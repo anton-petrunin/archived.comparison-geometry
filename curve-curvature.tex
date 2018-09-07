@@ -19,10 +19,15 @@ The length of $\tau$ is called \emph{total curvature of}~$\alpha$;
 that is,
 \[\tc\alpha:=\length\tau.\]
 
-\begin{thm}{Exercise}
-Show that the total curvature of any smooth closed regular curve $\alpha$ is at least $2\cdot\pi$.
+\begin{thm}{Exercise}\label{ex:fenchel}
+Show that 
+\[\tc\alpha\ge 2\cdot \pi\]
+for any smooth closed regular curve $\alpha$.
+
 Moreover, the equality holds if and only if $\alpha$ is a closed and convex curve that lies in a plane.
 \end{thm}
+
+The above exercise is the so called Fenchel's theorem.
 
 \section{On inscribed broken lines}
 
@@ -36,9 +41,14 @@ If the polygonal line $p_0\dots p_n$ is closed; that is $p_0=p_n$ you add one mo
 \[\alpha_0+\alpha_1+\dots+\alpha_{n-1},\]
 where $\alpha_0=\pi-\measuredangle p_{n}p_0p_{1}$.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:monotonic-tc}
 Let $a,b,c,d$ and $x$ be distinct points in $\RR^3$.
 Show that 
+\[\tc abcd\ge \tc abxcd.\]
+\end{thm}
+
+\begin{thm}{Exercise}
+Use Exercise~{ex:monotonic-tc} to prove an analog of Fenchel's theorem (Exercise~\ref{ex:fenchel}) for closed polygonal lines.
 \end{thm}
 
 

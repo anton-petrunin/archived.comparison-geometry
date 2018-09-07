@@ -190,8 +190,6 @@ Since $\eps>0$ is arbitrary, we get \ref{eq:semicont-length}.\qeds
 
 \section{Axioms of length}
 
-\warning
-
 \parbf{Concatenation.}
 Assume $\alpha\:[a,b]\to \RR^2$ and $\beta\:[b,c]\z\to \RR^2$ are two curves such that $\alpha(b)=\beta(b)$.
 Then one can combine these two curves in one $\gamma\:[a,c]\z\to \RR^2$ by assuming that $\gamma(t)=\alpha(t)$ for $t\le b$ and $\gamma(t)\ge\beta(t)$ for $t\ge b$.
@@ -321,6 +319,10 @@ Applying additivity, invariance of $\ell$ with respact to motions and reparameti
 Hence \ref{eq:l>length} follows.
 \qeds
 
+\begin{thm}{Exercise} 
+Construct a functional $\ell$ that is different from length and satisfies all the conditions in 
+ Proposition~\ref{prop:length-axioms} except the semi-continuity.
+\end{thm}
 
 
 
@@ -489,3 +491,22 @@ Show that
 \[|\perim F-\perim G|<2\cdot\pi\cdot\eps.\]
 
 \end{thm}
+
+The Minkowski sum of two sets $A$ and $B$ in the plane $\RR^2$ is the set denoted by $A+B$ that is formed by adding each vector in $A$ to each vector in $B$;
+that is, 
+\[A + B = \set{a+b}{a\in A,\ b\in B}.\]
+
+\begin{thm}{Exercise}
+Show that 
+\[\perim(A+B)=\perim A+\perim B\]
+for any pair of convex figures in the plane.
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $\gamma$ be a curve that lies in a convex figure $F$ in the plane.
+Assume that
+\[2\cdot \length \gamma\ge n\cdot \perim F\]
+for some integer $n$.
+Show that there is a line $\ell$ that has $\gamma$  at least $n$ distinct points of intersection with $\gamma$.
+\end{thm}
+
