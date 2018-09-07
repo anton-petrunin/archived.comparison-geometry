@@ -1,22 +1,21 @@
 \chapter{Isoperimetric inequality}
 
-\warning
-
 For any plane figure $F$ with perimeter $\ell$, its area $a$ satisfies the following inequality:
-\[4\pi\cdot  a \le \ell^2.\eqlbl{eq:plane-isop}\]
-Moreover the equality holds if $F$ is congruent to a round disc.
 
-This is so-called \emph{isoperimetric inequality} on the plane.
-Let us reformulate it without formulas, using the comparison language.
+\[4\pi\cdot  a \le \ell^2.\eqlbl{eq:plane-isop}\]
+Moreover the equality holds iff $F$ is congruent to a round disk.
+
+This is the so-called \emph{isoperimetric inequality} on the plane.
+Let us restate it without formulas, using the comparison language.
 
 \begin{thm}{Isoperimetric inequality}
-The area of plane figure bounded by a closed curve of length $\ell$ can not exceed the area of round disc with the same circumference $\ell$.
-Moreover the equality holds only if the figure is congruent to the disc.
+The area of plane figure bounded by a closed curve of length $\ell$ can not exceed the area of round disk with the same circumference $\ell$.
+Moreover the equality holds only if the figure is congruent to the disk.
 \end{thm}
 
 The comparison reformulation has some advantages --- it is more intuitive and it is also easier to generalize. 
 
-\begin{thm}{Exercise} Come up with a formulation of isoperimetric inequality on the units sphere. 
+\begin{thm}{Exercise} Come up with a formulation of the isoperimetric inequality on the unit sphere. 
 Try to reformulate it as an algebraic inequality similar to \ref{eq:plane-isop}.
 \end{thm}
 
@@ -29,7 +28,6 @@ Try to reformulate it as an algebraic inequality similar to \ref{eq:plane-isop}.
 
 Recall that a plane figure $F$ is called \index{convex figure}\emph{convex} if for every pair of points $x,y\in F$, the line segment $[x,y]$ that joins the pair of points lies also in~$F$.
 
-
 The following exercise reduces the isoperimetric inequality to the case of convex figures:
 
 \begin{thm}{Exercise}
@@ -40,21 +38,21 @@ Show that there is a convex figure $F'\supset F$ bounded by a closed curve of le
 The following problem is named after Dido, the legendary founder and first queen of Carthage.
 
 \begin{thm}{Dido's problem}
-A figure of the maximal area bounded by a straight line and a curve of given length with endpoints on that line is a half-disc.
+The figure of maximal area bounded by a straight line and a curve of given length with endpoints on that line is a half-disk.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:dido-isop}
 Show that Dido's problem follows from the isoperimetric inequality and the other way around.
 \end{thm}
 
-
 \begin{thm}{Exercise}
 Use the isoperimetric inequality in the plane to show that 
-inscribed convex polygons have maximal area among all the polygons with the given sides.
+among all the polygons with the given sides,
+the convex polygons inscribed in a circle have maximal area.
 \end{thm}
 
 \begin{thm}{Exercise}
-Find the minimal length of curve that divides the unit square in the given ratio $\alpha$.  
+Find the minimal length of a curve that divides the unit square in a given ratio $\alpha$.  
 \end{thm}
 
 \section{Lawlor's proof}
@@ -72,10 +70,9 @@ Before getting into the proof, try to solve the following exercise.
 \end{wrapfigure}
 
 \begin{thm}{Exercise}
-An old man walks along a trail around a convex meadows and pulls a brick on a rope of unit length (the rope is always strained).
+An old man walks along a trail around a convex meadows and pulls a brick tied to a rope of unit length (the rope is always strained).
 After walking around he noticed that the brick is at the same position as at the beginning.
-Show that the area between the trail and the path of the brick equals to the area of the unit disc. 
-
+Show that the area between the trail and the path of the brick equals the area of the unit disk. 
 \end{thm}
 
 }
@@ -85,7 +82,7 @@ Let $F$ be a convex figure bounded by a line and a curve $\gamma(t)$ of length $
 we can assume that $\gamma$ is a unit speed curve so the set of parameters is $[0,\ell]$.
 
 Imagine that we are walking along the curve with a stick of length $r$ so that the other end of the stick drags on the flow.
-Assume that at initially $t=0$ the stick points in the direction of $\gamma(\ell)$ --- the other end of $\gamma$.
+Assume that initially at $t=0$ the stick points in the direction of $\gamma(\ell)$ --- the other end of $\gamma$.
 
 \begin{wrapfigure}{r}{34 mm}
 \vskip-0mm
@@ -99,31 +96,32 @@ Assume that at initially $t=0$ the stick points in the direction of $\gamma(\ell
 \includegraphics{mppics/pic-5}
 \end{wrapfigure}
 
-Note that is $r$ is small then most of the time we drag the stick behind. Therefore at the end of walk the stick will make more than half turn and will point to the same side of the figure.
+Note that if $r$ is small then most of the time we drag the stick behind. Therefore at the end of the walk the stick will have made more than half turn and will point to the same side of the figure.
 
-Let $R$ be the radius of half-circle $\tilde\gamma(t)$ of length $\ell$.
-Assume we walk along $\tilde\gamma$  with a stick as or length $R$ the same way as described above.
-Note that the other end does not move (it always lies in the center) and the direction of stick changes with rate $\tfrac1R$.
-Note further for $\gamma$ this rate would be at most $\tfrac1R$.
+Let $R$ be the radius of the half-circle $\tilde\gamma(t)$ of length $\ell$.
+Assume we walk along $\tilde\gamma$  with a stick of length $R$ the same way as described above.
+Note that the other end does not move (it always lies in the center) and the direction of the stick changes with rate $\tfrac1R$.
+Note further that for $\gamma$ this rate is at most $\tfrac1R$.
 Therefore after walking along $\gamma$,
 the stick of length $R$ will rotate at most as much as if we would walk along $\tilde\gamma$.
 
-It follows that there is a positive value $r\z\le R$ such that after walking along $\gamma$, a stick of length $r$ will rotate exactly half turn, so it will point in the direction of $\gamma(0)$.
+It follows that there is a positive value $r\z\le R$ such that after walking along $\gamma$ with a stick of length $r$, it will rotate exactly half turn, so at the end it will point towards $\gamma(0)$.
 
 Imagine that the stick of length $r$ is covered with red paint and it paints the area below it.
-If we move with velocity $v$ then angular velocity (radians per second) of the stick is at most $\tfrac vr$ the equality hold if we move perpendicularly to the stick.
-Therefore we paint at the rate at most most $\tfrac12 v\cdot r$.
+If we move with velocity $v$ then the angular velocity (radians per second) of the stick is at most $\tfrac vr$ and the equality holds if we move perpendicularly to the stick.
+Therefore we paint at a rate of at most $\tfrac12 v\cdot r$.
 
-If we do the same for the half-disc of radius $R$ and stick of length $R$ with blue paint,
-then we paint area of disc without overlap with the rate $\tfrac12 v\cdot R$.
+If we do the same for the half-disk of radius $R$ and a stick of length $R$ with blue paint,
+then we paint the area of the disk without overlap with the rate $\tfrac12 v\cdot R$.
 Since $r\le R$, the total red-painted area can not exceed the blue-painted area, that is, $D$. 
 
 It remains to show that all $F$ is red-painted.
 Fix a point $p\in F$.
 Notice that at the beginning the point $p$ lies on the left from the stick and at the end it lies on the right form it.
-Therefore it will be a moment of time $t_0$ when the sides change from left to right.
+Therefore there will be a moment $t_0$ when the side changes from left to right.
 At this time the point must be on the line containing the stick. 
-Moreover if it lies on the extension then the sides change from right to left. Therefore $p$ have to lie under the stick; that is, $p$ is painted.
+Moreover, if it lies on the extension then the side changes from right to left. Therefore $p$ has to lie under the stick; that is, $p$ is painted.
+
 \qeds
 
 \begin{thm}{Exercise}

@@ -4,9 +4,11 @@ The material of this and the following chapters overlaps largely with \cite[Chap
 
 \section{Length of curve}
 
+
 \begin{thm}{Definition}\label{def:curve}
 A \emph{plane curve}\index{plane curve} is a continuous mapping $\alpha\:[a,b]\z\to \RR^2$,
 where $\RR^2$ denotes the Euclidean plane. 
+
 
 If $\alpha(a)=p$ and $\alpha(b)=q$,
 we say that $\alpha$ is a \emph{curve from $p$ to $q$}\index{curve from $p$ to $q$}.
@@ -27,6 +29,7 @@ is called \emph{partition} of interval $[a,b]$.
 \begin{thm}{Definition}\label{def:length}
 Let $\alpha\:[a,b]\to \RR^2$ be a curve.
 The \emph{length}\index{length of curve} of $\alpha$ is defined as
+
 \begin{align*}
 \length \alpha
 &= 
@@ -34,6 +37,7 @@ The \emph{length}\index{length of curve} of $\alpha$ is defined as
 \\
 &\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \dots+|\alpha(t_{k-1})-\alpha(t_k)|\}. 
 \end{align*}
+
 where the exact upper bound is taken over all partitions
 \[a=t_0 < t_1 < \cdots < t_k=b.\]
 
@@ -65,11 +69,13 @@ $\perim P\le \perim Q$, where $\perim P$ denotes the perimeter of $P$.
 
 Therefore it is sufficient to prove the following lemma.
 
+
 \begin{thm}{Lemma}\label{lem:perimeter}
 Let $P$ and $Q$ be polygons.
 Assume $P$ is convex and $Q\supset P$.
 Then $\perim P\le \perim Q$.
 \end{thm}
+
 
 \begin{wrapfigure}{r}{24 mm}
 \vskip-4mm
@@ -82,9 +88,11 @@ Then $\perim P\le \perim Q$.
 Note that by triangle inequality,
 the inequality
 \[\perim P\le \perim Q\]
+
 holds
 if $P$ can be obtained from $Q$ by cutting it along a chord;
 that is, the boundary curve of $P$ is formed by a part of boundary curve of $Q$ and one line segment lying in $Q$.
+
 
 Note that there is an increasing sequence of polygons 
 $$P=P_0\subset P_1\subset\dots\subset P_n=Q$$
@@ -107,6 +115,9 @@ Any closed curve is bounded; that is, it lies in a sufficiently large square.
 By Proposition~\ref{prop:convex-curve}, the length of the curve can not exceed the perimeter of the square, hence the result.
 \qeds
 
+
+
+\warning 
 \section{Semicontinuity of length}
 
 
@@ -123,14 +134,17 @@ where $\liminf_{n\to\infty}a_n$ denotes the lower limit; that is the lowest limi
 \end{thm}
 
 
+
 \begin{wrapfigure}{r}{20 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-6}
 \end{wrapfigure}
 
+
 Note that the inequality \ref{eq:semicont-length} might be strict.
 For example the diagonal of unit square $\alpha_\infty$ 
+
 can be  approximated by a sequence of stairs-like
 polygonal curves $\alpha_n$
 with sides parallel to the sides of the square,
@@ -150,7 +164,6 @@ such that
 &\dots+|\alpha_\infty(t_{k-1})-\alpha_\infty(t_k)|)<\eps
 \end{align*}
 
-
 Set 
 \begin{align*}\Sigma_n
 &\df
@@ -164,6 +177,7 @@ Set
 \\
 &\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \dots+|\alpha_\infty(t_{k-1})-\alpha_\infty(t_k)|.
 \end{align*}
+
 Note that $\Sigma_n\to \Sigma_\infty$ as $n\to\infty$
 and $\Sigma_n\le\length\alpha_n$ for each $n$.
 Hence
@@ -194,8 +208,10 @@ if $\alpha'$ is a reparametrization of $\alpha$.
 
 
 
+
 \begin{thm}{Proposition}\label{prop:length-axioms}
 Let $\ell$ be a functional that returns a value in $[0,\infty]$ for any curve $\alpha\:[a,b]\to\RR$.
+
 Assume it satisfies the following properties:
 \begin{enumerate}[(i)]
 \item\label{Normalization} (Normalization) If $\alpha\:[a,b]\to \RR^2$ is a linear curve,%
@@ -451,4 +467,3 @@ Show that
 \[|\perim F-\perim G|<2\cdot\pi\cdot\eps.\]
 
 \end{thm}
-
