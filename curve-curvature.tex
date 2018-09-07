@@ -15,9 +15,42 @@ If the curve $\alpha$ is closed then we assume in addition that $\alpha'(a)=\alp
 Denote by $\tau(t)$ the unit vector in the direction of $\alpha'(t)$;
 that is, $\tau(t)=\tfrac{\alpha'(t)}{|\alpha'(t)|}$.
 The $\tau\:[a,b]\to\mathbb{S}^2$ is an other curve which is called \emph{tangent indicatrix} of $\alpha$.
-The length of $\tau$ is called \emph{total curvature of}~$\alpha$.
+The length of $\tau$ is called \emph{total curvature of}~$\alpha$;
+that is,
+\[\tc\alpha:=\length\tau.\]
 
 \begin{thm}{Exercise}
 Show that the total curvature of any smooth closed regular curve $\alpha$ is at least $2\cdot\pi$.
 Moreover, the equality holds if and only if $\alpha$ is a closed and convex curve that lies in a plane.
+\end{thm}
+
+\section{On inscribed broken lines}
+
+The total curvature of a polygonal line is defined as the sum of its external angles.
+More precisely, assume $p_0,\dots,p_n$ are the vertexes of a polygonal line then.
+The external angle at the vertex $p_i$ is defined as $\alpha_i=\pi-\measuredangle p_{i-1}p_ip_{i+1}$.
+The the total curvature of the polygonal line $p_0\dots p_n$ is defined as the sum
+\[\alpha_1+\dots+\alpha_{n-1}.\]
+
+If the polygonal line $p_0\dots p_n$ is closed; that is $p_0=p_n$ you add one more angle 
+\[\alpha_0+\alpha_1+\dots+\alpha_{n-1},\]
+where $\alpha_0=\pi-\measuredangle p_{n}p_0p_{1}$.
+
+\begin{thm}{Exercise}
+Let $a,b,c,d$ and $x$ be distinct points in $\RR^3$.
+Show that 
+\end{thm}
+
+
+Let  $\alpha\:[a,b]\to \RR^3$ be a curve and  $a=t_0<\dots<t_n=b$ a partition.
+Set $p_i=\alpha(t_i)$.
+Then the polygonal line $p_0\dots p_n$ is called inscribed in~$\alpha$.
+
+We gave two definitions of total curvature:
+the first, via tangent indicatrix --- it works for smooth regular curves;
+the second, via external angles --- it works for polygonal lines.
+The following definition tells that these two definitions agree.
+
+\begin{thm}{Theorem}
+Total curvature of a smooth regular curve equals to the exact upper bound on the total curvature of inscribed polygonal lines; if the original curve is closed then the inscribed polygonal line is assumed to be closed as well. 
 \end{thm}

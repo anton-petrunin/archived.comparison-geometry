@@ -224,4 +224,28 @@ draw circle (z.b,z.c-z.b)  dashed evenly;
 draw circle (z.c,z.a-z.c)  dashed evenly;
 
 endfig;
+
+beginfig(10) 
+save u;
+u:=1cm;
+
+z.a=(1,2)*u;
+z.a1=(2,1)*u;
+z.a2=(2,.2)*u;
+z.b=(1.5,0)*u;
+z.b1=(1.6,-.3)*u;
+z.b2=(2,-1)*u;
+z.c=(1,-1)*u;
+
+draw z.a..z.a1..z.a2..z.b penbold;
+draw z.b..z.b1..z.b2..z.c penbold;
+dOt z.a;
+dOt z.b;
+dOt z.c;
+
+label.lft(btex $\alpha(a)$ etex, z.a);
+label.lft(btex $\alpha(b)=\beta(b)$ etex, z.b);
+label.lft(btex $\beta(c)$ etex, z.c);
+
+endfig;
 end
