@@ -19,3 +19,44 @@ Cut $G$ by a line that splits the perimeter in two equal parts --- $\ell$ each.
 Denote by $F$ and $F'$ the two parts.
 Applying the Dido's problem for each part, we get that that are of each does not exceed the area of half-disc bounded by a half-circle.
 The two half-disc could be arranged into a round disc of circumference $\ell$, hence the isoperimetric inequality follows.
+
+
+
+
+\parbf{Exercise~\ref{ex:fenchel}.} Assume contrary, that is there is a closed smooth regular curve $\alpha$ such that $\tc\alpha<2\cdot\pi$.
+
+The tangent indicatrix $\tau$ of $\alpha$ is a curve in a sphere;
+by the definition of total curvature, the length of $\tau$ is the total curvature of $\alpha$; in particular
+\[\length \tau <2\cdot\pi.\]
+
+By Exercise~\ref{ex:2pi-sphere}, $\tau$ lies in an open hemisphere.
+If $u$ is the center of the hemisphere, then 
+\[\langle u,\tau(t)\rangle>0\quad\text{and therefore}\quad \langle u,\alpha'(t)\rangle>0\]
+for any $t$.
+Therefore the function $t\mapsto \langle u,\alpha(t)\rangle$ is strictly increasing.
+In particular, if $\alpha$ is defined on the time interval $[a,b]$, then
+\[\langle u,\alpha(a)\rangle<\langle u,\alpha(a)\rangle.\]
+But $\alpha$ is closed; that is $\alpha(a)=\alpha(b)$ --- a contradiction.
+
+Now let us prove the equality case.
+First note that it is sufficient to show that $\tau$ runs around an equator.
+
+Assume $\tau$ is not an equator, from above we know that $\tau$ can not lie in an open hemisphere.
+Note that we can shorten $\tau$ by a small chord.
+The obtained curve $\tau'$ is shorter than $2\cdot\pi$ and therefore lies in an open hemisphere.
+Applying this construction for shorter and shorter chord and passing to the limit we get that $\tau$ lies in closed hemisphere.
+Denote its center by $u$ as before, then
+\[\langle u,\tau(t)\rangle\ge 0\quad\text{and therefore}\quad \langle u,\alpha'(t)\rangle\ge0\]
+for any $t$.
+Since $\alpha$ is closed we have that $\langle u,\alpha(t)\rangle$ is constant;
+that is, runs in a plane perpendicular to $u$ and $\tau$ lies in an equator perpendicular to $u$.
+
+So $\tau$ is a curve that runs along equator, has length $2\cdot\pi$ and does not lie in a open hemisphere.
+Since $\tau$ is not an equator, it have to run along half-equator back and forth.
+In this case $\tau$ lies in an other closed hemisphere and has some points in its interior.
+The latter contradicts closeness of $\alpha$ the same way as above. 
+
+
+
+
+
