@@ -248,4 +248,41 @@ label.lft(btex $\alpha(b)=\beta(b)$ etex, z.b);
 label.lft(btex $\beta(c)$ etex, z.c);
 
 endfig;
+
+beginfig(11) 
+save u;
+u:=1cm;
+
+z.o=origin;
+z.a1=(1.2,.5)*u;
+z.a2=(1.1,0)*u;
+z.a3=(1.1,-.5)*u;
+z.a4=(1.3,0)*u;
+
+draw z.a1..z.a2..z.a3--z.a3..z.a4..z.a1--cycle;
+hatchfill z.a1..z.a2..z.a3--z.a3..z.a4..z.a1--cycle  withcolor (57, 1mm, -.5bp);
+
+z.b1=(-.5,1.2)*u;
+z.b2=(0,1.1)*u;
+z.b3=(.5,1.2)*u;
+z.b4=(0,1.4)*u;
+
+draw z.b1..z.b2..z.b3--z.b3..z.b4..z.b1--cycle;
+hatchfill z.b1..z.b2..z.b3--z.b3..z.b4..z.b1--cycle  withcolor (57, 1mm, -.5bp);
+
+draw z.a1+z.b3..z.a4+z.b3..z.a3+z.b3--z.a3+z.b3..z.a3+z.b2..z.a3+z.b1--z.a3+z.b1..z.a2+z.b1..z.a1+z.b1--z.a1+z.b1..z.a1+z.b4..z.a1+z.b3--cycle;
+hatchfill z.a1+z.b3..z.a4+z.b3..z.a3+z.b3--z.a3+z.b3..z.a3+z.b2..z.a3+z.b1--z.a3+z.b1..z.a2+z.b1..z.a1+z.b1--z.a1+z.b1..z.a1+z.b4..z.a1+z.b3--cycle  withcolor (57, 1mm, -.5bp);
+
+z.a=(1.2,.2)*u;
+z.b=(.1,1.2)*u;
+
+drawarrow z.o--z.a;
+drawarrow z.o--z.b;
+drawarrow z.a--(z.a+z.b);
+drawarrow z.b--(z.a+z.b);
+
+dOt z.o;
+
+
+endfig;
 end

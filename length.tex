@@ -492,9 +492,36 @@ Show that
 
 \end{thm}
 
-The Minkowski sum of two sets $A$ and $B$ in the plane $\RR^2$ is the set denoted by $A+B$ that is formed by adding each vector in $A$ to each vector in $B$;
+\begin{wrapfigure}{r}{33 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-11}
+\end{wrapfigure}
+
+The set $C$ is called \emph{Minkowski sum} of two sets $A$ and $B$  (briefly $C=A+B$) if $C$ is formed by adding each vector in $A$ to each vector in $B$;
 that is, 
-\[A + B = \set{a+b}{a\in A,\ b\in B}.\]
+\[C = \set{a+b}{a\in A,\ b\in B}.\]
+
+Note that if $A$ and $B$ are convex then so is $C=A+B$. %??? statement+proof latter
+
+Indeed, $A$ is convex if and only if for any pair of points $a_0,a_1\in A$ and any $t\in[0,1]$,
+the point $a_t=(1-t)\cdot a_0+t\cdot a_1$ belongs to $A$.
+Similarly, $B$ is convex if and only if for any pair of points $b_0,b_1\in B$ and any $t\in[0,1]$,
+the point $b_t=(1-t)\cdot b_0+t\cdot b_1$ belongs to $A$.
+
+Fix a pair of points $c_0,c_1\in C$;
+by the definition of Minkowski sum, there are two pairs of points $a_0,a_1\in A$ and $b_0,b_1\in B$ such that $c_0=a_0+b_0$ and $c_1=a_1+b_1$.
+Then 
+\begin{align*}
+c_t&=(1-t)\cdot c_0+t\cdot c_1=
+\\
+&=(1-t)\cdot (a_0+b_0)+t\cdot(a_1+b_1)=
+\\
+&=[(1-t)\cdot a_0+t\cdot a_1]+[(1-t)\cdot b_0+t\cdot b_1]=
+\\
+&=a_t+b_t.
+\end{align*}
+That is, $c_t\in C$ for any $t\in [0,1]$, hence the result.
 
 \begin{thm}{Exercise}
 Show that 
