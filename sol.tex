@@ -21,6 +21,39 @@ Applying the Dido's problem for each part, we get that that are of each does not
 The two half-disc could be arranged into a round disc of circumference $\ell$, hence the isoperimetric inequality follows.
 
 
+\parbf{Exercise~\ref{ex:3d-crofton}.} 
+Let $\alpha\:[a,b]\to \RR^3$ be a curve.
+Given a unit vector $u$, denote by $\alpha_u$ the projection of $\alpha$ on a line in the direction of $u$;
+denote by $\alpha_{u^\perp}$ the of $\alpha$ on a plane perpendicular to $u$.
+
+Two formulas 
+\[\length \alpha=k\cdot \overline{\length \alpha_u}\]
+and 
+\[\length \alpha=k'\cdot \overline{\length \alpha_{u^\perp}}\]
+can be proved the same way as the Crofton's formula in the plane.
+
+It remains to find the coefficients $k$ and $k'$.
+It is sufficient to calculate the average projection of unit segment to a line and to a plane.
+We need to find two integrals 
+\begin{align*}
+k&=\oint_{\mathbb{S}^2} |x| \cdot d\area
+\intertext{and}
+k'&=\oint_{\mathbb{S}^2} \sqrt{1-x^2}\cdot d\area,
+\end{align*}
+where $\mathbb{S}^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}$ is the unit sphere in the Euclidean space and $\oint$ denotes the average value --- since the area of unit sphere is $4\cdot\pi$, we have
+\[\oint_{\mathbb{S}^2} f(x,y,z) \cdot d\area=\tfrac1{4\cdot \pi}\cdot\int_{\mathbb{S}^2} f(x,y,z) \cdot d\area\]
+
+Note that in the cylindrical coordinates 
+\[(x, \phi=\arctan \tfrac yz, \rho=\sqrt{y^2+z^2}),\] 
+we have $d\area=dx\cdot d\phi$.
+Therefore
+\begin{align*}
+k&=\oint_{[-1,1]} |x| \cdot dx=\tfrac12
+\intertext{and}
+k'&=\oint_{[-1,1]} \sqrt{1-x^2}\cdot dx=\tfrac\pi4.
+\end{align*}
+
+\parbf{Comment.} Note that $\tfrac{k'}k=\tfrac\pi2$ is the coefficient in the 2-dimensional Crofton formula. This is not a coincidence --- think about it.
 
 
 \parbf{Exercise~\ref{ex:fenchel}.} Assume contrary, that is there is a closed smooth regular curve $\alpha$ such that $\tc\alpha<2\cdot\pi$.
