@@ -332,7 +332,7 @@ Let $\alpha$ be a plane curve and $u$ is a unit vector.
 Denote by $\alpha_u$ the orthogonal projection of $\alpha$ to a line $\ell$ in the direction of $u$;
 that is, $\alpha_u(t)\in\ell$ and $\alpha(t)-\alpha_u(t)\perp \ell$ for any $t$.
 
-\begin{thm}{Crofton formula}
+\begin{thm}{Crofton formula}\label{thm:crofton}
 The length of any plane curve $\alpha$ is proportional to the average of lengths of its projection $\alpha_u$ for all unit vectors $u$.
 Moreover for any plane curve $\alpha$ we have
 \[\length\alpha=\tfrac\pi2\cdot\overline{\length \alpha_u},\]
@@ -404,7 +404,7 @@ For example.
 Recall that big circle in a sphere is the intersection of sphere with a plane passing thru its center.
 For example equator as well as any meridian are a big circles.
 
-\begin{thm}{Spherical Crofton formula}
+\begin{thm}{Spherical Crofton formula}\label{thm:crofton-sphere}
 The length of any curve $\alpha$ in the unit sphere is $\pi$ times the average number of its crossings with big circles.
 
 More presciently, given a unit vector $u$, denote by $n_\alpha(u)$ the number of crossings of $\alpha$ and the equator with pole at $u$.
@@ -485,7 +485,7 @@ What do you think could be the shortest trajectory?
 
 Hausdorff distance $d_H(F,G)$ between closed bounded sets $F$ and $G$ in the plane is defined as the exact lower bound on $\eps>0$ such that $\eps$-neightborhood of $F$ contains $G$ and $\eps$-neightborhood of $G$ contains~$F$.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:perim-hausdorff}
 Assume $F$ and $G$ be two closed convex figures on the plane such that $d_H(F,G)<\eps$.
 Show that 
 \[|\perim F-\perim G|<2\cdot\pi\cdot\eps.\]
@@ -524,10 +524,15 @@ c_t&=(1-t)\cdot c_0+t\cdot c_1=
 \end{align*}
 That is, $c_t\in C$ for any $t\in [0,1]$, hence the result.
 
-\begin{thm}{Exercise}
+
+\begin{thm}{Exercise}\label{ex:perim+mink}
 Show that 
 \[\perim(A+B)=\perim A+\perim B\]
 for any pair of convex figures in the plane.
+\end{thm}
+
+\begin{thm}{Exercise}
+Use Exercise~\ref{ex:perim+mink} and Lemma~\ref{lem:perimeter} to give another solution of Exercise~\ref{ex:perim-hausdorff}.
 \end{thm}
 
 \begin{thm}{Exercise}

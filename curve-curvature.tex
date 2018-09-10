@@ -1,6 +1,6 @@
 \chapter{Curvature of curves}
 
-\section{Total curvature}
+\section{Total curvature}\label{sec:total-curvature-smooth}
 
 Here we introduce the so called \emph{total curvature of curve}.
 In general term \emph{curvature} is used for something that measures how 
@@ -29,17 +29,23 @@ Moreover, the equality holds if and only if $\alpha$ is a closed and convex curv
 
 The above exercise is the so called Fenchel's theorem.
 
-\section{On inscribed broken lines}
+
+\section{On inscribed polygonal lines}
 
 The total curvature of a polygonal line is defined as the sum of its external angles.
 More precisely, assume $p_0,\dots,p_n$ are the vertexes of a polygonal line then.
 The external angle at the vertex $p_i$ is defined as $\alpha_i=\pi-\measuredangle p_{i-1}p_ip_{i+1}$.
 The the total curvature of the polygonal line $p_0\dots p_n$ is defined as the sum
-\[\alpha_1+\dots+\alpha_{n-1}.\]
+\[\alpha_1+\dots+\alpha_{n-1};\]
+it is defined if $p_{i-1}\ne p_i$ for any $i$.
 
 If the polygonal line $p_0\dots p_n$ is closed; that is $p_0=p_n$ you add one more angle 
 \[\alpha_0+\alpha_1+\dots+\alpha_{n-1},\]
 where $\alpha_0=\pi-\measuredangle p_{n}p_0p_{1}$.
+
+Let us define tangent indicatrix for a polygonal line $w_0\dots w_n$ as a spherical polygonal line (each edge is an arc of big circle of the sphere) that vertexes are unit vectors $\xi_1,\dots,\xi_n$ in the directions of $w_1-w_0$, $w_2-w_1,\dots, w_n-w_{n-1}$ correspondingly;
+if the  polygonal line is closed then we add one more vertex $\xi_0$ in the directions of $w_0-w_n$ and two more edges $\xi_0\xi_1$ and $\xi_n\xi_0$ so the indicatrix of closed polygonal line is closed.
+Note that the total curvature of polygonal line is the length of its tangent indicatrix.
 
 \begin{thm}{Exercise}\label{ex:monotonic-tc}
 Let $a,b,c,d$ and $x$ be distinct points in $\RR^3$.
@@ -47,20 +53,85 @@ Show that
 \[\tc abcd\ge \tc abxcd.\]
 \end{thm}
 
-\begin{thm}{Exercise}
-Use Exercise~{ex:monotonic-tc} to prove an analog of Fenchel's theorem (Exercise~\ref{ex:fenchel}) for closed polygonal lines.
+\begin{thm}{Exercise}\label{ex:poly-fenchel}
+Use Exercise~\ref{ex:monotonic-tc} to prove an analog of Fenchel's theorem (Exercise~\ref{ex:fenchel}) for closed polygonal lines.
 \end{thm}
 
 
 Let  $\alpha\:[a,b]\to \RR^3$ be a curve and  $a=t_0<\dots<t_n=b$ a partition.
 Set $p_i=\alpha(t_i)$.
-Then the polygonal line $p_0\dots p_n$ is called inscribed in~$\alpha$.
+Then the polygonal line $p_0\dots p_n$ is called inscribed in~$\alpha$;
+we say that the polygonal line $p_0\dots p_n$ is \emph{nondegenerate} if $p_{i-1}\ne p_i$ for each $i$. 
 
 We gave two definitions of total curvature:
 the first, via tangent indicatrix --- it works for smooth regular curves;
 the second, via external angles --- it works for polygonal lines.
+The later can be used to define total curvature of arbitrary nonconstant curves (it has to have nondegenerate inscribed polygonal lines).
+
+\begin{thm}{Definition}\label{def:total-curv-poly}
+The total curvature of a nonconstant curve $\alpha$ is the exact upper bound on the total curvatures of inscribed nondegenerate polygonal lines.
+\end{thm}
+
 The following definition tells that these two definitions agree.
 
-\begin{thm}{Theorem}
-Total curvature of a smooth regular curve equals to the exact upper bound on the total curvature of inscribed polygonal lines; if the original curve is closed then the inscribed polygonal line is assumed to be closed as well. 
+\begin{thm}{Theorem}\label{thm:total-curvature=}
+For smooth regular curves the two definitions of total curvature agree;
+that is, for any regular curve, the length of its indicatrix ia equal to the exact upper bound on the total curvatures of inscribed nondegenerate polygonal lines.
 \end{thm}
+
+Note that once from the theorem and Exercise~\ref{ex:poly-fenchel}, we get a generalization of Fenchel's theorem (Exercise~\ref{ex:fenchel}).
+
+\begin{thm}{Lemma}\label{lem:uvw}
+Let $\alpha\:[a,b]\to\RR^3$ be a smooth regular curve.
+Consider three unit vectors $u$, $v$ and $w$ in the directions of
+$\alpha'(a)$, $\alpha(b)-\alpha(a)$ and $\alpha'(b)$ correspondingly.
+Then 
+\[\tc\alpha\ge\measuredangle (u,v)+\measuredangle (v,w).\]
+\end{thm}
+
+\parit{Proof.}
+The tangent indicatrix $\tau$ runs from $u$ to $w$ in the unit sphere~$\mathbb{S}^2$.
+
+Note that $\tau$ can not be separated from $v$ by an equator.
+Indeed the vector 
+\[\alpha(b)-\alpha(a)=\int_a^b\alpha'(t)\cdot dt\]
+points in the same direction as $v$.
+Therefore if $\tau=\tfrac{\alpha'}{|\alpha'|}$ lies in a hemisphere then $v$ lies in the same hemisphere. 
+
+Fix an equator $\ell$ in general position.
+If $\ell$ intersects the spherical polygonal line $uvw$ at one point, then $\ell$ separates $u$ from $w$ and therefore it must intersect $\tau$.
+If $\ell$ intersects the spherical polygonal line $uvw$ at two points, then $\ell$ separates $v$ from $u$ and $w$ and therefore it must intersect $\tau$ at two points --- $\tau$ must cross $\ell$ and then come back.
+It follows that for almost all equators the number of intesections with the spherical polygonal line $uvw$ can not exceed the number of intersections with $\tau$.
+By the spherical Crofton formula (\ref{thm:crofton-sphere}), $\tau$ is longer than the spherical polygonal line $uvw$.
+But the polygonal line $uvw$ has length $\measuredangle (u,v)+\measuredangle (v,w)$, hence the result.
+\qeds
+ 
+
+\parit{Proof of \ref{thm:total-curvature=}.}
+Let $\alpha\:[a,b]\to\RR^3$ be a smooth curve.
+Fix a partition $a\z=t_0<\dots<t_n=b$ and consider the corresponding inscribed polygonal line $\beta=w_0\dots w_n$.
+Let $\chi=\xi_1\dots\xi_n$ be its tangent indicatrix --- this is a spherical polygonal line;
+we assume that $\chi(t_i)=\xi_i$ and it has constant speed on each arc.
+
+Consider a sequence of finer and finer partitions, denote by $\beta_n$ and $\chi_n$ the correspoponging inscribed polygonal line and its tangent indicatrix;
+since $\alpha$ is smooth, the $\chi_n$ converges pointwise to the $\tau$ --- the thangent indicatrix of $\alpha$.
+By semi-continuity of length functional, we get that 
+\begin{align*}
+\tc\alpha&=\length \tau\le  
+\\
+&\le \liminf_{n\to\infty}\length \chi_n\le
+\\
+&\le \sup\{\tc\beta\},
+\end{align*}
+where the list upper bound is taken for all partitions and corresponding inscribed polygonal lines $\beta$.
+
+It remains to prove that
+\[\tc\alpha\ge \tc\beta,\eqlbl{eq:tc-alpha<tc-beta}\]
+for any polygonal line $\beta$ inscribed in $\alpha$.
+Let $\zeta_i$ be the unit vector in the direction of $\alpha'(t_i)$.
+Consider the spherical polygonal line $\gamma=\zeta_0 \xi_1 \zeta_1 \xi_2\dots \xi_n \zeta_n$;
+recall that $\beta=\xi_0\dots \xi_n$.
+By triangle inequality, $\length \gamma\ge \length \beta$.
+By Lemma~\ref{lem:uvw}, $\tc\alpha\ge\length\gamma$, 
+hence \ref{eq:tc-alpha<tc-beta} follows.
+\qeds
