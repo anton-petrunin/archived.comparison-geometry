@@ -285,4 +285,30 @@ dOt z.o;
 
 
 endfig;
+
+beginfig(12) 
+save u;
+u:=1cm;
+
+z.a0=(0,0)*u;
+z.a1=(.8,1)*u;
+z.a2=(2.8,.7)*u;
+z.a3=(3,0)*u;
+
+save p; path p[];
+p0=z.a0..z.a1..z.a2..z.a3;
+
+draw p0;
+z.b0=z.a0+2*direction 0 of p0;
+drawarrow z.a0--z.b0;
+z.b3=z.a3+3*direction 3 of p0;
+drawarrow z.a3--z.b3;
+drawarrow z.a0--z.a3;
+
+dOt z.a0,z.a3;
+
+label.lft(btex $\alpha'(a)$ etex, z.b0);
+label.rt(btex $\alpha'(b)$ etex, z.b3);
+label.top(btex $\alpha(b)-\alpha(a)$ etex, .5[z.a0,z.a3]);
+endfig;
 end
