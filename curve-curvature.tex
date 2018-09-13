@@ -219,9 +219,15 @@ that is, the total curvature of any nontrival knot \emph{exceeds} $4\cdot\pi$.
 It is easy to construct a trefoil knot with total curvature arbitrary close to $4\cdot\pi$;
 therefore this result is optimal.
 
-In the proof we will use the following fact: \emph{if a coordinate function has only one local minimum and one local on a closed simple polygonal line then the line is a trivial knot.}
+In the proof we will use the following fact: \emph{if a height function has only one local minimum and one local maximum on a closed simple polygonal line then the line is a trivial knot.}
 It is easy to prove assuming that we gave the definitions of nontrivial knot.
-(A standard introduction to knot theory defines knots as simple closed polygonal lines, so in the proof we use this agreement; alternatively one can define knot as a closed smooth regular curve, but this approach requires more work.)
+Roughly, if a height function has only one local minimum and one local maximum, then at each intermediate height, there are
+exactly two points of the curve.
+Connecting each such pair with a straight segment, we obtain a disk bounded by the knot.
+Therefore the know is trivial.
+
+
+A standard introduction to knot theory defines knots as simple closed polygonal lines, so in the proof we use this agreement; alternatively one can define knot as a closed smooth regular curve, but this approach requires more work.
 
 \parit{Proof.}
 Let $\alpha$ be a simple closed polygonal line.
@@ -229,13 +235,15 @@ Assume its total curvature is less that $4\cdot\pi$.
 Then by Proposition~\ref{prop:tc-crofton}, 
 \[\tc\alpha_u<4\cdot\pi\]
 for some unit vector $u$.
+Moreover, we can assume that $u$ points in a generic direction;
+that is, $u$ is not perpendicular to any edge of $\alpha$.
 
 The total curvature of $\alpha_u$ is $\pi$ times the number of turns of $\alpha_u$
 which has to be an even number.
 It follows that number of turns of $\alpha_u$ is at most $2$;
 it can not be less than 2 for generic direction and therefore it is $2$.
-That is, if we choose the line in the direction of $u$ as the coordinate axis,
-then the the coordinate function has exactly one minimum and one maximum;
+That is, if we rotate the space so that $u$ pints to the top,
+than the height function has exactly one minimum and one maximum;
 by the fact stated above $\alpha$ is a trivial knot --- hence the result.
 \qeds
 
@@ -294,3 +302,26 @@ We say that a curve $\alpha\:[a,b]\to\RR^3$ \emph{does not stop} if $\alpha$ is 
 Assume that the curve $\alpha$ does not stop and its the total curvature is less than $\pi$.
 Show that $\alpha$ is simple; that is it has no self-intersections.
 \end{thm}
+
+\begin{thm}{Exercise-definition} 
+Assume that a curve $\alpha\:[a,b]\to\RR^3$ does not stop and has finite total curvature.
+Show that the direction of exit and entrance is defined for any point.
+
+That is for any $t_0\in [a,b)$ the unit vector  
+\[v(\eps)=\frac{\alpha(t_0+\eps)-\alpha(t_0)}{|\alpha(t_0+\eps)-\alpha(t_0)|}\] converges as $\eps\to0^+$;
+its limit is called the direction of exit and it will be denoted by $\alpha^+(t_0)$
+
+Analogously, for any $t_0\in (a,b]$ the unit vector  
+\[w(\eps)=\frac{\alpha(t_0-\eps)-\alpha(t_0)}{|\alpha(t_0-\eps)-\alpha(t_0)|}\] 
+converges as $\eps\to0^+$;
+its limit is called the direction of entrance and it will be denoted by $\alpha^-(t_0)$.
+\end{thm}
+
+\begin{thm}{Exercise} 
+Assume that a curve $\alpha\:[a,b]\to\RR^3$ does not stop and has finite total curvature.
+Show that 
+\[\alpha^+(t)=-\alpha^-(t)\]
+at all $t\in[a,b]$ except a countable subset.
+\end{thm}
+
+
