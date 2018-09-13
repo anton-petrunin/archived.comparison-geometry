@@ -1,6 +1,6 @@
-\chapter{Curvature of curves}
+\chapter{Total curvature}
 
-\section{Total curvature}\label{sec:total-curvature-smooth}
+\section{Smooth regular curves}\label{sec:total-curvature-smooth}
 
 Here we introduce the so called \emph{total curvature of curve}.
 In general term \emph{curvature} is used for something that measures how 
@@ -30,20 +30,22 @@ Moreover, the equality holds if and only if $\alpha$ is a closed and convex curv
 The above exercise is the so called Fenchel's theorem.
 
 
-\section{On inscribed polygonal lines}
+\section{General definition}
 
 The total curvature of a polygonal line is defined as the sum of its external angles.
-More precisely, assume $p_0,\dots,p_n$ are the vertexes of a polygonal line.
-The external angle at the vertex $p_i$ is defined as $\alpha_i=\pi-\measuredangle p_{i-1}p_ip_{i+1}$.
-The the total curvature of the polygonal line $p_0\dots p_n$ is defined as the sum
-\[\alpha_1+\dots+\alpha_{n-1};\]
+
+More precisely, 
+for a polygonal line $\beta=p_0\dots p_n$,
+the external angle at the vertex $p_i$ is defined as $\alpha_i=\pi-\measuredangle p_{i-1}p_ip_{i+1}$.
+The total curvature of the polygonal line $\beta=p_0\dots p_n$ is defined as the sum
+\[\tc\beta=\alpha_1+\dots+\alpha_{n-1};\]
 it is defined if the polygonal line is \emph{nondegenerate}; that is, $p_{i-1}\ne p_i$ for any $i$.
 
 If the polygonal line $p_0\dots p_n$ is closed; that is $p_0=p_n$ you add one more angle 
 \[\alpha_0+\alpha_1+\dots+\alpha_{n-1},\]
 where $\alpha_0=\pi-\measuredangle p_{n}p_0p_{1}$.
 
-Let us define tangent indicatrix for a polygonal line $p_0\dots p_n$ as a spherical polygonal line (each edge is an arc of big circle of the sphere) that vertexes are unit vectors $\xi_1,\dots,\xi_n$ in the directions of $p_1-p_0$, $p_2-p_1,\dots, p_n-p_{n-1}$ correspondingly;
+One can define the tangent indicatrix for a polygonal line $\beta$ as a spherical polygonal line (each edge is an arc of big circle of the sphere) that vertexes are unit vectors $\xi_1,\dots,\xi_n$ in the directions of $p_1-p_0$, $p_2-p_1,\dots, p_n-p_{n-1}$ correspondingly;
 if the  polygonal line is closed then we add one more vertex $\xi_0$ in the directions of $p_0-p_n$ and two more edges $\xi_0\xi_1$ and $\xi_n\xi_0$ so the indicatrix of closed polygonal line is a closed spherical polygonal line.
 
 Note that the total curvature of polygonal line is the length of its tangent indicatrix.
@@ -66,11 +68,25 @@ Then the polygonal line $p_0\dots p_n$ is called inscribed in~$\alpha$.
 We gave two definitions of total curvature:
 the first one is given in Section~\ref{sec:total-curvature-smooth} via tangent indicatrix --- it works for smooth regular curves;
 the second, via external angles --- it works for polygonal lines.
-The latter can be used to define total curvature of arbitrary nonconstant curves.
+The latter can be used to define total curvature of arbitrary curves.
 
 \begin{thm}{Definition}\label{def:total-curv-poly}
-The total curvature of a nonconstant curve $\alpha$ is the exact upper bound on the total curvatures of inscribed nondegenerate polygonal lines.
+The total curvature of a nonconstant curve $\alpha$ is the exact upper bound on the total curvatures of inscribed nondegenerate polygonal lines;
+if the curve is closed then we assume that the inscribed polygonal lines are closed as well.
 \end{thm}
+
+We need to assume that the curve is nonconstant, otherwise it does not admit inscribed polygonal lines that are not trivial.
+
+\begin{thm}{Exercise}
+Show that the total curvature is lower semi-continuous with respect to pointwise convergence of curves.
+That is, if a sequence
+of curves $\alpha_n\:[a,b]\to \RR^3$ converges pointwise 
+to a curve $\alpha_\infty\:[a,b]\z\to \RR^3$, then 
+\[\liminf_{n\to\infty} \tc\alpha_n \ge \tc\alpha_\infty.\]
+\end{thm}
+
+\parit{Hint:} Modify the proof of semi-continuity of length (Theorem~\ref{thm:length-semicont}).
+
 
 The following definition tells that these two definitions agree.
 
@@ -112,7 +128,22 @@ It follows that for almost all equators the number of intesections with the sphe
 By the spherical Crofton formula (\ref{thm:crofton-sphere}), $\tau$ is longer than the spherical polygonal line $\lambda \mu\nu$.
 But the polygonal line $\lambda \mu\nu$ has length $\measuredangle (\lambda,\mu)+\measuredangle (\mu,\nu)$, hence the result.
 \qeds
- 
+
+Let us sketch an alternative proof of the lemma which is built on Fenchel's theorem. 
+
+\parit{An alternative proof of the lemma.}
+That the curve $\alpha$ can be extended to a smooth regular closed curve $\hat\alpha$ by an arc $\beta$ that starts from $\alpha(b)$ in the same direction as $\alpha$ turns and joins the segment $[\alpha(b),\alpha(a)]$ runs close to $\alpha(a)$ turns and joints $\alpha$ smoothly at $\alpha(a)$.
+
+Note that the total curvature of $\beta$ can be made arbitrary close to $2\cdot\pi -\measuredangle (\lambda,\mu)-\measuredangle (\mu,\nu)$.
+Indeed, $\beta$ needs a bit more than $\pi -\measuredangle (\mu,\nu)$ to turn an join the segment $[\alpha(b),\alpha(a)]$ and bit more than $\pi -\measuredangle (\lambda,\mu)$ to turn an join the segment $\alpha$.
+
+By Fenchel's theorem,
+\[\tc\hat\alpha\ge 2\cdot \pi.\]
+Evidently 
+\[\tc\hat\alpha=\tc\alpha+\tc\beta,\]
+hence the lemma follows.
+\qeds
+
 
 \parit{Proof of \ref{thm:total-curvature=}.}
 Let $\alpha\:[a,b]\to\RR^3$ be a smooth curve.
@@ -142,3 +173,111 @@ By triangle inequality, $\length \gamma\ge \length \beta$.
 By Lemma~\ref{lem:uvw}, $\tc\alpha\ge\length\gamma$, 
 hence \ref{eq:tc-alpha<tc-beta} follows.
 \qeds
+
+
+
+
+\section{Crofton again}
+
+Given a curve $\alpha$ in $\RR^3$ and a unit vector $u$, denote by $\alpha_{u^\perp}$ 
+and $\alpha_u$ the projection of $\alpha$ to the plane perpendicular to $u$ and the line parallel to $u$ correspondingly.
+
+To prove the following proposition, apply the spherical Crofton formula to the tangent indicatrix of $\alpha$.
+
+\begin{thm}{Proposition}\label{prop:tc-crofton}
+Let $\alpha$ be a polygonal line in $\RR^3$.
+Show that 
+\begin{align*}
+\tc\alpha
+&=\overline{\tc\alpha_{u^\perp}}=
+\\
+&=\overline{\tc\alpha_u}.
+\end{align*}
+\end{thm}
+
+Note that since the curve $\alpha_u$ run back and forth along one line.
+Each change of its direction contributes $\pi$ to the total curvature of $\alpha_u$.
+Therefore the total curvature of $\alpha_u$ is $n\cdot\pi$, where $n$ is the number of switches of the direction.
+Since $n$ has to be even, $\tc\alpha_u$ may take values $2\cdot\pi, 4\cdot\pi,\dots$
+
+\begin{thm}{Exercise}
+Use the proposition and the observation above to give yet an other proof of  Fenchel's theorem (Exercise~\ref{ex:fenchel}).
+\end{thm}
+
+\section{Applications}
+
+\begin{thm}{Theorem}
+The total curvature of any nontrival knot is at least $4\cdot\pi$. 
+\end{thm}
+
+The famous Fary--Milnor theorem states that states that the inequality is strict;
+that is the total curvature of any nontrival knot \emph{exceeds} $4\cdot\pi$.
+It is easy to construct a trefoil knot with total curvature arbitrary close to $4\cdot\pi$;
+therefore this result is optimal.
+
+So the theorem above  
+
+In the proof we will use the following fact: a coordinate function must have at least two local maximums and two local minimums on any nontrivial knot.
+It is easy to prove assuming that we gave the definitions of nontrivial knot. 
+
+\parit{Proof.}
+It is sufficient to show that if $\alpha$ is a simple polygonal line that is a nontrival knot then its total curvature exceeds $2\cdot\pi$.
+
+Note that for any unit vector $u$, the projection $\alpha_u$ has total curvature at least $4\cdot\pi$.
+Indeed, $\alpha_u$ has even number of turns, each turns contributes $\pi$ to the total curvature. If the total curvature is less than $4\cdot\pi$ then the number of turns 2; that is $\alpha$ runs one way along a line segment and comes back.
+\qeds
+
+\begin{thm}{Exercise}
+Construct a closed smooth simple curve with total curvature arbitrary close to $2\cdot\pi$ such that its projection to any plane has at least $10$ self-intersections.   
+\end{thm}
+
+
+\begin{thm}{DNA inequality}
+Let $\alpha$ be a closed curve that lies in a unit disc.
+Then 
+\[\tc\alpha\ge \length\alpha.\]
+\end{thm}
+
+Note that if $\length\alpha\le2\cdot\pi$, then Fenchel's theorem gives a better estimate,
+for longer curves it gives something new.
+
+\parit{Proof.}
+Assume $\alpha$ is a polygonal line.
+
+Fix a unit vector $u$.
+Note that the curve $\alpha_u$ can run at most length 2 in one direction;
+therefore the number of turns has to be at least $\tfrac12\cdot\length\alpha$.
+Since each turn of $\alpha_u$ contributes $\pi$ to its total curvature, we get
+\[\tc\alpha_u\ge \tfrac\pi2\cdot\length\alpha_u.\]
+
+The same inequality holds for the average values of left and right hand sides;
+that is,
+\[\overline{\tc\alpha_u}
+\ge \tfrac\pi2\cdot\overline{\length\alpha_u}.\]
+It remains to apply the Crofton's formula and Proposition \ref{prop:tc-crofton}.
+
+It remains to reduce the general case to polygonal lines.
+If $\alpha$ is rectifiable, one can inscribe a polygonal line $\beta$ in $\alpha$ with length sufficiently close to length of $\alpha$; that is given $\eps>0$ there is an inscribed broken line $\beta$ such that 
+\[\length \alpha<\length \beta+\eps.\]
+By the definition of total curvature (\ref{def:total-curv-poly}) and from above
+\begin{align*}
+\tc\alpha&\ge\tc\beta\ge
+\\
+&\ge \length\beta>
+\\
+&>\length\alpha-\eps.
+\end{align*}
+The statement follows since $\eps$ is arbitrary positive number. 
+\qeds
+
+\begin{thm}{Exercise} 
+Assume that a curve $\alpha\:[a,b]\to\RR^3$ has finite total curvature.
+ Show that $\alpha$ is rectifiable.
+\end{thm}
+
+We say that a curve $\alpha\:[a,b]\to\RR^3$ \emph{does not stop} if $\alpha$ is not constant on any subinterval of $[a,b]$. 
+
+\begin{thm}{Exercise} 
+Assume that a curve $\alpha\:[a,b]\to\RR^3$ has finite total curvature does not stop.
+Show that $\alpha$ can visit one poit only finitely many times.
+\end{thm}
