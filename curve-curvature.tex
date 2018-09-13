@@ -95,7 +95,7 @@ For smooth regular curves the two definitions of total curvature agree;
 that is, for any regular curve, the length of its tangent indicatrix is equal to the exact upper bound on the total curvatures of inscribed nondegenerate polygonal lines.
 \end{thm}
 
-Note that from the theorem and Exercise~\ref{ex:poly-fenchel}, we get a generalization of Fenchel's theorem (Exercise~\ref{ex:fenchel}).
+Note that from the theorem and Exercise~\ref{ex:poly-fenchel}, we get a generalization of Fenchel's theorem (Exercise~\ref{ex:fenchel}) --- it works for arbtrary closed curves, not necessary smooth and regular.
 
 \begin{thm}{Lemma}\label{lem:uvw}
 Let $\alpha\:[a,b]\to\RR^3$ be a smooth regular curve.
@@ -132,7 +132,7 @@ But the polygonal line $\lambda \mu\nu$ has length $\measuredangle (\lambda,\mu)
 Let us sketch an alternative proof of the lemma which is built on Fenchel's theorem. 
 
 \parit{An alternative proof of the lemma.}
-That the curve $\alpha$ can be extended to a smooth regular closed curve $\hat\alpha$ by an arc $\beta$ that starts from $\alpha(b)$ in the same direction as $\alpha$ turns and joins the segment $[\alpha(b),\alpha(a)]$ runs close to $\alpha(a)$ turns and joints $\alpha$ smoothly at $\alpha(a)$.
+Note that the curve $\alpha$ can be extended to a smooth regular closed curve $\hat\alpha$ by an arc $\beta$ that starts from $\alpha(b)$ in the same direction as $\alpha$ turns and joins the segment $[\alpha(b),\alpha(a)]$ runs along the segment close to $\alpha(a)$ turns and joints $\alpha$ smoothly at $\alpha(a)$.
 
 Note that the total curvature of $\beta$ can be made arbitrary close to $2\cdot\pi -\measuredangle (\lambda,\mu)-\measuredangle (\mu,\nu)$.
 Indeed, $\beta$ needs a bit more than $\pi -\measuredangle (\mu,\nu)$ to turn an join the segment $[\alpha(b),\alpha(a)]$ and bit more than $\pi -\measuredangle (\lambda,\mu)$ to turn an join the segment $\alpha$.
@@ -157,7 +157,9 @@ By semi-continuity of length functional, we get that
 \begin{align*}
 \tc\alpha&=\length \tau\le  
 \\
-&\le \liminf_{n\to\infty}\length \chi_n\le
+&\le \liminf_{n\to\infty}\length \chi_n=
+\\
+&= \liminf_{n\to\infty}\tc \beta_n\le
 \\
 &\le \sup\{\tc\beta\},
 \end{align*}
@@ -167,10 +169,12 @@ It remains to prove that
 \[\tc\alpha\ge \tc\beta,\eqlbl{eq:tc-alpha<tc-beta}\]
 for any polygonal line $\beta$ inscribed in $\alpha$.
 Let $\zeta_i$ be the unit vector in the direction of $\alpha'(t_i)$.
-Consider the spherical polygonal line $\gamma=\zeta_0 \xi_1 \zeta_1 \xi_2\dots \xi_n \zeta_n$;
-recall that $\beta=\xi_0\dots \xi_n$.
-By triangle inequality, $\length \gamma\ge \length \beta$.
-By Lemma~\ref{lem:uvw}, $\tc\alpha\ge\length\gamma$, 
+Consider the spherical polygonal line $\gamma\z=\zeta_0 \xi_1 \zeta_1 \xi_2\dots \xi_n \zeta_n$;
+recall that $\chi=\xi_0\dots \xi_n$.
+By triangle inequality, 
+\[\length \gamma\ge \length \chi=\tc\beta.\]
+By Lemma~\ref{lem:uvw}, 
+\[\tc\alpha\ge\length\gamma,\] 
 hence \ref{eq:tc-alpha<tc-beta} follows.
 \qeds
 
@@ -195,10 +199,10 @@ Show that
 \end{align*}
 \end{thm}
 
-Note that since the curve $\alpha_u$ run back and forth along one line.
+Note that since the curve $\alpha_u$ runs back and forth along one line.
 Each change of its direction contributes $\pi$ to the total curvature of $\alpha_u$.
 Therefore the total curvature of $\alpha_u$ is $n\cdot\pi$, where $n$ is the number of switches of the direction.
-Since $n$ has to be even, $\tc\alpha_u$ may take values $2\cdot\pi, 4\cdot\pi,\dots$
+Since $n$ has to be even, $\tc\alpha_u$ may take values $2\cdot\pi$, $4\cdot\pi$, $6\cdot\pi$ and so on.
 
 \begin{thm}{Exercise}
 Use the proposition and the observation above to give yet an other proof of  Fenchel's theorem (Exercise~\ref{ex:fenchel}).
@@ -210,21 +214,28 @@ Use the proposition and the observation above to give yet an other proof of  Fen
 The total curvature of any nontrival knot is at least $4\cdot\pi$. 
 \end{thm}
 
-The famous Fary--Milnor theorem states that states that the inequality is strict;
-that is the total curvature of any nontrival knot \emph{exceeds} $4\cdot\pi$.
+The famous Fary--Milnor theorem states that the inequality is strict;
+that is, the total curvature of any nontrival knot \emph{exceeds} $4\cdot\pi$.
 It is easy to construct a trefoil knot with total curvature arbitrary close to $4\cdot\pi$;
 therefore this result is optimal.
 
-So the theorem above  
-
-In the proof we will use the following fact: a coordinate function must have at least two local maximums and two local minimums on any nontrivial knot.
+In the proof we will use the following fact: \emph{if a coordinate function has only one local minimum and one local on a closed simple polygonal line then the line is a trivial knot.}
 It is easy to prove assuming that we gave the definitions of nontrivial knot. 
 
 \parit{Proof.}
-It is sufficient to show that if $\alpha$ is a simple polygonal line that is a nontrival knot then its total curvature exceeds $2\cdot\pi$.
+Let $\alpha$ be a simple closed polygonal line.
+Assume its total curvature is less that $4\cdot\pi$.
+Then by Proposition~\ref{prop:tc-crofton}, 
+\[\tc\alpha_u<4\cdot\pi\]
+for some unit vector $u$.
 
-Note that for any unit vector $u$, the projection $\alpha_u$ has total curvature at least $4\cdot\pi$.
-Indeed, $\alpha_u$ has even number of turns, each turns contributes $\pi$ to the total curvature. If the total curvature is less than $4\cdot\pi$ then the number of turns 2; that is $\alpha$ runs one way along a line segment and comes back.
+The total curvature of $\alpha_u$ is $\pi$ times the number of turns of $\alpha_u$
+which has to be an even number.
+It follows that number of turns of $\alpha_u$ is at most $2$;
+it can not be less than 2 for generic direction and therefore it is $2$.
+That is, if we choose the line in the direction of $u$ as the coordinate axis,
+then the the coordinate function has exactly one minimum and one maximum;
+by the fact stated above $\alpha$ is a trivial knot --- hence the result.
 \qeds
 
 \begin{thm}{Exercise}
@@ -254,7 +265,7 @@ The same inequality holds for the average values of left and right hand sides;
 that is,
 \[\overline{\tc\alpha_u}
 \ge \tfrac\pi2\cdot\overline{\length\alpha_u}.\]
-It remains to apply the Crofton's formula and Proposition \ref{prop:tc-crofton}.
+It remains to apply the Crofton's formula and Proposition~\ref{prop:tc-crofton}.
 
 It remains to reduce the general case to polygonal lines.
 If $\alpha$ is rectifiable, one can inscribe a polygonal line $\beta$ in $\alpha$ with length sufficiently close to length of $\alpha$; that is given $\eps>0$ there is an inscribed broken line $\beta$ such that 
