@@ -208,16 +208,17 @@ Since $n$ has to be even, $\tc\alpha_u$ may take values $2\cdot\pi$, $4\cdot\pi$
 Use the proposition and the observation above to give yet an other proof of  Fenchel's theorem (Exercise~\ref{ex:fenchel}).
 \end{thm}
 
-\section{Applications}
+\section{F\'ary--Milnor theorem}
 
 \begin{thm}{Theorem}
 The total curvature of any nontrival knot is at least $4\cdot\pi$. 
 \end{thm}
 
-The famous Fary--Milnor theorem states that the inequality is strict;
+The famous F\'ary--Milnor theorem states that the inequality is strict;
 that is, the total curvature of any nontrival knot \emph{exceeds} $4\cdot\pi$.
 It is easy to construct a trefoil knot with total curvature arbitrary close to $4\cdot\pi$;
 therefore this result is optimal.
+The question was raised by Karol Borsuk \cite{borsuk} and answered independently by Istv\'an F\'ary and John Milnor \cite{fary, milnor}. 
 
 In the proof we will use the following fact: \emph{if a height function has only one local minimum and one local maximum on a closed simple polygonal line then the line is a trivial knot.}
 It is easy to prove assuming that we gave the definitions of nontrivial knot.
@@ -247,12 +248,86 @@ than the height function has exactly one minimum and one maximum;
 by the fact stated above $\alpha$ is a trivial knot --- hence the result.
 \qeds
 
+Let us give a sketch of another proof, based on the original idea of Istv\'an F\'ary.
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-13}
+\vskip0mm
+\end{wrapfigure}
+
+\parit{Alternative proof.}
+Assume that the knot is a polygonal line.
+
+Consider a projection of knot to a plane in general position.
+That is, we assume that the self-intersections of the projection are at most double and the projection of each edge does not degenerate.
+The obtained closed polygonal line $\beta=p_1p_2\dots p_n$ divides the plane into domains, one is unbounded, denote by $U$ and the others are bounded.
+
+Let us show that if the knot is nontrivial then there is a bounded domain $D$ that does not share a borderline with unbounded.
+
+First note that all domains can be colored in a cheeseboard order;
+that is, they can be colored in black and white in such a way that domains with common border  line get different colors.
+If the unbounded domain gets white color and every other domain is black then one can untie the knot by flipping these domains one by one.
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-14}
+\vskip0mm
+\end{wrapfigure}
+
+Therefore among the bounded domains there is a white domain, denote it by $D$.
+The domain $D$ can not have a borderline with $U$ since they have the same color.
+Fix a point $o$ in this domain.
+
+Set 
+\begin{align*}
+\alpha_i&=\pi-\measuredangle p_{i-1}p_ip_{i+1},
+\\
+\beta_i&=\measuredangle p_i o p_{i+1},
+\\
+\gamma_i&=\measuredangle o p_i p_{i+1}.
+\end{align*}
+Here indexes are taken modulo $n$; in particular, $n+1$ means $1$.
+
+
+Note that $\alpha_i$ is the external angle at $p_i$;
+therefore 
+\[\tc\beta= \alpha_1+\dots+\alpha_n\]
+
+\begin{figure}[h]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-15}
+\vskip0mm
+\end{figure}
+
+Direct calculations show that 
+\[\alpha_i\ge \beta_{i-1}+\gamma_{i-1}-\gamma_i.\]
+(Two pictures with the same angles, we have equality on the first one and strict inequality on the second one.)
+
+It follows that 
+\[\alpha_1+\dots+\alpha_n\ge \beta_1+\dots+\beta_n.\]
+
+The last sum 
+is the total angle at  which $\beta$ seen from $o$ counted with multiplicity. 
+The boundary of $D$ contributes at least $2\cdot\pi$ to this sum and the boundary of $U$ contributes an other $2\cdot\pi$;
+since their boundaries do not overlap we get 
+\[\beta_1+\dots+\beta_n\ge 4\cdot\pi,\]
+hence the result.
+\qeds
+
+
+
 \begin{thm}{Exercise}
 Construct a closed smooth simple curve with total curvature arbitrary close to $2\cdot\pi$ such that its projection to any plane has at least $10$ self-intersections.   
 \end{thm}
 
+\section{DNA inequality}
 
-\begin{thm}{DNA inequality}
+
+\begin{thm}{Theorem}
 Let $\alpha$ be a closed curve that lies in a unit disc.
 Then 
 \[\tc\alpha\ge \length\alpha.\]
@@ -291,6 +366,45 @@ By the definition of total curvature (\ref{def:total-curv-poly}) and from above
 The statement follows since $\eps$ is arbitrary positive number. 
 \qeds
 
+\parit{Alternative proof.}
+Note that it is sufficient to consider a closed polygonal lines $\beta=p_0p_1\dots p_n-1$ in the unit disc.
+We assume that $p_n=p_0$, $p_{n+1}=p_1$ and so on.
+Denote by $\alpha_i$ the external angle at $p_i$.
+
+Denote by $o$ the center of the disc.
+Consider a sequence of triangles 
+$\triangle q_0q_1s_0\cong \triangle p_0p_1o$,
+$\triangle q_1q_2s_0\cong \triangle p_1p_2o$ 
+and so on such that the points $q_0,q_1\dots$ lie on one line in the same order and the points $s_i$ lie on one side from this line.
+
+Note that 
+\[|s_n-s_0|=\length \beta.\]
+Therefore 
+\[|s_0-s_1|+\dots+|s_{n-1}-s_n|\ge \length \beta.\]
+
+Note that 
+\[|q_i-s_{i-1}|=|q_i-s_i|=|p_i-o|\le 1\]
+and
+\[\measuredangle s_{i-1}q_is_i\le \alpha_i\]
+for each $i$.
+Therefore 
+\[|s_{i-1}-s_i|<\alpha_i\]
+for each $i$.
+
+Therefore
+\begin{align*}
+\tc \beta
+&=\alpha_1+\dots+\alpha_n\ge
+\\
+&\ge |s_{0}-s_1|+\dots |s_{n-1}-s_n|\ge 
+\\
+&\ge\length \beta.
+\end{align*}
+Hence the result.
+\qeds
+
+\section{Curves of finite total curvature}
+
 \begin{thm}{Exercise} 
 Assume that a curve $\alpha\:[a,b]\to\RR^3$ has finite total curvature.
  Show that $\alpha$ is rectifiable.
@@ -323,5 +437,14 @@ Show that
 \[\alpha^+(t)=-\alpha^-(t)\]
 at all $t\in[a,b]$ except a countable subset.
 \end{thm}
+
+\begin{thm}{Exercise} 
+Assume a sequence of curves $\alpha_n\:[a,b]\to\RR^3$ converges to a curve $\alpha_\infty\:[a,b]\to\RR^3$ and
+\[\lim_{n\to\infty}\length\alpha_n>\length\alpha_\infty.\]
+Show that 
+\[\tc\alpha_n\to\infty\quad\text{as}\quad n\to\infty.\]
+
+\end{thm}
+
 
 

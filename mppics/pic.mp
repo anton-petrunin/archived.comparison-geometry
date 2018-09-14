@@ -311,4 +311,90 @@ label.lft(btex $\alpha'(a)$ etex, z.b0);
 label.rt(btex $\alpha'(b)$ etex, z.b3);
 label.top(btex $\alpha(b)-\alpha(a)$ etex, .5[z.a0,z.a3]);
 endfig;
+
+beginfig(13) 
+save u;
+u:=1cm;
+
+z.a1=(0,0)*u;
+z.a2=(1,0)*u;
+z.a3=(0,1)*u;
+z.a4=(2,1)*u;
+z.a5=(1,2)*u;
+z.a6=(.5,3)*u;
+z.a7=(.2,2)*u;
+z.a8=(3,2)*u;
+z.a9=(3,3)*u;
+
+
+save p; path p[];
+p0=z.a1--z.a2--z.a3--z.a4--z.a6--z.a7--z.a8--z.a9--cycle;
+
+draw p0;
+hatchfill p0 withcolor black;
+
+endfig;
+
+beginfig(14) 
+save u;
+u:=.5cm;
+
+z.a1=(-2,0)*u;
+z.a2=(2,0)*u;
+z.a3=(-1,3)*u;
+z.a4=(-3,1)*u;
+z.a5=(3,1)*u;
+z.a6=(1,3)*u;
+
+save p; path p[];
+p0=z.a1--z.a2--z.a3--z.a4--z.a5--z.a6--cycle;
+
+draw p0;
+hatchfill p0 withcolor black;
+
+z.x=whatever[z.a2,z.a3]=whatever[z.a4,z.a5];
+z.y=whatever[z.a6,z.a1]=whatever[z.a4,z.a5];
+z.z=whatever[z.a2,z.a3]=whatever[z.a6,z.a1];
+
+hatchfill z.x--z.y--z.z--cycle withcolor white;
+
+label(btex $D$ etex, (2/3)[z.z,.5[z.x,z.y]]);
+endfig;
+
+beginfig(15) 
+save u;
+u:=1cm;
+
+z.o=origin;
+z.p1=(-1,1)*u;
+z.p2=(0,2)*u;
+z.p3=(1,2.1)*u;
+
+z.sh=(4,0)*u;
+
+z.oo=z.o+z.sh;
+z.q1=z.p1+z.sh;
+z.q2=z.p2+z.sh;
+z.q3=(z.p3+z.sh) reflectedabout (z.oo,z.q2);
+
+draw z.o--z.p1--z.p2--z.p3--z.o--z.p2;
+draw z.oo--z.q1--z.q2--z.q3--z.oo--z.q2;
+
+fill_angle(z.p3, z.p2, (2[z.p1,z.p2]), 10);
+fill_angle(z.q3, z.q2, (2[z.q1,z.q2]), 10);
+
+dOt z.o,z.oo,z.p1,z.p2,z.p3,z.q1,z.q2,z.q3;
+
+label.bot(btex $o$ etex, z.o);
+label.bot(btex $o$ etex, z.oo);
+
+label.rt(btex $p_{i-1}$ etex, z.p1+(2,0));
+label.top(btex $p_i$ etex, (z.p2+(-2,0)));
+label.top(btex $p_{i+1}$ etex, z.p3);
+
+whitelabel.rt(btex $p_{i-1}$ etex, z.q1+(2,0));
+label.top(btex $p_i$ etex, (z.q2+(-2,0)));
+label.top(btex $p_{i+1}$ etex, z.q3);
+
+endfig;
 end
