@@ -258,17 +258,19 @@ Let us give a sketch of another proof, based on the original idea of Istv\'an F\
 \end{wrapfigure}
 
 \parit{Alternative proof.}
-Assume that the knot is a polygonal line.
+We assume that the knot is a polygonal line.
 
-Consider a projection of knot to a plane in general position.
+Consider a projection of the knot to a plane in general position.
 That is, we assume that the self-intersections of the projection are at most double and the projection of each edge does not degenerate.
-The obtained closed polygonal line $\beta=p_1p_2\dots p_n$ divides the plane into domains, one is unbounded, denote by $U$ and the others are bounded.
-
-Let us show that if the knot is nontrivial then there is a bounded domain $D$ that does not share a borderline with unbounded.
+The obtained closed polygonal line $\beta=p_1p_2\dots p_n$ divides the plane into domains, one is unbounded, denote it by $U$, and the others are bounded.
 
 First note that all domains can be colored in a cheeseboard order;
-that is, they can be colored in black and white in such a way that domains with common border  line get different colors.
+that is, they can be colored in black and white in such a way that domains with common borderline get different colors.
 If the unbounded domain gets white color and every other domain is black then one can untie the knot by flipping these domains one by one.
+
+Therefore among the bounded domains there is a white domain, denote it by $D$.
+The domain $D$ can not have a borderline with $U$ since they have the same color.
+Fix a point $o$ in this domain.
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
@@ -277,24 +279,27 @@ If the unbounded domain gets white color and every other domain is black then on
 \vskip0mm
 \end{wrapfigure}
 
-Therefore among the bounded domains there is a white domain, denote it by $D$.
-The domain $D$ can not have a borderline with $U$ since they have the same color.
-Fix a point $o$ in this domain.
-
 Set 
 \begin{align*}
-\alpha_i&=\pi-\measuredangle p_{i-1}p_ip_{i+1},
+\phi_i&=\pi-\measuredangle p_{i-1}p_ip_{i+1},
 \\
-\beta_i&=\measuredangle p_i o p_{i+1},
+\psi_i&=\measuredangle p_{i-1} o p_{i},
 \\
-\gamma_i&=\measuredangle o p_i p_{i+1}.
+\theta_i&=\measuredangle o p_i p_{i+1}
 \end{align*}
+for each $i$.
 Here indexes are taken modulo $n$; in particular, $n+1$ means $1$.
 
 
-Note that $\alpha_i$ is the external angle at $p_i$;
+Note that $\phi_i$ is the external angle at $p_i$;
 therefore 
-\[\tc\beta= \alpha_1+\dots+\alpha_n\]
+\[\tc\beta= \phi_1+\dots+\phi_n\]
+
+Direct calculations show that 
+\[\phi_i\ge \psi_i+\theta_{i-1}-\theta_i.\]
+In the two pictures below, $\phi_i$ is the solid angle;
+the rest of angles arre the same.
+We have equality on the first one and strict inequality on the second one.
 
 \begin{figure}[h]
 \vskip-0mm
@@ -303,19 +308,19 @@ therefore
 \vskip0mm
 \end{figure}
 
-Direct calculations show that 
-\[\alpha_i\ge \beta_{i-1}+\gamma_{i-1}-\gamma_i.\]
-(Two pictures with the same angles, we have equality on the first one and strict inequality on the second one.)
-
 It follows that 
-\[\alpha_1+\dots+\alpha_n\ge \beta_1+\dots+\beta_n.\]
+\[\phi_1+\dots+\phi_n\ge \psi_1+\dots+\psi_n.\]
 
 The last sum 
 is the total angle at  which $\beta$ seen from $o$ counted with multiplicity. 
 The boundary of $D$ contributes at least $2\cdot\pi$ to this sum and the boundary of $U$ contributes an other $2\cdot\pi$;
 since their boundaries do not overlap we get 
-\[\beta_1+\dots+\beta_n\ge 4\cdot\pi,\]
+\[\psi_1+\dots+\psi_n\ge 4\cdot\pi,\]
 hence the result.
+
+This is true for the projection of the knot to any plane in general position.
+The remaining planes contribute nothing to the average value.
+Therefore by Proposition~\ref{prop:tc-crofton}, the total curvature of the original knot is at least $4\cdot\pi$.
 \qeds
 
 
@@ -349,7 +354,7 @@ The same inequality holds for the average values of left and right hand sides;
 that is,
 \[\overline{\tc\alpha_u}
 \ge \tfrac\pi2\cdot\overline{\length\alpha_u}.\]
-It remains to apply the Crofton's formula and Proposition~\ref{prop:tc-crofton}.
+Applying the Crofton's formula and Proposition~\ref{prop:tc-crofton} we get the result.
 
 It remains to reduce the general case to polygonal lines.
 Let us inscribe a polygonal line $\beta$ in $\alpha$ with length sufficiently close to length of $\alpha$;
@@ -367,15 +372,21 @@ The statement follows since $\eps$ is arbitrary positive number.
 \qeds
 
 \parit{Alternative proof.}
-Note that it is sufficient to consider a closed polygonal lines $\beta=p_0p_1\dots p_n-1$ in the unit disc.
+The same argument as above shows that it is sufficient to consider a closed polygonal lines $\beta=p_0p_1\dots p_{n-1}$ in the unit disc.
 We assume that $p_n=p_0$, $p_{n+1}=p_1$ and so on.
 Denote by $\alpha_i$ the external angle at $p_i$.
 
 Denote by $o$ the center of the disc.
 Consider a sequence of triangles 
-$\triangle q_0q_1s_0\cong \triangle p_0p_1o$,
-$\triangle q_1q_2s_0\cong \triangle p_1p_2o$ 
-and so on such that the points $q_0,q_1\dots$ lie on one line in the same order and the points $s_i$ lie on one side from this line.
+\[\triangle q_0q_1s_0\cong \triangle p_0p_1o,\ \triangle q_1q_2s_0\cong \triangle p_1p_2o,\dots\]
+such that the points $q_0,q_1\dots$ lie on one line in the same order and the points $s_i$ lie on one side from this line.
+
+\begin{figure}[h]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-16}
+\vskip0mm
+\end{figure}
 
 Note that 
 \[|s_n-s_0|=\length \beta.\]
@@ -391,7 +402,7 @@ Therefore
 \[|s_{i-1}-s_i|<\alpha_i\]
 for each $i$.
 
-Therefore
+It follows that
 \begin{align*}
 \tc \beta
 &=\alpha_1+\dots+\alpha_n\ge

@@ -349,7 +349,7 @@ z.a6=(1,3)*u;
 save p; path p[];
 p0=z.a1--z.a2--z.a3--z.a4--z.a5--z.a6--cycle;
 
-draw p0;
+
 hatchfill p0 withcolor black;
 
 z.x=whatever[z.a2,z.a3]=whatever[z.a4,z.a5];
@@ -358,7 +358,10 @@ z.z=whatever[z.a2,z.a3]=whatever[z.a6,z.a1];
 
 hatchfill z.x--z.y--z.z--cycle withcolor white;
 
-label(btex $D$ etex, (2/3)[z.z,.5[z.x,z.y]]);
+draw p0;
+
+label(btex $D$ etex, .6[z.z,.5[z.x,z.y]]);
+label(btex $U$ etex, .5[z.a3,z.a6]);
 endfig;
 
 beginfig(15) 
@@ -395,6 +398,66 @@ label.top(btex $p_{i+1}$ etex, z.p3);
 whitelabel.rt(btex $p_{i-1}$ etex, z.q1+(2,0));
 label.top(btex $p_i$ etex, (z.q2+(-2,0)));
 label.top(btex $p_{i+1}$ etex, z.q3);
+
+endfig;
+
+beginfig(16) 
+save u;
+u:=1cm;
+
+z.o=origin;
+z.p1=(.7,.1)*u;
+z.p2=(-.5,.5)*u;
+z.p3=(.3,-.7)*u;
+z.p4=(.5,.7)*u;
+z.p5=(.7,.4)*u;
+
+draw circle(z.o,1*u);
+
+save p; path p[];
+p0=z.p1--z.p2--z.p3--z.p4--z.p5--cycle;
+
+draw p0 penbold;
+
+z.q0=(2,-.3)*u;
+z.q1=z.q0+(abs(z.p1-z.p5),0);
+z.q2=z.q1+(abs(z.p2-z.p1),0);
+z.q3=z.q2+(abs(z.p3-z.p2),0);
+z.q4=z.q3+(abs(z.p4-z.p3),0);
+z.q5=z.q4+(abs(z.p5-z.p4),0);
+z.q6=z.q5+(abs(z.p1-z.p5),0);
+
+z.s0=(z.q0+(z.o-z.p5 rotated -angle(z.p1-z.p5))) reflectedabout (z.q0,z.q1);
+z.s1=z.q1+(z.o-z.p1 rotated -angle(z.p2-z.p1));
+z.s2=z.q2+(z.o-z.p2 rotated -angle(z.p3-z.p2));
+z.s3=z.q3+(z.o-z.p3 rotated -angle(z.p4-z.p3));
+z.s4=(z.q4+(z.o-z.p4 rotated -angle(z.p5-z.p4))) reflectedabout (z.q0,z.q1);
+z.s5=(z.q5+(z.o-z.p5 rotated -angle(z.p1-z.p5))) reflectedabout (z.q0,z.q1);
+
+draw z.q6--z.s5--z.q5--z.s4--z.q4--z.s3--z.q3--z.s2--z.q2--z.s1--z.q1--z.s0--z.q0 penhair;
+draw z.s5--z.s4--z.s3--z.s2--z.s1--z.s0 dashed evenly;
+draw z.q0--z.q6 penbold;
+
+draw z.o--z.p1 penhair;
+draw z.o--z.p2 penhair;
+draw z.o--z.p3 penhair;
+draw z.o--z.p4 penhair;
+draw z.o--z.p5 penhair;
+
+dOt z.o,z.p1,z.p2,z.p3,z.p4,z.p5,z.q0,z.q1,z.q2,z.q3,z.q4,z.q5,z.q6, z.s0, z.s1, z.s2, z.s3, z.s4, z.s5;
+
+whitelabel.lft(btex $o$ etex, z.o);
+whitelabel.rt(btex $p_0$ etex, z.p5);
+whitelabel.rt(btex $p_1$ etex, z.p1);
+whitelabel.lft(btex $p_2$ etex, z.p2);
+label.bot(btex $q_0$ etex, z.q0);
+label.bot(btex $q_1$ etex, z.q1+(3,0));
+label.bot(btex $q_2$ etex, z.q2+(3,0));
+label.bot(btex $\dots$ etex, .5[z.q2,z.q5]+(0,-3));
+label.bot(btex $q_n$ etex, z.q5+(3,0));
+label.top(btex $s_0$ etex, z.s0);
+label.top(btex $s_1$ etex, z.s1);
+label.top(btex $s_n$ etex, z.s5);
 
 endfig;
 end
