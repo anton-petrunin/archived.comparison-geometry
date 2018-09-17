@@ -1,15 +1,23 @@
 \section{Tame knots}
 
-It turns out that the simplest definition that capture the intuitive meaning if knot,
-uses the closed polygonal lines.
-An attempt to define knots as simple closed curves leads to a pathological examples as the one show on the diagram --- these are so called wild knots.
-
+It is tricky to make a formal definition that captures the intuitive meaning of \emph{knot}.
+An attempt to define knots as simple closed curves leads to a pathological examples as the one show on the diagram --- these are so called \emph{wild knots}.
 \begin{figure}[h]
 \vskip-0mm
 \centering
 \includegraphics[scale=.6]{pics/Wild_knot}
 \vskip0mm
 \end{figure}
+If one adds that the curve has to be smooth and regular,
+then these examples disappear, but it is still a tricky to give right definition of \emph{deformation} --- the following diagram shows 
+\begin{figure}[h]
+\vskip-0mm
+\centering
+\includegraphics[scale=1]{pics/knot}
+\vskip0mm
+\end{figure}
+that it can not be defined as a continuous family of closed simple smooth regular curves. 
+Observe that all curves on the diagram are smooth and regular for all times including the last moment.
 
 We define a \emph{knot} (more precicely \emph{tame knot}) to be a simple closed polygonal line in Euclidean space~$\RR^3$.
 
@@ -35,6 +43,99 @@ elementary deformations are called \emph{isotopic}.
 
 A knot that is not isotopic to a triangle is called nontrivial.
 
+\begin{thm}{Exercise}\label{ex:triangle-isotopy}
+Let $x$ and $y$ be two points on the adjacent edges $[p_1p_2]$ and $[p_2p_3]$ of a knot $\beta=p_1p_2p_3\dots p_n$.
+Assume that the solid triangle $\solidtriangle xp_2y$ intersects $\beta$ only along the $[xp_2]\cup [p_2y]$.
+Show that the knot $\beta'=p_1xyp_3\dots p_n$ is isotopic to $\beta$.
+\end{thm}
+
+
+
+\section{Elementary proof of F\'ary--Milnor theorem}
+
+Here we sketch a proof of F\'ary--Milnor theorem given by of Stephanie Alexander and Richard Bishop in \cite{alexander-bishop}.
+
+The proof is elementary, but not simple 
+(elementary does not mean simple, it means only that it does not use much theory).
+It is based on the following two facts that we already familiar with:
+\begin{itemize}
+\item If a closed polygonal line $\beta'$ is inscribed in a closed polygonal line $\beta$ then 
+ \[\tc\beta'\le \tc\beta.\]
+\item The total curvature of doubly covered
+bigon is $4\cdot\pi$; that is,
+\[\tc\beta=4\cdot\pi\]
+if $\beta=pqpq$ for two distinct points $p$ and $q$.
+Similarly if a quadrilateral is sufficiently close to a doubly covered
+bigon, then its total curvature is close to $4\cdot\pi$.
+\end{itemize}
+
+
+\parit{Proof.}
+Let $\beta=p_1\dots p_n$ be a closed polygonal line that is not a trivial knot;
+that is, one can not get a triangle from $\beta$ by applying a sequence of deformations defined in the previous section.
+
+We proceed by induction on the number $n \ge 3$.
+In the base case $n=3$ the polygonal line $\beta$ is a triangle.
+Therefore, by the definition, $\beta$ is a trivial knot --- nothing to prove.
+
+Consider the smallest $n$ for which the statement fail;
+that is, there is a closed simple polygonal line $\beta\z=p_1\dots p_n$ that is not a trivial knot such that
+\[\tc\beta<4\cdot\pi.
+\eqlbl{eq:<4pi}\]
+We use the indexes modulo $n$ that is $p_0=p_n$, $p_1=p_{n+1}$ and so on.
+Without loss of generality, we may assume that $\beta$ is in general position; 
+that is, no four vertexes of $\beta$ lie on one plane. 
+
+Set $\beta_0=\beta$.
+If the solid triangle $\solidtriangle p_{0}p_1p_{2}$ intersects $\beta_0$ only by the two adjacent edges,
+then applying the corresponding triangular deformation, we get a knot $\beta'_0$ with $n-1$ edge that is inscribed in $\beta_0$ therefore
+\[\tc\beta_0\ge \tc\beta_0'.\]
+On the other hand by induction hypothesis 
+\[\tc\beta_0'\ge 4\cdot\pi\]
+which contradicts \ref{eq:<4pi}.
+
+Choose the first point $w'_1$ on the edge $[p_1p_2]$ so that the line segment $[p_0w'_1]$ 
+intersects $\beta_0$.
+Denote a point of intersection by $y_1$.
+
+\begin{wrapfigure}{r}{25 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-17}
+\vskip0mm
+\end{wrapfigure}
+
+Choose a point $w_1$ on $[p_1p_2]$ a bit before $w'_1$
+(below we explain how close).
+Denote by $x_1$ the point on $[p_0w_1]$ that minimize the distance to $y_1$.
+This way we get a closed polygonal line 
+$\beta_1\z=w_1p_2\dots p_n$ with two marked points $x_1$ and $y_1$.
+Denote by $m_1$ the number of edges in the arc $y_1w_1\dots x_1$ of $\beta_1$.
+
+By Exercise~\ref{ex:triangle-isotopy}, $\beta_1$ is isotopic to $\beta_0$;
+in particular $\beta_1$ is a nontrivial knot.
+
+Now let us repeat the procedure for the adjacent edges $[w_1b_2]$ and $[b_2b_3]$ of $\beta_1$.
+If the solid triangle $\solidtriangle w_1b_2b_3$ intersects $\beta_1$ only at these two adjacent edges, then we get a contradiction with the induction hypothesis the same way as before.
+Otherwise we get a new knot $\beta_2=w_1w_2b_3\dots b_n$ with two marked points $x_2$ and $y_2$.
+Denote by $m_2$ the number of edges in the broken line $y_2w_3\dots x_2$.
+
+Note that the points $x_1,x_2,y_1,y_2$ can not appear on $\beta_2$ in the same cyclic order;
+otherwise the broken line $x_1x_2y_1y_2$ can be made to be arbitrary close to a doubly covered bigon which again contradicts~\ref{eq:<4pi}.%
+\footnote{More precisely, the choice of $w_1$ has to be made so that the distance $|x_1-y_1|$ would be much less that all the distances between $y_1$ and any point $z\in\beta\cap \solidtriangle p_1p_2p_3$, so we have
+\[\measuredangle y_1zx_1<\tfrac\eps{10},\]
+where $\eps=4\cdot\pi-\tc\beta$.
+In this case, since $y_2\in \beta\cap \solidtriangle p_1p_2p_3$ and $x_2$ can be taken arbitrary close to $y_2$, we have
+\[\tc x_1x_2y_1y_2 > 4\cdot\pi -\eps= \tc\beta\]
+which can not happen since $x_1x_2y_1y_2$ is inscribed in $\beta$.}
+
+Therefore we can assume that the arc $x_2w_2\dots y_2$ lies inside of arc $x_1w_1\dots y_1$ in $\beta_2$
+and therefore $m_1>m_2$.
+
+Continuing this procedure we get a sequence of polygonal lines $\beta_i\z=w_1\dots w_i p_{i+1}p_n$ with marked points $x_i$ and $y_i$ such that the number of edges $m_i$ from $x_i$ to $y_i$ decreases in $i$.
+Clearly $m_i>1$ for any $i$ and $m_1<n$.
+Therefore it requires less than $n$ steps we get a contradiction with the induction hypothesis.
+\qeds
 
 
 

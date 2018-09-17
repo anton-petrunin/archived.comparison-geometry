@@ -460,4 +460,30 @@ label.top(btex $s_1$ etex, z.s1);
 label.top(btex $s_n$ etex, z.s5);
 
 endfig;
+
+beginfig(17) 
+save u;
+u:=1cm;
+
+z.p0=(0,0)*u;
+z.p1=(1,1)*u;
+z.p2=(2,0)*u;
+z.ww=.7[z.p1,z.p2];
+z.w=.7[z.p1,z.ww];
+z.x=.6[z.p0,z.ww];
+z.y=altitude(z.p0, z.x, z.w);
+
+draw z.w--z.p0--z.p1--z.p2;
+draw z.p0--z.ww dashed evenly;
+dOt z.p0,z.p1,z.p2,z.x,z.y,z.w,z.ww;
+
+
+label.bot(btex $p_0$ etex, z.p0);
+label.top(btex $p_1$ etex, z.p1);
+label.bot(btex $p_2$ etex, z.p2);
+label.urt(btex $w_1$ etex, z.w);
+label.rt(btex $w_1'$ etex, z.ww);
+label.bot(btex $y_1$ etex, z.x);
+label.top(btex $x_1$ etex, z.y);
+endfig;
 end
