@@ -486,4 +486,82 @@ label.rt(btex $w_1'$ etex, z.ww);
 label.bot(btex $y_1$ etex, z.x);
 label.top(btex $x_1$ etex, z.y);
 endfig;
+
+beginfig(18) 
+save u,a;
+u:=1cm;
+a:=45;
+
+z.i=(0,1)*u;
+z.a1= z.i rotated -a;
+z.a2= z.i rotated a;
+z.a3=z.a1 rotated -120;
+z.a4=z.a2 rotated -120;
+z.a5= z.a1 rotated 120;
+z.a6=z.a2 rotated 120;
+
+z.a23=.5[z.a2,z.a3];
+z.a45=.5[z.a4,z.a5];
+z.a61=.5[z.a6,z.a1];
+
+draw z.a2--z.a23;
+draw z.a45--z.a5  penextrabold withcolor white;
+draw z.a45--z.a5--z.a6--z.a61;
+draw z.a23--z.a3 penextrabold withcolor white;
+draw z.a23--z.a3--z.a4--z.a45;
+draw z.a61--z.a1 penextrabold withcolor white;
+draw z.a61--z.a1--z.a2;
+
+endfig;
+
+beginfig(19) 
+save u;
+u:=1cm;
+
+z.a0=(0,0)*u;
+z.a1=(-.4,-1.3)*u;
+z.a2=(.4,-2)*u;
+z.a3=(.1,-3)*u;
+z.b1=(.7,-.9)*u;
+z.b2=(-.7,-2.3)*u;
+z.x=whatever[z.a1,z.a2]=whatever[z.b1,z.b2];
+
+hatchfill z.a0--z.a1--z.b1--cycle  withcolor (87, 1mm, -.5bp);
+%hatchfill z.a1--z.b1--z.a2--cycle  withcolor (27, 1mm, -.5bp);
+%hatchfill z.b1--z.b2--z.a2--cycle  withcolor (-24, 1mm, -.5bp);
+
+draw z.a1--z.a0--z.b1--z.b2--z.a3--z.a2 penbold;
+fill circle(z.x,2) withcolor white;
+draw z.a1--z.a2 penbold;
+%draw z.x--z.a2 dashed evenly penbold;
+draw z.a1--z.b1;
+draw z.b1--z.a2--z.b2 dashed evenly;
+
+dOt z.a0,z.a1,z.a2,z.a3,z.b1,z.b2;
+
+label.lft(btex $p_{n-1}$ etex, z.a1);
+label.top(btex $p_n$ etex, z.a0);
+label.rt(btex $p_1$ etex, z.b1);
+endfig;
+
+beginfig(20) 
+save u;
+u:=.7cm;
+
+z.a=origin;
+z.b=(1,0)*u;
+z.c=2*z.b;
+z.d=3*z.b;
+
+draw z.a..z.c..z.b..z.d..cycle;
+draw -.2[z.a,z.d]--1.2[z.a,z.d];
+dOt z.a,z.b,z.c,z.d;
+
+label.urt(btex $a$ etex, z.a);
+label.ulft(btex $b$ etex, z.b);
+label.urt(btex $c$ etex, z.c);
+label.ulft(btex $d$ etex, z.d);
+label.top(btex $\alpha$ etex, point 3.5 of (z.a..z.c..z.b..z.d..cycle));
+endfig;
+
 end
