@@ -333,6 +333,8 @@ p0=z.a1--z.a2--z.a3--z.a4--z.a6--z.a7--z.a8--z.a9--cycle;
 draw p0;
 hatchfill p0 withcolor black;
 
+label(btex $U$ etex, ((2.5,.5)*u));
+
 endfig;
 
 beginfig(14) 
@@ -504,13 +506,20 @@ z.a23=.5[z.a2,z.a3];
 z.a45=.5[z.a4,z.a5];
 z.a61=.5[z.a6,z.a1];
 
-draw z.a2--z.a23;
-draw z.a45--z.a5  penextrabold withcolor white;
-draw z.a45--z.a5--z.a6--z.a61;
-draw z.a23--z.a3 penextrabold withcolor white;
-draw z.a23--z.a3--z.a4--z.a45;
-draw z.a61--z.a1 penextrabold withcolor white;
-draw z.a61--z.a1--z.a2;
+z.a223=whatever[z.a2,z.a3]=whatever[z.a4,z.a5];
+z.a661=whatever[z.a6,z.a1]=whatever[z.a2,z.a3];
+z.a445=whatever[z.a4,z.a5]=whatever[z.a6,z.a1];
+
+draw z.a2--z.a23 penbold;
+fill circle(z.a223,2.5) withcolor white;
+
+draw z.a45--z.a5--z.a6--z.a61 penbold;
+fill circle(z.a661,2.5) withcolor white;
+
+
+draw z.a23--z.a3--z.a4--z.a45 penbold;
+fill circle(z.a445,2.5) withcolor white;
+draw z.a61--z.a1--z.a2 penbold;
 
 endfig;
 
