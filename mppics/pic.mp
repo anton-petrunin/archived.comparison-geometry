@@ -573,4 +573,112 @@ label.ulft(btex $d$ etex, z.d);
 label.top(btex $\alpha$ etex, point 3.5 of (z.a..z.c..z.b..z.d..cycle));
 endfig;
 
+beginfig(21) 
+save u;
+u:=1cm;
+
+z.a0=(.5,0)*u;
+z.a1=(1,0)*u;
+z.a2=(1,1)*u;
+z.a3=(2,0)*u;
+z.a4=(0,0)*u;
+
+save p; path p[];
+p0=z.a0..z.a1..z.a2..z.a3..z.a4;
+
+draw p0 penbold;
+
+z.z=(point 1.3 of p0) + whatever*( (direction 1.3 of p0) rotated 90)=(point 1.4 of p0) + whatever*( (direction 1.4 of p0) rotated 90);
+
+p1=circle(z.z,(point 1.3 of p0)-z.z);
+
+draw p1;
+
+dOt (point 1.3 of p0);
+
+label.lrt(btex $\alpha$ etex, point 3 of p0);
+label.urt(btex $\gamma$ etex, point 1 of p1);
+
+endfig;
+
+beginfig(22) 
+save u;
+u:=1cm;
+
+z.p=(1,0)*u;
+z.s=(0,2)*u;
+z.q=(-1,0)*u;
+
+save p; path p[];
+p0=z.p{dir 150}..z.s{right}..{dir -150}z.q;
+
+draw p0;
+drawarrow subpath (0,1.05) of p0;
+drawarrow subpath (0,.2) of p0;
+drawarrow subpath (0,1.85) of p0;
+draw ddline(z.p,z.q)(0.3, 0.3);
+drawarrow z.p--.5[z.p,z.q];
+
+dOt z.p, z.q;
+
+label.bot(btex $p$ etex, z.p);
+label.bot(btex $q$ etex, z.q);
+label.bot(btex $\alpha$ etex, z.s);
+endfig;
+
+beginfig(23) 
+save u;
+u:=1cm;
+
+z.pp=(2,0)*u;
+z.qq=(-2,0)*u;
+z.s=(.5,1.5)*u;
+
+save p; path p[];
+p0=z.pp..z.s..z.qq;
+draw p0;
+
+z.p=.2[z.pp,z.qq];
+z.q=.8[z.pp,z.qq];
+z.sq=(0,.7)*u;
+
+p1=z.p{dir 170}..z.s{dir angle direction 1 of p0}..z.sq..{dir -120}z.q;
+draw p1;
+
+draw ddline(z.pp,z.qq)(0.1, 0.1);
+
+drawarrow subpath (0,1.4) of p0;
+drawarrow subpath (0,2) of p1;
+
+dOt z.p, z.q, z.pp, z.qq, z.s;
+
+label.bot(btex $p$ etex, z.p);
+label.bot(btex $q$ etex, z.q);
+label.urt(btex $p'$ etex, z.pp);
+label.ulft(btex $q'$ etex, z.qq);
+label.top(btex $s$ etex, z.s);
+label.lrt(btex $\alpha$ etex, z.sq);
+label.lrt(btex $\gamma$ etex, (point 1.4 of p0));
+endfig;
+
+beginfig(24) 
+save u;
+u:=1cm;
+
+z.p=(0,1)*u;
+z.q=(2,1)*u;
+
+draw (0,.25)*u{left}..(0,.5)*u{right}..(0,0)*u{left}..z.p{right}..(2,0)*u{right}..z.q{left}..(2,.5)*u{right}..(2,.75)*u{left};
+
+draw ddline(z.p,z.q)(.2,.2);
+
+dOt z.p, z.q;
+endfig;
+
+beginfig(25) 
+save u;
+u:=1cm;
+endfig;
+
+
 end
