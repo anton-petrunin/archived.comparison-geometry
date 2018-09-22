@@ -665,6 +665,41 @@ beginfig(24)
 save u;
 u:=1cm;
 
+z.pp=(2,0)*u;
+z.qq=(-2,0)*u;
+z.s=(.5,1.5)*u;
+
+save p; path p[];
+p0=z.pp..z.s..z.qq;
+draw p0;
+
+z.p=.2[z.pp,z.qq];
+z.q=.8[z.pp,z.qq];
+z.sq=(.5,.7)*u;
+
+p1=z.p{dir 170}..z.s{dir ((angle direction 1 of p0)-180)}..z.sq;
+draw p1;
+
+draw ddline(z.pp,z.qq)(0.1, 0.1);
+
+drawarrow subpath (0,1.4) of p0;
+drawarrow subpath (0,2) of p1;
+
+dOt z.p, z.q, z.pp, z.qq, z.s;
+
+label.bot(btex $p$ etex, z.p);
+label.bot(btex $q$ etex, z.q);
+label.urt(btex $p'$ etex, z.pp);
+label.ulft(btex $q'$ etex, z.qq);
+label.top(btex $s$ etex, z.s);
+label.lrt(btex $\alpha$ etex, z.sq);
+label.lrt(btex $\gamma$ etex, (point 1.4 of p0));
+endfig;
+
+beginfig(25) 
+save u;
+u:=1cm;
+
 z.p=(0,1)*u;
 z.q=(2,1)*u;
 
@@ -675,7 +710,7 @@ draw ddline(z.p,z.q)(.2,.2);
 dOt z.p, z.q;
 endfig;
 
-beginfig(25) 
+beginfig(26) 
 save u;
 u:=1cm;
 endfig;
