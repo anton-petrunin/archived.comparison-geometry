@@ -710,7 +710,18 @@ draw ddline(z.p,z.q)(.2,.2);
 dOt z.p, z.q;
 endfig;
 
-beginfig(26) 
+beginfig(26);
+save u;
+u:=.5cm;
+
+save p; path p[];
+p0=(0,0)*u..(2,0)*u..(1,0)*u..(3,0)*u..cycle;
+draw p0;
+
+dOt point 1.5 of p0, point 3.5 of p0;
+endfig;
+
+beginfig(27) 
 save u;
 u:=1cm;
 endfig;
