@@ -724,7 +724,64 @@ endfig;
 beginfig(27) 
 save u;
 u:=1cm;
+
+z.o=origin;
+z.p1=(1,0)*u;
+
+save p; path p[];
+p0=circle(z.o,z.p1-z.o);
+
+draw p0;
+
+z.p2= point 1.5 of p0;
+z.p3= point 2.8 of p0;
+
+p1=z.p1{direction 0 of p0}..tension 1.5..z.p2{direction 1.5 of p0}..tension 1.5..z.p3{direction 2.8 of p0}..tension 1.5..z.o..tension 1.5..cycle;
+draw p1;
+
+drawarrow subpath (0,3.6) of p0;
+drawarrow subpath (0,2.6) of p1;
+
+dOt z.p1, z.p2,z.p3;
+
+label.lft(btex $\alpha$ etex, point 2.6 of p1);
+label.lrt(btex $\gamma$ etex, point 3.6 of p0);
 endfig;
 
+beginfig(28) 
+save u;
+u:=1.4cm;
+
+z.o=origin;
+z.p1=(1,0)*u;
+
+save p; path p[];
+p0=circle(z.o,z.p1-z.o);
+
+draw subpath (2.8,4) of p0;
+
+z.p2= point 1.5 of p0;
+z.p3= point 2.8 of p0;
+
+p1=z.p1{direction 0 of p0}..tension 1.5..z.p2{direction 1.5 of p0}..tension 1.5..z.p3{direction 2.8 of p0}..tension 1.5..z.o..tension 1.5..cycle;
+draw subpath (2,4) of p1;
+
+drawarrow subpath (2.8,3.6) of p0;
+drawarrow subpath (2,2.6) of p1;
+
+p2=z.p3..z.o..z.p1;
+draw p2;
+drawarrow subpath (0,1.5) of p2;
+
+dOt z.p1, z.o, z.p3;
+
+label.lft(btex $\bar\alpha$ etex, point 2.5 of p1);
+label.lrt(btex $\bar\gamma$ etex, point 3.6 of p0);
+label.top(btex $\bar\gamma'$ etex, point 1.5 of p2);
+label.lft(btex $p_1$ etex, z.p3);
+label.rt(btex $p_2$ etex, z.p1);
+label.top(btex $s_1$ etex, z.o);
+label(btex $L$ etex, .5[z.p1,z.p3]);
+endfig;
 
 end
