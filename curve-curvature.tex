@@ -2,20 +2,20 @@
 
 \section{Smooth regular curves}\label{sec:total-curvature-smooth}
 
-Here we introduce the so called \emph{total curvature of curve}.
-In general term \emph{curvature} is used for something that measures how 
-a geometric object deviates from being a straight;
-total curvature is not an exception --- as you will see if the total curvature of a curve is vanishing then the curve runs along a straight line.
+Here we introduce the so called \emph{total curvature of a curve}.
+In general the term \emph{curvature} is used for something that measures how much 
+a geometric object deviates from being straight;
+total curvature is not an exception --- as you will see, if the total curvature of a curve is zero, then the curve runs along a straight line.
 
 
 Let $\alpha\:[a,b]\to\RR^3$ be a \emph{smooth} \emph{regular} curve --- smooth means that
-the velocity vector $\alpha'(t)$ is defined and continuous with respect to $t$ and regular means that $\alpha'(t)\ne 0$ for any $t$.
+the velocity vector $\alpha'(t)$ is defined and is continuous with respect to $t$, and regular means that $\alpha'(t)\ne 0$ for all $t$.
 If the curve $\alpha$ is closed then we assume in addition that $\alpha'(a)=\alpha'(b)$.
 
 Denote by $\tau(t)$ the unit vector in the direction of $\alpha'(t)$;
 that is, $\tau(t)=\tfrac{\alpha'(t)}{|\alpha'(t)|}$.
-The $\tau\:[a,b]\to\mathbb{S}^2$ is an other curve which is called \emph{tangent indicatrix} of $\alpha$.
-The length of $\tau$ is called \emph{total curvature of}~$\alpha$;
+Then $\tau\:[a,b]\to\mathbb{S}^2$ is an other curve which is called \emph{tangent indicatrix} of $\alpha$.
+The length of $\tau$ is called the \emph{total curvature of}~$\alpha$;
 that is,
 \[\tc\alpha:=\length\tau.\]
 
@@ -24,7 +24,7 @@ Show that
 \[\tc\alpha\ge 2\cdot \pi\]
 for any smooth closed regular curve $\alpha$.
 
-Moreover, the equality holds if and only if $\alpha$ is a closed and convex curve that lies in a plane.
+Moreover, the equality holds if and only if $\alpha$ is a closed convex curve that lying in a plane.
 \end{thm}
 
 The above exercise is the so called Fenchel's theorem.
@@ -41,14 +41,14 @@ The total curvature of the polygonal line $\beta=p_0\dots p_n$ is defined as the
 \[\tc\beta=\alpha_1+\dots+\alpha_{n-1};\]
 it is defined if the polygonal line is \emph{nondegenerate}; that is, $p_{i-1}\ne p_i$ for any $i$.
 
-If the polygonal line $p_0\dots p_n$ is closed; that is $p_0=p_n$ you add one more angle 
+If the polygonal line $p_0\dots p_n$ is closed; that is $p_0=p_{n+1}$ you add one more angle 
 \[\alpha_0+\alpha_1+\dots+\alpha_{n-1},\]
 where $\alpha_0=\pi-\measuredangle p_{n}p_0p_{1}$.
 
-One can define the tangent indicatrix for a polygonal line $\beta$ as a spherical polygonal line (each edge is an arc of big circle of the sphere) that vertexes are unit vectors $\xi_1,\dots,\xi_n$ in the directions of $p_1-p_0$, $p_2-p_1,\dots, p_n-p_{n-1}$ correspondingly;
-if the  polygonal line is closed then we add one more vertex $\xi_0$ in the directions of $p_0-p_n$ and two more edges $\xi_0\xi_1$ and $\xi_n\xi_0$ so the indicatrix of closed polygonal line is a closed spherical polygonal line.
+One can define the tangent indicatrix of a polygonal line $\beta$ as a spherical polygonal line (each edge is an arc of a big circle in the sphere) whose vertexes are the unit vectors $\xi_1,\dots,\xi_n$ in the directions of $p_1-p_0$, $p_2-p_1,\dots, p_n-p_{n-1}$ correspondingly;
+if the  polygonal line is closed then we add one more vertex $\xi_0$ in the direction of $p_0-p_{n}$ and two more edges $\xi_0\xi_1$ and $\xi_n\xi_0$ so the indicatrix of a closed polygonal line is a closed spherical polygonal line.
 
-Note that the total curvature of polygonal line is the length of its tangent indicatrix.
+Note that the total curvature of a polygonal line is the length of its tangent indicatrix.
 
 \begin{thm}{Exercise}\label{ex:monotonic-tc}
 Let $a,b,c,d$ and $x$ be distinct points in $\RR^3$.
@@ -61,18 +61,19 @@ Use Exercise~\ref{ex:monotonic-tc} to prove an analog of Fenchel's theorem (Exer
 \end{thm}
 
 
-Let  $\alpha\:[a,b]\to \RR^3$ be a curve and  $a=t_0<\dots<t_n=b$ a partition.
-Set $p_i=\alpha(t_i)$.
-Then the polygonal line $p_0\dots p_n$ is called inscribed in~$\alpha$. 
-
 We gave two definitions of total curvature:
-the first one is given in Section~\ref{sec:total-curvature-smooth} via tangent indicatrix --- it works for smooth regular curves;
+the first one is given in Section~\ref{sec:total-curvature-smooth} via the tangent indicatrix --- it works for smooth regular curves;
 the second, via external angles --- it works for polygonal lines.
 The latter can be used to define total curvature of arbitrary curves.
 
+
+Let  $\alpha\:[a,b]\to \RR^3$ be a curve and  $a=t_0<\dots<t_n=b$ a partition.
+Set $p_i=\alpha(t_i)$.
+Then the polygonal line $p_0\dots p_n$ is said to be inscribed in~$\alpha$. 
+
 \begin{thm}{Definition}\label{def:total-curv-poly}
 The total curvature of a nonconstant curve $\alpha$ is the exact upper bound on the total curvatures of inscribed nondegenerate polygonal lines;
-if the curve is closed then we assume that the inscribed polygonal lines are closed as well.
+if $\alpha$ is closed then we assume that the inscribed polygonal lines are closed as well.
 \end{thm}
 
 We need to assume that the curve is nonconstant, otherwise it does not admit inscribed polygonal lines that are not trivial.
@@ -88,7 +89,7 @@ to a curve $\alpha_\infty\:[a,b]\z\to \RR^3$, then
 \parit{Hint:} Modify the proof of semi-continuity of length (Theorem~\ref{thm:length-semicont}).
 
 
-The following definition tells that these two definitions agree.
+The following definition tells that the two definitions agree.
 
 \begin{thm}{Theorem}\label{thm:total-curvature=}
 For smooth regular curves the two definitions of total curvature agree;
@@ -123,7 +124,7 @@ Therefore if the indicatrix $\tau=\tfrac{\alpha'}{|\alpha'|}$ lies in a hemisphe
 
 Fix an equator $\ell$ in general position.
 If $\ell$ intersects the spherical polygonal line $\lambda \mu \nu$ at one point, then $\ell$ separates $\lambda$ from $\nu$ and therefore it must intersect $\tau$.
-If $\ell$ intersects the spherical polygonal line $\lambda \mu \nu$ at two points, then $\ell$ separates $\mu$ from $\lambda$ and $\nu$ and therefore it must intersect $\tau$ at two points --- $\tau$ must cross $\ell$ and then come back.
+If $\ell$ intersects the spherical polygonal line $\lambda \mu \nu$ at two points, then $\ell$ separates $\mu$ from $\lambda$ and $\nu$ and therefore it must intersect $\tau$ at least twice --- $\tau$ must cross $\ell$ and then come back.
 It follows that for almost all equators the number of intesections with the spherical polygonal line $\lambda \mu\nu$ can not exceed the number of intersections with $\tau$.
 By the spherical Crofton formula (\ref{thm:crofton-sphere}), $\tau$ is longer than the spherical polygonal line $\lambda \mu\nu$.
 But the polygonal line $\lambda \mu\nu$ has length $\measuredangle (\lambda,\mu)+\measuredangle (\mu,\nu)$, hence the result.
@@ -131,10 +132,10 @@ But the polygonal line $\lambda \mu\nu$ has length $\measuredangle (\lambda,\mu)
 
 Let us sketch an alternative proof of the lemma which is built on Fenchel's theorem. 
 
-\parit{An alternative proof of the lemma.}
-Note that the curve $\alpha$ can be extended to a smooth regular closed curve $\hat\alpha$ by an arc $\beta$ that starts from $\alpha(b)$ in the same direction as $\alpha$ turns and joins the segment $[\alpha(b),\alpha(a)]$ runs along the segment close to $\alpha(a)$ turns and joints $\alpha$ smoothly at $\alpha(a)$.
+\parit{Alternative proof of the lemma.}
+Note that the curve $\alpha$ can be extended to a smooth regular closed curve $\hat\alpha$ by an arc $\beta$ that starts from $\alpha(b)$ in the same direction as $\alpha$. Then turns and joins the segment $[\alpha(b),\alpha(a)]$, runs along the segment until it is close to $\alpha(a)$ turns and smoothly joints $\alpha$ at $\alpha(a)$.
 
-Note that the total curvature of $\beta$ can be made arbitrary close to $2\cdot\pi -\measuredangle (\lambda,\mu)-\measuredangle (\mu,\nu)$.
+Note that the total curvature of $\beta$ can be made arbitrarily close to $2\cdot\pi -\measuredangle (\lambda,\mu)-\measuredangle (\mu,\nu)$.
 Indeed, $\beta$ needs a bit more than $\pi -\measuredangle (\mu,\nu)$ to turn an join the segment $[\alpha(b),\alpha(a)]$ and bit more than $\pi -\measuredangle (\lambda,\mu)$ to turn an join the segment $\alpha$.
 
 By Fenchel's theorem,
@@ -151,9 +152,9 @@ Fix a partition $a\z=t_0<\dots<t_n=b$ and consider the corresponding inscribed p
 Let $\chi=\xi_1\dots\xi_n$ be its tangent indicatrix --- this is a spherical polygonal line;
 we assume that $\chi(t_i)=\xi_i$ and it has constant speed on each arc.
 
-Consider a sequence of finer and finer partitions, denote by $\beta_n$ and $\chi_n$ the correspoponging inscribed polygonal line and its tangent indicatrix;
-since $\alpha$ is smooth, the $\chi_n$ converges pointwise to the $\tau$ --- the thangent indicatrix of $\alpha$.
-By semi-continuity of length functional, we get that 
+Consider a sequence of finer and finer partitions, denote by $\beta_n$ and $\chi_n$ the corresponding inscribed polygonal line and its tangent indicatrix;
+since $\alpha$ is smooth, the $\chi_n$ converge pointwise to $\tau$ --- the thangent indicatrix of $\alpha$.
+By semi-continuity of the length functional, we get  
 \begin{align*}
 \tc\alpha&=\length \tau\le  
 \\
@@ -163,7 +164,7 @@ By semi-continuity of length functional, we get that
 \\
 &\le \sup\{\tc\beta\},
 \end{align*}
-where the list upper bound is taken for all partitions and corresponding inscribed polygonal lines $\beta$.
+where the last supremum is taken over all partitions and their corresponding inscribed polygonal lines $\beta$.
 
 It remains to prove that
 \[\tc\alpha\ge \tc\beta,\eqlbl{eq:tc-alpha<tc-beta}\]
@@ -171,7 +172,7 @@ for any polygonal line $\beta$ inscribed in $\alpha$.
 Let $\zeta_i$ be the unit vector in the direction of $\alpha'(t_i)$.
 Consider the spherical polygonal line $\gamma\z=\zeta_0 \xi_1 \zeta_1 \xi_2\dots \xi_n \zeta_n$;
 recall that $\chi=\xi_0\dots \xi_n$.
-By triangle inequality, 
+By the triangle inequality, 
 \[\length \gamma\ge \length \chi=\tc\beta.\]
 By Lemma~\ref{lem:uvw}, 
 \[\tc\alpha\ge\length\gamma,\] 
@@ -199,13 +200,13 @@ Show that
 \end{align*}
 \end{thm}
 
-Note that since the curve $\alpha_u$ runs back and forth along one line.
-Each change of its direction contributes $\pi$ to the total curvature of $\alpha_u$.
-Therefore the total curvature of $\alpha_u$ is $n\cdot\pi$, where $n$ is the number of switches of the direction.
+Note that since the curve $\alpha_u$ runs back and forth along one line, 
+every time it changes direction contributes $\pi$ to the total curvature of $\alpha_u$.
+Therefore the total curvature of $\alpha_u$ is $n\cdot\pi$, where $n$ is the number of changes of direction.
 Since $n$ has to be even, $\tc\alpha_u$ may take values $2\cdot\pi$, $4\cdot\pi$, $6\cdot\pi$ and so on.
 
 \begin{thm}{Exercise}
-Use the proposition and the observation above to give yet an other proof of  Fenchel's theorem (Exercise~\ref{ex:fenchel}).
+Use the proposition and the observation above to give yet another proof of  Fenchel's theorem (Exercise~\ref{ex:fenchel}).
 \end{thm}
 
 
@@ -220,7 +221,7 @@ Then
 \end{thm}
 
 Note that if $\length\alpha\le2\cdot\pi$, then Fenchel's theorem gives a better estimate,
-for longer curves it gives something new.
+for longer curves this gives something new.
 
 \parit{Proof.}
 Assume $\alpha$ is a polygonal line.
@@ -237,11 +238,10 @@ that is,
 \ge \tfrac\pi2\cdot\overline{\length\alpha_u}.\]
 Applying the Crofton's formula and Proposition~\ref{prop:tc-crofton} we get the result.
 
-It remains to reduce the general case to polygonal lines.
-Let us inscribe a polygonal line $\beta$ in $\alpha$ with length sufficiently close to length of $\alpha$;
-that is, given $\eps>0$, we choose an inscribed polygonal line $\beta$ such that 
+It remains to reduce the general case to polygonal lines. 
+Given $\eps>0$, we choose an inscribed polygonal line $\beta$ such that 
 \[\length \alpha<\length \beta+\eps.\]
-By the definition of total curvature (\ref{def:total-curv-poly}) and from above
+By the definition of total curvature (\ref{def:total-curv-poly}) and from the first part of the proof
 \begin{align*}
 \tc\alpha&\ge\tc\beta\ge
 \\
@@ -249,18 +249,18 @@ By the definition of total curvature (\ref{def:total-curv-poly}) and from above
 \\
 &>\length\alpha-\eps.
 \end{align*}
-The statement follows since $\eps$ is arbitrary positive number. 
+The statement follows since $\eps$ was arbitrary. 
 \qeds
 
 \parit{Alternative proof.}
-The same argument as above shows that it is sufficient to consider a closed polygonal lines $\beta=p_0p_1\dots p_{n-1}$ in the unit disc.
+The same argument as above shows that it is sufficient to consider a closed polygonal line $\beta=p_0p_1\dots p_{n-1}$ in the unit disc.
 We assume that $p_n=p_0$, $p_{n+1}=p_1$ and so on.
 Denote by $\alpha_i$ the external angle at $p_i$.
 
 Denote by $o$ the center of the disc.
 Consider a sequence of triangles 
-\[\triangle q_0q_1s_0\cong \triangle p_0p_1o,\ \triangle q_1q_2s_0\cong \triangle p_1p_2o,\dots\]
-such that the points $q_0,q_1\dots$ lie on one line in the same order and the points $s_i$ lie on one side from this line.
+\[\triangle q_0q_1s_0\cong \triangle p_0p_1o,\ \triangle q_1q_2s_1\cong \triangle p_1p_2o,\dots\]
+such that the points $q_0,q_1\dots$ lie on one line in that order and all the $s_i$'s lie on one side from this line.
 
 \begin{figure}[h]
 \vskip-0mm
@@ -305,8 +305,8 @@ Assume that a curve $\alpha\:[a,b]\to\RR^3$ has finite total curvature.
 We say that a curve $\alpha\:[a,b]\to\RR^3$ \emph{does not stop} if $\alpha$ is not constant on any subinterval of $[a,b]$. 
 
 \begin{thm}{Exercise} 
-Assume that the curve $\alpha$ does not stop and its the total curvature is less than $\pi$.
-Show that $\alpha$ is simple; that is it has no self-intersections.
+Assume that the curve $\alpha$ does not stop and its total curvature is less than $\pi$.
+Show that $\alpha$ is simple; that is, it has no self-intersections.
 \end{thm}
 
 \begin{thm}{Exercise-definition} 
@@ -327,12 +327,12 @@ its limit is called the direction of entrance and it will be denoted by $\alpha^
 Assume that a curve $\alpha\:[a,b]\to\RR^3$ does not stop and has finite total curvature.
 Show that 
 \[\alpha^+(t)=-\alpha^-(t)\]
-at all $t\in[a,b]$ except a countable subset.
+at all $t\in[a,b]$ except possibly on a countable subset.
 \end{thm}
 
 \begin{thm}{Exercise} 
 Assume a sequence of curves $\alpha_n\:[a,b]\to\RR^3$ converges to a curve $\alpha_\infty\:[a,b]\to\RR^3$ and
-\[\lim_{n\to\infty}\length\alpha_n>\length\alpha_\infty.\]
+\[ \liminf_{n\to\infty}\length\alpha_n>\length\alpha_\infty.\]
 Show that 
 \[\tc\alpha_n\to\infty\quad\text{as}\quad n\to\infty.\]
 
@@ -341,17 +341,17 @@ Show that
 
 \section{Total signed curvature}
 
-Let us define \emph{total signed curvature} for polygonal line in the plane as a sum of signed external angles;
-the external angle has positive sign if the line turns right and negative sign if the line turns left; the signed external angle is undefined if a pair of adjacent edges overlap;
-that is if at one vertex the polygonal line turns in the opposite direction.
+Let us define the \emph{total signed curvature} of a polygonal line in the plane as the sum of the signed external angles;
+the external angle has positive sign if the line turns left and negative sign if the line turns right; the signed external angle is undefined if a pair of adjacent edges overlap;
+that is if at one vertex the polygonal line turns in the exact opposite direction.
 In particular the total signed curvature is defined for any simple polygonal line in the plane.
 
 \begin{thm}{Exercise}\label{ex:2kpi}
 Assume that the total signed curvature of a closed polygonal line in the plane is defined.
-Show that is is multiple of $2\cdot\pi$.
+Show that it is a multiple of $2\cdot\pi$.
 \end{thm}
 
 
 \begin{thm}{Exercise}\label{ex:pm2pi}
-Show that total signed curvature of any closed simple polygonal line in the plane is $\pm2\cdot\pi$.
+Show that the total signed curvature of any closed simple polygonal line in the plane is $\pm2\cdot\pi$.
 \end{thm}

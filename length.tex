@@ -19,6 +19,8 @@ that is $\alpha(t)=\alpha(t')$ if and only if $t=t'$.
 However, a closed curve $\alpha\:[a,b]\to \RR^2$ is called simple if it is injective 
 everywhere except at the ends; that is, if
 $\alpha(t)=\alpha(t')$ for $t<t'$ then $t=a$ and $t'=b$.
+
+A closed curve is called \emph{convex} if it bounds a convex region.
 \end{thm}
 
 \begin{thm}{Advanced exercise}
@@ -120,9 +122,6 @@ Any convex closed curve is rectifiable.
 \end{thm}
 
 \parit{Proof.}
-Fix a curve $\alpha\:[a,b]\to\RR^2$.
-Note that $\alpha$ is bounded; indeed  
-
 Any closed curve is bounded; that is, it lies in a sufficiently large square.
 
 
@@ -374,9 +373,9 @@ consider the line of vectors $w$ on the plane satisfying the equation
 \[\langle u, w\rangle =\rho,\]
 where $\langle u, w\rangle$ denotes the scalar product. 
 Any line on the plane admits exactly two such presentations with pairs $(u,\rho)$ and $(-u,-\rho)$.
-A pair $(u,\rho)$ describes uniquely an \emph{oriented} lines --- that is a line with a chosen unit normal vector.
+A pair $(u,\rho)$ describes uniquely an \emph{oriented} line --- that is a line with a chosen unit normal vector.
 
-Fix a unit vector $u_0$ and denote by $u(\phi)$ the result of rotating $u_0$ counterclockwise by the angle $\phi $.%pic here should be nice
+Fix a unit vector $u_0$ and denote by $u(\phi)$ the result of rotating $u_0$ counterclockwise by the angle $\phi $. %pic here should be nice
 Denote by $\ell(\phi,\rho)$ the oriented line asociated to the pair $(u(\phi),\rho)$.
 To describe any line, we need a pair $(\phi,\rho)\in (-\pi,\pi]\times \RR$.
 
@@ -385,7 +384,7 @@ The value $n_\alpha(\phi,\rho)$ is a nonnegative integer or $\infty$.
 Note that if $\alpha$ is a simple curve, then $n_\alpha(\ell)$ is the number of intersections of $\alpha$ with $\ell$.
 
 
-\begin{thm}{An other Crofton formula}
+\begin{thm}{Another Crofton formula}
 For any curve $\alpha$,
 \[\length\alpha=\tfrac14\cdot\iint_{(-\pi,\pi]\times \RR} n_\alpha(\rho,\phi)\cdot d\rho\cdot d\phi.\]
 the integral is to be understood in the sense of Lebesgue.
@@ -410,7 +409,7 @@ The same argument can be used to derive other formulas of the same type.
 For example.
 
 Recall that a big circle in a sphere is the intersection of the sphere with a plane passing thru its center.
-For example, the equator as well as the meridian are big circles.
+For example, the equator as well as the meridians are big circles.
 
 \begin{thm}{Spherical Crofton formula}\label{thm:crofton-sphere}
 The length of any curve $\alpha$ in the unit sphere is $\pi$ times the average number of its crossings with big circles.
@@ -426,8 +425,8 @@ where $\alpha_u$ denotes the curve obtianed by closest point projection of $\alp
 
 
 \begin{thm}{Exercise}\label{ex:3d-crofton}
-Come up with a Crofton formulas for curves in the Euclidean space via projections to lines and to planes.
-Find the coefficients in these formulas.
+Come up with Crofton formulas for curves in the Euclidean space via projections to lines and to planes.
+Find the coefficients in those formulas.
 \end{thm}
 
 \section{Applications}
@@ -484,7 +483,7 @@ Show that it lies between a pair of parallel lines at distance $1$ from each oth
 
 \begin{thm}{Exercise}
 A spaceship flies around a nonrotating planet of unit radius and comes back to the original position;
-it was able to make a picture of every point on the surface of the planet.
+it was able to take a picture of every point on the surface of the planet.
 
 Try to use the Crofton formulas to get a lower bound on the length of its trajectory (does not need to be exact, but should be larger than $2\cdot\pi$).
 
@@ -553,4 +552,3 @@ for some integer $n$.
 Show that there is a line $\ell$ that intersects $\gamma$ in at least $n$ distinct points.
 \end{thm}
 
-\warning
