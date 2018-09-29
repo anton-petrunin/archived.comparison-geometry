@@ -8,7 +8,7 @@ Any smooth regular simple plane curve has at least four
 vertices.
 \end{thm}
 
-\begin{wrapfigure}{r}{20 mm}
+\begin{wrapfigure}[8]{r}{20 mm}
 \vskip-4mm
 \centering
 \includegraphics{mppics/pic-26}
@@ -16,25 +16,29 @@ vertices.
 \end{wrapfigure}
 
 Evidently any closed curve have to have at least two vertexes --- one minimum and one maximum.
-The curve on the diagram has one self-intersection and exactly two vertexes, they are marked on the diagram.
-There are smooth regular simple plane curves with exactly 4 vertexes, 
-ellipse for example.
+On the diagram the vertexes are marked;
+the first curve has one self-intersection and exactly two vertexes;
+he second curve has exactly four vertexes and no self-intersections.
 
 The four-vertex theorem was first proved by Syamadas Mukhopadhyaya \cite{mukhopadhyaya} for convex curves.
 By now it has number of different proofs and generalizations.
 We will present a proof given by Robert Osserman \cite{osserman}.
 
 \parit{Proof.}
-Fix a smooth regular closed plane curve $\alpha$.
+Fix a simple smooth regular closed plane curve $\alpha$.
 
 Suppose that $2\cdot n$ points $p_1,s_1,\dots,p_n,s_n$ appear on a closed curve $\alpha$ in the same cyclic order.
 Fix a real number $\kappa$.
-Assume that the curvature of $\alpha$ at $p_i$ is at least $\kappa$ and its curvature at $s_i$ is smaller than $\kappa$.
+Assume that the curvature of $\alpha$ at $p_i$ is at least $\kappa$ and its curvature at $s_i$ is at most $\kappa$.
 Then each of $n$ arcs $p_{n}p_1$, $p_{1}p_2, \dots p_{n-1}p_n$ of
-$\alpha$ has a local minimum.
+$\alpha$ has a minimum point of curvature in its interior.
 Similarly each of $n$ arcs $s_{n}s_1$, $s_{1}s_2, \dots s_{n-1}s_n$ of
-$\alpha$ has a local maximum.
-In particular it has at least $2\cdot n$ vertexes.
+$\alpha$ has a maximum point of curvature.
+
+In the case if some of these local minimum coincide with a local maximum,
+an arc around this point has constant curvature;
+in this case all these points are vertexes and we have infinite number of them.
+If they all different, then we have least $2\cdot n$ vertexes.
 
 Therefore it is sufficient to show that
 
@@ -65,15 +69,15 @@ Assume $\gamma$ is the circumscribed circle of $\alpha$.
 Then $\gamma$ touches $\alpha$ at least $2$ points which divide the $\gamma$ in arcs no longer than semicircle.
 \end{clm}
 
-\begin{wrapfigure}{r}{25 mm}
+If it would not be the case then one could move $\gamma$ slightly keeping its radius the same so that $\gamma$ will not touch $\alpha$ at all.
+But in this case $\alpha$ could be enclosed by a circle of smaller radius --- a contradiction.
+
+\begin{wrapfigure}{r}{38 mm}
 \vskip-4mm
 \centering
 \includegraphics{mppics/pic-27}
 \vskip0mm
 \end{wrapfigure}
-
-If it would not be the case then one could move $\gamma$ slightly keeping its radius the same so that $\gamma$ will not touch $\alpha$ at all.
-But in this case $\alpha$ could be enclosed by a circle of smaller radius --- a contradiction.
 
 Let us orient $\alpha$ and $\gamma$ counterclockwise.
 Then at the common points the directions of $\alpha$ and $\gamma$ coincide.
@@ -81,44 +85,22 @@ Note that these points appear on $\alpha$ and $\gamma$ in the same order;
 otherwise $\alpha$ could not be simple.
 
 Denote by $\kappa$ the signed curvature of $\gamma$, since it is oriented counterclockwise,
-$\kappa=\tfrac1r>0$.
-
-\begin{wrapfigure}{r}{25 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-28}
-\vskip0mm
-\end{wrapfigure}
-
+$\kappa\z=\tfrac1r>0$.
+  
 Fix two common points $p_1$ and $p_2$ of $\alpha$ and $\gamma$.
 By Proposition~\ref{prop:supporting-circline}, the curvature of $\alpha$ at $p_1$ and $p_2$ is at least $\kappa$.
+Let $\bar\alpha$ be the arc of $\alpha$ from $p_1$ to $p_2$.
 
-Denote by $\bar \gamma$ the arc of $\gamma$ from $p_1$ to $p_2$.
-Assume $\bar\gamma$ does not exceed semicircle.
-Let $\bar\alpha$ be the corresponding arc of $\alpha$  from $p_1$ to $p_2$.
+Let $o$ be the center of $\gamma$.
+Consider an other circle $\gamma'$ with the same radius $r$ and the center $o'$ moved away from the arc $p_1p_2$ to the last moment it intersects $\bar\alpha$.
+(More precisely, $o'$ lies on the line bisecting angle $p_1op_2$ on the side opposite from the arc such that $\gamma'$ intersects $\bar\alpha$ the distance $|o-o'|$ is maximal.)
 
-Consider the minimal lens $L$ with vertexes $p_1$ and $p_2$ that contain $\bar\alpha$;
-that is, $L$ is a closed region bounded by two arcs from $p_1$ to $p_2$.
-Note that one of the arcs has to be $\bar\gamma$;
-denote the other arc by $\bar\gamma'$ and its curvature by $\kappa'$.
-
-If the lens $L$ degenerates to $\bar \gamma$, 
-then $\bar\alpha=\bar\gamma$ and all the points on $\alpha$ have curvature $\kappa$.
-In particular each point of $\bar\alpha$ is a vertex and the theorem follows.
-
-If $L$ is nondegenerate, then
-\[\kappa'<\kappa.
-\eqlbl{eq:k<k}\]
-This inequality is evident if $\kappa'\le0$.
-If $\kappa'>0$ then $\kappa'=\tfrac1 {r'}$ where $r'$ is the radius of $\gamma'$.
-Since $\gamma$ does not exceed semicircle, we have that $r'>r$ and therefore \ref{eq:k<k} follows. %???PIC
-
-Note that there is a point $s_1$ on $\bar\alpha$ common with $\bar\gamma'$;
-otherwise $L$ would not be minimal.
-Moreover at the point $s_1$ the directions of $\bar\alpha$ and $\bar\gamma'$ coinside,
+Denote by $s_1$ a common point of $\bar\alpha$ and $\gamma'$;
+we can assume that $s_1$ is not an end point of $\bar\alpha$.
+At the point $s_1$ the directions of $\bar\alpha$ and $\gamma'$ coinside,
 otherwise $\alpha$ could not be simple --- the same argument is used in the proof of Lemma~\ref{lem:lens}.
-
-By Proposition~\ref{prop:supporting-circline}, the curvature of $\alpha$ at $s$ is at most $\kappa'$.
+Therefore $\gamma'$ supports $\alpha$ from left at $s_1$.
+By Proposition~\ref{prop:supporting-circline}, the curvature of $\alpha$ at $s_1$ is at most $\kappa$.
 
 By repeating the same argument for an other pair of points $p_2,p_3$,\footnote{If $p_1$ and $p_2$ divide $\gamma$ into two semicircles, then we can take $p_3=p_1$.} 
 we prove Claim \ref{clm-key}.

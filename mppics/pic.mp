@@ -718,12 +718,15 @@ save p; path p[];
 p0=(0,0)*u..(2,0)*u..(1,0)*u..(3,0)*u..cycle;
 draw p0;
 
-dOt point 1.5 of p0, point 3.5 of p0;
+p1=(0,-3)*u..(1.5,-2)*u..(3,-3)*u..(1.5,-4)*u..cycle;
+draw p1;
+
+dOt point 1.5 of p0, point 3.5 of p0, (0,-3)*u,(1.5,-2)*u,(3,-3)*u,(1.5,-4)*u;
 endfig;
 
 beginfig(27) 
 save u;
-u:=1cm;
+u:=1.4cm;
 
 z.o=origin;
 z.p1=(1,0)*u;
@@ -735,53 +738,29 @@ draw p0;
 
 z.p2= point 1.5 of p0;
 z.p3= point 2.8 of p0;
+z.s=.5[z.o,.5[z.p1,z.p3]];
 
-p1=z.p1{direction 0 of p0}..tension 1.5..z.p2{direction 1.5 of p0}..tension 1.5..z.p3{direction 2.8 of p0}..tension 1.5..z.o..tension 1.5..cycle;
+p1=z.p1{direction 0 of p0}..tension 1.5..z.p2{direction 1.5 of p0}..tension 1.5..z.p3{direction 2.8 of p0}..tension 1.5..z.s{z.o-z.s zscaled (0,-1)}..tension 1.5..cycle;
 draw p1;
+
+z.oo=z.s-unitvector(z.s)*abs(z.p1);
+p3=circle(z.oo,z.p1-z.o);
+draw p3;
 
 drawarrow subpath (0,3.6) of p0;
 drawarrow subpath (0,2.6) of p1;
+drawarrow subpath (0,3.6) of p3;
 
-dOt z.p1, z.p2,z.p3;
+dOt z.p1, z.p2,z.p3, z.o, z.oo, z.s;
 
 label.lft(btex $\alpha$ etex, point 2.6 of p1);
 label.lrt(btex $\gamma$ etex, point 3.6 of p0);
-endfig;
-
-beginfig(28) 
-save u;
-u:=1.4cm;
-
-z.o=origin;
-z.p1=(1,0)*u;
-
-save p; path p[];
-p0=circle(z.o,z.p1-z.o);
-
-draw subpath (2.8,4) of p0;
-
-z.p2= point 1.5 of p0;
-z.p3= point 2.8 of p0;
-
-p1=z.p1{direction 0 of p0}..tension 1.5..z.p2{direction 1.5 of p0}..tension 1.5..z.p3{direction 2.8 of p0}..tension 1.5..z.o..tension 1.5..cycle;
-draw subpath (2,4) of p1;
-
-drawarrow subpath (2.8,3.6) of p0;
-drawarrow subpath (2,2.6) of p1;
-
-p2=z.p3..z.o..z.p1;
-draw p2;
-drawarrow subpath (0,1.5) of p2;
-
-dOt z.p1, z.o, z.p3;
-
-label.lft(btex $\bar\alpha$ etex, point 2.5 of p1);
-label.lrt(btex $\bar\gamma$ etex, point 3.6 of p0);
-label.top(btex $\bar\gamma'$ etex, point 1.5 of p2);
-label.lft(btex $p_1$ etex, z.p3);
+label.top(btex $\gamma'$ etex, point 1 of p3);
+label.bot(btex $p_1$ etex, z.p3);
 label.rt(btex $p_2$ etex, z.p1);
-label.top(btex $s_1$ etex, z.o);
-label(btex $L$ etex, .5[z.p1,z.p3]);
+label.lrt(btex $s_1$ etex, z.s);
+label.lft(btex $o$ etex, z.o);
+label.rt(btex $o'$ etex, z.oo);
 endfig;
 
 end
