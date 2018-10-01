@@ -119,15 +119,19 @@ Let $z(t)$ be curvature center
 and $r(t)=\tfrac1{\kappa(t)}$ is radius of curvature of $\gamma$ at $t$.
 Note that 
 \begin{align*}
-z(t)&=\gamma(t)+\tfrac{\gamma''(t)}{|\gamma''(t)|^2},
-&
-r(t)&=\tfrac{1}{|\gamma''(t)|}.
+z(t)&=\gamma(t)+r(t)\cdot i\cdot \gamma'(t).
+\intertext{Therefore}
+z'(t)&=\gamma'(t)+r'(t)\cdot i\cdot \gamma'(t)+r(t)\cdot i\cdot \gamma''(t)=
+\\
+&=\gamma'(t)+r'(t)\cdot i\cdot \gamma'(t)+r(t)\cdot i\cdot \kappa(t)\cdot i\gamma'(t)=
+\\
+&=\gamma'(t)+r'(t)\cdot i\cdot \gamma'(t)-\gamma'(t)=
+\\
+&=r'(t)\cdot i\cdot \gamma'(t).
 \end{align*}
+In particular $|z'(t)|= r'(t)$ and $z'(t)\perp\gamma'(t)$.
 
-Straightforward calculations show that
-\[|z'(t)|= r'(t).\]
-and $z'(t)\perp\gamma'(t)$.
-It follows that the curve $z(t)$ does not have straight arcs;
+Note that the curve $z(t)$ does not have straight arcs;
 therefore
 \[
 \begin{aligned}

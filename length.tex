@@ -298,7 +298,8 @@ For the concatenation
 we have
 \[\ell(\gamma)=\ell(\alpha).\]
 
-Note that one can find a sequence of partitions of $[a,b]$ such that reparametrizations of  $\gamma_n$ converge to a linear segment $\gamma_\infty'$;
+Assume $\alpha$ is rectifiable.
+In this case we can find a sequence of partitions of $[a,b]$ such that reparametrizations of  $\gamma_n$ converge to a linear segment $\gamma_\infty'$;
 denote these reparametrizations by $\gamma'_n$.
 Also, $\length\gamma'_\infty\z=\length\alpha$;
 indeed, since $\gamma'_\infty$ is linear,
@@ -323,6 +324,12 @@ Applying additivity, invariance of $\ell$ with respact to motions and reparameti
 &=\length\alpha.
 \end{align*}
 Hence \ref{eq:l>length} follows.
+
+If $\alpha$ is not rectifiable, a similar constriction produce an approximation of an arbitrary long line segment. (We need to run zig-zag to reduce the distance  $|\gamma'_\infty (a)-\gamma'_\infty (b)|$.)
+It follows that 
+\[\ell(\alpha)\ge |\gamma'_\infty (a)-\gamma'_\infty (b)|.\]
+Since $|\gamma'_\infty (a)-\gamma'_\infty (b)|$ can take arbitrary large value,
+we get $\ell(\alpha)=\infty$.
 \qeds
 
 \begin{thm}{Exercise} 
