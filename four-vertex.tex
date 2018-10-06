@@ -1,7 +1,227 @@
-\chapter{Four-vertex theorem}
+\chapter{Supporting circlines}
+
+\section{Definitions}
+
+Suppose $\alpha\:[a,b]\to\RR^2$ be a smooth unit-speed plane curve and $t_0\z\in(a,b)$.
+
+\begin{wrapfigure}{r}{43 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-28}
+\vskip0mm
+\end{wrapfigure}
+
+A circline $\gamma$ supports $\alpha$ at $t_0$ if $\alpha(t_0)\in\gamma$
+and $\gamma$ lies locally on one side of $\alpha$.
+If $p=\gamma(t_0)$ for a single value $t_0$,
+then we can also say \emph{$\gamma$ supports $\alpha$ at $p$} without ambiguity.
+
+More precisely assume that there is a spherical neighborhood $U\ni \alpha(t_0)$ such that for some interval $[a',b']\ni t_0$
+the arc $\bar\alpha=\alpha|_{[a',b']}$ has no self-intersection and runs from boundary to boundary of $U$.
+In this case $\alpha$ divides $U$ into two sets  $L$ and $R$;
+$L$ lies on the left and $R$ lies on the right from $\bar\alpha$.
+If $\gamma\cap U$ contains only points of $\bar\alpha$ and $R$, we say that \emph{$\gamma$ supports $\alpha$ on the right};
+if $\gamma\cap U$ contains only points of $\bar\alpha$ and $L$, we say that \emph{$\gamma$ supports $\alpha$ on the left}.
+
+
+
+Note that a circle supports itself on the right and left at the same time.
+
+Suppose a unit-speed circline $\gamma$ supports a smooth unit-speed plane curve $\alpha$ at $t_0$.
+Without loss of generality we can assume that $\gamma(0)\z=\alpha(t_0)$. 
+Then $\gamma'(0)=\pm\alpha'(t_0)$.
+If not, then the curve $\alpha$ would cross $\gamma$ transversely and therefore could not stay at the same side for values close to $t_0$.
+Therefore reverting the parametrization of $\gamma$ if necessary we may (and further will) assume that 
+\[\gamma'(0)=\alpha'(t_0)\]
+holds for any supporting circline $\gamma$ to $\alpha$ at $t_0$.
+
+\section{Supporting test}
+
+The following proposition resembles the second derivative test. 
+
+\begin{thm}{Proposition}\label{prop:supporting-circline}
+Assume $\gamma$ is a circle that that supports $\alpha$ at $t_0$ from rigth (correspondingly left).  
+Then 
+\[\kappa(t_0)\ge \kappa
+\quad(\text{correspondingly}\quad\kappa(t_0)\le \kappa).
+\] 
+where $\kappa$ is the signed curvature of $\gamma$ 
+and $\kappa(t_0)$ is the signed curvature of $\alpha$ at $t_0$.
+
+A partial converse also holds.
+Namely suppose a unit-speed circline $\gamma$ with signed curvature $\kappa$ starts at $\alpha(t_0)$ in the direction $\alpha'(t_0)$.
+Then $\gamma$ supports $\alpha$ at $t_0$ from the right (correspondingly left) if 
+\[\kappa(t_0)> \kappa
+\quad(\text{correspondingly}\quad\kappa(t_0)< \kappa).
+\]
+
+\end{thm}
+
+\parit{Proof.}
+We prove only case $\kappa>0$.
+The 2 remaining cases $\kappa=0$ and $\kappa<0$ can be done essentially same way.
+
+Since $\kappa\ne0$, the curve $\gamma$ is a circle (it can not be a line).
+According to Proposition~\ref{prop:circline},
+$\gamma$ has radius $\tfrac1\kappa$ and it is centered at 
+\[z=\alpha(t_0)+\tfrac i\kappa\cdot \alpha'(t_0).\]
+Consider the function 
+\[f(t)=|z-\alpha(t)|^2-\tfrac1{\kappa^2}.\]
+
+Note that $f(t)\le0$ (correspondingly $f(t)\ge0$) 
+if an only if $\alpha(t)$ lies on the closed left (correspondingly right) side from $\gamma$.
+It follow that 
+\begin{itemize}
+\item if $\gamma$ supports $\alpha$ at $t_0$ from right, 
+then
+\[f'(t_0)=0\quad\text{and}\quad f''(t_0)\le 0;\]
+
+\item if $\gamma$ supports $\alpha$ at $t_0$ from  left, 
+then 
+\[f'(t_0)=0\quad\text{and}\quad f''(t_0)\ge 0;\]
+
+\item if 
+\[f'(t_0)=0\quad\text{and}\quad f''(t_0)< 0,\]
+then $\gamma$ supports $\alpha$ at $t_0$ from  right;
+
+\item if 
+\[f'(t_0)=0\quad\text{and}\quad f''(t_0)> 0,\] then $\gamma$ supports $\alpha$ at $t_0$ from  left;
+\end{itemize}
+
+Direct calculations show that
+\begin{align*}
+f(t_0)&=0;
+\\
+f'(t_0)&=\left.\langle z-\alpha(t),z-\alpha(t) \rangle'\right|_{t=t_0}=
+\\
+&=-2\cdot \langle \alpha'(t_0),z-\alpha(t_0) \rangle=
+\\&=-2\cdot \langle \alpha'(t_0),\tfrac i\kappa \cdot\alpha'(t_0) \rangle=
+\\
+&=0;
+\\
+f''(t_0)&=\langle z-\alpha(t),z-\alpha(t) \rangle''|_{t=t_0}=
+\\
+&=2\cdot\left( \langle \alpha'(t_0),\alpha'(t) \rangle-\langle \alpha''(t_0),z-\alpha(t) \rangle \right)=
+\\
+&=2\cdot\left(1-\kappa\cdot \frac1{\kappa(t_0)}\right)
+\end{align*}
+Hence the result.\qeds
+
+
+\begin{thm}{Exercise}
+Assume $\alpha$ is a closed smooth unit-speed plane curve that runs in a unit disk.
+Show that there is a point on $\alpha$ with curvature at least $1$.
+
+Give two proofs, one based on DNA inequality \ref{thm:DNA} and the other based on Proposition~\ref{prop:supporting-circline}.
+\end{thm}
+
+\section{Lens lemma}
+
+\begin{thm}{Lemma}\label{lem:lens}
+Let $\alpha$ be a smooth regular simple curve that runs from $p$ to $q$.
+Assume that $\alpha$ runs on right side (correspondingly left side) of the oriented line $pq$ and only its end points $p$ and $q$ lie on the line.
+Then $\alpha$ has a point with positive  (correspondingly negative) curvature.
+\end{thm}
+
+\begin{wrapfigure}{r}{35 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-22}
+\vskip0mm
+\end{wrapfigure}
+
+Note that the lemma fails for curves with self-intersections;
+the curve $\alpha$ on the diagram has negative curvature everywhere and it lies on the right side of the line $pq$. 
+
+\parit{Proof.}
+Choose points $p'$ and $q'$ on $\ell$
+so that the points $p', p, q, q'$ appear in the same order on $\ell$.
+
+Consider the smallest disc segment with chord $[p'q']$ that contains $\alpha$.
+Note that its arc $\gamma$ supports at a point $s=\alpha(t_0)$.
+
+\begin{wrapfigure}{R}{50 mm}
+\centering
+\includegraphics{mppics/pic-23}
+\bigskip
+\includegraphics{mppics/pic-24}
+\vskip0mm
+\end{wrapfigure}
+
+Note that the $\alpha'(t_0)$ is tangent to $\gamma$ at $s$.
+Moreover $\alpha'(t_0)$ points in the direction of $q'$;
+that is, if we go along $\gamma$ in the direction  of $\alpha'(t_0)$ then we have to start at $p'$ and end at $q'$.
+If the direction is opposite, then the arc of $\alpha$ from $s$ to $q$ would be trapped in the curvelinear triangle $psp'$ bounded by arcs of $\gamma$, $\alpha$ and the line segment $[p'p]$.
+But this is impossible since $q$ does not belong to this triangle.
+
+
+
+It follows that $\gamma$ supports $\alpha$ at $t_0$ from right.
+By Proposition~\ref{prop:supporting-circline}, 
+\[\kappa(t_0)\ge \kappa,\]
+where $\kappa(t_0)$ is signed curvature of $\alpha$ at $t_0$ and $\kappa$ is the curvature of $\gamma$.
+Evidently $\kappa>0$, hence the result.
+\qeds
+
+%\begin{thm}{Generalized lemma}
+%Let $\gamma$ be a circle of curvature $\kappa$.
+%Suppose that two points $x,y\in\gamma$ and a simple curve $\alpha$ on the left side from $\gamma$ from $x$ to $y$.
+
+%Assume there is an other circle $\gamma'$ of the same curvature $\kappa$ that contains $\alpha$ on the right side 
+
+
+
+%Suppose $L$ is a lens bounded by two arcs $\phi$ and $\psi$ with signed curvature $\kappa>0$ and both arcs run from $p$ to $q$.
+%Assume that $L$ lies on right from $\phi$ and on left from $\psi$ and the points $p,x,y,q$ lie in the same order on $\gamma$.
+%If a curve simple smooth curve $\alpha$ runs inside $L$ from $x$ to $y$, then it has a point with curvature at most $\kappa$.
+%\end{thm}
+
+The proof is a straightforward modification of the proof above;
+one only need to note that any circle arc running from $p$ to $q$ in $L$ has curvature at least
+way to prove the following useful statement.
+
+\begin{thm}{Exercise}
+Assume that a bounded domain $D$ in the plane is bounded by a closed regular smooth simple plane curve $\alpha$.
+Show that $D$ is convex if and only if the signed curvature of $\alpha$ does not change the sign.
+\end{thm}
+
+\begin{thm}{Exercise} Assume a smooth regular curve $\alpha$ has curvature at most $1$ at any point (that is, $|\kappa_\alpha(t)|\le 1$ for any $t$).
+Show that each of two unit circles tangent to $\gamma$ at $t_0$ is supporting. 
+\end{thm}
+
+The following diagram shows a simple curve with positive curvature that intersects a line at points $p_1,\dots p_11$; these points appear on the curve in the same order, and on the line  in the order $p_5,p_3,p_1,p_2,p_4,p_6,p_8,p_{10},p_{11},p_9,p_7$;
+applying revering the order and applying a cyclic permutation we get
+\[p_1,p_3,p_5,p_7,p_9,p_{11},p_{10},p_8,p_6,p_4,p_2;\]
+that is first we list odd points in the increasing order and after even points in the decreasing order.
+The following Exercise states that the same can be done for any simple curve with positive curvature and any line.
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-29}
+\vskip0mm
+\end{figure}
+
+\begin{thm}{Exercise}
+Suppose $\alpha$ is a simple smooth regular curve in the plane that crosses a line $\ell$ at the points $p_1,p_2,\dots p_n$.
+Assume that the points $p_1,p_2,\dots p_n$ appear on $\alpha$ in the same order.
+Then they appear on $\ell$ in the following cyclic order 
+\[p_1,p_3,\dots,p_4 ,p_2\]
+or its reverse.
+\end{thm}
+
+
+\section{Four-vertex theorem}
+
+
 
 A vertex of a smooth regular curve is defined as a critical point of its curvature;
 in particular, any point of local minimum (or maximum) is a vertex.
+
+\begin{thm}{Exercise}
+Assume an osculating circle of curve $\alpha$ at $t_0$ supports $\alpha$ at $t_0$.
+Show that $t_0$ is a vertex of $\alpha$.
+\end{thm}
 
 \begin{thm}{Four-vertex theorem}
 Any smooth regular simple plane curve has at least four
@@ -64,20 +284,22 @@ If there are two distinct circumscribed circle, then $\alpha$ lies in the inters
 But this intersection is enclosed in a circle of smaller radius --- a contradiction.
 Hence Claim \ref{clm:circumscribed circle} follows.
 
+
 \begin{clm}{}
 Assume $\gamma$ is the circumscribed circle of $\alpha$.
 Then $\gamma$ touches $\alpha$ at least $2$ points which divide the $\gamma$ in arcs no longer than semicircle.
 \end{clm}
 
-If it would not be the case then one could move $\gamma$ slightly keeping its radius the same so that $\gamma$ will not touch $\alpha$ at all.
-But in this case $\alpha$ could be enclosed by a circle of smaller radius --- a contradiction.
-
-\begin{wrapfigure}{r}{38 mm}
-\vskip-4mm
+\begin{wrapfigure}{R}{38 mm}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-27}
 \vskip0mm
 \end{wrapfigure}
+
+If it would not be the case then one could move $\gamma$ slightly keeping its radius the same so that $\gamma$ will not touch $\alpha$ at all.
+But in this case $\alpha$ could be enclosed by a circle of smaller radius --- a contradiction.
+
 
 Let us orient $\alpha$ and $\gamma$ counterclockwise.
 Then at the common points the directions of $\alpha$ and $\gamma$ coincide.
@@ -111,3 +333,19 @@ Whence the theorem follows.
 Show that any smooth regular curve of constant width has at least 6 vertexes.
 \end{thm}
 
+\section{Tennis ball theorem}
+
+Suppose that a curve $\alpha$ runs on the unit sphere 
+\[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\] 
+Let us denote by $\alpha''(t)^\top$ the projection of vector $\alpha''(t)$ to the tanget plane of the sphere at $\alpha(t)$.
+
+Assume $\alpha$ is a unit speed curve.
+By Proposition~\ref{prop:a'-pertp-a''}, $\alpha''(t)\perp\alpha'(t)$ and therefore $\alpha''(t)^\top\perp\alpha'(t)$.
+If $w(t)$ denotes by the vector $\alpha'(t)$ rotated
+counterclockwise by angle $\tfrac\pi2$ in the tangent plane to the sphere at $\alpha(t)$, then 
+\[\alpha''(t)^\top=\kappa_\alpha(t)\cdot w(t)\]
+for some real number $\kappa(t)$;
+this number is called \emph{signed geodesic curvature of $\alpha$ at $t$}.
+
+The geodesic curvature measures how $\alpha$ diverges from an equator --- the most straight curve on the curved $\SS^2$.
+TBC

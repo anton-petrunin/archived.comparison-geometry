@@ -742,10 +742,12 @@ z.s=.5[z.o,.5[z.p1,z.p3]];
 
 p1=z.p1{direction 0 of p0}..tension 1.5..z.p2{direction 1.5 of p0}..tension 1.5..z.p3{direction 2.8 of p0}..tension 1.5..z.s{z.o-z.s zscaled (0,-1)}..tension 1.5..cycle;
 draw p1;
+draw  (subpath (2,4) of p1) penbold;
 
 z.oo=z.s-unitvector(z.s)*abs(z.p1);
 p3=circle(z.oo,z.p1-z.o);
 draw p3;
+
 
 drawarrow subpath (0,3.6) of p0;
 drawarrow subpath (0,2.6) of p1;
@@ -763,4 +765,75 @@ label.lft(btex $o$ etex, z.o);
 label.rt(btex $o'$ etex, z.oo);
 endfig;
 
+beginfig(28);
+save u;
+u:=1cm;
+
+z.a1=(-1.5,0)*u;
+z.a2=(0,0)*u;
+z.a3=(1,1)*u;
+z.a4=(2,1)*u;
+z.a5=(0,-.5)*u;
+
+save p; path p[];
+p0=z.a1..z.a2..z.a3..z.a4..z.a5;
+
+z.o=z.a2+((direction 1 of p0) zscaled (0,-1));
+p1=circle(z.o,point 1 of p0 -z.o);
+
+p2=circle(point 1 of p0,0.7*(point 1 of p0 -z.o));
+
+draw p0;
+drawarrow (((p0 cutbefore p2) cutafter p2) cutafter p2) penbold;
+draw p1;
+draw p2 dashed evenly;
+
+dOt point 1 of p0;
+
+label.top(btex $p$ etex, z.a2);
+label.top(btex $\alpha$ etex, z.a3);
+label.top(btex $\gamma$ etex, point .4 of p1);
+label(btex $R$ etex, (.4,-.2)*u);
+label(btex $L$ etex, (-.4,.2)*u);
+endfig;
+
+beginfig(29);
+save u;
+u:=.5cm;
+
+z.a0=(3,.5)*u;
+z.a1=(3,0)*u;
+z.a2=(4,0)*u;
+z.a3=(2,0)*u;
+z.a4=(5,0)*u;
+z.a5=(1,0)*u;
+z.a6=(11,0)*u;
+z.a7=(6,0)*u;
+z.a8=(10,0)*u;
+z.a9=(7,0)*u;
+z.a10=(9,0)*u;
+z.a11=(8,0)*u;
+z.a12=(8,-.3)*u;
+z.b=(6,-3)*u;
+
+save p; path p[];
+p0=z.a0..z.a1..z.a2..z.a3..z.a4..z.a5..z.b..z.a6..z.a7..z.a8..z.a9..z.a10..z.a11..z.a12;
+
+draw p0;
+draw ddline(z.a5, z.a6)(0.2, 0.2) pensemibold;
+
+dOt z.a1,z.a2,z.a3,z.a4,z.a5,z.a6,z.a7,z.a8,z.a9,z.a10,z.a11;
+
+whitelabel.bot(btex $p_1$ etex, z.a1);
+whitelabel.top(btex $p_2$ etex, z.a2);
+whitelabel.bot(btex $p_3$ etex, z.a3);
+whitelabel.top(btex $p_4$ etex, z.a4);
+whitelabel.bot(btex $p_5$ etex, z.a5);
+whitelabel.top(btex $p_6$ etex, z.a6);
+whitelabel.bot(btex $p_7$ etex, z.a7);
+whitelabel.top(btex $p_8$ etex, z.a8);
+whitelabel.bot(btex $p_9$ etex, z.a9);
+whitelabel.top(btex $p_{10}$ etex, z.a10);
+whitelabel.bot(btex $p_{11}$ etex, z.a11);
+endfig;
 end
