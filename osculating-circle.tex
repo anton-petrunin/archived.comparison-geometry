@@ -4,13 +4,15 @@
 \section{Acceleration of unit-speed curve}
 
 Any regular smooth curve can be parametrized by its length.
-The obtained curve $\alpha$ (that is the constructed reparametrization of the given curve) has unit speed; 
+The obtained curve $\alpha$ has unit speed; 
 that is, $|\alpha'(t)|=1$ for any $t$.
 A curve with such parametrization is called \emph{unit-speed} curve
 or a curve with a \emph{natural parametrization}. 
 
 It is straightforward to show any smooth regular curve remains smooth (and surely regular) if equipped with a natural parametrization; 
 here smooth means that all derivatives $\alpha^{(n)}(t)$ are defined for any $n$ and all values of $t$ in the domain of definition of $\alpha$.
+
+The following proposition essentailly states that vector of acceleration is perpendicular to the velocity vector if the speed remains constant.
 
 \begin{thm}{Proposition}\label{prop:a'-pertp-a''}
 Assume $\alpha\:[a,b]\to\RR^2$ be a smooth unit-speed curve.
@@ -117,7 +119,7 @@ then $\gamma_{t_0}$ lies in the open disc bounded by $\gamma_{t_1}$ for any $t_0
 \end{thm}
 
 The osculating circles of the curve $\alpha$ give a peculiar foliation of an annulus by circles; it has the following property: if a smooth function is constant on each osculating circle it must be constant in the annulus \cite[see][Lecture 10]{fuchs-tabachnikov}.
-Also not the the cure $\alpha$ is tangent to the circle of the foliation at each of its point, however it does not run along a circle.
+Also note that the cure $\alpha$ is tangent to the circle of the foliation at each of its point, however it does not run along a circle.
 
 
 

@@ -16,10 +16,10 @@ and $\gamma$ lies locally on one side of $\alpha$.
 If $p=\gamma(t_0)$ for a single value $t_0$,
 then we can also say \emph{$\gamma$ supports $\alpha$ at $p$} without ambiguity.
 
-More precisely assume that there is a spherical neighborhood $U\ni \alpha(t_0)$ such that for some interval $[a',b']\ni t_0$
+More precisely assume that there is a spherical neighborhood $U\ni p$ such that for some interval $[a',b']\ni t_0$
 the arc $\bar\alpha=\alpha|_{[a',b']}$ has no self-intersection and runs from boundary to boundary of $U$.
 In this case $\alpha$ divides $U$ into two sets  $L$ and $R$;
-$L$ lies on the left and $R$ lies on the right from $\bar\alpha$.
+$L$ lies on the left and $R$ lies on the right from~$\bar\alpha$.
 If $\gamma\cap U$ contains only points of $\bar\alpha$ and $R$, we say that \emph{$\gamma$ supports $\alpha$ on the right};
 if $\gamma\cap U$ contains only points of $\bar\alpha$ and $L$, we say that \emph{$\gamma$ supports $\alpha$ on the left}.
 
@@ -118,8 +118,8 @@ Give two proofs, one based on DNA inequality \ref{thm:DNA} and the other based o
 \section{Lens lemma}
 
 \begin{thm}{Lemma}\label{lem:lens}
-Let $\alpha$ be a smooth regular simple curve that runs from $p$ to $q$.
-Assume that $\alpha$ runs on right side (correspondingly left side) of the oriented line $pq$ and only its end points $p$ and $q$ lie on the line.
+Let $\alpha$ be a smooth regular simple curve that runs from $x$ to $y$.
+Assume that $\alpha$ runs on right side (correspondingly left side) of the oriented line $xy$ and only its end points $x$ and $y$ lie on the line.
 Then $\alpha$ has a point with positive  (correspondingly negative) curvature.
 \end{thm}
 
@@ -131,13 +131,14 @@ Then $\alpha$ has a point with positive  (correspondingly negative) curvature.
 \end{wrapfigure}
 
 Note that the lemma fails for curves with self-intersections;
-the curve $\alpha$ on the diagram has negative curvature everywhere and it lies on the right side of the line $pq$. 
+the curve $\alpha$ on the diagram turns always right, 
+so it has negative curvature everywhere and it lies on the right side of the line $xy$. 
 
 \parit{Proof.}
-Choose points $p'$ and $q'$ on $\ell$
-so that the points $p', p, q, q'$ appear in the same order on $\ell$.
+Choose points $p$ and $q$ on $\ell$
+so that the points $p, x, y, q$ appear in the same order on $\ell$.
 
-Consider the smallest disc segment with chord $[p'q']$ that contains $\alpha$.
+Consider the smallest disc segment with chord $[pq]$ that contains $\alpha$.
 Note that its arc $\gamma$ supports at a point $s=\alpha(t_0)$.
 
 \begin{wrapfigure}{R}{50 mm}
@@ -149,10 +150,10 @@ Note that its arc $\gamma$ supports at a point $s=\alpha(t_0)$.
 \end{wrapfigure}
 
 Note that the $\alpha'(t_0)$ is tangent to $\gamma$ at $s$.
-Moreover $\alpha'(t_0)$ points in the direction of $q'$;
-that is, if we go along $\gamma$ in the direction  of $\alpha'(t_0)$ then we have to start at $p'$ and end at $q'$.
-If the direction is opposite, then the arc of $\alpha$ from $s$ to $q$ would be trapped in the curvelinear triangle $psp'$ bounded by arcs of $\gamma$, $\alpha$ and the line segment $[p'p]$.
-But this is impossible since $q$ does not belong to this triangle.
+Moreover $\alpha'(t_0)$ points in the direction of $q$;
+that is, if we go along $\gamma$ in the direction  of $\alpha'(t_0)$ then we have to start at $p$ and end at $q$.
+If the direction is opposite, then the arc of $\alpha$ from $s$ to $y$ would be trapped in the curvelinear triangle $xsp$ bounded by arcs of $\gamma$, $\alpha$ and the line segment $[px]$.
+But this is impossible since $y$ does not belong to this triangle.
 
 
 
@@ -163,22 +164,6 @@ where $\kappa(t_0)$ is signed curvature of $\alpha$ at $t_0$ and $\kappa$ is the
 Evidently $\kappa>0$, hence the result.
 \qeds
 
-%\begin{thm}{Generalized lemma}
-%Let $\gamma$ be a circle of curvature $\kappa$.
-%Suppose that two points $x,y\in\gamma$ and a simple curve $\alpha$ on the left side from $\gamma$ from $x$ to $y$.
-
-%Assume there is an other circle $\gamma'$ of the same curvature $\kappa$ that contains $\alpha$ on the right side 
-
-
-
-%Suppose $L$ is a lens bounded by two arcs $\phi$ and $\psi$ with signed curvature $\kappa>0$ and both arcs run from $p$ to $q$.
-%Assume that $L$ lies on right from $\phi$ and on left from $\psi$ and the points $p,x,y,q$ lie in the same order on $\gamma$.
-%If a curve simple smooth curve $\alpha$ runs inside $L$ from $x$ to $y$, then it has a point with curvature at most $\kappa$.
-%\end{thm}
-
-The proof is a straightforward modification of the proof above;
-one only need to note that any circle arc running from $p$ to $q$ in $L$ has curvature at least
-way to prove the following useful statement.
 
 \begin{thm}{Exercise}
 Assume that a bounded domain $D$ in the plane is bounded by a closed regular smooth simple plane curve $\alpha$.
@@ -212,6 +197,28 @@ Suppose $\alpha$ is a simple smooth regular curve in the plane.
 Show that $\alpha$ lies on one side from one of its tangent lines. 
 \end{thm}
 
+If curvature of a curve $\alpha$ vanish at $t_0$, then we say that $t_0$ is inflection value of parameter, and $p=\alpha(t_0)$ is its inflection point;
+the later convention might be ambiguous only if $\alpha$ has self-intersection at $p$. 
+In other words, $t_0$ is inflection value if osculating circline at at $t_0$ coincides with the tangent line. 
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-30}
+\vskip0mm
+\end{wrapfigure}
+
+\begin{thm}{Exercise}
+Assume $\alpha\:[a,b]\to\RR^2$ is a smooth simple regular curve such that 
+\[\alpha'(a)=\alpha'(b)=\alpha(b)-\alpha(a).\]
+In particular the tangent line $\ell$ at $a$ is also tangent at $b$.
+\begin{enumerate}[(a)]
+\item
+Show that it has at least 2 inflection points.
+\item
+If $\alpha$ crosses the line $\ell$ then $\alpha$ has at least 3 inflection points.
+\end{enumerate}
+\end{thm}
 
 
 \section{Four-vertex theorem}
@@ -296,9 +303,10 @@ Then $\gamma$ touches $\alpha$ at least $2$ points which divide the $\gamma$ in 
 \begin{wrapfigure}{R}{38 mm}
 \vskip-0mm
 \centering
-\includegraphics{mppics/pic-27}
+\includegraphics{mppics/pic-271}
 \vskip0mm
 \end{wrapfigure}
+
 
 If it would not be the case then one could move $\gamma$ slightly keeping its radius the same so that $\gamma$ will not touch $\alpha$ at all.
 But in this case $\alpha$ could be enclosed by a circle of smaller radius --- a contradiction.
@@ -311,14 +319,23 @@ otherwise $\alpha$ could not be simple.
 
 Denote by $\kappa$ the signed curvature of $\gamma$, since it is oriented counterclockwise,
 $\kappa\z=\tfrac1r>0$.
+
+\begin{wrapfigure}{R}{38 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-27}
+\vskip0mm
+\end{wrapfigure}
   
 Fix two common points $p_1$ and $p_2$ of $\alpha$ and $\gamma$.
 By Proposition~\ref{prop:supporting-circline}, the curvature of $\alpha$ at $p_1$ and $p_2$ is at least $\kappa$.
 Let $\bar\alpha$ be the arc of $\alpha$ from $p_1$ to $p_2$.
 
+We can assume that the circle is centered at the origin 
+and the points $p_1$ and $p_2$ lie on the same vertical line in the right halfplane of the coordinate plane.
+
 Let $o$ be the center of $\gamma$.
-Consider an other circle $\gamma'$ with the same radius $r$ and the center $o'$ moved away from the arc $p_1p_2$ to the last moment it intersects $\bar\alpha$.
-(More precisely, $o'$ lies on the line bisecting angle $p_1op_2$ on the side opposite from the arc such that $\gamma'$ intersects $\bar\alpha$ the distance $|o-o'|$ is maximal.)
+Consider an other circle $\gamma'$ with the same radius $r$ and the center $o'$ moved to the left along $x$-axis to the last moment it intersects $\bar\alpha$.
 
 Denote by $s_1$ a common point of $\bar\alpha$ and $\gamma'$;
 we can assume that $s_1$ is not an end point of $\bar\alpha$.

@@ -621,8 +621,8 @@ drawarrow z.p--.5[z.p,z.q];
 
 dOt z.p, z.q;
 
-label.bot(btex $p$ etex, z.p);
-label.bot(btex $q$ etex, z.q);
+label.bot(btex $x$ etex, z.p);
+label.bot(btex $y$ etex, z.q);
 label.bot(btex $\alpha$ etex, z.s);
 endfig;
 
@@ -652,10 +652,10 @@ drawarrow subpath (0,2) of p1;
 
 dOt z.p, z.q, z.pp, z.qq, z.s;
 
-label.bot(btex $p$ etex, z.p);
-label.bot(btex $q$ etex, z.q);
-label.urt(btex $p'$ etex, z.pp);
-label.ulft(btex $q'$ etex, z.qq);
+label.bot(btex $x$ etex, z.p);
+label.bot(btex $y$ etex, z.q);
+label.urt(btex $p$ etex, z.pp);
+label.ulft(btex $q$ etex, z.qq);
 label.top(btex $s$ etex, z.s);
 label.lrt(btex $\alpha$ etex, z.sq);
 label.lrt(btex $\gamma$ etex, (point 1.4 of p0));
@@ -687,10 +687,10 @@ drawarrow subpath (0,2) of p1;
 
 dOt z.p, z.q, z.pp, z.qq, z.s;
 
-label.bot(btex $p$ etex, z.p);
-label.bot(btex $q$ etex, z.q);
-label.urt(btex $p'$ etex, z.pp);
-label.ulft(btex $q'$ etex, z.qq);
+label.bot(btex $x$ etex, z.p);
+label.bot(btex $y$ etex, z.q);
+label.urt(btex $p$ etex, z.pp);
+label.ulft(btex $q$ etex, z.qq);
 label.top(btex $s$ etex, z.s);
 label.lrt(btex $\alpha$ etex, z.sq);
 label.lrt(btex $\gamma$ etex, (point 1.4 of p0));
@@ -724,7 +724,7 @@ draw p1;
 dOt point 1.5 of p0, point 3.5 of p0, (0,-3)*u,(1.5,-2)*u,(3,-3)*u,(1.5,-4)*u;
 endfig;
 
-beginfig(27) 
+beginfig(271) 
 save u;
 u:=1.4cm;
 
@@ -741,28 +741,54 @@ z.p3= point 2.8 of p0;
 z.s=.5[z.o,.5[z.p1,z.p3]];
 
 p1=z.p1{direction 0 of p0}..tension 1.5..z.p2{direction 1.5 of p0}..tension 1.5..z.p3{direction 2.8 of p0}..tension 1.5..z.s{z.o-z.s zscaled (0,-1)}..tension 1.5..cycle;
-draw p1;
-draw  (subpath (2,4) of p1) penbold;
+draw p1 penbold;
 
 z.oo=z.s-unitvector(z.s)*abs(z.p1);
 p3=circle(z.oo,z.p1-z.o);
-draw p3;
 
-
-drawarrow subpath (0,3.6) of p0;
-drawarrow subpath (0,2.6) of p1;
-drawarrow subpath (0,3.6) of p3;
-
-dOt z.p1, z.p2,z.p3, z.o, z.oo, z.s;
+dOt z.p1, z.p2,z.p3;
 
 label.lft(btex $\alpha$ etex, point 2.6 of p1);
 label.lrt(btex $\gamma$ etex, point 3.6 of p0);
-label.top(btex $\gamma'$ etex, point 1 of p3);
-label.bot(btex $p_1$ etex, z.p3);
-label.rt(btex $p_2$ etex, z.p1);
-label.lrt(btex $s_1$ etex, z.s);
-label.lft(btex $o$ etex, z.o);
-label.rt(btex $o'$ etex, z.oo);
+endfig;
+
+beginfig(27) 
+save u;
+u:=.7cm;
+
+z.o=origin;
+
+z.dir1=(2,1);
+z.dir2=(-x.dir1,y.dir1);
+x.r=2*u;
+
+save p; path p[];
+
+p0=circle(z.o,x.r);
+draw p0;
+
+z.oo=(-1,0)*u;
+
+p1=circle(z.oo,x.r);
+draw p1;
+
+z.a1=directionpoint z.dir1 of p0;
+z.a2=directionpoint z.dir2 of p0;
+
+z.a12=point 3.9 of p1;
+z.dir12=direction 3.9 of p1;
+p3=z.a1{z.dir1}..z.a12{z.dir12}..z.a2{z.dir2};
+draw p3 penbold;
+
+dOt z.a1,z.a12,z.a2;
+
+label.rt(btex $\bar\alpha$ etex, point 1.4 of p3);
+label.rt(btex $\gamma$ etex, point 3.7 of p0);
+label.lft(btex $\gamma'$ etex, point 3.7 of p1);
+label.bot(btex $p_1$ etex, z.a1);
+label.top(btex $p_2$ etex, z.a2);
+label.rt(btex $s_1$ etex, z.a12);
+
 endfig;
 
 beginfig(28);
@@ -835,5 +861,29 @@ whitelabel.top(btex $p_8$ etex, z.a8);
 whitelabel.bot(btex $p_9$ etex, z.a9);
 whitelabel.top(btex $p_{10}$ etex, z.a10);
 whitelabel.bot(btex $p_{11}$ etex, z.a11);
+endfig;
+
+beginfig(30);
+save u;
+u:=1cm;
+
+z.a0=(0,0)*u;
+z.a1=(1.3,.5)*u;
+z.a2=(1,.5)*u;
+z.a3=(.7,.5)*u;
+z.a34=(1.3,.8)*u;
+z.a4=(2,0)*u;
+
+save p; path p[];
+p0=z.a0{right}..z.a1{up}..z.a2{down}..z.a3{up}..z.a34..{right}z.a4;
+draw p0;
+
+drawarrow subpath (0,4) of p0;
+draw ddline(z.a0,z.a4)(.2,.2) dashed evenly;
+
+dOt z.a0,z.a2,z.a4;
+
+label.bot(btex $\alpha(a)$ etex, z.a0);
+label.bot(btex $\alpha(b)$ etex, z.a4);
 endfig;
 end
