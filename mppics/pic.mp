@@ -886,4 +886,49 @@ dOt z.a0,z.a2,z.a4;
 label.bot(btex $\alpha(a)$ etex, z.a0);
 label.bot(btex $\alpha(b)$ etex, z.a4);
 endfig;
+
+beginfig(31);
+save u;
+u:=.5cm;
+
+z.a0=(0,0)*u;
+z.a1=(0,1)*u;
+z.a2=(3,-3)*u;
+z.a3=(6,1)*u;
+z.a4=(6,0)*u;
+z.a5=(6,-1)*u;
+z.a6=(6,2)*u;
+z.a7=(3,-4)*u;
+z.a8=(0,2)*u;
+z.a9=(0,-1)*u;
+
+save p; path p[];
+p0=z.a0{right}..z.a1{left}..z.a2..z.a3{left}..z.a4{right}..z.a5{left}..z.a6{right}..z.a7..z.a8{right}..z.a9{left}..cycle;
+draw p0;
+
+p1=ddline(z.a1, z.a3)(.5,.5);
+
+draw p1 dashed evenly;
+
+z.b1=p1 intersectionpoint subpath (8,9) of p0;
+z.b2=p1 intersectionpoint subpath (7,8) of p0;
+z.b3=p1 intersectionpoint subpath (6,7) of p0;
+z.b4=p1 intersectionpoint subpath (5,6) of p0;
+
+hatchfill subpath (1,3) of p0 --cycle withcolor (67, 2mm, -.5bp);
+
+dOt z.a0,z.a4, z.a1, z.a3, z.b1,z.b2, z.b3, z.b4;
+
+whitelabel.bot(btex $v$ etex, z.a0);
+whitelabel.bot(btex $w$ etex, z.a4);
+whitelabel.bot(btex $F$ etex, .5[z.a0,z.a4]);
+label.top(btex $x$ etex, z.a1);
+label.top(btex $y$ etex, z.a3);
+label.urt(btex $p_1$ etex, z.b1);
+label.ulft(btex $p_2$ etex, z.b2);
+label.urt(btex $p_3$ etex, z.b3);
+label.ulft(btex $p_4$ etex, z.b4);
+whitelabel.top(btex $\alpha_1$ etex, z.a2);
+label.bot(btex $\alpha_2$ etex, z.a7);
+endfig;
 end

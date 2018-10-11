@@ -164,14 +164,34 @@ where $\kappa(t_0)$ is signed curvature of $\alpha$ at $t_0$ and $\kappa$ is the
 Evidently $\kappa>0$, hence the result.
 \qeds
 
+\section{Convexity and inflection points}
 
 \begin{thm}{Exercise}
-Assume that a bounded domain $D$ in the plane is bounded by a closed regular smooth simple plane curve $\alpha$.
-Show that $D$ is convex if and only if the signed curvature of $\alpha$ does not change the sign.
+Assume $\alpha$ is a closed regular simple plane curve with positive signed curvature.
+Show that $\alpha$ bounds a convex set.%
+\footnote{Hint: show that any tangent line to $\alpha$ is supporting.}
 \end{thm}
 
-\begin{thm}{Exercise} Assume a smooth regular curve $\alpha$ has curvature at most $1$ at any point (that is, $|\kappa_\alpha(t)|\le 1$ for any $t$).
-Show that each of two unit circles tangent to $\gamma$ at $t_0$ is supporting. 
+\begin{thm}{Exercise}\label{ex:1-supporting} Assume a smooth regular curve $\alpha$ has curvature at most $1$ at any point (that is, $|\kappa_\alpha(t)|\le 1$ for any $t$).
+Show that each of two unit circles tangent to $\gamma$ at $t_0$ is supporting.
+
+Moreover there is $\eps>0$ ($\eps=\tfrac12$ will do) such that any arc of length $<\eps$ of the curve $\alpha$ that starts at $p=\alpha(t_0)$ can not enter the unit circle tangent to $\alpha$ at $p$.  
+\end{thm}
+
+
+\begin{thm}{Exercise}
+Suppose $\alpha$ is a simple smooth regular curve in the plane with positive curvature.
+Assume $\alpha$ crosses a line $\ell$ at the points $p_1,p_2,\dots p_n$ and these points appear on $\alpha$ in the same order.
+\begin{enumerate}[(a)]
+
+\item Show that $p_2$ can not lie between $p_1$ and $p_3$ on $\ell$.
+
+\item Show that if $p_3$ lies between $p_1$ and $p_2$ on $\ell$ then these points uppear on $\ell$ in the following order:  
+\[p_1,p_3,\dots,p_4 ,p_2.\]
+
+\item Try to describe all possible orders in the case if $p_1$ lies between $p_2$ and $p_3$ (see the diagram).
+
+\end{enumerate}
 \end{thm}
 
 \begin{figure}[h!]
@@ -181,15 +201,12 @@ Show that each of two unit circles tangent to $\gamma$ at $t_0$ is supporting.
 \vskip0mm
 \end{figure}
 
-\begin{thm}{Exercise}
+Recall that $\Conv X$ denotes the convex hull of set $X$;
+that is, $\Conv X$ is the intersection of all convex sets containing $X$.
+
+\begin{thm}{Exercise}\label{ex:convex-hull}
 Suppose $\alpha$ is a simple smooth regular curve in the plane with positive curvature.
-Assume $\alpha$ crosses a line $\ell$ at the points $p_1,p_2,\dots p_n$ and these points appear on $\alpha$ in the same order.
-\begin{enumerate}[(a)]
-\item Show that $p_2$ can not lie between $p_1$ and $p_3$ on $\ell$.
-\item Show that if $p_3$ lies between $p_1$ and $p_2$ on $\ell$ then these points uppear on $\ell$ in the following order:  
-\[p_1,p_3,\dots,p_4 ,p_2.\]
-\item Try to describe all possible orders in the case if $p_1$ lies between $p_2$ and $p_3$ (see the diagram).
-\end{enumerate}
+Then the boundary of $\Conv \alpha$ is formed by an arc of $\alpha$ and a line segmet connecting the ends of its arc.
 \end{thm}
 
 \begin{thm}{Exercise}
@@ -214,29 +231,55 @@ Assume $\alpha\:[a,b]\to\RR^2$ is a smooth simple regular curve such that
 In particular the tangent line $\ell$ at $a$ is also tangent at $b$.
 \begin{enumerate}[(a)]
 \item
-Show that it has at least 2 inflection points.
+Show that $\alpha$ has at least 2 inflection points.
 \item
 If $\alpha$ crosses the line $\ell$ then $\alpha$ has at least 3 inflection points.
 \end{enumerate}
 \end{thm}
 
+\begin{thm}{Theorem} 
+Let $\alpha$ be a closed simple smooth regular plane curve.
+Assume $\alpha$ has exactly two inflection points which divide $\alpha$ in two arcs $\alpha_1$ and $\alpha_2$.
+Then 
+\[\Conv \alpha_1\supset \alpha_2
+\quad\text{or}\quad
+\Conv \alpha_2\supset \alpha_1.\]
+
+\end{thm}
+
+\parit{Proof.}
+Let us denote the inflection points by $v$ and $w$
+and orient the arcs $\alpha_1$ and $\alpha_2$ from $v$ to $w$; we can assume that both arcs $\alpha_1$ and $\alpha_2$ have positive curvature.
+
+Set $F=\Conv \alpha_1$.
+By Exercise~\ref{ex:convex-hull}, $F$ is bounded by an arc $\bar\alpha_1$ of $\alpha_1$ from $x$ to $y$ 
+and the line segment $xy$.
+We may assume that the line $xy$ is horizontal, $x$ lies on the left from $y$ and so $\alpha_1$ lies below the line.
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-31}
+\vskip0mm
+\end{figure}
+
+If $F\not\supset \alpha_2$, then $\alpha_2$ runs outside of $F$, so it has to cross the line segment $xy$.
+Denote by $p_1, p_2,\dots$ the points of intersection of $\alpha_2$ with the line $xy$ as they appear on $\alpha_2$.
+
+Since $\alpha_2$ has positive curvature, $p_1$ lies on left from $p_0$.
+If $p_2$ lies between $x$ and $p_1$ then the curve $\alpha_2$ is trapped in the region bounded by the arc $xvp_2$ of $\alpha$ and the line segment $p_2x$;
+therefore it can not reach $w$ --- a contradiction.
+Therefore $p_2$ lies on the extension of $yx$ behind $x$.
+
+Further $p_3$ lies on right from $p_2$. 
+If $p_3$ lies between $p_1$ and $x$, then $\alpha_2$ is trapped in the region bounded by the arc $xvp_3$ of $\alpha$ and the line segment $p_3x$ --- a contradiction again.
+Therefore $p_3$ lies on the extension of $xy$ behind $y$ and the arc $p_2p3$ of $\alpha$ surrounds $F$.
+Whence
+\[\Conv \alpha_2\supset \alpha_1.\]
+\qedsf
+
 
 \section{Four-vertex theorem}
-
-
-
-A vertex of a smooth regular curve is defined as a critical point of its curvature;
-in particular, any point of local minimum (or maximum) is a vertex.
-
-\begin{thm}{Exercise}
-Assume an osculating circle of curve $\alpha$ at $t_0$ supports $\alpha$ at $t_0$.
-Show that $t_0$ is a vertex of $\alpha$.
-\end{thm}
-
-\begin{thm}{Four-vertex theorem}
-Any smooth regular simple plane curve has at least four
-vertices.
-\end{thm}
 
 \begin{wrapfigure}[8]{r}{20 mm}
 \vskip-4mm
@@ -244,6 +287,20 @@ vertices.
 \includegraphics{mppics/pic-26}
 \vskip0mm
 \end{wrapfigure}
+
+A vertex of a smooth regular curve is defined as a critical point of its curvature;
+in particular, any point of local minimum (or maximum) is a vertex.
+
+\begin{thm}{Exercise}\label{ex:vert-support}
+Assume an osculating circle of curve $\alpha$ at $t_0$ supports $\alpha$ at $t_0$.
+Show that $t_0$ is a vertex of $\alpha$.
+\end{thm}
+
+\begin{thm}{Four-vertex theorem}\label{thm:4-vert}
+Any smooth regular simple plane curve has at least four
+vertices.
+\end{thm}
+
 
 Evidently any closed curve have to have at least two vertexes --- one minimum and one maximum.
 On the diagram the vertexes are marked;
@@ -300,8 +357,8 @@ Assume $\gamma$ is the circumscribed circle of $\alpha$.
 Then $\gamma$ touches $\alpha$ at least $2$ points which divide the $\gamma$ in arcs no longer than semicircle.
 \end{clm}
 
-\begin{wrapfigure}{R}{38 mm}
-\vskip-0mm
+\begin{wrapfigure}{r}{38 mm}
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-271}
 \vskip0mm
@@ -353,19 +410,62 @@ Whence the theorem follows.
 Show that any smooth regular curve of constant width has at least 6 vertexes.
 \end{thm}
 
-\section{Tennis ball theorem}
+\section{Moon in a puddle}
 
-Suppose that a curve $\alpha$ runs on the unit sphere 
-\[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\] 
-Let us denote by $\alpha''(t)^\top$ the projection of vector $\alpha''(t)$ to the tanget plane of the sphere at $\alpha(t)$.
+The following theorem was proved by Vladimir Ionin and Pestov German Pestov \cite{pestov-ionin}.
+It gives a first nontrivial example of the so called ``local to global theorems'' --- based on some local data (in this case curvature of curve) we conclude its global property (in this case existence of large disc surrounded by the curve).
+For convex curves, the result was known much earlier \cite[\S 24]{blaschke}.
 
-Assume $\alpha$ is a unit speed curve.
-By Proposition~\ref{prop:a'-pertp-a''}, $\alpha''(t)\perp\alpha'(t)$ and therefore $\alpha''(t)^\top\perp\alpha'(t)$.
-If $w(t)$ denotes by the vector $\alpha'(t)$ rotated
-counterclockwise by angle $\tfrac\pi2$ in the tangent plane to the sphere at $\alpha(t)$, then 
-\[\alpha''(t)^\top=\kappa_\alpha(t)\cdot w(t)\]
-for some real number $\kappa(t)$;
-this number is called \emph{signed geodesic curvature of $\alpha$ at $t$}.
+\begin{thm}{Theorem}\label{thm:moon}
+Assume $\alpha$ is a simple closed smooth regular plane curve of curvature bouned by 1.
+Then it surrounds a unit disc.
+\end{thm}
 
-The geodesic curvature measures how $\alpha$ diverges from an equator --- the most straight curve on the curved $\SS^2$.
-TBC
+\parit{Proof.}
+Denote by $F$ the closed region surrounded by $\alpha$. 
+
+
+Fix $p_1\in \alpha$.
+Consider the disc $D_1$ of maximal radius 
+that is tangent to $\alpha$ at $p_1$ and lies completely in $F$.
+
+If the radius of $D_1$ is at least $1$, then the problem is solved.
+Otherwise note that $p_1$ is an isolated point of the intersection $D_p\cap \alpha$.
+Moreover according to Exercise~\ref{ex:1-supporting}, there is a fixed value $\eps>0$ such that any arc of $\alpha$
+that starts at $p_1$ can not end in $D_1$.
+
+Consider an arc $\alpha_1$ of $\alpha$ that runs from $p_1$ to the first point in $D_1$.
+Denote by $F_1$ the set bounded by $\alpha_1$ and a part of boundary of $D_1$ that containing $D_1$.
+From above $\length \alpha_1>\eps$.
+
+Let $p_2$ be the midpoint of $\alpha_1$.
+Let $D_2$ be the disc of maximal radius that is tangent to $\alpha_1$ at $p_2$ and lies completely in $F_1$. 
+The disc $D_2$ is touching the boundary $\partial F_1$ at other points, dividing it in at least two arcs.
+
+Note that $D_2$ can not touch the boundary of $D_1$, otherwise it would lie in $D_1$ which is impossible.
+Therefore at least one of these arcs, say $\alpha_2$, do not contain the common boundary $F_1$ and $D_1$.
+Note that 
+\[\length \alpha_2< \tfrac12\cdot\length\alpha_1.\]
+
+Again, if the radius of $D_2$ is at least $1$, then the theorem is proved.
+By Exercise~\ref{ex:1-supporting}, it happens if $\length \alpha_2<\eps$.
+If the radius is smaller that 1, denote by $F_2$ be the set that is bounded by $\alpha_2$ and a part of boundary of $D_2$ and contains $D_2$ and repeat the construction several times. 
+
+Since the length of arcs gets at least twice as small on each step, 
+after several steps the obtained disc $D_n$ will lie completely in $F_{n-1}$ and therefore in $F$. 
+\qeds
+
+A straightforward modification of the proof above gives the following.
+
+\begin{thm}{Theorem}\label{thm:moon+4-vert}
+Suppose $\alpha$ is a closed simple smooth regular plane curve.
+Denote by $F$ and $G$ the two closed domains bounded by $\alpha$, say $F$ is bounded and $G$ is unbounded.  
+Then $\alpha$ has at least 2 osculating circlines that lie in $F$
+and  2 osculating circlines that lie in $G$. 
+\end{thm}
+
+Note that Theorem~\ref{thm:moon} as well as the Four-vertex theorem \label{thm:4-vert} follow from Theorem~\ref{thm:moon+4-vert};
+the first implication is evident and the second follow from Exercise~\ref{ex:vert-support}.
+
+
+%cf. W. Blaschke, Kreis und Kugel, see pp. 115–116, Veit, Leipzig, 1916; S. B. Jackson, Bull. Amer. Math. Soc. 50 (1944), 564–578; MR0010992; G. Pestov and V. Ionin, Dokl. Akad. Nauk SSSR 127 (1959), 1170–1172; MR0107214; the reviewer, Geom. Dedicata 12 (1982), no. 4, 371–381; MR0672867
