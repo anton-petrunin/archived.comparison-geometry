@@ -931,4 +931,64 @@ label.ulft(btex $p_4$ etex, z.b4);
 whitelabel.top(btex $\alpha_1$ etex, z.a2);
 label.bot(btex $\alpha_2$ etex, z.a7);
 endfig;
+
+beginfig(32);
+save u;
+u:=.7cm;
+
+save p; path p[];
+
+z.o1=(0,0)*u;
+x.r1=.6*u;
+p1=circle(z.o1,x.r1);
+draw p1;
+
+z.o2=(4,0)*u;
+x.r2=.7*u;
+p2=circle(z.o2,x.r2);
+draw p2;
+
+z.o3=(8,0)*u;
+x.r3=1.1*u;
+p3=circle(z.o3,x.r3);
+draw p3;
+
+z.d1=(1,1);
+z.d2=(1,-1);
+z.d3=(1,0);
+z.d4=(-1,0);
+z.d5=(-.8,-.3);
+z.d6=(-1,.5);
+
+p0=
+(directionpoint z.d1 of p1){z.d1}..
+(2,-1)*u..
+(1.5,-3)*u..
+(3,-3)*u..
+(2.2,-1)*u..
+(directionpoint z.d2 of p2){z.d2}..
+(4,-3)*u..
+(directionpoint z.d3 of p3){z.d3}..
+(10,.2)*u..
+(directionpoint z.d4 of p3){z.d4}..
+(directionpoint z.d5 of p2){z.d5}..
+(directionpoint z.d6 of p1){z.d6}..
+(-2,0)*u..
+cycle;
+draw p0;
+
+z.p1=directionpoint z.d1 of p1;
+z.p2=directionpoint z.d2 of p2;
+z.p3=directionpoint z.d3 of p3;
+
+dOt z.p1, z.p2, z.p3;
+
+label(btex $D_1$ etex, z.o1);
+label(btex $D_2$ etex, z.o2);
+label(btex $D_3$ etex, z.o3);
+label.lrt(btex $p_1$ etex, z.p1);
+label.llft(btex $p_2$ etex, z.p2);
+label.bot(btex $p_3$ etex, z.p3);
+
+endfig;
 end
