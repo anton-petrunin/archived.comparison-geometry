@@ -1,0 +1,127 @@
+\chapter{Surfaces}
+
+\section{Embedded surfaces}
+
+Recall that a function $f$ of two variables $x$ and $y$ is called smooth if all its partial derivatives $\frac{\partial^{m+n}}{\partial x^m\partial y^n}f$ are defined and continuous in the domain of definition of $f$. 
+
+A subset $\Sigma$ is called \emph{smooth surface} (or more precisely \emph{smooth regular embedded surface}) if it can be described locally as a graph of smooth function in an appropriate coordinate system.
+More precisely, for any point $p\in \Sigma$ admits a neighborhood $U$ such that
+in some coordinate system $(x,y,z)$, 
+the intersection $U\cap \Sigma$ can be written as a graph $z=f(x,y)$ of a smooth function $f$ defined in an open domain of $(x,y)$-plane.
+
+If $\Sigma$ is compact, then it is called \emph{closed surface} (the term \emph{closed set} is not relevant).
+
+If $\Sigma$ is closed and noncompact, then it is called  \emph{open surface} (again the term \emph{open set} is not relevant).
+
+A closed subset in a surface that is bounded by one or more smooth curves is called \emph{surface with boundary}; in this case the collection of curves is called \emph{boundary line} of the surface.
+
+\parbf{Examples.}
+For simplest example of surface is the $(x,y)$-plane 
+\[\Pi=\set{(x,y,z)\in\RR^3}{z=0}.\]
+It can be described as the graph of the function $f(x,y)=0$; hence $\Pi$ is a surface.
+
+All other planes are surfaces as well since one can choose a coordinate system so that it becomes $(x,y)$-plane or we can rewrite as a graph of linear function 
+$f(x,y)=a\cdot x+b\cdot y+c$ for some constants $a$, $b$ and $c$.
+
+A more interesting example is the unit sphere 
+\[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
+This set is not a graph of any function,
+but $\SS^2$
+can be covered by 6 graphs 
+\begin{align*}
+z&=f_\pm(x,y)=\pm \sqrt{1-x^2-y^2},
+\\
+y&=g_\pm(x,z)=\pm \sqrt{1-x^2-z^2},
+\\
+x&=h_\pm(y,z)=\pm \sqrt{1-y^2-z^2};
+\end{align*}
+each function $f_\pm,g_\pm,h_pm$ is defined in open unit disc.
+Therefore the unit sphere is a smooth surface.
+
+\section{Immersed surfaces}
+
+\parbf{Parametrizations.}
+A surface can be described by a map from a known surface to the space.
+For example the ellipsoid
+\[\Sigma_{a,b,c}=\set{(x,y,z)\in\RR^3}{\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}+\tfrac{z^2}{c^2}=1}\]
+for some positive numbers $a,b,c$ can be defined as the image of a map $s\:\SS^2\to\RR^3$ that is the restriction of the map $(x,y,z)\mapsto (a\cdot x, b\cdot y,c\cdot z)$ to the unit sphere $\SS^2$.
+The map $s$ has to be smooth and regular as defined below. 
+
+Assume $\SS^2$ is written locally as a graph $z=f(x,y)$ in some coordinate system.
+
+The map $s\:\SS^2\to \RR^3$ is  smooth if the composition $s\circ f$ has all partial derivatives $\frac{\partial^{m+n}}{\partial x^m\partial y^n}(s\circ f)$ are defined and continuous in the domain of definition of $f$.
+
+The map $s\:\SS^2\to \RR^3$ is regular
+if the vectors $\frac{\partial}{\partial x}(s\circ f)$ and $\frac{\partial}{\partial y}(s\circ f)$ are linearly independent at each point of the domain of $f$.
+
+Evidently the parametric definition includes the embedded surfaces defined above --- as a set of parameters we can take the surface itself and the identity map as $s$.
+
+\parbf{Immersed surfaces.} The parametric definition allows the surfaces to have self-intersections and therefore more general.
+The surfaces with possible self-intersections are  can called \emph{immersed}.
+
+In the described example $\SS^2$ is the \emph{domain of parameters} of the surface.
+We can say that the surface $\Sigma_{a,b,c}$ is a \emph{sphere} since it has sphere as the domain of parameters.
+
+We may use other domains of parameters, torus or sphere with two handles or for surfaces with boundary, disc, annulus, or M\"obius band and so on.
+
+The set of parameters can be more complicated, for example projective plane --- sphere where opposite points are identified; such set of parameters can not be realized as an embedded surface in $\RR^3$, but it can be embedded in a higher dimensional Euclidean space.
+
+\section{Tangent plane}
+
+Let $z=f(x,y)$ be a local graph realization of a surface. 
+Assume $p=(x_p,y_p,z_p)$ lies on this graph, so $z_p=f(x_p,y_p)$.
+The plane passing thru $p$ and spanned by two vectors $(\tfrac{\partial}{\partial x}f)(x_p,y_p)$ and  $(\tfrac{\partial}{\partial y}f)(x_p,y_p)$ is called \emph{tangent plane} of $\Sigma$ at $p$.
+It can be interpreted as the best approximation of the surface $\Sigma$ by a plane at $p$.
+
+It is straightforward to check that tangent plane does not depend of the local presentation of $\Sigma$ by a graph.
+
+The unit normal vector to the tangent plane at $p$ usually denoted by $\nu_p$; it is uniquely defined up to sign.  
+
+\parbf{Special coordinate system.}
+If one choose the coordinate system so that the origin is at $p$ and the $(x,y)$-plane coincide with the tangent plane then the function $f$ satisfies the following additional properties:
+\begin{align*}
+f(0,0)&=0,
+&
+(\tfrac{\partial}{\partial x}f)(0,0)&=0,
+&
+(\tfrac{\partial}{\partial y}f)(0,0)&=0.
+\end{align*}
+The first equality holds since $p=(0,0,0)$ lies on the surface and the last two equalities mean that the tangent plane at $p$ is horizontal.
+
+This gives almost canonical coordinate system in a neighborhood of $p$;
+it is unique up to rotation of  the $(x,y)$-plane and switching the sign of $z$-coordinate.
+
+\section{Curvatures}
+
+\parbf{Hessian.}
+Fix a point $p$ on a smooth surface $\Sigma$ and the associated special coordinate system. 
+
+Consider the Hessian matrix 
+\[M_p=\begin{pmatrix}
+   (\tfrac{\partial^2}{\partial x^2}f)(0,0)
+   &(\tfrac{\partial^2}{\partial x\partial y}f)(0,0)
+   \\
+   (\tfrac{\partial^2}{\partial y\partial x}f)(0,0)
+   &(\tfrac{\partial^2}{\partial y^2}f)(0,0)
+  \end{pmatrix}.
+\]
+This is symmetric matrix, therefore by rotation of $(x,y)$-plane, we can make it diagonal;
+that is we can assume that $(\tfrac{\partial^2}{\partial x\partial y}f)(0,0)=0$.
+Then the diagonal elements are called \emph{principle curvatures} of $\Sigma$ at $p$;
+they defied up to sign;
+They are denoted as $k_1(p)$ and $k_2(p)$.
+The principle curvatures can be also defined as the eigenvalues of $M_p$.
+
+The determinant of $M_p$ is $k_1(p)\cdot k_2(p)$;
+it is called \emph{Gauss curvature} of $\Sigma$ at $p$.
+The trace of $M_p$ is $k_1(p)+ k_2(p)$;
+it is called \emph{mean curvature} of $\Sigma$ at $p$.
+
+Form the discussion above, 
+we get that Gauss curvature and up to sign principle curvatures and mean curvature 
+do not depend only on $\Sigma$ and $p$,
+but not on the choice of the coordinate system.
+
+
+
+
