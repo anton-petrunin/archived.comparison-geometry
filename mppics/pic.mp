@@ -875,16 +875,21 @@ z.a34=(1.3,.8)*u;
 z.a4=(2,0)*u;
 
 save p; path p[];
-p0=z.a0{right}..z.a1{up}..z.a2{down}..z.a3{up}..z.a34..{right}z.a4;
+p0=z.a0-z.a4+z.a0{right}..z.a1-z.a4+z.a0{up}..z.a2-z.a4+z.a0{down}..z.a3-z.a4+z.a0{up}..z.a34-z.a4+z.a0..
+z.a0{right}..z.a1{up}..z.a2{down}..z.a3{up}..z.a34..
+z.a0+z.a4-z.a0{right}..z.a1+z.a4-z.a0{up}..z.a2+z.a4-z.a0{down}..z.a3+z.a4-z.a0{up}..z.a34+z.a4-z.a0..{right}z.a4+z.a4-z.a0;
 draw p0;
 
-drawarrow subpath (0,4) of p0;
-draw ddline(z.a0,z.a4)(.2,.2) dashed evenly;
+drawarrow subpath (0,8) of p0;
+%draw ddline(z.a0,z.a4)(.2,.2) dashed evenly;
 
-dOt z.a0,z.a2,z.a4;
+dOt point 4 of p0,point 9 of p0,point 14 of p0;
 
-label.bot(btex $\alpha(a)$ etex, z.a0);
-label.bot(btex $\alpha(b)$ etex, z.a4);
+label.top(btex $\alpha(-T)$ etex, point 4 of p0);
+label.top(btex $\alpha(0)$ etex, point 9 of p0);
+label.top(btex $\alpha(T)$ etex, point 14 of p0);
+label.lft(btex $\dots$ etex,z.a0-z.a4+z.a0);
+label.rt(btex $\dots$ etex,z.a4+z.a4-z.a0);
 endfig;
 
 beginfig(31);
@@ -990,5 +995,232 @@ label.lrt(btex $p_1$ etex, z.p1);
 label.llft(btex $p_2$ etex, z.p2);
 label.bot(btex $p_3$ etex, z.p3);
 
+endfig;
+
+beginfig(33);
+save u;
+u:=.35cm;
+
+x.shift=9*u;
+x.width=.1*u;
+x.size=2*u;
+x.gap=4*u;
+x.right=10*u;
+
+z.r=(x.size,x.shift);
+
+
+z.a0=(x.width,x.shift);
+z.a1=z.a0 rotatedabout (z.r,-60);
+z.a2=z.a0 rotatedabout (z.r,-120);
+z.a3=z.a0 rotatedabout (z.r,-180);
+z.a4=z.a3 reflectedabout((0,0),(1,0));
+z.a5=z.a2 reflectedabout((0,0),(1,0));
+z.a6=z.a1 reflectedabout((0,0),(1,0));
+z.a7=z.a0 reflectedabout((0,0),(1,0));
+
+z.aa4=z.a2 reflectedabout((0,x.shift),(1,x.shift));
+z.aa5=z.a1 reflectedabout((0,x.shift),(1,x.shift));
+
+z.aaa8=z.a7 reflectedabout((0,-x.gap),(1,-x.gap));
+z.aaa9=z.a6 reflectedabout((0,-x.gap),(1,-x.gap));
+z.aaa10=z.a5 reflectedabout((0,-x.gap),(1,-x.gap));
+z.aaa11=z.a4 reflectedabout((0,-x.gap),(1,-x.gap));
+
+
+
+save p; path p[];
+
+p1=z.a0{up}..z.a1..z.a2..z.a3{down}..z.a4{down}..z.a5..z.a6..z.a7{up}..cycle;
+draw p1;
+
+p2=p1 reflectedabout((0,0),(0,1));
+draw p2;
+
+z.b0=z.a0 reflectedabout((0,0),(0,1));
+z.b1=z.a1 reflectedabout((0,0),(0,1));
+z.b2=z.a2 reflectedabout((0,0),(0,1));
+z.b3=z.a3 reflectedabout((0,0),(0,1));
+z.b4=z.a4 reflectedabout((0,0),(0,1));
+z.b5=z.a5 reflectedabout((0,0),(0,1));
+z.b6=z.a6 reflectedabout((0,0),(0,1));
+z.b7=z.a7 reflectedabout((0,0),(0,1));
+
+z.c1= z.b0 rotatedabout (z.r,-60);
+z.c2= z.b0 rotatedabout (z.r,-120);
+z.c3= z.b0 rotatedabout (z.r,-180);
+z.c4=z.c3 reflectedabout((0,0),(1,0));
+z.c5=z.c2 reflectedabout((0,0),(1,0));
+z.c6=z.c1 reflectedabout((0,0),(1,0));
+z.c7=z.c6 reflectedabout((0,0),(0,1));
+z.c8=z.c5 reflectedabout((0,0),(0,1));
+z.c9=z.c4 reflectedabout((0,0),(0,1));
+z.c10=z.c3 reflectedabout((0,0),(0,1));
+z.c11=z.c2 reflectedabout((0,0),(0,1));
+z.c12=z.c1 reflectedabout((0,0),(0,1));
+
+p3=
+z.c3{down}..
+z.c4{down}..
+z.c5..
+z.c6{dir 150}..
+z.c7{dir -150}..
+z.c8..
+z.c9{up}..
+z.c10{up}..
+z.c11..
+z.c12{dir-30}..
+z.c1{dir 30}..
+z.c2..
+cycle;
+draw p3;
+
+z.d5=z.c2 reflectedabout((0,x.shift),(1,x.shift));
+z.d4=z.c1 reflectedabout((0,x.shift),(1,x.shift));
+
+z.d8=z.b7 reflectedabout((0,-x.gap),(1,-x.gap));
+z.d9=z.c6 reflectedabout((0,-x.gap),(1,-x.gap));
+z.d10=z.c5 reflectedabout((0,-x.gap),(1,-x.gap));
+z.d11=z.c4 reflectedabout((0,-x.gap),(1,-x.gap));
+
+p4=z.a0{up}..z.a1..z.a2..z.a3..z.aa4..z.aa5..cycle;
+draw p4 shifted (x.right,0);
+draw p4 shifted (2*x.right,0);
+draw p4 rotated 180 shifted (2*x.right,0);
+
+p5=
+z.c1{dir 30}..
+z.c2..
+z.c3{down}..
+z.d5..
+z.d4..
+z.b0{up}..
+z.b1..
+z.b2..
+z.b3{down}..
+z.b4{down}..
+z.b5..
+z.b6..
+z.b7{up}..
+z.d8{up}..
+z.d9..
+z.d10..
+z.d11{down}..
+z.c4{down}..
+z.c5..
+z.c6{dir 150}..
+z.c7{dir -150}..
+z.c8..
+z.c9{up}..
+z.c10{up}..
+z.c11..
+z.c12{dir-30}..
+cycle;
+
+draw p5 shifted (x.right,0);
+
+p6=z.a4{down}..
+z.a5..
+z.a6..
+z.a7{up}..
+z.aaa8{up}..
+z.aaa9..
+z.aaa10..
+z.aaa11{down}..
+cycle
+;
+
+draw p6 shifted (x.right,0);
+
+p7=z.c10{up}..
+z.c11..
+z.c12{dir-30}..
+z.c1{dir 30}..
+z.c2..
+z.c3{down}..
+z.d5..
+z.d4..
+z.b0{up}..
+z.b1..
+z.b2..
+z.b3{down}..
+-z.aaa11{down}..
+-z.aaa10..
+-z.aaa9..
+-z.aaa8{up}..
+z.d8{up}..
+z.d9..
+z.d10..
+z.d11{down}..
+z.c4{down}..
+z.c5..
+z.c6{dir 150}..
+z.c7{dir -150}..
+z.c8..
+z.c9{up}..
+-z.d5..
+-z.d4..
+-z.b0{down}..
+
+z.a7{down}..
+z.a6..
+z.a5..
+z.a4{up}..
+
+z.aaa11{up}..
+z.aaa10..
+z.aaa9..
+z.aaa8{down}..
+
+-z.d8{down}..
+-z.d9..
+-z.d10..
+-z.d11{up}..
+cycle;
+draw p7 shifted (2*x.right,0);
+
+hatchfill (reverse p1)--p3--p2--cycle  withcolor (57, 1mm, -.5bp);
+
+hatchfill ((reverse p4 shifted (x.right,0))--p5 shifted (x.right,0)--cycle)--(reverse p6 shifted (x.right,0))--cycle  withcolor (57, 1mm, -.5bp);
+
+hatchfill ((reverse p4 shifted (2*x.right,0))--p7 shifted (2*x.right,0)--cycle)--(reverse p4 rotated 180 shifted (2*x.right,0))--cycle  withcolor (57, 1mm, -.5bp);
+
+draw (z.a3--z.aaa11 cutbefore p5 cutafter subpath (5,15) of p5) shifted (x.right,0) dashed evenly penhair;
+draw (z.a0--z.aaa8 cutbefore p5 cutafter subpath (5,15) of p5) shifted (x.right,0) dashed evenly penhair;
+draw (z.b0--z.d8) shifted (x.right,0) penhair;
+draw (z.c3--z.d11) shifted (x.right,0) penhair;
+
+draw (z.a3--z.aaa11 cutbefore p5 cutafter subpath (5,15) of p5) shifted (2*x.right,0) dashed evenly penhair;
+draw (z.a0--z.aaa8 cutbefore p5 cutafter subpath (5,15) of p5) shifted (2*x.right,0) dashed evenly penhair;
+
+draw (z.a3--z.aaa11 cutbefore p5 cutafter subpath (5,15) of p5) rotated 180 shifted (2*x.right,0) dashed evenly penhair;
+draw (z.a0--z.aaa8 cutbefore p5 cutafter subpath (5,15) of p5) rotated 180 shifted (2*x.right,0) dashed evenly penhair;
+
+draw (z.b0--z.d8) shifted (2*x.right,0) penhair;
+draw (z.c3--z.d11) shifted (2*x.right,0) penhair;
+draw (z.b0--z.d8) rotated 180 shifted (2*x.right,0) penhair;
+draw (z.c3--z.d11) rotated 180 shifted (2*x.right,0) penhair;
+
+draw (-2.3*x.size,0)--(2.3*x.size,0)  dashed linedot;
+draw ((-.3*x.size,-(-x.shift+x.gap))--(2.3*x.size,-(-x.shift+x.gap))) shifted (x.right,0)  dashed linedot;
+
+label.bot(btex $V_1$ etex, (0,-x.shift-2*u));
+label.bot(btex $V_2$ etex, (x.right,-x.shift-2*u));
+label.bot(btex $V_3$ etex, (2*x.right,-x.shift-2*u));
+
+endfig;
+
+beginfig(34);
+save u;
+u:=1cm;
+
+save p; path p[];
+
+p1=circle(origin,u);
+p2=circle(origin,1.2*u);
+draw p1;
+draw p2;
+
+hatchfill reverse p1--p2--cycle  withcolor (57, 1mm, -.5bp);
 endfig;
 end
