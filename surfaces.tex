@@ -10,13 +10,26 @@ More precisely, any point $p\in \Sigma$ admits a neighborhood $U$ such that
 in some coordinate system $(x,y,z)$, 
 the intersection $W=U\cap \Sigma$ can be written as a graph $z=f(x,y)$ of a smooth function $f$ defined in an open domain of $(x,y)$-plane.
 
+Once we get a local representation of the surface by a graph, we can change it using the following proposition.
+
+\begin{thm}{Proposition}\label{prop:perp}
+Assume the tangent of a smooth surface $\Sigma$ at point $p$ is not perpendicular to the $(x,y)$-plane.
+Then a neighborhood of $p$ in $\Sigma$ can be presented as a graph of smooth function $z=f(x,y)$ defined on an open set of the $(x,y)$-plane.
+\end{thm}
+
+A reader familiar with the inverse function theorem, can consider this proposition as an exercise.
+
+
 \parbf{Examples.}
 For simplest example of surface is the $(x,y)$-plane 
 \[\Pi=\set{(x,y,z)\in\RR^3}{z=0}.\]
-It can be described as the graph of the function $f(x,y)=0$; hence $\Pi$ is a surface.
+The plane $\Pi$ is a surface since
+it can be described as the graph of the function $f(x,y)=0$.
 
-All other planes are surfaces as well since one can choose a coordinate system so that it becomes $(x,y)$-plane or we can rewrite as a graph of linear function 
-$f(x,y)=a\cdot x+b\cdot y+c$ for some constants $a$, $b$ and $c$.
+All other planes are surfaces as well since one can choose a coordinate system so that it becomes $(x,y)$-plane.
+We can also present a plane as a graph of linear function 
+$f(x,y)=a\cdot x+b\cdot y+c$ for some constants $a$, $b$ and $c$
+if the plane is not perpendicular to the $(x,y)$-plane.
 
 A more interesting example is the unit sphere 
 \[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
@@ -30,17 +43,23 @@ y&=g_\pm(x,z)=\pm \sqrt{1-x^2-z^2},
 \\
 x&=h_\pm(y,z)=\pm \sqrt{1-y^2-z^2};
 \end{align*}
-each function $f_\pm,g_\pm,h_\pm$ is defined in open unit disc.
+each function $f_\pm,g_\pm,h_\pm$ is defined in an open unit disc.
 Therefore the unit sphere is a smooth surface.
 
 \parbf{More conventions.}
-If $\Sigma$ is compact, then it is called \emph{closed surface} (the term \emph{closed set} is not directly relevant).
+If the surface $\Sigma$ is compact, then it is called \emph{closed surface} (the term \emph{closed set} is not directly relevant).
 
 If $\Sigma$ is closed and noncompact, then it is called  \emph{open surface} (again the term \emph{open set} is not relevant).
-For example, paraboloids $z=x^2+y^2$ or $z=x^2-y^2$ are open surfaces, while
-open disc in a plane $\set{(x,y,z)\in\RR^3}{x^2+y^2<1, z=0}$ is a surface which is not an open surface since this set is not closed. 
+For example, paraboloids 
+\[z=x^2+y^2\quad\text{or}\quad z=x^2-y^2\]
+are open surfaces, while
+open disc in a plane 
+\[\set{(x,y,z)\in\RR^3}{x^2+y^2<1, z=0}\]
+is a surface which is not an open surface since this set is not closed. 
 
 A closed subset in a surface that is bounded by one or more smooth curves is called \emph{surface with boundary}; in this case the collection of curves is called \emph{boundary line} of the surface.
+When we say \emph{surface} we usually mean a surface without boundary;
+we may use term \emph{surface with possibly nonempty boundary} if we need to talk about surfaces with and without boundary.
 
 \section{Immersed surfaces}
 
@@ -67,8 +86,11 @@ In the described example $\SS^2$ is the \emph{domain of parameters} of the surfa
 We can say that the surface $\Sigma_{a,b,c}$ is a \emph{sphere} since it has sphere as the domain of parameters.
 
 We may use other domains of parameters, torus or sphere with two handles or for surfaces with boundary, disc, annulus, or M\"obius band and so on.
+Sphere with $n$ handles is also called \emph{surface of genus $n$}.
 
 The set of parameters can be more complicated, for example projective plane --- sphere where opposite points are identified; such set of parameters can not be realized as an embedded surface in $\RR^3$, but it can be embedded in a higher dimensional Euclidean space.
+Another example is Klein bottle --- a nonoriented brother torus;
+it also can not be embedded in Euclidean space, but can be immersed with a self-intersection along a closed smooth curve.
 
 \section{Tangent plane}
 
@@ -77,17 +99,17 @@ Assume $p=(x_p,y_p,z_p)$ lies on this graph, so $z_p=f(x_p,y_p)$.
 The plane passing thru $p$ and spanned by two vectors $(\tfrac{\partial}{\partial x}f)(x_p,y_p)$ and  $(\tfrac{\partial}{\partial y}f)(x_p,y_p)$ is called \emph{tangent plane} of $\Sigma$ at $p$.
 It can be interpreted as the best approximation of the surface $\Sigma$ by a plane at $p$.
 
+The tangent plane to $\Sigma$ at $p$ is usually denoted by $\T_p$ or $\T_p\Sigma$.
+
 It is straightforward to check that tangent plane does not depend of the local presentation of $\Sigma$ by a graph.
 
-\begin{thm}{Proposition}
-Assume the tangent of a smooth surface $\Sigma$ at point $p$ is not perpendicular to the $(x,y)$-plane.
-Then a neighborhood of $p$ in $\Sigma$ can be presented as a graph of smooth function $z=f(x,y)$ defined on an open set of the $(x,y)$-plane.
-\end{thm}
-
-The proof is an immediate application of the inverse function theorem.
-
 \parbf{Special coordinate system.}
-If one choose the coordinate system so that the origin is at $p$ and the $(x,y)$-plane coincide with the tangent plane then the function $f$ satisfies the following additional properties:
+Fix a point $p$ is a smooth surface $\Sigma$.
+Consider a coordinate system $(x,y,z)$ with origin at $p$ such that $(x,y)$-plane coincides with $\T_p$.
+
+According to Proposition~\ref{prop:perp}, 
+we can present $\Sigma$ locally around $p$ as a graph as a graph of function $f$.
+Note that $f$ satisfies the following additional properties:
 \begin{align*}
 f(0,0)&=0,
 &
@@ -95,7 +117,7 @@ f(0,0)&=0,
 &
 (\tfrac{\partial}{\partial y}f)(0,0)&=0.
 \end{align*}
-The first equality holds since $p=(0,0,0)$ lies on the surface and the last two equalities mean that the tangent plane at $p$ is horizontal.
+The first equality holds since $p=(0,0,0)$ lies on the graph and the last two equalities mean that the tangent plane at $p$ is horizontal.
 
 This gives almost canonical coordinate system in a neighborhood of $p$;
 it is unique up to rotation of  the $(x,y)$-plane and switching the sign of $z$-coordinate.

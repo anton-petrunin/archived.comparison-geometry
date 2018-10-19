@@ -1,0 +1,57 @@
+\chapter{Convex surfaces}
+
+
+\section{Positive Gauss curvature}
+A set in $X$ Euclidean space is called strictly convex if for any two points $x,y\in X$ any point $z$ that lies between $x$ and $y$ lies in the interior of $X$.
+Clearly any open convex set is stricly convex;
+the cube (as well as any convex polyhedron) geves an example of convex set which is not strictly convex.
+
+\begin{thm}{Exercise}\label{ex:loc-convex}
+Let $\Sigma$ be a surface with positive Gauss curvature.
+Show that for any point $p\in \Sigma$ and all sufficiently small $\eps>0$,
+the surface $\Sigma$ divides the ball $B(p,\eps)$ into two regions, one of which is strictly convex.
+\end{thm}
+
+The following theorem gives a global version of the exercise above.
+
+\begin{thm}{Theorem}
+Assume $\Sigma$ is a closed smooth connected surface with positive Gauss curvature that bounds a bounded region $R$.
+Then $R$ is convex and $\Sigma$ is a sphere; that is, $\Sigma$ admits a smooth regular parametrization by $\SS^2$.
+
+\end{thm}
+
+\parit{Proof.} Since $\Sigma$ is connected, so it $R$.
+Moreover any two points $x$ and $y$ in the interior of $R$ can be connected by a polygonal line $\beta$ in the interior of $R$.
+
+Arguing by contradiction, assume the line segment $[xy]$ does not lie in the   in the interior of $R$.
+Let $y_0$ be the first point on $\beta$ so that the line segment $[xy_0]$ touches $\Sigma$; assume it touch it at a point $z$.
+
+By Exercise \ref{ex:loc-convex}, $R\cap B(z,\eps)$ is strictly convex for all sufficiently small $\eps>0$.
+On the other hand $z$ lies between two points common to the line segment $[xy_0]$ and $R\cap B(z,\eps)$ --- a contradiction.
+
+It remains to parameterize $\Sigma$ by $\SS^2$.
+
+Fix a point $p$ in the interior of $R$.
+By strict convexity of $R$, for any point $x\in \SS^2$ there is unique point $x'\in \Sigma$ that lies on the halfline $px$;
+moreover, the map $h\:x\mapsto x'$ describes a bijection $\SS^2\to \Sigma$.
+
+Applying inverse function theorem in a local coordinates of $\SS^2$ and $\Sigma$,
+we get that the map $h$ is smooth and regular.
+Hence the result.
+\qeds
+
+
+\begin{thm}{Theorem}
+Any closed connected immersed surface with positive Gauss curvature is embedded.
+\end{thm}
+
+\begin{wrapfigure}[8]{r}{20 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-35}
+\vskip0mm
+\end{wrapfigure}
+
+Note that an analogous statement does not hold in the plane;
+on the diagram you see a closed curve with self-intersection and positive curvature at all points.
+

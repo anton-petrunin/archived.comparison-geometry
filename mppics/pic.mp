@@ -1002,7 +1002,7 @@ save u;
 u:=.35cm;
 
 x.shift=9*u;
-x.width=.1*u;
+x.width=.2*u;
 x.size=2*u;
 x.gap=4*u;
 x.right=10*u;
@@ -1179,11 +1179,11 @@ z.aaa8{down}..
 cycle;
 draw p7 shifted (2*x.right,0);
 
-hatchfill (reverse p1)--p3--p2--cycle  withcolor (57, 1mm, -.5bp);
+hatchfill (reverse p1)--p3--p2--cycle  withcolor (57, .7mm, -.5bp);
 
-hatchfill ((reverse p4 shifted (x.right,0))--p5 shifted (x.right,0)--cycle)--(reverse p6 shifted (x.right,0))--cycle  withcolor (57, 1mm, -.5bp);
+hatchfill ((reverse p4 shifted (x.right,0))--p5 shifted (x.right,0)--cycle)--(reverse p6 shifted (x.right,0))--cycle  withcolor (57, .7mm, -.5bp);
 
-hatchfill ((reverse p4 shifted (2*x.right,0))--p7 shifted (2*x.right,0)--cycle)--(reverse p4 rotated 180 shifted (2*x.right,0))--cycle  withcolor (57, 1mm, -.5bp);
+hatchfill ((reverse p4 shifted (2*x.right,0))--p7 shifted (2*x.right,0)--cycle)--(reverse p4 rotated 180 shifted (2*x.right,0))--cycle  withcolor (57, .7mm, -.5bp);
 
 draw (z.a3--z.aaa11 cutbefore p5 cutafter subpath (5,15) of p5) shifted (x.right,0) dashed evenly penhair;
 draw (z.a0--z.aaa8 cutbefore p5 cutafter subpath (5,15) of p5) shifted (x.right,0) dashed evenly penhair;
@@ -1223,4 +1223,16 @@ draw p2;
 
 hatchfill reverse p1--p2--cycle  withcolor (57, 1mm, -.5bp);
 endfig;
+
+
+beginfig(35);
+save u;
+u:=.5cm;
+
+save p; path p[];
+p0=(0,0)*u..(2,0)*u..(1,0)*u..(3,0)*u..cycle;
+draw p0;
+
+endfig;
+
 end
