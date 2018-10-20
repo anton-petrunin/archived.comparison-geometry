@@ -1235,4 +1235,46 @@ draw p0;
 
 endfig;
 
+beginfig(36);
+save u;
+u:=1cm;
+save p; path p[];
+
+z.x=(2,0)*u;
+z.y=(.5,1)*u;
+z.z=(0,3)*u;
+
+p1=origin--z.x--z.x+z.y--z.y--cycle;
+p2=p1 shifted z.z;
+
+draw p2 penhair;
+
+z.p=.5*(z.x+z.y);
+
+z.a0=z.z+.2*z.x+.3*z.y;
+z.a1=z.z+.4*z.x+.2*z.y;
+z.a2=z.z+.5*z.x+.3*z.y;
+z.a3=z.z+.4*z.x+.4*z.y;
+
+p3=z.a0..z.a1..z.a2..z.a3..cycle;
+draw p3 penbold;
+
+z.b1=z.p-.1*z.x;
+z.b2=z.p-.05*z.y;
+z.b3=z.p+.1*z.x;
+
+p4=directionpoint (-1,-1) of p3{(-1,-1)}..z.b1..z.b2..z.b3..directionpoint (-1,1) of p3{(-1,1)};
+draw p4 pensemibold;
+
+draw (subpath (0,3) of p1) cutafter p4 penhair;
+draw (subpath (3,4) of p1) cutbefore p4 penhair;
+
+label(btex $\Pi_h$ etex, z.z+.8*z.x+.3*z.y);
+label(btex $\Pi_0$ etex, .8*z.x+.3*z.y);
+label.top(btex $\alpha_h$ etex, z.a3);
+label(btex $\Sigma_h$ etex, .5*z.z+.4*z.x+.5*z.y);
+
+
+endfig;
+
 end
