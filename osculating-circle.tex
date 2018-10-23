@@ -5,14 +5,13 @@
 
 Any regular smooth curve can be parametrized by its length.
 The obtained curve $\alpha$ has unit speed; 
-that is, $|\alpha'(t)|=1$ for any $t$.
-A curve with such parametrization is called \emph{unit-speed} curve
-or a curve with a \emph{natural parametrization}. 
+that is, $|\alpha'(t)|=1$ for all $t$.
+This is called the \emph{natural parametrization}. 
 
 It is straightforward to show any smooth regular curve remains smooth (and surely regular) if equipped with a natural parametrization; 
 here smooth means that all derivatives $\alpha^{(n)}(t)$ are defined for any $n$ and all values of $t$ in the domain of definition of $\alpha$.
 
-The following proposition essentailly states that vector of acceleration is perpendicular to the velocity vector if the speed remains constant.
+The following proposition essentailly states that the acceleration vector is perpendicular to the velocity vector if the speed remains constant.
 
 \begin{thm}{Proposition}\label{prop:a'-pertp-a''}
 Assume $\alpha\:[a,b]\to\RR^2$ be a smooth unit-speed curve.
@@ -22,14 +21,14 @@ for any $t$.
 \end{thm}
 
 The scalar product (also known as dot product) of two vectors $v$ and $w$ will be denoted by $\langle v,w\rangle$.
-Recall that for derivative of scalar product the product rule holds;
-that is if $v=v(t)$ and $w=w(t)$ are smooth vector-valued functions of real argument $t$, then
+Recall that the derivative of a scalar product satisfies the product rule;
+that is if $v=v(t)$ and $w=w(t)$ are smooth vector-valued functions of a real parameter $t$, then
 \[\langle v,w\rangle'=\langle v',w\rangle+\langle v,w'\rangle.\]
 
 \parit{Proof.}
 Since $|\alpha'(t)|=1$, we have
 \[\langle\alpha'(t),\alpha'(t)\rangle=1.\]
-Taking derivative of both sides we get
+Differentiating both sides we get
 \[2\cdot\langle\alpha''(t),\alpha'(t)\rangle=0,\]
 hence the result.
 \qeds
@@ -37,7 +36,7 @@ hence the result.
 \section{Signed curvature}
 
 Given a vector $v\in \RR^2$ denote by $i\cdot v$ the vector obtained from $v$ by the counterclockwise rotation by $\tfrac\pi2$.
-(The ``multiplication'' by $i$ agrees with the miultiplication by imaginary unit if one use  complex coordinates on the plane $z=x+i\cdot y$.)
+(The ``multiplication'' by $i$ agrees with the miultiplication by the imaginary unit if one uses  complex coordinates on the plane $z=x+i\cdot y$.)
 
 Suppose $\alpha\:[a,b]\to\RR^2$ is a smooth unit-speed curve.
 Recall that curvature of $\alpha$ at $t$ can be defined as $|\alpha''(t)|$.
@@ -46,11 +45,11 @@ The \emph{signed curvature} $\kappa_\alpha(t)$ is uniquely defined by
 the identity 
 \[\alpha''(t)=\kappa_\alpha(t)\cdot i\cdot \alpha'(t).\]
 Note that by Proposition~\ref{prop:a'-pertp-a''} this equation has a solution.
-Since $|\alpha'(t)|=1$ we have that $|\kappa_\alpha(t)|=|\alpha''(t)|$ for any $t$.
+Since $|\alpha'(t)|=1$ we have $|\kappa_\alpha(t)|=|\alpha''(t)|$ for any $t$.
 
 The signed curvature measures how fast the direction $\tau(t)=\alpha'(t)$ rotates;
-if is positive if it turns left and negative if it turns right;
-if the curve goes straight then its curvature vanish.
+the signed curvature is positive if $\tau $ turns left and negative if $\tau$ turns right;
+if the curve goes straight then its curvature vanishes.
 
 \section{Osculating circline}
 
@@ -62,11 +61,11 @@ a unit vector $u$
 and a real number $\kappa$ there is unique smooth unit-speed curve $\gamma\:\RR\to\RR^2$ 
 that starts at $p$ in the direction of $u$ and has constant signed curvature $\kappa$.
 
-Moreover if $\kappa=0$, then $\gamma$ runs along a line $\gamma=p+t\cdot u$
-and if $\kappa\ne 0$, then $\gamma$ runs around a circle of radius $\tfrac1{|\kappa|}$ with center at $p+\tfrac i\kappa\cdot u$. 
+Moreover, if $\kappa=0$, then $\gamma$ runs along the line $\gamma=p+t\cdot u$
+and if $\kappa\ne 0$, then $\gamma$ runs around the circle of radius $\tfrac1{|\kappa|}$ and center $p+\tfrac i\kappa\cdot u$. 
 \end{thm}
 
-Further we will use term \emph{circline} for \emph{circle or line}.
+Further we will use the term \emph{circline} for \emph{a circle or a line}.
 
 {
 
@@ -81,7 +80,7 @@ Further we will use term \emph{circline} for \emph{circle or line}.
 Let $\alpha$ be a smooth unit-speed plane curve;
 denote by $\kappa_\alpha(t)$ the signed curvature of $\alpha$ at $t$.
 
-A unit-speed plane curve $\gamma$ of constant signed curvature $\kappa_\alpha(t_0)$ that starts at $\alpha(t_0)$ and runs in the direction $\alpha'(t_0)$ is called \emph{osculating circline} of $\alpha$ at $t_0$.
+For $t_0 \in [a,b]$, the unit-speed curve $\gamma$ of constant signed curvature $\kappa_\alpha(t_0)$ that starts at $\alpha(t_0)$ in the direction $\alpha'(t_0)$ is called the \emph{osculating circline} of $\alpha$ at $t_0$.
 \end{thm}
 
 }
@@ -103,7 +102,7 @@ Assume $\alpha$ is a smooth regular plane curve with strictly monotonic curvatur
 Then $\alpha$ is simple.
 \end{thm}
 
-The same statement holds for signed curvature; the proof requires only minor modifications.
+The same statement also holds for signed curvature; the proof requires only minor modifications.
 
 \begin{thm}{Exercise}
 Show that a 3-dimensional analog of the theorem does not hold.
@@ -119,7 +118,7 @@ then $\gamma_{t_0}$ lies in the open disc bounded by $\gamma_{t_1}$ for any $t_0
 \end{thm}
 
 The osculating circles of the curve $\alpha$ give a peculiar foliation of an annulus by circles; it has the following property: if a smooth function is constant on each osculating circle it must be constant in the annulus \cite[see][Lecture 10]{fuchs-tabachnikov}.
-Also note that the cure $\alpha$ is tangent to the circle of the foliation at each of its point, however it does not run along a circle.
+Also note that the curve $\alpha$ is tangent to a circle of the foliation at each of its points. However, it does not run along a circle.
 
 
 
@@ -131,10 +130,10 @@ Also note that the cure $\alpha$ is tangent to the circle of the foliation at ea
 
 
 \parit{Proof.}
-Let $z(t)$ be curvature center
+Let $z(t)$ be the curvature center
 and 
 \[r(t)=\tfrac1{\kappa_\alpha(t)}\]
-is radius of curvature of $\alpha$ at $t$.
+the radius of curvature of $\alpha$ at $t$.
 Note that 
 \[z(t)=\alpha(t)+r(t)\cdot i\cdot \alpha'(t).\]
 Therefore
@@ -164,7 +163,7 @@ therefore
 \leqno({*})
 \]
 
-By $({*})$, the osculating circle at $t_0$ lies inside of the osculating circle at $t_1$ without touching it.
+By $({*})$, the osculating circle at $t_0$ lies inside the osculating circle at $t_1$ without touching it.
 \qeds
 
 \parit{Proof of \ref{thm:spiral}.}
