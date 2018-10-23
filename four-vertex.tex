@@ -442,30 +442,29 @@ Otherwise note that $p_1$ is an isolated point of the intersection $D_p\cap \alp
 Moreover according to Exercise~\ref{ex:1-supporting}, there is a fixed value $\eps>0$ such that any arc of $\alpha$
 that starts at $p_1$ can not end in $D_1$.
 
-\warning
 
-Consider an arc $\alpha_1$ of $\alpha$ that runs from $p_1$ to the next point in $D_1$.
-Denote by $F_1$ the set bounded by $\alpha_1$ and the part of boundary of $D_1$ that containing $D_1$.
+Consider an arc $\alpha_1$ of $\alpha$ that runs along $\alpha$ from $p_1$ to the next point in $D_1$.
+Denote by $F_1$ the region that contains $D_1$ and whose boundary is formed by $\alpha_1$ and part of the boundary of $D_1$.
 From above $\length \alpha_1>\eps$.
 
 Let $p_2$ be the midpoint of $\alpha_1$.
 Let $D_2$ be the disc of maximal radius that is tangent to $\alpha_1$ at $p_2$ and lies completely in $F_1$. 
 The disc $D_2$ touches the boundary $\partial F_1$ at other points, dividing it in at least two arcs.
 
-Note that $D_2$ can not touch the boundary of $D_1$, otherwise it would lie in $D_1$ which is impossible.
-Therefore at least one of these arcs, say $\alpha_2$, do not contain the common boundary $F_1$ and $D_1$.
+Note that $D_2$ can not touch the boundary of $D_1$, otherwise it would lie inside $D_1$, which is impossible.
+Therefore at least one of these arcs, say $\alpha_2$, do not contain the common boundary of $F_1$ and $D_1$.
 Note that 
 \[\length \alpha_2< \tfrac12\cdot\length\alpha_1.\]
 
 Again, if the radius of $D_2$ is at least $1$, then the theorem is proved.
 By Exercise~\ref{ex:1-supporting}, it happens if $\length \alpha_2<\eps$.
-If the radius is smaller that 1, denote by $F_2$ be the set that is bounded by $\alpha_2$ and a part of boundary of $D_2$ and contains $D_2$ and repeat the construction several times. 
+If the radius is smaller that 1, denote by $F_2$ the region that contains $D_2$ and is bounded by $\alpha_2$ and a part of the boundary of $D_2$. Clearly, we can repeat this construction as many times as needed. 
 
-Since the length of arcs gets at least twice as small on each step, 
+Since the length of the arc gets at least twice as small on each step, 
 after several steps the obtained disc $D_n$ will lie completely in $F_{n-1}$ and therefore in $F$. 
 \qeds
 
-A straightforward modification of the proof above gives the following.
+A straightforward modification of the above proof gives the following.
 
 \begin{thm}{Theorem}\label{thm:moon+4-vert}
 Suppose $\alpha$ is a closed simple smooth regular plane curve.
@@ -475,7 +474,8 @@ and  2 osculating circlines that lie in $G$.
 \end{thm}
 
 Note that Theorem~\ref{thm:moon} as well as the Four-vertex theorem \label{thm:4-vert} follow from Theorem~\ref{thm:moon+4-vert};
-the first implication is evident and the second follow from Exercise~\ref{ex:vert-support}.
+the first implication is evident and the second follows from Exercise~\ref{ex:vert-support}.
 
+\warning
 
 %cf. W. Blaschke, Kreis und Kugel, see pp. 115–116, Veit, Leipzig, 1916; S. B. Jackson, Bull. Amer. Math. Soc. 50 (1944), 564–578; MR0010992; G. Pestov and V. Ionin, Dokl. Akad. Nauk SSSR 127 (1959), 1170–1172; MR0107214; the reviewer, Geom. Dedicata 12 (1982), no. 4, 371–381; MR0672867
