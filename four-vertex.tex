@@ -2,7 +2,7 @@
 
 \section{Definitions}
 
-Suppose $\alpha\:[a,b]\to\RR^2$ be a smooth unit-speed plane curve and $t_0\z\in(a,b)$.
+Suppose $\alpha\:[a,b]\to\RR^2$ is a smooth unit-speed plane curve and $t_0\z\in(a,b)$.
 
 \begin{wrapfigure}{r}{43 mm}
 \vskip-4mm
@@ -16,9 +16,9 @@ and $\gamma$ lies locally on one side of $\alpha$.
 If $p=\gamma(t_0)$ for a single value $t_0$,
 then we can also say \emph{$\gamma$ supports $\alpha$ at $p$} without ambiguity.
 
-More precisely assume that there is a spherical neighborhood $U\ni p$ such that for some interval $[a',b']\ni t_0$
+More precisely, assume that there is a round neighborhood $U\ni p$ such that for some interval $[a',b']\ni t_0$
 the arc $\bar\alpha=\alpha|_{[a',b']}$ has no self-intersection and runs from boundary to boundary of $U$.
-In this case $\alpha$ divides $U$ into two sets  $L$ and $R$;
+In this case $\alpha$ divides $U$ intosets  $L$ and $R$;
 $L$ lies on the left and $R$ lies on the right from~$\bar\alpha$.
 If $\gamma\cap U$ contains only points of $\bar\alpha$ and $R$, we say that \emph{$\gamma$ supports $\alpha$ on the right};
 if $\gamma\cap U$ contains only points of $\bar\alpha$ and $L$, we say that \emph{$\gamma$ supports $\alpha$ on the left}.
@@ -30,7 +30,7 @@ Note that a circle supports itself on the right and left at the same time.
 Suppose a unit-speed circline $\gamma$ supports a smooth unit-speed plane curve $\alpha$ at $t_0$.
 Without loss of generality we can assume that $\gamma(0)\z=\alpha(t_0)$. 
 Then $\gamma'(0)=\pm\alpha'(t_0)$.
-If not, then the curve $\alpha$ would cross $\gamma$ transversely and therefore could not stay at the same side for values close to $t_0$.
+If not, then the curve $\alpha$ would cross $\gamma$ transversely and therefore could not stay on the same side for values close to $t_0$.
 Therefore reverting the parametrization of $\gamma$ if necessary we may (and further will) assume that 
 \[\gamma'(0)=\alpha'(t_0)\]
 holds for any supporting circline $\gamma$ to $\alpha$ at $t_0$.
@@ -40,7 +40,7 @@ holds for any supporting circline $\gamma$ to $\alpha$ at $t_0$.
 The following proposition resembles the second derivative test. 
 
 \begin{thm}{Proposition}\label{prop:supporting-circline}
-Assume $\gamma$ is a circle that that supports $\alpha$ at $t_0$ from rigth (correspondingly left).  
+Assume $\gamma$ is a circle that that supports $\alpha$ at $t_0$ from the rigth (correspondingly left).  
 Then 
 \[\kappa(t_0)\ge \kappa
 \quad(\text{correspondingly}\quad\kappa(t_0)\le \kappa).
@@ -49,7 +49,7 @@ where $\kappa$ is the signed curvature of $\gamma$
 and $\kappa(t_0)$ is the signed curvature of $\alpha$ at $t_0$.
 
 A partial converse also holds.
-Namely suppose a unit-speed circline $\gamma$ with signed curvature $\kappa$ starts at $\alpha(t_0)$ in the direction $\alpha'(t_0)$.
+Namely, suppose a unit-speed circline $\gamma$ with signed curvature $\kappa$ starts at $\alpha(t_0)$ in the direction $\alpha'(t_0)$.
 Then $\gamma$ supports $\alpha$ at $t_0$ from the right (correspondingly left) if 
 \[\kappa(t_0)> \kappa
 \quad(\text{correspondingly}\quad\kappa(t_0)< \kappa).
@@ -58,10 +58,10 @@ Then $\gamma$ supports $\alpha$ at $t_0$ from the right (correspondingly left) i
 \end{thm}
 
 \parit{Proof.}
-We prove only case $\kappa>0$.
-The 2 remaining cases $\kappa=0$ and $\kappa<0$ can be done essentially same way.
+We prove only the case $\kappa>0$.
+The 2 remaining cases $\kappa=0$ and $\kappa<0$ can be done essentially the same way.
 
-Since $\kappa\ne0$, the curve $\gamma$ is a circle (it can not be a line).
+Since $\kappa\ne0$, the curve $\gamma$ is a circle.
 According to Proposition~\ref{prop:circline},
 $\gamma$ has radius $\tfrac1\kappa$ and it is centered at 
 \[z=\alpha(t_0)+\tfrac i\kappa\cdot \alpha'(t_0).\]
@@ -70,22 +70,22 @@ Consider the function
 
 Note that $f(t)\le0$ (correspondingly $f(t)\ge0$) 
 if an only if $\alpha(t)$ lies on the closed left (correspondingly right) side from $\gamma$.
-It follow that 
+It follows that 
 \begin{itemize}
-\item if $\gamma$ supports $\alpha$ at $t_0$ from right, 
+\item if $\gamma$ supports $\alpha$ at $t_0$ from the right, 
 then
 \[f'(t_0)=0\quad\text{and}\quad f''(t_0)\le 0;\]
 
-\item if $\gamma$ supports $\alpha$ at $t_0$ from  left, 
+\item if $\gamma$ supports $\alpha$ at $t_0$ from  the left, 
 then 
 \[f'(t_0)=0\quad\text{and}\quad f''(t_0)\ge 0;\]
 
 \item if 
 \[f'(t_0)=0\quad\text{and}\quad f''(t_0)< 0,\]
-then $\gamma$ supports $\alpha$ at $t_0$ from  right;
+then $\gamma$ supports $\alpha$ at $t_0$ from  the right;
 
 \item if 
-\[f'(t_0)=0\quad\text{and}\quad f''(t_0)> 0,\] then $\gamma$ supports $\alpha$ at $t_0$ from  left;
+\[f'(t_0)=0\quad\text{and}\quad f''(t_0)> 0,\] then $\gamma$ supports $\alpha$ at $t_0$ from  the left;
 \end{itemize}
 
 Direct calculations show that
@@ -112,14 +112,14 @@ Hence the result.\qeds
 Assume $\alpha$ is a closed smooth unit-speed plane curve that runs in a unit disk.
 Show that there is a point on $\alpha$ with curvature at least $1$.
 
-Give two proofs, one based on DNA inequality \ref{thm:DNA} and the other based on Proposition~\ref{prop:supporting-circline}.
+Give two proofs, one based on the DNA inequality \ref{thm:DNA} and another one based on Proposition~\ref{prop:supporting-circline}.
 \end{thm}
 
 \section{Lens lemma}
 
 \begin{thm}{Lemma}\label{lem:lens}
 Let $\alpha$ be a smooth regular simple curve that runs from $x$ to $y$.
-Assume that $\alpha$ runs on right side (correspondingly left side) of the oriented line $xy$ and only its end points $x$ and $y$ lie on the line.
+Assume that $\alpha$ runs on the right side (correspondingly left side) of the oriented line $xy$ and only its end points $x$ and $y$ lie on the line.
 Then $\alpha$ has a point with positive  (correspondingly negative) curvature.
 \end{thm}
 
@@ -131,15 +131,15 @@ Then $\alpha$ has a point with positive  (correspondingly negative) curvature.
 \end{wrapfigure}
 
 Note that the lemma fails for curves with self-intersections;
-the curve $\alpha$ on the diagram turns always right, 
-so it has negative curvature everywhere and it lies on the right side of the line $xy$. 
+the curve $\alpha$ on the diagram always turns right, 
+so it has negative curvature everywhere, but it lies on the right side of the line $xy$. 
 
 \parit{Proof.}
 Choose points $p$ and $q$ on $\ell$
 so that the points $p, x, y, q$ appear in the same order on $\ell$.
 
 Consider the smallest disc segment with chord $[pq]$ that contains $\alpha$.
-Note that its arc $\gamma$ supports at a point $s=\alpha(t_0)$.
+Note that its arc $\gamma$ supports $\alpha$ at a point $s=\alpha(t_0)$.
 
 \begin{wrapfigure}{R}{50 mm}
 \centering
@@ -157,7 +157,7 @@ But this is impossible since $y$ does not belong to this triangle.
 
 
 
-It follows that $\gamma$ supports $\alpha$ at $t_0$ from right.
+It follows that $\gamma$ supports $\alpha$ at $t_0$ from the right.
 By Proposition~\ref{prop:supporting-circline}, 
 \[\kappa(t_0)\ge \kappa,\]
 where $\kappa(t_0)$ is signed curvature of $\alpha$ at $t_0$ and $\kappa$ is the curvature of $\gamma$.
@@ -174,28 +174,28 @@ Show that $\alpha$ bounds a convex set.%
 
 \begin{thm}{Exercise}\label{ex:convex+2pi}
 Assume $\alpha$ is a closed smooth regular plane curve with positive signed curvature.
-Show that it $\alpha$ is simple if and only if its total curvature is $2\cdot\pi$. 
+Show that $\alpha$ is simple if and only if its total curvature is $2\cdot\pi$. 
 \end{thm}
 
 
 \begin{thm}{Exercise}\label{ex:1-supporting} Assume a smooth regular curve $\alpha$ has curvature at most $1$ at any point (that is, $|\kappa_\alpha(t)|\le 1$ for any $t$).
-Show that each of two unit circles tangent to $\gamma$ at $t_0$ is supporting.
+Show that both unit circles tangent to $\gamma$ at $t_0$ are supporting.
 
-Moreover there is $\eps>0$ ($\eps=\tfrac12$ will do) such that any arc of length $<\eps$ of the curve $\alpha$ that starts at $p=\alpha(t_0)$ can not enter the unit circle tangent to $\alpha$ at $p$.  
+Moreover, there is $\eps>0$ ($\eps=\tfrac12$ will do) such that any arc of $\alpha$ of length $<\eps$ starting at $p=\alpha(t_0)$ cannot enter the unit circle tangent to $\alpha$ at $p$.  
 \end{thm}
 
 
 \begin{thm}{Exercise}
 Suppose $\alpha$ is a simple smooth regular curve in the plane with positive curvature.
-Assume $\alpha$ crosses a line $\ell$ at the points $p_1,p_2,\dots p_n$ and these points appear on $\alpha$ in the same order.
+Assume $\alpha$ crosses a line $\ell$ at the points $p_1,p_2,\dots p_n$ and these points appear on $\alpha$ in that same order.
 \begin{enumerate}[(a)]
 
 \item Show that $p_2$ can not lie between $p_1$ and $p_3$ on $\ell$.
 
-\item Show that if $p_3$ lies between $p_1$ and $p_2$ on $\ell$ then these points uppear on $\ell$ in the following order:  
+\item Show that if $p_3$ lies between $p_1$ and $p_2$ on $\ell$ then they appear on $\ell$ in the following order:  
 \[p_1,p_3,\dots,p_4 ,p_2.\]
 
-\item Try to describe all possible orders in the case if $p_1$ lies between $p_2$ and $p_3$ (see the diagram).
+\item Try to describe all possible orders when $p_1$ lies between $p_2$ and $p_3$ (see the diagram).
 
 \end{enumerate}
 \end{thm}
@@ -207,12 +207,12 @@ Assume $\alpha$ crosses a line $\ell$ at the points $p_1,p_2,\dots p_n$ and thes
 \vskip0mm
 \end{figure}
 
-Recall that $\Conv X$ denotes the convex hull of set $X$;
+Recall that $\Conv X$ denotes the convex hull of the set $X$;
 that is, $\Conv X$ is the intersection of all convex sets containing $X$.
 
 \begin{thm}{Exercise}\label{ex:convex-hull}
-Suppose $\alpha$ is a simple smooth regular curve in the plane with positive curvature.
-Then the boundary of $\Conv \alpha$ is formed by an arc of $\alpha$ and a line segmet connecting the ends of its arc.
+Suppose $\alpha$ is a simple smooth regular curve with positive curvature in the plane.
+Then the boundary of $\Conv \alpha$ is formed by an arc of $\alpha$ together with a line segmet connecting the ends of this arc.
 \end{thm}
 
 \begin{thm}{Exercise}
@@ -220,9 +220,9 @@ Suppose $\alpha$ is a simple smooth regular curve in the plane.
 Show that $\alpha$ lies on one side from one of its tangent lines. 
 \end{thm}
 
-If curvature of a curve $\alpha$ vanish at $t_0$, then we say that $t_0$ is inflection value of parameter, and $p=\alpha(t_0)$ is its inflection point;
-the later convention might be ambiguous only if $\alpha$ has self-intersection at $p$. 
-In other words, $t_0$ is inflection value if osculating circline at at $t_0$ coincides with the tangent line. 
+If the curvature of a curve $\alpha$ vanishes at $t_0$, then we say that $t_0$ is inflection value of the parameter, and $p=\alpha(t_0)$ is an inflection point;
+the later convention might be ambiguous only if $\alpha$ has a self-intersection at $p$. 
+In other words, $t_0$ is an inflection value if the osculating circline at $t_0$ coincides with the tangent line. 
 
 \begin{figure}[h!]%{r}{30 mm}
 \centering
@@ -241,7 +241,7 @@ Show that $\alpha$ has at least 2 inflection points in the interval $[0,T]$.
 
 \begin{thm}{Theorem} 
 Let $\alpha$ be a closed simple smooth regular plane curve.
-Assume $\alpha$ has exactly two inflection points which divide $\alpha$ in two arcs $\alpha_1$ and $\alpha_2$.
+Assume $\alpha$ has exactly two inflection points dividing $\alpha$ in two arcs $\alpha_1$ and $\alpha_2$.
 Then 
 \[\Conv \alpha_1\supset \alpha_2
 \quad\text{or}\quad
@@ -251,7 +251,7 @@ Then
 
 \parit{Proof.}
 Let us denote the inflection points by $v$ and $w$
-and orient the arcs $\alpha_1$ and $\alpha_2$ from $v$ to $w$; we can assume that both arcs $\alpha_1$ and $\alpha_2$ have positive curvature.
+and orient the arcs $\alpha_1$ and $\alpha_2$ from $v$ to $w$; we can then assume that both arcs $\alpha_1$ and $\alpha_2$ have positive curvature.
 
 Set $F=\Conv \alpha_1$.
 By Exercise~\ref{ex:convex-hull}, $F$ is bounded by an arc $\bar\alpha_1$ of $\alpha_1$ from $x$ to $y$ 
@@ -284,10 +284,10 @@ Whence
 \section{Four-vertex theorem}
 
 A vertex of a smooth regular curve is defined as a critical point of its curvature;
-in particular, any point of local minimum (or maximum) is a vertex.
+in particular, any local minimum (or maximum) of the curvature is a vertex.
 
 \begin{thm}{Exercise}\label{ex:vert-support}
-Assume an osculating circle of curve $\alpha$ at $t_0$ supports $\alpha$ at $t_0$.
+Assume the osculating circle of a curve $\alpha$ at $t_0$ supports $\alpha$ at $t_0$.
 Show that $t_0$ is a vertex of $\alpha$.
 \end{thm}
 
@@ -303,13 +303,13 @@ vertices.
 \vskip0mm
 \end{wrapfigure}
 
-Evidently any closed curve have to have at least two vertexes --- one minimum and one maximum.
+Evidently any closed curve has at least two vertexes --- where the minimum and the maximum of the curvature are attained.
 On the diagram the vertexes are marked;
 the first curve has one self-intersection and exactly two vertexes;
 he second curve has exactly four vertexes and no self-intersections.
 
 The four-vertex theorem was first proved by Syamadas Mukhopadhyaya \cite{mukhopadhyaya} for convex curves.
-By now it has number of different proofs and generalizations.
+By now it has a large number of different proofs and generalizations.
 We will present a proof given by Robert Osserman \cite{osserman}.
 
 \parit{Proof.}
@@ -319,14 +319,14 @@ Suppose that $2\cdot n$ points $p_1,s_1,\dots,p_n,s_n$ appear on a closed curve 
 Fix a real number $\kappa$.
 Assume that the curvature of $\alpha$ at $p_i$ is at least $\kappa$ and its curvature at $s_i$ is at most $\kappa$.
 Then each of $n$ arcs $p_{n}p_1$, $p_{1}p_2, \dots p_{n-1}p_n$ of
-$\alpha$ has a minimum point of curvature in its interior.
-Similarly each of $n$ arcs $s_{n}s_1$, $s_{1}s_2, \dots s_{n-1}s_n$ of
-$\alpha$ has a maximum point of curvature.
+$\alpha$ has a point of minimum curvature in its interior.
+Similarly each of the $n$ arcs $s_{n}s_1$, $s_{1}s_2, \dots s_{n-1}s_n$ of
+$\alpha$ has a point of maximum curvature.
 
-In the case if some of these local minimum coincide with a local maximum,
+If one of these local minima coincides with a local maximum,
 an arc around this point has constant curvature;
-in this case all these points are vertexes and we have infinite number of them.
-If they all different, then we have least $2\cdot n$ vertexes.
+in this case all these points are vertexes and we have an infinite number of them.
+If they are all different, then we have at least $2\cdot n$ vertexes.
 
 Therefore it is sufficient to show that
 
@@ -338,24 +338,24 @@ there are at least 4 points $p_1,s_1,p_2,s_2$ with the described properties for 
 Note that
 \begin{clm}{}\label{clm:circumscribed circle}
 $\alpha$
-admits unique \emph{circumscribed circle} $\gamma$; that is, a circle of minimal radius that encloses $\alpha$.
+admits a unique \emph{circumscribed circle} $\gamma$; that is, a circle of minimal radius that encloses $\alpha$.
 \end{clm}
 
-Denote by $r$ the least lower bound of circles that enclose $\alpha$.
-We can choose a sequence of circles $\gamma_n$ enclosing $\alpha$ such that their radiuses $r_n\to r$.
-Note that all the centers of $\gamma_i$ lie on bounded distance from $\alpha$.
-Therefore passing to a subsequence we can assume that centers of $\gamma_n$ converge to a point $o$.
+Denote by $r$ the infimum of radii of circles that enclose $\alpha$.
+We can choose a sequence of circles $\gamma_n$ enclosing $\alpha$ such that their radii $r_n\to r$.
+Note that all the centers of $\gamma_i$ lie at a bounded distance from $\alpha$.
+Therefore passing to a subsequence we can assume that the centers of $\gamma_n$ converge to a point $o$.
 Note that the circle $\gamma$ with center $o$ and radius $r$ encloses $\alpha$;
-hence the existence of circumscribed circle follows.
+hence the existence of the circumscribed circle follows.
 
-If there are two distinct circumscribed circle, then $\alpha$ lies in the intersection of the discs bounded by these circles.
+If there are two distinct circumscribed circles, then $\alpha$ lies in the intersection of the discs bounded by these circles.
 But this intersection is enclosed in a circle of smaller radius --- a contradiction.
 Hence Claim \ref{clm:circumscribed circle} follows.
 
 
 \begin{clm}{}
 Assume $\gamma$ is the circumscribed circle of $\alpha$.
-Then $\gamma$ touches $\alpha$ at least $2$ points which divide the $\gamma$ in arcs no longer than semicircle.
+Then $\gamma$ touches $\alpha$ at least $2$ points which divide the $\gamma$ in arcs no longer than a semicircle.
 \end{clm}
 
 \begin{wrapfigure}{r}{38 mm}
@@ -366,14 +366,14 @@ Then $\gamma$ touches $\alpha$ at least $2$ points which divide the $\gamma$ in 
 \end{wrapfigure}
 
 
-If it would not be the case then one could move $\gamma$ slightly keeping its radius the same so that $\gamma$ will not touch $\alpha$ at all.
-But in this case $\alpha$ could be enclosed by a circle of smaller radius --- a contradiction.
+If it was not the case, then one could move $\gamma$ slightly keeping its radius the same so that $\gamma$ will not touch $\alpha$ at all.
+But in this case $\alpha$ could be enclosed in a circle of smaller radius --- a contradiction.
 
 
 Let us orient $\alpha$ and $\gamma$ counterclockwise.
 Then at the common points the directions of $\alpha$ and $\gamma$ coincide.
 Note that these points appear on $\alpha$ and $\gamma$ in the same order;
-otherwise $\alpha$ could not be simple.
+otherwise $\alpha$ would not be simple.
 
 Denote by $\kappa$ the signed curvature of $\gamma$, since it is oriented counterclockwise,
 $\kappa\z=\tfrac1r>0$.
@@ -393,18 +393,18 @@ We can assume that the circle is centered at the origin
 and the points $p_1$ and $p_2$ lie on the same vertical line in the right halfplane of the coordinate plane.
 
 Let $o$ be the center of $\gamma$.
-Consider an other circle $\gamma'$ with the same radius $r$ and the center $o'$ moved to the left along $x$-axis to the last moment it intersects $\bar\alpha$.
+Consider another circle $\gamma'$ with the same radius $r$ and center $o'$ the leftmost point in the $x$-axis such that $\gamma^{\prime}$ intersects $\bar\alpha$.
 
 Denote by $s_1$ a common point of $\bar\alpha$ and $\gamma'$;
 we can assume that $s_1$ is not an end point of $\bar\alpha$.
-At the point $s_1$ the directions of $\bar\alpha$ and $\gamma'$ coinside,
+At the point $s_1$ the directions of $\bar\alpha$ and $\gamma'$ coincide,
 otherwise $\alpha$ could not be simple --- the same argument is used in the proof of Lemma~\ref{lem:lens}.
-Therefore $\gamma'$ supports $\alpha$ from left at $s_1$.
+Therefore $\gamma'$ supports $\alpha$ from the left at $s_1$.
 By Proposition~\ref{prop:supporting-circline}, the curvature of $\alpha$ at $s_1$ is at most $\kappa$.
 
-By repeating the same argument for an other pair of points $p_2,p_3$,\footnote{If $p_1$ and $p_2$ divide $\gamma$ into two semicircles, then we can take $p_3=p_1$.} 
+Repeating the same argument for another pair of points $p_2,p_3$,\footnote{If $p_1$ and $p_2$ divide $\gamma$ into two semicircles, then we can take $p_3=p_1$.} 
 we prove Claim \ref{clm-key}.
-Whence the theorem follows.
+Hence the theorem follows.
 \qeds
 
 \begin{thm}{Exercise}
@@ -420,7 +420,7 @@ Show there is a unit circle that is globally supporting $\alpha$ form the left a
 \end{thm}
 
 The following theorem was proved by Vladimir Ionin and Pestov German Pestov \cite{pestov-ionin}.
-It gives a first nontrivial example of the so called ``local to global theorems'' --- based on some local data (in this case curvature of curve) we conclude its global property (in this case existence of large disc surrounded by the curve).
+It gives a first nontrivial example of the so called ``local to global theorems'' --- based on some local data (in this case the curvature of a curve) we can conclude a global property (in this case existence of a large disc surrounded by the curve).
 For convex curves, the result was known much earlier \cite[\S 24]{blaschke}.
 
 \begin{thm}{Theorem}\label{thm:moon}
@@ -447,28 +447,29 @@ Otherwise note that $p_1$ is an isolated point of the intersection $D_p\cap \alp
 Moreover according to Exercise~\ref{ex:1-supporting}, there is a fixed value $\eps>0$ such that any arc of $\alpha$
 that starts at $p_1$ can not end in $D_1$.
 
-Consider an arc $\alpha_1$ of $\alpha$ that runs from $p_1$ to the first point in $D_1$.
-Denote by $F_1$ the set bounded by $\alpha_1$ and a part of boundary of $D_1$ that containing $D_1$.
+
+Consider an arc $\alpha_1$ of $\alpha$ that runs along $\alpha$ from $p_1$ to the next point in $D_1$.
+Denote by $F_1$ the region that contains $D_1$ and whose boundary is formed by $\alpha_1$ and part of the boundary of $D_1$.
 From above $\length \alpha_1>\eps$.
 
 Let $p_2$ be the midpoint of $\alpha_1$.
 Let $D_2$ be the disc of maximal radius that is tangent to $\alpha_1$ at $p_2$ and lies completely in $F_1$. 
-The disc $D_2$ is touching the boundary $\partial F_1$ at other points, dividing it in at least two arcs.
+The disc $D_2$ touches the boundary $\partial F_1$ at other points, dividing it in at least two arcs.
 
-Note that $D_2$ can not touch the boundary of $D_1$, otherwise it would lie in $D_1$ which is impossible.
-Therefore at least one of these arcs, say $\alpha_2$, do not contain the common boundary $F_1$ and $D_1$.
+Note that $D_2$ can not touch the boundary of $D_1$, otherwise it would lie inside $D_1$, which is impossible.
+Therefore at least one of these arcs, say $\alpha_2$, do not contain the common boundary of $F_1$ and $D_1$.
 Note that 
 \[\length \alpha_2< \tfrac12\cdot\length\alpha_1.\]
 
 Again, if the radius of $D_2$ is at least $1$, then the theorem is proved.
 By Exercise~\ref{ex:1-supporting}, it happens if $\length \alpha_2<\eps$.
-If the radius is smaller that 1, denote by $F_2$ be the set that is bounded by $\alpha_2$ and a part of boundary of $D_2$ and contains $D_2$ and repeat the construction several times. 
+If the radius is smaller that 1, denote by $F_2$ the region that contains $D_2$ and is bounded by $\alpha_2$ and a part of the boundary of $D_2$. Clearly, we can repeat this construction as many times as needed. 
 
-Since the length of arcs gets at least twice as small on each step, 
+Since the length of the arc gets at least twice as small on each step, 
 after several steps the obtained disc $D_n$ will lie completely in $F_{n-1}$ and therefore in $F$. 
 \qeds
 
-A straightforward modification of the proof above gives the following.
+A straightforward modification of the above proof gives the following.
 
 \begin{thm}{Theorem}\label{thm:moon+4-vert}
 Suppose $\alpha$ is a closed simple smooth regular plane curve.
@@ -478,7 +479,8 @@ and  2 osculating circlines that lie in $G$.
 \end{thm}
 
 Note that Theorem~\ref{thm:moon} as well as the Four-vertex theorem \label{thm:4-vert} follow from Theorem~\ref{thm:moon+4-vert};
-the first implication is evident and the second follow from Exercise~\ref{ex:vert-support}.
+the first implication is evident and the second follows from Exercise~\ref{ex:vert-support}.
 
+\warning
 
 %cf. W. Blaschke, Kreis und Kugel, see pp. 115–116, Veit, Leipzig, 1916; S. B. Jackson, Bull. Amer. Math. Soc. 50 (1944), 564–578; MR0010992; G. Pestov and V. Ionin, Dokl. Akad. Nauk SSSR 127 (1959), 1170–1172; MR0107214; the reviewer, Geom. Dedicata 12 (1982), no. 4, 371–381; MR0672867
