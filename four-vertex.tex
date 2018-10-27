@@ -283,13 +283,6 @@ Whence
 
 \section{Four-vertex theorem}
 
-\begin{wrapfigure}[8]{r}{20 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-26}
-\vskip0mm
-\end{wrapfigure}
-
 A vertex of a smooth regular curve is defined as a critical point of its curvature;
 in particular, any point of local minimum (or maximum) is a vertex.
 
@@ -303,6 +296,12 @@ Any smooth regular simple plane curve has at least four
 vertices.
 \end{thm}
 
+\begin{wrapfigure}{o}{20 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-26}
+\vskip0mm
+\end{wrapfigure}
 
 Evidently any closed curve have to have at least two vertexes --- one minimum and one maximum.
 On the diagram the vertexes are marked;
@@ -414,19 +413,25 @@ Show that any smooth regular curve of constant width has at least 6 vertexes.
 
 \section{Moon in a puddle}
 
+\begin{thm}{Exercise}\label{ex:moon}
+Let $F$ be a convex plane figure bounded by a simple closed smooth regular curve $\alpha$ of curvature bounded by 1.
+Assume $\alpha$ is oriented counterclockwise, so the figure $F$ lies on the left from $\alpha$.
+Show there is a unit circle that is globally supporting $\alpha$ form the left at any given point.
+\end{thm}
+
 The following theorem was proved by Vladimir Ionin and Pestov German Pestov \cite{pestov-ionin}.
 It gives a first nontrivial example of the so called ``local to global theorems'' --- based on some local data (in this case curvature of curve) we conclude its global property (in this case existence of large disc surrounded by the curve).
 For convex curves, the result was known much earlier \cite[\S 24]{blaschke}.
 
 \begin{thm}{Theorem}\label{thm:moon}
-Assume $\alpha$ is a simple closed smooth regular plane curve of curvature bouned by 1.
+Assume $\alpha$ is a simple closed smooth regular plane curve of curvature bounded by 1.
 Then it surrounds a unit disc.
 \end{thm}
 
 \parit{Proof.}
 Denote by $F$ the closed region surrounded by $\alpha$. 
 
-\begin{figure}%{r}{38 mm}
+\begin{figure}[h!]%{r}{38 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-32}

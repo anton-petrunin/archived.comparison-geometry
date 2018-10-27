@@ -15,16 +15,29 @@ the surface $\Sigma$ divides the ball $B(p,\eps)$ into two regions, one of which
 The following theorem gives a global version of the exercise above.
 
 \begin{thm}{Theorem}\label{thm:convex-embedded}
-Assume $\Sigma$ is a closed smooth connected surface with positive Gauss curvature that bounds a bounded region $R$.
-Then $R$ is convex and $\Sigma$ is a sphere; that is, $\Sigma$ admits a smooth regular parametrization by $\SS^2$.
+Assume $\Sigma$ is a closedor open smooth connected surface with positive Gauss curvature.
+Then $\Sigma$ bounds a convex region $R$.
+Moreover, if $\Sigma$ is closed then it is a sphere; that is, $\Sigma$ admits a smooth regular parametrization by $\SS^2$.
 
 \end{thm}
 
-\parit{Proof.} Since $\Sigma$ is connected, so it $R$.
+\parit{Proof.} 
+By Exercise~\ref{ex:loc-convex}, one of the regions, say $R$, bounded by $\Sigma$ is strictly convex locally;
+that is intersection of $R$ with a sufficiently small ball centered at a given point is strictly convex.
+
+Since $\Sigma$ is connected, so it $R$.
 Moreover any two points $x$ and $y$ in the interior of $R$ can be connected by a polygonal line $\beta$ in the interior of $R$.
+
 
 Arguing by contradiction, assume the line segment $[xy]$ does not lie in the   in the interior of $R$.
 Let $y_0$ be the first point on $\beta$ so that the line segment $[xy_0]$ touches $\Sigma$; assume it touch it at a point $z$.
+
+\begin{wrapfigure}{r}{43 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-37}
+\vskip-0mm
+\end{wrapfigure}
 
 By Exercise \ref{ex:loc-convex}, $R\cap B(z,\eps)$ is strictly convex for all sufficiently small $\eps>0$.
 On the other hand $z$ lies between two points common to the line segment $[xy_0]$ and $R\cap B(z,\eps)$ --- a contradiction.
@@ -57,7 +70,7 @@ Any closed connected immersed surface with positive Gauss curvature is embedded.
 
 In other words such surface can not have self-intersections.
 Note that an analogous statement does not hold in the plane;
-on the diagram you see a closed curve with self-intersection and positive curvature at all points.
+on the diagram you see a closed curve with a self-intersection and positive curvature at all points.
 Exercise~\ref{ex:convex+2pi} gives a condition that guarantees simplicity of locally convex plane curve;
 it will be used in the following proof.
 
@@ -67,10 +80,10 @@ Before going into the proof, note that theorems \ref{thm:convex-immersed} and \r
 imply the following:
 
 \begin{thm}{Corollary}
-Any closed connected immersed surface with positive Gauss curvature is an embedded sphere.
+Any closed connected immersed surface with positive Gauss curvature is an embedded sphere that bounds a convex region.
 \end{thm}
 
-The following proof use a Morse-type argument for the height function;
+The following proof use a \emph{Morse-type argument} for the height function;
 that is, we study how the part of the surface that lies below a plane changes when we move the plane up.
 Little more careful analysis of this changes would imply the corollary above directly, without using Theorem~\ref{thm:convex-embedded}.
 
@@ -83,6 +96,7 @@ Let $\Sigma$ be a closed surface with positive Gauss curvature, possibly with se
 
 Fix a horizontal plane $\Pi_h$ defined by the equation $z=h$ in an $(x,y,z)$-coordinate system.
 Note that the intersection $W_h=\Sigma\cap\Pi_h$ is formed by a finite collection of closed curves and isolated points.
+(These curves and isolated points might intersect in the Euclidean space, but they are disjoint in the domain of parameters of $\Sigma$.)
 
 Indeed, if $\T_p=\Pi_h$, then, since the principle curvatures are positive, $p$ is a local minimum or local maximum of the height function.
 In both cases, $p$ is an isolated point of $W_h$ in $\Sigma$.
@@ -95,15 +109,15 @@ Since $\Sigma$ is compact, so is $W$.
 Therefore $W$ is a finite disjoint collection of isolated points and closed simple curves in $\Sigma$.
 
 Assume $\alpha_{h_0}$ is a closed curves in $W_{h_0}$.
-Note that its neighborhood is swept by curves $\alpha_h$ in $W_{h}$ for $h$ sufficiently close to $h_0$.
-Indeed a neighbohood of $\alpha_{h_0}$ in $\Sigma$ can be covered by a finite number of graphs of the type $x=f(y,z)$ (or $y=f(x,z)$) and the curves $\alpha_h$ can be described locally as a curve $t\mapsto (f(t,h),t,h)$ (or correspondingly $t\z\mapsto(t,f(t,h),h)$).
+Note that its neighborhood is swept by curves $\alpha_h$ in $W_{h}$ for $h\approx h_0$.
+Indeed a neighbohood of $\alpha_{h_0}$ in $\Sigma$ can be covered by a finite number of graphs of the type $x=f(y,z)$ (or $y=f(x,z)$) and the curves $\alpha_h$ can be described locally as a curve $t\mapsto (f(t,h),t,h)$ (or correspondingly $t\z\mapsto(t,f(t,h),h)$) for $h\approx h_0$.
 
 As $\alpha_h$ is an intersection of locally convex surface with a plane,
 the curvature of $\alpha_h$ has fixed sign;
 so if we choose orientation of the curves properly, we can assume that they all have positive curvature.
 
-The family $\alpha_h$ depends smoothly on $h$,
-therefore the total signed curvature $K_h$ of $\alpha_h$ depends continuously on $h$.
+The family $\alpha_h$ depends smoothly on $h$ and the same holds for its tangent indicatrix.
+Therefore the total signed curvature $K_h$ of $\alpha_h$ depends continuously on $h$.
 If $K_h=2\cdot\pi$ for some $h$, then $K_h=2\cdot\pi$ for every $h$.
 It follows since, the function $h\mapsto K_h$ is continuous and its value is a multiple of $2\cdot\pi$.
 In this case, by Exercise~\ref{ex:convex+2pi}, all curves $\alpha_h$ are simple and each bounds a convex region in the plane $\Pi_h$.
@@ -116,9 +130,20 @@ Without loss of generality we may assume that $p$ is the origin and therefore th
 
 Fix $h>0$.
 The intersection of the set $z\le h$ with the surface may contain several connected components;
-one of them contains $p$, denote this component by $\Sigma_h$.
+one of them contains $p$, denote this component by $\Sigma_h$.\footnote{These components might intersect in the space, but they are disjoint in the domain of parameters. Note also that from the corollary, it follows that there is only one component $\Sigma_h$, but we can not use it before the theorem is proved.}
+
+
 From above, $\Sigma_h$ is a surface with possibly nonempty boundary.
-Indeed it might be bounded by few closed curves in $W_h$, isolated points of $W_h$ either lie in $\Sigma_h$ together with it neighborhood or do not lie in $\Sigma_h$.
+Indeed it might be bounded only by few closed curves in $W_h$;
+any isolated point of $W_h$ either lie in $\Sigma_h$ together with it neighborhood or do not lie in $\Sigma_h$.
+
+
+Note that for small values of $h$, the surface $\Sigma_h$ is an embedded disc.
+Indeed, if $z=f(x,y)$ is a graph represetation of $\Sigma$ around $p$,
+then $\Sigma_h$ is a graph of $f$ over 
+\[\Delta=\set{(x,y)\in\RR^2}{f(x,y)\le h}.\]
+Since Gauss curvature is positive, the function $f$ is convex and therefore $\Delta$ is convex and bounded by a smooth curve;
+any such set can be parameterized by a disc.
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
@@ -127,21 +152,14 @@ Indeed it might be bounded by few closed curves in $W_h$, isolated points of $W_
 \vskip-0mm
 \end{wrapfigure}
 
-Note that for small values of $h$, the surface $\Sigma_h$ is an embedded disc.
-Indeed, if $z=f(x,y)$ is a graph represetation of $\Sigma$ around $p$,
-then $\Sigma_h$ is a graph of $f$ over 
-\[\Delta=\set{(x,y)\in\RR^2}{f(x,y)\le h}.\]
-The function $f$ is convex and therefore $\Delta$ is convex and bounded by a smooth curve;
-any such set can be parameterized by a disc.
-
-Let $H>0$ be the maximal value such that $\Sigma_h$ is an embedde disc for any $h<H$.
+Let $H>0$ be the maximal value such that $\Sigma_h$ has no self-intersections for any $h<H$.
 For a sequence $h_n\to H^-$, choose a point $q_n$ on the boundary of $\Sigma_h$ and pass to a partial limit $q$ of $q_n$ in $\Sigma$;
-that is, $q$ is a limit of a subsequence of $q_n$.
+that is, $q$ is a limit of a subsequence of~$(q_n)$.
 
 If the tangent plane at $q$ is \emph{not} horizontal, 
 then there is a closed curve $\alpha_H$ in $\Sigma$ that passes thru $q$ and lies on the plane $z=H$.
-From above curve $\alpha_H$, as well as all $\alpha_h$ with $h\approx H$ are closed embedded convex curves and all of them bound a disc $\Sigma_h$.
-Whence $H$ is not maximal --- a contradiction.
+From above curve $\alpha_H$, as well as all $\alpha_h$ with $h\approx H$ are closed embedded convex curves.
+Hence $\Sigma_h$ has no self-intersections for some $h>H$ --- a contradiction.
 
 If the tangent plane at $q$ is horizontal,
 then the surface $\Sigma_H$ has no boundary.
@@ -149,3 +167,6 @@ Since $\Sigma$ is connected, $\Sigma_H=\Sigma$.
 Since $\Sigma_h$ has no self-intersections for $h<H$, we get that $\Sigma$ is an embedded surface.
 \qeds
 
+\begin{thm}{Exercise}
+Show that any open immersed surface with positive Gauss curvature is embedded.\footnote{Hint: Modify the proof of the theorem.}
+\end{thm}

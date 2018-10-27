@@ -1119,14 +1119,15 @@ cycle;
 
 draw p5 shifted (x.right,0);
 
-p6=z.a4{down}..
-z.a5..
-z.a6..
-z.a7{up}..
+p6=
 z.aaa8{up}..
 z.aaa9..
 z.aaa10..
 z.aaa11{down}..
+z.a4{down}..
+z.a5..
+z.a6..
+z.a7{up}..
 cycle
 ;
 
@@ -1201,8 +1202,8 @@ draw (z.c3--z.d11) shifted (2*x.right,0) penhair;
 draw (z.b0--z.d8) rotated 180 shifted (2*x.right,0) penhair;
 draw (z.c3--z.d11) rotated 180 shifted (2*x.right,0) penhair;
 
-draw (-2.3*x.size,0)--(2.3*x.size,0)  dashed linedot;
-draw ((-.3*x.size,-(-x.shift+x.gap))--(2.3*x.size,-(-x.shift+x.gap))) shifted (x.right,0)  dashed linedot;
+draw (-2.3*x.size,0)--(2.3*x.size,0)  dashed linedot penhair;
+draw ((-.3*x.size,-(-x.shift+x.gap))--(2.3*x.size,-(-x.shift+x.gap))) shifted (x.right,0)  dashed linedot penhair;
 
 label.bot(btex $V_1$ etex, (0,-x.shift-2*u));
 label.bot(btex $V_2$ etex, (x.right,-x.shift-2*u));
@@ -1274,6 +1275,37 @@ label(btex $\Pi_0$ etex, .8*z.x+.3*z.y);
 label.top(btex $\alpha_h$ etex, z.a3);
 label(btex $\Sigma_h$ etex, .5*z.z+.4*z.x+.5*z.y);
 
+
+endfig;
+
+beginfig(37) 
+save u;
+u:=1.4cm;
+
+save p; path p[];
+
+z.x0=(3.2,0)*u;
+z.x1=(3,.5)*u;
+z.x2=(4,1)*u;
+z.x3=(5,.4)*u;
+z.y=(4.8,0)*u;
+z.y0=.6[z.x2,z.x3];
+z.z0=.4[z.x0,z.y0];
+
+p2=(3,-.2)*u..(3,1.2)*u..(5,1.3)*u..(5,-.2)*u..z.z0{z.x0-z.y0}..cycle;
+draw p2 penbold;
+
+
+draw z.x0--z.x1--z.x2--z.x3--z.y--cycle;
+draw z.x0--z.y0;
+
+dOt z.x0,z.y,z.y0,z.z0;
+
+label.lft(btex $x$ etex, z.x0);
+label.rt(btex $y$ etex, z.y);
+label.urt(btex $y_0$ etex, z.y0);
+label.top(btex $z$ etex, z.z0);
+label.top(btex $R$ etex, (4,1.2)*u);
 
 endfig;
 

@@ -10,15 +10,7 @@ More precisely, any point $p\in \Sigma$ admits a neighborhood $U$ such that
 in some coordinate system $(x,y,z)$, 
 the intersection $W=U\cap \Sigma$ can be written as a graph $z=f(x,y)$ of a smooth function $f$ defined in an open domain of $(x,y)$-plane.
 
-Once we get a local representation of the surface by a graph, we can change it using the following proposition.
-
-\begin{thm}{Proposition}\label{prop:perp}
-Assume the tangent of a smooth surface $\Sigma$ at point $p$ is not perpendicular to the $(x,y)$-plane.
-Then a neighborhood of $p$ in $\Sigma$ can be presented as a graph of smooth function $z=f(x,y)$ defined on an open set of the $(x,y)$-plane.
-\end{thm}
-
-A reader familiar with the inverse function theorem, can consider this proposition as an exercise.
-
+Once we get a local representation of the surface by a graph, we can change it using the Proposition~\ref{prop:perp} below.
 
 \parbf{Examples.}
 For simplest example of surface is the $(x,y)$-plane 
@@ -61,37 +53,6 @@ A closed subset in a surface that is bounded by one or more smooth curves is cal
 When we say \emph{surface} we usually mean a surface without boundary;
 we may use term \emph{surface with possibly nonempty boundary} if we need to talk about surfaces with and without boundary.
 
-\section{Immersed surfaces}
-
-\parbf{Parametrizations.}
-A surface can be described by a map from a known surface to the space.
-For example the ellipsoid
-\[\Sigma_{a,b,c}=\set{(x,y,z)\in\RR^3}{\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}+\tfrac{z^2}{c^2}=1}\]
-for some positive numbers $a,b,c$ can be defined as the image of a map $s\:\SS^2\to\RR^3$ that is the restriction of the map $(x,y,z)\mapsto (a\cdot x, b\cdot y,c\cdot z)$ to the unit sphere $\SS^2$.
-The map $s$ has to be smooth and regular as defined below. 
-
-Assume $\SS^2$ is written locally as a graph $z=f(x,y)$ in some coordinate system.
-
-The map $s\:\SS^2\to \RR^3$ is  smooth if the composition $s\circ f$ has all partial derivatives $\frac{\partial^{m+n}}{\partial x^m\partial y^n}(s\circ f)$ are defined and continuous in the domain of definition of $f$.
-
-The map $s\:\SS^2\to \RR^3$ is regular
-if the vectors $\frac{\partial}{\partial x}(s\circ f)$ and $\frac{\partial}{\partial y}(s\circ f)$ are linearly independent at each point of the domain of $f$.
-
-Evidently the parametric definition includes the embedded surfaces defined above --- as a set of parameters we can take the surface itself and the identity map as $s$.
-
-\parbf{Immersed surfaces.} The parametric definition allows the surfaces to have self-intersections and therefore more general.
-The surfaces with possible self-intersections are  can called \emph{immersed}.
-
-In the described example $\SS^2$ is the \emph{domain of parameters} of the surface.
-We can say that the surface $\Sigma_{a,b,c}$ is a \emph{sphere} since it has sphere as the domain of parameters.
-
-We may use other domains of parameters, torus or sphere with two handles or for surfaces with boundary, disc, annulus, or M\"obius band and so on.
-Sphere with $n$ handles is also called \emph{surface of genus $n$}.
-
-The set of parameters can be more complicated, for example projective plane --- sphere where opposite points are identified; such set of parameters can not be realized as an embedded surface in $\RR^3$, but it can be embedded in a higher dimensional Euclidean space.
-Another example is Klein bottle --- a nonoriented brother torus;
-it also can not be embedded in Euclidean space, but can be immersed with a self-intersection along a closed smooth curve.
-
 \section{Tangent plane}
 
 Let $z=f(x,y)$ be a local graph realization of a surface. 
@@ -102,6 +63,16 @@ It can be interpreted as the best approximation of the surface $\Sigma$ by a pla
 The tangent plane to $\Sigma$ at $p$ is usually denoted by $\T_p$ or $\T_p\Sigma$.
 
 It is straightforward to check that tangent plane does not depend of the local presentation of $\Sigma$ by a graph.
+
+\parbf{On local graph representations.}
+The following proposition guarantees existence of a local graph representation near a given point.
+
+\begin{thm}{Proposition}\label{prop:perp}
+Assume the tangent of a smooth surface $\Sigma$ at point $p$ is not perpendicular to the $(x,y)$-plane.
+Then a neighborhood of $p$ in $\Sigma$ can be presented as a graph of smooth function $z=f(x,y)$ defined on an open set of the $(x,y)$-plane.
+\end{thm}
+
+A reader familiar with the inverse function theorem, can consider this proposition as an exercise.
 
 \parbf{Special coordinate system.}
 Fix a point $p$ is a smooth surface $\Sigma$.
@@ -168,8 +139,80 @@ Assume a closed surface $\Sigma$ bounds a convex body.
 Show that $\Sigma$ is a sphere with nonnegative Gauss curvature. 
 \end{thm}
 
+\section{Immersed surfaces}
+
+\parbf{Parametrizations.}
+A surface can be described by a map from a known surface to the space.
+For example the ellipsoid
+\[\Sigma_{a,b,c}=\set{(x,y,z)\in\RR^3}{\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}+\tfrac{z^2}{c^2}=1}\]
+for some positive numbers $a,b,c$ can be defined as the image of a map $s\:\SS^2\to\RR^3$ that is the restriction of the map $(x,y,z)\mapsto (a\cdot x, b\cdot y,c\cdot z)$ to the unit sphere $\SS^2$.
+The map $s$ has to be smooth and regular as defined below. 
+
+Assume $\SS^2$ is written locally as a graph $z=f(x,y)$ in some coordinate system.
+
+The map $s\:\SS^2\to \RR^3$ is  smooth if the composition $s\circ f$ has all partial derivatives $\frac{\partial^{m+n}}{\partial x^m\partial y^n}(s\circ f)$ are defined and continuous in the domain of definition of $f$.
+
+The map $s\:\SS^2\to \RR^3$ is regular
+if the vectors $\frac{\partial}{\partial x}(s\circ f)$ and $\frac{\partial}{\partial y}(s\circ f)$ are linearly independent at each point of the domain of $f$.
+
+Evidently the parametric definition includes the embedded surfaces defined above --- as a set of parameters we can take the surface itself and the identity map as $s$.
+
+\parbf{Immersed surfaces.} The parametric definition allows the surfaces to have self-intersections and therefore more general.
+The surfaces with possible self-intersections are  can called \emph{immersed}.
+
+In the described example $\SS^2$ is the \emph{domain of parameters} of the surface.
+We can say that the surface $\Sigma_{a,b,c}$ is a \emph{sphere} since it has sphere as the domain of parameters.
+
+We may use other domains of parameters, torus or sphere with two handles or for surfaces with boundary, disc, annulus, or M\"obius band and so on.
+Sphere with $n$ handles is also called \emph{surface of genus $n$}.
+
+The set of parameters can be more complicated, for example projective plane --- sphere where opposite points are identified; such set of parameters can not be realized as an embedded surface in $\RR^3$, but it can be embedded in a higher dimensional Euclidean space.
+Another example is Klein bottle --- a nonoriented brother torus;
+it also can not be embedded in Euclidean space, but can be immersed with a self-intersection along a closed smooth curve.
 
 
+
+\section{Gauss map}
+
+Let $\Sigma$ be a surface in the Euclidean space.
+Given a point $p\in\Sigma$ consider a unit vector $\nu(p)$ that is normal to the tangent plane $\T_p$. 
+The unit normal vector $\nu(p)$ is defined uniquely up to sign at each point $p\in \Sigma$.
+If the choice of the sign is made so that the map $\nu\:p\mapsto \nu(p)$ is continuous,
+then the map $\nu$ is called \emph{Gauss map}.
+
+The Gauss map sends the surface $\Sigma$ to the unit sphere $\SS^2$.
+It can be always defined locally (that is in a neighborhood of a point);
+if it can be defined globally then the surface $\Sigma$ is called \emph{oriented}.
+
+M\"obius band gives an example of nonoriented surface with boundary.
+Klein bottle is an example of closed immerersed surface which is not oriented.
+Any closed embedded surface is oriented since one can choose the  direction pointing outside of the region bounded by the surface.
+
+Fix a point $p\in \Sigma$ and a smooth curve $\alpha$ in $\Sigma$ that starts at $p$;
+that is $\alpha(0)=p$.
+Set  $v=\alpha'(0)$ and $w=(\nu\circ\alpha)'(0)$.
+Note that $v$ lie in $T_p$ --- the tangent plane at $p$.
+
+Further $w\in \T_p$ as well.
+Indeed $\nu\circ\alpha$ is a curve that starts at $\nu(p)$;
+so $w=(\nu\circ\alpha)'(0)$ lies in the tangent plane $\T_{\nu(p)}\SS^2$.
+But at $\nu(p)$, the sphere $\SS^2$ has normal $\nu(p)$ and therefore its tangent plane $\T_{\nu(p)}\SS^2$ is parallel $T_p$, so $\T_{\nu(p)}\SS^2$ and $T_p$ are identical as vector spaces.
+
+Further note that since Gauss map is smooth,
+the vector $w$ depends only on $v$;
+that is if we choose a different curve $\alpha$ such that $v=\alpha'(0)$ we will get the same value $w=(\nu\circ\alpha)'(0)$.
+The map $s_p\:v\mapsto w$ is called shape operator;
+it maps the tangent plane $\T_p$ to itself.
+
+It is straightforwardto check that the eigenvalues of $s_p$ are the principle curvatures at $p$; it agrees with the definition given above if the normal vector $\nu$ is chosen to point down in the specital graph representation $z=f(x,y)$.
+
+
+
+
+
+
+
+The Gauss map can be defined (globally) if and only if the surface is orientable, in which case its degree is half the Euler characteristic. The Gauss map can always be defined locally (i.e. on a small piece of the surface). The Jacobian determinant of the Gauss map is equal to Gaussian curvature, and the differential of the Gauss map is called the shape operator. 
 
 
 
