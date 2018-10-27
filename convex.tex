@@ -83,15 +83,21 @@ imply the following:
 Any closed connected immersed surface with positive Gauss curvature is an embedded sphere that bounds a convex region.
 \end{thm}
 
-The following proof use a \emph{Morse-type argument} for the height function;
+In the following sections we will give one complete proof and sketch an alternative proof.
+
+The first proof use a \emph{Morse-type argument} for the height function;
 that is, we study how the part of the surface that lies below a plane changes when we move the plane up.
 Little more careful analysis of this changes would imply the corollary above directly, without using Theorem~\ref{thm:convex-embedded}.
+
+The sketch use equidistant surfaces and Gauss map.
+We do not proof a topological statement which relying on intuition.
 
 In the proof we abuse notation slightly;
 we say a \emph{point of immersed surface} instead of \emph{point in the parameter domain of immersed surface}.
 So each point of self-intersection is considered as two or more ``distinct'' points of the surface.
 
-\parit{Proof of the theorem.}
+\section{Morse-type proof}
+
 Let $\Sigma$ be a closed surface with positive Gauss curvature, possibly with self-intersections. 
 
 Fix a horizontal plane $\Pi_h$ defined by the equation $z=h$ in an $(x,y,z)$-coordinate system.
@@ -170,3 +176,92 @@ Since $\Sigma_h$ has no self-intersections for $h<H$, we get that $\Sigma$ is an
 \begin{thm}{Exercise}
 Show that any open immersed surface with positive Gauss curvature is embedded.\footnote{Hint: Modify the proof of the theorem.}
 \end{thm}
+
+\section{Proof via equidistant surface}
+
+\begin{thm}{Claim}
+Assume $\Sigma$ is a closed immersed surface, then it is orientable.
+\end{thm}
+
+
+\parit{Proof.} Indeed we can choose the unit normal vector $\nu(p)$ in such a way that both principle curvatures are positive (in this case the surface lies locally on the side of tangent plane $\T_p$ which is opposite from $\nu(p)$).
+Evidently this choice is depends continuously from the point on $\Sigma$ (more precisely on the value in the parameter domain).
+\qeds
+
+The unit normal described in the proof will be called outer normal.
+
+\begin{thm}{Lemma}\label{lem:gauss-inverse}
+Assume $\Sigma$ is a closed connected immersed surface.
+Then Gauss map $\nu\:\Sigma \to \SS^2$ has a smooth regular inverse;
+in particular $\Sigma$ is a sphere.
+\end{thm}
+
+This lemma follows from two facts:
+(1) if Gauss curvature does not vanish then the  Gauss map is regular, in particular this map has a local inverse at each point
+and
+(2) the sphere $\SS^2$ is \emph{simply connected};
+that is, $\SS^2$ is connected any closed curve in $\SS^2$ can be deformed continuously into a trivial curve that stays at one point.
+The proof is standard in topology, we hope that the statement is intuitively obvious.
+
+\parbf{Equidistant surfaces.}
+Assume $\nu\:\Sigma\to \SS^2$ is a Gauss map of a surface $\Sigma$.
+Fix a real number $R$ and consider the map $h_R\:\Sigma\to\RR^3$ defined by $h_R\:p\mapsto p+R\cdot\nu(p)$.
+The map $h_R$ describe the so called \emph{equidistant surface};
+it is smooth by definition, but might be not regular in general.
+
+\begin{thm}{Lemma}\label{lem:curc<1/R}
+Suppose $\nu\:\Sigma\to \SS^2$ is a Gauss map of a surface $\Sigma$.
+Assume the corresponding principle curvatures are nonnegative at all points. 
+Then the equidistant surface $\Sigma_R$ is regular and its principle curvatures are positive and strictly smaller than $\tfrac1R$.
+\end{thm}
+
+\parit{Proof.}
+To prove regularity, let us use the special representation of $\Sigma$ as a graph $z=f(x,y)$ with $x$ and $y$ axis in the principle directions of $\Sigma$ at $p$.
+In other words, $\Sigma$ is given in parametric form 
+\[h_0\:(x,y)\mapsto (x,y,f(x,y)).\]
+
+Due to the choice of directions of $x$ and $y$ axis,
+for the Gauss map $g$, we have 
+\begin{align*}
+\tfrac{\partial}{\partial x}g(0,0)&=(k_1,0,0),
+\\
+\tfrac{\partial}{\partial x}g(0,0)&=(0,k_2,0).
+\end{align*}
+Then 
+\begin{align*}
+\tfrac{\partial}{\partial x} h_R&=(1+R\cdot k_1,0,0),
+\\
+\tfrac{\partial}{\partial x} h_R&=(0,1+R\cdot k_2,0)
+\end{align*}
+which are linearly independent for if $R>0$ and $k_1,k_2\ge 0$. 
+
+If $\Sigma$ bounds a convex closed set $K$.
+Then $\Sigma_R$ bounds $K_R$ --- the closed closed $R$-neighborhood of $K$;
+that is, $K$ is the set of all points on the distance at most $R$ from $K$.
+
+Since $\Sigma$ is smooth it is supported at each point $p$ from inside by a ball of small $B_\eps(o)$.
+Then the ball $B_{R+\eps}(o)$ lies in $K_R$ and touches its boundary at the point corresponding to $p$.
+Hence the principle curvatures at $p$ are at least $\tfrac1{R+\eps}$.
+
+In general case, a local chart of $\Sigma$ can be modified so it has a piece of original surface around $p$  and bounds a convex set.
+Here is one way to do this:
+
+Choose a smooth function $\phi(x)$ that is convex increasing and such that for sufficiently small $\eps>0$ we have $\phi(x)=x$ if $x<\eps$ and $\phi(x)\to\infty$ as $x\to 2\cdot\eps$.
+(Such functions do exist; moreover an explicit formula can be written, but we leave it without a proof.)
+
+If $z=f(x,y)$ is a special representation of $\Sigma$ around $p$ by some convex function $f$ then the function $h=\phi\circ f(x,y)$ is trill convex, the graph $z=h(x,y)$ bounds a convex closed set and the part of the surface described by parameters $\set{(x,y)}{f(x,y)<\eps}$ coincide with a neighborhood of $p$ in $\Sigma$.
+Hence the general case follows.\qeds
+
+\parit{Sketch of proof of \ref{thm:convex-immersed}.}
+Let $s\:\SS^2\to\RR^3$ be the parametization of $\Sigma$ provides by Lemma~\ref{lem:gauss-inverse}.
+Then the equidistant surface $\Sigma_R$ can be parametrized by map $u\mapsto s(u)+R\cdot u$.
+Applying rescaling with factor $\tfrac1r$ we get map $u\mapsto \tfrac1R\cdot s(u)+u$ which converges to the indentity map on the sphere $\SS^2$ together with all its derivatives.
+Therefore $\Sigma_R$ for sufficiently large $R$.
+
+Applying Theorem~\ref{thm:convex-embedded}, we get that $\Sigma_R$ bounds a convex set.
+
+By Lemma~\ref{lem:curc<1/R}, principle curvatures of $\Sigma_R$ are smaller than $\tfrac1R$.
+Therefore same idea as in the Exercise~\ref{ex:convex-lagunov} shows that any point of $\Sigma_R$ can be touched by a ball of radius $R$ from inside; moreover such ball touches surface at a single point.
+The center of this ball has to lie on $\Sigma$ and last property implies that it has no self-intersection.
+\qeds
+
