@@ -1309,4 +1309,71 @@ label.top(btex $R$ etex, (4,1.2)*u);
 
 endfig;
 
+beginfig(38) 
+save u;
+u:=.6cm;
+
+z.a0=(-2,1)*u;
+z.a1=(-1,.25)*u;
+z.a2=(0,0)*u;
+z.a3=(1,.25)*u;
+z.a4=(2,1)*u;
+
+save p; path p[];
+
+p1=z.a0..z.a1..z.a2..z.a3..z.a4;
+draw p1;
+
+z.b0=(-1.4,5)*u;
+%z.b1=(-1.9,2)*u;
+%z.b3=(1.9,2)*u;
+z.b4=(1.4,5)*u;
+
+p2=z.b0{down}...subpath (1,3) of p1...z.b4{up};
+draw p2;
+hatchfill p2--cycle  withcolor (57, 1mm, -.5bp);
+
+draw (-2,0)*u--(2,0)*u dashed evenly;
+
+dOt z.a2;
+
+label.bot(btex $p$ etex, z.a2);
+label.rt(btex $\Sigma$ etex, z.a4);
+label.lrt(btex $\Sigma'$ etex, z.b4);
+label.bot(btex $\T_p$ etex, (2,0)*u);
+whitelabel(btex $K$ etex, (0,3)*u);
+endfig;
+
+beginfig(39) 
+save u;
+u:=.7cm;
+
+z.a0=(-1,0)*u;
+z.a1=(0,.5)*u;
+z.a2=(1,0)*u;
+z.a3=(0,-.5)*u;
+
+save p; path p[];
+
+p1=z.a0..z.a1..z.a2..z.a3..cycle;
+draw p1 penbold;
+
+z.b0=(-3,0)*u;
+z.b1=(0,2.5)*u;
+z.b2=(3,0)*u;
+z.b3=(0,-2.5)*u;
+
+p2=z.b0..z.b1..z.b2..z.b3..cycle;
+draw p2 penbold;
+
+draw circle (z.a1,z.b1-z.a1);
+
+dOt z.a1, z.b1;
+
+label.top(btex $p$ etex, z.b1);
+label.top(btex $p'$ etex, z.a1);
+label.rt(btex $\Sigma_R$ etex, z.b2);
+label.rt(btex $\Sigma$ etex, z.a2);
+
+endfig;
 end

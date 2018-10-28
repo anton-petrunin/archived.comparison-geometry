@@ -172,49 +172,6 @@ it also can not be embedded in Euclidean space, but can be immersed with a self-
 
 
 
-\section{Gauss map}
-
-Let $\Sigma$ be a surface in the Euclidean space.
-Given a point $p\in\Sigma$ consider a unit vector $\nu(p)$ that is normal to the tangent plane $\T_p$. 
-The unit normal vector $\nu(p)$ is defined uniquely up to sign at each point $p\in \Sigma$.
-If the choice of the sign is made so that the map $\nu\:p\mapsto \nu(p)$ is continuous,
-then the map $\nu$ is called \emph{Gauss map}.
-
-The Gauss map sends the surface $\Sigma$ to the unit sphere $\SS^2$.
-It can be always defined locally (that is in a neighborhood of a point);
-if it can be defined globally then the surface $\Sigma$ is called \emph{oriented}.
-
-M\"obius band gives an example of nonoriented surface with boundary.
-Klein bottle is an example of closed immerersed surface which is not oriented.
-Any closed embedded surface is oriented since one can choose the  direction pointing outside of the region bounded by the surface.
-
-Fix a point $p\in \Sigma$ and a smooth curve $\alpha$ in $\Sigma$ that starts at $p$;
-that is $\alpha(0)=p$.
-Set  $v=\alpha'(0)$ and $w=(\nu\circ\alpha)'(0)$.
-Note that $v$ lie in $T_p$ --- the tangent plane at $p$.
-
-Further $w\in \T_p$ as well.
-Indeed $\nu\circ\alpha$ is a curve that starts at $\nu(p)$;
-so $w=(\nu\circ\alpha)'(0)$ lies in the tangent plane $\T_{\nu(p)}\SS^2$.
-But at $\nu(p)$, the sphere $\SS^2$ has normal $\nu(p)$ and therefore its tangent plane $\T_{\nu(p)}\SS^2$ is parallel $T_p$, so $\T_{\nu(p)}\SS^2$ and $T_p$ are identical as vector spaces.
-
-Further note that since Gauss map is smooth,
-the vector $w$ depends only on $v$;
-that is if we choose a different curve $\alpha$ such that $v=\alpha'(0)$ we will get the same value $w=(\nu\circ\alpha)'(0)$.
-The map $s_p\:v\mapsto w$ is called shape operator;
-it maps the tangent plane $\T_p$ to itself.
-
-It is straightforwardto check that the eigenvalues of $s_p$ are the principle curvatures at $p$; it agrees with the definition given above if the normal vector $\nu$ is chosen to point down in the specital graph representation $z=f(x,y)$.
-
-
-
-
-
-
-
-The Gauss map can be defined (globally) if and only if the surface is orientable, in which case its degree is half the Euler characteristic. The Gauss map can always be defined locally (i.e. on a small piece of the surface). The Jacobian determinant of the Gauss map is equal to Gaussian curvature, and the differential of the Gauss map is called the shape operator. 
-
-
 
 
 
