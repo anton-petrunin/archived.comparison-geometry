@@ -1376,4 +1376,69 @@ label.rt(btex $\Sigma_R$ etex, z.b2);
 label.rt(btex $\Sigma$ etex, z.a2);
 
 endfig;
+
+beginfig(40) 
+save u;
+u:=1.3cm;
+
+z.p=(0,2)*u;
+z.p0=(.5,0)*u;
+z.p1=-z.p0;
+z.m=origin;
+
+rimmark(z.p--z.p0, z.p--z.p1);
+rimmark2(z.m--z.p0, z.m--z.p1);
+mark_rt_angle(z.p, z.m, z.p0);
+
+draw z.m--z.p--z.p0--z.p1--z.p;
+dOt z.m,z.p,z.p0,z.p1;
+
+ 
+
+label.top(btex $p$ etex, z.p);
+label.rt(btex $\bar p$ etex, z.p0);
+label.lft(btex $\bar p'$ etex, z.p1);
+label.bot(btex $m$ etex, z.m);
+endfig;
+
+beginfig(41) 
+save u;
+u:=1.3cm;
+
+z.p=(-1,1)*u;
+z.pp=(-.7,0)*u;
+z.q=(1,.9)*u;
+z.qq=(.7,0)*u;
+
+z.p1=altitude(z.qq,z.p,z.pp);
+z.q1=altitude(z.qq,z.q,z.pp);
+
+mark_rt_angle(z.p, z.p1, z.pp);
+mark_rt_angle(z.q, z.q1, z.qq);
+
+save p; path p[];
+
+z.s=(0,-1)*u;
+p1=z.pp{(z.p-z.pp) zscaled (0,-1)}..
+z.qq{(z.q-z.qq) zscaled (0,-1)}..
+z.s..cycle;
+
+draw p1;
+draw ddline(z.qq,z.pp)(.4,.4) penhair;
+draw z.p--z.pp--z.qq--z.q penbold;
+draw z.p--z.p1 dashed evenly;
+draw z.q--z.q1 dashed evenly;
+
+hatchfill p1  withcolor (57, 1mm, -.5bp);
+
+dOt z.p,z.pp,z.q,z.qq,z.p1,z.q1;
+
+label.top(btex $p$ etex, z.p);
+label.top(btex $q$ etex, z.q);
+whitelabel.bot(btex $\bar p$ etex, z.pp);
+whitelabel.bot(btex $\bar q$ etex, z.qq);
+whitelabel.(btex $K$ etex, (z.pp+z.qq+z.s)/3);
+
+
+endfig;
 end
