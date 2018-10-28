@@ -1,0 +1,156 @@
+\chapter{Geodesics}
+
+The following exercise might look like a hard problem in calculus, but actually it is an easy problem in geometry.
+
+%???angle of inclination
+
+\begin{thm}{Exercise}
+There is a mountain of frictionless ice in the shape of a perfect cone with a circular base.
+A cowboy is at the bottom and he wants to climb the mountain.
+So, he throws up his lasso which slips neatly over the top of the cone, he pulls it tight and starts to climb.
+If the mountain is very steep, with a narrow angle $\theta$ at the top, there is no problem; the lasso grips tight and up he goes.
+On the other hand if the mountain is very flat, with a very shallow angle $\theta$ at the top, the lasso slips off as soon as the cowboy pulls on it.
+
+What is the critical angle $\theta_0$ at which the cowboy can no longer climb the ice-mountain?
+\end{thm}
+
+\section{Closest point projection}
+
+\begin{thm}{Lemma}
+Let $K$ be a closed convex set in $\RR^3$.
+Then for every point $p\in\RR^3$ there is unique point $\bar p\in K$ that minimize the distance $|p-x|$ for all points $x\in K$.
+
+Moreover the map $p\mapsto \bar p$ is short;
+that is,
+\[|p-q|\ge|\bar p-\bar q| \eqlbl{eq:short-cpp}\]
+for any pair of points $p,q\in \RR^3$.
+\end{thm}
+
+The map $p\mapsto \bar p$ is called \emph{closest point projection};
+it maps Euclidean space to $K$.
+Note that if $p\in K$, then $\bar p=p$.
+
+\parit{Proof.}
+Fix a point $p$ and set 
+\[\ell=\inf_{x\in K}\{|p-x|\}.\]
+Choose a sequence $x_n\in K$ such that $|p-x_n|\to \ell$ as $n\to\infty$.
+
+Without loss of generality, we can assume that all the points $x_n$ lie in a ball or radius $\ell+1$ centered at $p$.
+Therefore we can pass to a partial limit $\bar p$ of $x_n$; that is, $\bar p$ is a limit of a subsequence of $x_n$.
+Since $K$ is closed $\bar p\in K$.
+By construction 
+\[|p-\bar p|=\ell=\lim_{n\to\infty}|p-x_n|.\]
+Hence the existence follows.
+
+\begin{wrapfigure}{i}{22 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-40}
+\vskip-0mm
+\end{wrapfigure}
+
+Assume there are two distinct points $\bar p, \bar p'\in K$ that minimize the distance to $p$.
+Since $K$ is convex, their midpoint $m=\tfrac12\cdot (\bar p+\bar p')$ lies in~$K$.
+Note that $|p-\bar p|\z=|p-\bar p'|=\ell$; that is $\triangle p\bar p\bar p'$ is isosceles and therefore $\triangle p\bar p m$ is right with the right angle at $m$.
+Since leg of right triangle is shorter than its hypotenuse, we have $|p-m|<\ell$ --- a contradiction. 
+
+It remains to prove inequality \ref{eq:short-cpp}.
+
+We can assume that $\bar p\ne\bar q$, otherwise there is nothing to prove.
+Note that if $p\ne \bar p$ (that is, if $p\notin K$), 
+then $\angle p \bar p \bar q$ is right or obtuse.
+Otherwise there would be a point $x$ on the line segment $[\bar q,\bar p]$ that is closer to $p$ than $\bar p$.
+Since $K$ is convex, the line segment $[\bar q,\bar p]$ and therefore $x$ lie in $K$.
+Hence $\bar p$ is not closest to $p$ --- a contradiction.
+
+\begin{wrapfigure}{o}{37 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-41}
+\vskip-0mm
+\end{wrapfigure}
+
+The same way we can show that  if $q\z\ne \bar q$, then $\angle q \bar q \bar p$ is right or obtuse.
+In all cases it implies that the orthogonal projection of the line segment $[p,q]$ to the line $\bar p\bar q$ contains the line segment $[\bar p,\bar q]$.
+In particular \[|p-q|\ge |\bar p-\bar q|.\]
+\qedsf
+
+\section{Geodesics}
+
+\begin{wrapfigure}{r}{25 mm}
+\begin{lpic}[t(-0 mm),b(-4 mm),r(0 mm),l(0 mm)]{pics/convex-hat(1)}
+\lbl{15,8.6;$\Sigma$}
+\lbl[w]{5,18.6;$\Delta$}
+\end{lpic}
+\end{wrapfigure}
+
+Let $\Sigma$ be a surface. 
+Assume a curve $\gamma$ in $\Sigma$ connects two points $p,q\in \Sigma$ and
+minimizes the lenght among all such curves.
+Then $\gamma$ is called a \emph{minimizing geodesic} from $p$ to $q$.
+
+
+\begin{thm}{Exercise}
+Suppose $\Sigma$ is a smooth closed surface that bounds a convex body $K$ 
+in $\RR^3$ 
+and $\Pi$ is a plane that cuts from $\Sigma$ a disk $\Delta$.
+Assume that the reflection of $\Delta$ with respect to $\Pi$ lies inside of $\Sigma$.
+Show that $\Delta$ is \index{convex set}\emph{convex} with respect to the intrinsic metric  of $\Sigma$;
+that is, 
+if both ends of a minimizing geodesic in $\Sigma$ 
+lie in $\Delta$,
+then the whole geodesic lies in $\Delta$.
+\end{thm}
+
+A curve $\gamma\:[a,b]\to \Sigma$ is called \emph{geodesic}  if for some partition $a\z=t_0<t_1<\dots <t_n=b$ of the interval the each arc $\gamma|_{[t_{i-1},t_{i+1}]}$ is a minimizing geodesic.
+
+\begin{thm}{Liberman's lemma}
+Assume $\gamma$ is a geodesic on the graph $z=f(x,y)$ of a concave function $f$ defined on an open subset of the plane.
+Consider a reparametrization $(x(t),y(t),z(t)$ of $\gamma$ such that the curve  $t\mapsto (x(t),y(t))$ is a unit-speed curve.
+Then $z(t)$ is a concave function.
+\end{thm}
+
+If we draw a line parallel to the $z$-axis thru each point of $\gamma$, we get a surface which can be developed on the plane --- that is, it can be parametrized by a strip in the plane between parallel lines so that the length of all curves in the strip survive after the mapping.
+If we assume that the strip is oriented vertically on the plane  then the curve becomes a graph of a function and the theorem states that this function is concave.
+
+\parit{Proof.}
+Denote the graph by $\Sigma$.
+Choose a partition such that $\gamma|_{[t_{i-1},t_{i+1}]}$ is minimizing.
+If the function $z$ is convex on each interval $[t_{i-1},t_{i+1}]$, then it is convex on whole interval.
+Therefore it is sufficient to prove the case if $\gamma\:[a,b]\to $ is a minimizing geodesic.
+
+Further, passing to a finer partition, we can assume that the projection of $\gamma$ to the $(x,y)$-plane lies completely in a closed disc $\Delta$ in the domain of definition of $f$;
+moreover the distance from  the projection of $\gamma$ to the boundary of disc is much larger than length of $\gamma$.
+In this case the curve lies in the boundary of closed convex set 
+\[K=\set{(x,y,z)\in \RR^3}{(x,y)\in\Delta,\ z\le f(x,y)};\]
+so we can apply the lemma on closest point projection.
+
+\begin{figure}[h!]
+\centering
+ \begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/liberman(1)}
+\lbl[t]{25,8;$t$}
+\lbl[r]{1,27;$z$}
+\lbl[r]{36,27;$z$}
+\lbl[bl]{55.5,3.5;$x$}
+\lbl[rb]{53,16;$y$}
+\lbl[br]{62,22;$\gamma$}
+\end{lpic}
+\end{figure}
+
+If the function $z$ is not concave, then there is an other function $\check z\ge z$ with shorter graph such that $\check z(a)=z(a)$, $\check z(a)=z(a)$.
+Consider the curve $\check\gamma(t)=(x(t),y(t),\check z(t)$;
+$\check\gamma$ lies higher than $\gamma$ and therefore can on the boundary or outside of $K$.
+The closest point projection of $\check \gamma$ to $K$ gives a curve connecting endpoints of $\gamma$, by construction it runs in $\Sigma$ and by the lemma on closest point projection it is a shorter than $\gamma$ --- a contradiction. 
+\qeds
+
+
+\section{Bound on total curvature}
+
+Our nest aim is to prove the following theorem.
+
+\begin{thm}{Theorem}
+Assume $\Sigma$ is a graph $z=f(x,y)$ of a convex $L$-Lipschitz function $f$ defined on an open set in the $(x,y)$-plane.
+Then the total curvature of any geodesic in $\Sigma$ is at most $2\cdot L$.
+\end{thm}
+
+
