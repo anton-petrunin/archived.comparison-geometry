@@ -104,6 +104,8 @@ then the whole geodesic lies in $\Delta$.
 
 A curve $\gamma\:[a,b]\to \Sigma$ is called \emph{geodesic}  if for some partition $a\z=t_0<t_1<\dots <t_n=b$ of the interval the each arc $\gamma|_{[t_{i-1},t_{i+1}]}$ is a minimizing geodesic.
 
+The following lemma provides was proved by Joseph Liberman \cite{liberman}.
+
 \begin{thm}{Liberman's lemma}
 Assume $\gamma$ is a geodesic on the graph $z=f(x,y)$ of a concave function $f$ defined on an open subset of the plane.
 Consider a reparametrization $(x(t),y(t),z(t)$ of $\gamma$ such that the curve  $t\mapsto (x(t),y(t))$ is a unit-speed curve.
@@ -143,14 +145,64 @@ $\check\gamma$ lies higher than $\gamma$ and therefore can on the boundary or ou
 The closest point projection of $\check \gamma$ to $K$ gives a curve connecting endpoints of $\gamma$, by construction it runs in $\Sigma$ and by the lemma on closest point projection it is a shorter than $\gamma$ --- a contradiction. 
 \qeds
 
+\begin{wrapfigure}{o}{37 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-42}
+\vskip-0mm
+\end{wrapfigure}
+
+\begin{thm}{Exercise}
+Assume $\gamma$ is a minimizing geodesic on a smooth closed convex surface $\Sigma$ and $p$ in the interior of convex set bounded by $\Sigma$.
+Consider the cone $C$ with the tip at $p$ with ruling half-lines passing thru the points of $\gamma$.
+Let us develop $C$ on the plane; the curve $\gamma$ becomes a plane curve $\tilde\gamma$ and the tip of the cone is mapped to a point~$\tilde p$.
+
+Show that $\tilde\gamma$ is convex toward to $\tilde p$; that is for any sufficiently small arc $\tilde x\tilde y$ of $\tilde\gamma$, the curvelinear triangle $\tilde p\tilde x\tilde y$ is convex. 
+\end{thm}
+
+
 
 \section{Bound on total curvature}
 
-Our nest aim is to prove the following theorem.
+
+
 
 \begin{thm}{Theorem}
-Assume $\Sigma$ is a graph $z=f(x,y)$ of a convex $L$-Lipschitz function $f$ defined on an open set in the $(x,y)$-plane.
-Then the total curvature of any geodesic in $\Sigma$ is at most $2\cdot L$.
+Assume $\Sigma$ is a graph $z=f(x,y)$ of a convex $\ell$-Lipschitz function $f$ defined on an open set in the $(x,y)$-plane.
+Then the total curvature of any geodesic in $\Sigma$ is at most $2\cdot \ell$.
 \end{thm}
+
+The following theorem was proved by Vladimir Usov \cite{usov},
+later David Berg \cite{berg} pointed out that the same proof works for the geodesics in closed epigraphs of $\ell$-Lipschitz functions which are not necessary concave; that is, the set of the type 
+\[W=\set{(x,y,z)\in\RR^3}{z\ge f(x,y)}/\]
+
+
+Recall that by definition has constant speed.
+In the proof we will use the following clam without proof.
+
+\begin{thm}{Claim}
+Let $\gamma$ be a geodesic in a smooth regular surface $\Sigma$.
+Then $\gamma$ is a smooth regular curve or it is constant.
+Moreover, for any $t$ the second derivative $\gamma''(t)$ is normal to the tangent plane $\T_{\gamma(t)}\Sigma$.
+\end{thm}
+
+The first statement in the proof should be intuitively obvious.
+Let us give an informal physical explanation of the second statement about $\gamma''(t)$.
+
+One may think about geodesic $\gamma$ as of a stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
+Since it is frictionless, the force density $N(t)$ that keeps geodesic $\gamma$ in the surface must be therefore proportional to the normal vector to the surface at $\gamma(t)$.
+The tension in the thread has to be the same at all points (otherwise the thread would move back or forth and would not be stable).
+The tension at the ends of small arc is roughly proportional to the angle between the tangent lines at the ends of the arc. 
+Passing to the limit as the length of arc goes to zero, we get that density of this force $F(t)$ is proportional to $\gamma''(t)$.
+According to the second Newton's law, we have $F(t)+N(t)=0$;
+which implies that  $\gamma''(t)$ is perpendicular to $\T_{\gamma(t)}\Sigma$.%
+\footnote{In fact $\gamma''(t)+\nu\cdot \langle s(\gamma'(t)),\gamma'(t)\rangle=0$, where $s$ is the shape operator of $\Sigma$ at $\gamma(t)$ or equivalently,
+$\gamma''(t)+\nu\cdot  \II(\gamma'(t)),\gamma'(t))=0$, where $\II$ is the second fundamental form of $\Sigma$ at $\gamma(t)$.}
+
+\begin{thm}{Exercise} Assume $f\:[a,b]\to\RR$ is a smooth  function. 
+Let $(x(t),y(t))$ be a unit-speed parametrization of graph $y=f(x)$.
+Then $f$ is concave if and only if the function $t\mapsto y(t)$ is concave.
+\end{thm}
+
 
 

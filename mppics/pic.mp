@@ -1441,4 +1441,32 @@ whitelabel.(btex $K$ etex, (z.pp+z.qq+z.s)/3);
 
 
 endfig;
+
+beginfig(42) 
+save u;
+u:=1cm;
+
+z.p=origin;
+z.g0=(-1,-1)*u;
+z.g1=(1,0)*u;
+z.g2=(0,1)*u;
+z.g3=(-.5,0)*u;
+
+save p; path p[];
+p0=z.g0{right}..z.g1..z.g2..z.g3;
+
+draw p0;
+z.x=point 1.3 of p0;
+z.y=point 1.7 of p0;
+
+
+hatchfill subpath (1.3,1.7) of p0--z.p--cycle withcolor (57, 1mm, -.5bp);
+draw z.x--z.p--z.y;
+dOt z.p,z.x,z.y;
+
+label.bot(btex $\tilde p$ etex, z.p);
+label.urt(btex $\tilde x$ etex, z.x);
+label.urt(btex $\tilde y$ etex, z.y);
+label.ulft(btex $\tilde \gamma$ etex, point 2.5 of p0);
+endfig;
 end
