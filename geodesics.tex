@@ -102,6 +102,46 @@ lie in $\Delta$,
 then the whole geodesic lies in $\Delta$.
 \end{thm}
 
+Recall that \emph{diameter} of a set $K$ in the Euclidean space is defined as the exact uppper bound on the distances between pairs of points in $K$.
+Let us define \emph{intrinsic diameter} of a closed surface $\Sigma$ as the exact upper bound on the lengths of minimizing geodesic in the surface.
+
+\begin{thm}{Exercise}\label{ex:intrinsic-diameter}
+Assume that a closed smooth surface $\Sigma$ bounds a convex body $K$ of diameter $D$.
+\begin{itemize}
+\item Show that intrinsic diameter of can exceed $\pi\cdot D$.
+\item Show that the area of $\Sigma$ can not exceed the area of sphere of radius $D$.
+\end{itemize}
+
+
+\end{thm}
+
+\begin{wrapfigure}{r}{39 mm}
+\begin{lpic}[t(-0 mm),b(-4 mm),r(0 mm),l(0 mm)]{pics/unbend(1)}
+\lbl[t]{11.5,29;$p$}
+\lbl[r]{10.5,37;$p_t$}
+\lbl[t]{32.5,26;$q$}
+\lbl[t]{26,30;$\gamma(t)$}
+\lbl{20,13;{\Large $\Sigma$}}
+\end{lpic}
+\end{wrapfigure}
+
+
+\begin{thm}{Exercise}
+Let $\Sigma$ be a smooth closed strictly convex surface 
+in $\RR^3$ 
+and $\gamma\:[0,\ell]\z\to \Sigma$ be a unit-speed minimizing geodesic.
+Set $p\z=\gamma(0)$, $q=\gamma(\ell)$ and 
+$$p_t=\gamma(t)-t\cdot\gamma'(t),$$ 
+where $\gamma'(t)$ denotes the velocity vector of $\gamma$ at $t$.
+
+Show that for any $t\in (0,\ell)$,
+one {}\emph{cannot see}  $q$ from $p_t$;
+that is, the line segment $[p_tq]$ intersects $\Sigma$ at a point distinct from $q$.%
+\footnote{Hint: Show that the concatenation of the line segment $[p_t\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a minimizing geodesic in the closed set $W$ outside of $\Sigma$.}
+\end{thm}
+
+\section{Liberman's lemma}
+
 A curve $\gamma\:[a,b]\to \Sigma$ is called \emph{geodesic}  if for some partition $a\z=t_0<t_1<\dots <t_n=b$ of the interval the each arc $\gamma|_{[t_{i-1},t_{i+1}]}$ is a minimizing geodesic.
 
 The following lemma provides was proved by Joseph Liberman \cite{liberman}.
@@ -145,7 +185,7 @@ $\check\gamma$ lies higher than $\gamma$ and therefore can on the boundary or ou
 The closest point projection of $\check \gamma$ to $K$ gives a curve connecting endpoints of $\gamma$, by construction it runs in $\Sigma$ and by the lemma on closest point projection it is a shorter than $\gamma$ --- a contradiction. 
 \qeds
 
-\begin{wrapfigure}{o}{37 mm}
+\begin{wrapfigure}{o}{30 mm}
 \vskip-4mm
 \centering
 \includegraphics{mppics/pic-42}
@@ -167,20 +207,20 @@ Show that $\tilde\gamma$ is convex toward to $\tilde p$; that is for any suffici
 
 
 
-\begin{thm}{Theorem}
+\begin{thm}{Theorem}\label{thm:usov}
 Assume $\Sigma$ is a graph $z=f(x,y)$ of a convex $\ell$-Lipschitz function $f$ defined on an open set in the $(x,y)$-plane.
 Then the total curvature of any geodesic in $\Sigma$ is at most $2\cdot \ell$.
 \end{thm}
 
 The following theorem was proved by Vladimir Usov \cite{usov},
 later David Berg \cite{berg} pointed out that the same proof works for the geodesics in closed epigraphs of $\ell$-Lipschitz functions which are not necessary concave; that is, the set of the type 
-\[W=\set{(x,y,z)\in\RR^3}{z\ge f(x,y)}/\]
+\[W=\set{(x,y,z)\in\RR^3}{z\ge f(x,y)}\]
 
 
 Recall that by definition has constant speed.
 In the proof we will use the following clam without proof.
 
-\begin{thm}{Claim}
+\begin{thm}{Claim}\label{clm:gamma''}
 Let $\gamma$ be a geodesic in a smooth regular surface $\Sigma$.
 Then $\gamma$ is a smooth regular curve or it is constant.
 Moreover, for any $t$ the second derivative $\gamma''(t)$ is normal to the tangent plane $\T_{\gamma(t)}\Sigma$.
@@ -199,10 +239,41 @@ which implies that  $\gamma''(t)$ is perpendicular to $\T_{\gamma(t)}\Sigma$.%
 \footnote{In fact $\gamma''(t)+\nu\cdot \langle s(\gamma'(t)),\gamma'(t)\rangle=0$, where $s$ is the shape operator of $\Sigma$ at $\gamma(t)$ or equivalently,
 $\gamma''(t)+\nu\cdot  \II(\gamma'(t)),\gamma'(t))=0$, where $\II$ is the second fundamental form of $\Sigma$ at $\gamma(t)$.}
 
-\begin{thm}{Exercise} Assume $f\:[a,b]\to\RR$ is a smooth  function. 
+\begin{thm}{Lemma}\label{lem:unit-speed} Assume $f\:[a,b]\to\RR$ is a smooth  function. 
 Let $(x(t),y(t))$ be a unit-speed parametrization of graph $y=f(x)$.
 Then $f$ is concave if and only if the function $t\mapsto y(t)$ is concave.
 \end{thm}
 
+\parit{Proof.} 
+We can assume that the function $t\mapsto x(t)$ is increasing.
 
+Note that 
+\[y'(t)=\frac{f'(x(t))}{\sqrt{1+(f'(x(t)))^2}}.\]
+It follows that  $y'(t)$ is nonincreasing if and only if $f'(x)$ is nonincreasing, hence the result.
+\qeds
+
+\parit{Proof of \ref{thm:usov}.}
+Let $\gamma(t)=(x(t),y(t),z(t))$ be a geodesic on $\Sigma$ with a unit-speed parametrization.
+According to Liberman's lemma and Lemma~\ref{lem:unit-speed},
+$z(t)$ is concave.
+
+Since the slope of $f$ is at most $\ell$, we have
+\[|z'(t)|\le \tfrac{\ell}{\sqrt{1+\ell^2}}.\]
+If $\gamma$ is defined on the interval $[a,b]$, then
+\begin{align*}
+\int_a^b |z''(t)|&=z'(a)-z'(b)\le 
+\\
+&\le 2\cdot \tfrac{\ell}{\sqrt{1+\ell^2}}.
+\end{align*}
+
+Further note that $z''$ is the projection of $\gamma''$ to the $z$-axis.
+By 
+\qeds
+
+\begin{thm}{Exercise} Suppose a smooth surface $\Sigma$ bounds a convex set $K$ in the Euclidean spece.
+Assume $K$ contains a unit ball and has diameter $D$.
+Find an upper bound on the total curvatures of minimizing geodesics in $\Sigma$.\footnote{Hint: Use Exercise~\ref{ex:intrinsic-diameter}.}
+\end{thm}
+
+In fact there is a fixed bound on the total curvature of any minimizing geodesic on any closed convex surface \cite{lebedeva-petrunin}.
 
