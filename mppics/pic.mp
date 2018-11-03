@@ -1469,4 +1469,90 @@ label.urt(btex $\tilde x$ etex, z.x);
 label.urt(btex $\tilde y$ etex, z.y);
 label.ulft(btex $\tilde \gamma$ etex, point 2.5 of p0);
 endfig;
+
+beginfig(43) 
+save u;
+u:=1cm;
+
+z.a=(1,0)*u;
+
+save p; path p[];
+
+p0=circle(origin, z.a);
+draw p0;
+
+z.x1=(.3,.4)*u;
+z.y1=z.a rotated (90+angle z.x1);
+
+p1=(-z.y1)..(z.x1-z.y1)/sqrt(2)..z.x1..(z.x1+z.y1)/sqrt(2)..z.y1..(-z.x1+z.y1)/sqrt(2)..(-z.x1)..(-z.x1-z.y1)/sqrt(2)..cycle;
+draw subpath (0,4) of p1;
+draw subpath (4,8) of p1 dashed evenly;
+
+z.x2=(-.3,.3)*u;
+z.y2=z.a rotated (90+angle z.x2);
+
+p2=(-z.y2)..(z.x2-z.y2)/sqrt(2)..z.x2..(z.x2+z.y2)/sqrt(2)..z.y2..(-z.x2+z.y2)/sqrt(2)..(-z.x2)..(-z.x2-z.y2)/sqrt(2)..cycle;
+draw subpath (0,4) of p2;
+draw subpath (4,8) of p2 dashed evenly;
+
+z.x3=(.05,-.3)*u;
+z.y3=z.a rotated (90+angle z.x3);
+
+p3=(-z.y3)..(z.x3-z.y3)/sqrt(2)..z.x3..(z.x3+z.y3)/sqrt(2)..z.y3..(-z.x3+z.y3)/sqrt(2)..(-z.x3)..(-z.x3-z.y3)/sqrt(2)..cycle;
+draw subpath (0,4) of p3;
+draw subpath (4,8) of p3 dashed evenly;
+
+hatchfill 
+((subpath (0,4) of p1) cutbefore (subpath (0,4) of p3) cutafter (subpath (0,4) of p2))
+--
+((subpath (0,4) of p2) cutbefore (subpath (0,4) of p1) cutafter (subpath (0,4) of p3))
+--
+((subpath (0,4) of p3) cutbefore (subpath (0,4) of p2) cutafter (subpath (0,4) of p1))
+--cycle
+ withcolor (57, 1mm, -.5bp);
+ 
+whitelabel(btex $\Delta$ etex, origin);
+endfig;
+
+beginfig(44) 
+save u;
+u:=.7cm;
+
+drawarrow (2,-2)*u--(2,0)*u;
+drawarrow (2,0)*u--(-2,0)*u;
+drawarrow (-2,0)*u--(-2,1)*u;
+drawarrow (-2,1)*u--(-1,1)*u;
+drawarrow (-1,1)*u--(-1,-1)*u;
+drawarrow (-1,-1)*u--(1,-1)*u;
+drawarrow (1,-1)*u--(1,2)*u;
+drawarrow (1,2)*u--(0,2)*u;
+drawarrow (0,2)*u--(0,-2)*u;
+drawarrow (0,-2)*u--(2,-2)*u;
+
+label(btex $-1$ etex, (-1.5,.5)*u);
+label(btex $1$ etex, (-.5,-.5)*u);
+label(btex $2$ etex, (.5,-.5)*u);
+label(btex $0$ etex, (1.8,1)*u);
+label(btex $1$ etex, (.5,1)*u);
+label(btex $1$ etex, (1.5,-1.5)*u);
+endfig;
+
+beginfig(45) 
+save u;
+u:=1cm;
+
+z.v=(.8,1)*u;
+z.w=(2,3)*u;
+
+draw (0,0)*u--(-1,2)*u--z.w--(3,1)*u--(2.8,.2)*u--(1.2,-.1)*u--z.v--cycle;
+draw z.v--z.w;
+
+dOt z.v,z.w;
+
+label.rt(btex $v$ etex, z.v);
+label.top(btex $w$ etex, z.w);
+label(btex $Q$ etex, (0.2,1.8)*u);
+label(btex $R$ etex, (2,1)*u);
+
+endfig;
 end

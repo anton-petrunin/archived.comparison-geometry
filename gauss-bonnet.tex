@@ -26,22 +26,20 @@ Let $\Sigma$ be a smooth regular surface in the Euclidean space and $\alpha\:[a,
 
 Assume $p=\gamma(a)$ and $q=\gamma(b)$.
 Given a tangent vector $v\in\T_p$ there is unique parallel field $v(t)$ along $\alpha$ such that $v(a)=v$.
-The latter follows from Picard's theorem (a fundamental theorem of ordinary differential equations); uniqueness also follows from Exercise~\ref{ex:parallel}.
+The latter follows from Picard's theorem (the  fundamental theorem of ordinary differential equations); the uniqueness also follows from Exercise~\ref{ex:parallel}.
 
-The vector $v(b)\in\T_q$ is called parallel transport of $v$ along $\alpha$ and denoted as $\iota_\alpha(v)$.
+The vector $v(b)\in\T_q$ is called \emph{parallel transport} of $v$ along $\alpha$ and denoted as $\iota_\alpha(v)$.
 As it follow from the Exercise~\ref{ex:parallel}, parallel transport $\iota_\alpha\:\T_p\to\T_q$ is an an isometry;
-it depends on the choice of $\alpha$ --- for another curve $\beta$ connecting $p$ to $q$ the parallel transport $\iota_\beta\:\T_p\to\T_q$ might be different.
+it depends on the choice of $\alpha$ --- for another curve $\beta$ connecting $p$ to $q$ in $\Sigma$, the parallel transport $\iota_\beta\:\T_p\to\T_q$ might be different.
 
 To interpret the parallel transport physically, 
-think of walking along $\alpha$ and carrying a perfectly balanced bike wheel;
-you touch only the axis keeping it normal to $\Sigma$.
-It should be physically evident that if the wheel is non-spinning at the starting point $p$, then it will not be spinning after stopping at $q$.
-Indeed, by pushing axis one can not produce torque to spin the wheel. 
+think of walking along $\alpha$ and carrying a perfectly balanced bike wheel in such a way that you touch only its axis keeping it normal to $\Sigma$.
+It should be physically evident that if the wheel is non-spinning at the starting point $p$, then it will not be spinning after stopping at $q$.\footnote{Indeed, by pushing axis one can not produce torque to spin the wheel.}
 The map that sends the initial position of the wheel to the final position is  the parallel transportation~$\iota_\alpha$.
 
-This physical interpretation will be used further.
+This physical interpretation was suggested by Mark Levi \cite{levi}; it will be used further.
 
-On a more formal level, one can choose a partition $a=t_0<\dots<t_n=b$ of $[a,b]$
+On a more formal level, one can choose a partition $a=t_0<\dots\z<t_n=b$ of $[a,b]$
 and consider the sequence of orthogonal projections $\phi_i\:\T_{\alpha(t_{i-1})}\to\T_{\alpha(t_i)}$.
 For a fine partition, the composition 
 \[\phi_n\circ\dots\circ\phi_1\:T_p\z\to\T_q\]
@@ -51,23 +49,26 @@ It is straightforward to see that if if the partition is sufficiently fine, then
 \section{Geodesic curvature}
 
 Suppose $\Sigma$ is a smooth regular surface.
-Assume $\Sigma$ is oriented,
-In this case terms ``left'' and ``right'' can be used the same sense as in the plane.
+Assume $\Sigma$ is oriented;
+in this case terms ``left'' and ``right'' can be used the same sense as in the plane.
 
 \parbf{Broken geodesics.}
 For a concatenation of two geodesics in $\Sigma$, let us define signed external angle at their common point;
-the sign is positive if we turn left and negative if we turn right. 
+the sign is positive if it turns left and negative if it turns right. 
 
 A concatenation of minimizing geodesics in $\Sigma$ will be called \emph{broken geodesic}.
 
-The sum of the signed external angles for a broken geodesic $\gamma$ in $\Sigma$ will be called \emph{total geodesic curvature} of $\gamma$; it will be denoted as $\tgc\gamma$.
+The sum of the signed external angles for a broken geodesic $\gamma$ in $\Sigma$ will be called \emph{total geodesic curvature} of $\gamma$; it will be denoted as~$\tgc\gamma$.
+
 Note that if we change the orientation of the curve, then the total geodesic curvature changes sign.
 
 \parbf{Smooth regular curves.}
-The total geodesic curvature can be also defined for a smooth unit-speed curve $\gamma$ on $\Sigma$.
-Since $\Sigma$ is oriented, we can fix a Gauss map $\nu\:\Sigma\to \SS^2$.
+The total geodesic curvature can be also defined for a smooth unit-speed curve $\gamma\:[a,b]\to\Sigma$.
+
+Let $\nu\:\Sigma\to \SS^2$ be the Gauss map that defines the orientation on $\Sigma$.
 Then for any $t$ the vectors $\nu(t)=\nu(\gamma(t))$ and the velocity vector $\tau(t)=\gamma'(t)$ are unit vectors that are normal to each other.
 Denote by $\mu(t)$ the unit vector that is normal to both $\nu(t)$ and $\tau(t)$ that point to the left from $\gamma$.
+Note that the triple $\tau(t),\mu(t),\nu(t)$ is a orthogonal basis for any $t$
 
 Since $\gamma$ is unit-speed, the acceleration $\gamma''(t)$ is perpendicular to $\tau(t)$;
 therefore at any parameter value $t$, we have
@@ -75,15 +76,16 @@ therefore at any parameter value $t$, we have
 for some real numbers $k_n(t)$ and $k_g(t)$.
 The numbers $k_n(t)$ and $k_g(t)$ are called \emph{normal} and \emph{geodesic curvature} of $\gamma$ at $t$ correspondingly.
 
-Note that the geodesic curvature vanishes if $\gamma$ is a geodesic; 
-it measures how much a given curve diverges from a geodesic.
+Note that the geodesic curvature vanishes if $\gamma$ is a geodesic. 
+It measures how much a given curve diverges from a geodesic;
+it is positive if $\gamma$ turns left and negative if it turns right.
 
 The total geodesic curvature of $\gamma$ can be defined as the integral of its geodesic curvature
-\[\tgc\gamma=\int_\gamma k_g.\]
+\[\tgc\gamma=\int_a^b k_g(t)\cdot dt.\]
 
 If $\gamma$ is a regular curve then one has to parameterize it by arc length and then apply the definition above.
 
-The given two definitions for regular curve and broken geodesic agree in the sense that total geodesic curvature of smooth curve is a limit of the total geodesic curvatures of inscribed broken geodesics in $\gamma$ for finer and finer partitions.
+The given two definitions for regular curve and broken geodesic agree in the following sense: that total geodesic curvature of smooth curve is a limit of the total geodesic curvatures of inscribed broken geodesics in $\gamma$ for finer and finer partitions.
 
 \parbf{Piecewise smooth curves.}
 One could also combine both definitions to define total geodesic curvature for a concatenation of smooth curves in $\Sigma$ --- we need to add the total geodesic curvature of all the edges and the signed external angle at each vertex. 
@@ -108,7 +110,8 @@ Therefore after going around we get the
 Hence the result.
 
 For the smooth unit-speed curve $\gamma\:[a,b]\to\Sigma$, the proof is analogous.
-If $\phi(t)$ denotes the angle between $v(t)$ and $\gamma'(t)$ then $\phi'(t)+k_g=0$.
+If $\phi(t)$ denotes the angle between $v(t)$ and $\gamma'(t)$ then 
+\[\phi'(t)+k_g=0.\]
 Hence after going around it will rotate clockwise by angle
 \[\tgc\gamma=\int_a^b k_g(t)\cdot dt.\]
 
@@ -121,7 +124,7 @@ The case of piecewise regular smooth curve is a straightforward combination of t
 
 
 
-\section{Area of spherical triangle}
+\section{Signed area on the sphere}
 
 \begin{thm}{Lemma}
 Let $\Delta$ be a spherical triangle;
@@ -133,14 +136,24 @@ where $\alpha$, $\beta$ and $\gamma$ are the angles of $\Delta$.
 
 The value $\alpha+\beta+\gamma-\pi$ is called \emph{excess} of the triangle $\Delta$.
 
+\begin{wrapfigure}{o}{22 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-43}
+\vskip-0mm
+\end{wrapfigure}
+
 \parit{Proof.}
 Recall that 
 \[\area\SS^2=4\cdot\pi.\eqlbl{eq:area(S2)}\]
-The slice $S_\alpha$ of the sphere between two meridians under angle $\alpha$ is proportional to $\alpha$. Since for $S_\pi$ is a half-sphere we get that the coefficient is 2; that is,
+
+Note that the area of a spherical slice $S_\alpha$ between two meridians meeting at angle $\alpha$ is proportional to $\alpha$.
+Since for $S_\pi$ is a half-sphere, from \ref{eq:area(S2)}, we get $\area S_\pi\z=2\cdot\pi$.
+Therefore the coefficient is 2; that is,
 \[\area S_\alpha=2\cdot \alpha.\eqlbl{eq:area(Sa)}\]
 
-Extending the sides of $\Delta$ we get 6 slices: two $S_\alpha$, two $S_\beta$ and two $S_\gamma$ which cover whole sphere at once,
-but $\Delta$ and its centrally symmetric copy $\Delta'$ is covered 3 times.
+Extending the sides of $\Delta$ we get 6 slices: two $S_\alpha$, two $S_\beta$ and two $S_\gamma$ which cover most of the sphere once,
+but the triangle $\Delta$ and its centrally symmetric copy $\Delta'$ are covered 3 times.
 It follows that
 \[2\cdot \area S_\alpha+2\cdot \area S_\beta+2\cdot \area S_\gamma
 =\area\SS^2+4\cdot\area\Delta.\]
@@ -148,8 +161,64 @@ Substituting \ref{eq:area(S2)} and \ref{eq:area(Sa)} and simplifying, we get \re
 \qeds
 
 If the contour $\partial\Delta$ of spherical triangle with angles $\alpha$, $\beta$ and $\gamma$ is oriented such that the triangle lies on the left, then its external angles are  $\pi-\alpha$, $\pi-\beta$ and $\pi-\gamma$.
-Therefore \ref{eq:area(Delta)} can be rewritten as 
+Therefore the total geodesic curvature of $\partial\Delta$ is $\tgc{\partial\Delta}=3\cdot\pi-\alpha-\beta-\gamma$.
+The identity \ref{eq:area(Delta)} can be rewritten as 
 \[\tgc{\partial\Delta}+\area\Delta=2\cdot \pi.
 \eqlbl{eq:sphere-gauss-bonnet}\]
 
+The formula \ref{eq:sphere-gauss-bonnet} holds for arbitrary spherical polygon bounded by a simple broken geodesic;
+that is, intersection of finitely many closed half-spheres.
+The latter can be proved by triangulating the poygon, applying the formula for each triangle in the triangulation and summing up the results.
+
+\begin{wrapfigure}{o}{42 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-45}
+\vskip-0mm
+\end{wrapfigure}
+
+If a spherical polygon is $P$ divided in two polygons $Q$ and $R$ by a diagonal $vw$
+then 
+\[\tgc{\partial P}+2\cdot\pi =\tgc{\partial Q}+\tgc{\partial R}.\]
+Indeed, for the external angles $\theta_P$, $\theta_Q$ and $\theta_R$ at $v$, we have 
+\[\theta_P+\pi=\theta_Q+\theta_R.\]
+the same holds for the external angles at $w$ and the rest of the external angles of $P$ appear once on $Q$ or $R$.)
+Therefore if the formula \ref{eq:sphere-gauss-bonnet} holds for $\Delta=Q$ and $R$,
+then it holds for $P$.
+
+
+\parbf{Signed area.}
+The same formula modulo $2\cdot \pi$ holds for any closed broken geodesic, if one use \emph{signed area} surrounded by curve instead of usual area;
+that is, we count area of the regions taking into account how many times the curve goes around the region.
+
+Namely, we have to choose a \emph{south pole} and state that its region has zero multiplicity.
+When you cross the curve the mulitplicity has to changes by $\pm1$; it increases by 1 if the curve cross the way from left to right and it decreases by 1 otherwise.
+The signed area surrounded by a closed curve is the sum of area of all the regions counted with the multiplicities.
+
+\begin{wrapfigure}{o}{32 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-44}
+\vskip-0mm
+\end{wrapfigure}
+
+Here is an example of broken line with multiplicities assuming that the big region has a pole inside.
+
+This signed-area formula can be proved in a similar way:
+Apply the formula for each triangle with vertex at the north pole and base at each edge of the broken geodesic.
+Sum the resulting identities taking each with a sign: plus if the triangle lies on the left from the edge and minus if the triangle lies on the right from edge.
+
+Choosing a different pole will change all the coefficients by the same number.
+So the resulting formula holds only modulo the area of $\SS^2$, which is $4\cdot \pi$ --- this will not destroy identity modulo $2\cdot\pi$.
+
+Furthermore, by approximation, the signed-area formula holds for any reasonable curves, say piecewise smooth regular curves on the sphere.
+Summarizing, we hope the discussion above convinced the reader that the following statement hold:
+
+\begin{thm}{Proposition}
+For any closed piecewise smooth regular curves on the sphere $\alpha$, 
+we have that 
+\[\tgc\alpha+\area\alpha=0 \pmod{2\cdot\pi},\]
+where $\area\alpha$ denotes the signed area surrounded by $\alpha$ and $\tgc\alpha$ the total geodesic curvature of $\alpha$.
+
+\end{thm}
 
