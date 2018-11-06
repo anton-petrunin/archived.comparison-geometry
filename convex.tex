@@ -2,35 +2,35 @@
 
 
 \section{Embedded surfaces}
-A set in $X$ Euclidean space is called strictly convex if for any two points $x,y\in X$ any point $z$ that lies between $x$ and $y$ lies in the interior of $X$.
+A set $X$ in the Euclidean space is called strictly convex if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
 Clearly any open convex set is stricly convex;
-the cube (as well as any convex polyhedron) geves an example of convex set which is not strictly convex.
+the closed cube (as well as any convex polyhedron) gives an example of a convex set which is not strictly convex.
 
 \begin{thm}{Exercise}\label{ex:loc-convex}
 Let $\Sigma$ be a surface with positive Gauss curvature.
 Show that for any point $p\in \Sigma$ and all sufficiently small $\eps>0$,
-the surface $\Sigma$ divides the ball $B(p,\eps)$ into two regions, one of which is strictly convex.
+the surface $\Sigma$ divides the ball $B(p,\eps)$ in two regions, one of which is strictly convex.
 \end{thm}
 
-The following theorem gives a global version of the exercise above.
+The following theorem gives a global version of the above exercise.
 
 \begin{thm}{Theorem}\label{thm:convex-embedded}
-Assume $\Sigma$ is a closedor open smooth connected surface with positive Gauss curvature.
+Assume $\Sigma$ is a closed or open smooth connected surface with positive Gauss curvature.
 Then $\Sigma$ bounds a convex region $R$.
 Moreover, if $\Sigma$ is closed then it is a sphere; that is, $\Sigma$ admits a smooth regular parametrization by $\SS^2$.
 
 \end{thm}
 
 \parit{Proof.} 
-By Exercise~\ref{ex:loc-convex}, one of the regions, say $R$, bounded by $\Sigma$ is strictly convex locally;
-that is intersection of $R$ with a sufficiently small ball centered at a given point is strictly convex.
+By Exercise~\ref{ex:loc-convex}, one of the regions, say $R$, bounded by $\Sigma$ is locally strictly convex;
+that is, at any point $p$ of $R$, the intersection of $R$ with a sufficiently small ball centered at $p$ is strictly convex.
 
 Since $\Sigma$ is connected, so it $R$.
 Moreover any two points $x$ and $y$ in the interior of $R$ can be connected by a polygonal line $\beta$ in the interior of $R$.
 
 
 Arguing by contradiction, assume the line segment $[xy]$ does not lie in the   in the interior of $R$.
-Let $y_0$ be the first point on $\beta$ so that the line segment $[xy_0]$ touches $\Sigma$; assume it touch it at a point $z$.
+Let $y_0$ be the first point on $\beta$ so that the line segment $[xy_0]$ intersects $\Sigma$; assume $[xy_0]$ touches $\Sigma$ at a point $z$.
 
 \begin{wrapfigure}{r}{43 mm}
 \vskip-0mm
@@ -40,7 +40,7 @@ Let $y_0$ be the first point on $\beta$ so that the line segment $[xy_0]$ touche
 \end{wrapfigure}
 
 By Exercise \ref{ex:loc-convex}, $R\cap B(z,\eps)$ is strictly convex for all sufficiently small $\eps>0$.
-On the other hand $z$ lies between two points common to the line segment $[xy_0]$ and $R\cap B(z,\eps)$ --- a contradiction.
+On the other hand $z$ lies between two points both in the line segment $[xy_0]$ and $R\cap B(z,\eps)$ --- a contradiction.
 
 It remains to parameterize $\Sigma$ by $\SS^2$.
 
@@ -48,7 +48,7 @@ Fix a point $p$ in the interior of $R$.
 By strict convexity of $R$, for any point $x\in \SS^2$ there is unique point $x'\in \Sigma$ that lies on the halfline $px$;
 moreover, the map $h\:x\mapsto x'$ describes a bijection $\SS^2\to \Sigma$.
 
-Applying inverse function theorem in a local coordinates of $\SS^2$ and $\Sigma$,
+Applying inverse function theorem in local coordinates of $\SS^2$ and $\Sigma$,
 we get that the map $h$ is smooth and regular.
 Hence the result.
 \qeds
@@ -72,8 +72,8 @@ Any closed connected immersed surface with positive Gauss curvature is embedded.
 
 In other words such surface can not have self-intersections.
 Note that an analogous statement does not hold in the plane;
-on the diagram you see a closed curve with a self-intersection and positive curvature at all points.
-Exercise~\ref{ex:convex+2pi} gives a condition that guarantees simplicity of locally convex plane curve;
+on the diagram you can see a closed curve with a self-intersection and positive curvature at all points.
+Exercise~\ref{ex:convex+2pi} gives a condition that guarantees simplicity of a locally convex plane curve;
 it will be used in the following proof.
 
 
@@ -87,15 +87,15 @@ Any closed connected immersed surface with positive Gauss curvature is an embedd
 
 In the following sections we will give one complete proof and sketch an alternative proof.
 
-The first proof use a \emph{Morse-type argument} for the height function;
-that is, we study how the part of the surface that lies below a plane changes when we move the plane up.
+The first proof uses a \emph{Morse-type argument} for the height function;
+that is, we study how the part of the surface that lies below a plane changes when we move the plane upward.
 Little more careful analysis of this changes would imply the corollary above directly, without using Theorem~\ref{thm:convex-embedded}.
 
-The sketch use equidistant surfaces and Gauss map.
-We do not proof a topological statement which relying on intuition.
+The sketch use equidistants surfaces and the Gauss map.
+We will not proove a topological statement relying on intuition.
 
 In the proof we abuse notation slightly;
-we say a \emph{point of immersed surface} instead of \emph{point in the parameter domain of immersed surface}.
+we say a \emph{point of the immersed surface} instead of a \emph{point in the parameter domain of the immersed surface}.
 So each point of self-intersection is considered as two or more ``distinct'' points of the surface.
 
 \section{Morse-type proof}
@@ -108,7 +108,7 @@ Note that the intersection $W_h=\Sigma\cap\Pi_h$ is formed by a finite collectio
 
 Indeed, if $\T_p=\Pi_h$, then, since the principle curvatures are positive, $p$ is a local minimum or local maximum of the height function.
 In both cases, $p$ is an isolated point of $W_h$ in $\Sigma$.
-If the tangent plane $\T_p$ is not $\Pi_h$, then it is not perpendicular to $(x,z)$-pane or $(y,z)$-plane.
+If the tangent plane $\T_p$ is not $\Pi_h$, then it is not perpendicular to $(x,z)$-plane or $(y,z)$-plane.
 Therefore by Proposition~\ref{prop:perp}, the surface can be written locally as a graph $x=f(y,z)$ or $y=f(x,z)$;
 in both cases $p$ lies on the curve $x=f(y,h)$ or correspondingly $y=f(x,h)$.
 
@@ -116,24 +116,24 @@ Summarizing, the closed set $W_h\subset \Sigma$ locally looks like a curve or an
 Since $\Sigma$ is compact, so is $W$.
 Therefore $W$ is a finite disjoint collection of isolated points and closed simple curves in $\Sigma$.
 
-Assume $\alpha_{h_0}$ is a closed curves in $W_{h_0}$.
+Assume $\alpha_{h_0}$ is a closed curve in $W_{h_0}$.
 Note that its neighborhood is swept by curves $\alpha_h$ in $W_{h}$ for $h\approx h_0$.
-Indeed a neighbohood of $\alpha_{h_0}$ in $\Sigma$ can be covered by a finite number of graphs of the type $x=f(y,z)$ (or $y=f(x,z)$) and the curves $\alpha_h$ can be described locally as a curve $t\mapsto (f(t,h),t,h)$ (or correspondingly $t\z\mapsto(t,f(t,h),h)$) for $h\approx h_0$.
+Indeed a neighbohood of $\alpha_{h_0}$ in $\Sigma$ can be covered by a finite number of graphs of the type $x=f(y,z)$ (or $y=f(x,z)$) and the curves $\alpha_h$ can be described locally as curves of the form $t\mapsto (f(t,h),t,h)$ (or correspondingly $t\z\mapsto(t,f(t,h),h)$) for $h\approx h_0$.
 
-As $\alpha_h$ is an intersection of locally convex surface with a plane,
+As $\alpha_h$ is the intersection of a locally convex surface with a plane,
 the curvature of $\alpha_h$ has fixed sign;
-so if we choose orientation of the curves properly, we can assume that they all have positive curvature.
+so if we choose an orientation for the curves properly, we can assume that they all have positive curvature.
 
 The family $\alpha_h$ depends smoothly on $h$ and the same holds for its tangent indicatrix.
 Therefore the total signed curvature $K_h$ of $\alpha_h$ depends continuously on $h$.
 If $K_h=2\cdot\pi$ for some $h$, then $K_h=2\cdot\pi$ for every $h$.
 It follows since, the function $h\mapsto K_h$ is continuous and its value is a multiple of $2\cdot\pi$.
-In this case, by Exercise~\ref{ex:convex+2pi}, all curves $\alpha_h$ are simple and each bounds a convex region in the plane $\Pi_h$.
+In this case, by Exercise~\ref{ex:convex+2pi}, all curves $\alpha_h$ are simple and each one bounds a convex region in the plane $\Pi_h$.
 
 Summarizing, if one of the curves in the constructed family $\alpha_{h}$ is simple,
 then each curve in the family is simple and each $\alpha_{h}$ bounds a convex region in the plane $\Pi_h$. 
 
-Choose a point $p\in \Sigma$ that minimize the height function $z$.
+Choose a point $p\in \Sigma$ that minimizes the height function $z$.
 Without loss of generality we may assume that $p$ is the origin and therefore the surface lies in the upper half-space.
 
 Fix $h>0$.
@@ -143,14 +143,14 @@ one of them contains $p$, denote this component by $\Sigma_h$.\footnote{These co
 
 From above, $\Sigma_h$ is a surface with possibly nonempty boundary.
 Indeed it might be bounded only by few closed curves in $W_h$;
-any isolated point of $W_h$ either lie in $\Sigma_h$ together with it neighborhood or do not lie in $\Sigma_h$.
+any isolated point of $W_h$ either lies in $\Sigma_h$ together with its neighborhood or does not lie in $\Sigma_h$.
 
 
 Note that for small values of $h$, the surface $\Sigma_h$ is an embedded disc.
 Indeed, if $z=f(x,y)$ is a graph represetation of $\Sigma$ around $p$,
 then $\Sigma_h$ is a graph of $f$ over 
 \[\Delta=\set{(x,y)\in\RR^2}{f(x,y)\le h}.\]
-Since Gauss curvature is positive, the function $f$ is convex and therefore $\Delta$ is convex and bounded by a smooth curve;
+Since the Gauss curvature is positive, the function $f$ is convex and therefore $\Delta$ is convex and bounded by a smooth curve;
 any such set can be parameterized by a disc.
 
 \begin{wrapfigure}{r}{30 mm}
@@ -166,7 +166,7 @@ that is, $q$ is a limit of a subsequence of~$(q_n)$.
 
 If the tangent plane at $q$ is \emph{not} horizontal, 
 then there is a closed curve $\alpha_H$ in $\Sigma$ that passes thru $q$ and lies on the plane $z=H$.
-From above curve $\alpha_H$, as well as all $\alpha_h$ with $h\approx H$ are closed embedded convex curves.
+From the above discussion, the curve $\alpha_H$, as well as all $\alpha_h$ with $h\approx H$ are closed embedded convex curves.
 Hence $\Sigma_h$ has no self-intersections for some $h>H$ --- a contradiction.
 
 If the tangent plane at $q$ is horizontal,
@@ -179,11 +179,12 @@ Since $\Sigma_h$ has no self-intersections for $h<H$, we get that $\Sigma$ is an
 Show that any open immersed surface with positive Gauss curvature is embedded.\footnote{Hint: Modify the proof of the theorem.}
 \end{thm}
 
-\section{Proof via equidistant surface}
+\section{Proof via equidistant surfaces}
 
-Recall that a surface $\Sigma$ is called \emph{orientable} if one can choose a unit normal vector $\nu(p)$ at each point $p$ of the surface in such a way that the function $p\mapsto \nu_p$ is continuous in every chart of $\Sigma$.
+Recall that a surface $\Sigma$ is called \emph{orientable} if one can choose at each point $p$ of the surface
+a unit normal vector $\nu(p)$  in such a way that the function $p\mapsto \nu_p$ is continuous in every chart of $\Sigma$.
 For immersed surfaces we should say that $\nu$ is a continuous function defined on the parameter domain of the surface.
-The map $\nu$ is called \emph{Gauss map} of the surface.
+The map $\nu$ is called a \emph{Gauss map} of the surface.
 
 \begin{thm}{Claim}
 Assume $\Sigma$ is a closed immersed surface with positive Gauss curvature, then it is orientable.
@@ -200,8 +201,8 @@ The unit normal described in the proof of the claim will be called \emph{outer n
 
 \begin{thm}{Lemma}\label{lem:gauss-inverse}
 Assume $\Sigma$ is a closed connected immersed surface with positive Gauss curvature.
-Then Gauss map $\nu\:\Sigma \to \SS^2$ has a smooth regular inverse;
-in particular $\Sigma$ is a sphere.
+Then the Gauss map $\nu\:\Sigma \to \SS^2$ has a smooth regular inverse;
+in particular, $\Sigma$ is a sphere.
 \end{thm}
 
 This lemma follows from two facts:
@@ -216,7 +217,7 @@ The reader might be able to reinvent the theory by trying to prove that if the m
 Assume $\nu\:\Sigma\to \SS^2$ is a Gauss map of a smooth surface $\Sigma$.
 Fix a real number $R$ and consider the map $h_R\:\Sigma\z\to\RR^3$ defined by $h_R\:p\mapsto p+R\cdot\nu(p)$.
 The map $h_R$ describe the so called \emph{equidistant surface};
-it is smooth by definition, but might be not regular in general.
+it is smooth by definition, but in general it does not have to be regular.
 
 \begin{thm}{Lemma}\label{lem:curc<1/R}
 Suppose $\nu\:\Sigma\to \SS^2$ is a Gauss map of a surface $\Sigma$.
@@ -225,7 +226,7 @@ Then the equidistant surface $\Sigma_R$ is regular and its principle curvatures 
 \end{thm}
 
 \parit{Proof.}
-To prove regularity, let us use the special representation of $\Sigma$ as a graph $z=f(x,y)$ with $x$ and $y$ axis in the principle directions of $\Sigma$ at $p$.\footnote{If we assume that $\nu(p)$ points in the direction of $z$-axis, then $\Sigma$ is given in parametric form 
+To prove regularity, let us use the special representation of $\Sigma$ as a graph $z=f(x,y)$ with the $x$ and $y$ axis in the principle directions of $\Sigma$ at $p$.\footnote{If we assume that $\nu(p)$ points in the direction of the $z$-axis, then $\Sigma$ is given in parametric form 
 $h_0\:(x,y)\mapsto (x,y,f(x,y))$,
 where $f\z=-\tfrac{k_1}2\cdot x^2-\tfrac{k_2}2\cdot y^2+o(x^2+y^2)$.}
 
@@ -234,25 +235,25 @@ for the Gauss map $g(x,y)$, we have
 \begin{align*}
 \tfrac{\partial}{\partial x}g(0,0)&=(k_1,0,0),
 \\
-\tfrac{\partial}{\partial x}g(0,0)&=(0,k_2,0).
+\tfrac{\partial}{\partial y}g(0,0)&=(0,k_2,0).
 \end{align*}
 Then $h_R=h_0+R\cdot g$; therefore
 \begin{align*}
 \tfrac{\partial}{\partial x} h_R&=(1+R\cdot k_1,0,0),
 \\
-\tfrac{\partial}{\partial x} h_R&=(0,1+R\cdot k_2,0)
+\tfrac{\partial}{\partial y} h_R&=(0,1+R\cdot k_2,0)
 \end{align*}
-which are linearly independent for if $R\ge0$ and $k_1,k_2\ge 0$. 
+which are linearly independent if $R\ge0$ and $k_1,k_2\ge 0$. 
 
 If $\Sigma$ bounds a convex closed set $K$.
-Then $\Sigma_R$ bounds $K_R$ --- the closed closed $R$-neighborhood of $K$;
-that is, $K_R$ is the set of all points on the distance at most $R$ from $K$.
+Then $\Sigma_R$ bounds $K_R$ --- the closed $R$-neighborhood of $K$;
+that is, $K_R$ is the set of all points at distance at most $R$ from $K$.
 
-Since $\Sigma$ is smooth it is supported at each point $p$ from inside by a ball of small $B_\eps(o)$.
+Since $\Sigma$ is smooth it is supported at each point $p$ from inside by a small ball $B_\eps(o)$.
 Then the ball $B_{R+\eps}(o)$ lies in $K_R$ and touches its boundary at the point corresponding to $p$.
 Hence the principle curvatures at $p$ are at least $\tfrac1{R+\eps}$.
 
-In general case, a local chart of $\Sigma$ can be modified so it has a piece of original surface around $p$  and bounds a convex set.
+In the general case, a local chart of $\Sigma$ can be modified so that it has a piece of the original surface around $p$  and bounds a convex set.
 Here is one way to do this:
 
 \begin{wrapfigure}{r}{30 mm}
@@ -267,13 +268,14 @@ Choose a smooth function $\phi(x)$ that is convex increasing and such that for s
 
 Assume $z=f(x,y)$ is a special representation of $\Sigma$ around $p$ by some convex function $f$.
 Direct computations show that $h=\phi\circ f(x,y)$ is still convex.
-The surface $\Sigma'$ describe as the graph $z=h(x,y)$ bounds a convex closed set $K$ and the part of $\Sigma'$ described by parameters $\set{(x,y)}{f(x,y)<\eps}$ coincide with a neighborhood of $p$ in $\Sigma$.
+The surface $\Sigma'$ described as the graph $z=h(x,y)$ bounds a convex closed set $K$ and the part of $\Sigma'$ described by 
+the parameters $\set{(x,y)}{f(x,y)<\eps}$ coincide with a neighborhood of $p$ in $\Sigma$.
 Hence the general case follows.\qeds
 
 \parit{Proof assembling.}
-Let $s\:\SS^2\z\to\RR^3$ be the parametization of $\Sigma$ provides by Lemma~\ref{lem:gauss-inverse}.
+Let $s\:\SS^2\z\to\RR^3$ be the parametization of $\Sigma$ provided by Lemma~\ref{lem:gauss-inverse}.
 Then the equidistant surface $\Sigma_R$ can be parametrized by $s_R(u)= s(u)+R\cdot u$ for $u\in\SS^2$.
-Applying rescaling of $s_R$ with factor $\tfrac1r$ we get the map $u\mapsto \tfrac1R\cdot s(u)+u$ which converges smoothly to the indentity map on the sphere $\SS^2$.
+Rescaling $s_R$ by a  factor of $\tfrac1r$ we get the map $u\mapsto \tfrac1R\cdot s(u)+u$ which converges smoothly to the indentity map on the sphere $\SS^2$.
 Therefore $\Sigma_R$ is embedded for sufficiently large $R$.
 
 \begin{wrapfigure}{r}{47 mm}
@@ -285,11 +287,10 @@ Therefore $\Sigma_R$ is embedded for sufficiently large $R$.
 
 Applying Theorem~\ref{thm:convex-embedded}, we get that $\Sigma_R$ bounds a convex set.
 
-By Lemma~\ref{lem:curc<1/R}, principle curvatures of $\Sigma_R$ are smaller than $\tfrac1R$.
-Therefore same idea as in the Exercise~\ref{ex:convex-lagunov} shows that any point $p$ of $\Sigma_R$ can be touched by a ball of radius $R$ from inside; 
-moreover such ball touches surface at a single point.
+By Lemma~\ref{lem:curc<1/R}, the principle curvatures of $\Sigma_R$ are smaller than $\tfrac1R$.
+Therefore the same idea as in Exercise~\ref{ex:convex-lagunov} shows that any point $p$ of $\Sigma_R$ can be supported by a ball of radius $R$ from inside.
 Note that the center $p'$ of such ball has to lie on $\Sigma$;
-indeed it lies on the distance $R$ in the normal direction.
+indeed it lies at distance $R$ in the normal direction.
 In other words, the map $s_0(u)=s_R(u)-R\cdot u$ is injective, or equivalently $\Sigma$  has no self-intersection.
 \qeds
 
