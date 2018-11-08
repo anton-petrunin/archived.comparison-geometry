@@ -111,33 +111,8 @@ Assume that a closed smooth surface $\Sigma$ bounds a convex body $K$ of diamete
 \item Show that the area of $\Sigma$ can not exceed the area of sphere of radius $D$.
 \end{itemize}
 
+\end{thm}%??? exact bound if $\tfrac\pi2\cdot D$
 
-\end{thm}
-
-\begin{wrapfigure}{r}{39 mm}
-\begin{lpic}[t(-0 mm),b(-4 mm),r(0 mm),l(0 mm)]{pics/unbend(1)}
-\lbl[t]{11.5,29;$p$}
-\lbl[r]{10.5,37;$p_t$}
-\lbl[t]{32.5,26;$q$}
-\lbl[t]{26,30;$\gamma(t)$}
-\lbl{20,13;{\Large $\Sigma$}}
-\end{lpic}
-\end{wrapfigure}
-
-
-\begin{thm}{Exercise}
-Let $\Sigma$ be a smooth closed strictly convex surface 
-in $\RR^3$ 
-and $\gamma\:[0,\ell]\z\to \Sigma$ be a unit-speed minimizing geodesic.
-Set $p\z=\gamma(0)$, $q=\gamma(\ell)$ and 
-$$p_t=\gamma(t)-t\cdot\gamma'(t),$$ 
-where $\gamma'(t)$ denotes the velocity vector of $\gamma$ at $t$.
-
-Show that for any $t\in (0,\ell)$,
-one {}\emph{cannot see}  $q$ from $p_t$;
-that is, the line segment $[p_tq]$ intersects $\Sigma$ at a point distinct from $q$.%
-\footnote{Hint: Show that the concatenation of the line segment $[p_t\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a minimizing geodesic in the closed set $W$ outside of $\Sigma$.}
-\end{thm}
 
 \section{Liberman's lemma}
 
@@ -221,8 +196,10 @@ In the proof we will use the following clam without proof.
 
 \begin{thm}{Claim}\label{clm:gamma''}
 Let $\Sigma$ be a smooth regular surface.
-A curve $\gamma$ in $\Sigma$ is a geodesic if and only if it is a smooth constant-speed curve.
+A curve $\gamma$ in $\Sigma$ is a geodesic if and only if it is a smooth constant-speed curve
 such that  for any $t$ the second derivative $\gamma''(t)$ is normal to the tangent plane $\T_{\gamma(t)}\Sigma$.
+
+Moreover given an initial point $p\in \Sigma$ and a tangent vector $v\in\T_p\Sigma$ there is unique geodesic $\gamma$ defined on a maximal open interval containing zero such that $\gamma(0)=p$ and $\gamma'(0)=v$.
 \end{thm}
 
 The first statement in the proof should be intuitively obvious.
@@ -237,6 +214,20 @@ According to the second Newton's law, we have $F(t)+N(t)=0$;
 which implies that  $\gamma''(t)$ is perpendicular to $\T_{\gamma(t)}\Sigma$.%
 \footnote{In fact $\gamma''(t)+\nu\cdot \langle s(\gamma'(t)),\gamma'(t)\rangle=0$, where $s$ is the shape operator of $\Sigma$ at $\gamma(t)$ or equivalently,
 $\gamma''(t)+\nu\cdot  \II(\gamma'(t)),\gamma'(t))=0$, where $\II$ is the second fundamental form of $\Sigma$ at $\gamma(t)$.}
+
+The third statement can be also understood using physical intuition --- $\gamma(t)$ is the trajectory of a small object that slides on $\Sigma$ without friction and with initial velocity $v$.
+Formally, existence and uniqueness follows from Picard's theorem (the  fundamental theorem of ordinary differential equations).
+
+\begin{thm}{Exercise}
+Show that two minimizing geodesics in a smooth regular surface  can not have more than one point of intersections. 
+\end{thm}
+
+\begin{thm}{Exercise}
+Assume that a smooth regular surface $\Sigma$ is mirror symmetric with respect to a plane $\Pi$.
+Show that no minimizing geodesic in $\Sigma$ can cross $\Pi$ more than 1 time.
+\end{thm}
+
+
 
 \begin{thm}{Lemma}\label{lem:unit-speed} Assume $f\:[a,b]\to\RR$ is a smooth  function. 
 Let $(x(t),y(t))$ be a unit-speed parametrization of graph $y=f(x)$.
