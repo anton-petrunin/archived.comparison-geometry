@@ -14,7 +14,7 @@ If the curve $\alpha$ is closed then we assume in addition that $\alpha'(a)=\alp
 
 Denote by $\tau(t)$ the unit vector in the direction of $\alpha'(t)$;
 that is, $\tau(t)=\tfrac{\alpha'(t)}{|\alpha'(t)|}$.
-Then $\tau\:[a,b]\to\mathbb{S}^2$ is an other curve which is called \emph{tangent indicatrix} of $\alpha$.
+Then $\tau\:[a,b]\to\mathbb{S}^2$ is another curve which is called \emph{tangent indicatrix} of $\alpha$.
 The length of $\tau$ is called the \emph{total curvature of}~$\alpha$;
 that is,
 \[\tc\alpha:=\length\tau.\]
@@ -24,7 +24,7 @@ Show that
 \[\tc\alpha\ge 2\cdot \pi\]
 for any smooth closed regular curve $\alpha$.
 
-Moreover, the equality holds if and only if $\alpha$ is a closed convex curve that lying in a plane.
+Moreover, the equality holds if and only if $\alpha$ is a closed convex curve lying in a plane.
 \end{thm}
 
 The above exercise is the so called Fenchel's theorem.
@@ -41,9 +41,9 @@ The total curvature of the polygonal line $\beta=p_0\dots p_n$ is defined as the
 \[\tc\beta=\alpha_1+\dots+\alpha_{n-1};\]
 it is defined if the polygonal line is \emph{nondegenerate}; that is, $p_{i-1}\ne p_i$ for any $i$.
 
-If the polygonal line $p_0\dots p_n$ is closed; that is $p_0=p_{n+1}$ you add one more angle 
-\[\alpha_0+\alpha_1+\dots+\alpha_{n-1},\]
-where $\alpha_0=\pi-\measuredangle p_{n}p_0p_{1}$.
+If the polygonal line $p_0\dots p_n$ is closed; that is $p_0=p_{n+1}$ you add two more angles 
+\[\alpha_0+\alpha_1+\dots+\alpha_{n-1} + \alpha_n ,\]
+where $\alpha_0=\pi-\measuredangle p_{n}p_0p_{1}$ and $\alpha _n = \pi - \measuredangle p_{n-1} p_n p_0$.
 
 One can define the tangent indicatrix of a polygonal line $\beta$ as a spherical polygonal line (each edge is an arc of a big circle in the sphere) whose vertexes are the unit vectors $\xi_1,\dots,\xi_n$ in the directions of $p_1-p_0$, $p_2-p_1,\dots, p_n-p_{n-1}$ correspondingly;
 if the  polygonal line is closed then we add one more vertex $\xi_0$ in the direction of $p_0-p_{n}$ and two more edges $\xi_0\xi_1$ and $\xi_n\xi_0$ so the indicatrix of a closed polygonal line is a closed spherical polygonal line.
@@ -53,7 +53,7 @@ Note that the total curvature of a polygonal line is the length of its tangent i
 \begin{thm}{Exercise}\label{ex:monotonic-tc}
 Let $a,b,c,d$ and $x$ be distinct points in $\RR^3$.
 Show that 
-\[\tc abcd\ge \tc abxcd.\]
+\[\tc abcd \leq \tc abxcd.\]
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:poly-fenchel}
@@ -63,7 +63,7 @@ Use Exercise~\ref{ex:monotonic-tc} to prove an analog of Fenchel's theorem (Exer
 
 We gave two definitions of total curvature:
 the first one is given in Section~\ref{sec:total-curvature-smooth} via the tangent indicatrix --- it works for smooth regular curves;
-the second, via external angles --- it works for polygonal lines.
+the second is via external angles --- it works for polygonal lines.
 The latter can be used to define total curvature of arbitrary curves.
 
 
@@ -89,11 +89,11 @@ to a curve $\alpha_\infty\:[a,b]\z\to \RR^3$, then
 \parit{Hint:} Modify the proof of semi-continuity of length (Theorem~\ref{thm:length-semicont}).
 
 
-The following definition tells that the two definitions agree.
+The following definition tells us that the two definitions agree.
 
 \begin{thm}{Theorem}\label{thm:total-curvature=}
 For smooth regular curves the two definitions of total curvature agree;
-that is, for any regular curve, the length of its tangent indicatrix is equal to the exact upper bound on the total curvatures of inscribed nondegenerate polygonal lines.
+that is, for any regular curve, the length of its tangent indicatrix is equal to the exact upper bound of the total curvatures of inscribed nondegenerate polygonal lines.
 \end{thm}
 
 Note that from the theorem and Exercise~\ref{ex:poly-fenchel}, we get a generalization of Fenchel's theorem (Exercise~\ref{ex:fenchel}) --- it works for arbtrary closed curves, not necessary smooth and regular.
@@ -299,8 +299,8 @@ With minor modifications both proofs given above work in the 3-dimensional case 
 The following more general result was proved by Jeffrey Lagarias and Thomas Richardson in \cite{lagarias-richardso}, an other proof is given by Alexander Nazarov and Fedor Petrov in \cite{nazarov-petrov}.
 
 \begin{thm}{Theorem}
-Let $\alpha$ be a closed curve that lies in a convex plane figure bounded by curve $\gamma$
-Then average curvature of $\alpha$ is not less than average curvature of $\gamma$.
+Let $\alpha$ be a closed curve that lies in a convex plane figure bounded by a curve $\gamma$
+Then the average curvature of $\alpha$ is not less than the average curvature of $\gamma$.
 Since  $\tc\gamma=2\cdot\pi$, it can be written as
 \[\frac{\tc\alpha}{\length\alpha}\ge \frac{2\cdot\pi}{\length\gamma}.\]
 
@@ -344,7 +344,7 @@ at all $t\in[a,b]$ except possibly on a countable subset.
 \end{thm}
 
 \begin{thm}{Exercise} 
-Assume a sequence of curves $\alpha_n\:[a,b]\to\RR^3$ converges to a curve $\alpha_\infty\:[a,b]\to\RR^3$ and
+Assume a sequence of curves $\alpha_n\:[a,b]\to\RR^3$ converges uniformly to a curve $\alpha_\infty\:[a,b]\to\RR^3$ and
 \[ \liminf_{n\to\infty}\length\alpha_n>\length\alpha_\infty.\]
 Show that 
 \[\tc\alpha_n\to\infty\quad\text{as}\quad n\to\infty.\]

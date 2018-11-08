@@ -20,7 +20,6 @@ However, a closed curve $\alpha\:[a,b]\to \RR^2$ is called simple if it is injec
 everywhere except at the ends; that is, if
 $\alpha(t)=\alpha(t')$ for $t<t'$ then $t=a$ and $t'=b$.
 
-A closed curve is called \emph{convex} if it bounds a convex region.
 \end{thm}
 
 \begin{thm}{Advanced exercise}
@@ -67,7 +66,7 @@ Show that
 Construct a nonrectifiable curve $\alpha\:[0,1]\to\RR^2$.
 \end{thm}
 
-A closed simple plane curve is called \emph{convex} if it bounds a convex figure.
+A closed simple plane curve is called \emph{convex} if it bounds a convex region.
 
 \begin{thm}{Proposition}\label{prop:convex-curve}
 Assume a convex figure $A$ bounded by a curve $\alpha$ lies inside a figure $B$ bounded by a curve $\beta$.
@@ -235,7 +234,7 @@ Assume it satisfies the following properties:
 \[\ell(\alpha)=|\alpha(a)-\alpha(b)|.\]
 \item\label{Additivity} (Additivity) If the concatenation $\alpha*\beta$ is defined, then
 \[\ell(\alpha*\beta)=\ell(\alpha)+\ell(\beta).\]
-\item\label{Motion invariance} (Motion invariance) The functional $\ell$ is invariant with respect to the motions of the plane; that is, if $m$ is an isometry of the plane, then 
+\item\label{Motion invariance} (Motion invariance) The functional $\ell$ is invariant with respect to motions of the plane; that is, if $m$ is an isometry of the plane, then 
 \[\ell(m\circ\alpha)=\ell(\alpha)\]
 for any curve $\alpha$.
 \item\label{Reparametrization invariance} (Reparametrization invariance) If $\alpha'$ is a reparametrization of a curve $\alpha$ then
@@ -383,8 +382,8 @@ Any line on the plane admits exactly two such presentations with pairs $(u,\rho)
 A pair $(u,\rho)$ describes uniquely an \emph{oriented} line --- that is a line with a chosen unit normal vector.
 
 Fix a unit vector $u_0$ and denote by $u(\phi)$ the result of rotating $u_0$ counterclockwise by the angle $\phi $. %pic here should be nice
-Denote by $\ell(\phi,\rho)$ the oriented line asociated to the pair $(u(\phi),\rho)$.
-To describe any line, we need a pair $(\phi,\rho)\in (-\pi,\pi]\times \RR$.
+Denote by $\ell(\phi,\rho)$ the oriented line asociated to the pair $(u_0 (\phi),\rho)$.
+To describe alllines, we need all pairs $(\phi,\rho)\in (-\pi,\pi]\times \RR$.
 
 For a curve $\alpha$, set $n_\alpha(\phi,\rho)$ to be the number of parameter values $t$ such that $\alpha(t)$ lies on the line $\ell(\phi,\rho)$. 
 The value $n_\alpha(\phi,\rho)$ is a nonnegative integer or $\infty$.
@@ -550,9 +549,7 @@ Use Exercise~\ref{ex:perim+mink} and Lemma~\ref{lem:perimeter} to give another s
 \end{thm}
 
 \begin{thm}{Exercise}
-Let $\gamma$ be a curve that lies in a convex figure $F$ in the plane.
-
-Let $\gamma$ be a curve that lies inside a convex figure $F$ on the plane.
+Let $\gamma$ be a curve that lies inside a convex figure $F$ in the plane.
 Assume that
 \[2\cdot \length \gamma\ge n\cdot \perim F\]
 for some integer $n$.
