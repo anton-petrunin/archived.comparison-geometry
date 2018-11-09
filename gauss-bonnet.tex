@@ -3,8 +3,8 @@
 \section{Parallel fields}
 
 Let $\Sigma$ be a smooth regular surface in the Euclidean space and $\alpha\:[a,b]\z\to \Sigma$ be a smooth curve.
-Suppose $t\mapsto v(t)$ is a smooth vector valued function (a field on $\alpha$) such that
-that at each $t$, the vector $v(t)$ lies in the tangent plane $\T_{\alpha(t)}\Sigma$.
+A smooth vector valued function $t\mapsto v(t)$ is called a \emph{tangent field} on $\alpha$ if
+the vector $v(t)$ lies in the tangent plane $\T_{\alpha(t)}\Sigma$ for each $t$.
 The family of vectors $v(t)$ is called \emph{parallel} along $\alpha$ if $v'(t)\perp\T_{\alpha(t)}$ for any $t$.
 
 In general the family of tangent planes $\T_{\alpha(t)}\Sigma$ is not parallel.
@@ -92,7 +92,7 @@ The total geodesic curvature can be also defined for a smooth unit-speed curve $
 Let $\nu\:\Sigma\to \SS^2$ be the Gauss map that defines the orientation on $\Sigma$.
 Then for any $t$ the vectors $\nu(t)=\nu(\gamma(t))$ and the velocity vector $\tau(t)=\gamma'(t)$ are unit vectors that are normal to each other.
 Denote by $\mu(t)$ the unit vector that is normal to both $\nu(t)$ and $\tau(t)$ that point to the left from $\gamma$.
-Note that the triple $\tau(t),\mu(t),\nu(t)$ is a orthogonal basis for any $t$
+Note that the triple $\tau(t),\mu(t),\nu(t)$ is a orthogonal basis for any $t$.
 
 Since $\gamma$ is unit-speed, the acceleration $\gamma''(t)$ is perpendicular to $\tau(t)$;
 therefore at any parameter value $t$, we have
@@ -109,10 +109,11 @@ The total geodesic curvature of $\gamma$ can be defined as the integral of its g
 
 If $\gamma$ is a regular curve then one has to parameterize it by arc length and then apply the definition above.
 
-The given two definitions for regular curve and broken geodesic agree in the following sense: that total geodesic curvature of smooth curve is a limit of the total geodesic curvatures of inscribed broken geodesics in $\gamma$ for finer and finer partitions.
-
-\parbf{Piecewise smooth curves.}
-One could also combine both definitions to define total geodesic curvature for a concatenation of smooth curves in $\Sigma$ --- we need to add the total geodesic curvature of all the edges and the signed external angle at each vertex. 
+The given two definitions for regular curve and broken geodesic agree in the following sense.
+If $\beta_n$ is a sequence of inscribed broken geodesics in $\gamma$ for finer and finer partitions, then 
+\[\tgc{\beta_n}\to\tgc\gamma,\]
+where the left and right hand sides are defined using the first and the second definitions above.
+The proof is straightforward, it can be done the same way as the case in the plane. %??? is it???
 
 \begin{thm}{Exercise}
 Let $\gamma$ be a smooth unit-speed curve in a  smooth regular surface $\Sigma$ with a Gauss map $\nu$.
@@ -129,6 +130,12 @@ Show that
 and in case of equality $\gamma$ lies in a plane.
 \end{thm}
 
+\parbf{Piecewise smooth curves.}
+One could also combine both definitions to define total geodesic curvature for 
+piecewise smooth curve $\gamma$ in $\Sigma$; that is
+a concatenation of smooth regular curves.
+We need to add the total geodesic curvature of all the edges of $\gamma$ and the signed external angle at each vertex. 
+
 
 
 \begin{thm}{Proposition}\label{prop:pt+tgc}
@@ -138,22 +145,35 @@ Then the parallel transport $\iota_\gamma\:T_p\to\T_p$ is a rotation of the the 
 Moreover, the same statement holds for smooth closed curves and piecewise smooth curves.
 \end{thm}
 
+\begin{wrapfigure}{o}{22 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-48}
+\vskip-0mm
+\end{wrapfigure}
+
 \parit{Proof.}
-Assume $\gamma$ is a concatination of geodesics $\gamma_1,\dots,\gamma_n$.
+Assume $\gamma$ is a cyclic concatenation of geodesics $\gamma_1,\dots,\gamma_n$.
 Fix a tangent vector $v$ at $p$ and extend it to a parallel vector field along $\gamma$.
-Since $w_i=\gamma_i'$ is parallel along $\gamma_i$, the angle $\phi_i$ between $v$ and $w_i$ stays constant on each $\gamma_i$.
+Since $w_i(t)=\gamma_i'(t)$ is parallel along $\gamma_i$, the angle $\phi_i$ between $v$ and $w_i$ stays constant on each $\gamma_i$.
 
 If $\theta_i$ denotes the external angle at this vertex of switch from $\gamma_{i}$ to $\gamma_{i+1}$, we have that 
 \[\phi_{i+1}=\phi_i-\theta_i \pmod{2\cdot\pi}.\]
-Therefore after going around we get the 
+Therefore after going around we get that 
 \[\phi_{n+1}-\phi_1=-\theta_1-\dots-\theta_n=-\tgc\gamma.\]
-Hence the result.
+Hence the the first statement follows.
 
 For the smooth unit-speed curve $\gamma\:[a,b]\to\Sigma$, the proof is analogous.
-If $\phi(t)$ denotes the angle between $v(t)$ and $\gamma'(t)$ then 
-\[\phi'(t)+k_g=0.\]
-Hence after going around it will rotate clockwise by angle
-\[\tgc\gamma=\int_a^b k_g(t)\cdot dt.\]
+If $\phi(t)$ denotes the angle between $v(t)$ and $w(t)=\gamma'(t)$, then 
+\[\phi'(t)+k_g(t)\equiv0\]
+Whence the angle of rotation 
+\begin{align*}
+\phi(b)-\phi(a)&=\int_a^b \phi'(t)\cdot dt=
+\\
+&=-\int_a^b k_g\cdot dt=
+\\
+&=-\tgc\gamma
+\end{align*}
 
 The case of piecewise regular smooth curve is a straightforward combination of the above two cases. 
 \qeds
@@ -200,12 +220,7 @@ It follows that
 Substituting \ref{eq:area(S2)} and \ref{eq:area(Sa)} and simplifying, we get \ref{eq:area(Delta)}.
 \qeds
 
-\begin{wrapfigure}{o}{42 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-45}
-\vskip-0mm
-\end{wrapfigure}
+
 
 If the contour $\partial\Delta$ of spherical triangle with angles $\alpha$, $\beta$ and $\gamma$ is oriented such that the triangle lies on the left, then its external angles are  $\pi-\alpha$, $\pi-\beta$ and $\pi-\gamma$.
 Therefore the total geodesic curvature of $\partial\Delta$ is $\tgc{\partial\Delta}=3\cdot\pi-\alpha-\beta-\gamma$.
@@ -213,11 +228,16 @@ The identity \ref{eq:area(Delta)} can be rewritten as
 \[\tgc{\partial\Delta}+\area\Delta=2\cdot \pi.
 \eqlbl{eq:sphere-gauss-bonnet}\]
 
-
-
 The formula \ref{eq:sphere-gauss-bonnet} holds for arbitrary spherical polygon bounded by a simple broken geodesic;
 that is, intersection of finitely many closed half-spheres.
 The latter can be proved by triangulating the poygon, applying the formula for each triangle in the triangulation and summing up the results.
+
+\begin{wrapfigure}{o}{42 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-45}
+\vskip-0mm
+\end{wrapfigure}
 
 If a spherical polygon is $P$ divided in two polygons $Q$ and $R$ by a diagonal $vw$
 then 
@@ -226,10 +246,10 @@ Indeed, for the internal angles $Q$ and $R$ at $v$ are $\alpha$ and $\beta$,
 then their external angles are $\pi-\alpha$ and $\pi-\beta$ respectfully.
 The internal angle of $P$ in this case is $\alpha+\beta$ and its external angle is $\pi-\alpha-\beta$
 Clearly we have that 
-\[(\pi-\alpha-\beta)+\pi=(\pi-\alpha)+(\pi-\beta);\]
+\[(\pi-\alpha)+(\pi-\beta)=(\pi-\alpha-\beta)+\pi;\]
 that is, the sum of external angles of $Q$ and $R$ at $v$ is $\pi$ plus the external angle of $P$ at $v$. 
-The same holds for the external angles at $w$ and the rest of the external angles of $P$ appear once on $Q$ or $R$.)
-Therefore if the formula \ref{eq:sphere-gauss-bonnet} holds for $\Delta=Q$ and $R$,
+The same holds for the external angles at $w$ and the rest of the external angles of $P$ appear once on $Q$ or $R$.
+Therefore if the formula \ref{eq:sphere-gauss-bonnet} holds for $Q$ and $R$,
 then it holds for~$P$.
 
 \begin{thm}{Exercise}
@@ -240,11 +260,11 @@ Show that $\tgc\gamma=0$.
 
 
 \parbf{Signed area.}
-The same formula modulo $2\cdot \pi$ holds for any closed broken geodesic, if one use \emph{signed area} surrounded by curve instead of usual area;
+The formula \ref{eq:sphere-gauss-bonnet} holds modulo $2\cdot \pi$ for any closed broken geodesic, if one use \emph{signed area} surrounded by curve instead of usual area;
 that is, we count area of the regions taking into account how many times the curve goes around the region.
 
 Namely, we have to choose a \emph{south pole} and state that its region has zero multiplicity.
-When you cross the curve the mulitplicity has to changes by $\pm1$; it increases by 1 if the curve cross the way from left to right and it decreases by 1 otherwise.
+When you cross the curve the mulitplicity has to changes by $\pm1$; we add 1 if the curve cross the way from left to right and we subtract 1 otherwise.
 The signed area surrounded by a closed curve is the sum of area of all the regions counted with the multiplicities.
 
 \begin{wrapfigure}{o}{32 mm}
@@ -254,7 +274,7 @@ The signed area surrounded by a closed curve is the sum of area of all the regio
 \vskip-0mm
 \end{wrapfigure}
 
-Here is an example of broken line with multiplicities assuming that the big region has a pole inside.
+Here is an example of broken line with multiplicities assuming that the big region has the pole inside.
 
 This signed-area formula can be proved in a similar way:
 Apply the formula for each triangle with vertex at the north pole and base at each edge of the broken geodesic.
@@ -264,15 +284,19 @@ Choosing a different pole will change all the coefficients by the same number.
 So the resulting formula holds only modulo the area of $\SS^2$, which is $4\cdot \pi$ --- this will not destroy identity modulo $2\cdot\pi$.
 
 Furthermore, by approximation, the signed-area formula holds for any reasonable curves, say piecewise smooth regular curves on the sphere.
-Summarizing, we hope the discussion above convinced the reader that the following statement hold:
+Summarizing, we hope the discussion above convinced the reader that the following statement hold.
+
+A domain $\Delta$ in a surface is called a \emph{disc} (or more precisely \emph{topological disc}) if it is bounded by a closed simple curve and can be parameterized by a unit plane disc 
+\[\DD=\set{(x,y)\in\RR^2}{x^2+y^2\le1}.\]
+That is there is a continuous bijection $\DD\to\Delta$.
 
 \begin{thm}{Proposition}\label{prop:spherical-gb}
-For any closed piecewise smooth regular curves on the sphere $\alpha$, 
+For any closed piecewise smooth regular curve $\alpha$ on the sphere, 
 we have that 
 \[\tgc\alpha+\area\alpha=0 \pmod{2\cdot\pi},\]
 where $\area\alpha$ denotes the signed area surrounded by $\alpha$ and $\tgc\alpha$ the total geodesic curvature of $\alpha$.
 
-Moreover, if $\alpha$ is a simple curve and $\Delta$ is the region on the left from $\alpha$, then we have 
+Moreover, if $\alpha$ is a simple curve that bounds a disc $\Delta$ on the left from it, then we have 
 \[\tgc\alpha+\area\Delta=2\cdot\pi.\]
 
 \end{thm}
@@ -283,9 +307,6 @@ Moreover, if $\alpha$ is a simple curve and $\Delta$ is the region on the left f
 
 \section{Gauss--Bonnet formula}
 
-A domain $\Delta$ in a surface is called a disc if it is bounded by a closed simple curve and can be parametrized by a unit plane disc 
-\[\DD=\set{(x,y)\in\RR^2}{x^2+y^2\le1}.\]
-That is there is a continuous bijection $\DD\to\Delta$.
 
 \begin{thm}{Theorem}\label{thm:gb}
 Let $\Delta$ be a disc in smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$ that is oriented in such a way that $\Delta$ lies on its left.
@@ -294,31 +315,47 @@ Then
 where $G$ denotes the Gauss curvature of $\Sigma$.
 \end{thm}
 
-For a general compact domain $\Delta$ (not necessary a disc) we have 
+\parit{Remarks; (1).}
+For a general compact domain $\Delta$ (not necessary a disc) we have that
 \[\tgc{\partial\Delta}+\iint_{\Delta} G=2\cdot  \pi\cdot\chi(\Delta),\eqlbl{eq:g-b-euler}\]
 where $\chi(\Delta)$ is the so called \emph{Euler's characteristic} of $\Delta$.
-the Euler's characteristic is topological invariant, in particular preserved in a continuous deformation.
+The Euler's characteristic is \emph{topological invariant}, in particular preserved in a continuous deformation.
 
 If a surface $\Sigma$ (possibly with boundary) can be divided into $f$ discs by drawing $e$ edges connecting $v$ vertexes, then 
-\[\chi(\Sigma)=v-e+f;\]
-for example for a disc $e=f=v=1$ and therefore $\chi(\DD)=1$; that is the Euler's characteristic of the disc is $1$.\footnote{There are many other subdivisions of $\DD$, but we have $v-e+f=1$ for any of them.}
+\[\chi(\Sigma)=v-e+f.\]
+For example the disc $\DD$ has Euler's characteristic $1$; 
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-49}
+\vskip-0mm
+\end{figure}
+it can be divided into discs many ways, 
+but each time we have $v-e=f=1$.
 The latter agrees with \ref{eq:g-b} and \ref{eq:g-b-euler}.
 It is useful to know that $\chi(\SS^2)=2$; $\chi(\TT^2)=0$ where $\TT^2$ denotes torus; 
 $\chi( S_g)=2-2\cdot g$, where $S_g$ is a surface of genus $g$; that is, sphere with $g$ handles.
 
-Note that if $\Sigma$ is a plane then geodesic in $\Sigma$ are formed by line segments.
+\parit{(2).} Note that if $\Sigma$ is a plane then geodesic in $\Sigma$ are formed by line segments.
 In this case the statement of theorem follows from Exercise~\ref{ex:pm2pi}.
-If $\Sigma$ is the unit sphere then $G\equiv1$ and therefore the formula \ref{eq:g-b} can rewritten as 
+
+\parit{(3).} If $\Sigma$ is the unit sphere then $G\equiv1$ and therefore the formula \ref{eq:g-b} can rewritten as 
 \[\tgc{\partial\Delta}+\area\Delta=2\cdot \pi,\]
 which follow from Proposition~\ref{prop:spherical-gb}.
 
+\medskip
+
 We will give an informal proof of \ref{thm:gb} based on the bike wheel interpretation described above.
 We suppose that it is intuitively clear that moving the axis of the wheel without changing its direction does not change the direction of the wheel's spokes.
+
 More precisely, assume we keep the axis of a non-spinning bike wheel and perform the following two experiments:
 \begin{enumerate}[(i)]
-\item We moved it around and bring it back to the original position. 
+\item We moved it around and bring the axis back to the original position. 
 As a result the wheel might rotate by some angle; let us measure this angle.
-\item we move the direction of the axis the same as before without moving the center of the wheel and again measure the angle of rotation.
+
+\item
+We move the direction of the axis the same way as before without moving the center of the wheel.
+After that we measure the angle of rotation.
 \end{enumerate}
 Then the resulting angle in these two experiments is the same. 
 
@@ -354,12 +391,24 @@ By Proposition~\ref{prop:spherical-gb},
 Therefore 
 \[\tgc{\alpha,\Sigma}+\area\beta=0\pmod{2\cdot \pi}.\]
 
-Recall that the shape  operator $s_p\: T_p\Sigma \to \T_{\nu(p)}\SS^2$ is the Jacobian of the Gauss map $\nu\:\Sigma\to \SS^2$.
-The determinant of the shape operator if the Gauss curvature at $p$.
-Therefore the signed area $\area\beta$ can be found by integrating Gauss curvature along $\Delta$;
-that is,
-\[\area\beta=\iint_\Delta G.\]
-and therefore 
+Recall that the shape  operator $s_p\: T_p\Sigma \to \T_{\nu(p)}\SS^2=T_p\Sigma$ is the Jacobian of the Gauss map $\nu\:\Sigma\to \SS^2$ at the point $p$.
+In a appropriately chosen coordinates in $T_p$, the shape operator can be presented by a diagonal matrix 
+$\left(\begin{smallmatrix}
+k_1&0
+\\
+0&k_2
+\end{smallmatrix}\right)$, where $k_1$ and $k_2$ are the principle curvatures at $p$.
+Therefore, the determinant of $s_p$ is the Gauss curvature at~$p$.
+
+If $\Sigma$ is a closed surface with positive Gauss curvature, then the Gauss map $\nu\:\Sigma\to\SS^2$ is a smooth bijection.
+Therefore 
+\[\iint_\Delta G=\area[\nu(\Delta)].\]
+
+In general case we have to count area $\nu(\Delta)$ taking orientation and multiplicity of the Gauss map into account.
+In this case 
+\[\iint_\Delta G=\area\beta,\]
+where $\area\beta$ is the signed area surrounded by $\beta$; it is defined above.
+Therefore 
 \[\tgc{\alpha,\Sigma}+\iint_\Delta G=0\pmod{2\cdot \pi}.\eqlbl{eq:gb(mod2pi)}\]
 
 If $\Delta$ is a disc in the plane then Gauss curvature vanish and by Exercise~\ref{ex:pm2pi}, we have 
@@ -370,10 +419,12 @@ The value
 \[f(t)=\tgc{\alpha_t}+\iint_\Delta G\]
 is continuous in $t$ and by \ref{eq:gb(mod2pi)} it has to be constant.
 
-If $\Sigma_0$ is a plane then 
+If $\Sigma_0$ is a plane, then 
 \[\tgc{\partial\Delta_0}+\iint_{\Delta_0} G=2\cdot \pi.\]
 Intuitively it is clear that any disc can be obtained as a resultof continuous deformation of plane disc.
-Therefore \ref{eq:g-b} follows.
+Therefore 
+\[\tgc{\partial\Delta_1}+\iint_{\Delta_1} G=2\cdot \pi\]
+for arbitrary disc $\Delta_1$; whence \ref{eq:g-b} follows.
 \qeds
 
 
@@ -419,7 +470,7 @@ Can it happen that in this parametrization,  $\gamma$ look like one of the curve
 \includegraphics{mppics/pic-47}
 \vskip-0mm
 \end{figure}
-Say as much as possible about possible/impossible diagrams.
+Say as much as possible about possible/impossible diagrams of that type.
 \end{thm}
 
 

@@ -1552,9 +1552,6 @@ draw z.v--z.w;
 
 dOt z.v,z.w;
 
-
-
-
 label.rt(btex $w$ etex, z.v);
 label.top(btex $v$ etex, z.w);
 label(btex $Q$ etex, (0.2,1.8)*u);
@@ -1608,6 +1605,69 @@ z.d4..
 z.d5{right}..z.d4{left}..z.d6{right}..z.d3{left}..z.d0{right}..z.d2{left}..cycle;
 
 dOt z.a,z.b,z.c,z.a+z.s,z.b+z.s,z.c+z.s,z.d2,z.d3,z.d4;
+
+endfig;
+
+beginfig(48) 
+save u;
+u:=1cm;
+
+z.a0=(0,0)*u;
+z.a1=(.5,1)*u;
+z.a2=(0,2.5)*u;
+
+z.b1=.2[z.a0,z.a1];
+z.b2=.5[z.a1,z.a2];
+
+z.v=(-1,.2)*u;
+
+labelarcs(2*z.a1-z.a0,z.a1, z.a2, 10, btex $\theta_i$ etex);
+labelarcs(z.b1+z.v,z.b1, z.a1, 10, btex $\phi_i$ etex);
+labelarcs(z.b2+z.v,z.b2, z.a2, 10, btex $\phi_{i+1}\,\,$ etex);
+
+save p; path p[];
+
+p0=z.a0--z.a1--z.a2;
+draw p0 penbold;
+draw z.a1--z.a1+14*unitvector(z.a1-z.a0) penhair;
+
+drawarrow z.b1--z.b1+z.v;
+drawarrow z.a1--z.a1+z.v;
+drawarrow z.b2--z.b2+z.v;
+
+endfig;
+
+beginfig(49) 
+save u,r;
+u:=1cm;
+r:=1cm;
+
+
+z.s=(2.5,0)*u;
+z.o1=origin;
+z.o2=z.o1+z.s;
+z.o3=z.o1+2*z.s;
+z.o4=z.o1+3*z.s;
+
+draw circle(z.o1,r);
+dOt z.o1+(0,-1)*r;
+
+draw circle(z.o2,r);
+dOt z.o2+(0,-1)*r, z.o2-(0,-1)*r;
+
+draw circle(z.o3,r);
+draw z.o3+(0,-1)*r--z.o3-(0,-1)*r;
+dOt z.o3+(0,-1)*r, z.o3-(0,-1)*r;
+
+draw circle(z.o4,r);
+draw z.o4+(0,-1)*r--z.o4-(0,-1)*r;
+draw z.o4+(-1,0)*r--z.o4-(-1,0)*r;
+dOt z.o4,z.o4+(0,-1)*r, z.o4-(0,-1)*r,z.o4+(-1,0)*r, z.o4-(-1,0)*r;
+
+label.bot(btex $1-1+1=1;$ etex, z.o1+(0,-1)*r);
+label.bot(btex $2-2+1=1;$ etex, z.o2+(0,-1)*r);
+label.bot(btex $2-3+2=1;$ etex, z.o3+(0,-1)*r);
+label.bot(btex $5-8+4=1.$ etex, z.o4+(0,-1)*r);
 
 endfig;
 end
