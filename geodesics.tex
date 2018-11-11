@@ -192,7 +192,7 @@ later David Berg \cite{berg} pointed out that the same proof works for geodesics
 
 
 Recall that by definition, geoedesics  have constant speed.
-In the proof we will use the following clam without proof.
+In the proof we will use the following claim; we do not prove it, but make a physical interpretation which might help to believe it.
 
 \begin{thm}{Claim}\label{clm:gamma''}
 Let $\Sigma$ be a smooth regular surface.
@@ -202,9 +202,23 @@ such that  for any $t$ the second derivative $\gamma''(t)$ is normal to the tang
 Moreover given an initial point $p\in \Sigma$ and a tangent vector $v\in\T_p\Sigma$ there is unique geodesic $\gamma$ defined on a maximal open interval containing zero such that $\gamma(0)=p$ and $\gamma'(0)=v$.
 \end{thm}
 
-The first statement in the proof should be intuitively obvious.
-Let us give an informal physical explanation of the second statement about $\gamma''(t)$.
+This claim provides connection between intrinsic geometry of the surface and its extrinsic geometry which will be important latter.
+Intrinsic means that it can be expressed in terms of measuring things inside the surface, for example length of curves or angles between the curves that lie in the surface.
+Extrinsic means that we have to use ambient space in order to measure it.
 
+This connection will play an important role in the proof of the remarkable theorem (see \ref{thm:remarkable}).
+
+For instance geodesic $\gamma$ is an object of intrinsic geometry of the surface $\Sigma$,
+while its second derivative $\gamma''$ is not.
+Note that there is a smooth bijection between the cylinder $z=x^2$ and the plane $z=0$ that preserves the lengths of all curves; in other words cylinder can be \emph{unfolded} on the plane.
+Such a bijection sends geodesics in the cylinder to geodesics on the plane and the other way around; however a geodesic on the cylinder might have nonvanishing second derivative while geodesics on the plane are straight lines with vanishing second derivative.
+
+
+
+\parit{Informal sketch.}
+The smoothness should be intuitively obvious; at least the curve should be twice differentiable otherwise it can be shortened.
+
+Let us give an informal physical explanation why $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
 One may think about the geodesic $\gamma$ as of stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
 Since it is frictionless, the force density $N(t)$ that keeps the geodesic $\gamma$ in the surface must be therefore proportional to the normal vector to the surface at $\gamma(t)$.
 The tension in the thread has to be the same at all points (otherwise the thread would move back or forth and it would not be stable).
@@ -215,8 +229,9 @@ which implies that  $\gamma''(t)$ is perpendicular to $\T_{\gamma(t)}\Sigma$.%
 \footnote{In fact $\gamma''(t)+\nu\cdot \langle s(\gamma'(t)),\gamma'(t)\rangle=0$, where $s$ is the shape operator of $\Sigma$ at $\gamma(t)$ or equivalently,
 $\gamma''(t)+\nu\cdot  \II(\gamma'(t)),\gamma'(t))=0$, where $\II$ is the second fundamental form of $\Sigma$ at $\gamma(t)$.}
 
-The third statement can be also understood using physical intuition --- $\gamma(t)$ is the trajectory of a small object that slides on $\Sigma$ without friction and with initial velocity $v$.
+The third statement can be also understood using physical intuition --- $\gamma(t)$ is the trajectory of a particle that slides on $\Sigma$ without friction and with initial velocity $v$.
 Formally, existence and uniqueness follows from Picard's theorem (the  fundamental theorem of ordinary differential equations).
+\qeds
 
 \begin{thm}{Exercise}
 Show that two minimizing geodesics in a smooth regular surface  can not have more than one point of intersections. 
