@@ -9,13 +9,13 @@ verbatimtex
 \begin{document}
 etex
 
-filenametemplate "%j-%1c.mps";
+%filenametemplate "%j-%1c.mps";
 prologues:=3;
 setarrows(barbedsharp);
 linecap:=butt;
 %linejoin:=mitered;
-
-%outputformat := "svg";
+filenametemplate "%j-%1c.svg";
+outputformat := "svg";
 
 
 beginfig(1) 
