@@ -15,7 +15,8 @@ the triangle itself is denoted by $[xyz]$.%
 The length of one (and therefore any) minimizing geodesic $[xy]_\Sigma$ will be denoted by $|x-y|_\Sigma$; it is called \emph{intrinsic distance} from $x$ to $y$ in $\Sigma$.
 If defined, then $|x-y|_\Sigma$ is the exact lower bound on the lengths of curves from $x$ to $y$ in $\Sigma$. 
 
-A triangle $[\~x\~y\~z]$ in the plane is called \emph{model triangle} of the triangle $[xyz]$ if its corresponding sides are equal;
+A triangle $[\~x\~y\~z]$ in the plane is called \emph{model triangle} of the triangle $[xyz]$,
+briefly $[\~x\~y\~z]=\~\triangle xyz$, if its corresponding sides are equal;
 that is,
 \[|\~x-\~y|=|x-y|_\Sigma,
 \quad
@@ -24,6 +25,10 @@ that is,
 |\~z-\~x|=|z-x|_\Sigma.
 \]
 
+A pair of minimizing geodesics $[xy]$ and $[xz]$ starting from one point $x$ is called \emph{hinge} and denoted as $\hinge xyz$.
+The angle between these geodesics at $x$ is denoted by $\measuredangle\hinge xyz$.
+The corresponding angle $\measuredangle\hinge {\~x}{\~y}{\~z}$ in the model triangle $[\~x\~y\~z]=\~\triangle xyz$ is denoted by $\angk xyz$
+
 A surface $\Sigma$ is called \emph{simply connected} if any closed simple curve in $\Sigma$ bounds a disc.
 Equivalently any closed curve in $\Sigma$ can be continuously deformed into a trivial curve (which stays at one point).
 A plane or sphere are examples of simply connected surfaces, while torus or cylinder are not simply connected.
@@ -31,16 +36,16 @@ A plane or sphere are examples of simply connected surfaces, while torus or cyli
 
 \begin{thm}{Comparison theorem}\label{thm:comp}
 Let $\Sigma$ be a complete smooth regular surface with a geodesic triangle $[xyz]$.
-Suppose $[\~x\~y\~z]$ is a model triangle of $[xyz]$;
-denote by $\alpha$ the angle of $[xyz]$ at $x$
-and by $\~\alpha$ the angle of $[\~x\~y\~z]$ at $\~x$.
 \begin{enumerate}[(i)]
- \item\label{thm:comp:toponogov} If $\Sigma$ has nonnegative Gauss curvature, then $\alpha\ge\~\alpha$.
+ \item\label{thm:comp:toponogov} If $\Sigma$ has nonnegative Gauss curvature, then 
+ \[\measuredangle\hinge {\~x}{\~y}{\~z}\ge\angk xyz.\]
  \item\label{thm:comp:cat} If $\Sigma$ is simply connected and has nonpositive Gauss curvature,
- then $\alpha\le\~\alpha$.
+ then 
+ \[\measuredangle\hinge {\~x}{\~y}{\~z}\le\angk xyz.\]
 \end{enumerate}
 
 \end{thm}
+
 
 The angle $\alpha$ between geodesics is a number in the interval $[0,\pi]$;
 if $\theta$ is the external angle used in Gauss--Bonnet formula, then the corresponding angle is $\alpha=|\pi-\theta|$.
@@ -52,7 +57,7 @@ If the triangle bounds a disc, then by Gauss--Bonnet formula the sum of its inte
 Note that the triangle may not bound a disc, for example equator on the cyclinder is formed by a geodesic triangle that does not bound a disc.
 Also note that (1) Gauss--Bonnet formula gives a lower bound on the sum of its \emph{internal} angles, but does not bound each angle separately (2) if $\alpha$ is the angle in the comparison theorem, then the internal angle might be $\alpha$ or $2\cdot\pi-\alpha$; while Gauss--Bonnet formula gives a lower bound on the sum of internal angles it does not forbid that each of these angles is close to $2\cdot \pi$ which is impossible by the comparison theorem.
 
-On the part \ref{thm:comp:cat}.
+On the part (\ref{thm:comp:cat}).
 First note that without condition that $\Sigma$ is simply connected, the statement does not hold.
 For example the equator $z=0$ of infinite cylinder (which is not simply connected)
 \[\set{(x,y,z)\in\RR^3}{x^2+y^2=1}\]
@@ -64,7 +69,8 @@ Show that any two points in $\Sigma$ are connected by unique geodesic.
 \end{thm}
 
 
-\parbf{Names and history.}
+\section{Names and history}
+
 Part (\ref{thm:comp:toponogov}) of this theorem is called \emph{Toponogov comparison theorem};
 it is was proved by Paolo Pizzetti \cite{pizzetti} and latter independently by Alexandr Alexandrov \cite{alexandrov}; generalizations were obtained by  Victor Toponogov \cite{toponogov}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{BGP}.
 
@@ -75,4 +81,165 @@ Herbert Busemann \cite{busemann},
 Willi Rinow in \cite{rinow},
 Mikhael Gromov \cite[p.119]{gromov},
 Stephanie Alexander and Richard Bishop in \cite{a-b:h-c}.
+
+\section{Local part}
+
+First we prove the following local version of comparison theorem and then use it to prove the global version.
+
+\begin{thm}{Theorem}
+The comparison theorem (\ref{thm:comp}) holds in a small neighborhood of any point.
+
+That is, if $\Sigma$ be a complete smooth regular surface,
+then any point $p\in \Sigma$ admits a neighborhood $U$ such that 
+\begin{enumerate}[(i)]
+ \item If $\Sigma$ has nonnegative Gauss curvature, then for any geodesic triangle $[xyz]$ in $U$ we have
+ \[\measuredangle\hinge {\~x}{\~y}{\~z}\ge\angk xyz.\]
+ \item If $\Sigma$ has nonpositive Gauss curvature, then for any geodesic triangle $[xyz]$ in $U$ we have
+ \[\measuredangle\hinge {\~x}{\~y}{\~z}\le\angk xyz.\]
+\end{enumerate}
+\end{thm}
+
+\parit{Proof.}
+Assume $y=\exp_xv$ and $z=\exp_xw$ for two small vectors $v,w\in\T_x$.
+Note that $\measuredangle \hinge xvw_{\T_x}=\measuredangle \hinge xyz_\Sigma$,
+$|x-y|_\Sigma=|x-v|_{\T_x}$, $|x-z|_\Sigma=|x-w|_{\T_x}$.
+
+If the Gauss curvature is nonnegative,
+consider the line segment $\~\gamma$ joining $v$ to $w$ and set $\gamma=\exp_x\circ\~\gamma$.
+By Rauch comparison theorem (\ref{thm:rauch}), we have
+\[\length\gamma\le \length \~\gamma.\]
+Since $|v-w|_{\T_x}=\length\~\gamma$ and $|y-z|_{\Sigma}\le \length\gamma$, we get 
+\[|v-w|_{\T_x}\ge |y-z|_\Sigma.\]
+Therefore
+\[\angk xzy\ge \measuredangle\hinge xzy.\]
+
+If the Gauss curvature is nonpositive,
+consider a minimizing geodesic $\gamma$ joining $y$ to $z$ in $\Sigma$ and let $\~\gamma$ be the corresponding curve in $\T_x$; that is  $\gamma=\exp_x\circ\~\gamma$.
+By Rauch comparison theorem (\ref{thm:rauch}), we have
+\[\length\gamma\ge \length \~\gamma.\]
+Therefore
+\[\angk xzy\ge \measuredangle\hinge xzy.\]
+\qedsf
+%??? take care of size of the nbhd
+
+\section{Alexandrov's lemma}
+
+It this section we prove the following lemma in the plane geometry.
+
+\begin{thm}{Lemma}
+\label{lem:alex}
+Assume $[pxyz]$ and $[p'x'y'z']$ be two quadraliterals in the plane with equal corresponding sides.
+Assume that the sides $[x'y']$ and $[y'z']$ extend each other; that is, $y'$ lies on the line segment $[x'z']$.
+Then the following expressions have the same signs:
+\begin{enumerate}[(i)]
+ \item $|p-y|-|p'-y'|$;
+ \item $\measuredangle\hinge xpy-\measuredangle\hinge {x'}{p'}{y'}$;
+ \item $\pi-\measuredangle\hinge pyx+\measuredangle\hinge pyz$;
+\end{enumerate}
+\end{thm}
+
+\parit{Proof.} 
+In the proof we use the following \emph{monotonicity property}:
+if two sides adjacent to an angle in a plane triangle are fixed, 
+then the angle is increases if the opposite side increase.
+
+Take 
+a point $\bar z$ on the extension of 
+$[xy]$ beyond $y$ so that $\dist{y}{\bar z}{}=\dist{y}{z}{}$ (and therefore $\dist{x}{\bar z}{}=\dist{x'}{z'}{}$). 
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-50}
+\vskip-0mm
+\end{figure}
+ 
+From monotonicity, 
+the following expressions have the same sign:
+\begin{enumerate}[(i)]
+\item $|p-y|-|p'-y'|$;
+\item $\measuredangle\hinge{x}{y}{p}-\measuredangle\hinge{x'}{y'}{p'}=\measuredangle\hinge{x}{\bar z}{p}-\measuredangle\hinge{x'}{z'}{p'}$;
+\item $|p-\bar z|-|p'-z'|$;
+\item $\measuredangle\hinge{y}{\bar z}{p}-\measuredangle\hinge{y'}{z'}{p'}$;
+\end{enumerate}
+The first statement follows since
+\[\measuredangle\hinge{y'}{z'}{p'}+\measuredangle\hinge{y'}{x'}{p'}=\pi\]
+and
+\[\measuredangle\hinge{y}{\bar z}{p}+\measuredangle\hinge{y}{x}{p}=\pi.\]
+\qedsf
+
+\section{Thin and fat triangles}
+
+In this section we discuss some reformulations of the comparison theorem;
+it will be proved latter.
+
+A triangle $[xyz]$ in a surface is called \emph{fat} (or correspondingly \emph{thin})
+if for any two points $p$ and $q$ on the sides of the triangle and the corresponding points 
+$\~p$ and $\~q$ on the sides of its model triangle $[\~x\~y\~z]\z=\~\triangle xyz$ we have
+$|p-q|\ge |\~p-\~q|$ (or correspondingly $|p-q|\le |\~p-\~q|$).
+
+Let us reformulate the comparison theorem (\ref{thm:comp}) using thin and fat triangles:
+
+\begin{thm}{Proposition}
+Let $\Sigma$ be a complete smooth regular surface with a geodesic triangle $[xyz]$.
+\begin{enumerate}[(i)]
+ \item If $\Sigma$ has nonnegative Gauss curvature, then $[xyz]$ is fat
+ \item If $\Sigma$ is simply connected and has nonpositive Gauss curvature,
+ then $[xyz]$ is thin.
+\end{enumerate}
+\end{thm}
+
+We will give a proof of proposition using the comparison theorem (which is not yet proved).
+
+\parit{Proof.}
+Fix two points $p$ and $q$ on the sides of the triangle $[xyz]$.
+Without loss of generality, we may assume that $p\in [yz]$ and $q\in [xy]$.
+Let $\~p$ and $\~q$ be the corresponding points on the sides of the  model triangle $[\~x\~y\~z]\z=\~\triangle xyz$.
+
+Assume that Gauss curvature is nonnegative.
+Then by comparison theorem $\angk pxy\le \measuredangle \hinge pxy$ and $\angk pxz\le \measuredangle \hinge pxz$.
+Note that $\measuredangle \hinge pxy+\measuredangle \hinge pxz=\pi$;
+therefore
+\[\angk pxy +\angk pxz\le pi.\]
+
+Applying Alexandrov's lemma, we get $|x-p|\ge |\~x-\~p|$.
+Repeating the same argument for the triangle $[pxy]$ we get $|p-q|\ge |\~p-\~q|$.
+
+Now assume that Gauss curvature is nonpositive.
+Then by comparison theorem $\angk pxy\ge \measuredangle \hinge pxy$ and $\angk pxz\ge \measuredangle \hinge pxz$.
+Since $\measuredangle \hinge pxy+\measuredangle \hinge pxz=\pi$, we have
+\[\angk pxy +\angk pxz\le \pi.\]
+
+Applying Alexandrov's lemma, we get $|x-p|\le |\~x-\~p|$.
+Repeating the same argument for the triangle $[pxy]$ we get $|p-q|\ge |\~p-\~q|$.\qeds
+
+\begin{thm}{Exercise}
+Exercise assume all triangles in a complete smooth regular surface $\Sigma$ are thin (or correspondingly fat), show that comparison theorem part (i) (or correspondingly par (ii)) holds in $\Sigma$.
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $\Sigma$ be a complete smooth regular surface with nonnegative Gauss curvature.
+Show that for any four distinct points the following inequality holds:
+\[\angk pxy+\angk pyz+\angk pzx\le2\cdot \pi.\]
+
+\end{thm}
+
+\begin{thm}{Exercise}Let $\Sigma$ be a complete smooth regular surface
+and $\gamma$ be a unit-speed geodesic in $\Sigma$ and $p\in\Sigma$.
+
+Consider the function
+\[h(t)=|p-\gamma(t)|^2-t^2.\]
+
+\begin{enumerate}[(a)]
+\item Show that if the Gauss curvature of $\Sigma$ is nonnegative then $h$ is a concave function.
+\item Show that if $\Sigma$ is simply connected and the Gauss curvature of $\Sigma$ is nonpositive then $h$ is a convex function.
+\end{enumerate}
+\end{thm}
+
+
+
+
+
+
+
 

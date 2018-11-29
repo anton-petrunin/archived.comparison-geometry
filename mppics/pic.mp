@@ -1670,4 +1670,62 @@ label.bot(btex $2-3+2=1;$ etex, z.o3+(0,-1)*r);
 label.bot(btex $5-8+4=1.$ etex, z.o4+(0,-1)*r);
 
 endfig;
+
+beginfig(50) 
+save u;
+u:=1cm;
+
+z.p=(0,0)*u;
+z.x=(-1,2)*u;
+z.z=(2,2)*u;
+z.y=.4[z.x,z.z];
+
+z.s=(4,0)*u;
+
+z.p1=z.p+z.s;
+z.x1=z.x+z.s;
+z.z1=z.z+z.s;
+z.y1=z.y+z.s;
+
+z.xx=z.x rotated -3;
+z.zz=z.z rotated 3;
+
+z.zzz=(-abs(z.y-z.z)/abs(z.y-z.x))[z.yy,z.xx];
+
+
+
+save p; path p[];
+
+p1=circle(z.xx,z.y-z.x);
+p2=circle(z.zz,z.y-z.z);
+z.yy=cross.top(p1,p2);
+
+draw z.p1--z.x1--z.z1--cycle;
+draw z.p--z.xx--z.yy--z.zz--cycle;
+
+draw z.p--z.yy dashed evenly;
+draw z.p1--z.y1 dashed evenly;
+
+rimmark(z.p1--z.x1,z.p--z.xx);
+rimmark2(z.x1--z.y1,z.xx--z.yy);
+rimmark3(z.y1--z.z1,z.yy--z.zz,z.zzz--z.yy);
+rimmark4(z.z1--z.p1,z.zz--z.p);
+
+draw z.zzz--z.yy;
+draw z.zzz--z.p dashed evenly;
+
+dOt z.p,z.p1,z.x1,z.y1,z.z1,z.xx,z.yy,z.zz,z.zzz;
+
+label.bot(btex $p'$ etex, z.p);
+label.bot(btex $p$ etex, z.p1);
+label.lft(btex $x'$ etex, z.x1);
+label.lft(btex $x$ etex, z.xx);
+label.top(btex $y'$ etex, z.y1);
+label.top(btex $y$ etex, z.yy);
+label.rt(btex $z'$ etex, z.z1);
+label.rt(btex $z$ etex, z.zz);
+label.rt(btex $\bar z$ etex, z.zzz);
+
+
+endfig;
 end

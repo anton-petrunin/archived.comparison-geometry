@@ -127,7 +127,7 @@ Set $\ell(r)=\length \sigma_r$ and $\~\ell(r)\z=\length \~\sigma_r$.%
 
 Taking a limit as $b\to a$, we obtain the following corollary.
 
-\begin{thm}{Corollary}
+\begin{thm}{Corollary}\label{cor:w<w}
 Let $w(\theta,r)$ and $\~w(\theta,r)$ be the polar coordinates of a surface $\Sigma$ at $p$ and its tangent plane $\T_p$ at zero, so $w(\theta,r)\z=\exp_p[\~w(\theta,r)]$.
 \begin{enumerate}[(i)]
  \item If the Gauss curvature of $\Sigma$ is nonnegative, then 
@@ -138,6 +138,7 @@ Let $w(\theta,r)$ and $\~w(\theta,r)$ be the polar coordinates of a surface $\Si
  for all small $r>0$.
 \end{enumerate}
 \end{thm}
+
 
 \parit{Proof.}
 From the above discussion, the polar coordinates $w(\theta,r)$ are semigeodesic;
@@ -184,3 +185,58 @@ and let $\~\ell(r)=2\cdot\pi\cdot r$ the circumference of the plane circle of ra
 \end{enumerate}
 
 \end{thm}
+
+\section{Local comparison}
+
+The following proposition is a special case of the so a comparison theorem, proved by Harry Rauch \cite{rauch}.
+
+\begin{thm}{Theorem}\label{thm:rauch}
+Let $\Sigma$ be a smooth regular surface and $p\in\Sigma$.
+Assume $\~\gamma\:[a,b]$ is a curve the tangent plane $\T_p\Sigma$ that runs in a sufficiently small neighborhood of the origin; 
+consider the curve 
+\[\gamma=\exp_p\circ\gamma\] in $\Sigma$.
+
+\begin{enumerate}[(i)]
+ \item If Gauss curvature of $\Sigma$ is nonnegative, then 
+ \[\length \gamma\le \length \~\gamma\]
+\item If Gauss curvature of $\Sigma$ is nonpositive, then 
+ \[\length \gamma\ge \length \~\gamma.\]
+\end{enumerate}
+\end{thm}
+
+The proof is a direct application of Corollary \ref{cor:w<w}.
+
+\parit{Proof.}
+Let us denote $\~w(\theta,r)$ and $w(\theta,r)$ the polar coordinates of $\T_p$ and $\Sigma$ at $p$
+Recall that 
+\begin{align*}
+\tfrac{\partial \~w}{\partial\theta}&\perp \tfrac{\partial \~w}{\partial r};
+&
+|\tfrac{\partial \~w}{\partial r}|&=1;
+\\
+\tfrac{\partial w}{\partial\theta}&\perp \tfrac{\partial w}{\partial r};
+&
+|\tfrac{\partial w}{\partial r}|&=1;
+\intertext{By Corollary \ref{cor:w<w}, we also have}
+|\tfrac{\partial \~w}{\partial \theta}|&\ge |\tfrac{\partial \~w}{\partial \theta}|;
+&
+|\tfrac{\partial \~w}{\partial \theta}|&\le |\tfrac{\partial \~w}{\partial \theta}|;
+\end{align*}
+if Gauss curvature is nonnegative or nonpositive correspondingly.
+
+It is sufficient to show that
+\[|\gamma'(t)|\le |\~\gamma'(t)|\quad\text{or, correspondingly }\quad|\gamma'(t)|\ge |\~\gamma'(t)|\eqlbl{gamma<gamma}\]
+for any $t$.
+
+Note that both curves $\gamma(t)$ and $\~\gamma(t)$ described the same way in the polar coordinates;
+denote these coordinates by $(\theta(t),r(t))$.
+Then 
+\begin{align*}
+\gamma'(t)|^2&=|\tfrac{\partial w}{\partial\theta}\cdot\theta'(t)+\tfrac{\partial w}{\partial r}\cdot r'(t)|^2=
+\\
+&=|\tfrac{\partial w}{\partial\theta}|^2\cdot|\theta'(t)|^2+|r'(t)|^2
+\intertext{The same way} 
+\~\gamma'(t)|^2&=|\tfrac{\partial \~w}{\partial\theta}|^2\cdot|\theta'(t)|^2+|r'(t)|^2;
+\end{align*}
+hence \ref{gamma<gamma} follows.
+\qeds
