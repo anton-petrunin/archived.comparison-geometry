@@ -277,8 +277,170 @@ Consider the function
 \end{enumerate}
 \end{thm}
 
+\begin{thm}{Exercise}
+Let $[\~x_1\dots\~x_n]$ be a convex plane polygon and
+$x_1,\dots,x_n$ be points in a complete simply connected surface $\Sigma$ with nonpositive curvature.
+Assume that
+$|x_i-x_{i-1}|_\Sigma=|\~x_i-\~x_{i-1}|_{\RR^2}$ for each $i$ and
+$\measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}=\measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}$
+
+\end{thm}
 
 
+
+
+
+\section{Globalization for nonnegative curvature}
+
+In this section we will prove part \textit{(\ref{thm:comp:toponogov})} of the comparison theorem (\ref{thm:comp}) assuming that $\Sigma$ is compact; the general case requre only minor modifications.
+
+Since $\Sigma$ is compact, from local version of the theorem we get that there is $\eps>0$ such that the inequality 
+\[\measuredangle\hinge {x}{y}{z}\ge\angk xyz.\]
+holds for any hinge $\hinge {x}{y}{z}$ such that $|x-y|+|x-z|<\eps$.
+The following lemma states that in this case the same holds for any hinge $\hinge {x}{y}{z}$ such that $|x-y|+|x-z|<\tfrac32\cdot\eps$.
+Applying the lemma few times we will get that the comparison holds for arbitrary hinge, which will prove part~\textit{(\ref{thm:comp:toponogov})}.
+
+
+
+
+\begin{thm}{Key lemma}\label{key-lem:globalization}  
+Let $\Sigma$ be a complete smooth regular surface.
+Assume that the comparison
+\[\mangle\hinge x y q
+\ge\angk x y q\]
+holds for any hinge $\hinge x y q$ with 
+$\dist{x}{y}{}+\dist{x}{q}{}
+<
+\frac{2}{3}\cdot\ell$.
+Then comparison
+\[\mangle\hinge x p q
+\ge\angk x p q\] 
+holds for any hinge $\hinge x p q$ with $\dist{x}{ p}{}+\dist{x}{q}{}<\ell$.
+\end{thm}
+
+\begin{wrapfigure}{r}{30mm}
+\begin{lpic}[t(0mm),b(0mm),r(10mm),l(0mm)]{pics/globalization(1)}
+\lbl[l t]{17,2;$\~ p$}
+\lbl[l]{16.5,54;$\~ q$}
+\lbl[r]{0.3,22;$\~ x$}
+\lbl[r b]{8,35;$\~ x'$}
+\lbl[l]{15,34;$\ge \mangle\hinge{x'}p q$}
+\lbl[lw]{9,22;$\le \mangle\hinge x p q$}
+\end{lpic}
+\end{wrapfigure}
+
+\parit{Proof.} Let us denote by $\side \hinge x p q$ the third side of a plane triangle
+with angle $\measuredangle\hinge x p q$ and two adjacent sides $|x-p|$ and $|x-q|$.
+Note that the inequalities 
+\[\measuredangle\hinge x p q\ge \angk x p q\quad\text{and}\quad\side \hinge x p q
+\ge\dist{p}{q}{}\]
+are equivalent.
+So it is sufficient to prove that
+\[\side \hinge x p q
+\ge\dist{p}{q}{}.\eqlbl{eq:thm:=def-loc*}\] 
+for any hinge $\hinge x p q$ with $\dist{x}{p}{}+\dist{x}{q}{}<\ell$.
+
+Fix $q$.
+Consider a hinge $\hinge x p q$ such that 
+\[\tfrac{2}{3}\cdot\ell \le\dist{p}{x}{}\z+\dist{x}{q}{}< \ell.\]
+Let us construct a new smaller hinge $\hinge{x'}p q$; that is,
+\[
+\dist{p}{x}{}+\dist{x}{q}{}\ge\dist{p}{x'}{}+\dist{x'}{q}{}
+\eqlbl{eq:thm:=def-loc-fourstar}\]
+and such that 
+\[\side \hinge x p q
+\ge\side \hinge{x'}p q.
+\eqlbl{eq:thm:=def-loc-fivestar}\]
+
+%\parit{Construction of $\hinge{x'}p q$.}
+Assume $\dist{x}{q}{}\ge\dist{x}{p}{}$, otherwise switch the roles of $p$ and $q$ in the following construction.
+Take $x'\in [x q]$ such that 
+\[\dist{p}{x}{}+3\cdot\dist{x}{x'}{}
+=\tfrac{2}{3}\cdot\ell \eqlbl{3|xx'|}\]
+Choose a geodesic $[x' p]$ and consider the  hinge $\hinge{x'}p q$ fromed by $[x'p]$ and $[x' q]\subset [x q]$. 
+Then \ref{eq:thm:=def-loc-fourstar} follows since the length of $[x'p]$ can not exceed the length of broken geodesic $x'xp$.
+
+Further, note that 
+$\dist{p}{x}{}\z+\dist{x}{x'}{},\dist{p}{x'}{}\z+\dist{x'}{x}{}<\tfrac{2}{3}\cdot\ell $.
+In particular, 
+\[\mangle\hinge x p{x'}
+\ge\angk x p{x'}
+\ \ \text{and}\ \ 
+\mangle\hinge {x'}p x
+\ge\angk {x'}p x.
+\eqlbl{eq:thm:=def-loc-threestar}\]
+
+
+Consider the model triangle
+$\trig{\~x}{\~x'}{\~p}=\modtrig x x' p$.
+Take $\~ q$ on the extension of $[\~ x\~ x']$ beyond $x'$ such that $\dist{\~x}{\~q}{}=\dist{x}{q}{}$ (and therefore $\dist{\~x'}{\~q}{}=\dist{x'}{q}{}$).
+From \ref{eq:thm:=def-loc-threestar},
+\[\mangle\hinge x p q
+=\mangle\hinge  x p{x'}\ge\angk x p{x'}\ \ \Rightarrow\ \ 
+\side \hinge x q p\ge\dist{\~p}{\~q}{}.\]
+Since $\mangle\hinge{x'}p x+\mangle\hinge{x'}p q= \pi$,
+\ref{eq:thm:=def-loc-threestar} implies
+\[
+\pi
+-\angk{x'}p x
+\ge
+\pi-\mangle\hinge{x'}p x
+\ge
+\mangle\hinge{x'}p q.
+\]
+Therefore
+$\dist{\~p}{\~q}{}\ge\side \hinge{x'}q p$ and \ref{eq:thm:=def-loc-fivestar} follows.
+
+\medskip
+
+\begin{center}
+ \begin{lpic}[t(0mm),b(0mm),r(0mm),l(0mm)]{pics/px_nq(1)}
+\lbl[rb]{1,16;$x_0$}
+\lbl[rt]{12,1;$p$}
+\lbl[tl]{70,1;$q$}
+\lbl[l b]{22,12;$x_1$}
+\lbl[l b]{38,9;$x_2$}
+\lbl[br]{25,6;$x_3$}
+\lbl[t]{47,1.5;$x_4$}
+\lbl[t]{30,1;$x_5$}
+\end{lpic}
+\end{center}
+
+%%%??? WE SHOULD MENTION cat's cradle.
+Let us continue the proof.
+Set $x_0=x$.
+Let us apply inductively the above construction to get a sequence of hinges  $\hinge{x_n}p q$ with $x_{n+1}=x_n'$.
+
+The sequence might terminate at some $n$ only if $\dist{p}{x_n}{}+\dist{x_n}{q}{}\z< \tfrac{2}{3}\cdot\ell $.
+In this case, by the assumptions of the lemma, $\side \hinge{x_n}p q\ge\dist{p}{q}{}$.
+From \ref{eq:thm:=def-loc-fivestar}, we get that the sequence  $s_n\z=\side \hinge{x_n}p q$ is decreasing.
+Hence inequality \ref{eq:thm:=def-loc*} follows.
+
+Otherwise, the sequence $r_n=\dist{p}{x_n}{}+\dist{x_n}{q}{}$ is non-increasing and $r_n\ge\tfrac{2}{3}\cdot\ell$ for all $n$. Hence $r_n\to r$ as $n\to\infty$.
+Pass to a subsequence $y_\kay=x_{n_\kay}$ such that $y_\kay'=x_{n_\kay+1}\in [y_\kay q]$.
+(In particular, $\dist{y_\kay}{q}{}\ge\dist{y_\kay}{p}{}$.)
+Clearly, \[\dist{p}{y_\kay}{}+\dist{y_\kay}{y_\kay'}{}\z-\dist{p}{y_\kay'}{}=r_\kay-r_{\kay+1}\underset{\kay\to\infty} {\to}0.
+\eqlbl{trig=}\]
+From \ref{3|xx'|}, 
+it follows that  $\dist{y_\kay}{y'_\kay}{}\z>\tfrac{\ell}{100}$.
+From \ref{3|xx'|} and \ref{trig=}, it follows that 
+$\dist{p}{y_\kay}{}\z>\tfrac{\ell}{100}$
+for all large $\kay$.
+Therefore, $\angk{y_\kay}p{y_\kay'}\to \pi$. 
+Since 
+$\mangle\hinge{y_\kay}p{y_\kay'}
+\ge\angk{y_\kay}p{y_\kay'}$, we have 
+$\mangle\hinge{y_\kay}p q=\mangle\hinge{y_\kay}p{y_\kay'}\to \pi$.
+Therefore, 
+\[\dist{p}{y_\kay}{}+\dist{y_\kay}{q}{}-\side \hinge{y_\kay}p q\to 0.\] 
+Together with the triangle inequality
+\[
+\dist{p}{y_\kay}{}+\dist{y_\kay}{q}{}\ge\dist{p}{q}{}
+\]
+this yields
+\[\lim_{n\to\infty}\side \hinge{y_\kay}p q\ge \dist{p}{q}{}.\]
+Applying monotonicity of sequence  $s_n=\side \hinge{y_\kay}p q$ we obtain \ref{eq:thm:=def-loc*}.
+\qeds
 
 
 
