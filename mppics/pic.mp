@@ -1716,8 +1716,8 @@ draw z.zzz--z.p dashed evenly;
 
 dOt z.p,z.p1,z.x1,z.y1,z.z1,z.xx,z.yy,z.zz,z.zzz;
 
-label.bot(btex $p'$ etex, z.p);
-label.bot(btex $p$ etex, z.p1);
+label.bot(btex $p$ etex, z.p);
+label.bot(btex $p'$ etex, z.p1);
 label.lft(btex $x'$ etex, z.x1);
 label.lft(btex $x$ etex, z.xx);
 label.top(btex $y'$ etex, z.y1);
