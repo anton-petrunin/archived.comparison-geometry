@@ -258,6 +258,8 @@ Note that $\angk xwy\to \measuredangle\hinge xpz$ as $w,y\to x$; hence the impli
 The implication \textit{(iii$^{-}$)$\Longrightarrow$(i$^{-}$)} can be done the same way.
 \qeds
 
+In the following exercises you can apply the globalization theorem.
+
 \begin{thm}{Exercise}
 Let $\Sigma$ be a complete smooth regular surface with nonnegative Gauss curvature.
 Show that for any four distinct points the following inequality holds:
@@ -277,14 +279,32 @@ Consider the function
 \end{enumerate}
 \end{thm}
 
+The following exercise is a generalization of the so called \emph{arm lemma};
+
 \begin{thm}{Exercise}
-Let $[\~x_1\dots\~x_n]$ be a convex plane polygon and
-$x_1,\dots,x_n$ be points in a complete simply connected surface $\Sigma$ with nonpositive curvature.
+Let $\~x_1\dots\~x_n$ be a convex plane polygon and
+$x_1\dots x_n$ be a broken geodesic in a complete simply connected surface $\Sigma$ with nonpositive curvature.
 Assume that
-$|x_i-x_{i-1}|_\Sigma=|\~x_i-\~x_{i-1}|_{\RR^2}$ for each $i$ and
-$\measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}=\measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}$
+$|x_i-x_{i-1}|_\Sigma=|\~x_i-\~x_{i-1}|_{\RR^2}$ and
+$\measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}\ge \measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}$
+ for each $i$.
+Show that \[|x_1-x_n|_\Sigma\ge |\~x_1\z-\~x_n|_{\RR^2}.\]
+\end{thm}
+
+For $\Sigma=\RR^2$, the exercise above is the so called \emph{arm lemma}; you can use it without proof.
+
+\begin{thm}{Exercise}
+Let $x'$ and $y'$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in a complete smooth regular surface $\Sigma$.
+\begin{enumerate}[(a)]
+ \item Show that if the Gauss curvature of $\Sigma$ is nonnegative, then 
+ \[2\cdot |x'-y'|_\Sigma\ge |x-y|_\Sigma.\]
+ \item Show that if $\Sigma$ is simply connected and has nonpositive Gauss curvature, then 
+ \[2\cdot |x'-y'|_\Sigma\le |x-y|_\Sigma.\]
+\end{enumerate}
 
 \end{thm}
+
+
 
 
 
@@ -306,16 +326,14 @@ Applying the lemma few times we will get that the comparison holds for arbitrary
 \begin{thm}{Key lemma}\label{key-lem:globalization}  
 Let $\Sigma$ be a complete smooth regular surface.
 Assume that the comparison
-\[\mangle\hinge x y q
-\ge\angk x y q\]
-holds for any hinge $\hinge x y q$ with 
-$\dist{x}{y}{}+\dist{x}{q}{}
+\[\mangle\hinge x y z
+\ge\angk x y z\eqlbl{eq:key-lem:globalization}\]
+holds for any hinge $\hinge x y z$ with 
+$\dist{x}{y}{}+\dist{x}{z}{}
 <
 \frac{2}{3}\cdot\ell$.
-Then comparison
-\[\mangle\hinge x p q
-\ge\angk x p q\] 
-holds for any hinge $\hinge x p q$ with $\dist{x}{ p}{}+\dist{x}{q}{}<\ell$.
+Then the comparison \ref{eq:key-lem:globalization}
+holds for any hinge $\hinge x y z$ with $\dist{x}{y}{}+\dist{x}{z}{}<\ell$.
 \end{thm}
 
 \begin{wrapfigure}{r}{30mm}
@@ -410,39 +428,47 @@ $\dist{\~p}{\~q}{}\ge\side \hinge{x'}q p$ and \ref{eq:thm:=def-loc-fivestar} fol
 Let us continue the proof.
 Set $x_0=x$.
 Let us apply inductively the above construction to get a sequence of hinges  $\hinge{x_n}p q$ with $x_{n+1}=x_n'$.
+By \ref{eq:thm:=def-loc-fivestar} and triangle inequality, both sequences
+\[s_n=\side \hinge{x_n}pq\quad\text{and}\quad r_n=\dist{p}{x_n}{}+\dist{x_n}{q}{}\]
+are nonincreasing.
 
-The sequence might terminate at some $n$ only if $\dist{p}{x_n}{}+\dist{x_n}{q}{}\z< \tfrac{2}{3}\cdot\ell $.
-In this case, by the assumptions of the lemma, $\side \hinge{x_n}p q\ge\dist{p}{q}{}$.
-From \ref{eq:thm:=def-loc-fivestar}, we get that the sequence  $s_n\z=\side \hinge{x_n}p q$ is decreasing.
-Hence inequality \ref{eq:thm:=def-loc*} follows.
+The sequence might terminate at some $n$ only if $r_n< \tfrac{2}{3}\cdot\ell $.
+In this case, by the assumptions of the lemma, 
+\[s_n=\side \hinge{x_n}p q\ge\dist{p}{q}{}.\]
+Since sequence $s_n$ is nonincreasing;
+\[s_0=\side \hinge{x}p q\ge\dist{p}{q}{},\]
+whence inequality \ref{eq:thm:=def-loc*} follows.
 
-Otherwise, the sequence $r_n=\dist{p}{x_n}{}+\dist{x_n}{q}{}$ is non-increasing and $r_n\ge\tfrac{2}{3}\cdot\ell$ for all $n$. Hence $r_n\to r$ as $n\to\infty$.
-Pass to a subsequence $y_\kay=x_{n_\kay}$ such that $y_\kay'=x_{n_\kay+1}\in [y_\kay q]$.
-(In particular, $\dist{y_\kay}{q}{}\ge\dist{y_\kay}{p}{}$.)
-Clearly, \[\dist{p}{y_\kay}{}+\dist{y_\kay}{y_\kay'}{}\z-\dist{p}{y_\kay'}{}=r_\kay-r_{\kay+1}\underset{\kay\to\infty} {\to}0.
-\eqlbl{trig=}\]
-From \ref{3|xx'|}, 
-it follows that  $\dist{y_\kay}{y'_\kay}{}\z>\tfrac{\ell}{100}$.
-From \ref{3|xx'|} and \ref{trig=}, it follows that 
-$\dist{p}{y_\kay}{}\z>\tfrac{\ell}{100}$
-for all large $\kay$.
-Therefore, $\angk{y_\kay}p{y_\kay'}\to \pi$. 
-Since 
-$\mangle\hinge{y_\kay}p{y_\kay'}
-\ge\angk{y_\kay}p{y_\kay'}$, we have 
-$\mangle\hinge{y_\kay}p q=\mangle\hinge{y_\kay}p{y_\kay'}\to \pi$.
-Therefore, 
-\[\dist{p}{y_\kay}{}+\dist{y_\kay}{q}{}-\side \hinge{y_\kay}p q\to 0.\] 
-Together with the triangle inequality
-\[
-\dist{p}{y_\kay}{}+\dist{y_\kay}{q}{}\ge\dist{p}{q}{}
-\]
-this yields
-\[\lim_{n\to\infty}\side \hinge{y_\kay}p q\ge \dist{p}{q}{}.\]
-Applying monotonicity of sequence  $s_n=\side \hinge{y_\kay}p q$ we obtain \ref{eq:thm:=def-loc*}.
+Otherwise, $r_n\ge\tfrac{2}{3}\cdot\ell$ for all $n$.
+Since $(r_n)$ is nonincreasing, $r_n\to r\ge |p-q|_\Sigma$ as $n\to\infty$.
+Let us show that $\mangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
+
+Indeed assume $\mangle\hinge{x_n}p q< \pi-\eps$ for some $\eps>0$.
+Without loss of generality we can assume that $x_{n+1}\in [x_nq]$;
+otherwise switch $p$ and $q$ further.
+By comparison 
+\[|p-x_{n+1}|<\side\hinge{x_n}p{x_{n+1}}<|p-x_n|+|x_n-x_{n+1}|-\delta\]
+for some fixed $\delta=\delta(\eps)>0$.
+Therefore $r_n-r_{n+1}>\delta$.
+The latter can not hold for large $n$, otherwise the sequence $r_n$ would not converge.
+
+Since $\mangle\hinge{x_n}p q\to \pi$, we have 
+$s_n-r_n\to 0$ as $n\to\infty$;
+that is $s_n\to r$.
+
+Since the sequence $(s_n)$ is nonincreasing and $r\ge |p-q|$, we get
+\[s_n\ge |p-q|\]
+for any $n$.
+In particular
+\[\side\hinge spq=s_0\ge |p-q|,\] so we obtain \ref{eq:thm:=def-loc*}.
 \qeds
 
 
+\begin{thm}{Exercise} 
+Assume a disc $\Delta$ lies in complete smooth regular surface $\Sigma$ with nonnegative Gauss curvature and bounded by a closed broken geodesic $x_1\dots x_n$ with positive exterior angles, that is when you travel along the boundary, you always turn to the side where $\Delta$ is.
+
+Show that there is a convex plane polygon $\~x_1\dots \~x_n$ which sides are equal to the corresponding sides of $x_1\dots x_n$ and with internal angles at not bigger than in the corresponding angles  of $x_1\dots x_n$.
+\end{thm}
 
 
 
