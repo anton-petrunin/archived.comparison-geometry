@@ -5,25 +5,26 @@
 A minimizing geodesic between points $x$ and $y$ in a surface $\Sigma$ will be denoted as $[xy]$ or $[xy]_\Sigma$;
 the latter notation is used if we need to emphasise that the geodesic lies in $\Sigma$.
 If we write $[xy]$, then we assume that a minimizing geodesic exists and we made a choice of one of them.
+
+In general minimizing geodesic might be not unique for example any meridian in the sphere is a minimizing geodesic between its poles.
 If $\Sigma$ is complete, then a minimizing geodesic always exists. %%%???should we prove it???
 
 A \emph{geodesic triangle} in a surface $\Sigma$ is a triple of points $x,y,z\in \Sigma$ with choice of minimizing geodesics $[xy]$, $[yz]$ and $[zx]$.
 The points $x,y,z$ are called \emph{vertexes} of the geodesic triangle,
 the minimizing geodesics $[xy]$, $[yz]$ and $[zx]$ are called its sides;
 the triangle itself is denoted by $[xyz]$.
-(The notation $[xyz]$ is just a shortcut for the array $(x,y,z,[xy], [yz], [zx])$.)
 
 The length of one (and therefore any) minimizing geodesic $[xy]_\Sigma$ will be denoted by $|x-y|_\Sigma$; it is called \emph{intrinsic distance} from $x$ to $y$ in $\Sigma$.
 If defined, then $|x-y|_\Sigma$ is the exact lower bound on the lengths of curves from $x$ to $y$ in $\Sigma$. 
 
-A triangle $[\~x\~y\~z]$ in the plane is called \emph{model triangle} of the triangle $[xyz]$,
+A triangle $[\~x\~y\~z]$ in the plane $\RR^2$ is called \emph{model triangle} of the triangle $[xyz]$,
 briefly $[\~x\~y\~z]=\~\triangle xyz$, if its corresponding sides are equal;
 that is,
-\[|\~x-\~y|=|x-y|_\Sigma,
+\[|\~x-\~y|_{\RR^2}=|x-y|_\Sigma,
 \quad
-|\~y-\~z|=|y-z|_\Sigma,
+|\~y-\~z|_{\RR^2}=|y-z|_\Sigma,
 \quad
-|\~z-\~x|=|z-x|_\Sigma.
+|\~z-\~x|_{\RR^2}=|z-x|_\Sigma.
 \]
 
 A pair of minimizing geodesics $[xy]$ and $[xz]$ starting from one point $x$ is called \emph{hinge} and denoted as $\hinge xyz$.
@@ -55,19 +56,23 @@ If the triangle $[xyz]$ bounds a disc $\Delta$ and $\theta$ is the external angl
 then $\measuredangle\hinge {x}{y}{z}=|\pi-\theta|$.
 The corresponding internal angle might be $\measuredangle\hinge {x}{y}{z}$ or $2\cdot\pi-\measuredangle\hinge {x}{y}{z}$ depending on which side lies the disc $\Delta$.
 
-Since the angles of any plane triangle sum up to $\pi$,
+\begin{itemize}
+\item Since the angles of any plane triangle sum up to $\pi$,
 the part (\ref{thm:comp:toponogov}) of the theorem implies that angles of any triangle in a surface with nonnegative Gauss curvature have sum at least $\pi$.
-If the triangle bounds a disc, then by Gauss--Bonnet formula the sum of its internal angles is at least $\pi$.
-Note that the triangle may not bound a disc, for example equator on the cyclinder is formed by a geodesic triangle that does not bound a disc.
-Also note that (1) Gauss--Bonnet formula gives a lower bound on the sum of its \emph{internal} angles, but does not bound each angle separately (2) if $\alpha$ is the angle in the comparison theorem, then the internal angle might be $\alpha$ or $2\cdot\pi-\alpha$; while Gauss--Bonnet formula gives a lower bound on the sum of internal angles it does not forbid that each of these angles is close to $2\cdot \pi$ which is impossible by the comparison theorem.
 
-On the part (\ref{thm:comp:cat}).
-First note that without condition that $\Sigma$ is simply connected, the statement does not hold.
-For example the equator $z=0$ of infinite cylinder (which is not simply connected)
-\[\set{(x,y,z)\in\RR^3}{x^2+y^2=1}\]
-is formed by a triangle with all angles $\pi$; which contradict the comparison.
+\item The triangle may not bound a disc%
+\footnote{For example equator on the cyclinder is formed by a geodesic triangle that does not bound a disc.}, but  if it does, then by Gauss--Bonnet formula the sum of its {}\emph{internal} angles is at least~$\pi$.
+\end{itemize}
+These two statements are closely related, but they are not the same.
+Note that if $\alpha$ is the angle in the comparison theorem, then the internal angle might be $\alpha$ or $2\cdot\pi-\alpha$; while Gauss--Bonnet formula gives a lower bound on the sum of internal angles it does not forbid that each of these angles is close to $2\cdot \pi$.
+However the latter is impossible by the comparison theorem.
 
-\begin{thm}{Exercise}
+First note that without condition that $\Sigma$ is simply connected, the statement \textit{(\ref{thm:comp:cat})} does not hold.
+For example the equator $z=0$ of the hyperboloid (which is not simply connected)
+\[\set{(x,y,z)\in\RR^3}{x^2+y^2-z^2=1}\]
+forms a triangle with all angles $\pi$, which contradict the comparison in~\textit{(\ref{thm:comp:cat})}.
+
+\begin{thm}{Exercise}\label{ex:unique-geod}
 Let $\Sigma$ be a complete smooth regular simply connected surface with nonpositive Gauss curvature.
 Show that any two points in $\Sigma$ are connected by unique geodesic.
 \end{thm}
@@ -75,33 +80,37 @@ Show that any two points in $\Sigma$ are connected by unique geodesic.
 
 \section{Names and history}
 
-Part (\ref{thm:comp:toponogov}) of this theorem is called \emph{Toponogov comparison theorem};
-it is was proved by Paolo Pizzetti \cite{pizzetti} and latter independently by Alexandr Alexandrov \cite{alexandrov}; generalizations were obtained by  Victor Toponogov \cite{toponogov}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{BGP}.
+Part \textit{(\ref{thm:comp:toponogov})} of this theorem is called \emph{Toponogov comparison theorem};
+it is was proved by Paolo Pizzetti \cite{pizzetti} and latter independently by Alexandr Alexandrov \cite{alexandrov}; 
+generalizations were obtained by  Victor Toponogov \cite{toponogov}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{BGP}.
+%We present a proof from \cite{AKP} which is also very close to the one given by Urs Lang and Viktor Schroeder in \cite{lang-schroeder}.???
 
-Part (\ref{thm:comp:cat}) is called \emph{Cartan--Hadamard theorem};
+Part \textit{(\ref{thm:comp:cat})} is called \emph{Cartan--Hadamard theorem};
 it was proved by 
 Hans von Mangoldt \cite{mangoldt} and generalized by Elie Cartan \cite{cartan}, Jacques Hadamard \cite{hadamard},
 Herbert Busemann \cite{busemann},
 Willi Rinow in \cite{rinow},
-Mikhael Gromov \cite[p.119]{gromov},
+Mikhael Gromov \cite[p.~119]{gromov},
 Stephanie Alexander and Richard Bishop in \cite{a-b:h-c}.
 
 \section{Local part}
 
 First we prove the following local version of comparison theorem and then use it to prove the global version.
 
-\begin{thm}{Theorem}
+\begin{thm}{Theorem}\label{thm:loc-comp}
 The comparison theorem (\ref{thm:comp}) holds in a small neighborhood of any point.
 
 That is, if $\Sigma$ be a complete smooth regular surface,
-then any point $p\in \Sigma$ admits a neighborhood $U$ such that 
+then any point $p\in \Sigma$ admits a neighborhood $U\ni p$ such that 
 \begin{enumerate}[(i)]
  \item If $\Sigma$ has nonnegative Gauss curvature, then for any geodesic triangle $[xyz]$ in $U$ we have
  \[\measuredangle\hinge {x}{y}{z}\ge\angk xyz.\]
- \item If $\Sigma$ has nonpositive Gauss curvature, then for any geodesic triangle $[xyz]$ in $U$ we have
+ \item\label{cba} If $\Sigma$ has nonpositive Gauss curvature, then for any geodesic triangle $[xyz]$ in $U$ we have
  \[\measuredangle\hinge {x}{y}{z}\le\angk xyz.\]
 \end{enumerate}
 \end{thm}
+
+Note that we can assume that $U$ is simply connected therefore this condition is not necessary to include in part \textit{(\ref{cba})}.
 
 \parit{Proof.}
 Assume $y=\exp_xv$ and $z=\exp_xw$ for two small vectors $v,w\in\T_x$.
@@ -109,9 +118,9 @@ Note that
 \begin{align*}
 \measuredangle \hinge xvw_{\T_x}&=\measuredangle \hinge xyz_\Sigma,
 \\
-|x-y|_\Sigma&=|x-v|_{\T_x}, 
+|x-v|_{\T_x}&=|x-y|_\Sigma, 
 \\
-|x-z|_\Sigma&=|x-w|_{\T_x}.
+|x-w|_{\T_x}&=|x-z|_\Sigma.
 \end{align*}
 
 
@@ -151,17 +160,17 @@ Then the following expressions have the same signs:
 \end{enumerate}
 \end{thm}
 
-\parit{Proof.} 
-In the proof we use the following \emph{monotonicity property}:
-if two sides adjacent to an angle in a plane triangle are fixed, 
-then the angle is increases if the opposite side increase.
-
 \begin{figure}[h!]
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-50}
 \vskip-0mm
 \end{figure}
+
+\parit{Proof.} 
+In the proof we use the following \emph{monotonicity property}:
+if two sides adjacent to an angle in a plane triangle are fixed, 
+then the angle is increases if the opposite side increase.
 
 Take 
 a point $\bar z$ on the extension of 
@@ -181,7 +190,16 @@ and
 \[\measuredangle\hinge{y}{\bar z}{p}+\measuredangle\hinge{y}{x}{p}=\pi.\]
 \qedsf
 
-Further we will use the following reformulation of this lemma that is using language of comparison triangles.
+Further we will use the following reformulation of this lemma that is using language of comparison triangles and angles.
+
+\begin{wrapfigure}[7]{r}{28mm}
+\begin{lpic}[t(-0mm),b(6mm),r(0mm),l(0mm)]{pics/lem_alex1(1)}
+\lbl[lb]{10,23;$x$}
+\lbl[rt]{1.5,.5;$p$}
+\lbl[bl]{25,7.5;$z$}
+\lbl[lb]{17,15;$y$}
+\end{lpic}
+\end{wrapfigure}
 
 \begin{thm}{Reformulation}\label{lem:alex-reformulation}
 \label{lem:alex}
@@ -198,17 +216,15 @@ Then the following expressions have the same signs:
 
 \section{Reformulations of comparison}
 
-In this section we formulate conditions equivalent to the conclusion of the comparison theorem
-(which is not yet proved).
+In this section we formulate conditions equivalent to the conclusion of the comparison theorem (\ref{thm:comp}).
 
 A triangle $[xyz]$ in a surface is called \emph{fat} (or correspondingly \emph{thin})
 if for any two points $p$ and $q$ on the sides of the triangle and the corresponding points 
 $\~p$ and $\~q$ on the sides of its model triangle $[\~x\~y\~z]\z=\~\triangle xyz$ we have
 $|p-q|\ge |\~p-\~q|$ (or correspondingly $|p-q|\le |\~p-\~q|$).
 
-Let us reformulate the comparison theorem (\ref{thm:comp}) using thin and fat triangles:
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition}\label{prop:comp-reformulations}
 Let $\Sigma$ be a complete smooth regular surface.
 Then the following three conditions are equivalent:
 \begin{enumerate}[(i$^{+}$)]
@@ -232,30 +248,28 @@ Similarly, following three conditions are equivalent:
 
 \end{thm}
 
-\parit{Proof; (i$^{+}$)$\Longrightarrow$(ii$^{+}$).}
+\parit{Proof.} We will prove the implications \textit{(i$^{+}$)$\Rightarrow$(ii$^{+}$)$\Rightarrow$(iii$^{+}$)$\Rightarrow$(i$^{+}$)}.
+The implications \textit{(i$^{-}$)$\Rightarrow$(ii$^{-}$)$\Rightarrow$(iii$^{-}$)$\Rightarrow$(i$^{-}$)} can be done the same way.
+
+\parit{(i$^{+}$)$\Rightarrow$(ii$^{+}$).}
 Note that $\measuredangle\hinge ypx+\measuredangle\hinge ypz=\pi$.
 By \textit{(i$^{+}$)}, 
 \[\angk ypx+\angk ypz\le \pi.\]
-It reamains to apply Alexandrov's lemma \ref{lem:alex-reformulation}.
+It reamains to apply Alexandrov's lemma (\ref{lem:alex-reformulation}).
 
-The implication \textit{(i$^{-}$)$\Longrightarrow$(ii$^{-}$)} can be done the same way.
 
-\parit{(ii$^{+}$)$\Longrightarrow$(iii$^{+}$).}
+\parit{(ii$^{+}$)$\Rightarrow$(iii$^{+}$).}
 Applying \textit{(i$^{+}$)} twice, first for $y\in [xz]$ and then for $w\in [px]$, we get that
 \[\angk xwy \ge \angk xpy \ge \angk xpz\]
 and therefore
 \[|w-y|_\Sigma\ge |\~w-\~y|_{\RR^2},\]
 where $\~w$ and $\~y$ are the points corresponding to $w$ and $y$ points on the sides of the model triangle. Hence the implication follows.
 
-The implication \textit{(ii$^{-}$)$\Longrightarrow$(iii$^{-}$)} can be done the same way.
-
-\parit{(iii$^{+}$)$\Longrightarrow$(i$^{+}$).}
+\parit{(iii$^{+}$)$\Rightarrow$(i$^{+}$).}
 Since the triangle is fat, we have 
 \[\angk xwy \ge \angk xpz\]
 for any $w\in \left]xp\right]$ and $y\in \left]xz\right]$.
-Note that $\angk xwy\to \measuredangle\hinge xpz$ as $w,y\to x$; hence the implication follows.
-
-The implication \textit{(iii$^{-}$)$\Longrightarrow$(i$^{-}$)} can be done the same way.
+Note that $\angk xwy\to \measuredangle\hinge xpz$ as $w,y\to x$, whence the implication follows.
 \qeds
 
 In the following exercises you can apply the globalization theorem.
@@ -279,8 +293,6 @@ Consider the function
 \end{enumerate}
 \end{thm}
 
-The following exercise is a generalization of the so called \emph{arm lemma};
-
 \begin{thm}{Exercise}
 Let $\~x_1\dots\~x_n$ be a convex plane polygon and
 $x_1\dots x_n$ be a broken geodesic in a complete simply connected surface $\Sigma$ with nonpositive curvature.
@@ -291,7 +303,9 @@ $\measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}\ge \measuredangle\hinge{x_{i-1}}{x_
 Show that \[|x_1-x_n|_\Sigma\ge |\~x_1\z-\~x_n|_{\RR^2}.\]
 \end{thm}
 
-For $\Sigma=\RR^2$, the exercise above is the so called \emph{arm lemma}; you can use it without proof.
+For $\Sigma=\RR^2$, the exercise above is the so called \emph{arm lemma}; 
+you can use it without proof.
+
 
 \begin{thm}{Exercise}
 Let $x'$ and $y'$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in a complete smooth regular surface $\Sigma$.
@@ -305,16 +319,11 @@ Let $x'$ and $y'$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in 
 \end{thm}
 
 
-
-
-
-
-
-\section{Globalization for nonnegative curvature}
+\section{Nonnegative curvature}
 
 In this section we will prove part \textit{(\ref{thm:comp:toponogov})} of the comparison theorem (\ref{thm:comp}) assuming that $\Sigma$ is compact; the general case requre only minor modifications.
 
-Since $\Sigma$ is compact, from local version of the theorem we get that there is $\eps>0$ such that the inequality 
+Since $\Sigma$ is compact, from the local theorem (\ref{thm:loc-comp}), we get that there is $\eps>0$ such that the inequality 
 \[\measuredangle\hinge {x}{y}{z}\ge\angk xyz.\]
 holds for any hinge $\hinge {x}{y}{z}$ such that $|x-y|+|x-z|<\eps$.
 The following lemma states that in this case the same holds for any hinge $\hinge {x}{y}{z}$ such that $|x-y|+|x-z|<\tfrac32\cdot\eps$.
@@ -347,8 +356,11 @@ holds for any hinge $\hinge x y z$ with $\dist{x}{y}{}+\dist{x}{z}{}<\ell$.
 \end{lpic}
 \end{wrapfigure}
 
-\parit{Proof.} Let us denote by $\side \hinge x p q$ the third side of a plane triangle
+\parit{Proof.} 
+Given a hinge $\hinge x p q$ consider a triangle in the plane
 with angle $\measuredangle\hinge x p q$ and two adjacent sides $|x-p|$ and $|x-q|$.
+Let us denote by $\side \hinge x p q$ the third side of this triangle; let us call it \emph{model side} of the hinge.
+
 Note that the inequalities 
 \[\measuredangle\hinge x p q\ge \angk x p q\quad\text{and}\quad\side \hinge x p q
 \ge\dist{p}{q}{}\]
@@ -358,10 +370,9 @@ So it is sufficient to prove that
 \ge\dist{p}{q}{}.\eqlbl{eq:thm:=def-loc*}\] 
 for any hinge $\hinge x p q$ with $\dist{x}{p}{}+\dist{x}{q}{}<\ell$.
 
-Fix $q$.
-Consider a hinge $\hinge x p q$ such that 
-\[\tfrac{2}{3}\cdot\ell \le\dist{p}{x}{}\z+\dist{x}{q}{}< \ell.\]
-Let us construct a new smaller hinge $\hinge{x'}p q$; that is,
+Given a hinge $\hinge x p q$ such that 
+\[\tfrac{2}{3}\cdot\ell \le\dist{p}{x}{}\z+\dist{x}{q}{}< \ell,\]
+let us construct a new smaller hinge $\hinge{x'}p q$; that is,
 \[
 \dist{p}{x}{}+\dist{x}{q}{}\ge\dist{p}{x'}{}+\dist{x'}{q}{}
 \eqlbl{eq:thm:=def-loc-fourstar}\]
@@ -376,7 +387,7 @@ Take $x'\in [x q]$ such that
 \[\dist{p}{x}{}+3\cdot\dist{x}{x'}{}
 =\tfrac{2}{3}\cdot\ell \eqlbl{3|xx'|}\]
 Choose a geodesic $[x' p]$ and consider the  hinge $\hinge{x'}p q$ fromed by $[x'p]$ and $[x' q]\subset [x q]$. 
-Then \ref{eq:thm:=def-loc-fourstar} follows since the length of $[x'p]$ can not exceed the length of broken geodesic $x'xp$.
+Then \ref{eq:thm:=def-loc-fourstar} follows since the length of $[x'p]$ can not exceed the total length of $[x'x]$ and $[x'p]$.
 
 Further, note that 
 $\dist{p}{x}{}\z+\dist{x}{x'}{},\dist{p}{x'}{}\z+\dist{x'}{x}{}<\tfrac{2}{3}\cdot\ell $.
@@ -424,8 +435,6 @@ $\dist{\~p}{\~q}{}\ge\side \hinge{x'}q p$ and \ref{eq:thm:=def-loc-fivestar} fol
 \end{lpic}
 \end{center}
 
-%%%??? WE SHOULD MENTION cat's cradle.
-Let us continue the proof.
 Set $x_0=x$.
 Let us apply inductively the above construction to get a sequence of hinges  $\hinge{x_n}p q$ with $x_{n+1}=x_n'$.
 By \ref{eq:thm:=def-loc-fivestar} and triangle inequality, both sequences
@@ -439,18 +448,23 @@ Since sequence $s_n$ is nonincreasing;
 \[s_0=\side \hinge{x}p q\ge\dist{p}{q}{},\]
 whence inequality \ref{eq:thm:=def-loc*} follows.
 
-Otherwise, $r_n\ge\tfrac{2}{3}\cdot\ell$ for all $n$.
+If the sequence does not terminate, then $r_n\ge\tfrac{2}{3}\cdot\ell$ for all $n$.
 Since $(r_n)$ is nonincreasing, $r_n\to r\ge |p-q|_\Sigma$ as $n\to\infty$.
+
 Let us show that $\mangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
 
-Indeed assume $\mangle\hinge{x_n}p q< \pi-\eps$ for some $\eps>0$.
+Indeed assume $\mangle\hinge{x_n}p q\le \pi-\eps$ for some $\eps>0$.
 Without loss of generality we can assume that $x_{n+1}\in [x_nq]$;
 otherwise switch $p$ and $q$ further.
-By comparison 
+Note that $|x_n-x_{n+1}|,|p-x_n|>\tfrac\ell{100}$.
+Therefore by comparison 
 \[|p-x_{n+1}|<\side\hinge{x_n}p{x_{n+1}}<|p-x_n|+|x_n-x_{n+1}|-\delta\]
 for some fixed $\delta=\delta(\eps)>0$.
 Therefore $r_n-r_{n+1}>\delta$.
 The latter can not hold for large $n$, otherwise the sequence $r_n$ would not converge.
+
+It follows that for any $\eps>0$ we have that $\mangle\hinge{x_n}p q> \pi-\eps$ for all large $n$;
+that is $\mangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
 
 Since $\mangle\hinge{x_n}p q\to \pi$, we have 
 $s_n-r_n\to 0$ as $n\to\infty$;
@@ -470,5 +484,215 @@ Assume a disc $\Delta$ lies in complete smooth regular surface $\Sigma$ with non
 Show that there is a convex plane polygon $\~x_1\dots \~x_n$ which sides are equal to the corresponding sides of $x_1\dots x_n$ and with internal angles at not bigger than in the corresponding angles  of $x_1\dots x_n$.
 \end{thm}
 
+\section{Inheritance lemma}
+
+The following lemma will play key role in the proof of part \textit{(\ref{thm:comp:cat})} of the comparison theorem (\ref{thm:comp}).
+
+\begin{wrapfigure}[7]{r}{28mm}
+\begin{lpic}[t(-0mm),b(6mm),r(0mm),l(0mm)]{pics/lem_alex1(1)}
+\lbl[lb]{10,23;$x$}
+\lbl[rt]{1.5,.5;$p$}
+\lbl[bl]{25,7.5;$y$}
+\lbl[lb]{17,15;$z$}
+\end{lpic}
+\end{wrapfigure}
+
+\begin{thm}{Inheritance Lemma}
+\label{lem:inherit-angle} 
+Assume that a triangle $\trig p x y$ in a surface $\Sigma$ \emph{decomposes}\index{decomposed triangle} 
+into two triangles $\trig p x z$ and $\trig p y z$;
+that is, $\trig p x z$ and $\trig p y z$ have common side $[p z]$, and the sides $[x z]$ and $[z y]$ together form the side $[x y]$ of $\trig p x y$.
+
+If  both triangles $\trig p x z$ and $\trig p y z$ are thin, 
+then so is  $\trig p x y$.
+\end{thm} 
+
+We shall need the following lemma in plane geometry.
 
 
+\begin{thm}{Lemma}\label{lem:quadrangle}
+Let $\solidtriangle{\~p}{\~x}{\~y}$ be a solid plane triangle; that is, $\solidtriangle{\~p}{\~x}{\~y}\z=\Conv\{{\~p},{\~x},{\~y}\}$.
+Given  $\~z\in[\~x\~y]$,
+consider  points $\dot p, \dot x, \dot z, \dot y$ in the plane such that 
+\begin{align*}
+\dist{\dot p}{\dot x}{}&=\dist{\~p}{\~x}{},
+&
+\dist{\dot p}{\dot y}{}&=\dist{\~p}{\~y}{},
+&
+\dist{\dot p}{\dot z}{}&\le \dist{\~p}{\~z}{},
+\\
+\dist{\dot x}{\dot z}{}&=\dist{\~x}{\~z}{},
+&
+\dist{\dot y}{\dot z}{}&=\dist{\~y}{\~z}{},
+\end{align*}
+where points $\dot x$ and $\dot y$ lie on either side of $[\dot p\dot z]$.
+Then there is a short map 
+\[F\:\solidtriangle{\~p}{\~x}{\~y}\to \solidtriangle{\dot p}{\dot x}{\dot z}\cup \solidtriangle{\dot p} {\dot y} {\dot z}\]
+that maps $\~p$, $\~x$, $\~y$ and $\~z$ to $\dot p$, $\dot x$, $\dot y$ and $\dot z$ respectively.
+\end{thm}
+
+\begin{wrapfigure}{r}{30mm}
+\begin{lpic}[t(-5mm),b(0mm),r(0mm),l(0mm)]{pics/resh(1)}
+\lbl[t]{17,-.5;$\~p$}
+\lbl[b]{29,23.5;$\~x$}
+\lbl[rb]{2,19;$\~y$}
+\lbl[b]{15,21.5;$\~z$}
+\lbl[tr]{13.5,13;$\~z_x$}
+\lbl[tl]{18.3,14;$\~z_y$}
+\end{lpic}
+\end{wrapfigure}
+%???better pic???
+
+\parit{Proof.} 
+Note that 
+\begin{align*}
+|\dot x-\dot y|&\le |\dot x-\dot z|+|\dot z-\dot y|=
+\\
+&=|\~ x-\~ z|+|\~ z-\~ y|
+\\
+&=|\~ x-\~ y|.
+\end{align*}
+Applying monotonicity propery, we get that
+\[\measuredangle\hinge{\dot p}{\dot x}{\dot y}\le \measuredangle\hinge{\~ p}{\~ x}{\~ y}.\]
+It follows that there are nonoverlapping triangles 
+$\trig{\~p}{\~x}{\~z_y}\cong\trig {\dot p}{\dot x}{\dot z}$ 
+and 
+$\trig{\~p}{\~y}{\~z_x}\cong\trig {\dot p}{\dot y}{\dot z}$
+ inside triangle $\trig{\~p}{\~x}{\~y}$.
+
+
+Connect points in each pair
+$(\~z,\~z_x)$, 
+$(\~z_x,\~z_y)$ 
+and $(\~z_y,\~z)$ 
+with arcs of circles centered at 
+$\~y$, $\~p$, and $\~x$ respectively. 
+Define $F$ as follows.
+\begin{itemize}
+\item Map  $\solidtriangle{\~p}{\~x}{\~z_y}$ isometrically onto  $\solidtriangle {\dot p}{\dot x}{\dot y}$;
+similarly map $\solidtriangle{\~p}{\~y}{\~z_x}$ onto $\solidtriangle {\dot p}{\dot y}{\dot z}$.
+\item If a point $w$ lies in one of the three circular sectors, say at distance $r$ from center of the circle, let $F(w)$ be the point on the corresponding segment 
+$[\dot p \dot z]$, 
+$[\dot x \dot z]$ 
+or $[\dot y \dot z]$ whose distance from the lefthand endpoint of the segment is $r$.
+\item Finally, if $w$ lies in the remaining curvilinear triangle $\~z \~z_x \~z_y$, 
+set $F(w) =\dot z$. 
+\end{itemize}
+By construction, $F$ satisfies the remaining conditions of the lemma. 
+\qeds
+
+
+\parit{Proof of Inheritance lemma \ref{lem:inherit-angle}.}
+Construct model triangles $\trig{\dot p}{\dot x}{\dot z}\z=\modtrig(p x z)$ 
+and $\trig {\dot p} {\dot y} {\dot z}=\modtrig(p y z)$ so that $\dot x$ and $\dot y$ lie on opposite sides of $[\dot p\dot z]$.
+
+\begin{wrapfigure}{r}{25mm}
+\begin{lpic}[t(0mm),b(0mm),r(0mm),l(0mm)]{pics/cat-monoton-ineq(1)}
+\lbl[rb]{14,21;$\dot z$}
+\lbl[lt]{11,1;$\dot p$}
+\lbl[r]{1,12.5;$\dot x$}
+\lbl[l]{24,13;$\dot y$}
+\lbl[tl]{12.5,11.5;$\dot w$}
+\end{lpic}
+\end{wrapfigure}
+
+Suppose
+\[\angk{z}{p}{x}+\angk{z}{p}{y}
+<
+\pi.\]
+Then for some point $\dot w\in[\dot p\dot z]$, we have \[\dist{\dot x}{\dot w}{}+\dist{\dot w}{\dot y}{}
+<
+\dist{\dot x}{\dot z}{}+\dist{\dot z}{\dot y}{}=\dist{x}{y}{}.\]
+Let $w\in[p z]$ correspond to $\dot w$; that is, $\dist{z}{w}{}=\dist{\dot z}{\dot w}{}$. 
+Since $\trig p x z$ and $\trig p y z$ are thin, we have 
+\[\dist{x}{w}{}+\dist{w}{y}{}<\dist{x}{y}{},\]
+contradicting the triangle inequality. 
+
+Thus 
+\[\angk{z}{p}{x}+\angk{z}{p}{y}
+\ge
+\pi.\]
+By Alexandrov's lemma (\ref{lem:alex}), this is equivalent to 
+\[\angk x p z\le\angk x p y.
+\eqlbl{eq:for|pz|}\]
+
+Let $\trig{\~ p}{\~ x}{\~ y}=\modtrig (p x y)$ 
+and $\~ z\in[\~ x\~ y]$ correspond to $z$; that is, $\dist{x}{z}{}=\dist{\~ x}{\~ z}{}$.
+Inequality~\ref{eq:for|pz|} is equivalent to $\dist{ p}{ z}{}\le \dist{\~ p}{\~ z}{}$.
+Hence  Lemma~\ref{lem:quadrangle} applies;
+let $F\:\solidtriangle{\~ p}{\~ x}{\~ y}\to\solidtriangle {\dot p}{\dot x}{\dot z}\cup \solidtriangle {\dot p} {\dot y} {\dot z}$ be the provided short map.
+
+Fix $v,w$ on the sides of $\trig p x y$;
+let $\~v,\~w$ be the corresponding points on the sides of the model triangle $\trig {\~p}{\~x}{\~y}=\modtrig p x y$
+and $\dot v,\dot w$ be the corresponding points on the sides of the model triangles $\trig {\dot p} {\dot x}{\dot z}=\modtrig p x z$ and $\trig {\dot p} {\dot y}{\dot z}=\modtrig p y z$.
+Denote by $\ell$ the length of shortest curve from $\dot v$ to $\dot w$ in $\solidtriangle {\dot p}{\dot x}{\dot z}\cup \solidtriangle {\dot p} {\dot y} {\dot z}$.
+Since $F$ is short, $|\~v-\~w|_{\RR^2}\ge \ell$.
+Since both triangles $\trig p x z$ and $\trig p y z$ are thin, $\ell\ge|v-w|_{\Sigma}$.
+
+It follows that $|\~v-\~w|_{\RR^2}\ge |v-w|_{\Sigma}$ for any $v$ and $w$;
+that is, the triangle $\trig p x y$ is thin.
+\qeds
+
+\section{Nonpositive curvature}
+
+Assume $\Sigma$ is a complete smooth regular surface with nonpositive curvature.
+As it follow from Exercise \ref{ex:unique-geod} any two points $x$ and $y$ in $\Sigma$ are joined by unique geodesic $[xy]$.
+
+\begin{wrapfigure}{o}{61mm}
+\begin{lpic}[t(0mm),b(0mm),r(0mm),l(0mm)]{pics/cba-globalization-net(1)}
+\lbl[t]{2,0;$p$}
+\lbl[lt]{12,0;$x^{0,1}$}
+\lbl[lt]{30,0;$\dots$}
+\lbl[t]{54,0;$x^{0,N}=x$}
+\lbl[l]{49,12;$x^{1,N}$}
+\lbl[bl]{36,31,-52;$\dots$}
+\lbl[b]{24,48;$x^{N,N}=y$}
+\end{lpic}
+\end{wrapfigure}
+
+Note that the geodesic $[xy]$ depends continuously on its endpoints $x$ and $y$. 
+That is, if $\gamma_{[xy]}\:[0,1]\to \Sigma$ is the constant speed parametrization of $[xy]$ from $x$ to $y$,
+then the map $(x,y,t)\mapsto \gamma_{[xy]}(t)$ is continuous in three arguments.
+Indeed, assume contrary, that is $x_n\to x$, $y_n\to y$ and $t_n\to t$ as $n\to \infty$ and 
+$\gamma_{[x_ny_n]}(t_n)$ does not converge to $\gamma_{[xy]}(t)$. 
+Then we can pass to a subsequence such that $\gamma_{[x_ny_n]}(t_n)$ converges to a point distinct from $w\ne \gamma_{[xy]}(t)$.
+Note that $w\notin [xy]$. 
+Therefore there will be two distinct geodesics from $x$ to $y$;
+one is $[xy]$ and the other is the limit of $[x_ny_n]$ which passes thru $w$.
+
+\parit{Proof of part \textit{(\ref{thm:comp:cat})} of the comparison theorem (\ref{thm:comp}).}
+Fix a triangle $[p x y]$; 
+by Proposition~\ref{prop:comp-reformulations}, it is sufficient to show that the triangle $\trig p x y$ is thin.   
+
+Fix large integer $N$ and 
+divide $[xy]$ by points $x=x^{0,N},\dots,x^{N,N}=y$ into $N$ equal parts.
+Further divide each geodesic $[p\,x^{i,N}]$ into $N$ equal parts by points $p=x^{i,0},\dots,x^{i,N}$.
+Since the geodesic depends continuously on its end points, we can assume that each triangle 
+ $\trig{x^{i,j}}{\,x^{i,j+1}}{\,x^{i+1,j+1}}$ and $\trig{x^{i,j}}{\,x^{i+1,j}}{\,x^{i+1,j+1}}$ is small;
+ in particular, by local comparison (\ref{thm:loc-comp}), each of these triangles is thin. 
+
+Now we show that the thin property propagates to $\trig p x y$ by repeated application of the inheritance lemma (\ref{lem:inherit-angle}):
+\begin{itemize}
+\item 
+First, for fixed $i$, 
+sequentially applying the lemma shows  that the triangles 
+$\trig{x}{\,x^{i,1}}{\,x^{i+1,2}}$, 
+$\trig{x}{\,x^{i,2}}{\,x^{i+1,2}}$, 
+$\trig{x}{\,x^{i,2}}{\,x^{i+1,3}}$,
+and so on are thin. 
+\end{itemize}
+In particular, for each $i$, the long triangle $\trig{x}{\,x^{i,N}}{\,x^{i+1,N}}$ is thin.
+\begin{itemize} 
+\item 
+Applying the lemma again shows that the  triangles $\trig{x}{\,x^{0,N}}{\,x^{2,N}}$, $\trig{x}{\,x^{0,N}}{\,x^{3,N}}$, and so on are thin. 
+\end{itemize}
+In particular, $\trig p x y=\trig{p}{\,x^{0,N}}{\,x^{N,N}}$ is thin.
+\qeds
+
+
+\begin{thm}{Exercise}
+Assume $\gamma_1$ and $\gamma_2$ be two geodesics in  complete smooth regular simply connected surface $\Sigma$ with nonpositive Gauss curvature.
+Show that the function
+\[h(t)=|\gamma_1(t)-\gamma_2(t)|_\Sigma\]
+is convex.
+\end{thm}
