@@ -31,7 +31,7 @@ Assume $p=\gamma(a)$ and $q=\gamma(b)$.
 Given a tangent vector $v\in\T_p$ there is unique parallel field $v(t)$ along $\alpha$ such that $v(a)=v$.
 The latter follows from Picard's theorem; the uniqueness also follows from Exercise~\ref{ex:parallel}.
 
-The vector $v(b)\in\T_q$ is called \emph{parallel transport} of $v$ along $\alpha$ and denoted as $\iota_\alpha(v)$.
+The vector $v(b)\in\T_q$ is called the \emph{parallel transport} of $v$ along $\alpha$ and denoted as $\iota_\alpha(v)$.
 
 As it follow from the Exercise~\ref{ex:parallel}, parallel transport $\iota_\alpha\:\T_p\to\T_q$ is an an isometry;
 it depends on the choice of $\alpha$ --- for another curve $\beta$ connecting $p$ to $q$ in $\Sigma$, the parallel transport $\iota_\beta\:\T_p\to\T_q$ might be different.
@@ -39,7 +39,7 @@ it depends on the choice of $\alpha$ --- for another curve $\beta$ connecting $p
 To interpret the parallel transport physically, 
 think of walking along $\alpha$ and carrying a perfectly balanced bike wheel in such a way that you touch only its axis keeping it normal to $\Sigma$.
 It should be physically evident that if the wheel is non-spinning at the starting point $p$, then it will not be spinning after stopping at $q$.\footnote{Indeed, by pushing axis one can not produce torque to spin the wheel.}
-The map that sends the initial position of the wheel to the final position is  the parallel transportation~$\iota_\alpha$.
+The map that sends the initial position of the wheel to the final position is  the parallel transport~$\iota_\alpha$.
 
 This physical interpretation was suggested by Mark Levi \cite{levi}; it will be used further.
 
@@ -47,7 +47,7 @@ On a more formal level, one can choose a partition $a=t_0<\dots\z<t_n=b$ of $[a,
 and consider the sequence of orthogonal projections $\phi_i\:\T_{\alpha(t_{i-1})}\to\T_{\alpha(t_i)}$.
 For a fine partition, the composition 
 \[\phi_n\circ\dots\circ\phi_1\:T_p\z\to\T_q\]
-gives an approximation of $\iota_\alpha$.\footnote{Each $\phi_i$ does not increase the magnitude of a vector and so does the composition.
+gives an approximation of $\iota_\alpha$.\footnote{Each $\phi_i$ does not increase the magnitude of a vector and neither the composition.
 It is straightforward to see that if if the partition is sufficiently fine, then it almost preserves the composition almost preserves magnitudes.}
 
 \begin{wrapfigure}{r}{39 mm}
@@ -95,8 +95,8 @@ The total geodesic curvature can be also defined for a smooth unit-speed curve $
 
 Let $\nu\:\Sigma\to \SS^2$ be the Gauss map that defines the orientation on $\Sigma$.
 Then for any $t$ the vectors $\nu(t)=\nu(\gamma(t))$ and the velocity vector $\tau(t)=\gamma'(t)$ are unit vectors that are normal to each other.
-Denote by $\mu(t)$ the unit vector that is normal to both $\nu(t)$ and $\tau(t)$ that point to the left from $\gamma$.
-Note that the triple $\tau(t),\mu(t),\nu(t)$ is a orthogonal basis for any $t$.
+Denote by $\mu(t)$ the unit vector that is normal to both $\nu(t)$ and $\tau(t)$ that points to the left from $\gamma$.
+Note that the triple $\tau(t),\mu(t),\nu(t)$ is an orthogonal basis for any $t$.
 
 Since $\gamma$ is unit-speed, the acceleration $\gamma''(t)$ is perpendicular to $\tau(t)$;
 therefore at any parameter value $t$, we have
@@ -105,8 +105,8 @@ for some real numbers $k_n(t)$ and $k_g(t)$.
 The numbers $k_n(t)$ and $k_g(t)$ are called \emph{normal} and \emph{geodesic curvature} of $\gamma$ at $t$ correspondingly.
 
 Note that the geodesic curvature vanishes if $\gamma$ is a geodesic. 
-It measures how much a given curve diverges from a geodesic;
-it is positive if $\gamma$ turns left and negative if it turns right.
+It measures how much a given curve diverges from being a geodesic;
+it is positive if $\gamma$ turns left and negative if $\gamma$ turns right.
 
 The total geodesic curvature of $\gamma$ can be defined as the integral of its geodesic curvature
 \[\tgc\gamma=\int_a^b k_g(t)\cdot dt.\]
@@ -121,7 +121,6 @@ The proof is straightforward, it can be done the same way as the case in the pla
 
 \begin{thm}{Exercise}
 Let $\gamma$ be a smooth unit-speed curve in a  smooth regular surface $\Sigma$ with a Gauss map $\nu$.
-Set $\nu(t)=\nu\circ\gamma(t)$.
 Show that 
 \[k_n(t)=\langle\gamma'(t),\nu'(t)\rangle.\]
 
@@ -136,7 +135,7 @@ We need to add the total geodesic curvature of all the edges of $\gamma$ and the
 
 
 \begin{thm}{Proposition}\label{prop:pt+tgc}
-Assume $\gamma$ is a closed broken geodesic in a smooth oriented surface $\Sigma$ that starts and ends at point $p$.
+Assume $\gamma$ is a closed broken geodesic in a smooth oriented surface $\Sigma$ that starts and ends at the point $p$.
 Then the parallel transport $\iota_\gamma\:T_p\to\T_p$ is a rotation of the the plane $\T_p$ clockwise by angle $\tgc\gamma$.
 
 Moreover, the same statement holds for smooth closed curves and piecewise smooth curves.

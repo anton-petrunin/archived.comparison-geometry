@@ -41,13 +41,13 @@ Substituting \ref{eq:area(S2)} and \ref{eq:area(Sa)} and simplifying, we get \re
 
 
 
-If the contour $\partial\Delta$ of spherical triangle with angles $\alpha$, $\beta$ and $\gamma$ is oriented such that the triangle lies on the left, then its external angles are  $\pi-\alpha$, $\pi-\beta$ and $\pi-\gamma$.
+If the contour $\partial\Delta$ of a spherical triangle with angles $\alpha$, $\beta$ and $\gamma$ is oriented such that the triangle lies on the left, then its external angles are  $\pi-\alpha$, $\pi-\beta$ and $\pi-\gamma$.
 Therefore the total geodesic curvature of $\partial\Delta$ is $\tgc{\partial\Delta}=3\cdot\pi-\alpha-\beta-\gamma$.
 The identity \ref{eq:area(Delta)} can be rewritten as 
 \[\tgc{\partial\Delta}+\area\Delta=2\cdot \pi.
 \eqlbl{eq:sphere-gauss-bonnet}\]
 
-The formula \ref{eq:sphere-gauss-bonnet} holds for arbitrary spherical polygon bounded by a simple broken geodesic;
+The formula \ref{eq:sphere-gauss-bonnet} holds for an arbitrary spherical polygon bounded by a simple broken geodesic;
 that is, intersection of finitely many closed half-spheres.
 The latter can be proved by triangulating the poygon, applying the formula for each triangle in the triangulation and summing up the results.
 
@@ -83,8 +83,8 @@ The formula \ref{eq:sphere-gauss-bonnet} holds modulo $2\cdot \pi$ for any close
 that is, we count area of the regions taking into account how many times the curve goes around the region.
 
 Namely, we have to choose a \emph{south pole} and state that its region has zero multiplicity.
-When you cross the curve the mulitplicity has to changes by $\pm1$; we add 1 if the curve cross the way from left to right and we subtract 1 otherwise.
-The signed area surrounded by a closed curve is the sum of area of all the regions counted with the multiplicities.
+When you cross the curve the mulitplicity changes by $\pm1$; we add 1 if the curve crosses your path from left to right and we subtract 1 otherwise.
+The signed area surrounded by a closed curve is the sum of area of all the regions counted with multiplicities.
 
 \begin{wrapfigure}{o}{32 mm}
 \vskip-0mm
@@ -93,7 +93,7 @@ The signed area surrounded by a closed curve is the sum of area of all the regio
 \vskip-0mm
 \end{wrapfigure}
 
-Here is an example of broken line with multiplicities assuming that the big region has the pole inside.
+Here is an example of a broken line with multiplicities assuming that the big region has the south pole inside.
 
 This signed-area formula can be proved in a similar way:
 Apply the formula for each triangle with vertex at the north pole and base at each edge of the broken geodesic.
@@ -102,8 +102,8 @@ Sum the resulting identities taking each with a sign: plus if the triangle lies 
 Choosing a different pole will change all the coefficients by the same number.
 So the resulting formula holds only modulo the area of $\SS^2$, which is $4\cdot \pi$ --- this will not destroy identity modulo $2\cdot\pi$.
 
-Furthermore, by approximation, the signed-area formula holds for any reasonable curves, say piecewise smooth regular curves on the sphere.
-Summarizing, we hope the discussion above convinced the reader that the following statement hold.
+Furthermore, by approximation, the signed-area formula holds for any reasonable curve, say piecewise smooth regular curves on the sphere.
+Summarizing, we hope the discussion above convinced the reader that the following statement holds.
 
 A domain $\Delta$ in a surface is called a \emph{disc} (or more precisely \emph{topological disc}) if it is bounded by a closed simple curve and can be parameterized by a unit plane disc 
 \[\DD=\set{(x,y)\in\RR^2}{x^2+y^2\le1}.\]
@@ -128,7 +128,7 @@ Moreover, if $\alpha$ is a simple curve that bounds a disc $\Delta$ on the left 
 
 
 \begin{thm}{Theorem}\label{thm:gb}
-Let $\Delta$ be a disc in smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$ that is oriented in such a way that $\Delta$ lies on its left.
+Let $\Delta$ be a disc in a smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$ that is oriented in such a way that $\Delta$ lies on its left.
 Then 
 \[\tgc{\partial\Delta}+\iint_\Delta G=2\cdot \pi,\eqlbl{eq:g-b}\]
 where $G$ denotes the Gauss curvature of $\Sigma$.
@@ -160,21 +160,21 @@ The latter agrees with \ref{eq:g-b} and \ref{eq:g-b-euler}.
 It is useful to know that $\chi(\SS^2)=2$; $\chi(\TT^2)=0$ where $\TT^2$ denotes torus; 
 $\chi( S_g)=2-2\cdot g$, where $S_g$ is a surface of genus $g$; that is, sphere with $g$ handles.
 
-\parit{(2).} Note that if $\Sigma$ is a plane then geodesic in $\Sigma$ are formed by line segments.
+\parit{(2).} Note that if $\Sigma$ is a plane then a geodesic in $\Sigma$ are formed by line segments.
 In this case the statement of theorem follows from Exercise~\ref{ex:pm2pi}.
 
-\parit{(3).} If $\Sigma$ is the unit sphere then $G\equiv1$ and therefore the formula \ref{eq:g-b} can rewritten as 
+\parit{(3).} If $\Sigma$ is the unit sphere then $G\equiv1$ and therefore formula \ref{eq:g-b} can be rewritten as 
 \[\tgc{\partial\Delta}+\area\Delta=2\cdot \pi,\]
-which follow from Proposition~\ref{prop:spherical-gb}.
+which follows from Proposition~\ref{prop:spherical-gb}.
 
 \medskip
 
 We will give an informal proof of \ref{thm:gb} based on the bike wheel interpretation described above.
-We suppose that it is intuitively clear that moving the axis of the wheel without changing its direction does not change the direction of the wheel's spokes.
+We suppose that it is intuitively clear that moving the axis of the wheel without changing its direction does not change the direction of the wheel's spikes.
 
 More precisely, assume we keep the axis of a non-spinning bike wheel and perform the following two experiments:
 \begin{enumerate}[(i)]
-\item We moved it around and bring the axis back to the original position. 
+\item We move it around and bring the axis back to the original position. 
 As a result the wheel might rotate by some angle; let us measure this angle.
 
 \item
@@ -194,8 +194,8 @@ Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parall
 
 \begin{thm}{Exercise}
 Let $\Sigma$ be a smooth closed surface with positive Gauss curvature.
-Given a line $\ell$ denote by $\omega_\ell$ the closed curve formed by points with tangent planes parallel to $\ell$.\footnote{Equivalently the normal vector at any point of $\omega_\ell$ is perpendicular to $\ell$. If the light falls on $\Sigma$ from one side parallel to $\ell$, then $\omega_\ell$ divides bright and dark side of~$\Sigma$.}
-Show that parallel transport around $\omega_\ell$ is an identity map.
+Given a line $\ell$ denote by $\omega_\ell$ the closed curve formed by points with tangent planes parallel to $\ell$.\footnote{Equivalently the normal vector at any point of $\omega_\ell$ is perpendicular to $\ell$. If the light falls on $\Sigma$ from one side parallel to $\ell$, then $\omega_\ell$ divides the bright and dark sides of~$\Sigma$.}
+Show that parallel transport around $\omega_\ell$ is the identity map.
 \end{thm}
 
 Now we are ready to prove the theorem.
@@ -216,7 +216,7 @@ Therefore
 \[\tgc{\alpha,\Sigma}+\area\beta=0\pmod{2\cdot \pi}.\]
 
 Recall that the shape  operator $s_p\: T_p\Sigma \to \T_{\nu(p)}\SS^2=T_p\Sigma$ is the Jacobian of the Gauss map $\nu\:\Sigma\to \SS^2$ at the point $p$.
-In a appropriately chosen coordinates in $T_p$, the shape operator can be presented by a diagonal matrix 
+In appropriately chosen coordinates in $T_p$, the shape operator can be presented by a diagonal matrix 
 $\left(\begin{smallmatrix}
 k_1&0
 \\
@@ -228,14 +228,14 @@ If $\Sigma$ is a closed surface with positive Gauss curvature, then the Gauss ma
 Therefore 
 \[\iint_\Delta G=\area[\nu(\Delta)].\]
 
-In general case we have to count area $\nu(\Delta)$ taking orientation and multiplicity of the Gauss map into account.
+In the general case we have to count the area $\nu(\Delta)$ taking orientation and multiplicity of the Gauss map into account.
 In this case 
 \[\iint_\Delta G=\area\beta,\]
 where $\area\beta$ is the signed area surrounded by $\beta$; it is defined above.
 Therefore 
 \[\tgc{\alpha,\Sigma}+\iint_\Delta G=0\pmod{2\cdot \pi}.\eqlbl{eq:gb(mod2pi)}\]
 
-If $\Delta$ is a disc in the plane then Gauss curvature vanish and by Exercise~\ref{ex:pm2pi}, we have 
+If $\Delta$ is a disc in the plane then Gauss curvature vanishes and by Exercise~\ref{ex:pm2pi}, we have 
 \[\tgc{\partial\Delta}+\iint_\Delta G=2\cdot \pi.\]
 Assunme that $\Sigma_t$ is a smooth one parameter family of surfaces with 
 a one parameter family of discs $\Delta_t\subset \Sigma_t$ and $\alpha_t$ is the boundary $\partial\Delta_t$ parameterized in such a way that $\Delta_t$ lies on the left from it.
@@ -291,7 +291,7 @@ Show that $\Sigma$ can not have positive Gauss curvature.\footnote{Hint: estimat
 Let $\Sigma$ be a smooth regular sphere with positive Gauss curvature and $p\in\Sigma$. 
 Suppose $\gamma$ be a closed geodesic that does not pass thru $p$.
 Assume $\Sigma\backslash\{p\}$ parametrized by the plane.
-Can it happen that in this parametrization,  $\gamma$ look like one of the curves on the diagram?
+Can it happen that in this parametrization,  $\gamma$ looks like one of the curves on the diagram?
 \begin{figure}[h!]
 \vskip-0mm
 \centering
@@ -314,7 +314,7 @@ The following exercise produce slightly more interesting example.
 
 \begin{thm}{Exercise}
 Suppose $\gamma(t)=(x(t),y(t))$ is a smooth unit-curve in the plane such that $y(t)=a\cdot \cos t$.
-Let $\Sigma_\gamma$ be the surface of revolution of $\gamma$ around $x$-axis.
+Let $\Sigma_\gamma$ be the surface of revolution of $\gamma$ around the $x$-axis.
 Show that a small open domain in $\Sigma_\gamma$ admits a smooth length-pereserving map to the unit sphere.
 
 Conclude that any round disc $\Delta$ in $\SS^2$ of intrinsic radius smaller than $\tfrac\pi2$ admits a smooth length preserving deformation; that is there is one parameter family of surfaces with boundary $\Delta_t$, such that $\Delta_0=\Delta$ and $\Delta_t$ is not congruent to $\Delta_0$ for any $t\ne0$.\footnote{In fact any disc in $\SS^2$ of intrinsic radius smaller than $\pi$ admits a smooth length preserving deformation. %???REF
@@ -407,22 +407,22 @@ Moreover
 The surface $\Sigma$ is a boundary of an unbounded closed convex set $K$.
 
 Fix $p\in \Sigma$ and consider a sequence of points $x_n$ such that $|x_n-p|\z\to \infty$ as $n\to \infty$.
-Set $u_n=\tfrac{x_n-p}{|x_n-p|}$; it is the unit vector in the direction from $p$ to $x_n$.
+Set $u_n=\tfrac{x_n-p}{|x_n-p|}$; the unit vector in the direction from $p$ to $x_n$.
 Since the unit sphere is compact, we can pass to a subsequence of $(x_n)$ such that $u_n$ converges to a unit vector $u$.
 
 Note that for any $q\in \Sigma$, the directions $v_n=\tfrac{x_n-q}{|x_n-q|}$ converge to $u$ as well.
 The half-line from $q$ in the direction of $u$ lies in $K$.
 Indeed any point on the half-line is a limit of points on the line segments $[q,x_n]$;
-since $K$ is closed any of these poins lie in $K$.
+since $K$ is closed, all of these poins lie in $K$.
 
 
 Let us choose the $z$-axis in the direction of $u$.
 Note that line segments can not lie in $\Sigma$, otherwise its Gauss curvature would vanish.
 It follows that any vertical line can intersect $\Sigma$ at most at one point.
-That is, $\Sigma$ is a graph of function $z=f(x,y)$.
+That is, $\Sigma$ is a graph of a function $z=f(x,y)$.
 Since $K$ is convex, the function $f$ is convex and it is defined in a region $\Omega$ which is convex.
 The domain $\Omega$ is the projection of $\Sigma$ to the $(x,y)$-plane.
-This projection is injective and by inverse function theorem, it maps open sets in $\Sigma$ to open sets in the plane;
+This projection is injective and by the inverse function theorem, it maps open sets in $\Sigma$ to open sets in the plane;
 hence $\Omega$ is open.
 
 It follows that the outer normal vectors to $\Sigma$ at any point, points to the south hemisphere $\SS^2_-=\set{(x,y,z)\in\SS^2}{z< 0}$.
