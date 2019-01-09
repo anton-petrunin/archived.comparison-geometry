@@ -1,0 +1,126 @@
+\chapter{Curves}
+
+Let $\mathcal{X}$ be a metric space.
+A continuous map $f\:[0,1]\to\mathcal{X}$ is called a \emph{path}.
+If $p=f(0)$ and $q=f(1)$, then we say that \emph{$f$ connects $p$ to $q$}.
+
+If any two points in $\mathcal{X}$ can be connected by a path then $\mathcal{X}$ is called \emph{path connected}.
+Similarly, a subset $A\subset \mathcal{X}$ is called \emph{path connected} if any two points $p,q\in A$ can be connected by a path that runs in $A$.
+
+\begin{thm}{Definition} 
+A path connected subset $\gamma$ in a metric space is called a \emph{simple curve} if it is \emph{locally} homeomorphic to a real interval; that is, any point $p\in\gamma$ has a neighborhood $U\ni p$ such that 
+$U\cap \gamma$ is homeomorphic to a real interval.
+\end{thm}
+
+It turns out any curve $\gamma$ admits a homeomorphism from a real interval or a circle;
+that is, there is a continuous bijection $G\to \gamma$ with continuous inverse;
+here and further $G$ denotes a circle or real interval.
+We omit a proof of this statement, but it is not hard.
+
+The homeomorphism $G\to \gamma$ as above is called \emph{parametrization} of~$\gamma$.
+The parametrization completely defines the curve.
+Often will use the same letter for curve and its parametrization, so we can say curve $\gamma$ has parametrization $\gamma\:G\to \mathcal{X}$.
+
+\begin{thm}{Exercise}
+Find a continuous injective map $\gamma\:[0,1)\to\RR^2$ such that its image is not a simple curve.%
+\footnote{Hint: the image of $\gamma$ should have a shape of digit $9$.}
+\end{thm}
+
+
+
+If $G$ is a circle, then the curve $\gamma\:G\to \mathcal{X}$ is called \emph{closed}.
+If $G$ is a real interval, then  we may say that $\gamma$ is an \emph{arc}.
+
+A \emph{parameterized curve} is defined as a continuous map $\gamma\: G\to \mathcal{X}$, for a parametrized curve we do not assume that $\gamma$ is injective; in other words the parameterized curve might have self-intersections.
+
+A closed simple curve can be described as an image of a parameterized curve $\gamma\: [0,\ell]\to \mathcal{X}$ such that $\gamma(a)=\gamma(b)$,
+but as you will see further it is more natural to present it as a \emph{periodic} parametrized cure $\gamma\: \RR\to \mathcal{X}$; that is, there is a constant $\ell$ such that $\gamma(t+\ell)=\gamma(t)$ for any $t$.
+
+\begin{thm}{Advanced exercise}
+Let $\alpha\:[0,1]\to\mathcal{X}$ be a path from $p$ to $q$.
+Assume $p\ne q$.
+Show that there is a simple connecting from $p$ to $q$ in~$\mathcal{X}$
+\end{thm}
+
+\section*{Smooth curves}
+
+A curve in the Euclidean space or plane, called \emph{space} or \emph{plane curve} correspondingly.
+
+A space curve can be described by its coordinate functions 
+\[\gamma(t)=(x(t),y(t),z(t));\]
+we may assume that plane curves are partial case of space curves with $z(t)\equiv 0$.
+
+If each of the coordinate functions of a space curve $\gamma$ is a smooth (that is it has derivatives of all orders everywhere in its domain) then the parameterized curve is called \emph{smooth}.
+
+If the \emph{velocity vector} 
+\[\gamma'(t)=(x'(t),y'(t),z'(t))\] 
+does not vanish at all points, then the parameterized curve $\gamma$ is called \emph{regular}.
+
+A simple space curve is called \emph{smooth and regular} if it admits a smooth and regular parametrization.
+Regular smooth curves are among the main objects in differential geometry.
+
+\begin{thm}{Exercise}\label{ex:L-shape}
+Consider the smooth function 
+\[f(t)=
+\begin{cases}
+0&\text{if}\ t\le 0,
+\\
+t\cdot e^{\frac1t}&\text{if}\ t> 0.
+\end{cases}
+\]
+
+Show that $\gamma(t)=(f(t),f(-t))$ gives a smooth parametrization of the curve $S$ formed by the union of two half-axis in the plane.
+
+Show that any smooth parametrization of $S$ has vanishing velocity vector at the origin.
+Conclude that $S$ is not a regular smooth curve.
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:cycloid}
+Describe the set of real numbers $a$
+such that the plane curve $\gamma_a(t)= (t+a\cdot \sin t,a\cdot \cos t)$, $t\in\RR$ is
+\begin{enumerate}[(a)]
+\item regular;
+\item simple.
+\end{enumerate}
+
+\end{thm}
+
+A curve $\gamma\:[0,1]\to \mathcal{X}$ such that $p=\gamma(0)=\gamma(1)$ is called \emph{loop} and the point $p$ is called its \emph{base}.
+Any loop can be considered as a closed curve, but there is a subtle difference between closed smooth regular curve and smooth regular curve --- the loop might fail to be smooth at its base.
+
+
+\section*{Implicitly defined curves}
+
+Let $f\:\RR^2\to \RR$ be a smooth function; 
+that is, all its partial derivatives defined in its domain of definition.
+Consider the set $S$ of solution of equation $f(x,y)=0$ in the plane.
+
+Assume $S$ is path connected.
+According to implicit function theorem (\ref{thm:imlicit}), the set $S$ is a smooth regular simple curve if $0$ is a \emph{regular value} of $f$;
+that is, if the gradient $\nabla f$ does not vanish at any point $p\in S$.
+
+Similarly, by a system of equations
+$f(x,y,z)=h(x,y,z)=0$ in $\RR^3$ for two smooth functions $f$ and $h$
+defines a regular smooth space curve if the set of solutions is path connected and $0$ is a regular value of the map $(f,h)\:\RR^3\to\RR^2$;
+it this case it means that the gradients $\nabla f$ and $\nabla h$ are linearly independent at any point $p\in S$.
+
+The described way to define a curve is called \emph{implicit};
+if a curve is defined by its parametrization, we say that it is \emph{explicitly defined}.
+While implicit function theorem guarantees the existence of regular smooth parametrizations, it does not mean that such parametrization can be found explicitly in a closed form. 
+When it comes to calculations, usually it is easier to work directly with implicit presentation. 
+
+
+\begin{thm}{Exercise}\label{ex:viviani}
+Describe the set of real numbers $a$
+such that the system of equations
+\begin{align*}
+x^2+y^2+z^2&=1
+\\
+x^2+a\cdot x+y^2&=0
+\end{align*}
+describes a smooth regular curve.
+\end{thm}
+
+
+

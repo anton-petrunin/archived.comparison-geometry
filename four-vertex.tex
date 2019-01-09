@@ -17,8 +17,8 @@ If $p=\gamma(t_0)$ for a single value $t_0$,
 then we can also say \emph{$\gamma$ supports $\alpha$ at $p$} without ambiguity.
 
 More precisely, assume that there is a round neighborhood $U\ni p$ such that for some interval $[a',b']\ni t_0$
-the arc $\bar\alpha=\alpha|_{[a',b']}$ has no self-intersection and runs from boundary to boundary of $U$.
-In this case $\alpha$ divides $U$ intosets  $L$ and $R$;
+the arc $\bar\alpha\z=\alpha|_{[a',b']}$ has no self-intersection and runs in $U$ from its boundary to its boundary.
+In this case $\alpha$ divides $U$ into sets  $L$ and $R$;
 $L$ lies on the left and $R$ lies on the right from~$\bar\alpha$.
 If $\gamma\cap U$ contains only points of $\bar\alpha$ and $R$, we say that \emph{$\gamma$ supports $\alpha$ on the right};
 if $\gamma\cap U$ contains only points of $\bar\alpha$ and $L$, we say that \emph{$\gamma$ supports $\alpha$ on the left}.
@@ -107,13 +107,6 @@ f''(t_0)&=\langle z-\alpha(t),z-\alpha(t) \rangle''|_{t=t_0}=
 \end{align*}
 Hence the result.\qeds
 
-
-\begin{thm}{Exercise}
-Assume $\alpha$ is a closed smooth unit-speed plane curve that runs in a unit disk.
-Show that there is a point on $\alpha$ with curvature at least $1$.
-
-Give two proofs, one based on the DNA inequality \ref{thm:DNA} and another one based on Proposition~\ref{prop:supporting-circline}.
-\end{thm}
 
 \begin{thm}{Exercise}
 Assume a closed smooth regular plane curve $\alpha$ runs between parallel lines on distance 1 from each other.
@@ -425,7 +418,7 @@ Assume $\alpha$ is oriented counterclockwise, so the figure $F$ lies on the left
 Show that there is a unit circle that is globally supporting $\alpha$ form the left at any given point.
 \end{thm}
 
-The following theorem was proved by Vladimir Ionin and German Pestov \cite{pestov-ionin}.
+The following theorem was proved by Vladimir Ionin and German Pestov \cite{pestov-ionin}; we present their proof here.
 It gives a first nontrivial example of the so called ``local to global theorems'' --- based on some local data (in this case the curvature of a curve) we can conclude a global property (in this case existence of a large disc surrounded by the curve).
 For convex curves, the result was known much earlier \cite[\S 24]{blaschke}.
 
@@ -486,6 +479,15 @@ and  2 osculating circlines that lie in $G$.
 
 Note that Theorem~\ref{thm:moon} as well as the Four-vertex theorem \label{thm:4-vert} follow from Theorem~\ref{thm:moon+4-vert};
 the first implication is evident and the second follows from Exercise~\ref{ex:vert-support}.
+
+
+\begin{thm}{Exercise}
+Suppose $\alpha$ is a closed simple smooth regular plane curve and $\gamma$ is a circle.
+Assume $\alpha$ crosses $\gamma$ at the points $p_1,\dots,p_{2\cdot n}$ and these points appear in the same cycle order of $\alpha$ and $\gamma$.
+Show that osculating circles at $n$ distinct points of $\gamma$ lie inside $\gamma$ and that osculating circles at other $n$ distinct points of $\gamma$ lie outside of $\gamma$.
+
+Construct an example of a closed simple smooth regular plane curve $\alpha$ with only 4 vertexes that crosses a given circle at arbitrary many points. 
+\end{thm}
 
 
 

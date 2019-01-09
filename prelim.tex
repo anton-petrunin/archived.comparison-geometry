@@ -1,0 +1,79 @@
+\chapter{Preliminaries}
+
+In this chapter we state and discuss results from different branches of mathematics which were used further in the book.
+The reader is not expected to know proofs of these statements, but it is better to check that his intuition agrees with each.  
+
+\section*{Multivariable calculus}
+
+A map $\bm{f}\:\RR^n\to\RR^k$ can be thought as array of functions 
+\[f_1,\dots,f_k\:\RR^n\to \RR.\]
+The map $\bm{f}$ is called \emph{smooth} if each function $f_i$ is smooth;
+that is, all partial derivatives of $f_i$ are defined in the domain of definition of $\bm{f}$.
+
+Inverse function theorem gives a sufficient condition for a smooth function to be invertible in a neighborhood of a given point $p$ in its domain.
+The condition is formulated in terms of partial derivative of $f_i$ at $p$.
+
+Implicit function theorem is a close relative to inverse function theorem;
+in fact it can be obtained as its corollary.
+It is used for instance when we need to pass from parametric to implicit description of curves and surface.
+
+Both theorems reduce the existence of a map satisfying certain equation to a question in linear algebra. 
+We use these two theorems only for $n\le 3$.
+
+These two theorems are discussed in any course of multivariable calculus, the classical book of Walter Rudin \cite{rudin} is one of my favorites.
+
+\begin{thm}{Inverse function theorem}
+Let $\bm{f}=(f_1,\dots,f_n)\:\RR^n\to\RR^n$ be a smooth map.
+Assume that the Jacobian matrix
+\[
+\begin{pmatrix}
+\dfrac{\partial f_1}{\partial x_1} & \cdots & \dfrac{\partial f_1}{\partial x_n}\\
+\vdots & \ddots & \vdots\\
+\dfrac{\partial f_n}{\partial x_1} & \cdots & \dfrac{\partial f_n}{\partial x_n} \end{pmatrix}\]
+is invertible at some point $p$ in the domain of definition of $\bm{f}$.
+Then there is a smooth function $\bm{h}\:\RR^m\to\RR^n$ defined is a neighborhood $\Omega_q$ of $q=\bm{f}(p)$ that is \emph{local inverse of $\bm{f}$ at $p$};
+that is, there are neighborhoods $\Omega_p\ni p$ such that
+$\bm{f}$ defines a bijection $\Omega_p\to \Omega_q$ and
+$\bm{f}(x)=y$ if and only if $x=\bm{h}(y)$ for any $x\in \Omega_p$ and any $y\in \Omega_q$.
+\end{thm}
+
+\begin{thm}{Implicit function theorem}\label{thm:imlicit}
+Let $\bm{f}=(f_1,\dots,f_n)\:\RR^{n+m}\to\RR^n$ be a smooth map,
+$m,n\ge 1$.
+Let us consider $\RR^{n+m}$ as a product space $\RR^n\times \RR^m$ with coodinates 
+$x_1,\dots,x_n,y_1,\dots,y_m$.
+Consider the following matrix 
+\[
+M=\begin{pmatrix}
+\dfrac{\partial f_1}{\partial x_1} & \cdots & \dfrac{\partial f_1}{\partial x_n}\\
+\vdots & \ddots & \vdots\\
+\dfrac{\partial f_n}{\partial x_1} & \cdots & \dfrac{\partial f_n}{\partial x_n} \end{pmatrix}\]
+formed by first $n$ columns of the Jacobian matrix.
+Assume $M$ is invertible at some point $p$ in the domain of definition of $\bm{f}$ and $\bm{f}(p)=0$.
+Then there is a neighborhood $\Omega_p\ni p$
+and smooth function $\bm{h}\:\RR^m\to\RR^n$ defined is a neighborhood $\Omega_0\ni 0$ that
+for any $(x_1,\dots,x_n,y_1,\dots y_m)\in \Omega_p$ the equality
+\[\bm{f}(x_1,\dots,x_n,y_1,\dots y_m)=0\]
+holds if and only if 
+\[(x_1,\dots x_n)=\bm{h}(y_1,\dots y_m).\]
+
+\end{thm}
+
+
+\section*{Rademacher's theorem}
+
+Recall that a function $f$ is called Lipschitz if there is a constant $L$ such that 
+\[|f(x)-f(y)|\le L\cdot|x-y|\]
+for values $x$ and $y$ in the domain of definition of $f$.
+This definition works for maps between metric spaces, but we will use it for real-to-real functions only.
+
+\begin{thm}{Rademacher's theorem} 
+Let $f\:[a,b]\to\RR$ be a Lipschitz function.
+then derivative $f'(x)$ is defined for alomst all $x\in [a,b]$.
+Moreover the derivative is bounded and Lebesgue-integrable and satisfies the fundamental theorem of calculus; that is, the following identity 
+\[f(b)-f(a)=\int_a^b f'(x)\cdot dx,\]
+holds if the integral understood in the sense of Lebesgue.
+\end{thm}
+
+
+%\section*{Picard theorem}

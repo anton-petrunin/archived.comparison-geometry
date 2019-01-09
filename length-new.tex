@@ -1,0 +1,213 @@
+\chapter{Length}
+ 
+Recall that a sequence 
+\[a=t_0 < t_1 < \cdots < t_k=b.\]
+is called a \emph{partition} of the interval $[a,b]$.
+
+\begin{thm}{Definition}\label{def:length}
+The \emph{length}\index{length of curve} of a $\alpha\:[a,b]\to \mathcal{X}$ is defined as
+\begin{align*}
+\length \alpha
+= 
+\sup \{|\alpha(t_0)-\alpha(t_1)|&+|\alpha(t_1)-\alpha(t_2)|+\dots
+\\
+&\dots+|\alpha(t_{k-1})-\alpha(t_k)|\}. 
+\end{align*}
+where the exact upper bound is taken over all partitions
+\[a=t_0 < t_1 < \cdots < t_k=b.\]
+
+The length of $\alpha$ is a nonnegative real number or infinity;
+the curve $\alpha$ is called \emph{rectifiable}\index{rectifiable curve} if its length is finite.
+\end{thm}
+
+If $\alpha$ is a space curve, then the above definition says that it length is the exact upper bound of the lengths of polygonal lines $p_0\dots p_k$ \emph{inscribed} in the curve, where $p_i=\alpha(t_i)$ for a  partition $a=t_0 < t_1 < \cdots < t_k=b$.
+
+\begin{thm}{Exercise}
+Assume $\alpha\:[a,b]\to\RR^2$ is a smooth curve.
+Show that
+\begin{enumerate}[(a)]
+\item $\length \alpha\ge \int_a^b|\alpha'(t)|\cdot dt$,\footnote{Hint: apply the fundamental theorem of calculus for each segment in a given partition.}
+\item $\length \alpha\le \int_a^b|\alpha'(t)|\cdot dt$.\footnote{Consider a partition such that $\alpha'$ is nearly constant on each of its segments.}
+\end{enumerate}
+Conclude that 
+\[\length \alpha= \int_a^b|\alpha'(t)|\cdot dt.\]
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:nonrectifiable-curve}
+Construct a nonrectifiable simple curve $\alpha\:[0,1]\z\to\RR^2$.
+\end{thm}
+
+A closed simple plane curve is called \emph{convex} if it bounds a convex region.
+
+\begin{thm}{Proposition}\label{prop:convex-curve}
+Assume a convex figure $A$ bounded by a curve $\alpha$ lies inside a figure $B$ bounded by a curve $\beta$.
+Then
+\[\length\alpha\le \length\beta.\]
+\end{thm}
+
+Note that it is sufficient to show that for any polygon  $P$ inscribed in $\alpha$ there is a polygon $Q$ inscribed in $\beta$ with 
+$\perim P\le \perim Q$, where $\perim P$ denotes the perimeter of $P$.
+
+Therefore it is sufficient to prove the following lemma.
+
+
+\begin{thm}{Lemma}\label{lem:perimeter}
+Let $P$ and $Q$ be polygons.
+Assume $P$ is convex and $Q\supset P$.
+Then $\perim P\le \perim Q$.
+\end{thm}
+
+
+\begin{wrapfigure}{r}{24 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-7}
+%\caption*{}
+\end{wrapfigure}
+
+\parit{Proof.}
+Note that by the triangle inequality,
+the inequality
+\[\perim P\le \perim Q\]
+
+holds
+if $P$ can be obtained from $Q$ by cutting it along a chord;
+that is, a line segment with ends on the boundary of $Q$ that lies in $Q$.
+
+
+Note that there is an increasing sequence of polygons 
+$$P=P_0\subset P_1\subset\dots\subset P_n=Q$$
+such that $P_{i-1}$ obtained from $P_{i}$ by cutting along a chord.
+Therefore 
+\begin{align*}
+\perim P=\perim P_0&\le\perim P_1\le\dots
+\\
+\dots&\le\perim P_n=\perim Q
+\end{align*}
+and the lemma follows.
+\qeds
+
+\begin{thm}{Corollary}
+Any convex closed curve is rectifiable.  
+\end{thm}
+
+\parit{Proof.}
+Any closed curve is bounded; that is, it lies in a sufficiently large square.
+
+
+By Proposition~\ref{prop:convex-curve}, the length of the curve can not exceed the perimeter of the square, hence the result.
+\qeds
+
+
+
+\section*{Semicontinuity of length}
+
+Recall that the lower limit 
+of a sequence of real numbers $(x_n)$ is denoted by
+\[\liminf_{n\to\infty} x_n.\] 
+It is defined as the lowest partial limit; that is, the lowest possible limit of a subsequence of $(x_n)$.
+The lower limit is defined for any sequence of real numbers and it lies in the exteded real line $[-\infty,\infty]$
+
+
+\begin{thm}{Theorem}\label{thm:length-semicont}
+Length is a lower semi-continuous with respect to pointwise convergence of curves. 
+
+More precisely, assume that a sequence
+of curves $\alpha_n\:[a,b]\to \RR^2$ converges pointwise 
+to a curve $\alpha_\infty\:[a,b]\to \RR^2$;
+that is, $\alpha_n(t)\z\to\alpha_\infty(t)$ for any fixed $t\in[a,b]$ as $n\to\infty$. 
+Then 
+$$\liminf_{n\to\infty} \length\alpha_n \ge \length\alpha_\infty.\eqlbl{eq:semicont-length}$$
+\end{thm}
+
+
+
+\begin{wrapfigure}{r}{20 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-6}
+\end{wrapfigure}
+
+
+Note that the inequality \ref{eq:semicont-length} might be strict.
+For example the diagonal $\alpha_\infty$ of the unit square 
+
+can be  approximated by a sequence of stairs-like
+polygonal curves $\alpha_n$
+with sides parallel to the sides of the square ($\alpha_6$ is on the picture).
+In this case
+\[\length\alpha_\infty=\sqrt{2}\quad
+\text{and}\quad \length\alpha_n=2\]
+for any $n$.
+
+\parit{Proof.}
+Fix a partition $a=t_0<t_1<\dots<t_k=b$.
+Set 
+\begin{align*}\Sigma_n
+&\df
+|\alpha_n(t_0)-\alpha_n(t_1)|+\dots+|\alpha_n(t_{k-1})-\alpha_n(t_k)|.
+\\
+\Sigma_\infty
+&\df
+|\alpha_\infty(t_0)-\alpha_\infty(t_1)|+\dots+|\alpha_\infty(t_{k-1})-\alpha_\infty(t_k)|.
+\end{align*}
+
+Note that $\Sigma_n\to \Sigma_\infty$ as $n\to\infty$
+and $\Sigma_n\le\length\alpha_n$ for each $n$.
+Hence
+$$\liminf_{n\to\infty} \length\alpha_n \ge \Sigma_\infty.\eqlbl{>=Sigma-infty}$$
+
+If $\alpha_\infty$ is rectifiable, we can assume that 
+\begin{align*}
+\length\alpha_\infty<
+|\alpha_\infty(t_0)-\alpha_\infty(t_1)|+\dots+|\alpha_\infty(t_{k-1})-\alpha_\infty(t_k)|+\eps.
+\end{align*}
+for any given $\eps>0$.
+By \ref{>=Sigma-infty} it follows that 
+$$\liminf_{n\to\infty} \length\alpha_n > \length\alpha_\infty-\eps$$
+for any $\eps>0$; whence \ref{eq:semicont-length} follows.
+
+It remains to consider the case when $\alpha_\infty$ is not rectifiable; 
+that is $\length\alpha_\infty=\infty$.
+In this case we can choose a partition so that $\Sigma_\infty>L$ for any real number $L$.
+By \ref{>=Sigma-infty} it follows that 
+$$\liminf_{n\to\infty} \length\alpha_n > L$$
+for any $L$; whence $\liminf_{n\to\infty}=\infty$ and \ref{eq:semicont-length} follows.
+\qeds
+
+\section*{Length metric}
+
+Let $\spc{X}$ be a metric space.
+Given two points $x,y$ in $\spc{X}$, denote by $d(x,y)$ the exact lower bound for lengths of all paths connecting $x$ to $y$; if there is no such path we assume that $d(x,y)=\infty$.
+Note that function $d$ satisfies all the axioms of metric except it might take infinite value.
+
+Therefore if any two points in $\spc{X}$ can be connected by a rectifiable curve then $d$ defines a new metric on it; in this case $d$ is called \emph{induced length metric}.
+
+Evidently $d(x,y)\ge |x-y|$ for any pair of points $x,y\in \spc{X}$.
+If the equality holds for any pair, then then the metric is called \emph{length metric} and the space is called \emph{length-metric space}.
+
+Note that the Euclidean space is a length-metric space.
+Most of the time we consider length-metric spaces.
+A subspaces $A$ of length-metric space $\spc{X}$ might be not a lenght-metric space;
+the induced length distance between points $x$ and $y$ in the subspace $A$ will be denoted as $|x-y|_A$;
+that is $|x-y|_A$ is the exact lower bound for the length of paths in $A$.
+
+\begin{thm}{Exercise}\label{ex:intrinsic-convex}
+Let $A\subset \RR^3$ be a closed subset.
+Show that $A$ is convex if and only if
+\[|x-y|_A=|x-y|_{\RR^3}.\]
+\end{thm}
+
+\begin{thm}{Exercise}
+Let us denote by $\SS^2$ the unit sphere in the space; that is,
+\[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
+Show that
+\[|u-v|_{\SS^2}=\measuredangle(u,v)\df\arccos\langle u,v\rangle.\]
+
+\end{thm}
+
+\parit{Hint:} Use the following map $f\:(r,\theta,\phi)\mapsto (r,\theta,0)$ in spherical coordinates. Note that $f$ a distance nonexpanding map that maps $\RR^3$ to a half-plane and $\SS^2$ to one of its meridians.
+
+
+
+
