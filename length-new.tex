@@ -22,20 +22,24 @@ the curve $\alpha$ is called \emph{rectifiable}\index{rectifiable curve} if its 
 
 If $\alpha$ is a space curve, then the above definition says that it length is the exact upper bound of the lengths of polygonal lines $p_0\dots p_k$ \emph{inscribed} in the curve, where $p_i=\alpha(t_i)$ for a  partition $a=t_0 < t_1 < \cdots < t_k=b$.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:integral-length}
 Assume $\alpha\:[a,b]\to\RR^2$ is a smooth curve.
 Show that
 \begin{enumerate}[(a)]
-\item $\length \alpha\ge \int_a^b|\alpha'(t)|\cdot dt$,\footnote{Hint: apply the fundamental theorem of calculus for each segment in a given partition.}
-\item $\length \alpha\le \int_a^b|\alpha'(t)|\cdot dt$.\footnote{Consider a partition such that $\alpha'$ is nearly constant on each of its segments.}
+\item\label{ex:integral-length>} $\length \alpha\ge \int_a^b|\alpha'(t)|\cdot dt$,
+\item\label{ex:integral-length<} $\length \alpha\le \int_a^b|\alpha'(t)|\cdot dt$.
 \end{enumerate}
 Conclude that 
 \[\length \alpha= \int_a^b|\alpha'(t)|\cdot dt.\]
 \end{thm}
 
+\parit{Hints:} For (\ref{ex:integral-length>}), apply the fundamental theorem of calculus for each segment in a given partition. For (\ref{ex:integral-length<}) consider a partition such that $\alpha'$ is nearly constant on each of its segments.
+
 \begin{thm}{Exercise}\label{ex:nonrectifiable-curve}
 Construct a nonrectifiable simple curve $\alpha\:[0,1]\z\to\RR^2$.
 \end{thm}
+
+\section*{Convex curves}
 
 A closed simple plane curve is called \emph{convex} if it bounds a convex region.
 

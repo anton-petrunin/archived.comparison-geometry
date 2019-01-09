@@ -22,19 +22,19 @@ The parametrization completely defines the curve.
 Often will use the same letter for curve and its parametrization, so we can say curve $\gamma$ has parametrization $\gamma\:G\to \mathcal{X}$.
 
 \begin{thm}{Exercise}
-Find a continuous injective map $\gamma\:[0,1)\to\RR^2$ such that its image is not a simple curve.%
-\footnote{Hint: the image of $\gamma$ should have a shape of digit $9$.}
+Find a continuous injective map $\gamma\:[0,1)\to\RR^2$ such that its image is not a simple curve.
 \end{thm}
 
+\parit{Hint:} The image of $\gamma$ should have a shape of digit $9$.
 
 
 If $G$ is a circle, then the curve $\gamma\:G\to \mathcal{X}$ is called \emph{closed}.
 If $G$ is a real interval, then  we may say that $\gamma$ is an \emph{arc}.
 
-A \emph{parameterized curve} is defined as a continuous map $\gamma\: G\to \mathcal{X}$, for a parametrized curve we do not assume that $\gamma$ is injective; in other words the parameterized curve might have self-intersections.
+A \emph{parameterized curve} is defined as a continuous map $\gamma\: G\to \mathcal{X}$, for a parameterized curve we do not assume that $\gamma$ is injective; in other words the parameterized curve might have self-intersections.
 
 A closed simple curve can be described as an image of a parameterized curve $\gamma\: [0,\ell]\to \mathcal{X}$ such that $\gamma(a)=\gamma(b)$,
-but as you will see further it is more natural to present it as a \emph{periodic} parametrized cure $\gamma\: \RR\to \mathcal{X}$; that is, there is a constant $\ell$ such that $\gamma(t+\ell)=\gamma(t)$ for any $t$.
+but as you will see further it is more natural to present it as a \emph{periodic} parameterized cure $\gamma\: \RR\to \mathcal{X}$; that is, there is a constant $\ell$ such that $\gamma(t+\ell)=\gamma(t)$ for any $t$.
 
 \begin{thm}{Advanced exercise}
 Let $\alpha\:[0,1]\to\mathcal{X}$ be a path from $p$ to $q$.
@@ -99,11 +99,20 @@ Consider the set $S$ of solution of equation $f(x,y)=0$ in the plane.
 Assume $S$ is path connected.
 According to implicit function theorem (\ref{thm:imlicit}), the set $S$ is a smooth regular simple curve if $0$ is a \emph{regular value} of $f$;
 that is, if the gradient $\nabla f$ does not vanish at any point $p\in S$.
+In other words, if $f(p)=0$, then at least one of the values $\tfrac{\partial f}{\partial x}(p)$, $\tfrac{\partial f}{\partial y}(p)$ does not vanish.
 
 Similarly, by a system of equations
 $f(x,y,z)=h(x,y,z)=0$ in $\RR^3$ for two smooth functions $f$ and $h$
 defines a regular smooth space curve if the set of solutions is path connected and $0$ is a regular value of the map $(f,h)\:\RR^3\to\RR^2$;
 it this case it means that the gradients $\nabla f$ and $\nabla h$ are linearly independent at any point $p\in S$.
+In other words, if $f(p)=0$, then at the Jacobian matrix for the map $(x,y,z)\mapsto (f(x,y,z),h(x,y,z))$
+\[
+\begin{pmatrix}
+\tfrac{\partial f}{\partial x}&\tfrac{\partial f}{\partial y}&\tfrac{\partial f}{\partial z}\\
+\tfrac{\partial h}{\partial x}&\tfrac{\partial h}{\partial y}&\tfrac{\partial f}{\partial z}
+\end{pmatrix}
+\]
+has rank 2 at $p$.
 
 The described way to define a curve is called \emph{implicit};
 if a curve is defined by its parametrization, we say that it is \emph{explicitly defined}.
