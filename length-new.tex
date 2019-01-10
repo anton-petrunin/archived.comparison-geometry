@@ -17,7 +17,7 @@ where the exact upper bound is taken over all partitions
 \[a=t_0 < t_1 < \cdots < t_k=b.\]
 
 The length of $\alpha$ is a nonnegative real number or infinity;
-the curve $\alpha$ is called \emph{rectifiable}\index{rectifiable curve} if its length is finite.
+the curve $\alpha$ is called \emph{rectifiable}\index{rectifiable curve} if its length is finite. %???closed curves and open intervals???
 \end{thm}
 
 If $\alpha$ is a space curve, then the above definition says that it length is the exact upper bound of the lengths of polygonal lines $p_0\dots p_k$ \emph{inscribed} in the curve, where $p_i=\alpha(t_i)$ for a  partition $a=t_0 < t_1 < \cdots < t_k=b$.
@@ -58,7 +58,9 @@ Therefore it is sufficient to prove the following lemma.
 \begin{thm}{Lemma}\label{lem:perimeter}
 Let $P$ and $Q$ be polygons.
 Assume $P$ is convex and $Q\supset P$.
-Then $\perim P\le \perim Q$.
+Then 
+\[\perim P\le \perim Q.\]
+
 \end{thm}
 
 
@@ -73,7 +75,6 @@ Then $\perim P\le \perim Q$.
 Note that by the triangle inequality,
 the inequality
 \[\perim P\le \perim Q\]
-
 holds
 if $P$ can be obtained from $Q$ by cutting it along a chord;
 that is, a line segment with ends on the boundary of $Q$ that lies in $Q$.

@@ -1725,7 +1725,18 @@ label.top(btex $y$ etex, z.yy);
 label.rt(btex $z'$ etex, z.z1);
 label.rt(btex $z$ etex, z.zz);
 label.rt(btex $\bar z$ etex, z.zzz);
+endfig;
 
+beginfig(51) 
+save u;
+u:=1cm;
+
+z.s=(3,0)*u;
+
+draw origin{(1,1)}..(1,1)*u{up}..{down}origin;
+dOt origin;
+
+%draw z.s{right}..z.s+(1,1)*u..cycle;
 
 endfig;
 end

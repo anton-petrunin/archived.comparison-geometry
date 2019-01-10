@@ -61,7 +61,7 @@ holds if and only if
 
 If the assumption in the theorem holds for any point $p$ such that $\bm{f}(p)=0$,
 then we say that $0$ is a regular value of $\bm{f}$.
-Sard's theorem states that most of the values of smooth map are regular; in particular generic smooth function satisfies the assumption of the theorem.
+\emph{Sard's theorem} states that most of the values of smooth map are regular; in particular generic smooth function satisfies the assumption of the theorem.
 
 
 \section*{Rademacher's theorem}
@@ -80,4 +80,32 @@ holds if the integral understood in the sense of Lebesgue.
 \end{thm}
 
 
-%\section*{Picard theorem}
+\section*{Fundamental theorem of ODE}
+
+Picard theorem or the fundamental theorem of ordinary differential equations;
+it guarantees existance and uniqueness of a solution of an initial value problem
+for a system of ordinary differential equations
+\[
+\left\{\begin{aligned}
+x_1'&=f_1(x_1,\dots,x_n),
+\\
+&\dots
+\\
+x_n'&=f_n(x_1,\dots,x_n),
+\end{aligned}
+\right.
+\]
+The array functions $(f_1,\dots,f_n)$ can be considered as one vector-valued function 
+$\bm{f}\:\RR^n\to \RR^n$ and the array $(x_1,\dots,x_n)$ can be considered as a vector  $\bm{x}\in\RR^n$.
+Therefore the system can be rewritten as one vector equation 
+\[\bm{x}'=\bm{f}(\bm{x}).\]
+We use only the following partial case of this theorem. 
+
+\begin{thm}{Theorem}
+Suppose $\bm{f}\:\RR^n\to \RR^n$ is a smooth function.
+Then for any initial data $\bm{x}(0)=\bm{u}$ the differential equation 
+\[\bm{x}'=\bm{f}(\bm{x})\]
+has a unique solution $\bm{x}(t)$ defined at some open interval containing zero.
+Moreover the function $(\bm{u},t)\mapsto \bm{x}(t)$ is smooth.
+\end{thm}
+
