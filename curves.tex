@@ -40,14 +40,6 @@ If $G$ is a real interval, then  we may say that $\gamma$ is an \emph{arc}.
 A \emph{parameterized curve} is defined as a continuous map $\gamma\: G\to \mathcal{X}$. 
 For a parameterized curve we do not assume that $\gamma$ is injective; in other words the parameterized curve might have self-intersections.
 
-\parbf{Loops and periodic parametrization.}
-A closed simple curve can be described as an image of a parameterized curve $\gamma\: [0,1]\to \mathcal{X}$ such that $p=\gamma(0)=\gamma(1)$;
-such curves are called \emph{loops}; 
-the point $p$ in this case is called \emph{base} of the loop.
-
-As you will see further it is more natural to present it as a \emph{periodic} parameterized cure $\gamma\: \RR\to \mathcal{X}$; that is, there is a constant $\ell$ such that $\gamma(t+\ell)=\gamma(t)$ for any $t$.
-For example the unit circle in the plane can be described by periodic parametrization $(\cos t,\sin t)$.
-
 \begin{thm}{Advanced exercise}
 Let $\alpha\:[0,1]\to\mathcal{X}$ be a path from $p$ to $q$.
 Assume $p\ne q$.
@@ -62,7 +54,7 @@ A space curve can be described by its coordinate functions
 \[\gamma(t)=(x(t),y(t),z(t)).\]
 Plane curves can be considered as a partial case of space curves with $z(t)\equiv 0$.
 
-If each of the coordinate functions $x(t),y(t),z(t)$ of the space curve $\gamma$ is a smooth (that is it has derivatives of all orders everywhere in its domain) then the parameterized curve is called \emph{smooth}.
+If each of the coordinate functions $x(t),y(t),z(t)$ of the space curve $\gamma$ is a smooth (that is, it has derivatives of all orders everywhere in its domain) then the parameterized curve is called \emph{smooth}.
 
 If the \emph{velocity vector} 
 \[\gamma'(t)=(x'(t),y'(t),z'(t))\] 
@@ -86,7 +78,7 @@ is smooth.\footnote{The existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is
 Show that $\gamma(t)=(f(t),f(-t))$ gives a smooth parametrization of the curve $S$ formed by the union of two half-axis in the plane.
 
 Show that any smooth parametrization of $S$ has vanishing velocity vector at the origin.
-Conclude that the curve $S$ regular and smooth.
+Conclude that the curve $S$ is not regular and smooth.
 \end{thm}
 
 
@@ -100,6 +92,14 @@ such that the plane curve $\gamma_a(t)= (t+a\cdot \sin t,a\cdot \cos t)$, $t\in\
 
 \end{thm}
 
+\parbf{Loops and periodic parametrization.}
+A closed simple curve can be described as an image of a parameterized curve $\gamma\: [0,1]\to \mathcal{X}$ such that $p=\gamma(0)=\gamma(1)$;
+such curves are called \emph{loops}; 
+the point $p$ in this case is called \emph{base} of the loop.
+
+However, it is more natural to present it as a \emph{periodic} parameterized cure $\gamma\: \RR\to \mathcal{X}$; that is, there is a constant $\ell$ such that $\gamma(t+\ell)=\gamma(t)$ for any $t$.
+For example the unit circle in the plane can be described by $2{\cdot}\pi$-periodic parametrization $\gamma(t)=(\cos t,\sin t)$.
+
 \begin{wrapfigure}{r}{17 mm}
 \vskip-5mm
 \centering
@@ -107,7 +107,7 @@ such that the plane curve $\gamma_a(t)= (t+a\cdot \sin t,a\cdot \cos t)$, $t\in\
 \end{wrapfigure}
 
 Any smooth regular closed curve can be described by a smooth regular loop.
-But in general the closed curve that described by a smooth regular loop might fail to be smooth and regular --- it might be not smooth the the base of the loop; an example shown on the diagram.
+But in general the closed curve that described by a smooth regular loop might fail to be smooth and regular --- it might fail to be smooth at its base; an example shown on the diagram.
 
 
 \section*{Implicitly defined curves}
@@ -124,7 +124,7 @@ In other words, if $f(p)=0$, then  $\tfrac{\partial f}{\partial x}(p)\ne 0$ or $
 Similarly, assume $f,h$ is a pair of smooth functions defined in $\RR^3$.
 The system of equations
 $f(x,y,z)=h(x,y,z)=0$
-defines a regular smooth space curve if the set of solutions is path connected and $0$ is a regular value of the map $(f,h)\:\RR^3\to\RR^2$.
+defines a regular smooth space curve if the set of solutions is path connected and $0$ is a regular value of the map $F\:(x,y,z)\mapsto (f(x,y,z),h(x,y,z))$.
 In this case it means that the gradients $\nabla f$ and $\nabla h$ are linearly independent at any point $p\in S$.
 In other words, if $f(p)=0$, then at the Jacobian matrix
 \[
@@ -133,11 +133,11 @@ In other words, if $f(p)=0$, then at the Jacobian matrix
 \tfrac{\partial h}{\partial x}&\tfrac{\partial h}{\partial y}&\tfrac{\partial f}{\partial z}
 \end{pmatrix}
 \]
-for the map $(x,y,z)\mapsto (f(x,y,z),h(x,y,z))$ has rank 2 at $p$.
+for the map $F\:\RR^3\to\RR^2$ has rank 2 at $p$.
 
 The described way to define a curve is called \emph{implicit};
 if a curve is defined by its parametrization, we say that it is \emph{explicitly defined}.
-While implicit function theorem guarantees the existence of regular smooth parametrizations, it does not mean that such parametrization can be found explicitly in a closed form. 
+While implicit function theorem guarantees the existence of regular smooth parametrizations, do not expect it to be in a closed form. 
 When it comes to calculations, usually it is easier to work directly with implicit presentation. 
 
 
