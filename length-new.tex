@@ -49,6 +49,7 @@ Repeat this construction recursively to the obtained polygons.
 \begin{figure}[h!]
 \begin{minipage}{.24\textwidth}
 \centering
+\vskip5.9mm
 \includegraphics[scale=.15]{pics/Koch_Snowflake-0}
 \end{minipage}
 \hfill
@@ -72,10 +73,46 @@ The Koch snowflake is the boundary of the union of all the polygons.
 
 
 \begin{thm}{Exercise}\label{ex:nonrectifiable-curve}
-Show that Koch snowflake is a closed simple curve; that is, it admits a homeomorphism to a circle.
-
-Show that Koch snowflake is not rectifiable. 
+\begin{enumerate}[(a)]
+\item Show that Koch snowflake is a closed simple curve; that is, it admits a homeomorphism to a circle.
+\item\label{ex:nonrectifiable-curve:b} Show that Koch snowflake is not rectifiable. 
+\end{enumerate}
 \end{thm}
+
+\section*{Arc length parametrization}
+
+We say that a parametrized curve $\gamma$ has an \emph{arc length parametrization}\footnote{which is also called \emph{natural parametrization}}
+if for any two values of parameters $t_1<t_2$, the value $t_2-t_1$ is the length of $\gamma|_{[t_1,t_2]}$; that is, the closed arc of $\gamma$ from $t_1$ to $t_2$.
+
+Note that a smooth space curve $\gamma(t)=(x(t),y(t),z(t))$ has arc length parametrization if and only if it has unit velocity vector at all times;
+that is 
+\[|\gamma'(t)|=\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}=1;\]
+by that reason arc length parametrization of smooth curves with also called \emph{unit-speed curves}.
+Note that smooth unit-speed curves are automatically regular.
+
+
+Any rectifiable curve can be parameterized by arc length.
+For a parametrized smooth curve $\gamma$, the arc length parameter $s$ can be written as an integral
+\[s(t)=\int_{t_0}^t |\gamma'(\tau)|\cdot d\tau.\]
+Note that $s(t)$ is a smooth increasing function.
+Further by fundamental theorem of calculus, $s'(t)=|\gamma'(t)|$.
+Therefore if $\gamma$ is regular, then $s'(t)\ne0$ for any parameter value $t$.
+By inverse function theorem (\ref{thm:inverse}) the inverse function $s^{-1}(t)$ is also smooth.
+Therefore after the reparametrization of $\gamma$ by arclength  $s$ it remains smooth and regular.
+
+We will be interested in the properties of curves that are invariant under a reparametrization.
+Therefore we can always assume that the given smooth regular curve comes with a arc length parametrization.
+A good property of arc length parametrizations is that it is almost canonical --- these parametrizations differ only by a sign and additive constant.
+On the other hand, often it is impossible to find an arc length parametrization in a closed form which makes it hard to use it calculations;
+usually it is more convenient to use the original parametrization.
+
+\begin{thm}{Exercise}\label{ex:arc-length-helix}
+Reparametrize the helix 
+$\gamma_a(t)=(a\cdot\cos t,a\cdot \sin t,t)$
+by arc length.
+\end{thm}
+
+
 
 \section*{Convex curves}
 
@@ -143,6 +180,18 @@ That is $\alpha$ lies in the square defined by the inequalities $|x|\le C$ and $
 
 By Proposition~\ref{prop:convex-curve}, the length of the curve can not exceed the perimeter of the square $8\cdot C$, whence the result.
 \qeds
+
+Recall that convex hull of a set $X$ is the smallest convex set that contains $X$; in other words convex hull is the intersection of all convex sets containing $X$.
+
+\begin{thm}{Exercise}\label{ex:convex-hull}
+Let $\alpha$ be a closed simple plane curve.
+Denote by $K$ the convex hull of $\alpha$; let $\beta$ be the boundary curve of $X$.
+Show that 
+\[\length \alpha\ge \length \beta.\]
+
+Try to show that the statement holds for arbitrary closed plane curve $\alpha$, assuming that $X$ has nonempty interior.
+\end{thm}
+
 
 
 
@@ -242,7 +291,16 @@ Show that $A$ is convex if and only if
 \[|x-y|_A=|x-y|_{\RR^3}.\]
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:S1-intrinsic}
+Let us denote by $\SS^1$ the unit circle in the plane; that is,
+\[\SS^1=\set{(x,y)\in\RR^3}{x^2+y^2=1}.\]
+Show that
+\[|u-v|_{\SS^1}=\measuredangle(u,v)\df\arccos\langle u,v\rangle.\]
+\end{thm}
+
+\section*{Spherical curves}
+
+\begin{thm}{Exercise}\label{ex:S2-intrinsic}
 Let us denote by $\SS^2$ the unit sphere in the space; that is,
 \[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
 Show that
@@ -250,8 +308,57 @@ Show that
 
 \end{thm}
 
-\parit{Hint:} Use the following map $f\:(r,\theta,\phi)\mapsto (r,\theta,0)$ in spherical coordinates. Note that $f$ is distance nonexpanding and it maps $\RR^3$ to a half-plane and $\SS^2$ to one of its meridians.
+\parit{Hint:} Use Exercise~\ref{ex:S1-intrinsic} and the following map $f\:(r,\theta,\phi)\mapsto (r,\theta,0)$ in spherical coordinates. Note that $f$ is distance nonexpanding and it maps $\RR^3$ to a half-plane and $\SS^2$ to one of its meridians.
 
+\begin{thm}{Hemisphere lemma}
+\label{lem:hemisphere}
+Any closed curve of length $<2\cdot \pi$ in $\SS^2$ lies in an open hemisphere. 
+\end{thm}
 
+\parit{Proof.}
+Let $\alpha$ be a closed curve in $\mathbb{S}^2$ of length $2\cdot\ell$.
 
+%???+PIC
 
+Assume $\ell<\pi$.
+
+\begin{wrapfigure}{r}{35 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-52}
+\caption*{The north hemisphere corresponds to the disc and the south hemisphere --- its complement.}
+\end{wrapfigure}
+
+Let us divide $\alpha$ into two arcs $\alpha_1$ and $\alpha_2$ of length $\ell$, with endpoints $p$ and $q$. 
+According to Exercise~\ref{ex:S2-intrinsic}, $\measuredangle(p,q)\le\ell<\pi$.
+Denote by $z$ be the midpoint between $p$ and $q$ in $\mathbb{S}^2$;
+that is $z$ is the midpoint of an equator arc from $p$ to $q$. 
+We claim that $\alpha$ lies in the open north hemisphere with north pole at $z$.  
+If not, $\alpha$ intersects the equator in a point, say $r$.
+Without loss of generality we may assume that $r$ lies on~$\alpha_1$. 
+
+Rotate the arc $\alpha_1$ by angle $\pi$ around the line thru $z$ and the center of the sphere.
+The obtained arc $\alpha_1^{*}$ together with $\alpha_1$ forms a closed curve of length $2\cdot \ell$ that passes thru $r$ and its antipodal point $r^{*}$.
+Therefore
+\[\tfrac12\cdot\length \alpha=\ell\ge \measuredangle(r,r^{*})=\pi,\] 
+a contradiction.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:flaw}
+Consider the following problem, find a flaw in the given wrong solution.
+Come up with a correct argument.
+\end{thm}
+
+ 
+\parbf{Problem.}
+Suppose that a closed plane curve $\alpha$ has length at most 4.
+Show that $\alpha$ lies in a unit disc.
+
+\parit{Wrong solution.}
+Note that it is sufficient to show that diameter of $\alpha$ is at most 2;
+that is the distance between any two pairs of points $p$ and $q$ of $\alpha$ an not exceed $2$.
+
+The length of $\alpha$ can not be smaller then the closed inscribed polygonal line which goes from $p$ to $q$ and back to $p$.
+Therefore 
+\[2\cdot |p-q|\le\length \alpha\le 4.\]
+\qedsf

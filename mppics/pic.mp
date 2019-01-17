@@ -1739,4 +1739,40 @@ dOt origin;
 %draw z.s{right}..z.s+(1,1)*u..cycle;
 
 endfig;
+
+beginfig(52) 
+save u;
+u:=1cm;
+
+z.z=origin;
+z.r=(1,1)*u;
+draw circle(z.z,z.r);
+
+z.p=(.3,-.2)*u;
+z.q=-z.p;
+
+draw z.p--z.q;
+
+z.s=(.5,-.5)*u;
+save p; path p[];
+p1= z.p{up}..z.r..z.q{-1,-1}..z.s..cycle;
+
+draw p1;
+
+p2=(subpath (0,2) of p1) rotated 180;
+
+draw p2 dashed evenly;
+
+
+dOt z.p,z.q,z.r,-z.r,z.z;
+
+label.rt(btex $p$ etex, z.p);
+label.ulft(btex $q$ etex, z.q);
+label.urt(btex $z$ etex, z.z);
+label.urt(btex $r$ etex, z.r);
+label.llft(btex $r^{*}$ etex, -z.r);
+
+label.ulft(btex $\alpha_1$ etex, point 1.6 of p1+(1,0));
+label.ulft(btex $\alpha_1^{*}$ etex, point .6 of p2+(1,0));
+endfig;
 end
