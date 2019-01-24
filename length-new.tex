@@ -27,18 +27,29 @@ If a curve is defined on a open or closed-open interval then its length is defin
 If $\alpha$ is a space curve, then the above definition says that it length is the exact upper bound of the lengths of polygonal lines $p_0\dots p_k$ \emph{inscribed} in the curve, where $p_i=\alpha(t_i)$ for a  partition $a=t_0 < t_1 < \cdots < t_k=b$.
 If $\alpha$ is closed then $p_0=p_k$ and therefore the inscribed polygonal line is also closed.
 
+\begin{thm}{Exercise}\label{ex:length-image}
+Let $\alpha\:[0,1]\to\RR^3$ be a simple curve.
+Suppose a parametrized curve $\beta\:[0,1]\to\RR^3$ has that same image as $\alpha$;
+that is $\beta([0,1])=\alpha([0,1])$.
+Show that 
+\[\length \beta\ge \length \alpha.\]
+
+\end{thm}
+
+
 \begin{thm}{Exercise}\label{ex:integral-length}
-Assume $\alpha\:[a,b]\to\RR^2$ is a smooth curve.
+Assume $\alpha\:[a,b]\to\RR^3$ is a smooth curve.
 Show that
 \begin{enumerate}[(a)]
 \item\label{ex:integral-length>} $\length \alpha\ge \int_a^b|\alpha'(t)|\cdot dt$,
 \item\label{ex:integral-length<} $\length \alpha\le \int_a^b|\alpha'(t)|\cdot dt$.
 \end{enumerate}
 Conclude that 
-\[\length \alpha= \int_a^b|\alpha'(t)|\cdot dt.\]
+\[\length \alpha= \int_a^b|\alpha'(t)|\cdot dt.\eqlbl{eq:length}\]
 \end{thm}
 
 \parit{Hints:} For (\ref{ex:integral-length>}), apply the fundamental theorem of calculus for each segment in a given partition. For (\ref{ex:integral-length<}) consider a partition such that the velocity vector $\alpha'(t)$ is nearly constant on each of its segments.
+
 
 \parbf{Nonrectifiable curves.}
 A classical example of a nonrectifiable curve is the so called \emph{Koch snowflake};
@@ -79,6 +90,7 @@ The Koch snowflake is the boundary of the union of all the polygons.
 \end{enumerate}
 \end{thm}
 
+
 \section*{Arc length parametrization}
 
 We say that a parametrized curve $\gamma$ has an \emph{arc length parametrization}\footnote{which is also called \emph{natural parametrization}}
@@ -113,13 +125,12 @@ by arc length.
 \end{thm}
 
 
-
 \section*{Convex curves}
 
-A closed simple plane curve is called \emph{convex} if it bounds a convex region.
+A simple plane curve is called \emph{convex} if it bounds a convex region.
 
 \begin{thm}{Proposition}\label{prop:convex-curve}
-Assume a convex curve $\alpha$ lies inside the domain bounded by a closed simple plane curve $\beta$.
+Assume a convex closed curve $\alpha$ lies inside the domain bounded by a closed simple plane curve $\beta$.
 Then
 \[\length\alpha\le \length\beta.\]
 \end{thm}
@@ -185,7 +196,7 @@ Recall that convex hull of a set $X$ is the smallest convex set that contains $X
 
 \begin{thm}{Exercise}\label{ex:convex-hull}
 Let $\alpha$ be a closed simple plane curve.
-Denote by $K$ the convex hull of $\alpha$; let $\beta$ be the boundary curve of $X$.
+Denote by $K$ the convex hull of $\alpha$; let $\beta$ be the boundary curve of $K$.
 Show that 
 \[\length \alpha\ge \length \beta.\]
 
@@ -193,7 +204,63 @@ Try to show that the statement holds for arbitrary closed plane curve $\alpha$, 
 \end{thm}
 
 
+\section*{Crofton formulas*}
 
+Consider a plane curve $\alpha\:[a,b]\to\RR^2$.
+Given a unit vector $u$, denote by $\alpha_u$ the curve that follows orthogonal projections of $\alpha$ to the line in the direction $u$;
+that is 
+\[\alpha_u(t)=\langle u,\alpha(t)\rangle\cdot u.\]
+
+Note that 
+\[|\alpha'(t)|=|\langle u,\alpha'(t)\rangle|\] for any $t$.
+Note that for any plane vector the magnitude of its average projection is proportional to its magnitude with coefficient; that is,
+\[|w|=k\cdot \overline{|w_u|},\]
+where $\overline{|w_u|}$ denotes the average value of $|w_u|$ for all unit vectors $u$.
+(The value $k$ is the average value of $|\cos\phi|$ for $\phi\in [0,2\cdot\pi]$; it can be found by integration, but soon we will show another way to find it.)
+
+If the curve $\alpha$ is smooth, then according to Exercise~\ref{ex:integral-length}
+\begin{align*}
+\length\alpha
+&=\int_a^b|\alpha'(t)|\cdot dt=
+\\
+&=\int_a^b  k\cdot \overline{|\alpha_u'(t)|}\cdot dt=
+\\
+&=k\cdot \overline{\length\alpha_u}.
+\end{align*}
+This formula and its relatives are called Crofton formulas.
+To find the coefficient $k$ one can apply it for the unit circle: the left hand side is $2\cdot\pi$ --- this is the length of unit circle.
+Note that for any unit vector $u$, the curve $\alpha_u$ runs back and forth along an interval of length 2.
+Therefore $\length\alpha_u=4$ and hence its average value is also 4.
+It follows that the coefficient $k$ has to satisfy the equation $2\cdot \pi =k\cdot 4$; whence 
+\[
+\length\alpha
+=\tfrac\pi2\cdot \overline{\length\alpha_u}.
+\]
+
+The Crofton's formula holds for arbitrary rectifiable curves, not necessary smooth; it can be proved using Exercises~\ref{adex:integral-length}.
+
+\begin{thm}{Exercise}\label{ex:convex-croftons}
+Assume that closed plane curve $\alpha$ has length at least $\pi\cdot s$, where $s$ is the average of pojections of $\alpha$ to lines.
+Moreover the equality holds if and only if $\alpha$ is convex.
+
+Use this statement to solve of Exercise~\ref{ex:convex-hull}.
+\end{thm}
+
+\begin{thm}{Advanced exercise}\label{adex:more-croftons}
+Show that the length of space curve is proportional to the average length of its projections to all lines and to planes.
+Find the coefficients in each case.
+\end{thm}
+
+
+\begin{thm}{Advanced exercises}\label{adex:integral-length}
+\begin{enumerate}[(a)]
+\item Show that the formula \ref{eq:length} holds for any Lipschitz curve $\alpha\:[a,b]\z\to\RR^3$.
+\item Construct a simple curve $\alpha\:[a,b]\to\RR^3$ such that the velocity vector $\alpha'(t)$ is defined and bounded for almost all $t\in [a,b]$, but the formula \ref{eq:length} does not hold.
+
+\end{enumerate}
+\end{thm}
+
+\parit{Hint:} Use theorems of Rademacher and Lusin (\ref{thm:rademacher} and \ref{thm:lusin}).
 
 \section*{Semicontinuity of length}
 
@@ -311,10 +378,14 @@ for any $u,v\in \SS^2$.
 
 \parit{Hint:} Use Exercise~\ref{ex:S1-intrinsic} and the following map $f\:(r,\theta,\phi)\mapsto (r,\theta,0)$ in spherical coordinates. Note that $f$ is distance nonexpanding and it maps $\RR^3$ to a half-plane and $\SS^2$ to one of its meridians.
 
-\begin{thm}{Hemisphere lemma}
+\begin{thm}{Hemisphere lemma}\label{lem:hemisphere}
 \label{lem:hemisphere}
 Any closed curve of length $<2\cdot \pi$ in $\SS^2$ lies in an open hemisphere. 
 \end{thm}
+
+This lemma is a keystone in the proof of Fenchel's theorem given below.
+The lemma is not as simple as you might think --- try to prove it yourself.
+I learned the following proof from Stephanie Alexander.
 
 \parit{Proof.}
 Let $\alpha$ be a closed curve in $\mathbb{S}^2$ of length $2\cdot\ell$.
@@ -345,8 +416,20 @@ Therefore
 a contradiction.
 \qeds
 
+\begin{thm}{Exercise}\label{ex:antipodal}
+Describe a simple closed spherical curve that does not pass thru a pair of antipodal points and does not lie in any hemisphere.
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:bisection-of-S2}
+Suppose that a closed simple spherical curve $\alpha$ divides $\SS^2$ into two regions of equal area.
+Show that 
+\[\length\alpha\ge2\cdot\pi.\]
+\end{thm}
+
+
 \begin{thm}{Exercise}\label{ex:flaw}
-Consider the following problem, find a flaw in the given wrong solution.
+Consider the following problem, find a flaw in the given solution.
 Come up with a correct argument.
 \end{thm}
 
@@ -363,3 +446,20 @@ The length of $\alpha$ can not be smaller then the closed inscribed polygonal li
 Therefore 
 \[2\cdot |p-q|\le\length \alpha\le 4.\]
 \qedsf
+
+\begin{thm}{Advanced exercises} \label{adex:crofton}
+Given points $v,w\in\SS^2$, denote by $w_v$ the closest point to $w_u$ on the equator with pole at $v$;
+in other words, it $w^\perp$ is the projection of $w$ to the plane perpendicular to $v$, then $w_v$ is the unit vector in the direction of $w^\perp$.
+The vector $w_v$ is defined if $w\ne\pm v$.
+
+\begin{enumerate}
+\item \label{adex:crofton:crofton}
+Show that for any spherical curve $\alpha$ we have that
+\[\length\alpha=\overline{\length\alpha_v},\]
+where $\overline{\length\alpha_v}$ denotes the average length for all $v\in \SS^2$.
+(This is a spherical analog of Crofton's formula.)
+\item\label{adex:crofton:hemisphere} Give another proof of hemisphere lemme using part (\ref{adex:crofton:crofton}). 
+\end{enumerate}
+ 
+\end{thm}
+

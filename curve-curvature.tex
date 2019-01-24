@@ -83,7 +83,7 @@ Show that the total curvature is lower semi-continuous with respect to pointwise
 That is, if a sequence
 of curves $\alpha_n\:[a,b]\to \RR^3$ converges pointwise 
 to a curve $\alpha_\infty\:[a,b]\z\to \RR^3$, then 
-\[\liminf_{n\to\infty} \tc\alpha_n \ge \tc\alpha_\infty.\]
+\[\liminf_{n\to\infty} \tc{\alpha_n} \ge \tc{\alpha_\infty}.\]
 \end{thm}
 
 \parit{Hint:} Modify the proof of semi-continuity of length (Theorem~\ref{thm:length-semicont}).
@@ -139,9 +139,9 @@ Note that the total curvature of $\beta$ can be made arbitrarily close to $2\cdo
 Indeed, $\beta$ needs a bit more than $\pi -\measuredangle (\mu,\nu)$ to turn an join the segment $[\alpha(b),\alpha(a)]$ and bit more than $\pi -\measuredangle (\lambda,\mu)$ to turn an join the segment $\alpha$.
 
 By Fenchel's theorem,
-\[\tc\hat\alpha\ge 2\cdot \pi.\]
+\[\tc{\hat\alpha}\ge 2\cdot \pi.\]
 Evidently 
-\[\tc\hat\alpha=\tc\alpha+\tc\beta,\]
+\[\tc{\hat\alpha=}\tc\alpha+\tc\beta,\]
 hence the lemma follows.
 \qeds
 
@@ -160,7 +160,7 @@ By semi-continuity of the length functional, we get
 \\
 &\le \liminf_{n\to\infty}\length \chi_n=
 \\
-&= \liminf_{n\to\infty}\tc \beta_n\le
+&= \liminf_{n\to\infty}\tc {\beta_n}\le
 \\
 &\le \sup\{\tc\beta\},
 \end{align*}
@@ -194,16 +194,16 @@ Let $\alpha$ be a polygonal line in $\RR^3$.
 Show that 
 \begin{align*}
 \tc\alpha
-&=\overline{\tc\alpha_{u^\perp}}=
+&=\overline{\tc{\alpha_{u^\perp}}}=
 \\
-&=\overline{\tc\alpha_u}.
+&=\overline{\tc{\alpha_u}}.
 \end{align*}
 \end{thm}
 
 Note that since the curve $\alpha_u$ runs back and forth along one line, 
 every time it changes direction contributes $\pi$ to the total curvature of $\alpha_u$.
 Therefore the total curvature of $\alpha_u$ is $n\cdot\pi$, where $n$ is the number of changes of direction.
-Since $n$ has to be even, $\tc\alpha_u$ may take values $2\cdot\pi$, $4\cdot\pi$, $6\cdot\pi$ and so on.
+Since $n$ has to be even, $\tc{\alpha_u}$ may take values $2\cdot\pi$, $4\cdot\pi$, $6\cdot\pi$ and so on.
 
 \begin{thm}{Exercise}
 Use the proposition and the observation above to give yet another proof of  Fenchel's theorem (Exercise~\ref{ex:fenchel}).
@@ -230,11 +230,11 @@ Fix a unit vector $u$.
 Note that the curve $\alpha_u$ can run at most length 2 in one direction;
 therefore the number of turns has to be at least $\tfrac12\cdot\length\alpha$.
 Since each turn of $\alpha_u$ contributes $\pi$ to its total curvature, we get
-\[\tc\alpha_u\ge \tfrac\pi2\cdot\length\alpha_u.\]
+\[\tc{\alpha_u}\ge \tfrac\pi2\cdot\length\alpha_u.\]
 
 The same inequality holds for the average values of left and right hand sides;
 that is,
-\[\overline{\tc\alpha_u}
+\[\overline{\tc{\alpha_u}}
 \ge \tfrac\pi2\cdot\overline{\length\alpha_u}.\]
 Applying the Crofton's formula and Proposition~\ref{prop:tc-crofton} we get the result.
 
@@ -347,7 +347,7 @@ at all $t\in[a,b]$ except possibly on a countable subset.
 Assume a sequence of curves $\alpha_n\:[a,b]\to\RR^3$ converges uniformly to a curve $\alpha_\infty\:[a,b]\to\RR^3$ and
 \[ \liminf_{n\to\infty}\length\alpha_n>\length\alpha_\infty.\]
 Show that 
-\[\tc\alpha_n\to\infty\quad\text{as}\quad n\to\infty.\]
+\[\tc{\alpha_n}\to\infty\quad\text{as}\quad n\to\infty.\]
 
 \end{thm}
 

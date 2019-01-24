@@ -1,0 +1,163 @@
+\chapter{Curvature of curves}
+
+
+In general the term \emph{curvature} is used for something that measures how much 
+a geometric object deviates from being \emph{straight};
+in particular the curvature of a curve suppose to measure how fast it deviates from a straight line.
+
+\section*{Acceleration of unit-speed curve}
+
+Recall that any regular smooth curve can be parametrized by its length.
+The obtained curve $\gamma$ remains to be smooth and it has unit speed; 
+that is, $|\gamma'(t)|=1$ for all $t$.
+
+The following proposition essentailly states that the acceleration vector is perpendicular to the velocity vector if the speed remains constant.
+
+\begin{thm}{Proposition}\label{prop:a'-pertp-a''}
+Assume $\gamma$ be a smooth unit-speed space curve.
+Then $\gamma'(t)\perp \gamma''(t)$ for any $t$.
+\end{thm}
+
+The scalar product (also known as dot product) of two vectors $v$ and $w$ will be denoted by $\langle v,w\rangle$.
+Recall that the derivative of a scalar product satisfies the product rule;
+that is if $v=v(t)$ and $w=w(t)$ are smooth vector-valued functions of a real parameter $t$, then
+\[\langle v,w\rangle'=\langle v',w\rangle+\langle v,w'\rangle.\]
+
+\parit{Proof.}
+Since $|\gamma'(t)|=1$, we have
+\[\langle\gamma'(t),\gamma'(t)\rangle=1.\]
+Differentiating both sides we get
+\[2\cdot\langle\gamma''(t),\gamma'(t)\rangle=0,\]
+hence the result.
+\qeds
+
+\section*{Curvature}
+
+For a unit speed space curve $\gamma$ the magnitude of its acceleration $|\gamma''(t)|$ is called its \emph{curvature} at $t$.
+If $\gamma$ is simple, then we can say that $|\gamma''(t)|$ is the curvature at the point $p=\gamma(t)$ without ambiguity.
+The curvature is usually denoted by $k(t)$ and in the latter case it might be also denoted by $k(p)$.
+
+Informally the curvature measures how fast the curve turns;
+if you drive along a plane curve, curvature tells how much to turn the steering wheel at the given point (note that it does not depend on your speed).
+
+\section*{Tangent indicatrix}
+
+It was convenient to use arc length parametrization to define curvature, 
+but for finding curvature it more convenient to use the original description of curvature via tangent indicatrix described below.
+
+Let $\gamma$ be a regular smooth space curve.
+Let us consider another curve 
+\[\tau(t)=\tfrac{\gamma'(t)}{|\gamma'(t)|}\eqlbl{eq:tantrix}\] 
+that is called \emph{tangent indicatrix} of $\gamma$.
+Note that $|\tau(t)|=1$ for any $t$;
+that is, $\tau$ is a spherical curve that points in the direction tangent to $\gamma$ at each time.
+
+If $\gamma$ has a unit speed parametrization, then $\tau(t)=\gamma'(t)$.
+In this case we have the following expression for curvature: 
+$k(t)=|\tau'(t)|=|\gamma''(t)|$.
+
+In general case we have 
+\[ k(t)=\tfrac{|\tau'(t)|}{|\gamma'(t)|}.\eqlbl{eq:curvature}\]
+Indeed, for an arc length parametrization $s(t)$ we have $s'(t)=|\gamma'(t)|$.
+Therefore
+\begin{align*}
+k(t)&=|\tfrac{d\tau}{ ds}|=
+\\
+&=|\tfrac{d\tau}{ dt}|/|\tfrac{ds}{ dt}|=
+\\
+&=\tfrac{|\tau'(t)|}{|\gamma'(t)|}.
+\end{align*}
+
+
+
+\begin{thm}{Exercise}\label{ex:curvature-formulas}
+Use the formulas \ref{eq:tantrix} and \ref{eq:curvature} to show that 
+for any smooth regular space curve $\gamma$ we have the following expressions for its curvature:
+
+\begin{enumerate}[(a)]
+\item\label{ex:curvature-formulas:a} \[k(t)=\frac{|\gamma''(t)^\perp|}{|\gamma'(t)|^2},\]
+where $\gamma''(t)^\perp$ denotes the projection of $\gamma''(t)$ to the perpendicular plane to $\gamma'(t)$;
+\item \[k(t)=\frac{|\gamma''(t)\times \gamma'(t)|}{|\gamma'(t)|^{3}}.\]
+\end{enumerate}
+\end{thm}
+
+\parit{Hint:} Prove and use the following identities: 
+\begin{align*}
+\gamma''(t)-\gamma''(t)^\perp&=\tfrac{\gamma'(t)}{|\gamma'(t)|}\cdot\langle\gamma''(t),\tfrac{\gamma'(t)}{|\gamma'(t)|}\rangle,
+\\
+|\gamma'(t)|&=\sqrt{\langle \gamma'(t),\gamma'(t)\rangle}.\
+\end{align*}
+
+
+\begin{thm}{Exercise}\label{ex:curvature-graph}
+Apply the formulas in the previous exercise to show that if $f$ is a smooth real function,
+then its graph $\Gamma_f=\{\,(x,f(x))\z\in\RR^2\,\}$  has curvature
+\[k(p)=\frac{|f''(x)|}{(1+f'(x)^2)^{\frac32}}\]
+at the point $p=(x,f(x))$.
+\end{thm}
+
+\section*{Total curvature}
+
+Let $\gamma\:[a,b]\to\RR^3$ be a regular smooth curve and $\tau$ its \emph{tangent indicatrix}.
+Recall that without loss of generality we can assume that $\gamma$ has a unit speed parametrization;
+in this case $\tau(t)=\gamma'(t)$ and hence
+\[k(t)\df|\gamma''(t)|=|\tau'(t)|,\] 
+that is, the curvature of $\gamma$ at $t$ is the speed of the \emph{tangent indicatrix} $\tau$ at $t$.
+
+The integral 
+\[\tc\gamma:=\int_a^bk(t)\cdot dt\]
+is called \emph{total curvature of} $\gamma$.
+
+\begin{thm}{Exercise}\label{ex:helix-curvature}
+Find the curvature of helix $\gamma_a=(a\cdot \cos t,a\cdot \sin t,t)$, its tangent indicatrix and the total curvature of its arc $t\in[0,2\cdot\pi]$.
+\end{thm}
+
+\begin{thm}{Observation}\label{obs:tantrix}
+The total curvature of a smooth regular curve is the length of its tangent indicatrix.
+\end{thm}
+
+\parit{Proof.}
+It is sufficient to prove the observation for a unit-speed space curve $\gamma\:[a,b]\to\RR^3$.
+Denote by $\tau$ its tangent indicatrix.
+Then
+\begin{align*}
+\tc\gamma&\df\int_a^bk(t)\cdot dt=
+\\
+&=\int_a^b|\tau'(t)|\cdot dt=
+\\
+&=\length\tau.
+\end{align*}
+\qedsf %???other cases --- colsed curves, semiopen intervals...
+
+\begin{thm}{Fenchel's theorem}\label{thm:fenchel}
+The total curvature of of any closed regular space curve is at least $2\cdot\pi$.
+\end{thm}
+
+\parit{Proof.}
+Fix a closed regular space curve $\gamma$;
+we can assume that it has a unit-speed parametrization $\gamma\:[a,b]\to \RR^3$, so $\gamma(a)=\gamma(b)$.
+
+Consider its tangent indicatrix $\tau=\gamma'$.
+By fundamental theorem of calculus we have that 
+\[\int_a^b\tau(t)\cdot dt=\gamma(b)-\gamma(a)=0.\eqlbl{eq:zero}\]
+
+Recall that $|\tau(t)|=1$ for any $t$; that is, $\tau$ is a spherical curve.
+Let us show that $\tau$ can not lie in a hemisphere.
+Assume contrary, denote by $u$ the center of the hemisphere;
+so $\langle u,\tau(t)\rangle>0$ for any $t$.
+From \ref{eq:zero}, we get that
+\begin{align*}
+0&=\left\langle u,\int_a^b\tau(t)\cdot dt\right\rangle=
+\\
+&=\int_a^b\langle u,\tau(t)\rangle\cdot dt>
+\\
+&>0.
+\end{align*}
+--- a contradiction.
+
+Applying the observation (\ref{obs:tantrix}) and the hemisphere lemma (\ref{lem:hemisphere}), we get that 
+\[\tc\gamma=\length \tau\ge2\cdot\pi.\]
+\qedsf
+
+
+
