@@ -110,13 +110,9 @@ Note that $s(t)$ is a smooth increasing function.
 Further by fundamental theorem of calculus, $s'(t)=|\gamma'(t)|$.
 Therefore if $\gamma$ is regular, then $s'(t)\ne0$ for any parameter value $t$.
 By inverse function theorem (\ref{thm:inverse}) the inverse function $s^{-1}(t)$ is also smooth.
-Therefore after the reparametrization of $\gamma$ by arclength  $s$ it remains smooth and regular.
+Therefore $\gamma\circ s^{-1}$ --- the reparametrization  of $\gamma$ by arclength  $s$ --- remains smooth and regular.
 
-We will be interested in the properties of curves that are invariant under a reparametrization.
-Therefore we can always assume that the given smooth regular curve comes with a arc length parametrization.
-A good property of arc length parametrizations is that it is almost canonical --- these parametrizations differ only by a sign and additive constant.
-On the other hand, often it is impossible to find an arc length parametrization in a closed form which makes it hard to use it calculations;
-usually it is more convenient to use the original parametrization.
+Most of the time we use $s$ for an arc length parameter of a curve.
 
 \begin{thm}{Exercise}\label{ex:arc-length-helix}
 Reparametrize the helix 
@@ -124,6 +120,11 @@ $\gamma_a(t)=(a\cdot\cos t,a\cdot \sin t,t)$
 by arc length.
 \end{thm}
 
+We will be interested in the properties of curves that are invariant under a reparametrization.
+Therefore we can always assume that the given smooth regular curve comes with a arc length parametrization.
+A good property of arc length parametrizations is that it is almost canonical --- these parametrizations differ only by a sign and additive constant.
+On the other hand, often it is impossible to find an arc length parametrization in a closed form which makes it hard to use it calculations;
+usually it is more convenient to use the original parametrization.
 
 \section*{Convex curves}
 
@@ -367,6 +368,9 @@ for any $u,v\in \SS^1$.
 \end{thm}
 
 \section*{Spherical curves}
+
+A space curve $\gamma$ is called \emph{spherical} if it runs in the unit sphere;
+that is, $|\gamma(t)|=1$ for any $t$.
 
 \begin{thm}{Exercise}\label{ex:S2-intrinsic}
 Let us denote by $\SS^2$ the unit sphere in the space; that is,
