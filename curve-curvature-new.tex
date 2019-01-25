@@ -1,13 +1,13 @@
-\chapter{Curvature of curves}
+\chapter{Curvature of space curves}
 
 
-In general the term \emph{curvature} is used for something that measures how much 
+The term \emph{curvature} is used for something that measures how much 
 a geometric object deviates from being \emph{straight};
 in particular the curvature of a curve suppose to measure how fast it deviates from a straight line.
 
 \section*{Acceleration of unit-speed curve}
 
-Recall that any regular smooth curve can be parametrized by its length.
+Recall that any regular smooth curve can be parametrized by its arc length.
 The obtained curve $\gamma$ remains to be smooth and it has unit speed; 
 that is, $|\gamma'(s)|=1$ for all $s$.
 
@@ -33,9 +33,9 @@ hence the result.
 
 \section*{Curvature}
 
-For a unit speed space curve $\gamma$ the magnitude of its acceleration $|\gamma''(s)|$ is called its \emph{curvature} at $s$.
+For a unit speed space curve $\gamma$ the magnitude of its acceleration $|\gamma''(s)|$ is called its \emph{curvature} at the parameter value $s$.
 If $\gamma$ is simple, then we can say that $|\gamma''(s)|$ is the curvature at the point $p=\gamma(s)$ without ambiguity.
-The curvature is usually denoted by $k(s)$ and in the latter case it might be also denoted by $k(p)$.
+The curvature is usually denoted by $k(s)$ or $k_\gamma(s)$ and in the latter case it might be also denoted by $k(p)$ or $k_\gamma(p)$.
 
 Informally the curvature measures how fast the curve turns;
 if you drive along a plane curve, curvature tells how much to turn the steering wheel at the given point (note that it does not depend on your speed).
@@ -50,8 +50,9 @@ Show that any regular smooth spherical curve has curvature at least 1 at each po
 
 \section*{Tangent indicatrix}
 
-It was convenient to use arc length parametrization to define curvature, 
-but for finding curvature it more convenient to use the original description of curvature via tangent indicatrix described below.
+It was convenient to use arc length parametrization to \emph{define} curvature, 
+but for calculating the curvature it more convenient to use the original description of the given curve
+and its tangent indicatrix described below.
 
 Let $\gamma$ be a regular smooth space curve.
 Let us consider another curve 
@@ -85,7 +86,8 @@ for any smooth regular space curve $\gamma$ we have the following expressions fo
 \begin{enumerate}[(a)]
 \item\label{ex:curvature-formulas:a} \[k(t)=\frac{|\gamma''(t)^\perp|}{|\gamma'(t)|^2},\]
 where $\gamma''(t)^\perp$ denotes the projection of $\gamma''(t)$ to the perpendicular plane to $\gamma'(t)$;
-\item \[k(t)=\frac{|\gamma''(t)\times \gamma'(t)|}{|\gamma'(t)|^{3}}.\]
+\item \[k(t)=\frac{|\gamma''(t)\times \gamma'(t)|}{|\gamma'(t)|^{3}},\]
+where $\times$ denotes the \emph{vector product} (also known as \emph{cross product}).
 \end{enumerate}
 \end{thm}
 
@@ -99,7 +101,7 @@ where $\gamma''(t)^\perp$ denotes the projection of $\gamma''(t)$ to the perpend
 
 \begin{thm}{Exercise}\label{ex:curvature-graph}
 Apply the formulas in the previous exercise to show that if $f$ is a smooth real function,
-then its graph $\Gamma_f=\{\,(x,f(x))\z\in\RR^2\,\}$  has curvature
+then its graph $y=f(x)$  has curvature
 \[k(p)=\frac{|f''(x)|}{(1+f'(x)^2)^{\frac32}}\]
 at the point $p=(x,f(x))$.
 \end{thm}
@@ -108,16 +110,16 @@ at the point $p=(x,f(x))$.
 
 Let $\gamma\:[a,b]\to\RR^3$ be a regular smooth curve and $\tau$ its \emph{tangent indicatrix}.
 Recall that without loss of generality we can assume that $\gamma$ has a unit speed parametrization;
-in this case $\tau(t)=\gamma'(t)$ and hence
-\[k(t)\df|\gamma''(t)|=|\tau'(t)|,\] 
-that is, the curvature of $\gamma$ at $t$ is the speed of the \emph{tangent indicatrix} $\tau$ at $t$.
+in this case $\tau(s)=\gamma'(s)$ and hence
+\[k(s)\df|\gamma''(s)|=|\tau'(s)|,\] 
+that is, the curvature of $\gamma$ at $s$ is the speed of the \emph{tangent indicatrix} $\tau$ at $s$.
 
 The integral 
-\[\tc\gamma:=\int_a^bk(t)\cdot dt\]
+\[\tc\gamma:=\int_a^bk(s)\cdot ds\]
 is called \emph{total curvature of} $\gamma$.
 
 \begin{thm}{Exercise}\label{ex:helix-curvature}
-Find the curvature of helix $\gamma_a=(a\cdot \cos t,a\cdot \sin t,t)$, its tangent indicatrix and the total curvature of its arc $t\in[0,2\cdot\pi]$.
+Find the curvature of helix $\gamma_a(t)=(a\cdot \cos t,a\cdot \sin t,t)$, its tangent indicatrix and the total curvature of its arc $t\in[0,2\cdot\pi]$.
 \end{thm}
 
 \begin{thm}{Observation}\label{obs:tantrix}
@@ -129,9 +131,9 @@ It is sufficient to prove the observation for a unit-speed space curve $\gamma\:
 Denote by $\tau$ its tangent indicatrix.
 Then
 \begin{align*}
-\tc\gamma&\df\int_a^bk(t)\cdot dt=
+\tc\gamma&\df\int_a^bk(s)\cdot ds=
 \\
-&=\int_a^b|\tau'(t)|\cdot dt=
+&=\int_a^b|\tau'(s)|\cdot ds=
 \\
 &=\length\tau.
 \end{align*}
@@ -143,21 +145,21 @@ The total curvature of of any closed regular space curve is at least $2\cdot\pi$
 
 \parit{Proof.}
 Fix a closed regular space curve $\gamma$;
-we can assume that it has a unit-speed parametrization $\gamma\:[a,b]\to \RR^3$, so $\gamma(a)=\gamma(b)$.
+we can assume that it is described by a loop $\gamma\:[a,b]\to \RR^3$, so $\gamma(a)=\gamma(b)$ and $\gamma'(a)=\gamma'(b)$.
 
 Consider its tangent indicatrix $\tau=\gamma'$.
 By fundamental theorem of calculus we have that 
-\[\int_a^b\tau(t)\cdot dt=\gamma(b)-\gamma(a)=0.\eqlbl{eq:zero}\]
+\[\int_a^b\tau(s)\cdot ds=\gamma(b)-\gamma(a)=0.\eqlbl{eq:zero}\]
 
-Recall that $|\tau(t)|=1$ for any $t$; that is, $\tau$ is a spherical curve.
+Recall that $|\tau(s)|=1$ for any $s$; that is, $\tau$ is a closed spherical curve.
 Let us show that $\tau$ can not lie in a hemisphere.
 Assume contrary, denote by $u$ the center of the hemisphere;
-so $\langle u,\tau(t)\rangle>0$ for any $t$.
+so $\langle u,\tau(s)\rangle>0$ for any $s$.
 From \ref{eq:zero}, we get that
 \begin{align*}
-0&=\left\langle u,\int_a^b\tau(t)\cdot dt\right\rangle=
+0&=\left\langle u,\int_a^b\tau(s)\cdot ds\right\rangle=
 \\
-&=\int_a^b\langle u,\tau(t)\rangle\cdot dt>
+&=\int_a^b\langle u,\tau(s)\rangle\cdot ds>
 \\
 &>0.
 \end{align*}
