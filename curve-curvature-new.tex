@@ -11,10 +11,10 @@ Recall that any regular smooth curve can be parametrized by its arc length.
 The obtained curve $\gamma$ remains to be smooth and it has unit speed; 
 that is, $|\gamma'(s)|=1$ for all $s$.
 
-The following proposition essentailly states that the acceleration vector is perpendicular to the velocity vector if the speed remains constant.
+The following proposition states that the acceleration vector is perpendicular to the velocity vector if the speed remains constant.
 
 \begin{thm}{Proposition}\label{prop:a'-pertp-a''}
-Assume $\gamma$ be a smooth unit-speed space curve.
+Assume $\gamma$ is a smooth unit-speed space curve.
 Then $\gamma'(s)\perp \gamma''(s)$ for any $s$.
 \end{thm}
 
@@ -25,15 +25,15 @@ that is if $v=v(t)$ and $w=w(t)$ are smooth vector-valued functions of a real pa
 
 \parit{Proof.}
 Since $|\gamma'(s)|=1$, we have
-\[\langle\gamma'(s),\gamma'(s)\rangle=1.\]
+\[\langle\gamma',\gamma'\rangle=1.\]
 Differentiating both sides we get
-\[2\cdot\langle\gamma''(s),\gamma'(s)\rangle=0,\]
+\[2\cdot\langle\gamma'',\gamma'\rangle=\langle\gamma',\gamma'\rangle'=0,\]
 hence the result.
 \qeds
 
 \section*{Curvature}
 
-For a unit speed space curve $\gamma$ the magnitude of its acceleration $|\gamma''(s)|$ is called its \emph{curvature} at the parameter value $s$.
+For a unit speed space curve $\gamma$ the magnitude of its acceleration $|\gamma''(s)|$ is called its \emph{curvature} at the time $s$.
 If $\gamma$ is simple, then we can say that $|\gamma''(s)|$ is the curvature at the point $p=\gamma(s)$ without ambiguity.
 The curvature is usually denoted by $k(s)$ or $k_\gamma(s)$ and in the latter case it might be also denoted by $k(p)$ or $k_\gamma(p)$.
 
@@ -41,7 +41,7 @@ Informally the curvature measures how fast the curve turns;
 if you drive along a plane curve, curvature tells how much to turn the steering wheel at the given point (note that it does not depend on your speed).
 
 \begin{thm}{Exercise}
-Show that any regular smooth spherical curve has curvature at least 1 at each point.
+Show that any regular smooth spherical curve has curvature at least 1 at each time.
 \end{thm}
 
 \parit{Hint:} Differentiate the identity $\langle\gamma(s),\gamma(s)\rangle=1$ a couple of times.
@@ -112,7 +112,7 @@ Let $\gamma\:[a,b]\to\RR^3$ be a regular smooth curve and $\tau$ its \emph{tange
 Recall that without loss of generality we can assume that $\gamma$ has a unit speed parametrization;
 in this case $\tau(s)=\gamma'(s)$ and hence
 \[k(s)\df|\gamma''(s)|=|\tau'(s)|,\] 
-that is, the curvature of $\gamma$ at $s$ is the speed of the \emph{tangent indicatrix} $\tau$ at $s$.
+that is, the curvature of $\gamma$ at time $s$ is the speed of the \emph{tangent indicatrix} $\tau$ at the same time moment.
 
 The integral 
 \[\tc\gamma:=\int_a^bk(s)\cdot ds\]
@@ -140,34 +140,291 @@ Then
 \qedsf %???other cases --- colsed curves, semiopen intervals...
 
 \begin{thm}{Fenchel's theorem}\label{thm:fenchel}
-The total curvature of of any closed regular space curve is at least $2\cdot\pi$.
+The total curvature of any closed regular space curve is at least $2\cdot\pi$.
 \end{thm}
 
 \parit{Proof.}
 Fix a closed regular space curve $\gamma$;
-we can assume that it is described by a loop $\gamma\:[a,b]\to \RR^3$, so $\gamma(a)=\gamma(b)$ and $\gamma'(a)=\gamma'(b)$.
+we can assume that it is described by a loop $\gamma\:[a,b]\to \RR^3$;
+in this case $\gamma(a)=\gamma(b)$ and $\gamma'(a)=\gamma'(b)$.
 
 Consider its tangent indicatrix $\tau=\gamma'$.
-By fundamental theorem of calculus we have that 
-\[\int_a^b\tau(s)\cdot ds=\gamma(b)-\gamma(a)=0.\eqlbl{eq:zero}\]
-
 Recall that $|\tau(s)|=1$ for any $s$; that is, $\tau$ is a closed spherical curve.
 Let us show that $\tau$ can not lie in a hemisphere.
-Assume contrary, denote by $u$ the center of the hemisphere;
-so $\langle u,\tau(s)\rangle>0$ for any $s$.
-From \ref{eq:zero}, we get that
-\begin{align*}
-0&=\left\langle u,\int_a^b\tau(s)\cdot ds\right\rangle=
-\\
-&=\int_a^b\langle u,\tau(s)\rangle\cdot ds>
-\\
-&>0.
-\end{align*}
---- a contradiction.
+Assume contrary, without loss of generality we can assume that $\tau$ lies in the north hemisphere defined by the inequality $z>0$ in $(x,y,z)$-coordinates.
+It means that $z'(t)>0$ at any time, where $\gamma(t)=(x(t), y(t), z(t))$.
+Therefore 
+\[z(b)-z(a)=\int_a^bz'(s)\cdot ds>0.\]
+In particular, $\gamma(a)\ne \gamma(b)$, a contradiction.
 
 Applying the observation (\ref{obs:tantrix}) and the hemisphere lemma (\ref{lem:hemisphere}), we get that 
 \[\tc\gamma=\length \tau\ge2\cdot\pi.\]
 \qedsf
 
+\section*{Piecewise smooth curves}
+
+Assume $\alpha\:[a,b]\to \RR^3$ and $\beta\:[b,c]\z\to \RR^3$ are two curves such that $\alpha(b)=\beta(b)$.
+Then one can combine these two curves into one $\gamma\:[a,c]\z\to \RR^3$ by the rule $\gamma(t)=\alpha(t)$ for $t\le b$ and $\gamma(t) = \beta(t)$ for $t\ge b$.
+The obtained curve $\gamma$ is called the 
+\emph{concatenation} of $\alpha$ and $\beta$ and is denoted as $\gamma=\alpha{*}\beta$.
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-54}
+\end{wrapfigure}
+
+The same definition of cancatination $\alpha{*}\beta$ can be applied if $\alpha$ and/or $\beta$ are defied on semiopen intervals 
+$(a,b]$ and/or $[b,c)$.
+
+The concatenation can be also defined if the end point of the first curve coincides with the starting point of the second curve; if this is the case, their time intervals can be shifted so that they fit together. 
+
+If in addition $\beta(c)=\alpha(a)$ then we can do cyclic concatination of these curves and obtain a closed curve.
+
+If $\alpha'(b)$ and $\beta'(b)$ are defined then the angle $\theta=\measuredangle(\alpha'(b),\beta'(b))$ is called \emph{external angle} of $\gamma$ at time $b$.
+Note that smooth regular curve has zero external angle at each time.
+
+A space curve $\gamma$ is called \emph{piecewise smooth and regular} if it can be presented as a concatination of finite number of smooth regular curves; if $\gamma$ is closed, then the  concatination is assumed to be cyclic.
+
+If $\gamma$ is a concatination of smooth regular arcs $\gamma_1,\dots,\gamma_n$, then the total curvature of $\gamma$ is defined as a sum of total curvatures of $\gamma_i$ and the external angles;
+that is, 
+\[\tc\gamma=\tc{\gamma_1}+\dots+\tc{\gamma_n}+\theta_1+\dots+\theta_{n-1}\]
+where $\theta_i$ is the external angle at the joint $\gamma_i$ and $\gamma_{i+1}$;
+if $\gamma$ is closed, then 
+\[\tc\gamma=\tc{\gamma_1}+\dots+\tc{\gamma_n}+\theta_1+\dots+\theta_{n},\]
+where $\theta_n$ is the external angle at the joint $\gamma_n$ and $\gamma_1$.
+
+\begin{thm}{Generalized Fenchel's theorem}\label{thm:gen-fenchel}
+Let $\gamma$ be a piecewise smooth regular space curve.
+Then 
+\[\tc\gamma\ge2\cdot\pi.\]
+
+\end{thm}
+
+\parit{Proof.}
+Suppose $\gamma$ is a cyclic concatenation of $n$ smooth regular arcs $\gamma_1,\dots,\gamma_n$.
+Denote by $\theta_1,\dots,\theta_n$ its external angles.
+We need to show that
+\[\tc{\gamma_1}+\dots+\tc{\gamma_n}+\theta_1+\dots+\theta_n\ge2\cdot\pi.\eqlbl{eq:gen-fenchel}\]
+
+Consider the tangent indicatrix $\tau_1,\dots,\tau_n$ for each arc $\gamma_1,\dots,\gamma_n$;
+these are smooth spherical arcs.
+
+The same argument as in the proof of Fenchel's theorem, shows that the curves $\tau_1,\dots,\tau_n$ can not lie in an open hemisphere.
+
+Note that the spherical distance from the end point of $\tau_i$ to the starting point of $\tau_{i+1}$ is equal to the external angle $\theta_i$ (we enumerate modulo $n$, so $\gamma_{n+1}=\gamma_1$).
+Let us connect the end point of $\tau_i$ to the starting point of $\tau_{i+1}$ by a short arc of equator;
+this way we add $\theta_1+\dots+\theta_n$ to the total length of $\tau_1,\dots,\tau_n$.
+
+By the hemisphee lemma (\ref{lem:hemisphere}), we get 
+\[\length\tau_1+\dots+\length\tau_n+\theta_1+\dots+\theta_n\ge 2\cdot\pi.\]
+Applying the observation (\ref{obs:tantrix}), we get \ref{eq:gen-fenchel}.
+\qedsf
 
 
+\section*{Polygonal lines}
+
+
+\begin{thm}{Chord lemma}\label{lem:chord}
+Let $\ell$ be the chord to a smooth regular arc $\gamma\:[a,b]\to\RR^3$.
+Assume $\gamma$ meets $\ell$ at angles $\alpha$ and $\beta$ at its ends;
+that is 
+\[\alpha=\measuredangle(w,\gamma'(a))\quad\text{and}\quad \beta=\measuredangle(w,\gamma'(b)),\]
+where $w=\gamma(b)-\gamma(a)$.
+Then 
+\[\tc\gamma\ge \alpha+\beta.\] 
+
+\end{thm}
+
+\begin{wrapfigure}{r}{45 mm}
+\vskip-7mm
+\centering
+\includegraphics{mppics/pic-53}
+\vskip0mm
+\end{wrapfigure}
+
+\parit{Proof.}
+Parameterize $\ell$ from $\gamma(b)$ to $\gamma(a)$ and consider the cyclic concatenation $\bar\gamma$ of $\gamma$ and $\ell$.
+The closed curve $\bar\gamma$ has two external angles $\pi-\alpha$ and $\pi-\beta$;
+therefore 
+\[\tc{\bar\gamma}=\tc\gamma+(\pi-\alpha)+(\pi-\beta).\]
+According to the generalized Fenechel's theorem
+\[\tc{\bar\gamma}\ge 2\cdot\pi,\]
+hence the result.
+\qeds
+
+The following exercise states that the estimate in the chord lemma is optimal.
+
+\begin{thm}{Exercise}
+Given two points $p, q$ and two vectors $v,w$ in $\RR^3$.
+Show that there is a smooth regular curve $\gamma$ that starts at $p$ in the direction of $v$ and ends at $q$ in the direction of $w$ such that 
+$\tc\gamma$ is arbitrary close to $\measuredangle(u,v)+\measuredangle(u,w)$, where $u=q-p$.
+
+\end{thm}
+
+Polygonal lines are partial case of piecewise smooth regular curves;
+each arc in its concatenation is a line segment.
+Since the curvature of a line segment vanish, the total curvature of polygonal line is the sum of its external angles.
+
+\begin{thm}{Exercise}\label{ex:monotonic-tc}
+Let $a,b,c,d$ and $x$ be distinct points in $\RR^3$.
+Show that the total curvature of polygonal line $abcd$ can not exceed the the total curvature of $abxcd$; that is, 
+\[\tc {abcd} \leq \tc {abxcd}.\]
+
+Use this statement to show that any closed polygonal line has curvature at least $2\cdot\pi$.
+\end{thm}
+
+\parit{Hint:} For the second part use induction on number of vertexes.
+
+
+\begin{thm}{Corollary}\label{cor:inscribed-total-curvature}
+Assume a polygonal line $\hat\gamma=p_1\dots p_n$ is inscribed in a smooth regular curve $\gamma$.
+Then 
+\[\tc\gamma\ge \tc{\hat\gamma}.\]
+Moreover if $\gamma$ is closed we can assume that the inscribed polygonal line $\hat\gamma$ is also closed.
+
+\end{thm}
+
+\parit{Proof.}
+Since curvature of line segment vanish, 
+the total curvature of polygonal line is the sum of external angles $\theta_i=\pi-\measuredangle p_{i-1}p_ip_{i+1}$.
+In case of closed curve we use indexes modulo $n$, in particular $p_{n+1}=p_1$.
+
+Assume $p_i=\gamma(t_i)$.
+Set 
+\begin{align*}
+w_i&=p_{i+1}-p_i,& v_i&=\gamma'(t_i),
+\\
+\alpha_i&=\measuredangle (w_i,v_i),&\beta_i&=\measuredangle (w_{i-1},v_i).
+\end{align*}
+
+
+Note that $\theta_i=\measuredangle (w_{i-1},w_i)$.
+Therefore 
+\[\theta_i\le \alpha_i+\beta_i.\]
+By the chord lemma, the total curvature of the arc of $\gamma$ from $p_i$ to $p_{i+1}$ is at least $\alpha_i+\beta_{i+1}$. 
+Therefore if $\gamma$ is a closed curve, we have
+\begin{align*}
+\tc{\hat\gamma}&=\theta_1+\dots+\theta_n\le 
+\\
+&\le\beta_1+\alpha_1+\dots+\beta_n+\alpha_n = 
+\\
+&=(\alpha_1+\beta_2)+\dots+(\alpha_n+\beta_1) \le 
+\\
+&\le \tc\gamma.
+\end{align*}
+If $\gamma$ is an arc, the argument is analogous:
+\begin{align*}
+\tc{\hat\gamma}&=\theta_2+\dots+\theta_{n-1}\le 
+\\
+&\le\beta_2+\alpha_2+\dots+\beta_{n-1}+\alpha_{n-1} \le
+\\
+&\le (\alpha_1+\beta_2)+\dots+(\alpha_{n-1}+\beta_n) \le 
+\\
+&\le \tc\gamma.
+\end{align*}
+\qedsf
+
+\begin{thm}{Exercise}
+\begin{enumerate}[(a)]
+\item Construct a smooth regular curve $\gamma\:[a,b]\to\RR^3$ which has a self-intersection, but $\tc\gamma<2\cdot\pi$.
+\item Show that if a a smooth regular curve $\gamma\:[a,b]\to\RR^3$ has a self-intersection, then $\tc\gamma>\pi$.
+\end{enumerate}
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:fenchel=}
+\begin{enumerate}[(a)]
+ \item Show that the sum of external angles of a space quadraliteral is $2\cdot\pi$ if and only if it is a convex plane qudraliteral; that is if for quadraliteral $abcd$ we have that 
+ \[(\pi-\measuredangle dab)+(\pi-\measuredangle abc)+(\pi-\measuredangle bcd)+(\pi-\measuredangle cda)=2\cdot\pi,\]
+ then $a,b,c$ and $d$ form a convex quadraliteral in a plane. 
+
+ \item\label{ex:fenchel==} Use the previous part and \ref{cor:inscribed-total-curvature} to show that if the total curvature of a smooth regular space curve is equal to $2\cdot\pi$, then it is a convex plane curve.
+\end{enumerate}
+\end{thm}
+
+Note that part (\ref{ex:fenchel==}) of the above inequality describes the equality case in the Fenchel's theorem.
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-20}
+\vskip0mm
+\end{wrapfigure}
+
+\begin{thm}{Exercise}
+Suppose that a closed curve $\gamma$ crosses a line at four points $a$, $b$, $c$ and $d$.
+Assume that the points $a$, $b$, $c$ and $d$ appear on the line in that order and they appear on the curve $\gamma$ in the order $a$, $c$, $b$, $d$.
+Show that 
+\[\tc\gamma\ge 4\cdot\pi.\]
+
+\end{thm}
+
+A line crossing a curve at four points as in the exercise is called \emph{alternating quadrisecants}.
+It turns out that any \emph{nontrivial knot} admits an alternating quadrisecants \cite{denne};
+it implies the so called F\'ary--Milnor theorem --- the total curvature any knot exceeds $4\cdot \pi$.
+
+\section*{Nonsmooth curves*}
+
+In this section we define total curvature of locally simple curves and discuss its properties.
+
+\begin{thm}{Definition}\label{def:total-curv-poly}
+The total curvature of a locally simple curve $\gamma$ is the exact upper bound on the total curvatures of inscribed nondegenerate polygonal lines;
+if $\gamma$ is closed then we assume that the inscribed polygonal lines are closed as well.
+\end{thm}
+
+\begin{thm}{Theorem}\label{thm:total-curvature=}
+For smooth regular curves the two definitions of total curvature agree;
+that is, for any regular curve, the length of its tangent indicatrix is equal to the exact upper bound of the total curvatures of inscribed nondegenerate polygonal lines.
+\end{thm}
+
+\parit{Proof of \ref{thm:total-curvature=}.}
+Let $\gamma\:[a,b]\to\RR^3$ be a smooth curve.
+Fix a partition $a\z=t_0<\dots<t_n=b$ and consider the corresponding inscribed polygonal line $\beta=w_0\dots w_n$.
+Let $\chi=\xi_1\dots\xi_n$ be a spherical polygonal line
+with the vertexes $\xi_i\z=\tfrac{w_i-w_{i-1}}{|w_i-w_{i-1}|}$;
+We can assume that it has constant speed on each arc and $\chi(t_i)=\xi_i$ for each $i$. 
+The spherical polygonal line $\chi$ will be called tangent indicatrix for $\beta$.
+
+Consider a sequence of finer and finer partitions, denote by $\beta_n$ and $\chi_n$ the corresponding inscribed polygonal line and its tangent indicatrix;
+since $\gamma$ is smooth, the $\chi_n$ converge pointwise to $\tau$ --- the thangent indicatrix of $\gamma$.
+By semi-continuity of the length functional, we get  
+\begin{align*}
+\tc\gamma&=\length \tau\le  
+\\
+&\le \liminf_{n\to\infty}\length \chi_n=
+\\
+&= \liminf_{n\to\infty}\tc {\beta_n}\le
+\\
+&\le \sup\{\tc\beta\},
+\end{align*}
+where the last supremum is taken over all partitions and their corresponding inscribed polygonal lines $\beta$.
+
+By \ref{cor:inscribed-total-curvature}, we get that
+\[\tc\gamma\ge \tc\beta\]
+for any polygonal line $\beta$ inscribed in $\gamma$.
+Hence 
+\[\tc\gamma=\sup\{\tc\beta\},\]
+where the least upper bound is taken for all inscribed polygonal lines~$\beta$.
+\qeds
+
+
+\begin{thm}{Exercise}
+Show that the total curvature is lower semi-continuous with respect to pointwise convergence of curves.
+That is, if a sequence
+of curves $\gamma_n\:[a,b]\to \RR^3$ converges pointwise 
+to a curve $\gamma_\infty\:[a,b]\z\to \RR^3$, then 
+\[\liminf_{n\to\infty} \tc{\gamma_n} \ge \tc{\gamma_\infty}.\]
+\end{thm}
+
+\parit{Hint:} Modify the proof of semi-continuity of length (Theorem~\ref{thm:length-semicont}).
+
+\begin{thm}{Exercise}
+Show that Fenchel's theorem holds for any locally simple closed curve $\gamma$;
+that is, 
+\[\tc\gamma\ge2\cdot\pi.\]
+\end{thm}
+
+\begin{thm}{Exercise} 
+Assume that a curve $\gamma\:[a,b]\to\RR^3$ has finite total curvature.
+ Show that $\gamma$ is rectifiable.
+\end{thm}

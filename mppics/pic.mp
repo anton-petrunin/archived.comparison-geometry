@@ -570,7 +570,7 @@ label.urt(btex $a$ etex, z.a);
 label.ulft(btex $b$ etex, z.b);
 label.urt(btex $c$ etex, z.c);
 label.ulft(btex $d$ etex, z.d);
-label.top(btex $\alpha$ etex, point 3.5 of (z.a..z.c..z.b..z.d..cycle));
+label.top(btex $\gamma$ etex, point 3.5 of (z.a..z.c..z.b..z.d..cycle));
 endfig;
 
 beginfig(21) 
@@ -1774,5 +1774,71 @@ label.llft(btex $r^{*}$ etex, -z.r);
 
 label.ulft(btex $\alpha_1$ etex, point 1.6 of p1+(1,0));
 label.ulft(btex $\alpha_1^{*}$ etex, point .6 of p2+(1,0));
+endfig;
+
+beginfig(53) 
+save u;
+u:=1cm;
+
+z.a0=(0,0)*u;
+z.a3=(3,0)*u;
+
+save p; path p[];
+p0=z.a0{1,1}..{.8,-1.2}z.a3;
+z.b0=z.a0+1*direction 0 of p0;
+z.b3=z.a3+.5*direction 3 of p0;
+
+labelarcsprof(z.b0, z.a0, z.a3, 10,7, btex $\alpha$ etex);
+labelarcsprof2(z.a0, z.a3, (z.a3+2*(z.a3-z.b3)), 10,7, btex $\beta$ etex);
+draw p0;
+draw (z.a0+.5*(z.a0-z.b0))--z.b0;
+draw (z.a3+2*(z.a3-z.b3))--z.b3;
+draw z.a0--z.a3;
+drawarrow subpath (0,.5) of p0;
+
+dOt z.a0,z.a3;
+
+
+label.top(btex $\gamma$ etex, point .5 of p0);
+label.bot(btex $\ell$ etex, .5[z.a0,z.a3]);
+label.lft(btex $\gamma(a)$ etex, z.a0+(0,2));
+label.rt(btex $\gamma(b)$ etex, z.a3+(0,2));
+%label.lft(btex $\gamma'(a)$ etex, z.b0);
+%label.rt(btex $\gamma'(b)$ etex, z.b3);
+%label.top(btex $\alpha(b)-\alpha(a)$ etex, .5[z.a0,z.a3]);
+endfig;
+
+beginfig(54) 
+save u;
+u:=1cm;
+
+z.a=(1,2)*u;
+z.a1=(2,1)*u;
+z.a2=(2,.2)*u;
+z.b=(1.5,0)*u;
+z.b1=(1.6,-.3)*u;
+z.b2=(1.5,-1)*u;
+z.c=(1,-1)*u;
+
+save p; path p[];
+p0=z.a{1,-.5}..{-1,-1}z.b;
+p1=z.b{0,-1}..z.b2..{-1,0}z.c;
+
+z.aa=.5*u*unitvector(direction 1 of p0);
+z.bb=.5*u*unitvector(direction 0 of p1);
+
+labelarcsprof(z.b+z.aa, z.b, z.b+z.bb, 10,7, btex $\theta$ etex);
+draw z.b+z.aa--z.b-z.aa;
+draw z.b+z.bb--z.b-z.bb;
+draw p0 penbold;
+draw p1 penbold;
+dOt z.a;
+dOt z.b;
+dOt z.c;
+
+label.lft(btex $\alpha(a)$ etex, z.a);
+label.lft(btex $\alpha(b)=\beta(b)$ etex, z.b);
+label.lft(btex $\beta(c)$ etex, z.c);
+
 endfig;
 end
