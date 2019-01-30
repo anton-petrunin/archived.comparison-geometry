@@ -1893,4 +1893,31 @@ label.rt(btex $p_2$ etex, z.a1);
 label.top(btex $\dots$ etex rotated angle -z.b2, z.a2);
 label.lft(btex $p_n$ etex, z.a3);
 endfig;
+
+beginfig(56) 
+save u;
+u:=1.4cm;
+
+z.a0=(0,0)*u;
+z.a1=(1,1.2)*u;
+z.a2=(0.1,2)*u;
+z.a3=(-1,1.1)*u;
+
+save p; path p[];
+p0=z.a0..tension .8..z.a1..z.a2..z.a3..tension .8..cycle;
+p1=z.a0--z.a1--z.a2--z.a3--cycle;
+
+
+
+draw p0;
+draw p1;
+draw z.a1--z.a3;
+
+dOt z.a0,z.a1,z.a2,z.a3;
+
+label.bot(btex $a$ etex, z.a0);
+label.rt(btex $b$ etex, z.a1);
+label.top(btex $c$ etex, z.a2);
+label.lft(btex $d$ etex, z.a3);
+endfig;
 end

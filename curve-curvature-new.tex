@@ -36,7 +36,7 @@ if you drive along a plane curve, curvature tells how much to turn the steering 
 In general, the term \emph{curvature} is used for different types of geometric objects, and it always measures how much it deviates from being \emph{straight};
 for curves, it it measures how fast it deviates from a straight line.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:curvature-of-spherical-curve}
 Show that any regular smooth spherical curve has curvature at least 1 at each time.
 \end{thm}
 
@@ -261,7 +261,7 @@ hence the result.
 
 The following exercise states that the estimate in the chord lemma is optimal.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:chord-lemma-optimal}
 Show that the estimate in the chord lemma is optimal.
 
 That is, given two points $p, q$ and two nonzero vectors $v,w$ in $\RR^3$.
@@ -307,8 +307,8 @@ w_i&=p_{i+1}-p_i,& v_i&=\gamma'(t_i),
 \end{align*}
 In case of closed curve we use indexes modulo $n$, in particular $p_{n+1}\z=p_1$.
 
-\begin{wrapfigure}{r}{45 mm}
-\vskip-7mm
+\begin{wrapfigure}{r}{40 mm}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-55}
 \vskip0mm
@@ -341,25 +341,66 @@ If $\gamma$ is an arc, the argument is analogous:
 \end{align*}
 \qedsf
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:sef-intersection}
 \begin{enumerate}[(a)]
 \item Construct a smooth regular curve $\gamma\:[a,b]\to\RR^3$ which has a self-intersection, but $\tc\gamma<2\cdot\pi$.
 \item Show that if a smooth regular curve $\gamma\:[a,b]\to\RR^3$ has a self-intersection, then $\tc\gamma>\pi$.
 \end{enumerate}
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:fenchel=}
-\begin{enumerate}[(a)]
- \item Show that the sum of external angles of a space quadraliteral is $2\cdot\pi$ if and only if it is a convex plane qudraliteral;
- that is, if for four points $a,b,c,d\in\RR^3$ we have that 
- \[(\pi-\measuredangle dab)+(\pi-\measuredangle abc)+(\pi-\measuredangle bcd)+(\pi-\measuredangle cda)=2\cdot\pi,\]
- then $abcd$ is a convex quadraliteral in a plane. 
-
- \item\label{ex:fenchel==} Use the previous part and \ref{prop:inscribed-total-curvature} to show that
- the equality case in the Fenchel's theorem holds only for convex plane curves;
-that is, if the total curvature of a smooth regular space curve is equal to $2\cdot\pi$, then it is a convex plane curve.
-\end{enumerate}
+\begin{thm}{Proposition}
+The equality case in the Fenchel's theorem holds only for convex plane curves;
+that is, if the total curvature of a smooth regular space curve $\gamma$ is equal to $2\cdot\pi$, then it is a convex plane curve.
 \end{thm}
+
+The proof is an application of Proposition~\ref{prop:inscribed-total-curvature}.
+
+\parit{Proof.}
+Consider an inscribed quadraliteral $abcd$ in $\gamma$.
+By the definition of total curvature, we have that
+\begin{align*}
+\tc{abcd}&=(\pi-\measuredangle dab)+(\pi-\measuredangle abc)+(\pi-\measuredangle bcd)+(\pi-\measuredangle cda)=
+\\
+&=4\cdot\pi -(\measuredangle dab+\measuredangle abc+\measuredangle bcd+\measuredangle cda))
+\end{align*}
+
+
+Note that 
+\[
+\measuredangle abc\le\measuredangle abd+ \measuredangle dbc
+\quad\text{and}\quad
+\measuredangle cda\le\measuredangle cdb+ \measuredangle bda.
+\eqlbl{eq:spheric-triangle}
+\]
+
+The sum of angles in any triangle is $\pi$.
+Therefore combining these inequalities, we get that 
+\begin{align*}
+\tc{abcd}&\ge 4\cdot \pi 
+- (\measuredangle dab+\measuredangle abd+ \measuredangle bda)
+-(\measuredangle bcd+\measuredangle cdb +\measuredangle dbc)=
+\\
+=2\cdot\pi.
+\end{align*}
+
+\begin{wrapfigure}{r}{40 mm}
+\vskip-7mm
+\centering
+\includegraphics{mppics/pic-56}
+\vskip0mm
+\end{wrapfigure}
+
+By \ref{prop:inscribed-total-curvature},
+\[\tc{abcd}\le \tc\gamma\le 2\cdot\pi.\]
+Therefore in both inequalities \ref{eq:spheric-triangle} we have equalities.
+It means that the point $d$ lies in the angle $abc$ 
+and the point $b$ lies in the angle $cda$.
+That is, $abcd$ is a convex plane quadraliteral.
+
+It follows that any quadraliteral inscribed in $\gamma$ is convex plane quadraliteral.
+Therefore all points of $\gamma$ lie in one plane and the domain bounded by $\gamma$ is convex;
+that is $\gamma$ is a convex plane curve.
+\qeds
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
@@ -368,7 +409,7 @@ that is, if the total curvature of a smooth regular space curve is equal to $2\c
 \vskip0mm
 \end{wrapfigure}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:quadrisecant}
 Suppose that a closed curve $\gamma$ crosses a line at four points $a$, $b$, $c$ and $d$.
 Assume that these points appear on the line in the order $a$, $b$, $c$, $d$
 and they appear on the curve $\gamma$ in the order $a$, $c$, $b$, $d$.
