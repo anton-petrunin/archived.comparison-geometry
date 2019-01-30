@@ -562,15 +562,23 @@ z.b=(1,0)*u;
 z.c=2*z.b;
 z.d=3*z.b;
 
-draw z.a..z.c..z.b..z.d..cycle;
+save p; path p[];
+p0=z.a..z.c..z.b..z.d..cycle;
+
+draw p0;
 draw -.2[z.a,z.d]--1.2[z.a,z.d];
+drawarrow subpath (3.2,3.7) of p0;
+drawarrow subpath (1.2,1.7) of p0;
+drawarrow subpath (.1,.3) of p0;
+drawarrow subpath (2.2,2.7) of p0;
 dOt z.a,z.b,z.c,z.d;
+
 
 label.urt(btex $a$ etex, z.a);
 label.ulft(btex $b$ etex, z.b);
 label.urt(btex $c$ etex, z.c);
 label.ulft(btex $d$ etex, z.d);
-label.top(btex $\gamma$ etex, point 3.5 of (z.a..z.c..z.b..z.d..cycle));
+label.top(btex $\gamma$ etex, point 3.5 of p0);
 endfig;
 
 beginfig(21) 
@@ -1784,17 +1792,18 @@ z.a0=(0,0)*u;
 z.a3=(3,0)*u;
 
 save p; path p[];
-p0=z.a0{1,1}..{.8,-1.2}z.a3;
+p0=z.a0{1,1}..{1,-2}z.a3;
 z.b0=z.a0+1*direction 0 of p0;
 z.b3=z.a3+.5*direction 3 of p0;
 
 labelarcsprof(z.b0, z.a0, z.a3, 10,7, btex $\alpha$ etex);
 labelarcsprof2(z.a0, z.a3, (z.a3+2*(z.a3-z.b3)), 10,7, btex $\beta$ etex);
 draw p0;
-draw (z.a0+.5*(z.a0-z.b0))--z.b0;
-draw (z.a3+2*(z.a3-z.b3))--z.b3;
+draw (z.a0+.5*(z.a0-z.b0))--z.b0 penhair;
+draw (z.a3+2*(z.a3-z.b3))--z.b3 penhair;
 draw z.a0--z.a3;
 drawarrow subpath (0,.5) of p0;
+drawarrow z.a3--.5[z.a0,z.a3];
 
 dOt z.a0,z.a3;
 
@@ -1828,17 +1837,60 @@ z.aa=.5*u*unitvector(direction 1 of p0);
 z.bb=.5*u*unitvector(direction 0 of p1);
 
 labelarcsprof(z.b+z.aa, z.b, z.b+z.bb, 10,7, btex $\theta$ etex);
-draw z.b+z.aa--z.b-z.aa;
-draw z.b+z.bb--z.b-z.bb;
-draw p0 penbold;
-draw p1 penbold;
+draw z.b+z.aa--z.b-z.aa penhair;
+draw z.b+z.bb--z.b-z.bb penhair;
+draw p0;
+draw p1;
 dOt z.a;
 dOt z.b;
 dOt z.c;
 
 label.lft(btex $\alpha(a)$ etex, z.a);
-label.lft(btex $\alpha(b)=\beta(b)$ etex, z.b);
+label.lft(btex $\alpha(b)=\beta(b)$ etex, z.b+(0,2));
 label.lft(btex $\beta(c)$ etex, z.c);
 
+endfig;
+
+beginfig(55) 
+save u;
+u:=1.4cm;
+
+z.a0=(0,0)*u;
+z.a1=(1,1.2)*u;
+z.a2=(0.1,2)*u;
+z.a3=(-1,1.1)*u;
+
+save p; path p[];
+p0=z.a0..tension .8..z.a1..z.a2..z.a3..tension .8..cycle;
+p1=z.a0--z.a1--z.a2--z.a3--cycle;
+
+z.b0= .5*u*unitvector(direction 0 of p0);
+z.b1= .5*u*unitvector(direction 1 of p0);
+z.b2= .5*u*unitvector(direction 2 of p0);
+z.b3= .5*u*unitvector(direction 3 of p0);
+
+labelarcsprof(z.a0+z.b0, z.a0, z.a1, 10,7, btex {\small $\alpha_1$} etex);
+labelarcsprof(z.a1+z.b1, z.a1, z.a2, 10,7, btex {} etex);
+labelarcsprof(z.a2+z.b2, z.a2, z.a3, 10,7, btex {} etex);
+labelarcsprof(z.a3+z.b3, z.a3, z.a0, 10,7, btex {\small $\alpha_n$} etex);
+
+labelarcsprof(z.a0-z.b0, z.a0, z.a3, 10,7, btex {\small $\beta_1$} etex);
+labelarcsprof(z.a1-z.b1, z.a1, z.a0, 10,7, btex {\small $\beta_2$} etex);
+labelarcsprof(z.a2-z.b2, z.a2, z.a1, 10,7, btex {} etex);
+labelarcsprof(z.a3-z.b3, z.a3, z.a2, 10,7, btex {} etex);
+
+draw p0;
+draw p1;
+draw z.a0-z.b0--z.a0+z.b0 penhair;
+draw z.a1-z.b1--z.a1+z.b1 penhair;
+draw z.a2-z.b2--z.a2+z.b2 penhair;
+draw z.a3-z.b3--z.a3+z.b3 penhair;
+
+dOt z.a0,z.a1,z.a2,z.a3;
+
+label.bot(btex $p_1$ etex, z.a0);
+label.rt(btex $p_2$ etex, z.a1);
+label.top(btex $\dots$ etex rotated angle -z.b2, z.a2);
+label.lft(btex $p_n$ etex, z.a3);
 endfig;
 end
