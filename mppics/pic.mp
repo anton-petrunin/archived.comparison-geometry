@@ -1920,4 +1920,30 @@ label.rt(btex $b$ etex, z.a1);
 label.top(btex $c$ etex, z.a2);
 label.lft(btex $d$ etex, z.a3);
 endfig;
+
+beginfig(57) 
+save u;
+u:=1.4cm;
+
+z.a0=(0,0)*u;
+z.a1=(1,1)*u;
+z.a2=(1.5,0)*u;
+
+save p; path p[];
+p0=z.a0..tension .8..z.a1{1,0}..z.a2;
+
+draw p0;
+
+z.b1= .5*u*unitvector(direction 1 of p0);
+
+
+drawarrow z.a1--z.a1+z.b1;
+draw ddline(z.a0,z.a2)(.2,.2);
+dOt z.a0,z.a1,z.a2;
+
+label.bot(btex $\gamma_1(a)$ etex, z.a0);
+label.bot(btex $\gamma_1(s_0)$ etex, z.a1);
+label.bot(btex $\gamma_1(b)$ etex, z.a2);
+label.top(btex $u_1$ etex, z.a1+z.b1);
+endfig;
 end

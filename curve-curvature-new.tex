@@ -3,7 +3,7 @@
 \section*{Acceleration of unit-speed curve}
 
 Recall that any regular smooth curve can be parametrized by its arc length.
-The obtained curve $\gamma$ remains to be smooth and it has unit speed; 
+The obtained curve, say $\gamma$, remains to be smooth and it has unit speed; 
 that is, $|\gamma'(s)|=1$ for all $s$.
 
 The following proposition states that the acceleration vector is perpendicular to the velocity vector if the speed remains constant.
@@ -22,16 +22,17 @@ that is if $v=v(t)$ and $w=w(t)$ are smooth vector-valued functions of a real pa
 The identity $|\gamma'|=1$ can be rewritten as $\langle\gamma',\gamma'\rangle=1$.
 Therefore
 \[2\cdot\langle\gamma'',\gamma'\rangle=\langle\gamma',\gamma'\rangle'=0,\]
-hence the result.
+whence $\gamma''\perp\gamma'$.
 \qeds
 
 \section*{Curvature}
 
 For a unit speed smooth space curve $\gamma$ the magnitude of its acceleration $|\gamma''(s)|$ is called its \emph{curvature} at the time $s$.
 If $\gamma$ is simple, then we can say that $|\gamma''(s)|$ is the curvature at the point $p=\gamma(s)$ without ambiguity.
-The curvature is usually denoted by $k(s)$ or $k_\gamma(s)$ and in the latter case it might be also denoted by $k(p)$ or $k_\gamma(p)$.
+The curvature is usually denoted by $\kur(s)$ or $\kur_\gamma(s)$ %??? do I need it
+and in the latter case it might be also denoted by $\kur(p)$ or $\kur_\gamma(p)$. %??? do I need it
 
-Informally the curvature measures how fast the curve turns;
+The curvature measures how fast the curve turns;
 if you drive along a plane curve, curvature tells how much to turn the steering wheel at the given point (note that it does not depend on your speed).
 In general, the term \emph{curvature} is used for different types of geometric objects, and it always measures how much it deviates from being \emph{straight};
 for curves, it it measures how fast it deviates from a straight line.
@@ -46,10 +47,6 @@ Show that any regular smooth spherical curve has curvature at least 1 at each ti
 
 \section*{Tangent indicatrix}
 
-It is convenient to use arc length parametrization to \emph{define} curvature.
-However, for calculations, it more convenient to use the original description of the given curve
-and its tangent indicatrix described below.
-
 Let $\gamma$ be a regular smooth space curve.
 Let us consider another curve 
 \[\tau(t)=\tfrac{\gamma'(t)}{|\gamma'(t)|}\eqlbl{eq:tantrix}\] 
@@ -60,21 +57,21 @@ Note that points $\tau(t)$ points in the direction tangent to $\gamma$ at the ti
 
 If $\gamma$ has a unit speed parametrization, then $\tau(t)=\gamma'(t)$.
 In this case we have the following expression for curvature: 
-$k(t)=|\tau'(t)|=|\gamma''(t)|$.
+$\kur(t)=|\tau'(t)|=|\gamma''(t)|$.
 
 In general case we have 
-\[ k(t)=\tfrac{|\tau'(t)|}{|\gamma'(t)|}.\eqlbl{eq:curvature}\]
+\[ \kur(t)=\tfrac{|\tau'(t)|}{|\gamma'(t)|}.\eqlbl{eq:curvature}\]
 Indeed, for an arc length parametrization $s(t)$ we have $s'(t)=|\gamma'(t)|$.
 Therefore
 \begin{align*}
-k(t)&=|\tfrac{d\tau}{ ds}|=
+\kur(t)&=|\tfrac{d\tau}{ ds}|=
 \\
 &=|\tfrac{d\tau}{ dt}|/|\tfrac{ds}{ dt}|=
 \\
 &=\tfrac{|\tau'(t)|}{|\gamma'(t)|}.
 \end{align*}
 
-Note that indicatrix $\tau$ of a smooth regular curve $\gamma$ is regular if the curvature of $\gamma$ does not vanish. 
+Note that indicatrix of a smooth regular curve $\gamma$ is regular if the curvature of $\gamma$ does not vanish. 
 
 
 \begin{thm}{Exercise}\label{ex:curvature-formulas}
@@ -82,9 +79,9 @@ Use the formulas \ref{eq:tantrix} and \ref{eq:curvature} to show that
 for any smooth regular space curve $\gamma$ we have the following expressions for its curvature:
 
 \begin{enumerate}[(a)]
-\item\label{ex:curvature-formulas:a} \[k(t)=\frac{|\gamma''(t)^\perp|}{|\gamma'(t)|^2},\]
-where $\gamma''(t)^\perp$ denotes the projection of $\gamma''(t)$ to the perpendicular plane to $\gamma'(t)$;
-\item \[k(t)=\frac{|\gamma''(t)\times \gamma'(t)|}{|\gamma'(t)|^{3}},\]
+\item\label{ex:curvature-formulas:a} \[\kur(t)=\frac{|\gamma''(t)^\perp|}{|\gamma'(t)|^2},\]
+where $\gamma''(t)^\perp$ denotes the projection of $\gamma''(t)$ to the normal plane of $\gamma'(t)$;
+\item \[\kur(t)=\frac{|\gamma''(t)\times \gamma'(t)|}{|\gamma'(t)|^{3}},\]
 where $\times$ denotes the \emph{vector product} (also known as \emph{cross product}).
 \end{enumerate}
 \end{thm}
@@ -100,24 +97,25 @@ where $\times$ denotes the \emph{vector product} (also known as \emph{cross prod
 \begin{thm}{Exercise}\label{ex:curvature-graph}
 Apply the formulas in the previous exercise to show that if $f$ is a smooth real function,
 then its graph $y=f(x)$  has curvature
-\[k(p)=\frac{|f''(x)|}{(1+f'(x)^2)^{\frac32}}\]
+\[\kur(p)=\frac{|f''(x)|}{(1+f'(x)^2)^{\frac32}}\]
 at the point $p=(x,f(x))$.
 \end{thm}
 
 \section*{Total curvature}
 
-Let $\gamma\:[a,b]\to\RR^3$ be a regular smooth curve and $\tau$ its \emph{tangent indicatrix}.
+Let $\gamma\:[a,b]\to\RR^3$ be a regular smooth curve and $\tau$ its tangent indicatrix.
 Recall that without loss of generality we can assume that $\gamma$ has a unit speed parametrization;
 in this case $\tau(s)=\gamma'(s)$ and hence
-\[k(s)\df|\gamma''(s)|=|\tau'(s)|,\] 
-that is, the curvature of $\gamma$ at time $s$ is the speed of the \emph{tangent indicatrix} $\tau$ at the same time moment.
+\[\kur(s)\df|\gamma''(s)|=|\tau'(s)|;\] 
+that is, the curvature of $\gamma$ at time $s$ is the speed of the tangent indicatrix $\tau$ at the same time moment.
 
 The integral 
-\[\tc\gamma:=\int_a^bk(s)\cdot ds\]
-is called \emph{total curvature of} $\gamma$.
+\[\tc\gamma:=\int_a^b\kur(s)\cdot ds\]
+is called \emph{total curvature of}\label{page:total curvature of:smooth-def}
+$\gamma$.
 
 \begin{thm}{Exercise}\label{ex:helix-curvature}
-Find the curvature of helix $\gamma_a(t)=(a\cdot \cos t,a\cdot \sin t,t)$, its tangent indicatrix and the total curvature of its arc $t\in[0,2\cdot\pi]$.
+Find the curvature of the helix \[\gamma_{a,b}(t)=(a\cdot \cos t,a\cdot \sin t,b\cdot t),\] its tangent indicatrix and the total curvature of its arc $t\in[0,2\cdot\pi]$.
 \end{thm}
 
 \begin{thm}{Observation}\label{obs:tantrix}
@@ -129,7 +127,7 @@ It is sufficient to prove the observation for a unit-speed space curve $\gamma\:
 Denote by $\tau$ its tangent indicatrix.
 Then
 \begin{align*}
-\tc\gamma&\df\int_a^bk(s)\cdot ds=
+\tc\gamma&\df\int_a^b\kur(s)\cdot ds=
 \\
 &=\int_a^b|\tau'(s)|\cdot ds=
 \\
@@ -172,7 +170,7 @@ Then one can combine these two curves into one $\gamma\:[a,c]\z\to \RR^3$ by the
 \end{cases}
 \]
 The obtained curve $\gamma$ is called the 
-\emph{concatenation} of $\alpha$ and $\beta$; briefly $\gamma=\alpha{*}\beta$.
+\emph{concatenation} of $\alpha$ and $\beta$. %briefly $\gamma=\alpha{*}\beta$.
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
@@ -185,12 +183,10 @@ $(a,b]$ and/or $[b,c)$.
 
 The concatenation can be also defined if the end point of the first curve coincides with the starting point of the second curve; if this is the case, the time intervals of both curves can be shifted so that they fit together. 
 
-If in addition $\beta(c)=\alpha(a)$ then we can do cyclic concatination of these curves and obtain a closed curve.
+If in addition $\beta(c)=\alpha(a)$ then we can do cyclic concatination of these curves;
+this way we obtain a closed curve.
 
 If $\alpha'(b)$ and $\beta'(b)$ are defined then the angle $\theta=\measuredangle(\alpha'(b),\beta'(b))$ is called \emph{external angle} of $\gamma$ at time $b$.
-Note that a concatenation of smooth regular curves might be not smooth;
-if external angle does not vanish then the concatenation is not smooth.
-
 
 A space curve $\gamma$ is called \emph{piecewise smooth and regular} if it can be presented as a concatination of finite number of smooth regular curves; if $\gamma$ is closed, then the  concatination is assumed to be cyclic.
 
@@ -203,7 +199,7 @@ if $\gamma$ is closed, then
 where $\theta_n$ is the external angle at the joint $\gamma_n$ and $\gamma_1$.
 
 \begin{thm}{Generalized Fenchel's theorem}\label{thm:gen-fenchel}
-Let $\gamma$ be a piecewise smooth regular space curve.
+Let $\gamma$ be a closed piecewise smooth regular space curve.
 Then 
 \[\tc\gamma\ge2\cdot\pi.\]
 
@@ -221,10 +217,9 @@ these are smooth spherical arcs.
 The same argument as in the proof of Fenchel's theorem, shows that the curves $\tau_1,\dots,\tau_n$ can not lie in an open hemisphere.
 
 Note that the spherical distance from the end point of $\tau_i$ to the starting point of $\tau_{i+1}$ is equal to the external angle $\theta_i$ (we enumerate modulo $n$, so $\gamma_{n+1}=\gamma_1$).
-Let us connect the end point of $\tau_i$ to the starting point of $\tau_{i+1}$ by a short arc of a great circle in the sphere;
-this way we add $\theta_1+\dots+\theta_n$ to the total length of $\tau_1,\dots,\tau_n$.
+Therefore if we connect the end point of $\tau_i$ to the starting point of $\tau_{i+1}$ by a short arc of a great circle in the sphere, then we add $\theta_1+\dots+\theta_n$ to the total length of $\tau_1,\dots,\tau_n$.
 
-By the hemisphee lemma (\ref{lem:hemisphere}), we get 
+Applying the hemisphee lemma (\ref{lem:hemisphere}) to the obtained closed curve, we get that
 \[\length\tau_1+\dots+\length\tau_n+\theta_1+\dots+\theta_n\ge 2\cdot\pi.\]
 Applying the observation (\ref{obs:tantrix}), we get \ref{eq:gen-fenchel}.
 \qedsf
@@ -250,23 +245,21 @@ Then
 %??? is it really due to Reshetnyak???
 
 \parit{Proof.}
-Parameterize $\ell$ from $\gamma(b)$ to $\gamma(a)$ and consider the cyclic concatenation $\bar\gamma$ of $\gamma$ and $\ell$.
+Let us parameterize the chord $\ell$ from $\gamma(b)$ to $\gamma(a)$ and consider the cyclic concatenation $\bar\gamma$ of $\gamma$ and $\ell$.
 The closed curve $\bar\gamma$ has two external angles $\pi-\alpha$ and $\pi-\beta$.
 Since curvature of $\ell$ vanish, we get that 
 \[\tc{\bar\gamma}=\tc\gamma+(\pi-\alpha)+(\pi-\beta).\]
-According to the generalized Fenechel's theorem
-\[\tc{\bar\gamma}\ge 2\cdot\pi,\]
+According to the generalized Fenechel's theorem (\ref{thm:gen-fenchel}),
+\[\tc{\bar\gamma}\ge 2\cdot\pi;\]
 hence the result.
 \qeds
-
-The following exercise states that the estimate in the chord lemma is optimal.
 
 \begin{thm}{Exercise}\label{ex:chord-lemma-optimal}
 Show that the estimate in the chord lemma is optimal.
 
-That is, given two points $p, q$ and two nonzero vectors $v,w$ in $\RR^3$.
-Show that there is a smooth regular curve $\gamma$ that starts at $p$ in the direction of $v$ and ends at $q$ in the direction of $w$ such that 
-$\tc\gamma$ is arbitrary close to $\measuredangle(u,v)+\measuredangle(u,w)$, where $u=q-p$.
+That is, given two points $p, q$ and two nonzero vectors $u,v$ in $\RR^3$.
+Show that there is a smooth regular curve $\gamma$ that starts at $p$ in the direction of $u$ and ends at $q$ in the direction of $v$ such that 
+$\tc\gamma$ is arbitrary close to $\measuredangle(w,u)+\measuredangle(w,v)$, where $w=q-p$.
 
 \end{thm}
 
@@ -344,7 +337,7 @@ If $\gamma$ is an arc, the argument is analogous:
 \begin{thm}{Exercise}\label{ex:sef-intersection}
 \begin{enumerate}[(a)]
 \item Construct a smooth regular curve $\gamma\:[a,b]\to\RR^3$ which has a self-intersection, but $\tc\gamma<2\cdot\pi$.
-\item Show that if a smooth regular curve $\gamma\:[a,b]\to\RR^3$ has a self-intersection, then $\tc\gamma>\pi$.
+\item\label{ex:sef-intersection:>pi} Show that if a smooth regular curve $\gamma\:[a,b]\to\RR^3$ has a self-intersection, then $\tc\gamma>\pi$.
 \end{enumerate}
 \end{thm}
 
@@ -392,14 +385,14 @@ Therefore combining these inequalities, we get that
 
 By \ref{prop:inscribed-total-curvature},
 \[\tc{abcd}\le \tc\gamma\le 2\cdot\pi.\]
-Therefore in both inequalities \ref{eq:spheric-triangle} we have equalities.
+Therefore we have equalities in \ref{eq:spheric-triangle}.
 It means that the point $d$ lies in the angle $abc$ 
 and the point $b$ lies in the angle $cda$.
 That is, $abcd$ is a convex plane quadraliteral.
 
 It follows that any quadraliteral inscribed in $\gamma$ is convex plane quadraliteral.
 Therefore all points of $\gamma$ lie in one plane and the domain bounded by $\gamma$ is convex;
-that is $\gamma$ is a convex plane curve.
+that is, $\gamma$ is a convex plane curve.
 \qeds
 
 \begin{wrapfigure}{r}{30 mm}
@@ -422,6 +415,104 @@ A line crossing a curve at four points as in the exercise is called \emph{altern
 It turns out that any \emph{nontrivial knot} admits an alternating quadrisecants \cite{denne};
 it implies the so called F\'ary--Milnor theorem --- \emph{the total curvature any knot exceeds $4\cdot \pi$}.
 
+\section*{Bow lemma}
+
+\begin{thm}{Lemma}
+Let $\gamma_1\:[a,b]\to\RR^2$ and $\gamma_2\:[a,b] \to\RR^3$ be two smooth unit-speed curves;
+denote by $\kur_1(s)$ and $\kur_2(s)$ their curvatures at $s$.
+Suppose that $\kur_1(s)\ge\kur_2(s)$ for any $s$ 
+and the curve
+$\gamma_1$ is a simple arc of a convex curve; that is, it runs in the boundary of a covex plane figure.
+Then the distance between the ends of $\gamma_1$ can not axceed the  distance between the ends of $\gamma_2$; that is,
+\[|\gamma_1(b)-\gamma_1(a)|\le |\gamma_2(b)-\gamma_2(a)|.\]
+
+\end{thm}
+
+\begin{wrapfigure}{r}{36 mm}
+\vskip-7mm
+\centering
+\includegraphics{mppics/pic-57}
+\vskip0mm
+\end{wrapfigure}
+
+\parit{Proof.}
+Denote by $\tau_1$ and $\tau_2$ the tangent indicatrixes of $\gamma_1$ and $\gamma_2$ correspondingly.
+
+Let $\gamma_1(s_0)$ be the point on $\gamma_1$ that maximize the distance to the line 
+thru $\gamma(a)$ and $\gamma(b)$.
+Consider two unit vectors 
+\[u_1=\tau_1(s_0)=\gamma_1'(s_0)
+\quad\text{and}\quad
+u_2=\tau_2(s_0)=\gamma_2'(s_0).\]
+By construction the vector $u_1$ is parallel to $\gamma(b)-\gamma(a)$ in particular
+\[|\gamma_1(b)-\gamma_1(a)|=\langle u_1,\gamma_1(b)-\gamma_1(a)\rangle \]
+
+Since $\gamma_1$ is an arc of convex curve, it indicatrix $\tau(s)$ runs in one direction along the unit circle.
+Suppose $s\le s_0$, then 
+\begin{align*}
+\measuredangle(\gamma'_1(s),u_1)&=\measuredangle(\tau_1(s),\tau_1(s_0))=
+\\
+&=\length (\tau_1|_{[s,s_0]})=
+\\
+&=\int_s^{s_0}|\tau_1'(t)|\cdot d t=
+\\
+&=\int_s^{s_0}\kur_1(t)\cdot d t\ge
+\\
+&\ge
+\int_s^{s_0}\kur_2(t)\cdot d t=
+\\
+&=\int_s^{s_0}|\tau_2'(t)|\cdot d t= 
+\\
+&=\length (\tau_1|_{[s,s_0]})\ge
+\\
+&\ge \measuredangle(\tau_2(s),\tau_2(s_0))=
+\\
+&= \measuredangle(\gamma'_2(s),u_2),
+\end{align*}
+The same argument shows that 
+\[\measuredangle(\gamma'_1(s),u_1)\ge \measuredangle(\gamma'_2(s),u_2)\]
+for $s\ge s_0$; therefore the inequality holds for any $s$. 
+Since the vectors $\gamma'_1(s),u_1,\gamma'_2(s),u_2$ are unit, it follwos that 
+\[\langle\gamma'_1(s),u_1\rangle\le \langle\gamma'_2(s),u_2\rangle.\]
+Integrating the last inequality, we get that 
+\begin{align*}
+|\gamma_1(b)-\gamma_1(a)|&=\langle u_1,\gamma_1(b)-\gamma_1(a)\rangle=
+\\
+&=\int_a^b\langle u_1,\gamma'_1(s)\rangle\cdot ds \le 
+\\
+&\le\int_a^b\langle u_2,\gamma'_2(s)\rangle\cdot ds =
+\\
+&=\langle u_2,\gamma_2(b)-\gamma_2(a)\rangle \le
+\\
+&\le |\gamma_2(b)-\gamma_2(a)|.
+\end{align*}
+Hence the result.\qeds
+
+\begin{thm}{Exercise}\label{ex:length-dist}
+Let $\gamma\:[a,b]\to \RR^3$ be a smooth regular curve and $0<\theta\le\tfrac\pi2$.
+Suppose 
+\[\tc\gamma\le 2\cdot\theta.\]
+\begin{enumerate}[(a)]
+\item\label{ex:length-dist:>} Show that 
+\[|\gamma(b)-\gamma(a)|> \cos\theta\cdot\length\gamma.\]
+\item Use part (\ref{ex:length-dist:>}) to give another solution of \ref{ex:sef-intersection}\ref{ex:sef-intersection:>pi}.
+\item Show that the inequality in (\ref{ex:length-dist:>}) is optimal; that is, given 
+$\theta$ there is a smooth regular curve $\gamma$ such that $\frac{|\gamma(b)-\gamma(a)|}{\length\gamma}$ is arbitrary close to $\cos\theta$.
+
+\end{enumerate}
+
+
+
+
+\end{thm}
+
+\parit{Hint:}
+Choose a value $s_0\in[a,b]$ that splits the total curvature into two equal parts, $\theta$ in each.
+Observe that $\measuredangle(\gamma'(s_0),\gamma'(s))\le \theta$ for any~$s$.
+Use this inequality the same way as in the proof of the bow lemma.
+
+
+
 \section*{Nonsmooth curves*}
 
 \begin{thm}{Theorem}\label{thm:total-curvature=}
@@ -436,7 +527,7 @@ Note that the inequality
 \[\tc\gamma\ge \tc\beta\]
 follows from \ref{prop:inscribed-total-curvature};
 it remains to show 
-\[\tc\gamma\le\tc\beta. \eqlbl{eq:tc=<tc}\]
+\[\tc\gamma\le\sup\{\tc\beta\}. \eqlbl{eq:tc=<tc}\]
 
 Let $\gamma\:[a,b]\to\RR^3$ be a smooth curve.
 Fix a partition $a\z=t_0\z<\dots<t_n=b$ and consider the corresponding inscribed polygonal line $\beta=p_0\dots p_n$.
@@ -447,7 +538,7 @@ with the vertexes $\xi_i\z=\tfrac{p_i-p_{i-1}}{|p_i-p_{i-1}|}$.
 We can assume that $\chi$ has constant speed on each arc and $\chi(t_i)=\xi_i$ for each $i$. 
 The spherical polygonal line $\chi$ will be called tangent indicatrix for $\beta$.
 
-Consider a sequence of finer and finer partitions, denote by $\beta_n$ and $\chi_n$ the corresponding inscribed polygonal line and their tangent indicatrixes.
+Consider a sequence of finer and finer partitions, denote by $\beta_n$ and $\chi_n$ the corresponding inscribed polygonal lines and their tangent indicatrixes.
 Note that since $\gamma$ is smooth, the idicatrixes $\chi_n$ converge pointwise to $\tau$ --- the thangent indicatrix of $\gamma$.
 By semi-continuity of the length (\ref{thm:length-semicont}), we get that  
 \begin{align*}
@@ -470,7 +561,6 @@ The total curvature of a nontrivial parameterized space curve $\gamma$ is the ex
 if $\gamma$ is closed then we assume that the inscribed polygonal lines are closed as well.
 \end{thm}
 
-
 \begin{thm}{Exercise}
 Show that the total curvature is lower semi-continuous with respect to pointwise convergence of curves.
 That is, if a sequence
@@ -490,4 +580,116 @@ that is,
 \begin{thm}{Exercise} 
 Assume that a curve $\gamma\:[a,b]\to\RR^3$ has finite total curvature.
  Show that $\gamma$ is rectifiable.
+\end{thm}
+
+A good survey on curves of finite total curvature is written by John Sullivan \cite{sullivan-curves}.
+
+\section*{DNA inequality*}
+
+Recall that curvature of a spherical curve is at least $1$
+(Exercise~\ref{ex:curvature-of-spherical-curve}).
+In particular the length of spherical curve can not exceed its total curvature.
+The following theorem shows that the same inequality holds for \emph{closed} curves in a unit ball.
+
+\begin{thm}{Theorem}\label{thm:DNA}
+Let $\gamma$ be a nontrivial closed curve that lies in a unit ball.
+Then 
+\[\tc\gamma\ge \length\gamma.\]
+
+\end{thm}
+
+In the proof we use \ref{def:total-curv-poly} to define for the total curvature;
+according to \ref{thm:total-curvature=}, it is more general than the smooth definition on page \pageref{page:total curvature of:smooth-def}.
+
+\parit{Proof.}
+We will show that 
+\[\tc\gamma> \length\gamma.\]
+for any closed polygonal line $\gamma=p_1\dots p_{n}$ in a unit ball.
+It implies the theorem since in any nontrivial closed curve we can inscribe a closed polygonal line with arbitrary close total curvature and length.
+
+The indexes are taken modulo $n$, in particular $p_{n}=p_0$, $p_{n+1}=p_1$ and so on.
+Denote by $\theta_i$ the external angle of $\gamma$ at $p_i$;
+that is,
+\[\theta_i=\pi-\measuredangle p_{i-1}p_ip_{i+1}.\]
+
+Denote by $o$ the center of the ball.
+Consider a sequence of $n+1$ plane triangles
+\begin{align*}
+\triangle q_0s_0q_1
+&\cong 
+\triangle p_0op_1,
+\\
+\triangle q_1s_1q_2
+&\cong 
+\triangle p_1op_2,
+\\
+&\dots
+\\
+\triangle q_{n}s_nq_{n+1}
+&\cong 
+\triangle p_nop_{n+1},
+\end{align*}
+such that the points $q_0,q_1\dots$ lie on one line in that order and all the points $s_0,\dots,s_n$ lie on one side from this line.
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-16}
+\vskip0mm
+\end{figure}
+
+Since $p_0=p_n$ and $p_1=p_{n+1}$, we have that
+\[\triangle q_{n}s_nq_{n+1}\cong 
+\triangle p_nop_{n+1}=\triangle p_0op_1\cong\triangle q_{0}s_0q_1,\]
+so $s_0q_0q_ns_n$ is a parallelogram.
+Therefore
+\begin{align*}
+|s_0-s_1|+\dots+|s_{n-1}-s_n|
+&\ge|s_n-s_0|=
+\\
+&=|q_0-q_n|=
+\\
+&=|p_0-p_1|+\dots+|p_{n-1}-p_n|
+\\
+&=\length \gamma.
+\end{align*}
+
+Note that 
+\begin{align*}
+\theta_i&=\pi-\measuredangle p_{i-1}p_ip_{i+1}\ge
+\\
+&\ge\pi-\measuredangle p_{i-1}p_io-\measuredangle op_ip_{i+1}=
+\\
+&=\pi-\measuredangle q_{i-1}q_is_{i-1}-\measuredangle s_iq_iq_{i+1}=
+\\
+&=\measuredangle s_{i-1}q_is_i>
+\\
+&>|s_{i-1}-s_i|;
+\end{align*}
+the last inequality follows since $|q_i-s_{i-1}|=|q_i-s_i|=|p_i-o|\le 1$.
+That is, 
+\[\theta_i>|s_{i-1}-s_i|\]
+for each $i$.
+
+It follows that
+\begin{align*}
+\tc \gamma
+&=\theta_1+\dots+\theta_n>
+\\
+&> |s_{0}-s_1|+\dots |s_{n-1}-s_n|\ge 
+\\
+&\ge\length \gamma.
+\end{align*}
+Hence the result.
+\qeds
+
+Other proofs of this theorem are discussed by Serge Tabachnikov \cite{tabachnikov}.
+The following closely related result is annoyingly difficult;
+it was proved by Jeffrey Lagarias and Thomas Richardson in \cite{lagarias-richardso}, a simpler proof was given by Alexander Nazarov and Fedor Petrov in \cite{nazarov-petrov}.
+
+\begin{thm}{Theorem}
+Suppose a closed regular smooth curve $\gamma$ lies in a convex figure with the perimeter $2\cdot \pi$.
+Then 
+\[\tc\gamma\ge \length\gamma.\]
+
 \end{thm}

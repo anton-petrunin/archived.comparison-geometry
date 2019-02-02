@@ -1,0 +1,159 @@
+\chapter{Torsion}
+
+\section*{Frenet frame}
+Let $\gamma$ be a smooth regular space curve.
+Without loss of generality, we may assume that $\gamma$ has arc length parametrization,
+so the velocity vector $\tau(s)=\gamma'(s)$ is unit.
+
+Assume its curvature does not vanish at some time moment $s$;
+that is $\gamma''(s)\ne 0$.
+Then we can define the so called \emph{normal vector} at $s$ as
+\[\nu(s)=\frac{\gamma''(s)}{|\gamma''(s)|}.\]
+Note that 
+\[\tau'(s)=\gamma''(s)=\kur(s)\cdot\nu(s).\]
+
+According to \ref{prop:a'-pertp-a''}, $\nu(s)\perp \tau(s)$.
+Therefore the vector product 
+\[\beta(s)=\tau(s)\times \nu(s)\]
+is a unit vector which makes the triple $\tau(s),\nu(s),\beta(s)$ an oriented orthonormal basis in $\RR^3$;
+in particular, we have that
+\[\begin{aligned}
+\langle\tau,\tau\rangle&=1,
+&
+\langle\nu,\nu\rangle&=1,
+&
+\langle\beta,\beta\rangle&=1,
+\\
+\langle\tau,\nu\rangle&=0,
+&
+\langle\nu,\beta\rangle&=0,
+&
+\langle\beta,\tau\rangle&=0.
+\end{aligned}
+\eqlbl{eq:orthornomal}
+\]
+
+The vector $\beta(s)$ is called \emph{binormal} vector at $s$.
+The orthonormal basis $\tau(s),\nu(s),\beta(s)$ is called \emph{Frenet frame} at $s$; the vectors in the frame are called \emph{tangent}, \emph{normal} and \emph{binormal} correspondingly.
+Recall that Frenet frame $\tau(s),\nu(s),\beta(s)$ is defined if $k(s)\ne 0$.
+
+The line thru $\gamma(s)$ in the direction of $\tau(s)$ is called \emph{thangent line} at $s$.
+
+The plane thru $\gamma(s)$ spanned by vectors $\tau(s)$ and $\nu(s)$ is called \emph{osculating plane} at $s$;
+equivalently it can be defined as a plane thru $\gamma(s)$ that is perpendicular to the binormal vector $\beta(s)$.
+This plane has \emph{second order of contact} with $\gamma$ at $s$;
+that is, $r(\ell)=o(\ell^2)$, where $r(\ell)$ the distance from $\gamma(s+\ell)$ to the osculating plane at $s$.
+
+\section*{Torsoion}
+
+Let $\gamma$ be a smooth unit-speed space curve
+and $\tau(s),\nu(s),\beta(s)$ is its Frenet frame.
+The value 
+\[\tor(s)=\langle \nu'(s),\beta(s)\rangle\]
+is called \emph{torsion} of $\gamma$ at $s$.
+
+Note that the torsion $\tor(s)$ is defined at each $s$ with nonzero curvature.
+Indeed, if $k(s)\ne 0$ then Frenet frame $\tau(s),\nu(s),\beta(s)$ is defined at $s$.
+Moreover since $k(s)$ is continuous, it is positive in an open ineteval containing $s$ and Frenet frame is also defined in this interval.
+Clearly $\tau(s)$, $\nu(s)$ and $\beta(s)$ depend smoothly on $s$ in their domains of definition.
+Therefore $\nu'(s)$ is defined and so is the torsion $\tor(s)$.
+
+The torsion measures how fast the osculating plane rotated when one travels along $\gamma$.
+
+\begin{thm}{Exercise}\label{ex:helix-torsion}
+Given real numbers $a$ and $b$, calculate curvature and torsion of the helix
+\[\gamma_{a,b}(t)=(a\cdot \cos t,a\cdot\sin t, b\cdot t).\]
+
+Conclude that for any $\kur>0$ and $\tor$ there is a helix with constant curvature $\kur$ and torsion $\tor$.
+\end{thm}
+
+
+\section*{Frenet formulas}
+
+Assume the Frenet frame $\tau(s),\nu(s),\beta(s)$ of curve $\gamma$ is defined at $s$.
+Recall that 
+\[\tau'(s)=\kur(s)\cdot \nu(s).
+\eqlbl{eq:frenet-tau}\]
+Let us  express the remaining derivatives $\nu'(s)$ and $\beta'(s)$ using the frame $\tau(s),\nu(s),\beta(s)$.
+
+First let us show that
+\[\nu'(s)=-\kur(s)\cdot\tau(s)+\tor(s)\cdot\beta(s).\eqlbl{eq:frenet-nu}\]
+
+Since the frame $\tau(s),\nu(s),\beta(s)$ is orthonormal it is equivalent to the following three identities:
+\begin{align*}
+\langle \nu',\tau\rangle&=-\kur,
+&
+\langle \nu',\nu\rangle&=0,
+&
+\langle \nu',\beta\rangle&=\tor,
+\end{align*}
+The last identity follows from the definition of torsion.
+Differentiating $\langle \nu,\nu\rangle\z=1$ in \ref{eq:orthornomal}, we get that
+\[2\cdot\langle \nu',\nu\rangle=0;\]
+whence the second identity follows.
+Let us differentiate the identity $\langle\tau,\nu\rangle=0$ in \ref{eq:orthornomal};
+we get that
+\[\langle\tau',\nu\rangle+\langle\tau,\nu'\rangle=0.\]
+Applying \ref{eq:frenet-tau}, we get that
+\begin{align*}
+\langle \nu',\tau\rangle&=-\langle\tau',\nu\rangle=
+\\
+&=-\langle\kur\cdot\nu,\nu\rangle=
+\\
+&=-\kur.
+\end{align*}
+It proves the first equality $\langle \nu',\tau\rangle=-\kur$, 
+whence \ref{eq:frenet-nu} follows.
+
+Taking derivatives of the third identity in \ref{eq:orthornomal}, we get that $\beta'\perp\beta$.
+Further taking derivatives of the other identities with $\beta$ in \ref{eq:orthornomal}, we get that 
+\begin{align*}
+\langle\beta',\tau\rangle&=-\langle\beta,\tau'\rangle=-\langle\beta,\kur\cdot\nu\rangle=0
+\\
+\langle\beta',\nu\rangle&=-\langle\beta,\nu'\rangle=\tor
+\end{align*}
+That is,
+\[\beta'(s)=-\tor(s)\cdot\nu(s).\eqlbl{eq:frenet-beta}\]
+
+The equations \ref{eq:frenet-tau}, \ref{eq:frenet-nu} and \ref{eq:frenet-beta} are called Frenet formulas.
+They could be written in a matrix formulas
+\[
+\begin{pmatrix}
+\tau'
+\\
+\nu'
+\\
+\beta'
+\end{pmatrix}
+=
+\begin{pmatrix}
+0&\kur&0
+\\
+-\kur&0&\tor
+\\
+0&-\tor&0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+\tau
+\\
+\nu
+\\
+\beta
+\end{pmatrix}.
+\]
+
+\begin{thm}{Exercise}
+Deduce the formula \ref{eq:frenet-beta} from  \ref{eq:frenet-tau} and \ref{eq:frenet-nu} by differentiating the identity
+$\beta=\tau\times \nu$.
+\end{thm}
+
+\begin{thm}{Exercise} 
+Let $\gamma$ be a regular space curve with nonvanishing curvature.
+Show that $\gamma$ lies in a plane if and only if its torsion vanishes.
+\end{thm}
+
+\parit{Hint:} 
+Show and use that the binormal vector is constant.
+
+
