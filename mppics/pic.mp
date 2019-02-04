@@ -604,8 +604,8 @@ draw p1;
 
 dOt (point 1.3 of p0);
 
-label.lrt(btex $\alpha$ etex, point 3 of p0);
-label.urt(btex $\gamma$ etex, point 1 of p1);
+label.lrt(btex $\gamma$ etex, point 3 of p0);
+label.urt(btex $\sigma$ etex, point 1 of p1);
 
 endfig;
 
@@ -1946,4 +1946,27 @@ label.bot(btex $\gamma_1(s_0)$ etex, z.a1);
 label.bot(btex $\gamma_1(b)$ etex, z.a2);
 label.top(btex $u_1$ etex, z.a1+z.b1);
 endfig;
+
+beginfig(58) 
+save u;
+u:=1cm;
+
+z.o=origin;
+z.v=(1,.3)*u;
+z.iv=z.v rotated 90;
+
+mark_rt_angle(z.v, z.o, z.iv);
+
+drawarrow z.o--z.v;
+drawarrow z.o--z.iv;
+
+dOt z.o;
+
+label.top(btex $w$ etex, z.v);
+label.top(btex $i\cdot w$ etex, z.iv);
+
+
+
+endfig;
+
 end

@@ -116,7 +116,7 @@ Most of the time we use $s$ for an arc length parameter of a curve.
 
 \begin{thm}{Exercise}\label{ex:arc-length-helix}
 Reparametrize the helix 
-$\gamma_a(t)=(a\cdot\cos t,a\cdot \sin t,t)$
+\[\gamma_{a,b}(t)=(a\cdot\cos t,a\cdot \sin t, b\cdot t)\]
 by arc length.
 \end{thm}
 
@@ -333,7 +333,9 @@ that is $\length\alpha_\infty=\infty$.
 In this case we can choose a partition so that $\Sigma_\infty>L$ for any real number $L$.
 By \ref{>=Sigma-infty} it follows that 
 $$\liminf_{n\to\infty} \length\alpha_n > L$$
-for any $L$; whence $\liminf_{n\to\infty}=\infty$ and \ref{eq:semicont-length} follows.
+for any $L$; whence 
+\[\liminf_{n\to\infty}\length\alpha_n=\infty\]
+and \ref{eq:semicont-length} follows.
 \qeds
 
 \section*{Length metric}
@@ -378,7 +380,7 @@ Let us denote by $\SS^2$ the unit sphere in the space; that is,
 Show that
 \[|u-v|_{\SS^2}=\measuredangle(u,v)\df\arccos\langle u,v\rangle\]
 for any $u,v\in \SS^2$.
-\end{thm}
+\end{thm} %???spherical geometry
 
 \parit{Hint:} Use Exercise~\ref{ex:S1-intrinsic} and the following map $f\:(r,\theta,\phi)\mapsto (r,\theta,0)$ in spherical coordinates. Note that $f$ is distance nonexpanding and it maps $\RR^3$ to a half-plane and $\SS^2$ to one of its meridians.
 

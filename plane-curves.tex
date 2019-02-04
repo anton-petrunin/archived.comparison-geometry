@@ -1,0 +1,209 @@
+\chapter{Plane curves}
+
+\section*{Signed curvature}
+
+Suppose $\gamma$ is a smooth unit-speed plane curve,
+so $\tau(s)=\gamma'(s)$ is its unit tangent vector.
+
+Let us rotate $\tau(s)$ by angle $\tfrac\pi 2$ counterclockwise; 
+denote the obtained vector by $\nu(s)$.
+The pair $\tau(s),\nu(s)$ is an oriented orthonormal frame in the plane which is analogous to the Frenet frame for space curves; we will keep the name \emph{Frenet frame} for it.
+
+Recall that $\gamma''(s)\perp \gamma'(s)$ (\ref{prop:a'-pertp-a''}).
+Therefore 
+\[\tau'(s)=\skur(s)\cdot \nu(s).\eqlbl{eq:tau'}\]
+for some real number $\skur(s)$;
+the value $\skur(s)$ is called \emph{signed curvature} of $\gamma$ at $s$.
+Note that up to sign it equals to the curvature of $\gamma$ at $s$ as it defined o page \pageref{page:curvature};
+the sign tells which direction $\gamma$ turns --- if it turns left, then it is positive.
+
+Note that if we reverse the parametrization of $\gamma$ or change the orientation of the plane, then
+the signed curvature changes its sign.
+
+Since $\tau(s),\nu(s)$ is an orthonormal frame, we get that 
+\begin{align*}
+\langle\tau,\tau\rangle&=1,
+&
+\langle\nu,\nu\rangle&=1,
+&
+\langle\tau,\nu\rangle&=0,
+\end{align*}
+Differentiating these idenitites we get that 
+\begin{align*}
+\langle\tau',\tau\rangle&=0,
+&
+\langle\nu',\nu\rangle&=0,
+&
+\langle\tau',\nu\rangle+\langle\tau,\nu'\rangle&=0,
+\end{align*}
+By \ref{eq:tau'}, $\langle\tau',\nu\rangle=\skur$ and therefore $\langle\tau,\nu'\rangle=-\skur$.
+Whence we get 
+\[\nu'(s)=-\skur(s)\cdot \tau(s).\eqlbl{eq:nu'}\]
+The equations \ref{eq:tau'} and \ref{eq:nu'} are plane analogs of the Frenet formulas. 
+They could be also written in a matrix form:
+\[
+\begin{pmatrix}
+\tau'
+\\
+\nu'
+\end{pmatrix}
+=
+\begin{pmatrix}
+0&\kur
+\\
+-\kur&0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+\tau
+\\
+\nu
+\end{pmatrix}.
+\]
+
+
+The following theorem is analogous to the fundamental theorem of curves (\ref{thm:fund-curves}) and it can be proved along the same lines.
+
+\begin{thm}{Theorem}\label{thm:fund-curves-2D}
+Let $\skur(s)$ be two smooth real valued functions defined on a real interval $\mathbb{I}$.
+Then there is a smooth unit-speed curve $\gamma\:\mathbb{I}\to\RR^2$ with signed curvature $\kur(s)$ at every $s$.
+Moreover $\gamma$ is uniquely defined up to a rigid motion of the plane.
+\end{thm}
+
+\section*{Osculating circline}
+
+As a direct corollary of Theorem~\ref{thm:fund-curves-2D}, we get the following:
+
+\begin{thm}{Proposition}\label{prop:circline}
+Given a point $p$,
+a unit vector $\tau$ 
+and a real number $\skur$, there is a unique smooth unit-speed curve $\sigma\:\RR\to\RR^2$ 
+that starts at $p$ in the direction of $\tau$ and has constant signed curvature $\skur$.
+
+Moreover, if $\skur=0$, then $\sigma$ runs along the line $\sigma=p+s\cdot \tau$
+and if $\skur\ne 0$, then $\sigma$ runs around the circle of radius $\tfrac1{|\skur|}$ and center $p+\tfrac1\skur\cdot \nu$, where $\tau,\nu$ is an oriented orthonoral frame.
+\end{thm}
+
+Further we will use the term \emph{circline} for \emph{a circle or a line}.
+
+{
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-21}
+\vskip0mm
+\end{wrapfigure}
+
+\begin{thm}{Definition}
+Let $\gamma$ be a smooth unit-speed plane curve;
+denote by $\skur(s)$ the signed curvature of $\gamma$ at $s$.
+
+For $s_0 \in [a,b]$, the unit-speed curve $\sigma$ of constant signed curvature $\skur(s_0)$ that starts at $\gamma(s_0)$ in the direction $\gamma'(s_0)$ is called the \emph{osculating circline} of $\gamma$ at $s_0$.
+\end{thm}
+
+}
+
+The center and radius of the osculating circle at a given point are called \emph{center of curvature} and \emph{radius of curvature} of the curve at that point.
+
+This is a unique circline that has \emph{second order of contact} with $\gamma$ at $s$;
+that is, $\rho(\ell)=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to the osculating circline at $s$.
+
+\section*{Spiral lemma}
+\label{spiral}
+
+The following lemma was proved by Peter Tait \cite{tait}
+and later rediscovered by Adolf Kneser \cite{kneser}.
+
+\begin{thm}{Lemma}
+Assume that $\gamma$ is a smooth regular plane curve with strictly decreasing positive signed curvature. Then the osculating circles of $\gamma$ are nested; that is, if $\sigma_s$ denoted the osculating circle of $\gamma$ at $s$,
+then $\sigma_{s_0}$ lies in the open disc bounded by $\sigma_{s_1}$ for any $s_0<s_1$. 
+\end{thm}
+
+\begin{wrapfigure}{o}{25 mm}
+\begin{lpic}[t(-0 mm),b(-2 mm),r(0 mm),l(0 mm)]{pics/kneser-log(1)}
+\end{lpic}
+\end{wrapfigure} %???change pic
+
+It turnes out that osculating circles of the curve $\gamma$ give a peculiar foliation of an annulus by circles; it has the following property: if a smooth function is constant on each osculating circle it must be constant in the annulus \cite[see][Lecture 10]{fuchs-tabachnikov}.
+Also note that the curve $\gamma$ is tangent to a circle of the foliation at each of its points. However, it does not run along a circle.
+
+\parit{Proof.}
+Let $\tau(s),\nu(s)$ be the Frenet frame,
+$z(s)$ the curvature center
+and $r(s)$
+the radius of curvature of $\gamma$ at $s$.
+Recall that $r(s)\cdot\skur(s)=1$.
+By \ref{prop:circline},
+\[z(s)=\gamma(s)+r(s)\cdot \nu(s).\]
+
+Applying Frenet formula \ref{eq:nu'}, we get that
+\begin{align*}
+z'(s)&=\gamma'(s)+r'(s)\cdot \nu(s)+r(s)\cdot \nu'(s)=
+\\
+&=\tau(s)+r'(s)\cdot \nu(s)-r(s)\cdot \skur(s)\cdot \tau(s)=
+\\
+&=r'(s)\cdot \nu(s).
+\end{align*}
+Since $\skur(s)$ is decreasing, $r(s)$ is increasing;
+therefore $r'\ge 0$.
+It follows that $|z'(s)|= r'(s)$ and $z'(s)$ points in the direction of $\nu(s)$.
+
+Since $\nu'(s)=-\skur(s)\cdot\tau(s)$, the directiion of $z'(s)$ always rotates;
+that is, the curve $s\mapsto z(s)$ does not have straight arcs.
+It follows that 
+\[
+\begin{aligned}
+|z(s_1)-z(s_0)|&<\length(z|_{[s_0,s_1]})=
+\\
+&=\int_{s_0}^{s_1}|z'(s)|\cdot ds=
+\\
+&=\int_{s_0}^{s_1}r'(s)\cdot ds=
+\\
+&=r(s_1)-r(s_0).
+\end{aligned}
+\leqno({*})
+\]
+In other words, the distance between the centers of $\siga_{s_1}$ and $\sigma_{s_0}$
+is less than the difference between their raduses.
+Therefore the osculating circle at $s_0$ lies inside the osculating circle at $s_1$ without touching it.
+\qeds
+
+The following theorem states that 
+if you drive on the plane and turn the steering wheel to the right all the time,
+then you will not be able to come back to the same place.
+
+\begin{thm}{Theorem}\label{thm:spiral}
+Assume $\gamma$ is a smooth regular plane curve with strictly monotonic curvature. 
+Then $\gamma$ is simple.
+\end{thm}
+
+\parit{Proof of \ref{thm:spiral}.}
+Note that $\gamma(s)\in \sigma_s$ for any $s$.
+Applying the lemma we get
+$\gamma(s_1)\ne \gamma(s_0)$ if $s_1\ne s_0$.
+Hence the result.\qeds
+
+The same statement also holds for signed curvature; the proof requires only minor modifications.
+
+\begin{thm}{Exercise}
+Show that a 3-dimensional analog of the theorem does not hold.
+That is, there are self-intersecting smooth regular space curves with strictly monotonic curvature.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:double-tangent}
+Assume that $\gamma$ is a smooth regular plane curve with positive strictly monotonic signed curvature.
+\begin{enumerate}[(a)]
+\item\label{ex:double-tangent:a}Show that no line can be tangent to $\gamma$ at two distinct points.
+\item Show that no circle can be tangent to $\gamma$ at three distinct points. 
+\end{enumerate}
+\end{thm} %???monotone or monotonic???
+
+\begin{wrapfigure}{r}{35 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-25}
+\vskip0mm
+\end{wrapfigure}
+
+Note that part (\ref{ex:double-tangent:a}) does not hold if we alow the curvature to be negative; an example is shown on the diagram.

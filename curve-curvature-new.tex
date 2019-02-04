@@ -1,4 +1,4 @@
-\chapter{Curvature of space curves}
+\chapter{Space curves}
 
 \section*{Acceleration of unit-speed curve}
 
@@ -28,6 +28,7 @@ whence $\gamma''\perp\gamma'$.
 \section*{Curvature}
 
 For a unit speed smooth space curve $\gamma$ the magnitude of its acceleration $|\gamma''(s)|$ is called its \emph{curvature} at the time $s$.
+\label{page:curvature}
 If $\gamma$ is simple, then we can say that $|\gamma''(s)|$ is the curvature at the point $p=\gamma(s)$ without ambiguity.
 The curvature is usually denoted by $\kur(s)$ or $\kur_\gamma(s)$ %??? do I need it
 and in the latter case it might be also denoted by $\kur(p)$ or $\kur_\gamma(p)$. %??? do I need it
@@ -53,7 +54,8 @@ Let us consider another curve
 that is called \emph{tangent indicatrix} of $\gamma$.
 Note that $|\tau(t)|=1$ for any $t$;
 that is, $\tau$ is a spherical curve.
-Note that points $\tau(t)$ points in the direction tangent to $\gamma$ at the time $t$.
+
+The line thru $\gamma(s)$ in the direction of $\tau(s)$ is called \emph{thangent line} at $s$.
 
 If $\gamma$ has a unit speed parametrization, then $\tau(t)=\gamma'(t)$.
 In this case we have the following expression for curvature: 
@@ -103,14 +105,14 @@ at the point $p=(x,f(x))$.
 
 \section*{Total curvature}
 
-Let $\gamma\:[a,b]\to\RR^3$ be a regular smooth curve and $\tau$ its tangent indicatrix.
+Let $\gamma\:\mathbb{I}\to\RR^3$ be a regular smooth curve and $\tau$ its tangent indicatrix.
 Recall that without loss of generality we can assume that $\gamma$ has a unit speed parametrization;
 in this case $\tau(s)=\gamma'(s)$ and hence
 \[\kur(s)\df|\gamma''(s)|=|\tau'(s)|;\] 
 that is, the curvature of $\gamma$ at time $s$ is the speed of the tangent indicatrix $\tau$ at the same time moment.
 
 The integral 
-\[\tc\gamma:=\int_a^b\kur(s)\cdot ds\]
+\[\tc\gamma:=\int_{\mathbb{I}}\kur(s)\cdot ds\]
 is called \emph{total curvature of}\label{page:total curvature of:smooth-def}
 $\gamma$.
 
@@ -123,13 +125,13 @@ The total curvature of a smooth regular curve is the length of its tangent indic
 \end{thm}
 
 \parit{Proof.}
-It is sufficient to prove the observation for a unit-speed space curve $\gamma\:[a,b]\to\RR^3$.
+It is sufficient to prove the observation for a unit-speed space curve $\gamma\:\mathbb{I}\to\RR^3$.
 Denote by $\tau$ its tangent indicatrix.
 Then
 \begin{align*}
-\tc\gamma&\df\int_a^b\kur(s)\cdot ds=
+\tc\gamma&\df\int_{\mathbb{I}}\kur(s)\cdot ds=
 \\
-&=\int_a^b|\tau'(s)|\cdot ds=
+&=\int_{\mathbb{I}}|\tau'(s)|\cdot ds=
 \\
 &=\length\tau.
 \end{align*}
@@ -178,7 +180,7 @@ The obtained curve $\gamma$ is called the
 \includegraphics{mppics/pic-54}
 \end{wrapfigure}
 
-The same definition of cancatination $\alpha{*}\beta$ can be applied if $\alpha$ and/or $\beta$ are defied on semiopen intervals 
+The same definition of cancatination can be applied if $\alpha$ and/or $\beta$ are defied on semiopen intervals 
 $(a,b]$ and/or $[b,c)$.
 
 The concatenation can be also defined if the end point of the first curve coincides with the starting point of the second curve; if this is the case, the time intervals of both curves can be shifted so that they fit together. 
@@ -277,7 +279,9 @@ Show that the total curvature of polygonal line $abcd$ can not exceed the the to
 Use this statement to show that any closed polygonal line has curvature at least $2\cdot\pi$.
 \end{thm}
 
-\parit{Hint:} For the second part use induction on number of vertexes.
+\parit{Hint:} 
+Use that exterior angle of a triangle equals to the sum of the two remote interior angles;
+for the second part apply the induction on number of vertexes.
 
 \begin{thm}{Proposition}\label{prop:inscribed-total-curvature}
 Assume a polygonal line $\hat\gamma=p_1\dots p_n$ is inscribed in a smooth regular curve $\gamma$.
@@ -288,8 +292,15 @@ Moreover if $\gamma$ is closed we can assume that the inscribed polygonal line $
 \end{thm}
 
 \parit{Proof.}
-Since curvature of line segment vanish, 
+Since the curvature of line segments vanishes, 
 the total curvature of polygonal line is the sum of external angles $\theta_i=\pi-\measuredangle p_{i-1}p_ip_{i+1}$.
+
+\begin{wrapfigure}{o}{40 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-55}
+\vskip0mm
+\end{wrapfigure}
 
 Assume $p_i=\gamma(t_i)$.
 Set 
@@ -299,13 +310,6 @@ w_i&=p_{i+1}-p_i,& v_i&=\gamma'(t_i),
 \alpha_i&=\measuredangle (w_i,v_i),&\beta_i&=\measuredangle (w_{i-1},v_i).
 \end{align*}
 In case of closed curve we use indexes modulo $n$, in particular $p_{n+1}\z=p_1$.
-
-\begin{wrapfigure}{r}{40 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-55}
-\vskip0mm
-\end{wrapfigure}
 
 Note that $\theta_i=\measuredangle (w_{i-1},w_i)$.
 Therefore 
@@ -579,7 +583,9 @@ that is,
 
 \begin{thm}{Exercise} 
 Assume that a curve $\gamma\:[a,b]\to\RR^3$ has finite total curvature.
- Show that $\gamma$ is rectifiable.
+Show that $\gamma$ is rectifiable.
+
+Construct a rectifiable curve $\gamma\:[a,b]\to\RR^3$ that has infinite total curvature.
 \end{thm}
 
 A good survey on curves of finite total curvature is written by John Sullivan \cite{sullivan-curves}.
@@ -683,9 +689,10 @@ It follows that
 Hence the result.
 \qeds
 
-Other proofs of this theorem are discussed by Serge Tabachnikov \cite{tabachnikov}.
-The following closely related result is annoyingly difficult;
-it was proved by Jeffrey Lagarias and Thomas Richardson in \cite{lagarias-richardso}, a simpler proof was given by Alexander Nazarov and Fedor Petrov in \cite{nazarov-petrov}.
+This theorem was proved by Don Chakerian \cite{chakerian};
+for plane curves it was prved earlier by Istv\'{a}n F\'{a}ry \cite{fary-DNA}.
+Few proofs of this theorem are discussed by Serge Tabachnikov~\cite{tabachnikov}.
+He also conjectured the following closely related statement:
 
 \begin{thm}{Theorem}
 Suppose a closed regular smooth curve $\gamma$ lies in a convex figure with the perimeter $2\cdot \pi$.
@@ -693,3 +700,6 @@ Then
 \[\tc\gamma\ge \length\gamma.\]
 
 \end{thm}
+
+It was proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso}; latter a simpler proof was given by Alexander Nazarov and Fedor Petrov~\cite{nazarov-petrov}.
+The proof is annoyingly difficult; we do not present it here.

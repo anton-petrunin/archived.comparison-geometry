@@ -6,7 +6,7 @@ Without loss of generality, we may assume that $\gamma$ has arc length parametri
 so the velocity vector $\tau(s)=\gamma'(s)$ is unit.
 
 Assume its curvature does not vanish at some time moment $s$;
-that is $\gamma''(s)\ne 0$.
+in other words, $\gamma''(s)\ne 0$.
 Then we can define the so called \emph{normal vector} at $s$ as
 \[\nu(s)=\frac{\gamma''(s)}{|\gamma''(s)|}.\]
 Note that 
@@ -33,18 +33,15 @@ in particular, we have that
 \eqlbl{eq:orthornomal}
 \]
 
-The vector $\beta(s)$ is called \emph{binormal} vector at $s$.
 The orthonormal basis $\tau(s),\nu(s),\beta(s)$ is called \emph{Frenet frame} at $s$; the vectors in the frame are called \emph{tangent}, \emph{normal} and \emph{binormal} correspondingly.
-Recall that Frenet frame $\tau(s),\nu(s),\beta(s)$ is defined if $k(s)\ne 0$.
-
-The line thru $\gamma(s)$ in the direction of $\tau(s)$ is called \emph{thangent line} at $s$.
+Note that the frame $\tau(s),\nu(s),\beta(s)$ is defined only if $k(s)\ne 0$.
 
 The plane thru $\gamma(s)$ spanned by vectors $\tau(s)$ and $\nu(s)$ is called \emph{osculating plane} at $s$;
 equivalently it can be defined as a plane thru $\gamma(s)$ that is perpendicular to the binormal vector $\beta(s)$.
-This plane has \emph{second order of contact} with $\gamma$ at $s$;
-that is, $r(\ell)=o(\ell^2)$, where $r(\ell)$ the distance from $\gamma(s+\ell)$ to the osculating plane at $s$.
+This a unique plane that has \emph{second order of contact} with $\gamma$ at $s$;
+that is, $\rho(\ell)=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to the osculating plane at $s$.
 
-\section*{Torsoion}
+\section*{Torsion}
 
 Let $\gamma$ be a smooth unit-speed space curve
 and $\tau(s),\nu(s),\beta(s)$ is its Frenet frame.
@@ -54,7 +51,8 @@ is called \emph{torsion} of $\gamma$ at $s$.
 
 Note that the torsion $\tor(s)$ is defined at each $s$ with nonzero curvature.
 Indeed, if $k(s)\ne 0$ then Frenet frame $\tau(s),\nu(s),\beta(s)$ is defined at $s$.
-Moreover since $k(s)$ is continuous, it is positive in an open ineteval containing $s$ and Frenet frame is also defined in this interval.
+Moreover since the function $s\mapsto k(s)$ is continuous, it must be positive in an open interval containing $s$;
+therefore Frenet frame is also defined in this interval.
 Clearly $\tau(s)$, $\nu(s)$ and $\beta(s)$ depend smoothly on $s$ in their domains of definition.
 Therefore $\nu'(s)$ is defined and so is the torsion $\tor(s)$.
 
@@ -74,7 +72,7 @@ Assume the Frenet frame $\tau(s),\nu(s),\beta(s)$ of curve $\gamma$ is defined a
 Recall that 
 \[\tau'(s)=\kur(s)\cdot \nu(s).
 \eqlbl{eq:frenet-tau}\]
-Let us  express the remaining derivatives $\nu'(s)$ and $\beta'(s)$ using the frame $\tau(s),\nu(s),\beta(s)$.
+Let us write the remaining derivatives $\nu'(s)$ and $\beta'(s)$ in the frame $\tau(s),\nu(s),\beta(s)$.
 
 First let us show that
 \[\nu'(s)=-\kur(s)\cdot\tau(s)+\tor(s)\cdot\beta(s).\eqlbl{eq:frenet-nu}\]
@@ -91,18 +89,18 @@ The last identity follows from the definition of torsion.
 Differentiating $\langle \nu,\nu\rangle\z=1$ in \ref{eq:orthornomal}, we get that
 \[2\cdot\langle \nu',\nu\rangle=0;\]
 whence the second identity follows.
-Let us differentiate the identity $\langle\tau,\nu\rangle=0$ in \ref{eq:orthornomal};
+Differentiating the identity $\langle\tau,\nu\rangle\z=0$ in \ref{eq:orthornomal};
 we get that
 \[\langle\tau',\nu\rangle+\langle\tau,\nu'\rangle=0.\]
 Applying \ref{eq:frenet-tau}, we get that
 \begin{align*}
 \langle \nu',\tau\rangle&=-\langle\tau',\nu\rangle=
 \\
-&=-\langle\kur\cdot\nu,\nu\rangle=
+&=-\kur\cdot\langle\nu,\nu\rangle=
 \\
 &=-\kur.
 \end{align*}
-It proves the first equality $\langle \nu',\tau\rangle=-\kur$, 
+It proves the first equality $\langle \nu',\tau\rangle=-\kur$; 
 whence \ref{eq:frenet-nu} follows.
 
 Taking derivatives of the third identity in \ref{eq:orthornomal}, we get that $\beta'\perp\beta$.
@@ -116,7 +114,7 @@ That is,
 \[\beta'(s)=-\tor(s)\cdot\nu(s).\eqlbl{eq:frenet-beta}\]
 
 The equations \ref{eq:frenet-tau}, \ref{eq:frenet-nu} and \ref{eq:frenet-beta} are called Frenet formulas.
-They could be written in a matrix formulas
+All three can be written as one matrix identity:
 \[
 \begin{pmatrix}
 \tau'
@@ -156,4 +154,174 @@ Show that $\gamma$ lies in a plane if and only if its torsion vanishes.
 \parit{Hint:} 
 Show and use that the binormal vector is constant.
 
+\section*{Curves of constant slope}
 
+We say that a smooth regular space curve $\gamma$ has \emph{constant slope} if its velocity vector makes a constant angle with a fixed direction.
+The following theorem was proved by Michel Ange Lancret~\cite{lancret} more than two century ago.
+
+\begin{thm}{Theorem}
+Let $\gamma$ be a smooth regular curve with nonvanishing curvature.
+Then $\gamma$ has constant slope if and only if the ratio $\tfrac\tor\kur$ is constant; here $\kur$ and $\tor$
+denote the curvature and torsion of $\gamma$.
+\end{thm}
+
+The following exercise will guide you thru the proof of the theorem. 
+
+\begin{thm}{Exercise} \label{ex:lancret}
+Suppose that $\gamma$ is a smooth regular space curve with nonvanishing curvature, $\tau,\nu,\beta$ 
+is its Frenet frame and $\kur$, $\tor$ are its curvature and torsion.
+\begin{enumerate}[(a)]
+\item\label{ex:lancret:a} 
+Assume that  $\langle w,\tau\rangle$ is constant for a fixed nonzero vector $w$.
+Show that 
+\[\langle w, \nu\rangle =0.\]
+Use it to show that 
+\[\langle w, -\kur\cdot\tau+\tor\cdot \beta\rangle =0.\]
+Use these two identities to show that $\tfrac\tor\kur$ is constant;
+it proves the ``only if'' part of the theorem.
+
+\item Assume that $\tfrac\tor\kur$ is constant, show that the vector $w=\tfrac\tor\kur\cdot \tau+\beta$ is constant.
+Conclude that $\gamma$ is has constant slope; it proves the ``if'' part of the theorem.
+\end{enumerate}
+\end{thm}
+
+Assume $\gamma$ is a smooth unit speed curve and $s_0$ is a fixed real number.
+Then the curve 
+\[\alpha(s)=\gamma(s)+(s_0-s)\cdot \gamma'(s)\]
+is called \emph{evolvent} of $\gamma$.
+
+\begin{thm}{Exercise} 
+Show that evolvent of a constant slope curve lies in a plane.
+\end{thm}
+
+\parit{Hint:} 
+Show that $\langle w,\alpha\rangle$ is constant if $\gamma$ makes constant angle with a fixed vector $w$ and $\alpha$ is the evolvent of $\gamma$.
+ 
+\section*{Fundamental theorem of curves}
+
+\begin{thm}{Theorem}\label{thm:fund-curves}
+Let $\kur(s)$ and $\tor(s)$ be two smooth real valued functions defined on a real interval $\mathbb{I}$.
+Suppose $\kur(s)>0$ for any $s$.
+Then there is a smooth unit-speed curve $\gamma\:\mathbb{I}\to\RR^3$ with curvature $\kur(s)$ and torsion $\tor(s)$ for every $s$.
+Moreover $\gamma$ is uniquely defined up to a rigid motion of the space.
+\end{thm}
+
+\parit{Proof.}
+Fix a parameter value $s_0$, a point $\gamma(s_0)$ and an oriented orthonormal frame $\tau(s_0)$, $\nu(s_0)$, $\beta(s_0)$.
+Consider the following initial value problem: 
+\[
+\begin{cases}
+\gamma'=\tau,
+\\
+\tau'=\kur\cdot\nu,
+\\
+\nu'=-\kur\cdot\tau+\tor\cdot\beta,
+\\
+\beta'=-\tor\cdot\nu.
+\end{cases}
+\]
+It has four vector equations, so it can be rewritten as a system of 12 scalar equations.
+By \ref{thm:ODE}, it has a solution which is defined in a maximal subinterval $\mathbb{J}$ containing $s_0$.
+
+Note that 
+\begin{align*}
+\langle\tau,\tau\rangle'
+&=
+2\cdot\langle\tau,\tau'\rangle
+=
+2\cdot\kur\cdot \langle\tau,\nu\rangle
+=
+0,
+\\
+\langle\nu,\nu\rangle'
+&=
+2\cdot\langle\nu,\nu'\rangle
+=
+-
+2\cdot\kur\cdot\langle\nu,\tau\rangle
++
+2\cdot\tor\cdot\langle\nu,\beta\rangle
+=
+0,
+\\
+\langle\beta,\beta\rangle'
+&=
+2\cdot\langle\beta,\beta'\rangle
+=
+-2\cdot\tor\langle\beta,\nu\rangle
+=
+0,
+\\
+\langle\tau,\nu\rangle'
+&=
+\langle\tau',\nu\rangle
++
+\langle\tau,\nu'\rangle
+=
+\kur\cdot\langle\nu,\nu\rangle
+-
+\kur\cdot\langle\tau,\tau\rangle
++
+\tor\cdot\langle\tau,\beta\rangle
+=
+0,
+\\
+\langle\nu,\beta\rangle'
+&=
+\langle\nu',\beta\rangle+\langle\nu,\beta'\rangle
+=0,
+\\
+\langle\beta,\tau\rangle'
+&=
+\langle\beta',\tau\rangle+\langle\beta,\tau'\rangle
+=
+-\tor\cdot \langle\nu,\tau\rangle
++\kur\cdot\langle\beta,\nu\rangle
+=0.
+\end{align*}
+That is, the values 
+$\langle\tau,\tau\rangle$,
+$\langle\nu,\nu\rangle$,
+$\langle\beta,\beta\rangle$,
+$\langle\tau,\nu\rangle$,
+$\langle\tau,\nu\rangle$,
+$\langle\beta,\tau\rangle$
+are constant functions of $s$.
+Since we choose $\tau(s_0)$, $\nu(s_0)$, $\beta(s_0)$ to be an oriented orthonormal frame, we have that the $\tau(s)$, $\nu(s)$, $\beta(s)$ is oriented orthonormal for any $s$.
+
+In particular $|\gamma'(s)|=1$ for any $s$.
+
+Assume $\mathbb{J}\ne \mathbb{I}$.
+Then an end of $\mathbb{J}$, say $a$, lies in the interior of $\mathbb{I}$.
+By Theorem~\ref{thm:ODE}, at least one of the values $\gamma(s)$, $\tau(s)$, $\nu(s)$, $\beta(s)$
+escapes to infinity as $s\to a$.
+But this is impossible since the vectors $\tau(s)$, $\nu(s)$, $\beta(s)$ remain unit and $|\gamma'(s)|=|\tau(s)|=1$ --- a contradiction.
+Whence $\mathbb{J}= \mathbb{I}$.
+
+Assume there are two curves $\gamma_1$ and $\gamma_2$ with the given curvature and torsion functions.
+Applying a motion of the space we can assume that the $\gamma_1(s_0)=\gamma_2(s_0)$ and the Frenet frames of the curves coincide at $s_0$.
+Then $\gamma_1=\gamma_2$ by uniqueness of solution of the system (\ref{thm:ODE}).
+That is, the curve is unique up to a rigid motion of the space.
+\qeds
+
+\begin{thm}{Exercise}
+Assume a curve $\gamma\:\RR\to\RR^3$ has constant curvature and torsion.
+Show that $\gamma$ is a helix, possibly degenerate to a circle;
+that is, in a suitable coordinate system we have
+\[\gamma(t)=(a\cdot \cos t,a\cdot\sin t, b\cdot t)\]
+for some constants $a$ and $b$.
+\end{thm}
+
+\parit{Hint:} Use the second statement in Exercise \ref{ex:helix-torsion}.
+Use 
+
+
+\begin{thm}{Advanced exercise}
+Let $\gamma$ be a smooth regular space curve such that the distance $|\gamma(t)-\gamma(t+\ell)|$ depends only on $\ell$.
+Show that $\gamma$ is a helix, possibly degenerate to a line or a circle.
+\end{thm}
+
+\parit{Hint:} Note that 
+\[\rho(\ell)=|\gamma(t+\ell)-\gamma(t)|^2=\langle \gamma(t+\ell)-\gamma(t),\gamma(t+\ell)-\gamma(t)\rangle\] 
+is a smooth function that does not depend on $t$.
+Express speed, curvature and torsion of $\gamma$ in terms of derivatives $\rho^{(n)}(0)$.
