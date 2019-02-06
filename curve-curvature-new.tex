@@ -160,6 +160,26 @@ Applying the observation (\ref{obs:tantrix}) and the hemisphere lemma (\ref{lem:
 \[\tc\gamma=\length \tau\ge2\cdot\pi.\]
 \qedsf
 
+\begin{thm}{Exercise}\label{ex:length>=2pi}
+Show that a closed space curve $\gamma$ with curvature at most~$1$ can not be shorter than the unit circle;
+that is, $\length\gamma\ge 2\cdot \pi$.
+\end{thm}
+
+
+\begin{thm}{Advanced exercise}
+Suppose that $\gamma$ is a smooth regular space curve that does not pass thru the origin.
+Consider the spherical curve defined as $\sigma(t)=\frac{\gamma(t)}{|\gamma(t)|}$ for any $t$.
+Show that 
+\[\length \sigma< \tc\gamma+\pi.\]
+Moreover, if $\gamma$ is closed, then
+\[\length \sigma\le \tc\gamma.\]
+\end{thm}
+
+Note that the last inequality gives an alternative proof of Fenchel's theorem.
+Indeed, without loss of generality we can assume that the origin lies on a chord of $\gamma$;
+in this case the spherical curve $\sigma$ passes thru a apir of antipodal points in $\mathbb{S}^2$
+whence $\length\sigma\ge 2\cdot\pi$.
+
 \section*{Piecewise smooth curves}
 
 Assume $\alpha\:[a,b]\to \RR^3$ and $\beta\:[b,c]\z\to \RR^3$ are two curves such that $\alpha(b)=\beta(b)$.
@@ -340,7 +360,7 @@ If $\gamma$ is an arc, the argument is analogous:
 
 \begin{thm}{Exercise}\label{ex:sef-intersection}
 \begin{enumerate}[(a)]
-\item Construct a smooth regular curve $\gamma\:[a,b]\to\RR^3$ which has a self-intersection, but $\tc\gamma<2\cdot\pi$.
+\item Draw a smooth regular plane curve $\gamma$ which has a self-intersection, such that $\tc\gamma<2\cdot\pi$.
 \item\label{ex:sef-intersection:>pi} Show that if a smooth regular curve $\gamma\:[a,b]\to\RR^3$ has a self-intersection, then $\tc\gamma>\pi$.
 \end{enumerate}
 \end{thm}
@@ -505,9 +525,6 @@ $\theta$ there is a smooth regular curve $\gamma$ such that $\frac{|\gamma(b)-\g
 
 \end{enumerate}
 
-
-
-
 \end{thm}
 
 \parit{Hint:}
@@ -515,6 +532,15 @@ Choose a value $s_0\in[a,b]$ that splits the total curvature into two equal part
 Observe that $\measuredangle(\gamma'(s_0),\gamma'(s))\le \theta$ for any~$s$.
 Use this inequality the same way as in the proof of the bow lemma.
 
+\begin{thm}{Exercise}\label{ex:schwartz}
+Suppose that two points $p$ and $q$ lie on a unit circle and dividing it in two arcs with lengths $\ell_1<\ell_2$.
+Show that if a curve $\gamma$ runs from $p$ to $q$ and has curvature at most 1,
+then either
+\[\length \gamma\le \ell_1
+\quad\text{or}\quad
+\length \gamma\ge \ell_2.
+\]
+\end{thm} %H. A. Schwartz???
 
 
 \section*{Nonsmooth curves*}

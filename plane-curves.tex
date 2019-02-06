@@ -39,7 +39,7 @@ Differentiating these idenitites we get that
 By \ref{eq:tau'}, $\langle\tau',\nu\rangle=\skur$ and therefore $\langle\tau,\nu'\rangle=-\skur$.
 Whence we get 
 \[\nu'(s)=-\skur(s)\cdot \tau(s).\eqlbl{eq:nu'}\]
-The equations \ref{eq:tau'} and \ref{eq:nu'} are plane analogs of the Frenet formulas. 
+The equations \ref{eq:tau'} and \ref{eq:nu'} are Frenet formulas for plane curves. 
 They could be also written in a matrix form:
 \[
 \begin{pmatrix}
@@ -62,12 +62,126 @@ They could be also written in a matrix form:
 \]
 
 
-The following theorem is analogous to the fundamental theorem of curves (\ref{thm:fund-curves}) and it can be proved along the same lines.
+The following theorem is the fundamental theorem of plane curves; it is direct analog of \ref{thm:fund-curves} and it can be proved along the same lines.
 
 \begin{thm}{Theorem}\label{thm:fund-curves-2D}
-Let $\skur(s)$ be two smooth real valued functions defined on a real interval $\mathbb{I}$.
+Let $\skur(s)$ be two smooth real valued function defined on a real interval $\mathbb{I}$.
 Then there is a smooth unit-speed curve $\gamma\:\mathbb{I}\to\RR^2$ with signed curvature $\kur(s)$ at every $s$.
 Moreover $\gamma$ is uniquely defined up to a rigid motion of the plane.
+\end{thm}
+
+\section*{Total signed curvature}
+
+\begin{thm}{Lemma}\label{lem:2D-angle}
+Suppose $\gamma\:[a,b]\to\RR^2$ is a smooth unit-speed  curve.
+Then there is a smooth function $\theta\:[a,b]\to\RR$ such that 
+\[\gamma'(s)=(\cos[\theta(s)],\sin[\theta(s)])\quad\text{and}\quad \theta'(s)=\skur(s)\]
+for any $s$,
+where $\skur(s)$ denotes the signed curvature of $\gamma$.
+\end{thm}
+
+\parit{Proof.}
+Since $\gamma$ is unit-speed, $\gamma'(a)=(\cos\theta_0,\sin\theta_0)$ for some $\theta_0$.
+Set 
+\[\theta(s)=\theta_0+\int_a^s\skur(t)\cdot dt;\]
+by the fundamental theorem of calculus, we have $\theta'(s)=\skur(s)$ for any~$s$.
+
+Set $\tau(s)=(\cos[\theta(s)],\sin[\theta(s)])$ and let $\nu(s)$ be its counterclockwise rotation by angle $\tfrac\pi2$; so $\tau(s)=(-\sin[\theta(s)],\cos[\theta(s)])$.
+Note that
+\begin{align*}
+\tau'(s)&=(\cos[\theta(s)]',\sin[\theta(s)]')=
+\\
+&=\theta'(s)\cdot (-\sin[\theta(s)],\cos[\theta(s)])=
+\\
+&=\skur(s)\cdot \nu(s)
+\\
+\nu'(s)&=(-\sin[\theta(s)]',\cos[\theta(s)]')=
+\\
+&=\theta'(s)\cdot (-\cos[\theta(s)],\sin[\theta(s)])=
+\\
+&=-\skur(s)\cdot \nu(s)
+\end{align*}
+That is, $\tau$ and $\nu$ satisfy the Frenet formulas \ref{eq:tau'} and \ref{eq:nu'} for $\gamma$.
+By construction $\tau(a),\nu(a)$ is the Frenet frame at $a$; therefore $\tau(s),\nu(s)$ is the Frenet frame at any $s$.
+In particular, 
+\[\gamma'(s)=\tau(s)=(\cos[\theta(s)],\sin[\theta(s)])\]
+for any $s$.
+\qeds
+
+
+Let $\gamma$ be a smooth unit-speed plane curve.
+The integral of its signed curvature is called \emph{total signed curvature} and it denoted by $\Psi(\gamma)$;
+so if $\theta$ and $\gamma$ is as in \ref{lem:2D-angle}, then 
+\[\Psi(\gamma)= \int_a^bk(s)\cdot ds=\theta(b)-\theta(a).\eqlbl{eq:tsc-theta}\]
+Since $\left|\int k(s)\cdot ds\right|\le \int|k(s)|\cdot ds$, we have that
+\[|\Psi(\gamma)|\le \tc\gamma\eqlbl{eq:tsc-tc}\] 
+for any smooth regular plane curve $\gamma$. 
+
+
+\begin{thm}{Proposition}\label{prop:total-signed-curvature}
+The total signed curvature of any closed simple smooth plane curve $\gamma$ is $\pm2\cdot\pi$; it is $+2\cdot\pi$
+if the region bounded by $\gamma$ lies on the left from it and  $-2\cdot\pi$ otherwise.
+\end{thm}
+
+This proposition is a differential-geometric analog of the theorem about sum of the internal angles of a polygon (\ref{thm:sum=(n-2)pi}) which we use in the proof.
+A more conceptual proof was given by Heinz Hopf \cite[p. 42]{hopf}.
+
+\parit{Proof.}
+Without loss of generality we may assume that $\gamma$ is oriented in such a way that the region bounded by $\gamma$ lies on the left from it.
+We can also assume that it parametrized by arc length.
+
+Consider a closed polygonal line $p_1\dots p_n$ inscribed in $\gamma$.
+We can assume that the arcs between the vertexes are sufficiently small;
+in this case the polygonal line is simple and each arc $\gamma_i$ from $p_i$ to $p_{i+1}$ have small total curvature, say  $\tc{\gamma_i}<\pi$ for each $i$.
+(As usual we use indexes modulo $n$, in particular $p_{n+1}\z=p_1$.)
+
+\begin{wrapfigure}{o}{40 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-59}
+\vskip0mm
+\end{wrapfigure}
+
+Assume $p_i=\gamma(t_i)$.
+Set 
+\begin{align*}
+w_i&=p_{i+1}-p_i,& v_i&=\gamma'(t_i),
+\\
+\alpha_i&=\measuredangle (v_i,w_i),&\beta_i&=\measuredangle (w_{i-1},v_i),
+\end{align*}
+where $\alpha_i,\beta_i\in(-\pi,\pi]$ are oriented angles.
+
+By \ref{eq:tsc-theta}, the value
+\[\Psi(\gamma_i)-\alpha_i-\beta_{i+1}\]
+is a multiple of $2\cdot\pi$.
+Since $\tc{\gamma_i}<\pi$, by chord lemma (\ref{lem:chord}), we have that $|\alpha_i|\z+|\beta_i|<\pi$.
+By \ref{eq:tsc-tc}, we have that $|\Psi(\gamma_i)|\le\tc{\gamma_i}$;
+therefore
+\[\Psi(\gamma_i)=\alpha_i+\beta_{i+1}.\]
+for each $i$.
+
+Note that $\delta_i=\pi-\alpha_i-\beta_i$ is the internal angle of $p_1\dots p_n$ at $p_i$;
+$\delta_i\in (0,2\cdot\pi$ for each $i$.
+Recall that the sum of internal angles of an $n$-gon is $(n-2)\cdot \pi$ (see \ref{thm:sum=(n-2)pi}); that is,
+\[\delta_1+\dots+\delta_n=(n-2)\cdot \pi.\]
+Therefore 
+\begin{align*}
+\Psi(\gamma)&=\Psi(\gamma_1)+\dots+\Psi(\gamma_n)=
+\\
+&=(\alpha_1+\beta_2)+\dots+(\alpha_n+\beta_1)=
+\\
+&=(\beta_1+\alpha_1)+\dots+(\beta_n+\alpha_n)=
+\\
+&=(\pi-\delta_1)+\dots+(\pi-\delta_n)=
+\\
+&=n\cdot\pi-(n-2)\cdot \pi=
+\\
+&=2\cdot\pi.
+\end{align*}
+\qedsf
+
+\begin{thm}{Exercise}\label{ex:zero-tsc}
+Draw a smooth regular closed plane curve with vanishing total signed curvature.
 \end{thm}
 
 \section*{Osculating circline}
@@ -80,8 +194,8 @@ a unit vector $\tau$
 and a real number $\skur$, there is a unique smooth unit-speed curve $\sigma\:\RR\to\RR^2$ 
 that starts at $p$ in the direction of $\tau$ and has constant signed curvature $\skur$.
 
-Moreover, if $\skur=0$, then $\sigma$ runs along the line $\sigma=p+s\cdot \tau$
-and if $\skur\ne 0$, then $\sigma$ runs around the circle of radius $\tfrac1{|\skur|}$ and center $p+\tfrac1\skur\cdot \nu$, where $\tau,\nu$ is an oriented orthonoral frame.
+Moreover, if $\skur=0$, then $\sigma=p+s\cdot \tau$ which runs along the line;
+if $\skur\ne 0$, then $\sigma$ runs around the circle of radius $\tfrac1{|\skur|}$ and center $p+\tfrac1\skur\cdot \nu$, where $\tau,\nu$ is an oriented orthonoral frame.
 \end{thm}
 
 Further we will use the term \emph{circline} for \emph{a circle or a line}.
@@ -150,7 +264,7 @@ therefore $r'\ge 0$.
 It follows that $|z'(s)|= r'(s)$ and $z'(s)$ points in the direction of $\nu(s)$.
 
 Since $\nu'(s)=-\skur(s)\cdot\tau(s)$, the directiion of $z'(s)$ always rotates;
-that is, the curve $s\mapsto z(s)$ does not have straight arcs.
+that is, the curve $s\mapsto z(s)$ contains no line segments.
 It follows that 
 \[
 \begin{aligned}
@@ -164,14 +278,14 @@ It follows that
 \end{aligned}
 \leqno({*})
 \]
-In other words, the distance between the centers of $\siga_{s_1}$ and $\sigma_{s_0}$
-is less than the difference between their raduses.
+In other words, the distance between the centers of $\sigma_{s_1}$ and $\sigma_{s_0}$
+is strictly less than the difference between their radiuses.
 Therefore the osculating circle at $s_0$ lies inside the osculating circle at $s_1$ without touching it.
 \qeds
 
-The following theorem states that 
-if you drive on the plane and turn the steering wheel to the right all the time,
-then you will not be able to come back to the same place.
+The following theorem has the following intuitive formulation: 
+\emph{if you drive on the plane and turn the steering wheel to the right all the time,
+then you will not be able to come back to the same place.}
 
 \begin{thm}{Theorem}\label{thm:spiral}
 Assume $\gamma$ is a smooth regular plane curve with strictly monotonic curvature. 

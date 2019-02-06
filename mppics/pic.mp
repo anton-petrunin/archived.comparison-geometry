@@ -1969,4 +1969,55 @@ label.top(btex $i\cdot w$ etex, z.iv);
 
 endfig;
 
+beginfig(59) 
+save u;
+u:=1.4cm;
+
+z.a0=(0,0)*u;
+z.a1=(1,1.2)*u;
+z.a2=(0.1,2)*u;
+z.a23=(0,1)*u;
+z.a3=(-1,1.1)*u;
+
+save p; path p[];
+p0=z.a0..z.a1..z.a2..z.a23..z.a3..tension 1.2..cycle;
+p1=z.a0--z.a1--z.a2--z.a23--z.a3--cycle;
+
+z.b0= .5*u*unitvector(direction 0 of p0);
+z.b1= .5*u*unitvector(direction 1 of p0);
+z.b2= .5*u*unitvector(direction 2 of p0);
+z.b23= .5*u*unitvector(direction 3 of p0);
+z.b3= .5*u*unitvector(direction 4 of p0);
+
+labelarcsprof(z.a0+z.b0, z.a0, z.a1, 10,7, btex {\small $\alpha_1$} etex);
+labelarcsprof(z.a1+z.b1, z.a1, z.a2, 10,7, btex {} etex);
+labelarcsprof(z.a2+z.b2, z.a2, z.a23, 10,7, btex {} etex);
+labelarcsprof(z.a23+z.b23, z.a23, z.a3, 10,7, btex {} etex);
+labelarcsprof(z.a3+z.b3, z.a3, z.a0, 10,7, btex {\small $\alpha_n$} etex);
+
+labelarcsprof(z.a0-z.b0, z.a0, z.a3, 10,7, btex {\small $\beta_1$} etex);
+labelarcsprof(z.a1-z.b1, z.a1, z.a0, 10,7, btex {\small $\beta_2$} etex);
+labelarcsprof(z.a2-z.b2, z.a2, z.a1, 10,7, btex {} etex);
+labelarcsprof(z.a23-z.b23, z.a23, z.a2, 10,7, btex {} etex);
+labelarcsprof(z.a3-z.b3, z.a3, z.a23, 10,7, btex {} etex);
+
+labeldashedarcsprof(z.a3, z.a0, z.a1, 12,16, btex {\small $\delta_1$} etex);
+labeldashedarcsprof(z.a0, z.a1, z.a2, 12,16, btex {\small $\delta_2$} etex);
+
+draw p0;
+draw p1;
+draw z.a0-z.b0--z.a0+z.b0 penhair;
+draw z.a1-z.b1--z.a1+z.b1 penhair;
+draw z.a2-z.b2--z.a2+z.b2 penhair;
+draw z.a23-z.b23--z.a23+z.b23 penhair;
+draw z.a3-z.b3--z.a3+z.b3 penhair;
+
+dOt z.a0,z.a1,z.a2,z.a23,z.a3;
+
+label.bot(btex $p_1$ etex, z.a0);
+label.rt(btex $p_2$ etex, z.a1);
+label.lft(btex $\dots$ etex rotated angle -z.b2, z.a2 +(3,3));
+label.ulft(btex $p_n$ etex, z.a3);
+endfig;
+
 end

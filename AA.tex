@@ -1,0 +1,291 @@
+\section*{Complex coordinates}
+
+It is often convenient to use complex coordinate on the plane,
+it packs two coordinates $(x,y)$ in one complex number $z=x+i\cdot y$.
+
+{
+
+\begin{wrapfigure}{r}{20 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-58}
+\vskip0mm
+\end{wrapfigure}
+
+In particular any vector $w$ in $\RR^2$ can be regarded as a complex number.
+Note that $i\cdot w$ is the vector obtained from $w$ by the counterclockwise rotation by $\tfrac\pi2$.
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The same formula holds for any closed curve, if one use \emoh{signed area} surrounded by curve;
+that is we count area surrounded by curve with multiplicity --- for each region cut by the curve from the sphere we count how many times the curve goes around it counterclockwise and multiply the area of the region by this number.
+In order to be defined correctly we need to specify a pole on the spherelying and stating that its region has zero multiplicity. 
+When you cross the curve the mulitplicity changes by $\pm1$; it increases is the curve cross the ways from left to right and decreasing otherwise.
+
+Note that for the Gauss curvature of unit sphere is identically 1
+Therefore 
+\[\area\Delta=\int_\Delta G.\]
+That is, \ref{eq:sphere-gauss-bonnet} is Gauss--Bonnet formula for spherical triangle.
+Applying this formula for each triangle in a  triangulation of polygon and summing up, we get Gauss--Bonnet formula for arbitrary spherical polygon.
+
+Since any smooth simple closed curve can be approximated by a polygon, we get that the 
+
+
+
+
+
+Let $\Sigma$ be a smooth regular oriented surface and $\nu\:\Sigma\to \SS^2$ be its Gauss map.
+Assume $\alpha$ is a smooth unit-speed curve in $\Sigma$. 
+Then for any $t$ the vectors $\nu(t)=\nu(\gamma(t))$ and the velocity vector $\tau(t)\gamma'(t)$ are unit vectos that are normal to each other.
+Denote by $\mu(t)$ the unit vector that is normal to both $\nu(t)$ and $\tau(t)$ such that for any $t$ the triple $(\tau(t),\mu(t),\nu(t)$ is an oriented basis (say $\mu(t)=[\nu(t),\tau(t)]$, where $[{*},{*}]$ denotes the vector product).
+
+Since $\alpha$ is unit-speed, the acceleration $\alpha''(t)\perp\tau(t)$;
+therefore at any parameter value $t$, we have
+\[\alpha''(t)=k_n(t)\cdot \nu(t)+k_g(t)\cdot \mu(t),\]
+for some real numbers $k_n$ and $k_g$.
+The numbers $k_n(t)$ and $k_g(t)$ are called \emph{normal} and \emph{geodesic curvature} of $\alpha$ at $t$ correspondingly.
+The geodesic curvature vanishes if and only if $\alpha$ is a geodesic; 
+it measures how much a given curve diverges from a geodesic.
+
+Locally $\alpha$ cuts $\Sigma$ into two parts, left and right.
+The left part is the one that lies in the direction of $\mu(t)$ and the opposite is right.
+
+
+\begin{thm}{Theorem}
+Suppose $\Delta$ is a disc in a surfaces $\Sigma$ 
+bounded bounded by a simple closed regular curve $\alpha$.
+Assume that $\alpha$ is oriented such that $\Delta$ lies on the left from $\alpha$.
+Then
+\[\int_\Delta G+\int_\alpha k_g=2\cdot \pi,\]
+where $G$ denotes the Gauss curvature of $\Sigma$ and
+$k_g$ denotes the geodesic curvature curvature of $\alpha$.
+
+\end{thm}
+
+We will give an informal proof of this formula based on the bike wheel interpretation described in the previous section.
+We suppose that it is intuitively clear that moving the axis of the wheel without changing its direction does not change the direction of the wheel's spokes.
+More precisely, we need the following:
+
+\begin{thm}{Claim}
+Assume we keep the axis of a non-spinning bike wheel and perform the following two experiments:
+
+\begin{enumerate}[(i)]
+\item We moved it around and bring it back to the original position. 
+As a result the wheel might rotate by some angle; let us measure this angle.
+
+\item we move the direction of the axis the same as before without moving the center of the wheel and again measure the angle of rotation.
+\end{enumerate}
+
+Then the resulting angle in these two experiments is the same. 
+\end{thm}
+
+\section{Gauss--Bonnet formula}
+
+\begin{thm}{Theorem}
+Suppose $\gamma$ is a simple broken geodesic line that cuts a disc $\Delta$ from the surface $\Sigma$.
+Assume that $\gamma$ is oriented so that $\Delta$ lies on the left from $\Sigma$.
+Then 
+\[\tgc\gamma+\iint_\Delta G=2\cdot \pi,\]
+where $G$ denotes the Gauss curvature of $\Sigma$.
+\end{thm}
+
+Note that if $\Sigma$ is a plane then geodesic in $\Sigma$ are formed by line segments.
+In this case the statement of theorem follows from Exercise~\ref{ex:pm2pi}.
+In the next section we will prove the formula for the unit sphere;
+latter we will use it in the sketch of the proof of the general case.
+
+
+
+
+
+
+
+
+
+\section{Gauss map}
+
+Let $\Sigma$ be a surface in the Euclidean space.
+Given a point $p\in\Sigma$ consider a unit vector $\nu(p)$ that is normal to the tangent plane $\T_p$. 
+The unit normal vector $\nu(p)$ is defined uniquely up to sign at each point $p\in \Sigma$.
+If the choice of the sign is made so that the map $\nu\:p\mapsto \nu(p)$ is continuous,
+then the map $\nu$ is called \emph{Gauss map}.
+
+The Gauss map sends the surface $\Sigma$ to the unit sphere $\SS^2$.
+It can be always defined locally (that is in a neighborhood of a point);
+if it can be defined globally then the surface $\Sigma$ is called \emph{oriented}.
+
+M\"obius band gives an example of nonoriented surface with boundary.
+Klein bottle is an example of closed immerersed surface which is not oriented.
+Any closed embedded surface is oriented since one can choose the  direction pointing outside of the region bounded by the surface.
+
+Fix a point $p\in \Sigma$ and a smooth curve $\alpha$ in $\Sigma$ that starts at $p$;
+that is $\alpha(0)=p$.
+Set  $v=\alpha'(0)$ and $w=(\nu\circ\alpha)'(0)$.
+Note that $v$ lie in $T_p$ --- the tangent plane at $p$.
+
+Further $w\in \T_p$ as well.
+Indeed $\nu\circ\alpha$ is a curve that starts at $\nu(p)$;
+so $w=(\nu\circ\alpha)'(0)$ lies in the tangent plane $\T_{\nu(p)}\SS^2$.
+But at $\nu(p)$, the sphere $\SS^2$ has normal $\nu(p)$ and therefore its tangent plane $\T_{\nu(p)}\SS^2$ is parallel $T_p$, so $\T_{\nu(p)}\SS^2$ and $T_p$ are identical as vector spaces.
+
+Further note that since Gauss map is smooth,
+the vector $w$ depends only on $v$;
+that is if we choose a different curve $\alpha$ such that $v=\alpha'(0)$ we will get the same value $w=(\nu\circ\alpha)'(0)$.
+The map $s_p\:v\mapsto w$ is called shape operator;
+it maps the tangent plane $\T_p$ to itself.
+
+It is straightforwardto check that the eigenvalues of $s_p$ are the principle curvatures at $p$; it agrees with the definition given above if the normal vector $\nu$ is chosen to point down in the specital graph representation $z=f(x,y)$.
+
+
+
+
+
+
+
+The Gauss map can be defined (globally) if and only if the surface is orientable, in which case its degree is half the Euler characteristic. The Gauss map can always be defined locally (i.e. on a small piece of the surface). The Jacobian determinant of the Gauss map is equal to Gaussian curvature, and the differential of the Gauss map is called the shape operator. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Comments}
+
+
+\section{Tennis ball theorem}
+
+Suppose that a curve $\alpha$ runs on the unit sphere 
+\[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\] 
+Let us denote by $\alpha''(t)^\top$ the projection of vector $\alpha''(t)$ to the tanget plane of the sphere at $\alpha(t)$.
+
+Assume $\alpha$ is a unit speed curve.
+By Proposition~\ref{prop:a'-pertp-a''}, $\alpha''(t)\perp\alpha'(t)$ and therefore $\alpha''(t)^\top\perp\alpha'(t)$.
+If $w(t)$ denotes by the vector $\alpha'(t)$ rotated
+counterclockwise by angle $\tfrac\pi2$ in the tangent plane to the sphere at $\alpha(t)$, then 
+\[\alpha''(t)^\top=\kappa_\alpha(t)\cdot w(t)\]
+for some real number $\kappa(t)$;
+this number is called \emph{signed geodesic curvature of $\alpha$ at $t$}.
+
+The geodesic curvature measures how $\alpha$ diverges from an equator --- the most straight curve on the curved $\SS^2$.
+TBC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The following diagram shows a simple curve with positive curvature that intersects a line at points $p_1,\dots p_11$; these points appear on the curve in the same order, and on the line  in the order $p_5,p_3,p_1,p_2,p_4,p_7,p_9,p_{11},p_{10},p_8,p_6$; 
+The following Exercise is about this pattern.
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-29}
+\vskip0mm
+\end{figure}
+
+\begin{thm}{Exercise}
+Suppose $\alpha$ is a simple smooth regular curve in the plane that crosses a line $\ell$ at the points $p_1,p_2,\dots p_n$.
+Assume that the points $p_1,p_2,\dots p_n$ appear on $\alpha$ in the same order.
+Then the order on $\ell$ can be obtained from the following sequence 
+\[p_1,p_3,\dots,p_4 ,p_2\]
+by shift last $k$ elements to the beginning, reverting the order in the tail starting from $(2\cdot k+1)$-th element and reverting the order of the obtained sequence if necessary.
+\end{thm}
+
+
+
+
+
+\parit{Proof; only-if part.} 
+Without loss of generality we can assume that $D$ lies on that $D$ lies on the left side of $\alpha$.
+If so,
+the only-if part will follow if the curvature of $\alpha$ is nonnegative.
+
+Assume contrary, that is $\kappa(t_0)<0$ for some $t_0$.
+Then the tangent line $\ell$ strictly supports $\alpha$ at $t_0$ from left;
+that is, $\ell$ pass thru $\\alpha(t_0)$ and runs in the interior of $D$ shortly before and after.
+A line $\ell'\parallel \ell$ which lies slightly to the right from $\ell$ has a line segment with the ends in the interior of $D$ that crosses $\alpha$.
+That is $D$ is not convex.
+
+\parit{If part.} assume $D$ is not convex; that is there are two points $p$ and $q$ in $D$ such that the line segment $[pq]$ does not lie completely in $D$.
+Without loss of generality we may assume that $p$ and $q$ lie in the interior of $D$.
+
+Let $\ell$ be the line thru $p$ and $q$.
+Note that $\alpha$ changes the side of $\ell$ at least 4 times;
+moreover one can choose crossing points $a$, $b$, $c$ and $d$ that appear in the same order on the line and $\alpha$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+The total signed curvature of a smooth unit-speed curve $\alpha\:[a,b]\z\to\RR^2$ can be defined as the integral
+\[\tsc\alpha=\int_{[a,b]}\kappa(t)\cdot dt.\]
+
+It is straightforward to show that for sufficienlty fine partition of closed unit-speed curve $\alpha$ the inscribed polygonal line has the same total signed curvature.
+Therefore by exercises~\ref{ex:2kpi} and \ref{ex:pm2pi},
+we get that the total signed curvature of any closed simple curve is mutiple of $2\cdot\pi$ and if the curve is simple, it has to be $\pm2\cdot\pi$.
+
+\begin{thm}{Exercise}\label{ex:curvature-of-circle}
+Find a unit-speed parametrization of the circle $\gamma$ or radius $R$ centered at the point $p$;
+it is defined as the set 
+\[\gamma=\set{v\in\RR^2}{|p-v|=R}.\]
+Show that the signed curvature of this circle is $\pm \tfrac1R$.
+\end{thm}

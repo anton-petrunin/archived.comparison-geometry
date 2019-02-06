@@ -1,6 +1,6 @@
-\chapter{Preliminaries}
+\chapter{Review}
 
-In this chapter we state and discuss results from different branches of mathematics which were used further in the book.
+Here we state and discuss results from different branches of mathematics which were used further in the book.
 The reader is not expected to know proofs of these statements, but it is better to check that his intuition agrees with each.  
 
 \section*{Multivariable calculus}
@@ -138,6 +138,38 @@ By now many proofs of this theorem are known.
 For the first statement, a very short proof based on somewhat developed technique is given by Patrick Doyle \cite{doyle},
 among elementary proofs, one of my favorites is the proof given by Aleksei Filippov \cite{filippov}.
 
-An ammusing proof of general statement for smooth regular curves can be found in \cite{chambers-liokumovich}; we use this theorem mostly in this (much simpler) case.
+An amusing proof of general statement for smooth regular curves can be found in \cite{chambers-liokumovich}; we use this theorem mostly in this (much simpler) case.
+
+\section*{Elementary geometry}
+
+\begin{thm}{Theorem}\label{thm:sum=(n-2)pi}
+The sum of sum of all the internal angles of a simple $n$-gon is $(n-2)\cdot\pi$. 
+\end{thm}
 
 
+\parit{Proof.}
+The proof is by induction on $n$.
+For $n=3$ it says that sum of internal angles of a triangle is $\pi$, which is assumed to be known.
+
+First let us show that for any $n\ge4$, any $n$-gon has a diagonal that lies inside of it.
+Assume this is holds true for all polygons with at most $n-1$ vertex.
+
+Fix an $n$-gon $P$, $n\ge4$.
+Applying rotation if necessary, we can assume that all its vertexes have different $x$-coordinates.
+Let $v$ be a vertex of $P$ that minimize the $x$-coordinate;
+denote by $u$ and $w$ its adjacent vertexes.
+Let us choose the diagonal $uw$ if it lies in $P$.
+Otherwise the triangle $\triangle uvw$ contains another vertex of $P$.
+Choose a vertex $s$ in the interior of $\triangle uvw$ that maximize the distance to line $uw$.
+Note that the diagonal $vs$ lyes in $P$;
+if it is not the case then $vs$ crosses another side $pq$ of $P$, one of the vertexes $p$ or $q$ has larger distance to the line and it lies in the interior of $\triangle uvw$ --- a contradiction.
+
+Note that the diagonal divides $P$ into two polygons, say $Q$ and $R$, with smaller number of sides in each, say $k$ and $m$ correspondingly.
+Note that 
+\[k+m=n+2;
+\eqlbl{eq:k+m=n+2}\]
+indeed each side of $P$ appears once as a side of $P$ or $Q$ plus the diagonal appears twice --- once as a side in $Q$ and once as a side of $R$.
+Note that the sum of angles of $P$ is the sum of angles of $Q$ and $R$, which by the induction hypothesis are $(k-2)\cdot\pi$ and $(m-2)\cdot\pi$ correspondingly.
+It remains to note that \ref{eq:k+m=n+2} implies
+\[(k-2)\cdot\pi+(m-2)\cdot\pi=(n-2)\cdot\pi.\]
+\qedsf
