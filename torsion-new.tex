@@ -36,10 +36,10 @@ in particular, we have that
 The orthonormal basis $\tau(s),\nu(s),\beta(s)$ is called \emph{Frenet frame} at $s$; the vectors in the frame are called \emph{tangent}, \emph{normal} and \emph{binormal} correspondingly.
 Note that the frame $\tau(s),\nu(s),\beta(s)$ is defined only if $k(s)\ne 0$.
 
-The plane thru $\gamma(s)$ spanned by vectors $\tau(s)$ and $\nu(s)$ is called \emph{osculating plane} at $s$;
+The plane $\Pi_s$ thru $\gamma(s)$ spanned by vectors $\tau(s)$ and $\nu(s)$ is called \emph{osculating plane} at $s$;
 equivalently it can be defined as a plane thru $\gamma(s)$ that is perpendicular to the binormal vector $\beta(s)$.
 This a unique plane that has \emph{second order of contact} with $\gamma$ at $s$;
-that is, $\rho(\ell)=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to the osculating plane at $s$.
+that is, $\rho(\ell)=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\Pi_s$.
 
 \section*{Torsion}
 
@@ -100,17 +100,17 @@ Applying \ref{eq:frenet-tau}, we get that
 \\
 &=-\kur.
 \end{align*}
-It proves the first equality $\langle \nu',\tau\rangle=-\kur$; 
+It proves the first equality $\langle \nu',\tau\rangle=-\kur$ and
 whence \ref{eq:frenet-nu} follows.
 
 Taking derivatives of the third identity in \ref{eq:orthornomal}, we get that $\beta'\perp\beta$.
 Further taking derivatives of the other identities with $\beta$ in \ref{eq:orthornomal}, we get that 
 \begin{align*}
-\langle\beta',\tau\rangle&=-\langle\beta,\tau'\rangle=-\langle\beta,\kur\cdot\nu\rangle=0
+\langle\beta',\tau\rangle&=-\langle\beta,\tau'\rangle=-\kur\cdot\langle\beta,\nu\rangle=0
 \\
 \langle\beta',\nu\rangle&=-\langle\beta,\nu'\rangle=\tor
 \end{align*}
-That is,
+Since the frame $\tau(s),\nu(s),\beta(s)$ is orthonormal, it follows that
 \[\beta'(s)=-\tor(s)\cdot\nu(s).\eqlbl{eq:frenet-beta}\]
 
 The equations \ref{eq:frenet-tau}, \ref{eq:frenet-nu} and \ref{eq:frenet-beta} are called Frenet formulas.
@@ -141,7 +141,7 @@ All three can be written as one matrix identity:
 \end{pmatrix}.
 \]
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:beta-from-tau+nu}
 Deduce the formula \ref{eq:frenet-beta} from  \ref{eq:frenet-tau} and \ref{eq:frenet-nu} by differentiating the identity
 $\beta=\tau\times \nu$.
 \end{thm}
@@ -154,17 +154,31 @@ Show that $\gamma$ lies in a plane if and only if its torsion vanishes.
 \parit{Hint:} 
 Show and use that the binormal vector is constant.
 
+\begin{thm}{Exercise} 
+Let $\gamma$ be a smooth regular space curve and $\tau,\nu,\beta$ its Frenet frame.
+Show that 
+\[\beta=\frac{\gamma'\times\gamma''}{|\gamma'\times\gamma''|}.\]
+Use this formula to show that its torsion is
+\[\tor=\frac{\langle\gamma'\times\gamma'',\gamma'''\rangle}{|\gamma'\times\gamma''|^2}.\]
+
+\end{thm}
+
 \section*{Curves of constant slope}
 
 We say that a smooth regular space curve $\gamma$ has \emph{constant slope} if its velocity vector makes a constant angle with a fixed direction.
-The following theorem was proved by Michel Ange Lancret~\cite{lancret} more than two century ago.
+The following theorem was proved by Michel Ange Lancret~\cite{lancret} more than two centuries ago.
 
-\begin{thm}{Theorem}
-Let $\gamma$ be a smooth regular curve with nonvanishing curvature.
-Then $\gamma$ has constant slope if and only if the ratio $\tfrac\tor\kur$ is constant; here $\kur$ and $\tor$
-denote the curvature and torsion of $\gamma$.
+\begin{thm}{Theorem}\label{thm:const-slope}
+Let $\gamma$ be a smooth regular curve;
+denote by $\kur$ and $\tor$ its curvature and torsion.
+Suppose $\kur(s)>0$ at any $s$.
+Then $\gamma$ has constant slope if and only if the ratio $\tfrac\tor\kur$ is constant.
 \end{thm}
 
+Note that the assumption in the theorem implicitely implies that $\kur\ne 0$;
+otherwise $\tfrac\tor\kur$ is undefined.
+
+The proof is an application of Frenet formulas.
 The following exercise will guide you thru the proof of the theorem. 
 
 \begin{thm}{Exercise} \label{ex:lancret}
@@ -181,11 +195,11 @@ Use these two identities to show that $\tfrac\tor\kur$ is constant;
 it proves the ``only if'' part of the theorem.
 
 \item Assume that $\tfrac\tor\kur$ is constant, show that the vector $w=\tfrac\tor\kur\cdot \tau+\beta$ is constant.
-Conclude that $\gamma$ is has constant slope; it proves the ``if'' part of the theorem.
+Conclude that $\gamma$ has constant slope; it proves the ``if'' part of the theorem.
 \end{enumerate}
 \end{thm}
 
-Assume $\gamma$ is a smooth unit speed curve and $s_0$ is a fixed real number.
+Assume $\gamma$ is a smooth unit speed curve and $s_0$ is a fixed real number. %???unit-speed/unit speed
 Then the curve 
 \[\alpha(s)=\gamma(s)+(s_0-s)\cdot \gamma'(s)\]
 is called \emph{evolvent} of $\gamma$.
@@ -198,6 +212,57 @@ Show that evolvent of a constant slope curve lies in a plane.
 
 \parit{Hint:} 
 Show that $\langle w,\alpha\rangle$ is constant if $\gamma$ makes constant angle with a fixed vector $w$ and $\alpha$ is the evolvent of $\gamma$.
+
+\section*{Spherical curves}
+
+\begin{thm}{Theorem}
+A smooth regular space curve $\gamma$ lies in a unit sphere if and only if 
+the following identity 
+\[\left|\tfrac{\kur'}{\tor}\right|=\kur\cdot\sqrt{\kur^2-1}.\]
+holds for its curvature $\kur$ and torsion $\tor$.
+\end{thm}
+
+Note that the identity implicitely implies that the torsion $\tor$ of the curve is nonzero;
+otherwise the left hand side would be undefined while right hand side is defined.
+The proof is another application of Frenet formulas;
+we present it in a form of guided exercise:
+
+\begin{thm}{Exercise}\label{ex:spherical-frenet}
+Suppose $\gamma$ is a smooth unit-speed space curve.
+Denote by $\tau,\nu,\beta$ 
+is its Frenet frame and $\kur$, $\tor$ its curvature and torsion.
+
+\smallskip
+
+Assume that $\gamma$ is spherical; that is, $|\gamma(s)|=1$ for any $s$.
+Show that
+
+\begin{enumerate}[(a)]
+\item\label{ex:spherical-frenet:tau} $\langle\tau,\gamma\rangle=0$; conclude that $\langle\nu,\gamma\rangle^2+\langle\beta,\gamma\rangle^2=1$.
+\item\label{ex:spherical-frenet:nu} $\langle\nu,\gamma\rangle=-\tfrac1\kur$;
+\item\label{ex:spherical-frenet:beta} $\langle\beta,\gamma\rangle'=\tfrac\tor\kur$; conclude that if $\gamma$ is closed, then $\tor(s)=0$ for some~$s$.
+\item\label{ex:spherical-frenet:kur-tor} Use (\ref{ex:spherical-frenet:tau})--(\ref{ex:spherical-frenet:beta}) to show that 
+\[\left|\tfrac{\kur'}{\tor}\right|=\kur\cdot\sqrt{\kur^2-1}.\]
+\setcounter{lastnumber}{\value{enumi}}
+\end{enumerate}
+It proves the ``only if'' part of the theorem.
+
+\smallskip
+
+Now assume that $\gamma$ is a space curve that satisfies the idenity in (\ref{ex:spherical-frenet:kur-tor}).
+\begin{enumerate}[(a)]
+\setcounter{enumi}{\value{lastnumber}}
+\item Show that $p=\gamma+\tfrac1\kur\cdot \nu+\tfrac{\kur'}{\kur^2\cdot\tor}\cdot\beta$ is constant; conclude that $\gamma$ lies in a unit sphere the cente at $p$.
+\end{enumerate}
+It proves the ``if'' part of the theorem.
+\end{thm}
+
+For a unit speed curve $\gamma$ with nonzero curvature and torsion at $s$,
+the sphere $\Sigma_s$ with the center
+\[p(s)=\gamma(s)+\tfrac1{\kur(s)}\cdot \nu(s)+\tfrac{\kur'(s)}{\kur^2(s)\cdot\tor(s)}\cdot\beta(s)\]
+that pass thru $\gamma(s)$ is called \emph{osculating sphere} of $\gamma$ at $s$.
+This a unique sphere that has \emph{third order of contact} with $\gamma$ at $s$;
+that is, $\rho(\ell)=o(\ell^3)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\Sigma_s$.
  
 \section*{Fundamental theorem of curves}
 
@@ -306,7 +371,7 @@ Then $\gamma_1=\gamma_2$ by uniqueness of solution of the system (\ref{thm:ODE})
 That is, the curve is unique up to a rigid motion of the space.
 \qeds
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:cur+tor=helix}
 Assume a curve $\gamma\:\RR\to\RR^3$ has constant curvature and torsion.
 Show that $\gamma$ is a helix, possibly degenerate to a circle;
 that is, in a suitable coordinate system we have
@@ -323,7 +388,8 @@ Let $\gamma$ be a smooth regular space curve such that the distance $|\gamma(t)-
 Show that $\gamma$ is a helix, possibly degenerate to a line or a circle.
 \end{thm}
 
-\parit{Hint:} Note that 
+\parit{Hint:} Note that the function
 \[\rho(\ell)=|\gamma(t+\ell)-\gamma(t)|^2=\langle \gamma(t+\ell)-\gamma(t),\gamma(t+\ell)-\gamma(t)\rangle\] 
-is a smooth function that does not depend on $t$.
-Express speed, curvature and torsion of $\gamma$ in terms of derivatives $\rho^{(n)}(0)$.
+is a smooth and does not depend on $t$.
+Express speed, curvature and torsion of $\gamma$ in terms of derivatives $\rho^{(n)}(0)$
+and apply \ref{ex:cur+tor=helix}.

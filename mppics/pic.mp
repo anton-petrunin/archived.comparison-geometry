@@ -631,7 +631,7 @@ dOt z.p, z.q;
 
 label.bot(btex $x$ etex, z.p);
 label.bot(btex $y$ etex, z.q);
-label.bot(btex $\alpha$ etex, z.s);
+label.bot(btex $\gamma$ etex, z.s);
 endfig;
 
 beginfig(23) 
@@ -665,8 +665,8 @@ label.bot(btex $y$ etex, z.q);
 label.urt(btex $p$ etex, z.pp);
 label.ulft(btex $q$ etex, z.qq);
 label.top(btex $s$ etex, z.s);
-label.lrt(btex $\alpha$ etex, z.sq);
-label.lrt(btex $\gamma$ etex, (point 1.4 of p0));
+label.lrt(btex $\gamma$ etex, z.sq);
+label.lrt(btex $\sigma$ etex, (point 1.4 of p0));
 endfig;
 
 beginfig(24) 
@@ -700,8 +700,8 @@ label.bot(btex $y$ etex, z.q);
 label.urt(btex $p$ etex, z.pp);
 label.ulft(btex $q$ etex, z.qq);
 label.top(btex $s$ etex, z.s);
-label.lrt(btex $\alpha$ etex, z.sq);
-label.lrt(btex $\gamma$ etex, (point 1.4 of p0));
+label.lrt(btex $\gamma$ etex, z.sq);
+label.lrt(btex $\sigma$ etex, (point 1.4 of p0));
 endfig;
 
 beginfig(25) 
@@ -972,6 +972,7 @@ z.d3=(1,0);
 z.d4=(-1,0);
 z.d5=(-.8,-.3);
 z.d6=(-1,.5);
+z.pp=(10,.2)*u;
 
 p0=
 (directionpoint z.d1 of p1){z.d1}..
@@ -982,26 +983,37 @@ p0=
 (directionpoint z.d2 of p2){z.d2}..
 (4,-3)*u..
 (directionpoint z.d3 of p3){z.d3}..
-(10,.2)*u..
+z.pp..
 (directionpoint z.d4 of p3){z.d4}..
 (directionpoint z.d5 of p2){z.d5}..
 (directionpoint z.d6 of p1){z.d6}..
 (-2,0)*u..
 cycle;
-draw p0;
 
+p4=circumcircle(point 8.2 of p0,point 8 of p0,point 7.8 of p0);
+
+draw p0;
+draw p4;
 z.p1=directionpoint z.d1 of p1;
 z.p2=directionpoint z.d2 of p2;
 z.p3=directionpoint z.d3 of p3;
+z.q1=directionpoint z.d6 of p1;
+z.q2=directionpoint z.d5 of p2;
+z.q3=directionpoint z.d4 of p3;
 
-dOt z.p1, z.p2, z.p3;
+dOt z.p1, z.p2, z.p3, z.q1, z.q2, z.q3, z.pp;
 
-label(btex $D_1$ etex, z.o1);
-label(btex $D_2$ etex, z.o2);
-label(btex $D_3$ etex, z.o3);
+label(btex $\sigma_1$ etex, z.o1);
+label(btex $\sigma_2$ etex, z.o2);
+label.lft(btex $\hat\sigma_3$ etex, z.o3-(x.r3,0));
+whitelabel(btex $\sigma_\infty$ etex, point 2 of p4);
 label.lrt(btex $p_1$ etex, z.p1);
 label.llft(btex $p_2$ etex, z.p2);
 label.bot(btex $p_3$ etex, z.p3);
+label.rt(btex $p_\infty$ etex, z.pp);
+label.urt(btex $q_1$ etex, z.q1);
+label.top(btex $q_2$ etex, z.q2);
+label.top(btex $q_3$ etex, z.q3);
 
 endfig;
 
@@ -2018,6 +2030,36 @@ label.bot(btex $p_1$ etex, z.a0);
 label.rt(btex $p_2$ etex, z.a1);
 label.lft(btex $\dots$ etex rotated angle -z.b2, z.a2 +(3,3));
 label.ulft(btex $p_n$ etex, z.a3);
+endfig;
+
+
+beginfig(60);
+save u;
+u:=1cm;
+
+z.a1=(-1.5,0)*u;
+z.a2=(0,0)*u;
+z.a3=(1,1)*u;
+z.a4=(2,1)*u;
+z.a5=(0,-.5)*u;
+
+save p; path p[];
+p0=z.a1..z.a2..z.a3..z.a4..z.a5;
+
+z.o=z.a2+((direction 1 of p0) zscaled (0,-1));
+p1=circle(z.o,point 1 of p0 -z.o);
+
+p2=circle(point 1 of p0,0.7*(point 1 of p0 -z.o));
+
+draw p0 dashed evenly;
+drawarrow (((p0 cutbefore p2) cutafter p2) cutafter p2);
+draw p1;
+
+dOt point 1 of p0;
+
+label.top(btex $p$ etex, z.a2);
+label.top(btex $\gamma$ etex, z.a3);
+label.urt(btex $\sigma$ etex, point .4 of p1);
 endfig;
 
 end

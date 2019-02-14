@@ -3,7 +3,7 @@
 \section*{Acceleration of unit-speed curve}
 
 Recall that any regular smooth curve can be parametrized by its arc length.
-The obtained curve, say $\gamma$, remains to be smooth and it has unit speed; 
+The obtained parametrized curve, say $\gamma$, remains to be smooth and it has unit speed; 
 that is, $|\gamma'(s)|=1$ for all $s$.
 
 The following proposition states that the acceleration vector is perpendicular to the velocity vector if the speed remains constant.
@@ -36,7 +36,7 @@ and in the latter case it might be also denoted by $\kur(p)$ or $\kur_\gamma(p)$
 The curvature measures how fast the curve turns;
 if you drive along a plane curve, curvature tells how much to turn the steering wheel at the given point (note that it does not depend on your speed).
 In general, the term \emph{curvature} is used for different types of geometric objects, and it always measures how much it deviates from being \emph{straight};
-for curves, it it measures how fast it deviates from a straight line.
+for curves, it measures how fast it deviates from a straight line.
 
 \begin{thm}{Exercise}\label{ex:curvature-of-spherical-curve}
 Show that any regular smooth spherical curve has curvature at least 1 at each time.
@@ -72,8 +72,7 @@ Therefore
 \\
 &=\tfrac{|\tau'(t)|}{|\gamma'(t)|}.
 \end{align*}
-
-Note that indicatrix of a smooth regular curve $\gamma$ is regular if the curvature of $\gamma$ does not vanish. 
+It follows that indicatrix of a smooth regular curve $\gamma$ is regular if the curvature of $\gamma$ does not vanish. 
 
 
 \begin{thm}{Exercise}\label{ex:curvature-formulas}
@@ -180,8 +179,11 @@ Moreover, if $\gamma$ is closed, then
 
 Note that the last inequality gives an alternative proof of Fenchel's theorem.
 Indeed, without loss of generality we can assume that the origin lies on a chord of $\gamma$;
-in this case the spherical curve $\sigma$ passes thru a apir of antipodal points in $\mathbb{S}^2$
-whence $\length\sigma\ge 2\cdot\pi$.
+in this case the spherical curve $\sigma$ passes thru a pair of antipodal points in $\mathbb{S}^2$;
+whence 
+\[\length\sigma\ge 2\cdot\pi.\]
+
+
 
 \section*{Piecewise smooth curves}
 
@@ -196,6 +198,7 @@ Then one can combine these two curves into one $\gamma\:[a,c]\z\to \RR^3$ by the
 \]
 The obtained curve $\gamma$ is called the 
 \emph{concatenation} of $\alpha$ and $\beta$. %briefly $\gamma=\alpha{*}\beta$.
+(The condition $\alpha(b)=\beta(b)$ ensures that the map $t\mapsto\gamma(t)$ is continuous.)
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
@@ -206,7 +209,8 @@ The obtained curve $\gamma$ is called the
 The same definition of cancatination can be applied if $\alpha$ and/or $\beta$ are defied on semiopen intervals 
 $(a,b]$ and/or $[b,c)$.
 
-The concatenation can be also defined if the end point of the first curve coincides with the starting point of the second curve; if this is the case, the time intervals of both curves can be shifted so that they fit together. 
+The concatenation can be also defined if the end point of the first curve coincides with the starting point of the second curve;
+if this is the case, then the time intervals of both curves can be shifted so that they fit together. 
 
 If in addition $\beta(c)=\alpha(a)$ then we can do cyclic concatination of these curves;
 this way we obtain a closed curve.
@@ -215,7 +219,7 @@ If $\alpha'(b)$ and $\beta'(b)$ are defined then the angle $\theta=\measuredangl
 
 A space curve $\gamma$ is called \emph{piecewise smooth and regular} if it can be presented as a concatination of finite number of smooth regular curves; if $\gamma$ is closed, then the  concatination is assumed to be cyclic.
 
-If $\gamma$ is a concatination of smooth regular arcs $\gamma_1,\dots,\gamma_n$, then the total curvature of $\gamma$ is defined as a sum of total curvatures of $\gamma_i$ and the external angles;
+If $\gamma$ is a concatination of smooth regular arcs $\gamma_1,\dots,\gamma_n$, then the total curvature of $\gamma$ is defined as a sum of the total curvatures of $\gamma_i$ and the external angles;
 that is, 
 \[\tc\gamma=\tc{\gamma_1}+\dots+\tc{\gamma_n}+\theta_1+\dots+\theta_{n-1}\]
 where $\theta_i$ is the external angle at the joint $\gamma_i$ and $\gamma_{i+1}$;
@@ -261,7 +265,7 @@ Then
 \end{thm}
 
 \begin{wrapfigure}{r}{45 mm}
-\vskip-7mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-53}
 \vskip0mm
@@ -282,8 +286,8 @@ hence the result.
 \begin{thm}{Exercise}\label{ex:chord-lemma-optimal}
 Show that the estimate in the chord lemma is optimal.
 
-That is, given two points $p, q$ and two nonzero vectors $u,v$ in $\RR^3$.
-Show that there is a smooth regular curve $\gamma$ that starts at $p$ in the direction of $u$ and ends at $q$ in the direction of $v$ such that 
+That is, given two points $p, q$ and two nonzero vectors $u,v$ in $\RR^3$,
+show that there is a smooth regular curve $\gamma$ that starts at $p$ in the direction of $u$ and ends at $q$ in the direction of $v$ such that 
 $\tc\gamma$ is arbitrary close to $\measuredangle(w,u)+\measuredangle(w,v)$, where $w=q-p$.
 
 \end{thm}
@@ -296,7 +300,7 @@ Since the curvature of a line segment vanish, the total curvature of polygonal l
 
 \begin{thm}{Exercise}\label{ex:monotonic-tc}
 Let $a,b,c,d$ and $x$ be distinct points in $\RR^3$.
-Show that the total curvature of polygonal line $abcd$ can not exceed the the total curvature of $abxcd$; that is, 
+Show that the total curvature of polygonal line $abcd$ can not exceed the total curvature of $abxcd$; that is, 
 \[\tc {abcd} \leq \tc {abxcd}.\]
 
 Use this statement to show that any closed polygonal line has curvature at least $2\cdot\pi$.
@@ -368,7 +372,7 @@ If $\gamma$ is an arc, the argument is analogous:
 \end{enumerate}
 \end{thm}
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition}\label{prop:fenchel=}
 The equality case in the Fenchel's theorem holds only for convex plane curves;
 that is, if the total curvature of a smooth regular space curve $\gamma$ is equal to $2\cdot\pi$, then it is a convex plane curve.
 \end{thm}
@@ -444,7 +448,7 @@ it implies the so called F\'ary--Milnor theorem --- \emph{the total curvature an
 
 \section*{Bow lemma}
 
-\begin{thm}{Lemma}
+\begin{thm}{Lemma}\label{lem:bow}
 Let $\gamma_1\:[a,b]\to\RR^2$ and $\gamma_2\:[a,b] \to\RR^3$ be two smooth unit-speed curves;
 denote by $\kur_1(s)$ and $\kur_2(s)$ their curvatures at $s$.
 Suppose that $\kur_1(s)\ge\kur_2(s)$ for any $s$ 
@@ -545,6 +549,14 @@ then either
 \]
 \end{thm} %H. A. Schwartz???
 
+\begin{thm}{Exercise}\label{ex:loop}
+Suppose $\gamma\:[a,b]\to \RR^3$ is a smooth regular loop with curvature at most 1.
+Show that 
+\[\length\gamma\ge2\cdot\pi.\]
+
+\end{thm}
+
+
 \section*{DNA inequality*}
 
 Recall that curvature of a spherical curve is at least $1$
@@ -603,8 +615,8 @@ Then
 \end{thm}
 
 It was proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso};
-latter a simpler proof was given by Alexander Nazarov and Fedor Petrov~\cite{nazarov-petrov}.
-Despite the simplicity of the statement, its proof is annoyingly difficult; we do not present it here.
+latter a simpler proof was found by Alexander Nazarov and Fedor Petrov~\cite{nazarov-petrov}.
+The proof is elementary, but annoyingly difficult; we do not present it here.
 
 
 \section*{Nonsmooth curves*}
