@@ -2062,4 +2062,45 @@ label.top(btex $\gamma$ etex, z.a3);
 label.urt(btex $\sigma$ etex, point .4 of p1);
 endfig;
 
+beginfig(61);
+save u, n;
+u:=.1cm;
+n=30;
+
+z.a=(1,0)*u;
+z.b=z.a rotated 180/n;
+x.r=abs(z.a-z.b)/2.6;
+y.r=3*u;
+
+for i=0 
+upto n:
+draw circle(z.a rotated (i*360/n),y.r+i*x.r) penhair;
+endfor
+
+draw
+for i=0 
+upto n-1:
+(z.a rotated (i*360/n) + (y.r+i*x.r)*unitvector(z.a rotated ((i-1)*360/n)-z.a rotated (i*360/n)))..
+endfor
+(z.a rotated (n*360/n) + (y.r+n*x.r)*unitvector(z.a rotated ((n-1)*360/n)-z.a rotated (n*360/n)))
+;
+
+endfig;
+
+beginfig(62);
+save u;
+u:=.5cm;
+
+z.a0=(.1,0)*u;
+z.a2=z.a0 rotated 120;
+z.a4=z.a2 rotated 120;
+z.a3=(-3,0)*u;
+z.a5=z.a3 rotated 120;
+z.a1=z.a5 rotated 120;
+
+draw z.a0..z.a1..z.a2..z.a3..z.a4..z.a5..cycle;
+fill circumcircle (z.a0,z.a2,z.a4) withcolor black;
+
+endfig;
+
 end
