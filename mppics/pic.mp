@@ -2103,4 +2103,85 @@ fill circumcircle (z.a0,z.a2,z.a4) withcolor black;
 
 endfig;
 
+beginfig(63);
+save u;
+u:=1cm;
+
+save p; path p[];
+p0=(0,0)*u..(0,1)*u..(1,0)*u..(0,-1)*u..cycle;
+
+draw circumcircle(point 2 of p0,point 2.2 of p0,point 1.8 of p0);
+draw circumcircle(point 0 of p0,point 0.2 of p0,point 3.8 of p0);
+draw circumcircle(point .9 of p0,point 1.1 of p0,point 1.3 of p0);
+draw circumcircle(point 3.1 of p0,point 2.7 of p0,point 2.9 of p0);
+
+draw p0 penbold;
+
+dOt point 0 of p0,point 1.1 of p0,point 2 of p0,point 2.9 of p0;
+endfig;
+
+beginfig(64);
+save u;
+u:=1cm;
+
+z.p1=(0,0)*u;
+z.q1=(.2,2)*u;
+z.s=(-.9,.8)*u;
+z.p2=(1,1)*u;
+z.ss=(-1.7,1)*u;
+
+save p; path p[];
+p0=z.p1..tension 1.3..z.q1..z.s..cycle;
+p1=z.p1{direction 0 of p0}..z.p2..z.q1{direction 1 of p0};
+p2= z.p2{direction 1 of p1}..tension 1.6..z.s{1,-2}..tension 1.3..cycle;
+
+draw p0;
+draw p1 penbold;
+draw p2;
+
+z.x= p0 intersectionpoint subpath (0,1) of p2;
+z.y= p0 intersectionpoint subpath (1,2) of p2;
+
+dOt z.p1,z.q1,z.s,z.p2, z.x, z.y;
+
+label.llft(btex $y$ etex, z.x);
+label.ulft(btex $x$ etex, z.y);
+label.lrt(btex $p_1$ etex, z.p1);
+label.urt(btex $q_1$ etex, z.q1);
+label.rt(btex $p_2$ etex, z.p2);
+label.llft(btex $s$ etex, z.s);
+label.urt(btex $\gamma_1$ etex, point 1.5 of p1);
+label.ulft(btex $\hat\sigma_1$ etex, point 1.5 of p0);
+whitelabel(btex $\check\sigma_1$ etex, point .6 of p0);
+label.lrt(btex $\sigma_2$ etex, point .7 of p2);
+endfig;
+
+beginfig(65);
+save u;
+u:=1cm;
+
+save p; path p[];
+p0= circle(origin,1*u);
+
+z.p1=point 0 of p0;
+z.p2=point .5 of p0;
+z.p3=point .9 of p0;
+z.p4=point 1.3 of p0;
+z.p5=point 1.9 of p0;
+z.p6=point 2.5 of p0;
+z.p7=point 3.1 of p0;
+z.p8=point 3.6 of p0;
+
+p1= z.p1{1,0}..z.p2..z.p3{0,1}..z.p4..z.p5{-1,0}..z.p6..z.p7{0,-1}..z.p8..cycle;
+
+draw p0;
+draw p1 penbold;
+
+dOt z.p1, z.p2, z.p3, z.p4, z.p5, z.p6, z.p7, z.p8;
+
+label.lrt(btex $p_1$ etex, z.p1);
+label.urt(btex $p_2$ etex, z.p2);
+label.lft(btex $\dots$ etex rotated (angle (direction  1.5 of p0)), point 1.5 of p0);
+label.lrt(btex $p_{2{\cdot} n}$ etex, z.p8);
+endfig;
 end

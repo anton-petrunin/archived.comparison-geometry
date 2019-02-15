@@ -257,9 +257,9 @@ then $\sigma_{s_0}$ lies in the open disc bounded by $\sigma_{s_1}$ for any $s_0
 \vskip-4mm
 \begin{lpic}[t(-0 mm),b(-2 mm),r(0 mm),l(0 mm)]{mppics/pic-61}
 \end{lpic}
-\end{wrapfigure} %???change pic
+\end{wrapfigure}
 
-It turnes out that osculating circles of the curve $\gamma$ give a peculiar foliation of an annulus by circles; it has the following property: if a smooth function is constant on each osculating circle it must be constant in the annulus \cite[see][Lecture 10]{fuchs-tabachnikov}.
+It turns out that osculating circles of the curve $\gamma$ give a peculiar foliation of an annulus by circles; it has the following property: if a smooth function is constant on each osculating circle it must be constant in the annulus \cite[see][Lecture 10]{fuchs-tabachnikov}.
 Also note that the curve $\gamma$ is tangent to a circle of the foliation at each of its points. However, it does not run along a circle.
 
 \parit{Proof.}
@@ -583,7 +583,14 @@ Assume $\gamma$ is a simple closed smooth regular plane curve.
 Then at least two of its osculating circles support $\gamma$ from the left and  at least two from the right.
 \end{thm}
 
-%???+PIC
+\begin{wrapfigure}{r}{32 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-63}
+\vskip0mm
+\end{wrapfigure}
+
+The diagram shows for supporting osculating circles, two from inside and two outside the curve for the given curve.
 
 The above theorem is a slight generalization of the following therem proved by Vladimir Ionin and German Pestov in \cite{pestov-ionin}:
 
@@ -655,19 +662,25 @@ For each point $p\in\gamma$ consider corresponding circle $\sigma$ that lies com
 Note that $\sigma$ has to touch $\gamma$ at another point;
 otherwise we could decrease its curvature slightly while keeping the circle in $F$.
 
-%???+PIC
-
 Fix a point $p_1$ and let $\sigma_1$ be the corresponding circle.
 Denote by $\gamma_1$ an arc of $\gamma$ from $p_1$ to a first common point $q_1$ on $\sigma_1$.
 Denote by $\hat\sigma_1$ and $\check\sigma_1$ two arcs of $\sigma_1$ from $p_1$ to $q_1$ such that the cyclic concatenation of $\hat\sigma_1$ and $\gamma_1$ surrounds $\check\sigma_1$.
 
 Let $p_2$ be the midpoint of $\gamma_1$ and $\sigma_2$ be the corresponding circle. 
 
+\begin{wrapfigure}{o}{30 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-64}
+\vskip0mm
+\end{wrapfigure}
+
 Note that $\sigma_2$ can not intersect $\hat\sigma_1$.
-Otherwise, if $\sigma_2$ intersects $\hat\sigma_1$ at some point $s$, then $\sigma_2$ has two more common points with $\check\sigma_1$ --- one for each arc from $p_2$ to $s$.
+Otherwise, if $\sigma_2$ intersects $\hat\sigma_1$ at some point $s$, then $\sigma_2$ has two more common points with $\check\sigma_1$ --- $x$ and $y$, one for each arc of $\sigma_2$ from $p_2$ to $s$.
 That is $\sigma_1$ and $\sigma_2$ have three common point.
 Therefore $\sigma_1=\sigma_2$ as two circles with three common points. 
 On the other hand, by construction $p_2\in \sigma_2$ and $p_2\notin \sigma_1$ --- a contradiction.
+(Two ovals on the diagram pretend to be circles.)
 
 Note that by construction we have that
 \[\length \gamma_2< \tfrac12\cdot\length\gamma_1.\eqlbl{eq:length<length/2}\]
@@ -698,13 +711,22 @@ We leave it as an exercise.
 List all the necessary changes in the proof above of existence of circlines that support $\gamma$ form the right.
 \end{thm}
 
+\begin{wrapfigure}{o}{30 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-65}
+\vskip0mm
+\end{wrapfigure}
+
 \begin{thm}{Advanced exercise}
 Suppose $\gamma$ is a closed simple smooth regular plane curve and $\sigma$ is a circle.
-Assume $\gamma$ crosses $\sigma$ at the points $p_1,\dots,p_{2\cdot n}$ and these points appear in the same cycle order of $\gamma$ and $\sigma$.
+Assume $\gamma$ crosses $\sigma$ at the points $p_1,\dots,p_{2{\cdot} n}$ and these points appear in the same cycle order of $\gamma$ and $\sigma$.
 Show that osculating circles at $n$ distinct points of $\gamma$ lie inside $\gamma$ and that osculating circles at other $n$ distinct points of $\gamma$ lie outside of~$\gamma$.
 
 Construct an example of a closed simple smooth regular plane curve $\gamma$ with only 4 vertexes that crosses a given circle at arbitrary many points. 
 \end{thm}
+
+\parit{Hint:} Repeat the proof of theorem for each cyclic concatenation of an arc of $\gamma$ from $p_i$ to $p_{i+1}$ with large arc of the circle. 
 
 Recall that the \emph{inverse} of a point $x$ with respect to the unit circle centered at the origin is the point $\hat x=\tfrac{x}{|x|^2}$.
 
