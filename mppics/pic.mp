@@ -2184,4 +2184,20 @@ label.urt(btex $p_2$ etex, z.p2);
 label.lft(btex $\dots$ etex rotated (angle (direction  1.5 of p0)), point 1.5 of p0);
 label.lrt(btex $p_{2{\cdot} n}$ etex, z.p8);
 endfig;
+
+beginfig(66);
+save u;
+u:=1cm;
+
+z.a=(0,0)*u;
+z.b=(2,0)*u;
+z.c=(2,1)*u;
+z.d=(0,1)*u;
+
+draw z.a--z.b{right}..{left}z.c--z.d{left}..{right}cycle;
+
+draw ddline(z.a,z.b)(.3,.3) dashed evenly;
+draw ddline(z.c,z.d)(.3,.3) dashed evenly;
+
+endfig;
 end
