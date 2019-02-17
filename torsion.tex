@@ -1,0 +1,74 @@
+\chapter{Torsion of spaces curves}
+
+\section{Frenet frame}
+
+Let $\gamma$ be a smooth unit-speed space curve.
+Recall that its velocity vector $\tau(s)=\gamma'(s)$ and acceleration $\gamma''(s)$ are perpendicular.
+
+Assume its curvature $k(s)=|\gamma''(s)|=|\tau'(s)|$ does not vanish at some time $s$.
+In this case the unit normal vector $\nu(s)$ at the time $s$ is defined as
+\[\nu(s)\df \frac{\gamma''(s)}{|\gamma''(s)|}.\]
+Note that the vectors $\nu(s)$ and $\tau(s)$ are unit and orthogonal to each other.
+Therefore we can extend this pair to an oriented orthogonal basis $\tau(s),\nu(s),\beta(s)$; clearly $\beta(s)=\tau(s)\times\nu(s)$.
+Since $\tau(s),\nu(s),\beta(s)$ is an orthogonal basis, we have
+\begin{align*}
+\langle\tau,\tau\rangle&=1,
+&
+\langle\nu,\nu\rangle&=1,
+&
+\langle\beta,\beta\rangle&=1,
+\\
+\langle\tau,\nu\rangle&=0,
+&
+\langle\nu,\beta\rangle&=0,
+&
+\langle\beta,\tau\rangle&=0,
+\end{align*}
+Taking derivatives we get 
+\begin{align*}
+\langle\tau',\tau\rangle&=0,
+&
+\langle\nu',\nu\rangle&=0,
+&
+\langle\beta',\beta\rangle&=0,
+\\
+\langle\tau',\nu\rangle&=-\langle\tau,\nu'\rangle,
+&
+\langle\nu',\beta\rangle&=-\langle\nu',\beta\rangle,
+&
+\langle\beta',\tau\rangle&=-\langle\beta,\tau'\rangle,
+\end{align*}
+
+Further from above we get that 
+\[\tau'=k\cdot \nu.\]
+Therefore 
+\begin{align*}
+\langle\tau',\tau\rangle&=1,
+&
+\langle\nu,\nu\rangle&=1,
+&
+\langle\beta,\beta\rangle&=1,
+\end{align*}
+Let us write the expressions for $\nu'$ and $\beta'$
+
+\begin{thm}{Exercise}
+Let $\gamma$ be a regular smooth curve with nonvanishing curvature.
+Show that the torsion of $\gamma$ vanish if and only if $\gamma$ lies in a plane.
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $\gamma(t)$ be a smooth regular space curve.
+Assume that there is function $|\gamma(t_1)-\gamma(t_2)|$ depends only on $t_2-t_1$;
+that is there is a function $\ell$ such that $\ell(t_2-t_1)=|\gamma(t_1)-\gamma(t_2)|^2$ for any $t_1$ and $t_2$.
+Show that 
+\begin{enumerate}[(a)]
+\item $2\cdot|\gamma'(t)|^2=\ell''(0)$;
+\item $2\cdot|\gamma''(t)|^2=\ell^{(4)}(0)$;
+\item $2\cdot|\gamma'''(t)|^2=\ell^{(6)}(0)$;
+\item The vectors $\gamma'(t)$, $\gamma''(t)$, $\gamma'''(t)$ are orthogonal to each other.
+\item Conclude that $\gamma$ is a helix, possibly degenerated to a line or a circle. 
+\end{enumerate}
+
+\end{thm}
+
+

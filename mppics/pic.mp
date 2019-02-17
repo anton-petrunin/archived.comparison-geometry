@@ -973,6 +973,7 @@ z.d4=(-1,0);
 z.d5=(-.8,-.3);
 z.d6=(-1,.5);
 z.pp=(10,.2)*u;
+z.qq=(4,-3)*u;
 
 p0=
 (directionpoint z.d1 of p1){z.d1}..
@@ -981,7 +982,7 @@ p0=
 (3,-3)*u..
 (2.2,-1)*u..
 (directionpoint z.d2 of p2){z.d2}..
-(4,-3)*u..
+z.qq..
 (directionpoint z.d3 of p3){z.d3}..
 z.pp..
 (directionpoint z.d4 of p3){z.d4}..
@@ -1005,7 +1006,8 @@ dOt z.p1, z.p2, z.p3, z.q1, z.q2, z.q3, z.pp;
 
 label(btex $\sigma_1$ etex, z.o1);
 label(btex $\sigma_2$ etex, z.o2);
-label.lft(btex $\hat\sigma_3$ etex, z.o3-(x.r3,0));
+whitelabel(btex $\hat\sigma_3$ etex, z.o3-(x.r3,0));
+whitelabel(btex $\check\sigma_3$ etex, z.o3+(x.r3,0));
 whitelabel(btex $\sigma_\infty$ etex, point 2 of p4);
 label.lrt(btex $p_1$ etex, z.p1);
 label.llft(btex $p_2$ etex, z.p2);
@@ -1014,6 +1016,7 @@ label.rt(btex $p_\infty$ etex, z.pp);
 label.urt(btex $q_1$ etex, z.q1);
 label.top(btex $q_2$ etex, z.q2);
 label.top(btex $q_3$ etex, z.q3);
+label.top(btex $F$ etex, (z.p2+z.p3+z.qq)/3);
 
 endfig;
 
@@ -2194,7 +2197,11 @@ z.b=(2,0)*u;
 z.c=(2,1)*u;
 z.d=(0,1)*u;
 
-draw z.a--z.b{right}..{left}z.c--z.d{left}..{right}cycle;
+save p; path p[];
+p0=z.a--z.b{right}..{left}z.c--z.d{left}..{right}cycle;
+
+hatchfill p0  withcolor (67, 1mm, -.5bp);
+draw p0;
 
 draw ddline(z.a,z.b)(.3,.3) dashed evenly;
 draw ddline(z.c,z.d)(.3,.3) dashed evenly;
