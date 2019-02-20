@@ -856,19 +856,19 @@ p0=z.a0..z.a1..z.a2..z.a3..z.a4..z.a5..z.b..z.a6..z.a7..z.a8..z.a9..z.a10..z.a11
 draw p0;
 draw ddline(z.a5, z.a6)(0.2, 0.2) pensemibold;
 
-dOt z.a1,z.a2,z.a3,z.a4,z.a5,z.a6,z.a7,z.a8,z.a9,z.a10,z.a11;
-
 whitelabel.bot(btex $p_1$ etex, z.a1);
-whitelabel.top(btex $p_2$ etex, z.a2);
+whitelabel.top(btex $p_2$ etex, z.a2+(0,1));
 whitelabel.bot(btex $p_3$ etex, z.a3);
-whitelabel.top(btex $p_4$ etex, z.a4);
+whitelabel.top(btex $p_4$ etex, z.a4+(0,1));
 whitelabel.bot(btex $p_5$ etex, z.a5);
-whitelabel.top(btex $p_6$ etex, z.a6);
+whitelabel.top(btex $p_6$ etex, z.a6+(0,1));
 whitelabel.bot(btex $p_7$ etex, z.a7);
-whitelabel.top(btex $p_8$ etex, z.a8);
+whitelabel.top(btex $p_8$ etex, z.a8+(0,1));
 whitelabel.bot(btex $p_9$ etex, z.a9);
-whitelabel.top(btex $p_{10}$ etex, z.a10);
+whitelabel.top(btex $p_{10}$ etex, z.a10+(0,1));
 whitelabel.bot(btex $p_{11}$ etex, z.a11);
+
+dOt z.a1,z.a2,z.a3,z.a4,z.a5,z.a6,z.a7,z.a8,z.a9,z.a10,z.a11;
 endfig;
 
 beginfig(30);
@@ -2207,4 +2207,54 @@ draw ddline(z.a,z.b)(.3,.3) dashed evenly;
 draw ddline(z.c,z.d)(.3,.3) dashed evenly;
 
 endfig;
+
+beginfig(67);
+save u;
+u:=.7cm;
+
+z.p=(0,0)*u;
+z.b=(0,2)*u;
+
+save p; path p[];
+p0=z.p{1,1}..z.b..{0,-1}z.p;
+
+draw p0 penbold;
+
+z.z=((point .6 of p0)+(point 1 of p0)+(point 1.4 of p0))/3;
+
+p1=circumcircle (.8*(point .6 of p0)+.2*z.z, .8*(point 1 of p0)+.2*z.z, .8*(point 1.4 of p0)+.2*z.z);
+
+draw p1;
+hatchfill p1  withcolor (67, 1mm, -.5bp);
+
+dOt z.p;
+label.bot(btex $p$ etex, z.p);
+endfig;
+
+beginfig(68);
+save u;
+u:=1cm;
+
+z.x=(0,0)*u;
+z.y=(2,0)*u;
+z.xy=(1,.5)*u;
+z.yx=(1,1.4)*u;
+
+save p; path p[];
+p0=z.x{right}..z.xy..z.y{right}..z.yx{-1,.2}..cycle;
+
+hatchfill p0  withcolor (67, 1mm, -.5bp);
+draw p0;
+
+draw ddline(z.x,z.y)(.4,.3)dashed evenly;
+
+dOt z.x,z.y;
+
+whitelabel(btex $F$ etex, (1,1)*u);
+label.bot(btex $x$ etex, z.x);
+label.bot(btex $y$ etex, z.y);
+label.bot(btex $\gamma_1$ etex, z.xy);
+label.top(btex $\gamma_2$ etex, z.yx);
+endfig;
+
 end

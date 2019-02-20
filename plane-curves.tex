@@ -305,10 +305,13 @@ is strictly less than the difference between their radiuses.
 Therefore the osculating circle at $s_0$ lies inside the osculating circle at $s_1$ without touching it.
 \qeds
 
-The curve $s\mapsto z(s)$ is called \emph{evolute} of $\gamma$; it traces the centers of curvature of the curve. 
-Note that in the proof we showed that $(\tfrac1{\kur})'\cdot\nu$ is the velocity of evolute of the curve.
+The curve $s\mapsto z(s)$ is called \emph{evolute} of $\gamma$; 
+it traces the centers of curvature of the curve. 
+The evolute of $\gamma$ can be written as 
+\[z(t)=\gamma(t)+\tfrac1{\kur(t)}\cdot \nu(t)\] and  
+in the proof we showed that $(\tfrac1{\kur})'\cdot\nu$ is its the velocity vector.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:evolute-of-ellipse}
 Show that the stretched astroid 
 \[\alpha(t)=(\tfrac{a^2-b^2}{a}\cdot \cos^3 t,  \tfrac{b^2-a^2}{b}\cdot\sin^3 t)\]
 is an evolute of the ellipse $\gamma(t)= (a\cdot \cos t, b\cdot\sin t)$.
@@ -508,16 +511,26 @@ Show that there is a point on $\gamma$ with absolute curvature at least 1.
 \parit{Hint:} Consider the smallest figure $F$ as on the diagram that contains the curve.
 More precisely, $F$ is formed by a rectangle with pair of bases on the lines and two half discs attached to the sides of length $2$.   
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:in-triangle}
 Assume a closed smooth regular plane curve $\gamma$ runs inside of a triangle $\triangle$ with inradius 1; that is, the inscribed circle of $\triangle$ has radius 1.
 Show that there is a point on $\gamma$ with absolute curvature at least~$1$.
 \end{thm}
 
-\section*{Lens lemma}
 
-\begin{thm}{Lemma}\label{lem:lens}
-Let $\gamma$ be a smooth regular simple curve that runs from $x$ to $y$.
-Assume that $\gamma$ runs on the right side (correspondingly left side) of the oriented line $xy$ and only its end points $x$ and $y$ lie on the line.
+
+\section*{Convex curves}
+
+Recall that a plane curve is convex if it bounds a convex region.
+
+\begin{thm}{Proposition}\label{prop:convex}
+Suppose that a closed simple cure $\gamma$ bounds a figure $F$.
+Then $F$ is convex if and only if the signed curvature of $\gamma$ does not change the sign.
+\end{thm}
+
+
+\begin{thm}{Lens lemma}\label{lem:lens}
+Let $\gamma$ be a smooth regular simple curve that runs from $x$ to $y$ and distinct from the line segment from $x$ to $y$.
+Assume that $\gamma$ runs on the closed right side (correspondingly left side) of the oriented line $xy$ and only its end points $x$ and $y$ lie on the line.
 Then $\gamma$ has a point with positive  (correspondingly negative) signed curvature.
 \end{thm}
 
@@ -535,14 +548,13 @@ so it has negative curvature everywhere, but it lies on the right side of the li
 \parit{Proof.}
 Choose points $p$ and $q$ on $\ell$
 so that the points $p, x, y, q$ appear in the same order on $\ell$.
+We can assume that $p$ and $q$ lie sufficiently far from $x$ and $y$, so the half-disc with diameter $pq$ contains $\gamma$.
 
 Consider the smallest disc segment with chord $[pq]$ that contains $\gamma$.
 Note that its arc $\sigma$ supports $\gamma$ at a point $s=\gamma(t_0)$.
 
 \begin{wrapfigure}{r}{50 mm}
 \centering
-\includegraphics{mppics/pic-23}
-\bigskip
 \includegraphics{mppics/pic-24}
 \vskip0mm
 \end{wrapfigure}
@@ -553,10 +565,14 @@ Then $\gamma$ and $\sigma$ are cooriented as $s$.
 If not, then the arc of $\gamma$ from $s$ to $y$ would be trapped in the curvelinear triangle $xsp$ bounded by arcs of $\sigma$, $\gamma$ and the line segment $[px]$.
 But this is impossible since $y$ does not belong to this triangle.
 
-
+\begin{wrapfigure}{r}{50 mm}
+\centering
+\includegraphics{mppics/pic-23}
+\vskip0mm
+\end{wrapfigure}
 
 It follows that $\sigma$ supports $\gamma$ at $t_0$ from the right.
-By Proposition~\ref{prop:supporting-circline}, 
+By \ref{prop:supporting-circline}, 
 \[\kur_\gamma(t_0)\ge \kur_\sigma,\]
 Evidently $\kur_\sigma>0$, hence the result.
 \qeds
@@ -565,26 +581,45 @@ Evidently $\kur_\sigma>0$, hence the result.
 Instead of taking minimal disc segment, one can take a point $s$ on $\gamma$ that maximize the distance to the line $xy$.
 The same argument shows that curvature at $s$ is nonnegative, which is slightly weaker than the required positive curvature.
 
-\begin{thm}{Exercise}
-Assume $\gamma$ is a closed regular simple plane curve with positive signed curvature.
-Show that $\gamma$ bounds a convex set.
+\parit{Proof of \ref{prop:convex}.}
+If $F$ is convex, then every tangent line of $\gamma$ supports $\gamma$.
+If a point moves along $\gamma$, the figure $F$ has to stay on one side from its tangent line;
+that is, we can assume that each tangent line supports $\gamma$ on one side, say on the right.
+Applying the supporting test (\ref{prop:supporting-circline}), we get that $k\ge 0$ at each point.
+
+\begin{wrapfigure}{r}{35 mm}
+\centering
+\includegraphics{mppics/pic-68}
+\vskip0mm
+\end{wrapfigure}
+
+Now assume $F$ is not convex.
+Then there is a line that supports $\gamma$ at two points, say $x$ and $y$ that divide $\gamma$ in two arcs $\gamma_1$ and $\gamma_2$, both distinct from the line segment $xy$.
+Note the one of the arcs is parametrized from $x$ to $y$ and the other from $y$ to $x$.
+Applying the lens lemma, we get that the arcs $\gamma_1$ and $\gamma_2$ contain points with curvatures of opposite signs.
+
+That is, if $F$ is not convex, then curvature of $\gamma$ changes sign.
+Equivalently: if curvature of $\gamma$ does not change sign then $F$ is convex.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:convex small}
+Suppose $\gamma$ is a smooth regular simple closed convex plane curve of diameter bigger than 2.
+Show that $\gamma$ has a point with absolute curvature less than 1.
 \end{thm}
 
-\parit{Hint:} Show that any tangent line to $\gamma$ is supporting.
+\parit{Hint:}
+Note that we can assume that $\gamma$ bounds a convex figure $F$, otherwise by \ref{prop:convex} its curvature changes the sign and therefore it has zero curvature at some point.
+Choose two points $x$ and $y$ surrounded by $\gamma$ such that $|x-y|>2$,
+look at the maximal lens bounded by two arcs with common chord $xy$ that lies in $F$ and apply supporting test (\ref{prop:supporting-circline}).
 
-\begin{thm}{Exercise}\label{ex:convex+2pi}
-Assume $\gamma$ is a closed smooth regular plane curve with positive signed curvature.
-Show that $\gamma$ is simple if and only if its total absolute curvature is $2\cdot\pi$. 
-\end{thm}
-
-\begin{thm}{Advanced exercise}
+\begin{thm}{Exercise}\label{ex:line-curve-intersections}
 Suppose $\gamma$ is a simple smooth regular curve in the plane with positive curvature.
 Assume $\gamma$ crosses a line $\ell$ at the points $p_1,p_2,\dots p_n$ and these points appear on $\gamma$ in that same order.
 \begin{enumerate}[(a)]
 
-\item Show that $p_2$ can not lie between $p_1$ and $p_3$ on $\ell$.
+\item\label{ex:line-curve-intersections:a} Show that $p_2$ can not lie between $p_1$ and $p_3$ on $\ell$.
 
-\item Show that if $p_3$ lies between $p_1$ and $p_2$ on $\ell$ then the points appear on $\ell$ in the following order:  
+\item\label{ex:line-curve-intersections:b} Show that if $p_3$ lies between $p_1$ and $p_2$ on $\ell$ then the points appear on $\ell$ in the following order:  
 \[p_1,p_3,\dots,p_4 ,p_2.\]
 
 \item Try to describe all possible orders when $p_1$ lies between $p_2$ and $p_3$ (see the diagram).
@@ -737,16 +772,33 @@ It remains to show that existence of a pair of osculating circlines that support
 This is done the same way, one only has to change the definition of corresponding circline --- given $p\in\gamma$, it has to be the circline of maximal signed curvature that supports $\gamma$ from the right at $p$.
 We leave it as an exercise:
 
-\begin{thm}{Exercise}
-List all the necessary changes in the proof above of existence of circlines that support $\gamma$ form the right.\qeds
+\begin{thm}{Exercise}\label{ex:finish-moon}
+List the necessary changes in the proof above for the existence of circlines that support $\gamma$ form the right.\qeds
 \end{thm}
 
-\begin{wrapfigure}{r}{30 mm}
+{
+
+\begin{wrapfigure}{r}{15 mm}
 \vskip-4mm
 \centering
-\includegraphics{mppics/pic-65}
+\includegraphics{mppics/pic-67}
 \vskip0mm
 \end{wrapfigure}
+
+Theorem \ref{thm:moon-orginal} admits the following generalization:
+
+\begin{thm}{Theorem}\label{thm:moon-gen}
+Suppose that $\gamma$ is a closed simple plane curve which is smooth regular everywhere except one point $p$ and the absolute curvature $\gamma$ does not exceed 1 at all points except $p$.
+Then $\gamma$ surrounds a unit circle.
+\end{thm}
+
+}
+
+
+\begin{thm}{Exercise}
+List the modifications in the proof of \ref{thm:moon} which are nesesary to prove \ref{thm:moon-gen}.
+\end{thm}
+
 
 \begin{thm}{Advanced exercise}
 Suppose $\gamma$ is a closed simple smooth regular plane curve and $\sigma$ is a circle.
@@ -757,8 +809,17 @@ In particular the curve $\gamma$ has at least $2\cdot n$ vertexes.
 Construct an example of a closed simple smooth regular plane curve $\gamma$ with only 4 vertexes that crosses a given circle at arbitrary many points. 
 \end{thm}
 
+\begin{wrapfigure}{r}{30 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-65}
+\vskip0mm
+\end{wrapfigure}
+
 \parit{Hint:}
 Repeat the proof of theorem for each cyclic concatenation of an arc of $\gamma$ from $p_i$ to $p_{i+1}$ with large arc of the circle. 
+
+
 
 Recall that the \emph{inverse} of a point $x$ with respect to the unit circle centered at the origin is the point $\hat x=\tfrac{x}{|x|^2}$.
 

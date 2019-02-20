@@ -1,0 +1,115 @@
+\chapter{Alternative proofs}
+
+\section*{DNA inequality}
+
+Recall that curvature of a spherical curve is at least $1$
+(Exercise~\ref{ex:curvature-of-spherical-curve}).
+In particular the length of spherical curve can not exceed its total curvature.
+The following theorem shows that the same inequality holds for \emph{closed} curves in a unit ball.
+
+\begin{thm}{Theorem}\label{thm:DNA}
+Let $\gamma$ be a nontrivial closed curve that lies in a unit ball.
+Then 
+\[\tc\gamma\ge \length\gamma.\]
+
+\end{thm}
+
+In the proof we use \ref{def:total-curv-poly} to define for the total curvature;
+according to \ref{thm:total-curvature=}, it is more general than the smooth definition on page \pageref{page:total curvature of:smooth-def}.
+
+\parit{Proof.}
+We will show that 
+\[\tc\gamma> \length\gamma.\]
+for any closed polygonal line $\gamma=p_1\dots p_{n}$ in a unit ball.
+It implies the theorem since in any nontrivial closed curve we can inscribe a closed polygonal line with arbitrary close total curvature and length.
+
+The indexes are taken modulo $n$, in particular $p_{n}=p_0$, $p_{n+1}=p_1$ and so on.
+Denote by $\theta_i$ the external angle of $\gamma$ at $p_i$;
+that is,
+\[\theta_i=\pi-\measuredangle p_{i-1}p_ip_{i+1}.\]
+
+Denote by $o$ the center of the ball.
+Consider a sequence of $n+1$ plane triangles
+\begin{align*}
+\triangle q_0s_0q_1
+&\cong 
+\triangle p_0op_1,
+\\
+\triangle q_1s_1q_2
+&\cong 
+\triangle p_1op_2,
+\\
+&\dots
+\\
+\triangle q_{n}s_nq_{n+1}
+&\cong 
+\triangle p_nop_{n+1},
+\end{align*}
+such that the points $q_0,q_1\dots$ lie on one line in that order and all the points $s_0,\dots,s_n$ lie on one side from this line.
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-16}
+\vskip0mm
+\end{figure}
+
+Since $p_0=p_n$ and $p_1=p_{n+1}$, we have that
+\[\triangle q_{n}s_nq_{n+1}\cong 
+\triangle p_nop_{n+1}=\triangle p_0op_1\cong\triangle q_{0}s_0q_1,\]
+so $s_0q_0q_ns_n$ is a parallelogram.
+Therefore
+\begin{align*}
+|s_0-s_1|+\dots+|s_{n-1}-s_n|
+&\ge|s_n-s_0|=
+\\
+&=|q_0-q_n|=
+\\
+&=|p_0-p_1|+\dots+|p_{n-1}-p_n|
+\\
+&=\length \gamma.
+\end{align*}
+
+Note that 
+\begin{align*}
+\theta_i&=\pi-\measuredangle p_{i-1}p_ip_{i+1}\ge
+\\
+&\ge\pi-\measuredangle p_{i-1}p_io-\measuredangle op_ip_{i+1}=
+\\
+&=\pi-\measuredangle q_{i-1}q_is_{i-1}-\measuredangle s_iq_iq_{i+1}=
+\\
+&=\measuredangle s_{i-1}q_is_i>
+\\
+&>|s_{i-1}-s_i|;
+\end{align*}
+the last inequality follows since $|q_i-s_{i-1}|=|q_i-s_i|=|p_i-o|\le 1$.
+That is, 
+\[\theta_i>|s_{i-1}-s_i|\]
+for each $i$.
+
+It follows that
+\begin{align*}
+\tc \gamma
+&=\theta_1+\dots+\theta_n>
+\\
+&> |s_{0}-s_1|+\dots |s_{n-1}-s_n|\ge 
+\\
+&\ge\length \gamma.
+\end{align*}
+Hence the result.
+\qeds
+
+This theorem was proved by Don Chakerian \cite{chakerian};
+for plane curves it was prved earlier by Istv\'{a}n F\'{a}ry \cite{fary-DNA}.
+Few proofs of this theorem are discussed by Serge Tabachnikov~\cite{tabachnikov}.
+He also conjectured the following closely related statement:
+
+\begin{thm}{Theorem}
+Suppose a closed regular smooth curve $\gamma$ lies in a convex figure with the perimeter $2\cdot \pi$.
+Then 
+\[\tc\gamma\ge \length\gamma.\]
+
+\end{thm}
+
+It was proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso}; latter a simpler proof was given by Alexander Nazarov and Fedor Petrov~\cite{nazarov-petrov}.
+The proof is annoyingly difficult; we do not present it here.
