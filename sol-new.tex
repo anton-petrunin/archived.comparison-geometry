@@ -1,0 +1,54 @@
+\chapter{Semisolutions}
+
+\parbf{Exercise \ref{ex:vertex-support}}
+
+\parit{Using the spiral lemma.}
+If $\gamma$ does not have a vertex at $s$ then $k'(s)\ne 0$ and therefore the curvature of a small arc around $s$ is monotonic.
+By spiral lemma the osculating circles at this arc are nested.
+In particular the curve $\gamma$ crosses the osculating circle $\sigma_s$ at $s$; 
+that is, $\sigma_s$ is not a local support of $\gamma$ at $s$.
+
+We proved that \emph{if $\gamma$ does not have a vertex at $s$ then the osculating circle $\sigma_s$ is not supporting at $s$}.
+The latter is equivalent to the requred statement: \emph{if the osculating circle $\sigma_s$ supports $\gamma$ at $s$, then $\gamma$ has a vertex at~$s$}.
+
+\parit{By direct calculations.}
+Assume the osculating circline $\sigma_s$ is a circle.
+Then its center is $p=\gamma(s)+\tfrac1{k(s)}\cdot\nu(s)$.
+Since $\sigma_s$ is supporting $\gamma$ at $s$, we have that the function
+\[f(t)=\langle p-\gamma(t),p-\gamma(t)\rangle\]
+has a minimum or maximum at $s$.
+
+Note that 
+\begin{align*}
+f'(t)&= 2\cdot\langle p-\gamma(t),-\tau(t)\rangle;
+\\
+f''(s)&= 
+2\cdot\langle -\tau(t),-\tau(t)\rangle
+-2\cdot\langle  p-\gamma(t),k(t)\cdot\nu(t)\rangle=
+\\
+&=2-2\cdot\langle  p-\gamma(t),k(t)\cdot\nu(t)\rangle;
+\\
+f'''(s)&=-2\cdot\langle  -\tau(t),k(t)\cdot\nu(t)\rangle-
+\\&\quad-
+2\cdot\langle  p-\gamma(t),k'(t)\cdot\nu(t)\rangle
++2\cdot\langle  p-\gamma(t),-k^2(t)\cdot\tau(t)\rangle=
+\\
+&=-
+2\cdot\langle  p-\gamma(t),k'(t)\cdot\nu(t)\rangle
++2\cdot\langle  p-\gamma(t),-k^2(t)\cdot\tau(t)\rangle.
+\end{align*}
+Therefore
+\begin{align*}
+f'(s)&=-2\cdot\langle \tfrac1{k(s)}\cdot\nu(s),\tau(s)\rangle=
+\\
+&=0.
+\\
+f''(s)
+&=2-2\cdot\tfrac{k(s)}{k(s)}=
+\\
+&=0.
+\\
+f'''(s)&=-2\cdot\tfrac{k'(s)}{k(s)}.
+\end{align*}
+Therefore if $f$ has a local minimum or maximum at $s$, then $f'''(s)=0$ and therefore $k'(s)=0$.
+
