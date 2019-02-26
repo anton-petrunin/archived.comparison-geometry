@@ -173,3 +173,65 @@ Note that the sum of angles of $P$ is the sum of angles of $Q$ and $R$, which by
 It remains to note that \ref{eq:k+m=n+2} implies
 \[(k-2)\cdot\pi+(m-2)\cdot\pi=(n-2)\cdot\pi.\]
 \qedsf
+
+The following theorem says that triangle inequality holds for angles between half-lines from a fixed point.
+In particular it implies that a unit sphere with angle metric is a metric space.
+
+\begin{thm}{Theorem}\label{thm:spherical-triangle-inq}
+The inequality
+\[\measuredangle aob+\measuredangle boc\ge\measuredangle aoc\]
+holds for any three half-lines $oa$, $ob$ and $oc$ in the Euclidean space.
+\end{thm}
+
+The following lemma says that angle of a triangle monotonically depends on the opposit side, assuming the we keep the remaining two sides fixed.
+It is a simple statement in elementary geometry; in particular it follows directly from the cosine rule.
+
+\begin{thm}{Lemma}\label{lem:angle-monotonicity}
+Let $x$, $y$, $z$, $x'$, $y'$ and $z'$ be 6 points such that $|x-y|=|x'-y'|>0$ and $|y-z|=|y'-z'|>0$.
+Then 
+\[\measuredangle xyz\ge \measuredangle x'y'z'
+\quad\text{if and only if}\quad
+|x-z|\ge |x'-y'|.\]
+\end{thm}
+
+\begin{wrapfigure}{o}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-69}
+\vskip0mm
+\end{wrapfigure}
+
+\parit{Proof of \ref{thm:spherical-triangle-inq}.}
+We can assume that $\measuredangle aob<\measuredangle aoc$; otherwise the statement is evident.
+In this case there is a half-line $ob'$ in the angle $aoc$ such that 
+\[\measuredangle aob=\measuredangle aob',\]
+so in particular we have that
+\[\measuredangle aob'+\measuredangle b'oc=\measuredangle aoc.\]
+Without loss of generality we can assume that  $|o-b|=|o-b'|$ and $b'$ lies on a line segment $ac$, so
+\[|a-b'|+|b'-c|=|a-c|.\]
+
+Then by triangle inequality 
+\[
+\begin{aligned}
+|a-b|+|b-c|&\ge |a-c|=
+\\
+&=|a-b'|+|b'-c|.
+\end{aligned}
+\eqlbl{eq:triangle-inq-abcb'}
+\]
+
+Note that in the triangles $aob$ and $aob'$ the side $ao$ is shared, $\measuredangle aob\z=\measuredangle aob'$ and $|o-b|=|o-b'|$.
+By side-angle-side congruence condition, we have that $\triangle aob\cong \triangle aob'$;
+in particular $|a-b'|=|a-b|$.
+Therefore from \ref{eq:triangle-inq-abcb'} we have that 
+\[|b-c|\ge |b'-c|.\]
+Applying the angle monotonicity (\ref{lem:angle-monotonicity}) we get that
+\[\measuredangle boc\ge \measuredangle b'oc.\]
+Whence
+\begin{align*}
+\measuredangle aob+\measuredangle boc
+&\ge \measuredangle aob'+\measuredangle b'oc=
+\\
+&=\measuredangle aoc.
+\end{align*}
+\qedsf

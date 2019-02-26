@@ -2257,4 +2257,39 @@ label.bot(btex $\gamma_1$ etex, z.xy);
 label.top(btex $\gamma_2$ etex, z.yx);
 endfig;
 
+beginfig(69);
+save u;
+u:=1cm;
+
+z.o=origin;
+z.a=(2,0)*u;
+z.c=(-.5,1.2)*u;
+z.b=.3[z.c,z.a];
+z.bb=(-.3,-.6)*u;
+
+save p; path p[];
+p0=z.o--z.b;
+p1=z.o--z.bb;
+p2=z.a--z.b;
+p3=z.a--z.bb;
+
+draw p0;
+draw p1;
+draw p2;
+draw p3;
+
+draw z.a--z.o--z.c--z.b;
+draw z.c--z.bb;
+
+dOt z.o,z.a,z.b,z.bb,z.c;
+
+rimmark(p0,p1);
+rimmark2(p2,p3);
+
+label.lrt(btex $o$ etex, z.o);
+label.rt(btex $a$ etex, z.a);
+label.urt(btex $b'$ etex, z.b);
+label.bot(btex $b$ etex, z.bb);
+label.top(btex $c$ etex, z.c);
+endfig;
 end
