@@ -1,14 +1,23 @@
 \chapter{Surfaces}
 
-\section{Definition}
+\section*{General definition}
+
+Few times we will need the following general definition.
+
+A path connected subset $\Sigma$ in a metric space is called \emph{surface} (more precisely \emph{embedded surface without boundary}) 
+if any point of $p\in \Sigma$ admits a neighborhood $W$ in $\Sigma$ which is \emph{homeomorphic} to an open plane subset;
+that is, if there is an injective continuous map $U\to W$ from an open set $U\subset \RR^2$ such that its invese $W\to U$ is also continuous.
+
+However, as well as in the case of curves we will be mostly interested in smooth surfaces in the Euclidean space describe in the following section.
+
+\section*{Smooth surfaces}
 
 Recall that a function $f$ of two variables $x$ and $y$ is called \emph{smooth} if all its partial derivatives $\frac{\partial^{m+n}}{\partial x^m\partial y^n}f$ are defined and are continuous in the domain of definition of $f$. 
 
-A path connected set $\Sigma \subset \mathbb{R}^3$ is called a \emph{smooth surface} (or more precisely \emph{smooth regular embedded surface}) if it can be described locally as a graph of a smooth function in an appropriate coordinate system.
+A path connected set $\Sigma \subset \mathbb{R}^3$ is called a \emph{smooth surface} (or more precisely \emph{smooth regular embedded surface}) if it can be described locally as a graph of a smooth function in an appropriate coordinate system.\label{page:def-smooth-surface}
 
-More precisely, any point $p\in \Sigma$ admits a neighborhood $U$ such that
-in some coordinate system $(x,y,z)$, 
-the intersection $W=U\cap \Sigma$ is a graph $z=f(x,y)$ of a smooth function $f$ defined in an open domain of the $(x,y)$-plane.
+More precisely, for any point $p\in \Sigma$ one can choose a coordinate system $(x,y,z)$ and a neighborhood $U\ni p$ such that
+the intersection $W=U\cap \Sigma$ is formed by a graph $z=f(x,y)$ of a smooth function $f$ defined in an open domain of the $(x,y)$-plane.
 
 \parbf{Examples.}
 The simplest example of a surface is the $(x,y)$-plane 
@@ -19,13 +28,13 @@ it can be described as the graph of the function $f(x,y)=0$.
 All other planes are surfaces as well since one can choose a coordinate system so that it becomes the $(x,y)$-plane.
 We can also present a plane as a graph of a linear function 
 $f(x,y)=a\cdot x+b\cdot y+c$ for some constants $a$, $b$ and $c$
-if the plane is not perpendicular to the $(x,y)$-plane.
+(assuming the plane is not perpendicular to the $(x,y)$-plane).
 
 A more interesting example is the unit sphere 
 \[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
 This set is not the graph of any function,
-but $\SS^2$
-can be covered by 6 graphs 
+but $\SS^2$ is locally a graph;
+in fact it can be covered by 6 graphs:
 \begin{align*}
 z&=f_\pm(x,y)=\pm \sqrt{1-x^2-y^2},
 \\
@@ -34,7 +43,7 @@ y&=g_\pm(x,z)=\pm \sqrt{1-x^2-z^2},
 x&=h_\pm(y,z)=\pm \sqrt{1-y^2-z^2};
 \end{align*}
 each function $f_\pm,g_\pm,h_\pm$ is defined in an open unit disc.
-Therefore the unit sphere is a smooth surface.
+That is, $\SS^2$ is a smooth surface.
 
 \parbf{More conventions.}
 If the surface $\Sigma$ is formed by a closed set, then it is called \emph{complete}.
@@ -45,7 +54,7 @@ or sphere
 are complete surfaces, while the
 open disc in a plane 
 \[\set{(x,y,z)\in\RR^3}{x^2+y^2<1, z=0}\]
-is a surface which is complete.
+is a surface which is not complete.
 
 If moreover $\Sigma$ is a compact set, then it is called \emph{closed surface} (the term \emph{closed set} is not directly relevant).
 
@@ -60,10 +69,153 @@ curves is called \emph{surface with boundary}; in this case the collection of cu
 When we say \emph{surface} we usually mean a surface without boundary;
 we may use the term \emph{surface with possibly nonempty boundary} if we need to talk about surfaces with and without boundary.
 
+\section*{Local parametrizations}
 
-%???complete surface???
+Let $U$ be an open domain in $\RR^2$ and $f\:U\to \RR^3$ be a smooth map.
+We say that $f$ is regular if its Jacobian has maximal rank;
+that is, if the vectors $\tfrac{\partial f}{\partial u}$ and $\tfrac{\partial f}{\partial v}$ are linearly independent at any $(u,v)\in U$;
+equivalently $\tfrac{\partial f}{\partial u}\times\tfrac{\partial f}{\partial v}\ne 0$, where $\times$ denotes the vector product.
 
-\section{Tangent plane}
+\begin{thm}{Proposition}\label{prop:graph-chart}
+If $f\:U\to \RR^3$ is a smooth regular embedding of an open connected set $U\subset \RR^2$, then it image $\Sigma=f(U)$ is a smooth surface.
+\end{thm}
+
+\parit{Proof.}
+Let $f(u,v)=(f_1(u,v),f_2(u,v),f_3(u,v))$.
+Since $f$ is regular the Jacobian
+\[
+\renewcommand\arraystretch{1.3}
+\begin{pmatrix}
+\tfrac{\partial f_1}{\partial u}&\tfrac{\partial f_1}{\partial v}\\
+\tfrac{\partial f_2}{\partial u}&\tfrac{\partial f_2}{\partial v}\\
+\tfrac{\partial f_3}{\partial u}&\tfrac{\partial f_3}{\partial v}
+\end{pmatrix}
+\]
+has rank two.
+
+Fix a point $p\in \Sigma$; by shifting the coordinate system we may assume that $p$ is the origin.
+Permuting the coordinates $x,y,z$ if necessary, we may assume that 
+the matrix 
+\[
+\renewcommand\arraystretch{1.3}
+\begin{pmatrix}
+\tfrac{\partial f_1}{\partial u}&\tfrac{\partial f_1}{\partial v}\\
+\tfrac{\partial f_2}{\partial u}&\tfrac{\partial f_2}{\partial v}
+\end{pmatrix}
+\]
+is invertible.
+Let $\bar f\:U\to\RR^2$ be the projection of $f$ to the $(x,y)$-coordinate plane;
+that is, $\bar f(u,v)=(f_1(u,v),f_2(u,v))$.
+Note that the $2\times2$-matrix above is the Jacobian matrix of $\bar f$.
+
+The inverse function theorem implies that there is a smooth regular function $h$ defined on an open set $W\ni 0$ in the $(x,y)$-plane
+such that $h(0,0)=(0,0)$ and $\bar f\circ h$ is the identity map.
+
+The graph $\Gamma$ described by $z=f_3\circ h(x,y)$ is a subset of $\Sigma$.
+Indeed, if $(u,v)\z=h(x,y)$, then $x=f_1(u,v)$ and $y=f_2(u,v)$.
+Therefore the identity $z=f_3\circ h(x,y)$ can be rewritten as $(x,y,z)=f(u,v)$.
+
+Clearly $\Gamma$ is an open subset in $\Sigma$;
+that is, $\Gamma$ a neighborhood of $p$ in $\Sigma$ that can be described as a graph of a smooth function $f_3\circ h\:W\to\RR$.
+Since $p$ is arbitrary, we get that $\Sigma$ is a surface.
+\qeds
+
+If $f$ and $\Sigma$ as in the proposition, then we say that $f$ is a \emph{parametrization} of the surface $\Sigma$. 
+
+Not all the smooth surfaces can be described by such a parametrization;
+for example the sphere $\SS^2$ does not.
+But any smooth surface $\Sigma$ admits a local parametrization; that is, any point $p\in\Sigma$ admits an open neighborhood $W\subset \Sigma$ with a smooth regular parametrization~$f$.
+In this case any point in $W$ can be described by two parameters, usually denoted by $u$ and $v$, 
+which are called \emph{local coordinates} at $p$.
+The map $f$ is called a \emph{chart} of $\Sigma$.
+
+If $W$ is a graph $z=h(x,y)$ then the map $f\:(u,v)\mapsto (u,v,h(u,v))$ is a chart.
+Indeed, $f$ has an inverse $(u,v,h(u,v))\mapsto (u,v)$ which is continuous;
+that is, $f$ is an embedding.
+Further,
+$\tfrac{\partial f}{\partial u}=(1,0,\tfrac{\partial h}{\partial u})$ and $\tfrac{\partial f}{\partial v}=(0,1,\tfrac{\partial h}{\partial v})$, whence $\tfrac{\partial f}{\partial u}$ and $\tfrac{\partial f}{\partial v}$ are linearly independent.
+
+Note that from \ref{prop:graph-chart}, we obtain the following corollary.
+
+\begin{thm}{Corollary}
+A path connected set $\Sigma\subset \RR^3$ is a smooth regular surface if at any point $p\in \Sigma$ it has a local parametrization by a smooth regular map.
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:inversion}
+Consider the following map 
+\[f(u,v)=(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2}).\]
+Show that $f$ is a chart of the unit sphere centered at $(0,0,1)$; describe the image of $f$.
+\end{thm}
+
+The map 
+\[(u,v,1)\mapsto (\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})\]
+is called \emph{stereographic projection}. 
+Note that the point $(u,v,1)$ and its image $(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})$ lie on one half-line starting at the origin.
+
+Let $\gamma(t)=(x(t),y(t)$ be a plane curve.
+Recall that the image of the map 
+\[(t,\theta)\mapsto (x(t), y(t)\cdot\cos\theta,y(t)\cdot\sin\theta)\] 
+is called \emph{surface of revolution} of the curve $\gamma$ around $x$-axis.
+
+\begin{thm}{Exercise}\label{ex:revolution}
+Assume $\gamma$ is a closed simple smooth regular plane curve that does not intersect $x$-axis.
+Show that surface of revolution of $\gamma$ around $x$-axis is a smooth regular surface.
+\end{thm}
+
+
+\section*{Golbal parametrizations} 
+A surface can be described by an embedding from a known surface to the space.
+For example the ellipsoid
+\[\Sigma_{a,b,c}=\set{(x,y,z)\in\RR^3}{\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}+\tfrac{z^2}{c^2}=1}\]
+for some positive numbers $a,b,c$ can be defined as the image of the map $s\:\SS^2\to\RR^3$, defined as the restriction of the map $(x,y,z)\z\mapsto (a\cdot x, b\cdot y,c\cdot z)$ to the unit sphere $\SS^2$.
+
+For a surface $\Sigma$, a map $s: \Sigma \to \RR ^3$ is called a 
+\emph{smooth parametrized surface} if for for any chart $f\:U\to \Sigma$ 
+the composition $s\circ f$ is smooth and regular;
+that is all partial derivatives $\frac{\partial^{m+n}}{\partial u^m\partial v^n}(s\circ \tilde{f})$ exist and are continuous in the domain of definition and the following two vectors 
+$\frac{\partial}{\partial u}(s\circ \tilde{f})$ $\frac{\partial}{\partial v}(s\circ \tilde{f})$ are linearly independent.
+
+Evidently the parametric definition includes the embedded surfaces defined previously --- as the domain of parameters we can take the surface itself and the identity map as $s$,
+but parametrized surfaces are more general, in particular they  might  have self-intersections.
+
+If $\Sigma$ is a known surface for example a sphere or a plane, the paramtrized surface $s\:\Sigma\to\RR^3$ might be called by the same name.
+For example any embedding $s\:\SS^2\to\RR^3$ might be called topological sphere
+and if $s$ is smooth it might be called smooth sphere.
+Similarly an embedding $s\:\RR^2\to\RR^3$ might be called topological plane
+and if $s$ is smooth it might be called smooth plane.
+
+\section*{Implicitly defined surfaces}
+
+\begin{thm}{Proposition}
+Let $f\:\RR^3\to \RR$ be a smooth function; 
+that is, all its partial derivatives defined in its domain of definition.
+Consider the set $\Sigma$ of solution of equation $f(x,y,z)=0$ in the plane.
+Suppose that $\nabla f$ does not vanish at any point $p\in \Sigma$.
+Then any path connected component of $\Sigma$ is a surface.
+\end{thm}
+
+\parit{Proof.}
+Fix $p\in\Sigma$.
+Since $\nabla_p f\ne 0$ we have 
+\[\tfrac{\partial f}{\partial x}(p)\ne 0,\quad \tfrac{\partial f}{\partial y}(p)\ne 0,\quad \text{or}\quad\tfrac{\partial f}{\partial z}(p)\ne 0.\]
+We may assume $\tfrac{\partial f}{\partial z}(p)\ne 0$;
+otherwise permute the coordinates $x,y,z$.
+
+The implicit function theorem (\ref{thm:imlicit}) implies that a neighborhood of $p$ in $\Sigma$ is the graph $z=h(x,y)$ of a smooth function $h$ defined on an open domain in $\RR^2$.
+It remains to apply the definition of smooth surface (page \pageref{page:def-smooth-surface}).
+\qeds
+
+\begin{thm}{Exercise}\label{ex:hyperboloinds}
+Describe the set of real numbers $a$
+such that the equation
+\begin{align*}
+x^2+y^2-z^2&=a
+\end{align*}
+describes a smooth regular surface.
+\end{thm}
+
+\section*{Tangent plane}
 
 Let $z=f(x,y)$ be a local graph realization of a surface. 
 Assume $p=(x_p,y_p,z_p)$ lies on this graph, so $z_p=f(x_p,y_p)$.
@@ -103,7 +255,7 @@ The first equality holds since $p=(0,0,0)$ lies on the graph and the last two eq
 This gives an almost canonical coordinate system in a neighborhood of $p$;
 it is unique up to a rotation of  the $(x,y)$-plane and switching the sign of the $z$-coordinate.
 
-\section{Curvatures}
+\section*{Curvatures}
 
 \parbf{Hessian.}
 Fix a point $p$ on a smooth surface $\Sigma$ and the associated tangent-normal coordinates. 
@@ -149,44 +301,6 @@ Show that any closed immersed surface has a point with positive Gauss curvature.
 Assume a closed surface $\Sigma$ bounds a convex body.
 Show that $\Sigma$ is a sphere with nonnegative Gauss curvature. 
 \end{thm}
-
-\section{Immersed surfaces}
-
-\parbf{Parametrizations.}
-A surface can be described by a map from a known surface to the space.
-For example the ellipsoid
-\[\Sigma_{a,b,c}=\set{(x,y,z)\in\RR^3}{\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}+\tfrac{z^2}{c^2}=1}\]
-for some positive numbers $a,b,c$ can be defined as the image of the map $s\:\SS^2\to\RR^3$, defined as the restriction of the map $(x,y,z)\mapsto (a\cdot x, b\cdot y,c\cdot z)$ to the unit sphere $\SS^2$.
-
-For a surface $\Sigma$, a map $s: \Sigma \to \RR ^3$ is called a 
-\emph{parametrized surface} if it is smooth and regular in the sense defined below. 
-$\Sigma$ will be called the \emph{domain of parameters} and $s$ the \emph{parametrization}.
-
-Assume $\Sigma$ is written locally as a graph $z=f(x,y)$ in some coordinate system. Let $\tilde{f} $ be defined on the same domain as $f$ as $\tilde{f}(x,y) = (x,y, f(x,y))$.
-
-The map $s\:\Sigma \to \RR^3$ is  smooth if for the composition $s\circ \tilde{f}$, all partial derivatives $\frac{\partial^{m+n}}{\partial x^m\partial y^n}(s\circ \tilde{f})$ exist and are continuous in the domain of definition of $f$.
-
-The map $s\:\Sigma \to \RR^3$ is regular
-if the vectors $\frac{\partial}{\partial x}(s\circ \tilde{f})$ and $\frac{\partial}{\partial y}(s\circ \tilde{f})$ are linearly independent at each point of the domain of $f$.
-
-Evidently the parametric definition includes the embedded surfaces defined previously --- as the domain of parameters we can take the surface itself and the identity map as $s$.
-
-\parbf{Immersed surfaces.} The parametric definition allows the surfaces to have self-intersections, hence it is more general.
-The surfaces with possible self-intersections are  called \emph{immersed}.
-
-In the described example $\SS^2$ is the \emph{domain of parameters} of the surface.
-We can say that the surface $\Sigma_{a,b,c}$ is a \emph{sphere} since it has the sphere as the domain of parameters.
-
-We may use other domains of parameters, the torus or the sphere with two handles or for surfaces with boundary, the disc, the annulus, the M\"obius band and so on.
-The sphere with $n$ handles is also called the \emph{surface of genus $n$}.
-
-The set of parameters can be more complicated, for example the projective plane --- a sphere where opposite points are identified; such set of parameters can not be realized as an embedded surface in $\RR^3$, but it can be embedded in a higher dimensional Euclidean space.
-Another example is the Klein bottle --- the  nonoriented brother of the torus;
-it also can not be embedded in the Euclidean space, but it can be immersed with a self-intersection along a closed smooth curve.
-
-
-
-
 
 
 
