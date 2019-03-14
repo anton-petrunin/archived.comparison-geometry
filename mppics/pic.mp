@@ -2228,7 +2228,7 @@ draw p1;
 hatchfill p1  withcolor (67, 1mm, -.5bp);
 
 dOt z.p;
-label.bot(btex $p$ etex, z.p);
+%label.bot(btex $p$ etex, z.p);
 endfig;
 
 beginfig(68);
@@ -2291,5 +2291,65 @@ label.rt(btex $a$ etex, z.a);
 label.urt(btex $b'$ etex, z.b);
 label.bot(btex $b$ etex, z.bb);
 label.top(btex $c$ etex, z.c);
+endfig;
+
+beginfig(70);
+save u,k;
+u:=1cm;
+k=.5;
+
+z.x=(-1,0)*u;
+z.y=(1,0)*u;
+z.a=(0,k)*u;
+z.b=(0,1/k)*u;
+
+
+save p; path p[];
+p0=arc(z.x,z.a,z.y);
+p1=arc(z.y,z.b,z.x);
+
+hatchfill (reverse p0)--p1--cycle  withcolor (67, 1mm, -.5bp);
+
+draw p0;
+draw p1;
+
+
+z.c0=point .6 of p0;
+z.c1=(0,1)*u;
+z.c2=point 1.7 of p0;
+
+draw z.c0{up}..z.c1{.2,-1}..{down}z.c2 penbold;
+
+dOt z.x, z.y, z.c0, z.c2;
+
+label.bot(btex $y$ etex, z.x);
+label.bot(btex $x$ etex, z.y);
+whitelabel.bot(btex $F$ etex, z.b+(-5,-5));
+label.top(btex $\sigma_2$ etex, z.b);
+label.bot(btex $\sigma_1$ etex, z.a);
+whitelabel.rt(btex $\gamma$ etex, z.c1);
+endfig;
+
+beginfig(71);
+save u,k;
+u:=1cm;
+k=30;
+
+z0=(0,-1)*u;
+z1=(2,0)*u;
+z2=(0,1)*u;
+z3=(3.5,0)*u;
+
+save p; path p[];
+p0=z0{up}..z1{down}..z2{up}..z3{down}..cycle;
+
+draw subpath (0,1) of p0 cutafter subpath (1.1,1.9) of p0 dashed evenly pensemibold;
+draw subpath (0,1) of p0 cutbefore subpath (1.1,1.9) of p0 pensemibold;
+draw subpath (1,4) of p0 pensemibold;
+
+for i=1  upto k:
+draw (point 2*i/k of p0)--(point 2+2*i/k of p0) penhair;
+endfor 
+
 endfig;
 end

@@ -636,6 +636,25 @@ Assume $\gamma$ crosses a line $\ell$ at the points $p_1,p_2,\dots p_n$ and thes
 \vskip0mm
 \end{figure}
 
+{
+
+\begin{wrapfigure}{r}{35 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-70}
+\vskip0mm
+\end{wrapfigure}
+
+\begin{thm}{Exercise}
+Let $F$ be a plane figure bounded by two circle arcs $\sigma_1$ and $\sigma_2$ of signed curvature 1 that run from $x$ to $y$.
+Suppose $\sigma_1$ is a shorter than $\sigma_2$.
+Assume a simple arc $\gamma$ runs in $F$ and has the end points on $\sigma_1$.
+Show that the absolute curvature of $\gamma$ is at least 1 at some parameter value.
+
+\end{thm}
+
+}
+
 \section*{Moon in a puddle}
 
 \begin{thm}{Theorem}\label{thm:moon}
@@ -780,7 +799,7 @@ List the necessary changes in the proof above for the existence of circlines tha
 
 {
 
-\begin{wrapfigure}{r}{15 mm}
+\begin{wrapfigure}{r}{12 mm}
 \vskip-4mm
 \centering
 \includegraphics{mppics/pic-67}
@@ -790,7 +809,8 @@ List the necessary changes in the proof above for the existence of circlines tha
 Theorem \ref{thm:moon-orginal} admits the following generalization:
 
 \begin{thm}{Theorem}\label{thm:moon-gen}
-Suppose that $\gamma$ is a closed simple plane curve which is smooth regular everywhere except one point $p$ and the absolute curvature $\gamma$ does not exceed 1 at all points except $p$.
+Let $\gamma$ be a smooth regular simple plane loop.
+Suppose that absolute curvature of $\gamma$ does not exceed~1.
 Then $\gamma$ surrounds a unit circle.
 \end{thm}
 
@@ -800,6 +820,14 @@ Then $\gamma$ surrounds a unit circle.
 \begin{thm}{Exercise}\label{ex:moon-loop}
 Describe the modifications in the proof of \ref{thm:moon} which are necessary to prove \ref{thm:moon-gen}.
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:moon-rad}
+Assume that a closed smooth regular curve $\gamma$ lies in a figure $F$ bounded by a closed simple plane curve.
+Suppose that $R$ is the maximal radius of discs that lies in $F$.
+Show that absolute curvature of $\gamma$ is at least $\tfrac1R$ at some parameter value.
+\end{thm}
+
+\parit{Hint:} Note that $\gamma$ contains a simple loop; apply to it \ref{thm:moon-gen}.
 
 
 \begin{thm}{Advanced exercise}
@@ -811,8 +839,10 @@ In particular the curve $\gamma$ has at least $2\cdot n$ vertexes.
 Construct an example of a closed simple smooth regular plane curve $\gamma$ with only 4 vertexes that crosses a given circle at arbitrary many points. 
 \end{thm}
 
+{
+
 \begin{wrapfigure}{r}{30 mm}
-\vskip-4mm
+\vskip-8mm
 \centering
 \includegraphics{mppics/pic-65}
 \vskip0mm
@@ -825,9 +855,8 @@ Repeat the proof of theorem for each cyclic concatenation of an arc of $\gamma$ 
 
 Recall that the \emph{inverse} of a point $x$ with respect to the unit circle centered at the origin is the point $\hat x=\tfrac{x}{|x|^2}$.
 
-%???+PIC
+}
 
-%cf. W. Blaschke, Kreis und Kugel, see pp. 115–116, Veit, Leipzig, 1916; S. B. Jackson, Bull. Amer. Math. Soc. 50 (1944), 564–578; MR0010992; G. Pestov and V. Ionin, Dokl. Akad. Nauk SSSR 127 (1959), 1170–1172; MR0107214; the reviewer, Geom. Dedicata 12 (1982), no. 4, 371–381; MR0672867
 
 \begin{thm}{Advanced exercise}
 Suppose $\gamma$ is a smooth regular point on the plane that does not pass thru the origin.

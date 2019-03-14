@@ -103,13 +103,16 @@ isbn=false]{biblatex}
 %{\buildrel \mathrm{def} \over{=\!\!=}}
 
 \def\:{\colon}
-\newcommand*{\set}[2]{\left\{\,{#1}\,:\,{#2}\,\right\}}
+\newcommand*{\set}[2]%{\left\{\,{#1}\,:\,{#2}\,\right\}}
+{\ifthenelse{\equal{#2}{}}{\left\{\,{#1}\,\right\}}{\left\{\,{#1}\,:\,{#2}\,\right\}}}
+
 
 \def\defect{\mathop{\rm defect}\nolimits}
 \def\length{\mathop{\rm length}\nolimits}
 \def\area{\mathop{\rm area}\nolimits}
 \def\perim{\mathop{\rm perim}\nolimits}
 \def\diam{\mathop{\rm diam}\nolimits}
+\def\trace{\mathop{\rm trace}\nolimits}
 \newcommand*{\tc}[1]{\Phi({#1})}
 \def\tsc{\mathop{\rm TotSignCurv}\nolimits}
 \newcommand*{\tgc}[1]{\Theta_{#1}}

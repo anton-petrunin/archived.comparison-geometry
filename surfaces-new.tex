@@ -5,7 +5,7 @@
 Few times we will need the following general definition.
 
 A path connected subset $\Sigma$ in a metric space is called \emph{surface} (more precisely \emph{embedded surface without boundary}) 
-if any point of $p\in \Sigma$ admits a neighborhood $W$ in $\Sigma$ which is \emph{homeomorphic} to an open plane subset;
+if any point of $p\in \Sigma$ admits a neighborhood $W$ in $\Sigma$ which is \emph{homeomorphic} to an open subset in the Euclidean plane;
 that is, if there is an injective continuous map $U\to W$ from an open set $U\subset \RR^2$ such that its invese $W\to U$ is also continuous.
 
 However, as well as in the case of curves we will be mostly interested in smooth surfaces in the Euclidean space describe in the following section.
@@ -82,7 +82,7 @@ If $f\:U\to \RR^3$ is a smooth regular embedding of an open connected set $U\sub
 
 \parit{Proof.}
 Let $f(u,v)=(f_1(u,v),f_2(u,v),f_3(u,v))$.
-Since $f$ is regular the Jacobian
+Since $f$ is regular the Jacobian matrix
 \[
 \renewcommand\arraystretch{1.3}
 \begin{pmatrix}
@@ -190,9 +190,9 @@ and if $s$ is smooth it might be called smooth plane.
 \begin{thm}{Proposition}
 Let $f\:\RR^3\to \RR$ be a smooth function; 
 that is, all its partial derivatives defined in its domain of definition.
-Consider the set $\Sigma$ of solution of equation $f(x,y,z)=0$ in the plane.
-Suppose that $\nabla f$ does not vanish at any point $p\in \Sigma$.
-Then any path connected component of $\Sigma$ is a surface.
+Suppose that $0$ is a regular value of $f$;
+that is $\nabla_p f\ne 0$ if $f(p)=0$.
+Then any path connected component $\Sigma$ of the set of solutions of the equation $f(x,y,z)=0$ is a surface.
 \end{thm}
 
 \parit{Proof.}
@@ -219,29 +219,102 @@ describes a smooth regular surface.
 
 Let $z=f(x,y)$ be a local graph realization of a surface. 
 Assume $p=(x_p,y_p,z_p)$ lies on this graph, so $z_p=f(x_p,y_p)$.
-The plane passing thru $p$ and spanned by the vectors $(1,0,(\tfrac{\partial}{\partial x}f)(x_p,y_p))$ and  $(0,1,(\tfrac{\partial}{\partial y}f)(x_p,y_p))$ is called the \emph{tangent plane} of $\Sigma$ at $p$.
-It can be interpreted as the best approximation of the surface $\Sigma$ by a plane at~$p$.
-
+The plane spanned by the vectors $(1,0,(\tfrac{\partial}{\partial x}f)(x_p,y_p))$ and  $(0,1,(\tfrac{\partial}{\partial y}f)(x_p,y_p))$ is called the \emph{tangent plane} of $\Sigma$ at $p$.
 The tangent plane to $\Sigma$ at $p$ is usually denoted by $\T_p$ or $\T_p\Sigma$.
+Vectors in $\T_p$ are called \emph{tangent vectors} of $\Sigma$ at $p$.
 
-It is straightforward to check that the tangent plane does not depend of the local presentation of $\Sigma$ by a graph.
+Tangent plane $\T_p$ might be considered as a linear subspace of $\RR^3$ or as an plane passing thru $p$.
+In the latter case it can be interpreted as the best approximation of the surface $\Sigma$ by a plane at~$p$.
 
-\parbf{On local graph representations.}
-The following proposition guarantees the existence of a local graph representation near a given point.
-
-\begin{thm}{Proposition}\label{prop:perp}
-Assume the tangent of a smooth surface $\Sigma$ at point $p$ is not perpendicular to the $(x,y)$-plane.
-Then a neighborhood of $p$ in $\Sigma$ can be presented as a graph of smooth function $z=f(x,y)$ defined on an open set of the $(x,y)$-plane.
+\begin{thm}{Proposition}
+Let $\Sigma$ be a smooth surface.
+A vector $w$ is a tangent vector of $\Sigma$ at $p$ if and only if there is a curve $\gamma$ that runs in $\Sigma$ and has $w$ as a velocity vector at $p$.  
 \end{thm}
 
-A reader familiar with the inverse function theorem, can consider this proposition as an exercise.
+Note the tangent plane to a surface at a given point $p$ does not depend on the local graph representation of the surface;
+indeed according to the proposition the tangent plane can be defined as the set of all velocity vectors of smooth parameterized curves that run in $\Sigma$.
 
-\parbf{Tangent-normal coordinates.} 
+\parit{Proof; ``only if'' part.}
+We can assume that $\Sigma$ is a graph $z=f(x,y)$; 
+otherwise pass to a local presentation of $\Sigma$ around $p$.
+
+Suppose that $(x(t),y(t))$ denotes the projection of $\gamma(t)$ to the $(x,y)$-plane.
+Since $\gamma$ runs in $\Sigma$, we have that
+\[\gamma(t)=\bigl(x(t),y(t),f(x(t),y(t))\bigr).\]
+Therefore 
+\begin{align*}
+\gamma'&=(x',y',\tfrac{\partial f}{\partial x}(x,y)\cdot x'+\tfrac{\partial f}{\partial y}(x,y)\cdot y')=
+\\
+&=x'\cdot (1,0,(\tfrac{\partial}{\partial x}f)(x,y))+y'\cdot (0,1,(\tfrac{\partial}{\partial y}f)(x,y));
+\end{align*}
+That is, $\gamma'(t)\in\T_{\gamma(t)}$ for any $t$.
+
+\parit{``If'' part.}
+Without loss of generality we can assume that $p$ is the origin.
+Fix a tangent vector 
+\[w=a\cdot (1,0,(\tfrac{\partial}{\partial x}f)(x_p,y_p))+b\cdot(0,1,(\tfrac{\partial}{\partial y}f)(x_p,y_p))\] 
+and consider the curve $\gamma(t)=(a\cdot t, b\cdot t, f(a\cdot t,b\cdot t)$.
+By construction $\gamma$ runs in $\Sigma$ and the direct calculations show that $\gamma'(0)=w$.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:tangent-chart}
+Assume $f\:U\to\RR^3$ is a smooth regular chart of a surface $\Sigma$ and $p=f(u_0,v_0)$.
+Show that the tangent plane of $\Sigma$ at $p$ is spanned by vectors $\tfrac{\partial f}{\partial u}(u_0,v_0)$ and $\tfrac{\partial f}{\partial v}(u_0,v_0)$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:tangent-normal}
+Let $f:\RR^3\to\RR$ be a smooth function with a regular value $0$ and $\Sigma$ is a surface described as a connected component of the set of solutions $f(x,y,z)=0$.
+Show that the tangent plane $\T_p\Sigma$ is perpendicular to the gradient $\nabla_pf$ at any point $p\in\Sigma$.
+\end{thm}
+
+
+\section*{Normal vector and orientation}
+A unit vector that is normal to $\T_p$ is usually denoted by $\nu_p$;
+it is uniquely defined up to sign.
+
+A surface $\Sigma$ is called \emph{oriented} if it is equipped with a unit normal vector field $\nu$;
+that is, a continuous map $p\mapsto \nu_p$ such that $\nu_p\perp\T_p$ and $|\nu_p|=1$ for any $p$;
+the choice of the field $\nu$ is called \emph{orientation} on $\Sigma$.
+A surface $\Sigma$ is called \emph{orientable} if it can be oriented.
+Note that each orientable surface admits two orientations $\nu$ and $-\nu$.
+
+\begin{wrapfigure}{o}{40 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-71}
+\vskip0mm
+\end{wrapfigure}
+
+M\"obius strip shown on the diagram gives an example of nonorientable surface --- there is no choice of normal vector field that is continuous along the middle of the strip, 
+when you go around it changes the sign.
+
+Note that each surface is locally orientable.
+In fact each chart $f(u,v)$ admits an orientation 
+\[\nu=
+\frac{\tfrac{\partial f}{\partial u}\times \tfrac{\partial f}{\partial v}}
+{\left|\tfrac{\partial f}{\partial u}\times \tfrac{\partial f}{\partial v}\right|}.\]
+Indeed the vectors $\tfrac{\partial f}{\partial u}$ and $\tfrac{\partial f}{\partial v}$ are tangent vectors at $p$; 
+since they are linearly independent, their vector product is perpendicular to the tangent plane.
+Therefore $\nu(u,v)$ is a unit normal vector at $f(u,v)$;
+evidently $(u,v)\mapsto \nu(u,v)$ is a continuous map. 
+
+\begin{thm}{Exercise}
+Let $f:\RR^3\to\RR$ be a smooth function with a regular value $0$ and $\Sigma$ is a surface described as a connected component of the set of solutions $f(x,y,z)=0$.
+Show that $\Sigma$ is orientable.
+\end{thm}
+
+\parit{Hint.} Show that $\nu=\tfrac{\nabla f}{|\nabla f|}$ defines a unit normal field on $\Sigma$.
+
+
+In fact any complete smooth surface cuts the space into two connected components.
+Therefore one could choose an orientation on any complete surface by taking normal vector at each point that points into one of these components. %???
+
+\section*{Tangent-normal coordinates} 
+
 Fix a point $p$ in a smooth surface $\Sigma$.
 Consider a coordinate system $(x,y,z)$ with origin at $p$ such that the $(x,y)$-plane coincides with $\T_p$.
-
-According to Proposition~\ref{prop:perp}, 
-we can present $\Sigma$ locally around $p$ as a graph of a function $f$.
+The same argument as in \ref{prop:graph-chart} shows that
+we can present $\Sigma$ locally around $p$ as a graph of a function $f$. %???
 Note that $f$ satisfies the following additional properties:
 \begin{align*}
 f(0,0)&=0,
@@ -251,59 +324,229 @@ f(0,0)&=0,
 (\tfrac{\partial}{\partial y}f)(0,0)&=0.
 \end{align*}
 The first equality holds since $p=(0,0,0)$ lies on the graph and the last two equalities mean that the tangent plane at $p$ is horizontal.
-
-This gives an almost canonical coordinate system in a neighborhood of $p$;
-it is unique up to a rotation of  the $(x,y)$-plane and switching the sign of the $z$-coordinate.
-
-\section*{Curvatures}
-
-\parbf{Hessian.}
-Fix a point $p$ on a smooth surface $\Sigma$ and the associated tangent-normal coordinates. 
-
+ 
 Consider the Hessian matrix 
 \[M_p=\begin{pmatrix}
-   (\tfrac{\partial^2}{\partial x^2}f)(0,0)
-   &(\tfrac{\partial^2}{\partial x\partial y}f)(0,0)
+   \ell
+   &m
    \\
-   (\tfrac{\partial^2}{\partial y\partial x}f)(0,0)
-   &(\tfrac{\partial^2}{\partial y^2}f)(0,0)
+   m
+   &n
+  \end{pmatrix},
+\]
+where 
+\begin{align*}
+\ell&=(\tfrac{\partial^2}{\partial x^2}f)(0,0),
+\\
+m&=(\tfrac{\partial^2}{\partial x\partial y}f)(0,0)=(\tfrac{\partial^2}{\partial y\partial x}f)(0,0),
+\\
+n&=(\tfrac{\partial^2}{\partial y^2}f)(0,0).
+\end{align*}
+
+The components of the matrix describe the surface at up to the second order.
+In fact the paraboloid
+\[z=\tfrac12(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)\]
+gives the best approximation of the surface at $p$.
+
+The second directional derivative $(D_wD_vf)(0,0)$ for two vectors $v,w$ in the $(x,y)$-plane is called \emph{second fundamental form}.
+It is usually denoted by $\II_p(w,v)$; it takes two tangent vector at the point and spits a real number.
+The second fundamental form can be written in terms of the Hessian matrix.
+Indeed if $w=(a,b)$ and $v=(c,d)$, then $D_w=a\cdot \tfrac\partial{\partial x}+b\cdot \tfrac\partial{\partial y}$ and $D_v=c\cdot \tfrac\partial{\partial x}+d\cdot \tfrac\partial{\partial y}$.
+Therefore 
+\begin{align*}
+(D_wD_vf)(0,0)&=a\cdot c\cdot \ell+(a\cdot d+ b\cdot c)\cdot m +b\cdot d\cdot n=
+\\
+&=v\cdot M_p\cdot w^\top.
+\end{align*}
+
+\section*{Principle curvatures}
+
+Note that tangent-normal coordinates give an almost canonical coordinate system in a neighborhood of $p$;
+it is unique up to a rotation of  the $(x,y)$-plane and switching the sign of the $z$-coordinate.
+Rotating the $(x,y)$-plane is equivalent too changing its basis which results in the rewriting   
+the Hessian matrix in the new basis.
+
+Since Hessian matrix is symmetric, it is diagonalizable by orthogonal matrices. %???
+That is, we can assume that $m=0$. %???+lin algebra material
+Then the diagonal elements are called \emph{principle curvatures} of $\Sigma$ at $p$;
+they are uniquely defined up to sign;
+they are denoted as $k_1(p)$ and $k_2(p)$ or $k_1(p)_\Sigma$ and $k_2(p)_\Sigma$ if we need to emphasize that these are the curvatures of the surface $\Sigma$.
+We will always assume that $k_1\le k_2$.
+
+The principle curvatures can be also defined as the eigenvalues of $M_p$;
+the eigendirections of $M_p$ are called \emph{principle directions} of $\Sigma$ at~$p$.
+
+Assume we choose the coordinates in the $(x,y)$-plane so that the Hessian matrix is diagonalized, we can assume that
+\[M_p=\begin{pmatrix}
+   k_1(p)
+   &0
+   \\
+   0
+   &k_2(p)
   \end{pmatrix}.
 \]
-This is a symmetric matrix, therefore by an appropriate rotation of the $(x,y)$-plane, we can make it diagonal;
-that is, we can assume that $(\tfrac{\partial^2}{\partial x\partial y}f)(0,0)=0$.
-Then the diagonal elements are called \emph{principle curvatures} of $\Sigma$ at $p$;
-they are uniqueley defined up to sign;
-They are denoted as $k_1(p)$ and $k_2(p)$.
-The principle curvatures can be also defined as the eigenvalues of $M_p$.
+In this case the second directional derivative $(D^2_wf)(0,0)$
+for a vector $w=(a,b)$ in the $(x,y)$-plane can be written as 
+\[
+(D^2_wf)(0,0)=a^2\cdot k_1(p) +b^2\cdot k_2(p).
+\]
+If $w$ is unit, then the second directional derivative $D^2_wf(0,0)$ can be intepreted as the signed curvature of the curve formed by the intersection of $\Sigma$ with the plane thru $p$ spanned by $\nu_p$ and $w$.
+By that reason $D^2_wf(0,0)$ is called \emph{normal curvature} in the direction $w$;
+it is denoted by $k_w(p)$ or $k_w(p)_\Sigma$ if we need to emphasize that .
+Since $|w|=1$, we have $a^2+b^2=1$.
+Therefore we get the following observation.
 
-The determinant of $M_p$ is $k_1(p)\cdot k_2(p)$;
-it is called the \emph{Gauss curvature} of $\Sigma$ at $p$.
-The trace of $M_p$ is $k_1(p)+ k_2(p)$;
-it is called the \emph{mean curvature} of $\Sigma$ at $p$.
+\begin{thm}{Observation}\label{obs:k1-k2}
+For any point $p$ on an oriented smooth surface $\Sigma$,
+the principle curvatures $k_1(p)$ and $k_2(p)$ are correspondingly minimum and maximum of the normal curvatures at $p$.
+\end{thm}
 
-Form the discussion above, 
-we get that the Gauss curvature depends only on $\Sigma$ and $p$,
+A smooth regular curve on a surface $\Sigma$ that always runs in the principle directions is called \emph{line of curvature} of $\Sigma$.  
+
+\begin{thm}{Exercise}\label{ex:line-of-curvature}
+Assume that a smooth surface $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$.
+Suppose that $\Sigma$ and $\Pi$ intersect along a curve $\gamma$.
+Show that $\gamma$ is a line of curvature of $\Sigma$.
+\end{thm}
+
+
+\section*{Gauss and mean curvatures}
+
+Fix an oriented smooth surface $\Sigma$ and a point $p\in\Sigma$.
+The product 
+\[K(p)=k_1(p)\cdot k_2(p)\]
+is called Gauss curvature at $p$.
+We may denote it by $K(p)_\Sigma$ if we need to emphasize that this is curvature of $\Sigma$.
+The Gauss curvature can be also interpreted as determinant of the Hessian matrix $M_p$.
+
+The sum 
+\[H(p)=k_1(p)+ k_2(p)\]
+is called mean curvature at $p$.
+We may denote it by $H(p)_\Sigma$ if we need to emphasize that this is curvature of $\Sigma$.
+The mean curvature can be also interpreted as trace of the Hessian matrix $M_p$.
+
+Note that the Gauss curvature depends only on $\Sigma$ and $p$,
 and not on the choice of the coordinate system.
-Up to sign, the same obsevation is true for the principle curvatures and the mean curvature. 
+The same is true up to sign for the principle curvatures and the mean curvature. 
+
+\begin{thm}{Exercise}\label{ex:gauss+orientable}
+Show that any surface with positive Gauss curvature is orientable. 
+\end{thm}
 
 
-\begin{thm}{Exercise}\label{ex:projection}
-Assume $\Sigma$ is a closed surface of with principle curvatures at most 1
-and let $F$ be its orthogonal projection to a plane.
-Show that no circle of curvature larger than 1 can support $F$ from the left. %???left???
+\section*{Supporting surfaces}
+
+Assume two oriented surfaces $\Sigma_1$ and $\Sigma_2$ have a common point $p$.
+If there is a neighborhood $U$ of $p$ such that $\Sigma_1\cap U$ lies on one side from $\Sigma_2$ in $U$, then we say that $\Sigma_2$ \emph{locally supports} $\Sigma_1$ at $p$.
+
+Note that in this case $\T_p\Sigma_1=\T_p\Sigma_2$; that is, the tangent planes of $\Sigma_1$ and $\Sigma_2$ at $p$ coincide.
+Therefore we can assume that $\Sigma_1$ and $\Sigma_2$ are cooriented at $p$;
+that is, they have common unit normal vector at $p$.
+If not we can revert the orientation of one of the surfaces.
+
+If $\Sigma_1$ and $\Sigma_2$ are cooriented at $p$,
+then we can say that $\Sigma_1$ supports $\Sigma_2$ from \emph{inside} or from \emph{outside},
+assuming that the normal vector points \emph{inside} the domain bounded by surface $\Sigma_2$ in $U$.
+
+More precisely, we can use for $\Sigma_1$ and $\Sigma_2$ one tangent-normal coordinate system at $p$,
+assuming that the axis $z$ points in the direction of the unit normal vector $\nu_p$ to both surfaces.
+This way we write $\Sigma_1$ and $\Sigma_2$ locally as graphs: $z=f_1(x,y)$  and $z=f_2(x,y)$ correspondingly.
+Then $\Sigma_1$ supports $\Sigma_2$ from inside (from outside)  if $f_1(x,y)\ge f_2(x,y)$ (correspondingly $f_1(x,y)\le f_2(x,y)$) for $(x,y)$ in a sufficiently small neighborhood of the origin.
+
+\begin{thm}{Proposition}\label{prop:surf-support}
+Let $\Sigma_1$ and $\Sigma_2$ be oriented surfaces.
+Assume $\Sigma_1$ supports $\Sigma_2$ from inside at the point $p$.
+Then $k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}$ and $k_2(p)_{\Sigma_1}\ge k_2(p)_{\Sigma_2}$.
+\end{thm}
+
+\parit{Proof.} We can assume that $\Sigma_1$ and $\Sigma_2$ are graphs $z=f_1(x,y)$  and $z=f_2(x,y)$ in a common tangent-normal coordinates at $p$, so we have $f_1\ge f_2$.
+
+Fix a unit vector $w\in \T_p\Sigma_1=T_p\Sigma_2$.
+Consider the plane $\Pi$ passing thru $p$ and spanned by the normal vector $\nu_p$ and $w$.
+Let $\gamma_1$ and $\gamma_2$ be the curves of intersection of $\Sigma_1$ and $\Sigma_2$ with $\Pi$.
+Note that the curve $\gamma_1$ supports the curve $\gamma_2$ and therefore we have the following inequality for the normal curvatures of $\Sigma_1$ and $\Sigma_2$ at $p$ in the direction of $w$:
+\[k_w(p)_{\Sigma_1}\ge k_w(p)_{\Sigma_2}.\eqlbl{kw>=kw}\]
+
+According to \ref{obs:k1-k2},
+\[k_1(p)_{\Sigma_i}=\min\set{k_w(p)_{\Sigma_i}}{w\in\T_p, |w|=1}\]
+for $i=1,2$.
+Choose $w$ so that $k_1(p)_{\Sigma_1}=k_w(p)_{\Sigma_1}$.
+Then 
+\begin{align*}
+k_1(p)_{\Sigma_1}&=k_w(p)_{\Sigma_1}\ge
+\\
+&\ge k_w(p)_{\Sigma_2}\ge
+\\
+&\ge\min\set{k_w(p)_{\Sigma_2}}{}=
+\\
+&=k_1(p)_{\Sigma_2};
+\end{align*}
+that is, $k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}$.
+
+Similarly, by \ref{obs:k1-k2}, we have that
+\[k_2(p)_{\Sigma_i}=\max\set{k_w(p)_{\Sigma_i}}{}.\]
+Fix $w$ so that $k_2(p)_{\Sigma_2}=k_w(p)_{\Sigma_2}$.
+Then 
+\begin{align*}
+k_2(p)_{\Sigma_2}&=k_w(p)_{\Sigma_2}\le
+\\
+&\le k_w(p)_{\Sigma_1}\le
+\\
+&\le\max\set{k_w(p)_{\Sigma_1}}{}=
+\\
+&=k_2(p)_{\Sigma_1};
+\end{align*}
+that is, $k_2(p)_{\Sigma_1}\ge k_2(p)_{\Sigma_2}$.
+\qeds
+
+\begin{thm}{Corollary}\label{cor:surf-support}
+Let $\Sigma_1$ and $\Sigma_2$ be oriented surfaces.
+Assume $\Sigma_1$ supports $\Sigma_2$ from inside at the point $p$.
+Then
+\begin{enumerate}[(a)]
+\item\label{cor:surf-support:mean} $H(p)_{\Sigma_1}\ge H(p)_{\Sigma_2}$;
+\item\label{cor:surf-support:gauss} If $k_1(p)_{\Sigma_2}\ge 0$, then $K(p)_{\Sigma_1}\ge K(p)_{\Sigma_2}$.
+\end{enumerate}
+ 
+\end{thm}
+
+\parit{Proof.} Part \ref{cor:surf-support:mean} follow from \ref{prop:surf-support} since 
+$H(p)_{\Sigma_i}=k_1(p)_{\Sigma_i}+k_2(p)_{\Sigma_i}$.
+
+By \ref{prop:surf-support}, we get that $k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}$ and $k_2(p)_{\Sigma_2}\ge k_2(p)_{\Sigma_2}$.
+Since $k_2\ge k_1$, we get that all the principle curvatures 
+$k_1(p)_{\Sigma_1}$, $k_1(p)_{\Sigma_1}$ and $k_2(p)_{\Sigma_1}$ and $k_2(p)_{\Sigma_2}$ are nonnegative.
+Whence
+\begin{align*}
+K(p)_{\Sigma_1}&=k_1(p)_{\Sigma_1}\cdot k_2(p)_{\Sigma_1}\ge 
+\\
+&\ge k_1(p)_{\Sigma_2}\cdot k_2(p)_{\Sigma_2}=
+\\
+&=K(p)_{\Sigma_2}.
+\end{align*}
+\qedsf
+
+
+
+
+\begin{thm}{Exercise}\label{ex:positive-gauss}
+Show that any closed surface has a point with positive Gauss curvature.
 \end{thm}
 
 \begin{thm}{Exercise}
-Show that any closed immersed surface has a point with positive Gauss curvature.
+Show that there is no closed surface with vanishing mean curvature.
 \end{thm}
+
+\parit{Hint.}
+Consider the minimal sphere that encloses the surface.
 
 \begin{thm}{Exercise}
-Assume a closed surface $\Sigma$ bounds a convex body.
-Show that $\Sigma$ is a sphere with nonnegative Gauss curvature. 
+Assume a closed surface $\Sigma$ surrounds a unit disc.
+Show that Gauss curvature of $\Sigma$ is at most 1 at some point. 
+
+Try to prove the same assuming that $\Sigma$ surrounds a unit circle.
 \end{thm}
 
-
-
-
-
+\parit{Hint.}
+Look for a supporting spherical dome with the unit circle as the boundary.
 
