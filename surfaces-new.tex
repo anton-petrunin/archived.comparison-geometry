@@ -1,4 +1,4 @@
-\chapter{Surfaces}
+\chapter{Definitions}
 
 \section*{General definition}
 
@@ -218,21 +218,22 @@ describes a smooth regular surface.
 \section*{Tangent plane}
 
 Let $z=f(x,y)$ be a local graph realization of a surface. 
-Assume $p=(x_p,y_p,z_p)$ lies on this graph, so $z_p=f(x_p,y_p)$.
+Assume that a point $p=(x_p,y_p,z_p)$ lies on this graph, so $z_p=f(x_p,y_p)$.
 The plane spanned by the vectors $(1,0,(\tfrac{\partial}{\partial x}f)(x_p,y_p))$ and  $(0,1,(\tfrac{\partial}{\partial y}f)(x_p,y_p))$ is called the \emph{tangent plane} of $\Sigma$ at $p$.
 The tangent plane to $\Sigma$ at $p$ is usually denoted by $\T_p$ or $\T_p\Sigma$.
 Vectors in $\T_p$ are called \emph{tangent vectors} of $\Sigma$ at $p$.
 
-Tangent plane $\T_p$ might be considered as a linear subspace of $\RR^3$ or as an plane passing thru $p$.
-In the latter case it can be interpreted as the best approximation of the surface $\Sigma$ by a plane at~$p$.
+Tangent plane $\T_p$ might be considered as a linear subspace of $\RR^3$ or as a parallel plane passing thru $p$.
+In the latter case it can be interpreted as the best approximation of the surface $\Sigma$ by a plane at~$p$;
+it has \emph{first order of contact} with $\Sigma$ at $p$;
+that is, $\rho(q)\z=o(|p-q|)$, where $q\in \Sigma$ and $\rho(q)$ denotes the distance from $q$ to $\T_p$. %???
 
 \begin{thm}{Proposition}
 Let $\Sigma$ be a smooth surface.
 A vector $w$ is a tangent vector of $\Sigma$ at $p$ if and only if there is a curve $\gamma$ that runs in $\Sigma$ and has $w$ as a velocity vector at $p$.  
 \end{thm}
 
-Note the tangent plane to a surface at a given point $p$ does not depend on the local graph representation of the surface;
-indeed according to the proposition the tangent plane can be defined as the set of all velocity vectors of smooth parameterized curves that run in $\Sigma$.
+Note according to the proposition the tangent plane can be defined as the set of all velocity vectors of smooth parameterized curves that run in $\Sigma$; in particular the tangent plane to a surface at a given point does not depend on the choice of its local graph representation.
 
 \parit{Proof; ``only if'' part.}
 We can assume that $\Sigma$ is a graph $z=f(x,y)$; 
@@ -245,7 +246,7 @@ Therefore
 \begin{align*}
 \gamma'&=(x',y',\tfrac{\partial f}{\partial x}(x,y)\cdot x'+\tfrac{\partial f}{\partial y}(x,y)\cdot y')=
 \\
-&=x'\cdot (1,0,(\tfrac{\partial}{\partial x}f)(x,y))+y'\cdot (0,1,(\tfrac{\partial}{\partial y}f)(x,y));
+&=x'\cdot (1,0,(\tfrac{\partial}{\partial x}f)(x,y))+y'\cdot (0,1,(\tfrac{\partial}{\partial y}f)(x,y)).
 \end{align*}
 That is, $\gamma'(t)\in\T_{\gamma(t)}$ for any $t$.
 
@@ -253,7 +254,7 @@ That is, $\gamma'(t)\in\T_{\gamma(t)}$ for any $t$.
 Without loss of generality we can assume that $p$ is the origin.
 Fix a tangent vector 
 \[w=a\cdot (1,0,(\tfrac{\partial}{\partial x}f)(x_p,y_p))+b\cdot(0,1,(\tfrac{\partial}{\partial y}f)(x_p,y_p))\] 
-and consider the curve $\gamma(t)=(a\cdot t, b\cdot t, f(a\cdot t,b\cdot t)$.
+and consider the curve $\gamma(t)=(a\cdot t, b\cdot t, f(a\cdot t,b\cdot t))$.
 By construction $\gamma$ runs in $\Sigma$ and the direct calculations show that $\gamma'(0)=w$.
 \qeds
 
@@ -276,7 +277,7 @@ A surface $\Sigma$ is called \emph{oriented} if it is equipped with a unit norma
 that is, a continuous map $p\mapsto \nu_p$ such that $\nu_p\perp\T_p$ and $|\nu_p|=1$ for any $p$;
 the choice of the field $\nu$ is called \emph{orientation} on $\Sigma$.
 A surface $\Sigma$ is called \emph{orientable} if it can be oriented.
-Note that each orientable surface admits two orientations $\nu$ and $-\nu$.
+Note that each orientable surface admits two orientations $\nu$ and $-\nu$. %???
 
 \begin{wrapfigure}{o}{40 mm}
 \vskip-0mm
@@ -294,7 +295,7 @@ In fact each chart $f(u,v)$ admits an orientation
 \frac{\tfrac{\partial f}{\partial u}\times \tfrac{\partial f}{\partial v}}
 {\left|\tfrac{\partial f}{\partial u}\times \tfrac{\partial f}{\partial v}\right|}.\]
 Indeed the vectors $\tfrac{\partial f}{\partial u}$ and $\tfrac{\partial f}{\partial v}$ are tangent vectors at $p$; 
-since they are linearly independent, their vector product is perpendicular to the tangent plane.
+since they are linearly independent, their vector product does not vanish and it is perpendicular to the tangent plane.
 Therefore $\nu(u,v)$ is a unit normal vector at $f(u,v)$;
 evidently $(u,v)\mapsto \nu(u,v)$ is a continuous map. 
 
@@ -308,6 +309,7 @@ Show that $\Sigma$ is orientable.
 
 In fact any complete smooth surface cuts the space into two connected components.
 Therefore one could choose an orientation on any complete surface by taking normal vector at each point that points into one of these components. %???
+In particular the M\"obius strip can not be extended to a complete smooth surface.
 
 \section*{Tangent-normal coordinates} 
 
@@ -333,6 +335,7 @@ Consider the Hessian matrix
    m
    &n
   \end{pmatrix},
+\eqlbl{eq:hessian}
 \]
 where 
 \begin{align*}
@@ -346,35 +349,40 @@ n&=(\tfrac{\partial^2}{\partial y^2}f)(0,0).
 The components of the matrix describe the surface at up to the second order.
 In fact the paraboloid
 \[z=\tfrac12(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)\]
-gives the best approximation of the surface at $p$.
+gives the best approximation of the surface at $p$;
+it has \emph{second order of contact} with $\Sigma$ at $p$.
 
 The second directional derivative $(D_wD_vf)(0,0)$ for two vectors $v,w$ in the $(x,y)$-plane is called \emph{second fundamental form}.
-It is usually denoted by $\II_p(w,v)$; it takes two tangent vector at the point and spits a real number.
+It is usually denoted by $\II_p(w,v)$; it takes two tangent vector at $p$ and spits a real number.
 The second fundamental form can be written in terms of the Hessian matrix.
 Indeed if $w=(a,b)$ and $v=(c,d)$, then $D_w=a\cdot \tfrac\partial{\partial x}+b\cdot \tfrac\partial{\partial y}$ and $D_v=c\cdot \tfrac\partial{\partial x}+d\cdot \tfrac\partial{\partial y}$.
 Therefore 
-\begin{align*}
+\[\begin{aligned}
 (D_wD_vf)(0,0)&=a\cdot c\cdot \ell+(a\cdot d+ b\cdot c)\cdot m +b\cdot d\cdot n=
 \\
 &=v\cdot M_p\cdot w^\top.
-\end{align*}
+\end{aligned}
+\eqlbl{eq:DwDv}\]
 
 \section*{Principle curvatures}
 
 Note that tangent-normal coordinates give an almost canonical coordinate system in a neighborhood of $p$;
 it is unique up to a rotation of  the $(x,y)$-plane and switching the sign of the $z$-coordinate.
-Rotating the $(x,y)$-plane is equivalent too changing its basis which results in the rewriting   
-the Hessian matrix in the new basis.
+Rotating the $(x,y)$-plane is equivalent to changing its orthonormal basis, which results in the rewriting   
+the Hessian matrix in this new basis.
 
 Since Hessian matrix is symmetric, it is diagonalizable by orthogonal matrices. %???
-That is, we can assume that $m=0$. %???+lin algebra material
-Then the diagonal elements are called \emph{principle curvatures} of $\Sigma$ at $p$;
+That is, by rotating $(x,y)$-plane we can assume that $m=0$ in \ref{eq:hessian}. %???+lin algebra material
+In this case the diagonal components of $M_p$ are called \emph{principle curvatures} of $\Sigma$ at $p$;
 they are uniquely defined up to sign;
 they are denoted as $k_1(p)$ and $k_2(p)$ or $k_1(p)_\Sigma$ and $k_2(p)_\Sigma$ if we need to emphasize that these are the curvatures of the surface $\Sigma$.
 We will always assume that $k_1\le k_2$.
 
 The principle curvatures can be also defined as the eigenvalues of $M_p$;
 the eigendirections of $M_p$ are called \emph{principle directions} of $\Sigma$ at~$p$.
+Note that if $k_1(p)\ne k_2(p)$ then $p$ has exactly two principle directions, which are perpendicular to each other.
+
+Note that if we revert the orientation of $\Sigma$ then the principle curvatures at each point switch their signs and indexes.
 
 Assume we choose the coordinates in the $(x,y)$-plane so that the Hessian matrix is diagonalized, we can assume that
 \[M_p=\begin{pmatrix}
@@ -385,16 +393,15 @@ Assume we choose the coordinates in the $(x,y)$-plane so that the Hessian matrix
    &k_2(p)
   \end{pmatrix}.
 \]
-In this case the second directional derivative $(D^2_wf)(0,0)$
+In this case, according to \ref{eq:DwDv}, the second directional derivative
 for a vector $w=(a,b)$ in the $(x,y)$-plane can be written as 
 \[
 (D^2_wf)(0,0)=a^2\cdot k_1(p) +b^2\cdot k_2(p).
 \]
 If $w$ is unit, then the second directional derivative $D^2_wf(0,0)$ can be intepreted as the signed curvature of the curve formed by the intersection of $\Sigma$ with the plane thru $p$ spanned by $\nu_p$ and $w$.
 By that reason $D^2_wf(0,0)$ is called \emph{normal curvature} in the direction $w$;
-it is denoted by $k_w(p)$ or $k_w(p)_\Sigma$ if we need to emphasize that .
-Since $|w|=1$, we have $a^2+b^2=1$.
-Therefore we get the following observation.
+it is denoted by $k_w(p)$ or $k_w(p)_\Sigma$.
+Since $|w|=1$, we have $a^2+b^2=1$ which implies the following:
 
 \begin{thm}{Observation}\label{obs:k1-k2}
 For any point $p$ on an oriented smooth surface $\Sigma$,
@@ -410,9 +417,10 @@ Show that $\gamma$ is a line of curvature of $\Sigma$.
 \end{thm}
 
 
-\section*{Gauss and mean curvatures}
+\section*{More curvatures}
 
 Fix an oriented smooth surface $\Sigma$ and a point $p\in\Sigma$.
+
 The product 
 \[K(p)=k_1(p)\cdot k_2(p)\]
 is called Gauss curvature at $p$.
@@ -420,14 +428,14 @@ We may denote it by $K(p)_\Sigma$ if we need to emphasize that this is curvature
 The Gauss curvature can be also interpreted as determinant of the Hessian matrix $M_p$.
 
 The sum 
-\[H(p)=k_1(p)+ k_2(p)\]
+\[H(p)=\tfrac12\cdot(k_1(p)+ k_2(p))\] %??? conge back later
 is called mean curvature at $p$.
 We may denote it by $H(p)_\Sigma$ if we need to emphasize that this is curvature of $\Sigma$.
-The mean curvature can be also interpreted as trace of the Hessian matrix $M_p$.
+The mean curvature can be also interpreted as half of the trace of the Hessian matrix $M_p$. %??? conge back later
 
 Note that the Gauss curvature depends only on $\Sigma$ and $p$,
 and not on the choice of the coordinate system.
-The same is true up to sign for the principle curvatures and the mean curvature. 
+The same is true up to sign for the mean curvature. 
 
 \begin{thm}{Exercise}\label{ex:gauss+orientable}
 Show that any surface with positive Gauss curvature is orientable. 
@@ -471,7 +479,7 @@ According to \ref{obs:k1-k2},
 \[k_1(p)_{\Sigma_i}=\min\set{k_w(p)_{\Sigma_i}}{w\in\T_p, |w|=1}\]
 for $i=1,2$.
 Choose $w$ so that $k_1(p)_{\Sigma_1}=k_w(p)_{\Sigma_1}$.
-Then 
+Then by \ref{kw>=kw}, we have that
 \begin{align*}
 k_1(p)_{\Sigma_1}&=k_w(p)_{\Sigma_1}\ge
 \\
@@ -485,7 +493,7 @@ that is, $k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}$.
 
 Similarly, by \ref{obs:k1-k2}, we have that
 \[k_2(p)_{\Sigma_i}=\max\set{k_w(p)_{\Sigma_i}}{}.\]
-Fix $w$ so that $k_2(p)_{\Sigma_2}=k_w(p)_{\Sigma_2}$.
+Let us fix $w$ so that $k_2(p)_{\Sigma_2}=k_w(p)_{\Sigma_2}$.
 Then 
 \begin{align*}
 k_2(p)_{\Sigma_2}&=k_w(p)_{\Sigma_2}\le
@@ -510,11 +518,11 @@ Then
  
 \end{thm}
 
-\parit{Proof.} Part \ref{cor:surf-support:mean} follow from \ref{prop:surf-support} since 
-$H(p)_{\Sigma_i}=k_1(p)_{\Sigma_i}+k_2(p)_{\Sigma_i}$.
+\parit{Proof.} Part \ref{cor:surf-support:mean} follows from \ref{prop:surf-support} since 
+\[H(p)_{\Sigma_i}=\tfrac12\cdot(k_1(p)_{\Sigma_i}+k_2(p)_{\Sigma_i})).\]
 
-By \ref{prop:surf-support}, we get that $k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}$ and $k_2(p)_{\Sigma_2}\ge k_2(p)_{\Sigma_2}$.
-Since $k_2\ge k_1$, we get that all the principle curvatures 
+By (\ref{prop:surf-support}), we get that $k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}$ and $k_2(p)_{\Sigma_2}\ge k_2(p)_{\Sigma_2}$.
+Since $k_2(p)_{\Sigma_i}\ge k_1(p)_{\Sigma_i}$ and $k_1(p)_{\Sigma_2}\ge 0$, we get that all the principle curvatures 
 $k_1(p)_{\Sigma_1}$, $k_1(p)_{\Sigma_1}$ and $k_2(p)_{\Sigma_1}$ and $k_2(p)_{\Sigma_2}$ are nonnegative.
 Whence
 \begin{align*}
