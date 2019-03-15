@@ -2333,7 +2333,7 @@ endfig;
 beginfig(71);
 save u,k;
 u:=1cm;
-k=30;
+k=100;
 
 z0=(0,-1)*u;
 z1=(2,0)*u;
@@ -2348,7 +2348,7 @@ draw subpath (0,1) of p0 cutbefore subpath (1.1,1.9) of p0 pensemibold;
 draw subpath (1,4) of p0 pensemibold;
 
 for i=1  upto k:
-draw (point 2*i/k of p0)--(point 2+2*i/k of p0) penhair;
+draw (point 2*i/k of p0)--(point 2+2*i/k of p0) cutbefore subpath (1.5,2) of p0  pensemibold penhair;
 endfor 
 
 endfig;
