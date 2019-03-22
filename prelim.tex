@@ -58,7 +58,20 @@ holds if and only if
 
 If the assumption in the theorem holds for any point $p$ such that $\bm{f}(p)=0$,
 then we say that $0$ is a regular value of $\bm{f}$.
-\emph{Sard's theorem} states that most of the values of smooth map are regular; in particular generic smooth function satisfies the assumption of the theorem.
+The following lemma states that most of the values of smooth map are regular;
+in particular generic smooth function satisfies the assumption of the theorem.
+
+\begin{thm}{Sard's lemma}
+Almost all values of a smooth map $f\colon U \rightarrow \RR^m$ defined on an open set $U\subset \RR^n$ are regular.
+\end{thm}
+
+The words \emph{almost all} means that with exception o set of zero Lebesgue measure.
+In particular if one choose a random value equidistributed in arbitrary small ball $B\subset \RR^m$ then it is a regular value of $f$ with probability 1.
+
+
+
+
+
 
 \section{Initial value problem}
 
@@ -136,6 +149,15 @@ For the first statement, a very short proof based on somewhat developed techniqu
 among elementary proofs, one of my favorites is the proof given by Aleksei Filippov \cite{filippov}.
 
 An amusing proof of general statement for smooth regular curves can be found in \cite{chambers-liokumovich}; we use this theorem mostly in this (much simpler) case.
+
+\section{Convexity}
+
+\begin{thm}{Lemma}\label{lem:separation}
+Let $K\subset \RR^3$ be a closed convex subset.
+Then for any point $p\notin K$ there is a plane $\Pi$ that separates $K$ from $p$;
+that is, $K$ and $p$ lie on the opposite open half-spaces of $\Pi$.
+\end{thm}
+
 
 \section{Elementary geometry}
 

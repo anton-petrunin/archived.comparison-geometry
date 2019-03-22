@@ -224,7 +224,7 @@ Further we will use the term \emph{circline} for \emph{a circle or a line}.
 
 {
 
-\begin{wrapfigure}{r}{30 mm}
+\begin{wrapfigure}{r}{31 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-21}
@@ -256,7 +256,7 @@ Assume that $\gamma$ is a smooth regular plane curve with strictly decreasing po
 then $\sigma_{s_0}$ lies in the open disc bounded by $\sigma_{s_1}$ for any $s_0<s_1$. 
 \end{thm}
 
-\begin{wrapfigure}{o}{30 mm}
+\begin{wrapfigure}{o}{31 mm}
 \vskip-4mm
 \begin{lpic}[t(-0 mm),b(-2 mm),r(0 mm),l(0 mm)]{mppics/pic-61}
 \end{lpic}
@@ -427,17 +427,17 @@ The following proposition resembles the second derivative test.
 Assume $\sigma$ is a circline that locally supports $\gamma$ at $t_0$ from the right (correspondingly left). 
 Suppose $\sigma$ is cooriented to $\gamma$ at $t_0$.
 Then 
-\[\kur_\gamma(t_0)\ge \kur_\sigma
-\quad(\text{correspondingly}\quad\kur_\gamma(t_0)\le \kur_\sigma).
+\[\kur(t_0)_\gamma\ge \kur_\sigma
+\quad(\text{correspondingly}\quad\kur(t_0)_\gamma\le \kur_\sigma).
 \] 
 where $\kur_\sigma$ is the signed curvature of $\sigma$ 
-and $\kur_\gamma(t_0)$ is the signed curvature of $\gamma$ at $t_0$.
+and $\kur(t_0)_\gamma$ is the signed curvature of $\gamma$ at $t_0$.
 
 A partial converse also holds.
 Namely, suppose a unit-speed circline $\sigma$ with signed curvature $\kur_\sigma$ starts at $\gamma(t_0)$ in the direction $\gamma'(t_0)$.
 Then $\sigma$ locally supports $\gamma$ at $t_0$ from the right (correspondingly left) if 
-\[\kur_\gamma(t_0)> \kur_\sigma
-\quad(\text{correspondingly}\quad\kur_\gamma(t_0)< \kur_\sigma).
+\[\kur(t_0)_\gamma> \kur_\sigma
+\quad(\text{correspondingly}\quad\kur(t_0)_\gamma< \kur_\sigma).
 \]
 
 \end{thm}
@@ -490,9 +490,9 @@ f''(t_0)&=\langle z-\gamma(t),z-\gamma(t) \rangle''|_{t=t_0}=
 \\
 &=2\cdot\left( \langle \gamma'(t_0),\gamma'(t_0) \rangle-\langle \gamma''(t_0),z-\gamma(t_0) \rangle \right)=
 \\
-&=2\cdot\left( \langle \tau(t_0),\tau(t_0) \rangle-r\cdot\kur_\gamma(t_0)\cdot \langle \nu(t_0),\nu(t_0) \rangle \right)=
+&=2\cdot\left( \langle \tau(t_0),\tau(t_0) \rangle-r\cdot\kur(t_0)_\gamma\cdot \langle \nu(t_0),\nu(t_0) \rangle \right)=
 \\
-&=2\cdot\left(1- \frac{\kur_\gamma(t_0)}{\kur_\sigma}\right).
+&=2\cdot\left(1- \frac{\kur(t_0)_\gamma}{\kur_\sigma}\right).
 \end{align*}
 Hence the result.\qeds
 
@@ -575,7 +575,7 @@ But this is impossible since $y$ does not belong to this triangle.
 
 It follows that $\sigma$ supports $\gamma$ at $t_0$ from the right.
 By \ref{prop:supporting-circline}, 
-\[\kur_\gamma(t_0)\ge \kur_\sigma,\]
+\[\kur(t_0)_\gamma\ge \kur_\sigma,\]
 Evidently $\kur_\sigma>0$, hence the result.
 \qeds
 
@@ -662,7 +662,7 @@ Assume $\gamma$ is a simple closed smooth regular plane curve.
 Then at least two of its osculating circles support $\gamma$ from the left and  at least two from the right.
 \end{thm}
 
-\begin{wrapfigure}{r}{32 mm}
+\begin{wrapfigure}{r}{33 mm}
 \vskip4mm
 \centering
 \includegraphics{mppics/pic-63}

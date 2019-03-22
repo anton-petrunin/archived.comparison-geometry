@@ -1,21 +1,162 @@
 \chapter{Saddle surfaces}
 
+\section*{Definitions}
+
 A surface is called \emph{saddle} if its Gauss curvature at each point is nonpositive;
 in other words principle curvatures at each point have opposite signs or one of them is zero.
+
+If the Gauss curvature is negative at each point,
+then the surface is called \emph{strictly saddle}.
+
+
+\begin{thm}{Exercise}\label{ex:convex-revolution}
+Let $f\:\RR\to\RR$ be a smooth positive function.
+Show that the surface of revolution of the graph $y\z=f(x)$ around the $x$-axis
+ is saddle if and only if $f$ is convex; that is if $f''(x)\ge0$ for any $x$.
+\end{thm}
+
+\parit{Hint:} Use \ref{ex:principle-revolution}.
+
+A surface $\Sigma$ is called \emph{ruled} if for every point $p\in \Sigma$ there is a line segment $\ell_p\subset \Sigma_p$ thru $p$ that is infinite or has its endpoint(s) on the boundary line of $\Sigma$.
+
+\begin{thm}{Exercise}
+Show that any ruled surface $\Sigma$ is saddle.
+\end{thm}
+
+\parit{Hint:} Prove and use that each point $p\in\Sigma$ has a direction with vanishing normal curvature.
+
+A tangent direction on a smooth surface with vanishing normal curvature is called \emph{asymptotic}.
+A smooth regular curve that always run in an asymptotic direction is called
+\index{asymptotic line}\emph{asymptotic line}.
+
+\begin{thm}{Advanced exercise}
+Let $\Sigma\subset \RR^3$ be the graph $z\z=f(x,y)$
+of a smooth function $f$ 
+and $\gamma$ be a closed smooth asymptotic line in $\Sigma$.
+Assume $\Sigma$ is strictly saddle in a neighborhood of $\gamma$.
+Show that the projection of $\gamma$ to the $(x, y)$-plane cannot be star-shaped.
+\end{thm}
+
+\section*{Hats}
 
 Note that a closed surface can not be saddle.
 Indeed consider a smallest sphere that contains a closed surface $\Sigma$ inside;
 it supports $\Sigma$ at some point $p$ and at this point the principle curvature must have the same sign.
-The following exercise can be solved using the same idea.
+The following more general statement  is proved using the same idea.
 
-\begin{thm}{Exercise}
-Show that a smooth surface $\Sigma$ is saddle if and only if it has no hats;
-that is no disc $\Delta$ in $\Sigma$ that boundary lies in a plane and the remaining points of the $\Delta$ lie on one side of the plane.  
+\begin{thm}{Lemma}\label{lem:convex-saddle}
+Assume $\Sigma$ is a compact saddle surface and its boundary line lies in a convex closed set $F$.
+Then $\Sigma\subset F$.
 \end{thm}
 
-A surface $\Sigma$ is called \emph{ruled} if thru every point of $\Sigma$ there is a straight line that lies on $\Sigma$.
+\begin{wrapfigure}{o}{50 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-73}
+\vskip0mm
+\end{wrapfigure}
+
+\parit{Proof.}
+Assume contrary; that is, there is point $p\in \Sigma$ that does not lie in $F$.
+By \ref{lem:separation}, there is a plane $\Pi$ that separates $p$ from $F$.
+Denote by $\Sigma'$ the part of $\Sigma$ that lies with $p$ on the same side from $\Pi$.
+
+Since $\Sigma$ is compact, it is surrounded by a sphere $S$ centered at $\Pi$;
+let $\sigma$ be the circle of intersection of $S$ and $\Pi$.
+Consider the smallest spherical dome $\Sigma_0$ with boundary $\sigma$ that includes $\Sigma'$.
+
+Note that $\Sigma_0$ supports $\Sigma$ at some point~$q$.
+Without loss of generality we may assume that $\Sigma_0$ and $\Sigma$ are cooriented at $q$ and $\Sigma_0$ has positive principle curvatures.
+In this case $\Sigma_0$ supports $\Delta$ from outside.
+By \ref{cor:surf-support}, $K(q)_\Sigma\ge K(q)_{\Sigma_0}$.
+The statement follows since $K(q)_{\Sigma_0}$ is positive --- a contradiction.
+\qeds
+
+Note that if we assume that $\Sigma$ is strictly saddle, then we could arrive to a contradiction by taking a point $q$ on the same side with $p$ and on the maximal distance from $\Pi$.
+
+A disc $\Delta$ in a surface $\Sigma$ is called a \emph{hat} of $\Sigma$
+if its boundary line $\partial\Delta$ lies in a plane $\Pi$ and the remaining points of $\Delta$ lie on one side of $\Pi$.
+
+\begin{thm}{Proposition}\label{prop:hat}
+A smooth surface $\Sigma$ is saddle if and only if it has no hats.
+\end{thm}
+
+\parit{Proof.}
+Since plane is a convex set, the ``only if'' part follows from \ref{lem:convex-saddle};
+it remains to prove the ``if'' part.
+
+Assume $\Sigma$ is not saddle; that is, it has a point $p$ with strictly positive Gauss curvature;
+or equivalently, the principle curvatures $k_1(p)$ and $k_2(p)$ have the same sign.
+
+Let $z=f(x,y)$ be a graph representation of $\Sigma$ in the tangent-normal coordinates at $p$.
+Without loss of generality we may assume that both principle curvatures are positive,
+or equivalently the 
+\[D^2_wf(0,0)=\II_p(w,w)>0\] 
+for any nonzero tangent vector $w\in\T_p\Sigma$ (which is the $(x,y)$-plane).
+
+It follows that $D^2_wf(x,y)>0$ for $(x,y)$ in a neighborhood of the origin.
+Whence $f$ is a strictly convex function in a neighborhood of the origin in the $(x,y)$-plane.
+In particular the set 
+\[\Delta_\eps=\set{(x,y,f(x,y))\in \RR^3}{f(x,y))\le \eps}\]
+is a disc for sufficiently small $\eps>0$. %???
+Note that its boundary line lies on the plane $z=\eps$ and whole disc lies below it;
+that is, $\Delta_\eps$ is a hat.
+\qeds
 
 \begin{thm}{Exercise}
-Show that any ruled surface is saddle.
+Let $\Delta_\eps$ be as in the proof above.
+Show that $\Delta_\eps$ is a smooth disc; that is, $\Delta_\eps$ is the image of regular embedding $\DD\to \RR^3$, where $\DD=\set{(x,y)\in\RR^2}{x^2+y^2\le 1}$.
 \end{thm}
+
+
+\begin{thm}{Exercise}
+Some saddle surfaces contain a closed plane curves;
+for example the hyperboloid $x^2+y^2-z^2=1$ contains the unit circle in the $(x,y)$-plane centered at the origin.
+
+Why does not it contradict \ref{prop:hat}?
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:saddle-linear}
+Let $T\:\RR^3\to\RR^3$ be a linear transformation; that is, $T(x,y,z)=(x,y,z)\cdot A$ for a invertible $3{\times}3$-matrix $A$. 
+Show that for any saddle surface $\Sigma$ the image $T(\Sigma)$ is also a saddle surface.
+\end{thm}
+
+\section*{Saddle graphs}
+
+The following theorem was proved by Sergei Bernstein \cite{bernstein}.
+
+\begin{thm}{Bernshtein's theorem}\label{thm:bernshtein}
+Let $f\:\RR^2\to\RR$ be a smooth function.
+Assume its graph $z=f(x,y)$ is a strictly saddle surface $\RR^3$.
+Then $f$ is not bounded;
+that, is there is no constant $C$ such that 
+$|f(x,y)|\le C$ for any $(x,y)\in\RR^2$.
+\end{thm}
+
+\parit{The proof of \ref{thm:bernshtein} is coming.}
+
+Note that the theorem states that a saddle graph can not lie between parallel horizontal planes;
+applying \ref{ex:saddle-linear} we get that saddle graph can not lie between parallel planes,
+not necessary horizontal.
+The following exercise shows that the theorem does not hold for saddle surface which are not graphs.
+
+
+\begin{thm}{Exercise}\label{ex:between-parallels}
+Construct a complete strictly saddle surface that lies between parallel planes.
+\end{thm}
+
+\parit{Hint:} Look for an example among the surfaces of revolution and use \ref{ex:principle-revolution}.
+
+
+The following exercise shows that there are saddle graphs with with functions bounded on one side; that is, both --- upper and lower bounds are needed in the proof of Bernshtein's theorem.
+
+\begin{thm}{Exercise}\label{ex:one-side-bernshtein}
+Show that there are positive functions with strictly saddle graphs.
+In fact the graph
+$z=\exp(x-y^2)$
+is strictly saddle.
+\end{thm}
+
+\parit{Hint:} Look at two section of the graph by planes parallel to $(x,y)$-plane and to $(x,z)$-plane and apply Meusnier's theorem (\ref{cor:meusnier}).
+
 

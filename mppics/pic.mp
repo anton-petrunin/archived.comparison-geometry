@@ -2352,4 +2352,77 @@ draw (point 2*i/k of p0)--(point 2+2*i/k of p0) cutbefore subpath (1.5,2) of p0 
 endfor 
 
 endfig;
+
+beginfig(72);
+save u;
+u:=1cm;
+
+z.a0=(-1,1)*u;
+z.a1=(0,0)*u;
+z.a2=(1,1)*u;
+
+z.b0=(0,.5)*u;
+z.b1=(0,2)*u;
+
+save p; path p[];
+p0= z.a0{1,-.5}..z.a1..z.a2{-1,-.5}..z.a1..cycle;
+p1=z.a0{1,-.5}..z.a2{1,.5};
+p2=z.b0{1,-.1}..z.b1{-1,.1}..cycle;
+
+hatchfill p1--(reverse (subpath (1,2) of p0))--(subpath (3,4) of p0)--cycle  withcolor (87, 1mm, -.5bp);
+hatchfill p2  withcolor (7, 1mm, -.5bp);
+draw p0 pensemibold;
+draw p1;
+draw p2 dashed evenly;
+
+whitelabel(btex $\Omega$ etex, .5[z.b0,z.b1]);
+whitelabel(btex $\hat\Sigma$ etex, .5[z.a0,z.a1]+(-5,-5));
+label.top(btex $\hat\gamma$ etex, point 1.8 of p0);
+endfig;
+
+beginfig(73);
+save u;
+u:=1cm;
+
+z.a0=(0,1)*u;
+z.a1=(0,0)*u;
+z.a2=(0,-1)*u;
+z.a3=(-.2,0)*u;
+
+z.b0=(0,-1.5)*u;
+z.b1=(0,1.5)*u;
+
+z.q=(2.5,-.4)*u;
+
+z.c0=(2,-1.5)*u;
+z.c1=(2.2,1.7)*u;
+
+save p; path p[];
+p0=z.b0{1,-.1}..z.b1{-1,.1}..cycle;
+p1= z.a0{1,-.5}..z.a1..z.a2{-1,-.5}..z.a3..cycle;
+p3=z.c0..z.q..z.c1;
+p2=z.a0{1,-.5}..z.q{-direction 1 of p3}..z.a2{-1,-.5};
+
+hatchfill p0  withcolor (7, 1mm, -.5bp);
+draw p0;
+draw p1 penbold;
+draw p2;
+
+draw ddline(z.c0,z.c1)(.1,.1);
+
+draw p3;
+
+z.p= point .8 of p2;
+
+dOt z.q, z.p;
+
+label.llft(btex $p$ etex, z.p);
+label.rt(btex $q$ etex, z.q);
+whitelabel.rt(btex $F$ etex, point 1.5 of p0);
+label.llft(btex $\Pi$ etex, .9[z.c0,z.c1]);
+label.rt(btex $\Sigma_0$ etex, point 1.5 of p3);
+label.bot(btex $\Sigma$ etex, point .5 of p2);
+whitelabel.rt(btex $\partial\Sigma$ etex, z.a1);
+endfig;
+
 end

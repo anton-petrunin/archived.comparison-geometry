@@ -30,8 +30,8 @@ whence $\gamma''\perp\gamma'$.
 For a unit speed smooth space curve $\gamma$ the magnitude of its acceleration $|\gamma''(s)|$ is called its \emph{curvature} at the time $s$.
 \label{page:curvature}
 If $\gamma$ is simple, then we can say that $|\gamma''(s)|$ is the curvature at the point $p=\gamma(s)$ without ambiguity.
-The curvature is usually denoted by $\kur(s)$ or $\kur_\gamma(s)$ %??? do I need it
-and in the latter case it might be also denoted by $\kur(p)$ or $\kur_\gamma(p)$. %??? do I need it
+The curvature is usually denoted by $\kur(s)$ or $\kur(s)_\gamma$ %??? do I need it
+and in the latter case it might be also denoted by $\kur(p)$ or $\kur(p)_\gamma$. %??? do I need it
 
 The curvature measures how fast the curve turns;
 if you drive along a plane curve, curvature tells how much to turn the steering wheel at the given point (note that it does not depend on your speed).
@@ -191,6 +191,8 @@ whence
 
 \section*{Piecewise smooth curves}
 
+{\sloppy
+
 Assume $\alpha\:[a,b]\to \RR^3$ and $\beta\:[b,c]\z\to \RR^3$ are two curves such that $\alpha(b)=\beta(b)$.
 Then one can combine these two curves into one $\gamma\:[a,c]\z\to \RR^3$ by the rule 
 \[\gamma(t)=
@@ -203,6 +205,8 @@ Then one can combine these two curves into one $\gamma\:[a,c]\z\to \RR^3$ by the
 The obtained curve $\gamma$ is called the 
 \emph{concatenation} of $\alpha$ and $\beta$. %briefly $\gamma=\alpha{*}\beta$.
 (The condition $\alpha(b)=\beta(b)$ ensures that the map $t\mapsto\gamma(t)$ is continuous.)
+
+}
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
@@ -672,7 +676,7 @@ if $\gamma$ is closed then we assume that the inscribed polygonal lines are clos
 \end{thm}
 
 \begin{thm}{Exercise}
-Show that the total curvature is lower semi-continuous with respect to pointwise convergence of curves.
+Show that the total curvature is lower semicontinuous with respect to pointwise convergence of curves.
 That is, if a sequence
 of curves $\gamma_n\:[a,b]\to \RR^3$ converges pointwise 
 to a nontrivial curve $\gamma_\infty\:[a,b]\z\to \RR^3$, then 

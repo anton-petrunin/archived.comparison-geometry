@@ -1,3 +1,250 @@
+\parit{Proof.}
+Denote by $\Gamma$ the graph $z=f(x,y)$.
+Assume contrary; that is, $\Gamma$ lies between two planes $z=\pm C$.
+
+Note $f$ can not be constant.
+It follows that there is a line $\ell$ in $\RR^3$ with three points $a,b,c$ in the same order such that 
+$a$ and $c$ are above $\Gamma$ and $b$ is below $\Gamma$.
+Without loss of generality we can assume that the $z$-coordinate of $c$ is bigger than $C$.
+
+Consider one parameter family of planes $\Pi_t$ containing $\ell$ that starts and ends at the vertical plane $\Pi_0=\Pi_1$ and rotates by angle $\pi$ while $t$ goes from $0$ to $1$.
+For each $t$, consider the connected component $\Omega_t$ of $a$ in the subset of $\Pi_t$ that lies above $\Gamma$.
+
+Let us show that $\Omega_t\not\ni c$ for some $t$.
+
+If  $\Omega_t\ni c$ then $a$ can be connected by a path to $c$ in $\Omega_t$.
+Since $\Gamma$ is saddle, the point $b$ cannot be surrounded by a closed curve in $\Omega_t$;
+otherwise we would get a contradiction to ???.
+Whence a any path from $a$ to $c$ in $\Omega_t$ might pass $b$ on the right side or on the left side,
+but there is no pair of such paths that pass $b$ on both sides.
+In particular we can divide subdivide the parameter values $[0,1]$ into three sets $t\in R$ if the path  in $\Omega_t$  goes on the right side from $b$,  $L$ if the path in $\Omega_t$ goes on the right side from $b$ and $N=[0,1]\backslash(R\cup L)$ if there is no path in $\Omega_t$ from $a$ to $b$.
+
+Notice that $R$ and $L$ are open; indeed, if a path $\gamma$ lies in $\Omega_{t_0}$ then, since the epigraph $z>f(x,y)$ is open, all close paths lie in the epigraph.
+In particular there will be a path from $a$ to $b$ in $\Omega_t$ for all $t$ sufficiently close to $t_0$,
+evidently it goes on the same side from $b$.
+
+Notice that $R\ni 0$ and $L\ni 1$; that is $R$ and $L$ are nonempty.
+Since $[0,1]$ is connected, it can not be decomposed into two open nonempty sets.
+Whence $N$ is not empty.
+(In fact one can show that $s=\sup R$ lies in $N$.)
+
+
+Fix $t\in N$; note that $\Omega_t$ lies between the planes $z=\pm C$;
+otherwise $\Omega_t\ni c$.
+Denote by $\Gamma_t$ the part of the graph $\Gamma$ that lies above $\Omega_t$.
+By Sard's lemma we can assume that $\Gamma_t$ is a smooth surface with boundary on $\Pi_t$.
+
+Denote by $N$ the plane perpendicular to $\ell$.
+Let $n$ be the projection of $\Pi_t$ to $N$; 
+it is a line in $N$.
+Since $\Gamma_t$ and $\Omega_t$ lies between the planes $z=\pm C$, the projection of $\Gamma_t$ to $L$ lies on a bounded distance from $n$.
+
+Applying \ref{ex:saddle-projection}, we get that the complement of the projection of $\Gamma_t$ in the $L^+$ convex. 
+In order to be bounded it has to be a 
+
+
+In particular the projection of $\Gamma_t$ the 
+
+consider the projection $\proj\Omega_t$ of $\Omega_t$ to the plane $L$ perpendicular to $\ell$.
+According to \ref{ex:saddle-projection},
+each connected component of the complement of $\proj\Omega_t$  in the halfplane ??? is convex.
+On the other hand by construction $\proj\Omega_t$ lies on the finite distance to ???.
+It follows that $\proj\Omega_t$ is a strip of fixed width to ...
+
+It follows that a plane parallel to $\Pi_t$ is supporting $\Gamma$ along a line.
+
+\qeds
+
+\begin{wrapfigure}{o}{40 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-72}
+\vskip0mm
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:saddle-projection}
+Let $\Omega$ is an open convex set in the $(x,y)$-plane and 
+$\Sigma$ be a compact saddle surface in $\RR^3$ with boundary line $\gamma$.
+Denote by $\hat \Sigma$ and $\hat\gamma$ the orthogonal projections of $\Sigma$ and $\gamma$ to the $(x,y)$-plane in $\RR^3$.
+Assume that $\hat\gamma$ lies outside of $\Omega$.
+Show that each connected component of $\Omega\backslash \hat\Sigma$ is convex. 
+\end{thm}
+
+
+\parit{Hint:} 
+Assume contrary; that is, for some connected component $\Theta$ there is a line $\ell$ that goes in $\Theta$, out and in again.
+Observe that the same argument as in the lens lemma (\ref{lem:lens}) shows that the boundary of $\Theta$ has a locally supporting circle from inside.
+Take the cylinder $C$ over this circle, observe that $C$ is supports $\Sigma$ and apply \ref{cor:surf-support}.
+
+\begin{thm}{Lemma}
+There is no complete strictly saddle surface in the cylinder $y^2+z^2\le R^2, z\ge 0$ that has boundary line on the $(x,y)$-plane.
+\end{thm}
+
+\parit{Proof.}
+Assume contrary; let $\Sigma$ be such a surface.
+Consider the projection $\hat\Sigma$ of $\Sigma$ to $(x,z)$-plane;
+it lies on distance at most $R$ from $x$-axis.
+
+Note that by \ref{ex:saddle-projection} the complement of $\hat\Sigma$ in the upper half-plane is convex.
+It follows that $\hat\Sigma$ is a strip described by $0\le z\le r$ for some $r>0$.
+Whence the plane $z=r$ supports $\Sigma$ at some point $p$. 
+By \ref{cor:surf-support}, $K(p)_\Sigma\ge0$ --- a contradiction.
+\qeds
+
+
+
+
+
+
+
+
+
+\section*{Shape operator}
+
+Suppose $\Sigma$ is an oriented surface with the unit normal field $\nu$.
+Fix a point $p\in \Sigma$ and a tangent vector $v\in \T_p\Sigma$.
+Assume $\gamma_0$ ia a smooth curve in $\Sigma$ such that $p=\gamma_0(t_0)$ and $v=\gamma'_0(t_0)$ for some $t_0$;
+that is, $\gamma_0$ is passing thru $p$ with the velocity vector $v$.
+The shape operator of $v$ at $p$ is defined as 
+\[S_p(v)=-(\nu\circ\gamma_0)'(t_0).\eqlbl{eq:shape}\]
+
+Note that the value $S(v)$ does not depend on the choice of $\gamma$;
+that is, if $\gamma_1$ is another curve in $\Sigma$ such that $\gamma(t_1)=p$ and $\gamma'_1(t_1)=v$,
+then 
+\[(\nu\circ\gamma_0)'(t_0)=(\nu\circ\gamma_1)'(t_1).\eqlbl{eq:nu'=nu'}\]
+Indeed, $v=\gamma'_1(t_1)=\gamma'_0(t_0)$, therefore 
+\[|\gamma_1(t_1+\eps)-\gamma_0(t_0+\eps)|=o(\eps).\]
+Since $\nu$ is a smooth vector field,
+\[|\nu\circ\gamma_1(t_1+\eps)-\nu\circ\gamma_0(t_0+\eps)|=o(\eps);\]
+whence \ref{eq:nu'=nu'} follows.
+
+
+\begin{thm}{Proposition}
+Suppose $\Sigma$ is an oriented surface.
+Then for any $p\in \Sigma$ and any $v\in \T_p$ we have that $S_p(v)\in\T_p$.
+Moreover 
+\[\langle S_p(v),w\rangle=\langle S_p(w),v\rangle=\II_p(v,w)\]
+for any $v,w\in \T_p$.
+\end{thm}
+
+\parit{Proof.}
+Assume an oriented surface $\Sigma$ is written locally as a graph $z\z=f(x,y)$ in the tangent-normal coordinates at $p\in\Sigma$.
+As usual we assume that the normal vector $\nu_p$ points in the direction of $z$-axis,
+in this case the normal vector at any point of the graph points up; that is, its $z$-coordinate  is positive.
+
+Consider the corresponding chart  of $\Sigma$:
+\[s(x,y)\z=(x,y,f(x,y)).\]
+Denote by $\nu(x,y)$ the unit normal vector at $s(x,y)$.
+
+Note that for a tangent vector $v=(a,b,0)\in \T_p$ we have that
+\[
+\begin{aligned}
+S_p(v)&=-D_v\nu(0,0)=
+\\
+&=-(a\cdot \tfrac{\partial \nu}{\partial x}+b\cdot \tfrac{\partial \nu}{\partial y})(0,0),
+\end{aligned}
+\eqlbl{eq:S=D}
+\]
+where $D_v$ denotes the directional derivative along a vector $v$ in the $(x,y)$-plane which is $\T_p$.
+
+Indeed, the first equality follows from \ref{eq:shape} applied for the curve $\gamma(t)=(a\cdot t,b\cdot t, f(a\cdot t,b\cdot t))$ at $t=0$ and the second follow from the chain rule.
+
+Taking partial derivatives of $\langle\nu,\nu\rangle=1$, we get that 
+\[\langle\tfrac{\partial\nu}{\partial x},\nu\rangle=\langle\tfrac{\partial\nu}{\partial x},\nu\rangle=0\]
+By \ref{eq:S=D} it follows that $S_p(v)\perp \nu_p$, or equivalently $S_p(v)\in\T_p$.
+
+Further, since $\tfrac{\partial s}{\partial x}, \tfrac{\partial s}{\partial y}\in\T_{s(x,y)}\Sigma$
+and $\nu(x,y)\perp\T_{s(x,y)}\Sigma$,
+we have that
+\[\langle \nu,\tfrac{\partial s}{\partial x}\rangle\equiv 0
+\quad\text{and}\quad
+\langle \nu,\tfrac{\partial s}{\partial y}\rangle\equiv 0.\]
+Taking a derivative of these identities, we get that
+\[\begin{aligned}
+\langle \tfrac{\partial\nu}{\partial x},\tfrac{\partial s}{\partial x}\rangle+\langle \nu,\tfrac{\partial^2 s}{\partial x^2}\rangle&\equiv 0,
+\\
+\langle \tfrac{\partial\nu}{\partial y},\tfrac{\partial s}{\partial x}\rangle+\langle \nu,\tfrac{\partial^2 s}{\partial y\partial x}\rangle&\equiv 0,
+\\
+\langle \tfrac{\partial\nu}{\partial x},\tfrac{\partial s}{\partial y}\rangle+\langle \nu,\tfrac{\partial^2 s}{\partial x\partial y}\rangle&\equiv 0,
+\\
+\langle \tfrac{\partial\nu}{\partial y},\tfrac{\partial s}{\partial y}\rangle+\langle \nu,\tfrac{\partial^2 s}{\partial y^2}\rangle&\equiv 0,
+\end{aligned}
+\eqlbl{eq:shape=second}
+\]
+
+Fix two vectors $v=(a,b,0)$ and $w=(c,d,0)$ in $\T_p$ (which is the $(x,y)$-plane).
+Since $\nu(0,0)=(0,0,1)$ we get $f(x,y)\equiv\langle\nu(0,0),s(x,y)\rangle$.
+Therefore by \ref{eq:S=D}, \ref{eq:shape=second} and \ref{eq:DwDv} we get that 
+\begin{align*}
+\langle S_p(v),w\rangle 
+&=-\langle  a\cdot \tfrac{\partial \nu}{\partial x}+b\cdot \tfrac{\partial \nu}{\partial y},c\cdot \tfrac{\partial s}{\partial x}+d\cdot \tfrac{\partial s}{\partial y}\rangle(0,0)=
+\\
+&=-\bigl(a\cdot c\cdot\langle \tfrac{\partial \nu}{\partial x},\tfrac{\partial s}{\partial x}\rangle 
++a\cdot d\cdot\langle \tfrac{\partial \nu}{\partial x},\tfrac{\partial s}{\partial y}\rangle+
+\\&\quad
++b\cdot c\cdot\langle \tfrac{\partial \nu}{\partial y},\tfrac{\partial s}{\partial x}\rangle
++b\cdot d\cdot\langle \tfrac{\partial \nu}{\partial y},\tfrac{\partial s}{\partial y}\rangle\bigr)(0,0)=
+\\
+&=\bigl(a\cdot c\cdot\langle \nu,\tfrac{\partial^2 s}{\partial x^2}\rangle 
++a\cdot d\cdot\langle \nu,\tfrac{\partial^2 s}{\partial x\partial y}\rangle+
+\\&\quad
++b\cdot c\cdot\langle \nu,\tfrac{\partial^2 s}{\partial y\partial x}\rangle
++b\cdot d\cdot\langle \nu,\tfrac{\partial^2 s}{\partial y^2}\rangle\bigr)(0,0)=
+\\
+&=\bigl(a\cdot c\cdot\tfrac{\partial^2 f}{\partial x^2} 
++a\cdot d\cdot\tfrac{\partial^2 f}{\partial x\partial y}+
+\\&\quad
++b\cdot c\cdot\tfrac{\partial^2 f}{\partial y\partial x}
++b\cdot d\cdot\tfrac{\partial^2 f}{\partial y^2}\bigr)(0,0)=
+\\
+&=\II_p(v,w).
+\end{align*}
+It remains to apply \ref{eq:II=II}.
+\qeds
+
+\begin{thm}{Exercise}
+Let $\Sigma$ be a smooth oriented surface and $p\in \Sigma$.
+Show that a nonzero tangent vector $v\in \T_p$ points in a principle direction
+if and only if $S(v)$ is parallel to $v$ and if so, then the unique coefficient $k$ such that
+$S(v)=k\cdot v$ is the principle curvature in this direction.
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:normal-curvature=const}
+Let $\Sigma$ be a smooth oriented surface with the unit normal field $\nu$.
+Suppose that $\Sigma$ has unit normal curvature at any point in any direction.
+\begin{enumerate}[(a)]
+ \item Show that $S_p(w)=w$ for any $p\in\Sigma$ and $w\in \T_p\Sigma$.
+ \item Show that $p+\nu_p$ is constant; that is the value $o=p+\nu_p$ does not depend on $p\in\Sigma$.
+ Conclude that $\Sigma$ is a part of the unit sphere centered at $o$.
+\end{enumerate}
+
+\end{thm}
+
+
+\begin{thm}{Exercise}
+Assume $\Sigma_1$ and $\Sigma_2$ intersect at constant angle along a smooth regular curve $\gamma$.
+Show that if $\gamma$ is a curvature line in $\Sigma_1$ then it is also a curvature line in $\Sigma_2$ 
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{thm}{Exercise}\label{ex:signed-distance}
 Let $\gamma$ be a simple smooth regular closed plane curve.
 Assume it is parametrized so that the bounded region lies on the left from $\gamma$.
