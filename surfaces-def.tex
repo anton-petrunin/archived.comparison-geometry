@@ -314,4 +314,32 @@ In fact any complete smooth surface cuts the space into two connected components
 Therefore one could choose an orientation on any complete surface by taking normal vector at each point that points into one of these components. %???
 In particular the M\"obius strip can not be extended to a complete smooth surface.
 
+\section*{Sections}
+
+\begin{thm}{Advanced exercise}
+Show that any closed set in the plane can appear as an intersection of this plane with a complete smooth regular surface.  
+\end{thm}
+
+As a consequence of the exercise above, the section of a smooth regular surface by a plane might look ugly.
+The following lemma makes possible to perturb the plane so that the section becomes nice. 
+
+\begin{thm}{Lemma}\label{lem:reg-section}
+Let $\Sigma$ be a smooth regular surface.
+Then for any plane $\Pi$ there is arbitrarily close parallel plane $\Pi'$ such that 
+each connected component of the intersection $\Sigma\cap \Pi'$ is a smooth regular curve.
+\end{thm}
+
+\parit{Proof.}
+Assume $\Pi$ is described by equation $f(x,y,z)=r_0$, where
+\[f(x,y,z)=a\cdot x+b\cdot y+c\cdot z.\] 
+The surface $\Sigma$ can be covered by a countable set of charts $s_i\:U_i\to \Sigma$.
+The composition $f\circ s_i$ is a smooth function.
+Therefore almost all real numbers $r$ are regular values of each $f\circ s_i$.
+
+Fix such value $r$ sufficiently close to $r_0$ and consider the plane $\Pi'$ described by the equation $f(x,y,z)=r$.
+Note that $\Pi'\parallel \Pi$ and arbitrary close to it.
+Any point in the intersection $\Sigma\cap\Pi'$ lies in the image of one of the charts.
+From above it admits a neighborhood which is a regular smooth curve;
+hence the result.\qeds
+
 

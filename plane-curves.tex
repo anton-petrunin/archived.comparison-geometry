@@ -99,7 +99,7 @@ Note that
 \end{align*}
 That is $\kur(s)$ is the signed curvature of $\gamma$ at $s$.
 
-We proved the existence; it remains to prove uniueness.
+We proved the existence; it remains to prove uniqueness.
 Assume $\gamma_1$ and $\gamma_2$ are two curves that satisfy the assumptions of the theorem.
 Applying a rigid motion, we can assume that $\gamma_1(s_0)=\gamma_2(s_0)=0$ and the Frenet frame of both curves at $s_0$ is formed by the coordinate frame $(1,0),(0,1)$.
 Let us denote by $\tau_1,\nu_1$ and $\tau_2,\nu_2$ the Frenet frames of $\gamma_1$ and $\gamma_2$ correspondingly. The triples $\gamma_i,\tau_i,\nu_i$ satisfy the same system system of ordinary differential equations 
@@ -178,7 +178,7 @@ By \ref{eq:tsc-theta}, the value
 is a multiple of $2\cdot\pi$.
 Since $\tc{\gamma_i}<\pi$, by chord lemma (\ref{lem:chord}), we also have that $|\alpha_i|\z+|\beta_i|<\pi$.
 By \ref{eq:tsc-tc}, we have that $|\Psi(\gamma_i)|\le\tc{\gamma_i}$;
-therefore tha value in \ref{eq:Psi-alpha-beta} vanishes, or equivalently
+therefore the value in \ref{eq:Psi-alpha-beta} vanishes, or equivalently
 \[\Psi(\gamma_i)=\alpha_i+\beta_{i+1}\]
 for each $i$.
 
@@ -242,7 +242,7 @@ The unit-speed curve $\sigma$ of constant signed curvature $\skur(s)$ that start
 
 The center and radius of the osculating circle at a given point are called \emph{center of curvature} and \emph{radius of curvature} of the curve at that point.
 
-The osculating circle $\sigma_s$ can be also defined as the (nesesary unique) circline that has \emph{second order of contact} with $\gamma$ at $s$;
+The osculating circle $\sigma_s$ can be also defined as the (necessarily unique) circline that has \emph{second order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)\z=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\sigma_s$.
 
 \section*{Spiral lemma}
@@ -288,7 +288,7 @@ Since $\skur(s)$ is decreasing, $r(s)$ is increasing;
 therefore $r'\ge 0$.
 It follows that $|z'(s)|= r'(s)$ and $z'(s)$ points in the direction of $\nu(s)$.
 
-Since $\nu'(s)=-\skur(s)\cdot\tau(s)$, the directiion of $z'(s)$ can not have constant direction on a nontrivial interval;
+Since $\nu'(s)=-\skur(s)\cdot\tau(s)$, the direction of $z'(s)$ can not have constant direction on a nontrivial interval;
 that is, the curve $s\mapsto z(s)$ contains no line segments.
 It follows that 
 \begin{align*}
@@ -359,7 +359,7 @@ Assume that $\gamma$ is a smooth regular plane curve with positive strictly mono
 \vskip0mm
 \end{wrapfigure}
 
-Note that part (\ref{ex:double-tangent:a}) does not hold if we alow the curvature to be negative; an example is shown on the diagram.
+Note that part (\ref{ex:double-tangent:a}) does not hold if we allow the curvature to be negative; an example is shown on the diagram.
 
 }
 
@@ -368,7 +368,7 @@ Note that part (\ref{ex:double-tangent:a}) does not hold if we alow the curvatur
 Suppose $\gamma$ is a smooth regular plane curve.
 Recall that a circline $\sigma$ is tangent to $\gamma$ at $t_0$ if
 $\gamma(t_0)=\sigma(t_1)$ for some $t_1$ and they share the tangent at these time parameters;
-that is, the tangent lines of $\gamma$ and $t_0$ coincides with the tangent line $\sigma$ at $t_1$.
+that is, the tangent lines of $\gamma$ at $t_0$ coincides with the tangent line $\sigma$ at $t_1$.
 
 We can (and often will) assume that tangent circline is \emph{cooriented} with the curve;
 that is, the tangent vectors $\gamma'(t_0)$ and $\sigma'(t_1)$ point in the same direction.
@@ -456,7 +456,7 @@ Consider the function
 \[f(t)=|z-\gamma(t)|^2-\tfrac1{\kur_\sigma^2}.\]
 
 Note that $f(t)\le0$ (correspondingly $f(t)\ge0$) 
-if an only if $\gamma(t)$ lies on the closed left (correspondingly right) side from $\sigma$.
+if and only if $\gamma(t)$ lies on the closed left (correspondingly right) side from $\sigma$.
 It follows that 
 \begin{itemize}
 \item if $\sigma$ locally supports $\gamma$ at $t_0$ from the right, 
@@ -859,7 +859,7 @@ Recall that the \emph{inverse} of a point $x$ with respect to the unit circle ce
 
 
 \begin{thm}{Advanced exercise}
-Suppose $\gamma$ is a smooth regular point on the plane that does not pass thru the origin.
+Suppose $\gamma$ is a smooth regular plane curve that does not pass thru the origin.
 Let $\hat \gamma$ be the inversion of $\gamma$ in the unit circle centered at the origin.
 Show that osculating circline of $\hat\gamma$ at $s$ is the inversion of osculating circline of $\gamma$ at $s$.
 Conclude that every vertex of $\hat\gamma$ is the inversion of a vertex of $\gamma$.
@@ -870,11 +870,11 @@ Conclude that every vertex of $\hat\gamma$ is the inversion of a vertex of $\gam
 %???+PIC
 
 Note that the exercise provides an alternative way to finish the proof of \ref{thm:moon} --- once we proved the existence of two osculating circles that support $\gamma$ from the left,
-we can apply to $\gamma$ invesion with the center surrounded by $\gamma$.
+we can apply to $\gamma$ inversion with the center surrounded by $\gamma$.
 In this case the curve $\gamma$ is mapped to a curve $\hat \gamma$,
 the domain inside $\gamma$ is mapped to the domain outside $\hat\gamma$ and the other way around.
 It follows that if an osculating circle supports the obtained curve $\hat\gamma$ on the right 
 then its inversion supports  $\gamma$ from the left and the other way around.
-That is form the existance of two supporting circles on the left we also get the existance of two supporting circles on the right.
+That is from the existance of two supporting circles on the left we also get the existance of two supporting circles on the right.
 
 

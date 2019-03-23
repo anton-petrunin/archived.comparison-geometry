@@ -129,15 +129,15 @@ The following theorem was proved by Sergei Bernstein \cite{bernstein}.
 Let $f\:\RR^2\to\RR$ be a smooth function.
 Assume its graph $z=f(x,y)$ is a strictly saddle surface $\RR^3$.
 Then $f$ is not bounded;
-that, is there is no constant $C$ such that 
+that is, there is no constant $C$ such that 
 $|f(x,y)|\le C$ for any $(x,y)\in\RR^2$.
 \end{thm}
 
-\parit{The proof of \ref{thm:bernshtein} is coming.}
+Before going into the proof let us discuss some examples.
 
 Note that the theorem states that a saddle graph can not lie between parallel horizontal planes;
 applying \ref{ex:saddle-linear} we get that saddle graph can not lie between parallel planes,
-not necessary horizontal.
+not necessarily horizontal.
 The following exercise shows that the theorem does not hold for saddle surface which are not graphs.
 
 
@@ -148,7 +148,7 @@ Construct a complete strictly saddle surface that lies between parallel planes.
 \parit{Hint:} Look for an example among the surfaces of revolution and use \ref{ex:principle-revolution}.
 
 
-The following exercise shows that there are saddle graphs with with functions bounded on one side; that is, both --- upper and lower bounds are needed in the proof of Bernshtein's theorem.
+The following exercise shows that there are saddle graphs with functions bounded on one side; that is, both (upper and lower) bounds are needed in the proof of Bernshtein's theorem.
 
 \begin{thm}{Exercise}\label{ex:one-side-bernshtein}
 Show that there are positive functions with strictly saddle graphs.
@@ -158,5 +158,104 @@ is strictly saddle.
 \end{thm}
 
 \parit{Hint:} Look at two section of the graph by planes parallel to $(x,y)$-plane and to $(x,z)$-plane and apply Meusnier's theorem (\ref{cor:meusnier}).
+
+Note that according to \ref{lem:convex-saddle}, there are no complete saddle surfaces in a parallelepiped that boundary line lies on one of its faces.
+The following lemma gives an analogous statement for a parallelepiped with an infinite side.
+
+\begin{thm}{Lemma}\label{lem:region}
+There is no complete strictly saddle smooth surface 
+with the boundary line in a plane
+that lies on bounded distance from a line.
+\end{thm}
+
+In a suitable coordinate system, the statement can be reformulated the following way:
+\emph{There is no complete strictly saddle smooth surface 
+with the boundary line in the $(x,y)$-plane
+that lies in a region of the following form:}
+\[R=\set{(x,y,z)\in\RR^3}{0\le z\le r, 0\le y\le r}.\]
+
+\parit{Proof.}
+We will prove the statement using the second (equivalent) formulation.
+
+Assume contrary, let $\Sigma$ be such a surface.
+Consider the projection $\hat \Sigma$ of $\Sigma$ to the $(x,z)$-plane.
+It lies in the upper half plane and below the the line $z=r$.
+
+Consider the open upper half-plane $H=\set{(x,z)\in \RR^2}{z> 0}$. 
+Let $\Theta$ be the connected component of the complement $H\backslash \hat \Sigma$ that contains all the points above the line $z=r$.
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-74}
+\vskip0mm
+\end{figure}
+
+Note that $\Theta$ is convex.
+If not then a line segment $[pq]$ for some $p,q\in \Theta$ cuts from $\hat\Sigma$ a compact piece.
+Consider the plane $\Pi$ thru $[pq]$ that is perpendicular to the $(x,z)$-plane.
+Note that $\pi$ cuts from $\Sigma$ a compact region $\Delta$.
+By general position argument \ref{lem:reg-section}, 
+we can assume that $\Delta$ is a compact surface with boundary line in $\Pi$ and the remaining part of $\Delta$ lies on one side from $\Pi$.
+Since the plane $\Pi$ is a convex, this statement contradicts \ref{lem:convex-saddle}.
+
+Summarizing, $\Theta$ is an open convex set of $H$ that contains all points above $z=r$.
+By convexity, together with any point $w$, the set $\Theta$ contains all points on the half-lines that point up from it. 
+Whence it contain all points with $z$-coordinate larger than the $z$-coordinate of $w$.
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-75}
+\vskip0mm
+\end{figure}
+Since $\Theta$ is open it can be described by inequality $z>r_0$.
+It follows that the plane $z=r_0$ supports $\Sigma$ at some point (in fact at many points).
+By \ref{prop:surf-support}, the latter is impossible --- a contradiction.
+\qeds
+
+\parit{Proof of \ref{thm:bernshtein}.}
+Denote by $\Sigma$ the graph $z=f(x,y)$.
+Assume contrary; that is, $\Sigma$ lies between two planes $z=\pm C$.
+
+Note $f$ can not be constant.
+It follows that the tangent plane $\T_p$ at some point $p\in\Sigma$ is not horizontal.
+
+Denote by $\Sigma^+$ the part of $\Sigma$ that lies above $\T_p$.
+Note that it has at least two connected components which are approaching $p$ from both sides 
+in the principle direction with positive principle curvature.
+Indeed if there would be a curve that runs in $\Sigma^+$ and approaches $p$ from both sides then it would cut a disc from $\Sigma$ with boundary line above $\T_p$ and some points below it;
+the later contradicts \ref{lem:convex-saddle}.
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-76}
+\vskip0mm
+\end{figure}
+
+Summarizing, $\Sigma^+$ has at least two connected components, denote them by $\Sigma^+_0$ and $\Sigma^+_1$.
+Let $z=h(x,y)=a\cdot x+b\cdot y+c$ be the equation of $\T_p$.
+Note that $\Sigma^+$ contains all points in the region
+\[R_-=\set{(x,y,f(x,y))\in\Sigma}{h(x,y)< C}\] 
+which is a connected set and no points in 
+\[R_+=\set{(x,y,f(x,y))\in\Sigma}{h(x,y)> C}\]
+Whence one of the connected components, say $\Sigma^+_0$, lies in 
+\[R_0=\set{(x,y,f(x,y))\in\Sigma}{|h(x,y)|\le  C}.\]
+This set lies on a bounded distance from the line of intersection of $\T_p$ with the $(x,y)$-plane.
+
+Moving the plane $\T_p$ little up, we can cut from $\Sigma^+_0$ is a complete surface with boundary line lying in this plane (see \ref{lem:reg-section}).
+The obtained surface is still on a bounded distance to a line
+which is impossible by \ref{lem:region}.
+\qeds
+
+\begin{thm}{Advanced exercise}
+Let $\Sigma$ be a smooth saddle disk in $\RR^3$.
+Assume that the orthogonal projection to the $(x,y)$-plane
+maps the boundary line of $\Sigma$
+injectively to a convex closed curve.
+Show that the orthogonal projection to $(x,y)$-plane is injective on $\Sigma$.
+
+In particular, $\Sigma$ is the graph $z=f(x,y)$ of a function $f$ defined on a convex figure in the $(x,y)$-plane.
+\end{thm}
 
 

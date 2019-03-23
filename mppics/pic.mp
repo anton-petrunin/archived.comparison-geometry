@@ -2425,4 +2425,132 @@ label.bot(btex $\Sigma$ etex, point .5 of p2);
 whitelabel.rt(btex $\partial\Sigma$ etex, z.a1);
 endfig;
 
+beginfig(74);
+save u;
+u:=1cm;
+
+z.l=(0,0)*u;
+z.a0=(0,1)*u;
+z.a1=(1,1)*u;
+z.a2=(2,1.5)*u;
+z.a3=(3,1)*u;
+z.a4=(4,1)*u;
+z.a5=(5,1)*u;
+z.a6=(6,1)*u;
+z.a7=(7,1)*u;
+z.a8=(8,1)*u;
+z.r=(8,0)*u;
+
+z.b0=(6.5,.5)*u;
+z.b1=(5.5,.5)*u;
+
+
+save p; path p[];
+p0=z.a0..z.a1..z.a2..z.a3..z.a4..z.a5..z.a6..z.a7..z.a8;
+p1=z.b0..tension 2..z.b1..tension 2..cycle;
+
+z.p=(-.3)[point 1.5 of p0,point 2.4 of p0];
+z.q=1.3[point 1.5 of p0,point 2.4 of p0];
+
+draw p0 pensemibold;
+draw p1 pensemibold;
+
+hatchfill p0--z.r--p1--z.r--z.l--cycle  withcolor (37, 1mm, -.5bp);
+
+draw z.r--z.l dashed evenly;
+draw z.r+(0,2)*u--z.l+(0,2)*u dashed evenly;
+draw z.p--z.q;
+
+dOt z.p,z.q, z.a2;
+
+label.top(btex $p$ etex, z.p);
+label.top(btex $q$ etex, z.q);
+label.top(btex $\hat s$ etex, z.a2);
+label.top(btex $\Theta$ etex, z.a5);
+whitelabel.bot(btex $\hat\Sigma$ etex, z.a5);
+label.top(btex $z=r$ etex, (x.a5,2*u));
+label.bot(btex $z=0$ etex, (x.a5,0));
+endfig;
+
+beginfig(75);
+save u;
+u:=1cm;
+
+z.l=(0,0)*u;
+z.a0=(0,1)*u;
+z.a8=(8,1)*u;
+z.a5=(5/8)[z.a0,z.a8];
+z.a2=(2/8)[z.a0,z.a8];
+z.r=(8,0)*u;
+
+z.b0=(6.5,.5)*u;
+z.b1=(5.5,.5)*u;
+
+z.w=(1,1.3)*u;
+z.ww=(3,2.5)*u;
+
+save p; path p[];
+p0=z.a0--z.a8;
+p1=z.b0..tension 2..z.b1..tension 2..cycle;
+
+draw p0 pensemibold;
+draw p1 pensemibold;
+
+hatchfill p0--z.r--p1--z.r--z.l--cycle  withcolor (37, 1mm, -.5bp);
+
+draw z.r--z.l dashed evenly;
+draw z.r+(0,2)*u--z.l+(0,2)*u dashed evenly;
+draw z.w--z.ww;
+
+dOt z.w;
+
+label.top(btex $\Theta$ etex, z.a2);
+whitelabel.bot(btex $\hat\Sigma$ etex, z.a2);
+label.top(btex $z=r$ etex, (x.a5,2*u));
+label.top(btex $z=r_0$ etex, (x.a5,1*u));
+label.ulft(btex $w$ etex, z.w);
+label.bot(btex $z=0$ etex, (x.a5,0));
+endfig;
+
+beginfig(76);
+save u;
+u:=1cm;
+
+z.a0=(-4,.1)*u;
+z.a1=(0,0)*u;
+z.a2=(4,.2)*u;
+
+z.b0=(-4,-.9)*u;
+z.b1=z.a1;
+z.b2=(-4,.9)*u;
+
+save p; path p[];
+p0=z.a0..z.a1..z.a2;
+p1=z.b0{right}...z.b1...{left}z.b2;
+
+hatchfill (subpath (0,1) of p0)--(subpath (1,0) of p1)--cycle  withcolor (37, 1mm, -.5bp);
+
+hatchfill (subpath (2,1) of p0)--(subpath (1,2) of p1)--(-4,1.5)*u--(4,1.5)*u--cycle  withcolor (37, 1mm, -.5bp);
+
+draw p0;
+draw p1;
+
+draw (-4,1)*u--(4,1)*u pensemibold;
+draw (-4,-1)*u--(4,-1)*u pensemibold;
+
+dOt z.a1;
+
+x.h=3*u;
+
+whitelabel.top(btex $h=-C$ etex, (x.h,1*u));
+label.top(btex $h=C$ etex, (x.h,-1*u));
+whitelabel.top(btex $\Sigma^+_0$ etex, (-2*u,-.6*u));
+whitelabel.top(btex $\Sigma^+_1$ etex, (2*u,.5*u));
+label.lrt(btex $p$ etex, z.a1);
+
+whitelabel.lrt(btex $R_-$ etex, (-4,1.5)*u);
+whitelabel.rt(btex $R_0$ etex, (-4,0)*u);
+whitelabel.urt(btex $R_+$ etex, (-4,-1.5)*u);
+endfig;
+
 end
