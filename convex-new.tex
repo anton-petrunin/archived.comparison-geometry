@@ -1,0 +1,176 @@
+\chapter{Positive Gauss curvature}
+
+
+\section*{Convexity}
+
+\begin{thm}{Exercise}\label{ex:convex-surf}
+Suppose that an oriented surface $\Sigma$ bounds a convex region $R$.
+\begin{enumerate}[(a)]
+\item Show that  Gauss curvature of $\Sigma$ is nonnegative at each point.
+\item Show that for any point $p\in \Sigma$ and $q$ in the interior of $R$ we have that
+\[\langle \nu_p,q-p\rangle>0,\]
+where $\nu_p$ is the  unit normal vector at $p$ that points in $R$.
+\end{enumerate}
+
+\end{thm}
+
+\parit{Hint:} Show and use that any tangent plane $\T_p$ supports $\Sigma$ at $p$.
+
+Recall that a region $R$ in the Euclidean space is called  \emph{strictly convex} if for any two points $x,y\in R$, any point $z$ between $x$ and $y$ lies in the interior of $R$.
+
+Clearly any open convex set is strictly convex;
+the cube (as well as any convex polyhedron) gives an example of a convex set which is not strictly convex.
+It is easy to see that a convex region is strictly convex if and only if its boundary does not contain a line segment.
+
+The following theorem gives a global description of surfaces with positive Gauss curvature.
+
+\begin{thm}{Theorem}\label{thm:convex-embedded}
+Assume $\Sigma$ is a complete smooth surface with positive Gauss curvature.
+Then $\Sigma$ bounds a strictly convex region.
+\end{thm}
+
+Note that in the proof we have to use that surface is a connected set;
+otherwise a pair of disjoint spheres which bound two disjoint balls would give a counterexample.
+
+\parit{Proof.}
+Since the Gauss curvature is positive, we can choose unit normal field $\nu$ on $\Sigma$ so that the both principle curvatures are positive at any point.
+Let $R$ be the region bounded by $\Sigma$ that lies on the side of $\nu$;
+that is $\nu$ points inside of $R$ at any point of $\Sigma$.
+
+Fix $p\in\Sigma$; let $z=f(x,y)$ be a local description of $\Sigma$ in the tangent-normal coordinates at $p$.
+By \ref{lem:gauss+=>convexity}, $f$ is strictly convex in a neighborhood of the origin.
+In particular the intersection of a small ball centered at $p$ with the epigraph $z\ge f(x,y)$ is strictly convex.
+In other words, $R$ is \emph{locally strictly convex};
+that is, for any point $p\in R$, the intersection of $R$ with a small ball centered at $p$ is strictly convex.
+
+Since $\Sigma$ is connected, so is $R$;
+moreover any two points in the interior of $R$ can be connected by a polygonal line in in the interior of~$R$.
+
+\begin{wrapfigure}{r}{43 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-37}
+\vskip-0mm
+\end{wrapfigure}
+
+Assume the interior of $R$ is not convex; that is, there are points $x,y\in R$ and a point $z$ between $x$ and $y$ that does not lie in the interior of $R$.
+Consider a polygonal  line $\beta$ from $x$ to $y$ in the interior of $R$.
+Let $y_0$ be the first point on $\beta$ such that the chord $[x,y_0]$ touches $\Sigma$ at some point, say~$z_0$.
+
+Since $R$ is locally strictly convex, $R\cap B(z_0,\eps)$ is strictly convex for all sufficiently small $\eps>0$.
+On the other hand $z_0$ lies between two points in the intersection $[x,y_0]\cap B(z_0,\eps)$.
+Since $[x,y_0]\subset R$, we arrived to a contradiction.
+
+Therefore the interior of $R$ is a convex sets.
+Note that the region $R$ is the closure of ints interior, therefore $R$ is convex as well.
+
+Since $R$ is locally strictly convex, its boundary $\Sigma$ contains no line segments.
+Therefore $R$ is strictly convex.
+\qeds
+
+In fact only minor modifications of the proof above imply that
+any connected locally convex region is convex.
+
+
+\section*{Closed surfaces}
+
+\begin{thm}{Lemma}
+Assume $\Sigma$ is a closed smooth surface with positive Gauss curvature.
+Then $\Sigma$ is a smooth sphere; that is, $\Sigma$ admits a smooth regular parametrization by $\SS^2$.
+\end{thm}
+
+\parit{Proof.}
+Without loss of generality we can assume that the origin lies in the interior of the convex region $R$ bounded by $\Sigma$.
+
+By convexity of $R$, any half-line starting at the origin intersects $\Sigma$ at a single point;
+that is there is a positive function $\rho\:\SS^2\to\RR$ such that $\Sigma$ is formed by points $\rho(\xi)\cdot \xi$ for $\xi\in \SS^2$.
+
+Let us show that $\rho$ is a smooth function.
+Fix a point $p=(x_p,y_p,z_p)$ on $\Sigma$.
+Consider a local implicit description of $\Sigma$ at $p$ as a solution of equation $f(x,y,z)=0$ with nonvanishing gradient;
+so $f(p)=0$.
+Note that for any point $q$ in a neighborhood of $p$, we have that 
+\[f(q)=0 \iff q\in \Sigma \iff q=\rho(\xi)\cdot\xi\] for some $\xi\in \SS^2$.
+In other words $f$ defines implicitly $\rho$ as in the implicit function theorem.
+
+
+
+Recall that $\nabla_p f\perp \T_p$.
+Since the origin lies in the interior of $R$, it can not lie on $\T_p$;
+that is $\langle\nabla_p f,p \rangle\ne0$;
+or equivalently $D_\eta f(p)\ne 0$, where $\eta=\tfrac{p}{|p|}$ is the unit vector in the direction of $p$ and $D$ denotes the directional derivative.
+
+Fix a $(u,v)$ chart $s$ on $\SS^2$ in a neighborhood of $\eta$;
+note that the map 
+\[S\:(u,v,w)\mapsto w\cdot s(u,v)\] 
+is smooth and regular for $w>0$; that is, the vectors 
+\[\tfrac{\partial S}{\partial u},\quad \tfrac{\partial S}{\partial v},\quad  \tfrac{\partial S}{\partial w}=w\] are linearly independent.
+Note that the function $f\circ S$ is smooth and
+$\tfrac{\partial f\circ S}{\partial \rho}(p)=D_\eta f(p)\ne 0$.
+Applying implicit function theorem, we get that $\rho$ is smooth in a neighborhood of $\eta$;
+since $\eta$ is arbitrary it is smooth on whole $\SS^2$.
+\qeds
+
+
+If one only needs to show that $\Sigma$ is a topological sphere, then one only needs to show that $\rho$ is continuous.
+The latter is a consequence of another classical result it topology --- the so called \emph{closed graph theorem}.
+
+\section*{Open surfaces}
+
+\begin{thm}{Lemma}\label{lem:graph}
+Suppose $\Sigma$ is an open surface in with positive Gauss curvature.
+Then there there is a coordinate system such that 
+$\Sigma$ is a graph $z=f(x,y)$ of a convex function $f$ defined on a convex open region of $(x,y)$-plane.
+\end{thm}
+
+\parit{Proof.}
+The surface $\Sigma$ is a boundary of an unbounded closed convex region $R$.
+
+We can assume that the origin lies on $\Sigma$.
+Consider a sequence of points $x_n\in \Sigma$ such that $|x_n|\z\to \infty$ as $n\to \infty$.
+Set $u_n=\tfrac{x_n}{|x_n|}$; this is the unit vector in the direction from $x_n$.
+Since the unit sphere is compact, we can pass to a subsequence of $(x_n)$ such that $u_n$ converges to a unit vector $u$.
+
+Note that for any $q\in \Sigma$, the directions $v_n=\tfrac{x_n-q}{|x_n-q|}$ converge to $u$ as well.
+Indeed, the sequences of vectors $\tfrac{x_n-q}{|x_n-q|}$, $\tfrac{x_n-q}{|x_n|}$ and 
+$\tfrac{x_n}{|x_n|}$ have the same limit since $\tfrac{|q|}{|x_n|}\to 0$
+and $\tfrac{|x_n|}{|x_n-q|}\to 1$ as $n\to \infty$;
+the latter follows since
+\begin{align*}
+|\tfrac{|x_n|}{|x_n-q|}-1|&=|\tfrac{|x_n|-|x_n-q|}{|x_n-q|}-1|\le
+\\
+&\le\tfrac{|p-q|}{|x_n-q|}.
+\end{align*}
+
+Morover, the half-line from $q$ in the direction of $u$ lies in $R$.
+Indeed any point on the half-line is a limit of points on the line segments $[q,x_n]$;
+since $R$ is closed, all of these poins lie in $R$.
+
+
+Let us choose the $z$-axis in the direction of $u$.
+Note that there is no point $p\in\Sigma$ with vertical tangent plane.
+Otherwise $\Sigma$ would contain a vertical half-line starting from $p$ and therefore Gauss curvature of $\Sigma$ would vanish.
+It follows that any vertical line can intersect $\Sigma$ at most at one point.
+That is, $\Sigma$ is a graph of a smooth convex function $z=f(x,y)$.
+
+Let $\Omega$ be the domain of definition of $f$.
+Note that $\Omega$ is the projection of $\Sigma$ to $(x,y)$-plane 
+which is the same as the projection of $R$.
+Since $R$ is convex, so is $\Omega$.
+
+Since no tangent plane is vertical, the projection from $\Sigma$ to the $(x,y)$-plane is regular.
+By inverse function theorem the $\Omega$ is open.\qeds
+
+\begin{thm}{Exercise}
+Show that any open surface $\Sigma$ with positive Gauss curvature is a topological plane;
+that is there is an embedding $\RR^2\to\RR^3$ with image $\Sigma$.
+
+Try to show that $\Sigma$ is a smooth plane; that is the embedding $f$ can be made smooth and regular.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:circular-cone}
+Show that any open surface $\Sigma$ with positive Gauss curvature
+lies inside of an infinite circular cone. 
+\end{thm}
+ 
+

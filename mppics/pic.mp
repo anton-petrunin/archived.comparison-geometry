@@ -1315,6 +1315,8 @@ z.y=(4.8,0)*u;
 z.y0=.6[z.x2,z.x3];
 z.z0=.4[z.x0,z.y0];
 
+z.z=.4[z.x0,z.y];
+
 p2=(3,-.2)*u..(3,1.2)*u..(5,1.3)*u..(5,-.2)*u..z.z0{z.x0-z.y0}..cycle;
 draw p2 penbold;
 
@@ -1322,14 +1324,15 @@ draw p2 penbold;
 draw z.x0--z.x1--z.x2--z.x3--z.y--cycle;
 draw z.x0--z.y0;
 
-dOt z.x0,z.y,z.y0,z.z0;
+dOt z.x0,z.y,z.y0,z.z0,z.z;
 
 label.lft(btex $x$ etex, z.x0);
 label.rt(btex $y$ etex, z.y);
 label.urt(btex $y_0$ etex, z.y0);
-label.top(btex $z$ etex, z.z0);
-label.top(btex $R$ etex, (4,1.2)*u);
-
+label.top(btex $z_0$ etex, z.z0);
+label.bot(btex $z$ etex, z.z);
+label.top(btex $R$ etex, (4,1.1)*u);
+label.urt(btex $\Sigma$ etex, point 2 of p2);
 endfig;
 
 beginfig(38) 
@@ -2545,12 +2548,40 @@ x.h=3*u;
 whitelabel.top(btex $h=-C$ etex, (x.h,1*u));
 label.top(btex $h=C$ etex, (x.h,-1*u));
 whitelabel.top(btex $\Sigma^+_0$ etex, (-2*u,-.6*u));
-whitelabel.top(btex $\Sigma^+_1$ etex, (2*u,.5*u));
+whitelabel.top(btex $\Sigma^+_1$ etex, (2*u,.4*u));
 label.lrt(btex $p$ etex, z.a1);
 
 whitelabel.lrt(btex $R_-$ etex, (-4,1.5)*u);
-whitelabel.rt(btex $R_0$ etex, (-4,0)*u);
+whitelabel.rt(btex $R_0$ etex, (-4,0)*u+(0,2));
 whitelabel.urt(btex $R_+$ etex, (-4,-1.5)*u);
+endfig;
+
+beginfig(77);
+save u, t;
+u:=1cm;
+t:=1.7;
+
+save p; path p[];
+p0=ellipse_canonical(sqrt(5)*u, 1*u);
+
+z.l=point t of p0;
+z.r=point (2-t) of p0;
+z.v=(0,whatever)=z.l+ whatever*(direction t of p0);
+z.p=point (2.1) of p0;
+
+labelarcsprof(origin, z.p, z.v, 10,7, btex {$\theta$} etex);
+
+draw subpath (2-t,t) of p0 dashed evenly;
+draw subpath (t,4) of p0;
+draw subpath (0,2-t) of p0;
+
+draw z.r--z.v--z.l;
+draw z.p--origin  dashed evenly;
+draw z.p--z.v;
+
+dOt origin;
+
+
 endfig;
 
 end

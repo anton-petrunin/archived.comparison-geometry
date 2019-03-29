@@ -25,17 +25,12 @@ Show that any ruled surface $\Sigma$ is saddle.
 
 \parit{Hint:} Prove and use that each point $p\in\Sigma$ has a direction with vanishing normal curvature.
 
-A tangent direction on a smooth surface with vanishing normal curvature is called \emph{asymptotic}.
-A smooth regular curve that always run in an asymptotic direction is called
-\index{asymptotic line}\emph{asymptotic line}.
-
-\begin{thm}{Advanced exercise}
-Let $\Sigma\subset \RR^3$ be the graph $z\z=f(x,y)$
-of a smooth function $f$ 
-and $\gamma$ be a closed smooth asymptotic line in $\Sigma$.
-Assume $\Sigma$ is strictly saddle in a neighborhood of $\gamma$.
-Show that the projection of $\gamma$ to the $(x, y)$-plane cannot be star-shaped.
+\begin{thm}{Exercise}
+Assume $\Sigma$ is complete saddle surface.
+Show that for any point $p\in \Sigma$ there is a curve $\gamma\:[0,\infty)\to\Sigma$ that starts at $p$
+such that $t\mapsto|\gamma(t)|$ is an increasing function and $|\gamma(t)|\to\infty$ as $t\to\infty$.
 \end{thm}
+
 
 \section*{Hats}
 
@@ -74,12 +69,29 @@ The statement follows since $K(q)_{\Sigma_0}$ is positive --- a contradiction.
 
 Note that if we assume that $\Sigma$ is strictly saddle, then we could arrive to a contradiction by taking a point $q$ on the same side with $p$ and on the maximal distance from $\Pi$.
 
+\begin{thm}{Exercise}\label{ex:length-of-bry}
+Let $\Delta$ be a smooth regular saddle disc and $p\in \Delta$.
+Assume the the boundary line $\partial \Delta$ lies in the unit sphere.
+Show that $\length (\partial \Delta)\ge 2\cdot\pi$.
+\end{thm}
+
+\parit{Hint:} Use the lemma above and the hemisphere lemma (\ref{lem:hemisphere}).
+
+\begin{thm}{Exercise}\label{ex:circular-cone-saddle}
+Show that an open saddle surface
+can not lie inside of an infinite circular cone. 
+\end{thm}
+
 A disc $\Delta$ in a surface $\Sigma$ is called a \emph{hat} of $\Sigma$
 if its boundary line $\partial\Delta$ lies in a plane $\Pi$ and the remaining points of $\Delta$ lie on one side of $\Pi$.
 
 \begin{thm}{Proposition}\label{prop:hat}
 A smooth surface $\Sigma$ is saddle if and only if it has no hats.
 \end{thm}
+
+Note that a saddle surface can contain a closed plane curve.
+For example the hyperboloid $x^2+y^2-z^2=1$ contains the unit circle in the $(x,y)$-plane centered at the origin.
+However by proposition, a plane curve can not bound a disc (or any compact set) in a saddle surface.
 
 \parit{Proof.}
 Since plane is a convex set, the ``only if'' part follows from \ref{lem:convex-saddle};
@@ -103,17 +115,18 @@ Note that its boundary line lies on the plane $z=\eps$ and whole disc lies below
 that is, $\Delta_\eps$ is a hat.
 \qeds
 
-\begin{thm}{Exercise}
-Let $\Delta_\eps$ be as in the proof above.
-Show that $\Delta_\eps$ is a smooth disc; that is, $\Delta_\eps$ is the image of regular embedding $\DD\to \RR^3$, where $\DD=\set{(x,y)\in\RR^2}{x^2+y^2\le 1}$.
+Note that we proved the following lemma; it will be useful latter.
+
+\begin{thm}{Lemma}\label{lem:gauss+=>convexity}
+Let $z=f(x,y)$ be the local description of a smooth surface $\Sigma$ in a tangent-normal coordinates at some point $p\in\Sigma$.
+Assume both principle curvatures of $\Sigma$ are positive at $p$.
+Then the function $f$ is strictly convex in a neighborhood of the origin.
 \end{thm}
 
 
 \begin{thm}{Exercise}
-Some saddle surfaces contain a closed plane curves;
-for example the hyperboloid $x^2+y^2-z^2=1$ contains the unit circle in the $(x,y)$-plane centered at the origin.
-
-Why does not it contradict \ref{prop:hat}?
+Let $\Delta_\eps$ be as in the proof above.
+Show that $\Delta_\eps$ is a smooth disc; that is, $\Delta_\eps$ is the image of regular embedding $\DD\to \RR^3$, where $\DD=\set{(x,y)\in\RR^2}{x^2+y^2\le 1}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:saddle-linear}
@@ -125,9 +138,9 @@ Show that for any saddle surface $\Sigma$ the image $T(\Sigma)$ is also a saddle
 
 The following theorem was proved by Sergei Bernstein \cite{bernstein}.
 
-\begin{thm}{Bernshtein's theorem}\label{thm:bernshtein}
+\begin{thm}{Theorem}\label{thm:bernshtein}
 Let $f\:\RR^2\to\RR$ be a smooth function.
-Assume its graph $z=f(x,y)$ is a strictly saddle surface $\RR^3$.
+Assume its graph $z=f(x,y)$ is a strictly saddle surface in $\RR^3$.
 Then $f$ is not bounded;
 that is, there is no constant $C$ such that 
 $|f(x,y)|\le C$ for any $(x,y)\in\RR^2$.
@@ -230,6 +243,7 @@ the later contradicts \ref{lem:convex-saddle}.
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-76}
+\caption*{The surface $\Sigma$ seeing from above.}
 \vskip0mm
 \end{figure}
 
@@ -248,6 +262,9 @@ The obtained surface is still on a bounded distance to a line
 which is impossible by \ref{lem:region}.
 \qeds
 
+The following exercise gives a condition that guarantees that a saddle surface is a graph;
+it can be used in combination with Bernshtein's theorem.
+
 \begin{thm}{Advanced exercise}
 Let $\Sigma$ be a smooth saddle disk in $\RR^3$.
 Assume that the orthogonal projection to the $(x,y)$-plane
@@ -258,4 +275,26 @@ Show that the orthogonal projection to $(x,y)$-plane is injective on $\Sigma$.
 In particular, $\Sigma$ is the graph $z=f(x,y)$ of a function $f$ defined on a convex figure in the $(x,y)$-plane.
 \end{thm}
 
+\section*{Remarks}
 
+Note that Bernstein's theorem and the lemma in its proof do not hold for saddle surfaces;
+counterexamples can be found among infinite cylinders over a smooth regular curves.
+In fact it can be shown that these are only counterexamples;
+the proof is based on the same idea, but more technical.
+
+By \ref{prop:hat}, saddle surfaces can be defined as smooth surfaces without hats.
+This definition can be used for arbitrary surfaces not necessarily smooth.
+Some results, for example Bernshtein's characterization of saddle graphs can be extended to generalized saddle surface, but this class of surfaces is far from being understood.
+Some nontrivial properties were proved by in Samuil Shefel \cite{shefel} see also \cite[Capter 4]{akp}.
+
+A tangent direction on a smooth surface with vanishing normal curvature is called \emph{asymptotic}.
+A smooth regular curve that always run in an asymptotic direction is called
+\index{asymptotic line}\emph{asymptotic line}.
+
+\begin{thm}{Advanced exercise}
+Let $\Sigma\subset \RR^3$ be the graph $z\z=f(x,y)$
+of a smooth function $f$ 
+and $\gamma$ be a closed smooth asymptotic line in $\Sigma$.
+Assume $\Sigma$ is strictly saddle in a neighborhood of $\gamma$.
+Show that the projection of $\gamma$ to the $(x, y)$-plane cannot be star-shaped.
+\end{thm}

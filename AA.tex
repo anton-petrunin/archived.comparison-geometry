@@ -1,3 +1,101 @@
+
+
+
+Let us write $\Sigma$ in the spherical $(\rho,u)$-coordinates where $\rho\ge 0$ and $u\in\SS^2$.
+
+
+
+Consider the map $f\:\Sigma\to\SS^2$ defined by $f(x)=\tfrac1{|x|}\cdot x$.
+By construction $f$ is a smooth map.
+Since $R$ is convex, and $\Sigma$ is bounded, on any ray from the origin there is exactly one point of $\Sigma$;
+that is, $f$ gives a continuous bijection between $\Sigma$ and $\SS^2$.
+Since $\SS^2$ is compact, the inverse map $f^{-1}\:\SS^2\to \Sigma$ is continuous; 
+this is, $f$ is a homeomorphism.
+The latter statement is a standard result in topology \ref{thm:Hausdorff-compact}.
+
+Summarizing, we proved that $\Sigma$ is a topological sphere.
+
+Let us show that that $f$ is regular.
+In other words, for any cart $(u,v)\mapsto s(u,v)$ of $\Sigma$
+the vectors $\tfrac{\partial f\circ s}{\partial u}$ and $\tfrac{\partial f\circ s}{\partial v}$ are linearly independent.
+
+Note that
+\begin{align*}
+\frac{\partial (f\circ s)}{\partial u}&=\frac{\partial}{\partial u}\frac{s}{|s|}=
+\\
+&=\frac{1}{|s|}\cdot \frac{\partial s}{\partial u}+\left(\frac{\partial}{\partial u}\tfrac{1}{\sqrt{\langle s,s\rangle}}\right)\cdot s=
+\\
+&=\frac{1}{|s|}\cdot \frac{\partial s}{\partial u}
+-
+\left(\frac{\langle s,\frac{\partial s}{\partial u}\rangle}{|s|^3}\right)\cdot s=
+\\
+&=\frac{1}{|s|}\cdot \left(\frac{\partial s}{\partial u}\right)^\perp_s,
+\intertext{where $v^\perp_s$ denotes the orthogonal projection of the vector $v$ to the line in the direction of $s$. 
+The same way we get}
+\frac{\partial (f\circ s)}{\partial v}&=\frac{1}{|s|}\cdot \left(\frac{\partial s}{\partial v}\right)^\perp_s.
+\end{align*}
+
+Since $R$ is convex and the origin in its interior, 
+$s(u,v)$ can not point in the direction of the tangent plane $\T_{s(u,v)}$;
+that is, three vectors $s(u,v)$, $\frac{\partial s}{\partial u}(u,v)$ and $\frac{\partial s}{\partial v}(u,v)$ are linearly independent.
+Whence the projections $\left(\frac{\partial s}{\partial u}\right)^\perp_s$ and $ \left(\frac{\partial s}{\partial v}\right)^\perp_s$ are linearly independent
+and therefore $f$ is regular.
+By the inverse function theorem the inverse $f^{-1}\:\SS^2\to \Sigma$ is also regular;
+that is, $\Sigma$ is a smooth sphere.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{thm}{Theorem}
+Let $\Sigma$ be a complete oriented surface with 
+nonnegative principal curvatures at all points.
+Then $\Sigma$ bounds a convex region $R$.
+\end{thm}
+
+\parit{Proof.}
+Let $\nu$ be the unit normal field on $\Sigma$.
+Consider the open region $R$ bounded by $\Sigma$ that lies on the side of $\nu$;
+that is $\nu$ points inside of $R$ at any point of $\Sigma$.
+
+Fix a plane $\Pi$ intersecting $R$.
+Consider a conn
+
+Since $\Sigma$ is connected, so is $R$;
+moreover any two points in the interior of $R$ can be connected by a polygonal line in in the interior of~$R$.
+
+Assume the interior of $R$ is not convex; that is, there are points $x,y\in R$ and a point $z$ between $x$ and $y$ that does not lie in the interior of $R$.
+Consider a polygonal  line $\beta$ from $x$ to $y$ in the interior of $R$.
+Let $y_0$ be the first point on $\beta$ such that the chord $[x,y_0]$ touches $\Sigma$ at some point, say~$z_0$.
+
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
 \parit{Proof.}
 Denote by $\Gamma$ the graph $z=f(x,y)$.
 Assume contrary; that is, $\Gamma$ lies between two planes $z=\pm C$.

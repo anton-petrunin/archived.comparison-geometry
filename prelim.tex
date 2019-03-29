@@ -134,13 +134,21 @@ Moreover, $\phi$ is bounded above and/or below by some constants then we can ass
 
 \section{Topology}
 
+We sometimes characterization of homeomorphism.
+
+\begin{thm}{Theorem}\label{thm:Hausdorff-compact}
+A continuous bijection $f$ between compact metric spaces has continuous inverse;
+that is $f$ is a homeomorphism.
+\end{thm}
+
+
 The first part of the following theorem is proved by Camille Jordan, the second part is due to Arthur Schoenflies.
 
 \begin{thm}{Theorem}
-The complement of any closed simple $\gamma$ plane curve has exactly two connected components. 
+The complement of any closed simple plane curve $\gamma$ has exactly two connected components. 
 
 Moreover the there is a homeomorphism $h\:\RR^2\to \RR^2$ that maps the unit circle to $\gamma$.
-In particular one of the components is a topological disc.
+In particular $\gamma$ bounds a topological disc.
 \end{thm}
 
 This theorem is known for simple formulation and quite hard proof.
@@ -148,15 +156,42 @@ By now many proofs of this theorem are known.
 For the first statement, a very short proof based on somewhat developed technique is given by Patrick Doyle \cite{doyle},
 among elementary proofs, one of my favorites is the proof given by Aleksei Filippov \cite{filippov}.
 
-An amusing proof of general statement for smooth regular curves can be found in \cite{chambers-liokumovich}; we use this theorem mostly in this (much simpler) case.
+We use the following smooth analog of this theorem.
+
+\begin{thm}{Theorem}
+The complement of any closed simple smooth regular plane curve $\gamma$ has exactly two connected components. 
+
+Moreover the there is a diffeomorphism $h\:\RR^2\to \RR^2$ that maps the unit circle to $\gamma$.
+\end{thm}
+
+The proof of this statement is much simpler.
+An amusing proof of can be found in \cite{chambers-liokumovich}.
 
 \section{Convexity}
+
+A set $X$ in the Euclidean space is called \emph{convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in $X$.
+It is called  \emph{strictly convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
+
+From the definition, it is easy to see that intersection of arbitrary family of convex sets is convex. 
+The intersection of all convex sets containing $X$ is called \emph{convex hull} of $X$;
+it is the minimal convex set containing the given set $X$.
+
 
 \begin{thm}{Lemma}\label{lem:separation}
 Let $K\subset \RR^3$ be a closed convex subset.
 Then for any point $p\notin K$ there is a plane $\Pi$ that separates $K$ from $p$;
 that is, $K$ and $p$ lie on the opposite open half-spaces of $\Pi$.
 \end{thm}
+
+A function of two variables $(x,y)\mapsto f(x,y)$ is called convex if 
+its epigraph $z\ge f(x,y)$ is a convex set.
+This is equivalent to the the so called Jensen's inequality
+\[f \left (t\cdot x_1 + (1-t)\cdot x_2 \right ) \leq t\cdot f(x_1)+ (1-t)\cdot f(x_2)\]
+for $t\in[0,1]$.
+If $f$ is smooth, then the condition is equivalent to the following inequality for second directional derivative:
+\[D^2_wf\ge 0\]
+for any vector $w\ne 0$ in the $(x,y)$-plane.
+
 
 
 \section{Elementary geometry}
