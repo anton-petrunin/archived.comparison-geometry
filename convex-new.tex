@@ -44,7 +44,7 @@ In other words, $R$ is \emph{locally strictly convex};
 that is, for any point $p\in R$, the intersection of $R$ with a small ball centered at $p$ is strictly convex.
 
 Since $\Sigma$ is connected, so is $R$;
-moreover any two points in the interior of $R$ can be connected by a polygonal line in in the interior of~$R$.
+moreover any two points in the interior of $R$ can be connected by a polygonal line in the interior of~$R$.
 
 \begin{wrapfigure}{r}{43 mm}
 \vskip-0mm
@@ -62,7 +62,7 @@ On the other hand $z_0$ lies between two points in the intersection $[x,y_0]\cap
 Since $[x,y_0]\subset R$, we arrived to a contradiction.
 
 Therefore the interior of $R$ is a convex sets.
-Note that the region $R$ is the closure of ints interior, therefore $R$ is convex as well.
+Note that the region $R$ is the closure of its interior, therefore $R$ is convex as well.
 
 Since $R$ is locally strictly convex, its boundary $\Sigma$ contains no line segments.
 Therefore $R$ is strictly convex.
@@ -74,41 +74,48 @@ any connected locally convex region is convex.
 
 \section*{Closed surfaces}
 
-\begin{thm}{Lemma}
+\begin{thm}{Lemma}\label{lem:gauss=sphere}
 Assume $\Sigma$ is a closed smooth surface with positive Gauss curvature.
 Then $\Sigma$ is a smooth sphere; that is, $\Sigma$ admits a smooth regular parametrization by $\SS^2$.
 \end{thm}
+
+\begin{wrapfigure}{O}{33 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-78}
+\vskip-0mm
+\end{wrapfigure}
 
 \parit{Proof.}
 Without loss of generality we can assume that the origin lies in the interior of the convex region $R$ bounded by $\Sigma$.
 
 By convexity of $R$, any half-line starting at the origin intersects $\Sigma$ at a single point;
-that is there is a positive function $\rho\:\SS^2\to\RR$ such that $\Sigma$ is formed by points $\rho(\xi)\cdot \xi$ for $\xi\in \SS^2$.
+that is there is a positive function $\rho\:\SS^2\to\RR$ such that $\Sigma$ is formed by points $q=\rho(\xi)\cdot \xi$ for $\xi\in \SS^2$.
 
 Let us show that $\rho$ is a smooth function.
 Fix a point $p=(x_p,y_p,z_p)$ on $\Sigma$.
-Consider a local implicit description of $\Sigma$ at $p$ as a solution of equation $f(x,y,z)=0$ with nonvanishing gradient;
-so $f(p)=0$.
+Consider a local implicit description of $\Sigma$ at $p$ as a solution of equation $h(x,y,z)=0$ with nonvanishing gradient;
+so $h(p)=0$.
 Note that for any point $q$ in a neighborhood of $p$, we have that 
-\[f(q)=0 \iff q\in \Sigma \iff q=\rho(\xi)\cdot\xi\] for some $\xi\in \SS^2$.
-In other words $f$ defines implicitly $\rho$ as in the implicit function theorem.
+\[h(q)=0 \iff q\in \Sigma \iff q=\rho(\xi)\cdot\xi\] for some $\xi\in \SS^2$.
+In other words $h$ defines implicitly $\rho$ as in the implicit function theorem.
 
 
 
-Recall that $\nabla_p f\perp \T_p$.
+Recall that $\nabla_p h\perp \T_p$.
 Since the origin lies in the interior of $R$, it can not lie on $\T_p$;
 that is $\langle\nabla_p f,p \rangle\ne0$;
-or equivalently $D_\eta f(p)\ne 0$, where $\eta=\tfrac{p}{|p|}$ is the unit vector in the direction of $p$ and $D$ denotes the directional derivative.
+or equivalently $D_\eta h(p)\ne 0$, where $\eta=\tfrac{p}{|p|}$ is the unit vector in the direction of $p$ and $D$ denotes the directional derivative.
 
 Fix a $(u,v)$ chart $s$ on $\SS^2$ in a neighborhood of $\eta$;
 note that the map 
 \[S\:(u,v,w)\mapsto w\cdot s(u,v)\] 
 is smooth and regular for $w>0$; that is, the vectors 
 \[\tfrac{\partial S}{\partial u},\quad \tfrac{\partial S}{\partial v},\quad  \tfrac{\partial S}{\partial w}=w\] are linearly independent.
-Note that the function $f\circ S$ is smooth and
-$\tfrac{\partial f\circ S}{\partial \rho}(p)=D_\eta f(p)\ne 0$.
+Note that the function $h\circ S$ is smooth and
+$\tfrac{\partial h\circ S}{\partial \rho}(p)=D_\eta h(p)\ne 0$.
 Applying implicit function theorem, we get that $\rho$ is smooth in a neighborhood of $\eta$;
-since $\eta$ is arbitrary it is smooth on whole $\SS^2$.
+since $\eta$ is arbitrary, $\rho$ is smooth on whole $\SS^2$.
 \qeds
 
 
@@ -125,6 +132,8 @@ $\Sigma$ is a graph $z=f(x,y)$ of a convex function $f$ defined on a convex open
 
 \parit{Proof.}
 The surface $\Sigma$ is a boundary of an unbounded closed convex region $R$.
+
+%???+PIC
 
 We can assume that the origin lies on $\Sigma$.
 Consider a sequence of points $x_n\in \Sigma$ such that $|x_n|\z\to \infty$ as $n\to \infty$.
@@ -151,7 +160,7 @@ Let us choose the $z$-axis in the direction of $u$.
 Note that there is no point $p\in\Sigma$ with vertical tangent plane.
 Otherwise $\Sigma$ would contain a vertical half-line starting from $p$ and therefore Gauss curvature of $\Sigma$ would vanish.
 It follows that any vertical line can intersect $\Sigma$ at most at one point.
-That is, $\Sigma$ is a graph of a smooth convex function $z=f(x,y)$.
+That is, $\Sigma$ is a graph $z=f(x,y)$ of a smooth convex function $f$.
 
 Let $\Omega$ be the domain of definition of $f$.
 Note that $\Omega$ is the projection of $\Sigma$ to $(x,y)$-plane 
@@ -159,18 +168,31 @@ which is the same as the projection of $R$.
 Since $R$ is convex, so is $\Omega$.
 
 Since no tangent plane is vertical, the projection from $\Sigma$ to the $(x,y)$-plane is regular.
-By inverse function theorem the $\Omega$ is open.\qeds
+By inverse function theorem, the set $\Omega$ is open.\qeds
 
 \begin{thm}{Exercise}
 Show that any open surface $\Sigma$ with positive Gauss curvature is a topological plane;
-that is there is an embedding $\RR^2\to\RR^3$ with image $\Sigma$.
+that is, there is an embedding $\RR^2\to\RR^3$ with image $\Sigma$.
 
-Try to show that $\Sigma$ is a smooth plane; that is the embedding $f$ can be made smooth and regular.
+Try to show that $\Sigma$ is a smooth plane; that is, the embedding $f$ can be made smooth and regular.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:circular-cone}
-Show that any open surface $\Sigma$ with positive Gauss curvature
+Show that any open smooth surface $\Sigma$ with positive Gauss curvature
 lies inside of an infinite circular cone. 
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:small-gauss}
+Let $\Sigma$ be an open smooth surface with positive Gauss curvature.
+Show that $\Sigma$ has a point with arbitrary small Gauss curvature.
+\end{thm}
+
+\parit{Hint:}
+Observe that the Gauss curvature of the surface of revolution of the graph $y=a\cdot \sin (x/b)$ for $x\in(0,\tfrac\pi b)$ can not exceed $\tfrac{1}{b^2}$ (Use \ref{ex:curvature-graph} and \ref{cor:meusnier}).
+Try to support the surface $\Sigma$ from inside by a surface of revolution of the described type with large $b$. 
+
+%+PIC
+
+
  
 

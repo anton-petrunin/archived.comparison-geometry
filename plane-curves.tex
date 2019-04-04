@@ -63,7 +63,17 @@ They could be also written in a matrix form:
 \end{pmatrix}.
 \]
 
+\begin{thm}{Exercise}\label{ex:bike}
+Let $\gamma_0\:[a,b]\to\RR^2$ be a smooth regular curve and $\tau$ its tangent indicatrix.
+Consider another curve $\gamma_1\:[a,b]\to\RR^2$ defined by $\gamma_1(t)=\gamma_0(t)+\tau(t)$.
+Show that
+\[\length\gamma_0\le \length\gamma_1.\]
 
+\end{thm}
+
+The curves $\gamma_0$ and $\gamma_1$ in the exercise above describe tracks of idealized bicycle with the distance 1 from rear to front wheel.
+Thus by the exercise, the front wheel have to have the longer track.
+For more on geometry of bicycle tracks see \cite{FLT} and the references there in.
 
 \begin{thm}{Theorem}\label{thm:fund-curves-2D}
 Let $\skur(s)$ be a smooth real valued function defined on a real interval $\mathbb{I}$.
@@ -205,6 +215,25 @@ Therefore
 \begin{thm}{Exercise}\label{ex:zero-tsc}
 Draw a smooth regular closed plane curve with zero total signed curvature.
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:length'}
+Let $\gamma\:[a,b]\to\RR$ be a smooth regular plane curve with Frenet frame $\tau,\nu$.
+Given a real parameter $d$, consider
+the curve $\gamma_d(t)=\gamma(t)+d\cdot\nu(t)$; it is called a \emph{parallel curve of $\gamma$ on the signed distance $d$}.
+
+\begin{enumerate}[(a)]
+\item Show that $\gamma_d$ is a regular curve if $d\cdot \skur(t)\ne 1$ for any $t$, where $\skur(t)$ denotes the signed curvature of $\gamma$. 
+\item Set $\ell(d)=\length\gamma_d$.
+Show that 
+\[\ell(d)=\ell(0)-d\cdot\Psi(\gamma)\]
+for all $d$ sufficiently close to $0$. Show that in general, this formula does not hold for all $d$. 
+\end{enumerate}
+
+
+ 
+
+\end{thm}
+
 
 \section*{Osculating circline}
 
@@ -393,7 +422,9 @@ In this case we say that $\sigma$ supports $\gamma$ from the left (right) if $\g
 
 Note that a circle supports itself on the right and left at the same time at any point.
 
-\begin{wrapfigure}{O}{43 mm}
+{
+
+\begin{wrapfigure}{o}{43 mm}
 \vskip0mm
 \centering
 \includegraphics{mppics/pic-60}
@@ -406,6 +437,7 @@ The same definitions for local support on the left and right are applied.
 
 The circle $\sigma$ on the diagram locally supports curve $\gamma$ on the right at $p$, but does not support it globally --- since $\gamma$ crosses $\sigma$ at a latter time.
 
+}
 
 We say that a smooth regular plane curve $\gamma$ has a \emph{vertex} at $s$
 if the signed curvature function is critical at $s$;
@@ -583,17 +615,17 @@ Evidently $\kur_\sigma>0$, hence the result.
 Instead of taking minimal disc segment, one can take a point $s$ on $\gamma$ that maximize the distance to the line $xy$.
 The same argument shows that curvature at $s$ is nonnegative, which is slightly weaker than the required positive curvature.
 
-\parit{Proof of \ref{prop:convex}.}
-If $F$ is convex, then every tangent line of $\gamma$ supports $\gamma$.
-If a point moves along $\gamma$, the figure $F$ has to stay on one side from its tangent line;
-that is, we can assume that each tangent line supports $\gamma$ on one side, say on the right.
-Applying the supporting test (\ref{prop:supporting-circline}), we get that $k\ge 0$ at each point.
-
 \begin{wrapfigure}{r}{35 mm}
 \centering
 \includegraphics{mppics/pic-68}
 \vskip0mm
 \end{wrapfigure}
+
+\parit{Proof of \ref{prop:convex}.}
+If $F$ is convex, then every tangent line of $\gamma$ supports $\gamma$.
+If a point moves along $\gamma$, the figure $F$ has to stay on one side from its tangent line;
+that is, we can assume that each tangent line supports $\gamma$ on one side, say on the right.
+Applying the supporting test (\ref{prop:supporting-circline}), we get that $k\ge 0$ at each point.
 
 Now assume $F$ is not convex.
 Then there is a line that supports $\gamma$ at two points, say $x$ and $y$ that divide $\gamma$ in two arcs $\gamma_1$ and $\gamma_2$, both distinct from the line segment $xy$.
@@ -704,7 +736,7 @@ That is, we proved the following theorem:
 {
 
 \begin{wrapfigure}{r}{20 mm}
-\vskip-5mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-26}
 \vskip0mm
@@ -752,6 +784,12 @@ Denote by $\hat\sigma_1$ and $\check\sigma_1$ two arcs of $\sigma_1$ from $p_1$ 
 
 Let $p_2$ be the midpoint of $\gamma_1$ and $\sigma_2$ be the corresponding circle. 
 
+Note that $\sigma_2$ can not intersect $\hat\sigma_1$.
+Otherwise, if $\sigma_2$ intersects $\hat\sigma_1$ at some point $s$, then $\sigma_2$ has two more common points with $\check\sigma_1$ --- $x$ and $y$, one for each arc of $\sigma_2$ from $p_2$ to $s$.
+That is $\sigma_1$ and $\sigma_2$ have common point $s$, $x$ and $y$.
+Therefore $\sigma_1\z=\sigma_2$ as two circles with three common points. 
+On the other hand, by construction $p_2\in \sigma_2$ and $p_2\notin \sigma_1$ --- a contradiction.
+
 \begin{wrapfigure}{o}{32 mm}
 \vskip-4mm
 \centering
@@ -759,12 +797,6 @@ Let $p_2$ be the midpoint of $\gamma_1$ and $\sigma_2$ be the corresponding circ
 \caption*{Two ovals on the diagram pretend to be circles.}
 \vskip0mm
 \end{wrapfigure}
-
-Note that $\sigma_2$ can not intersect $\hat\sigma_1$.
-Otherwise, if $\sigma_2$ intersects $\hat\sigma_1$ at some point $s$, then $\sigma_2$ has two more common points with $\check\sigma_1$ --- $x$ and $y$, one for each arc of $\sigma_2$ from $p_2$ to $s$.
-That is $\sigma_1$ and $\sigma_2$ have common point $s$, $x$ and $y$.
-Therefore $\sigma_1\z=\sigma_2$ as two circles with three common points. 
-On the other hand, by construction $p_2\in \sigma_2$ and $p_2\notin \sigma_1$ --- a contradiction.
 
 Recall that $\sigma_2$ has to touch $\gamma$ at another point.
 From above it follows that it can only touch $\gamma_1$ and therefore we can choose an arc $\gamma_2\subset \gamma_1$ that runs from $p_2$ to a first point $q_2$ on $\sigma_2$.

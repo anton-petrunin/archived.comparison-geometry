@@ -46,8 +46,8 @@ each function $f_\pm,g_\pm,h_\pm$ is defined in an open unit disc.
 That is, $\SS^2$ is a smooth surface.
 
 \parbf{More conventions.}
-If the surface $\Sigma$ is formed by a closed set, then it is called \emph{complete}.
-For example, paraboloids 
+If the surface $\Sigma$ is formed by a closed set, then it is called \emph{complete}. %change it to proper???
+For example, paraboloids %???+PICs
 \[z=x^2+y^2,\quad\quad z=x^2-y^2\]
 or sphere 
 \[x^2+y^2+z^2=1\]
@@ -72,24 +72,24 @@ we may use the term \emph{surface with possibly nonempty boundary} if we need to
 
 \section*{Local parametrizations}
 
-Let $U$ be an open domain in $\RR^2$ and $f\:U\to \RR^3$ be a smooth map.
-We say that $f$ is regular if its Jacobian has maximal rank;
-in this case it means that the vectors $\tfrac{\partial f}{\partial u}$ and $\tfrac{\partial f}{\partial v}$ are linearly independent at any $(u,v)\in U$ or
-equivalently $\tfrac{\partial f}{\partial u}\times\tfrac{\partial f}{\partial v}\ne 0$, where $\times$ denotes the vector product.
+Let $U$ be an open domain in $\RR^2$ and $s\:U\to \RR^3$ be a smooth map.
+We say that $s$ is regular if its Jacobian has maximal rank;
+in this case it means that the vectors $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ are linearly independent at any $(u,v)\in U$ or
+equivalently $\tfrac{\partial s}{\partial u}\times\tfrac{\partial s}{\partial v}\ne 0$, where $\times$ denotes the vector product.
 
 \begin{thm}{Proposition}\label{prop:graph-chart}
-If $f\:U\to \RR^3$ is a smooth regular embedding of an open connected set $U\subset \RR^2$, then its image $\Sigma=f(U)$ is a smooth surface.
+If $s\:U\to \RR^3$ is a smooth regular embedding of an open connected set $U\subset \RR^2$, then its image $\Sigma=s(U)$ is a smooth surface.
 \end{thm}
 
 \parit{Proof.}
-Let $f(u,v)=(f_1(u,v),f_2(u,v),f_3(u,v))$.
-Since $f$ is regular the Jacobian matrix
+Let $s(u,v)=(s_1(u,v),s_2(u,v),s_3(u,v))$.
+Since $s$ is regular the Jacobian matrix
 \[
 \renewcommand\arraystretch{1.3}
 \begin{pmatrix}
-\tfrac{\partial f_1}{\partial u}&\tfrac{\partial f_1}{\partial v}\\
-\tfrac{\partial f_2}{\partial u}&\tfrac{\partial f_2}{\partial v}\\
-\tfrac{\partial f_3}{\partial u}&\tfrac{\partial f_3}{\partial v}
+\tfrac{\partial s_1}{\partial u}&\tfrac{\partial s_1}{\partial v}\\
+\tfrac{\partial s_2}{\partial u}&\tfrac{\partial s_2}{\partial v}\\
+\tfrac{\partial s_3}{\partial u}&\tfrac{\partial s_3}{\partial v}
 \end{pmatrix}
 \]
 has rank two.
@@ -100,41 +100,41 @@ the matrix
 \[
 \renewcommand\arraystretch{1.3}
 \begin{pmatrix}
-\tfrac{\partial f_1}{\partial u}&\tfrac{\partial f_1}{\partial v}\\
-\tfrac{\partial f_2}{\partial u}&\tfrac{\partial f_2}{\partial v}
+\tfrac{\partial s_1}{\partial u}&\tfrac{\partial s_1}{\partial v}\\
+\tfrac{\partial s_2}{\partial u}&\tfrac{\partial s_2}{\partial v}
 \end{pmatrix}
 \]
 is invertible.
-Let $\bar f\:U\to\RR^2$ be the projection of $f$ to the $(x,y)$-coordinate plane;
-that is, $\bar f(u,v)=(f_1(u,v),f_2(u,v))$.
-Note that the $2\times2$-matrix above is the Jacobian matrix of $\bar f$.
+Let $\bar s\:U\to\RR^2$ be the projection of $s$ to the $(x,y)$-coordinate plane;
+that is, $\bar s(u,v)=(s_1(u,v),s_2(u,v))$.
+Note that the $2\times2$-matrix above is the Jacobian matrix of $\bar s$.
 
 The inverse function theorem implies that there is a smooth regular function $h$ defined on an open set $W\ni 0$ in the $(x,y)$-plane
-such that $h(0,0)=(0,0)$ and $\bar f\circ h$ is the identity map.
+such that $h(0,0)=(0,0)$ and $\bar s\circ h$ is the identity map.
 
-The graph $\Gamma$ described by $z=f_3\circ h(x,y)$ is an open subset in $\Sigma$.
-Indeed, if $(u,v)\z=h(x,y)$, then $x=f_1(u,v)$ and $y=f_2(u,v)$.
-Therefore the identity $z=f_3\circ h(x,y)$ can be rewritten as $(x,y,z)\z=f(u,v)$.
+Note that the graph $z=s_3\circ h(x,y)$ for $(x,y)\in W$ is a subset in $\Sigma$.
+Indeed, if $(u,v)\z=h(x,y)$, then $x=s_1(u,v)$ and $y=s_2(u,v)$.
+Therefore the identity $z=s_3\circ h(x,y)$ can be rewritten as $(x,y,z)\z=s(u,v)$.
 
-Clearly $\Gamma$ is an open subset in $\Sigma$;
+Clearly the graph $z=s_3\circ h(x,y)$ for $(x,y)\in W$ is open in $\Sigma$; %???why
 that is, $\Gamma$ a neighborhood of $p$ in $\Sigma$ that can be described as a graph of a smooth function $f_3\circ h\:W\to\RR$.
 Since $p$ is arbitrary, we get that $\Sigma$ is a surface.
 \qeds
 
-If $f$ and $\Sigma$ as in the proposition, then we say that $f$ is a \emph{parametrization} of the surface $\Sigma$. 
+If $s$ and $\Sigma$ as in the proposition, then we say that $s$ is a \emph{parametrization} of the surface $\Sigma$. 
 
 Not all the smooth surfaces can be described by such a parametrization;
-for example the sphere $\SS^2$ does not.
-But any smooth surface $\Sigma$ admits a local parametrization; that is, any point $p\in\Sigma$ admits an open neighborhood $W\subset \Sigma$ with a smooth regular parametrization~$f$.
+for example the sphere $\SS^2$ cannot.
+But any smooth surface $\Sigma$ admits a local parametrization; that is, any point $p\in\Sigma$ admits an open neighborhood $W\subset \Sigma$ with a smooth regular parametrization~$s$.
 In this case any point in $W$ can be described by two parameters, usually denoted by $u$ and $v$, 
 which are called \emph{local coordinates} at $p$.
-The map $f$ is called a \emph{chart} of $\Sigma$.
+The map $s$ is called a \emph{chart} of $\Sigma$.
 
-If $W$ is a graph $z=h(x,y)$ then the map $f\:(u,v)\mapsto (u,v,h(u,v))$ is a chart.
-Indeed, $f$ has an inverse $(u,v,h(u,v))\mapsto (u,v)$ which is continuous;
-that is, $f$ is an embedding.
+If $W$ is a graph $z=h(x,y)$ then the map $s\:(u,v)\mapsto (u,v,h(u,v))$ is a chart.
+Indeed, $s$ has an inverse $(u,v,h(u,v))\mapsto (u,v)$ which is continuous;
+that is, $s$ is an embedding.
 Further,
-$\tfrac{\partial f}{\partial u}=(1,0,\tfrac{\partial h}{\partial u})$ and $\tfrac{\partial f}{\partial v}=(0,1,\tfrac{\partial h}{\partial v})$, whence $\tfrac{\partial f}{\partial u}$ and $\tfrac{\partial f}{\partial v}$ are linearly independent.
+$\tfrac{\partial s}{\partial u}=(1,0,\tfrac{\partial h}{\partial u})$ and $\tfrac{\partial s}{\partial v}=(0,1,\tfrac{\partial h}{\partial v})$, whence $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ are linearly independent.
 
 Note that from \ref{prop:graph-chart}, we obtain the following corollary.
 
@@ -145,14 +145,16 @@ A path connected set $\Sigma\subset \RR^3$ is a smooth regular surface if at any
 
 \begin{thm}{Exercise}\label{ex:inversion}
 Consider the following map 
-\[f(u,v)=(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2}).\]
-Show that $f$ is a chart of the unit sphere centered at $(0,0,1)$; describe the image of $f$.
+\[s(u,v)=(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2}).\]
+Show that $s$ is a chart of the unit sphere centered at $(0,0,1)$; describe the image of $s$.
 \end{thm}
 
 The map 
 \[(u,v,1)\mapsto (\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})\]
 is called \emph{stereographic projection}. 
 Note that the point $(u,v,1)$ and its image $(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})$ lie on one half-line starting at the origin.
+
+%+PIC
 
 Let $\gamma(t)=(x(t),y(t))$ be a plane curve.
 Recall that the image of the map 
@@ -177,8 +179,8 @@ the composition $s\circ f$ is smooth and regular;
 that is, all partial derivatives $\frac{\partial^{m+n}}{\partial u^m\partial v^n}(s\circ f)$ exist and are continuous in the domain of definition and the following two vectors 
 $\frac{\partial}{\partial u}(s\circ f)$ and $\frac{\partial}{\partial v}(s\circ f)$ are linearly independent.
 
-Evidently the parametric definition includes the embedded surfaces defined previously --- as the domain of parameters we can take the surface itself and the identity map as $s$,
-but parametrized surfaces are more general, in particular they  might  have self-intersections.
+Evidently the parametric definition includes the embedded surfaces defined previously --- as the domain of parameters we can take the surface itself and the identity map as $s$.
+But parametrized surfaces are more general, in particular they  might  have self-intersections.
 
 If $\Sigma$ is a known surface for example a sphere or a plane, the paramtrized surface $s\:\Sigma\to\RR^3$ might be called by the same name.
 For example, any embedding $s\:\SS^2\to\RR^3$ might be called topological sphere
@@ -192,7 +194,7 @@ and if $s$ is smooth it might be called smooth plane.
 \begin{thm}{Proposition}
 Let $f\:\RR^3\to \RR$ be a smooth function.
 Suppose that $0$ is a regular value of $f$;
-that is $\nabla_p f\ne 0$ if $f(p)=0$.
+that is, $\nabla_p f\ne 0$ if $f(p)=0$.
 Then any path connected component $\Sigma$ of the set of solutions of the equation $f(x,y,z)=0$ is a surface.
 \end{thm}
 
@@ -218,11 +220,13 @@ describes a smooth regular surface.
 
 \section*{Tangent plane}
 
+%???change def
+
 Let $z=f(x,y)$ be a local graph realization of a surface. 
 Assume that a point $p=(x_p,y_p,z_p)$ lies on this graph, so $z_p=f(x_p,y_p)$.
 The plane spanned by the vectors $(1,0,(\tfrac{\partial}{\partial x}f)(x_p,y_p))$ and  $(0,1,(\tfrac{\partial}{\partial y}f)(x_p,y_p))$ is called the \emph{tangent plane} of $\Sigma$ at $p$.
 The tangent plane to $\Sigma$ at $p$ is usually denoted by $\T_p$ or $\T_p\Sigma$.
-Vectors in $\T_p$ are called \emph{tangent vectors} of $\Sigma$ at $p$.
+Vectors in $\T_p$ are called \emph{tangent vectors} of $\Sigma$ at $p$. %??? redo def
 
 Tangent plane $\T_p$ might be considered as a linear subspace of $\RR^3$ or as a parallel plane passing thru $p$.
 In the latter case it can be interpreted as the best approximation of the surface $\Sigma$ by a plane at~$p$;
@@ -271,14 +275,21 @@ Let $f:\RR^3\to\RR$ be a smooth function with a regular value $0$ and $\Sigma$ i
 Show that the tangent plane $\T_p\Sigma$ is perpendicular to the gradient $\nabla_pf$ at any point $p\in\Sigma$.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:vertical-tangent}
+Let $\Sigma$ be a smooth surface and $p\in\Sigma$.
+Fix an $(x,y,z)$-coordinates.
+Show that a neighborhood of $p$ in $\Sigma$ is a graph $z=f(x,y)$ of a smooth function $f$ defined on an open subset in $(x,y)$-plane if and only if the tangent plane $\T_p$ is not a \emph{vertical plane}; that is if the projection of $\T_p$ to $(x,y)$-plane does not degenerates to a line.
+\end{thm}
+
+
 
 \section*{Normal vector and orientation}
 A unit vector that is normal to $\T_p$ is usually denoted by $\nu_p$;
 it is uniquely defined up to sign.
 
 A surface $\Sigma$ is called \emph{oriented} if it is equipped with a unit normal vector field $\nu$;
-that is, a continuous map $p\mapsto \nu_p$ such that $\nu_p\perp\T_p$ and $|\nu_p|=1$ for any $p$;
-the choice of the field $\nu$ is called \emph{orientation} on $\Sigma$.
+that is, a continuous map $p\mapsto \nu_p$ such that $\nu_p\perp\T_p$ and $|\nu_p|=1$ for any $p$.
+The choice of the field $\nu$ is called \emph{orientation} on $\Sigma$.
 A surface $\Sigma$ is called \emph{orientable} if it can be oriented.
 Note that each orientable surface admits two orientations $\nu$ and $-\nu$. %???
 
@@ -303,24 +314,24 @@ Therefore $\nu(u,v)$ is a unit normal vector at $f(u,v)$;
 evidently $(u,v)\mapsto \nu(u,v)$ is a continuous map. 
 
 \begin{thm}{Exercise}
-Let $f:\RR^3\to\RR$ be a smooth function with a regular value $0$ and $\Sigma$ is a surface described as a connected component of the set of solutions $f(x,y,z)=0$.
+Let $h:\RR^3\to\RR$ be a smooth function with a regular value $0$ and $\Sigma$ is a surface described as a connected component of the set of solutions $h(x,y,z)=0$.
 Show that $\Sigma$ is orientable.
 \end{thm}
 
-\parit{Hint.} Show that $\nu=\tfrac{\nabla f}{|\nabla f|}$ defines a unit normal field on $\Sigma$.
+\parit{Hint.} Show that $\nu=\tfrac{\nabla h}{|\nabla h|}$ defines a unit normal field on $\Sigma$.
 
 
 In fact any complete smooth surface cuts the space into two connected components.
 Therefore one could choose an orientation on any complete surface by taking normal vector at each point that points into one of these components. %???
-In particular the M\"obius strip can not be extended to a complete smooth surface.
+In particular the M\"obius strip can not be extended to a complete smooth surface. %???redo
 
-\section*{Sections}
+\section*{Plane sections}
 
 \begin{thm}{Advanced exercise}
 Show that any closed set in the plane can appear as an intersection of this plane with a complete smooth regular surface.  
 \end{thm}
 
-As a consequence of the exercise above, the section of a smooth regular surface by a plane might look ugly.
+As a consequence of the exercise above, the section of a smooth regular surface by a plane might look complicated.
 The following lemma makes possible to perturb the plane so that the section becomes nice. 
 
 \begin{thm}{Lemma}\label{lem:reg-section}
@@ -333,7 +344,7 @@ each connected component of the intersection $\Sigma\cap \Pi'$ is a smooth regul
 Assume $\Pi$ is described by equation $f(x,y,z)=r_0$, where
 \[f(x,y,z)=a\cdot x+b\cdot y+c\cdot z.\] 
 The surface $\Sigma$ can be covered by a countable set of charts $s_i\:U_i\to \Sigma$.
-The composition $f\circ s_i$ is a smooth function.
+Note that the composition $f\circ s_i$ is a smooth function.
 Therefore almost all real numbers $r$ are regular values of each $f\circ s_i$.
 
 Fix such value $r$ sufficiently close to $r_0$ and consider the plane $\Pi'$ described by the equation $f(x,y,z)=r$.

@@ -4,7 +4,7 @@
 
 Fix a point $p$ in a smooth surface $\Sigma$.
 Consider a coordinate system $(x,y,z)$ with origin at $p$ such that the $(x,y)$-plane coincides with $\T_p$.
-The same argument as in \ref{prop:graph-chart} shows that
+By \ref{ex:vertical-tangent}
 we can present $\Sigma$ locally around $p$ as a graph of a function $f$. %???
 Note that $f$ satisfies the following additional properties:
 \begin{align*}
@@ -15,6 +15,13 @@ f(0,0)&=0,
 (\tfrac{\partial}{\partial y}f)(0,0)&=0.
 \end{align*}
 The first equality holds since $p=(0,0,0)$ lies on the graph and the last two equalities mean that the tangent plane at $p$ is horizontal.
+
+\begin{wrapfigure}{r}{40 mm}
+\vskip-0mm
+\centering
+\includegraphics{asy/paraboloid}
+\vskip-3mm
+\end{wrapfigure}
  
 Consider the Hessian matrix 
 \[M_p=\begin{pmatrix}
@@ -35,26 +42,38 @@ m&=(\tfrac{\partial^2}{\partial x\partial y}f)(0,0)=(\tfrac{\partial^2}{\partial
 n&=(\tfrac{\partial^2}{\partial y^2}f)(0,0).
 \end{align*}
 
-The components of the matrix describe the surface at up to the second order.
+The components of the matrix describe the surface at up to the second order at $p$.
 In fact the so called \emph{osculating paraboloid}
 \[z=\tfrac12(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)\]
 gives the best approximation of the surface at $p$;
 it has \emph{second order of contact} with $\Sigma$ at $p$.
 
-The second directional derivative $(D_wD_vf)(0,0)$ for two vectors $v,w$ in the $(x,y)$-plane is called \emph{second fundamental form}.\label{page:second fundamental form}
-It is usually denoted by $\II_p(w,v)$; it takes two tangent vector at $p$ and spits a real number.
+Given two vectors $v,w$ in the $(x,y)$-plane, consider the value 
+\[\II_p(v,w)\df(D_wD_vf)(0,0),\]
+where $D$ denotes the directional derivative.
+The function $(v,w)\z\mapsto \II_p(v,w)$ is called \emph{second fundamental form} at $p$;\label{page:second fundamental form}
+it takes two tangent vector $v$ and $w$ at $p$ and spits the real number $\II_p(v,w)$.
+
 The second fundamental form can be written in terms of the Hessian matrix.
-Indeed if $w=(a,b)$ and $v=(c,d)$, then $D_w=a\cdot \tfrac\partial{\partial x}+b\cdot \tfrac\partial{\partial y}$ and $D_v=c\cdot \tfrac\partial{\partial x}+d\cdot \tfrac\partial{\partial y}$.
+Indeed if 
+$w=(\begin{smallmatrix}a\\b
+\end{smallmatrix})$ 
+and 
+$v=(\begin{smallmatrix}c\\d
+\end{smallmatrix})$, then 
+\[D_w=a\cdot \tfrac\partial{\partial x}+b\cdot \tfrac\partial{\partial y}\quad\text{and}\quad D_v=c\cdot \tfrac\partial{\partial x}+d\cdot \tfrac\partial{\partial y}.\]
 Therefore 
 \[\begin{aligned}
 \II_p(w,v)&\df(D_wD_vf)(0,0)=
 \\
 &=a\cdot c\cdot \ell+(a\cdot d+ b\cdot c)\cdot m +b\cdot d\cdot n=
 \\
-&=v\cdot M_p\cdot w^\top.
+&=\langle M_p\cdot w,v\rangle=
+\\
+&=\langle M_p\cdot v,w\rangle.
 \end{aligned}
 \eqlbl{eq:DwDv}\]
-Note that from \ref{eq:DwDv} it follows that $\II_p$ is symmetric; that is
+Note that from \ref{eq:DwDv} it follows that $\II_p$ is symmetric; that is,
 \[\II_p(v,w)=\II_p(w,v)\eqlbl{eq:II=II}\]
 for any two tangent vectors $v,w\in \T_p$.
 
@@ -76,9 +95,11 @@ The principle curvatures can be also defined as the eigenvalues of $M_p$;
 the eigendirections of $M_p$ are called \emph{principle directions} of $\Sigma$ at~$p$.
 Note that if $k_1(p)\ne k_2(p)$ then $p$ has exactly two principle directions, which are perpendicular to each other.
 
-Note that if we revert the orientation of $\Sigma$ then the principle curvatures at each point switch their signs and indexes.
+Note that if we revert the orientation of $\Sigma$, then the principle curvatures at each point switch their signs and indexes.
 
 \section*{Normal curvature}
+
+%???+PIC
 
 Assume we choose the coordinates in the $(x,y)$-plane so that the Hessian matrix is diagonalized, we can assume that
 \[M_p=\begin{pmatrix}
@@ -89,15 +110,18 @@ Assume we choose the coordinates in the $(x,y)$-plane so that the Hessian matrix
    &k_2(p)
   \end{pmatrix}.
 \]
-In this case, according to \ref{eq:DwDv}, the second directional derivative
-for a vector $w=(a,b)$ in the $(x,y)$-plane can be written as 
+According to \ref{eq:DwDv}, the second directional derivative
+for a vector $w=(\begin{smallmatrix}a\\b
+\end{smallmatrix})$ in the $(x,y)$-plane can be written as 
 \[
 (D^2_wf)(0,0)=a^2\cdot k_1(p) +b^2\cdot k_2(p).
 \]
+
 If $w$ is unit, then the second directional derivative $D^2_wf(0,0)$ can be intepreted as the signed curvature of the curve formed by the intersection of $\Sigma$ with the plane thru $p$ spanned by $\nu_p$ and $w$.
-By that reason $D^2_wf(0,0)$ is called \emph{normal curvature} in the direction $w$;
+In this case $\II_p(w,w)=D^2_wf(0,0)$ is called \emph{normal curvature} in the direction $w$;
 it is denoted by $k_w(p)$ or $k_w(p)_\Sigma$.
-Since $|w|=1$, we have $a^2+b^2=1$ which implies the following.
+
+Since $|w|=1$, we have $a^2+b^2=1$ which implies the following:
 
 \begin{thm}{Observation}\label{obs:k1-k2}
 For any point $p$ on an oriented smooth surface $\Sigma$,
@@ -184,12 +208,33 @@ Assume $\Sigma_1$ locally supports $\Sigma_2$ from inside at the point $p$ (equi
 Then $k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}$ and $k_2(p)_{\Sigma_1}\z\ge k_2(p)_{\Sigma_2}$.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:surf-support}
+Give an example of two surfaces $\Sigma_1$ and $\Sigma_2$ that have common point $p$ with common unit normal vector $\nu_p$ such that 
+$k_1(p)_{\Sigma_1}> k_1(p)_{\Sigma_2}$ and $k_2(p)_{\Sigma_1}\z> k_2(p)_{\Sigma_2}$, but $\Sigma_1$ does not support $\Sigma_2$ locally at $p$.
+\end{thm}
+
+
 \parit{Proof.} We can assume that $\Sigma_1$ and $\Sigma_2$ are graphs $z=f_1(x,y)$  and $z=f_2(x,y)$ in a common tangent-normal coordinates at $p$, so we have $f_1\ge f_2$.
+
+%???+PIC
+
+\begin{wrapfigure}{o}{40 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-80}
+\vskip-0mm
+\end{wrapfigure}
 
 Fix a unit vector $w\in \T_p\Sigma_1=\T_p\Sigma_2$.
 Consider the plane $\Pi$ passing thru $p$ and spanned by the normal vector $\nu_p$ and $w$.
 Let $\gamma_1$ and $\gamma_2$ be the curves of intersection of $\Sigma_1$ and $\Sigma_2$ with $\Pi$.
-Note that the curve $\gamma_1$ supports the curve $\gamma_2$ and therefore we have the following inequality for the normal curvatures of $\Sigma_1$ and $\Sigma_2$ at $p$ in the direction of $w$:
+
+Let us orient $\Pi$ so that $\nu_p$ points to the left from $w$.
+Further, let us parametrize both curves so that they are running in the direction of $w$ at $p$ and therefore cooriented.
+In this case the curve $\gamma_1$ supports the curve $\gamma_2$ from the right. %??? make \ref{prop:supporting-circline} once it is generalized
+
+
+Therefore we have the following inequality for the normal curvatures of $\Sigma_1$ and $\Sigma_2$ at $p$ in the direction of $w$:
 \[k_w(p)_{\Sigma_1}\ge k_w(p)_{\Sigma_2}.\eqlbl{kw>=kw}\]
 
 According to \ref{obs:k1-k2},
@@ -253,22 +298,10 @@ K(p)_{\Sigma_1}&=k_1(p)_{\Sigma_1}\cdot k_2(p)_{\Sigma_1}\ge
 \end{align*}
 \qedsf
 
-\begin{thm}{Exercise}
-Give an example of two smooth oriented surfaces $\Sigma_1$ and $\Sigma_2$ such that 
-$\Sigma_1$ locally supports $\Sigma_2$ from inside at the point $p$, but
-\[K(p)_{\Sigma_1}<K(p)_{\Sigma_2}.\]
-
-\end{thm}
-
-
-
 \begin{thm}{Exercise}\label{ex:positive-gauss}
-Show that any closed surface has a point with positive Gauss curvature.
+Show that any closed surface has a point with positive Gauss curvature. %??? change to the surface in a unit ball
 \end{thm}
 
-\begin{thm}{Exercise}
-Show that there is no closed surface with vanishing mean curvature.
-\end{thm}
 
 \parit{Hint.}
 Consider the minimal sphere that encloses the surface.
@@ -288,7 +321,7 @@ Look for a supporting spherical dome with the unit circle as the boundary.
 Recall that the second fundamental form $\II_p$ is defined on page \pageref{page:second fundamental form}.
 
 \begin{thm}{Proposition}\label{prop:gamma''=II}
-Suppose $\gamma$ is a smooth curve in the smooth oriented surface $\Sigma$ with unit normal field $\nu$.
+Suppose $\gamma$ is a smooth curve in a smooth oriented surface $\Sigma$ with a unit normal field $\nu$.
 Then, the following identity holds for any time parameter $t$:
 \[\langle \gamma''(t),\nu_{\gamma(t)}\rangle=\II_{\gamma(t)}(\gamma'(t),\gamma'(t)).\]
 
@@ -303,9 +336,9 @@ we assume that $\nu$ points in the derection of~$\nu_p$.
 
 Without loss of generality may assume that $\gamma$ runs in the graph $z=f(x,y)$;
 so 
+\[\gamma(t)=\left(x(t),y(t),f(x(t),y(t))\right).\]
+Then
 \begin{align*}
-\gamma(t)&=\left(x(t),y(t),f(x(t),y(t))\right).
-\intertext{Then}
 \gamma'&=(x',y',\tfrac{\partial f}{\partial x}\cdot x'+\tfrac{\partial f}{\partial y}\cdot y');
 \\
 \gamma''
@@ -382,7 +415,7 @@ k_{w}(p)&=\II_p(w,w) =
 \end{align*}
 \qedsf
 
-The corollary above, as well as the statement in the following exercise are called \emph{Meusnier's theorem}; it was proved by Jean Baptiste Meusnier \cite{meusnier}.
+The corollary above, as well as the statement in the following exercise are proved by Jean Baptiste Meusnier \cite{meusnier}.
 
 \begin{thm}{Exercise}\label{ex:meusnier}
 Let $\Sigma$ be a smooth surface, $p\in\Sigma$ and $w\in \T_p\Sigma$ is a unit vector.

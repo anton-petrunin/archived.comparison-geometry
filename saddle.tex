@@ -5,8 +5,17 @@
 A surface is called \emph{saddle} if its Gauss curvature at each point is nonpositive;
 in other words principle curvatures at each point have opposite signs or one of them is zero.
 
+\begin{wrapfigure}{r}{40 mm}
+\vskip-0mm
+\centering
+\includegraphics{asy/saddle}
+\vskip0mm
+\end{wrapfigure}
+
 If the Gauss curvature is negative at each point,
-then the surface is called \emph{strictly saddle}.
+then the surface is called \emph{strictly saddle};
+equivalently it means that the principle curvatures have opposite signs at each point.
+Note that in this case tangent plane is does not support the surface even locally --- moving along the surface in the principle directions at a given point, one gets above and below the tangent plane at this point.  
 
 
 \begin{thm}{Exercise}\label{ex:convex-revolution}
@@ -31,17 +40,28 @@ Show that for any point $p\in \Sigma$ there is a curve $\gamma\:[0,\infty)\to\Si
 such that $t\mapsto|\gamma(t)|$ is an increasing function and $|\gamma(t)|\to\infty$ as $t\to\infty$.
 \end{thm}
 
+A tangent direction on a smooth surface with vanishing normal curvature is called \emph{asymptotic}.
+A smooth regular curve that always run in an asymptotic direction is called
+\index{asymptotic line}\emph{asymptotic line}.
+
+\begin{thm}{Advanced exercise}
+Let $\Sigma\subset \RR^3$ be the graph $z\z=f(x,y)$
+of a smooth function $f$ 
+and $\gamma$ be a closed smooth asymptotic line in $\Sigma$.
+Assume $\Sigma$ is strictly saddle in a neighborhood of $\gamma$.
+Show that the projection of $\gamma$ to the $(x, y)$-plane cannot be star-shaped.
+\end{thm}
 
 \section*{Hats}
 
-Note that a closed surface can not be saddle.
+Note that a closed surface cannot be saddle.
 Indeed consider a smallest sphere that contains a closed surface $\Sigma$ inside;
 it supports $\Sigma$ at some point $p$ and at this point the principle curvature must have the same sign.
 The following more general statement  is proved using the same idea.
 
 \begin{thm}{Lemma}\label{lem:convex-saddle}
-Assume $\Sigma$ is a compact saddle surface and its boundary line lies in a convex closed set $F$.
-Then $\Sigma\subset F$.
+Assume $\Sigma$ is a compact saddle surface and its boundary line lies in a convex closed region $R$.
+Then $\Sigma\subset R$.
 \end{thm}
 
 \begin{wrapfigure}{o}{50 mm}
@@ -52,26 +72,25 @@ Then $\Sigma\subset F$.
 \end{wrapfigure}
 
 \parit{Proof.}
-Assume contrary; that is, there is point $p\in \Sigma$ that does not lie in $F$.
-By \ref{lem:separation}, there is a plane $\Pi$ that separates $p$ from $F$.
+Assume contrary; that is, there is point $p\in \Sigma$ that does not lie in $R$.
+Let $\Pi$ be a plane that separates $p$ from $R$; it exists by \ref{lem:separation}.
 Denote by $\Sigma'$ the part of $\Sigma$ that lies with $p$ on the same side from $\Pi$.
 
-Since $\Sigma$ is compact, it is surrounded by a sphere $S$ centered at $\Pi$;
+Since $\Sigma$ is compact, it is surrounded by a sphere $S$;
 let $\sigma$ be the circle of intersection of $S$ and $\Pi$.
 Consider the smallest spherical dome $\Sigma_0$ with boundary $\sigma$ that includes $\Sigma'$.
 
 Note that $\Sigma_0$ supports $\Sigma$ at some point~$q$.
 Without loss of generality we may assume that $\Sigma_0$ and $\Sigma$ are cooriented at $q$ and $\Sigma_0$ has positive principle curvatures.
 In this case $\Sigma_0$ supports $\Delta$ from outside.
-By \ref{cor:surf-support}, $K(q)_\Sigma\ge K(q)_{\Sigma_0}$.
-The statement follows since $K(q)_{\Sigma_0}$ is positive --- a contradiction.
+By \ref{cor:surf-support}, $K(q)_\Sigma\ge K(q)_{\Sigma_0}>0$ --- a contradiction.
 \qeds
 
 Note that if we assume that $\Sigma$ is strictly saddle, then we could arrive to a contradiction by taking a point $q$ on the same side with $p$ and on the maximal distance from $\Pi$.
 
 \begin{thm}{Exercise}\label{ex:length-of-bry}
 Let $\Delta$ be a smooth regular saddle disc and $p\in \Delta$.
-Assume the the boundary line $\partial \Delta$ lies in the unit sphere.
+Assume that the boundary line $\partial \Delta$ lies in the unit sphere centered at~$p$.
 Show that $\length (\partial \Delta)\ge 2\cdot\pi$.
 \end{thm}
 
@@ -91,7 +110,7 @@ A smooth surface $\Sigma$ is saddle if and only if it has no hats.
 
 Note that a saddle surface can contain a closed plane curve.
 For example the hyperboloid $x^2+y^2-z^2=1$ contains the unit circle in the $(x,y)$-plane centered at the origin.
-However by proposition, a plane curve can not bound a disc (or any compact set) in a saddle surface.
+However, a plane curve can not bound a disc (as well any compact set) in a saddle surface.
 
 \parit{Proof.}
 Since plane is a convex set, the ``only if'' part follows from \ref{lem:convex-saddle};
@@ -104,18 +123,22 @@ Let $z=f(x,y)$ be a graph representation of $\Sigma$ in the tangent-normal coord
 Without loss of generality we may assume that both principle curvatures are positive,
 or equivalently the 
 \[D^2_wf(0,0)=\II_p(w,w)>0\] 
-for any nonzero tangent vector $w\in\T_p\Sigma$ (which is the $(x,y)$-plane).
+for any unit tangent vector $w\in\T_p\Sigma$ (which is the $(x,y)$-plane).
 
-It follows that $D^2_wf(x,y)>0$ for $(x,y)$ in a neighborhood of the origin.
-Whence $f$ is a strictly convex function in a neighborhood of the origin in the $(x,y)$-plane.
+Since the set of unit vectors is compact, we have that 
+\[D^2_wf(0,0)>\eps\]
+for some fixed $\eps>0$ and any unit tangent vector $w\in\T_p\Sigma$.
+By continuity of the function $(x,y,w)\mapsto D^2_wf(x,y)$,
+we have that $D^2_wf(x,y)>0$ for $(x,y)$ in a neighborhood of the origin.
+That is, $f$ is a strictly convex function in a neighborhood of the origin in the $(x,y)$-plane.
 In particular the set 
 \[\Delta_\eps=\set{(x,y,f(x,y))\in \RR^3}{f(x,y))\le \eps}\]
-is a disc for sufficiently small $\eps>0$. %???
+is a disc for sufficiently small $\eps>0$ (see \ref{ex:disc-hat}).
 Note that its boundary line lies on the plane $z=\eps$ and whole disc lies below it;
 that is, $\Delta_\eps$ is a hat.
 \qeds
 
-Note that we proved the following lemma; it will be useful latter.
+Note that we proved the following lemma; it will be useful latter. %??? move in curvature
 
 \begin{thm}{Lemma}\label{lem:gauss+=>convexity}
 Let $z=f(x,y)$ be the local description of a smooth surface $\Sigma$ in a tangent-normal coordinates at some point $p\in\Sigma$.
@@ -123,11 +146,15 @@ Assume both principle curvatures of $\Sigma$ are positive at $p$.
 Then the function $f$ is strictly convex in a neighborhood of the origin.
 \end{thm}
 
+In the proof above we assumed that the statement in following exercise is evident.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:disc-hat}
 Let $\Delta_\eps$ be as in the proof above.
 Show that $\Delta_\eps$ is a smooth disc; that is, $\Delta_\eps$ is the image of regular embedding $\DD\to \RR^3$, where $\DD=\set{(x,y)\in\RR^2}{x^2+y^2\le 1}$.
 \end{thm}
+
+\parit{Hint:} Observe that it is sufficient to construct a smooth parametrization of $\Delta_\eps$ by a closed hemisphere.
+To do this repeat the argument in \ref{lem:gauss=sphere} with the center at a point surrounded by the boundary line of $\Delta_\eps$ in its plane.
 
 \begin{thm}{Exercise}\label{ex:saddle-linear}
 Let $T\:\RR^3\to\RR^3$ be a linear transformation; that is, $T(x,y,z)=(x,y,z)\cdot A$ for a invertible $3{\times}3$-matrix $A$. 
@@ -181,18 +208,18 @@ with the boundary line in a plane
 that lies on bounded distance from a line.
 \end{thm}
 
-In a suitable coordinate system, the statement can be reformulated the following way:
+
+\parit{Proof.}
+Note that in a suitable coordinate system, the statement can be reformulated the following way:
 \emph{There is no complete strictly saddle smooth surface 
 with the boundary line in the $(x,y)$-plane
 that lies in a region of the following form:}
 \[R=\set{(x,y,z)\in\RR^3}{0\le z\le r, 0\le y\le r}.\]
-
-\parit{Proof.}
-We will prove the statement using the second (equivalent) formulation.
+Further we will prove this statement.
 
 Assume contrary, let $\Sigma$ be such a surface.
 Consider the projection $\hat \Sigma$ of $\Sigma$ to the $(x,z)$-plane.
-It lies in the upper half plane and below the the line $z=r$.
+It lies in the upper half-plane and below the line $z=r$.
 
 Consider the open upper half-plane $H=\set{(x,z)\in \RR^2}{z> 0}$. 
 Let $\Theta$ be the connected component of the complement $H\backslash \hat \Sigma$ that contains all the points above the line $z=r$.
@@ -275,6 +302,7 @@ Show that the orthogonal projection to $(x,y)$-plane is injective on $\Sigma$.
 In particular, $\Sigma$ is the graph $z=f(x,y)$ of a function $f$ defined on a convex figure in the $(x,y)$-plane.
 \end{thm}
 
+
 \section*{Remarks}
 
 Note that Bernstein's theorem and the lemma in its proof do not hold for saddle surfaces;
@@ -286,15 +314,3 @@ By \ref{prop:hat}, saddle surfaces can be defined as smooth surfaces without hat
 This definition can be used for arbitrary surfaces not necessarily smooth.
 Some results, for example Bernshtein's characterization of saddle graphs can be extended to generalized saddle surface, but this class of surfaces is far from being understood.
 Some nontrivial properties were proved by in Samuil Shefel \cite{shefel} see also \cite[Capter 4]{akp}.
-
-A tangent direction on a smooth surface with vanishing normal curvature is called \emph{asymptotic}.
-A smooth regular curve that always run in an asymptotic direction is called
-\index{asymptotic line}\emph{asymptotic line}.
-
-\begin{thm}{Advanced exercise}
-Let $\Sigma\subset \RR^3$ be the graph $z\z=f(x,y)$
-of a smooth function $f$ 
-and $\gamma$ be a closed smooth asymptotic line in $\Sigma$.
-Assume $\Sigma$ is strictly saddle in a neighborhood of $\gamma$.
-Show that the projection of $\gamma$ to the $(x, y)$-plane cannot be star-shaped.
-\end{thm}
