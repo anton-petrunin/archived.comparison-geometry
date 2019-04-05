@@ -2738,4 +2738,38 @@ label.rt(btex $\Sigma$ etex, z.Sigma);
 label.bot(btex $\Pi$ etex, 1.5[z.a,z.b]);
 whitelabel(btex $R$ etex, (0,-.5)*u);
 endfig;
+
+beginfig(83);
+save u, t;
+u:=2cm;
+t=1;
+
+z.a0=(-.5,0)*u;
+z.a1=(.5,0)*u;
+
+save p; path p[];
+p0= circle(origin, .2*u);
+p1=z.a0{.3,1}..z.a1{1,-1}..cycle;
+p2= circle(origin, 1*u);
+
+z.p= point t of p1;
+z.nu=z.p + unitvector(direction t of p1 rotated 90)*u;
+z.Sigma=point 1.5 of p1;
+
+labelarcsprof(2*z.p, z.p, z.nu, 12,12, btex {$\theta_p$} etex);
+mark_rt_angle(z.nu, z.p, z.p + unitvector(direction t of p1 rotated 180)*u);
+
+draw p0;
+draw p1 pensemibold;
+draw p2;
+draw ddline(origin,z.p)(0,1) dashed evenly;
+
+drawarrow z.p--z.nu;
+
+dOt origin,z.p;
+
+label.llft(btex $p$ etex, z.p);
+label.urt(btex $\nu$ etex, z.nu);
+label.top(btex $\Sigma$ etex, z.Sigma);
+endfig;
 end

@@ -18,7 +18,7 @@ There is a mountain of frictionless ice with the shape of a perfect cone with a 
 A cowboy is at the bottom and he wants to climb the mountain.
 So, he throws up his lasso which slips neatly over the top of the cone, he pulls it tight and starts to climb.
 If the angle of inclination $\theta$ is large, there is no problem; the lasso grips tight and up he goes.
-On the other hand if the angle of inclination $\theta$ is small, the lasso slips off as soon as the cowboy pulls on it.
+On the other hand if $\theta$ is small, the lasso slips off as soon as the cowboy pulls on it.
 
 What is the critical angle $\theta_0$ at which the cowboy can no longer climb the ice-mountain?
 \end{thm}
@@ -46,8 +46,8 @@ However if we write $[p,q]_\Sigma$, then we assume that a shortest path exists a
 
 %+PIC???
 
-\parbf{Nonexistence.} Let us give an example of a surface with a pair of points without shortest path.
-Consider the surface $\Sigma$ which is the $(x,y)$-plane with removed origin with two points $p=(1,0,0)$ and $q=(-1,0,0)$.
+\parbf{Nonexistence.} Let $\Sigma$ be the $(x,y)$-plane with removed origin.
+Consider two points $p=(1,0,0)$ and $q=(-1,0,0)$ in $\Sigma$.
 
 \begin{wrapfigure}{r}{28 mm}
 \vskip-0mm
@@ -113,7 +113,7 @@ Note that if $p\in R$, then $\bar p=p$.
 
 \parit{Proof.}
 Fix a point $p$ and set 
-\[\ell=\inf_{x\in R}\{|p-x|\}.\]
+\[\ell=\inf\set{|p-x|}{x\in R}.\]
 Choose a sequence $x_n\in R$ such that $|p-x_n|\to \ell$ as $n\to\infty$.
 
 \begin{wrapfigure}{i}{22 mm}
@@ -123,16 +123,20 @@ Choose a sequence $x_n\in R$ such that $|p-x_n|\to \ell$ as $n\to\infty$.
 \vskip-0mm
 \end{wrapfigure}
 
-Without loss of generality, we can assume that all the points $x_n$ lie in a ball or radius $\ell+1$ centered at $p$.
+Without loss of generality, we can assume that all the points $x_n$ lie in a ball or radius $\ell+1$ centered at~$p$.
 Therefore we can pass to a partial limit $\bar p$ of $x_n$; that is, $\bar p$ is a limit of a subsequence of $x_n$.
 Since $R$ is closed $\bar p\in R$.
 By construction 
-\[|p-\bar p|=\ell=\lim_{n\to\infty}|p-x_n|.\]
+\begin{align*}
+|p-\bar p|&=\lim_{n\to\infty}|p-x_n|=
+\\
+&=\ell.
+\end{align*}
 Hence the existence follows.
 
 Assume there are two distinct points $\bar p, \bar p'\in R$ that minimize the distance to $p$.
 Since $R$ is convex, their midpoint $m=\tfrac12\cdot (\bar p+\bar p')$ lies in~$R$.
-Note that $|p-\bar p|\z=|p-\bar p'|=\ell$; that is $\triangle p\bar p\bar p'$ is isosceles and therefore $\triangle p\bar p m$ is right with the right angle at $m$.
+Note that $|p-\bar p|\z=|p-\bar p'|=\ell$; that is $\triangle p\bar p\bar p'$ is isosceles and therefore $\triangle p\bar p m$ is right with the right angle at~$m$.
 Since a leg of a right triangle is shorter than its hypotenuse, we have $|p-m|<\ell$ --- a contradiction. 
 
 It remains to prove inequality \ref{eq:short-cpp}.
@@ -152,7 +156,13 @@ Since $R$ is convex, the line segment $[\bar q,\bar p]$ and therefore $x$ lie in
 Hence $\bar p$ is not closest to $p$ --- a contradiction.
 
 The same way we can show that  if $q\z\ne \bar q$, then $\angle q \bar q \bar p$ is right or obtuse.
-In all cases it implies that the orthogonal projection of the line segment $[p,q]$ to the line $\bar p\bar q$ contains the line segment $[\bar p,\bar q]$.
+
+We have to consider the following 4 cases:
+(1) $p\ne \bar p$ and $q\ne \bar q$,
+(2) $p= \bar p$ and $q\ne \bar q$,
+(3) $p\ne \bar p$ and $q= \bar q$,
+(4) $p= \bar p$ and $q= \bar q$.
+In all these cases the obtained angle estimates imply that the orthogonal projection of the line segment $[p,q]$ to the line $\bar p\bar q$ contains the line segment $[\bar p,\bar q]$.
 In particular 
 \[|p-q|\ge |\bar p-\bar q|.\]
 \qedsf
@@ -162,7 +172,7 @@ Assume a surface $\Sigma$ bounds a closed convex region $R$ and  $p,q \in \Sigma
 Denote by $W$ the outer closed region of $\Sigma$; in other words $W$ is the union of $\Sigma$ and the complement of $R$.
 Then for any curve $\gamma$ in $W$ that runs from $p$ to $q$ we have
 \[\length\gamma\ge |p-q|_\Sigma.\]
-Moreover if  $\gamma\not\subset\Sigma$, then the inequality is strict.
+Moreover if  $\gamma$ does not lie in $\Sigma$, then the inequality is strict.
 \end{thm}
 
 \parit{Proof.}
@@ -171,7 +181,7 @@ Indeed consider the closest point projection $\bar\gamma$ of~$\gamma$.
 Note that $\bar\gamma$ lies in $\Sigma$ and connects $p$ to $q$ therefore 
 \[\length\bar\gamma\ge |p-q|_\Sigma.\]
 
-Indeed, consider an inscribed polygonal line $p_0\dots p_n$ in $\gamma$.
+Consider an inscribed polygonal line $p_0\dots p_n$ in $\gamma$.
 Denote by $\bar p_i$ the closest point projection of $p_i$ to $R$.
 Note that the polygonal line  $\bar p_0\dots \bar p_n$ is inscribed in $\bar\gamma$;
 moreover any inscribed polygonal line in $\bar\gamma$ can appear this way.
@@ -201,7 +211,7 @@ Remove from $\gamma$ the arc from $a$ to $b$ and glue in the line segment $[a,b]
 denote the obtained curve by $\gamma_1$. 
 From above,
 \[\length\gamma>\length \gamma_1\]
-Note that $\gamma_1$ is runs in $W$.
+Note that $\gamma_1$ runs in $W$.
 Therefore by the first part of corollary, we have
 \[\length \gamma_1\ge |p-q|_\Sigma.\]
 Whence the second statement follows.
@@ -271,7 +281,7 @@ That is $|\gamma'(t)|^2=\langle\gamma'(t),\gamma'(t)\rangle$ is constant.
 \begin{thm}{Proposition}\label{prop:geod-existance} 
 Given a tangent vector $v$ to a smooth surface $\Sigma$ at a point $p$
 There is a unique geodesic $\gamma\:\mathbb{I}\to \Sigma$ defined on a maximal open interval $\mathbb{I}\ni 0$ that starts at $p$ with velocity vector $v$;
-that is, such that $\gamma(0)=p$ and $\gamma'(0)=v$.
+that is, $\gamma(0)=p$ and $\gamma'(0)=v$.
 
 Moreover
 \begin{enumerate}[(a)]
@@ -298,9 +308,31 @@ Given a tangent vector $v\in \T_p$ consider a geodesic $\gamma_v$ in $\Sigma$ th
 that is, $\gamma(0)=p$ and $\gamma'(0)=v$.
 
 The point $q=\gamma_v(1)$ is called \emph{exponential map} of $v$, or briefly $q=\exp_pv$.
-By \ref{prop:geod-existance}, the map $\exp_p\:\T_p\to \Sigma$ is smooth and defined in a neighborhood of zero in $\T_p$ and if $\Sigma$ is compete, it is defined on the whole space $\T_p$.
+(There is a reason to call this map \emph{exponential}, but it will takes us to far from the subject.)
+By \ref{prop:geod-existance}, the map $\exp_p\:\T_p\to \Sigma$ is smooth and defined in a neighborhood of zero in $\T_p$;
+moreover, if $\Sigma$ is compete, then $\exp_p$ is defined on the whole space $\T_p$.
 
 Note that the Jacobian of $\exp_p$ at zero is the identity matrix.
+Indeed, let $z=f(x,y)$ be a local graph representation of $\Sigma$ in the tangent-normal coordinates.
+The tangent plane at $p$ is the $(x,y)$-plane.
+Let $\gamma_x$ and $\gamma_y$ be the geodesics starting from $p$ in the directions
+$(1,0,0)$
+and
+$(0,1,0)$
+correspondingly.
+A general tangent vector can be written as $v=(x,y,0)$.
+Note that $\tfrac{\partial\exp_p}{\partial x}(0,0)=\gamma_x'(0)=(1,0,0)$ and  
+$\tfrac{\partial\exp_p}{\partial x}(0,0)=\gamma_y'(0)=(0,1,0)$.
+That is, the Jacobian matrix of $\exp_p$ at $(0,0)$ is
+\[\begin{pmatrix}
+1&0
+\\
+0&1
+\\
+0&0
+  \end{pmatrix}.
+\]
+It follows that the Jacobian matrix of the projection of $\exp_p$ to the $(x,y)$-plane has is the identity matrix.
 Therefore by the inverse function theorem (\ref{thm:inverse}), we get the following statement:
 
 \begin{thm}{Proposition}\label{prop:exp}
@@ -308,10 +340,10 @@ Let $\Sigma$ be smooth surface and $p\in \Sigma$.
 Then the exponential map $\exp_p\:\T_p\to \Sigma$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$ by a neighborhood of $0$ in the tangent plane~$\T_p$.
 
 Moreover for any $p\in \Sigma$ there is $\eps>0$ such that for any $x\in \Sigma$ such that $|x-p|_\Sigma<\eps$ the map 
-$\exp_x\:\T_x\to \Sigma$ is a smooth regular parametrization of the $\eps$-neighborhood of $x$ in $\Sigma$ by the $\eps$-neighborhood of zero in the tangent plane~$\T_x$.
+$\exp_x\:\T_x\to \Sigma$ is a smooth regular parametrization of the $\eps$-neighborhood of $x$ in $\Sigma$ by the $\eps$-neighborhood of zero in the tangent plane~$\T_x$. %???
 \end{thm}
 
-\section*{Shortest paths and geodesics}
+\section*{Shortest paths are geodesics}
 
 
 \begin{thm}{Claim}\label{clm:gamma''}
@@ -345,11 +377,15 @@ The smoothness should be intuitively obvious; at least the curve should be twice
 
 Let us give an informal physical explanation why $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
 One may think about the geodesic $\gamma$ as of stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
-Since it is frictionless, the force density $N(t)$ that keeps the geodesic $\gamma$ in the surface must be therefore proportional to the normal vector to the surface at $\gamma(t)$.
+Since it is frictionless, the force density $N(t)$ that keeps the geodesic $\gamma$ in the surface must be proportional to the normal vector to the surface at $\gamma(t)$.
+
 The tension in the thread has to be the same at all points (otherwise the thread would move back or forth and it would not be stable).
-The sum of tensions at the ends of small arc is roughly proportional to the angle between the tangent lines at the ends of the arc. 
-Passing to the limit as the length of the arc goes to zero, we get that the density of this force $F(t)$ is proportional to $\gamma''(t)$.
-According to the second Newton's law, we have $F(t)+N(t)=0$;
+Denote by $T$ the tension.
+We can assume that $\gamma$ has unit speed,
+In this case the net force from tension to the arc $\gamma_{[t_0,t_1]}$ is $T\cdot(\gamma'(t_1)-\gamma'(t_0)$.
+Hence the density of net force from tension at $t$ is $F(t)=T\cdot\gamma''(t)$.
+According to the second Newton's law of motion, we have 
+\[F(t)+N(t)=0;\]
 which implies that  $\gamma''(t)$ is perpendicular to $\T_{\gamma(t)}\Sigma$.
 
 Fix a point $p\in\Sigma$.
@@ -362,7 +398,7 @@ $q=\exp_pv=\exp_pw$.
 But according to \ref{prop:exp}, the exponential map is injective in $\eps$-neighborhood of zero --- a contradiction.\qeds
 
 \begin{thm}{Exercise}\label{ex:two-min-geod}
-Show that two shortest paths in a smooth regular surface  can not have more than one point of intersections.
+Show that two shortest paths in a smooth surface  can not have more than one point of intersections.
 
 Show by example that a geodesics can cross each other arbitrary number of times.
 \end{thm}
@@ -371,6 +407,35 @@ Show by example that a geodesics can cross each other arbitrary number of times.
 Assume that a smooth regular surface $\Sigma$ is mirror symmetric with respect to a plane $\Pi$.
 Show that no shortest path in $\Sigma$ can cross $\Pi$ more than once.
 \end{thm}
+
+{
+
+\begin{wrapfigure}[12]{r}{39 mm}
+\begin{lpic}[t(-0 mm),b(-4 mm),r(0 mm),l(0 mm)]{pics/unbend(1)}
+\lbl[t]{11.5,29;$p$}
+\lbl[r]{10.5,37;$p_t$}
+\lbl[t]{32.5,26;$q$}
+\lbl[t]{26,30;$\gamma(t)$}
+\lbl{20,13;{\Large $\Sigma$}}
+\end{lpic}
+\end{wrapfigure}
+
+\begin{thm}{Advanced exercise}
+Let $\Sigma$ be a smooth closed strictly convex surface 
+in $\RR^3$ 
+and $\gamma\:[0,\ell]\z\to \Sigma$ be a unit-speed minimizing geodesic.
+Set $p\z=\gamma(0)$, $q=\gamma(\ell)$ and 
+$$p_t=\gamma(t)-t\cdot\gamma'(t),$$ 
+where $\gamma'(t)$ denotes the velocity vector of $\gamma$ at $t$.
+
+Show that for any $t\in (0,\ell)$,
+one {}\emph{cannot see}  $q$ from $p_t$;
+that is, the line segment $[p_t,q]$ intersects $\Sigma$ at a point distinct from $q$.%
+\end{thm}
+
+\parit{Hint:} Show that the concatenation of the line segment $[p_t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path in the closed set $W$ outside of $\Sigma$.
+
+}
 
 \section*{Liberman's lemma}
 
@@ -424,15 +489,13 @@ Then the total curvature of any geodesic in $\Sigma$ is at most $2\cdot \ell$.
 \end{thm}
 
 The above theorem was proved by Vladimir Usov \cite{usov},
-later David Berg \cite{berg} pointed out that the same proof works for geodesics in closed epigraphs of $\ell$-Lipschitz functions which are not necessary concave; that is, sets of the type 
+later David Berg \cite{berg} pointed out that the same proof works for geodesics in closed epigraphs of $\ell$-Lipschitz functions which are not necessary convex; that is, sets of the type 
 \[W=\set{(x,y,z)\in\RR^3}{z\ge f(x,y)}\]
-
-Recall that $\tc\gamma$ denotes the total curvature of curve $\gamma$.
 
 \parit{Proof.}
 Let $\gamma(t)=(x(t),y(t),z(t))$ be a unit speed geodesic on $\Sigma$.
 According to Liberman's lemma 
-$z(t)$ is concave.
+$z(t)$ is convex.
 
 Since the slope of $f$ is at most $\ell$, we have
 \[|z'(t)|\le \tfrac{\ell}{\sqrt{1+\ell^2}}.\]
@@ -447,7 +510,9 @@ Further, note that $z''$ is the projection of $\gamma''$ to the $z$-axis.
 Since $f$ is $\ell$-Lipschitz, the tangent plane $T_{\gamma (t)} \Sigma$ cannot have slope greater than $\ell$ for any $t$.
 Because $\gamma ''$ is perpendicular to that plane, 
 \[|\gamma'' (t)|  \le \sqrt{1+ \ell ^2} \cdot|z''(t)| .\]
-Therefore 
+
+Recall that $\tc\gamma$ denotes the total curvature of curve $\gamma$.
+It follows that 
 \begin{align*}
 \tc\gamma&=\int_a^b|\gamma'' (t)|\cdot dt\le 
 \\
@@ -456,6 +521,16 @@ Therefore
 &\le 2\cdot \ell.
 \end{align*}
 \qedsf
+
+\begin{thm}{Exercise}
+Note that the graph $z=\ell\cdot\sqrt{x^2+y^2}$ with removed origin is a smooth surface; denote it by $\Sigma$.
+Show that it has an both side infinite geodesic $\gamma$ with total curvature exactly $2\cdot \ell$.
+\end{thm}
+
+Note that the function $f(x,y)=\ell\cdot\sqrt{x^2+y^2}$ is $\ell$-Lipschitz.
+The graph $z=f(x,y)$ in the exercise can be smoothed in a neighborhood of the origin while keeping it convex.
+It follows that the estimate in the Usov's theorem is optimal.
+
 
 \begin{thm}{Exercise}
 Assume $f$ is a convex function $\tfrac32$-Lipschitz function defined on the $(x,y)$-plane.
@@ -470,16 +545,39 @@ with a nonsimple geodesic $\gamma$ on its graph $z=f(x,y)$.
 The suggested argument does not give the optimal bound for the Lipschitz constant that guarantee that $\gamma$ is simple, but
 later we will show that the exact bound is $\sqrt{3}=\tan\tfrac\pi3$ --- it is the same as in the case of cone; compare to \ref{ex:lasso}.  %+??? ref
 
-
-\begin{thm}{Advanced exercise}
+\begin{thm}{Theorem}
 Suppose a smooth surface $\Sigma$ bounds a convex set $K$ in the Euclidean space.
-Assume $K$ contains a unit ball and has diameter $D$.
-Find an upper bound of the total curvatures of minimizing geodesics in $\Sigma$.
+Assume $B(0,\eps)\subset K\subset B(0,1)$.
+Then the total curvatures of any shortest path in $\Sigma$ can be bounded in terms of~$\eps$. 
 \end{thm}
 
-\parit{Hint:} Use Exercise~\ref{ex:intrinsic-diameter}.
+\begin{wrapfigure}{o}{48 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-83}
+\vskip-0mm
+\end{wrapfigure}
 
-In fact there is a fixed bound on the total curvature of any minimizing geodesic on any closed convex surface \cite{lebedeva-petrunin}.
+The following exercise will guide you thru the proof of the theorem. 
 
+\begin{thm}{Exercise}
+Let $\Sigma$ be as in the theorem and $\gamma$ be a unit-speed shortest path in $\Sigma$.
+Denote by $\nu_p$ the unit normal vector that points outside of $\Sigma$;
+denote by $\theta_p$ the angle between $\nu_p$ and the direction from the origin to a point $p\in\Sigma$.
+Set $\rho(t)\z=|\gamma(t)|^2$; let $k(t)$ be the curvature of $\gamma$ at $t$.
+\begin{enumerate}[(a)]
+\item Show that $\cos\theta_p\ge \eps$ for any $p\in \Sigma$.
+\item Show that $|\rho'(t)|\le 2$ for any $t$.
+\item Show that 
+\[\rho''(t)=2-2\cdot k(t)\cdot \cos \theta_{\gamma(t)}\cdot |\gamma(t)|\]
+for any $t$.
+\item Use the closest-point projection from the unit sphere to $\Sigma$ to show that 
+\[\length \gamma\le \pi.\]
+\item Use the the statements above to conclude that 
+\[\tc\gamma\le \frac{100}{\eps^2}.\]
+\end{enumerate}
+\end{thm}
 
-
+Note that our bound on total curvature given above goes to infinity as $\eps\to 0$,
+but in fact there is a bound independent of $\eps$;
+it is good of any closed convex surface \cite{lebedeva-petrunin}.
