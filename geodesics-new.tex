@@ -171,19 +171,23 @@ Indeed consider the closest point projection $\bar\gamma$ of~$\gamma$.
 Note that $\bar\gamma$ lies in $\Sigma$ and connects $p$ to $q$ therefore 
 \[\length\bar\gamma\ge |p-q|_\Sigma.\]
 
-
 Indeed, consider an inscribed polygonal line $p_0\dots p_n$ in $\gamma$.
 Denote by $\bar p_i$ the closest point projection of $p_i$ to $R$.
 Note that the polygonal line  $\bar p_0\dots \bar p_n$ is inscribed in $\bar\gamma$;
 moreover any inscribed polygonal line in $\bar\gamma$ can appear this way.
-By \ref{lem:closest-point-projection} $|p_i-p_{i-1}|\ge|\bar p_i-\bar p_{i-1}|$ for any $i$.
+By \ref{lem:closest-point-projection} $|p_i-p_{i-1}|\z\ge|\bar p_i-\bar p_{i-1}|$ for any $i$.
 Therefore 
 \[\length p_0\dots p_n\ge \length \bar p_0\dots \bar p_n.\]
 Taking least upper bound of each side of the inequality for all inscribed polygonal lines $p_0\dots p_n$ in $\gamma$, we get
 \[\length\gamma\ge\length\bar\gamma.\]
 Whence the first statement follows.
 
-%???+PIC
+\begin{wrapfigure}{o}{37 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-82}
+\vskip-0mm
+\end{wrapfigure}
 
 To prove the second statement, note that if $s=\gamma(t_1)\notin\Sigma$,
 then $s\notin R$.
@@ -370,70 +374,49 @@ Show that no shortest path in $\Sigma$ can cross $\Pi$ more than once.
 
 \section*{Liberman's lemma}
 
-A curve of constant speed $\gamma\:[a,b]\to \Sigma$ is called a \emph{geodesic}  if for some partition $a\z=t_0<t_1<\dots <t_n=b$, each arc $\gamma|_{[t_{i-1},t_{i+1}]}$ is a minimizing geodesic.
-
-The following lemma was proved by Joseph Liberman \cite{liberman}.
+The following lemma is a smooth analog of lemma proved by Joseph Liberman \cite{liberman}.
 
 \begin{thm}{Liberman's lemma}\label{lem:liberman}
-Assume $\gamma$ is a geodesic on the graph $z=f(x,y)$ of a concave function $f$ defined on an open subset of the plane.
-Consider a reparametrization $(x(t),y(t),z(t))$ of $\gamma$ such that the curve  $t\mapsto (x(t),y(t))$ is a unit-speed curve.
-Then $z(t)$ is a concave function.
+Assume $\gamma$ is a geodesic on the graph $z=f(x,y)$ of a smooth convex function $f$ defined on an open subset of the plane.
+Suppose that $\gamma(t)=(x(t),y(t),z(t))$
+Then $t\mapsto z(t)$ is a convex function; that is $z''(t)\ge 0$ for any $t$.
 \end{thm}
 
-If we draw a line parallel to the $z$-axis thru each point of $\gamma$, we get a surface which can be developed on the plane --- that is, it can be parametrized by a strip in the plane between parallel lines so that the length of all curves in the strip are preserved after the mapping.
-If we assume that the strip is oriented vertically on the plane  then the curve becomes a graph of a function and the theorem states that this function is concave.
-
 \parit{Proof.}
-Denote the graph by $\Sigma$.
-Choose a partition such that $\gamma|_{[t_{i-1},t_{i+1}]}$ is minimizing.
-If the function $z$ is convex on each interval $[t_{i-1},t_{i+1}]$, then it is convex on the entire interval.
-Therefore it is sufficient to prove the case when $\gamma\:[a,b]\to $ is a minimizing geodesic.
+Choose the orientation on the graph so that the unit normal vector $\nu$ always points up;
+that is, it has positive $z$-coordinate.
 
-Further, passing to a finer partition, we can assume that the projection of $\gamma$ to the $(x,y)$-plane lies completely in a closed disc $\Delta$ in the domain of definition of $f$;
-moreover the distance from  the projection of $\gamma$ to the boundary of the disc is much larger than the length of $\gamma$.
-In this case the curve lies in the boundary of a closed convex set 
-\[K=\set{(x,y,z)\in \RR^3}{(x,y)\in\Delta,\ z\le f(x,y)};\]
-so we can apply the lemma on closest point projection.
+Since $\gamma$ is a geodesic, we have $\gamma''(t)\perp\T_{\gamma(t)}$,
+or equivalently $\gamma''(t)$ is proportional to $\nu_{\gamma(t)}$ for any $t$.
+By \ref{prop:gamma''=II}, we have
+\[\langle \gamma''(t),\nu_{\gamma(t)}\rangle=\II_{\gamma(t)}(\gamma'(t),\gamma'(t));\]
+hence
+\[\gamma''(t)=\nu_{\gamma(t)}\cdot \II_{\gamma(t)}(\gamma'(t),\gamma'(t))\]
+for any $t$.
 
-\begin{figure}[h!]
-\centering
- \begin{lpic}[t(-2 mm),b(-0 mm),r(0 mm),l(0 mm)]{pics/liberman(1)}
-\lbl[t]{25,8;$t$}
-\lbl[r]{1,27;$z$}
-\lbl[r]{36,27;$z$}
-\lbl[bl]{55.5,3.5;$x$}
-\lbl[rb]{53,16;$y$}
-\lbl[br]{62,22;$\gamma$}
-\end{lpic}
-\end{figure}
+Therefore
+\[z''(t)=\cos(\theta_\gamma(t))\cdot\nu_{\gamma(t)}\cdot \II_{\gamma(t)}(\gamma'(t),\gamma'(t)),\eqlbl{eq:z''}\]
+where $\theta_\gamma(t)$ denotes the angle between $\nu_{\gamma(t)}$ and the $z$-axis.
 
-If the function $z$ is not concave, then there is another function $\check z\ge z$ with shorter graph such that $\check z(a)=z(a)$, $\check z(b)=z(b)$.
-Consider the curve $\check\gamma(t)=(x(t),y(t),\check z(t))$;
-$\check\gamma$ lies higher than $\gamma$ and therefore can be on the boundary or outside of $K$.
-The closest point projection of $\check \gamma$ to $K$ gives a curve connecting the endpoints of $\gamma$, by construction it runs in $\Sigma$, and by the lemma on closest point projection it is shorter than $\gamma$ --- a contradiction. 
+Since $\nu$ points up, we have $\theta_\gamma(t)<\tfrac\pi2$, or equivalently
+\[\cos(\theta_\gamma(t))>0\]
+for any $t$.
+ 
+Since $f$ is convex, we have that tangent plan supports the graph from below at any point;
+in particular $\II_{\gamma(t)}(\gamma'(t),\gamma'(t))\ge 0$.
+It follows that the right hand side in \ref{eq:z''} is nonnegative;
+whence the statement follows.
 \qeds
 
-\begin{wrapfigure}{o}{30 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-42}
-\vskip-0mm
-\end{wrapfigure}
-
 \begin{thm}{Exercise}
-Assume $\gamma$ is a minimizing geodesic on a smooth closed convex surface $\Sigma$ and $p$ in the interior of a convex set bounded by $\Sigma$.
-Consider the cone $C$ with the tip at $p$ and with ruling the half-lines passing thru the points of $\gamma$.
-Let us develop $C$ on the plane; the curve $\gamma$ becomes a plane curve $\tilde\gamma$ and the tip of the cone is mapped to a point~$\tilde p$.
-
-Show that $\tilde\gamma$ is convex toward to $\tilde p$; that is for any sufficiently small arc $\tilde x\tilde y$ of $\tilde\gamma$, the curvelinear triangle $\tilde p\tilde x\tilde y$ is convex. 
+Assume $\gamma$ is a unit-speed geodesic on a smooth convex surface $\Sigma$ and $p$ in the interior of a convex set bounded by $\Sigma$.
+Set $\rho(t)=|p-\gamma(t)|^2$.
+Show that $\rho''(t)\le 2$ for any $t$.
 \end{thm}
 
 
 
 \section*{Bound on total curvature}
-
-
-
 
 \begin{thm}{Theorem}\label{thm:usov}
 Assume $\Sigma$ is a graph $z=f(x,y)$ of a convex $\ell$-Lipschitz function $f$ defined on an open set in the $(x,y)$-plane.
@@ -444,27 +427,11 @@ The above theorem was proved by Vladimir Usov \cite{usov},
 later David Berg \cite{berg} pointed out that the same proof works for geodesics in closed epigraphs of $\ell$-Lipschitz functions which are not necessary concave; that is, sets of the type 
 \[W=\set{(x,y,z)\in\RR^3}{z\ge f(x,y)}\]
 
+Recall that $\tc\gamma$ denotes the total curvature of curve $\gamma$.
 
-
-
-
-
-\begin{thm}{Lemma}\label{lem:unit-speed} Assume $f\:[a,b]\to\RR$ is a smooth  function. 
-Let $(x(t),y(t))$ be a unit-speed parametrization of the graph $y=f(x)$.
-Then $f$ is concave if and only if the function $t\mapsto y(t)$ is concave.
-\end{thm}
-
-\parit{Proof.} 
-We can assume that the function $t\mapsto x(t)$ is increasing.
-
-Note that 
-\[y'(t)=\frac{f'(x(t))}{\sqrt{1+(f'(x(t)))^2}}.\]
-It follows that  $y'(t)$ is nonincreasing if and only if $f'(x)$ is nonincreasing, hence the result.
-\qeds
-
-\parit{Proof of \ref{thm:usov}.}
+\parit{Proof.}
 Let $\gamma(t)=(x(t),y(t),z(t))$ be a unit speed geodesic on $\Sigma$.
-According to Liberman's lemma and Lemma~\ref{lem:unit-speed},
+According to Liberman's lemma 
 $z(t)$ is concave.
 
 Since the slope of $f$ is at most $\ell$, we have
@@ -500,8 +467,8 @@ with a nonsimple geodesic $\gamma$ on its graph $z=f(x,y)$.
 \end{thm}
 
 \parit{Hint:} Use the theorem and \ref{ex:sef-intersection}.
-The suggested argument does not give the optimal bound the Lipschitz constant that guarantee that $\gamma$ is simple, but
-later we will give the exact bound. %+??? ref
+The suggested argument does not give the optimal bound for the Lipschitz constant that guarantee that $\gamma$ is simple, but
+later we will show that the exact bound is $\sqrt{3}=\tan\tfrac\pi3$ --- it is the same as in the case of cone; compare to \ref{ex:lasso}.  %+??? ref
 
 
 \begin{thm}{Advanced exercise} Suppose a smooth surface $\Sigma$ bounds a convex set $K$ in the Euclidean space.

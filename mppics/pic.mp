@@ -2665,4 +2665,77 @@ label.rt(btex $\gamma_1$ etex, z.a2);
 label.rt(btex $\gamma_2$ etex, z.b2);
 label(btex $\Pi$ etex, .5[z.b0,z.nu]);
 endfig;
+
+beginfig(81);
+save u;
+u:=1cm;
+
+z.a0=(-1,6)*u;
+z.a1=(0,0)*u;
+z.a2=(1,6)*u;
+
+save p; path p[];
+p0=z.a0{down}...z.a1{1,-.1}...z.a2{up};
+z.x1=point 1.3 of p0;
+z.xn=point 1.9 of p0;
+z.dots=point 1.6 of p0;
+z.q=point .8 of p0;
+z.Sigma=point .3 of p0;
+
+draw p0 pensemibold;
+
+draw z.a1--(x.a1,y.a0) dashed evenly;
+draw z.a1--z.x1;
+draw z.a1--z.xn;
+draw z.q--(x.q,y.a0) dashed evenly;
+drawarrow z.a1--(z.a1+(0,1)*u);
+
+dOt z.a1, z.xn, z.q, z.x1;
+
+label.bot(btex $p$ etex, z.a1);
+label.llft(btex $q$ etex, z.q);
+label.rt(btex $x_n$ etex, z.xn);
+label.rt(btex $x_1$ etex, z.x1);
+label.lft(btex $\Sigma$ etex, z.Sigma);
+label.rt(btex $R$ etex, (x.a1,y.Sigma));
+label.lft(btex $u$ etex,z.a1+(0,1)*u);
+label.rt(btex $\dots$ etex rotated angle(direction 1.6 of p0), z.dots);
+endfig;
+
+beginfig(82);
+save u;
+u:=1cm;
+
+z.a0=(-1,0)*u;
+z.a1=(1,0)*u;
+
+save p; path p[];
+p0=z.a0{.3,1}..z.a1{.3,-1}..cycle;
+
+hatchfill p0  withcolor (37, 1mm, -.5bp);
+draw p0;
+
+z.p=point .2 of p0;
+z.q=point .9 of p0;
+z.Sigma=point 1.1 of p0;
+z.s=(0,1.5)*u;
+z.a=(-.8,1.2)*u;
+z.b=(.9,1.3)*u;
+
+p1=z.p..z.a..z.s..z.b..z.q;
+
+draw ddline(z.a,z.b)(.2,.5);
+draw p1 pensemibold;
+
+dOt z.p,z.q,z.s,z.a,z.b;
+
+whitelabel.lrt(btex $p$ etex, z.p);
+whitelabel.llft(btex $q$ etex, z.q);
+label.ulft(btex $a$ etex, z.a);
+label.urt(btex $b$ etex, z.b);
+label.top(btex $s$ etex, z.s);
+label.rt(btex $\Sigma$ etex, z.Sigma);
+label.bot(btex $\Pi$ etex, 1.5[z.a,z.b]);
+whitelabel(btex $R$ etex, (0,-.5)*u);
+endfig;
 end
