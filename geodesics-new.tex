@@ -42,12 +42,23 @@ and it might many of them;
 this is shown in the following two examples.
 However if we write $[p,q]_\Sigma$, then we assume that a shortest path exists and we made a choice of one of them.
 
-\parbf{Nonuniqueness.} There plenty of shortest paths between the poles on the sphere --- each meridian is a shortest path.
+\begin{wrapfigure}{r}{28 mm}
+\vskip-4mm
+\centering
+\includegraphics{asy/sphere}
+\vskip-3mm
+\end{wrapfigure}
 
-%+PIC???
+\parbf{Nonuniqueness.} There plenty of shortest paths between the poles on the sphere --- each meridian is a shortest path.
 
 \parbf{Nonexistence.} Let $\Sigma$ be the $(x,y)$-plane with removed origin.
 Consider two points $p=(1,0,0)$ and $q=(-1,0,0)$ in $\Sigma$.
+
+Note that $|p-q|_\Sigma=2$. 
+Indeed, given $\eps\z>0$, consider the point $s_\eps=(0,\eps,0)$.
+Note that the polygonal path $ps_\eps q$ lies in $\Sigma$ and its length $2\cdot\sqrt{1+\eps^2}$ approaches $2$ as $\eps\to0$.
+It follows that $|p-q|_\Sigma\le 2$.
+On the other hand $|p-q|_\Sigma\ge |p-q|_{\RR^3}=2$; that is, $|p-q|_\Sigma= 2$.
 
 \begin{wrapfigure}{r}{28 mm}
 \vskip-0mm
@@ -55,12 +66,6 @@ Consider two points $p=(1,0,0)$ and $q=(-1,0,0)$ in $\Sigma$.
 \includegraphics{mppics/pic-79}
 \vskip-0mm
 \end{wrapfigure}
-
-Note that $|p-q|_\Sigma=2$. 
-Indeed, given $\eps\z>0$, consider the point $s_\eps=(0,\eps,0)$.
-Note that the polygonal path $ps_\eps q$ lies in $\Sigma$ and its length $2\cdot\sqrt{1+\eps^2}$ approaches $2$ as $\eps\to0$.
-It follows that $|p-q|_\Sigma\le 2$.
-On the other hand $|p-q|_\Sigma\ge |p-q|_{\RR^3}=2$; that is, $|p-q|_\Sigma= 2$.
 
 Therefore a shortest path from $p$ to $q$ (if it exists) must have length 2.
 By triangle inequality any curve of length 2 from $p$ to $q$ must run along the line segment $[p,q]$;
@@ -552,7 +557,7 @@ Then the total curvatures of any shortest path in $\Sigma$ can be bounded in ter
 \end{thm}
 
 \begin{wrapfigure}{o}{48 mm}
-\vskip-0mm
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-83}
 \vskip-0mm

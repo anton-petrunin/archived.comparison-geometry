@@ -2759,10 +2759,10 @@ z.Sigma=point 1.5 of p1;
 labelarcsprof(2*z.p, z.p, z.nu, 12,12, btex {$\theta_p$} etex);
 mark_rt_angle(z.nu, z.p, z.p + unitvector(direction t of p1 rotated 180)*u);
 
-draw p0;
+draw p0 dashed evenly;
 draw p1 pensemibold;
-draw p2;
-draw ddline(origin,z.p)(0,1) dashed evenly;
+draw p2 dashed evenly;
+draw ddline(origin,z.p)(0,.65) dashed evenly;
 
 drawarrow z.p--z.nu;
 
