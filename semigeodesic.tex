@@ -1,0 +1,83 @@
+\chapter{Semieodesic coordinates}
+
+\section*{Semigeodesic map}
+
+Let $(u,v)\mapsto s(u,v)$ be a smooth map from a rectangle $(a,b)\times(c,d)$ to a smooth surface $\Sigma$.
+If the first coordinate lines $u\mapsto s(u,v)$ are unit-speed geodesics in $\Sigma$, then the map $s$ is called semigeodesic.
+One might think that $v$ is the parameter in a family of unit-speed geodesics $\gamma_v:u\mapsto s(u,v)$.
+
+\begin{thm}{Proposition}
+Let $(u,v)\mapsto s(u,v)$ be a semigedesic map to a smooth surface.
+Then the value $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle$ does not depend on $u$.
+
+In particular,
+if for some fixed $u_0$ the point $s(u_0,v)$ does not depend on $v$, 
+then $\tfrac{\partial s}{\partial u}\perp \tfrac{\partial s}{\partial v}$ for all $u$ and $v$.
+
+\end{thm}
+
+\parit{Proof.}
+Fix $v$; we need to show that 
+\[\tfrac{\partial}{\partial u}\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle=0.\]
+
+Since $u\to s(u,v)$ is a unit-speed curve we have $|\tfrac{\partial s}{\partial u}|=1$,
+or equivalently,
+\[\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial u}\rangle=1.\]
+Therefore
+\begin{align*}
+0
+&=\tfrac{\partial}{\partial v}\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial u}\rangle=
+\\
+&=2\cdot\langle\tfrac{\partial s}{\partial u},\tfrac{\partial^2 s}{\partial u\partial v}\rangle.
+\end{align*}
+In particular,
+\[\langle\tfrac{\partial s}{\partial u},\tfrac{\partial^2 s}{\partial u\partial v}\rangle=0.\]
+
+Further the equation for geodesic for $u\to s(u,v)$ implies that $\tfrac{\partial^2 s}{\partial u^2}(u,v)$ is perpendicular to the tangent plane $T_{s(u,v)}$.
+Since $\tfrac{\partial s}{\partial u}(u,v)$ and $\tfrac{\partial s}{\partial v}(u,v)$ are tangent vectors at $s(u,v)$, we have the following two identities:
+\begin{align*}
+\langle\tfrac{\partial^2 s}{\partial u^2},\tfrac{\partial s}{\partial u}\rangle&=0,
+\\
+\langle\tfrac{\partial^2 s}{\partial u^2},\tfrac{\partial s}{\partial v}\rangle&=0.
+\end{align*}
+
+Therefore
+\begin{align*}
+\tfrac{\partial}{\partial u}\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle
+&=\langle\tfrac{\partial^2 s}{\partial u^2},\tfrac{\partial s}{\partial v}\rangle
++
+\langle\tfrac{\partial s}{\partial u},\tfrac{\partial^2 s}{\partial u\partial v}\rangle=
+\\
+&=0;
+\end{align*}
+that is, for fixed $v$, the value $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle$ is constant.
+
+If $v\mapsto s(u_0,v)$ is constant, then $\tfrac{\partial s}{\partial u}(u_0,v)=0$.
+In particular $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle(u_0,v)=0$ for any $v$.
+Since $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle$ does not depend on $u$, we have that $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle(u,v)=0$, or equivalently
+$\tfrac{\partial s}{\partial u}\perp \tfrac{\partial s}{\partial v}$ for any $u$ and~$v$.
+\qeds
+
+\section*{Polar coordinates}
+
+Fix a point $p$ in a smooth oriented surface $\Sigma$ and a unit tangent vector $u\in\T_p$.
+Let us construct an analog of polar coordinates in a neighborhood of $p$.
+
+Fix a pair or real numbers $(\theta,\rho)$.
+Denote by $w$ the counterclockwise rotation of $u$ by angle $\theta$ and let $\gamma_\theta$ be the unit-speed geodesic that runs from $p$ in the direction $w$.
+Further set $s(\theta,\rho)=\gamma_\theta(\rho)$.
+
+Note that the function $s\:\RR\times \RR\to \Sigma$ could be also defined as 
+\[s(\theta,\rho)=\exp_p\tilde s(\theta,\rho),\]
+where $\tilde s(\theta,\rho)$ denotes the vector in $\T_p$ with polar coordinates $(\theta,\rho)$, if one takes the axis in the direction of $u$.
+By ???, it follows that there is $\eps>$ such that $s(\theta,\rho)$ is defined if $|\rho|<\eps$;
+moreover, if $|\rho_i|<\eps$, then $s(\theta_1,\rho_1)=s(\theta_2,\rho_2)$ if and only if $\rho_1=\rho_2=0$ or $\theta_1=\theta_2+\pi\cdot n$ and $\rho_1=(-1)^n\cdot \rho_2$ for some integer $n$;
+that is, in the strip described by the inequality $|\rho|<\eps$ the polar coordinates on $\Sigma$ behave as usual polar coordinates.
+
+Consider the polar coordinates $(\theta,\rho)$ in the tangent plane $\T_p$.
+Recall that the polar coordinates of a a point are not uniquely defined;
+first of all the origin has can be described by coordinates $(\theta,0)$ for any $\theta$ and also 
+the coordinates $(\theta,r)$, $(\theta\pm\pi,-r)$, $(\theta\pm2\cdot \pi,r),\dots$ describe the same point for all real pairs $(\theta,r)$.
+
+Let us use the exponential map to transfer the polar coordinates to the surface.
+That is, a point has polar coordinates $(r,\theta)$ is 

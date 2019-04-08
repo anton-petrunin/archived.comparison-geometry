@@ -84,14 +84,15 @@ By the definition of induced length metric,
 there is a sequence of paths $\gamma_n$ from $p$ to $q$ in $\Sigma$ such that
 \[\length\gamma_n\to \ell\quad\text{as}\quad n\to \infty.\]
 
-Without loss of generality, we may assume that $\length\gamma_n<\ell+1$ for any $n$ and each $\gamma_n$ is parameterized proportional to its arclength.
+Without loss of generality, we may assume that $\length\gamma_n<\ell+1$ for any $n$ and each $\gamma_n$ is parameterized proportional to its arc length.
 In particular each path $\gamma_n\:[0,1]\to\Sigma$ is $(\ell+1)$-Lipschitz; 
 that is,
 \[|\gamma(t_0)-\gamma(t_1)|\le (\ell+1)\cdot|t_0-t_1|\]
 for any $t_0,t_1\in[0,1]$.
 Further the image of $\gamma_n$ lies in the closed ball $\bar B[p,\ell+1]$ for any $n$.
-It follows that $\gamma_n$ is a uniformly continuous sequence of curves with image in a compact set.
-Whence we can pass to a a converging subsequence of $\gamma_n$; denote by $\gamma_\infty\:[0,1]\to\RR^3$ its limit.
+It follows that the coordinate functions of $\gamma_n$ are uniformly equicontinuous and uniformly bounded.
+By \ref{lem:equicontinuous}, we can pass to a converging subsequence of $\gamma_n$;
+denote by $\gamma_\infty\:[0,1]\to\RR^3$ its limit.
 As a limit of uniformly continuous sequence, $\gamma_\infty$ is continuous;
 that is, $\gamma_\infty$ is a path.
 Evidently $\gamma_\infty$ runs from $p$ to $q$.
@@ -403,9 +404,9 @@ $q=\exp_pv=\exp_pw$.
 But according to \ref{prop:exp}, the exponential map is injective in $\eps$-neighborhood of zero --- a contradiction.\qeds
 
 \begin{thm}{Exercise}\label{ex:two-min-geod}
-Show that two shortest paths in a smooth surface  can not have more than one point of intersections.
+Show that two shortest paths all 4 ends of which are distinct can not have more than one point of intersections.
 
-Show by example that a geodesics can cross each other arbitrary number of times.
+Show by example that distinct geodesics can cross each other arbitrary number of times.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:min-geod+plane}
@@ -435,10 +436,12 @@ where $\gamma'(t)$ denotes the velocity vector of $\gamma$ at $t$.
 
 Show that for any $t\in (0,\ell)$,
 one {}\emph{cannot see}  $q$ from $p_t$;
-that is, the line segment $[p_t,q]$ intersects $\Sigma$ at a point distinct from $q$.%
+that is, the line segment $[p_t,q]$ intersects $\Sigma$ at a point distinct from $q$.
+
+Show that the statement is does not hold if $\gamma$ fails to me minimizing.
 \end{thm}
 
-\parit{Hint:} Show that the concatenation of the line segment $[p_t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path in the closed set $W$ outside of $\Sigma$.
+\parit{Hint:} Show that the concatenation of the line segment $[p_t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path in the closed region $W$ outside of $\Sigma$.
 
 }
 
