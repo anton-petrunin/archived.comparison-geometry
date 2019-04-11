@@ -6,7 +6,7 @@ Let $(u,v)\mapsto s(u,v)$ be a smooth map from a rectangle $(a,b)\times(c,d)$ to
 If the first coordinate lines $u\mapsto s(u,v)$ are unit-speed geodesics in $\Sigma$, then the map $s$ is called semigeodesic.
 One might think that $v$ is the parameter in a family of unit-speed geodesics $\gamma_v:u\mapsto s(u,v)$.
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition}\label{prop:semigeodesic}
 Let $(u,v)\mapsto s(u,v)$ be a semigedesic map to a smooth surface.
 Then the value $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle$ does not depend on $u$.
 
@@ -81,3 +81,38 @@ the coordinates $(\theta,r)$, $(\theta\pm\pi,-r)$, $(\theta\pm2\cdot \pi,r),\dot
 
 Let us use the exponential map to transfer the polar coordinates to the surface.
 That is, a point has polar coordinates $(r,\theta)$ is 
+
+\begin{thm}{Proposition}
+For any point $p$ in a smooth surface $\Sigma$ there is a positive function $\eps$
+such that any geodesic of length less than $\eps$ that starts at $p$ is a shortest path.  
+\end{thm}
+
+\parit{Proof.} Let $\eps$ be as in ???.
+Consider a curve $\alpha$ with arc length parameter in $\Sigma$ that starts at $p$.
+Assume $\length\alpha<\eps$.
+
+Consider the polar coordinates $(\theta,\rho)\mapsto s(\theta,\rho)$ at $p$.
+Note that the polar coordinates at $p$ satisfy the conditions in \ref{prop:semigeodesic}.
+In particular
+\[\tfrac{\partial s}{\partial\theta}\perp\tfrac{\partial s}{\partial\rho}.\eqlbl{eq:perp-partial}\]
+
+Let us reqrite $\alpha$ in the polar coordinates 
+\[\alpha(t)=s(\theta(t),\rho(t)).\]
+Applying the chain rule, we get 
+\[\alpha'=\tfrac{\partial s}{\partial\theta}\cdot\theta'+\tfrac{\partial s}{\partial\rho}\cdot\rho'.\]
+By \ref{eq:perp-partial}, 
+\[|\alpha'|\ge \tfrac{\partial s}{\partial\rho}\cdot\rho'\]
+and the equality holds if and only if $\theta'=0$ and $\rho'\ge 0$.
+Taking the integral, we get 
+\[\length(\alpha|_{[0,t]}\ge\rho(t)\]
+for any $t>0$ and the equality holds only if $\alpha$ always runs in a radial direction in the polar coordinates.
+
+It follows that 
+\[|p-s(\theta,\rho)|_\Sigma\ge |\rho|\]
+for any point $s(\theta,\rho)$ in the ???.
+On the other hand the geodesic $t\mapsto s(\theta,t)$ for $t\in[0,\rho]$ has length $\rho$ and therefore 
+\[|p-s(\theta,\rho)|_\Sigma\le |\rho|\]
+It follows that 
+
+
+

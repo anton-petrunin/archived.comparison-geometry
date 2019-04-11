@@ -38,7 +38,7 @@ A path $\gamma$ from $p$ to $q$ in $\Sigma$ that minimize the length is called a
 
 The image of a shortest path between $p$ and $q$ in $\Sigma$ is usually denoted by $[p,q]_\Sigma$.
 In general there might be no shortest path between two given points on the surface
-and it might many of them;
+and it might be many of them;
 this is shown in the following two examples.
 However if we write $[p,q]_\Sigma$, then we assume that a shortest path exists and we made a choice of one of them.
 
@@ -268,6 +268,13 @@ Suppose that $\Sigma$ and $\Pi$ intersect along a curve $\gamma$.
 Show that $\gamma$ is a geodesic of $\Sigma$.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:helix=geodesic}
+Show that the helix 
+\[\gamma(t)=(\cos t,\sin t, a\cdot t)\]
+is a geodesic on the cylindrical surface described by the equation $x^2+y^2=1$.
+\end{thm}
+
+
 \begin{thm}{Lemma}\label{lem:constant-speed}
 Any geodesic $\gamma$ has constant speed; that is $|\gamma'(t)|$ is constant.
 \end{thm}
@@ -304,7 +311,7 @@ $\gamma''(t)=\II_{\gamma(t)}(\gamma'(t),\gamma'(t))$.
 
 The part (\ref{prop:geod-existance:whole}) follows from \ref{lem:constant-speed}.
 Indeed by \ref{thm:ODE}, if the maximal interval is not whole real line, then the curve $\gamma$ must escape to infinity. %???
-But the later is impossible since $\gamma$ runs with constant speed.
+But the latter is impossible since $\gamma$ runs with constant speed.
 \qeds
 
 \section*{Exponential map}
@@ -366,7 +373,7 @@ A geodesic might not form a shortest path, but if this is the case, then it is c
 Note that according to the claim, any shortest path is a reparametrization of a minimizing geodesic.
 
 This claim provides connection between intrinsic geometry of the surface and its extrinsic geometry.
-This connection will be important latter; in particular it will play the key role in the proof of the so called remarkable theorem. %???+ref(see \ref{thm:remarkable}).
+This connection will be important later; in particular it will play the key role in the proof of the so called remarkable theorem. %???+ref(see \ref{thm:remarkable}).
 
 Intrinsic means that it can be expressed in terms of measuring things inside the surface, for example length of curves or angles between the curves that lie in the surface.
 Extrinsic means that we have to use ambient space in order to measure it.
@@ -404,7 +411,8 @@ $q=\exp_pv=\exp_pw$.
 But according to \ref{prop:exp}, the exponential map is injective in $\eps$-neighborhood of zero --- a contradiction.\qeds
 
 \begin{thm}{Exercise}\label{ex:two-min-geod}
-Show that two shortest paths all 4 ends of which are distinct can not have more than one point of intersections.
+Show that two shortest paths can cross each other at most once.
+More precisely, if two shortest paths have two distinct common points $p$ and $q$ then either these points are the ends of both shortest paths or both shortest paths contain an arc from $p$ to $q$.
 
 Show by example that distinct geodesics can cross each other arbitrary number of times.
 \end{thm}
@@ -509,22 +517,22 @@ Since the slope of $f$ is at most $\ell$, we have
 \[|z'(t)|\le \tfrac{\ell}{\sqrt{1+\ell^2}}.\]
 If $\gamma$ is defined on the interval $[a,b]$, then
 \begin{align*}
-\int_a^b |z''(t)|&=z'(a)-z'(b)\le 
+\int_a^b z''(t)&=z'(b)-z'(a)\le 
 \\
 &\le 2\cdot \tfrac{\ell}{\sqrt{1+\ell^2}}.
 \end{align*}
 
 Further, note that $z''$ is the projection of $\gamma''$ to the $z$-axis.
-Since $f$ is $\ell$-Lipschitz, the tangent plane $T_{\gamma (t)} \Sigma$ cannot have slope greater than $\ell$ for any $t$.
+Since $f$ is $\ell$-Lipschitz, the tangent plane $\T_{\gamma (t)} \Sigma$ cannot have slope greater than $\ell$ for any $t$.
 Because $\gamma ''$ is perpendicular to that plane, 
-\[|\gamma'' (t)|  \le \sqrt{1+ \ell ^2} \cdot|z''(t)| .\]
+\[|\gamma'' (t)|  \le  z''(t)\cdot\sqrt{1+ \ell ^2}.\]
 
 Recall that $\tc\gamma$ denotes the total curvature of curve $\gamma$.
 It follows that 
 \begin{align*}
 \tc\gamma&=\int_a^b|\gamma'' (t)|\cdot dt\le 
 \\
-&\le \sqrt{1+ \ell ^2}\cdot  \int_a^b |z''(t)|\cdot dt\le 
+&\le \sqrt{1+ \ell ^2}\cdot  \int_a^b z''(t)\cdot dt\le 
 \\
 &\le 2\cdot \ell.
 \end{align*}
@@ -568,7 +576,7 @@ Then the total curvatures of any shortest path in $\Sigma$ can be bounded in ter
 
 The following exercise will guide you thru the proof of the theorem. 
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:bound-tc}
 Let $\Sigma$ be as in the theorem and $\gamma$ be a unit-speed shortest path in $\Sigma$.
 Denote by $\nu_p$ the unit normal vector that points outside of $\Sigma$;
 denote by $\theta_p$ the angle between $\nu_p$ and the direction from the origin to a point $p\in\Sigma$.

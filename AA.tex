@@ -1,3 +1,16 @@
+According to \ref{ex:differential-range}, the shape operator takes a tangent vector at $p$ and spits a tangent vector to $\SS^2$ at $\nu_p$.
+Note that $\nu_p$ is the normal vector to $\SS^2$ at $\nu_p$.
+In other words the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\nu_p}\SS^2$,
+or $\T_p\Sigma=\T_{\nu_p}\SS^2$, if we consider the tangent planes as linear spaces. 
+
+
+
+
+
+
+
+
+
 
 
 
@@ -197,133 +210,6 @@ By \ref{cor:surf-support}, $K(p)_\Sigma\ge0$ --- a contradiction.
 
 
 
-\section*{Shape operator}
-
-Suppose $\Sigma$ is an oriented surface with the unit normal field $\nu$.
-Fix a point $p\in \Sigma$ and a tangent vector $v\in \T_p\Sigma$.
-Assume $\gamma_0$ ia a smooth curve in $\Sigma$ such that $p=\gamma_0(t_0)$ and $v=\gamma'_0(t_0)$ for some $t_0$;
-that is, $\gamma_0$ is passing thru $p$ with the velocity vector $v$.
-The shape operator of $v$ at $p$ is defined as 
-\[S_p(v)=-(\nu\circ\gamma_0)'(t_0).\eqlbl{eq:shape}\]
-
-Note that the value $S(v)$ does not depend on the choice of $\gamma$;
-that is, if $\gamma_1$ is another curve in $\Sigma$ such that $\gamma(t_1)=p$ and $\gamma'_1(t_1)=v$,
-then 
-\[(\nu\circ\gamma_0)'(t_0)=(\nu\circ\gamma_1)'(t_1).\eqlbl{eq:nu'=nu'}\]
-Indeed, $v=\gamma'_1(t_1)=\gamma'_0(t_0)$, therefore 
-\[|\gamma_1(t_1+\eps)-\gamma_0(t_0+\eps)|=o(\eps).\]
-Since $\nu$ is a smooth vector field,
-\[|\nu\circ\gamma_1(t_1+\eps)-\nu\circ\gamma_0(t_0+\eps)|=o(\eps);\]
-whence \ref{eq:nu'=nu'} follows.
-
-
-\begin{thm}{Proposition}
-Suppose $\Sigma$ is an oriented surface.
-Then for any $p\in \Sigma$ and any $v\in \T_p$ we have that $S_p(v)\in\T_p$.
-Moreover 
-\[\langle S_p(v),w\rangle=\langle S_p(w),v\rangle=\II_p(v,w)\]
-for any $v,w\in \T_p$.
-\end{thm}
-
-\parit{Proof.}
-Assume an oriented surface $\Sigma$ is written locally as a graph $z\z=f(x,y)$ in the tangent-normal coordinates at $p\in\Sigma$.
-As usual we assume that the normal vector $\nu_p$ points in the direction of $z$-axis,
-in this case the normal vector at any point of the graph points up; that is, its $z$-coordinate  is positive.
-
-Consider the corresponding chart  of $\Sigma$:
-\[s(x,y)\z=(x,y,f(x,y)).\]
-Denote by $\nu(x,y)$ the unit normal vector at $s(x,y)$.
-
-Note that for a tangent vector $v=(a,b,0)\in \T_p$ we have that
-\[
-\begin{aligned}
-S_p(v)&=-D_v\nu(0,0)=
-\\
-&=-(a\cdot \tfrac{\partial \nu}{\partial x}+b\cdot \tfrac{\partial \nu}{\partial y})(0,0),
-\end{aligned}
-\eqlbl{eq:S=D}
-\]
-where $D_v$ denotes the directional derivative along a vector $v$ in the $(x,y)$-plane which is $\T_p$.
-
-Indeed, the first equality follows from \ref{eq:shape} applied for the curve $\gamma(t)=(a\cdot t,b\cdot t, f(a\cdot t,b\cdot t))$ at $t=0$ and the second follow from the chain rule.
-
-Taking partial derivatives of $\langle\nu,\nu\rangle=1$, we get that 
-\[\langle\tfrac{\partial\nu}{\partial x},\nu\rangle=\langle\tfrac{\partial\nu}{\partial x},\nu\rangle=0\]
-By \ref{eq:S=D} it follows that $S_p(v)\perp \nu_p$, or equivalently $S_p(v)\in\T_p$.
-
-Further, since $\tfrac{\partial s}{\partial x}, \tfrac{\partial s}{\partial y}\in\T_{s(x,y)}\Sigma$
-and $\nu(x,y)\perp\T_{s(x,y)}\Sigma$,
-we have that
-\[\langle \nu,\tfrac{\partial s}{\partial x}\rangle\equiv 0
-\quad\text{and}\quad
-\langle \nu,\tfrac{\partial s}{\partial y}\rangle\equiv 0.\]
-Taking a derivative of these identities, we get that
-\[\begin{aligned}
-\langle \tfrac{\partial\nu}{\partial x},\tfrac{\partial s}{\partial x}\rangle+\langle \nu,\tfrac{\partial^2 s}{\partial x^2}\rangle&\equiv 0,
-\\
-\langle \tfrac{\partial\nu}{\partial y},\tfrac{\partial s}{\partial x}\rangle+\langle \nu,\tfrac{\partial^2 s}{\partial y\partial x}\rangle&\equiv 0,
-\\
-\langle \tfrac{\partial\nu}{\partial x},\tfrac{\partial s}{\partial y}\rangle+\langle \nu,\tfrac{\partial^2 s}{\partial x\partial y}\rangle&\equiv 0,
-\\
-\langle \tfrac{\partial\nu}{\partial y},\tfrac{\partial s}{\partial y}\rangle+\langle \nu,\tfrac{\partial^2 s}{\partial y^2}\rangle&\equiv 0,
-\end{aligned}
-\eqlbl{eq:shape=second}
-\]
-
-Fix two vectors $v=(a,b,0)$ and $w=(c,d,0)$ in $\T_p$ (which is the $(x,y)$-plane).
-Since $\nu(0,0)=(0,0,1)$ we get $f(x,y)\equiv\langle\nu(0,0),s(x,y)\rangle$.
-Therefore by \ref{eq:S=D}, \ref{eq:shape=second} and \ref{eq:DwDv} we get that 
-\begin{align*}
-\langle S_p(v),w\rangle 
-&=-\langle  a\cdot \tfrac{\partial \nu}{\partial x}+b\cdot \tfrac{\partial \nu}{\partial y},c\cdot \tfrac{\partial s}{\partial x}+d\cdot \tfrac{\partial s}{\partial y}\rangle(0,0)=
-\\
-&=-\bigl(a\cdot c\cdot\langle \tfrac{\partial \nu}{\partial x},\tfrac{\partial s}{\partial x}\rangle 
-+a\cdot d\cdot\langle \tfrac{\partial \nu}{\partial x},\tfrac{\partial s}{\partial y}\rangle+
-\\&\quad
-+b\cdot c\cdot\langle \tfrac{\partial \nu}{\partial y},\tfrac{\partial s}{\partial x}\rangle
-+b\cdot d\cdot\langle \tfrac{\partial \nu}{\partial y},\tfrac{\partial s}{\partial y}\rangle\bigr)(0,0)=
-\\
-&=\bigl(a\cdot c\cdot\langle \nu,\tfrac{\partial^2 s}{\partial x^2}\rangle 
-+a\cdot d\cdot\langle \nu,\tfrac{\partial^2 s}{\partial x\partial y}\rangle+
-\\&\quad
-+b\cdot c\cdot\langle \nu,\tfrac{\partial^2 s}{\partial y\partial x}\rangle
-+b\cdot d\cdot\langle \nu,\tfrac{\partial^2 s}{\partial y^2}\rangle\bigr)(0,0)=
-\\
-&=\bigl(a\cdot c\cdot\tfrac{\partial^2 f}{\partial x^2} 
-+a\cdot d\cdot\tfrac{\partial^2 f}{\partial x\partial y}+
-\\&\quad
-+b\cdot c\cdot\tfrac{\partial^2 f}{\partial y\partial x}
-+b\cdot d\cdot\tfrac{\partial^2 f}{\partial y^2}\bigr)(0,0)=
-\\
-&=\II_p(v,w).
-\end{align*}
-It remains to apply \ref{eq:II=II}.
-\qeds
-
-\begin{thm}{Exercise}
-Let $\Sigma$ be a smooth oriented surface and $p\in \Sigma$.
-Show that a nonzero tangent vector $v\in \T_p$ points in a principle direction
-if and only if $S(v)$ is parallel to $v$ and if so, then the unique coefficient $k$ such that
-$S(v)=k\cdot v$ is the principle curvature in this direction.
-\end{thm}
-
-
-\begin{thm}{Exercise}\label{ex:normal-curvature=const}
-Let $\Sigma$ be a smooth oriented surface with the unit normal field $\nu$.
-Suppose that $\Sigma$ has unit normal curvature at any point in any direction.
-\begin{enumerate}[(a)]
- \item Show that $S_p(w)=w$ for any $p\in\Sigma$ and $w\in \T_p\Sigma$.
- \item Show that $p+\nu_p$ is constant; that is the value $o=p+\nu_p$ does not depend on $p\in\Sigma$.
- Conclude that $\Sigma$ is a part of the unit sphere centered at $o$.
-\end{enumerate}
-
-\end{thm}
-
-
-\begin{thm}{Exercise}
-Assume $\Sigma_1$ and $\Sigma_2$ intersect at constant angle along a smooth regular curve $\gamma$.
-Show that if $\gamma$ is a curvature line in $\Sigma_1$ then it is also a curvature line in $\Sigma_2$ 
-\end{thm}
 
 
 
