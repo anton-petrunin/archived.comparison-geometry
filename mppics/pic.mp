@@ -1575,13 +1575,14 @@ save u;
 u:=1cm;
 
 z.v=(.8,1)*u;
+z.vw=(1.6,1.8)*u;
 z.w=(2,3)*u;
 
-labelarcs(z.v,z.w, (3,1)*u, 9, btex $\beta$ etex);
-labelarcs(z.v,z.w, (-1,2)*u, 10, btex $\alpha$ etex);
+labelarcs2(z.vw,z.w, (3,1)*u, 9, btex $\beta$ etex);
+labelarcs(z.vw,z.w, (-1,2)*u, 10, btex $\alpha$ etex);
 
 draw (0,0)*u--(-1,2)*u--z.w--(3,1)*u--(2.8,.2)*u--(1.2,-.1)*u--z.v--cycle;
-draw z.v--z.w;
+draw z.v--z.vw--z.w;
 
 dOt z.v,z.w;
 
@@ -2078,7 +2079,7 @@ endfig;
 beginfig(61);
 save u, n;
 u:=.1cm;
-n=30;
+n:=30;
 
 z.a=(1,0)*u;
 z.b=z.a rotated 180/n;
@@ -2771,5 +2772,34 @@ dOt origin,z.p;
 label.llft(btex $p$ etex, z.p);
 label.urt(btex $\nu$ etex, z.nu);
 label.top(btex $\Sigma$ etex, z.Sigma);
+endfig;
+
+beginfig(84);
+save u, n, m;
+u:=.2cm;
+n:=30;
+m:=10;
+
+z.a=(1,0)*u;
+z.b=z.a rotated 180/n;
+x.r=abs(z.a-z.b)/2.6;
+y.r=3*u;
+
+draw
+for i=0 
+upto n-1:
+(z.a rotated (i*360/n) + (y.r+i*x.r)*unitvector(z.a rotated ((i-1)*360/n)-z.a rotated (i*360/n)))..
+endfor
+(z.a rotated (n*360/n) + (y.r+n*x.r)*unitvector(z.a rotated ((n-1)*360/n)-z.a rotated (n*360/n)))
+;
+
+draw circle(z.a rotated (m*360/n),y.r+m*x.r) pensemibold;
+draw z.a rotated (m*360/n)--(z.a rotated (m*360/n) + (y.r+m*x.r)*unitvector(z.a rotated ((m-1)*360/n)-z.a rotated (m*360/n)));
+dOt z.a rotated (m*360/n), (z.a rotated (m*360/n) + (y.r+m*x.r)*unitvector(z.a rotated ((m-1)*360/n)-z.a rotated (m*360/n)));
+
+label.urt(btex $\gamma(s)$ etex, (z.a rotated (m*360/n) + (y.r+m*x.r)*unitvector(z.a rotated ((m-1)*360/n)-z.a rotated (m*360/n))));
+label.llft(btex $z(s)$ etex, z.a rotated (m*360/n));
+
+label.top(btex $r(s)$ etex rotated angle(z.a rotated ((m-1)*360/n)-z.a rotated (m*360/n)), .5[z.a rotated (m*360/n), (z.a rotated (m*360/n) + (y.r+m*x.r)*unitvector(z.a rotated ((m-1)*360/n)-z.a rotated (m*360/n)))]+(-1,-2));
 endfig;
 end

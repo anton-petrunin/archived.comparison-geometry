@@ -4,8 +4,6 @@ We start to study the intrinsic geometry of surfaces.
 The following exercise should help you to be in the right mood for this;
 it might look like a tedious problem in calculus, but actually it is an easy problem in geometry.
 
-%???angle of inclination
-
 \begin{wrapfigure}{r}{33 mm}
 \vskip-0mm
 \centering
@@ -72,7 +70,7 @@ By triangle inequality any curve of length 2 from $p$ to $q$ must run along the 
 in particular it must pass thru the origin.
 Since the origin does not lie in $\Sigma$, there is no shortest from $p$ to $q$ in $\Sigma$ 
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition}\label{prop:shortest-paths-exist}
 Any two points in a complete smooth surface can be joined by a shortest path. 
 \end{thm}
 
@@ -173,7 +171,7 @@ In particular
 \[|p-q|\ge |\bar p-\bar q|.\]
 \qedsf
 
-\begin{thm}{Corollary}
+\begin{thm}{Corollary}\label{cor:shorts+convex}
 Assume a surface $\Sigma$ bounds a closed convex region $R$ and  $p,q \in \Sigma$.
 Denote by $W$ the outer closed region of $\Sigma$; in other words $W$ is the union of $\Sigma$ and the complement of $R$.
 Then for any curve $\gamma$ in $W$ that runs from $p$ to $q$ we have
@@ -274,6 +272,12 @@ Show that the helix
 is a geodesic on the cylindrical surface described by the equation $x^2+y^2=1$.
 \end{thm}
 
+Recall that asymptotic line is defined on page~\pageref{page:asymptotic line}.
+
+\begin{thm}{Exercise}\label{ex:asymptotic-geodesic}
+Show that if a curve that is a geodesic and an asymptotic line on a smooth surface,
+then the curve is a line segment.
+\end{thm}
 
 \begin{thm}{Lemma}\label{lem:constant-speed}
 Any geodesic $\gamma$ has constant speed; that is $|\gamma'(t)|$ is constant.
@@ -561,7 +565,7 @@ with a nonsimple geodesic $\gamma$ on its graph $z=f(x,y)$.
 The suggested argument does not give the optimal bound for the Lipschitz constant that guarantee that $\gamma$ is simple, but
 later we will show that the exact bound is $\sqrt{3}=\tan\tfrac\pi3$ --- it is the same as in the case of cone; compare to \ref{ex:lasso}.  %+??? ref
 
-\begin{thm}{Theorem}
+\begin{thm}{Theorem}\label{thm:tc-of-mingeod}
 Suppose a smooth surface $\Sigma$ bounds a convex set $K$ in the Euclidean space.
 Assume $B(0,\eps)\subset K\subset B(0,1)$.
 Then the total curvatures of any shortest path in $\Sigma$ can be bounded in terms of~$\eps$. 

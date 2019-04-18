@@ -61,17 +61,60 @@ then we say that $0$ is a regular value of $\bm{f}$.
 The following lemma states that most of the values of smooth map are regular;
 in particular generic smooth function satisfies the assumption of the theorem.
 
-\begin{thm}{Sard's lemma}
-Almost all values of a smooth map $f\colon U \z\to \RR^m$ defined on an open set $U\subset \RR^n$ are regular.
+\begin{thm}{Sard's lemma}\label{lem:sard}
+Almost all values of a smooth map $\bm{f}\colon U \z\to \RR^m$ defined on an open set $U\subset \RR^n$ are regular.
 \end{thm}
 
 The words \emph{almost all} means that with exception o set of zero Lebesgue measure.
 In particular if one chooses a random value equidistributed in arbitrary small ball $B\subset \RR^m$ then it is a regular value of $f$ with probability 1.
 
+The following theorem is a substitution rule for multiple variables.
+
+\begin{thm}{Theorem}\label{thm:mult-substitution}
+Let $K\subset \RR^n$ be a compact set and $h\:K\to\RR$ be a bounded measurable function.
+Assume $\bm{f}\:K\to \RR^n$ is an injective smooth map.
+Then 
+\[\int_K h(\bm{x})\cdot |J_{\bm{f}}(\bm{x})|\cdot d\bm{x}
+=
+\int_{\bm{f}(K)} h\circ \bm{f}^{-1}(\bm{y})\cdot d\bm{y},\]
+where $J_{\bm{f}}(\bm{x})$ denotes the Jacobian of $\bm{f}$ at $\bm{x}$;
+that is, the determinant of the Jacobian matrix of $\bm{f}$ at $\bm{x}$.
+
+\end{thm}
 
 
+\begin{thm}{Area formula}
+Let $\bm{f}\:K\to\RR^n$ be a smooth map defined on a compact set $K\subset \RR^n$;
+denote by $J_{\bm{f}}$ the Jacobian of $\bm{f}$.
+Then for any function $h\:K\to \RR$
+\[\int_K h(\bm{x})\cdot |J_{\bm{f}}(\bm{x})|\cdot d\bm{x}=\int_{\bm{f}(K)} H_K(\bm{y})\cdot d\bm{y},\]
+where 
+\[H_K(\bm{y})=\sum_{\substack{\bm{x}\in K \\ \bm{f}(\bm{x})=\bm{y}}}h(\bm{x}).\]
+(The integrals are understood in the sense of Lebesgue.)
+\end{thm}
 
+Let us sketch the proof of area formula using  Sard's lemma (\ref{lem:sard}) and the substitution rule (\ref{thm:mult-substitution}).
 
+\parit{Sketch of proof.}
+Denote by $S\subset K$ the set of critical points of $\bm{f}$; that is, $\bm{x}\in S$ if $J_{\bm{f}}(\bm{x})=0$.
+By Sard's lemma,
+\emph{$\bm{f}(S)$ has vanishing measure}.
+Note that 
+\[\int_S h(\bm{x})\cdot |J_{\bm{f}}(\bm{x})|\cdot d\bm{x}=0\]
+since $J_{\bm{f}}(\bm{x})=0$
+and
+\[\int_{\bm{f}(S)} H_S(\bm{y})\cdot d\bm{y}\]
+since $\bm{f}(S)$ has vanishing measure.
+In particular,
+\[\int_S h(\bm{x})\cdot |J_{\bm{f}}(\bm{x})|\cdot d\bm{x}=\int_{\bm{f}(S)} H_S(\bm{y})\cdot d\bm{y};\]
+that is the area formula holds for $S$.
+
+It remains to prove that 
+\[\int_{K\backslash S} h(\bm{x})\cdot |J_{\bm{f}}(\bm{x})|\cdot d\bm{x}=\int_{\bm{f}(K\backslash S)} H_{K\backslash S}(\bm{y})\cdot d\bm{y}.\]
+Since $J_{\bm{f}}(\bm{x})\ne 0$ for any $\bm{x}\in K\backslash S$, by inverse function theorem, the restriction of $\bm{f}$ to a neighborhood $U\ni\bm{x}$ has a smooth inverse.
+Therefore for any compact set $K'\subset U$ we have that %???compact
+\[\int_{K'}h(\bm{x})\cdot |J_{\bm{f}}(\bm{x})|\cdot d\bm{x}=\int_{\bm{f}(K_1)} h(\bm{f}^-1(\bm{y}))\cdot d\bm{y}.\]
+It remains to subdivide $K_1$ into a countable collection of subsets of that type and sum up the corresponding formulas.\qeds
 
 \section{Initial value problem}
 
@@ -109,8 +152,6 @@ Moreover
 \end{thm}
 
 \section{Real analysis}
-
-%???+uniform continuity
 
 Recall that a function $f$ is called Lipschitz if there is a constant $L$ such that 
 \[|f(x)-f(y)|\le L\cdot|x-y|\]

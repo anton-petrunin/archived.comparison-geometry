@@ -1,0 +1,238 @@
+\chapter{Parallel transport}
+
+\section*{Parallel fields}
+
+Let $\Sigma$ be a smooth surface in the Euclidean space and $\gamma\:[a,b]\z\to \Sigma$ be a smooth curve.
+A smooth vector-valued function $t\mapsto v(t)$ is called a \emph{tangent field} on $\gamma$ if
+the vector $v(t)$ lies in the tangent plane $\T_{\gamma(t)}\Sigma$ for each $t$.
+
+A tangent field $v(t)$ on $\gamma$ is called \emph{parallel} if $v'(t)\perp\T_{\gamma(t)}$ for any~$t$.
+
+In general the family of tangent planes $\T_{\gamma(t)}\Sigma$ is not parallel.
+Therefore one can not expect to have a truly parallel family $v(t)$ with $v'\equiv 0$.
+The condition $v'(t)\perp\T_{\gamma(t)}$ means that this family is as parallel as possible --- it rotates together with the tangent plane, but does not rotate inside the plane.
+
+Note that by the definition of geodesic, the velocity field $v(t)\z=\gamma'(t)$ of any geodesic $\gamma$ is parallel along $\gamma$.
+
+\begin{thm}{Exercise}\label{ex:parallel}
+Let $\Sigma$ be a smooth regular surface in the Euclidean space, 
+$\gamma\:[a,b]\to \Sigma$ a smooth curve 
+and $v(t)$, $w(t)$ parallel vector fields along $\gamma$.
+\begin{enumerate}[(a)]
+ \item Show that $|v(t)|$ is constant.
+ \item Show that the angle $\theta(t)$ between $v(t)$ and $w(t)$ is constant.
+\end{enumerate}
+\end{thm}
+
+\section*{Parallel transport}
+
+Assume $p=\gamma(a)$ and $q=\gamma(b)$.
+Given a tangent vector $v\in\T_p$ there is unique parallel field $v(t)$ along $\gamma$ such that $v(a)=v$.
+The latter follows from \ref{thm:ODE}; the uniqueness also follows from Exercise~\ref{ex:parallel}.
+
+The vector $v(b)\in\T_q$ is called the \emph{parallel transport} of $v$ along $\gamma$ and denoted as $\iota_\gamma(v)$.
+
+From the Exercise~\ref{ex:parallel}, it follows that parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ is an an isometry;
+it depends on the choice of $\gamma$ --- for another curve $\gamma_1$ connecting $p$ to $q$ in $\Sigma$, the parallel transport $\iota_{\gamma_1}\:\T_p\to\T_q$ might be different.
+
+To interpret the parallel transport physically, 
+think of walking along $\gamma$ and carrying a perfectly balanced bike wheel in such a way that you touch only its axis and keep it normal to $\Sigma$.
+It should be physically evident that if the wheel is non-spinning at the starting point $p$, then it will not be spinning after stopping at $q$.
+(Indeed, by pushing axis one can not produce torque to spin the wheel.)
+The map that sends the initial position of the wheel to the final position is  the parallel transport~$\iota_\gamma$.
+
+This physical interpretation was suggested by Mark Levi \cite{levi};
+it will be used further.
+
+On a more formal level, one can choose a partition $a=t_0<\dots\z<t_n=b$ of $[a,b]$
+and consider the sequence of orthogonal projections $\phi_i\:\T_{\gamma(t_{i-1})}\to\T_{\gamma(t_i)}$.
+For a fine partition, the composition 
+\[\phi_n\circ\dots\circ\phi_1\:T_p\z\to\T_q\]
+gives an approximation of $\iota_\gamma$.
+Each $\phi_i$ does not increase the magnitude of a vector and neither the composition.
+It is straightforward to see that if if the partition is sufficiently fine, then it is almost isometry; in particular it almost preserves the magnitudes of tangent vectors.
+
+\begin{thm}{Exercise}
+Let $\gamma$ is a smooth closed loop with base point $p$ on a smooth oriented surface $\Sigma$ with the unit normal field $\nu$.
+Suppose that the spherical image of $\gamma$ lies in an equator.
+Show that the parallel translation $\iota_\gamma\:\T_p\to \T_p$ a along $\gamma$ is the identity map.
+\end{thm}
+
+\parit{Hint:} Denote by $w$ the pole of the equator; show and use that $w$ is a parallel vector field along $\gamma$.
+
+\section*{Geodesic curvature}
+
+Plane is the simplest example of smooth surface.
+Earlier we introduced signed curvature of a plane curve.
+For a smooth curve $\gamma$ in general oriented smooth surface $\Sigma$ the analogous notion is called \emph{geodesic curvature} which we are about to introduce.
+
+Let $\nu\:\Sigma\to \SS^2$ be the spherical map that defines the orientation on $\Sigma$.
+Without loss of generality we can assume that $\gamma$ has unit speed.
+Then for any $t$ the vectors $\nu(t)=\nu(\gamma(t))_\Sigma$ and the velocity vector $\tau(t)=\gamma'(t)$ are unit vectors that are normal to each other.
+Denote by $\mu(t)$ the unit vector that is normal to both $\nu(t)$ and $\tau(t)$ that points to the left from $\gamma$; that is, $\mu=\nu\times \tau$.
+Note that the triple $\tau(t),\mu(t),\nu(t)$ is an oriented orthonormal basis for any $t$.
+
+Since $\gamma$ is unit-speed, the acceleration $\gamma''(t)$ is perpendicular to $\tau(t)$;
+therefore at any parameter value $t$, we have
+\[\gamma''(t)=k_g(t)\cdot \mu(t)-k_n(t)\cdot \nu(t),\]
+for some real numbers $k_n(t)$ and $k_g(t)$.
+The numbers $k_n(t)$ and $k_g(t)$ are called \emph{normal} and \emph{geodesic curvature} of $\gamma$ at $t$ correspondingly.
+
+Note that the geodesic curvature vanishes if $\gamma$ is a geodesic. 
+It measures how much a given curve diverges from being a geodesic;
+it is positive if $\gamma$ turns left and negative if $\gamma$ turns right.
+
+\section*{Total geodesic curvature}
+
+The total geodesic curvature is defined as integral 
+\[\tgc\gamma\df \int_{\mathbb{I}} k_g(t)\cdot dt,\]
+assuming that $\gamma$ is defined on the real interval $\mathbb{I}$.
+Note that if $\Sigma$ is a plane and $\gamma$ lies in $\Sigma$ then geodesic curvature of $\gamma$ equals to signed curvature and therefore total geodesic curvature equals to the total signed curvature.
+By that reason we use the same notation $\tgc\gamma$ as for total signed curvature; if we need to emphasize that we consider $\gamma$ as a curve in $\Sigma$, we write $\tgc\gamma_\Sigma$.
+
+If $\gamma$ is a piecewise smooth regular curve in $\Sigma$, then
+its total geodesic curvature is defined as a sum of all total geodesic curvature of its arcs and the sum signed exterior angles of $\gamma$ at the joints.
+More precisely, if $\gamma$ is a concatenation of smooth regular curves $\gamma_1,\dots,\gamma_n$ then
+\[\tgc\gamma=\tgc{\gamma_1}+\dots+\tgc{\gamma_n}+\theta_1+\dots+\theta_{n-1},\]
+where $\theta_i$ is the signed external angle at the joint $\gamma_i$ and $\gamma_{i+1}$; it is positive if we turn left and negative if we turn right, it is undefined if we turn to the opposite direction.
+If $\gamma$ is closed, then 
+\[\tgc\gamma=\tgc{\gamma_1}+\dots+\tgc{\gamma_n}+\theta_1+\dots+\theta_{n},\]
+where $\theta_n$ is the signed external angle at the joint $\gamma_n$ and $\gamma_1$.
+
+Note that if each arc $\gamma_i$ in the concatenation is a geodesic, then $\gamma$ is called \emph{broken geodesic}.
+Note that in this case $\tgc{\gamma_i}=0$ for each $i$ and therefore the total geodesic curvature of $\gamma$ is the sum of its signed external angles.
+
+\begin{thm}{Proposition}\label{prop:pt+tgc}
+Assume $\gamma$ is a closed broken geodesic in a smooth oriented surface $\Sigma$ that starts and ends at the point $p$.
+Then the parallel transport $\iota_\gamma\:T_p\to\T_p$ is a rotation of the the plane $\T_p$ clockwise by angle $\tgc\gamma$.
+
+Moreover, the same statement holds for smooth closed curves and piecewise smooth curves.
+\end{thm}
+
+\begin{wrapfigure}{o}{22 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-48}
+\vskip-0mm
+\end{wrapfigure}
+
+\parit{Proof.}
+Assume $\gamma$ is a cyclic concatenation of geodesics $\gamma_1,\dots,\gamma_n$.
+Fix a tangent vector $v$ at $p$ and extend it to a parallel vector field along $\gamma$.
+Since $w_i(t)=\gamma_i'(t)$ is parallel along $\gamma_i$, the angle $\phi_i$ between $v$ and $w_i$ stays constant on each $\gamma_i$.
+
+If $\theta_i$ denotes the external angle at this vertex of switch from $\gamma_{i}$ to $\gamma_{i+1}$, we have that 
+\[\phi_{i+1}=\phi_i-\theta_i \pmod{2\cdot\pi}.\]
+Therefore after going around we get that 
+\[\phi_{n+1}-\phi_1=-\theta_1-\dots-\theta_n=-\tgc\gamma.\]
+Hence the the first statement follows.
+
+For the smooth unit-speed curve $\gamma\:[a,b]\to\Sigma$, the proof is analogous.
+If $\phi(t)$ denotes the angle between $v(t)$ and $w(t)=\gamma'(t)$, then 
+\[\phi'(t)+k_g(t)\equiv0\]
+Whence the angle of rotation 
+\begin{align*}
+\phi(b)-\phi(a)&=\int_a^b \phi'(t)\cdot dt=
+\\
+&=-\int_a^b k_g\cdot dt=
+\\
+&=-\tgc\gamma
+\end{align*}
+
+The case of piecewise regular smooth curve is a straightforward combination of the above two cases. 
+\qeds
+
+
+\section*{Spherical area}
+
+\begin{thm}{Lemma}\label{lem:area-spher-triangle}
+Let $\Delta$ be a spherical triangle;
+that is, $\Delta$ is the intersection of three closed half-spheres in the unit sphere $\SS^2$.
+Then 
+\[\area\Delta=\alpha+\beta+\gamma-\pi,\eqlbl{eq:area(Delta)}\]
+where $\alpha$, $\beta$ and $\gamma$ are the angles of $\Delta$.
+\end{thm}
+
+The value $\alpha+\beta+\gamma-\pi$ is called \emph{excess} of the triangle $\Delta$.
+
+\begin{wrapfigure}{o}{22 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-43}
+\vskip-0mm
+\end{wrapfigure}
+
+\parit{Proof.}
+Recall that 
+\[\area\SS^2=4\cdot\pi.\eqlbl{eq:area(S2)}\]
+
+Note that the area of a spherical slice $S_\alpha$ between two meridians meeting at angle $\alpha$ is proportional to $\alpha$.
+Since for $S_\pi$ is a half-sphere, from \ref{eq:area(S2)}, we get $\area S_\pi\z=2\cdot\pi$.
+Therefore the coefficient is 2; that is,
+\[\area S_\alpha=2\cdot \alpha.\eqlbl{eq:area(Sa)}\]
+
+Extending the sides of $\Delta$ we get 6 slices: two $S_\alpha$, two $S_\beta$ and two $S_\gamma$ which cover most of the sphere once,
+but the triangle $\Delta$ and its centrally symmetric copy $\Delta'$ are covered 3 times.
+It follows that
+\[2\cdot \area S_\alpha+2\cdot \area S_\beta+2\cdot \area S_\gamma
+=\area\SS^2+4\cdot\area\Delta.\]
+Substituting \ref{eq:area(S2)} and \ref{eq:area(Sa)} and simplifying, we get \ref{eq:area(Delta)}.
+\qeds
+
+
+
+If the contour $\partial\Delta$ of a spherical triangle with angles $\alpha$, $\beta$ and $\gamma$ is oriented such that the triangle lies on the left, then its external angles are  $\pi-\alpha$, $\pi-\beta$ and $\pi-\gamma$.
+Therefore the total geodesic curvature of $\partial\Delta$ is $\tgc{\partial\Delta}=3\cdot\pi-\alpha-\beta-\gamma$.
+The identity \ref{eq:area(Delta)} can be rewritten as 
+\[\tgc{\partial\Delta}+\area\Delta=2\cdot \pi.
+\eqlbl{eq:sphere-gauss-bonnet}\]
+
+The formula \ref{eq:sphere-gauss-bonnet} holds for an arbitrary spherical polygon bounded by a simple broken geodesic.
+The latter can be proved by triangulating the poygon, applying the formula for each triangle in the triangulation and summing up the results.
+
+\begin{wrapfigure}{o}{42 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-45}
+\vskip-0mm
+\end{wrapfigure}
+
+If a spherical polygon is $P$ divided in two polygons $Q$ and $R$ by a diagonal $vw$
+then 
+\[\tgc{\partial P}+2\cdot\pi =\tgc{\partial Q}+\tgc{\partial R}.\]
+Indeed, for the internal angles $Q$ and $R$ at $v$ are $\alpha$ and $\beta$,
+then their external angles are $\pi-\alpha$ and $\pi-\beta$ respectfully.
+The internal angle of $P$ in this case is $\alpha+\beta$ and its external angle is $\pi-\alpha-\beta$
+Clearly we have that 
+\[(\pi-\alpha)+(\pi-\beta)=(\pi-\alpha-\beta)+\pi;\]
+that is, the sum of external angles of $Q$ and $R$ at $v$ is $\pi$ plus the external angle of $P$ at $v$. 
+The same holds for the external angles at $w$ and the rest of the external angles of $P$ appear once on $Q$ or $R$.
+Therefore if the formula \ref{eq:sphere-gauss-bonnet} holds for $Q$ and $R$,
+then it holds for~$P$.
+
+The following proposition summarizes the discussion above.
+Note that it is a spherical analog of \ref{prop:total-signed-curvature}.
+
+\begin{thm}{Proposition}\label{prop:area-of-spher-polygon}
+Let $P$ be a spherical polygon bounded by a simple closed broken geodesic $\partial P$.
+Assume $\partial P$ is oriented such that $P$ lies on the left from $\partial P$.
+Then 
+\[\tgc{\partial P}+\area P=2\cdot \pi.\]
+
+Moreover the same formula holds for any spherical region $P$ bounded by piecewise smooth simple closed curve $\partial P$.
+\end{thm}
+
+\parit{Sketch of proof.}
+The proof of the first statement is given above. 
+
+The second statement can be proved by approximation. One has to show that the total geodesic curvature of an inscribed broken geodesic approximates the total geodesic curvature of the original curve.
+We omit the proof of the latter statement, but it can be done along the same lines as \ref{thm:total-curvature=}.
+\qeds
+
+
+\begin{thm}{Exercise}\label{ex:half-sphere-total-curvature}
+Assume $\gamma$ is a simple piecewise smooth loop on $\SS^2$ that divides its area into two equal parts.
+Denote by $p$ the base point of $\gamma$.
+Show that $\iota_\gamma\:\T_p\SS^2\to\T_p\SS^2$ is the identity map.
+\end{thm}
+

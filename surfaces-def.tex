@@ -65,7 +65,7 @@ For example, paraboloids
 are open surfaces, 
 and sphere is closed.
 
-A closed subset in a surface that is bounded by one or more smooth %???smooth???
+A closed subset in a surface that is bounded by one or more 
 curves is called \emph{surface with boundary}; in this case the collection of curves is called the \emph{boundary line} of the surface.
 When we say \emph{surface} we usually mean a surface without boundary;
 we may use the term \emph{surface with possibly nonempty boundary} if we need to talk about surfaces with and without boundary.
@@ -154,12 +154,18 @@ The map
 is called \emph{stereographic projection}. 
 Note that the point $(u,v,1)$ and its image $(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})$ lie on one half-line starting at the origin.
 
-%+PIC
+\begin{wrapfigure}{r}{40 mm}
+\vskip-4mm
+\centering
+\includegraphics{asy/torus}
+\vskip-3mm
+\end{wrapfigure}
 
 Let $\gamma(t)=(x(t),y(t))$ be a plane curve.
 Recall that the image of the map 
 \[(t,\theta)\mapsto (x(t), y(t)\cdot\cos\theta,y(t)\cdot\sin\theta)\] 
 is called \emph{surface of revolution} of the curve $\gamma$ around $x$-axis.
+For fixed $t$ or $\theta$ the obtained curves are called meridian or correspondingly parallel of the surface of revolution; note that parallels are formed by circles in the plane perpendicular to the axis of rotation.
 
 \begin{thm}{Exercise}\label{ex:revolution}
 Assume $\gamma$ is a closed simple smooth regular plane curve that does not intersect $x$-axis.
@@ -220,8 +226,6 @@ describes a smooth regular surface.
 
 \section*{Tangent plane}
 
-%???change def
-
 Let $z=f(x,y)$ be a local graph realization of a surface. 
 Assume that a point $p=(x_p,y_p,z_p)$ lies on this graph, so $z_p=f(x_p,y_p)$.
 The plane spanned by the vectors $(1,0,(\tfrac{\partial}{\partial x}f)(x_p,y_p))$ and  $(0,1,(\tfrac{\partial}{\partial y}f)(x_p,y_p))$ is called the \emph{tangent plane} of $\Sigma$ at $p$.
@@ -231,7 +235,7 @@ Vectors in $\T_p$ are called \emph{tangent vectors} of $\Sigma$ at $p$. %??? red
 Tangent plane $\T_p$ might be considered as a linear subspace of $\RR^3$ or as a parallel plane passing thru $p$.
 In the latter case it can be interpreted as the best approximation of the surface $\Sigma$ by a plane at~$p$;
 it has \emph{first order of contact} with $\Sigma$ at $p$;
-that is, $\rho(q)\z=o(|p-q|)$, where $q\in \Sigma$ and $\rho(q)$ denotes the distance from $q$ to $\T_p$. %???
+that is, $\rho(q)\z=o(|p-q|)$, where $q\in \Sigma$ and $\rho(q)$ denotes the distance from $q$ to $\T_p$.
 
 \begin{thm}{Proposition}
 Let $\Sigma$ be a smooth surface.
@@ -293,10 +297,10 @@ The choice of the field $\nu$ is called \emph{orientation} on $\Sigma$.
 A surface $\Sigma$ is called \emph{orientable} if it can be oriented.
 Note that each orientable surface admits two orientations $\nu$ and $-\nu$. %???
 
-\begin{wrapfigure}{o}{40 mm}
+\begin{wrapfigure}{r}{40 mm}
 \vskip-0mm
 \centering
-\includegraphics{mppics/pic-71}
+\includegraphics{asy/moebius}
 \vskip0mm
 \end{wrapfigure}
 
@@ -320,10 +324,21 @@ Show that $\Sigma$ is orientable.
 
 \parit{Hint.} Show that $\nu=\tfrac{\nabla h}{|\nabla h|}$ defines a unit normal field on $\Sigma$.
 
+The following claim should be intuitively obvious. 
+Its proof is not at all trivial; a standard proof use the so called \emph{Alexander's duality} which is a classical technique in algebraic topology.
 
-In fact any complete smooth surface cuts the space into two connected components.
-Therefore one could choose an orientation on any complete surface by taking normal vector at each point that points into one of these components. %???
-In particular the M\"obius strip can not be extended to a complete smooth surface. %???redo
+\begin{thm}{Claim}
+The complement of any complete surface in the Euclidean space has exactly two connected components. 
+\end{thm}
+
+Note that if a complete surface is smooth, we can choose the unit normal filed on it that points into one of the components of the complement.
+Therefore we obtain the following observation. 
+
+\begin{thm}{Observation}
+Any smooth complete surface in Euclidean space is oriented.
+\end{thm}
+
+In particular it follows that the M\"obius strip can not be extended to a complete smooth surface.
 
 \section*{Plane sections}
 
@@ -345,7 +360,7 @@ Assume $\Pi$ is described by equation $f(x,y,z)=r_0$, where
 \[f(x,y,z)=a\cdot x+b\cdot y+c\cdot z.\] 
 The surface $\Sigma$ can be covered by a countable set of charts $s_i\:U_i\to \Sigma$.
 Note that the composition $f\circ s_i$ is a smooth function.
-Therefore almost all real numbers $r$ are regular values of each $f\circ s_i$.
+By Sard's lemma (\ref{lem:sard}), almost all real numbers $r$ are regular values of each $f\circ s_i$.
 
 Fix such value $r$ sufficiently close to $r_0$ and consider the plane $\Pi'$ described by the equation $f(x,y,z)=r$.
 Note that $\Pi'\parallel \Pi$ and arbitrary close to it.

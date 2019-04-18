@@ -149,6 +149,8 @@ Since $\left|\int k(s)\cdot ds\right|\le \int|k(s)|\cdot ds$, we have that
 \[|\Psi(\gamma)|\le \tc\gamma\eqlbl{eq:tsc-tc}\] 
 for any smooth regular plane curve $\gamma$. 
 
+%???+ add corners
+
 
 \begin{thm}{Proposition}\label{prop:total-signed-curvature}
 The total signed curvature of any closed simple smooth plane curve $\gamma$ is $\pm2\cdot\pi$; it is $+2\cdot\pi$
@@ -251,14 +253,6 @@ if $\skur\ne 0$, then $\sigma$ runs around the circle of radius $\tfrac1{|\skur|
 
 Further we will use the term \emph{circline} for \emph{a circle or a line}.
 
-{
-
-\begin{wrapfigure}{r}{31 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-21}
-\vskip0mm
-\end{wrapfigure}
 
 \begin{thm}{Definition}
 Let $\gamma$ be a smooth unit-speed plane curve;
@@ -267,7 +261,13 @@ denote by $\skur(s)$ the signed curvature of $\gamma$ at $s$.
 The unit-speed curve $\sigma$ of constant signed curvature $\skur(s)$ that starts at $\gamma(s)$ in the direction $\gamma'(s)$ is called the \emph{osculating circline} of $\gamma$ at~$s$.
 \end{thm}
 
-}
+
+\begin{wrapfigure}{r}{31 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-21}
+\vskip0mm
+\end{wrapfigure}
 
 The center and radius of the osculating circle at a given point are called \emph{center of curvature} and \emph{radius of curvature} of the curve at that point.
 
@@ -292,7 +292,8 @@ then $\sigma_{s_0}$ lies in the open disc bounded by $\sigma_{s_1}$ for any $s_0
 \end{wrapfigure}
 
 It turns out that osculating circles of the curve $\gamma$ give a peculiar foliation of an annulus by circles; it has the following property: if a smooth function is constant on each osculating circle it must be constant in the annulus \cite[see][Lecture 10]{fuchs-tabachnikov}.
-Also note that the curve $\gamma$ is tangent to a circle of the foliation at each of its points. However, it does not run along a circle.
+Also note that the curve $\gamma$ is tangent to a circle of the foliation at each of its points.
+However, it does not run along a circle.
 
 %???z(s) is not good
 
@@ -317,6 +318,14 @@ Since $\skur(s)$ is decreasing, $r(s)$ is increasing;
 therefore $r'\ge 0$.
 It follows that $|z'(s)|= r'(s)$ and $z'(s)$ points in the direction of $\nu(s)$.
 
+{
+
+\begin{wrapfigure}{o}{41 mm}
+\vskip-0mm
+\begin{lpic}[t(-0 mm),b(-2 mm),r(0 mm),l(0 mm)]{mppics/pic-84}
+\end{lpic}
+\end{wrapfigure}
+
 Since $\nu'(s)=-\skur(s)\cdot\tau(s)$, the direction of $z'(s)$ can not have constant direction on a nontrivial interval;
 that is, the curve $s\mapsto z(s)$ contains no line segments.
 It follows that 
@@ -329,6 +338,8 @@ It follows that
 \\
 &=r(s_1)-r(s_0).
 \end{align*}
+
+}
 
 In other words, the distance between the centers of $\sigma_{s_1}$ and $\sigma_{s_0}$
 is strictly less than the difference between their radiuses.
@@ -422,22 +433,20 @@ In this case we say that $\sigma$ supports $\gamma$ from the left (right) if $\g
 
 Note that a circle supports itself on the right and left at the same time at any point.
 
-{
+We say that a circle $\sigma$ \emph{locally supports} a curve $\gamma$ at $s$
+if it supports its arc $\gamma|_{(s-\eps,s+\eps)}$ for some $\eps>0$.
+The same definitions for local support on the left and right are applied.
 
 \begin{wrapfigure}{o}{43 mm}
-\vskip0mm
+\vskip-3mm
 \centering
 \includegraphics{mppics/pic-60}
 \vskip0mm
 \end{wrapfigure}
 
-We say that a circle $\sigma$ \emph{locally supports} a curve $\gamma$ at $s$
-if it supports its arc $\gamma|_{(s-\eps,s+\eps)}$ for some $\eps>0$.
-The same definitions for local support on the left and right are applied.
 
 The circle $\sigma$ on the diagram locally supports curve $\gamma$ on the right at $p$, but does not support it globally --- since $\gamma$ crosses $\sigma$ at a latter time.
 
-}
 
 We say that a smooth regular plane curve $\gamma$ has a \emph{vertex} at $s$
 if the signed curvature function is critical at $s$;
@@ -590,6 +599,8 @@ Note that its arc $\sigma$ supports $\gamma$ at a point $s=\gamma(t_0)$.
 \begin{wrapfigure}{r}{50 mm}
 \centering
 \includegraphics{mppics/pic-24}
+\bigskip
+\includegraphics{mppics/pic-23}
 \vskip0mm
 \end{wrapfigure}
 
@@ -598,12 +609,6 @@ Let us parameterise $\sigma$ from $p$ to $q$.
 Then $\gamma$ and $\sigma$ are cooriented as $s$.
 If not, then the arc of $\gamma$ from $s$ to $y$ would be trapped in the curvelinear triangle $xsp$ bounded by arcs of $\sigma$, $\gamma$ and the line segment $[px]$.
 But this is impossible since $y$ does not belong to this triangle.
-
-\begin{wrapfigure}{r}{50 mm}
-\centering
-\includegraphics{mppics/pic-23}
-\vskip0mm
-\end{wrapfigure}
 
 It follows that $\sigma$ supports $\gamma$ at $t_0$ from the right.
 By \ref{prop:supporting-circline}, 
@@ -832,7 +837,7 @@ List the necessary changes in the proof above for the existence of circlines tha
 {
 
 \begin{wrapfigure}{r}{12 mm}
-\vskip-4mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-67}
 \vskip0mm
