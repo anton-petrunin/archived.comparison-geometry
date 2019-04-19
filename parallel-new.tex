@@ -236,3 +236,139 @@ Denote by $p$ the base point of $\gamma$.
 Show that $\iota_\gamma\:\T_p\SS^2\to\T_p\SS^2$ is the identity map.
 \end{thm}
 
+\section*{Gauss--Bonnet formula}
+
+
+\begin{thm}{Theorem}\label{thm:gb}
+Let $\Delta$ be a topological disc in a smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$ that is oriented in such a way that $\Delta$ lies on its left.
+Then 
+\[\tgc{\partial\Delta}+\int_\Delta K=2\cdot \pi,\eqlbl{eq:g-b}\]
+where $K$ denotes the Gauss curvature of $\Sigma$.
+\end{thm}
+
+For geodesic triangles this theorem was proved by Carl Friedrich Gauss \cite{gauss};
+Pierre Bonnet and Jacques Binet independently generalized the statement for arbitrary curves. 
+
+Note that if $\Sigma$ is a plane, then the statement of theorem follows from \ref{prop:total-signed-curvature}.
+
+If $\Sigma$ is the unit sphere then $K\equiv1$ and therefore formula \ref{eq:g-b} can be rewritten as 
+\[\tgc{\partial\Delta}+\area\Delta=2\cdot \pi,\]
+which follows from Proposition~\ref{prop:spherical-gb}.
+
+We will give an informal proof of \ref{thm:gb} in a partial case based on the bike wheel interpretation described above.
+We suppose that it is intuitively clear that moving the axis of the wheel without changing its direction does not change the direction of the wheel's spikes.
+
+More precisely, assume we keep the axis of a non-spinning bike wheel and perform the following two experiments:
+\begin{enumerate}[(i)]
+\item We move it around and bring the axis back to the original position. 
+As a result the wheel might rotate by some angle; let us measure this angle.
+
+\item
+We move the direction of the axis the same way as before without moving the center of the wheel.
+After that we measure the angle of rotation.
+\end{enumerate}
+Then the resulting angle in these two experiments is the same. 
+
+Consider a surface $\Sigma$ with a Gauss map $\nu\:\Sigma\to \SS^2$.
+Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\nu(p)}\SS^2$; so we can identify these tangent spaces.
+From the experiments above, we get the following:
+
+\begin{thm}{Lemma}\label{lem:spherical-image}
+Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\nu\:\Sigma\to \SS^2$.
+Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\nu\circ\alpha$ in $\SS^2$.
+\end{thm}
+
+\parit{Proof of partial case.}
+We will prove the formula for complete surface $\Sigma$ with positive Gauss curvature.
+In this case, by \ref{thm:spherical-image} the formula can be rewritten as 
+\[\tgc{\partial\Delta}+\area[\nu(\Delta)]=2\cdot \pi.\eqlbl{eq:gb-area}\]
+The general case can be proved similarly, but one has to use the area formula (\ref{thm:area-formula}) and oriented area surrounded by a spherical curve.
+
+Fix $p\in \partial\Delta$ consider the parallel translation $\iota\:\T_p\to\T_p$ along $\partial\Delta$.
+According to \ref{prop:pt+tgc}, $\iota$ is a clockwise rotation by angle $\tgc{\partial\Delta}_\Sigma$.
+
+According to \ref{lem:spherical-image}, $\iota$ is also parallel translation $\partial[\nu(\Delta)]$ in $\SS^2$.
+In particular $\iota$ is a clockwise rotation by angle $\tgc{\partial[\nu(\Delta)]}_\Sigma$.
+By \ref{prop:area-of-spher-polygon} 
+\[\tgc{\partial[\nu(\Delta)]}_{\SS^2}+\area[\nu(\Delta)]=2\cdot \pi.\]
+Therefore 
+$\iota$ is a counterclockwise rotation by angle $\area[\nu(\Delta)]$
+
+The rotations are identical if the angles are equal modulo $2\cdot\pi$.
+Therefore 
+\[\tgc{\partial\Delta}_\Sigma+\area[\nu(\Delta)]=2\cdot \pi\cdot n\eqlbl{eq:sum=2pin}\]
+for an integer $n$.
+
+It remains to show that $n=1$.
+This is so for plane disc, see \ref{eq:sum=2pin}.
+One can think that $\Delta$ is a result of a continuous deformation of plane disc.
+The integer $n$ can not change in the process of deformation since the left hand side in \ref{eq:sum=2pin} is continuous along the deformation.
+
+Let us redo the last argument more formally.
+
+First assume that $\Delta$ lies in a local graph realization $z=f(x,y)$ of $\Sigma$.
+Consider one parameter family $\Sigma_t$ of graphs $z=t\cdot f(x,y)$ and denote by $\Delta_t$ the corresponding disc in $\Sigma_t$, so $\Delta_1=\Delta$ amd $\Delta_0$ is its projection to the $(x,y)$-plane.
+Since $\Sigma_0$ is a plane domain, we have $\area[\nu_0(\Delta_0)]=0$.
+Therefore by \ref{prop:total-signed-curvature} we gave 
+\[\tgc{\partial\Delta_0}_{\Sigma_0}+\area[\nu_0(\Delta_0)]=2\cdot \pi.\]
+
+Note that 
+\[\tgc{\partial\Delta_t}_{\Sigma_t}+\area[\nu_t(\Delta_t)]\]
+depends continuously on $t$.
+According to \ref{eq:sum=2pin}, its value is a multiple of $2\cdot\pi$;
+therefore it has to be constant.
+Whence the Gauss--Bonnet formula follows.
+
+If $\Delta$ does not lie in one graph, then one could divide it into smaller discs, apply the formula for each and sum up the result.
+The proof is done along the same lines as \ref{prop:area-of-spher-polygon}.
+\qeds
+
+
+
+\begin{thm}{Exercise}\label{ex:1=geodesic-curvature}
+ Assume $\gamma$ is a closed simple curve with constant geodesic curvature $1$ in a smooth complete surface $\Sigma$ with positive Gauss curvature.
+ Show that 
+ \[\length\gamma\le 2\cdot\pi;\]
+that is, the length of $\gamma$ can not exceed the length of the unit circle in the plane.  
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:geodesic-half}
+Let $\gamma$ be a closed simple geodesic on a complete surface $\Sigma$ with positive Gauss curvature.
+Assume $\nu\:\Sigma\to\SS^2$ is a Gauss map.
+Show that the curve $\alpha=\nu\circ\gamma$ divides the sphere into regions of equal area.
+
+Conclude that
+\[\length \alpha\ge 2\cdot\pi.\]
+\end{thm}
+
+{
+
+\begin{wrapfigure}{o}{32 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-46}
+\vskip-0mm
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:aabbccdd}
+Let $\Sigma$ be a smooth closed surface with a closed geodesic $\gamma$.
+Assume $\gamma$ has exactly 4 self-intersection at the points $a$, $b$, $c$ and $d$ that appear on $\gamma$ in the order $a,a,b,b,c,c,d,d$.
+Show that $\Sigma$ can not have positive Gauss curvature.\footnote{Hint: estimate integral of Gauss curvature bounded by a simple geodesic loop.}
+\end{thm}
+
+\begin{thm}{Advanced exercise}
+Let $\Sigma$ be a smooth regular sphere with positive Gauss curvature and $p\in\Sigma$. 
+Suppose $\gamma$ be a closed geodesic that does not pass thru $p$.
+Assume $\Sigma\backslash\{p\}$ parametrized by the plane.
+Can it happen that in this parametrization,  $\gamma$ looks like one of the curves on the diagram?
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-47}
+\vskip-0mm
+\end{figure}
+Say as much as possible about possible/impossible diagrams of that type.
+\end{thm}
+
+}
