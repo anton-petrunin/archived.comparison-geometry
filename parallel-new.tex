@@ -197,7 +197,7 @@ The latter can be proved by triangulating the poygon, applying the formula for e
 \vskip-0mm
 \end{wrapfigure}
 
-If a spherical polygon is $P$ divided in two polygons $Q$ and $R$ by a diagonal $vw$
+If a spherical polygon is $P$ divided in two polygons $Q$ and $R$ by polygonal line between vertexes $v$ and $w$
 then 
 \[\tgc{\partial P}+2\cdot\pi =\tgc{\partial Q}+\tgc{\partial R}.\]
 Indeed, for the internal angles $Q$ and $R$ at $v$ are $\alpha$ and $\beta$,
@@ -210,8 +210,7 @@ The same holds for the external angles at $w$ and the rest of the external angle
 Therefore if the formula \ref{eq:sphere-gauss-bonnet} holds for $Q$ and $R$,
 then it holds for~$P$.
 
-The following proposition summarizes the discussion above.
-Note that it is a spherical analog of \ref{prop:total-signed-curvature}.
+The following proposition gives a spherical analog of \ref{prop:total-signed-curvature}.
 
 \begin{thm}{Proposition}\label{prop:area-of-spher-polygon}
 Let $P$ be a spherical polygon bounded by a simple closed broken geodesic $\partial P$.
@@ -249,11 +248,12 @@ where $K$ denotes the Gauss curvature of $\Sigma$.
 For geodesic triangles this theorem was proved by Carl Friedrich Gauss \cite{gauss};
 Pierre Bonnet and Jacques Binet independently generalized the statement for arbitrary curves. 
 
-Note that if $\Sigma$ is a plane, then the statement of theorem follows from \ref{prop:total-signed-curvature}.
+Note that if $\Sigma$ is a plane, then the Gauss curvatue vanished;
+therefore the statement of theorem follows from \ref{prop:total-signed-curvature}.
 
 If $\Sigma$ is the unit sphere then $K\equiv1$ and therefore formula \ref{eq:g-b} can be rewritten as 
 \[\tgc{\partial\Delta}+\area\Delta=2\cdot \pi,\]
-which follows from Proposition~\ref{prop:spherical-gb}.
+which follows from \ref{prop:area-of-spher-polygon}.
 
 We will give an informal proof of \ref{thm:gb} in a partial case based on the bike wheel interpretation described above.
 We suppose that it is intuitively clear that moving the axis of the wheel without changing its direction does not change the direction of the wheel's spikes.
@@ -261,13 +261,13 @@ We suppose that it is intuitively clear that moving the axis of the wheel withou
 More precisely, assume we keep the axis of a non-spinning bike wheel and perform the following two experiments:
 \begin{enumerate}[(i)]
 \item We move it around and bring the axis back to the original position. 
-As a result the wheel might rotate by some angle; let us measure this angle.
+As a result the wheel might turn by some angle; let us measure this angle.
 
 \item
 We move the direction of the axis the same way as before without moving the center of the wheel.
 After that we measure the angle of rotation.
 \end{enumerate}
-Then the resulting angle in these two experiments is the same. 
+Then the resulting angles in these two experiments is the same. 
 
 Consider a surface $\Sigma$ with a Gauss map $\nu\:\Sigma\to \SS^2$.
 Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\nu(p)}\SS^2$; so we can identify these tangent spaces.
@@ -278,30 +278,34 @@ Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface
 Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\nu\circ\alpha$ in $\SS^2$.
 \end{thm}
 
-\parit{Proof of partial case.}
+\parit{Proof of partial case of \ref{thm:gb}.}
 We will prove the formula for complete surface $\Sigma$ with positive Gauss curvature.
 In this case, by \ref{thm:spherical-image} the formula can be rewritten as 
 \[\tgc{\partial\Delta}+\area[\nu(\Delta)]=2\cdot \pi.\eqlbl{eq:gb-area}\]
 The general case can be proved similarly, but one has to use the area formula (\ref{thm:area-formula}) and oriented area surrounded by a spherical curve.
 
-Fix $p\in \partial\Delta$ consider the parallel translation $\iota\:\T_p\to\T_p$ along $\partial\Delta$.
-According to \ref{prop:pt+tgc}, $\iota$ is a clockwise rotation by angle $\tgc{\partial\Delta}_\Sigma$.
+Fix $p\in \partial\Delta$;
+assume the loop $\alpha$ runs along $\partial\Delta$ so that $\Delta$ lies on the left from it.
+Consider the parallel translation $\iota\:\T_p\to\T_p$ along $\alpha$.
+According to \ref{prop:pt+tgc}, $\iota$ is a clockwise rotation by angle $\tgc{\alpha}_\Sigma$.
 
-According to \ref{lem:spherical-image}, $\iota$ is also parallel translation $\partial[\nu(\Delta)]$ in $\SS^2$.
-In particular $\iota$ is a clockwise rotation by angle $\tgc{\partial[\nu(\Delta)]}_\Sigma$.
+Set $\beta=\nu\circ\alpha$.
+According to \ref{lem:spherical-image}, $\iota$ is also parallel translation along $\beta$ in $\SS^2$.
+In particular $\iota$ is a clockwise rotation by angle $\tgc{\beta}_{\SS^2}$.
 By \ref{prop:area-of-spher-polygon} 
-\[\tgc{\partial[\nu(\Delta)]}_{\SS^2}+\area[\nu(\Delta)]=2\cdot \pi.\]
+\[\tgc{\beta}_{\SS^2}+\area[\nu(\Delta)]=2\cdot \pi.\]
 Therefore 
-$\iota$ is a counterclockwise rotation by angle $\area[\nu(\Delta)]$
+$\iota$ is a counterclockwise rotation by $\area[\nu(\Delta)]$
 
+Summarizing, the clockwise rotation by $\tgc{\alpha}_\Sigma$ is identical to a counterclockwise rotation by $\area[\nu(\Delta)]$.
 The rotations are identical if the angles are equal modulo $2\cdot\pi$.
 Therefore 
 \[\tgc{\partial\Delta}_\Sigma+\area[\nu(\Delta)]=2\cdot \pi\cdot n\eqlbl{eq:sum=2pin}\]
 for an integer $n$.
 
 It remains to show that $n=1$.
-This is so for plane disc, see \ref{eq:sum=2pin}.
-One can think that $\Delta$ is a result of a continuous deformation of plane disc.
+By \ref{eq:sum=2pin}, this is so for a topological disc in a plane.
+One can think of a general disc $\Delta$ as about a result of a continuous deformation of plane disc.
 The integer $n$ can not change in the process of deformation since the left hand side in \ref{eq:sum=2pin} is continuous along the deformation.
 
 Let us redo the last argument more formally.
@@ -344,8 +348,8 @@ Conclude that
 
 {
 
-\begin{wrapfigure}{o}{32 mm}
-\vskip-0mm
+\begin{wrapfigure}[4]{r}{32 mm}
+\vskip-12mm
 \centering
 \includegraphics{mppics/pic-46}
 \vskip-0mm
