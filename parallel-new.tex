@@ -9,7 +9,7 @@ the vector $v(t)$ lies in the tangent plane $\T_{\gamma(t)}\Sigma$ for each $t$.
 A tangent field $v(t)$ on $\gamma$ is called \emph{parallel} if $v'(t)\perp\T_{\gamma(t)}$ for any~$t$.
 
 In general the family of tangent planes $\T_{\gamma(t)}\Sigma$ is not parallel.
-Therefore one can not expect to have a truly parallel family $v(t)$ with $v'\equiv 0$.
+Therefore one cannot expect to have a truly parallel family $v(t)$ with $v'\equiv 0$.
 The condition $v'(t)\perp\T_{\gamma(t)}$ means that this family is as parallel as possible --- it rotates together with the tangent plane, but does not rotate inside the plane.
 
 Note that by the definition of geodesic, the velocity field $v(t)\z=\gamma'(t)$ of any geodesic $\gamma$ is parallel along $\gamma$.
@@ -38,7 +38,7 @@ it depends on the choice of $\gamma$ --- for another curve $\gamma_1$ connecting
 To interpret the parallel transport physically, 
 think of walking along $\gamma$ and carrying a perfectly balanced bike wheel in such a way that you touch only its axis and keep it normal to $\Sigma$.
 It should be physically evident that if the wheel is non-spinning at the starting point $p$, then it will not be spinning after stopping at $q$.
-(Indeed, by pushing axis one can not produce torque to spin the wheel.)
+(Indeed, by pushing axis one cannot produce torque to spin the wheel.)
 The map that sends the initial position of the wheel to the final position is  the parallel transport~$\iota_\gamma$.
 
 This physical interpretation was suggested by Mark Levi \cite{levi};
@@ -305,8 +305,8 @@ for an integer $n$.
 
 It remains to show that $n=1$.
 By \ref{eq:sum=2pin}, this is so for a topological disc in a plane.
-One can think of a general disc $\Delta$ as about a result of a continuous deformation of plane disc.
-The integer $n$ can not change in the process of deformation since the left hand side in \ref{eq:sum=2pin} is continuous along the deformation.
+One can think of a general disc $\Delta$ as about a result of a continuous deformation of a plane disc.
+The integer $n$ cannot change in the process of deformation since the left hand side in \ref{eq:sum=2pin} is continuous along the deformation.
 
 Let us redo the last argument more formally.
 
@@ -333,7 +333,7 @@ The proof is done along the same lines as \ref{prop:area-of-spher-polygon}.
  Assume $\gamma$ is a closed simple curve with constant geodesic curvature $1$ in a smooth complete surface $\Sigma$ with positive Gauss curvature.
  Show that 
  \[\length\gamma\le 2\cdot\pi;\]
-that is, the length of $\gamma$ can not exceed the length of the unit circle in the plane.  
+that is, the length of $\gamma$ cannot exceed the length of the unit circle in the plane.  
 \end{thm}
 
 
@@ -358,12 +358,23 @@ Conclude that
 \begin{thm}{Exercise}\label{ex:aabbccdd}
 Let $\Sigma$ be a smooth closed surface with a closed geodesic $\gamma$.
 Assume $\gamma$ has exactly 4 self-intersection at the points $a$, $b$, $c$ and $d$ that appear on $\gamma$ in the order $a,a,b,b,c,c,d,d$.
-Show that $\Sigma$ can not have positive Gauss curvature.\footnote{Hint: estimate integral of Gauss curvature bounded by a simple geodesic loop.}
+Show that $\Sigma$ cannot have positive Gauss curvature.\footnote{Hint: estimate integral of Gauss curvature bounded by a simple geodesic loop.}
 \end{thm}
+
+The following exercise gives the optimal bound on Lipschitz constant of a convex function that guarantees that its geodesics have no self-intersections;
+compare to \ref{ex:rough-bound-mountain}.
+
+\begin{thm}{Exercise}
+Suppose that $f\:\RR^2\to\RR$ is a $\sqrt{3}$-Lipshitz smooth convex function.
+Show that any geodesic in the surface defined by the graph $z=f(x,y)$ has no self-intersections.
+\end{thm}
+
+\parit{Hint.} Note that it is sufficient to show that the surface has no geodesic loops.
+Estimate the integral of Gauss curvature of whole surface and a disc in it surrounded by a geodesic loop.
 
 \begin{thm}{Advanced exercise}
 Let $\Sigma$ be a smooth regular sphere with positive Gauss curvature and $p\in\Sigma$. 
-Suppose $\gamma$ be a closed geodesic that does not pass thru $p$.
+Suppose $\gamma$ is a closed geodesic that does not pass thru $p$.
 Assume $\Sigma\backslash\{p\}$ parametrized by the plane.
 Can it happen that in this parametrization,  $\gamma$ looks like one of the curves on the diagram?
 \begin{figure}[h!]
