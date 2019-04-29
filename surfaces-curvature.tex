@@ -42,7 +42,7 @@ n&=(\tfrac{\partial^2}{\partial y^2}f)(0,0).
 \end{align*}
 
 The components of the matrix describe the surface at up to the second order at $p$.
-In fact the so called \emph{osculating paraboloid}
+In fact the so-called \emph{osculating paraboloid}
 \[z=\tfrac12(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)\]
 gives the best approximation of the surface at $p$;
 it has \emph{second order of contact} with $\Sigma$ at $p$.
@@ -50,8 +50,8 @@ it has \emph{second order of contact} with $\Sigma$ at $p$.
 Given two vectors $v,w$ in the $(x,y)$-plane, consider the value 
 \[\II_p(v,w)\df(D_wD_vf)(0,0),\]
 where $D$ denotes the directional derivative.
-The function $(v,w)\z\mapsto \II_p(v,w)$ is called \emph{second fundamental form} at $p$;\label{page:second fundamental form}
-it takes two tangent vector $v$ and $w$ at $p$ and spits the real number $\II_p(v,w)$.
+The function $(v,w)\z\mapsto \II_p(v,w)$ is called the \emph{second fundamental form} at $p$;\label{page:second fundamental form}
+it takes two tangent vectors $v$ and $w$ at $p$ and spits out the real number $\II_p(v,w)$.
 
 The second fundamental form can be written in terms of the Hessian matrix.
 Indeed if 
@@ -79,15 +79,15 @@ for any two tangent vectors $v,w\in \T_p$.
 \section*{Principle curvatures}
 
 Note that tangent-normal coordinates give an almost canonical coordinate system in a neighborhood of $p$;
-it is unique up to a rotation of  the $(x,y)$-plane and switching the sign of the $z$-coordinate.
+it is unique up to a rotation of  the $(x,y)$-plane and a switching of the sign of the $z$-coordinate.
 Rotating the $(x,y)$-plane is equivalent to changing its orthonormal basis, which results in the rewriting   
 the Hessian matrix in this new basis.
 
 Since Hessian matrix is symmetric, it is diagonalizable by orthogonal matrices. %???
-That is, by rotating $(x,y)$-plane we can assume that $m=0$ in \ref{eq:hessian}. %???+lin algebra material
+That is, by rotating the $(x,y)$-plane we can assume that $m=0$ in \ref{eq:hessian}. %???+lin algebra material
 In this case the diagonal components of $M_p$ are called \emph{principle curvatures} of $\Sigma$ at $p$;
 they are uniquely defined up to sign;
-they are denoted as $k_1(p)$ and $k_2(p)$ or $k_1(p)_\Sigma$ and $k_2(p)_\Sigma$ if we need to emphasize that these are the curvatures of the surface $\Sigma$.
+they are denoted as $k_1(p)$ and $k_2(p)$, or $k_1(p)_\Sigma$ and $k_2(p)_\Sigma$ if we need to emphasize that these are the curvatures of the surface $\Sigma$.
 We will always assume that $k_1\le k_2$.
 
 The principle curvatures can be also defined as the eigenvalues of $M_p$;
@@ -130,9 +130,9 @@ Moreover, if $\theta$ is the angle between a unit vector $w\in\T_p$ and the firs
 
 \end{thm}
 
-The last identity is the so called \emph{Euler's formula}.
+The last identity is the so-called \emph{Euler's formula}.
 
-A smooth regular curve on a surface $\Sigma$ that always runs in the principle directions is called \emph{line of curvature} of $\Sigma$.  
+A smooth regular curve on a surface $\Sigma$ that always runs in the principle directions is called a \emph{line of curvature} of $\Sigma$.  
 
 \begin{thm}{Exercise}\label{ex:line-of-curvature}
 Assume that a smooth surface $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$.
@@ -193,7 +193,7 @@ then we can say that $\Sigma_1$ locally supports $\Sigma_2$ from \emph{inside} o
 assuming that the normal vector points \emph{inside} the domain bounded by surface $\Sigma_2$ in $U$.
 
 More precisely, we can use for $\Sigma_1$ and $\Sigma_2$ one tangent-normal coordinate system at $p$,
-assuming that the axis $z$ points in the direction of the unit normal vector $\nu_p$ to both surfaces.
+assuming that the $z$-axis points in the direction of the unit normal vector $\nu_p$ to both surfaces.
 This way we write $\Sigma_1$ and $\Sigma_2$ locally as graphs: $z=f_1(x,y)$  and $z=f_2(x,y)$ correspondingly.
 Then $\Sigma_1$ locally supports $\Sigma_2$ from inside (from outside)  if $f_1(x,y)\ge f_2(x,y)$ (correspondingly $f_1(x,y)\le f_2(x,y)$) for $(x,y)$ in a sufficiently small neighborhood of the origin.
 
@@ -329,7 +329,7 @@ Fix a parameteer value $t_0$; set $p=\gamma(t_0)$, $v=\gamma'(t_0)$ and $a\z=\ga
 so we need to show that
 \[\langle a,\nu_{p}\rangle=\II_p(v,v).\eqlbl{a-nu-II}\]
 Let $z=f(x,y)$ be the local representaion of $\Sigma$ in the tangent-normal coordinates at $p$;
-we assume that $\nu$ points in the derection of~$\nu_p$.
+we assume that $\nu$ points in the direction of~$\nu_p$.
 
 Without loss of generality may assume that $\gamma$ runs in the graph $z=f(x,y)$;
 so 
@@ -380,7 +380,7 @@ Note that
 2\cdot \tfrac{\partial^2 f}{\partial x\partial y}\cdot x'\cdot y'
 +
 \tfrac{\partial^2 f}{\partial y^2}\cdot (y')^2\right)(t_0);\]
-that is, the $z$-coordinate of the acelaration $a$ equals to $\II_p(v,v)$ which is equivalent to~\ref{a-nu-II}.
+that is, the $z$-coordinate of the acceleration $a$ equals $\II_p(v,v)$ which is equivalent to~\ref{a-nu-II}.
 \qeds
 
 

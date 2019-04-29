@@ -15,7 +15,7 @@ in other words principle curvatures at each point have opposite signs or one of 
 If the Gauss curvature is negative at each point,
 then the surface is called \emph{strictly saddle};
 equivalently it means that the principle curvatures have opposite signs at each point.
-Note that in this case tangent plane is does not support the surface even locally --- moving along the surface in the principle directions at a given point, one gets above and below the tangent plane at this point.  
+Note that in this case the tangent plane does not support the surface even locally --- moving along the surface in the principle directions at a given point, one goes above and below the tangent plane at this point.  
 
 
 \begin{thm}{Exercise}\label{ex:convex-revolution}
@@ -35,13 +35,13 @@ Show that any ruled surface $\Sigma$ is saddle.
 \parit{Hint:} Prove and use that each point $p\in\Sigma$ has a direction with vanishing normal curvature.
 
 \begin{thm}{Exercise}
-Assume $\Sigma$ is complete saddle surface.
+Suppose $\Sigma$ is a complete saddle surface.
 Show that for any point $p\in \Sigma$ there is a curve $\gamma\:[0,\infty)\to\Sigma$ that starts at $p$
 such that $t\mapsto|\gamma(t)|$ is an increasing function and $|\gamma(t)|\to\infty$ as $t\to\infty$.
 \end{thm}
 
 A tangent direction on a smooth surface with vanishing normal curvature is called \emph{asymptotic}.
-A smooth regular curve that always run in an asymptotic direction is called
+A smooth regular curve that always runs in an asymptotic direction is called an asymptotic line
 \index{asymptotic line}\emph{asymptotic line}.\label{page:asymptotic line}
 
 \begin{thm}{Advanced exercise}
@@ -157,7 +157,7 @@ Show that $\Delta_\eps$ is a smooth disc; that is, $\Delta_\eps$ is the image of
 To do this repeat the argument in \ref{lem:gauss=sphere} with the center at a point surrounded by the boundary line of $\Delta_\eps$ in its plane.
 
 \begin{thm}{Exercise}\label{ex:saddle-linear}
-Let $T\:\RR^3\to\RR^3$ be a linear transformation; that is, $T(x,y,z)=(x,y,z)\cdot A$ for a invertible $3{\times}3$-matrix $A$. 
+Let $T\:\RR^3\to\RR^3$ be a linear transformation; that is, $T(x,y,z)=(x,y,z)\cdot A$ for an invertible $3{\times}3$-matrix $A$. 
 Show that for any saddle surface $\Sigma$ the image $T(\Sigma)$ is also a saddle surface.
 \end{thm}
 
@@ -176,9 +176,9 @@ $|f(x,y)|\le C$ for any $(x,y)\in\RR^2$.
 Before going into the proof let us discuss some examples.
 
 Note that the theorem states that a saddle graph cannot lie between parallel horizontal planes;
-applying \ref{ex:saddle-linear} we get that saddle graph cannot lie between parallel planes,
+applying \ref{ex:saddle-linear} we get that saddle graphs cannot lie between parallel planes,
 not necessarily horizontal.
-The following exercise shows that the theorem does not hold for saddle surface which are not graphs.
+The following exercise shows that the theorem does not hold for saddle surfaces which are not graphs.
 
 
 \begin{thm}{Exercise}\label{ex:between-parallels}
@@ -197,7 +197,7 @@ $z=\exp(x-y^2)$
 is strictly saddle.
 \end{thm}
 
-\parit{Hint:} Look at two section of the graph by planes parallel to $(x,y)$-plane and to $(x,z)$-plane and apply Meusnier's theorem (\ref{cor:meusnier}).
+\parit{Hint:} Look at the sections of the graph by planes parallel to the $(x,y)$-plane and to the $(x,z)$-plane, then apply Meusnier’s theorem apply Meusnier's theorem (\ref{cor:meusnier}).
 
 Note that according to \ref{lem:convex-saddle}, there are no complete saddle surfaces in a parallelepiped that boundary line lies on one of its faces.
 The following lemma gives an analogous statement for a parallelepiped with an infinite side.
@@ -237,7 +237,7 @@ Consider the plane $\Pi$ thru $[pq]$ that is perpendicular to the $(x,z)$-plane.
 Note that $\pi$ cuts from $\Sigma$ a compact region $\Delta$.
 By general position argument \ref{lem:reg-section}, 
 we can assume that $\Delta$ is a compact surface with boundary line in $\Pi$ and the remaining part of $\Delta$ lies on one side from $\Pi$.
-Since the plane $\Pi$ is a convex, this statement contradicts \ref{lem:convex-saddle}.
+Since the plane $\Pi$ is convex, this statement contradicts \ref{lem:convex-saddle}.
 
 Summarizing, $\Theta$ is an open convex set of $H$ that contains all points above $z=r$.
 By convexity, together with any point $w$, the set $\Theta$ contains all points on the half-lines that point up from it. 
@@ -284,7 +284,7 @@ Whence one of the connected components, say $\Sigma^+_0$, lies in
 \[R_0=\set{(x,y,f(x,y))\in\Sigma}{|h(x,y)|\le  C}.\]
 This set lies on a bounded distance from the line of intersection of $\T_p$ with the $(x,y)$-plane.
 
-Moving the plane $\T_p$ little up, we can cut from $\Sigma^+_0$ is a complete surface with boundary line lying in this plane (see \ref{lem:reg-section}).
+Moving the plane $\T_p$ slightly upward, we can cut from $\Sigma^+_0$ is a complete surface with boundary line lying in this plane (see \ref{lem:reg-section}).
 The obtained surface is still on a bounded distance to a line
 which is impossible by \ref{lem:region}.
 \qeds
@@ -297,7 +297,7 @@ Let $\Sigma$ be a smooth saddle disk in $\RR^3$.
 Assume that the orthogonal projection to the $(x,y)$-plane
 maps the boundary line of $\Sigma$
 injectively to a convex closed curve.
-Show that the orthogonal projection to $(x,y)$-plane is injective on $\Sigma$.
+Show that the orthogonal projection to the $(x,y)$-plane is injective on $\Sigma$.
 
 In particular, $\Sigma$ is the graph $z=f(x,y)$ of a function $f$ defined on a convex figure in the $(x,y)$-plane.
 \end{thm}
@@ -306,11 +306,11 @@ In particular, $\Sigma$ is the graph $z=f(x,y)$ of a function $f$ defined on a c
 \section*{Remarks}
 
 Note that Bernstein's theorem and the lemma in its proof do not hold for saddle surfaces;
-counterexamples can be found among infinite cylinders over a smooth regular curves.
-In fact it can be shown that these are only counterexamples;
-the proof is based on the same idea, but more technical.
+counterexamples can be found among infinite cylinders over smooth regular curves.
+In fact it can be shown that these are the only counterexamples;
+a proof is based on the same idea, but more technical.
 
 By \ref{prop:hat}, saddle surfaces can be defined as smooth surfaces without hats.
-This definition can be used for arbitrary surfaces not necessarily smooth.
-Some results, for example Bernshtein's characterization of saddle graphs can be extended to generalized saddle surface, but this class of surfaces is far from being understood.
-Some nontrivial properties were proved by in Samuil Shefel \cite{shefel} see also \cite[Capter 4]{akp}.
+This definition can be used for arbitrary surfaces, not necessarily smooth.
+Some results, for example Bernshtein's characterization of saddle graphs can be extended to generalized saddle surfaces, but this class of surfaces is far from being understood.
+Some nontrivial properties were proved by Samuil Shefel \cite{shefel}; see also \cite[Capter 4]{akp}.

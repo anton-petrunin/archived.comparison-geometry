@@ -4,11 +4,11 @@
 
 Few times we will need the following general definition.
 
-A path connected subset $\Sigma$ in a metric space is called \emph{surface} (more precisely \emph{embedded surface without boundary}) 
+A path connected subset $\Sigma$ in a metric space is called a \emph{surface} (more precisely an \emph{embedded surface without boundary}) 
 if any point of $p\in \Sigma$ admits a neighborhood $W$ in $\Sigma$ which is \emph{homeomorphic} to an open subset in the Euclidean plane;
-that is, if there is an injective continuous map $U\to W$ from an open set $U\subset \RR^2$ such that its invese $W\to U$ is also continuous.
+that is, if there is an injective continuous map $U\to W$ from an open set $U\subset \RR^2$ such that its inverse $W\to U$ is also continuous.
 
-However, as well as in the case of curves we will be mostly interested in smooth surfaces in the Euclidean space describe in the following section.
+However, as well as in the case of curves, we will be mostly interested in smooth surfaces in the Euclidean space describe in the following section.
 
 \section*{Smooth surfaces}
 
@@ -121,7 +121,7 @@ that is, $\Gamma$ a neighborhood of $p$ in $\Sigma$ that can be described as a g
 Since $p$ is arbitrary, we get that $\Sigma$ is a surface.
 \qeds
 
-If $s$ and $\Sigma$ as in the proposition, then we say that $s$ is a \emph{parametrization} of the surface $\Sigma$. 
+If we have $s$ and $\Sigma$ as in the proposition, then we say that $s$ is a \emph{parametrization} of the surface $\Sigma$. 
 
 Not all the smooth surfaces can be described by such a parametrization;
 for example the sphere $\SS^2$ cannot.
@@ -164,12 +164,12 @@ Note that the point $(u,v,1)$ and its image $(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac
 Let $\gamma(t)=(x(t),y(t))$ be a plane curve.
 Recall that the image of the map 
 \[(t,\theta)\mapsto (x(t), y(t)\cdot\cos\theta,y(t)\cdot\sin\theta)\] 
-is called \emph{surface of revolution} of the curve $\gamma$ around $x$-axis.
+is called the \emph{surface of revolution} of the curve $\gamma$ around the $x$-axis.
 For fixed $t$ or $\theta$ the obtained curves are called meridian or correspondingly parallel of the surface of revolution; note that parallels are formed by circles in the plane perpendicular to the axis of rotation.
 
 \begin{thm}{Exercise}\label{ex:revolution}
-Assume $\gamma$ is a closed simple smooth regular plane curve that does not intersect $x$-axis.
-Show that surface of revolution of $\gamma$ around $x$-axis is a smooth regular surface.
+Assume $\gamma$ is a closed simple smooth regular plane curve that does not intersect the $x$-axis.
+Show that surface of revolution of $\gamma$ around the $x$-axis is a smooth regular surface.
 \end{thm}
 
 
@@ -188,12 +188,12 @@ $\frac{\partial}{\partial u}(s\circ f)$ and $\frac{\partial}{\partial v}(s\circ 
 Evidently the parametric definition includes the embedded surfaces defined previously --- as the domain of parameters we can take the surface itself and the identity map as $s$.
 But parametrized surfaces are more general, in particular they  might  have self-intersections.
 
-If $\Sigma$ is a known surface for example a sphere or a plane, the paramtrized surface $s\:\Sigma\to\RR^3$ might be called by the same name.
-For example, any embedding $s\:\SS^2\to\RR^3$ might be called topological sphere
+If $\Sigma$ is a known surface for example a sphere or a plane, the parametrized surface $s\:\Sigma\to\RR^3$ might be called by the same name.
+For example, any embedding $s\:\SS^2\to\RR^3$ might be called a topological sphere
 and if $s$ is smooth and regular, then it might be called smooth sphere.
-(A smooth regular map $s\:\SS^2\to\RR^3$ which is not necessary an embedding is called \emph{smooth regular immersion}, so we can say that $s$ describes a smooth immersed sphere.) 
-Similarly an embedding $s\:\RR^2\to\RR^3$ might be called topological plane
-and if $s$ is smooth it might be called smooth plane.
+(A smooth regular map $s\:\SS^2\to\RR^3$ which is not necessary an embedding is called a \emph{smooth regular immersion}, so we can say that $s$ describes a smooth immersed sphere.) 
+Similarly an embedding $s\:\RR^2\to\RR^3$ might be called topological plane,
+and if $s$ is smooth, it might be called smooth plane.
 
 \section*{Implicitly defined surfaces}
 
@@ -282,7 +282,7 @@ Show that the tangent plane $\T_p\Sigma$ is perpendicular to the gradient $\nabl
 \begin{thm}{Exercise}\label{ex:vertical-tangent}
 Let $\Sigma$ be a smooth surface and $p\in\Sigma$.
 Fix an $(x,y,z)$-coordinates.
-Show that a neighborhood of $p$ in $\Sigma$ is a graph $z=f(x,y)$ of a smooth function $f$ defined on an open subset in $(x,y)$-plane if and only if the tangent plane $\T_p$ is not a \emph{vertical plane}; that is if the projection of $\T_p$ to $(x,y)$-plane does not degenerates to a line.
+Show that a neighborhood of $p$ in $\Sigma$ is a graph $z=f(x,y)$ of a smooth function $f$ defined on an open subset in the $(x,y)$-plane if and only if the tangent plane $\T_p$ is not a \emph{vertical plane}; that is, if the projection of $\T_p$ to the $(x,y)$-plane does not degenerate to a line.
 \end{thm}
 
 
@@ -293,7 +293,7 @@ it is uniquely defined up to sign.
 
 A surface $\Sigma$ is called \emph{oriented} if it is equipped with a unit normal vector field $\nu$;
 that is, a continuous map $p\mapsto \nu_p$ such that $\nu_p\perp\T_p$ and $|\nu_p|=1$ for any $p$.
-The choice of the field $\nu$ is called \emph{orientation} on $\Sigma$.
+The choice of the field $\nu$ is called the \emph{orientation} on $\Sigma$.
 A surface $\Sigma$ is called \emph{orientable} if it can be oriented.
 Note that each orientable surface admits two orientations $\nu$ and $-\nu$. %???
 
@@ -304,7 +304,7 @@ Note that each orientable surface admits two orientations $\nu$ and $-\nu$. %???
 \vskip0mm
 \end{wrapfigure}
 
-M\"obius strip shown on the diagram gives an example of nonorientable surface --- there is no choice of normal vector field that is continuous along the middle of the strip, 
+M\"obius strip shown on the diagram gives an example of a nonorientable surface --- there is no choice of normal vector field that is continuous along the middle of the strip, 
 when you go around it changes the sign.
 
 Note that each surface is locally orientable.
@@ -325,13 +325,13 @@ Show that $\Sigma$ is orientable.
 \parit{Hint.} Show that $\nu=\tfrac{\nabla h}{|\nabla h|}$ defines a unit normal field on $\Sigma$.
 
 The following claim should be intuitively obvious. 
-Its proof is not at all trivial; a standard proof use the so called \emph{Alexander's duality} which is a classical technique in algebraic topology.
+Its proof is not at all trivial; a standard proof uses the so-called \emph{Alexander's duality} which is a classical technique in algebraic topology.
 
 \begin{thm}{Claim}
 The complement of any complete surface in the Euclidean space has exactly two connected components. 
 \end{thm}
 
-Note that if a complete surface is smooth, we can choose the unit normal filed on it that points into one of the components of the complement.
+Note that if a complete surface is smooth, we can choose the unit normal field on it that points into one of the components of the complement.
 Therefore we obtain the following observation. 
 
 \begin{thm}{Observation}
@@ -346,12 +346,12 @@ In particular it follows that the M\"obius strip cannot be extended to a complet
 Show that any closed set in the plane can appear as an intersection of this plane with a complete smooth regular surface.  
 \end{thm}
 
-As a consequence of the exercise above, the section of a smooth regular surface by a plane might look complicated.
-The following lemma makes possible to perturb the plane so that the section becomes nice. 
+As a consequence of the exercise above, the plane sections of a smooth regular surface might look complicated.
+The following lemma makes it possible to perturb the plane so that the section becomes nice. 
 
 \begin{thm}{Lemma}\label{lem:reg-section}
 Let $\Sigma$ be a smooth regular surface.
-Then for any plane $\Pi$ there is arbitrarily close parallel plane $\Pi'$ such that 
+Then for any plane $\Pi$ there is an arbitrarily close parallel plane $\Pi'$ such that 
 each connected component of the intersection $\Sigma\cap \Pi'$ is a smooth regular curve.
 \end{thm}
 
@@ -363,7 +363,7 @@ Note that the composition $f\circ s_i$ is a smooth function.
 By Sard's lemma (\ref{lem:sard}), almost all real numbers $r$ are regular values of each $f\circ s_i$.
 
 Fix such value $r$ sufficiently close to $r_0$ and consider the plane $\Pi'$ described by the equation $f(x,y,z)=r$.
-Note that $\Pi'\parallel \Pi$ and arbitrary close to it.
+Note that $\Pi'\parallel \Pi$ and is arbitrarily close to it.
 Any point in the intersection $\Sigma\cap\Pi'$ lies in the image of one of the charts.
 From above it admits a neighborhood which is a regular smooth curve;
 hence the result.\qeds
