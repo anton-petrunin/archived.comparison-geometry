@@ -147,7 +147,7 @@ Then for any initial data $\bm{x}(t_0)=\bm{u}$ the differential equation
 has a unique solution $\bm{x}(t)$ defined at a maximal subinterval $\mathbb{J}$ of $\mathbb{I}$ that contains $t_0$.
 Moreover
 \begin{enumerate}[(a)]
-\item  if $\mathbb{J}\ne \mathbb{I}$, that is, if an end $a$ of $\mathbb{J}$ lies in the interior of $\mathbb{I}$, then $\bm{x}(t)$ diverges for $t\to a$;
+\item  if $\mathbb{J}\ne \mathbb{I}$ (that is, if an end $a$ of $\mathbb{J}$ lies in the interior of $\mathbb{I}$) then $\bm{x}(t)$ diverges for $t\to a$;
 \item  the function $(\bm{u},t_0,t)\mapsto \bm{x}(t)$ is smooth.
 \end{enumerate}
 
@@ -213,13 +213,13 @@ We sometimes characterization of homeomorphism.
 
 \begin{thm}{Theorem}\label{thm:Hausdorff-compact}
 A continuous bijection $f$ between compact metric spaces has continuous inverse;
-that is $f$ is a homeomorphism.
+that is, $f$ is a homeomorphism.
 \end{thm}
 
 
 The first part of the following theorem is proved by Camille Jordan, the second part is due to Arthur Schoenflies.
 
-\begin{thm}{Theorem}
+\begin{thm}{Theorem}\label{thm:jordan}
 The complement of any closed simple plane curve $\gamma$ has exactly two connected components. 
 
 Moreover the there is a homeomorphism $h\:\RR^2\to \RR^2$ that maps the unit circle to $\gamma$.
@@ -243,6 +243,9 @@ The proof of this statement is much simpler.
 An amusing proof of can be found in \cite{chambers-liokumovich}.
 
 \section{Connectedness}
+
+Recall that a continuous map from the unit interval $[0,1]$ to a space is called a \emph{path}.
+
 
 A set $X$ in the Euclidean space is called \emph{path connected} if any two points $x,y\in X$ can be connected by a path lying in $X$;
 that is, there is a path $\alpha\:[0,1]\to X$ such that $\alpha(0)=x$ and $\alpha(1)=y$.
@@ -316,6 +319,8 @@ Note that the sum of angles of $P$ is the sum of angles of $Q$ and $R$, which by
 It remains to note that \ref{eq:k+m=n+2} implies
 \[(k-2)\cdot\pi+(m-2)\cdot\pi=(n-2)\cdot\pi.\]
 \qedsf
+
+\section{Triangle inequality for angles}
 
 The following theorem says that triangle inequality holds for angles between half-lines from a fixed point.
 In particular it implies that a unit sphere with angle metric is a metric space.

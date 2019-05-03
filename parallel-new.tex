@@ -52,13 +52,12 @@ gives an approximation of $\iota_\gamma$.
 Each $\phi_i$ does not increase the magnitude of a vector and neither the composition.
 It is straightforward to see that if if the partition is sufficiently fine, then it is almost isometry; in particular it almost preserves the magnitudes of tangent vectors.
 
-\begin{thm}{Exercise}
-Let $\gamma$ be a smooth closed loop with base point $p$ on a smooth oriented surface $\Sigma$ with the unit normal field $\nu$.
-Suppose that the spherical image of $\gamma$ lies in an equator.
+\begin{thm}{Exercise}\label{ex:parallel-transport-equator}
+Let $\gamma$ be a smooth closed loop with base point $p$ on a smooth oriented surface $\Sigma$ with the unit normal field $\Norm$.
+Suppose that the spherical image of $\gamma$ lies in a great circle.
 Show that the parallel translation $\iota_\gamma\:\T_p\to \T_p$ along $\gamma$ is the identity map.
 \end{thm}
 
-\parit{Hint:} Denote by $w$ the pole of the equator; show and use that $w$ is a parallel vector field along $\gamma$.
 
 \section*{Geodesic curvature}
 
@@ -66,15 +65,15 @@ Plane is the simplest example of smooth surface.
 Earlier we introduced signed curvature of a plane curve.
 For a smooth curve $\gamma$ in general oriented smooth surface $\Sigma$ the analogous notion is called \emph{geodesic curvature} which we are about to introduce.
 
-Let $\nu\:\Sigma\to \SS^2$ be the spherical map that defines the orientation on $\Sigma$.
+Let $\Norm\:\Sigma\to \SS^2$ be the spherical map that defines the orientation on $\Sigma$.
 Without loss of generality we can assume that $\gamma$ has unit speed.
-Then for any $t$ the vectors $\nu(t)=\nu(\gamma(t))_\Sigma$ and the velocity vector $\tau(t)=\gamma'(t)$ are unit vectors that are normal to each other.
-Denote by $\mu(t)$ the unit vector that is normal to both $\nu(t)$ and $\tau(t)$ that points to the left from $\gamma$; that is, $\mu=\nu\times \tau$.
-Note that the triple $\tau(t),\mu(t),\nu(t)$ is an oriented orthonormal basis for any $t$.
+Then for any $t$ the vectors $\Norm(t)=\Norm(\gamma(t))_\Sigma$ and the velocity vector $\tan(t)=\gamma'(t)$ are unit vectors that are normal to each other.
+Denote by $\mu(t)$ the unit vector that is normal to both $\Norm(t)$ and $\tan(t)$ that points to the left from $\gamma$; that is, $\mu=\Norm\times \tan$.
+Note that the triple $\tan(t),\mu(t),\Norm(t)$ is an oriented orthonormal basis for any $t$.
 
-Since $\gamma$ is unit-speed, the acceleration $\gamma''(t)$ is perpendicular to $\tau(t)$;
+Since $\gamma$ is unit-speed, the acceleration $\gamma''(t)$ is perpendicular to $\tan(t)$;
 therefore at any parameter value $t$, we have
-\[\gamma''(t)=k_g(t)\cdot \mu(t)-k_n(t)\cdot \nu(t),\]
+\[\gamma''(t)=k_g(t)\cdot \mu(t)-k_n(t)\cdot \Norm(t),\]
 for some real numbers $k_n(t)$ and $k_g(t)$.
 The numbers $k_n(t)$ and $k_g(t)$ are called \emph{normal} and \emph{geodesic curvature} of $\gamma$ at $t$ correspondingly.
 
@@ -269,19 +268,19 @@ After that we measure the angle of rotation.
 \end{enumerate}
 Then the resulting angles in these two experiments is the same. 
 
-Consider a surface $\Sigma$ with a Gauss map $\nu\:\Sigma\to \SS^2$.
-Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\nu(p)}\SS^2$; so we can identify these tangent spaces.
+Consider a surface $\Sigma$ with a Gauss map $\Norm\:\Sigma\to \SS^2$.
+Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\Norm(p)}\SS^2$; so we can identify these tangent spaces.
 From the experiments above, we get the following:
 
 \begin{thm}{Lemma}\label{lem:spherical-image}
-Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\nu\:\Sigma\to \SS^2$.
-Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\nu\circ\alpha$ in $\SS^2$.
+Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\Norm\:\Sigma\to \SS^2$.
+Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\Norm\circ\alpha$ in $\SS^2$.
 \end{thm}
 
 \parit{Proof of partial case of \ref{thm:gb}.}
-We will prove the formula for complete surface $\Sigma$ with positive Gauss curvature.
+We will prove the formula for proper surface $\Sigma$ with positive Gauss curvature.
 In this case, by \ref{thm:spherical-image} the formula can be rewritten as 
-\[\tgc{\partial\Delta}+\area[\nu(\Delta)]=2\cdot \pi.\eqlbl{eq:gb-area}\]
+\[\tgc{\partial\Delta}+\area[\Norm(\Delta)]=2\cdot \pi.\eqlbl{eq:gb-area}\]
 The general case can be proved similarly, but one has to use the area formula (\ref{thm:area-formula}) and oriented area surrounded by a spherical curve.
 
 Fix $p\in \partial\Delta$;
@@ -289,18 +288,18 @@ assume the loop $\alpha$ runs along $\partial\Delta$ so that $\Delta$ lies on th
 Consider the parallel translation $\iota\:\T_p\to\T_p$ along $\alpha$.
 According to \ref{prop:pt+tgc}, $\iota$ is a clockwise rotation by angle $\tgc{\alpha}_\Sigma$.
 
-Set $\beta=\nu\circ\alpha$.
+Set $\beta=\Norm\circ\alpha$.
 According to \ref{lem:spherical-image}, $\iota$ is also parallel translation along $\beta$ in $\SS^2$.
 In particular $\iota$ is a clockwise rotation by angle $\tgc{\beta}_{\SS^2}$.
 By \ref{prop:area-of-spher-polygon} 
-\[\tgc{\beta}_{\SS^2}+\area[\nu(\Delta)]=2\cdot \pi.\]
+\[\tgc{\beta}_{\SS^2}+\area[\Norm(\Delta)]=2\cdot \pi.\]
 Therefore 
-$\iota$ is a counterclockwise rotation by $\area[\nu(\Delta)]$
+$\iota$ is a counterclockwise rotation by $\area[\Norm(\Delta)]$
 
-Summarizing, the clockwise rotation by $\tgc{\alpha}_\Sigma$ is identical to a counterclockwise rotation by $\area[\nu(\Delta)]$.
+Summarizing, the clockwise rotation by $\tgc{\alpha}_\Sigma$ is identical to a counterclockwise rotation by $\area[\Norm(\Delta)]$.
 The rotations are identical if the angles are equal modulo $2\cdot\pi$.
 Therefore 
-\[\tgc{\partial\Delta}_\Sigma+\area[\nu(\Delta)]=2\cdot \pi\cdot n\eqlbl{eq:sum=2pin}\]
+\[\tgc{\partial\Delta}_\Sigma+\area[\Norm(\Delta)]=2\cdot \pi\cdot n\eqlbl{eq:sum=2pin}\]
 for an integer $n$.
 
 It remains to show that $n=1$.
@@ -312,12 +311,12 @@ Let us redo the last argument more formally.
 
 First assume that $\Delta$ lies in a local graph realization $z=f(x,y)$ of $\Sigma$.
 Consider one parameter family $\Sigma_t$ of graphs $z=t\cdot f(x,y)$ and denote by $\Delta_t$ the corresponding disc in $\Sigma_t$, so $\Delta_1=\Delta$ amd $\Delta_0$ is its projection to the $(x,y)$-plane.
-Since $\Sigma_0$ is a plane domain, we have $\area[\nu_0(\Delta_0)]=0$.
+Since $\Sigma_0$ is a plane domain, we have $\area[\Norm_0(\Delta_0)]=0$.
 Therefore by \ref{prop:total-signed-curvature} we gave 
-\[\tgc{\partial\Delta_0}_{\Sigma_0}+\area[\nu_0(\Delta_0)]=2\cdot \pi.\]
+\[\tgc{\partial\Delta_0}_{\Sigma_0}+\area[\Norm_0(\Delta_0)]=2\cdot \pi.\]
 
 Note that 
-\[\tgc{\partial\Delta_t}_{\Sigma_t}+\area[\nu_t(\Delta_t)]\]
+\[\tgc{\partial\Delta_t}_{\Sigma_t}+\area[\Norm_t(\Delta_t)]\]
 depends continuously on $t$.
 According to \ref{eq:sum=2pin}, its value is a multiple of $2\cdot\pi$;
 therefore it has to be constant.
@@ -330,7 +329,7 @@ The proof is done along the same lines as \ref{prop:area-of-spher-polygon}.
 
 
 \begin{thm}{Exercise}\label{ex:1=geodesic-curvature}
- Assume $\gamma$ is a closed simple curve with constant geodesic curvature $1$ in a smooth complete surface $\Sigma$ with positive Gauss curvature.
+ Assume $\gamma$ is a closed simple curve with constant geodesic curvature $1$ in a smooth closed surface $\Sigma$ with positive Gauss curvature.
  Show that 
  \[\length\gamma\le 2\cdot\pi;\]
 that is, the length of $\gamma$ cannot exceed the length of the unit circle in the plane.  
@@ -338,9 +337,9 @@ that is, the length of $\gamma$ cannot exceed the length of the unit circle in t
 
 
 \begin{thm}{Exercise}\label{ex:geodesic-half}
-Let $\gamma$ be a closed simple geodesic on a complete surface $\Sigma$ with positive Gauss curvature.
-Assume $\nu\:\Sigma\to\SS^2$ is a Gauss map.
-Show that the curve $\alpha=\nu\circ\gamma$ divides the sphere into regions of equal area.
+Let $\gamma$ be a closed simple geodesic on a smooth closed surface $\Sigma$ with positive Gauss curvature.
+Assume $\Norm\:\Sigma\to\SS^2$ is a Gauss map.
+Show that the curve $\alpha=\Norm\circ\gamma$ divides the sphere into regions of equal area.
 
 Conclude that
 \[\length \alpha\ge 2\cdot\pi.\]
@@ -348,8 +347,8 @@ Conclude that
 
 {
 
-\begin{wrapfigure}[4]{r}{32 mm}
-\vskip-12mm
+\begin{wrapfigure}[4]{r}{25 mm}
+\vskip-8mm
 \centering
 \includegraphics{mppics/pic-46}
 \vskip-0mm
@@ -358,7 +357,7 @@ Conclude that
 \begin{thm}{Exercise}\label{ex:aabbccdd}
 Let $\Sigma$ be a smooth closed surface with a closed geodesic $\gamma$.
 Assume $\gamma$ has exactly 4 self-intersection at the points $a$, $b$, $c$ and $d$ that appear on $\gamma$ in the order $a,a,b,b,c,c,d,d$.
-Show that $\Sigma$ cannot have positive Gauss curvature.\footnote{Hint: estimate integral of Gauss curvature bounded by a simple geodesic loop.}
+Show that $\Sigma$ cannot have positive Gauss curvature.
 \end{thm}
 
 The following exercise gives the optimal bound on Lipschitz constant of a convex function that guarantees that its geodesics have no self-intersections;
@@ -368,9 +367,6 @@ compare to \ref{ex:rough-bound-mountain}.
 Suppose that $f\:\RR^2\to\RR$ is a $\sqrt{3}$-Lipschitz smooth convex function.
 Show that any geodesic in the surface defined by the graph $z=f(x,y)$ has no self-intersections.
 \end{thm}
-
-\parit{Hint.} Note that it is sufficient to show that the surface has no geodesic loops.
-Estimate the integral of Gauss curvature of whole surface and a disc in it surrounded by a geodesic loop.
 
 \begin{thm}{Advanced exercise}
 Let $\Sigma$ be a smooth regular sphere with positive Gauss curvature and $p\in\Sigma$. 

@@ -1,54 +1,157 @@
 \chapter{Semisolutions}
 
-\parbf{Exercise \ref{ex:vertex-support}}
+\parbf{Exercise \ref{ex:9}.} The image of $\gamma$ might have a shape of digit $8$ or $9$.
 
-\parit{Using the spiral lemma.}
-If $\gamma$ does not have a vertex at $s$ then $k'(s)\ne 0$ and therefore the curvature of a small arc around $s$ is monotonic.
-By spiral lemma the osculating circles at this arc are nested.
-In particular the curve $\gamma$ crosses the osculating circle $\sigma_s$ at $s$; 
-that is, $\sigma_s$ is not a local support of $\gamma$ at $s$.
+\parbf{Exercise \ref{ex:integral-length}.} For (\ref{ex:integral-length>}), apply the fundamental theorem of calculus for each segment in a given partition. For (\ref{ex:integral-length<}) consider a partition such that the velocity vector $\alpha'(t)$ is nearly constant on each of its segments.
 
-We proved that \emph{if $\gamma$ does not have a vertex at $s$ then the osculating circle $\sigma_s$ is not supporting at $s$}.
-The latter is equivalent to the requred statement: \emph{if the osculating circle $\sigma_s$ supports $\gamma$ at $s$, then $\gamma$ has a vertex at~$s$}.
+\parbf{Advanced exercise \ref{adex:integral-length}.} Use theorems of Rademacher and Lusin (\ref{thm:rademacher} and \ref{thm:lusin}).
 
-\parit{By direct calculations.}
-Assume the osculating circline $\sigma_s$ is a circle.
-Then its center is $p=\gamma(s)+\tfrac1{k(s)}\cdot\nu(s)$.
-Since $\sigma_s$ is supporting $\gamma$ at $s$, we have that the function
-\[f(t)=\langle p-\gamma(t),p-\gamma(t)\rangle\]
-has a minimum or maximum at $s$.
+\parbf{Exercise \ref{ex:curvature-of-spherical-curve}.} Differentiate the identity $\langle\gamma(s),\gamma(s)\rangle=1$ a couple of times.
 
-Note that 
+\parbf{Exercise \ref{ex:curvature-formulas}.} Prove and use the following identities: 
 \begin{align*}
-f'(t)&= 2\cdot\langle p-\gamma(t),-\tau(t)\rangle;
+\gamma''(t)-\gamma''(t)^\perp&=\tfrac{\gamma'(t)}{|\gamma'(t)|}\cdot\langle\gamma''(t),\tfrac{\gamma'(t)}{|\gamma'(t)|}\rangle,
 \\
-f''(s)&= 
-2\cdot\langle -\tau(t),-\tau(t)\rangle
--2\cdot\langle  p-\gamma(t),k(t)\cdot\nu(t)\rangle=
-\\
-&=2-2\cdot\langle  p-\gamma(t),k(t)\cdot\nu(t)\rangle;
-\\
-f'''(s)&=-2\cdot\langle  -\tau(t),k(t)\cdot\nu(t)\rangle-
-\\&\quad-
-2\cdot\langle  p-\gamma(t),k'(t)\cdot\nu(t)\rangle
-+2\cdot\langle  p-\gamma(t),-k^2(t)\cdot\tau(t)\rangle=
-\\
-&=-
-2\cdot\langle  p-\gamma(t),k'(t)\cdot\nu(t)\rangle
-+2\cdot\langle  p-\gamma(t),-k^2(t)\cdot\tau(t)\rangle.
+|\gamma'(t)|&=\sqrt{\langle \gamma'(t),\gamma'(t)\rangle}.\
 \end{align*}
-Therefore
-\begin{align*}
-f'(s)&=-2\cdot\langle \tfrac1{k(s)}\cdot\nu(s),\tau(s)\rangle=
-\\
-&=0.
-\\
-f''(s)
-&=2-2\cdot\tfrac{k(s)}{k(s)}=
-\\
-&=0.
-\\
-f'''(s)&=-2\cdot\tfrac{k'(s)}{k(s)}.
-\end{align*}
-Therefore if $f$ has a local minimum or maximum at $s$, then $f'''(s)=0$ and therefore $k'(s)=0$.
 
+\parbf{Advanced exercise \ref{ex:gamma/|gamma|}.} Assume that $\gamma$ is unit-speed; show that $|\sigma'|\le \kur+\theta'$, where $\theta(s)=\angle(\gamma(s),\gamma'(s))$.
+
+\parbf{Exercise \ref{ex:monotonic-tc}.}
+Use that exterior angle of a triangle equals to the sum of the two remote interior angles;
+for the second part apply the induction on number of vertexes.
+
+\parbf{Exercise \ref{ex:length-dist}.}
+Choose a value $s_0\in[a,b]$ that splits the total curvature into two equal parts, $\theta$ in each.
+Observe that $\measuredangle(\gamma'(s_0),\gamma'(s))\le \theta$ for any~$s$.
+Use this inequality the same way as in the proof of the bow lemma.
+
+\parbf{Exercise \ref{ex:tc-semicontinuous}.} Modify the proof of semi-continuity of length (\ref{thm:length-semicont}).
+
+\parbf{Exercise \ref{ex:torsion=0}.}
+Show and use that the binormal vector is constant.
+
+\parbf{Exercise \ref{ex:evolvent-constant-slope}.}
+Show that $\langle w,\alpha\rangle$ is constant if $\gamma$ makes constant angle with a fixed vector $w$ and $\alpha$ is the evolvent of $\gamma$.
+
+\parbf{Exercise \ref{ex:cur+tor=helix}.} Use the second statement in \ref{ex:helix-torsion}.
+
+\parbf{Advanced exercise \ref{ex:const-dist}.} Note that the function
+\[\rho(\ell)=|\gamma(t+\ell)-\gamma(t)|^2=\langle \gamma(t+\ell)-\gamma(t),\gamma(t+\ell)-\gamma(t)\rangle\] 
+is smooth and does not depend on $t$.
+Express speed, curvature and torsion of $\gamma$ in terms of derivatives $\rho^{(n)}(0)$
+and apply \ref{ex:cur+tor=helix}.
+
+\parbf{Exercise \ref{ex:vertex-support}.} Apply the spiral lemma (\ref{lem:spiral}).
+
+\begin{wrapfigure}{r}{35 mm}
+\vskip1mm
+\centering
+\includegraphics{mppics/pic-66}
+\vskip0mm
+\end{wrapfigure}
+
+\parbf{Exercise \ref{ex:between-parallels-1}.}
+ Note that the curve lies in a figure $F$ as on the diagram.
+More precisely, $F$ is formed by a rectangle with pair of bases on the lines and two half discs attached to the sides of length $2$.
+Look at the right most position of $F$ that still contains the curve.
+
+\parbf{Exercise \ref{ex:convex small}.}
+Note that we can assume that $\gamma$ bounds a convex figure $F$, otherwise by \ref{prop:convex} its curvature changes the sign and therefore it has zero curvature at some point.
+Choose two points $x$ and $y$ surrounded by $\gamma$ such that $|x-y|>2$,
+look at the maximal lens bounded by two arcs with common chord $xy$ that lies in $F$ and apply supporting test (\ref{prop:supporting-circline}).
+
+\parbf{Exercise \ref{ex:moon-rad}.} Note that $\gamma$ contains a simple loop; apply to it \ref{thm:moon-gen}.
+
+\parbf{Exercise \ref{ex:moon-rad}.} Note that $\gamma$ contains a simple loop; apply to it \ref{thm:moon-gen}.
+
+\parbf{Exercise \ref{ex:curve-crosses-circle}.}
+Repeat the proof of theorem for each cyclic concatenation of an arc of $\gamma$ from $p_i$ to $p_{i+1}$ with large arc of the circle. 
+
+\parbf{Exercise \ref{ex:inverse}.} Use the definition of osculating circle via order of contact and that inversion maps circles to circlines. 
+
+\parbf{Exercise \ref{ex:implicit-orientable}.} Show that $\Norm=\tfrac{\nabla h}{|\nabla h|}$ defines a unit normal field on $\Sigma$.
+
+\parbf{Exercise \ref{ex:moon-revolution}.} Use \ref{ex:line-of-curvature} and \ref{thm:moon-orginal}.
+
+\parbf{Exercise \ref{ex:positive-gauss}.}
+Consider the minimal sphere that encloses the surface.
+
+\parbf{Exercise \ref{ex:surrounds-disc}.}
+Look for a supporting spherical dome with the unit circle as the boundary.
+
+\parbf{Exercise \ref{ex:principle-revolution}.} Use \ref{ex:line-of-curvature} and \ref{cor:meusnier}.
+
+\parbf{Exercise \ref{ex:convex-lagunov}.}
+Assume a maximal ball in $V$ touches its boundary at the points $p$ and $q$.
+Consider the projection of $V$ to a plane thru $p$, $q$ and the center of the ball. 
+
+\parbf{Exercise \ref{ex:lagunov-genus4}.} Drill an extra hole or combine two examples together.
+
+\parbf{Exercise \ref{ex:convex-revolution}.} Use \ref{ex:principle-revolution}.
+
+\parbf{Exercise \ref{ex:ruled=>saddle}.} Prove and use that each point $p\in\Sigma$ has a direction with vanishing normal curvature.
+
+\parbf{Exercise \ref{ex:length-of-bry}.} Use the \ref{lem:convex-saddle} and the hemisphere lemma (\ref{lem:hemisphere}).
+
+\parbf{Exercise \ref{ex:disc-hat}.} Observe that it is sufficient to construct a smooth parametrization of $\Delta_\eps$ by a closed hemisphere.
+To do this repeat the argument in \ref{lem:gauss=sphere} with the center at a point surrounded by the boundary line of $\Delta_\eps$ in its plane.
+
+\parbf{Exercise \ref{ex:between-parallels}.} Look for an example among the surfaces of revolution and use \ref{ex:principle-revolution}.
+
+\parbf{Exercise \ref{ex:one-side-bernshtein}.} Look at the sections of the graph by planes parallel to the $(x,y)$-plane and to the $(x,z)$-plane, then apply Meusnier’s theorem apply Meusnier's theorem (\ref{cor:meusnier}).
+
+\parbf{Exercise \ref{ex:convex-surf}.} Show and use that any tangent plane $\T_p$ supports $\Sigma$ at $p$.
+
+\parbf{Exercise \ref{ex:small-gauss}.}
+Note that we can assume that the surface has positive Gauss curvature, otherwise the statement is evident.
+Therefore the surface bounds a convex region that contains a line segment of length~$\pi$.
+
+Observe that the Gauss curvature of the surface of revolution of the graph $y=a\cdot \sin x$ for $x\in(0,\pi)$ cannot exceed $1$ (Use \ref{ex:curvature-graph} and \ref{cor:meusnier}).
+Try to support the surface $\Sigma$ from inside by a surface of revolution of the described type with large $R$. 
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{asy/sin}
+\vskip-0mm
+\end{figure}
+
+\parbf{Exercise \ref{ex:lasso}.} Cut the lateral surface of the mountain by a line from the cowboy to the top, unfold it on the plane and try to figure out what is the image of the strained lasso.
+
+\parbf{Advanced exercise \ref{ex:milka}.} Show that the concatenation of the line segment $[p_t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path in the closed region $W$ outside of $\Sigma$.
+
+\parbf{Exercise \ref{ex:rough-bound-mountain}.} Use \ref{thm:usov} and \ref{ex:sef-intersection}.
+
+The suggested argument does not give the optimal bound for the Lipschitz constant that guarantees that $\gamma$ is simple, but
+later (see \ref{ex:sqrt(3)}) we will show that the exact bound is $\sqrt{3}=\tg\tfrac\pi3$ --- it is the same as in the exercise about mountain of with the shape of a perfect cone; see \ref{ex:lasso}.
+
+\parbf{Exercise \ref{ex:shape-curvature-line}.}  Denote by $\Norm_1(t)$ and $\Norm_2(t)$ the unit normal vectors to $\Sigma_1$ and $\Sigma_2$ at $\gamma(t)$.
+Note that $\langle \Norm_1(t),\Norm_2(t)\rangle$ is constant; take it derivative and apply \ref{thm:rodrigues}.
+
+\parbf{Exercise \ref{ex:gauss-integral-open}.} Use \ref{lem:graph}.
+
+\parbf{Exercise \ref{ex:parallel-transport-equator}.} Denote by $w$ the pole of the equator; show and use that $w$ is a parallel vector field along $\gamma$.
+
+\parbf{Exercise \ref{ex:aabbccdd}.} Estimate integral of Gauss curvature bounded by a simple geodesic loop and apply \ref{ex:int-gauss=4pi}.
+
+\parbf{Exercise \ref{ex:sqrt(3)}.} Note that it is sufficient to show that the surface has no geodesic loops.
+Estimate the integral of Gauss curvature of whole surface and a disc in it surrounded by a geodesic loop.
+
+
+
+\parbf{Exercise \ref{ex:intrinsic-diameter}.} Use \ref{lem:closest-point-projection}.
+
+
+
+\parbf{Exercise \ref{ex:geod-semigeod}.} Note that in order to show that $\gamma''_t(s)\perp\T_{\gamma_t(s)}$, it is sufficient to show that $\langle\tfrac{\partial^2}{\partial s^2}w,\tfrac{\partial}{\partial t}w\rangle=0$.
+
+
+
+%\parbf{Exercise \ref{}.}
+
+%\parbf{Exercise \ref{}.}
+
+%\parbf{Exercise \ref{}.}
+
+%\parbf{Exercise \ref{}.}

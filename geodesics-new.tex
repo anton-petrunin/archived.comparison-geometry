@@ -21,7 +21,6 @@ On the other hand if $\theta$ is small, the lasso slips off as soon as the cowbo
 What is the critical angle $\theta_0$ at which the cowboy can no longer climb the ice-mountain?
 \end{thm}
 
-\parit{Hint:} Cut the lateral surface of the mountain by a line from the cowboy to the top, unfold it on the plane and try to figure out what is the image of the strained lasso.
 
 \section*{Shortest paths}
 
@@ -58,7 +57,7 @@ Note that the polygonal path $ps_\eps q$ lies in $\Sigma$ and its length $2\cdot
 It follows that $|p-q|_\Sigma\le 2$.
 On the other hand $|p-q|_\Sigma\ge |p-q|_{\RR^3}=2$; that is, $|p-q|_\Sigma= 2$.
 
-\begin{wrapfigure}{r}{28 mm}
+\begin{wrapfigure}{o}{28 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-79}
@@ -71,11 +70,11 @@ in particular it must pass thru the origin.
 Since the origin does not lie in $\Sigma$, there is no shortest from $p$ to $q$ in $\Sigma$ 
 
 \begin{thm}{Proposition}\label{prop:shortest-paths-exist}
-Any two points in a complete smooth surface can be joined by a shortest path. 
+Any two points in a proper smooth surface can be joined by a shortest path. 
 \end{thm}
 
 \parit{Proof.}
-Fix a complete smooth surface $\Sigma$ with two points $p$ and $q$.
+Fix a proper smooth surface $\Sigma$ with two points $p$ and $q$.
 Set $\ell=|p-q|_\Sigma$.
 
 By the definition of induced length metric,
@@ -120,7 +119,7 @@ Fix a point $p$ and set
 \[\ell=\inf\set{|p-x|}{x\in R}.\]
 Choose a sequence $x_n\in R$ such that $|p-x_n|\to \ell$ as $n\to\infty$.
 
-\begin{wrapfigure}{i}{22 mm}
+\begin{wrapfigure}{o}{22 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-40}
@@ -140,7 +139,7 @@ Hence the existence follows.
 
 Assume there are two distinct points $\bar p, \bar p'\in R$ that minimize the distance to $p$.
 Since $R$ is convex, their midpoint $m=\tfrac12\cdot (\bar p+\bar p')$ lies in~$R$.
-Note that $|p-\bar p|\z=|p-\bar p'|=\ell$; that is $\triangle p\bar p\bar p'$ is isosceles and therefore $\triangle p\bar p m$ is right with the right angle at~$m$.
+Note that $|p-\bar p|\z=|p-\bar p'|=\ell$; that is, $\triangle p\bar p\bar p'$ is isosceles and therefore $\triangle p\bar p m$ is right with the right angle at~$m$.
 Since a leg of a right triangle is shorter than its hypotenuse, we have $|p-m|<\ell$ --- a contradiction. 
 
 It remains to prove inequality \ref{eq:short-cpp}.
@@ -229,7 +228,7 @@ Whence the second statement follows.
 \end{wrapfigure}
 
 \begin{thm}{Exercise}\label{ex:hat-convex}
-Suppose $\Sigma$ is a complete smooth surface that bounds a convex region $R$ 
+Suppose $\Sigma$ is a closed smooth surface that bounds a convex region $R$ 
 in $\RR^3$
 and $\Pi$ is a plane that cuts a hat $\Delta$ from $\Sigma$.
 Assume that the reflection of the interior of $\Delta$ with respect to $\Pi$ lies in the interior of $R$.
@@ -247,8 +246,6 @@ Let us define the \emph{intrinsic diameter} of a closed surface $\Sigma$ as the 
 Assume that a closed smooth surface $\Sigma$ with positive Gauss curvature lies in a unit ball.
 Show that the intrinsic diameter of $\Sigma$ cannot exceed $\pi$.
 \end{thm}
-
-\parit{Hint:} Use \ref{lem:closest-point-projection}.
 
 
 \section*{Geodesics}
@@ -280,7 +277,7 @@ then the curve is a line segment.
 \end{thm}
 
 \begin{thm}{Lemma}\label{lem:constant-speed}
-Any geodesic $\gamma$ has constant speed; that is $|\gamma'(t)|$ is constant.
+Any geodesic $\gamma$ has constant speed; that is, $|\gamma'(t)|$ is constant.
 \end{thm}
 
 \parit{Proof.} 
@@ -292,18 +289,19 @@ Whence
 \\
 &=0.
 \end{align*}
-That is $|\gamma'(t)|^2=\langle\gamma'(t),\gamma'(t)\rangle$ is constant.
+That is, $|\gamma'(t)|^2=\langle\gamma'(t),\gamma'(t)\rangle$ is constant.
 \qeds
 
 \begin{thm}{Proposition}\label{prop:geod-existance} 
-Given a tangent vector $v$ to a smooth surface $\Sigma$ at a point $p$
-There is a unique geodesic $\gamma\:\mathbb{I}\to \Sigma$ defined on a maximal open interval $\mathbb{I}\ni 0$ that starts at $p$ with velocity vector $v$;
+Let $\Sigma$ be  a smooth surface without boundary.
+Given a tangent vector $v$ to $\Sigma$ at a point $p$
+there is a unique geodesic $\gamma\:\mathbb{I}\to \Sigma$ defined on a maximal open interval $\mathbb{I}\ni 0$ that starts at $p$ with velocity vector $v$;
 that is, $\gamma(0)=p$ and $\gamma'(0)=v$.
 
 Moreover
 \begin{enumerate}[(a)]
 \item\label{prop:geod-existance:smooth} the map $(p,v,t)\mapsto \gamma(t)$ is smooth in its domain of definition.
-\item\label{prop:geod-existance:whole} if $\Sigma$ is complete, then $\mathbb{I}=\RR$; that is, the maximal interval is whole real line.
+\item\label{prop:geod-existance:whole} if $\Sigma$ is proper, then $\mathbb{I}=\RR$; that is, the maximal interval is whole real line.
 \end{enumerate}
 
 \end{thm}
@@ -327,7 +325,7 @@ that is, $\gamma(0)=p$ and $\gamma'(0)=v$.
 The point $q=\gamma_v(1)$ is called \emph{exponential map} of $v$, or briefly $q=\exp_pv$.
 (There is a reason to call this map \emph{exponential}, but it will take us too far from the subject.)
 By \ref{prop:geod-existance}, the map $\exp_p\:\T_p\to \Sigma$ is smooth and defined in a neighborhood of zero in $\T_p$;
-moreover, if $\Sigma$ is complete, then $\exp_p$ is defined on the whole space $\T_p$.
+moreover, if $\Sigma$ is proper, then $\exp_p$ is defined on the whole space $\T_p$.
 
 Note that the Jacobian of $\exp_p$ at zero is the identity matrix.
 Indeed, let $z=f(x,y)$ be a local graph representation of $\Sigma$ in the tangent-normal coordinates.
@@ -377,7 +375,7 @@ A geodesic might not form a shortest path, but if this is the case, then it is c
 Note that according to the claim, any shortest path is a reparametrization of a minimizing geodesic.
 
 This claim provides connection between intrinsic geometry of the surface and its extrinsic geometry.
-This connection will be important later; in particular it will play the key role in the proof of the so-called \emph{remarkable theorem}. %???+ref(see \ref{thm:remarkable}).
+This connection will be important later; in particular it will play the key role in the proof of the so-called \emph{remarkable theorem} (\ref{thm:remarkable}).
 
 Intrinsic means that it can be expressed in terms of measuring things inside the surface, for example length of curves or angles between the curves that lie in the surface.
 Extrinsic means that we have to use ambient space in order to measure it.
@@ -409,7 +407,7 @@ Fix a point $p\in\Sigma$.
 Let $\eps>0$ be as in \ref{prop:exp}.
 Assume a geodesic $\gamma$ of length less than $\eps$ from $p$ to $q$ does not minimize the length between its endpoints.
 Then there is a shortest path from $p$ to $q$, which becomes a geodesic if parameterized by its arc length.
-That is there are two geodesics from $p$ to $q$ of length smaller than $\eps$.
+That is, there are two geodesics from $p$ to $q$ of length smaller than $\eps$.
 In other words there are two vectors $v,w\in\T_p$ such that $|v|<\eps$, $|w|<\eps$ and 
 $q=\exp_pv=\exp_pw$.
 But according to \ref{prop:exp}, the exponential map is injective in $\eps$-neighborhood of zero --- a contradiction.\qeds
@@ -438,7 +436,7 @@ Show that no shortest path in $\Sigma$ can cross $\Pi$ more than once.
 \end{lpic}
 \end{wrapfigure}
 
-\begin{thm}{Advanced exercise}
+\begin{thm}{Advanced exercise}\label{ex:milka}
 Let $\Sigma$ be a smooth closed strictly convex surface 
 in $\RR^3$ 
 and $\gamma\:[0,\ell]\z\to \Sigma$ be a unit-speed minimizing geodesic.
@@ -453,8 +451,6 @@ that is, the line segment $[p_t,q]$ intersects $\Sigma$ at a point distinct from
 Show that the statement does not hold without assuming that $\gamma$ is minimizing.
 \end{thm}
 
-\parit{Hint:} Show that the concatenation of the line segment $[p_t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path in the closed region $W$ outside of $\Sigma$.
-
 }
 
 \section*{Liberman's lemma}
@@ -464,26 +460,26 @@ The following lemma is a smooth analog of lemma proved by Joseph Liberman \cite{
 \begin{thm}{Liberman's lemma}\label{lem:liberman}
 Assume $\gamma$ is a geodesic on the graph $z=f(x,y)$ of a smooth convex function $f$ defined on an open subset of the plane.
 Suppose that $\gamma(t)=(x(t),y(t),z(t))$
-Then $t\mapsto z(t)$ is a convex function; that is $z''(t)\ge 0$ for any $t$.
+Then $t\mapsto z(t)$ is a convex function; that is, $z''(t)\ge 0$ for any $t$.
 \end{thm}
 
 \parit{Proof.}
-Choose the orientation on the graph so that the unit normal vector $\nu$ always points up;
+Choose the orientation on the graph so that the unit normal vector $\Norm$ always points up;
 that is, it has positive $z$-coordinate.
 
 Since $\gamma$ is a geodesic, we have $\gamma''(t)\perp\T_{\gamma(t)}$,
-or equivalently $\gamma''(t)$ is proportional to $\nu_{\gamma(t)}$ for any $t$.
+or equivalently $\gamma''(t)$ is proportional to $\Norm_{\gamma(t)}$ for any $t$.
 By \ref{prop:gamma''=II}, we have
-\[\langle \gamma''(t),\nu_{\gamma(t)}\rangle=\II_{\gamma(t)}(\gamma'(t),\gamma'(t));\]
+\[\langle \gamma''(t),\Norm_{\gamma(t)}\rangle=\II_{\gamma(t)}(\gamma'(t),\gamma'(t));\]
 hence
-\[\gamma''(t)=\nu_{\gamma(t)}\cdot \II_{\gamma(t)}(\gamma'(t),\gamma'(t))\]
+\[\gamma''(t)=\Norm_{\gamma(t)}\cdot \II_{\gamma(t)}(\gamma'(t),\gamma'(t))\]
 for any $t$.
 
 Therefore
-\[z''(t)=\cos(\theta_\gamma(t))\cdot\nu_{\gamma(t)}\cdot \II_{\gamma(t)}(\gamma'(t),\gamma'(t)),\eqlbl{eq:z''}\]
-where $\theta_\gamma(t)$ denotes the angle between $\nu_{\gamma(t)}$ and the $z$-axis.
+\[z''(t)=\cos(\theta_\gamma(t))\cdot\Norm_{\gamma(t)}\cdot \II_{\gamma(t)}(\gamma'(t),\gamma'(t)),\eqlbl{eq:z''}\]
+where $\theta_\gamma(t)$ denotes the angle between $\Norm_{\gamma(t)}$ and the $z$-axis.
 
-Since $\nu$ points up, we have $\theta_\gamma(t)<\tfrac\pi2$, or equivalently
+Since $\Norm$ points up, we have $\theta_\gamma(t)<\tfrac\pi2$, or equivalently
 \[\cos(\theta_\gamma(t))>0\]
 for any $t$.
  
@@ -513,7 +509,7 @@ later David Berg \cite{berg} pointed out that the same proof works for geodesics
 \[W=\set{(x,y,z)\in\RR^3}{z\ge f(x,y)}\]
 
 \parit{Proof.}
-Let $\gamma(t)=(x(t),y(t),z(t))$ be a unit speed geodesic on $\Sigma$.
+Let $\gamma(t)=(x(t),y(t),z(t))$ be a unit-speed geodesic on $\Sigma$.
 According to Liberman's lemma 
 $z(t)$ is convex.
 
@@ -561,9 +557,6 @@ Construct a convex $2$-Lipschitz function defined on the $(x,y)$-plane
 with a nonsimple geodesic $\gamma$ on its graph $z=f(x,y)$.
 \end{thm}
 
-\parit{Hint:} Use the theorem and \ref{ex:sef-intersection}.
-The suggested argument does not give the optimal bound for the Lipschitz constant that guarantees that $\gamma$ is simple, but
-later (see \ref{ex:sqrt(3)}) we will show that the exact bound is $\sqrt{3}=\tan\tfrac\pi3$ --- it is the same as in the exercise about mountain of with the shape of a perfect cone; see \ref{ex:lasso}.
 
 \begin{thm}{Theorem}\label{thm:tc-of-mingeod}
 Suppose a smooth surface $\Sigma$ bounds a convex set $K$ in the Euclidean space.
@@ -571,7 +564,7 @@ Assume $B(0,\eps)\subset K\subset B(0,1)$.
 Then the total curvatures of any shortest path in $\Sigma$ can be bounded in terms of~$\eps$. 
 \end{thm}
 
-\begin{wrapfigure}{o}{48 mm}
+\begin{wrapfigure}{r}{48 mm}
 \vskip-4mm
 \centering
 \includegraphics{mppics/pic-83}
@@ -582,8 +575,8 @@ The following exercise will guide you thru the proof of the theorem.
 
 \begin{thm}{Exercise}\label{ex:bound-tc}
 Let $\Sigma$ be as in the theorem and $\gamma$ be a unit-speed shortest path in $\Sigma$.
-Denote by $\nu_p$ the unit normal vector that points outside of $\Sigma$;
-denote by $\theta_p$ the angle between $\nu_p$ and the direction from the origin to a point $p\in\Sigma$.
+Denote by $\Norm_p$ the unit normal vector that points outside of $\Sigma$;
+denote by $\theta_p$ the angle between $\Norm_p$ and the direction from the origin to a point $p\in\Sigma$.
 Set $\rho(t)\z=|\gamma(t)|^2$; let $k(t)$ be the curvature of $\gamma$ at $t$.
 \begin{enumerate}[(a)]
 \item Show that $\cos\theta_p\ge \eps$ for any $p\in \Sigma$.

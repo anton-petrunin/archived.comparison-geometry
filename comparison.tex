@@ -7,7 +7,7 @@ the latter notation is used if we need to emphasise that the geodesic lies in $\
 If we write $[xy]$, then we assume that a minimizing geodesic exists and we made a choice of one of them.
 
 In general minimizing geodesic might be not unique for example any meridian in the sphere is a minimizing geodesic between its poles.
-If $\Sigma$ is complete, then a minimizing geodesic always exists. %%%???should we prove it???
+If $\Sigma$ is proper, then a minimizing geodesic always exists. %%%???should we prove it???
 
 A \emph{geodesic triangle} in a surface $\Sigma$ is a triple of points $x,y,z\in \Sigma$ with choice of minimizing geodesics $[xy]$, $[yz]$ and $[zx]$.
 The points $x,y,z$ are called \emph{vertexes} of the geodesic triangle,
@@ -37,7 +37,7 @@ A plane or sphere are examples of simply connected surfaces, while torus or cyli
 
 
 \begin{thm}{Comparison theorem}\label{thm:comp}
-Let $\Sigma$ be a complete smooth regular surface with a geodesic triangle $[xyz]$.
+Let $\Sigma$ be a proper smooth regular surface with a geodesic triangle $[xyz]$.
 \begin{enumerate}[(i)]
  \item\label{thm:comp:toponogov} If $\Sigma$ has nonnegative Gauss curvature, then 
  \[\measuredangle\hinge {x}{y}{z}\ge\angk xyz.\]
@@ -73,7 +73,7 @@ For example the equator $z=0$ of the hyperboloid (which is not simply connected)
 forms a triangle with all angles $\pi$, which contradict the comparison in~\textit{(\ref{thm:comp:cat})}.
 
 \begin{thm}{Exercise}\label{ex:unique-geod}
-Let $\Sigma$ be a complete smooth regular simply connected surface with nonpositive Gauss curvature.
+Let $\Sigma$ be an open smooth regular simply connected surface with nonpositive Gauss curvature.
 Show that any two points in $\Sigma$ are connected by a unique geodesic.
 \end{thm}
 
@@ -100,7 +100,7 @@ First we prove the following local version of comparison theorem and then use it
 \begin{thm}{Theorem}\label{thm:loc-comp}
 The comparison theorem (\ref{thm:comp}) holds in a small neighborhood of any point.
 
-That is, if $\Sigma$ be a complete smooth regular surface,
+That is, if $\Sigma$ be a smooth regular surface without boundary,
 then any point $p\in \Sigma$ admits a neighborhood $U\ni p$ such that 
 \begin{enumerate}[(i)]
  \item If $\Sigma$ has nonnegative Gauss curvature, then for any geodesic triangle $[xyz]$ in $U$ we have
@@ -225,7 +225,7 @@ $|p-q|\ge |\~p-\~q|$ (or correspondingly $|p-q|\le |\~p-\~q|$).
 
 
 \begin{thm}{Proposition}\label{prop:comp-reformulations}
-Let $\Sigma$ be a complete smooth regular surface.
+Let $\Sigma$ be a proper smooth regular surface.
 Then the following three conditions are equivalent:
 \begin{enumerate}[(i$^{+}$)]
 \item For any geodesic triangle $[xyz]$ in $\Sigma$ we have
@@ -275,13 +275,13 @@ Note that $\angk xwy\to \measuredangle\hinge xpz$ as $w,y\to x$, whence the impl
 In the following exercises you can apply the globalization theorem.
 
 \begin{thm}{Exercise}
-Let $\Sigma$ be a complete smooth regular surface with nonnegative Gauss curvature.
+Let $\Sigma$ be a closed (or open) regular surface and with nonnegative Gauss curvature.
 Show that for any four distinct points the following inequality holds:
 \[\angk pxy+\angk pyz+\angk pzx\le2\cdot \pi.\]
 
 \end{thm}
 
-\begin{thm}{Exercise}Let $\Sigma$ be a complete smooth regular surface
+\begin{thm}{Exercise}Let $\Sigma$ be a open smooth regular surface
 and $\gamma$ be a unit-speed geodesic in $\Sigma$ and $p\in\Sigma$.
 
 Consider the function
@@ -295,7 +295,7 @@ Consider the function
 
 \begin{thm}{Exercise}
 Let $\~x_1\dots\~x_n$ be a convex plane polygon and
-$x_1\dots x_n$ be a broken geodesic in a complete simply connected surface $\Sigma$ with nonpositive curvature.
+$x_1\dots x_n$ be a broken geodesic in an open simply connected surface $\Sigma$ with nonpositive curvature.
 Assume that
 $|x_i-x_{i-1}|_\Sigma=|\~x_i-\~x_{i-1}|_{\RR^2}$ and
 $\measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}\ge \measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}$
@@ -308,7 +308,7 @@ you can use it without proof.
 
 
 \begin{thm}{Exercise}
-Let $x'$ and $y'$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in a complete smooth regular surface $\Sigma$.
+Let $x'$ and $y'$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in an open smooth regular surface $\Sigma$.
 \begin{enumerate}[(a)]
  \item Show that if the Gauss curvature of $\Sigma$ is nonnegative, then 
  \[2\cdot |x'-y'|_\Sigma\ge |x-y|_\Sigma.\]
@@ -333,7 +333,7 @@ Applying the lemma few times we will get that the comparison holds for arbitrary
 
 
 \begin{thm}{Key lemma}\label{key-lem:globalization}  
-Let $\Sigma$ be a complete smooth regular surface.
+Let $\Sigma$ be an open smooth regular surface.
 Assume that the comparison
 \[\mangle\hinge x y z
 \ge\angk x y z\eqlbl{eq:key-lem:globalization}\]
@@ -345,7 +345,7 @@ Then the comparison \ref{eq:key-lem:globalization}
 holds for any hinge $\hinge x y z$ with $\dist{x}{y}{}+\dist{x}{z}{}<\ell$.
 \end{thm}
 
-\begin{wrapfigure}{r}{30mm}
+\begin{wrapfigure}{o}{30mm}
 \begin{lpic}[t(0mm),b(0mm),r(10mm),l(0mm)]{pics/globalization(1)}
 \lbl[l t]{17,2;$\~ p$}
 \lbl[l]{16.5,54;$\~ q$}
@@ -464,11 +464,11 @@ Therefore $r_n-r_{n+1}>\delta$.
 The latter can not hold for large $n$, otherwise the sequence $r_n$ would not converge.
 
 It follows that for any $\eps>0$ we have that $\mangle\hinge{x_n}p q> \pi-\eps$ for all large $n$;
-that is $\mangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
+that is, $\mangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
 
 Since $\mangle\hinge{x_n}p q\to \pi$, we have 
 $s_n-r_n\to 0$ as $n\to\infty$;
-that is $s_n\to r$.
+that is, $s_n\to r$.
 
 Since the sequence $(s_n)$ is nonincreasing and $r\ge |p-q|$, we get
 \[s_n\ge |p-q|\]
@@ -479,7 +479,7 @@ In particular
 
 
 \begin{thm}{Exercise} 
-Assume a disc $\Delta$ lies in complete smooth regular surface $\Sigma$ with nonnegative Gauss curvature and bounded by a closed broken geodesic $x_1\dots x_n$ with positive exterior angles, that is when you travel along the boundary, you always turn to the side where $\Delta$ is.
+Assume a disc $\Delta$ lies in open smooth regular surface $\Sigma$ with nonnegative Gauss curvature and bounded by a closed broken geodesic $x_1\dots x_n$ with positive exterior angles; that is, when you travel along the boundary, you always turn to the side where $\Delta$ is.
 
 Show that there is a convex plane polygon $\~x_1\dots \~x_n$ which sides are equal to the corresponding sides of $x_1\dots x_n$ and with internal angles at not bigger than in the corresponding angles  of $x_1\dots x_n$.
 \end{thm}
@@ -531,8 +531,8 @@ Then there is a short map
 that maps $\~p$, $\~x$, $\~y$ and $\~z$ to $\dot p$, $\dot x$, $\dot y$ and $\dot z$ respectively.
 \end{thm}
 
-\begin{wrapfigure}{r}{30mm}
-\begin{lpic}[t(-5mm),b(0mm),r(0mm),l(0mm)]{pics/resh(1)}
+\begin{wrapfigure}{o}{30mm}
+\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{pics/resh(1)}
 \lbl[t]{17,-.5;$\~p$}
 \lbl[b]{29,23.5;$\~x$}
 \lbl[rb]{2,19;$\~y$}
@@ -586,7 +586,7 @@ By construction, $F$ satisfies the remaining conditions of the lemma.
 Construct model triangles $\trig{\dot p}{\dot x}{\dot z}\z=\modtrig(p x z)$ 
 and $\trig {\dot p} {\dot y} {\dot z}=\modtrig(p y z)$ so that $\dot x$ and $\dot y$ lie on opposite sides of $[\dot p\dot z]$.
 
-\begin{wrapfigure}{r}{25mm}
+\begin{wrapfigure}{o}{25mm}
 \begin{lpic}[t(0mm),b(0mm),r(0mm),l(0mm)]{pics/cat-monoton-ineq(1)}
 \lbl[rb]{14,21;$\dot z$}
 \lbl[lt]{11,1;$\dot p$}
@@ -635,7 +635,7 @@ that is, the triangle $\trig p x y$ is thin.
 
 \section{Nonpositive curvature}
 
-Assume $\Sigma$ is a complete smooth regular surface with nonpositive curvature.
+Assume $\Sigma$ is an open smooth regular surface with nonpositive curvature.
 As it follow from Exercise \ref{ex:unique-geod} any two points $x$ and $y$ in $\Sigma$ are joined by unique geodesic $[xy]$.
 
 \begin{wrapfigure}{o}{61mm}
@@ -653,7 +653,7 @@ As it follow from Exercise \ref{ex:unique-geod} any two points $x$ and $y$ in $\
 Note that the geodesic $[xy]$ depends continuously on its endpoints $x$ and $y$. 
 That is, if $\gamma_{[xy]}\:[0,1]\to \Sigma$ is the constant speed parametrization of $[xy]$ from $x$ to $y$,
 then the map $(x,y,t)\mapsto \gamma_{[xy]}(t)$ is continuous in three arguments.
-Indeed, assume contrary, that is $x_n\to x$, $y_n\to y$ and $t_n\to t$ as $n\to \infty$ and 
+Indeed, assume contrary, that is, $x_n\to x$, $y_n\to y$ and $t_n\to t$ as $n\to \infty$ and 
 $\gamma_{[x_ny_n]}(t_n)$ does not converge to $\gamma_{[xy]}(t)$. 
 Then we can pass to a subsequence such that $\gamma_{[x_ny_n]}(t_n)$ converges to a point distinct from $w\ne \gamma_{[xy]}(t)$.
 Note that $w\notin [xy]$. 
@@ -691,7 +691,7 @@ In particular, $\trig p x y=\trig{p}{\,x^{0,N}}{\,x^{N,N}}$ is thin.
 
 
 \begin{thm}{Exercise}
-Assume $\gamma_1$ and $\gamma_2$ be two geodesics in  complete smooth regular simply connected surface $\Sigma$ with nonpositive Gauss curvature.
+Assume $\gamma_1$ and $\gamma_2$ be two geodesics in an open smooth regular simply connected surface $\Sigma$ with nonpositive Gauss curvature.
 Show that the function
 \[h(t)=|\gamma_1(t)-\gamma_2(t)|_\Sigma\]
 is convex.

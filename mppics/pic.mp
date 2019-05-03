@@ -436,9 +436,11 @@ z.s3=z.q3+(z.o-z.p3 rotated -angle(z.p4-z.p3));
 z.s4=(z.q4+(z.o-z.p4 rotated -angle(z.p5-z.p4))) reflectedabout (z.q0,z.q1);
 z.s5=(z.q5+(z.o-z.p5 rotated -angle(z.p1-z.p5))) reflectedabout (z.q0,z.q1);
 
-draw z.q6--z.s5--z.q5--z.s4--z.q4--z.s3--z.q3--z.s2--z.q2--z.s1--z.q1--z.s0--z.q0 penhair;
+draw z.q6--z.s5--z.q5--z.s4--z.q4--z.s3--z.q3--z.s2--z.q2--z.s1--z.q1--z.s0--z.q0;
 draw z.s5--z.s4--z.s3--z.s2--z.s1--z.s0 dashed evenly;
 draw z.q0--z.q6 penbold;
+
+draw z.s0--z.s5 penhair;
 
 draw z.o--z.p1 penhair;
 draw z.o--z.p2 penhair;
@@ -1339,7 +1341,7 @@ label.top(btex $z_0$ etex, z.z0);
 label.bot(btex $z$ etex, z.z);
 label.top(btex $R$ etex, (4,1.1)*u);
 label.urt(btex $\Sigma$ etex, point 2 of p2);
-label.rt(btex $\nu$ etex, z.q);
+label.rt(btex $\Norm$ etex, z.q);
 endfig;
 
 beginfig(38) 
@@ -1970,7 +1972,7 @@ dOt z.a0,z.a1,z.a2;
 label.bot(btex $\gamma_1(a)$ etex, z.a0);
 label.bot(btex $\gamma_1(s_0)$ etex, z.a1);
 label.bot(btex $\gamma_1(b)$ etex, z.a2);
-label.top(btex $u_1$ etex, z.a1+z.b1);
+label.top(btex $\vec u_1$ etex, z.a1+z.b1);
 endfig;
 
 beginfig(58) 
@@ -2661,7 +2663,7 @@ dOt z.p;
 
 label.bot(btex $p$ etex, z.p);
 label.rt(btex $w$ etex, z.w);
-label.top(btex $\nu_p$ etex, z.nu);
+label.top(btex $\Norm_p$ etex, z.nu);
 label.rt(btex $\gamma_1$ etex, z.a2);
 label.rt(btex $\gamma_2$ etex, z.b2);
 label(btex $\Pi$ etex, .5[z.b0,z.nu]);
@@ -2770,7 +2772,7 @@ drawarrow z.p--z.nu;
 dOt origin,z.p;
 
 label.llft(btex $p$ etex, z.p);
-label.urt(btex $\nu$ etex, z.nu);
+label.urt(btex $\Norm$ etex, z.nu);
 label.top(btex $\Sigma$ etex, z.Sigma);
 endfig;
 

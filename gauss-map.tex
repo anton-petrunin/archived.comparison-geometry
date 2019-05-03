@@ -82,13 +82,13 @@ Many statements admit simpler proofs with this approach, for example \ref{prop:l
 
 \section*{Spherical map}
 
-Let $\Sigma$ be a smooth oriented surface with unit normal field $\nu$.
-The map $\nu\:\Sigma\to \SS^2$ defined by $p\mapsto \nu_p$ is called \emph{spherical map} or \emph{Gauss map}.
+Let $\Sigma$ be a smooth oriented surface with unit normal field $\Norm$.
+The map $\Norm\:\Sigma\to \SS^2$ defined by $p\mapsto \Norm_p$ is called \emph{spherical map} or \emph{Gauss map}.
 
 For surfaces, the spherical map plays essentially the same role as the tangent indicatrix for curves.
 
 Recall that if $(u,v)\mapsto s(u,v)$ is a chart on $\Sigma$ then 
-\[\nu(u,v)=\pm \frac{\frac{\partial s}{\partial u}\times \frac{\partial s}{\partial v}}{|\frac{\partial s}{\partial u}\times \frac{\partial s}{\partial v}|}.\]
+\[\Norm(u,v)=\pm \frac{\frac{\partial s}{\partial u}\times \frac{\partial s}{\partial v}}{|\frac{\partial s}{\partial u}\times \frac{\partial s}{\partial v}|}.\]
 Since $s$ is a chart $\tfrac{\partial s}{\partial u}\times \tfrac{\partial s}{\partial v}\ne 0$,
 therefore the spherical map is smooth.
 
@@ -96,12 +96,12 @@ In particular the differential of the spherical map is defined at any point of $
 
 \section*{Shape operator}
 
-Suppose $\Sigma$ is an oriented surface with the unit normal field $\nu$;
-in other words $\nu\:\Sigma\to\SS^2$ is its spherical map.
+Suppose $\Sigma$ is an oriented surface with the unit normal field $\Norm$;
+in other words $\Norm\:\Sigma\to\SS^2$ is its spherical map.
 
 Fix a point $p\in \Sigma$.
 The \emph{shape operator} at $p$ is defined as 
-\[S_p\df-d_p\nu.
+\[S_p\df-d_p\Norm.
 \eqlbl{eq:shape}\]
 The shape operator $S_p$ is defined on the tangent plane $\T_p\Sigma$ and it returns a vector in the same plane (otherwise we could not call it an \emph{operator}).
 The latter is shown in the following proposition, which also gives a reason for the change of sign in \ref{eq:shape}.
@@ -116,12 +116,12 @@ for any $v,w\in \T_p$.
 
 \parit{Proof.}
 Assume an oriented surface $\Sigma$ is written locally as a graph $z\z=f(x,y)$ in the tangent-normal coordinates at $p\in\Sigma$.
-As usual we assume that the normal vector $\nu_p$ points in the direction of the $z$-axis,
+As usual we assume that the normal vector $\Norm_p$ points in the direction of the $z$-axis,
 in this case the normal vector at any point of the graph points up; that is, its $z$-coordinate  is positive.
 
 Consider the corresponding chart  of $\Sigma$:
 \[s(x,y)\z=(x,y,f(x,y)).\]
-Denote by $\nu(x,y)$ the unit normal vector at $s(x,y)$; it is a shortcut notation for $\nu_{s(x,y)}$.
+Denote by $\Norm(x,y)$ the unit normal vector at $s(x,y)$; it is a shortcut notation for $\Norm_{s(x,y)}$.
 
 Note that $\tfrac{\partial s}{\partial x}(0,0)=(1,0,0)$ and $\tfrac{\partial s}{\partial y}(0,0)=(0,1,0)$.
 For a tangent vector 
@@ -129,9 +129,9 @@ For a tangent vector
 we have that
 \[
 \begin{aligned}
-S_p(v)&=-D_v\nu(0,0)=
+S_p(v)&=-D_v\Norm(0,0)=
 \\
-&=-(a\cdot \tfrac{\partial \nu}{\partial x}+b\cdot \tfrac{\partial \nu}{\partial y})(0,0),
+&=-(a\cdot \tfrac{\partial \Norm}{\partial x}+b\cdot \tfrac{\partial \Norm}{\partial y})(0,0),
 \end{aligned}
 \eqlbl{eq:S=D}
 \]
@@ -140,53 +140,53 @@ where $D_v$ denotes the directional derivative along a vector $v$ in the $(x,y)$
 Indeed, the first equality follows from \ref{eq:shape} and the definition of differential \ref{eq:differenital} applied for the curve $\gamma(t)=(a\cdot t,b\cdot t, f(a\cdot t,b\cdot t))$ at $t=0$ and the second follow since
 $D_v=a\cdot \tfrac{\partial }{\partial x}+b\cdot \tfrac{\partial }{\partial y}$.
 
-Taking partial derivatives of $\langle\nu,\nu\rangle=1$, we get that 
+Taking partial derivatives of $\langle\Norm,\Norm\rangle=1$, we get that 
 \begin{align*}
-0&=\tfrac{\partial}{\partial x} \langle\nu,\nu\rangle=
+0&=\tfrac{\partial}{\partial x} \langle\Norm,\Norm\rangle=
 \\
-&=2\cdot\langle\tfrac{\partial\nu}{\partial x},\nu\rangle.
+&=2\cdot\langle\tfrac{\partial\Norm}{\partial x},\Norm\rangle.
 \end{align*}
-That is, $\langle\tfrac{\partial\nu}{\partial x},\nu\rangle=0$ and the same way we get $\langle\tfrac{\partial\nu}{\partial y},\nu\rangle=0$.
-By \ref{eq:S=D} it follows that $S_p(v)\perp \nu_p$, or equivalently $S_p(v)\in\T_p$ for any $v\in \T_p$.
+That is, $\langle\tfrac{\partial\Norm}{\partial x},\Norm\rangle=0$ and the same way we get $\langle\tfrac{\partial\Norm}{\partial y},\Norm\rangle=0$.
+By \ref{eq:S=D} it follows that $S_p(v)\perp \Norm_p$, or equivalently $S_p(v)\in\T_p$ for any $v\in \T_p$.
 
 Further, since $\tfrac{\partial s}{\partial x}, \tfrac{\partial s}{\partial y}\in\T_{s(x,y)}\Sigma$
-and $\nu(x,y)\perp\T_{s(x,y)}\Sigma$,
+and $\Norm(x,y)\perp\T_{s(x,y)}\Sigma$,
 we have that
-\[\langle \nu,\tfrac{\partial s}{\partial x}\rangle\equiv 0
+\[\langle \Norm,\tfrac{\partial s}{\partial x}\rangle\equiv 0
 \quad\text{and}\quad
-\langle \nu,\tfrac{\partial s}{\partial y}\rangle\equiv 0.\]
+\langle \Norm,\tfrac{\partial s}{\partial y}\rangle\equiv 0.\]
 Taking a derivative of these identities, we get that
 \[\begin{aligned}
-\langle \tfrac{\partial\nu}{\partial x},\tfrac{\partial s}{\partial x}\rangle+\langle \nu,\tfrac{\partial^2 s}{\partial x^2}\rangle&\equiv 0,
+\langle \tfrac{\partial\Norm}{\partial x},\tfrac{\partial s}{\partial x}\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial x^2}\rangle&\equiv 0,
 \\
-\langle \tfrac{\partial\nu}{\partial y},\tfrac{\partial s}{\partial x}\rangle+\langle \nu,\tfrac{\partial^2 s}{\partial y\partial x}\rangle&\equiv 0,
+\langle \tfrac{\partial\Norm}{\partial y},\tfrac{\partial s}{\partial x}\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial y\partial x}\rangle&\equiv 0,
 \\
-\langle \tfrac{\partial\nu}{\partial x},\tfrac{\partial s}{\partial y}\rangle+\langle \nu,\tfrac{\partial^2 s}{\partial x\partial y}\rangle&\equiv 0,
+\langle \tfrac{\partial\Norm}{\partial x},\tfrac{\partial s}{\partial y}\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial x\partial y}\rangle&\equiv 0,
 \\
-\langle \tfrac{\partial\nu}{\partial y},\tfrac{\partial s}{\partial y}\rangle+\langle \nu,\tfrac{\partial^2 s}{\partial y^2}\rangle&\equiv 0,
+\langle \tfrac{\partial\Norm}{\partial y},\tfrac{\partial s}{\partial y}\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial y^2}\rangle&\equiv 0,
 \end{aligned}
 \eqlbl{eq:shape=second}
 \]
 
 Fix two vectors $v=(a,b,0)$ and $w=(c,d,0)$ in $\T_p$ (which is the $(x,y)$-plane).
-Since $\nu(0,0)=(0,0,1)$ we get 
-\[f(x,y)\equiv\langle\nu(0,0),s(x,y)\rangle.\]
+Since $\Norm(0,0)=(0,0,1)$ we get 
+\[f(x,y)\equiv\langle\Norm(0,0),s(x,y)\rangle.\]
 Therefore by \ref{eq:S=D}, \ref{eq:shape=second} and \ref{eq:DwDv} we get that 
 \begin{align*}
 \langle S_p(v),w\rangle 
-&=-\langle  a\cdot \tfrac{\partial \nu}{\partial x}+b\cdot \tfrac{\partial \nu}{\partial y},c\cdot \tfrac{\partial s}{\partial x}+d\cdot \tfrac{\partial s}{\partial y}\rangle(0,0)=
+&=-\langle  a\cdot \tfrac{\partial \Norm}{\partial x}+b\cdot \tfrac{\partial \Norm}{\partial y},c\cdot \tfrac{\partial s}{\partial x}+d\cdot \tfrac{\partial s}{\partial y}\rangle(0,0)=
 \\
-&=-\bigl(a\cdot c\cdot\langle \tfrac{\partial \nu}{\partial x},\tfrac{\partial s}{\partial x}\rangle 
-+a\cdot d\cdot\langle \tfrac{\partial \nu}{\partial x},\tfrac{\partial s}{\partial y}\rangle+
+&=-\bigl(a\cdot c\cdot\langle \tfrac{\partial \Norm}{\partial x},\tfrac{\partial s}{\partial x}\rangle 
++a\cdot d\cdot\langle \tfrac{\partial \Norm}{\partial x},\tfrac{\partial s}{\partial y}\rangle+
 \\&\quad
-+b\cdot c\cdot\langle \tfrac{\partial \nu}{\partial y},\tfrac{\partial s}{\partial x}\rangle
-+b\cdot d\cdot\langle \tfrac{\partial \nu}{\partial y},\tfrac{\partial s}{\partial y}\rangle\bigr)(0,0)=
++b\cdot c\cdot\langle \tfrac{\partial \Norm}{\partial y},\tfrac{\partial s}{\partial x}\rangle
++b\cdot d\cdot\langle \tfrac{\partial \Norm}{\partial y},\tfrac{\partial s}{\partial y}\rangle\bigr)(0,0)=
 \\
-&=\bigl(a\cdot c\cdot\langle \nu,\tfrac{\partial^2 s}{\partial x^2}\rangle 
-+a\cdot d\cdot\langle \nu,\tfrac{\partial^2 s}{\partial x\partial y}\rangle+
+&=\bigl(a\cdot c\cdot\langle \Norm,\tfrac{\partial^2 s}{\partial x^2}\rangle 
++a\cdot d\cdot\langle \Norm,\tfrac{\partial^2 s}{\partial x\partial y}\rangle+
 \\&\quad
-+b\cdot c\cdot\langle \nu,\tfrac{\partial^2 s}{\partial y\partial x}\rangle
-+b\cdot d\cdot\langle \nu,\tfrac{\partial^2 s}{\partial y^2}\rangle\bigr)(0,0)=
++b\cdot c\cdot\langle \Norm,\tfrac{\partial^2 s}{\partial y\partial x}\rangle
++b\cdot d\cdot\langle \Norm,\tfrac{\partial^2 s}{\partial y^2}\rangle\bigr)(0,0)=
 \\
 &=\bigl(a\cdot c\cdot\tfrac{\partial^2 f}{\partial x^2} 
 +a\cdot d\cdot\tfrac{\partial^2 f}{\partial x\partial y}+
@@ -213,16 +213,16 @@ A nonzero tangent vector $v\in \T_p$ points in a principle direction at $p$
 if and only if $S_p(v)\parallel v$ and if so, then the unique coefficient $k$ such that
 $S_p(v)=k\cdot v$ is the principle curvature in this direction.
 
-In particular $K(p)=\det S_p$ and $H(p)=\tfrac12\cdot \trace S_p $. %???change
+In particular $K(p)=\det S_p$ and $H(p)=\trace S_p $.
 \end{thm}
 
 
 \begin{thm}{Exercise}\label{ex:normal-curvature=const}
-Let $\Sigma$ be a smooth oriented surface with the unit normal field $\nu$.
+Let $\Sigma$ be a smooth oriented surface with the unit normal field $\Norm$.
 Suppose that $\Sigma$ has unit normal curvature at any point in any direction.
 \begin{enumerate}[(a)]
  \item Show that $S_p(w)=w$ for any $p\in\Sigma$ and $w\in \T_p\Sigma$.
- \item Show that $p+\nu_p$ is constant; that is the point $c=p+\nu_p$ does not depend on $p\in\Sigma$.
+ \item Show that $p+\Norm_p$ is constant; that is, the point $c=p+\Norm_p$ does not depend on $p\in\Sigma$.
  Conclude that $\Sigma$ is a part of the unit sphere centered at $c$.
 \end{enumerate}
 
@@ -236,9 +236,6 @@ Show that if $\gamma$ is a curvature line in $\Sigma_1$, then it is also a curva
 Conclude that if a smooth surface $\Sigma$ intersects a plane or sphere along a smooth curve $\gamma$,
 then $\gamma$ is a curvature line of $\Sigma$.
 \end{thm}
-
-\parit{Hint:}  Denote by $\nu_1(t)$ and $\nu_2(t)$ the unit normal vectors to $\Sigma_1$ and $\Sigma_2$ at $\gamma(t)$.
-Note that $\langle \nu_1(t),\nu_2(t)\rangle$ is constant; take it derivative and apply \ref{thm:rodrigues}.
 
 \begin{thm}{Exercise}\label{ex:geodesic-curvature-line}
 Suppose that a geodesic $\gamma$ on the surface $\Sigma$ is also a curvature line.
@@ -255,7 +252,7 @@ First assume that there is a chart $(u,v)\mapsto s(u,v)$ of $\Sigma$ defined on 
 In this case set
 \[\int_R h\df \iint_{s^{-1}(R)} h\circ s(u,v)\cdot |\tfrac{\partial s}{\partial v}(u,v)\times\tfrac{\partial s}{\partial u}(u,v)|  \cdot du\cdot dv.\eqlbl{eq:area-def}\]
 By substitution rule for multiple variables (\ref{thm:mult-substitution}), the right hand side in  \ref{eq:area-def} does not depend on choice of $s$;
-that is if $s_1\:U_1\to \Sigma$ is another chart such that $s_1(U_1)\supset R$, then 
+that is, if $s_1\:U_1\to \Sigma$ is another chart such that $s_1(U_1)\supset R$, then 
 \[\iint_{s^{-1}(R)} h\circ s\cdot |\tfrac{\partial s}{\partial v}\times\tfrac{\partial s}{\partial u}|  \cdot du\cdot dv=\iint_{s_1^{-1}(R)} h\circ s_1\cdot |\tfrac{\partial s_1}{\partial v}\times\tfrac{\partial s_1}{\partial u}|  \cdot du\cdot dv.\]
 (In fact the factor $|\tfrac{\partial s}{\partial v}\times\tfrac{\partial s}{\partial u}|$ is chosen so to meet this property.)
 
@@ -270,39 +267,39 @@ The area of $R$ is defined as the integral
 
 
 \begin{thm}{Theorem}\label{thm:spherical-image}
-Let $\Sigma$ be an oriented complete surface with positive Gauss curvature.
-Then the spherical map $\nu\:\Sigma\to\SS^2$ is injective and
-\[\int_R K=\area[\nu(R)]\]
+Let $\Sigma$ be an oriented proper surface without boundary and with positive Gauss curvature.
+Then the spherical map $\Norm\:\Sigma\to\SS^2$ is injective and
+\[\int_R K=\area[\Norm(R)]\]
 for any region $R$ in $\Sigma$. %??? measurable
 \end{thm}
 
 \parit{Proof.} 
-Lets show that the spherical map $\nu\:\Sigma\to\SS^2$ is injective.
+Lets show that the spherical map $\Norm\:\Sigma\to\SS^2$ is injective.
 Fix two distinct points $p,q\in\Sigma$.
 Recall that $\Sigma$ bounds a strictly convex region.
-Therefore the $\nu_p$ makes an obtuse angle with the line segment $[p,q]$. %??? why
-The same way we can show that $\nu_q$ makes an obtuse angle with the line segment $[q,p]$.
-In other words the projections of $\nu_p$ and $\nu_q$ on the line $pq$ point in the opposite directions.
-In particular $\nu_p\ne \nu_q$; that is, the spherical map is injective.
+Therefore the $\Norm_p$ makes an obtuse angle with the line segment $[p,q]$. %??? why
+The same way we can show that $\Norm_q$ makes an obtuse angle with the line segment $[q,p]$.
+In other words the projections of $\Norm_p$ and $\Norm_q$ on the line $pq$ point in the opposite directions.
+In particular $\Norm_p\ne \Norm_q$; that is, the spherical map is injective.
 
 Note that it is sufficient to prove the identity assuming that the region $R$ is covered by one chart $(u,v)\mapsto s(u,v)$ of $\Sigma$; if not cut $R$ into smaller regions and sum up the results.
 Applying the definition of integral, we have the following expression for the left hand side
 \[\int_R K \df \iint_{s^{-1}(R)} K[s(u,v)]\cdot |\tfrac{\partial s}{\partial v}(u,v)\times\tfrac{\partial s}{\partial u}(u,v)|  \cdot du\cdot dv.\]
 Applying the definition of area, we have the following expression for the right hand side
-\[\area[\nu(R)] \df \iint_{s^{-1}(R)}  |\tfrac{\partial \nu\circ s}{\partial v}(u,v)\times\tfrac{\partial \nu\circ s}{\partial u}(u,v)|  \cdot du\cdot dv.\]
+\[\area[\Norm(R)] \df \iint_{s^{-1}(R)}  |\tfrac{\partial \Norm\circ s}{\partial v}(u,v)\times\tfrac{\partial \Norm\circ s}{\partial u}(u,v)|  \cdot du\cdot dv.\]
 Therefore it is sufficient to show that 
-\[\tfrac{\partial \nu\circ s}{\partial v}(u,v)\times\tfrac{\partial \nu\circ s}{\partial u}(u,v)=K[s(u,v)]\cdot \tfrac{\partial s}{\partial v}(u,v)\times\tfrac{\partial s}{\partial u}(u,v)\eqlbl{eq:gauss-curv}\]
+\[\tfrac{\partial \Norm\circ s}{\partial v}(u,v)\times\tfrac{\partial \Norm\circ s}{\partial u}(u,v)=K[s(u,v)]\cdot \tfrac{\partial s}{\partial v}(u,v)\times\tfrac{\partial s}{\partial u}(u,v)\eqlbl{eq:gauss-curv}\]
 for any $(u,v)$ in the domain of definition. 
 
 Fix a point $p=s(u,v)$.
 Recall that 
-\[\tfrac{\partial \nu\circ s}{\partial u}=S_p(\tfrac{\partial  s}{\partial u})\quad\text{and}\quad\tfrac{\partial \nu\circ s}{\partial v}=S_p(\tfrac{\partial  s}{\partial v}).\]
+\[\tfrac{\partial \Norm\circ s}{\partial u}=S_p(\tfrac{\partial  s}{\partial u})\quad\text{and}\quad\tfrac{\partial \Norm\circ s}{\partial v}=S_p(\tfrac{\partial  s}{\partial v}).\]
 Therefore 
-\[\tfrac{\partial \nu\circ s}{\partial v}\times\tfrac{\partial \nu\circ s}{\partial u}=\det S_p\cdot \tfrac{\partial s}{\partial v}\times\tfrac{\partial s}{\partial u}.\]
+\[\tfrac{\partial \Norm\circ s}{\partial v}\times\tfrac{\partial \Norm\circ s}{\partial u}=\det S_p\cdot \tfrac{\partial s}{\partial v}\times\tfrac{\partial s}{\partial u}.\]
 Since $K(p)=\det S_p$, \ref{eq:gauss-curv} follows.
 \qeds
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:int-gauss=4pi}
 Let $\Sigma$ be a closed surface with positive Gauss curvature.
 Show that 
 \[\int_\Sigma K=4\cdot\pi.\]
@@ -315,5 +312,3 @@ Show that
 \[\int_\Sigma K\le 2\cdot\pi.\]
 
 \end{thm}
-
-\parit{Hint:} Use \ref{lem:graph}.

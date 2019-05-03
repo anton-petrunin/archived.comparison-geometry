@@ -5,7 +5,7 @@
 A surface is called \emph{saddle} if its Gauss curvature at each point is nonpositive;
 in other words principle curvatures at each point have opposite signs or one of them is zero.
 
-\begin{wrapfigure}{r}{40 mm}
+\begin{wrapfigure}{o}{40 mm}
 \vskip-0mm
 \centering
 \includegraphics{asy/saddle}
@@ -21,23 +21,19 @@ Note that in this case the tangent plane does not support the surface even local
 \begin{thm}{Exercise}\label{ex:convex-revolution}
 Let $f\:\RR\to\RR$ be a smooth positive function.
 Show that the surface of revolution of the graph $y\z=f(x)$ around the $x$-axis
- is saddle if and only if $f$ is convex; that is if $f''(x)\ge0$ for any $x$.
+ is saddle if and only if $f$ is convex; that is, if $f''(x)\ge0$ for any $x$.
 \end{thm}
-
-\parit{Hint:} Use \ref{ex:principle-revolution}.
 
 A surface $\Sigma$ is called \emph{ruled} if for every point $p\in \Sigma$ there is a line segment $\ell_p\subset \Sigma_p$ thru $p$ that is infinite or has its endpoint(s) on the boundary line of $\Sigma$.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:ruled=>saddle}
 Show that any ruled surface $\Sigma$ is saddle.
 \end{thm}
 
-\parit{Hint:} Prove and use that each point $p\in\Sigma$ has a direction with vanishing normal curvature.
-
 \begin{thm}{Exercise}
-Suppose $\Sigma$ is a complete saddle surface.
-Show that for any point $p\in \Sigma$ there is a curve $\gamma\:[0,\infty)\to\Sigma$ that starts at $p$
-such that $t\mapsto|\gamma(t)|$ is an increasing function and $|\gamma(t)|\to\infty$ as $t\to\infty$.
+Suppose $\Sigma$ is an open saddle surface.
+Show that for any point $p\in \Sigma$ there is a curve $\gamma\:[0,\infty)\to\Sigma$ that starts at $p$ and monotonically escapes to infinity;
+that is, $t\mapsto|\gamma(t)|$ is an increasing function and $|\gamma(t)|\to\infty$ as $t\to\infty$.
 \end{thm}
 
 A tangent direction on a smooth surface with vanishing normal curvature is called \emph{asymptotic}.
@@ -93,8 +89,6 @@ Let $\Delta$ be a smooth regular saddle disc and $p\in \Delta$.
 Assume that the boundary line $\partial \Delta$ lies in the unit sphere centered at~$p$.
 Show that $\length (\partial \Delta)\ge 2\cdot\pi$.
 \end{thm}
-
-\parit{Hint:} Use the lemma above and the hemisphere lemma (\ref{lem:hemisphere}).
 
 \begin{thm}{Exercise}\label{ex:circular-cone-saddle}
 Show that an open saddle surface
@@ -153,9 +147,6 @@ Let $\Delta_\eps$ be as in the proof above.
 Show that $\Delta_\eps$ is a smooth disc; that is, $\Delta_\eps$ is the image of regular embedding $\DD\to \RR^3$, where $\DD=\set{(x,y)\in\RR^2}{x^2+y^2\le 1}$.
 \end{thm}
 
-\parit{Hint:} Observe that it is sufficient to construct a smooth parametrization of $\Delta_\eps$ by a closed hemisphere.
-To do this repeat the argument in \ref{lem:gauss=sphere} with the center at a point surrounded by the boundary line of $\Delta_\eps$ in its plane.
-
 \begin{thm}{Exercise}\label{ex:saddle-linear}
 Let $T\:\RR^3\to\RR^3$ be a linear transformation; that is, $T(x,y,z)=(x,y,z)\cdot A$ for an invertible $3{\times}3$-matrix $A$. 
 Show that for any saddle surface $\Sigma$ the image $T(\Sigma)$ is also a saddle surface.
@@ -182,10 +173,8 @@ The following exercise shows that the theorem does not hold for saddle surfaces 
 
 
 \begin{thm}{Exercise}\label{ex:between-parallels}
-Construct a complete strictly saddle surface that lies between parallel planes.
+Construct an open strictly saddle surface that lies between parallel planes.
 \end{thm}
-
-\parit{Hint:} Look for an example among the surfaces of revolution and use \ref{ex:principle-revolution}.
 
 
 The following exercise shows that there are saddle graphs with functions bounded on one side; that is, both (upper and lower) bounds are needed in the proof of Bernshtein's theorem.
@@ -197,13 +186,11 @@ $z=\exp(x-y^2)$
 is strictly saddle.
 \end{thm}
 
-\parit{Hint:} Look at the sections of the graph by planes parallel to the $(x,y)$-plane and to the $(x,z)$-plane, then apply Meusnier’s theorem apply Meusnier's theorem (\ref{cor:meusnier}).
-
-Note that according to \ref{lem:convex-saddle}, there are no complete saddle surfaces in a parallelepiped that boundary line lies on one of its faces.
+Note that according to \ref{lem:convex-saddle}, there are no proper saddle surfaces in a parallelepiped that boundary line lies on one of its faces.
 The following lemma gives an analogous statement for a parallelepiped with an infinite side.
 
 \begin{thm}{Lemma}\label{lem:region}
-There is no complete strictly saddle smooth surface 
+There is no proper strictly saddle smooth surface 
 with the boundary line in a plane
 that lies on bounded distance from a line.
 \end{thm}
@@ -211,7 +198,7 @@ that lies on bounded distance from a line.
 
 \parit{Proof.}
 Note that in a suitable coordinate system, the statement can be reformulated the following way:
-\emph{There is no complete strictly saddle smooth surface 
+\emph{There is no proper strictly saddle smooth surface 
 with the boundary line in the $(x,y)$-plane
 that lies in a region of the following form:}
 \[R=\set{(x,y,z)\in\RR^3}{0\le z\le r, 0\le y\le r}.\]
@@ -284,7 +271,7 @@ Whence one of the connected components, say $\Sigma^+_0$, lies in
 \[R_0=\set{(x,y,f(x,y))\in\Sigma}{|h(x,y)|\le  C}.\]
 This set lies on a bounded distance from the line of intersection of $\T_p$ with the $(x,y)$-plane.
 
-Moving the plane $\T_p$ slightly upward, we can cut from $\Sigma^+_0$ is a complete surface with boundary line lying in this plane (see \ref{lem:reg-section}).
+Moving the plane $\T_p$ slightly upward, we can cut from $\Sigma^+_0$ is a proper surface with boundary line lying in this plane (see \ref{lem:reg-section}).
 The obtained surface is still on a bounded distance to a line
 which is impossible by \ref{lem:region}.
 \qeds

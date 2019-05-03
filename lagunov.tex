@@ -3,14 +3,14 @@
 Note that there sets in $\RR^3$ bounded by a closed surface $\Sigma$ with principle curvatures at most 1 by absolute value
 that do not contain a ball of radius 1.
 
-\begin{wrapfigure}{r}{33 mm}
+\begin{wrapfigure}{o}{33 mm}
 \vskip-4mm
 \centering
 \includegraphics{mppics/pic-34}
 \vskip0mm
 \end{wrapfigure}
 
-For example the region between two large spheres with similar radii and centers close to each other. 
+For example the region between two large concentric spheres with almost equal raduses. 
 This region can be made arbitrary thin and the curvature of the boundary can be made arbitrary close to zero.
 
 The same example works in the plane --- a pair of circles with arbitrary small curvature can bound an arbitrary thin region.
@@ -26,7 +26,7 @@ that is, both can be written in parametric form with the same parameter domain.
 The same example would work for curves if we allow the boundary of the plane figure to be not connected.
 The following question might look like a right 3-dimensional analog of the moon in a puddle problem (\ref{thm:moon}).
 
-\section{Lagunov's example}
+\section*{Lagunov's example}
 
 \begin{thm}{Question}
 Assume a set $V\subset \RR^3$ is bounded by a closed connected surface $\Sigma$ with 
@@ -74,7 +74,7 @@ and assuming that the holes are large its boundary can be made so that its princ
 \qeds
 
 \begin{thm}{Claim}
-The surface of $V_3$ has genus 2.
+The surface of $V_3$ has genus 2; that is it can be parameterized by a sphere with two handles.
 \end{thm}
 
 
@@ -84,8 +84,9 @@ Note that the boundary of $V_1$ consists of three spheres.
 When we drill a hole, we make one hole in two spheres and two holes in one shpere.
 We reconnect two spheres by a tube and obtain one sphere.
 Connecting the two holes of the other sphere by a tube we get a torus.
+That is, the boundary of $V_2$ is formed by one sphere and one torus.
 
-At the second operation we make a torus from the remaining sphere and connect it to the other torus by a tube.
+To construct $V_3$ from $V_2$, we make a torus from the remaining sphere and connect it to the torus by a tube.
 This way we get a sphere with two handles; that is, it has genus 2.
 \qeds
 
@@ -96,17 +97,15 @@ Show that $V$ contains a unit ball.
 
 \begin{thm}{Exercise}\label{ex:convex-lagunov}
 Assume $V$ is a convex body in $\RR^3$ bounded by a surface with principle curvatures at most 1.
-Show that $V$ contains a unit ball.%
-\footnote{Hint: Consider a maximal ball in $V$ and apply Exercise~\ref{ex:projection} for a right choice of projection.}
+Show that $V$ contains a unit ball.
 \end{thm}
 
 
 
 
 
-\begin{thm}{Exercise}
-Modify Lagunov's construction to make the boundary surface a sphere with 4 handles.%
-\footnote{Hint: Drill an extra hole or combine two examples together.}
+\begin{thm}{Exercise}\label{ex:lagunov-genus4}
+Modify Lagunov's construction to make the boundary surface a sphere with 4 handles.
 \end{thm}
 
 
@@ -116,7 +115,7 @@ Show that the bound in the Lagunov's example is optimal.
 That is, if a body $V\subset \RR^3$ is bounded by a connected surface  $\Sigma$ with principle curvatures at most 1, then $V$ contains a ball of radius $r_2$.
 \end{thm}
 
-\section{On embedded sphere}
+\section*{On embedded sphere}
 
 
 \begin{thm}{Advanced exercise}

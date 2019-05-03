@@ -1,60 +1,63 @@
 \chapter{Torsion}
 
+This chapter provides practice that might be useful,
+but most of the result in this chapter will not be used further in the sequel.
+
 \section*{Frenet frame}
 Let $\gamma$ be a smooth regular space curve.
-Without loss of generality, we may assume that $\gamma$ has arc length parametrization,
-so the velocity vector $\tau(s)=\gamma'(s)$ is unit.
+Without loss of generality, we may assume that $\gamma$ has an arc-length parametrization,
+so the velocity vector $\tan(s)=\gamma'(s)$ is unit.
 
 Assume its curvature does not vanish at some time moment $s$;
 in other words, $\gamma''(s)\ne 0$.
 Then we can define the so-called \emph{normal vector} at $s$ as
-\[\nu(s)=\frac{\gamma''(s)}{|\gamma''(s)|}.\]
+\[\norm(s)=\frac{\gamma''(s)}{|\gamma''(s)|}.\]
 Note that 
-\[\tau'(s)=\gamma''(s)=\kur(s)\cdot\nu(s).\]
+\[\tan'(s)=\gamma''(s)=\kur(s)\cdot\norm(s).\]
 
-According to \ref{prop:a'-pertp-a''}, $\nu(s)\perp \tau(s)$.
+According to \ref{prop:a'-pertp-a''}, $\norm(s)\perp \tan(s)$.
 Therefore the vector product 
-\[\beta(s)=\tau(s)\times \nu(s)\]
-is a unit vector which makes the triple $\tau(s),\nu(s),\beta(s)$ an oriented orthonormal basis in $\RR^3$;
+\[\bi(s)=\tan(s)\times \norm(s)\]
+is a unit vector which makes the triple $\tan(s),\norm(s),\bi(s)$ an oriented orthonormal basis in $\RR^3$;
 in particular, we have that
 \[\begin{aligned}
-\langle\tau,\tau\rangle&=1,
+\langle\tan,\tan\rangle&=1,
 &
-\langle\nu,\nu\rangle&=1,
+\langle\norm,\norm\rangle&=1,
 &
-\langle\beta,\beta\rangle&=1,
+\langle\bi,\bi\rangle&=1,
 \\
-\langle\tau,\nu\rangle&=0,
+\langle\tan,\norm\rangle&=0,
 &
-\langle\nu,\beta\rangle&=0,
+\langle\norm,\bi\rangle&=0,
 &
-\langle\beta,\tau\rangle&=0.
+\langle\bi,\tan\rangle&=0.
 \end{aligned}
 \eqlbl{eq:orthornomal}
 \]
 
-The orthonormal basis $\tau(s),\nu(s),\beta(s)$ is called \emph{Frenet frame} at $s$; the vectors in the frame are called \emph{tangent}, \emph{normal} and \emph{binormal} correspondingly.
-Note that the frame $\tau(s),\nu(s),\beta(s)$ is defined only if $k(s)\ne 0$.
+The orthonormal basis $\tan(s),\norm(s),\bi(s)$ is called \emph{Frenet frame} at $s$; the vectors in the frame are called \emph{tangent}, \emph{normal} and \emph{binormal} correspondingly.\label{page:frenet-frame}
+Note that the frame $\tan(s),\norm(s),\bi(s)$ is defined only if $k(s)\ne 0$.
 
-The plane $\Pi_s$ thru $\gamma(s)$ spanned by vectors $\tau(s)$ and $\nu(s)$ is called \emph{osculating plane} at $s$;
-equivalently it can be defined as a plane thru $\gamma(s)$ that is perpendicular to the binormal vector $\beta(s)$.
+The plane $\Pi_s$ thru $\gamma(s)$ spanned by vectors $\tan(s)$ and $\norm(s)$ is called \emph{osculating plane} at $s$;
+equivalently it can be defined as a plane thru $\gamma(s)$ that is perpendicular to the binormal vector $\bi(s)$.
 This a unique plane that has \emph{second order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\Pi_s$.
 
-\section*{Torsion}
+\section*{Torsion*}
 
 Let $\gamma$ be a smooth unit-speed space curve
-and $\tau(s),\nu(s),\beta(s)$ is its Frenet frame.
+and $\tan(s),\norm(s),\bi(s)$ is its Frenet frame.
 The value 
-\[\tor(s)=\langle \nu'(s),\beta(s)\rangle\]
+\[\tor(s)=\langle \norm'(s),\bi(s)\rangle\]
 is called \emph{torsion} of $\gamma$ at $s$.
 
-Note that the torsion $\tor(s)$ is defined at each $s$ with nonzero curvature.
-Indeed, if $k(s)\ne 0$ then Frenet frame $\tau(s),\nu(s),\beta(s)$ is defined at $s$.
-Moreover since the function $s\mapsto k(s)$ is continuous, it must be positive in an open interval containing $s$;
+Note that the torsion $\tor(s)$ is defined if $\kur(s)\ne0$.
+Indeed, if $\kur(s)\ne 0$ then Frenet frame $\tan(s),\norm(s),\bi(s)$ is defined at $s$.
+Moreover since the function $s\mapsto \kur(s)$ is continuous, it must be positive in an open interval containing $s$;
 therefore Frenet frame is also defined in this interval.
-Clearly $\tau(s)$, $\nu(s)$ and $\beta(s)$ depend smoothly on $s$ in their domains of definition.
-Therefore $\nu'(s)$ is defined and so is the torsion $\tor(s)$.
+Clearly $\tan(s)$, $\norm(s)$ and $\bi(s)$ depend smoothly on $s$ in their domains of definition.
+Therefore $\norm'(s)$ is defined and so is the torsion $\tor(s)=\langle \norm'(s),\bi(s)\rangle$.
 
 The torsion measures how fast the osculating plane rotated when one travels along $\gamma$.
 
@@ -66,62 +69,61 @@ Conclude that for any $\kur>0$ and $\tor$ there is a helix with constant curvatu
 \end{thm}
 
 
-\section*{Frenet formulas}
+\section*{Frenet formulas*}
 
-Assume the Frenet frame $\tau(s),\nu(s),\beta(s)$ of curve $\gamma$ is defined at $s$.
+Assume the Frenet frame $\tan(s),\norm(s),\bi(s)$ of curve $\gamma$ is defined at $s$.
 Recall that 
-\[\tau'(s)=\kur(s)\cdot \nu(s).
+\[\tan'(s)=\kur(s)\cdot \norm(s).
 \eqlbl{eq:frenet-tau}\]
-Let us write the remaining derivatives $\nu'(s)$ and $\beta'(s)$ in the frame $\tau(s),\nu(s),\beta(s)$.
+Let us write the remaining derivatives $\norm'(s)$ and $\bi'(s)$ in the frame $\tan(s),\norm(s),\bi(s)$.
 
 First let us show that
-\[\nu'(s)=-\kur(s)\cdot\tau(s)+\tor(s)\cdot\beta(s).\eqlbl{eq:frenet-nu}\]
+\[\norm'(s)=-\kur(s)\cdot\tan(s)+\tor(s)\cdot\bi(s).\eqlbl{eq:frenet-nu}\]
 
-Since the frame $\tau(s),\nu(s),\beta(s)$ is orthonormal it is equivalent to the following three identities:
-\begin{align*}
-\langle \nu',\tau\rangle&=-\kur,
+Since the frame $\tan(s),\norm(s),\bi(s)$ is orthonormal it is equivalent to the following three identities:
+\[\begin{aligned}
+\langle \norm',\tan\rangle&=-\kur,
 &
-\langle \nu',\nu\rangle&=0,
+\langle \norm',\norm\rangle&=0,
 &
-\langle \nu',\beta\rangle&=\tor,
-\end{align*}
+\langle \norm',\bi\rangle&=\tor,
+\end{aligned}\eqlbl{eq:<N',?>}\]
 The last identity follows from the definition of torsion.
-Differentiating $\langle \nu,\nu\rangle\z=1$ in \ref{eq:orthornomal}, we get that
-\[2\cdot\langle \nu',\nu\rangle=0;\]
-whence the second identity follows.
-Differentiating the identity $\langle\tau,\nu\rangle\z=0$ in \ref{eq:orthornomal};
+Differentiating $\langle \norm,\norm\rangle\z=1$ in \ref{eq:orthornomal}, we get that
+\[2\cdot\langle \norm',\norm\rangle=0;\]
+whence the second identity in \ref{eq:<N',?>} follows.
+Differentiating the identity $\langle\tan,\norm\rangle\z=0$ in \ref{eq:orthornomal};
 we get that
-\[\langle\tau',\nu\rangle+\langle\tau,\nu'\rangle=0.\]
+\[\langle\tan',\norm\rangle+\langle\tan,\norm'\rangle=0.\]
 Applying \ref{eq:frenet-tau}, we get that
 \begin{align*}
-\langle \nu',\tau\rangle&=-\langle\tau',\nu\rangle=
+\langle \norm',\tan\rangle&=-\langle\tan',\norm\rangle=
 \\
-&=-\kur\cdot\langle\nu,\nu\rangle=
+&=-\kur\cdot\langle\norm,\norm\rangle=
 \\
 &=-\kur.
 \end{align*}
-It proves the first equality $\langle \nu',\tau\rangle=-\kur$ and
-whence \ref{eq:frenet-nu} follows.
+It proves the first equality in \ref{eq:<N',?>}; whence \ref{eq:frenet-nu} follows.
 
-Taking derivatives of the third identity in \ref{eq:orthornomal}, we get that $\beta'\perp\beta$.
-Further taking derivatives of the other identities with $\beta$ in \ref{eq:orthornomal}, we get that 
+Taking derivatives of the third identity in \ref{eq:orthornomal}, we get that $\bi'\perp\bi$.
+Further taking derivatives of the other identities with $\bi$ in \ref{eq:orthornomal}, we get that 
 \begin{align*}
-\langle\beta',\tau\rangle&=-\langle\beta,\tau'\rangle=-\kur\cdot\langle\beta,\nu\rangle=0
+\langle\bi',\tan\rangle&=-\langle\bi,\tan'\rangle=-\kur\cdot\langle\bi,\norm\rangle=0
 \\
-\langle\beta',\nu\rangle&=-\langle\beta,\nu'\rangle=\tor
+\langle\bi',\norm\rangle&=-\langle\bi,\norm'\rangle=\tor
 \end{align*}
-Since the frame $\tau(s),\nu(s),\beta(s)$ is orthonormal, it follows that
-\[\beta'(s)=-\tor(s)\cdot\nu(s).\eqlbl{eq:frenet-beta}\]
+Since the frame $\tan(s),\norm(s),\bi(s)$ is orthonormal, it follows that
+\[\bi'(s)=-\tor(s)\cdot\norm(s).\eqlbl{eq:frenet-beta}\]
 
 The equations \ref{eq:frenet-tau}, \ref{eq:frenet-nu} and \ref{eq:frenet-beta} are called Frenet formulas.
 All three can be written as one matrix identity:
 \[
 \begin{pmatrix}
-\tau'
+\tan'
 \\
-\nu'
+\norm'
 \\
-\beta'
+\bi'
 \end{pmatrix}
 =
 \begin{pmatrix}
@@ -133,37 +135,36 @@ All three can be written as one matrix identity:
 \end{pmatrix}
 \cdot
 \begin{pmatrix}
-\tau
+\tan
 \\
-\nu
+\norm
 \\
-\beta
+\bi
 \end{pmatrix}.
 \]
 
 \begin{thm}{Exercise}\label{ex:beta-from-tau+nu}
 Deduce the formula \ref{eq:frenet-beta} from  \ref{eq:frenet-tau} and \ref{eq:frenet-nu} by differentiating the identity
-$\beta=\tau\times \nu$.
+$\bi=\tan\times \norm$.
 \end{thm}
 
-\begin{thm}{Exercise} 
+\begin{thm}{Exercise}\label{ex:torsion=0}
 Let $\gamma$ be a regular space curve with nonvanishing curvature.
 Show that $\gamma$ lies in a plane if and only if its torsion vanishes.
 \end{thm}
 
-\parit{Hint:} 
-Show and use that the binormal vector is constant.
 
 \begin{thm}{Exercise} 
-Let $\gamma$ be a smooth regular space curve and $\tau,\nu,\beta$ its Frenet frame.
+Let $\gamma$ be a smooth regular space curve, $\kur$ and $\tor$ its curvature and torsion,
+and $\tan,\norm,\bi$ its Frenet frame.
 Show that 
-\[\beta=\frac{\gamma'\times\gamma''}{|\gamma'\times\gamma''|}.\]
-Use this formula to show that its torsion is
+\[\bi=\frac{\gamma'\times\gamma''}{|\gamma'\times\gamma''|}.\]
+Use this formula to show that
 \[\tor=\frac{\langle\gamma'\times\gamma'',\gamma'''\rangle}{|\gamma'\times\gamma''|^2}.\]
 
 \end{thm}
 
-\section*{Curves of constant slope}
+\section*{Curves of constant slope*}
 
 We say that a smooth regular space curve $\gamma$ has \emph{constant slope} if its velocity vector makes a constant angle with a fixed direction.
 The following theorem was proved by Michel Ange Lancret~\cite{lancret} more than two centuries ago.
@@ -175,50 +176,44 @@ Suppose $\kur(s)>0$ at any $s$.
 Then $\gamma$ has constant slope if and only if the ratio $\tfrac\tor\kur$ is constant.
 \end{thm}
 
-Note that the assumption in the theorem implicitely implies that $\kur\ne 0$;
-otherwise $\tfrac\tor\kur$ is undefined.
-
-The proof is an application of Frenet formulas.
+The theorem can be proved using the Frenet formulas.
 The following exercise will guide you thru the proof of the theorem. 
 
 \begin{thm}{Exercise} \label{ex:lancret}
-Suppose that $\gamma$ is a smooth regular space curve with nonvanishing curvature, $\tau,\nu,\beta$ 
+Suppose that $\gamma$ is a smooth regular space curve with nonvanishing curvature, $\tan,\norm,\bi$ 
 is its Frenet frame and $\kur$, $\tor$ are its curvature and torsion.
 \begin{enumerate}[(a)]
 \item\label{ex:lancret:a} 
-Assume that  $\langle w,\tau\rangle$ is constant for a fixed nonzero vector $w$.
+Assume that  $\langle \vec w,\tan\rangle$ is constant for a fixed nonzero vector $\vec w$.
 Show that 
-\[\langle w, \nu\rangle =0.\]
+\[\langle \vec w, \norm\rangle =0.\]
 Use it to show that 
-\[\langle w, -\kur\cdot\tau+\tor\cdot \beta\rangle =0.\]
+\[\langle \vec w, -\kur\cdot\tan+\tor\cdot \bi\rangle =0.\]
 Use these two identities to show that $\tfrac\tor\kur$ is constant;
 it proves the ``only if'' part of the theorem.
 
-\item Assume that $\tfrac\tor\kur$ is constant, show that the vector $w=\tfrac\tor\kur\cdot \tau+\beta$ is constant.
+\item Assume that $\tfrac\tor\kur$ is constant, show that the vector $\vec w=\tfrac\tor\kur\cdot \tan+\bi$ is constant.
 Conclude that $\gamma$ has constant slope; it proves the ``if'' part of the theorem.
 \end{enumerate}
 \end{thm}
 
-Assume $\gamma$ is a smooth unit speed curve and $s_0$ is a fixed real number. %???unit-speed/unit speed
+Assume $\gamma$ is a smooth unit-speed curve and $s_0$ is a fixed real number. 
 Then the curve 
 \[\alpha(s)=\gamma(s)+(s_0-s)\cdot \gamma'(s)\]
 is called \emph{evolvent} of $\gamma$.
 Note that if $\ell(s)$ denotes the tangent line of $\gamma$ at $s$,
 then $\alpha(s)\in \ell(s)$ and $\alpha'(s)\perp \ell$ for any $s$.
 
-\begin{thm}{Exercise} 
-Show that evolvent of a constant slope curve lies in a plane.
+\begin{thm}{Exercise}\label{ex:evolvent-constant-slope}
+Show that evolvent of a constant slope curve is a plane curve.
 \end{thm}
 
-\parit{Hint:} 
-Show that $\langle w,\alpha\rangle$ is constant if $\gamma$ makes constant angle with a fixed vector $w$ and $\alpha$ is the evolvent of $\gamma$.
-
-\section*{Spherical curves}
+\section*{Spherical curves*}
 
 \begin{thm}{Theorem}
 A smooth regular space curve $\gamma$ lies in a unit sphere if and only if 
 the following identity 
-\[\left|\tfrac{\kur'}{\tor}\right|=\kur\cdot\sqrt{\kur^2-1}.\]
+\[\left|\frac{\kur'}{\tor}\right|=\kur\cdot\sqrt{\kur^2-1}.\]
 holds for its curvature $\kur$ and torsion $\tor$.
 \end{thm}
 
@@ -229,8 +224,7 @@ we present it in a form of guided exercise:
 
 \begin{thm}{Exercise}\label{ex:spherical-frenet}
 Suppose $\gamma$ is a smooth unit-speed space curve.
-Denote by $\tau,\nu,\beta$ 
-is its Frenet frame and $\kur$, $\tor$ its curvature and torsion.
+Denote by $\tan,\norm,\bi$ its Frenet frame and by $\kur$, $\tor$ its curvature and torsion.
 
 \smallskip
 
@@ -238,11 +232,13 @@ Assume that $\gamma$ is spherical; that is, $|\gamma(s)|=1$ for any $s$.
 Show that
 
 \begin{enumerate}[(a)]
-\item\label{ex:spherical-frenet:tau} $\langle\tau,\gamma\rangle=0$; conclude that $\langle\nu,\gamma\rangle^2+\langle\beta,\gamma\rangle^2=1$.
-\item\label{ex:spherical-frenet:nu} $\langle\nu,\gamma\rangle=-\tfrac1\kur$;
-\item\label{ex:spherical-frenet:beta} $\langle\beta,\gamma\rangle'=\tfrac\tor\kur$; conclude that if $\gamma$ is closed, then $\tor(s)=0$ for some~$s$.
+\item\label{ex:spherical-frenet:tau} $\langle\tan,\gamma\rangle=0$; conclude that $\langle\norm,\gamma\rangle^2+\langle\bi,\gamma\rangle^2=1$.
+\item\label{ex:spherical-frenet:nu} $\langle\norm,\gamma\rangle=-\tfrac1\kur$;
+\item\label{ex:spherical-frenet:beta} $\langle\bi,\gamma\rangle'=\tfrac\tor\kur$.
+\item\label{ex:spherical-frenet:beta+}
+Use (\ref{ex:spherical-frenet:beta}) to show that if $\gamma$ is closed, then $\tor(s)=0$ for some~$s$.
 \item\label{ex:spherical-frenet:kur-tor} Use (\ref{ex:spherical-frenet:tau})--(\ref{ex:spherical-frenet:beta}) to show that 
-\[\left|\tfrac{\kur'}{\tor}\right|=\kur\cdot\sqrt{\kur^2-1}.\]
+\[\left|\frac{\kur'}{\tor}\right|=\kur\cdot\sqrt{\kur^2-1}.\]
 \setcounter{lastnumber}{\value{enumi}}
 \end{enumerate}
 It proves the ``only if'' part of the theorem.
@@ -252,19 +248,19 @@ It proves the ``only if'' part of the theorem.
 Now assume that $\gamma$ is a space curve that satisfies the idenity in (\ref{ex:spherical-frenet:kur-tor}).
 \begin{enumerate}[(a)]
 \setcounter{enumi}{\value{lastnumber}}
-\item Show that $p=\gamma+\tfrac1\kur\cdot \nu+\tfrac{\kur'}{\kur^2\cdot\tor}\cdot\beta$ is constant; conclude that $\gamma$ lies in a unit sphere the centered at $p$.
+\item Show that $p=\gamma+\tfrac1\kur\cdot \norm+\tfrac{\kur'}{\kur^2\cdot\tor}\cdot\bi$ is constant; conclude that $\gamma$ lies in a unit sphere centered at $p$.
 \end{enumerate}
 It proves the ``if'' part of the theorem.
 \end{thm}
 
-For a unit speed curve $\gamma$ with nonzero curvature and torsion at $s$,
+For a unit-speed curve $\gamma$ with nonzero curvature and torsion at $s$,
 the sphere $\Sigma_s$ with the center
-\[p(s)=\gamma(s)+\tfrac1{\kur(s)}\cdot \nu(s)+\tfrac{\kur'(s)}{\kur^2(s)\cdot\tor(s)}\cdot\beta(s)\]
+\[p(s)=\gamma(s)+\tfrac1{\kur(s)}\cdot \norm(s)+\tfrac{\kur'(s)}{\kur^2(s)\cdot\tor(s)}\cdot\bi(s)\]
 that pass thru $\gamma(s)$ is called \emph{osculating sphere} of $\gamma$ at $s$.
 This a unique sphere that has \emph{third order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)=o(\ell^3)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\Sigma_s$.
  
-\section*{Fundamental theorem of curves}
+\section*{Fundamental theorem of space curves*}
 
 \begin{thm}{Theorem}\label{thm:fund-curves}
 Let $\kur(s)$ and $\tor(s)$ be two smooth real valued functions defined on a real interval $\mathbb{I}$.
@@ -273,97 +269,103 @@ Then there is a smooth unit-speed curve $\gamma\:\mathbb{I}\to\RR^3$ with curvat
 Moreover $\gamma$ is uniquely defined up to a rigid motion of the space.
 \end{thm}
 
+The proof is an application of the theorem on existence and uniqueness of a solution of ordinary differential equation (\ref{thm:ODE}).
+
 \parit{Proof.}
-Fix a parameter value $s_0$, a point $\gamma(s_0)$ and an oriented orthonormal frame $\tau(s_0)$, $\nu(s_0)$, $\beta(s_0)$.
-Consider the following initial value problem: 
+Fix a parameter value $s_0$, a point $\gamma(s_0)$ and an oriented orthonormal frame $\tan(s_0)$, $\norm(s_0)$, $\bi(s_0)$.
+
+Consider the following system of differential equations
 \[
 \begin{cases}
-\gamma'=\tau,
+\gamma'=\tan,
 \\
-\tau'=\kur\cdot\nu,
+\tan'=\kur\cdot\norm,
 \\
-\nu'=-\kur\cdot\tau+\tor\cdot\beta,
+\norm'=-\kur\cdot\tan+\tor\cdot\bi,
 \\
-\beta'=-\tor\cdot\nu.
+\bi'=-\tor\cdot\norm.
 \end{cases}
 \]
-It has four vector equations, so it can be rewritten as a system of 12 scalar equations.
-By \ref{thm:ODE}, it has a solution which is defined in a maximal subinterval $\mathbb{J}$ containing $s_0$.
+with the initial condition $\gamma(s_0)$ and an oriented orthonormal frame $\tan(s_0)$, $\norm(s_0)$, $\bi(s_0)$.
+(The system of equations has four vector equations, so it can be rewritten as a system of 12 scalar equations.)
+
+By \ref{thm:ODE}, this system has a unique solution which is defined in a maximal subinterval $\mathbb{J}\subset \mathbb{I}$ containing $s_0$; we need to show that actually $\mathbb{J}= \mathbb{I}$.
 
 Note that 
 \begin{align*}
-\langle\tau,\tau\rangle'
+\langle\tan,\tan\rangle'
 &=
-2\cdot\langle\tau,\tau'\rangle
+2\cdot\langle\tan,\tan'\rangle
 =
-2\cdot\kur\cdot \langle\tau,\nu\rangle
+2\cdot\kur\cdot \langle\tan,\norm\rangle
 =
 0,
 \\
-\langle\nu,\nu\rangle'
+\langle\norm,\norm\rangle'
 &=
-2\cdot\langle\nu,\nu'\rangle
+2\cdot\langle\norm,\norm'\rangle
 =
 -
-2\cdot\kur\cdot\langle\nu,\tau\rangle
+2\cdot\kur\cdot\langle\norm,\tan\rangle
 +
-2\cdot\tor\cdot\langle\nu,\beta\rangle
+2\cdot\tor\cdot\langle\norm,\bi\rangle
 =
 0,
 \\
-\langle\beta,\beta\rangle'
+\langle\bi,\bi\rangle'
 &=
-2\cdot\langle\beta,\beta'\rangle
+2\cdot\langle\bi,\bi'\rangle
 =
--2\cdot\tor\langle\beta,\nu\rangle
+-2\cdot\tor\langle\bi,\norm\rangle
 =
 0,
 \\
-\langle\tau,\nu\rangle'
+\langle\tan,\norm\rangle'
 &=
-\langle\tau',\nu\rangle
+\langle\tan',\norm\rangle
 +
-\langle\tau,\nu'\rangle
+\langle\tan,\norm'\rangle
 =
-\kur\cdot\langle\nu,\nu\rangle
+\kur\cdot\langle\norm,\norm\rangle
 -
-\kur\cdot\langle\tau,\tau\rangle
+\kur\cdot\langle\tan,\tan\rangle
 +
-\tor\cdot\langle\tau,\beta\rangle
+\tor\cdot\langle\tan,\bi\rangle
 =
 0,
 \\
-\langle\nu,\beta\rangle'
+\langle\norm,\bi\rangle'
 &=
-\langle\nu',\beta\rangle+\langle\nu,\beta'\rangle
+\langle\norm',\bi\rangle+\langle\norm,\bi'\rangle
 =0,
 \\
-\langle\beta,\tau\rangle'
+\langle\bi,\tan\rangle'
 &=
-\langle\beta',\tau\rangle+\langle\beta,\tau'\rangle
+\langle\bi',\tan\rangle+\langle\bi,\tan'\rangle
 =
--\tor\cdot \langle\nu,\tau\rangle
-+\kur\cdot\langle\beta,\nu\rangle
+-\tor\cdot \langle\norm,\tan\rangle
++\kur\cdot\langle\bi,\norm\rangle
 =0.
 \end{align*}
 That is, the values 
-$\langle\tau,\tau\rangle$,
-$\langle\nu,\nu\rangle$,
-$\langle\beta,\beta\rangle$,
-$\langle\tau,\nu\rangle$,
-$\langle\tau,\nu\rangle$,
-$\langle\beta,\tau\rangle$
+$\langle\tan,\tan\rangle$,
+$\langle\norm,\norm\rangle$,
+$\langle\bi,\bi\rangle$,
+$\langle\tan,\norm\rangle$,
+$\langle\tan,\norm\rangle$,
+$\langle\bi,\tan\rangle$
 are constant functions of $s$.
-Since we choose $\tau(s_0)$, $\nu(s_0)$, $\beta(s_0)$ to be an oriented orthonormal frame, we have that the $\tau(s)$, $\nu(s)$, $\beta(s)$ is oriented orthonormal for any $s$.
-
+Since we choose $\tan(s_0)$, $\norm(s_0)$, $\bi(s_0)$ to be an oriented orthonormal frame, we have that the $\tan(s)$, $\norm(s)$, $\bi(s)$ is oriented orthonormal for any $s$.
 In particular $|\gamma'(s)|=1$ for any $s$.
 
 Assume $\mathbb{J}\ne \mathbb{I}$.
 Then an end of $\mathbb{J}$, say $a$, lies in the interior of $\mathbb{I}$.
-By Theorem~\ref{thm:ODE}, at least one of the values $\gamma(s)$, $\tau(s)$, $\nu(s)$, $\beta(s)$
+By Theorem~\ref{thm:ODE}, at least one of the values $\gamma(s)$, $\tan(s)$, $\norm(s)$, $\bi(s)$
 escapes to infinity as $s\to a$.
-But this is impossible since the vectors $\tau(s)$, $\nu(s)$, $\beta(s)$ remain unit and $|\gamma'(s)|=|\tau(s)|=1$ --- a contradiction.
+But this is impossible since the vectors $\tan(s)$, $\norm(s)$, $\bi(s)$ remain unit and $|\gamma'(s)|=|\tan(s)|=1$ --- a contradiction.
 Whence $\mathbb{J}= \mathbb{I}$.
+
+It remains to prove the last statement.
 
 Assume there are two curves $\gamma_1$ and $\gamma_2$ with the given curvature and torsion functions.
 Applying a motion of the space we can assume that the $\gamma_1(s_0)=\gamma_2(s_0)$ and the Frenet frames of the curves coincide at $s_0$.
@@ -379,16 +381,9 @@ that is, in a suitable coordinate system we have
 for some constants $a$ and $b$.
 \end{thm}
 
-\parit{Hint:} Use the second statement in \ref{ex:helix-torsion}.
 
-
-\begin{thm}{Advanced exercise}
+\begin{thm}{Advanced exercise}\label{ex:const-dist}
 Let $\gamma$ be a smooth regular space curve such that the distance $|\gamma(t)-\gamma(t+\ell)|$ depends only on $\ell$.
 Show that $\gamma$ is a helix, possibly degenerate to a line or a circle.
 \end{thm}
 
-\parit{Hint:} Note that the function
-\[\rho(\ell)=|\gamma(t+\ell)-\gamma(t)|^2=\langle \gamma(t+\ell)-\gamma(t),\gamma(t+\ell)-\gamma(t)\rangle\] 
-is smooth and does not depend on $t$.
-Express speed, curvature and torsion of $\gamma$ in terms of derivatives $\rho^{(n)}(0)$
-and apply \ref{ex:cur+tor=helix}.

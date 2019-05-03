@@ -1,6 +1,6 @@
 \chapter{Definitions}
 
-\section*{General definition}
+\section*{Topological surfaces}
 
 Few times we will need the following general definition.
 
@@ -45,30 +45,32 @@ x&=h_\pm(y,z)=\pm \sqrt{1-y^2-z^2};
 each function $f_\pm,g_\pm,h_\pm$ is defined in an open unit disc.
 That is, $\SS^2$ is a smooth surface.
 
+\parbf{Surfaces with boundary.}
+A connected subset in a surface that is bounded by one or more 
+curves is called \emph{surface with boundary}; in this case the collection of curves is called the \emph{boundary line} of the surface.
+
+When we say \emph{surface} we usually mean a \emph{surface without boundary};
+we may use the term \emph{surface with possibly nonempty boundary} if we need to talk about surfaces with and without boundary.
+
 \parbf{More conventions.}
-If the surface $\Sigma$ is formed by a closed set, then it is called \emph{complete}. %change it to proper???
+If the surface $\Sigma$ is formed by a closed set, then it is called \emph{proper}.
 For example, paraboloids %???+PICs
 \[z=x^2+y^2,\quad\quad z=x^2-y^2\]
 or sphere 
 \[x^2+y^2+z^2=1\]
-are complete surfaces, while the
+are proper surfaces, while the
 open disc in a plane 
 \[\set{(x,y,z)\in\RR^3}{x^2+y^2<1, z=0}\]
-is a surface which is not complete.
+is a surface which is not proper.
 
-If moreover $\Sigma$ is a compact set, then it is called \emph{closed surface}
-(the term is closely related to \emph{closed curve} but has nothing to do with \emph{closed set}).
+If compact surface without boundary is called \emph{closed}
+(this term is closely related to \emph{closed curve} but has nothing to do with \emph{closed set}).
 
-If a complete surface $\Sigma$ is noncompact, then it is called  \emph{open surface} (again the term \emph{open set} is not relevant).
+A proper noncompact surface without boundary is called \emph{open} (again the term \emph{open set} is not relevant).
 
-For example, paraboloids 
-are open surfaces, 
-and sphere is closed.
-
-A closed subset in a surface that is bounded by one or more 
-curves is called \emph{surface with boundary}; in this case the collection of curves is called the \emph{boundary line} of the surface.
-When we say \emph{surface} we usually mean a surface without boundary;
-we may use the term \emph{surface with possibly nonempty boundary} if we need to talk about surfaces with and without boundary.
+For example, any paraboloid 
+is an open surface; 
+sphere is a closed surface.
 
 \section*{Local parametrizations}
 
@@ -154,7 +156,7 @@ The map
 is called \emph{stereographic projection}. 
 Note that the point $(u,v,1)$ and its image $(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})$ lie on one half-line starting at the origin.
 
-\begin{wrapfigure}{r}{40 mm}
+\begin{wrapfigure}{o}{40 mm}
 \vskip-4mm
 \centering
 \includegraphics{asy/torus}
@@ -288,16 +290,16 @@ Show that a neighborhood of $p$ in $\Sigma$ is a graph $z=f(x,y)$ of a smooth fu
 
 
 \section*{Normal vector and orientation}
-A unit vector that is normal to $\T_p$ is usually denoted by $\nu_p$;
+A unit vector that is normal to $\T_p$ is usually denoted by $\Norm_p$;
 it is uniquely defined up to sign.
 
-A surface $\Sigma$ is called \emph{oriented} if it is equipped with a unit normal vector field $\nu$;
-that is, a continuous map $p\mapsto \nu_p$ such that $\nu_p\perp\T_p$ and $|\nu_p|=1$ for any $p$.
-The choice of the field $\nu$ is called the \emph{orientation} on $\Sigma$.
+A surface $\Sigma$ is called \emph{oriented} if it is equipped with a unit normal vector field $\Norm$;
+that is, a continuous map $p\mapsto \Norm_p$ such that $\Norm_p\perp\T_p$ and $|\Norm_p|=1$ for any $p$.
+The choice of the field $\Norm$ is called the \emph{orientation} on $\Sigma$.
 A surface $\Sigma$ is called \emph{orientable} if it can be oriented.
-Note that each orientable surface admits two orientations $\nu$ and $-\nu$. %???
+Note that each orientable surface admits two orientations $\Norm$ and $-\Norm$. %???
 
-\begin{wrapfigure}{r}{40 mm}
+\begin{wrapfigure}{o}{40 mm}
 \vskip-0mm
 \centering
 \includegraphics{asy/moebius}
@@ -309,41 +311,40 @@ when you go around it changes the sign.
 
 Note that each surface is locally orientable.
 In fact each chart $f(u,v)$ admits an orientation 
-\[\nu=
+\[\Norm=
 \frac{\tfrac{\partial f}{\partial u}\times \tfrac{\partial f}{\partial v}}
 {\left|\tfrac{\partial f}{\partial u}\times \tfrac{\partial f}{\partial v}\right|}.\]
 Indeed the vectors $\tfrac{\partial f}{\partial u}$ and $\tfrac{\partial f}{\partial v}$ are tangent vectors at $p$; 
 since they are linearly independent, their vector product does not vanish and it is perpendicular to the tangent plane.
-Therefore $\nu(u,v)$ is a unit normal vector at $f(u,v)$;
-evidently $(u,v)\mapsto \nu(u,v)$ is a continuous map. 
+Therefore $\Norm(u,v)$ is a unit normal vector at $f(u,v)$;
+evidently $(u,v)\mapsto \Norm(u,v)$ is a continuous map. 
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:implicit-orientable}
 Let $h:\RR^3\to\RR$ be a smooth function with a regular value $0$ and $\Sigma$ is a surface described as a connected component of the set of solutions $h(x,y,z)=0$.
 Show that $\Sigma$ is orientable.
 \end{thm}
 
-\parit{Hint.} Show that $\nu=\tfrac{\nabla h}{|\nabla h|}$ defines a unit normal field on $\Sigma$.
 
 The following claim should be intuitively obvious. 
 Its proof is not at all trivial; a standard proof uses the so-called \emph{Alexander's duality} which is a classical technique in algebraic topology.
 
 \begin{thm}{Claim}
-The complement of any complete surface in the Euclidean space has exactly two connected components. 
+The complement of any open or closed surface in the Euclidean space has exactly two connected components. 
 \end{thm}
 
-Note that if a complete surface is smooth, we can choose the unit normal field on it that points into one of the components of the complement.
+Note that if a proper surface is smooth, we can choose the unit normal field on it that points into one of the components of the complement.
 Therefore we obtain the following observation. 
 
 \begin{thm}{Observation}
-Any smooth complete surface in Euclidean space is oriented.
+Any smooth open or closed surface in Euclidean space is oriented.
 \end{thm}
 
-In particular it follows that the M\"obius strip cannot be extended to a complete smooth surface.
+In particular it follows that the M\"obius strip cannot be extended to an open or closed smooth surface without boundary.
 
 \section*{Plane sections}
 
 \begin{thm}{Advanced exercise}
-Show that any closed set in the plane can appear as an intersection of this plane with a complete smooth regular surface.  
+Show that any closed set in the plane can appear as an intersection of this plane with an open smooth regular surface.  
 \end{thm}
 
 As a consequence of the exercise above, the plane sections of a smooth regular surface might look complicated.

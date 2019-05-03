@@ -1,59 +1,4 @@
-\chapter{Convex surfaces}
-
-
-\section{Embedded surfaces}
-A set $X$ in the Euclidean space is called strictly convex if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
-Clearly any open convex set is stricly convex;
-the closed cube (as well as any convex polyhedron) gives an example of a convex set which is not strictly convex.
-
-\begin{thm}{Exercise}\label{ex:loc-convex}
-Let $\Sigma$ be a surface with positive Gauss curvature.
-Show that for any point $p\in \Sigma$ and all sufficiently small $\eps>0$,
-the surface $\Sigma$ divides the ball $B(p,\eps)$ in two regions, one of which is strictly convex.
-\end{thm}
-
-The following theorem gives a global version of the above exercise.
-
-\begin{thm}{Theorem}\label{thm:convex-embedded}
-Assume $\Sigma$ is a closed or open smooth connected surface with positive Gauss curvature.
-Then $\Sigma$ bounds a convex region $R$.
-Moreover, if $\Sigma$ is closed then it is a sphere; that is, $\Sigma$ admits a smooth regular parametrization by $\SS^2$.
-
-\end{thm}
-
-\parit{Proof.} 
-By Exercise~\ref{ex:loc-convex}, one of the regions, say $R$, bounded by $\Sigma$ is locally strictly convex;
-that is, at any point $p$ of $R$, the intersection of $R$ with a sufficiently small ball centered at $p$ is strictly convex.
-
-Since $\Sigma$ is connected, so it $R$.
-Moreover any two points $x$ and $y$ in the interior of $R$ can be connected by a polygonal line $\beta$ in the interior of $R$.
-
-
-Arguing by contradiction, assume the line segment $[xy]$ does not lie in the   in the interior of $R$.
-Let $y_0$ be the first point on $\beta$ so that the line segment $[xy_0]$ intersects $\Sigma$; assume $[xy_0]$ touches $\Sigma$ at a point $z$.
-
-\begin{wrapfigure}{r}{43 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-37}
-\vskip-0mm
-\end{wrapfigure}
-
-By Exercise \ref{ex:loc-convex}, $R\cap B(z,\eps)$ is strictly convex for all sufficiently small $\eps>0$.
-On the other hand $z$ lies between two points both in the line segment $[xy_0]$ and $R\cap B(z,\eps)$ --- a contradiction.
-
-It remains to parameterize $\Sigma$ by $\SS^2$.
-
-Fix a point $p$ in the interior of $R$.
-By strict convexity of $R$, for any point $x\in \SS^2$ there is unique point $x'\in \Sigma$ that lies on the halfline $px$;
-moreover, the map $h\:x\mapsto x'$ describes a bijection $\SS^2\to \Sigma$.
-
-Applying inverse function theorem in local coordinates of $\SS^2$ and $\Sigma$,
-we get that the map $h$ is smooth and regular.
-Hence the result.
-\qeds
-
-\section{Immersed surfaces}
+\section*{Immersed surfaces}
 
 It seems that first formulation and proof of the following theorem was given by James Stoker \cite{stoker} who attributed it to Jacques Hadamard, who proved a closely relevant statement in \cite[item 23]{hadamard}.
 
@@ -64,7 +9,7 @@ Any closed connected immersed surface with positive Gauss curvature is embedded.
 
 
 
-\begin{wrapfigure}{r}{20 mm}
+\begin{wrapfigure}{o}{20 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-35}
@@ -154,7 +99,7 @@ then $\Sigma_h$ is a graph of $f$ over
 Since the Gauss curvature is positive, the function $f$ is convex and therefore $\Delta$ is convex and bounded by a smooth curve;
 any such set can be parameterized by a disc.
 
-\begin{wrapfigure}{r}{30 mm}
+\begin{wrapfigure}{o}{30 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-36}
@@ -177,23 +122,23 @@ Since $\Sigma_h$ has no self-intersections for $h<H$, we get that $\Sigma$ is an
 \qeds
 
 \begin{thm}{Exercise}
-Show that any open immersed surface with positive Gauss curvature is embedded.\footnote{Hint: Modify the proof of the theorem.}
+Modify the proof of the theorem to show that any open immersed surface with positive Gauss curvature is embedded.
 \end{thm}
 
 \section{Proof via equidistant surfaces}
 
 Recall that a surface $\Sigma$ is called \emph{orientable} if one can choose at each point $p$ of the surface
-a unit normal vector $\nu(p)$  in such a way that the function $p\mapsto \nu_p$ is continuous in every chart of $\Sigma$.
-For immersed surfaces we should say that $\nu$ is a continuous function defined on the parameter domain of the surface.
-The map $\nu$ is called a \emph{Gauss map} of the surface.
+a unit normal vector $\Norm_p$  in such a way that the function $p\mapsto \Norm_p$ is continuous in every chart of $\Sigma$.
+For immersed surfaces we should say that $\Norm$ is a continuous function defined on the parameter domain of the surface.
+The map $\Norm$ is called a \emph{Gauss map} of the surface.
 
 \begin{thm}{Claim}
 Assume $\Sigma$ is a closed immersed surface with positive Gauss curvature, then it is orientable.
 \end{thm}
 
 
-\parit{Proof.} Indeed we can choose the unit normal vector $\nu(p)$ in such a way that both principle curvatures are positive. 
-Iin this case the surface lies locally on the side of tangent plane $\T_p$ which is opposite from $\nu(p)$.
+\parit{Proof.} Indeed we can choose the unit normal vector $\Norm_p$ in such a way that both principle curvatures are positive. 
+In this case the surface lies locally on the side of tangent plane $\T_p$ which is opposite from $\Norm_p$.
 
 Evidently this choice is  continuous.
 \qeds
@@ -202,7 +147,7 @@ The unit normal described in the proof of the claim will be called \emph{outer n
 
 \begin{thm}{Lemma}\label{lem:gauss-inverse}
 Assume $\Sigma$ is a closed connected immersed surface with positive Gauss curvature.
-Then the Gauss map $\nu\:\Sigma \to \SS^2$ has a smooth regular inverse;
+Then the Gauss map $\Norm\:\Sigma \to \SS^2$ has a smooth regular inverse;
 in particular, $\Sigma$ is a sphere.
 \end{thm}
 
@@ -215,19 +160,19 @@ The proof is standard in topology, we hope that the statement is intuitively obv
 The reader might be able to reinvent the theory by trying to prove that if the map $\phi\:\SS^2\to\SS^2$ is smooth and regular then it has an inverse.
 
 \parbf{Equidistant surfaces.}
-Assume $\nu\:\Sigma\to \SS^2$ is a Gauss map of a smooth surface $\Sigma$.
-Fix a real number $R$ and consider the map $h_R\:\Sigma\z\to\RR^3$ defined by $h_R\:p\mapsto p+R\cdot\nu(p)$.
+Assume $\Norm\:\Sigma\to \SS^2$ is a Gauss map of a smooth surface $\Sigma$.
+Fix a real number $R$ and consider the map $h_R\:\Sigma\z\to\RR^3$ defined by $h_R\:p\mapsto p+R\cdot\Norm_p$.
 The map $h_R$ describe the so called \emph{equidistant surface};
 it is smooth by definition, but in general it does not have to be regular.
 
 \begin{thm}{Lemma}\label{lem:curc<1/R}
-Suppose $\nu\:\Sigma\to \SS^2$ is a Gauss map of a surface $\Sigma$.
+Suppose $\Norm\:\Sigma\to \SS^2$ is a Gauss map of a surface $\Sigma$.
 Assume the corresponding principle curvatures are nonnegative at all points. 
 Then the equidistant surface $\Sigma_R$ is regular and its principle curvatures are positive and strictly smaller than $\tfrac1R$.
 \end{thm}
 
 \parit{Proof.}
-To prove regularity, let us use the special representation of $\Sigma$ as a graph $z=f(x,y)$ with the $x$ and $y$ axis in the principle directions of $\Sigma$ at $p$.\footnote{If we assume that $\nu(p)$ points in the direction of the $z$-axis, then $\Sigma$ is given in parametric form 
+To prove regularity, let us use the special representation of $\Sigma$ as a graph $z=f(x,y)$ with the $x$ and $y$ axis in the principle directions of $\Sigma$ at $p$.\footnote{If we assume that $\Norm_p$ points in the direction of the $z$-axis, then $\Sigma$ is given in parametric form 
 $h_0\:(x,y)\mapsto (x,y,f(x,y))$,
 where $f\z=-\tfrac{k_1}2\cdot x^2-\tfrac{k_2}2\cdot y^2+o(x^2+y^2)$.}
 
@@ -257,7 +202,7 @@ Hence the principle curvatures at $p$ are at least $\tfrac1{R+\eps}$.
 In the general case, a local chart of $\Sigma$ can be modified so that it has a piece of the original surface around $p$  and bounds a convex set.
 Here is one way to do this:
 
-\begin{wrapfigure}{r}{30 mm}
+\begin{wrapfigure}{o}{30 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-38}
@@ -279,7 +224,7 @@ Then the equidistant surface $\Sigma_R$ can be parametrized by $s_R(u)= s(u)+R\c
 Rescaling $s_R$ by a  factor of $\tfrac1r$ we get the map $u\mapsto \tfrac1R\cdot s(u)+u$ which converges smoothly to the indentity map on the sphere $\SS^2$.
 Therefore $\Sigma_R$ is embedded for sufficiently large $R$.
 
-\begin{wrapfigure}{r}{47 mm}
+\begin{wrapfigure}{o}{47 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-39}

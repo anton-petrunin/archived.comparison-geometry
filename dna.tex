@@ -1,23 +1,10 @@
-\chapter{Alternative proofs}
+\section*{DNA inequality revisited*}
 
-\section*{DNA inequality}
-
-Recall that curvature of a spherical curve is at least $1$
-(Exercise~\ref{ex:curvature-of-spherical-curve}).
-In particular the length of spherical curve can not exceed its total curvature.
-The following theorem shows that the same inequality holds for \emph{closed} curves in a unit ball.
-
-\begin{thm}{Theorem}\label{thm:DNA}
-Let $\gamma$ be a nontrivial closed curve that lies in a unit ball.
-Then 
-\[\tc\gamma\ge \length\gamma.\]
-
-\end{thm}
-
+In this section we will give an alternative proof of \ref{thm:DNA} that works for arbitrary, not necessarily smooth, curves.
 In the proof we use \ref{def:total-curv-poly} to define for the total curvature;
-according to \ref{thm:total-curvature=}, it is more general than the smooth definition on page \pageref{page:total curvature of:smooth-def}.
+according to \ref{thm:total-curvature=}, it is more general than the smooth definition given on page \pageref{page:total curvature of:smooth-def}.
 
-\parit{Proof.}
+\parit{Alternative proof of \ref{thm:DNA}.}
 We will show that 
 \[\tc\gamma> \length\gamma.\]
 for any closed polygonal line $\gamma=p_1\dots p_{n}$ in a unit ball.
@@ -99,10 +86,8 @@ It follows that
 Hence the result.
 \qeds
 
-This theorem was proved by Don Chakerian \cite{chakerian};
-for plane curves it was prved earlier by Istv\'{a}n F\'{a}ry \cite{fary-DNA}.
-Few proofs of this theorem are discussed by Serge Tabachnikov~\cite{tabachnikov}.
-He also conjectured the following closely related statement:
+
+Let us mention the following closely related statement:
 
 \begin{thm}{Theorem}
 Suppose a closed regular smooth curve $\gamma$ lies in a convex figure with the perimeter $2\cdot \pi$.
@@ -111,5 +96,5 @@ Then
 
 \end{thm}
 
-It was proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso}; latter a simpler proof was given by Alexander Nazarov and Fedor Petrov~\cite{nazarov-petrov}.
-The proof is annoyingly difficult; we do not present it here.
+It was  conjectured by Serge Tabachnikov~\cite{tabachnikov} and proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso}; latter a simpler proof was given by Alexander Nazarov and Fedor Petrov~\cite{nazarov-petrov}.
+Despite the simplicity of the formulation, the proof is annoyingly difficult.

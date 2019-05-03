@@ -45,17 +45,17 @@ Therefore, for this particular $s$ we have
 \\
 &=\Theta_{\sigma_s}.
 \end{align*}
-Since the left hand side and the right hands side of this formula do not depend on the parametrization of $\sigma_s$, this formula holds for all $s$.\footnote{One may avoid passing the a unit speed parametrization by using the following formula for geodesic curvature which holds for any regular parametrization: 
-\[k_g(t,s)=\langle \nu(\sigma_s(t)),[\sigma'_s(t),\sigma''_s(t)]\rangle/|\sigma_s'(t)|^3;\]
+Since the left hand side and the right hands side of this formula do not depend on the parametrization of $\sigma_s$, this formula holds for all $s$.\footnote{One may avoid passing the a unit-speed parametrization by using the following formula for geodesic curvature which holds for any regular parametrization: 
+\[k_g(t,s)=\langle \Norm(\sigma_s(t)),[\sigma'_s(t),\sigma''_s(t)]\rangle/|\sigma_s'(t)|^3;\]
 it saves thinking but makes the calculations longer.}
 \qeds
 
 The parametrization of a surface satisfying the conditions in the proposition are called \emph{semigeodesic coordinates}.
 The following exercise explains the reason for this name.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:geod-semigeod}
 Assume $(s,t)\mapsto w(s,t)$ be a local parametrization of an oriented smooth regular surface $\Sigma$ as in the proposition above.
-Show that for any fixed $t$ the curve $\gamma_t(s)= w(s,t)$ is a geodesic.\footnote{Hint: note that in order to show that $\gamma''_t(s)\perp\T_{\gamma_t(s)}$, it is sufficient to show that $\langle\tfrac{\partial^2}{\partial s^2}w,\tfrac{\partial}{\partial t}w\rangle=0$.}
+Show that for any fixed $t$ the curve $\gamma_t(s)= w(s,t)$ is a geodesic.
 \end{thm}
 
 
@@ -142,7 +142,7 @@ Let $w(\theta,r)$ and $\~w(\theta,r)$ be the polar coordinates of a surface $\Si
 
 \parit{Proof.}
 From the above discussion, the polar coordinates $w(\theta,r)$ are semigeodesic;
-that is $w(\theta,r)$ satisfies the conditions in the first variation formula (\ref{prop:first-var}).
+that is, $w(\theta,r)$ satisfies the conditions in the first variation formula (\ref{prop:first-var}).
 In particular if $\ell(r)=\length \sigma_r$, then
 \[\ell'(r)=\Theta_{\sigma_r}\]
 for any $r>0$.
@@ -241,5 +241,3 @@ Then
 hence \ref{gamma<gamma} follows.
 \qeds
 
-
-\warning
