@@ -666,7 +666,7 @@ label.bot(btex $x$ etex, z.p);
 label.bot(btex $y$ etex, z.q);
 label.urt(btex $p$ etex, z.pp);
 label.ulft(btex $q$ etex, z.qq);
-label.top(btex $s$ etex, z.s);
+label.top(btex $w$ etex, z.s);
 label.lrt(btex $\gamma$ etex, z.sq);
 label.lrt(btex $\sigma$ etex, (point 1.4 of p0));
 endfig;
@@ -690,6 +690,8 @@ z.sq=(.5,.7)*u;
 p1=z.p{dir 170}..z.s{dir ((angle direction 1 of p0)-180)}..z.sq;
 draw p1;
 
+hatchfill (subpath (0,1) of p1)--(reverse(subpath (0,1) of p0))--cycle withcolor (67, 2mm, -.5bp);
+
 draw ddline(z.pp,z.qq)(0.1, 0.1);
 
 drawarrow subpath (0,1.4) of p0;
@@ -701,8 +703,8 @@ label.bot(btex $x$ etex, z.p);
 label.bot(btex $y$ etex, z.q);
 label.urt(btex $p$ etex, z.pp);
 label.ulft(btex $q$ etex, z.qq);
-label.top(btex $s$ etex, z.s);
-label.lrt(btex $\gamma$ etex, z.sq);
+label.top(btex $w$ etex, z.s);
+whitelabel.lrt(btex $\gamma$ etex, z.sq);
 label.lrt(btex $\sigma$ etex, (point 1.4 of p0));
 endfig;
 
@@ -2804,4 +2806,78 @@ label.llft(btex $z(s)$ etex, z.a rotated (m*360/n));
 
 label.top(btex $r(s)$ etex rotated angle(z.a rotated ((m-1)*360/n)-z.a rotated (m*360/n)), .5[z.a rotated (m*360/n), (z.a rotated (m*360/n) + (y.r+m*x.r)*unitvector(z.a rotated ((m-1)*360/n)-z.a rotated (m*360/n)))]+(-1,-2));
 endfig;
+
+beginfig(85);
+save u;
+u:=1cm;
+
+z.a0=(-1,-1)*u;
+z.a2=(1,-1)*u;
+
+z.b0=(-1,1)*u;
+z.b2=(1,1)*u;
+
+z.shift=(4.5,0)*u;
+
+drawarrow z.a0..origin{right}..z.a2;
+drawarrow z.b0..origin{right}..z.b2;
+
+drawarrow (z.a2..origin{left}..z.a0) shifted z.shift;
+drawarrow (z.b0..origin{right}..z.b2) shifted z.shift;
+
+dOt origin, z.shift;
+
+label.bot(btex cooriented etex, (0,-1)*u);
+label.bot(btex controriented etex, z.shift+(0,-1)*u);
+
+label.ulft(btex $\gamma_1$ etex, z.a0);
+label.llft(btex $\gamma_2$ etex, z.b0);
+
+label.urt(btex $\gamma_1$ etex, z.shift+z.a2);
+label.lrt(btex $\gamma_2$ etex, z.shift+z.b2);
+
+label.bot(btex $p$ etex, origin);
+label.bot(btex $p$ etex, z.shift);
+endfig;
+
+beginfig(86);
+save u;
+u:=1cm;
+
+z.a0=(0,0)*u;
+z.a1=(1,1)*u;
+z.a2=(2,.5)*u;
+z.a3=(3,1)*u;
+z.a4=(4,0)*u;
+z.a5=(2.7,.6)*u;
+
+z.b0=(0,1)*u;
+z.b1=(1,.5)*u;
+z.b2=z.a2;
+z.b3=(3,0)*u;
+z.b4=(4,.3)*u;
+
+
+save p; path p[];
+p0=z.a0..z.a1..z.a2..z.a3..z.a4..z.a5;
+p1=z.b0..z.b1..z.b2{direction 2 of p0}..z.b3..z.b4;
+p2=z.b3..z.a2+(0,2)*u..z.b1;
+
+
+draw p0 dashed evenly;
+drawarrow subpath (1.3,2.7) of p0 pensemibold;
+draw p1 dashed evenly;
+drawarrow subpath (1,3) of p1 pensemibold;
+draw p2 penhair;
+
+dOt point 2 of p0;
+
+hatchfill (subpath (1,3) of p1)--p2--cycle  withcolor (67, 2mm, -.5bp);
+
+label.bot(btex $p$ etex, z.a2);
+label.top(btex $\gamma_2$ etex,  point .7 of p0);
+label.bot(btex $\gamma_1$ etex, point .7 of p1);
+whitelabel(btex $R$ etex, z.a2+(0,1)*u);
+endfig;
+
 end
