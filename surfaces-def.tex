@@ -2,19 +2,19 @@
 
 \section*{Topological surfaces}
 
-Few times we will need the following general definition.
+We will be mostly interested in smooth regular surfaces defined in the following section.
+However few times we will use the following general definition.
 
-A path connected subset $\Sigma$ in a metric space is called a \emph{surface} (more precisely an \emph{embedded surface without boundary}) 
+A connected subset $\Sigma$ in a metric space is called a \emph{topological surface} (more precisely an \emph{embedded surface without boundary}) 
 if any point of $p\in \Sigma$ admits a neighborhood $W$ in $\Sigma$ which is \emph{homeomorphic} to an open subset in the Euclidean plane;
 that is, if there is an injective continuous map $U\to W$ from an open set $U\subset \RR^2$ such that its inverse $W\to U$ is also continuous.
 
-However, as well as in the case of curves, we will be mostly interested in smooth surfaces in the Euclidean space describe in the following section.
 
 \section*{Smooth surfaces}
 
 Recall that a function $f$ of two variables $x$ and $y$ is called \emph{smooth} if all its partial derivatives $\frac{\partial^{m+n}}{\partial x^m\partial y^n}f$ are defined and are continuous in the domain of definition of $f$. 
 
-A path connected set $\Sigma \subset \mathbb{R}^3$ is called a \emph{smooth surface} (or more precisely \emph{smooth regular embedded surface}) if it can be described locally as a graph of a smooth function in an appropriate coordinate system.\label{page:def-smooth-surface}
+A connected set $\Sigma \subset \mathbb{R}^3$ is called a \emph{smooth surface} (or more precisely \emph{smooth regular embedded surface}) if it can be described locally as a graph of a smooth function in an appropriate coordinate system.\label{page:def-smooth-surface} %???+regular???spoken term
 
 More precisely, for any point $p\in \Sigma$ one can choose a coordinate system $(x,y,z)$ and a neighborhood $U\ni p$ such that
 the intersection $W=U\cap \Sigma$ is formed by a graph $z=f(x,y)$ of a smooth function $f$ defined in an open domain of the $(x,y)$-plane.
@@ -34,36 +34,37 @@ A more interesting example is the unit sphere
 \[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
 This set is not the graph of any function,
 but $\SS^2$ is locally a graph;
-in fact it can be covered by 6 graphs:
+it can be covered by the following 6 graphs:
 \begin{align*}
 z&=f_\pm(x,y)=\pm \sqrt{1-x^2-y^2},
 \\
 y&=g_\pm(x,z)=\pm \sqrt{1-x^2-z^2},
 \\
-x&=h_\pm(y,z)=\pm \sqrt{1-y^2-z^2};
+x&=h_\pm(y,z)=\pm \sqrt{1-y^2-z^2},
 \end{align*}
-each function $f_\pm,g_\pm,h_\pm$ is defined in an open unit disc.
-That is, $\SS^2$ is a smooth surface.
+where each function $f_\pm,g_\pm,h_\pm$ is defined in an open unit disc.
+Any point $p\in\SS^2$ lies in one of these graphs, therefore $\SS^2$ is a smooth surface.
 
-\parbf{Surfaces with boundary.}
+\section*{Surfaces with boundary}
 A connected subset in a surface that is bounded by one or more 
 curves is called \emph{surface with boundary}; in this case the collection of curves is called the \emph{boundary line} of the surface.
 
-When we say \emph{surface} we usually mean a \emph{surface without boundary};
-we may use the term \emph{surface with possibly nonempty boundary} if we need to talk about surfaces with and without boundary.
+When we say \emph{surface} we usually mean a \emph{smooth regular surface without boundary};
+we may use the terms \emph{surface without boundary} if we need to emphasise it;
+otherwise we may use the term \emph{surface with possibly nonempty boundary}.
 
-\parbf{More conventions.}
+\section*{Proper, closed and open surfaces}
 If the surface $\Sigma$ is formed by a closed set, then it is called \emph{proper}.
 For example, paraboloids %???+PICs
 \[z=x^2+y^2,\quad\quad z=x^2-y^2\]
 or sphere 
 \[x^2+y^2+z^2=1\]
 are proper surfaces, while the
-open disc in a plane 
-\[\set{(x,y,z)\in\RR^3}{x^2+y^2<1, z=0}\]
-is a surface which is not proper.
+open disc 
+\[\set{(x,y,z)\in\RR^3}{x^2+y^2<1,\  z=0}\]
+is not proper; this set is neither open nor closed.
 
-If compact surface without boundary is called \emph{closed}
+A compact surface without boundary is called \emph{closed}
 (this term is closely related to \emph{closed curve} but has nothing to do with \emph{closed set}).
 
 A proper noncompact surface without boundary is called \emph{open} (again the term \emph{open set} is not relevant).
@@ -72,11 +73,24 @@ For example, any paraboloid
 is an open surface; 
 sphere is a closed surface.
 
+Note that any proper surface without boundary is either closed or open.
+
+The following claim is a two-dimesional analog of \ref{ex:proper-curve};
+hopefully it is intuitively obvious. 
+Its proof is not at all trivial; a standard proof uses the so-called \emph{Alexander's duality} which is a classical technique in algebraic topology.
+We omit its proof. %???+ref
+
+\begin{thm}{Claim}\label{clm:proper-divides}
+The complement of any proper topological surface without boundary (or, equivalently any open or closed topological surface) in the Euclidean space has exactly two connected components. 
+\end{thm}
+
+
+
 \section*{Local parametrizations}
 
 Let $U$ be an open domain in $\RR^2$ and $s\:U\to \RR^3$ be a smooth map.
 We say that $s$ is regular if its Jacobian has maximal rank;
-in this case it means that the vectors $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ are linearly independent at any $(u,v)\in U$ or
+in this case it means that the vectors $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ are linearly independent at any $(u,v)\in U$;
 equivalently $\tfrac{\partial s}{\partial u}\times\tfrac{\partial s}{\partial v}\ne 0$, where $\times$ denotes the vector product.
 
 \begin{thm}{Proposition}\label{prop:graph-chart}
@@ -84,14 +98,15 @@ If $s\:U\to \RR^3$ is a smooth regular embedding of an open connected set $U\sub
 \end{thm}
 
 \parit{Proof.}
-Let $s(u,v)=(s_1(u,v),s_2(u,v),s_3(u,v))$.
+Set 
+\[s(u,v)=(x_s(u,v),y_s(u,v),z_s(u,v)).\]
 Since $s$ is regular the Jacobian matrix
 \[
 \renewcommand\arraystretch{1.3}
 \begin{pmatrix}
-\tfrac{\partial s_1}{\partial u}&\tfrac{\partial s_1}{\partial v}\\
-\tfrac{\partial s_2}{\partial u}&\tfrac{\partial s_2}{\partial v}\\
-\tfrac{\partial s_3}{\partial u}&\tfrac{\partial s_3}{\partial v}
+\tfrac{\partial x_s}{\partial u}&\tfrac{\partial x_s}{\partial v}\\
+\tfrac{\partial y_s}{\partial u}&\tfrac{\partial y_s}{\partial v}\\
+\tfrac{\partial z_s}{\partial u}&\tfrac{\partial z_s}{\partial v}
 \end{pmatrix}
 \]
 has rank two.
@@ -102,24 +117,19 @@ the matrix
 \[
 \renewcommand\arraystretch{1.3}
 \begin{pmatrix}
-\tfrac{\partial s_1}{\partial u}&\tfrac{\partial s_1}{\partial v}\\
-\tfrac{\partial s_2}{\partial u}&\tfrac{\partial s_2}{\partial v}
-\end{pmatrix}
+\tfrac{\partial x_s}{\partial u}&\tfrac{\partial x_s}{\partial v}\\
+\tfrac{\partial y_s}{\partial u}&\tfrac{\partial y_s}{\partial v}
+\end{pmatrix},
 \]
+which is the Jacobian matix of the map $(u,v)\mapsto (x_s(u,v),y_s(u,v))$, 
 is invertible.
-Let $\bar s\:U\to\RR^2$ be the projection of $s$ to the $(x,y)$-coordinate plane;
-that is, $\bar s(u,v)=(s_1(u,v),s_2(u,v))$.
-Note that the $2\times2$-matrix above is the Jacobian matrix of $\bar s$.
 
 The inverse function theorem implies that there is a smooth regular function $h$ defined on an open set $W\ni 0$ in the $(x,y)$-plane
-such that $h(0,0)=(0,0)$ and $\bar s\circ h$ is the identity map.
-
-Note that the graph $z=s_3\circ h(x,y)$ for $(x,y)\in W$ is a subset in $\Sigma$.
-Indeed, if $(u,v)\z=h(x,y)$, then $x=s_1(u,v)$ and $y=s_2(u,v)$.
-Therefore the identity $z=s_3\circ h(x,y)$ can be rewritten as $(x,y,z)\z=s(u,v)$.
-
-Clearly the graph $z=s_3\circ h(x,y)$ for $(x,y)\in W$ is open in $\Sigma$; %???why
-that is, $\Gamma$ a neighborhood of $p$ in $\Sigma$ that can be described as a graph of a smooth function $f_3\circ h\:W\to\RR$.
+such that 
+\[(x_s\circ h)(x,y)=x\quad\text{and}\quad (y_s\circ h)(x,y)=y\]
+for any $(x,y)\in W$.
+It follows that the graph $z=z_s\circ h(x,y)$ for $(x,y)\in W$ is a subset in $\Sigma$.
+Clearly this graph is open in $\Sigma$. %???why
 Since $p$ is arbitrary, we get that $\Sigma$ is a surface.
 \qeds
 
@@ -132,7 +142,7 @@ In this case any point in $W$ can be described by two parameters, usually denote
 which are called \emph{local coordinates} at $p$.
 The map $s$ is called a \emph{chart} of $\Sigma$.
 
-If $W$ is a graph $z=h(x,y)$ then the map $s\:(u,v)\mapsto (u,v,h(u,v))$ is a chart.
+If $W$ is a graph $z=h(x,y)$ then the map \[s\:(u,v)\mapsto (u,v,h(u,v))\] is a chart.
 Indeed, $s$ has an inverse $(u,v,h(u,v))\mapsto (u,v)$ which is continuous;
 that is, $s$ is an embedding.
 Further,
@@ -141,7 +151,7 @@ $\tfrac{\partial s}{\partial u}=(1,0,\tfrac{\partial h}{\partial u})$ and $\tfra
 Note that from \ref{prop:graph-chart}, we obtain the following corollary.
 
 \begin{thm}{Corollary}
-A path connected set $\Sigma\subset \RR^3$ is a smooth regular surface if at any point $p\in \Sigma$ it has a local parametrization by a smooth regular map.
+A connected set $\Sigma\subset \RR^3$ is a smooth regular surface if $\Sigma$ has a local parametrization by a smooth regular map at any point $p\in\Sigma$.
 \end{thm}
 
 
@@ -167,7 +177,7 @@ Let $\gamma(t)=(x(t),y(t))$ be a plane curve.
 Recall that the image of the map 
 \[(t,\theta)\mapsto (x(t), y(t)\cdot\cos\theta,y(t)\cdot\sin\theta)\] 
 is called the \emph{surface of revolution} of the curve $\gamma$ around the $x$-axis.
-For fixed $t$ or $\theta$ the obtained curves are called meridian or correspondingly parallel of the surface of revolution; note that parallels are formed by circles in the plane perpendicular to the axis of rotation.
+For fixed $t$ or $\theta$ the obtained curves are called \emph{meridian} or correspondingly \emph{parallel} of the surface of revolution; note that parallels are formed by circles in the plane perpendicular to the axis of rotation.
 
 \begin{thm}{Exercise}\label{ex:revolution}
 Assume $\gamma$ is a closed simple smooth regular plane curve that does not intersect the $x$-axis.
@@ -218,63 +228,49 @@ It remains to apply the definition of smooth surface (page \pageref{page:def-smo
 \qeds
 
 \begin{thm}{Exercise}\label{ex:hyperboloinds}
-Describe the set of real numbers $a$
+Describe the set of real numbers $\ell$
 such that the equation
 \begin{align*}
-x^2+y^2-z^2&=a
+x^2+y^2-z^2&=\ell
 \end{align*}
 describes a smooth regular surface.
 \end{thm}
 
 \section*{Tangent plane}
 
-Let $z=f(x,y)$ be a local graph realization of a surface. 
-Assume that a point $p=(x_p,y_p,z_p)$ lies on this graph, so $z_p=f(x_p,y_p)$.
-The plane spanned by the vectors $(1,0,(\tfrac{\partial}{\partial x}f)(x_p,y_p))$ and  $(0,1,(\tfrac{\partial}{\partial y}f)(x_p,y_p))$ is called the \emph{tangent plane} of $\Sigma$ at $p$.
-The tangent plane to $\Sigma$ at $p$ is usually denoted by $\T_p$ or $\T_p\Sigma$.
-Vectors in $\T_p$ are called \emph{tangent vectors} of $\Sigma$ at $p$. %??? redo def
+\begin{thm}{Definition}
+Let $\Sigma$ be a smooth surface.
+A vector $w$ is a tangent vector of $\Sigma$ at $p$ if and only if there is a curve $\gamma$ that runs in $\Sigma$ and has $w$ as a velocity vector at $p$.  
+\end{thm}
 
+\begin{thm}{Proposition}
+Let $\Sigma$ be a smooth surface and $p\in \Sigma$.
+Then the set of tangent vectors of $\Sigma$ at $p$ forms a plane;
+this plane is called \emph{tangent plane} of $\Sigma$ at $p$.
+
+Moreover if $s\:U\to \Sigma$ is a local chart and $p=s(u_p,v_p)$, then 
+the tangent plane of $\Sigma$ at $p$ is spanned by vectors $\tfrac{\partial s}{\partial u}(u_p,v_p)$ and $\tfrac{\partial s}{\partial v}(u_p,v_p)$.
+\end{thm}
+
+The tangent plane to $\Sigma$ at $p$ is usually denoted by $\T_p$ or $\T_p\Sigma$.
 Tangent plane $\T_p$ might be considered as a linear subspace of $\RR^3$ or as a parallel plane passing thru $p$.
 In the latter case it can be interpreted as the best approximation of the surface $\Sigma$ by a plane at~$p$;
 it has \emph{first order of contact} with $\Sigma$ at $p$;
 that is, $\rho(q)\z=o(|p-q|)$, where $q\in \Sigma$ and $\rho(q)$ denotes the distance from $q$ to $\T_p$.
 
-\begin{thm}{Proposition}
-Let $\Sigma$ be a smooth surface.
-A vector $w$ is a tangent vector of $\Sigma$ at $p$ if and only if there is a curve $\gamma$ that runs in $\Sigma$ and has $w$ as a velocity vector at $p$.  
-\end{thm}
-
-Note that according to the proposition the tangent plane $\T_p\Sigma$ can be defined as the set of all velocity vectors at $p$ of smooth parameterized curves that run in $\Sigma$. 
-In particular the tangent plane to a surface at a given point does not depend on the choice of its local graph representation.
-
 \parit{Proof.}
-We can assume that $\Sigma$ is a graph $z=f(x,y)$; 
-otherwise pass to a local presentation of $\Sigma$ around $p$.
+Fix a chart $s$ at $p$.
+Assume $\gamma$ is a smooth curve that starts at $p$.
+Without loss of generality, we can assume that $\gamma$ is covered by the chart;
+in particular, there are smooth function $u(t)$ and $v(t)$ such that 
+\[\gamma(t)=s(u(t),v(t)).\]
+Applying chain rule, we get
+\[\gamma'=\tfrac{\partial s}{\partial u}\cdot u'+ \tfrac{\partial s}{\partial v}\cdot v';\]
+that is, $\gamma'$ is a linear combination of $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$.
 
-\parit{``Only if'' part.}
-Suppose that $(x(t),y(t))$ denotes the projection of $\gamma(t)$ to the $(x,y)$-plane.
-Since $\gamma$ runs in $\Sigma$, we have that
-\[\gamma(t)=\bigl(x(t),y(t),f(x(t),y(t))\bigr).\]
-Therefore 
-\begin{align*}
-\gamma'&=(x',y',\tfrac{\partial f}{\partial x}(x,y)\cdot x'+\tfrac{\partial f}{\partial y}(x,y)\cdot y')=
-\\
-&=x'\cdot (1,0,(\tfrac{\partial}{\partial x}f)(x,y))+y'\cdot (0,1,(\tfrac{\partial}{\partial y}f)(x,y)).
-\end{align*}
-That is, $\gamma'(t)\in\T_{\gamma(t)}$ for any $t$.
-
-\parit{``If'' part.}
-Without loss of generality we can assume that $p$ is the origin.
-Fix a tangent vector 
-\[w=a\cdot (1,0,(\tfrac{\partial}{\partial x}f)(0,0))+b\cdot(0,1,(\tfrac{\partial}{\partial y}f)(0,0))\] 
-and consider the curve $\gamma(t)=(a\cdot t, b\cdot t, f(a\cdot t,b\cdot t))$.
-By construction $\gamma$ runs in $\Sigma$ and the direct calculations show that $\gamma'(0)=w$.
+Since the functions $u(t)$ and $v(t)$ can be chousen arbitrary, we have that any linear combination of $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ is a tangent vector at the corresponding point. 
 \qeds
 
-\begin{thm}{Exercise}\label{ex:tangent-chart}
-Assume $f\:U\to\RR^3$ is a smooth regular chart of a surface $\Sigma$ and $p=f(u_0,v_0)$.
-Show that the tangent plane $\T_p\Sigma$ is spanned by vectors $\tfrac{\partial f}{\partial u}(u_0,v_0)$ and $\tfrac{\partial f}{\partial v}(u_0,v_0)$.
-\end{thm}
 
 \begin{thm}{Exercise}\label{ex:tangent-normal}
 Let $f:\RR^3\to\RR$ be a smooth function with a regular value $0$ and $\Sigma$ is a surface described as a connected component of the set of solutions $f(x,y,z)=0$.
@@ -287,6 +283,97 @@ Fix an $(x,y,z)$-coordinates.
 Show that a neighborhood of $p$ in $\Sigma$ is a graph $z=f(x,y)$ of a smooth function $f$ defined on an open subset in the $(x,y)$-plane if and only if the tangent plane $\T_p$ is not a \emph{vertical plane}; that is, if the projection of $\T_p$ to the $(x,y)$-plane does not degenerate to a line.
 \end{thm}
 
+
+\section*{Directional derivative}
+
+In this section we extend the definition of directional derivative to smooth functions defined on smooth surfaces.
+
+\begin{thm}{Proposition-Definition}\label{def:directional-derivative}
+Let $\Sigma$ be a smooth regular surface and $f$ is a smooth function defined on $\Sigma$. 
+Suppose $\gamma$ is a smooth curve in $\Sigma$ that starts at $p$ with the velocity vector $\vec{w}\in \T_p$;
+that is $\gamma(0)=p$ and $\gamma'(0)=\vec{w}$.
+Then the derivative $(f\circ\gamma)'(0)$
+depends only on $f$, $p$ and $\vec{w}$;
+it is called \emph{directional derivative of $f$ along $\vec{w}$ at $p$}
+and denoted by
+\[D_{\vec{w}}f,\quad(D_{\vec{w}})f(p), \quad\text{or}\quad (D_{\vec{w}})f(p)_\Sigma\] 
+--- we may omit $p$ and $\Sigma$ if it is clear from the context.
+
+Moreover, if $(u,v)\mapsto s(u,v)$ is a local chart at $p=s(u_p,v_p)$, and $\vec{w}=a\cdot \tfrac{\partial s}{\partial u}(u_p,v_p)+b\cdot \tfrac{\partial s}{\partial v}(u_p,v_p)$, then 
+\[D_{\vec{w}}f(p)=a\cdot\tfrac{\partial f\circ s}{\partial u}(u_p,v_p)+b\cdot \tfrac{\partial f\circ s}{\partial v}(u_p,v_p).\]
+
+\end{thm}
+
+Note that our definition agrees with standard definition of directional derivative if $\Sigma$ is a plane.
+Indeed, in this case $\gamma(t)=p+\vec w\cdot t$ is a curve in $\Sigma$ that starts at $p$ with the velocity vector $\vec{w}$.
+For a general surface the point $p+\vec w\cdot t$ might not lie on the surface; therefore the function $f$ might be undefined at this point; therefore the standard definition will not work.
+
+\parit{Proof.}
+Without loss of generality, we may assume that $\gamma$ is covered by the chart $s$;
+if not we can chop $\gamma$.
+In this case 
+\[\gamma(t)=s(u(t),v(t))\]
+for some smooth functions $u,v$ defined in a neighborhood of $0$ such that 
+$u(0)=u_p$ and $v(0)=v_p$.
+
+Applying the chain rule, we get that
+\begin{align*}
+\gamma'(0)&=u'(0)\cdot \tfrac{\partial s}{\partial u}(u_p,v_p)+v'(0)\cdot \tfrac{\partial s}{\partial v}(u_p,v_p).
+\end{align*}
+Since $\vec{w}=\gamma'(0)$ and the vectors $\tfrac{\partial s}{\partial u}$, $\tfrac{\partial s}{\partial v}$ are linearly independent, we get that $a=u'(0)$ and $b=v'(0)$.
+
+Applying the chain rule again, we get that
+\[
+(f\circ\gamma)'(0)=a\cdot \tfrac{\partial f\circ s}{\partial u}(u_p,v_p)+b\cdot \tfrac{\partial f\circ s}{\partial v}(u_p,v_p).
+\eqlbl{eq:f-gamma}
+\]
+
+Notice that the left hand side in \ref{eq:f-gamma} does not depend on the choice of the chart $s$ and the right hand side depends only on $p$, $\vec w$, $f$, and $s$. 
+It follows that $(f\circ\gamma)'(0)$ depends only on $p$, $\vec w$ and $f$.
+
+The last statement follows from \ref{eq:f-gamma}.
+\qeds
+
+Any smooth map $f$ from a surface $\Sigma$ to $\RR^3$ can be described by its coordinate functions 
+$f(p)=(f_x(p),f_y(p),f_z(p))$.
+To take a directional derivative of the map we should take the  directional derivative of each of its coordinate function.
+\[D_{\vec{w}}f\df(D_{\vec{w}}f_x,D_{\vec{w}}f_y,D_{\vec{w}}f_z).\]
+
+\begin{thm}{Exercise}\label{ex:differential-range}
+Assume $f$ is a smooth map from one smooth surface $\Sigma_0$ to another $\Sigma_1$ and $p\in \Sigma_0$.
+Show that $D_{\vec w}f(p)\in \T_{f(p)}\Sigma_1$ for any $\vec w\in \T_p$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:linerity}
+Assume $f$ is a smooth function from one smooth surface $\Sigma$.
+Show that the map $\vec w \mapsto D_{\vec w}f(p)$ defined for $\vec w\in \T_p$ is linear;
+that is,
+$D_{c\cdot \vec w}f=c\cdot D_{\vec w}f(p)$
+and 
+$D_{\vec v+ \vec w}f=D_{\vec v}f(p)+ D_{\vec w}f(p)$
+for any $c\in\RR$ and $\vec v, \vec w\in\T_p$.
+\end{thm}
+
+
+\section*{Tangent vectors as functionals*}
+
+In this section we introduce a more conceptual way to define tangent vectors.
+We will not use this approach in the sequel, but it is better to know about it.
+
+A tangent vector $\vec w\in \T_p$ to a smooth surface $\Sigma$ 
+defines a linear functional%
+\footnote{Term \emph{functional} is used for functions that take a function as an argument and return a number.} $D_{\vec w}$
+that takes a smooth function $\phi$ on $\Sigma$ and spits the directional derivative $D_{\vec w}\phi$.
+It is straightforward to check the product rule:
+\[D_{\vec w}(\phi\cdot\psi)=(D_{\vec w}\phi)\cdot \psi(p)+\phi(p)\cdot(D_{\vec w}\psi).
+\eqlbl{eq:tangent-functional}\]
+
+It turns out that the tangent vector $\vec w$ is completely determined by the functional $D_{\vec w}$.
+Moreover tangent vectors at $p$ can be defined as linear functionals on the space of smooth functions
+that satisfy the product rule \ref{eq:tangent-functional}.
+
+This new definition is less intuitive, but it is more convenient to use since it grabs the key algebraic property of tangent vectors.
+Many statements admit simpler proofs with this approach, for example linearity of the map $\vec w\mapsto D_{\vec w}f$ (\ref{ex:linerity}) becomes a tautology.
 
 
 \section*{Normal vector and orientation}
@@ -316,23 +403,16 @@ In fact each chart $f(u,v)$ admits an orientation
 {\left|\tfrac{\partial f}{\partial u}\times \tfrac{\partial f}{\partial v}\right|}.\]
 Indeed the vectors $\tfrac{\partial f}{\partial u}$ and $\tfrac{\partial f}{\partial v}$ are tangent vectors at $p$; 
 since they are linearly independent, their vector product does not vanish and it is perpendicular to the tangent plane.
-Therefore $\Norm(u,v)$ is a unit normal vector at $f(u,v)$;
-evidently $(u,v)\mapsto \Norm(u,v)$ is a continuous map. 
+Evidently $(u,v)\mapsto \Norm(u,v)$ is a continuous map.
+Therefore $\Norm$ is a unit normal field. 
 
 \begin{thm}{Exercise}\label{ex:implicit-orientable}
 Let $h:\RR^3\to\RR$ be a smooth function with a regular value $0$ and $\Sigma$ is a surface described as a connected component of the set of solutions $h(x,y,z)=0$.
 Show that $\Sigma$ is orientable.
 \end{thm}
 
-
-The following claim should be intuitively obvious. 
-Its proof is not at all trivial; a standard proof uses the so-called \emph{Alexander's duality} which is a classical technique in algebraic topology.
-
-\begin{thm}{Claim}
-The complement of any open or closed surface in the Euclidean space has exactly two connected components. 
-\end{thm}
-
-Note that if a proper surface is smooth, we can choose the unit normal field on it that points into one of the components of the complement.
+Recall that any proper surface without boundary in the Euclidean space divides it into two connected components (\ref{clm:proper-divides}).
+Therefore we can choose the unit normal field on any smooth proper surfaces that points into one of the components of the complement.
 Therefore we obtain the following observation. 
 
 \begin{thm}{Observation}
@@ -341,6 +421,11 @@ Any smooth open or closed surface in Euclidean space is oriented.
 
 In particular it follows that the M\"obius strip cannot be extended to an open or closed smooth surface without boundary.
 
+Let $\Sigma$ be a smooth oriented surface with unit normal field $\Norm$.
+The map $\Norm\:\Sigma\to \SS^2$ defined by $p\mapsto \Norm_p$ is called \emph{spherical map} or \emph{Gauss map}.
+
+For surfaces, the spherical map plays essentially the same role as the tangent indicatrix for curves.
+
 \section*{Plane sections}
 
 \begin{thm}{Advanced exercise}
@@ -348,7 +433,7 @@ Show that any closed set in the plane can appear as an intersection of this plan
 \end{thm}
 
 As a consequence of the exercise above, the plane sections of a smooth regular surface might look complicated.
-The following lemma makes it possible to perturb the plane so that the section becomes nice. 
+The following lemma makes it possible to perturb the plane so that the section becomes nice.
 
 \begin{thm}{Lemma}\label{lem:reg-section}
 Let $\Sigma$ be a smooth regular surface.
@@ -360,10 +445,10 @@ each connected component of the intersection $\Sigma\cap \Pi'$ is a smooth regul
 Assume $\Pi$ is described by equation $f(x,y,z)=r_0$, where
 \[f(x,y,z)=a\cdot x+b\cdot y+c\cdot z.\] 
 The surface $\Sigma$ can be covered by a countable set of charts $s_i\:U_i\to \Sigma$.
-Note that the composition $f\circ s_i$ is a smooth function.
+Note that the composition $f\circ s_i$ is a smooth function for any $i$.
 By Sard's lemma (\ref{lem:sard}), almost all real numbers $r$ are regular values of each $f\circ s_i$.
 
-Fix such value $r$ sufficiently close to $r_0$ and consider the plane $\Pi'$ described by the equation $f(x,y,z)=r$.
+Fix such a value $r$ sufficiently close to $r_0$ and consider the plane $\Pi'$ described by the equation $f(x,y,z)=r$.
 Note that $\Pi'\parallel \Pi$ and is arbitrarily close to it.
 Any point in the intersection $\Sigma\cap\Pi'$ lies in the image of one of the charts.
 From above it admits a neighborhood which is a regular smooth curve;

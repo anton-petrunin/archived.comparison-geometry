@@ -979,6 +979,8 @@ z.d6=(-1,.5);
 z.pp=(10,.2)*u;
 z.qq=(4,-3)*u;
 
+z.base=(-2,0)*u;
+
 p0=
 (directionpoint z.d1 of p1){z.d1}..
 (2,-1)*u..
@@ -992,7 +994,8 @@ z.pp..
 (directionpoint z.d4 of p3){z.d4}..
 (directionpoint z.d5 of p2){z.d5}..
 (directionpoint z.d6 of p1){z.d6}..
-(-2,0)*u..
+z.base--
+z.base..
 cycle;
 
 p4=circumcircle(point 8.2 of p0,point 8 of p0,point 7.8 of p0);
@@ -1006,7 +1009,7 @@ z.q1=directionpoint z.d6 of p1;
 z.q2=directionpoint z.d5 of p2;
 z.q3=directionpoint z.d4 of p3;
 
-dOt z.p1, z.p2, z.p3, z.q1, z.q2, z.q3, z.pp;
+dOt z.p1, z.p2, z.p3, z.q1, z.q2, z.q3, z.pp, z.base;
 
 label(btex $\sigma_1$ etex, z.o1);
 label(btex $\sigma_2$ etex, z.o2);
@@ -2780,7 +2783,7 @@ endfig;
 
 beginfig(84);
 save u, n, m;
-u:=.2cm;
+u:=.15cm;
 n:=30;
 m:=10;
 
@@ -2802,7 +2805,7 @@ draw z.a rotated (m*360/n)--(z.a rotated (m*360/n) + (y.r+m*x.r)*unitvector(z.a 
 dOt z.a rotated (m*360/n), (z.a rotated (m*360/n) + (y.r+m*x.r)*unitvector(z.a rotated ((m-1)*360/n)-z.a rotated (m*360/n)));
 
 label.urt(btex $\gamma(s)$ etex, (z.a rotated (m*360/n) + (y.r+m*x.r)*unitvector(z.a rotated ((m-1)*360/n)-z.a rotated (m*360/n))));
-label.llft(btex $z(s)$ etex, z.a rotated (m*360/n));
+label.llft(btex $\omega(s)$ etex, z.a rotated (m*360/n));
 
 label.top(btex $r(s)$ etex rotated angle(z.a rotated ((m-1)*360/n)-z.a rotated (m*360/n)), .5[z.a rotated (m*360/n), (z.a rotated (m*360/n) + (y.r+m*x.r)*unitvector(z.a rotated ((m-1)*360/n)-z.a rotated (m*360/n)))]+(-1,-2));
 endfig;

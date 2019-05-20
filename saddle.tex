@@ -1,6 +1,136 @@
-\chapter{Saddle surfaces}
+\chapter{Supporting surfaces}
 
 \section*{Definitions}
+
+Assume two oriented surfaces $\Sigma_1$ and $\Sigma_2$ have a common point $p$.
+If there is a neighborhood $U$ of $p$ such that $\Sigma_1\cap U$ lies on one side from $\Sigma_2$ in $U$, then we say that $\Sigma_2$ \emph{locally supports} $\Sigma_1$ at $p$.
+
+\begin{thm}{Exercise}\label{ex:T=T}
+Let $\Sigma_1$ and $\Sigma_2$ be two smooth surfaces.
+Assume $\Sigma_2$ \emph{locally supports} $\Sigma_1$ at a point $p$.
+Show that $\T_p\Sigma_1=\T_p\Sigma_2$;
+that is, the tangent planes of $\Sigma_1$ and $\Sigma_2$ at $p$ coincide.
+\end{thm}
+
+By the exercise, we can assume that $\Sigma_1$ and $\Sigma_2$ are cooriented at $p$;
+that is, they have common unit normal vector at $p$.
+If not we can revert the orientation of one of the surfaces.
+
+If $\Sigma_1$ and $\Sigma_2$ are cooriented at $p$,
+then we can say that $\Sigma_1$ locally supports $\Sigma_2$ from \emph{inside} or from \emph{outside},
+assuming that the normal vector points \emph{inside} the domain bounded by surface $\Sigma_2$ in $U$.
+
+More precisely, we can use for $\Sigma_1$ and $\Sigma_2$ one tangent-normal coordinate system at $p$.
+This way we write $\Sigma_1$ and $\Sigma_2$ locally as graphs: $z=f_1(x,y)$  and $z=f_2(x,y)$ correspondingly.
+Then $\Sigma_1$ locally supports $\Sigma_2$ from inside (from outside)  if $f_1(x,y)\ge f_2(x,y)$ (correspondingly $f_1(x,y)\le f_2(x,y)$) for $(x,y)$ in a sufficiently small neighborhood of the origin.
+
+Note that $\Sigma_1$ locally supports $\Sigma_2$ from inside at the point $p$ is equivalent to $\Sigma_2$ locally supports $\Sigma_1$ from outside.
+Further if we revert the orientation of both surfaces then supporting from inside becomes supporting from outside and the other way around.
+
+
+\begin{thm}{Proposition}\label{prop:surf-support}
+Let $\Sigma_1$ and $\Sigma_2$ be oriented surfaces.
+Assume $\Sigma_1$ locally supports $\Sigma_2$ from inside at the point $p$ (equivalently $\Sigma_2$ locally supports $\Sigma_1$ from outside).
+Then 
+\[k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}\quad\text{and}\quad k_2(p)_{\Sigma_1}\z\ge k_2(p)_{\Sigma_2}.\]
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:surf-support}
+Give an example of two surfaces $\Sigma_1$ and $\Sigma_2$ that have common point $p$ with common unit normal vector $\Norm_p$ such that 
+$k_1(p)_{\Sigma_1}> k_1(p)_{\Sigma_2}$ and $k_2(p)_{\Sigma_1}\z> k_2(p)_{\Sigma_2}$, but $\Sigma_1$ does not support $\Sigma_2$ locally at $p$.
+\end{thm}
+
+
+\parit{Proof.} We can assume that $\Sigma_1$ and $\Sigma_2$ are graphs $z=f_1(x,y)$  and $z=f_2(x,y)$ in a common tangent-normal coordinates at $p$, so we have $f_1\ge f_2$.
+
+\begin{wrapfigure}{o}{40 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-80}
+\vskip-0mm
+\end{wrapfigure}
+
+Fix a unit vector ${\vec w}\in \T_p\Sigma_1=\T_p\Sigma_2$.
+Consider the plane $\Pi$ passing thru $p$ and spanned by the normal vector $\Norm_p$ and ${\vec w}$.
+Let $\gamma_1$ and $\gamma_2$ be the curves of intersection of $\Sigma_1$ and $\Sigma_2$ with $\Pi$.
+
+Let us orient $\Pi$ so that $\Norm_p$ points to the left from ${\vec w}$.
+Further, let us parametrize both curves so that they are running in the direction of ${\vec w}$ at $p$ and therefore cooriented.
+In this case the curve $\gamma_1$ supports the curve $\gamma_2$ from the right. %??? make \ref{prop:supporting-circline} once it is generalized
+
+
+By \ref{prop:supporting-circline}, we have the following inequality for the normal curvatures of $\Sigma_1$ and $\Sigma_2$ at $p$ in the direction of ${\vec w}$:
+\[k_{\vec w}(p)_{\Sigma_1}\ge k_{\vec w}(p)_{\Sigma_2}.\eqlbl{kw>=kw}\]
+
+According to \ref{obs:k1-k2},
+\[k_1(p)_{\Sigma_i}=\min\set{k_{\vec w}(p)_{\Sigma_i}}{{\vec w}\in\T_p, |{\vec w}|=1}\]
+for $i=1,2$.
+Choose ${\vec w}$ so that $k_1(p)_{\Sigma_1}=k_{\vec w}(p)_{\Sigma_1}$.
+Then by \ref{kw>=kw}, we have that
+\begin{align*}
+k_1(p)_{\Sigma_1}&=k_{\vec w}(p)_{\Sigma_1}\ge
+\\
+&\ge k_{\vec w}(p)_{\Sigma_2}\ge
+\\
+&\ge\min\set{k_{\vec w}(p)_{\Sigma_2}}{}=
+\\
+&=k_1(p)_{\Sigma_2};
+\end{align*}
+that is, $k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}$.
+
+Similarly, by \ref{obs:k1-k2}, we have that
+\[k_2(p)_{\Sigma_i}=\max\set{k_{\vec w}(p)_{\Sigma_i}}{}.\]
+Let us fix ${\vec w}$ so that $k_2(p)_{\Sigma_2}=k_{\vec w}(p)_{\Sigma_2}$.
+Then 
+\begin{align*}
+k_2(p)_{\Sigma_2}&=k_{\vec w}(p)_{\Sigma_2}\le
+\\
+&\le k_{\vec w}(p)_{\Sigma_1}\le
+\\
+&\le\max\set{k_{\vec w}(p)_{\Sigma_1}}{}=
+\\
+&=k_2(p)_{\Sigma_1};
+\end{align*}
+that is, $k_2(p)_{\Sigma_1}\ge k_2(p)_{\Sigma_2}$.
+\qeds
+
+\begin{thm}{Corollary}\label{cor:surf-support}
+Let $\Sigma_1$ and $\Sigma_2$ be oriented surfaces.
+Assume $\Sigma_1$ locally supports $\Sigma_2$ from inside at the point $p$.
+Then
+\begin{enumerate}[(a)]
+\item\label{cor:surf-support:mean} $H(p)_{\Sigma_1}\ge H(p)_{\Sigma_2}$;
+\item\label{cor:surf-support:gauss} If $k_1(p)_{\Sigma_2}\ge 0$, then $K(p)_{\Sigma_1}\ge K(p)_{\Sigma_2}$.
+\end{enumerate}
+ 
+\end{thm}
+
+\parit{Proof.}
+By \ref{prop:surf-support}, we get that $k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}$ and $k_2(p)_{\Sigma_2}\ge k_2(p)_{\Sigma_2}$.
+Therefore part (\ref{cor:surf-support:mean}) follows since 
+\[H(p)_{\Sigma_i}=k_1(p)_{\Sigma_i}+k_2(p)_{\Sigma_i}.\]
+
+
+\parit{(\ref{cor:surf-support:gauss}).} Since $k_2(p)_{\Sigma_i}\ge k_1(p)_{\Sigma_i}$ and $k_1(p)_{\Sigma_2}\ge 0$, we get that all the principle curvatures 
+$k_1(p)_{\Sigma_1}$, 
+$k_1(p)_{\Sigma_2}$, 
+$k_2(p)_{\Sigma_1}$, and 
+$k_2(p)_{\Sigma_2}$ are nonnegative.
+By \ref{prop:surf-support}, it implies that
+\begin{align*}
+K(p)_{\Sigma_1}&=k_1(p)_{\Sigma_1}\cdot k_2(p)_{\Sigma_1}\ge 
+\\
+&\ge k_1(p)_{\Sigma_2}\cdot k_2(p)_{\Sigma_2}=
+\\
+&=K(p)_{\Sigma_2}.
+\end{align*}
+\qedsf
+
+\begin{thm}{Exercise}\label{ex:positive-gauss}
+Show that any closed surface in a unit ball has a point with Gauss curvature at least 1.
+\end{thm}
+
+\section*{Saddle surfaces}
 
 A surface is called \emph{saddle} if its Gauss curvature at each point is nonpositive;
 in other words principle curvatures at each point have opposite signs or one of them is zero.

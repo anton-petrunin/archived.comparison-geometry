@@ -1,4 +1,562 @@
 
+
+
+
+
+
+\section*{Curve in a surface}
+
+
+\begin{thm}{Proposition}\label{prop:gamma''=II}
+Suppose $\gamma$ is a smooth curve in a smooth oriented surface $\Sigma$ with a unit normal field $\Norm$.
+Then, the following identity holds for any time parameter $t$:
+\[\langle \gamma''(t),\Norm\circ\gamma(t)\rangle=-\langle \gamma'(t),(\Norm\circ\gamma)'(t)\rangle=\langle S_{\gamma(t)}(\gamma'(t)),\gamma'(t)\rangle.\]
+
+\end{thm}
+
+\parit{Proof.} 
+Fix a parameter value $t_0$; set $p=\gamma(t_0)$, $v=\gamma'(t_0)$ and $a\z=\gamma''(t_0)$;
+so we need to show that
+\[\langle a,\Norm_{p}\rangle=\II_p(v,v).\eqlbl{a-nu-II}\]
+Let $z=f(x,y)$ be the local representaion of $\Sigma$ in the tangent-normal coordinates at $p$;
+we assume that $\Norm$ points in the direction of~$\Norm_p$.
+
+Without loss of generality may assume that $\gamma$ runs in the graph $z=f(x,y)$;
+so 
+\[\gamma(t)=\left(x(t),y(t),f(x(t),y(t))\right).\]
+Then
+\begin{align*}
+\gamma'&=(x',y',\tfrac{\partial f}{\partial x}\cdot x'+\tfrac{\partial f}{\partial y}\cdot y');
+\\
+\gamma''
+&=
+{\small(x'',
+y'',
+ \tfrac{\partial^2 f}{\partial x^2}\cdot (x')^2
++
+2\cdot \tfrac{\partial^2 f}{\partial x\partial y}\cdot x'\cdot y'
++
+\tfrac{\partial^2 f}{\partial y^2}\cdot (y')^2
++
+\tfrac{\partial f}{\partial x}\cdot x''
++
+\tfrac{\partial f}{\partial y}\cdot y'')}.
+\end{align*}
+
+Recall that $p=\gamma(t_0)=(0,0,0)$ and
+\begin{align*}
+f(0,0)&=0,
+&
+\tfrac{\partial f}{\partial x}(0,0)&=0,
+&
+\tfrac{\partial f}{\partial y}(0,0)&=0.
+\end{align*}
+
+Therefore 
+\begin{align*}
+v&=\left(x',y',0\right)(t_0);
+\\
+a&=\left(x'',y'',
+\tfrac{\partial^2 f}{\partial x^2}\cdot (x')^2
++
+2\cdot \tfrac{\partial^2 f}{\partial x\partial y}\cdot x'\cdot y'
++
+\tfrac{\partial^2 f}{\partial y^2}\cdot (y')^2\right)(t_0).
+\end{align*}
+
+Note that 
+\[\II_p(v,v)=\left(\tfrac{\partial^2 f}{\partial x^2}\cdot (x')^2
++
+2\cdot \tfrac{\partial^2 f}{\partial x\partial y}\cdot x'\cdot y'
++
+\tfrac{\partial^2 f}{\partial y^2}\cdot (y')^2\right)(t_0);\]
+that is, the $z$-coordinate of the acceleration $a$ equals $\II_p(v,v)$ which is equivalent to~\ref{a-nu-II}.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{tmp}
+
+\section{Shape}
+
+The linear operator $S\:\T_p\to \T_p$ defined by the matrix multiplication
+\[S\:(\begin{smallmatrix}
+x\\y
+\end{smallmatrix})
+\mapsto
+M_p\cdot(\begin{smallmatrix}
+x\\y
+\end{smallmatrix})\] is called \emph{shape operator} of $\Sigma$ at $p$.
+
+For a vector $\vec w\in\T_p$, we use notation $S(\vec w)$ when it is clear from the context which base point $p$ and which surface we are working with;
+otherwise we may use notations 
+\[S_p(\vec w)\quad\text{or even}\quad S_p(\vec w)_\Sigma.\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{Shape operator}
+
+Let $z=f(x,y)$ be a local representation of a smooth surface $\Sigma$ in the tangent-normal coordinates at a point $p$.
+Let $M_p$ be the Hessian matrix.
+Recall that $(x,y)$-plane coincides with the tangent plane $\T_p$.
+
+The operator $S_p\:\T_p\to \T_p$ defined by the matrix multiplication
+\[S_p\:(\begin{smallmatrix}
+x\\y
+\end{smallmatrix})
+\mapsto
+M_p\cdot(\begin{smallmatrix}
+x\\y
+\end{smallmatrix})\] is called \emph{shape operator} of $\Sigma$ at $p$.
+The following proposition implies that $S_p$ does not depend on the choice of $(x,y)$-coordinates on $\T_p$.
+
+
+
+
+
+Given two vectors $\vec v=(\begin{smallmatrix}a\\b
+\end{smallmatrix})$ and $\vec w=(\begin{smallmatrix}c\\d
+\end{smallmatrix})$ in the $(x,y)$-plane, consider the value 
+\[\II_p(\vec v,\vec w)\df(D_{\vec w}D_{\vec v}f)(0,0),\]
+where $D$ denotes the directional derivative.
+The function $(v,w)\z\mapsto \II_p(v,w)$ is called the \emph{second fundamental form} at $p$;\label{page:second fundamental form}
+it takes two tangent vectors $v$ and $w$ at $p$ and spits out the real number $\II_p(v,w)$.
+
+The second fundamental form can be written in terms of the Hessian matrix.
+Indeed if 
+$w=(\begin{smallmatrix}a\\b
+\end{smallmatrix})$ 
+and 
+$v=(\begin{smallmatrix}c\\d
+\end{smallmatrix})$, then 
+\[D_w=a\cdot \tfrac\partial{\partial x}+b\cdot \tfrac\partial{\partial y}\quad\text{and}\quad D_v=c\cdot \tfrac\partial{\partial x}+d\cdot \tfrac\partial{\partial y}.\]
+Therefore 
+\[\begin{aligned}
+\II_p(w,v)&\df(D_wD_vf)(0,0)=
+\\
+&=a\cdot c\cdot \ell+(a\cdot d+ b\cdot c)\cdot m +b\cdot d\cdot n=
+\\
+&=\langle M_p\cdot w,v\rangle=
+\\
+&=\langle M_p\cdot v,w\rangle.
+\end{aligned}
+\eqlbl{eq:DwDv}\]
+Note that from \ref{eq:DwDv} it follows that $\II_p$ is symmetric; that is,
+\[\II_p(v,w)=\II_p(w,v)\]
+for any two tangent vectors $v,w\in \T_p$.
+
+
+
+
+
+\parit{Proof.}
+Assume an oriented surface $\Sigma$ is written locally as a graph $z\z=f(x,y)$ in the tangent-normal coordinates at $p\in\Sigma$.
+As usual we assume that the normal vector $\Norm_p$ points in the direction of the $z$-axis,
+in this case the normal vector at any point of the graph points up; that is, its $z$-coordinate  is positive.
+
+Consider the corresponding chart  of $\Sigma$:
+\[s(x,y)\z=(x,y,f(x,y)).\]
+Denote by $\Norm(x,y)$ the unit normal vector at $s(x,y)$; it is a shortcut notation for $\Norm_{s(x,y)}$.
+
+Note that $\tfrac{\partial s}{\partial x}(0,0)=(1,0,0)$ and $\tfrac{\partial s}{\partial y}(0,0)=(0,1,0)$.
+For a tangent vector 
+\[v=(a\cdot\tfrac{\partial s}{\partial x}+b\cdot\tfrac{\partial s}{\partial y})(0,0) =(a,b,0)\in \T_p\]
+we have that
+\[
+\begin{aligned}
+S_p(v)&=-D_v\Norm(0,0)=
+\\
+&=-(a\cdot \tfrac{\partial \Norm}{\partial x}+b\cdot \tfrac{\partial \Norm}{\partial y})(0,0),
+\end{aligned}
+\eqlbl{eq:S=D}
+\]
+where $D_v$ denotes the directional derivative along a vector $v$ in the $(x,y)$-plane which is $\T_p$.
+
+Indeed, the first equality follows from \ref{eq:shape} and the definition of differential \ref{eq:differenital} applied for the curve $\gamma(t)=(a\cdot t,b\cdot t, f(a\cdot t,b\cdot t))$ at $t=0$ and the second follow since
+$D_v=a\cdot \tfrac{\partial }{\partial x}+b\cdot \tfrac{\partial }{\partial y}$.
+
+Taking partial derivatives of $\langle\Norm,\Norm\rangle=1$, we get that 
+\begin{align*}
+0&=\tfrac{\partial}{\partial x} \langle\Norm,\Norm\rangle=
+\\
+&=2\cdot\langle\tfrac{\partial\Norm}{\partial x},\Norm\rangle.
+\end{align*}
+That is, $\langle\tfrac{\partial\Norm}{\partial x},\Norm\rangle=0$ and the same way we get $\langle\tfrac{\partial\Norm}{\partial y},\Norm\rangle=0$.
+By \ref{eq:S=D} it follows that $S_p(v)\perp \Norm_p$, or equivalently $S_p(v)\in\T_p$ for any $v\in \T_p$.
+
+Further, since $\tfrac{\partial s}{\partial x}, \tfrac{\partial s}{\partial y}\in\T_{s(x,y)}\Sigma$
+and $\Norm(x,y)\perp\T_{s(x,y)}\Sigma$,
+we have that
+\[\langle \Norm,\tfrac{\partial s}{\partial x}\rangle\equiv 0
+\quad\text{and}\quad
+\langle \Norm,\tfrac{\partial s}{\partial y}\rangle\equiv 0.\]
+Taking a derivative of these identities, we get that
+\[\begin{aligned}
+\langle \tfrac{\partial\Norm}{\partial x},\tfrac{\partial s}{\partial x}\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial x^2}\rangle&\equiv 0,
+\\
+\langle \tfrac{\partial\Norm}{\partial y},\tfrac{\partial s}{\partial x}\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial y\partial x}\rangle&\equiv 0,
+\\
+\langle \tfrac{\partial\Norm}{\partial x},\tfrac{\partial s}{\partial y}\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial x\partial y}\rangle&\equiv 0,
+\\
+\langle \tfrac{\partial\Norm}{\partial y},\tfrac{\partial s}{\partial y}\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial y^2}\rangle&\equiv 0,
+\end{aligned}
+\]
+
+Fix two vectors $v=(a,b,0)$ and $w=(c,d,0)$ in $\T_p$ (which is the $(x,y)$-plane).
+Since $\Norm(0,0)=(0,0,1)$ we get 
+\[f(x,y)\equiv\langle\Norm(0,0),s(x,y)\rangle.\]
+Therefore by \ref{eq:S=D}, \ref{eq:shape=second} and \ref{eq:DwDv} we get that 
+\begin{align*}
+\langle S_p(v),w\rangle 
+&=-\langle  a\cdot \tfrac{\partial \Norm}{\partial x}+b\cdot \tfrac{\partial \Norm}{\partial y},c\cdot \tfrac{\partial s}{\partial x}+d\cdot \tfrac{\partial s}{\partial y}\rangle(0,0)=
+\\
+&=-\bigl(a\cdot c\cdot\langle \tfrac{\partial \Norm}{\partial x},\tfrac{\partial s}{\partial x}\rangle 
++a\cdot d\cdot\langle \tfrac{\partial \Norm}{\partial x},\tfrac{\partial s}{\partial y}\rangle+
+\\&\quad
++b\cdot c\cdot\langle \tfrac{\partial \Norm}{\partial y},\tfrac{\partial s}{\partial x}\rangle
++b\cdot d\cdot\langle \tfrac{\partial \Norm}{\partial y},\tfrac{\partial s}{\partial y}\rangle\bigr)(0,0)=
+\\
+&=\bigl(a\cdot c\cdot\langle \Norm,\tfrac{\partial^2 s}{\partial x^2}\rangle 
++a\cdot d\cdot\langle \Norm,\tfrac{\partial^2 s}{\partial x\partial y}\rangle+
+\\&\quad
++b\cdot c\cdot\langle \Norm,\tfrac{\partial^2 s}{\partial y\partial x}\rangle
++b\cdot d\cdot\langle \Norm,\tfrac{\partial^2 s}{\partial y^2}\rangle\bigr)(0,0)=
+\\
+&=\bigl(a\cdot c\cdot\tfrac{\partial^2 f}{\partial x^2} 
++a\cdot d\cdot\tfrac{\partial^2 f}{\partial x\partial y}+
+\\&\quad
++b\cdot c\cdot\tfrac{\partial^2 f}{\partial y\partial x}
++b\cdot d\cdot\tfrac{\partial^2 f}{\partial y^2}\bigr)(0,0)=
+\\
+&=\II_p(v,w).
+\end{align*}
+It remains to apply \ref{eq:II=II} on page \pageref{eq:II=II}.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{???}
+
+Denote by $\nu(x,y)$ the normal vector at the point $(x,y,f(x,y))\in \Sigma$, so we may think that $\nu$ is defined on the tangent plane.
+
+\begin{thm}{Claim}
+Let $\Sigma$ be a smooth surface with unit normal field $\Norm$.
+Suppose $p\in \Sigma$ and $S\:\T_p\to\T_p$ is the shape operator at $p$.
+Then 
+\[S(\vec w)=-D_{\vec w}\nu\]
+for any $\vec w\in \T_p$.
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Then 
+\begin{align*}
+\langle\tfrac{\partial^2 s}{\partial^2 u},\Norm\circ s\rangle
+&=
+-\langle\tfrac{\partial s}{\partial u},\tfrac{\partial \Norm\circ s}{\partial u}\rangle,
+\\
+\langle\tfrac{\partial^2 s}{\partial u\partial v},\Norm\circ s\rangle
+&=
+-\langle\tfrac{\partial s}{\partial v},\tfrac{\partial \Norm\circ s}{\partial u}\rangle=
+\\
+=\langle\tfrac{\partial^2 s}{\partial v\partial u},\Norm\circ s\rangle
+&=
+-\langle\tfrac{\partial s}{\partial u},\tfrac{\partial \Norm\circ s}{\partial v}\rangle,
+\\
+\langle\tfrac{\partial^2 s}{\partial^2 v},\Norm\circ s\rangle
+&=
+-\langle\tfrac{\partial s}{\partial v},\tfrac{\partial \Norm\circ s}{\partial v}\rangle.
+\end{align*}
+
+
+
+
+%???product rule???
+
+The proof is based on three identities $\langle\Norm,\Norm\rangle=1$ and $\langle\Norm,\vec w\rangle=0$ for any tangent vector $\vec w$ and the unit normal vector $\Norm$ with the same base point.
+It is sufficient to take directional derivatives of these two identity and understand the result.
+In the proof we use the following product rule:
+\[D_{\vec w}\langle\vec u,\vec v\rangle
+=
+\langle D_{\vec w}\vec u,\vec v\rangle+\langle\vec u,D_{\vec w}\vec v\rangle.\]
+which easely follows from the standard product rule and the definition of directional derivative.
+
+\parit{Proof.}
+Since $\Norm$ is a unit normal field, we have the identity
+\[1=\langle\Norm,\Norm\rangle.\]
+Taking the directional derivative along $\vec w$, we get
+\begin{align*}0&=D_{\vec w}\langle\Norm,\Norm\rangle=
+\\
+&=2\cdot \langle D_{\vec w}\Norm,\Norm\rangle.
+\end{align*}
+That is, $D_{\vec w}\Norm$ lies in the orthogonal complement of $\Norm_p$;
+or, equivalently, $D_{\vec w}\Norm\in\T_p$.
+
+Note that both sides of the identity \ref{eq:shape=-dNorm} are linear in $\vec w$.
+Therefore it is sufficient to check the identity for two basis vectors $\vec u$ and $\vec v$ of $\T_p$.
+That is, it is sufficient to establish the following two identities:
+\begin{align*}
+S(\vec u)&= -D_{\vec u}\Norm,
+&
+S(\vec v)&= -D_{\vec v}\Norm.
+\end{align*}
+Further, since $D_{\vec u}\Norm,D_{\vec v}\Norm\in\T_p$, to prove the two vector indentities, it sufficient to prove the following four real identities:
+\[\begin{aligned}
+\langle S(\vec u),\vec u\rangle &= -\langle D_{\vec u}\Norm,\vec u\rangle,
+&
+\langle S(\vec v),\vec u\rangle &= -\langle D_{\vec v}\Norm,\vec u\rangle,
+\\
+\langle S(\vec u),\vec v\rangle &= -\langle D_{\vec u}\Norm,\vec v\rangle,
+&
+\langle S(\vec v),\vec v\rangle &= -\langle D_{\vec v}\Norm,\vec v\rangle.
+\end{aligned}
+\eqlbl{eq:<S(u),v>=<-Du,v>}
+\]
+
+Let $z=f(x,y)$ be a local description of $\Sigma$ in the tangent-normal coordinates at $p$.
+Note that 
+\[s(u,v)=(u,v,f(u,v))\]
+describes a chart of $\Sigma$ at $p$.
+Let us prove the indentities \ref{eq:<S(u),v>=<-Du,v>} for the basis $\vec u=\tfrac{\partial s}{\partial u}$ and $\vec v=\tfrac{\partial s}{\partial v}$.
+Note that 
+\[f=\langle s, \vec k\rangle=\langle s, \nu(p)\rangle.\]???
+
+
+Note that the vector fields $\vec u=\tfrac{\partial s}{\partial u}$ and $\vec v=\tfrac{\partial s}{\partial v}$ are tangent to $\Sigma$  and therefore they are orthogonal to $\Norm$;
+that is, we have two identities:
+\[\begin{aligned}
+0&=\langle \Norm,\vec u\rangle=\langle \Norm,\tfrac{\partial s}{\partial u}\rangle,
+\\
+0&=\langle \Norm,\vec v\rangle=\langle \Norm,\tfrac{\partial s}{\partial v}\rangle.
+\end{aligned}
+\eqlbl{eq:<Norm,uv>}\]
+Applying the product rule for the directional derivative of the first identity in \ref{eq:<Norm,uv>} along $\vec u$, we get that
+\begin{align*}
+0&=D_{\vec u}\langle \Norm,\vec u\rangle=
+\\
+&=\langle D_{\vec v}\Norm,\vec u\rangle
++
+\langle \Norm,D_{\vec v}\vec u\rangle
+\end{align*}
+Note that $\langle\nu(p),s(u,v)\rangle=f(u,v)$.
+Therefore evaluating the last expression at $p$, we get
+\[\langle D_{\vec v}\Norm,\tfrac{\partial s}{\partial u}\rangle+\tfrac{\partial^2 f}{\partial v\partial u}=0.\]
+
+
+
+Since $\tfrac{\partial^2 s}{\partial u\partial v}=\tfrac{\partial^2 s}{\partial v\partial u}$, we get
+\[\langle S({\vec u}),\vec v\rangle=\langle {\vec u},S(\vec v)\rangle;\]
+that is, the identity \ref{eq:S-self-adjoint} for two vectors $\vec u=\tfrac{\partial s}{\partial u}$ and $\vec v=\tfrac{\partial s}{\partial v}$.
+Evidently the identity \ref{eq:S-self-adjoint} holds if $\vec u=\vec v$.
+
+It follows that the identity \ref{eq:S-self-adjoint} holds for any pair of vectors in a basis of $\T_p$; that is we have the following four identities:
+\begin{align*}
+ \langle S({\vec u}),\vec u\rangle&=\langle {\vec u},S(\vec u)\rangle,
+ &\langle S({\vec u}),\vec v\rangle&=\langle {\vec u},S(\vec v)\rangle
+ \\
+ \langle S({\vec v}),\vec u\rangle&=\langle {\vec v},S(\vec u)\rangle,
+ &\langle S({\vec v}),\vec v\rangle&=\langle {\vec v},S(\vec v)\rangle.
+\end{align*}
+
+Since both sides of this identiy \ref{eq:S-self-adjoint} are linear in $\vec u$ and $\vec v$,
+the latter is sufficient to conclude that \ref{eq:S-self-adjoint} for any pair of tangent vectors at $p$.
+Let us present the formal calculations for two vectors $a\cdot \vec u+b\cdot\vec v$ and $c\cdot \vec u+d\cdot\vec v$:
+\begin{align*} 
+\langle S(a\cdot \vec u+b\cdot\vec v),c\cdot \vec u+d\cdot\vec v\rangle
+&=a\cdot c\cdot\langle S({\vec u}),\vec u\rangle + a\cdot d\cdot \langle S({\vec u}),\vec v\rangle+
+\\
+&+b\cdot c\cdot\langle S({\vec v}),\vec u\rangle + b\cdot d\cdot \langle S({\vec v}),\vec v\rangle=
+\\
+&=a\cdot c\cdot\langle {\vec u},S(\vec u)\rangle + a\cdot d\cdot \langle {\vec u},S(\vec v)\rangle+
+\\
+&+b\cdot c\cdot\langle {\vec v},S(\vec u)\rangle + b\cdot d\cdot \langle {\vec v},S(\vec v)\rangle=
+\\
+&=\langle a\cdot \vec u+b\cdot\vec v,S(c\cdot \vec u+d\cdot\vec v)\rangle.
+\end{align*}
+
+The vectors $\vec u$ and $\vec v$ are tangent to $\Sigma$, we have
+
+
+
+\qeds
+
+
+
+Let $\Sigma$ be an smooth oriented surface in the Euclidean space;
+denote by $\Norm$ its unit normal field.
+
+Given a point $p$ on $\Sigma$ and a tangent vector $\vec w$ at $p$,
+the shape operator of $\vec w$ at $p$ is defined as
+\[S(\vec w)=-D_{\vec w}\Norm,\]
+where $D_{\vec w}$ denotes the directional derivative defined in \ref{def:directional-derivative}.
+
+
+
+
+\begin{thm}{Proposition}
+Let $\Sigma$ be an smooth oriented surface and $p\in \Sigma$.
+Then the shape operator $S_p$ is a linear self-adjoint operator defined on the tangent plane $\T_p$;
+that is, $\vec v\mapsto S_p(\vec v)$ defines a linear map $\T_p\to \T_p$ and
+\[\langle S_p(\vec u), \vec v\rangle =\langle \vec u, S_p(\vec v)\rangle\eqlbl{eq:S-self-adjoint}\]
+for any two vectors $\vec u, \vec v \in \T_p$.
+\end{thm}
+
+\parit{Proof.}
+The linearity follow from \ref{ex:linerity}.
+
+Since $\Norm$ is a unit normal field, we have the identity
+\[1=\langle\Norm,\Norm\rangle.\]
+Taking the directional derivative along $\vec v$, we get
+\begin{align*}0&=D_{\vec v}\langle\Norm,\Norm\rangle=
+\\
+&=2\cdot \langle D_{\vec v}\Norm,\Norm\rangle=
+\\
+&=-2\cdot \langle S({\vec v}),\Norm\rangle.
+\end{align*}
+That is, $S_p({\vec v})$ lies in the orthogonal complement of $\Norm_p$;
+or, equivalently, $S_p({\vec v})\in\T_p$.
+
+Now let us fix a chart $(u,v)\mapsto s(u,v)$ of $\Sigma$ at $p$.
+Note that the vectors $\vec u=\tfrac{\partial s}{\partial u}$ and $\vec v=\tfrac{\partial s}{\partial v}$ are tangent to $\Sigma$ at their base points and therefore they are orthogonal to $\Norm$;
+that is we have two identities:
+\[\begin{aligned}
+0&=\langle \Norm,\tfrac{\partial s}{\partial u}\rangle,
+\\
+0&=\langle \Norm,\tfrac{\partial s}{\partial v}\rangle.
+\end{aligned}
+\eqlbl{eq:<Norm,uv>}\]
+Taking a directional derivative of the first identity in \ref{eq:<Norm,uv>} along $\vec v$ , we get that
+\begin{align*}
+0&=D_{\vec v}\langle \Norm,\tfrac{\partial s}{\partial u}\rangle=
+\\
+&=\langle D_{\vec v}\Norm,\tfrac{\partial s}{\partial u}\rangle
++
+\langle \Norm,D_{\vec v}\tfrac{\partial s}{\partial u}\rangle=
+\\
+&=-\langle S({\vec v}),\vec u\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial v\partial u}\rangle.
+\intertext{Analogously, taking a directional derivative of the second identity in \ref{eq:<Norm,uv>} along $\vec u$, we get that}
+0&=D_{\vec u}\langle \Norm,\tfrac{\partial s}{\partial v}\rangle=
+\\
+&=\langle D_{\vec u}\Norm,\tfrac{\partial s}{\partial v}\rangle
++
+\langle \Norm,D_{\vec u}\tfrac{\partial s}{\partial v}\rangle=
+\\
+&=-\langle S({\vec u}),\vec v\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial u\partial v}\rangle.
+\end{align*}
+
+Since $\tfrac{\partial^2 s}{\partial u\partial v}=\tfrac{\partial^2 s}{\partial v\partial u}$, we get
+\[\langle S({\vec u}),\vec v\rangle=\langle {\vec u},S(\vec v)\rangle;\]
+that is, the identity \ref{eq:S-self-adjoint} for two vectors $\vec u=\tfrac{\partial s}{\partial u}$ and $\vec v=\tfrac{\partial s}{\partial v}$.
+Evidently the identity \ref{eq:S-self-adjoint} holds if $\vec u=\vec v$.
+
+It follows that the identity \ref{eq:S-self-adjoint} holds for any pair of vectors in a basis of $\T_p$; that is we have the following four identities:
+\begin{align*}
+ \langle S({\vec u}),\vec u\rangle&=\langle {\vec u},S(\vec u)\rangle,
+ &\langle S({\vec u}),\vec v\rangle&=\langle {\vec u},S(\vec v)\rangle
+ \\
+ \langle S({\vec v}),\vec u\rangle&=\langle {\vec v},S(\vec u)\rangle,
+ &\langle S({\vec v}),\vec v\rangle&=\langle {\vec v},S(\vec v)\rangle.
+\end{align*}
+
+Since both sides of this identiy \ref{eq:S-self-adjoint} are linear in $\vec u$ and $\vec v$,
+the latter is sufficient to conclude that \ref{eq:S-self-adjoint} for any pair of tangent vectors at $p$.
+Let us present the formal calculations for two vectors $a\cdot \vec u+b\cdot\vec v$ and $c\cdot \vec u+d\cdot\vec v$:
+\begin{align*} 
+\langle S(a\cdot \vec u+b\cdot\vec v),c\cdot \vec u+d\cdot\vec v\rangle
+&=a\cdot c\cdot\langle S({\vec u}),\vec u\rangle + a\cdot d\cdot \langle S({\vec u}),\vec v\rangle+
+\\
+&+b\cdot c\cdot\langle S({\vec v}),\vec u\rangle + b\cdot d\cdot \langle S({\vec v}),\vec v\rangle=
+\\
+&=a\cdot c\cdot\langle {\vec u},S(\vec u)\rangle + a\cdot d\cdot \langle {\vec u},S(\vec v)\rangle+
+\\
+&+b\cdot c\cdot\langle {\vec v},S(\vec u)\rangle + b\cdot d\cdot \langle {\vec v},S(\vec v)\rangle=
+\\
+&=\langle a\cdot \vec u+b\cdot\vec v,S(c\cdot \vec u+d\cdot\vec v)\rangle.
+\end{align*}
+\qedsf
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  On page 58, at the end of the first paragraph, you have "... its invese W → U is also continuous." Notice, "inverse" has a spelling error in the sentence. 
  
  In the second paragraph of this page, you have "However, as well as in the case of curves we will be mostly interested in smooth surfaces in the Euclidean space describe in the following section." This is missing a comma which should be placed after "curves," 

@@ -1,46 +1,175 @@
-\chapter{Bounded principle curvatures}
+\chapter{Curvature estimates}
 
-Note that there sets in $\RR^3$ bounded by a closed surface $\Sigma$ with principle curvatures at most 1 by absolute value
-that do not contain a ball of radius 1.
+\section*{Curve in a surface}
 
-\begin{wrapfigure}{o}{33 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-34}
-\vskip0mm
-\end{wrapfigure}
+Suppose $\gamma$ is a regular smooth curve in a smooth oriented surface $\Sigma$.
+As usual we denote by $\Norm$ the unit normal field on $\Sigma$.
 
-For example the region between two large concentric spheres with almost equal raduses. 
-This region can be made arbitrary thin and the curvature of the boundary can be made arbitrary close to zero.
+Without loss of generality we can assume that $\gamma$ is unit-speed;
+in this case $\tan(s)=\gamma'(s)$ is its tangent indicatrix.
+Let us use a shortcut notation $\Norm(s)=\Norm(\gamma(s))$.
+Note that the unit vectors $\tan(s)$ and $\Norm(s)$ are orthogonal;
+therefore there is a unique unit vector $\mu(s)$ such that 
+$\tan(s),\mu(s),\nu(s)$ is an oriented orthonormal basis.
+Since $\tan(s)\perp\nu(s)$, the vector $\mu(s)$ is tangent at $\gamma(s)$.
+In fact $\mu(s)$ is a counterclockwise rotation of $\tan(s)$ by right angle in $\T_{\gamma(s)}$; 
+it can be also defined as a vector product $\mu(s)=\nu(s)\times \tan(s)$. %???+PIC
 
-The same example works in the plane --- a pair of circles with arbitrary small curvature can bound an arbitrary thin region.
+Recall that $\gamma''\perp \gamma'$; see \ref{prop:a'-pertp-a''}.
+Therefore the acceleration of $\gamma$ can be written as a linear combination of $\mu$ and $\Norm$;
+that is,
+\[\gamma''(s)=k_g(s)\cdot \mu(s)+k_n(s)\cdot\Norm(s).\]
+The values $k_g(s)$ and $k_n(s)$ are called \emph{geodesic} and \emph{normal curvature} of $\gamma$ at $s$.
+Since the frame $\tan(s),\mu(s),\nu(s)$ is orthonormal, these curvatures can be also written as the following scalar products:
+\begin{align*}
+k_g(s)&=\langle \gamma''(s),\mu(s)\rangle
+=
+\\
+&=\langle \tan'(s),\mu(s)\rangle.
+\\
+k_n(s)&=\langle \gamma''(s),\Norm(s)\rangle=
+\\
+&=\langle \tan'(s),\Norm(s)\rangle.
+\end{align*}
 
-\begin{thm}{Advanced exercise}
-Suppose a set $V\subset \RR^3$ is bounded by a closed surface $\Sigma$ with principle curvatures bounded in absolute value by 1.
-Assume that $V$ does not contain a ball of radius $\tfrac1{100}$.
-Show that $\Sigma$ has two components of the same topological type; 
-that is, both can be written in parametric form with the same parameter domain. 
+Since $0=\langle \tan(s),\Norm(s)\rangle$ we have 
+that 
+\begin{align*}
+0&=\langle \tan(s),\Norm(s)\rangle=
+\\
+&=\langle \tan'(s),\Norm(s)\rangle+\langle \tan(s),\Norm'(s)\rangle=
+\\
+&=k_n(s)+\langle \tan(s),D_{\tan(s)}\nu\rangle.
+\end{align*}
+Applying \ref{prop:S=-D},  we get the following:
+
+\begin{thm}{Proposition}\label{prop:normal-shape}
+Assume $\gamma$ is a smooth unit-speed curve in a smooth surface $\Sigma$.
+Suppose $p=\gamma(s_0)$ and $\vec v=\gamma'(s_0)$.
+Then 
+\[k_n(s_0)=\langle S_p(\vec v),\vec v\rangle,\]
+where $k_n$ denotes the normal curvature of $\gamma$ at $s_0$ and $S_p$ is the shape operator at $p$.
+\end{thm}
+
+Note that according to the proposition, the normal curvature of regular smooth curve in $\Sigma$ is completely determined by the velocity vector $\vec v$ at the point $p$.
+By that reason the normal curvature is also denoted by $k_{\vec v}$;
+that is,
+\[k_{\vec v}=\langle S_p(\vec v),\vec v\rangle\]
+if $\vec v$ is a unit vector in $\T_p$.
+
+
+
+
+
+
+%???+PIC
+
+Let $p$ be a point on a smooth surface $\Sigma$.
+Assume we choose the tangent-normal coordinates at $p$ so that the Hessian matrix is diagonalized, we can assume that
+\[M_p=\begin{pmatrix}
+   k_1(p)
+   &0
+   \\
+   0
+   &k_2(p)
+  \end{pmatrix}.
+\]
+Consider a vector ${\vec w}=(\begin{smallmatrix}a\\b
+\end{smallmatrix})$ in the $(x,y)$-plane.
+Then
+\begin{align*}
+\langle S(\vec w),\vec w\rangle
+&=\langle M_p\cdot(\begin{smallmatrix}a\\b
+\end{smallmatrix}),(\begin{smallmatrix}a\\b
+\end{smallmatrix})\rangle=
+\\
+&=a^2\cdot k_1(p) +b^2\cdot k_2(p). 
+\end{align*}
+If ${\vec w}$ is unit, then $a^2+b^2=1$ which implies the following:
+
+\begin{thm}{Observation}\label{obs:k1-k2}
+For any point $p$ on an oriented smooth surface $\Sigma$,
+the principle curvatures $k_1(p)$ and $k_2(p)$ are correspondingly minimum and maximum of the normal curvatures at $p$.
+Moreover, if $\theta$ is the angle between a unit vector ${\vec w}\in\T_p$ and the first principle direction at $p$, then 
+\[k_{\vec w}(p)=k_1(p)\cdot\cos^2\theta+k_2(p)\cdot\sin^2\theta.\]
+
+\end{thm}
+
+The last identity is called \emph{Euler's formula}.
+
+
+\begin{thm}{Meusnier's theorem}\label{thm:meusnier}
+Let $\gamma$ be a regular smooth curve that runs in a smooth oriented surface $\Sigma$.
+Suppose $p=\gamma(t_0)$ and ${\vec v}=\gamma'(t_0)$ and $\alpha=\angle(\Norm(p),\norm(t_0))$;
+that is $\alpha$ is the angle between the unit normal to $\Sigma$ at $p$ and the unit normal vector in the Frenet frame of $\gamma$ at $t_0$.
+Then the following identity holds for the curvature $\kur(t_0)$ and the normal curvature $k_n(t_0)$ of $\gamma$ at $t_0$:  
+\[\kur(t_0)_\gamma\cdot\cos\alpha=k_{n}(t_0).\]
+
 \end{thm}
 
 
-The same example would work for curves if we allow the boundary of the plane figure to be not connected.
-The following question might look like a right 3-dimensional analog of the moon in a puddle problem (\ref{thm:moon}).
+\parit{Proof.} Since $\tan'=\kur\cdot \norm$, we get that
+\begin{align*}
+k_{n}(t_0)&=\langle\gamma'',\Norm\rangle=
+\\
+&=\kur(t_0)\cdot\langle\norm,\Norm\rangle=
+\\
+&=\kur(t_0)\cdot\cos\alpha.
+\end{align*}
+\qedsf
+
+The theorem above, as well as the statement in the following exercise are proved by Jean Baptiste Meusnier \cite{meusnier}.
+
+\begin{thm}{Exercise}\label{ex:meusnier}
+Let $\Sigma$ be a smooth surface, $p\in\Sigma$ and ${\vec v}\in \T_p\Sigma$ is a unit vector.
+Assume that $k_{\vec v}(p)\ne 0$; that is, the normal curvature of $\Sigma$ at $p$ in the direction of ${\vec v}$ does not vanish.
+
+Show that the osculating circles at $p$ of smooth regular curves in $\Sigma$ that run in the direction ${\vec v}$ sweep out a sphere with center $p+\tfrac1{k_{\vec v}}\cdot\Norm$ and radius $\tfrac1{|k_{\vec v}|}$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:principle-revolution}
+Let $\gamma(s)=(x(s),y(s))$ be a smooth unit-speed simple plane curve in the upper half-plane.
+Suppose that $\Sigma$ is the surface of revolution of $\gamma$ with respect to the $x$-axis.
+
+\begin{enumerate}[(a)]
+\item Show that parallels and meridians form lines of curvature on $\Sigma$.
+\item Show that 
+\[\frac{|x'(s)|}{y(s)}
+\quad
+\text{and}
+\quad
+\frac{-y''(s)}{|x'(s)|}
+\]
+are principle curvatures of $\Sigma$ at $(x(s),y(s),0)$ in the direction of parallel and meridian correspondingly.
+\end{enumerate}
+
+\end{thm}
 
 \section*{Lagunov's example}
 
-\begin{thm}{Question}
+\begin{thm}{Exercise}\label{ex:moon-revolution}
+Assume $V$ is a body in $\RR^3$ bounded by a smooth surface of revolution with principle curvatures at most 1 in absolute value.
+Show that $V$ contains a unit ball.
+\end{thm}
+
+The following question is a 3-dimensional analog of the moon in a puddle problem (\ref{thm:moon}).
+
+\begin{thm}{Question}\label{quest:lagunov}
 Assume a set $V\subset \RR^3$ is bounded by a closed connected surface $\Sigma$ with 
 principle curvatures bounded in absolute value by 1.
 Is it true that $V$ contains a ball of radius 1?
 \end{thm}
 
-It turns out that the answer is  ``no''. The following example was constructed by Vladimir Lagunov \cite{lagunov}.
+According to \ref{ex:moon-revolution}, the answer is ``yes'' for surfaces of revolution.
+We also have ``yes'' for convex surfaces; see \ref{ex:convex-lagunov}.
+It turns out that in general the answer is  ``no''.
+The following example was constructed by Vladimir Lagunov \cite{lagunov}.
 
 
 \parit{Construction.}
 Let us start with a body of revolution $V_1$ with cross section shown on the diagram.
-The boundary curve of the cross section consists of 6 vertical line segments smoothly jointed into 3 closed simple curves. 
-The boundary of $V_1$ has 3 components, each of which is a sphere.
+The boundary curve of the cross section consists of 6 long vertical line segments smoothly jointed into 3 closed simple curves. 
+The boundary of $V_1$ has 3 components, each of which is a smooth sphere.
 
 \begin{figure}[h!]%{r}{43 mm}
 %\vskip-4mm
@@ -49,14 +178,16 @@ The boundary of $V_1$ has 3 components, each of which is a sphere.
 \vskip0mm
 \end{figure}
 
-A simple computation shows that if the curvature of all curves is at most 1 then the boundary surface of $V_1$ has priniple curvatures at most 1 in absolute value.
-
-At most of the places $V_1$ can be made arbitrary thin,
-the only thick place is where all tree spheres come together;
-it could be arranged that the radius of the maximal ball is  just a little bit above 
+We assume that the curvature of the curves have curvature at most 1.
+Moreover with the exception of vertical segments, the curve have absolute curvature near 1 almost all time.
+The only thick part in $V$ is the place where all three boundary components come together;
+the remaining part of $V$ is assumed to be very thin.
+It could be arranged that the radius of the maximal ball in $V$ is just a little bit above the value
 \[r_2=\tfrac2{\sqrt{3}}-1< \tfrac16.\]
-This is the radius of the smallest circle tangent to three unit circles that are tangent to each other.
+The value $r_2$ is the radius of the smallest circle tangent to three unit circles that are tangent to each other.
 
+Exercise \ref{ex:principle-revolution} gives formulas for the principle curvatures of the boundary of $V$;
+note that both of them are at most 1 by absolute value.  
 
 It remains to modify $V_1$ to make its boundary connected without  alloing larger balls inside.
 
@@ -69,17 +200,14 @@ Denote the obtained body by $V_2$; its cross section of the obtained body is sho
 Then repeat the operation for the other two pairs.
 Denote the obtained body by $V_3$; the cross section of the obtained body is shown on the diagram.
 
-It is easy to see that the boundary of $V_3$ is connected
-and assuming that the holes are large its boundary can be made so that its principle curvatures are still at most $1$.
+Note that the boundary of $V_3$ is connected.
+Assuming that the holes are large, its boundary can be made so that its principle curvatures are still at most $1$; the latter can be proved the same way as for~$V_1$.
 \qeds
 
-\begin{thm}{Claim}
-The surface of $V_3$ has genus 2; that is it can be parameterized by a sphere with two handles.
-\end{thm}
 
+Note that the surface of $V_3$ in the Lagunov's example has genus 2; that is it can be parameterized by a sphere with two handles.
 
-\parit{Proof.}
-Note that the boundary of $V_1$ consists of three spheres.
+Indeed, the boundary of $V_1$ consists of three smooth spheres.
 
 When we drill a hole, we make one hole in two spheres and two holes in one shpere.
 We reconnect two spheres by a tube and obtain one sphere.
@@ -88,66 +216,54 @@ That is, the boundary of $V_2$ is formed by one sphere and one torus.
 
 To construct $V_3$ from $V_2$, we make a torus from the remaining sphere and connect it to the torus by a tube.
 This way we get a sphere with two handles; that is, it has genus 2.
-\qeds
-
-\begin{thm}{Exercise}
-Assume $V$ is a body of revolution in $\RR^3$ and its boundary is a connected surface with principle curvatures at most 1 in absolute value.
-Show that $V$ contains a unit ball.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:convex-lagunov}
-Assume $V$ is a convex body in $\RR^3$ bounded by a surface with principle curvatures at most 1.
-Show that $V$ contains a unit ball.
-\end{thm}
-
-
-
-
 
 \begin{thm}{Exercise}\label{ex:lagunov-genus4}
 Modify Lagunov's construction to make the boundary surface a sphere with 4 handles.
 \end{thm}
 
+\section*{Variations*}
 
+In this section we will discuss few results related to \ref{quest:lagunov}.
+Recall that $r_2$
+
+is the radius of the smallest circle tangent to three unit circles that are tangent to each other.
+Let $r_3$
+be the radius of the smallest sphere tangent to four unit spheres that are tangent to each other.
+Direct calculations show that 
+\[r_2=\tfrac2{\sqrt{3}}-1< \tfrac16\quad\text{and}\quad r_3=\sqrt{\tfrac32}-1>\tfrac15.\]
+
+The following example shows that the bound obtained in the construction of the Lagunov's example is optimal.
 
 \begin{thm}{Advanced exercise}
-Show that the bound in the Lagunov's example is optimal.
-That is, if a body $V\subset \RR^3$ is bounded by a connected surface  $\Sigma$ with principle curvatures at most 1, then $V$ contains a ball of radius $r_2$.
+Suppose a connected body $V\subset \RR^3$ is bounded by a finite number of closed smooth surfaces with principle curvatures bounded in absolute value by 1.
+Assume that $V$ does not contain a ball of radius $r_2$.
+Show that its boundary has two components of the same topological type; 
+that is, both can be written in parametric form with the same parameter domain. 
 \end{thm}
 
-\section*{On embedded sphere}
+\begin{wrapfigure}{o}{33 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-34}
+\vskip0mm
+\end{wrapfigure}
 
+For example consider the region between two large concentric spheres with almost equal radiuses. 
+This region can be made arbitrary thin and the curvature of the boundary can be made arbitrary close to zero.
 
-\begin{thm}{Advanced exercise}
-Note that the body $V$ in the example of Lagunov is constructed by thikening a surface having a singular curve where the surface self-intersects at an angle of $120\degree$.
-Show that this way one can not obtain a body bounded by a sphere.
-\end{thm}
+The same example works in the plane --- a pair of circles with arbitrary small curvature can bound an arbitrary thin region.
 
-In fact one can show that if a body $V\subset \RR^3$ is bounded by a sphere $\Sigma$ with principle curvatures at most 1, then $V$ contains a ball of radius $r_3=\sqrt{\tfrac32}-1>\tfrac15$,
+In fact one can show that if a body $V\subset \RR^3$ is bounded by a sphere $\Sigma$ with principle curvatures at most 1, then $V$ contains a ball of radius $r_3$,
 which is the radius of the smallest sphere tangent to three unit spheres that are tangent to each other.
 Moreover, this bound is optimal.
 
-An example of such a body can be obtained by thickening the so called Bing's house.
-It is certainly a surface whose singularities are formed by three curves meeting at two points;
+An example of such a body can be obtained by thickening a smoothed version of the so called Bing's house.
+It is a certain surface whose singularities are formed by three curves meeting at two points;
 four ends at each point.
-The remaining surface of Bing's house is smooth and has bounded principle curvatures;
-we can assume that they are bounded by an arbitrary small number.
+At the singular curves the three pieces of surface have to cross at angles $\tfrac23\cdot\pi$ and at the sigular points 6 pieces of surface should come together forming 6 triangles with vertex in the center of a regular tetrahedron and the bases at its 6 edges.
+Thickening of a sufficiently large smooth Bing's house of that type produces the optimal bound $r_3$ on the maximal ball that it contains.
 
-At the singular curves the three pieces of surface have to cross at angles $\tfrac23\cdot\pi$ and at the sigular points 6 pieces of surface should come together forming 6 tringles with vertex in the center of a regular tetrahedron and the bases at its 6 edges.
-Thickening of a sufficiently large Bing's house of that type produces the optimal bound $r_3$ on the maximal ball that it contains.
 
-\begin{wrapfigure}{o}{52 mm}
-\vskip-0mm
-\centering
-\includegraphics[scale=.45]{pics/thickened-bing's-house}
-\vskip-0mm
-\end{wrapfigure}
 
-The thickening of Bing's house shown on the picture can not give the optimal bound,
-but still it can produce an example of an embedded sphere that does not surround a ball of radius 1.
 
-This picture is very similar to the Lagunov's example described above --- it can be obtained by filling the rings in the section of $V_3$ by thickened discs. 
-
-This picture was taken from a post of Ken Baker \cite{baker};
-this post has many other beautiful pictures that help to visualize Bing's house.
 

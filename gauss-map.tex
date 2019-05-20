@@ -57,42 +57,6 @@ Applying the chain rule, we get
 The statement follows since $d_p(\gamma'(0))=(f\circ\gamma)'(0)$.
 \qeds
 
-\section*{A more conceptual way*}
-
-In this section we introduce a more conceptual way to define tangent vectors.
-We will not use this approach in the sequel, but it is better to know about it.
-
-A tangent vector $v\in \T_p$ to a smooth surface $\Sigma$ is a linear functional%
-\footnote{Term \emph{functional} is used for functions that take a function as an argument and return a number.}
-that takes a smooth function $\phi$ on $\Sigma$, spits out a real number denoted by $v\phi$ and satisfies the product rule:
-\[v(\phi\cdot\psi)=(v\phi)\cdot \psi(p)+\phi(p)\cdot(v\psi).
-\eqlbl{eq:tangent-functional}\]
-
-If $v$ is a velocity vector of a smooth curve $\gamma$ that starts at $p$, then you can set
-\[v\phi=(\phi\circ\gamma)'(0).\eqlbl{eq:curve-functional}\]
-It follows that any velocity vector $v=\gamma'(0)$ is also a tangent vector in the new definition.
-It is not hard to check the converse as well; that is, to any linear functional $v$ satisfying the product rule there is a curve $\gamma$ such that \ref{eq:curve-functional} holds.
-
-The new definition is less intuitive, but it is more convenient to use since it grabs the key algebraic property of tangent vectors.
-For example the differential could be defined using the following identity:
-\[(d_pf(v))\phi\df v(\phi\circ f);\]
-that is, the result of the functional $d_pf(v)$ on the function $\phi\:\RR^3\to\RR$ is defined to be the same as the result of the functional $v$ on the function $\phi\circ f\:\Sigma\to\RR$.
-
-Many statements admit simpler proofs with this approach, for example \ref{prop:linearity} becomes a tautology.
-
-\section*{Spherical map}
-
-Let $\Sigma$ be a smooth oriented surface with unit normal field $\Norm$.
-The map $\Norm\:\Sigma\to \SS^2$ defined by $p\mapsto \Norm_p$ is called \emph{spherical map} or \emph{Gauss map}.
-
-For surfaces, the spherical map plays essentially the same role as the tangent indicatrix for curves.
-
-Recall that if $(u,v)\mapsto s(u,v)$ is a chart on $\Sigma$ then 
-\[\Norm(u,v)=\pm \frac{\frac{\partial s}{\partial u}\times \frac{\partial s}{\partial v}}{|\frac{\partial s}{\partial u}\times \frac{\partial s}{\partial v}|}.\]
-Since $s$ is a chart $\tfrac{\partial s}{\partial u}\times \tfrac{\partial s}{\partial v}\ne 0$,
-therefore the spherical map is smooth.
-
-In particular the differential of the spherical map is defined at any point of $\Sigma$.
 
 \section*{Shape operator}
 
@@ -106,98 +70,7 @@ The \emph{shape operator} at $p$ is defined as
 The shape operator $S_p$ is defined on the tangent plane $\T_p\Sigma$ and it returns a vector in the same plane (otherwise we could not call it an \emph{operator}).
 The latter is shown in the following proposition, which also gives a reason for the change of sign in \ref{eq:shape}.
 
-\begin{thm}{Proposition}\label{prop:shape-operator}
-Suppose $\Sigma$ is an oriented surface.
-Then for any $p\in \Sigma$ and any $v\in \T_p$ we have that $S_p(v)\in\T_p$.
-Moreover 
-\[\langle S_p(v),w\rangle=\langle S_p(w),v\rangle=\II_p(v,w)\]
-for any $v,w\in \T_p$.
-\end{thm}
 
-\parit{Proof.}
-Assume an oriented surface $\Sigma$ is written locally as a graph $z\z=f(x,y)$ in the tangent-normal coordinates at $p\in\Sigma$.
-As usual we assume that the normal vector $\Norm_p$ points in the direction of the $z$-axis,
-in this case the normal vector at any point of the graph points up; that is, its $z$-coordinate  is positive.
-
-Consider the corresponding chart  of $\Sigma$:
-\[s(x,y)\z=(x,y,f(x,y)).\]
-Denote by $\Norm(x,y)$ the unit normal vector at $s(x,y)$; it is a shortcut notation for $\Norm_{s(x,y)}$.
-
-Note that $\tfrac{\partial s}{\partial x}(0,0)=(1,0,0)$ and $\tfrac{\partial s}{\partial y}(0,0)=(0,1,0)$.
-For a tangent vector 
-\[v=(a\cdot\tfrac{\partial s}{\partial x}+b\cdot\tfrac{\partial s}{\partial y})(0,0) =(a,b,0)\in \T_p\]
-we have that
-\[
-\begin{aligned}
-S_p(v)&=-D_v\Norm(0,0)=
-\\
-&=-(a\cdot \tfrac{\partial \Norm}{\partial x}+b\cdot \tfrac{\partial \Norm}{\partial y})(0,0),
-\end{aligned}
-\eqlbl{eq:S=D}
-\]
-where $D_v$ denotes the directional derivative along a vector $v$ in the $(x,y)$-plane which is $\T_p$.
-
-Indeed, the first equality follows from \ref{eq:shape} and the definition of differential \ref{eq:differenital} applied for the curve $\gamma(t)=(a\cdot t,b\cdot t, f(a\cdot t,b\cdot t))$ at $t=0$ and the second follow since
-$D_v=a\cdot \tfrac{\partial }{\partial x}+b\cdot \tfrac{\partial }{\partial y}$.
-
-Taking partial derivatives of $\langle\Norm,\Norm\rangle=1$, we get that 
-\begin{align*}
-0&=\tfrac{\partial}{\partial x} \langle\Norm,\Norm\rangle=
-\\
-&=2\cdot\langle\tfrac{\partial\Norm}{\partial x},\Norm\rangle.
-\end{align*}
-That is, $\langle\tfrac{\partial\Norm}{\partial x},\Norm\rangle=0$ and the same way we get $\langle\tfrac{\partial\Norm}{\partial y},\Norm\rangle=0$.
-By \ref{eq:S=D} it follows that $S_p(v)\perp \Norm_p$, or equivalently $S_p(v)\in\T_p$ for any $v\in \T_p$.
-
-Further, since $\tfrac{\partial s}{\partial x}, \tfrac{\partial s}{\partial y}\in\T_{s(x,y)}\Sigma$
-and $\Norm(x,y)\perp\T_{s(x,y)}\Sigma$,
-we have that
-\[\langle \Norm,\tfrac{\partial s}{\partial x}\rangle\equiv 0
-\quad\text{and}\quad
-\langle \Norm,\tfrac{\partial s}{\partial y}\rangle\equiv 0.\]
-Taking a derivative of these identities, we get that
-\[\begin{aligned}
-\langle \tfrac{\partial\Norm}{\partial x},\tfrac{\partial s}{\partial x}\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial x^2}\rangle&\equiv 0,
-\\
-\langle \tfrac{\partial\Norm}{\partial y},\tfrac{\partial s}{\partial x}\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial y\partial x}\rangle&\equiv 0,
-\\
-\langle \tfrac{\partial\Norm}{\partial x},\tfrac{\partial s}{\partial y}\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial x\partial y}\rangle&\equiv 0,
-\\
-\langle \tfrac{\partial\Norm}{\partial y},\tfrac{\partial s}{\partial y}\rangle+\langle \Norm,\tfrac{\partial^2 s}{\partial y^2}\rangle&\equiv 0,
-\end{aligned}
-\eqlbl{eq:shape=second}
-\]
-
-Fix two vectors $v=(a,b,0)$ and $w=(c,d,0)$ in $\T_p$ (which is the $(x,y)$-plane).
-Since $\Norm(0,0)=(0,0,1)$ we get 
-\[f(x,y)\equiv\langle\Norm(0,0),s(x,y)\rangle.\]
-Therefore by \ref{eq:S=D}, \ref{eq:shape=second} and \ref{eq:DwDv} we get that 
-\begin{align*}
-\langle S_p(v),w\rangle 
-&=-\langle  a\cdot \tfrac{\partial \Norm}{\partial x}+b\cdot \tfrac{\partial \Norm}{\partial y},c\cdot \tfrac{\partial s}{\partial x}+d\cdot \tfrac{\partial s}{\partial y}\rangle(0,0)=
-\\
-&=-\bigl(a\cdot c\cdot\langle \tfrac{\partial \Norm}{\partial x},\tfrac{\partial s}{\partial x}\rangle 
-+a\cdot d\cdot\langle \tfrac{\partial \Norm}{\partial x},\tfrac{\partial s}{\partial y}\rangle+
-\\&\quad
-+b\cdot c\cdot\langle \tfrac{\partial \Norm}{\partial y},\tfrac{\partial s}{\partial x}\rangle
-+b\cdot d\cdot\langle \tfrac{\partial \Norm}{\partial y},\tfrac{\partial s}{\partial y}\rangle\bigr)(0,0)=
-\\
-&=\bigl(a\cdot c\cdot\langle \Norm,\tfrac{\partial^2 s}{\partial x^2}\rangle 
-+a\cdot d\cdot\langle \Norm,\tfrac{\partial^2 s}{\partial x\partial y}\rangle+
-\\&\quad
-+b\cdot c\cdot\langle \Norm,\tfrac{\partial^2 s}{\partial y\partial x}\rangle
-+b\cdot d\cdot\langle \Norm,\tfrac{\partial^2 s}{\partial y^2}\rangle\bigr)(0,0)=
-\\
-&=\bigl(a\cdot c\cdot\tfrac{\partial^2 f}{\partial x^2} 
-+a\cdot d\cdot\tfrac{\partial^2 f}{\partial x\partial y}+
-\\&\quad
-+b\cdot c\cdot\tfrac{\partial^2 f}{\partial y\partial x}
-+b\cdot d\cdot\tfrac{\partial^2 f}{\partial y^2}\bigr)(0,0)=
-\\
-&=\II_p(v,w).
-\end{align*}
-It remains to apply \ref{eq:II=II} on page \pageref{eq:II=II}.
-\qeds
 
 Recall that 
 \[\II_p(w,v)=\langle M_p\cdot v,w\rangle,\]
@@ -217,25 +90,10 @@ In particular $K(p)=\det S_p$ and $H(p)=\trace S_p $.
 \end{thm}
 
 
-\begin{thm}{Exercise}\label{ex:normal-curvature=const}
-Let $\Sigma$ be a smooth oriented surface with the unit normal field $\Norm$.
-Suppose that $\Sigma$ has unit normal curvature at any point in any direction.
-\begin{enumerate}[(a)]
- \item Show that $S_p(w)=w$ for any $p\in\Sigma$ and $w\in \T_p\Sigma$.
- \item Show that $p+\Norm_p$ is constant; that is, the point $c=p+\Norm_p$ does not depend on $p\in\Sigma$.
- Conclude that $\Sigma$ is a part of the unit sphere centered at $c$.
-\end{enumerate}
-
-\end{thm}
 
 
-\begin{thm}{Exercise}\label{ex:shape-curvature-line}
-Assume that smooth surfaces $\Sigma_1$ and $\Sigma_2$ intersect at constant angle along a smooth regular curve $\gamma$.
-Show that if $\gamma$ is a curvature line in $\Sigma_1$, then it is also a curvature line in $\Sigma_2$.
 
-Conclude that if a smooth surface $\Sigma$ intersects a plane or sphere along a smooth curve $\gamma$,
-then $\gamma$ is a curvature line of $\Sigma$.
-\end{thm}
+
 
 \begin{thm}{Exercise}\label{ex:geodesic-curvature-line}
 Suppose that a geodesic $\gamma$ on the surface $\Sigma$ is also a curvature line.

@@ -2,8 +2,8 @@
 
 \section*{Tangent-normal coordinates} 
 
-Fix a point $p$ in a smooth surface $\Sigma$.
-Consider a coordinate system $(x,y,z)$ with origin at $p$ such that the $(x,y)$-plane coincides with $\T_p$.
+Fix a point $p$ in a smooth oriented surface $\Sigma$.
+Consider a coordinate system $(x,y,z)$ with origin at $p$ such that the $(x,y)$-plane coincides with $\T_p$ and the $z$-axis in the direction of the normal vector $\Norm_p$.
 By \ref{ex:vertical-tangent}, we can present $\Sigma$ locally around $p$ as a graph of a function $f$. 
 Note that $f$ satisfies the following additional properties:
 \begin{align*}
@@ -15,24 +15,14 @@ f(0,0)&=0,
 \end{align*}
 The first equality holds since $p=(0,0,0)$ lies on the graph and the last two equalities mean that the tangent plane at $p$ is horizontal.
 
-\begin{wrapfigure}{o}{40 mm}
+\begin{wrapfigure}[8]{o}{40 mm}
 \vskip-0mm
 \centering
 \includegraphics{asy/paraboloid}
 \vskip-3mm
 \end{wrapfigure}
 
-Consider the Hessian matrix 
-\[M_p=\begin{pmatrix}
-   \ell
-   &m
-   \\
-   m
-   &n
-  \end{pmatrix},
-\eqlbl{eq:hessian}
-\]
-where 
+Set \label{page:lmn}
 \begin{align*}
 \ell&=(\tfrac{\partial^2}{\partial x^2}f)(0,0),
 \\
@@ -40,97 +30,54 @@ m&=(\tfrac{\partial^2}{\partial x\partial y}f)(0,0)=(\tfrac{\partial^2}{\partial
 \\
 n&=(\tfrac{\partial^2}{\partial y^2}f)(0,0).
 \end{align*}
-
-The components of the matrix describe the surface at up to the second order at $p$.
-In fact the so-called \emph{osculating paraboloid}
-\[z=\tfrac12(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)\]
+The Taylor series for $f$ at $(0,0)$ up to the second oreder term can be then written as
+\[f(x,y)=\tfrac12(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)+o(x^2+y^2).\]
+Note that values $\ell$, $m$, and $n$ are completely determined by this equation.
+The so-called \emph{osculating paraboloid}
+\[z=\tfrac12\cdot(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)\]
 gives the best approximation of the surface at $p$;
 it has \emph{second order of contact} with $\Sigma$ at $p$.
 
-Given two vectors $v,w$ in the $(x,y)$-plane, consider the value 
-\[\II_p(v,w)\df(D_wD_vf)(0,0),\]
-where $D$ denotes the directional derivative.
-The function $(v,w)\z\mapsto \II_p(v,w)$ is called the \emph{second fundamental form} at $p$;\label{page:second fundamental form}
-it takes two tangent vectors $v$ and $w$ at $p$ and spits out the real number $\II_p(v,w)$.
-
-The second fundamental form can be written in terms of the Hessian matrix.
-Indeed if 
-$w=(\begin{smallmatrix}a\\b
-\end{smallmatrix})$ 
-and 
-$v=(\begin{smallmatrix}c\\d
-\end{smallmatrix})$, then 
-\[D_w=a\cdot \tfrac\partial{\partial x}+b\cdot \tfrac\partial{\partial y}\quad\text{and}\quad D_v=c\cdot \tfrac\partial{\partial x}+d\cdot \tfrac\partial{\partial y}.\]
-Therefore 
-\[\begin{aligned}
-\II_p(w,v)&\df(D_wD_vf)(0,0)=
-\\
-&=a\cdot c\cdot \ell+(a\cdot d+ b\cdot c)\cdot m +b\cdot d\cdot n=
-\\
-&=\langle M_p\cdot w,v\rangle=
-\\
-&=\langle M_p\cdot v,w\rangle.
-\end{aligned}
-\eqlbl{eq:DwDv}\]
-Note that from \ref{eq:DwDv} it follows that $\II_p$ is symmetric; that is,
-\[\II_p(v,w)=\II_p(w,v)\eqlbl{eq:II=II}\]
-for any two tangent vectors $v,w\in \T_p$.
+Note that 
+\[\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2=\langle M_p\cdot (\begin{smallmatrix}
+x\\y
+\end{smallmatrix}), (\begin{smallmatrix}
+x\\y
+\end{smallmatrix})\rangle,\]
+where
+\[M_p=\begin{pmatrix}
+   \ell
+   &m
+   \\
+   m
+   &n
+  \end{pmatrix};
+\eqlbl{eq:hessian}
+\]
+it is called the Hessian matrix of $f$ at $(0,0)$.
 
 \section*{Principle curvatures}
 
 Note that tangent-normal coordinates give an almost canonical coordinate system in a neighborhood of $p$;
-it is unique up to a rotation of  the $(x,y)$-plane and a switching of the sign of the $z$-coordinate.
-Rotating the $(x,y)$-plane is equivalent to changing its orthonormal basis, which results in the rewriting   
-the Hessian matrix in this new basis.
+it is unique up to a rotation of  the $(x,y)$-plane.
+Rotating the $(x,y)$-plane is equivalent to changing its the basis, which results in the rewriting   
+the matrix $M_p$ in this new basis.
 
-Since Hessian matrix is symmetric, it is diagonalizable by orthogonal matrices. %???
+Since the Hessian matrix $M_p$ is symmetric, it is diagonalizable by orthogonal matrices.
 That is, by rotating the $(x,y)$-plane we can assume that $m=0$ in \ref{eq:hessian}. %???+lin algebra material
 In this case the diagonal components of $M_p$ are called \emph{principle curvatures} of $\Sigma$ at $p$;
 they are uniquely defined up to sign;
 they are denoted as $k_1(p)$ and $k_2(p)$, or $k_1(p)_\Sigma$ and $k_2(p)_\Sigma$ if we need to emphasize that these are the curvatures of the surface $\Sigma$.
 We will always assume that $k_1\le k_2$.
 
+Note that if $x=f(x,y)$ is a local graph representation of $\Sigma$ in these coordinates then 
+\[f(x,y)=\tfrac12\cdot(k_1\cdot x^2+k_2\cdot y^2)+o(x^2+y^2).\]
+
 The principle curvatures can be also defined as the eigenvalues of $M_p$;
 the eigendirections of $M_p$ are called \emph{principle directions} of $\Sigma$ at~$p$.
-Note that if $k_1(p)\ne k_2(p)$ then $p$ has exactly two principle directions, which are perpendicular to each other.
+Note that if $k_1(p)\ne k_2(p)$ then $p$ has exactly two principle directions, which are perpendicular to each other; if $k_1(p)= k_2(p)$ then all tangent directions at $p$ are principle.
 
 Note that if we revert the orientation of $\Sigma$, then the principle curvatures at each point switch their signs and indexes.
-
-\section*{Normal curvature}
-
-%???+PIC
-
-Assume we choose the coordinates in the $(x,y)$-plane so that the Hessian matrix is diagonalized, we can assume that
-\[M_p=\begin{pmatrix}
-   k_1(p)
-   &0
-   \\
-   0
-   &k_2(p)
-  \end{pmatrix}.
-\]
-According to \ref{eq:DwDv}, the second directional derivative
-for a vector $w=(\begin{smallmatrix}a\\b
-\end{smallmatrix})$ in the $(x,y)$-plane can be written as 
-\[
-(D^2_wf)(0,0)=a^2\cdot k_1(p) +b^2\cdot k_2(p).
-\]
-
-If $w$ is unit, then the second directional derivative $D^2_wf(0,0)$ can be intepreted as the signed curvature of the curve formed by the intersection of $\Sigma$ with the plane thru $p$ spanned by $\Norm_p$ and $w$.
-In this case $\II_p(w,w)=D^2_wf(0,0)$ is called \emph{normal curvature} in the direction $w$;
-it is denoted by $k_w(p)$ or $k_w(p)_\Sigma$.
-
-Since $|w|=1$, we have $a^2+b^2=1$ which implies the following:
-
-\begin{thm}{Observation}\label{obs:k1-k2}
-For any point $p$ on an oriented smooth surface $\Sigma$,
-the principle curvatures $k_1(p)$ and $k_2(p)$ are correspondingly minimum and maximum of the normal curvatures at $p$.
-Moreover, if $\theta$ is the angle between a unit vector $w\in\T_p$ and the first principle direction at $p$, then 
-\[k_w(p)=k_1(p)\cdot\cos^2\theta+k_2(p)\cdot\sin^2\theta.\]
-
-\end{thm}
-
-The last identity is the so-called \emph{Euler's formula}.
 
 A smooth regular curve on a surface $\Sigma$ that always runs in the principle directions is called a \emph{line of curvature} of $\Sigma$.  
 
@@ -140,10 +87,6 @@ Suppose that $\Sigma$ and $\Pi$ intersect along a curve $\gamma$.
 Show that $\gamma$ is a line of curvature of $\Sigma$.
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:moon-revolution}
-Assume $V$ is a body of revolution in $\RR^3$ and its boundary is a smooth surface with principle curvatures at most 1 in absolute value.
-Show that $V$ contains a unit ball.
-\end{thm}
 
 \section*{More curvatures}
 
@@ -153,276 +96,232 @@ The product
 \[K(p)=k_1(p)\cdot k_2(p)\]
 is called Gauss curvature at $p$.
 We may denote it by $K(p)_\Sigma$ if we need to emphasize that this is curvature of $\Sigma$.
-The Gauss curvature can be also interpreted as determinant of the Hessian matrix $M_p$.
+The Gauss curvature can be also interpreted as the determinant of the Hessian matrix $M_p$, or, equivalently,  as the determinant of the shape operator $S_p$.
 
 The sum 
-\[H(p)=\tfrac12\cdot(k_1(p)+ k_2(p))\] %???  back later
-is called mean curvature at $p$.
+\[H(p)=k_1(p)+ k_2(p)\] 
+is called \emph{mean curvature}\footnote{Some authors define mean curvature as $\tfrac12\cdot(k_1(p)+ k_2(p))$ --- the mean value of the principle curvatures. It is suits the name better, but not as convenient when it comes to calculations.} at $p$.
 We may denote it by $H(p)_\Sigma$ if we need to emphasize that this is curvature of $\Sigma$.
-The mean curvature can be also interpreted as half of the trace of the Hessian matrix $M_p$. %???  back later
+The mean curvature can be also interpreted as the trace of the Hessian matrix $M_p$, or, equivalently,  as the trace of the shape operator $S_p$. 
 
-Note that the Gauss curvature depends only on $\Sigma$ and $p$,
-and not on the choice of the coordinate system.
+Note that the Gauss curvature depends only on $\Sigma$ and $p$.
 The same is true up to sign for the mean curvature --- it changes the sign if we revert the orientation of the surface.
 
 \begin{thm}{Exercise}\label{ex:gauss+orientable}
 Show that any surface with positive Gauss curvature is orientable. 
+%Show that any surface with positive mean curvature is orientable.
 \end{thm}
 
+\section*{Shape operator}
 
-\section*{Supporting surfaces}
+Let $p$ be a point on a smooth oriented surface $\Sigma$.
+Suppose $\Sigma$ is described locally as a graph $z=f(x,y)$ in a tangent-normal coordinates at $p$
+and 
+\[M_p=\begin{pmatrix}
+   \ell
+   &m
+   \\
+   m
+   &n
+  \end{pmatrix};
+\]
+is the Hessian matrix of $f$ at $(0,0)$; that is, the components $\ell$, $m$, and $n$ are as on page \pageref{page:lmn}.
 
-Assume two oriented surfaces $\Sigma_1$ and $\Sigma_2$ have a common point $p$.
-If there is a neighborhood $U$ of $p$ such that $\Sigma_1\cap U$ lies on one side from $\Sigma_2$ in $U$, then we say that $\Sigma_2$ \emph{locally supports} $\Sigma_1$ at $p$.
+The multiplication by the Hessian matrix defies the so called \emph{shape operator}
+\[S\:(\begin{smallmatrix}
+x\\y
+\end{smallmatrix})
+\mapsto
+M_p\cdot(\begin{smallmatrix}
+x\\y
+\end{smallmatrix});\]
+it is a linear operator $S\:\T_p\to \T_p$.
+For a point $p\in \Sigma$ the shape operator of a tangent vector $\vec w\in \T_p$ will be denoted by $S(\vec w)$ if it is clear from the context which base point $p$ and which surface we are working with;
+otherwise we may use notations 
+\[S_p(\vec w)\quad\text{or even}\quad S_p(\vec w)_\Sigma.\]
 
-\begin{thm}{Exercise}\label{ex:T=T}
-Let $\Sigma_1$ and $\Sigma_2$ be two smooth surfaces.
-Assume $\Sigma_2$ \emph{locally supports} $\Sigma_1$ at a point $p$.
-Show that $\T_p\Sigma_1=\T_p\Sigma_2$;
-that is, the tangent planes of $\Sigma_1$ and $\Sigma_2$ at $p$ coincide.
-\end{thm}
+Since $M_p$ is symmetric, $S$ is \emph{self-adjoint}; that is
+\[\langle S(\vec v),\vec w\rangle=\langle \vec v,S(\vec w)\rangle\]
+for any $\vec v,\vec w\in\T_p$.
+Note also that principle curvatures of $\Sigma$ at $p$ are the eigenvalues of $S_p$ and the principle directions are the directions of principle vectors of $S_p$.
 
-By the exercise, we can assume that $\Sigma_1$ and $\Sigma_2$ are cooriented at $p$;
-that is, they have common unit normal vector at $p$.
-If not we can revert the orientation of one of the surfaces.
-
-If $\Sigma_1$ and $\Sigma_2$ are cooriented at $p$,
-then we can say that $\Sigma_1$ locally supports $\Sigma_2$ from \emph{inside} or from \emph{outside},
-assuming that the normal vector points \emph{inside} the domain bounded by surface $\Sigma_2$ in $U$.
-
-More precisely, we can use for $\Sigma_1$ and $\Sigma_2$ one tangent-normal coordinate system at $p$,
-assuming that the $z$-axis points in the direction of the unit normal vector $\Norm_p$ to both surfaces.
-This way we write $\Sigma_1$ and $\Sigma_2$ locally as graphs: $z=f_1(x,y)$  and $z=f_2(x,y)$ correspondingly.
-Then $\Sigma_1$ locally supports $\Sigma_2$ from inside (from outside)  if $f_1(x,y)\ge f_2(x,y)$ (correspondingly $f_1(x,y)\le f_2(x,y)$) for $(x,y)$ in a sufficiently small neighborhood of the origin.
-
-Note that $\Sigma_1$ locally supports $\Sigma_2$ from inside at the point $p$ is equivalent to $\Sigma_2$ locally supports $\Sigma_1$ from outside.
-Further if we revert the orientation of both surfaces then supporting from inside becomes supporting from outside and the other way around.
-
-
-\begin{thm}{Proposition}\label{prop:surf-support}
-Let $\Sigma_1$ and $\Sigma_2$ be oriented surfaces.
-Assume $\Sigma_1$ locally supports $\Sigma_2$ from inside at the point $p$ (equivalently $\Sigma_2$ locally supports $\Sigma_1$ from outside).
-Then $k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}$ and $k_2(p)_{\Sigma_1}\z\ge k_2(p)_{\Sigma_2}$.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:surf-support}
-Give an example of two surfaces $\Sigma_1$ and $\Sigma_2$ that have common point $p$ with common unit normal vector $\Norm_p$ such that 
-$k_1(p)_{\Sigma_1}> k_1(p)_{\Sigma_2}$ and $k_2(p)_{\Sigma_1}\z> k_2(p)_{\Sigma_2}$, but $\Sigma_1$ does not support $\Sigma_2$ locally at $p$.
-\end{thm}
-
-
-\parit{Proof.} We can assume that $\Sigma_1$ and $\Sigma_2$ are graphs $z=f_1(x,y)$  and $z=f_2(x,y)$ in a common tangent-normal coordinates at $p$, so we have $f_1\ge f_2$.
-
-\begin{wrapfigure}{o}{40 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-80}
-\vskip-0mm
-\end{wrapfigure}
-
-Fix a unit vector $w\in \T_p\Sigma_1=\T_p\Sigma_2$.
-Consider the plane $\Pi$ passing thru $p$ and spanned by the normal vector $\Norm_p$ and $w$.
-Let $\gamma_1$ and $\gamma_2$ be the curves of intersection of $\Sigma_1$ and $\Sigma_2$ with $\Pi$.
-
-Let us orient $\Pi$ so that $\Norm_p$ points to the left from $w$.
-Further, let us parametrize both curves so that they are running in the direction of $w$ at $p$ and therefore cooriented.
-In this case the curve $\gamma_1$ supports the curve $\gamma_2$ from the right. %??? make \ref{prop:supporting-circline} once it is generalized
-
-
-Therefore we have the following inequality for the normal curvatures of $\Sigma_1$ and $\Sigma_2$ at $p$ in the direction of $w$:
-\[k_w(p)_{\Sigma_1}\ge k_w(p)_{\Sigma_2}.\eqlbl{kw>=kw}\]
-
-According to \ref{obs:k1-k2},
-\[k_1(p)_{\Sigma_i}=\min\set{k_w(p)_{\Sigma_i}}{w\in\T_p, |w|=1}\]
-for $i=1,2$.
-Choose $w$ so that $k_1(p)_{\Sigma_1}=k_w(p)_{\Sigma_1}$.
-Then by \ref{kw>=kw}, we have that
-\begin{align*}
-k_1(p)_{\Sigma_1}&=k_w(p)_{\Sigma_1}\ge
-\\
-&\ge k_w(p)_{\Sigma_2}\ge
-\\
-&\ge\min\set{k_w(p)_{\Sigma_2}}{}=
-\\
-&=k_1(p)_{\Sigma_2};
-\end{align*}
-that is, $k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}$.
-
-Similarly, by \ref{obs:k1-k2}, we have that
-\[k_2(p)_{\Sigma_i}=\max\set{k_w(p)_{\Sigma_i}}{}.\]
-Let us fix $w$ so that $k_2(p)_{\Sigma_2}=k_w(p)_{\Sigma_2}$.
-Then 
-\begin{align*}
-k_2(p)_{\Sigma_2}&=k_w(p)_{\Sigma_2}\le
-\\
-&\le k_w(p)_{\Sigma_1}\le
-\\
-&\le\max\set{k_w(p)_{\Sigma_1}}{}=
-\\
-&=k_2(p)_{\Sigma_1};
-\end{align*}
-that is, $k_2(p)_{\Sigma_1}\ge k_2(p)_{\Sigma_2}$.
-\qeds
-
-\begin{thm}{Corollary}\label{cor:surf-support}
-Let $\Sigma_1$ and $\Sigma_2$ be oriented surfaces.
-Assume $\Sigma_1$ locally supports $\Sigma_2$ from inside at the point $p$.
+\begin{thm}{Proposition}\label{prop:shape=D2}
+Let $p$ be a point on a smooth oriented surface $\Sigma$.
+Suppose $\Sigma$ is described locally as a graph $z=f(x,y)$ in a tangent-normal coordinates at $p$.
 Then
-\begin{enumerate}[(a)]
-\item\label{cor:surf-support:mean} $H(p)_{\Sigma_1}\ge H(p)_{\Sigma_2}$;
-\item\label{cor:surf-support:gauss} If $k_1(p)_{\Sigma_2}\ge 0$, then $K(p)_{\Sigma_1}\ge K(p)_{\Sigma_2}$.
-\end{enumerate}
- 
+\[\langle S(\vec v),\vec w\rangle=D_{\vec w}D_{\vec v}f(0,0)\]
+for any $\vec v,\vec w\in\T_p$.
+Moreover $S$ is unique linear operator $\T_p\to\T_p$ that satisfies the above condition.
 \end{thm}
 
-\parit{Proof.}
-By (\ref{prop:surf-support}), we get that $k_1(p)_{\Sigma_1}\ge k_1(p)_{\Sigma_2}$ and $k_2(p)_{\Sigma_2}\ge k_2(p)_{\Sigma_2}$.
-Therefore part (\ref{cor:surf-support:mean}) follows since 
-\[H(p)_{\Sigma_i}=\tfrac12\cdot(k_1(p)_{\Sigma_i}+k_2(p)_{\Sigma_i})).\]
+Here $D_{\vec v}f$ denoted directional derivative of $f$ along vector $\vec v$;
+that is, if $\phi(t)=f(q+\vec v\cdot t)$, then $D_{\vec v}f(q)=\phi'(0)$.
 
-
-\parit{(\ref{cor:surf-support:gauss}).} Since $k_2(p)_{\Sigma_i}\ge k_1(p)_{\Sigma_i}$ and $k_1(p)_{\Sigma_2}\ge 0$, we get that all the principle curvatures 
-$k_1(p)_{\Sigma_1}$, $k_1(p)_{\Sigma_1}$ and $k_2(p)_{\Sigma_1}$ and $k_2(p)_{\Sigma_2}$ are nonnegative.
-Whence
+\parit{Proof.} 
+Suppose $\vec v=(\begin{smallmatrix}
+a\\b
+\end{smallmatrix})$
+and 
+$\vec v=(\begin{smallmatrix}
+c\\d
+\end{smallmatrix})$, then 
 \begin{align*}
-K(p)_{\Sigma_1}&=k_1(p)_{\Sigma_1}\cdot k_2(p)_{\Sigma_1}\ge 
+D_{\vec v}&=a\cdot\tfrac{\partial}{\partial x}+ b\cdot\tfrac{\partial}{\partial y},
+&
+D_{\vec w}&=c\cdot\tfrac{\partial}{\partial x}+ d\cdot\tfrac{\partial}{\partial y}.
+\end{align*}
+Therefore 
+\begin{align*}
+D_{\vec w}D_{\vec v}f&=
+a\cdot c\cdot\tfrac{\partial^2 f}{\partial^2 x}
++b\cdot c\cdot\tfrac{\partial^2 f}{\partial x\partial y}
++a\cdot d\cdot\tfrac{\partial^2 f}{\partial y\partial x}
++b\cdot d\cdot\tfrac{\partial^2 f}{\partial^2 y}
+\intertext{evaluating this expression at $(0,0)$ we get}
+D_{\vec w}D_{\vec v}f(0,0)&=a\cdot c\cdot\ell
++b\cdot c\cdot m
++a\cdot d\cdot m
++b\cdot d\cdot n=
 \\
-&\ge k_1(p)_{\Sigma_2}\cdot k_2(p)_{\Sigma_2}=
+&=\langle M_p\cdot \vec v,\vec w\rangle=\langle \vec v,M_p\cdot \vec w\rangle=
 \\
-&=K(p)_{\Sigma_2}.
+&=\langle S(\vec v),\vec w\rangle=\langle \vec v,S(\vec w)\rangle.
 \end{align*}
 \qedsf
 
-\begin{thm}{Exercise}\label{ex:positive-gauss}
-Show that any closed surface has a point with positive Gauss curvature. %??? change to the surface in a unit ball
-\end{thm}
-
-
-\begin{thm}{Exercise}\label{ex:surrounds-disc}
-Assume that a closed surface $\Sigma$ surrounds a unit disc.
-Show that Gauss curvature of $\Sigma$ is at most 1 at some point. 
-
-Try to prove the same assuming that $\Sigma$ surrounds a unit circle only.
-\end{thm} %move in positive curvature???
-
-
-\section*{Curve in a surface}
-
-Recall that the second fundamental form $\II_p$ is defined on page \pageref{page:second fundamental form}.
-
-\begin{thm}{Proposition}\label{prop:gamma''=II}
-Suppose $\gamma$ is a smooth curve in a smooth oriented surface $\Sigma$ with a unit normal field $\Norm$.
-Then, the following identity holds for any time parameter $t$:
-\[\langle \gamma''(t),\norm_{\gamma(t)}\rangle=\II_{\gamma(t)}(\gamma'(t),\gamma'(t)).\]
-
+\begin{thm}{Corollary}\label{cor:S(ij)}
+Let  $p$ be a point on a smooth oriented surface $\Sigma$.
+Suppose $\Sigma$ is described locally as a graph $z=f(x,y)$ in a tangent-normal coordinates at $p$.
+Denote by $\vec i$, $\vec j$ and $\vec k$ the standard basis in the $(x,y,z)$-coordinates.
+Then
+\begin{align*}
+\langle S(\vec i),\vec i\rangle&=\ell,
+&
+\langle S(\vec i),\vec j\rangle&=m,
+&
+\langle S(\vec i),\vec k\rangle&=0,
+\\
+\langle S(\vec j),\vec i\rangle&=m,
+&
+\langle S(\vec j),\vec j\rangle&=n,
+&
+\langle S(\vec j),\vec k\rangle&=0,
+\end{align*}
+where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$ defined on page \pageref{page:lmn}.
 \end{thm}
 
 \parit{Proof.} 
-Fix a parameteer value $t_0$; set $p=\gamma(t_0)$, $v=\gamma'(t_0)$ and $a\z=\gamma''(t_0)$;
-so we need to show that
-\[\langle a,\Norm_{p}\rangle=\II_p(v,v).\eqlbl{a-nu-II}\]
-Let $z=f(x,y)$ be the local representaion of $\Sigma$ in the tangent-normal coordinates at $p$;
-we assume that $\Norm$ points in the direction of~$\Norm_p$.
-
-Without loss of generality may assume that $\gamma$ runs in the graph $z=f(x,y)$;
-so 
-\[\gamma(t)=\left(x(t),y(t),f(x(t),y(t))\right).\]
-Then
-\begin{align*}
-\gamma'&=(x',y',\tfrac{\partial f}{\partial x}\cdot x'+\tfrac{\partial f}{\partial y}\cdot y');
-\\
-\gamma''
-&=
-{\small(x'',
-y'',
- \tfrac{\partial^2 f}{\partial x^2}\cdot (x')^2
-+
-2\cdot \tfrac{\partial^2 f}{\partial x\partial y}\cdot x'\cdot y'
-+
-\tfrac{\partial^2 f}{\partial y^2}\cdot (y')^2
-+
-\tfrac{\partial f}{\partial x}\cdot x''
-+
-\tfrac{\partial f}{\partial y}\cdot y'')}.
-\end{align*}
-
-Recall that $p=\gamma(t_0)=(0,0,0)$ and
-\begin{align*}
-f(0,0)&=0,
-&
-\tfrac{\partial f}{\partial x}(0,0)&=0,
-&
-\tfrac{\partial f}{\partial y}(0,0)&=0.
-\end{align*}
-
-Therefore 
-\begin{align*}
-v&=\left(x',y',0\right)(t_0);
-\\
-a&=\left(x'',y'',
-\tfrac{\partial^2 f}{\partial x^2}\cdot (x')^2
-+
-2\cdot \tfrac{\partial^2 f}{\partial x\partial y}\cdot x'\cdot y'
-+
-\tfrac{\partial^2 f}{\partial y^2}\cdot (y')^2\right)(t_0).
-\end{align*}
-
 Note that 
-\[\II_p(v,v)=\left(\tfrac{\partial^2 f}{\partial x^2}\cdot (x')^2
-+
-2\cdot \tfrac{\partial^2 f}{\partial x\partial y}\cdot x'\cdot y'
-+
-\tfrac{\partial^2 f}{\partial y^2}\cdot (y')^2\right)(t_0);\]
-that is, the $z$-coordinate of the acceleration $a$ equals $\II_p(v,v)$ which is equivalent to~\ref{a-nu-II}.
+\[D_{\vec i}=\tfrac{\partial}{\partial x}\quad\text{and}\quad D_{\vec j}=\tfrac{\partial}{\partial y}.\]
+It remains to use \ref{prop:shape=D2} and the expressions for $\ell$, $m$, and $n$ on page~\pageref{page:lmn}.
 \qeds
 
+In the following proposition we use the notion of directional derivative defined in \ref{def:directional-derivative}.
 
-
-\begin{thm}{Corollary}\label{cor:meusnier}
-Let $\gamma$ be a regular smooth curve that runs in a smooth surface $\Sigma$.
-Suppose $p=\gamma(t_0)$ and $w=\gamma'(t_0)$.
-Denote by $\alpha$ the angle between the unit normal to $\Sigma$ at $p$ and the unit normal vector in the Frenet frame of $\gamma$.
-Then the following identity holds for the curvature $\kur(t_0)_\gamma$ of $\gamma$ at $p$ and the normal curvature $k_w(p)$ of $\Sigma$ at $p$ in the direction of $w$:  
-\[ \kur(t_0)_\gamma\cdot\cos\alpha=k_{w}(p).\]
-
+\begin{thm}{Proposition}\label{prop:S=-D}
+Let $\Sigma$ be a smooth surface with unit normal field $\Norm$.
+Suppose $p\in \Sigma$ and $S\:\T_p\to\T_p$ is the shape operator at $p$.
+Then 
+\[S(\vec w)=-D_{\vec w}\nu
+\eqlbl{eq:shape=-dNorm}\]
+for any $\vec w\in \T_p$.
 \end{thm}
 
 
-\parit{Proof.}
-Denote by $\Norm$ the unit normal vector to $\Sigma$ at $p$ 
-and by $\norm$ the unit normal vector in the Frenet frame of $\gamma$.
-Note that $\cos\alpha=\langle\Norm,\norm\rangle$.
+The reason for minus sign in \ref{eq:shape=-dNorm} is the same as in the formula  
+for curvature of plane curve in its Frenet frame: $\norm'=-\skur\cdot\tan$.
+This proposition will be proved in the next section. 
 
-Applying \ref{prop:gamma''=II}, we get that
+\begin{thm}{Exercise}\label{ex:normal-curvature=const}
+Let $\Sigma$ be a smooth oriented surface with the unit normal field $\Norm$.
+Suppose that $\Sigma$ has unit principle curvatures at any point.
+\begin{enumerate}[(a)]
+ \item Show that $S_p(w)=w$ for any $p\in\Sigma$ and $w\in \T_p\Sigma$.
+ \item Show that $p+\Norm_p$ is constant; that is, the point $c=p+\Norm_p$ does not depend on $p\in\Sigma$.
+ Conclude that $\Sigma$ is a part of the unit sphere centered at $c$.
+\end{enumerate}
+
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:shape-curvature-line}
+Assume that smooth surfaces $\Sigma_1$ and $\Sigma_2$ intersect at constant angle along a smooth regular curve $\gamma$.
+Show that if $\gamma$ is a curvature line in $\Sigma_1$, then it is also a curvature line in $\Sigma_2$.
+
+Conclude that if a smooth surface $\Sigma$ intersects a plane or sphere along a smooth curve $\gamma$,
+then $\gamma$ is a curvature line of $\Sigma$.
+\end{thm}
+
+\section*{Proof of \ref{prop:S=-D}} 
+
+
+\parit{Proof of \ref{prop:S=-D}.}
+Let $\Sigma$ be a smooth surface with unit normal field $\Norm$.
+Suppose $(u,v)\mapsto s(u,v)$ is a local chart of $\Sigma$ at $p$.
+Since $\Norm$ is unit we have the identity
+\[1=\langle\Norm{\circ} s,\Norm{\circ} s\rangle.\]
+Note that the vectors $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ tangent at their base point; therefore we have two more identities:
 \begin{align*}
-k_{w}(p)&=\II_p(w,w) =
-\\
-&=\langle\gamma'',\Norm\rangle=
-\\
-&=\kur(t_0)_\gamma\cdot\langle\norm,\Norm\rangle=
-\\
-&=\kur(t_0)_\gamma\cdot\cos\alpha.
+ 0&=\langle\tfrac{\partial}{\partial u} s,\Norm{\circ} s\rangle,
+ &
+ 0&=\langle\tfrac{\partial}{\partial u} s,\Norm\rangle.
 \end{align*}
-\qedsf
+Taking partial derivatives of these there identities and applying the product rule,
+we get the following six identities:
+\begin{align*}
+0&=\tfrac{\partial}{\partial u}\langle\Norm{\circ} s,\Norm{\circ} s\rangle
+=
+2\cdot \langle\tfrac{\partial}{\partial u}\Norm{\circ} s,\Norm{\circ} s\rangle,
+\\
+0&=\tfrac{\partial}{\partial v}\langle\Norm{\circ} s,\Norm{\circ} s\rangle=2\cdot \langle\tfrac{\partial}{\partial v}\Norm{\circ} s,\Norm{\circ} s\rangle,
+\\
+0&=\tfrac{\partial}{\partial u}\langle\tfrac{\partial}{\partial u} s,\Norm{\circ} s\rangle=\langle\tfrac{\partial^2}{\partial u^2} s,\Norm{\circ} s\rangle+\langle\tfrac{\partial}{\partial u} s,\tfrac{\partial}{\partial u}\Norm{\circ} s\rangle,
+\\
+0&=\tfrac{\partial}{\partial v}\langle\tfrac{\partial}{\partial u} s,\Norm{\circ} s\rangle=\langle\tfrac{\partial^2}{\partial v\partial u} s,\Norm{\circ} s\rangle+\langle\tfrac{\partial}{\partial u} s,\tfrac{\partial}{\partial v}\Norm{\circ} s\rangle
+\\
+0&=\tfrac{\partial}{\partial u}\langle\tfrac{\partial}{\partial v} s,\Norm{\circ} s\rangle=\langle\tfrac{\partial^2}{\partial u\partial v} s,\Norm{\circ} s\rangle+\langle\tfrac{\partial}{\partial v} s,\tfrac{\partial}{\partial u}\Norm{\circ} s\rangle,
+\\
+0&=\tfrac{\partial}{\partial v}\langle\tfrac{\partial}{\partial v} s,\Norm{\circ} s\rangle=\langle\tfrac{\partial^2}{\partial v^2} s,\Norm{\circ} s\rangle
++
+\langle\tfrac{\partial}{\partial v} s,\tfrac{\partial}{\partial v}\Norm{\circ} s\rangle.
+\end{align*}
 
-The corollary above, as well as the statement in the following exercise are proved by Jean Baptiste Meusnier \cite{meusnier}.
+Now suppose $z=f(x,y)$ be a local description of $\Sigma$ in the tangent-normal coordinates at $p$.
+Note that 
+\[s(u,v)=(u,v,f(u,v))\]
+describes a chart of $\Sigma$ at $p$.
 
-\begin{thm}{Exercise}\label{ex:meusnier}
-Let $\Sigma$ be a smooth surface, $p\in\Sigma$ and $w\in \T_p\Sigma$ is a unit vector.
-Assume that $k_w(p)\ne 0$; that is, the normal curvature of $\Sigma$ at $p$ in the direction of $w$ does not vanish.
+Denote by $\vec i$, $\vec j$ and $\vec k$ the standard basis in the $(x,y,z)$-coordinates.
+Note that $s(0,0)=p$ and 
+\begin{align*}
+\tfrac{\partial}{\partial u} s(0,0)&=\vec i,
+&
+\tfrac{\partial}{\partial v} s(0,0)&=\vec j,
+&
+\nu\circ s(0,0)&=\vec k,
+\intertext{In particular $D_{\vec i}\nu=\tfrac{\partial}{\partial u}\Norm{\circ} s(0,0)$ and $D_{\vec j}\nu=\tfrac{\partial}{\partial v}\Norm{\circ} s(0,0)$. Further,}
+\tfrac{\partial^2}{\partial u^2} s(0,0)&=\ell\cdot \vec k,
+&
+\tfrac{\partial^2}{\partial v\partial u} s(0,0)&=m\cdot \vec k,
+&
+\tfrac{\partial^2}{\partial v^2} s(0,0)&=n\cdot \vec k,
+\end{align*}
+where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$ defined on page \pageref{page:lmn}.
 
-Show that the osculating circles at $p$ of smooth regular curves in $\Sigma$ that run in the direction $w$ sweep out a sphere. 
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:principle-revolution}
-Let $\gamma(t)=(x(t),y(t))$ be a smooth unit-speed simple plane curve in the upper half-plane.
-Suppose that $\Sigma$ is the surface of revolution of $\gamma$ with respect to the $x$-axis.
-
-Express the principle curvatures of $\Sigma$ at $(x(t),y(t),0)$ in terms of $y(t)$, $y'(t)$ and $y''(t)$.
-Conclude that $-\tfrac{y''(t)}{y(t)}$ is the Gauss curvature of $\Sigma$ at $(x(t),y(t),0)$.
-\end{thm}
-
-\begin{thm}{Exercise}
-Assume that a regular smooth curve $\gamma$ lies in a surface of positive Gauss curvature.
-Show that curvature of $\gamma$ does not vanish at any value.
-\end{thm}
+Evaluating the above 6 identities at $(u,v)\z=(0,0)$, we get that
+\begin{align*}
+\langle -D_{\vec i}\nu ,\vec i\rangle&=\ell,
+&
+\langle -D_{\vec i},\vec j\rangle&=m,
+&
+\langle -D_{\vec i}\nu,\vec k\rangle&=0,
+\\
+\langle -D_{\vec j}\nu,\vec i\rangle&=m,
+&
+\langle -D_{\vec j}\nu,\vec j\rangle&=n,
+&
+\langle -D_{\vec j}\nu,\vec k\rangle&=0,
+\end{align*}
+That is, $-D_{\vec i}\nu$ and $-D_{\vec j}\nu$ satisfy the same equalities as $S(\vec i)$ in \ref{cor:S(ij)}.
+Note that these equalities define $S$ completely; 
+therefore \ref{eq:shape=-dNorm} follows.
+\qeds
