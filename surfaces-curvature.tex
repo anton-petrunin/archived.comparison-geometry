@@ -70,12 +70,12 @@ they are uniquely defined up to sign;
 they are denoted as $k_1(p)$ and $k_2(p)$, or $k_1(p)_\Sigma$ and $k_2(p)_\Sigma$ if we need to emphasize that these are the curvatures of the surface $\Sigma$.
 We will always assume that $k_1\le k_2$.
 
-Note that if $x=f(x,y)$ is a local graph representation of $\Sigma$ in these coordinates then 
+Note that if $x=f(x,y)$ is a local graph representation of $\Sigma$ in these coordinates, then 
 \[f(x,y)=\tfrac12\cdot(k_1\cdot x^2+k_2\cdot y^2)+o(x^2+y^2).\]
 
 The principle curvatures can be also defined as the eigenvalues of $M_p$;
 the eigendirections of $M_p$ are called \emph{principle directions} of $\Sigma$ at~$p$.
-Note that if $k_1(p)\ne k_2(p)$ then $p$ has exactly two principle directions, which are perpendicular to each other; if $k_1(p)= k_2(p)$ then all tangent directions at $p$ are principle.
+Note that if $k_1(p)\ne k_2(p)$, then $p$ has exactly two principle directions, which are perpendicular to each other; if $k_1(p)= k_2(p)$ then all tangent directions at $p$ are principle.
 
 Note that if we revert the orientation of $\Sigma$, then the principle curvatures at each point switch their signs and indexes.
 
@@ -85,31 +85,6 @@ A smooth regular curve on a surface $\Sigma$ that always runs in the principle d
 Assume that a smooth surface $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$.
 Suppose that $\Sigma$ and $\Pi$ intersect along a curve $\gamma$.
 Show that $\gamma$ is a line of curvature of $\Sigma$.
-\end{thm}
-
-
-\section*{More curvatures}
-
-Fix an oriented smooth surface $\Sigma$ and a point $p\in\Sigma$.
-
-The product 
-\[K(p)=k_1(p)\cdot k_2(p)\]
-is called Gauss curvature at $p$.
-We may denote it by $K(p)_\Sigma$ if we need to emphasize that this is curvature of $\Sigma$.
-The Gauss curvature can be also interpreted as the determinant of the Hessian matrix $M_p$, or, equivalently,  as the determinant of the shape operator $S_p$.
-
-The sum 
-\[H(p)=k_1(p)+ k_2(p)\] 
-is called \emph{mean curvature}\footnote{Some authors define mean curvature as $\tfrac12\cdot(k_1(p)+ k_2(p))$ --- the mean value of the principle curvatures. It is suits the name better, but not as convenient when it comes to calculations.} at $p$.
-We may denote it by $H(p)_\Sigma$ if we need to emphasize that this is curvature of $\Sigma$.
-The mean curvature can be also interpreted as the trace of the Hessian matrix $M_p$, or, equivalently,  as the trace of the shape operator $S_p$. 
-
-Note that the Gauss curvature depends only on $\Sigma$ and $p$.
-The same is true up to sign for the mean curvature --- it changes the sign if we revert the orientation of the surface.
-
-\begin{thm}{Exercise}\label{ex:gauss+orientable}
-Show that any surface with positive Gauss curvature is orientable. 
-%Show that any surface with positive mean curvature is orientable.
 \end{thm}
 
 \section*{Shape operator}
@@ -251,7 +226,7 @@ Conclude that if a smooth surface $\Sigma$ intersects a plane or sphere along a 
 then $\gamma$ is a curvature line of $\Sigma$.
 \end{thm}
 
-\section*{Proof of \ref{prop:S=-D}} 
+\section*{Proof of \ref{prop:S=-D}*} 
 
 
 \parit{Proof of \ref{prop:S=-D}.}
@@ -325,3 +300,31 @@ That is, $-D_{\vec i}\nu$ and $-D_{\vec j}\nu$ satisfy the same equalities as $S
 Note that these equalities define $S$ completely; 
 therefore \ref{eq:shape=-dNorm} follows.
 \qeds
+
+
+\section*{More curvatures}
+
+Fix an oriented smooth surface $\Sigma$ and a point $p\in\Sigma$.
+
+The product 
+\[K(p)=k_1(p)\cdot k_2(p)\]
+is called Gauss curvature at $p$.
+We may denote it by $K(p)_\Sigma$ if we need to emphasize that this is curvature of $\Sigma$.
+The Gauss curvature can be also interpreted as the determinant of the Hessian matrix $M_p$, or, equivalently,  as the determinant of the shape operator $S_p$.
+
+The sum 
+\[H(p)=k_1(p)+ k_2(p)\] 
+is called \emph{mean curvature}\footnote{Some authors define mean curvature as $\tfrac12\cdot(k_1(p)+ k_2(p))$ --- the mean value of the principle curvatures. It is suits the name better, but not as convenient when it comes to calculations.} at $p$.
+We may denote it by $H(p)_\Sigma$ if we need to emphasize that this is curvature of $\Sigma$.
+The mean curvature can be also interpreted as the trace of the Hessian matrix $M_p$, or, equivalently,  as the trace of the shape operator $S_p$. 
+
+Note that the Gauss curvature depends only on $\Sigma$ and $p$.
+The same is true up to sign for the mean curvature --- it changes the sign if we revert the orientation of the surface.
+
+\begin{thm}{Exercise}\label{ex:gauss+orientable}
+Show that any surface with positive Gauss curvature is orientable. 
+%Show that any surface with positive mean curvature is orientable.
+\end{thm}
+
+
+

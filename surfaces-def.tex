@@ -5,9 +5,10 @@
 We will be mostly interested in smooth regular surfaces defined in the following section.
 However few times we will use the following general definition.
 
-A connected subset $\Sigma$ in a metric space is called a \emph{topological surface} (more precisely an \emph{embedded surface without boundary}) 
+A connected subset $\Sigma$ in the Euclidean space $\RR^3$
+is called a \emph{topological surface} (more precisely an \emph{embedded surface without boundary}) 
 if any point of $p\in \Sigma$ admits a neighborhood $W$ in $\Sigma$ which is \emph{homeomorphic} to an open subset in the Euclidean plane;
-that is, if there is an injective continuous map $U\to W$ from an open set $U\subset \RR^2$ such that its inverse $W\to U$ is also continuous.
+that is, there is an injective continuous map $U\to W$ from an open set $U\subset \RR^2$ such that its inverse $W\to U$ is also continuous.
 
 
 \section*{Smooth surfaces}
@@ -81,10 +82,37 @@ Its proof is not at all trivial; a standard proof uses the so-called \emph{Alexa
 We omit its proof. %???+ref
 
 \begin{thm}{Claim}\label{clm:proper-divides}
-The complement of any proper topological surface without boundary (or, equivalently any open or closed topological surface) in the Euclidean space has exactly two connected components. 
+The complement of any proper topological surface without boundary (or, equivalently any open or closed topological surface) has exactly two connected components. 
 \end{thm}
 
+\section*{Implicitly defined surfaces}
 
+\begin{thm}{Proposition}\label{prop:implicit-surface}
+Let $f\:\RR^3\to \RR$ be a smooth function.
+Suppose that $0$ is a regular value of $f$;
+that is, $\nabla_p f\ne 0$ if $f(p)=0$.
+Then any connected component $\Sigma$ of the set of solutions of the equation $f(x,y,z)=0$ is a surface.
+\end{thm}
+
+\parit{Proof.}
+Fix $p\in\Sigma$.
+Since $\nabla_p f\ne 0$ we have 
+\[\tfrac{\partial f}{\partial x}(p)\ne 0,\quad \tfrac{\partial f}{\partial y}(p)\ne 0,\quad \text{or}\quad\tfrac{\partial f}{\partial z}(p)\ne 0.\]
+We may assume $\tfrac{\partial f}{\partial z}(p)\ne 0$;
+otherwise permute the coordinates $x,y,z$.
+
+The implicit function theorem (\ref{thm:imlicit}) implies that a neighborhood of $p$ in $\Sigma$ is the graph $z=h(x,y)$ of a smooth function $h$ defined on an open domain in $\RR^2$.
+It remains to apply the definition of smooth surface (page \pageref{page:def-smooth-surface}).
+\qeds
+
+\begin{thm}{Exercise}\label{ex:hyperboloinds}
+Describe the set of real numbers $\ell$
+such that the equation
+\begin{align*}
+x^2+y^2-z^2&=\ell
+\end{align*}
+describes a smooth regular surface.
+\end{thm}
 
 \section*{Local parametrizations}
 
@@ -94,13 +122,14 @@ in this case it means that the vectors $\tfrac{\partial s}{\partial u}$ and $\tf
 equivalently $\tfrac{\partial s}{\partial u}\times\tfrac{\partial s}{\partial v}\ne 0$, where $\times$ denotes the vector product.
 
 \begin{thm}{Proposition}\label{prop:graph-chart}
-If $s\:U\to \RR^3$ is a smooth regular embedding of an open connected set $U\subset \RR^2$, then its image $\Sigma=s(U)$ is a smooth surface.
+If $s\:U\to \RR^3$ is a smooth regular embedding %???is it defined???
+of an open connected set $U\subset \RR^2$, then its image $\Sigma=s(U)$ is a smooth surface.
 \end{thm}
 
 \parit{Proof.}
 Set 
 \[s(u,v)=(x_s(u,v),y_s(u,v),z_s(u,v)).\]
-Since $s$ is regular the Jacobian matrix
+Since $s$ is regular, its Jacobian matrix
 \[
 \renewcommand\arraystretch{1.3}
 \begin{pmatrix}
@@ -109,7 +138,7 @@ Since $s$ is regular the Jacobian matrix
 \tfrac{\partial z_s}{\partial u}&\tfrac{\partial z_s}{\partial v}
 \end{pmatrix}
 \]
-has rank two.
+has rank two at any pint $(u,v)\in U$.
 
 Fix a point $p\in \Sigma$; by shifting the coordinate system we may assume that $p$ is the origin.
 Permuting the coordinates $x,y,z$ if necessary, we may assume that 
@@ -142,11 +171,14 @@ In this case any point in $W$ can be described by two parameters, usually denote
 which are called \emph{local coordinates} at $p$.
 The map $s$ is called a \emph{chart} of $\Sigma$.
 
-If $W$ is a graph $z=h(x,y)$ then the map \[s\:(u,v)\mapsto (u,v,h(u,v))\] is a chart.
+If $W$ is a graph $z=h(x,y)$ of a smooth function $h$, then the map 
+\[s\:(u,v)\mapsto (u,v,h(u,v))\] is a chart.
 Indeed, $s$ has an inverse $(u,v,h(u,v))\mapsto (u,v)$ which is continuous;
 that is, $s$ is an embedding.
 Further,
-$\tfrac{\partial s}{\partial u}=(1,0,\tfrac{\partial h}{\partial u})$ and $\tfrac{\partial s}{\partial v}=(0,1,\tfrac{\partial h}{\partial v})$, whence $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ are linearly independent.
+$\tfrac{\partial s}{\partial u}=(1,0,\tfrac{\partial h}{\partial u})$ and $\tfrac{\partial s}{\partial v}=(0,1,\tfrac{\partial h}{\partial v})$. 
+Whence $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ are linearly independent;
+that is, $s$ is a regular map.
 
 Note that from \ref{prop:graph-chart}, we obtain the following corollary.
 
@@ -161,10 +193,10 @@ Consider the following map
 Show that $s$ is a chart of the unit sphere centered at $(0,0,1)$; describe the image of $s$.
 \end{thm}
 
-The map 
+The map $s$ in the exercise can be visualized using the following map
 \[(u,v,1)\mapsto (\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})\]
-is called \emph{stereographic projection}. 
-Note that the point $(u,v,1)$ and its image $(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})$ lie on one half-line starting at the origin.
+which is called \emph{stereographic projection} from the plane $z=1$ to the unit sphere with center at $(0,0,1)$
+Note that the point $(u,v,1)$ and its image $(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})$ lie on one half-line starting at the origin. %???+PIC???
 
 \begin{wrapfigure}{o}{40 mm}
 \vskip-4mm
@@ -174,9 +206,9 @@ Note that the point $(u,v,1)$ and its image $(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac
 \end{wrapfigure}
 
 Let $\gamma(t)=(x(t),y(t))$ be a plane curve.
-Recall that the image of the map 
-\[(t,\theta)\mapsto (x(t), y(t)\cdot\cos\theta,y(t)\cdot\sin\theta)\] 
-is called the \emph{surface of revolution} of the curve $\gamma$ around the $x$-axis.
+Recall that the \emph{surface of revolution} of the curve $\gamma$ around the $x$-axis can be described as the 
+image of the map 
+\[(t,\theta)\mapsto (x(t), y(t)\cdot\cos\theta,y(t)\cdot\sin\theta).\]
 For fixed $t$ or $\theta$ the obtained curves are called \emph{meridian} or correspondingly \emph{parallel} of the surface of revolution; note that parallels are formed by circles in the plane perpendicular to the axis of rotation.
 
 \begin{thm}{Exercise}\label{ex:revolution}
@@ -185,11 +217,20 @@ Show that surface of revolution of $\gamma$ around the $x$-axis is a smooth regu
 \end{thm}
 
 
-\section*{Golbal parametrizations} 
+\section*{Global parametrizations} 
 A surface can be described by an embedding from a known surface to the space.
-For example the ellipsoid
+
+For example, consider the ellipsoid
 \[\Sigma_{a,b,c}=\set{(x,y,z)\in\RR^3}{\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}+\tfrac{z^2}{c^2}=1}\]
-for some positive numbers $a,b,c$ can be defined as the image of the map $s\:\SS^2\to\RR^3$, defined as the restriction of the map $(x,y,z)\z\mapsto (a\cdot x, b\cdot y,c\cdot z)$ to the unit sphere $\SS^2$.
+for some positive numbers $a,b,c$.
+Note that by \ref{prop:implicit-surface}, $\Sigma_{a,b,c}$ is a smooth regular surface.
+Indeed, set $f(x,y,z)=\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}+\tfrac{z^2}{c^2}$,
+then
+\[\nabla f(x,y,z)=(\tfrac{2}{a^2}\cdot x,\tfrac{2}{b^2}\cdot y,\tfrac{2}{c^2}\cdot z).\]
+Therefore $\nabla f\ne0$ if $f=1$; that is, $1$ is a regular value of $f$.
+Since $\Sigma_{a,b,c}$ it is a smooth regular surface.
+
+Note that $\Sigma_{a,b,c}$ can be defined as the image of the map $s\:\SS^2\to\RR^3$, defined as the restriction of the map $(x,y,z)\z\mapsto (a\cdot x, b\cdot y,c\cdot z)$ to the unit sphere $\SS^2$.
 
 For a surface $\Sigma$, a map $s: \Sigma \to \RR ^3$ is called a 
 \emph{smooth parametrized surface} if for any chart $f\:U\to \Sigma$ 
@@ -207,43 +248,15 @@ and if $s$ is smooth and regular, then it might be called smooth sphere.
 Similarly an embedding $s\:\RR^2\to\RR^3$ might be called topological plane,
 and if $s$ is smooth, it might be called smooth plane.
 
-\section*{Implicitly defined surfaces}
-
-\begin{thm}{Proposition}
-Let $f\:\RR^3\to \RR$ be a smooth function.
-Suppose that $0$ is a regular value of $f$;
-that is, $\nabla_p f\ne 0$ if $f(p)=0$.
-Then any path connected component $\Sigma$ of the set of solutions of the equation $f(x,y,z)=0$ is a surface.
-\end{thm}
-
-\parit{Proof.}
-Fix $p\in\Sigma$.
-Since $\nabla_p f\ne 0$ we have 
-\[\tfrac{\partial f}{\partial x}(p)\ne 0,\quad \tfrac{\partial f}{\partial y}(p)\ne 0,\quad \text{or}\quad\tfrac{\partial f}{\partial z}(p)\ne 0.\]
-We may assume $\tfrac{\partial f}{\partial z}(p)\ne 0$;
-otherwise permute the coordinates $x,y,z$.
-
-The implicit function theorem (\ref{thm:imlicit}) implies that a neighborhood of $p$ in $\Sigma$ is the graph $z=h(x,y)$ of a smooth function $h$ defined on an open domain in $\RR^2$.
-It remains to apply the definition of smooth surface (page \pageref{page:def-smooth-surface}).
-\qeds
-
-\begin{thm}{Exercise}\label{ex:hyperboloinds}
-Describe the set of real numbers $\ell$
-such that the equation
-\begin{align*}
-x^2+y^2-z^2&=\ell
-\end{align*}
-describes a smooth regular surface.
-\end{thm}
-
 \section*{Tangent plane}
 
 \begin{thm}{Definition}
 Let $\Sigma$ be a smooth surface.
-A vector $w$ is a tangent vector of $\Sigma$ at $p$ if and only if there is a curve $\gamma$ that runs in $\Sigma$ and has $w$ as a velocity vector at $p$.  
+A vector $\vec w$ is a \emph{tangent vector} of $\Sigma$ at $p$ if and only if there is a curve $\gamma$ that runs in $\Sigma$ and has $\vec w$ as a velocity vector at $p$;
+that is, $p=\gamma(t)$ and $\vec w=\gamma'(t)$ for some $t$.
 \end{thm}
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition-Definition}
 Let $\Sigma$ be a smooth surface and $p\in \Sigma$.
 Then the set of tangent vectors of $\Sigma$ at $p$ forms a plane;
 this plane is called \emph{tangent plane} of $\Sigma$ at $p$.
@@ -260,7 +273,7 @@ that is, $\rho(q)\z=o(|p-q|)$, where $q\in \Sigma$ and $\rho(q)$ denotes the dis
 
 \parit{Proof.}
 Fix a chart $s$ at $p$.
-Assume $\gamma$ is a smooth curve that starts at $p$.
+Assume $\gamma$ is a smooth curve that starts at~$p$.
 Without loss of generality, we can assume that $\gamma$ is covered by the chart;
 in particular, there are smooth function $u(t)$ and $v(t)$ such that 
 \[\gamma(t)=s(u(t),v(t)).\]
@@ -273,7 +286,7 @@ Since the functions $u(t)$ and $v(t)$ can be chousen arbitrary, we have that any
 
 
 \begin{thm}{Exercise}\label{ex:tangent-normal}
-Let $f:\RR^3\to\RR$ be a smooth function with a regular value $0$ and $\Sigma$ is a surface described as a connected component of the set of solutions $f(x,y,z)=0$.
+Let $f:\RR^3\to\RR$ be a smooth function with a regular value $0$ and $\Sigma$ be a surface described as a connected component of the set of solutions $f(x,y,z)=0$.
 Show that the tangent plane $\T_p\Sigma$ is perpendicular to the gradient $\nabla_pf$ at any point $p\in\Sigma$.
 \end{thm}
 

@@ -2479,11 +2479,10 @@ draw z.r--z.l dashed evenly;
 draw z.r+(0,2)*u--z.l+(0,2)*u dashed evenly;
 draw z.p--z.q;
 
-dOt z.p,z.q, z.a2;
+dOt z.p,z.q;
 
 label.top(btex $p$ etex, z.p);
 label.top(btex $q$ etex, z.q);
-label.top(btex $\hat s$ etex, z.a2);
 label.top(btex $\Theta$ etex, z.a5);
 whitelabel.bot(btex $\hat\Sigma$ etex, z.a5);
 label.top(btex $z=r$ etex, (x.a5,2*u));
@@ -2667,7 +2666,7 @@ drawarrow z.p--z.nu;
 dOt z.p;
 
 label.bot(btex $p$ etex, z.p);
-label.rt(btex $w$ etex, z.w);
+label.rt(btex $\vec w$ etex, z.w);
 label.top(btex $\Norm_p$ etex, z.nu);
 label.rt(btex $\gamma_1$ etex, z.a2);
 label.rt(btex $\gamma_2$ etex, z.b2);
