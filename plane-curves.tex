@@ -3,7 +3,7 @@
 Suppose $\gamma$ is a smooth unit-speed plane curve,
 so $\tan(s)=\gamma'(s)$ is its unit tangent vector for any $s$.
 
-Let us rotate $\tan(s)$ by angle $\tfrac\pi 2$ counterclockwise; 
+Let us rotate $\tan(s)$ by the angle $\tfrac\pi 2$ counterclockwise; 
 denote the obtained vector by $\norm(s)$.
 The pair $\tan(s),\norm(s)$ is an oriented orthonormal frame in the plane which is analogous to the Frenet frame defined on page \pageref{page:frenet-frame}; we will keep the name \emph{Frenet frame} for it.
 
@@ -16,15 +16,15 @@ We may use notation $\skur(s)_\gamma$ if we need to specify the curve $\gamma$.
 
 Note that 
 \[\kur(s)=|\skur(s)|;\]
-that is, up to sign, the signed curvature $\skur(s)$ equals to the curvature $\kur(s)$  of $\gamma$ at $s$  defined on page \pageref{page:curvature};
-the sign tells which direction it turns --- if $\gamma$ turns left, then $\skur>0$.
-If we want to emphasise that we work with \emph{nonsigned} curvature of the curve, 
+that is, up to sign, the signed curvature $\skur(s)$ equals the curvature $\kur(s)$  of $\gamma$ at $s$  defined on page \pageref{page:curvature};
+the sign tells us in which direction it turns --- if $\gamma$ is turning left at time $s$, then $\skur (s)>0$.
+If we want to emphasise that we are working with the \emph{nonsigned} curvature of the curve, 
 we call it \emph{absolute curvature}.
 
 Note that if we reverse the parametrization of $\gamma$ or change the orientation of the plane, then
 the signed curvature changes its sign.
 
-Since $\tan(s),\norm(s)$ is an orthonormal frame, we have that 
+Since $\tan(s),\norm(s)$ is an orthonormal frame, we have 
 \begin{align*}
 \langle\tan,\tan\rangle&=1,
 &
@@ -32,7 +32,7 @@ Since $\tan(s),\norm(s)$ is an orthonormal frame, we have that
 &
 \langle\tan,\norm\rangle&=0,
 \end{align*}
-Differentiating these idenitites we get that 
+Differentiating these idenitites we get 
 \begin{align*}
 \langle\tan',\tan\rangle&=0,
 &
@@ -43,8 +43,8 @@ Differentiating these idenitites we get that
 By \ref{eq:tau'}, $\langle\tan',\norm\rangle=\skur$ and therefore $\langle\tan,\norm'\rangle=-\skur$.
 Whence we get 
 \[\norm'(s)=-\skur(s)\cdot \tan(s).\eqlbl{eq:nu'}\]
-The equations \ref{eq:tau'} and \ref{eq:nu'} are Frenet formulas for plane curves. 
-They could be also written in a matrix form:
+The equations \ref{eq:tau'} and \ref{eq:nu'} are the Frenet formulas for plane curves. 
+They can be written in matrix form as:
 \[
 \begin{pmatrix}
 \tan'
@@ -73,26 +73,26 @@ Show that
 
 \end{thm}
 
-The curves $\gamma_0$ and $\gamma_1$ in the exercise above describe tracks of idealized bicycle with the distance 1 from rear to front wheel.
-Thus by the exercise, the front wheel have to have the longer track.
-For more on geometry of bicycle tracks see \cite{FLT} and the references there in.
+The curves $\gamma_0$ and $\gamma_1$ in the exercise above describe the tracks of an idealized bicycle with  distance 1 from the rear to the front wheel.
+Thus by the exercise, the front wheel must have longer track.
+For more on the geometry of bicycle tracks, see \cite{FLT} and the references therein.
 
 \section*{Fundamental theorem of plane curves}
 
 \begin{thm}{Theorem}\label{thm:fund-curves-2D}
 Let $\skur(s)$ be a smooth real valued function defined on a real interval $\mathbb{I}$.
-Then there is a smooth unit-speed curve $\gamma\:\mathbb{I}\to\RR^2$ with signed curvature $\skur(s)$ at every $s$.
-Moreover $\gamma$ is uniquely defined up to a rigid motion of the plane.
+Then there is a smooth unit-speed curve $\gamma\:\mathbb{I}\to\RR^2$ with signed curvature $\skur(s)$.
+Moreover, $\gamma$ is uniquely defined up to a rigid motion of the plane.
 \end{thm}
 
-This is the fundamental theorem of plane curves; it is direct analog of \ref{thm:fund-curves} and it can be proved along the same lines.
+This is the fundamental theorem of plane curves; it is a direct analog of \ref{thm:fund-curves} and it can be proved along the same lines.
 We give a slightly simpler proof.
 
 \parit{Proof.} 
 Fix $s_0\in\mathbb{I}$.
 Consider the function
 \[\theta(s)=\int_{s_0}^s\skur(t)\cdot dt.\]
-Note that by the fundamental theorem of calculus, we have $\theta'(s)\z=\skur(s)$ for any~$s$.
+Note that by the fundamental theorem of calculus, we have $\theta'(s)\z=\skur(s)$ for all~$s$.
 
 Set 
 \[\tan(s)=(\cos[\theta(s)],\sin[\theta(s)])\] and let $\norm(s)$ be its counterclockwise rotation by angle $\tfrac\pi2$; so 
@@ -111,14 +111,13 @@ Note that
 \\
 &=\skur(s)\cdot \norm(s).
 \end{align*}
-That is, $\skur(s)$ is the signed curvature of $\gamma$ at $s$.
+So $\skur(s)$ is the signed curvature of $\gamma$ at $s$. This proves the existence.
 
-The existence is proved; it remains to prove uniqueness.
-
+it remains to prove uniqueness.
 Assume $\gamma_1$ and $\gamma_2$ are two curves that satisfy the assumptions of the theorem.
 Applying a rigid motion, we can assume that $\gamma_1(s_0)=\gamma_2(s_0)=0$ and the Frenet frame of both curves at $s_0$ is formed by the coordinate frame $(1,0),(0,1)$.
 Let us denote by $\tan_1,\norm_1$ and $\tan_2,\norm_2$ the Frenet frames of $\gamma_1$ and $\gamma_2$ correspondingly.
-The triples $\gamma_i,\tan_i,\norm_i$ satisfy the same system system of ordinary differential equations 
+The triples $\gamma_i,\tan_i,\norm_i$ satisfy the same system of ordinary differential equations 
 \[
 \begin{cases}
 \gamma_i'=\tan_i,
@@ -128,7 +127,7 @@ The triples $\gamma_i,\tan_i,\norm_i$ satisfy the same system system of ordinary
 \norm_i'=-\skur\cdot\tan_i.
 \end{cases}
 \]
-Motreover, they have the same the initial values at $s_0$.
+Motreover, they have the same initial values at $s_0$.
 Therefore $\gamma_1=\gamma_2$.
 \qeds
 
@@ -137,12 +136,12 @@ Note that from the proof of theorem we obtain the following corollary:
 
 
 \begin{thm}{Corollary}\label{cor:2D-angle}
-Suppose $\gamma\:\mathbb{I}\to\RR^2$ is a smooth unit-speed curve and $s_0\in \mathbb{I}$.
+Let $\gamma\:\mathbb{I}\to\RR^2$ be a smooth unit-speed curve and $s_0\in \mathbb{I}$.
 Denote by $\skur$ the signed curvature of $\gamma$.
-Assume an oriented $(x,y)$-coordinate system on is chosen in such a way that $\gamma(s_0)$ is the origin and $\gamma'(s_0)$ points in the direction of $x$-axis.
+Assume an oriented $(x,y)$-coordinate system is chosen in such a way that $\gamma(s_0)$ is the origin and $\gamma'(s_0)$ points in the direction of the $x$-axis.
 Then 
-\[\gamma'(s)=(\cos[\theta(s)],\sin[\theta(s)])\]
-where 
+\[\gamma'(s)=(\cos[\theta(s)],\sin[\theta(s)]) , \]
+for all $s$, where 
 \[\theta(s)=\int_{s_0}^s\skur(t)\cdot dt.\]
 \end{thm}
 
@@ -150,16 +149,16 @@ where
 \section*{Total signed curvature}
 
 Let $\gamma\:\mathbb{I}\to\RR^2$ be a smooth unit-speed plane curve.
-The integral of its signed curvature is called \emph{total signed curvature} and it denoted by $\Psi(\gamma)$;
-so 
+The \emph{total signed curvature} of $\gamma$, denoted by $\Psi(\gamma)$, is defined as the integral
+of its signed curvature;
 \[\Psi(\gamma)= \int_\mathbb{I} \skur(s)\cdot ds,\eqlbl{eq:tsc-theta}\]
-where $\skur$ denotes signed curvature of $\gamma$.
+where $\skur$ denotes the signed curvature of $\gamma$.
 
 If $\mathbb{I}=[a,b]$, then 
 \[\Psi(\gamma)=\theta(b)-\theta(a),\]
 where $\theta$ is as in \ref{cor:2D-angle}.
 
-If $\gamma$ is a piecewise smooth and regular plane curve, then we define its total signed curvature as the sum of total signed curvatures of its arcs plus the sum of signed external angles at the joints;
+If $\gamma$ is a piecewise smooth and regular plane curve, then we define its total signed curvature as the sum of the total signed curvatures of its arcs plus the sum of the signed external angles at its joints;
 it is positive if $\gamma$ turns left, negative if  $\gamma$ turns right, 0 if it goes straight and undefined if it turns backward.
 That is, if $\gamma$ is a concatenation of smooth and regular arcs $\gamma_1,\dots,\gamma_n$, then 
 \[\Psi(\gamma)=\Psi(\gamma_1)+\dots+\Psi(\gamma_n)+\theta_1+\dots+\theta_{n-1}\]
@@ -168,10 +167,9 @@ If $\gamma$ is closed, then the concatenation is cyclic and
 \[\Psi(\gamma=\Psi(\gamma_1)+\dots+\Psi(\gamma_n)+\theta_1+\dots+\theta_{n},\]
 where $\theta_n$ is the signed external angle at the joint between $\gamma_n$ and $\gamma_1$.
 
-Since $\left|\int \skur(s)\cdot ds\right|\le \int|\skur(s)|\cdot ds$, we have that
+Since $\left|\int \skur(s)\cdot ds\right|\le \int|\skur(s)|\cdot ds$, we have
 \[|\Psi(\gamma)|\le \tc\gamma\eqlbl{eq:tsc-tc}\] 
-for any smooth regular plane curve $\gamma$;
-that is, total signed curvature can not exceed total curvature by absolute value.
+for any smooth regular plane curve $\gamma$.
 
 %???+ add corners
 
@@ -183,16 +181,16 @@ if the region bounded by $\gamma$ lies on the left from it and  $-2\cdot\pi$ oth
 Moreover the same statement holds for any closed piecewise simple smooth regular plane curve $\gamma$ if its total signed curvature is defined.
 \end{thm}
 
-This proposition is called sometimes \emph{Umlaufsatz}; it is a differential-geometric analog of the theorem about sum of the internal angles of a polygon (\ref{thm:sum=(n-2)pi}) which we use in the proof.
+This proposition is called sometimes \emph{Umlaufsatz}; it is a differential-geometric analog of the theorem about the sum of the internal angles of a polygon (\ref{thm:sum=(n-2)pi}) which we use in the proof.
 A more conceptual proof was given by Heinz Hopf \cite{hopf}, \cite[p. 42]{hopf-book}.
 
 \parit{Proof.}
 Without loss of generality we may assume that $\gamma$ is oriented in such a way that the region bounded by $\gamma$ lies on the left from it.
-We can also assume that it parametrized by arc length.
+We can also assume that it is parametrized by arc length.
 
 Consider a closed polygonal line $p_1\dots p_n$ inscribed in $\gamma$.
 We can assume that the arcs between the vertexes are sufficiently small;
-in this case the polygonal line is simple and each arc $\gamma_i$ from $p_i$ to $p_{i+1}$ have small total absolute curvature, say  $\tc{\gamma_i}<\pi$ for each $i$.
+in this case the polygonal line is simple and each arc $\gamma_i$ from $p_i$ to $p_{i+1}$ has small total absolute curvature, say  $\tc{\gamma_i}<\pi$ for each $i$.
 
 \begin{wrapfigure}{o}{40 mm}
 \vskip-0mm
@@ -214,9 +212,8 @@ where $\alpha_i,\beta_i\in(-\pi,\pi]$ are signed angles --- $\alpha_i$ is positi
 By \ref{eq:tsc-theta}, the value
 \[\Psi(\gamma_i)-\alpha_i-\beta_{i+1}\eqlbl{eq:Psi-alpha-beta}\]
 is a multiple of $2\cdot\pi$.
-Since $\tc{\gamma_i}<\pi$, by chord lemma (\ref{lem:chord}), we also have that $|\alpha_i|\z+|\beta_i|<\pi$.
-By \ref{eq:tsc-tc}, we have that $|\Psi(\gamma_i)|\le\tc{\gamma_i}$;
-therefore the value in \ref{eq:Psi-alpha-beta} vanishes, or equivalently
+Since $\tc{\gamma_i}<\pi$, by the chord lemma (\ref{lem:chord}), we also have that $|\alpha_i|\z+|\beta_i|<\pi$.
+By \ref{eq:tsc-tc},  the value in \ref{eq:Psi-alpha-beta} vanishes, or equivalently
 \[\Psi(\gamma_i)=\alpha_i+\beta_{i+1}\]
 for each $i$.
 
@@ -224,7 +221,7 @@ Note that
 \[\delta_i=\pi-\alpha_i-\beta_i\eqlbl{eq:delta=pi-alpha-beta}\] 
 is the internal angle of $p_1\dots p_n$ at $p_i$;
 $\delta_i\in (0,2\cdot\pi)$ for each $i$.
-Recall that the sum of internal angles of an $n$-gon is $(n-2)\cdot \pi$ (see \ref{thm:sum=(n-2)pi}); that is,
+Recall that the sum of the internal angles of an $n$-gon is $(n-2)\cdot \pi$ (see \ref{thm:sum=(n-2)pi}); that is,
 \[\delta_1+\dots+\delta_n=(n-2)\cdot \pi.\]
 Therefore 
 \[
@@ -269,10 +266,10 @@ Draw a smooth regular closed plane curve with zero total signed curvature.
 \begin{thm}{Exercise}\label{ex:length'}
 Let $\gamma\:[a,b]\to\RR$ be a smooth regular plane curve with Frenet frame $\tan,\norm$.
 Given a real parameter $\ell$, consider
-the curve $\gamma_\ell(t)=\gamma(t)+\ell\cdot\norm(t)$; it is called a \emph{parallel curve of $\gamma$ on the signed distance $\ell$}.
+the curve $\gamma_\ell(t)=\gamma(t)+\ell\cdot\norm(t)$; it is called a \emph{parallel curve of $\gamma$ at signed distance $\ell$}.
 
 \begin{enumerate}[(a)]
-\item Show that $\gamma_\ell$ is a regular curve if $\ell\cdot \skur(t)\ne 1$ for any $t$, where $\skur(t)$ denotes the signed curvature of $\gamma$. 
+\item Show that $\gamma_\ell$ is a regular curve if $\ell\cdot \skur(t)\ne 1$ for all $t$, where $\skur(t)$ denotes the signed curvature of $\gamma$. 
 \item Set $L(\ell)=\length\gamma_\ell$.
 Show that 
 \[L(\ell)=L(0)-\ell\cdot\Psi(\gamma)\]
@@ -291,7 +288,7 @@ a unit vector $\tan$
 and a real number $\skur$, there is a unique smooth unit-speed curve $\sigma\:\RR\to\RR^2$ 
 that starts at $p$ in the direction of $\tan$ and has constant signed curvature $\skur$.
 
-Moreover, if $\skur=0$, then $\sigma(s)=p+s\cdot \tan$ which runs along the line;
+Moreover, if $\skur=0$, then $\sigma(s)=p+s\cdot \tan$ which runs along a line;
 if $\skur\ne 0$, then $\sigma$ runs around the circle of radius $\tfrac1{|\skur|}$ and center $p+\tfrac1\skur\cdot \norm$, where $\tan,\norm$ is an oriented orthonoral frame.
 \end{thm}
 
@@ -299,9 +296,9 @@ Further we will use the term \emph{circline} for \emph{a circle or a line};
 these are the only plane curves with constant signed curvature.
 
 \parit{Proof.}
-The proof is done by calculation based on \ref{thm:fund-curves-2D} and \ref{cor:2D-angle}.
+The proof is done by a calculation based on \ref{thm:fund-curves-2D} and \ref{cor:2D-angle}.
 
-Suppose $s_0=0$, choose coordinate system such that $p$ is its origin, $\tan$ points in the direction of $x$-axis and therefore $\norm$ points in the direction of $y$-axis.
+Suppose $s_0=0$, choose a coordinate system such that $p$ is its origin and $\tan$ points in the direction of the $x$-axis. Therefore $\norm$ points in the direction of the $y$-axis.
 Then
 \begin{align*}\theta(s)&=\int_{0}^s\skur\cdot dt=
 \\
@@ -322,9 +319,9 @@ which is the circle of radius $r=\tfrac1{|\skur|}$ centered at $(0,\tfrac1\skur)
 
 \begin{thm}{Definition}
 Let $\gamma$ be a smooth unit-speed plane curve;
-denote by $\skur(s)$ the signed curvature of $\gamma$ at $s$.
+denote by $\skur(s)$ the signed curvature of $\gamma$.
 
-The unit-speed curve $\sigma$ of constant signed curvature $\skur(s)$ that starts at $\gamma(s)$ in the direction $\gamma'(s)$ is called the \emph{osculating circline} of $\gamma$ at~$s$.
+For fixed $s$, the unit-speed curve $\sigma$ of constant signed curvature $\skur(s)$ that starts at $\gamma(s)$ in the direction $\gamma'(s)$ is called the \emph{osculating circline} of $\gamma$ at~$s$.
 \end{thm}
 
 
@@ -335,9 +332,9 @@ The unit-speed curve $\sigma$ of constant signed curvature $\skur(s)$ that start
 \vskip0mm
 \end{wrapfigure}
 
-The center and radius of the osculating circle at a given point are called \emph{center of curvature} and \emph{radius of curvature} of the curve at that point.
+The center and radius of the osculating circle at a given point are called \emph{center of curvature} and \emph{radius of curvature}.
 
-The osculating circle $\sigma_s$ can be also defined as the (necessarily unique) circline that has \emph{second order of contact} with $\gamma$ at $s$;
+The osculating circle $\sigma_s$ can be also defined as the unique circline that has \emph{second order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)\z=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\sigma_s$.
 
 Recall that the \emph{inverse} of a point $x$ with respect to the unit circle centered at the origin is the point $\hat x=\tfrac{x}{|x|^2}$.
@@ -366,9 +363,9 @@ then $\sigma_{s_0}$ lies in the open disc bounded by $\sigma_{s_1}$ for any $s_0
 \end{lpic}
 \end{wrapfigure}
 
-It turns out that osculating circles of the curve $\gamma$ give a peculiar foliation of an annulus by circles; it has the following property: if a smooth function is constant on each osculating circle it must be constant in the annulus \cite[see][Lecture 10]{fuchs-tabachnikov}.
+It turns out that the osculating circles of the curve $\gamma$ give a peculiar foliation of an annulus by circles; it has the following property: if a smooth function is constant on each osculating circle it must be constant in the annulus \cite[see][Lecture 10]{fuchs-tabachnikov}.
 Also note that the curve $\gamma$ is tangent to a circle of the foliation at each of its points.
-However, it does not run along a circle.
+However, it does not run along any of those circles.
 
 \begin{wrapfigure}[8]{o}{33 mm}
 \vskip-4mm
@@ -380,9 +377,8 @@ However, it does not run along a circle.
 
 \parit{Proof.}
 Let $\tan(s),\norm(s)$ be the Frenet frame,
-$\omega(s)$ the curvature center
-and $r(s)$
-the radius of curvature of $\gamma$ at $s$.
+$\omega(s)$, $r(s)$
+the center and radius of curvature of $\gamma$.
 By \ref{prop:circline},
 \[\omega(s)=\gamma(s)+r(s)\cdot \norm(s).\]
 
@@ -413,11 +409,11 @@ It follows that
 \end{align*}
 
 In other words, the distance between the centers of $\sigma_{s_1}$ and $\sigma_{s_0}$
-is strictly less than the difference between their radiuses.
+is strictly less than the difference between their radii.
 Therefore the osculating circle at $s_0$ lies inside the osculating circle at $s_1$ without touching it.
 \qeds
 
-The curve $s\mapsto \omega(s)$ is called \emph{evolute} of $\gamma$; 
+The curve $s\mapsto \omega(s)$ is called the \emph{evolute} of $\gamma$; 
 it traces the centers of curvature of the curve. 
 The evolute of $\gamma$ can be written as 
 \[\omega(t)=\gamma(t)+\tfrac1{\skur(t)}\cdot \norm(t)\] and  
@@ -432,7 +428,7 @@ is an evolute of the ellipse $\gamma(t)= (a\cdot \cos t, b\cdot\sin t)$.
 
 
 The following theorem states formally that 
-\emph{if you drive on the plane and turn the steering wheel to the right all the time,
+\emph{if you drive on the plane and turn the steering wheel to the left all the time,
 then you will not be able to come back to the same place.}
 
 \begin{thm}{Theorem}\label{thm:spiral}
@@ -444,7 +440,7 @@ The same statement holds without assuming positivity of curvature; the proof req
 
 \parit{Proof of \ref{thm:spiral}.}
 Note that $\gamma(s)$ lies on the osculating circle $\sigma_s$ of $\gamma$ at $s$.
-If $s_1\ne s_0$, then by lemma $\sigma_{s_0}$ does not intersect $\sigma_{s_1}$.
+If $s_1\ne s_0$, then by lemma \ref{lem:spiral}, $\sigma_{s_0}$ does not intersect $\sigma_{s_1}$.
 Therefore $\gamma(s_1)\ne \gamma(s_0)$,
 hence the result.\qeds
 
@@ -481,14 +477,14 @@ Note that part (\ref{ex:double-tangent:a}) does not hold if we allow the curvatu
 Suppose $\gamma_1$ and $\gamma_2$ are smooth regular plane curves.
 Recall that the curves $\gamma_1$ and $\gamma_2$ are tangent at the  time parameters $t_1$ and $t_2$
 if $\gamma_1(t_1)=\gamma_2(t_2)$
-and they share the tangent line at these time parameters;
+and they share the tangent line at those time parameters;
 that is, the tangent lines of $\gamma_1$ at $t_1$ coincides with the tangent line $\gamma_2$ at $t_2$.
 
 In this case the point $p=\gamma_1(t_1)=\gamma_2(t_2)$ is called a \emph{point of tangency} of the curves.
-If one of the curves is simple, then we may say that $\gamma_1$ and $\gamma_2$ are tangent at the point $p$ 
+If both curves are simple, then we may say that $\gamma_1$ and $\gamma_2$ are tangent at the point $p$ 
 without ambiguity.
 
-Note that if $\gamma_1$  $\gamma_2$ are tangent to at the time parameters $t_1$ and $t_2$, 
+Note that if $\gamma_1$ and $\gamma_2$ are tangent at the time parameters $t_1$ and $t_2$, 
 then the velocity vectors $\gamma_1'(t_1)$ and $\gamma_2'(t_2)$ are parallel.
 \begin{figure}[h!]
 \vskip-0mm
@@ -496,10 +492,10 @@ then the velocity vectors $\gamma_1'(t_1)$ and $\gamma_2'(t_2)$ are parallel.
 \includegraphics{mppics/pic-85}
 \vskip0mm
 \end{figure}
-If $\gamma_1'(t_1)$ and $\gamma_2'(t_2)$ point in the same direction we say that the curves a \emph{cooriented},
-if these directions are opposite, we say that the curves are \emph{controriented} at the  time parameters $t_1$ and $t_2$.
+If $\gamma_1'(t_1)$ and $\gamma_2'(t_2)$ point in the same direction we say that the curves are \emph{cooriented},
+if they point in opposite directions, we say that the curves are \emph{controriented} at the  time parameters $t_1$ and $t_2$.
 
-Note that reverting parametrization of one of the curves, cooriented curves become counteroriented and the other way around; so we can always assume that the curves are cooriented at the given point of tangency.
+Note that reverting the parametrization of one of the curves, cooriented curves become counteroriented and vice versa; so we can always assume that the curves are cooriented at a given point of tangency.
 
 \section*{Supporting curves}
 
@@ -643,7 +639,7 @@ Then $F$ is convex if and only if the signed curvature of $\gamma$ does not chan
 
 \begin{thm}{Lens lemma}\label{lem:lens}
 Let $\gamma$ be a smooth regular simple curve that runs from $x$ to $y$.
-Assume that $\gamma$ runs on the right side (correspondingly left side) of the oriented line $xy$ and only its end points $x$ and $y$ lie on the line.
+Assume that $\gamma$ runs on the right side (correspondingly left side) of the oriented line $xy$ and only its endpoints $x$ and $y$ lie on the line.
 Then $\gamma$ has a point with positive (correspondingly negative) signed curvature.
 \end{thm}
 
@@ -660,8 +656,8 @@ so it has negative curvature everywhere, but it lies on the right side of the li
 
 \parit{Proof.}
 Choose points $p$ and $q$ on the line $xy$
-so that the points $p, x, y, q$ appear in the same order.
-We can assume that $p$ and $q$ lie sufficiently far from $x$ and $y$, so the half-disc with diameter $pq$ contains $\gamma$.
+so that the points $p, x, y, q$ appear in that order.
+We can assume that $p$ and $q$ lie sufficiently far from $x$ and $y$, so that the half-disc with diameter $pq$ contains $\gamma$.
 
 Consider the smallest disc segment with chord $[pq]$ that contains $\gamma$.
 Note that its arc $\sigma$ supports $\gamma$ at some point $w=\gamma(t_0)$.
@@ -675,20 +671,19 @@ Note that its arc $\sigma$ supports $\gamma$ at some point $w=\gamma(t_0)$.
 \end{wrapfigure}
 
 Note that the $\gamma$ is tangent to $\sigma$ at $w$.
-Let us parameterise $\sigma$ from $p$ to $q$.
+Let us parameterize $\sigma$ from $p$ to $q$.
 Then $\gamma$ and $\sigma$ are cooriented as $w$.
 If not, then the arc of $\gamma$ from $w$ to $y$ would be trapped in the curvelinear triangle $xwp$ bounded by arcs of $\sigma$, $\gamma$ and the line segment $[px]$.
 But this is impossible since $y$ does not belong to this triangle.
 
 It follows that $\sigma$ supports $\gamma$ at $t_0$ from the right.
 By \ref{prop:supporting-circline}, 
-\[\skur(t_0)_\gamma\ge \skur_\sigma,\]
-Evidently $\skur_\sigma>0$, hence the result.
+\[\skur(t_0)_\gamma\ge \skur_\sigma >0.\].
 \qeds
 
 \parit{Remark.}
-Instead of taking minimal disc segment, one can take a point $w$ on $\gamma$ that maximize the distance to the line $xy$.
-The same argument shows that curvature at $w$ is nonnegative, which is slightly weaker than the required positive curvature.
+Instead of taking the minimal disc segment, one can take a point $w$ on $\gamma$ that maximizes the distance to the line $xy$.
+The same argument shows that the curvature at $w$ is nonnegative, which is slightly weaker than the required positive curvature.
 
 \begin{wrapfigure}{o}{35 mm}
 \centering
@@ -703,17 +698,14 @@ that is, we can assume that each tangent line supports $\gamma$ on one side, say
 Since line has vanishing curvature, the supporting test (\ref{prop:supporting-circline}) implies that $\skur\ge 0$ at each point.
 
 Now assume $F$ is not convex.
-Then there is a line that supports $\gamma$ at two points, say $x$ and $y$ that divide $\gamma$ in two arcs $\gamma_1$ and $\gamma_2$, both distinct from the line segment $[x,y]$.
-Note the one of the arcs is parametrized from $x$ to $y$ and the other from $y$ to $x$.
+Then there is a line that supports $\gamma$ at two points, say $x$ and $y$. The points $x$ and $y$ divide $\gamma$ in two arcs $\gamma_1$ and $\gamma_2$, both distinct from the line segment $[x,y]$.
+Note that one of the arcs is parametrized from $x$ to $y$ and the other from $y$ to $x$.
 Passing to a smaller arc if necessary we can ensure that only its endpoints lie on the line; 
-so we can apply the lens lemma from which we get that the arcs $\gamma_1$ and $\gamma_2$ contain points with curvatures of opposite signs.
-
-That is, if $F$ is not convex, then curvature of $\gamma$ changes sign.
-Equivalently: if curvature of $\gamma$ does not change sign, then $F$ is convex.
+so we can apply the lens lemma from which we get that the arcs $\gamma_1$ and $\gamma_2$ contain points with signed curvatures of opposite signs.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:convex small}
-Suppose $\gamma$ is a smooth regular simple closed convex plane curve of diameter bigger than 2.
+Suppose $\gamma$ is a smooth regular simple closed convex plane curve of diameter larger than 2.
 Show that $\gamma$ has a point with absolute curvature less than 1.
 \end{thm}
 
