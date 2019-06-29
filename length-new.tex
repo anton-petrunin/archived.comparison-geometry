@@ -14,22 +14,32 @@ The \emph{length}\index{length of curve} of $\gamma$ is defined as
 \\
 &\dots+|\gamma(t_{k-1})-\gamma(t_k)|\},
 \end{align*}
-where the exact upper bound is taken over all partitions
+where the supremum is taken over all partitions
 \[a=t_0 < t_1 < \cdots < t_k=b.\]
 
 The length of $\gamma$ is a nonnegative real number or infinity;
 the curve $\gamma$ is called \emph{rectifiable}\index{rectifiable curve} if its length is finite. 
 
-The length of a closed curve is defined as the length of a corresponding loop.
-If a curve is defined on a open or semi-open interval, then its length is defined as the exact upper bound for lengths of all its closed arcs.
+The length of a closed curve is defined as the length of the corresponding loop.
+If a curve is defined on an open or semi-open interval, then its length is defined as the supremum of the lengths of its restrictions to compact intervals.
 \end{thm}
 
-If $\gamma$ is a space curve, then the above definition says that it length is the exact upper bound of the lengths of polygonal lines $p_0\dots p_k$ \emph{inscribed} in the curve, where $p_i=\gamma(t_i)$ for a  partition $a=t_0 < t_1 < \cdots < t_k=b$.
-If $\gamma$ is closed, then $p_0=p_k$ and therefore the inscribed polygonal line is also closed.
+If $\gamma$ is a space curve, then its length equals the supremum of the lengths of polygonal lines $p_0\dots p_k$ \emph{inscribed} in the curve (that is, $p_i=\gamma(t_i)$ for a  partition $a=t_0 < t_1 < \cdots < t_k=b$).
+If $\gamma$ is closed, then $p_0=p_k$, so the inscribed polygonal line is also closed.
+
+
+\begin{thm}{Exercise}\label{ex:integral-length}
+Let $\gamma\: I \to\RR^3$ ba a curve and $\phi : J \to I$ a homeomorphism. We call the curve $\gamma \circ \phi$ a 
+\emph{reparametrization} of $\gamma$. Show that $\length (\gamma \circ \phi ) = \length \gamma$.
+\end{thm}
+
+
+
+
 
 \begin{thm}{Exercise}\label{ex:length-image}
 Let $\alpha\:[0,1]\to\RR^3$ be a parametrization of a simple closed arc.
-Suppose a path $\beta\:[0,1]\to\RR^3$ has that same image as $\alpha$;
+Suppose a path $\beta\:[0,1]\to\RR^3$ has the same image as $\alpha$;
 that is, $\beta([0,1])=\alpha([0,1])$.
 Show that 
 \[\length \beta\ge \length \alpha.\]
@@ -53,10 +63,10 @@ Conclude that
 
 \section*{Nonrectifiable curves}
 A classical example of a nonrectifiable curve is the so-called \emph{Koch snowflake};
-it is a fractal curve that can be constructed the following way:
+it is a fractal curve that can be constructed as follows:
 
-Start with an equilateral triangle, divide each of its side into three segments of equal length and add an equilateral triangle with base at the middle segment.
-Repeat this construction recursively to the obtained polygons.
+Start with an equilateral triangle, divide each side into three segments of equal length and add an equilateral triangle with base the middle segment.
+Repeat this construction recursively with the obtained polygons.
 \begin{figure}[h!]
 \begin{minipage}{.24\textwidth}
 \centering
@@ -85,32 +95,32 @@ The Koch snowflake is the boundary of the union of all the polygons.
 
 \begin{thm}{Exercise}\label{ex:nonrectifiable-curve}
 \begin{enumerate}[(a)]
-\item Show that Koch snowflake is a closed simple curve; that is, it can be parameterized by a circle.
-\item\label{ex:nonrectifiable-curve:b} Show that Koch snowflake is not rectifiable. 
+\item Show that the Koch snowflake is a closed simple curve; that is, it can be parameterized by a circle.
+\item\label{ex:nonrectifiable-curve:b} Show that the Koch snowflake is not rectifiable. 
 \end{enumerate}
 \end{thm}
-
-
+  
+  
 \section*{Arc length parametrization}
 
-We say that a curve $\gamma$ has an \emph{arc-length parametrization} (also called \emph{natural parametrization})
+We say that a curve $\gamma$ is an \emph{arc-length parametrization} (also called \emph{natural parametrization})
 if for any two values of parameters $t_1<t_2$, the value $t_2-t_1$ is the length of $\gamma|_{[t_1,t_2]}$; that is, the closed arc of $\gamma$ from $t_1$ to $t_2$.
 
-Note that a smooth space curve $\gamma(t)=(x(t),y(t),z(t))$ has arc-length parametrization if and only if it has unit velocity vector at all times;
+Note that a smooth space curve $\gamma(t)=(x(t),y(t),z(t))$ is an arc-length parametrization if and only if it has unit velocity vector at all times;
 that is, 
-\[|\gamma'(t)|=\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}=1;\]
-by that reason smooth curves equipped with arc-length parametrization also called \emph{unit-speed curves}.
+\[|\gamma'(t)|=\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}=1\]
+for all $t$; by that reason smooth curves equipped with an arc-length parametrization are also called \emph{unit-speed curves}.
 Note that smooth unit-speed curves are automatically regular.
 
 
 Any rectifiable curve can be parameterized by arc length.
-For a parametrized smooth curve $\gamma$, the arc-length parameter $s$ can be written as an integral
+For a parametrized smooth curve $\gamma : [ t_0 , t_1] \to \mathcal{X}$, the arc-length parameter $s$ can be written as an integral
 \[s(t)=\int_{t_0}^t |\gamma'(\tau)|\cdot d\tau.\] %??? s is overloaded
-Note that $s(t)$ is a smooth increasing function.
-Further by fundamental theorem of calculus, $s'(t)=|\gamma'(t)|$.
+Note that $s(t)$ is a smooth non-decreasing function.
+By the fundamental theorem of calculus, $s'(t)=|\gamma'(t)|$.
 Therefore if $\gamma$ is regular, then $s'(t)\ne0$ for any parameter value $t$.
-By inverse function theorem (\ref{thm:inverse}) the inverse function $s^{-1}(t)$ is also smooth.
-Therefore $\gamma\circ s^{-1}$ --- the reparametrization  of $\gamma$ by arc length  $s$ --- remains smooth and regular.
+By the inverse function theorem (\ref{thm:inverse}) the inverse function $s^{-1}(t)$ is also smooth.
+Therefore $\gamma\circ s^{-1}$ remains smooth and regular. It is straightforward to check that $\gamma\circ s^{-1}$ is an arc length parametrization.
 
 Most of the time we use $s$ for an arc-length parameter of a curve.
 
@@ -121,12 +131,12 @@ by its arc length.
 \end{thm}
 
 We will be interested in the properties of curves that are invariant under a reparametrization.
-Therefore we can always assume that the given smooth regular curve comes with an arc-length parametrization.
-A good property of arc-length parametrizations is that it is almost canonical --- these parametrizations differ only by a sign and additive constant.
+Therefore we can always assume that any given smooth regular curve comes with an arc-length parametrization.
+A nice property of arc-length parametrizations is that they are almost canonical --- these parametrizations differ only by a sign and an additive constant.
 By that reason, it is easier to express parametrization-independent quatities using arc-length parametrizations;
 this will be usefull in the definition of curvature and torsion.
 
-On the other hand, often it is impossible to find an arc-length parametrization in a closed form which makes it hard to use it calculations;
+On the other hand, it is often impossible to find an arc-length parametrization in explicit form, which makes it hard to perform calculations;
 usually it is more convenient to use the original parametrization.
 
 \section*{Convex curves}
@@ -134,13 +144,13 @@ usually it is more convenient to use the original parametrization.
 A simple plane curve is called \emph{convex} if it bounds a convex region.
 
 \begin{thm}{Proposition}\label{prop:convex-curve}
-Assume a convex closed curve $\alpha$ lies inside the domain bounded by a closed simple plane curve $\beta$.
+Assume a convex closed curve $\alpha$ lies inside the domain bounded by a simple closed plane curve $\beta$.
 Then
 \[\length\alpha\le \length\beta.\]
 \end{thm}
 
 Note that it is sufficient to show that for any polygon  $P$ inscribed in $\alpha$ there is a polygon $Q$ inscribed in $\beta$ with 
-$\perim P\le \perim Q$, where $\perim P$ denotes the perimeter of $P$.
+$\perim P\le \perim Q$.
 
 Therefore it is sufficient to prove the following lemma.
 
@@ -168,7 +178,7 @@ the inequality
 \[\perim P\le \perim Q\]
 holds
 if $P$ can be obtained from $Q$ by cutting it along a chord;
-that is, a line segment with ends on the boundary of $Q$ that lies in $Q$.
+that is, a line segment in $Q$ with ends on the boundary of $Q$.
 
 
 Note that there is an increasing sequence of polygons 
@@ -188,37 +198,37 @@ Any convex closed plane curve is rectifiable.
 \end{thm}
 
 \parit{Proof.}
-Any closed curve is bounded; that is, it lies in a sufficiently large square.
-Indeed the curve can be described as an image of a loop $\alpha\:[0,1]\to\RR^2$, $\alpha(t)=(x(t),y(t))$.
+Any closed curve is bounded.
+Indeed, the curve can be described as an image of a loop $\alpha\:[0,1]\to\RR^2$, $\alpha(t)=(x(t),y(t))$.
 The coordinate functions $x(t)$ and $y(t)$ are continous functions defined on $[0,1]$.
-Therefore the absolute values of both of these functions are bounded by some constant $C$.
-That is, $\alpha$ lies in the square defined by the inequalities $|x|\le C$ and $|y|\le C$.
+Therefore the absolute values of bothfunctions are bounded by some constant $C$.
+Therefore, $\alpha$ lies in the square defined by the inequalities $|x|\le C$ and $|y|\le C$.
 
-By Proposition~\ref{prop:convex-curve}, the length of the curve cannot exceed the perimeter of the square $8\cdot C$, whence the result.
+By Proposition~\ref{prop:convex-curve}, the length of the curve cannot exceed the perimeter of the square $8\cdot C$, hence the result.
 \qeds
 
-Recall that convex hull of a set $X$ is the smallest convex set that contains $X$; in other words convex hull is the intersection of all convex sets containing $X$.
+Recall that the convex hull of a set $X$ is the smallest convex set that contains $X$; equivalently, the convex hull of $X$ is the intersection of all convex sets containing $X$.
 
 \begin{thm}{Exercise}\label{ex:convex-hull}
-Let $\alpha$ be a closed simple plane curve.
+Let $\alpha$ be a simple closed plane curve.
 Denote by $K$ the convex hull of $\alpha$; let $\beta$ be the boundary curve of $K$.
 Show that 
 \[\length \alpha\ge \length \beta.\]
 
-Try to show that the statement holds for arbitrary closed plane curve $\alpha$, assuming only that $X$ has nonempty interior.
+Try to show that the statement holds for arbitrary closed plane curves $\alpha$, assuming only that $K$ has nonempty interior.
 \end{thm}
 
 
 \section*{Crofton formulas*}
 
 Consider a smooth plane curve $\gamma\:[a,b]\to\RR^2$.
-Given a unit vector $u$, denote by $\gamma_u$ the curve that follows orthogonal projections of $\gamma$ to the line in the direction $u$;
+Given a unit vector $u$, denote by $\gamma_u$ the curve that follows the orthogonal projection of $\gamma$ to the line in the direction $u$;
 that is, 
 \[\gamma_u(t)=\langle u,\gamma(t)\rangle\cdot u.\]
 
 Note that 
 \[|\gamma_u'(t)|=|\langle u,\gamma'(t)\rangle|\] for any $t$.
-Note that for any plane vector the magnitude of its average projection is proportional to its magnitude with coefficient; that is,
+Note that for any plane vector $w$, the average magnitude of its projections is proportional to its magnitude; that is,
 \[|w|=k\cdot \overline{|w_u|},\]
 where $\overline{|w_u|}$ denotes the average value of $|w_u|$ for all unit vectors $u$.
 (The value $k$ is the average value of $|\cos\phi|$ for $\phi\in [0,2\cdot\pi]$; it can be found by integration, but soon we will show another way to find it.)
@@ -233,26 +243,30 @@ If the curve $\gamma$ is smooth, then according to Exercise~\ref{ex:integral-len
 &=k\cdot \overline{\length\gamma_u}.
 \end{align*}
 This formula and its relatives are called \emph{Crofton formulas}.
-To find the coefficient $k$ one can apply it for the unit circle: the left hand side is $2\cdot\pi$ --- this is the length of unit circle.
+Since $k$ in universal for any curve, we can take $\gamma$ to be the unit circle to compute $k$: the left hand side is $2\cdot\pi$.
 Note that for any unit vector $u$, the curve $\gamma_u$ runs back and forth along an interval of length 2.
 Therefore $\length\gamma_u=4$ and hence its average value is also 4.
-It follows that the coefficient $k$ has to satisfy the equation $2\cdot \pi =k\cdot 4$; whence 
+It follows that the coefficient $k$ has to satisfy the equation $2\cdot \pi =k\cdot 4$; hence 
 \[
 \length\gamma
 =\tfrac\pi2\cdot \overline{\length\gamma_u}.
 \]
 
-The Crofton's formula holds for arbitrary rectifiable curves, not necessary smooth; it can be proved using Exercises~\ref{adex:integral-length}.
+The Crofton's formula holds for arbitrary rectifiable curves, not necessary smooth; it can be proved using Exercise~\ref{adex:integral-length}.
 
 \begin{thm}{Exercise}\label{ex:convex-croftons}
-Show that any closed plane curve $\gamma$ has length at least $\pi\cdot s$, where $s$ is the average of pojections of $\gamma$ to lines.
-Moreover the equality holds if and only if $\gamma$ is convex.
+Show that any closed plane curve $\gamma$ has length at least $\pi\cdot s$, where $s$ is the average length of pojections of $\gamma$ to lines.
+Moreover, equality holds if and only if $\gamma$ is convex.
 
-Use this statement to give another solution of Exercise~\ref{ex:convex-hull}.
+Use this statement to give another solution to Exercise~\ref{ex:convex-hull}.
 \end{thm}
 
 \begin{thm}{Exercise}\label{adex:more-croftons}
-Show that the length of space curve is proportional to the average length of its projections to all lines and to planes.
+Show that the length of a space curve is proportional to 
+\begin{enumerate}[(a)]
+\item the average length of its projections to all lines.
+\item the average length of its projections to all planes
+\end{enumerate}
 Find the coefficients in each case.
 \end{thm}
 
@@ -260,7 +274,7 @@ Find the coefficients in each case.
 \begin{thm}{Advanced exercises}\label{adex:integral-length}
 \begin{enumerate}[(a)]
 \item Show that the formula \ref{eq:length} holds for any Lipschitz curve $\gamma\:[a,b]\z\to\RR^3$.
-\item Construct a simple curve $\gamma\:[a,b]\to\RR^3$ such that the velocity vector $\gamma'(t)$ is defined and bounded for almost all $t\in [a,b]$, but the formula \ref{eq:length} does not hold.
+\item Construct a simple curve $\gamma\:[a,b]\to\RR^3$ such that the velocity vector $\gamma'(t)$ is defined and uniformly bounded for almost all $t\in [a,b]$, but the formula \ref{eq:length} does not hold.
 
 \end{enumerate}
 \end{thm}
@@ -281,29 +295,12 @@ Length is a lower semi-continuous with respect to pointwise convergence of curve
 More precisely, assume that a sequence
 of curves $\gamma_n\:[a,b]\to \spc{X}$ in a metric space $\spc{X}$ converges pointwise 
 to a curve $\gamma_\infty\:[a,b]\to \spc{X}$;
-that is, $\gamma_n(t)\z\to\gamma_\infty(t)$ for any fixed $t\in[a,b]$ as $n\to\infty$. 
+that is, for any fixed $t \in [a,b]$, $\gamma_n(t)\z\to\gamma_\infty(t)$ as $n\to\infty$. 
 Then 
 $$\liminf_{n\to\infty} \length\gamma_n \ge \length\gamma_\infty.\eqlbl{eq:semicont-length}$$
 \end{thm}
 
 
-
-\begin{wrapfigure}{o}{20 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-6}
-\end{wrapfigure}
-
-
-Note that the inequality \ref{eq:semicont-length} might be strict.
-For example the diagonal $\gamma_\infty$ of the unit square 
-can be  approximated by a sequence of stairs-like
-polygonal curves $\gamma_n$
-with sides parallel to the sides of the square ($\gamma_6$ is on the picture).
-In this case
-\[\length\gamma_\infty=\sqrt{2}\quad
-\text{and}\quad \length\gamma_n=2\]
-for any $n$.
 
 \parit{Proof.}
 Fix a partition $a=t_0<t_1<\dots<t_k=b$.
@@ -347,28 +344,49 @@ for any given $L$; whence
 and \ref{eq:semicont-length} follows.
 \qeds
 
+
+\begin{wrapfigure}{o}{20 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-6}
+\end{wrapfigure}
+
+
+Note that the inequality \ref{eq:semicont-length} might be strict.
+For example the diagonal $\gamma_\infty$ of the unit square 
+can be  approximated by a stairs-like
+polygonal curves $\gamma_n$
+with sides parallel to the sides of the square ($\gamma_6$ is on the picture).
+In this case
+\[\length\gamma_\infty=\sqrt{2}\quad
+\text{and}\quad \length\gamma_n=2\]
+for any $n$.
+
+
+
 \section*{Length metric}
 
 Let $\spc{X}$ be a metric space.
-Given two points $x,y$ in $\spc{X}$, denote by $d(x,y)$ the exact lower bound for lengths of all paths connecting $x$ to $y$; if there is no such path we assume that $d(x,y)=\infty$.
+Given two points $x,y$ in $\spc{X}$, denote by $d(x,y)$ the infimum of lengths of all paths connecting $x$ to $y$; if there is no such path, then $d(x,y)=\infty$.
 
-Note that function $d$ satisfies all the axioms of metric except it might take infinite value.
-Therefore if any two points in $\spc{X}$ can be connected by a rectifiable curve, then $d$ defines a new metric on $\spc{X}$; in this case $d$ is called \emph{induced length metric}.
+\begin{thm}{Exercise}
+Show that the function $d$ satisfies all the axioms of a metric except it might take infinite values.
+Therefore if any two points in $\spc{X}$ can be connected by a rectifiable curve, then $d$ defines a new metric on $\spc{X}$; in this case $d$ is called the \emph{induced length metric}.
+\end{thm}
 
 Evidently $d(x,y)\ge |x-y|$ for any pair of points $x,y\in \spc{X}$.
-If the equality holds for any pair, then then the metric is called \emph{length metric} and the space is called \emph{length-metric space}.
+If the equality holds for all pairs, then the metric $|-|$ is said to be a \emph{length metric} and the space is called \emph{length-metric space}.
 
 Most of the time we consider length-metric spaces.
 In particular the Euclidean space is a length-metric space.
-A subspaces $A$ of length-metric space $\spc{X}$ might be not a length-metric space;
+A subspace $A$ of a length-metric space $\spc{X}$ is not necessarily length-metric space;
 the induced length distance between points $x$ and $y$ in the subspace $A$ will be denoted as $|x-y|_A$;
-that is, $|x-y|_A$ is the exact lower bound for the length of paths in $A$.
+that is, $|x-y|_A$ is the infimum of the lengths of paths in $A$ from $x$ to $y$.
 
 \begin{thm}{Exercise}\label{ex:intrinsic-convex}
 Let $A\subset \RR^3$ be a closed subset.%???subset is A
-Show that $A$ is convex if and only if
-\[|x-y|_A=|x-y|_{\RR^3}\]
-for any $x,y\in A$
+Show that $A$ is convex if and only if for all $x, y \in A$,
+\[|x-y|_A=|x-y|_{\RR^3} .\]
 \end{thm}
 
 
@@ -377,12 +395,12 @@ for any $x,y\in A$
 Let us denote by $\SS^2$ the unit sphere in the space; that is,
 \[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
 A space curve $\gamma$ is called \emph{spherical} if it runs in the unit sphere;
-that is, $|\gamma(t)|=1$ or equivalently $\gamma(t)\in\SS^2$  for any $t$.
+that is, $|\gamma(t)|=1$, or equivalently, $\gamma(t)\in\SS^2$  for any $t$.
 
 Recall that $\measuredangle(u,v)$ denotes the angle between two vectors $u$ and $v$.
 
 \begin{thm}{Observation}
-For any $u,v\in \SS^2$, we have that
+For any $u,v\in \SS^2$, we have
 \[|u-v|_{\SS^2}=\measuredangle(u,v)\]
 
 \end{thm}
@@ -413,8 +431,7 @@ The lemma is not as simple as you might think --- try to prove it yourself.
 The following proof is due to Stephanie Alexander.
 
 \parit{Proof.}
-Let $\gamma$ be a closed curve in $\mathbb{S}^2$ of length $2\cdot\ell$.
-Assume $\ell<\pi$.
+Let $\gamma$ be a closed curve in $\mathbb{S}^2$ of length $2\cdot\ell$, with $\ell<\pi$.
 
 {
 
@@ -438,20 +455,20 @@ Note that
 Denote by $z$ be the midpoint between $p$ and $q$ in $\mathbb{S}^2$;
 that is, $z$ is the midpoint of the short arc of a great circle from $p$ to $q$ in $\mathbb{S}^2$. 
 We claim that $\gamma$ lies in the open north hemisphere with north pole at $z$.  
-If not, $\gamma$ intersects the equator in a point, say $r$.
+If not, $\gamma$ intersects the equator in a point $r$.
 Without loss of generality we may assume that $r$ lies on~$\gamma_1$. 
 
 }
 
-Rotate the arc $\gamma_1$ by angle $\pi$ around the line thru $z$ and the center of the sphere.
-The obtained arc $\gamma_1^{*}$ together with $\gamma_1$ forms a closed curve of length $2\cdot \ell$ that passes thru $r$ and its antipodal point $r^{*}$.
+Rotate the arc $\gamma_1$ by the angle $\pi$ around the line thru $z$ and the center of the sphere.
+The obtained arc $\gamma_1^{*}$ together with $\gamma_1$ forms a closed curve of length $2\cdot \ell$ passing thru $r$ and its antipodal point $r^{*}$.
 Therefore
 \[\tfrac12\cdot\length \gamma=\ell\ge \measuredangle(r,r^{*})=\pi,\] 
 a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:antipodal}
-Describe a simple closed spherical curve that does not pass thru a pair of antipodal points and does not lie in any hemisphere.
+Describe a simple closed spherical curve that does not pass thru a pair of antipodal points and does not lie in any open  hemisphere.
 \end{thm}
 
 
@@ -485,17 +502,17 @@ whence \ref{eq:|pq|=<2} follows.
 \qedsf
 
 \begin{thm}{Advanced exercises} \label{adex:crofton}
-Given points $v,w\in\SS^2$, denote by $w_v$ the closest point to $w_u$ on the equator with pole at $v$;
+Given points $v,w\in\SS^2$, denote by $w_v$ the closest point to $w$ on the equator with pole at $v$;
 in other words, if $w^\perp$ is the projection of $w$ to the plane perpendicular to $v$, then $w_v$ is the unit vector in the direction of $w^\perp$.
 The vector $w_v$ is defined if $w\ne\pm v$.
 
 \begin{enumerate}
 \item \label{adex:crofton:crofton}
-Show that for any spherical curve $\gamma$ we have that
+Show that for any spherical curve $\gamma$ we have
 \[\length\gamma=\overline{\length\gamma_v},\]
-where $\overline{\length\gamma_v}$ denotes the average length for all $v\in \SS^2$.
+where $\overline{\length\gamma_v}$ denotes the average length of $\gamma _v$ with $v$ varying in $\SS^2$.
 (This is a spherical analog of Crofton's formula.)
-\item\label{adex:crofton:hemisphere} Give another proof of hemisphere lemme using part (\ref{adex:crofton:crofton}). 
+\item\label{adex:crofton:hemisphere} Give another proof of the hemisphere lemma using part (\ref{adex:crofton:crofton}). 
 \end{enumerate}
  
 \end{thm}
