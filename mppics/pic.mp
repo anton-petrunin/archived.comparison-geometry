@@ -671,6 +671,7 @@ label.lrt(btex $\gamma$ etex, z.sq);
 label.lrt(btex $\sigma$ etex, (point 1.4 of p0));
 endfig;
 
+
 beginfig(24) 
 save u;
 u:=1cm;
@@ -2882,4 +2883,212 @@ label.bot(btex $\gamma_1$ etex, point .7 of p1);
 whitelabel(btex $R$ etex, z.a2+(0,1)*u);
 endfig;
 
+beginfig(87)
+save u, k;
+u:=.6cm;
+k:=4;
+
+save p; path p[];
+p0= ellipse_canonical(3*u, u);
+p1=p0 shifted (0,1.5*u);
+
+z.A=point 2.8 of p0;
+z.B=point 3.3 of p1;
+z.BB=point 3.3 of p0;
+z.C=point 3.8 of p0;
+z.O=origin;
+z.K=(z.O--z.BB) intersectionpoint (z.A--z.C);
+
+z.r0=point 0 of p0;
+z.r1=point 0 of p1;
+z.l0=point 2 of p0;
+z.l1=point 2 of p1;
+
+draw subpath (0,2) of p0 dashed evenly;
+draw subpath (2,4) of p0;
+draw p1;
+
+draw z.A--z.B--z.C--z.BB--cycle;
+draw z.A--z.C;
+draw z.B--z.BB;
+draw z.K--z.BB;
+draw z.B--z.K;
+draw z.r0--z.r1;
+draw z.l0--z.l1;
+
+dOt z.A,z.B,z.BB,z.C,z.K;
+
+label.llft(btex $a$ etex, z.A);
+whitelabel.top(btex $b$ etex, z.B);
+label.bot(btex $b'$ etex, z.BB);
+label.lrt(btex $c$ etex, z.C);
+label.ulft(btex $p$ etex, z.K);
+endfig;
+
+beginfig(220);
+save u,a,n;
+u:=.7cm;
+a:=60;
+n:=0;
+
+
+
+z0=origin;
+z1=(1,0)*u;
+z2=z1+(z1 rotated a);
+z3=z2+(z1 rotated -a);
+z4=z3+z1;
+z.b=z4 rotated -60;
+x.r=abs(z1)/abs(z4);
+
+setbounds currentpicture to (x0-1,y2+1)--(x4+1,y2+1)--(x4+1,y.b-1)--(x0-1,y.b-1)--cycle;
+
+save p;
+path p[];
+
+p0=z0--z3;
+
+for i = 1 upto n : 
+p[i]=(p[i-1] scaled x.r)--(p[i-1] scaled x.r rotated a shifted z1)--(p[i-1] scaled x.r  rotated -a shifted z2)--(p[i-1] scaled x.r  shifted z3); 
+endfor
+
+fill p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle withcolor .7;
+draw p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle penhair;
+endfig;
+
+beginfig(221);
+save u,a,n;
+u:=.7cm;
+a:=60;
+n:=1;
+
+z0=origin;
+z1=(1,0)*u;
+z2=z1+(z1 rotated a);
+z3=z2+(z1 rotated -a);
+z4=z3+z1;
+z.b=z4 rotated -60;
+x.r=abs(z1)/abs(z4);
+
+setbounds currentpicture to (x0-1,y2+1)--(x4+1,y2+1)--(x4+1,y.b-1)--(x0-1,y.b-1)--cycle;
+
+save p;
+path p[];
+
+p0=z0--z3;
+
+for i = 1 upto n : 
+p[i]=(p[i-1] scaled x.r)--(p[i-1] scaled x.r rotated a shifted z1)--(p[i-1] scaled x.r  rotated -a shifted z2)--(p[i-1] scaled x.r  shifted z3); 
+endfor
+
+fill p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle withcolor .7;
+draw p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle penhair;
+endfig;
+
+beginfig(222);
+save u,a,n;
+u:=.7cm;
+a:=60;
+n:=2;
+
+z0=origin;
+z1=(1,0)*u;
+z2=z1+(z1 rotated a);
+z3=z2+(z1 rotated -a);
+z4=z3+z1;
+z.b=z4 rotated -60;
+x.r=abs(z1)/abs(z4);
+
+setbounds currentpicture to (x0-1,y2+1)--(x4+1,y2+1)--(x4+1,y.b-1)--(x0-1,y.b-1)--cycle;
+
+save p;
+path p[];
+
+p0=z0--z3;
+
+for i = 1 upto n : 
+p[i]=(p[i-1] scaled x.r)--(p[i-1] scaled x.r rotated a shifted z1)--(p[i-1] scaled x.r  rotated -a shifted z2)--(p[i-1] scaled x.r  shifted z3); 
+endfor
+
+fill p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle withcolor .7;
+draw p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle penhair;
+endfig;
+
+beginfig(225);
+save u,a,n;
+u:=.7cm;
+a:=60;
+n:=5;
+
+z0=origin;
+z1=(1,0)*u;
+z2=z1+(z1 rotated a);
+z3=z2+(z1 rotated -a);
+z4=z3+z1;
+z.b=z4 rotated -60;
+x.r=abs(z1)/abs(z4);
+
+z.shift=(3.4,0)*u;
+z.extra=(1,0)*u;
+
+setbounds currentpicture to (x0-1,y2+1)--(x4+1,y2+1)--(x4+1,y.b-1)--(x0-1,y.b-1)--cycle;
+
+save p;
+path p[];
+
+p0=z0--z3;
+
+for i = 1 upto n : 
+p[i]=(p[i-1] scaled x.r)--(p[i-1] scaled x.r rotated a shifted z1)--(p[i-1] scaled x.r  rotated -a shifted z2)--(p[i-1] scaled x.r  shifted z3); 
+endfor
+
+fill p[0]--(p[0] rotated -120 shifted z4)--(p[0] rotated 120 shifted z.b)--cycle withcolor .7;
+draw p[0]--(p[0] rotated -120 shifted z4)--(p[0] rotated 120 shifted z.b)--cycle ;
+
+fill (p[1]--(p[1] rotated -120 shifted z4)--(p[1] rotated 120 shifted z.b)--cycle) shifted z.shift withcolor .7;
+draw (p[1]--(p[1] rotated -120 shifted z4)--(p[1] rotated 120 shifted z.b)--cycle) shifted z.shift ;
+
+fill (p[2]--(p[2] rotated -120 shifted z4)--(p[2] rotated 120 shifted z.b)--cycle) shifted (2*z.shift) withcolor .7;
+draw (p[2]--(p[2] rotated -120 shifted z4)--(p[2] rotated 120 shifted z.b)--cycle) shifted (2*z.shift);
+
+fill (p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle) shifted (3*z.shift+z.extra) withcolor .7;
+draw (p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle) shifted (3*z.shift+z.extra) penhair;
+
+label(btex $\dots$ etex, .5[z4+.5*(z2 rotated -120)+2*z.shift,3*z.shift+z.extra+.5*(z2 rotated -120)]);
+
+
+endfig;
+
+
+beginfig(230) 
+save u;
+u:=1cm;
+
+z.pp=(2,0)*u;
+z.qq=(-2,0)*u;
+z.s=(.5,1.5)*u;
+
+save p; path p[];
+p0=(ddline(z.pp,z.qq)(0.1, 0.1)) shifted (0,y.s);
+draw p0;
+
+z.p=.2[z.pp,z.qq];
+z.q=.8[z.pp,z.qq];
+z.sq=(0,.7)*u;
+
+p1=z.p{dir 170}..z.s{left}..z.sq..{dir -120}z.q;
+draw p1;
+
+draw ddline(z.pp,z.qq)(0.1, 0.1);
+
+%drawarrow subpath (0,1.4) of p0;
+drawarrow subpath (0,2) of p1;
+
+dOt z.p, z.q, z.s;
+
+label.bot(btex $x$ etex, z.p);
+label.bot(btex $y$ etex, z.q);
+label.top(btex $w$ etex, z.s);
+label.lrt(btex $\gamma$ etex, z.sq);
+endfig;
 end

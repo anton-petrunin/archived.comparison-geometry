@@ -1,3 +1,112 @@
+
+It remains to show that $\tfrac{\partial}{\partial r}\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0$.
+
+The curve $\sigma_r(t)=w(t,r)$ is a parametrization of the circle of radius $r$ and center at $p$ in $\Sigma$; that is, if $q=\sigma_r(t)$, then $|q-p|_\Sigma=r$.
+If the latter is not the case, then a minimizing geodesic $[pq]_\Sigma$ would be shorter than $r$ and therefore $q$ would not be described uniquely in the polar coordinates. 
+
+Note that $\tfrac{\partial}{\partial r}w\perp \tfrac{\partial}{\partial \theta}w$ if $r>0$;
+otherwise for small $\eps>0$ the intrinsic distance from $p$ to $w(\theta\pm \eps,r)$ would be shorter than $r$, which contradicts the previous statement.
+
+\begin{thm}{Proposition}\label{prop:loc-comp-l}
+Let $w(\theta,r)$ and $\~w(\theta,r)$ be the polar coordinates of a surface $\Sigma$ at $p$ and its tangent plane $\T_p$ at zero, so $w(\theta,r)\z=\exp_p[\~w(\theta,r)]$.
+Given a real interval $[a,b]$ consider the one parameter families of circular arcs $\sigma_r\:[a,b]\to \Sigma$ and $\~\sigma_r\:[a,b]\to \T_p$
+$\sigma_r(t)\z=w(t,r)$ and $\~\sigma_r(t)=\~w(t,r)$.
+Set $\ell(r)=\length \sigma_r$ and $\~\ell(r)\z=\length \~\sigma_r$.%
+\footnote{Note that angular measure of $\~\sigma_r$ is $b-a$; therefore $\~\ell(r)=r\cdot(b-a)$.}
+
+\begin{enumerate}[(i)]
+ \item If the Gauss curvature of $\Sigma$ is nonnegative, then 
+ \[\ell(r)\le \~\ell(r)\]
+ for all small $r>0$.
+ \item If the Gauss curvature of $\Sigma$ is nonpositive, then 
+ \[\ell(r)\ge \~\ell(r)\]
+ for all small $r>0$.
+\end{enumerate}
+
+\end{thm}
+
+Taking a limit as $b\to a$, we obtain the following corollary.
+
+\begin{thm}{Corollary}\label{cor:w<w}
+Let $w(\theta,r)$ and $\~w(\theta,r)$ be the polar coordinates of a surface $\Sigma$ at $p$ and its tangent plane $\T_p$ at zero, so $w(\theta,r)\z=\exp_p[\~w(\theta,r)]$.
+\begin{enumerate}[(i)]
+ \item If the Gauss curvature of $\Sigma$ is nonnegative, then 
+ \[|\tfrac{\partial}{\partial \theta} w|\le |\tfrac{\partial}{\partial \theta} \~w|\]
+ for all small $r>0$.
+ \item If the Gauss curvature of $\Sigma$ is nonpositive, then 
+\[|\tfrac{\partial}{\partial \theta} w|\ge |\tfrac{\partial}{\partial \theta} \~w|\]
+ for all small $r>0$.
+\end{enumerate}
+\end{thm}
+
+
+\parit{Proof.}
+From the above discussion, the polar coordinates $w(\theta,r)$ are semigeodesic;
+that is, $w(\theta,r)$ satisfies the conditions in the first variation formula (\ref{prop:first-var}).
+In particular if $\ell(r)=\length \sigma_r$, then
+\[\ell'(r)=\Theta_{\sigma_r}\]
+for any $r>0$.
+
+By Gauss--Bonnet formula, the last identity can be rewritten as
+\[\ell'(r)=2\cdot (b-a) -\iint_{\Delta_r}G,\eqlbl{eq:ell'}\]
+where $\Delta_r$ is the sector in $\Sigma$ in the polar coordinates at $p$
+\[\set{w(t,s)}{a\le t\le b,\ 0\le s\le r};\]
+which is bounded by two geodesics from $p$ with angle $b-a$ 
+and a circular arc that meets these geodesics at right angle.
+
+Since the plane has vanishing Gauss curvature, we have
+\[\~\ell'(r)=2\cdot (b-a),\eqlbl{eq:tilde-ell'}\]
+which agrees with the formula for the length of the arc $\~\ell(r)\z=2\cdot\pi\cdot r$.
+
+If the Gauss curvature of $\Sigma$ is nonnegative,
+the equations \ref{eq:ell'} and \ref{eq:tilde-ell'} imply that
+\[\ell'(r)\le \~\ell'(r)\]
+for any small $r$.
+
+If the Gauss curvature of $\Sigma$ is nonnegative,
+the same equations imply that
+\[\ell'(r)\ge \~\ell'(r)\]
+for any small $r$.
+
+Since $\ell(0)=\~\ell(0)$, integrating the inequalities proves both statements.\qeds
+
+The following exercise provides a stronger statement.
+It almost follow from the proof above, but one has to make an extra observation.
+
+
+\begin{thm}{Exercise}
+Assume $\Sigma$ is a smooth regular surface and $p\in\Sigma$,
+denote by $\ell(r)$ the circumference of the circle with the center at $p$ and radius $r$ in $\Sigma$
+and let $\~\ell(r)=2\cdot\pi\cdot r$ the circumference of the plane circle of radius $r$.
+
+\begin{enumerate}[(i)]
+ \item Show that if Gauss curvature of $\Sigma$ is nonnegative, then the function $r\mapsto \ell(r)$ is concave for small $r>0$. Conclude that the function $r\mapsto \frac{\ell(r)}{\~\ell(r)}$ is nonincreasing for small $r>0$.
+\item Show that if Gauss curvature of $\Sigma$ is nonpositive, then the function $r\mapsto \ell(r)$ is convex for small $r>0$. Conclude that the function $r\mapsto \frac{\ell(r)}{\~\ell(r)}$ is nondecresing for small $r>0$.
+\end{enumerate}
+
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section*{Proof via equidistant surfaces}
 
 Recall that a surface $\Sigma$ is called \emph{orientable} if one can choose at each point $p$ of the surface

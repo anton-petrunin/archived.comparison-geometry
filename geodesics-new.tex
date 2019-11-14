@@ -1,4 +1,4 @@
-\chapter{Geodesics}
+\chapter{Shortest paths}
 
 We start to study the intrinsic geometry of surfaces.
 The following exercise should help you to be in the right mood for this;
@@ -247,26 +247,23 @@ Assume that a closed smooth surface $\Sigma$ with positive Gauss curvature lies 
 Show that the intrinsic diameter of $\Sigma$ cannot exceed $\pi$.
 \end{thm}
 
+\chapter{Geodesics}
 
-\section*{Geodesics}
+
+\section*{Definitions}
 
 A smooth curve $\gamma$ on a smooth surface $\Sigma$ is called \emph{geodesic} if its acceleration $\gamma''(t)$ is perpendicular to the tangent plane $\T_{\gamma(t)}$ for each~$t$.
 
-Geodesics can be understood as the trajectories of a particle that slides on $\Sigma$ without friction.
-In this case the force that keeps the particle on $\Sigma$ must be perpendicular to $\Sigma$.
-By the second Newton's laws of motion,
-we get that the acceleration $\gamma''$ is perpendicular to $\T_{\gamma(t)}$.
-
 \begin{thm}{Exercise}\label{ex:reflection-geodesic}
 Assume that a smooth surface $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$.
-Suppose that $\Sigma$ and $\Pi$ intersect along a curve $\gamma$.
+Suppose that $\Sigma$ and $\Pi$ intersect along a smooth regular curve $\gamma$.
 Show that $\gamma$ is a geodesic of $\Sigma$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:helix=geodesic}
 Show that the helix 
 \[\gamma(t)=(\cos t,\sin t, a\cdot t)\]
-is a geodesic on the cylindrical surface described by the equation $x^2+y^2=1$.
+is a geodesic on the cylindrical surface described by the equation $x^2\z+y^2=1$.
 \end{thm}
 
 Recall that asymptotic line is defined on page~\pageref{page:asymptotic line}.
@@ -275,6 +272,14 @@ Recall that asymptotic line is defined on page~\pageref{page:asymptotic line}.
 Show that if a curve that is a geodesic and an asymptotic line on a smooth surface,
 then the curve is a line segment.
 \end{thm}
+
+Physically, geodesics can be understood as the trajectories of a particle that slides on $\Sigma$ without friction.
+In this case the force that keeps the particle on $\Sigma$ must be perpendicular to $\Sigma$.
+Therefore, by the second Newton's laws of motion,
+we get that the acceleration $\gamma''$ is perpendicular to $\T_{\gamma(t)}$.
+
+The following lemma and proposition can be also interpreted physically;
+lemma states the conservation of energy and the proposition gives smooth dependence of trajectory of a particle depending on its initial position and velocity.
 
 \begin{thm}{Lemma}\label{lem:constant-speed}
 Any geodesic $\gamma$ has constant speed; that is, $|\gamma'(t)|$ is constant.
@@ -294,88 +299,31 @@ That is, $|\gamma'(t)|^2=\langle\gamma'(t),\gamma'(t)\rangle$ is constant.
 
 \begin{thm}{Proposition}\label{prop:geod-existance} 
 Let $\Sigma$ be  a smooth surface without boundary.
-Given a tangent vector $v$ to $\Sigma$ at a point $p$
-there is a unique geodesic $\gamma\:\mathbb{I}\to \Sigma$ defined on a maximal open interval $\mathbb{I}\ni 0$ that starts at $p$ with velocity vector $v$;
-that is, $\gamma(0)=p$ and $\gamma'(0)=v$.
+Given a tangent vector ${\vec v}$ to $\Sigma$ at a point $p$
+there is a unique geodesic $\gamma\:\mathbb{I}\to \Sigma$ defined on a maximal open interval $\mathbb{I}\ni 0$ that starts at $p$ with velocity vector ${\vec v}$;
+that is, $\gamma(0)=p$ and $\gamma'(0)={\vec v}$.
 
 Moreover
 \begin{enumerate}[(a)]
-\item\label{prop:geod-existance:smooth} the map $(p,v,t)\mapsto \gamma(t)$ is smooth in its domain of definition.
+\item\label{prop:geod-existance:smooth} the map $(p,{\vec v},t)\mapsto \gamma(t)$ is smooth in its domain of definition.
 \item\label{prop:geod-existance:whole} if $\Sigma$ is proper, then $\mathbb{I}=\RR$; that is, the maximal interval is whole real line.
 \end{enumerate}
 
 \end{thm}
 
-\parit{Sketch of proof.}
-The first part of the proposition and part (\ref{prop:geod-existance:smooth}) follows from existence and uniqueness of a solution of initial value problem (\ref{thm:ODE}).
-One only needs to rewrite the condition $\gamma''(t)\perp\T_{\gamma(t)}$ as a differential equation 
-$\gamma''(t)=\II_{\gamma(t)}(\gamma'(t),\gamma'(t))$.
+This proposition follows from the theorem on existance and uniqueness of the initial value problem (\ref{thm:ODE})
+but the proof contains few technical details, so we decided to write it separately in Section~\ref{sec:geod-existance}.
 
-The part (\ref{prop:geod-existance:whole}) follows from \ref{lem:constant-speed}.
-Indeed by \ref{thm:ODE}, if the maximal interval is not whole real line, then the curve $\gamma$ must escape to infinity. %???
-But the latter is impossible since $\gamma$ runs with constant speed.
-\qeds
 
-\section*{Exponential map}
-
-Let $\Sigma$ be smooth regular surface and $p\in \Sigma$.
-Given a tangent vector $v\in \T_p$ consider a geodesic $\gamma_v$ in $\Sigma$ that runs from $p$ with the initial velocity $v$;  
-that is, $\gamma(0)=p$ and $\gamma'(0)=v$.
-
-The point $q=\gamma_v(1)$ is called \emph{exponential map} of $v$, or briefly $q=\exp_pv$.
-(There is a reason to call this map \emph{exponential}, but it will take us too far from the subject.)
-By \ref{prop:geod-existance}, the map $\exp_p\:\T_p\to \Sigma$ is smooth and defined in a neighborhood of zero in $\T_p$;
-moreover, if $\Sigma$ is proper, then $\exp_p$ is defined on the whole space $\T_p$.
-
-Note that the Jacobian of $\exp_p$ at zero is the identity matrix.
-Indeed, let $z=f(x,y)$ be a local graph representation of $\Sigma$ in the tangent-normal coordinates.
-The tangent plane at $p$ is the $(x,y)$-plane.
-Let $\gamma_x$ and $\gamma_y$ be the geodesics starting from $p$ in the directions
-$(1,0,0)$
-and
-$(0,1,0)$
-correspondingly.
-A general tangent vector can be written as $v=(x,y,0)$.
-Note that $\tfrac{\partial\exp_p}{\partial x}(0,0)=\gamma_x'(0)=(1,0,0)$ and  
-$\tfrac{\partial\exp_p}{\partial x}(0,0)=\gamma_y'(0)=(0,1,0)$.
-That is, the Jacobian matrix of $\exp_p$ at $(0,0)$ is
-\[\begin{pmatrix}
-1&0
-\\
-0&1
-\\
-0&0
-  \end{pmatrix}.
-\]
-It follows that the Jacobian matrix of the projection of $\exp_p$ to the $(x,y)$-plane is the identity matrix.
-Therefore by the inverse function theorem (\ref{thm:inverse}), we get the following statement:
-
-\begin{thm}{Proposition}\label{prop:exp}
-Let $\Sigma$ be smooth surface and $p\in \Sigma$.
-Then the exponential map $\exp_p\:\T_p\to \Sigma$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$ by a neighborhood of $0$ in the tangent plane~$\T_p$.
-
-Moreover for any $p\in \Sigma$ there is $\eps>0$ such that for any $x\in \Sigma$ such that $|x-p|_\Sigma<\eps$ the map 
-$\exp_x\:\T_x\to \Sigma$ is a smooth regular parametrization of the $\eps$-neighborhood of $x$ in $\Sigma$ by the $\eps$-neighborhood of zero in the tangent plane~$\T_x$. %???
+\begin{thm}{Exercise}
+Let $\gamma$ be a smooth regular curve in a smooth surface~$\Sigma$.
+Show that $\gamma$ is a geodesic if and only if it has constant speed and vanishing geodesic curvature.
 \end{thm}
 
 \section*{Shortest paths are geodesics}
 
-
-\begin{thm}{Claim}\label{clm:gamma''}
-Let $\Sigma$ be a smooth regular surface.
-Then any shortest path $\gamma$ in $\Sigma$ parameterized proportional to its length is a geodesic in $\Sigma$.
-In particular $\gamma$ is a smooth curve.
-
-A partial converse to the first statement also holds: a sufficiently short arc of any geodesic is a shortest path.
-More precisely, given a smooth surface $\Sigma$ there is a positive function $\rho$ on $\Sigma$ such that 
-if a geodesic $\gamma$ starts at $p\in \Sigma$ and has length at most $\rho(p)$, then it is a shortest path.
-\end{thm}
-
-A geodesic might not form a shortest path, but if this is the case, then it is called \emph{minimizing geodesic}.
-Note that according to the claim, any shortest path is a reparametrization of a minimizing geodesic.
-
-This claim provides connection between intrinsic geometry of the surface and its extrinsic geometry.
-This connection will be important later; in particular it will play the key role in the proof of the so-called \emph{remarkable theorem} (\ref{thm:remarkable}).
+The following proposition provides connection between intrinsic geometry of the surface and its extrinsic geometry.
+This connection will be important later; in particular it plays the key role in the proof of the so-called \emph{Gauss remarkable theorem}.
 
 Intrinsic means that it can be expressed in terms of measuring things inside the surface, for example length of curves or angles between the curves that lie in the surface.
 Extrinsic means that we have to use ambient space in order to measure it.
@@ -385,32 +333,42 @@ while definition of geodesic is not intrinsic --- it requires acceleration which
 Note that there is a smooth bijection between the cylinder $z=x^2$ and the plane $z=0$ that preserves the lengths of all curves; in other words the cylinder can be \emph{unfolded} on the plane.
 Such a bijection sends geodesics in the cylinder to geodesics on the plane and the other way around; however a geodesic on the cylinder might have nonvanishing second derivative while geodesics on the plane are straight lines with vanishing second derivative.
 
+\begin{thm}{Proposition}\label{prop:gamma''}
+Let $\Sigma$ be a smooth regular surface.
+Then any shortest path $\gamma$ in $\Sigma$ parameterized proportional to its length is a geodesic in $\Sigma$.
+In particular $\gamma$ is a smooth curve.
 
+A partial converse to the first statement also holds: a sufficiently short arc of any geodesic is a shortest path.
+More precisely, any point $p$ in $\Sigma$ has a neighborhood $U$ such that any geodesic that lies completely in $U$ is a shortest path.
+\end{thm}
 
-\parit{Informal sketch.}
-The smoothness should be intuitively obvious; at least the curve should be twice differentiable otherwise it can be shortened.
+A geodesic might not form a shortest path, but if this is the case, then it is called \emph{minimizing geodesic}.
+Note that according to the claim, any shortest path is a reparametrization of a minimizing geodesic.
 
-Let us give an informal physical explanation why $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
-One may think about the geodesic $\gamma$ as of stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
+A rigorous proof will be given in the next few sections.
+Before that, let us give an informal physical explanation why $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
+(In fact, if one assumes that $\gamma$ is smooth, then it is easy to convert this explanation into a rigorous proof.)
+
+One may think about a shortest path $\gamma$ as of stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
 Since it is frictionless, the force density $N(t)$ that keeps the geodesic $\gamma$ in the surface must be proportional to the normal vector to the surface at $\gamma(t)$.
 
 The tension in the thread has to be the same at all points (otherwise the thread would move back or forth and it would not be stable).
 Denote by $T$ the tension.
-We can assume that $\gamma$ has unit speed,
-In this case the net force from tension to the arc $\gamma_{[t_0,t_1]}$ is $T\cdot(\gamma'(t_1)-\gamma'(t_0)$.
-Hence the density of net force from tension at $t$ is $F(t)=T\cdot\gamma''(t)$.
+
+We can assume that $\gamma$ has unit speed;
+in this case the net force from tension to the arc $\gamma_{[t_0,t_1]}$ is $T\cdot(\gamma'(t_1)-\gamma'(t_0)$.
+Hence the density of net force from tension at $t_0$ is 
+\begin{align*}
+F(t_0)&=\lim_{t_1\to t_0}T\cdot\frac{\gamma'(t_1)-\gamma'(t_0)}{t_1-t_0}=
+\\
+&=T\cdot\gamma''(t_0).
+\end{align*}
 According to the second Newton's law of motion, we have 
 \[F(t)+N(t)=0;\]
-which implies that  $\gamma''(t)$ is perpendicular to $\T_{\gamma(t)}\Sigma$.
+which implies that  $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
 
-Fix a point $p\in\Sigma$.
-Let $\eps>0$ be as in \ref{prop:exp}.
-Assume a geodesic $\gamma$ of length less than $\eps$ from $p$ to $q$ does not minimize the length between its endpoints.
-Then there is a shortest path from $p$ to $q$, which becomes a geodesic if parameterized by its arc length.
-That is, there are two geodesics from $p$ to $q$ of length smaller than $\eps$.
-In other words there are two vectors $v,w\in\T_p$ such that $|v|<\eps$, $|w|<\eps$ and 
-$q=\exp_pv=\exp_pw$.
-But according to \ref{prop:exp}, the exponential map is injective in $\eps$-neighborhood of zero --- a contradiction.\qeds
+Note that according to the proposition above, any shortest path parameterized by its arc length is a smooth curve.
+This observation should help to solve in the following two exercises.
 
 \begin{thm}{Exercise}\label{ex:two-min-geod}
 Show that two shortest paths can cross each other at most once.
@@ -458,7 +416,7 @@ Show that the statement does not hold without assuming that $\gamma$ is minimizi
 The following lemma is a smooth analog of lemma proved by Joseph Liberman \cite{liberman}.
 
 \begin{thm}{Liberman's lemma}\label{lem:liberman}
-Assume $\gamma$ is a geodesic on the graph $z=f(x,y)$ of a smooth convex function $f$ defined on an open subset of the plane.
+Assume $\gamma$ is a unit-speed geodesic on the graph $z=f(x,y)$ of a smooth convex function $f$ defined on an open subset of the plane.
 Suppose that $\gamma(t)=(x(t),y(t),z(t))$
 Then $t\mapsto z(t)$ is a convex function; that is, $z''(t)\ge 0$ for any $t$.
 \end{thm}
@@ -469,14 +427,14 @@ that is, it has positive $z$-coordinate.
 
 Since $\gamma$ is a geodesic, we have $\gamma''(t)\perp\T_{\gamma(t)}$,
 or equivalently $\gamma''(t)$ is proportional to $\Norm_{\gamma(t)}$ for any $t$.
-By \ref{prop:gamma''=II}, we have
-\[\langle \gamma''(t),\Norm_{\gamma(t)}\rangle=\II_{\gamma(t)}(\gamma'(t),\gamma'(t));\]
+By \ref{prop:normal-shape}, we have
+\[\langle \gamma''(t),\Norm_{\gamma(t)}\rangle=\langle S_{\gamma(t)}(\gamma'(t)),\gamma'(t)\rangle;\]
 hence
-\[\gamma''(t)=\Norm_{\gamma(t)}\cdot \II_{\gamma(t)}(\gamma'(t),\gamma'(t))\]
+\[\gamma''(t)=\Norm_{\gamma(t)}\cdot \langle S_{\gamma(t)}(\gamma'(t)),\gamma'(t)\rangle\]
 for any $t$.
 
 Therefore
-\[z''(t)=\cos(\theta_\gamma(t))\cdot\Norm_{\gamma(t)}\cdot \II_{\gamma(t)}(\gamma'(t),\gamma'(t)),\eqlbl{eq:z''}\]
+\[z''(t)=\cos(\theta_\gamma(t))\cdot\Norm_{\gamma(t)}\cdot \langle S_{\gamma(t)}(\gamma'(t)),\gamma'(t)\rangle,\eqlbl{eq:z''}\]
 where $\theta_\gamma(t)$ denotes the angle between $\Norm_{\gamma(t)}$ and the $z$-axis.
 
 Since $\Norm$ points up, we have $\theta_\gamma(t)<\tfrac\pi2$, or equivalently
@@ -484,7 +442,7 @@ Since $\Norm$ points up, we have $\theta_\gamma(t)<\tfrac\pi2$, or equivalently
 for any $t$.
  
 Since $f$ is convex, we have that tangent plane supports the graph from below at any point;
-in particular $\II_{\gamma(t)}(\gamma'(t),\gamma'(t))\ge 0$.
+in particular $\langle S_{\gamma(t)}(\gamma'(t)),\gamma'(t)\rangle\ge 0$.
 It follows that the right hand side in \ref{eq:z''} is nonnegative;
 whence the statement follows.
 \qeds

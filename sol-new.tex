@@ -110,9 +110,6 @@ To do this repeat the argument in \ref{lem:gauss=sphere} with the center at a po
 Note that we can assume that the surface has positive Gauss curvature, otherwise the statement is evident.
 Therefore the surface bounds a convex region that contains a line segment of length~$\pi$.
 
-Observe that the Gauss curvature of the surface of revolution of the graph $y=a\cdot \sin x$ for $x\in(0,\pi)$ cannot exceed $1$ (Use \ref{ex:curvature-graph} and \ref{cor:meusnier}).
-Try to support the surface $\Sigma$ from inside by a surface of revolution of the described type with large $R$. 
-
 \begin{figure}[h!]
 \vskip-0mm
 \centering
@@ -120,7 +117,22 @@ Try to support the surface $\Sigma$ from inside by a surface of revolution of th
 \vskip-0mm
 \end{figure}
 
+Observe that the Gauss curvature of the surface of revolution of the graph $y=a\cdot \sin x$ for $x\in(0,\pi)$ cannot exceed $1$ (Use \ref{ex:curvature-graph} and \ref{cor:meusnier}).
+Try to support the surface $\Sigma$ from inside by a surface of revolution of the described type. 
+
+\parit{Remark.}
+In fact if Gauss curvature of $\Sigma$ is at least $1$,
+then
+the intrinsic diameter of $\Sigma$ can not exceed $\pi$.
+The latter means that any two points in $\Sigma$ can be connected by a path that lies in $\Sigma$ and has length at most~$\pi$.
+
+A proof of this stronger statement can be build on an analog of comparison theorem \ref{thm:comp}(\ref{thm:comp:toponogov}) for surfaces with Gauss curvature at least~1.
+
 \parbf{Exercise \ref{ex:lasso}.} Cut the lateral surface of the mountain by a line from the cowboy to the top, unfold it on the plane and try to figure out what is the image of the strained lasso.
+
+Since the distance between points, can not be bigger than length of a path connecting them,
+this statement implies the problem.
+
 
 \parbf{Advanced exercise \ref{ex:milka}.} Show that the concatenation of the line segment $[p_t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path in the closed region $W$ outside of $\Sigma$.
 

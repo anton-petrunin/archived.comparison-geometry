@@ -1,125 +1,9 @@
 
 \chapter{Spherical map}
 
-%???MOVE UP
-
-\section*{Differential}
-
-Let $f\:\Sigma\to \RR^3$ be a smooth map defined on a smooth surface $\Sigma$;
-that is, for any chart $s$ of $\Sigma$ the composition $f\circ s$ is smooth.
-
-Given a smooth curve $\gamma$ in $\Sigma$ consider the smooth curve $\hat \gamma=f\circ\gamma$.
-Assume $\gamma$ starts at a point $p\in \Sigma$ with velocity vector $v\in\T_p\Sigma$;
-that is, $p=\gamma(0)$ and $v=\gamma'(0)$.
-The differential of $v$ at $p$ is defined as 
-\[d_pf(v)=\hat\gamma'(0).\eqlbl{eq:differenital}\]
-The domain of definition of $d_pf$ is the tangent plane $\T_p\Sigma$.
-The differential is an operator that produces a map $d_pf\:\T_p\Sigma\to\RR^3$ for given smooth map $f\:\Sigma\to \RR^3$ and $p\in\Sigma$.
-
-Note that the value $d_pf(v)$ does not depend on the choice of $\gamma$;
-that is, if $\gamma_1$ is another curve in $\Sigma$ such that $\gamma_1(0)=p$ and $\gamma'_1(0)=v$,
-then 
-\[(f\circ\gamma)'(0)=(f\circ\gamma_1)'(0).\eqlbl{eq:df(v)}\]
-Indeed,  $v=\gamma'_1(0)=\gamma'(0)$; therefore we have that 
-\[|\gamma_1(\eps)-\gamma(\eps)|=o(\eps).\]
-Since $f$ is smooth,
-\[|f\circ\gamma_1(\eps)-f\circ\gamma(\eps)|=o(\eps);\]
-whence \ref{eq:df(v)} follows.
-
-Note that if $\Sigma$ is a plane, then
-\[d_pf(v)=D_vf,\]
-where $D_v$ denotes the direction derivative.
-For general surface $D_vf$ is not well defined since the point $p+t\cdot v$ may not lie in $\Sigma$ for small values $t$.
-
-\begin{thm}{Exercise}\label{ex:differential-range}
-Assume $f$ is a smooth map from one surface $\Sigma_0$ to another $\Sigma_1$ and $p\in \Sigma_0$.
-Show that the range of $d_pf$ lies in the tangent plane $\T_{f(p)}\Sigma_1$.
-\end{thm}
-
-\begin{thm}{Proposition}\label{prop:linearity}
-The differential is a linear map.
-That is, for any smooth map $f\:\Sigma\to \RR^3$ defined on a smooth surface $\Sigma$ and $p\in\Sigma$,
-the map $d_pf\:\T_p\to \RR^3$ is linear.
-\end{thm}
-
-\parit{Proof.}
-Fix a chart $(u,v)\mapsto s(u,v)$ on $\Sigma$ that covers a neighborhood of $p$.
-Without loss of generality we may assume that $p=s(0,0)$.
-
-Any smooth curve $\gamma$ that starts at $p$ can be written locally in the chart as $\gamma(t)=s(u(t),v(t))$;
-since $\gamma$ stats at $p$, we have $u(0)=v(0)\z=0$.
-Applying the chain rule, we get
-\begin{align*}
-\gamma'(0)&=\tfrac{\partial s}{\partial u}(0,0)\cdot u'(0)+\tfrac{\partial s}{\partial v}(0,0)\cdot v'(0),
-\\
-(f\circ\gamma)'(0)&=\tfrac{\partial f\circ s}{\partial u}(0,0)\cdot u'(0)+\tfrac{\partial f\circ s}{\partial v}(0,0)\cdot v'(0).
-\end{align*}
-The statement follows since $d_p(\gamma'(0))=(f\circ\gamma)'(0)$.
-\qeds
-
-
-\section*{Shape operator}
-
-Suppose $\Sigma$ is an oriented surface with the unit normal field $\Norm$;
-in other words $\Norm\:\Sigma\to\SS^2$ is its spherical map.
-
-Fix a point $p\in \Sigma$.
-The \emph{shape operator} at $p$ is defined as 
-\[S_p\df-d_p\Norm.
-\eqlbl{eq:shape}\]
-The shape operator $S_p$ is defined on the tangent plane $\T_p\Sigma$ and it returns a vector in the same plane (otherwise we could not call it an \emph{operator}).
-The latter is shown in the following proposition, which also gives a reason for the change of sign in \ref{eq:shape}.
 
 
 
-Recall that 
-\[\II_p(w,v)=\langle M_p\cdot v,w\rangle,\]
-where $M_p$ is the Hessian matrix at $p$.
-It follows that 
-\[S_p(v)=M_p\cdot v\]
-if $v$ is written in the standard basis of the $(x,y)$-plane.
-Whence we get the following theorem. 
-
-\begin{thm}{Theorem}\label{thm:rodrigues}
-Let $\Sigma$ be a smooth oriented surface and $p\in \Sigma$.
-A nonzero tangent vector $v\in \T_p$ points in a principle direction at $p$
-if and only if $S_p(v)\parallel v$ and if so, then the unique coefficient $k$ such that
-$S_p(v)=k\cdot v$ is the principle curvature in this direction.
-
-In particular $K(p)=\det S_p$ and $H(p)=\trace S_p $.
-\end{thm}
-
-
-
-
-
-
-
-\begin{thm}{Exercise}\label{ex:geodesic-curvature-line}
-Suppose that a geodesic $\gamma$ on the surface $\Sigma$ is also a curvature line.
-Show that $\gamma$ lies in a plane.
-\end{thm}
-
-\section*{Area}
-
-
-Let $\Sigma$ be a smooth surface and $h\:\Sigma\to\RR$ be a smooth function.
-Let us define the integral $\int_R h$ of the function $h$ along a region $R\subset \Sigma$.
-
-First assume that there is a chart $(u,v)\mapsto s(u,v)$ of $\Sigma$ defined on an open set $U\subset\RR^2$ such that $R\subset s(U)$.
-In this case set
-\[\int_R h\df \iint_{s^{-1}(R)} h\circ s(u,v)\cdot |\tfrac{\partial s}{\partial v}(u,v)\times\tfrac{\partial s}{\partial u}(u,v)|  \cdot du\cdot dv.\eqlbl{eq:area-def}\]
-By substitution rule for multiple variables (\ref{thm:mult-substitution}), the right hand side in  \ref{eq:area-def} does not depend on choice of $s$;
-that is, if $s_1\:U_1\to \Sigma$ is another chart such that $s_1(U_1)\supset R$, then 
-\[\iint_{s^{-1}(R)} h\circ s\cdot |\tfrac{\partial s}{\partial v}\times\tfrac{\partial s}{\partial u}|  \cdot du\cdot dv=\iint_{s_1^{-1}(R)} h\circ s_1\cdot |\tfrac{\partial s_1}{\partial v}\times\tfrac{\partial s_1}{\partial u}|  \cdot du\cdot dv.\]
-(In fact the factor $|\tfrac{\partial s}{\partial v}\times\tfrac{\partial s}{\partial u}|$ is chosen so to meet this property.)
-
-For a general region $R$ one could subdivide it into regions $R_1,R_2\dots$ such that each $R_i$ lies in the image of some chart.
-After that one could define the integral along $R$ as the sum
-\[\int_Rh=\int_{R_1}h+\int_{R_2}h+\dots\]
-
-The area of $R$ is defined as the integral 
-\[\area R=\int_R 1.\]
 
 \section*{Spherical image}
 
@@ -132,7 +16,6 @@ for any region $R$ in $\Sigma$. %??? measurable
 \end{thm}
 
 \parit{Proof.} 
-Lets show that the spherical map $\Norm\:\Sigma\to\SS^2$ is injective.
 Fix two distinct points $p,q\in\Sigma$.
 Recall that $\Sigma$ bounds a strictly convex region.
 Therefore the $\Norm_p$ makes an obtuse angle with the line segment $[p,q]$. %??? why
@@ -140,7 +23,9 @@ The same way we can show that $\Norm_q$ makes an obtuse angle with the line segm
 In other words the projections of $\Norm_p$ and $\Norm_q$ on the line $pq$ point in the opposite directions.
 In particular $\Norm_p\ne \Norm_q$; that is, the spherical map is injective.
 
-Note that it is sufficient to prove the identity assuming that the region $R$ is covered by one chart $(u,v)\mapsto s(u,v)$ of $\Sigma$; if not cut $R$ into smaller regions and sum up the results.
+It remains to prove the identity.
+Note that we can assume that the region $R$ is covered by one chart $(u,v)\mapsto s(u,v)$; if not cut $R$ into smaller regions and sum up the results.
+
 Applying the definition of integral, we have the following expression for the left hand side
 \[\int_R K \df \iint_{s^{-1}(R)} K[s(u,v)]\cdot |\tfrac{\partial s}{\partial v}(u,v)\times\tfrac{\partial s}{\partial u}(u,v)|  \cdot du\cdot dv.\]
 Applying the definition of area, we have the following expression for the right hand side

@@ -33,9 +33,9 @@ If $\gamma$ is simple, then we can say that $|\gamma''(s)|$ is the curvature at 
 The curvature is usually denoted by $\kur(s)$ or $\kur(s)_\gamma$ and in the latter case it might be also denoted by $\kur(p)$ or $\kur(p)_\gamma$.
 
 The curvature measures how fast the curve turns;
-if you drive along a plane curve, curvature tells how much to turn the steering wheel at the given point (note that it does not depend on your speed).
+if you drive along a plane curve, then curvature describes the position of your steering wheel at the given point (note that it does not depend on your speed).
 
-In general, the term \emph{curvature} is used for different types of geometric objects, and it always measures how much it deviates from being \emph{straight};
+In general, the term \emph{curvature} is used for anything that measures how much a \emph{geometric object} deviates from being \emph{straight};
 for curves, it measures how fast it deviates from a straight line.
 
 \begin{thm}{Exercise}\label{ex:curvature-of-spherical-curve}
@@ -51,9 +51,9 @@ that is called \emph{tangent indicatrix} of $\gamma$.
 Note that $|\tan(t)|=1$ for any $t$;
 that is, $\tan$ is a spherical curve.
 
-If $\gamma$ has a unit-speed parametrization, then $\tan(t)=\gamma'(t)$.
+If $s\mapsto \gamma(s)$ is a unit-speed parametrization, then $\tan(s)=\gamma'(s)$.
 In this case we have the following expression for curvature: 
-$\kur(t)=|\tan'(t)|=|\gamma''(t)|$.
+\[\kur(s)\z=|\tan'(s)|\z=|\gamma''(s)|.\]
 
 In general case we have 
 \[ \kur(t)=\frac{|\tan'(t)|}{|\gamma'(t)|}.\eqlbl{eq:curvature}\]
@@ -74,7 +74,7 @@ for any smooth regular space curve $\gamma$ we have the following expressions fo
 
 \begin{enumerate}[(a)]
 \item\label{ex:curvature-formulas:a} \[\kur(t)=\frac{|\vec w(t)|}{|\gamma'(t)|^2},\]
-where $\vec w(t)$ denotes the projection of $\gamma''(t)$ to the normal plane of $\gamma'(t)$;
+where $\vec w(t)$ denotes the projection of $\gamma''(t)$ to the plane normal to $\gamma'(t)$;
 \item \[\kur(t)=\frac{|\gamma''(t)\times \gamma'(t)|}{|\gamma'(t)|^{3}},\]
 where $\times$ denotes the \emph{vector product} (also known as \emph{cross product}).
 \end{enumerate}
@@ -94,7 +94,8 @@ at the point $p=(x,f(x))$.
 
 Let $\gamma$ be a smooth regular space curve and $\tan$ its tangent indicatrix.
 The line thru $\gamma(t)$ in the direction of $\tan(t)$ is called \emph{tangent line} at~$t$.
-It could be also defined as a unique line that has that has \emph{first order of contact} with $\gamma$ at $s$;
+
+The tangent line could be also defined as a unique line that has that has \emph{first order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)=o(\ell)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to the line.
 
 We say that smooth regular curve $\gamma_1$ at $s_1$ is \emph{tangent} to a smooth regular curve $\gamma_2$ at $s_2$
@@ -120,7 +121,7 @@ is called \emph{total curvature of}\label{page:total curvature of:smooth-def}
 $\gamma$.
 
 \begin{thm}{Exercise}\label{ex:helix-curvature}
-Find the curvature of the helix \[\gamma_{a,b}(t)=(a\cdot \cos t,a\cdot \sin t,b\cdot t),\] its tangent indicatrix and the total curvature of its  arc $t\in[0,2\cdot\pi]$.
+Find the curvature of the helix \[\gamma_{a,b}(t)=(a\cdot \cos t,a\cdot \sin t,b\cdot t),\] its tangent indicatrix and the total curvature of its  arc for $t\in[0,2\cdot\pi]$.
 \end{thm}
 
 \begin{thm}{Observation}\label{obs:tantrix}
@@ -148,7 +149,7 @@ The total curvature of any closed regular space curve is at least $2\cdot\pi$.
 
 \parit{Proof.}
 Fix a closed regular space curve $\gamma$;
-we can assume that it is described by a loop $\gamma\:[a,b]\to \RR^3$;
+we can assume that it is described by a unit-speed loop $\gamma\:[a,b]\to \RR^3$;
 in this case $\gamma(a)=\gamma(b)$ and $\gamma'(a)=\gamma'(b)$.
 
 Consider its tangent indicatrix $\tan=\gamma'$.
@@ -191,13 +192,7 @@ whence
 
 \section*{Piecewise smooth curves}
 
-{
 
-\begin{wrapfigure}{o}{25 mm}
-\vskip-3mm
-\centering
-\includegraphics{mppics/pic-54}
-\end{wrapfigure}
 
 Assume $\alpha\:[a,b]\to \RR^3$ and $\beta\:[b,c]\z\to \RR^3$ are two curves such that $\alpha(b)=\beta(b)$.
 Then one can combine these two curves into one $\gamma\:[a,c]\z\to \RR^3$ by the rule 
@@ -212,9 +207,8 @@ The obtained curve $\gamma$ is called the
 \emph{concatenation} of $\alpha$ and $\beta$. %briefly $\gamma=\alpha{*}\beta$.
 (The condition $\alpha(b)=\beta(b)$ ensures that the map $t\mapsto\gamma(t)$ is continuous.)
 
-}
 
-The same definition of cancatination can be applied if $\alpha$ and/or $\beta$ are defied on semiopen intervals 
+The same definition of concatenation can be applied if $\alpha$ and/or $\beta$ are defied on semiopen intervals 
 $(a,b]$ and/or $[b,c)$.
 
 The concatenation can be also defined if the end point of the first curve coincides with the starting point of the second curve;
@@ -222,6 +216,12 @@ if this is the case, then the time intervals of both curves can be shifted so th
 
 If in addition $\beta(c)=\alpha(a)$, then we can do cyclic concatination of these curves;
 this way we obtain a closed curve.
+
+\begin{wrapfigure}{o}{25 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-54}
+\end{wrapfigure}
 
 If $\alpha'(b)$ and $\beta'(b)$ are defined, then the angle $\theta=\measuredangle(\alpha'(b),\beta'(b))$ is called \emph{external angle} of $\gamma$ at time $b$.
 
@@ -254,7 +254,8 @@ these are smooth spherical arcs.
 The same argument as in the proof of Fenchel's theorem, shows that the curves $\tan_1,\dots,\tan_n$ cannot lie in an open hemisphere.
 
 Note that the spherical distance from the end point of $\tan_i$ to the starting point of $\tan_{i+1}$ is equal to the external angle $\theta_i$ (we enumerate the arcs modulo $n$, so $\gamma_{n+1}=\gamma_1$).
-Therefore if we connect the end point of $\tan_i$ to the starting point of $\tan_{i+1}$ by a short arc of a great circle in the sphere, then we add $\theta_1+\dots+\theta_n$ to the total length of $\tan_1,\dots,\tan_n$.
+Let us connect the end point of $\tan_i$ to the starting point of $\tan_{i+1}$ by a short arc of a great circle in the sphere.
+This way we get a closed spherical curve that is $\theta_1+\dots+\theta_n$ longer then the total length of $\tan_1,\dots,\tan_n$.
 
 Applying the hemisphee lemma (\ref{lem:hemisphere}) to the obtained closed curve, we get that
 \[\length\tan_1+\dots+\length\tan_n+\theta_1+\dots+\theta_n\ge 2\cdot\pi.\]
@@ -268,7 +269,7 @@ that is
 \[\alpha=\measuredangle(\vec w,\gamma'(a))\quad\text{and}\quad \beta=\measuredangle(\vec w,\gamma'(b)),\]
 where $\vec w=\gamma(b)-\gamma(a)$.
 Then 
-\[\tc\gamma\ge \alpha+\beta.\] 
+\[\tc\gamma\ge \alpha+\beta.\eqlbl{tc>a+b}\] 
 
 \end{thm}
 
@@ -287,13 +288,13 @@ The closed curve $\bar\gamma$ has two external angles $\pi-\alpha$ and $\pi-\bet
 Since curvature of $\ell$ vanish, we get that 
 \[\tc{\bar\gamma}=\tc\gamma+(\pi-\alpha)+(\pi-\beta).\]
 According to the generalized Fenechel's theorem (\ref{thm:gen-fenchel}),
-\[\tc{\bar\gamma}\ge 2\cdot\pi;\]
-hence the result.
+$\tc{\bar\gamma}\ge 2\cdot\pi$;
+hence \ref{tc>a+b} follows.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:chord-lemma-optimal}
 Show that the estimate in the chord lemma is optimal.
-That is, given two points $p, q$ and two nonzero vectors $u,v$ in $\RR^3$,
+That is, given two points $p, q$ and two nonzero vectors $\vec u,\vec v$ in $\RR^3$,
 show that there is a smooth regular curve $\gamma$ that starts at $p$ in the direction of $\vec u$ and ends at $q$ in the direction of $\vec v$ such that 
 $\tc\gamma$ is arbitrarily close to $\measuredangle(\vec w,\vec u)+\measuredangle(\vec w,\vec v)$, where $\vec w=q-p$.
 
@@ -409,10 +410,10 @@ Therefore combining these inequalities, we get that
 - (\measuredangle dab+\measuredangle abd+ \measuredangle bda)
 -(\measuredangle bcd+\measuredangle cdb +\measuredangle dbc)=
 \\
-=2\cdot\pi.
+&=2\cdot\pi.
 \end{align*}
 
-\begin{wrapfigure}{o}{40 mm}
+\begin{wrapfigure}{r}{40 mm}
 \vskip-7mm
 \centering
 \includegraphics{mppics/pic-56}
@@ -426,7 +427,7 @@ It means that the point $d$ lies in the angle $abc$
 and the point $b$ lies in the angle $cda$.
 That is, $abcd$ is a convex plane quadraliteral.
 
-It follows that any quadraliteral inscribed in $\gamma$ is convex plane quadraliteral.
+It follows that any quadraliteral inscribed in $\gamma$ is a convex plane quadraliteral.
 Therefore all points of $\gamma$ lie in one plane and the domain bounded by $\gamma$ is convex;
 that is, $\gamma$ is a convex plane curve. %???more
 \qeds
@@ -454,15 +455,24 @@ according to the exercise the latter implies the so-called \emph{F\'ary--Milnor 
 \section*{Bow lemma}
 
 \begin{thm}{Lemma}\label{lem:bow}
-Let $\gamma_1\:[a,b]\to\RR^2$ and $\gamma_2\:[a,b] \to\RR^3$ be two smooth unit-speed curves;
-denote by $\kur_1(s)$ and $\kur_2(s)$ their curvatures at $s$.
-Suppose that $\kur_1(s)\ge\kur_2(s)$ for any $s$ 
+Let $\gamma_1\:[a,b]\to\RR^2$ and $\gamma_2\:[a,b] \to\RR^3$ be two smooth unit-speed curves.
+Suppose that $\kur(s)_{\gamma_1}\ge\kur(s)_{\gamma_2}$ for any $s$ 
 and the curve
 $\gamma_1$ is a simple arc of a convex curve; that is, it runs in the boundary of a covex plane figure.
 Then the distance between the ends of $\gamma_1$ cannot exceed the  distance between the ends of $\gamma_2$; that is,
 \[|\gamma_1(b)-\gamma_1(a)|\le |\gamma_2(b)-\gamma_2(a)|.\]
 
 \end{thm}
+
+The following exercise states that the condition that $\gamma_1$ is a convex arc is necessary.
+It is instructive to do this exercise before reading the proof of the lemma.
+
+\begin{thm}{Exercise}
+Construct a simple smooth unit-speed plane curves $\gamma_1,\gamma_2\:[a,b]\to\RR^2$ such that 
+that $\kur(s)_{\gamma_1}>\kur(s)_{\gamma_2}$ for any $s$ and
+\[|\gamma_1(b)-\gamma_1(a)|> |\gamma_2(b)-\gamma_2(a)|.\]
+\end{thm}
+
 
 \begin{wrapfigure}{o}{36 mm}
 \vskip-7mm
@@ -626,7 +636,18 @@ where the least upper bound is taken for all polygonal lines~$\beta$ inscribed i
 (if $\gamma$ is closed we assume that so is $\beta$).
 \end{thm}
 
-\parit{Proof.}
+This theorem is a refinement of Proposition~\ref{prop:inscribed-total-curvature}.
+It shows that the following definition of total curvature of arbitrary curves, 
+generalize the original definition that works only for (piecewise) smooth and regular curves.
+
+We say that a parameterized curve is trivial if it is constant; that is, it stays at one point.
+
+\begin{thm}{Definition}\label{def:total-curv-poly}
+The total curvature of a nontrivial parameterized space curve $\gamma$ is the exact upper bound on the total curvatures of inscribed nondegenerate polygonal lines;
+if $\gamma$ is closed, then we assume that the inscribed polygonal lines are closed as well.
+\end{thm}
+
+\parit{Proof of the theorem.}
 Note that the inequality 
 \[\tc\gamma\ge \tc\beta\]
 follows from \ref{prop:inscribed-total-curvature};
@@ -657,14 +678,6 @@ By semi-continuity of the length (\ref{thm:length-semicont}), we get that
 where the least upper bound is taken over all partitions and their corresponding inscribed polygonal lines $\beta$; whence \ref{eq:tc=<tc} follows.
 \qeds
 
-The theorem above can be used to define total curvature for arbitrary curves, not necessary (piecewise) smooth and regular. 
-We say that a parameterized curve is trivial if it is constant; that is, it stays at one point.
-
-\begin{thm}{Definition}\label{def:total-curv-poly}
-The total curvature of a nontrivial parameterized space curve $\gamma$ is the exact upper bound on the total curvatures of inscribed nondegenerate polygonal lines;
-if $\gamma$ is closed, then we assume that the inscribed polygonal lines are closed as well.
-\end{thm}
-
 \begin{thm}{Exercise}\label{ex:tc-semicontinuous}
 Show that the total curvature is lower semi-continuous with respect to pointwise convergence of curves.
 That is, if a sequence
@@ -674,7 +687,7 @@ to a nontrivial curve $\gamma_\infty\:[a,b]\z\to \RR^3$, then
 \end{thm}
 
 \begin{thm}{Exercise}
-Generalize Fenchel's theorem all nontrivial closed space curves.
+Generalize Fenchel's theorem to all nontrivial closed space curves.
 That is, show that \[\tc\gamma\ge2\cdot\pi\]
 for any  closed space curve $\gamma$(not necessary piecewise smooth and regular).
 \end{thm}
@@ -686,11 +699,11 @@ Show that $\gamma$ is rectifiable.
 Construct a rectifiable curve $\gamma\:[a,b]\to\RR^3$ that has infinite total curvature.
 \end{thm}
 
-A good survey on curves of finite total curvature is written by John Sullivan \cite{sullivan-curves}.
+For more on curves of finite total curvature read \cite{aleksandrov-reshetnyak,sullivan-curves}. 
 
 \section*{DNA inequality revisited*}
 
-In this section we will give an alternative proof of \ref{thm:DNA} that works for arbitrary, not necessarily smooth, curves.
+In this section we will give an alternative proof of the DNA inequality (\ref{thm:DNA}) that works for arbitrary, not necessarily smooth, curves.
 In the proof we use \ref{def:total-curv-poly} to define for the total curvature;
 according to \ref{thm:total-curvature=}, it is more general than the smooth definition given on page \pageref{page:total curvature of:smooth-def}.
 
@@ -722,7 +735,7 @@ Consider a sequence of $n+1$ plane triangles
 &\cong 
 \triangle p_nop_{n+1},
 \end{align*}
-such that the points $q_0,q_1\dots$ lie on one line in that order and all the points $s_0,\dots,s_n$ lie on one side from this line.
+such that the points $q_0,q_1,\dots,q_{n+1}$ lie on one line in that order and all the points $s_0,\dots,s_n$ lie on one side from this line.
 
 \begin{figure}[h!]
 \vskip-0mm

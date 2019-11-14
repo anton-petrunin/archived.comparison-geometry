@@ -4,7 +4,7 @@
 
 Fix a point $p$ in a smooth oriented surface $\Sigma$.
 Consider a coordinate system $(x,y,z)$ with origin at $p$ such that the $(x,y)$-plane coincides with $\T_p$ and the $z$-axis in the direction of the normal vector $\Norm_p$.
-By \ref{ex:vertical-tangent}, we can present $\Sigma$ locally around $p$ as a graph of a function $f$. 
+By \ref{ex:vertical-tangent}, we can present $\Sigma$ locally around $p$ as a graph of a smooth function $f$. 
 Note that $f$ satisfies the following additional properties:
 \begin{align*}
 f(0,0)&=0,
@@ -30,7 +30,8 @@ m&=(\tfrac{\partial^2}{\partial x\partial y}f)(0,0)=(\tfrac{\partial^2}{\partial
 \\
 n&=(\tfrac{\partial^2}{\partial y^2}f)(0,0).
 \end{align*}
-The Taylor series for $f$ at $(0,0)$ up to the second oreder term can be then written as
+The Taylor series %???Taylor series
+for $f$ at $(0,0)$ up to the second oreder term can be then written as
 \[f(x,y)=\tfrac12(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)+o(x^2+y^2).\]
 Note that values $\ell$, $m$, and $n$ are completely determined by this equation.
 The so-called \emph{osculating paraboloid}
@@ -60,20 +61,20 @@ it is called the Hessian matrix of $f$ at $(0,0)$.
 
 Note that tangent-normal coordinates give an almost canonical coordinate system in a neighborhood of $p$;
 it is unique up to a rotation of  the $(x,y)$-plane.
-Rotating the $(x,y)$-plane is equivalent to changing its the basis, which results in the rewriting   
-the matrix $M_p$ in this new basis.
+Rotating the $(x,y)$-plane results in the rewriting   
+the matrix $M_p$ in the new basis.
 
 Since the Hessian matrix $M_p$ is symmetric, it is diagonalizable by orthogonal matrices.
 That is, by rotating the $(x,y)$-plane we can assume that $m=0$ in \ref{eq:hessian}. %???+lin algebra material
 In this case the diagonal components of $M_p$ are called \emph{principle curvatures} of $\Sigma$ at $p$;
-they are uniquely defined up to sign;
 they are denoted as $k_1(p)$ and $k_2(p)$, or $k_1(p)_\Sigma$ and $k_2(p)_\Sigma$ if we need to emphasize that these are the curvatures of the surface $\Sigma$.
 We will always assume that $k_1\le k_2$.
+
 
 Note that if $x=f(x,y)$ is a local graph representation of $\Sigma$ in these coordinates, then 
 \[f(x,y)=\tfrac12\cdot(k_1\cdot x^2+k_2\cdot y^2)+o(x^2+y^2).\]
 
-The principle curvatures can be also defined as the eigenvalues of $M_p$;
+The principle curvatures can be also defined as the eigenvalues of the Hessian matrix $M_p$;
 the eigendirections of $M_p$ are called \emph{principle directions} of $\Sigma$ at~$p$.
 Note that if $k_1(p)\ne k_2(p)$, then $p$ has exactly two principle directions, which are perpendicular to each other; if $k_1(p)= k_2(p)$ then all tangent directions at $p$ are principle.
 
@@ -100,7 +101,7 @@ and
    &n
   \end{pmatrix};
 \]
-is the Hessian matrix of $f$ at $(0,0)$; that is, the components $\ell$, $m$, and $n$ are as on page \pageref{page:lmn}.
+is the Hessian matrix of $f$ at $(0,0)$; the components $\ell$, $m$, and $n$ are defined on page \pageref{page:lmn}.
 
 The multiplication by the Hessian matrix defies the so called \emph{shape operator}
 \[S\:(\begin{smallmatrix}
@@ -188,7 +189,7 @@ where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(
 \parit{Proof.} 
 Note that 
 \[D_{\vec i}=\tfrac{\partial}{\partial x}\quad\text{and}\quad D_{\vec j}=\tfrac{\partial}{\partial y}.\]
-It remains to use \ref{prop:shape=D2} and the expressions for $\ell$, $m$, and $n$ on page~\pageref{page:lmn}.
+It remains to use \ref{prop:shape=D2} and the expressions for $\ell$, $m$, and $n$ (see page~\pageref{page:lmn}).
 \qeds
 
 In the following proposition we use the notion of directional derivative defined in \ref{def:directional-derivative}.
@@ -205,40 +206,19 @@ for any $\vec w\in \T_p$.
 
 The reason for minus sign in \ref{eq:shape=-dNorm} is the same as in the formula  
 for curvature of plane curve in its Frenet frame: $\norm'=-\skur\cdot\tan$.
-This proposition will be proved in the next section. 
-
-\begin{thm}{Exercise}\label{ex:normal-curvature=const}
-Let $\Sigma$ be a smooth oriented surface with the unit normal field $\Norm$.
-Suppose that $\Sigma$ has unit principle curvatures at any point.
-\begin{enumerate}[(a)]
- \item Show that $S_p(w)=w$ for any $p\in\Sigma$ and $w\in \T_p\Sigma$.
- \item Show that $p+\Norm_p$ is constant; that is, the point $c=p+\Norm_p$ does not depend on $p\in\Sigma$.
- Conclude that $\Sigma$ is a part of the unit sphere centered at $c$.
-\end{enumerate}
-
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:shape-curvature-line}
-Assume that smooth surfaces $\Sigma_1$ and $\Sigma_2$ intersect at constant angle along a smooth regular curve $\gamma$.
-Show that if $\gamma$ is a curvature line in $\Sigma_1$, then it is also a curvature line in $\Sigma_2$.
-
-Conclude that if a smooth surface $\Sigma$ intersects a plane or sphere along a smooth curve $\gamma$,
-then $\gamma$ is a curvature line of $\Sigma$.
-\end{thm}
-
-\section*{Proof of \ref{prop:S=-D}*} 
-
+The proof is done by straightforward calculations.
 
 \parit{Proof of \ref{prop:S=-D}.}
 Let $\Sigma$ be a smooth surface with unit normal field $\Norm$.
 Suppose $(u,v)\mapsto s(u,v)$ is a local chart of $\Sigma$ at $p$.
 Since $\Norm$ is unit we have the identity
 \[1=\langle\Norm{\circ} s,\Norm{\circ} s\rangle.\]
-Note that the vectors $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ tangent at their base point; therefore we have two more identities:
+Note that the vectors $\tfrac{\partial s}{\partial u}(u,v)$ and $\tfrac{\partial s}{\partial v}(u,v)$ are tangent to $\Sigma$ at $s(u,v)$.
+Since $\Norm_p\perp\T_p$ for any $p\in\Sigma$, we have two more identities:
 \begin{align*}
  0&=\langle\tfrac{\partial}{\partial u} s,\Norm{\circ} s\rangle,
  &
- 0&=\langle\tfrac{\partial}{\partial u} s,\Norm\rangle.
+ 0&=\langle\tfrac{\partial}{\partial u} s,\Norm{\circ} s\rangle\rangle.
 \end{align*}
 Taking partial derivatives of these there identities and applying the product rule,
 we get the following six identities:
@@ -302,6 +282,26 @@ therefore \ref{eq:shape=-dNorm} follows.
 \qeds
 
 
+\begin{thm}{Exercise}\label{ex:normal-curvature=const}
+Let $\Sigma$ be a smooth oriented surface with the unit normal field $\Norm$.
+Suppose that $\Sigma$ has unit principle curvatures at any point.
+\begin{enumerate}[(a)]
+ \item Show that $S_p(w)=w$ for any $p\in\Sigma$ and $w\in \T_p\Sigma$.
+ \item Show that $p+\Norm_p$ is constant; that is, the point $c=p+\Norm_p$ does not depend on $p\in\Sigma$.
+ Conclude that $\Sigma$ is a part of the unit sphere centered at $c$.
+\end{enumerate}
+
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:shape-curvature-line}
+Assume that smooth surfaces $\Sigma_1$ and $\Sigma_2$ intersect at constant angle along a smooth regular curve $\gamma$.
+Show that if $\gamma$ is a curvature line in $\Sigma_1$, then it is also a curvature line in $\Sigma_2$.
+
+Conclude that if a smooth surface $\Sigma$ intersects a plane or sphere along a smooth curve $\gamma$,
+then $\gamma$ is a curvature line of $\Sigma$.
+\end{thm}
+
+
 \section*{More curvatures}
 
 Fix an oriented smooth surface $\Sigma$ and a point $p\in\Sigma$.
@@ -315,11 +315,11 @@ The Gauss curvature can be also interpreted as the determinant of the Hessian ma
 The sum 
 \[H(p)=k_1(p)+ k_2(p)\] 
 is called \emph{mean curvature}\footnote{Some authors define mean curvature as $\tfrac12\cdot(k_1(p)+ k_2(p))$ --- the mean value of the principle curvatures. It is suits the name better, but not as convenient when it comes to calculations.} at $p$.
-We may denote it by $H(p)_\Sigma$ if we need to emphasize that this is curvature of $\Sigma$.
+We may also denote it by $H(p)_\Sigma$.
 The mean curvature can be also interpreted as the trace of the Hessian matrix $M_p$, or, equivalently,  as the trace of the shape operator $S_p$. 
 
-Note that the Gauss curvature depends only on $\Sigma$ and $p$.
-The same is true up to sign for the mean curvature --- it changes the sign if we revert the orientation of the surface.
+Note that reverting orientaion of $\Sigma$ does not change Gauss curvatre and changes sign of mean curvature.
+In particular, the Gauss curvature is well defined for nonoriented surface $\Sigma$ and $p$.
 
 \begin{thm}{Exercise}\label{ex:gauss+orientable}
 Show that any surface with positive Gauss curvature is orientable. 
