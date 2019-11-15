@@ -6,38 +6,35 @@
 In the following definition we use the notion of \emph{metric space} which is discussed in Appendix~\ref{app:metric-spcaes}.
 The Euclidean plane and space are the main examples of metric spaces that one should keep in mind. 
 
-Recall that that a bijective continuous map $f\:X\to Y$ between subsets of some metric spaces is called \emph{homeomorphism} if its inverse $f^{-1}\:Y\z\to X$ is continuous.  
+Recall that that a bijective continuous map $f\:X\to Y$ between subsets of some metric spaces is called a \emph{homeomorphism} if its inverse $f^{-1}\:Y\z\to X$ is continuous.  
 
 \begin{thm}{Definition} 
-A connected subset $\gamma$ in a metric space is called a \emph{simple curve} if it is \emph{locally} homeomorphic to a real interval; that is, any point $p\in\gamma$ has a neighborhood $U\ni p$ such that the intersection
-$U\cap \gamma$ is homeomorphic to an open real interval.
+A connected subset $\gamma$ in a metric space is called a \emph{simple curve} if it is \emph{locally} homeomorphic to a real interval.
 \end{thm}
 
-It turns out that any curve can be \emph{parameterized} by an open real interval or a circle.
-That is, for any curve $\gamma$ there is a homeomorphism $(a,b)\to\gamma$ or $\SS^1\to\gamma$ 
-where $\SS^1$ denotes the unit circle; that is 
+It turns out that any simple curve $\gamma$ can be \emph{parametrized} by a real interval or a circle.
+That is, there is a homeomorphism $G\to\gamma$ 
+where $G$ is a real interval (open, closed or semi-open) or the circle
 \[\SS^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}.\]
 We omit a proof of this statement; it is not hard, but would take us away from the subject.
 We hope however that this statement is intuitively obvious. % a formal proof can be found in???.
 
-Curves that admit a parametrization by a circle are called \emph{closed}.
-The subsets of curves bounded from one or two sides by points are called \emph{curves with endpoints}.
-If it has two endpoints, then it is called \emph{arc}; note that any arc can be parameterized by a closed interval.
-A curve as well as a curve with endpoint(s) can be regarded as a curve;
-if we need to emphasize that we work with a genuine curve we may say a \emph{curve without endpoints}.
+If $G$ is an open interval or a circle we say that $\gamma$ is a \emph{curve without endpoints}, otherwise it is 
+called a \emph{curve with endpoints}. In the case when $G$ is a circle we say that the curve is \emph{closed}. 
+When $G$ is a closed interval, $\gamma$ is called an \emph{arc}.
 
 
 A parametrization describes a curve completely.
-Often we will denote a curve and its parametrization by the same letter;
+We will denote a curve and its parametrization by the same letter;
 for example, we may say a plane curve $\gamma$ is given with a parametrization $\gamma\:(a,b)\to \RR^2$.
-Note however that any curve admits many different parametrization. 
+Note, however, that any simple curve admits many different parametrization. 
 
 \begin{thm}{Exercise}\label{ex:9}
 Find a continuous injective map $\gamma\:(0,1)\to\RR^2$ such that its image is not a simple curve.
 \end{thm}
 
 
-\section*{Parameterized curves}
+\section*{Parametrized curves}
 
 A \emph{parameterized curve} is defined as a continuous map $\gamma$ from a circle or a real interval (open, closed or semi-open) to a metric space. 
 For a parameterized curve we do not assume that $\gamma$ is injective; in other words a parameterized curve might have \emph{self-intersections}.
@@ -46,7 +43,7 @@ If we say \emph{curve} it means we do not want to specify whether it is a parame
 
 If the domain of a parameterized curve is the closed unit interval $[0,1]$, then it is also called a \emph{path}.
 If in addition $p=\gamma(0)=\gamma(1)$, then $\gamma$ is called a loop;
-the point $p$ in this case is called \emph{base} of the loop.
+in this case the point $p$ is called the \emph{base} of the loop.
 
 \begin{thm}{Advanced exercise}
 Let $X$ be a subset of the plane.
@@ -56,22 +53,22 @@ Show that there is a simple arc in~$X$ connecting $p$ to $q$.
 
 \section*{Smooth curves}
 
-A curve in the Euclidean space or plane, is called \emph{space} or \emph{plane curve} correspondingly.
+Curves in Euclidean space or plane are called \emph{space} or \emph{plane curves}, respectively.
 
 A parameterized space curve can be described by its coordinate functions 
 \[\gamma(t)=(x(t),y(t),z(t)).\]
 Plane curves can be considered as a partial case of space curves with $z(t)\equiv 0$.
 
 Recall that a real-to-real function is called \index{smooth function}\emph{smooth} if its derivatives of all orders are defined everywhere in the domain of definition.  
-If each of the coordinate functions $t\mapsto x(t),t\mapsto y(t)$ and $t\mapsto z(t)$ of the space curve $\gamma$ is a smooth, then the parameterized curve is called \index{smooth curve}\emph{smooth}.
+If each of the coordinate functions $x(t), y(t)$ and $z(t)$ of a space curve $\gamma$ are smooth, then the parametrized curve is called \index{smooth curve}\emph{smooth}.
 
 If the \emph{velocity vector} 
 \[\gamma'(t)=(x'(t),y'(t),z'(t))\] 
-does not vanish at all points, then the parameterized curve $\gamma$ is called \emph{regular}.
+does not vanish at any point, then the parameterized curve $\gamma$ is called \emph{regular}.
 
-A simple space curve is called \emph{smooth and regular} if it admits a smooth and regular parametrization.
+A simple space curve is called \emph{smooth} (resp. \emph{regular}) if it admits a smooth (resp. regular) parametrization.
 Regular smooth curves are among the main objects in differential geometry;
-colloquially, the term \emph{smooth curve} often used as a shortcut for \emph{smooth regular curve}. 
+colloquially, the term \emph{smooth curve} is often used as a shortcut for \emph{smooth regular curve}. 
 
 \begin{thm}{Exercise}\label{ex:L-shape}
 Note that the function 
@@ -82,7 +79,7 @@ Note that the function
 \frac{t}{e^{1\!/\!t}}&\text{if}\ t> 0.
 \end{cases}
 \]
-is smooth. Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and direct calculations show that $f^{(n)}(0)=0$ for any $n$.
+is smooth. Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and direct calculations show that $f^{(n)}(0)=0$ for all $n$.
 
 Show that $\gamma(t)=(f(t),f(-t))$ gives a smooth parametrization of a simple curve formed by the union of two half-axis in the plane.
 
@@ -103,9 +100,8 @@ such that the plane curve $\gamma_\ell (t)= (t+\ell \cdot \sin t,\ell \cdot \cos
 \end{thm}
 
 \section*{Periodic parametrization}
-Note that any closed simple curve can be described as an image of a loop.
-However, it is more natural to present it as a \emph{periodic} parameterized curve $\gamma\: \RR\to \mathcal{X}$; that is, such that $\gamma(t+\ell)=\gamma(t)$ for a fixed period $\ell$ and any $t$.
-For example the unit circle in the plane can be described by $2{\cdot}\pi$-periodic parametrization $\gamma(t)=(\cos t,\sin t)$.
+A natural way to describe a closed simple curve is as a \emph{periodic} parameterized curve $\gamma\: \RR\to \mathcal{X}$; that is, a curve such that $\gamma(t+\ell)=\gamma(t)$ for a fixed period $\ell > 0$ and all $t$.
+For example, the unit circle in the plane can be described by the $2{\cdot}\pi$-periodic parametrization $\gamma(t)=(\cos t,\sin t)$.
 
 {
 
@@ -116,19 +112,19 @@ For example the unit circle in the plane can be described by $2{\cdot}\pi$-perio
 \end{wrapfigure}
 
 Any smooth regular closed curve can be described by a smooth regular loop.
-But in general the closed curve that described by a smooth regular loop might fail to be smooth at its base; an example is shown on the diagram.
+But in general the closed curve described by a smooth regular loop might fail to be regular at its base; an example is shown on the diagram.
 
 }
 
 \section*{Implicitly defined curves}
 
 Suppose $f\:\RR^2\to \RR$ is a smooth function; 
-that is, all its partial derivatives defined in its domain of definition.
+that is, all its partial derivatives are defined in its domain of definition.
 Let $\gamma\subset \RR^2$ be the set of solutions of the equation $f(x,y)=0$.
 
 Assume $\gamma$ is connected.
-According to implicit function theorem (\ref{thm:imlicit}), the set $\gamma$ is a smooth regular simple curve if $0$ is a \emph{regular value} of $f$.
-In this case it means that the gradient $\nabla f$ does not vanish at any point $p\in \gamma$.
+According to the implicit function theorem (\ref{thm:imlicit}), the set $\gamma$ is a smooth regular simple curve if $0$ is a \emph{regular value} of $f$.
+This condition is equivalent to the gradient $\nabla f$ not vanishing at any point $p\in \gamma$.
 In other words, if $f(p)=0$, then  $\tfrac{\partial f}{\partial x}(p)\ne 0$ or $\tfrac{\partial f}{\partial y}(p)\ne 0$.
 
 Similarly, assume $f,h$ is a pair of smooth functions defined in $\RR^3$.
@@ -151,15 +147,15 @@ In other words, the Jacobian matrix
 \]
 for the map $F\:\RR^3\to\RR^2$ has rank 2 at any $p$ such that $f(p)=h(p)=0$.
 
-The described way to define a curve is called \emph{implicit};
+The way described above to define a curve is called \emph{implicit};
 if a curve is defined by its parametrization, we say that it is \emph{explicitly defined}.
-While implicit function theorem guarantees the existence of regular smooth parametrizations, do not expect it to be in a closed form. 
-When it comes to calculations, usually it is easier to work directly with implicit representation. 
+While implicit function theorem guarantees the existence of regular smooth parametrizations,
+when it comes to calculations, it is usualy easier to work directly with implicit representations. 
 
 \begin{thm}{Exercise}
 Consider the set in the plane described by the equation
 \[y^2=x^3.\]
-Is it a simple curve? and if ``yes'', is it a smooth regular curve?
+Is it a simple curve? Is it a smooth regular curve?
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:viviani}
@@ -175,16 +171,16 @@ describes a smooth regular curve.
 
 \section*{Proper curves}
 
-A parametrized curve $\gamma$ in a metric space $\mathcal{X}$ is called \emph{proper} if for any compact set $K$ the inverse image $\gamma^{-1}(K)$ is compact.
+A parametrized curve $\gamma$ in a metric space $\mathcal{X}$ is called \emph{proper} if for any compact set $K \subset X$, the inverse image $\gamma^{-1}(K)$ is compact.
 
-For example curve $\gamma(t)=(e^t,0,0)$ defined on whole real line is not proper.
-Indeed the half-line $(-\infty,0]$ is not compact and it is the inverse image of unit closed ball around the origin.  
+For example, the curve $\gamma(t)=(e^t,0,0)$ defined on whole real line is not proper.
+Indeed, the half-line $(-\infty,0]$ is not compact and it is the inverse image of unit closed ball around the origin.  
 
-Note that any closed curve as well arc are proper curves since its parameter set is compact.
+Note that closed curves ans arcs are automatically proper since the parameter set is compact.
 
 A simple curve is called proper if it admits a proper parametrization.
-It turns out that simple curve is proper if and only if its image is a closed set.
-In particular any implicitly defined plane or space curve is proper.
+It turns out that a simple curve is proper if and only if its image is a closed set.
+In particular, any implicitly defined plane or space curve is proper.
 We omit the proof of this statement, but it is not hard. %??? ref
 
 \begin{thm}{Exercise}\label{ex:proper-curve}

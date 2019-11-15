@@ -8,7 +8,7 @@ Let $\gamma$ be a smooth regular space curve.
 Without loss of generality, we may assume that $\gamma$ has an arc-length parametrization,
 so the velocity vector $\tan(s)=\gamma'(s)$ is unit.
 
-Assume its curvature does not vanish at some time moment $s$;
+Assume its curvature does not vanish at some time $s$;
 in other words, $\gamma''(s)\ne 0$.
 Then we can define the so-called \emph{normal vector} at $s$ as
 \[\norm(s)=\frac{\gamma''(s)}{|\gamma''(s)|}.\]
@@ -41,7 +41,7 @@ Note that the frame $\tan(s),\norm(s),\bi(s)$ is defined only if $k(s)\ne 0$.
 
 The plane $\Pi_s$ thru $\gamma(s)$ spanned by vectors $\tan(s)$ and $\norm(s)$ is called \emph{osculating plane} at $s$;
 equivalently it can be defined as a plane thru $\gamma(s)$ that is perpendicular to the binormal vector $\bi(s)$.
-This a unique plane that has \emph{second order of contact} with $\gamma$ at $s$;
+This is the unique plane that has \emph{second order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\Pi_s$.
 
 \section*{Torsion*}
@@ -50,16 +50,16 @@ Let $\gamma$ be a smooth unit-speed space curve
 and $\tan(s),\norm(s),\bi(s)$ is its Frenet frame.
 The value 
 \[\tor(s)=\langle \norm'(s),\bi(s)\rangle\]
-is called \emph{torsion} of $\gamma$ at $s$.
+is called the \emph{torsion} of $\gamma$ at $s$.
 
 Note that the torsion $\tor(s)$ is defined if $\kur(s)\ne0$.
 Indeed, if $\kur(s)\ne 0$, then Frenet frame $\tan(s),\norm(s),\bi(s)$ is defined at $s$.
 Moreover since the function $s\mapsto \kur(s)$ is continuous, it must be positive in an open interval containing $s$;
-therefore Frenet frame is also defined in this interval.
+therefore the Frenet frame is also defined in this interval.
 Clearly $\tan(s)$, $\norm(s)$ and $\bi(s)$ depend smoothly on $s$ in their domains of definition.
 Therefore $\norm'(s)$ is defined and so is the torsion $\tor(s)=\langle \norm'(s),\bi(s)\rangle$.
 
-The torsion measures how fast the osculating plane rotated when one travels along $\gamma$.
+The torsion measures how fast the osculating plane rotates when one travels along $\gamma$.
 
 \begin{thm}{Exercise}\label{ex:helix-torsion}
 Given real numbers $a$ and $b$, calculate curvature and torsion of the helix
@@ -71,16 +71,16 @@ Conclude that for any $\kur>0$ and $\tor$ there is a helix with constant curvatu
 
 \section*{Frenet formulas*}
 
-Assume the Frenet frame $\tan(s),\norm(s),\bi(s)$ of curve $\gamma$ is defined at $s$.
+Assume the Frenet frame $\tan(s),\norm(s),\bi(s)$ of a curve $\gamma$ is defined at $s$.
 Recall that 
 \[\tan'(s)=\kur(s)\cdot \norm(s).
 \eqlbl{eq:frenet-tau}\]
-Let us write the remaining derivatives $\norm'(s)$ and $\bi'(s)$ in the frame $\tan(s),\norm(s),\bi(s)$.
+It is convenient to write the remaining derivatives $\norm'(s)$ and $\bi'(s)$ in the frame $\tan(s),\norm(s),\bi(s)$.
 
 First let us show that
 \[\norm'(s)=-\kur(s)\cdot\tan(s)+\tor(s)\cdot\bi(s).\eqlbl{eq:frenet-nu}\]
 
-Since the frame $\tan(s),\norm(s),\bi(s)$ is orthonormal it is equivalent to the following three identities:
+Since the frame $\tan(s),\norm(s),\bi(s)$ is orthonormal, the above formula is equivalent to the following three identities:
 \[\begin{aligned}
 \langle \norm',\tan\rangle&=-\kur,
 &
@@ -89,23 +89,13 @@ Since the frame $\tan(s),\norm(s),\bi(s)$ is orthonormal it is equivalent to the
 \langle \norm',\bi\rangle&=\tor,
 \end{aligned}\eqlbl{eq:<N',?>}\]
 The last identity follows from the definition of torsion.
-Differentiating $\langle \norm,\norm\rangle\z=1$ in \ref{eq:orthornomal}, we get that
-\[2\cdot\langle \norm',\norm\rangle=0;\]
-whence the second identity in \ref{eq:<N',?>} follows.
+The second one comes from differentiating $\langle \norm,\norm\rangle\z=1$ in \ref{eq:orthornomal}. 
 Differentiating the identity $\langle\tan,\norm\rangle\z=0$ in \ref{eq:orthornomal};
-we get that
+we get 
 \[\langle\tan',\norm\rangle+\langle\tan,\norm'\rangle=0.\]
-Applying \ref{eq:frenet-tau}, we get that
-\begin{align*}
-\langle \norm',\tan\rangle&=-\langle\tan',\norm\rangle=
-\\
-&=-\kur\cdot\langle\norm,\norm\rangle=
-\\
-&=-\kur.
-\end{align*}
-It proves the first equality in \ref{eq:<N',?>}; whence \ref{eq:frenet-nu} follows.
+Applying \ref{eq:frenet-tau}, we get get the first one.
 
-Taking derivatives of the third identity in \ref{eq:orthornomal}, we get that $\bi'\perp\bi$.
+Differentiating the third identity in \ref{eq:orthornomal}, we get that $\bi'\perp\bi$.
 Further taking derivatives of the other identities with $\bi$ in \ref{eq:orthornomal}, we get that 
 \begin{align*}
 \langle\bi',\tan\rangle&=-\langle\bi,\tan'\rangle=-\kur\cdot\langle\bi,\norm\rangle=0
@@ -172,7 +162,7 @@ The following theorem was proved by Michel Ange Lancret~\cite{lancret} more than
 \begin{thm}{Theorem}\label{thm:const-slope}
 Let $\gamma$ be a smooth regular curve;
 denote by $\kur$ and $\tor$ its curvature and torsion.
-Suppose $\kur(s)>0$ at any $s$.
+Suppose $\kur(s)>0$ for all $s$.
 Then $\gamma$ has constant slope if and only if the ratio $\tfrac\tor\kur$ is constant.
 \end{thm}
 
@@ -180,8 +170,8 @@ The theorem can be proved using the Frenet formulas.
 The following exercise will guide you thru the proof of the theorem. 
 
 \begin{thm}{Exercise} \label{ex:lancret}
-Suppose that $\gamma$ is a smooth regular space curve with nonvanishing curvature, $\tan,\norm,\bi$ 
-is its Frenet frame and $\kur$, $\tor$ are its curvature and torsion.
+Let $\gamma$ be a smooth regular space curve with nonvanishing curvature, $\tan,\norm,\bi$ 
+its Frenet frame and $\kur$, $\tor$ its curvature and torsion.
 \begin{enumerate}[(a)]
 \item\label{ex:lancret:a} 
 Assume that  $\langle \vec w,\tan\rangle$ is constant for a fixed nonzero vector $\vec w$.
@@ -192,20 +182,20 @@ Use it to show that
 Use these two identities to show that $\tfrac\tor\kur$ is constant;
 it proves the ``only if'' part of the theorem.
 
-\item Assume that $\tfrac\tor\kur$ is constant, show that the vector $\vec w=\tfrac\tor\kur\cdot \tan+\bi$ is constant.
+\item Assume $\tfrac\tor\kur$ is constant, show that the vector $\vec w=\tfrac\tor\kur\cdot \tan+\bi$ is constant.
 Conclude that $\gamma$ has constant slope; it proves the ``if'' part of the theorem.
 \end{enumerate}
 \end{thm}
 
-Assume $\gamma$ is a smooth unit-speed curve and $s_0$ is a fixed real number. 
+Let $\gamma$ be a smooth unit-speed curve and $s_0$ a fixed real number. 
 Then the curve 
 \[\alpha(s)=\gamma(s)+(s_0-s)\cdot \gamma'(s)\]
-is called \emph{evolvent} of $\gamma$.
-Note that if $\ell(s)$ denotes the tangent line of $\gamma$ at $s$,
-then $\alpha(s)\in \ell(s)$ and $\alpha'(s)\perp \ell$ for any $s$.
+is called the \emph{evolvent} of $\gamma$.
+Note that if $\ell(s)$ denotes the tangent line to $\gamma$ at $s$,
+then $\alpha(s)\in \ell(s)$ and $\alpha'(s)\perp \ell$ for all $s$.
 
 \begin{thm}{Exercise}\label{ex:evolvent-constant-slope}
-Show that evolvent of a constant slope curve is a plane curve.
+Show that the evolvent of a constant slope curve is a plane curve.
 \end{thm}
 
 \section*{Spherical curves*}
@@ -219,8 +209,8 @@ holds for its curvature $\kur$ and torsion $\tor$.
 
 Note that the identity implicitely implies that the torsion $\tor$ of the curve is nonzero;
 otherwise the left hand side would be undefined while right hand side is defined.
-The proof is another application of Frenet formulas;
-we present it in a form of guided exercise:
+The proof is another application of the Frenet formulas;
+we present it in form of a guided exercise:
 
 \begin{thm}{Exercise}\label{ex:spherical-frenet}
 Suppose $\gamma$ is a smooth unit-speed space curve.
@@ -248,23 +238,23 @@ It proves the ``only if'' part of the theorem.
 Now assume that $\gamma$ is a space curve that satisfies the idenity in (\ref{ex:spherical-frenet:kur-tor}).
 \begin{enumerate}[(a)]
 \setcounter{enumi}{\value{lastnumber}}
-\item Show that $p=\gamma+\tfrac1\kur\cdot \norm+\tfrac{\kur'}{\kur^2\cdot\tor}\cdot\bi$ is constant; conclude that $\gamma$ lies in a unit sphere centered at $p$.
+\item Show that $p=\gamma+\tfrac1\kur\cdot \norm+\tfrac{\kur'}{\kur^2\cdot\tor}\cdot\bi$ is constant; conclude that $\gamma$ lies in the unit sphere centered at $p$.
 \end{enumerate}
 It proves the ``if'' part of the theorem.
 \end{thm}
 
 For a unit-speed curve $\gamma$ with nonzero curvature and torsion at $s$,
-the sphere $\Sigma_s$ with the center
+the sphere $\Sigma_s$ with center
 \[p(s)=\gamma(s)+\tfrac1{\kur(s)}\cdot \norm(s)+\tfrac{\kur'(s)}{\kur^2(s)\cdot\tor(s)}\cdot\bi(s)\]
-that pass thru $\gamma(s)$ is called \emph{osculating sphere} of $\gamma$ at $s$.
-This a unique sphere that has \emph{third order of contact} with $\gamma$ at $s$;
+and passing thru $\gamma(s)$ is called the \emph{osculating sphere} of $\gamma$ at $s$.
+This is the unique sphere that has \emph{third order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)=o(\ell^3)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\Sigma_s$.
  
 \section*{Fundamental theorem of space curves*}
 
 \begin{thm}{Theorem}\label{thm:fund-curves}
 Let $\kur(s)$ and $\tor(s)$ be two smooth real valued functions defined on a real interval $\mathbb{I}$.
-Suppose $\kur(s)>0$ for any $s$.
+Suppose $\kur(s)>0$ for all $s$.
 Then there is a smooth unit-speed curve $\gamma\:\mathbb{I}\to\RR^3$ with curvature $\kur(s)$ and torsion $\tor(s)$ for every $s$.
 Moreover $\gamma$ is uniquely defined up to a rigid motion of the space.
 \end{thm}
@@ -355,22 +345,19 @@ $\langle\tan,\norm\rangle$,
 $\langle\tan,\norm\rangle$,
 $\langle\bi,\tan\rangle$
 are constant functions of $s$.
-Since we choose $\tan(s_0)$, $\norm(s_0)$, $\bi(s_0)$ to be an oriented orthonormal frame, we have that the $\tan(s)$, $\norm(s)$, $\bi(s)$ is oriented orthonormal for any $s$.
-In particular $|\gamma'(s)|=1$ for any $s$.
+Since we choose $\tan(s_0)$, $\norm(s_0)$, $\bi(s_0)$ to be an oriented orthonormal frame, we have that the triple $\tan(s)$, $\norm(s)$, $\bi(s)$ is an oriented orthonormal for any $s$. In particular, $|\gamma'(s)|=1$ for all $s$.
 
-Assume $\mathbb{J}\ne \mathbb{I}$.
-Then an end of $\mathbb{J}$, say $a$, lies in the interior of $\mathbb{I}$.
+Assume $\mathbb{J} \varsubsetneq \mathbb{I}$. Then an end of $\mathbb{J}$, say $a$, lies in the interior of $\mathbb{I}$.
 By Theorem~\ref{thm:ODE}, at least one of the values $\gamma(s)$, $\tan(s)$, $\norm(s)$, $\bi(s)$
 escapes to infinity as $s\to a$.
 But this is impossible since the vectors $\tan(s)$, $\norm(s)$, $\bi(s)$ remain unit and $|\gamma'(s)|=|\tan(s)|=1$ --- a contradiction.
-Whence $\mathbb{J}= \mathbb{I}$.
+Hence $\mathbb{J}= \mathbb{I}$.
 
 It remains to prove the last statement.
 
 Assume there are two curves $\gamma_1$ and $\gamma_2$ with the given curvature and torsion functions.
 Applying a motion of the space we can assume that the $\gamma_1(s_0)=\gamma_2(s_0)$ and the Frenet frames of the curves coincide at $s_0$.
-Then $\gamma_1=\gamma_2$ by uniqueness of solution of the system (\ref{thm:ODE}).
-That is, the curve is unique up to a rigid motion of the space.
+Then $\gamma_1=\gamma_2$ by uniqueness of  solutions of the system (\ref{thm:ODE}).
 \qeds
 
 \begin{thm}{Exercise}\label{ex:cur+tor=helix}
