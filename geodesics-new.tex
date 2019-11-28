@@ -1,25 +1,6 @@
 \chapter{Shortest paths}
 
-We start to study the intrinsic geometry of surfaces.
-The following exercise should help you to be in the right mood for this;
-it might look like a tedious problem in calculus, but actually it is an easy problem in geometry.
 
-\begin{wrapfigure}{r}{33 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-77}
-\vskip-0mm
-\end{wrapfigure}
-
-\begin{thm}{Exercise}\label{ex:lasso}
-There is a mountain of frictionless ice with the shape of a perfect cone with a circular base.
-A cowboy is at the bottom and he wants to climb the mountain.
-So, he throws up his lasso which slips neatly over the top of the cone, he pulls it tight and starts to climb.
-If the angle of inclination $\theta$ is large, there is no problem; the lasso grips tight and up he goes.
-On the other hand if $\theta$ is small, the lasso slips off as soon as the cowboy pulls on it.
-
-What is the critical angle $\theta_0$ at which the cowboy can no longer climb the ice-mountain?
-\end{thm}
 
 
 \section*{Shortest paths}
@@ -55,7 +36,7 @@ Note that $|p-q|_\Sigma=2$.
 Indeed, given $\eps\z>0$, consider the point $s_\eps=(0,\eps,0)$.
 Note that the polygonal path $ps_\eps q$ lies in $\Sigma$ and its length $2\cdot\sqrt{1+\eps^2}$ approaches $2$ as $\eps\to0$.
 It follows that $|p-q|_\Sigma\le 2$.
-On the other hand $|p-q|_\Sigma\ge |p-q|_{\RR^3}=2$; that is, $|p-q|_\Sigma= 2$.
+On the other hand $|p-q|_\Sigma\ge |p-q|_{\RR^3}=2$; therefore $|p-q|_\Sigma= 2$.
 
 \begin{wrapfigure}{o}{28 mm}
 \vskip-0mm
@@ -64,7 +45,7 @@ On the other hand $|p-q|_\Sigma\ge |p-q|_{\RR^3}=2$; that is, $|p-q|_\Sigma= 2$.
 \vskip-0mm
 \end{wrapfigure}
 
-Therefore a shortest path from $p$ to $q$ (if it exists) must have length 2.
+It follows that a shortest path from $p$ to $q$, if it exists, must have length 2.
 By triangle inequality any curve of length 2 from $p$ to $q$ must run along the line segment $[p,q]$;
 in particular it must pass thru the origin.
 Since the origin does not lie in $\Sigma$, there is no shortest from $p$ to $q$ in $\Sigma$ 
@@ -86,10 +67,12 @@ In particular each path $\gamma_n\:[0,1]\to\Sigma$ is $(\ell+1)$-Lipschitz;
 that is,
 \[|\gamma(t_0)-\gamma(t_1)|\le (\ell+1)\cdot|t_0-t_1|\]
 for any $t_0,t_1\in[0,1]$.
-Further the image of $\gamma_n$ lies in the closed ball $\bar B[p,\ell+1]$ for any $n$.
+
+Note that the image of $\gamma_n$ lies in the closed ball $\bar B[p,\ell+1]$ for any $n$.
 It follows that the coordinate functions of $\gamma_n$ are uniformly equicontinuous and uniformly bounded.
 By \ref{lem:equicontinuous}, we can pass to a converging subsequence of $\gamma_n$;
 denote by $\gamma_\infty\:[0,1]\to\RR^3$ its limit.
+
 As a limit of uniformly continuous sequence, $\gamma_\infty$ is continuous;
 that is, $\gamma_\infty$ is a path.
 Evidently $\gamma_\infty$ runs from $p$ to $q$.
@@ -128,7 +111,7 @@ Choose a sequence $x_n\in R$ such that $|p-x_n|\to \ell$ as $n\to\infty$.
 
 Without loss of generality, we can assume that all the points $x_n$ lie in a ball of radius $\ell+1$ centered at~$p$.
 Therefore we can pass to a partial limit $\bar p$ of $x_n$; that is, $\bar p$ is a limit of a subsequence of $x_n$.
-Since $R$ is closed $\bar p\in R$.
+Since $R$ is closed, $\bar p\in R$.
 By construction 
 \begin{align*}
 |p-\bar p|&=\lim_{n\to\infty}|p-x_n|=
@@ -184,6 +167,9 @@ Indeed consider the closest point projection $\bar\gamma$ of~$\gamma$.
 Note that $\bar\gamma$ lies in $\Sigma$ and connects $p$ to $q$ therefore 
 \[\length\bar\gamma\ge |p-q|_\Sigma.\]
 
+To prove the first statemnt, it is sufficient to show that 
+\[\length\gamma\ge\length\bar\gamma.\eqlbl{bar-gamma=<gamma}\]
+
 Consider an inscribed polygonal line $p_0\dots p_n$ in $\gamma$.
 Denote by $\bar p_i$ the closest point projection of $p_i$ to $R$.
 Note that the polygonal line  $\bar p_0\dots \bar p_n$ is inscribed in $\bar\gamma$;
@@ -191,9 +177,7 @@ moreover any inscribed polygonal line in $\bar\gamma$ can appear this way.
 By \ref{lem:closest-point-projection} $|p_i-p_{i-1}|\z\ge|\bar p_i-\bar p_{i-1}|$ for any $i$.
 Therefore 
 \[\length p_0\dots p_n\ge \length \bar p_0\dots \bar p_n.\]
-Taking least upper bound of each side of the inequality for all inscribed polygonal lines $p_0\dots p_n$ in $\gamma$, we get
-\[\length\gamma\ge\length\bar\gamma.\]
-Whence the first statement follows.
+Taking least upper bound of each side of the inequality for all inscribed polygonal lines $p_0\dots p_n$ in $\gamma$, we get \ref{bar-gamma=<gamma}.\
 
 \begin{wrapfigure}{o}{37 mm}
 \vskip-0mm
@@ -202,8 +186,9 @@ Whence the first statement follows.
 \vskip-0mm
 \end{wrapfigure}
 
-To prove the second statement, note that if $s=\gamma(t_1)\notin\Sigma$,
-then $s\notin R$.
+It remains to prove the second statement.
+Suppose that there is a point $s\z=\gamma(t_1)\notin\Sigma$;
+note that $s\notin R$.
 Hence there is a plane $\Pi$ that cuts $s$ from $\Sigma$.
 The curve $\gamma$ must intersect at least at two points: one point before $t_1$ and one after;
 let $a=\gamma(t_0)$ and $b=\gamma(t_2)$ be these points.

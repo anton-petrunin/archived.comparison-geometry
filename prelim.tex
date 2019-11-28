@@ -1,4 +1,4 @@
-
+\chapter{Multivariable calculus}
 
 \section{Regular values}
 
@@ -119,6 +119,25 @@ Therefore for any compact set $K'\subset U$ we have that %???compact
 \[\int_{K'}h(\bm{x})\cdot |J_{\bm{f}}(\bm{x})|\cdot d\bm{x}=\int_{\bm{f}(K_1)} h(\bm{f}^-1(\bm{y}))\cdot d\bm{y}.\]
 It remains to subdivide $K_1$ into a countable collection of subsets of that type and sum up the corresponding formulas.\qeds
 
+\section{Divergence theorem}
+
+\begin{thm}{Theorem}\label{thm:div}
+If a piecewise smooth surface $\Sigma$ bounds a body $V$ in $\RR^3$, then
+\[\flux_{\vec u}\Sigma=\iiint_V\div \vec u,\]
+assuming that the orientation on $\Sigma$ is defined by a unit normal field that points out of $V$.
+\end{thm}
+
+
+\section{Curl theorem}
+
+\begin{thm}{Theorem}\label{thm:curl}
+???
+\end{thm}
+
+
+
+\chapter{Differential equations}
+
 \section{Initial value problem}
 
 The following theorem guarantees existence and uniqueness of solutions of an initial value problem
@@ -153,6 +172,8 @@ Moreover
 
 
 \end{thm}
+
+\chapter{Real analysis}
 
 \section{Lipschitz condition}
 
@@ -206,6 +227,7 @@ for all $x  \in X$.
 Any uniformly equicontinuous sequence of function $f_n\:[a,b]\to [c,d]$ has a subsequence that converges uniformly to a continuous function. 
 \end{thm}
 
+\chapter{Topology}
 
 \section{Jordan's theorem}
 
@@ -258,34 +280,9 @@ Moreover, any open connected set in the Euclidean space or  plane is path connec
 
 Given a point $x\in X$, the maximal connected subset of $X$ containing $x$ is called the \emph{connected component} of $x$ in $X$.
 
-\section{Convexity}
-
-A set $X$ in the Euclidean space is called \emph{convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in $X$.
-It is called  \emph{strictly convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
-
-From the definition, it is easy to see that the intersection of an arbitrary family of convex sets is convex. 
-The intersection of all convex sets containing $X$ is called the \emph{convex hull} of $X$;
-it is the minimal convex set containing the set $X$.
 
 
-\begin{thm}{Lemma}\label{lem:separation}
-Let $K\subset \RR^3$ be a closed convex set.
-Then for any point $p\notin K$ there is a plane $\Pi$ that separates $K$ from $p$;
-that is, $K$ and $p$ lie on opposite open half-spaces separated by $\Pi$.
-\end{thm}
-
-A function of two variables $(x,y)\mapsto f(x,y)$ is called convex if 
-its epigraph $z\ge f(x,y)$ is a convex set.
-This is equivalent to the so-called \emph{Jensen's inequality}
-\[f \left (t\cdot x_1 + (1-t)\cdot x_2 \right ) \leq t\cdot f(x_1)+ (1-t)\cdot f(x_2)\]
-for $t\in[0,1]$.
-If $f$ is smooth, then the condition is equivalent to the following inequality for the second directional derivative:
-\[D^2_wf\ge 0\]
-for any vector $w\ne 0$ in the $(x,y)$-plane.
-
-
-
-\section{Elementary geometry}
+\chapter{Elementary geometry}
 
 \begin{thm}{Theorem}\label{thm:sum=(n-2)pi}
 The sum of all the internal angles of a simple $n$-gon is $(n-2)\cdot\pi$. 
@@ -382,7 +379,7 @@ Whence
 \end{align*}
 \qedsf
 
-\section{Schwarz's boot}
+\section{Schwarz's boot}\label{sec:schwarz-boot}
 
 Recall that we defined length of curve as the exact upper bound on the length of inscribed polygonal lines.
 It suggests to define area of a surface as a exact upper bound on the area of polyhedrons inscribed in the surface.
@@ -441,3 +438,29 @@ Consider the pairs $(m,n)$ such that $m$ is much larger than $n$; namely $m>\tfr
 Then
 \[S_{m,n}> 2\cdot  m\cdot  n\cdot  s_n>2\cdot  \tfrac1{s_n}\cdot  n\cdot  s_n=2\cdot n.\]
 Therefore $S_{m,n}\to \infty$ as $n\to \infty$.
+
+
+\section{Convexity}
+
+A set $X$ in the Euclidean space is called \emph{convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in $X$.
+It is called  \emph{strictly convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
+
+From the definition, it is easy to see that the intersection of an arbitrary family of convex sets is convex. 
+The intersection of all convex sets containing $X$ is called the \emph{convex hull} of $X$;
+it is the minimal convex set containing the set $X$.
+
+
+\begin{thm}{Lemma}\label{lem:separation}
+Let $K\subset \RR^3$ be a closed convex set.
+Then for any point $p\notin K$ there is a plane $\Pi$ that separates $K$ from $p$;
+that is, $K$ and $p$ lie on opposite open half-spaces separated by $\Pi$.
+\end{thm}
+
+A function of two variables $(x,y)\mapsto f(x,y)$ is called convex if 
+its epigraph $z\ge f(x,y)$ is a convex set.
+This is equivalent to the so-called \emph{Jensen's inequality}
+\[f \left (t\cdot x_1 + (1-t)\cdot x_2 \right ) \leq t\cdot f(x_1)+ (1-t)\cdot f(x_2)\]
+for $t\in[0,1]$.
+If $f$ is smooth, then the condition is equivalent to the following inequality for the second directional derivative:
+\[D^2_wf\ge 0\]
+for any vector $w\ne 0$ in the $(x,y)$-plane.
