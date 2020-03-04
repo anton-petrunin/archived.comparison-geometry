@@ -441,6 +441,8 @@ Any smooth open or closed surface in Euclidean space is oriented.
 
 In particular it follows that the M\"obius strip cannot be extended to an open or closed smooth surface without boundary.
 
+%??? +orientability of piecewise smooth surfaces
+
 \section*{Spherical map}
 
 Let $\Sigma$ be a smooth oriented surface with unit normal field $\Norm$.
@@ -448,10 +450,10 @@ The map $\Norm\:\Sigma\to \SS^2$ defined by $p\mapsto \Norm_p$ is called \emph{s
 
 For surfaces, the spherical map plays essentially the same role as the tangent indicatrix for curves.
 
-\section*{Plane sections}
+\section*{Sections}%???redo into sections
 
 \begin{thm}{Advanced exercise}
-Show that any closed set in the plane can appear as an intersection of this plane with an open smooth regular surface.  
+Show that any closed set in a plane can appear as an intersection of this plane with an open smooth regular surface.  
 \end{thm}
 
 The exercise above says that plane sections of a smooth regular surface might look complicated.
@@ -459,21 +461,26 @@ The following lemma makes it possible to perturb the plane so that the section b
 
 \begin{thm}{Lemma}\label{lem:reg-section}
 Let $\Sigma$ be a smooth regular surface.
-Then for any plane $\Pi$ there is an arbitrarily close parallel plane $\Pi'$ such that 
-each connected component of the intersection $\Sigma\cap \Pi'$ is a smooth regular curve.
+Suppose $f\:\RR^3\z\to\RR$ is a smooth function.
+Then for any constant $r_0$ there is an arbitrarily close value $r$ such that 
+each connected component of the intersection of the level set $L_{r}=f^{-1}\{r\}$ with
+$\Sigma$ is a smooth regular curve.
 \end{thm}
 
 \parit{Proof.}
-Assume $\Pi$ is described by equation $f(x,y,z)=r_0$, where
-\[f(x,y,z)=a\cdot x+b\cdot y+c\cdot z.\] 
 The surface $\Sigma$ can be covered by a countable set of charts $s_i\:U_i\to \Sigma$.
 Note that the composition $f\circ s_i$ is a smooth function for any $i$.
 By Sard's lemma (\ref{lem:sard}), almost all real numbers $r$ are regular values of each $f\circ s_i$.
 
-Fix such a value $r$ sufficiently close to $r_0$ and consider the plane $\Pi'$ described by the equation $f(x,y,z)=r$.
-Note that $\Pi'\parallel \Pi$ and is arbitrarily close to it.
-Any point in the intersection $\Sigma\cap\Pi'$ lies in the image of one of the charts.
+Fix such a value $r$ sufficiently close to $r_0$ and consider the level set $L_r$ described by the equation $f(x,y,z)=r$.
+Any point in the intersection $\Sigma\cap L_r$ lies in the image of one of the charts.
 From above it admits a neighborhood which is a regular smooth curve;
 hence the result.\qeds
+
+\begin{thm}{Corollary}
+Let $\Sigma$ be a smooth surface.
+Then for any plane $\Pi$ there is a parallel plane $\Pi'$ that lies arbitrary close to $\Pi$ and such that the intersection $\Sigma\cap\Pi$ is a union of disjoint smooth curves.
+\end{thm}
+
 
 

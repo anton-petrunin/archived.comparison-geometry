@@ -1,0 +1,406 @@
+\chapter{Area}
+
+
+
+\section*{Surface integral}
+
+Let $\Sigma$ be a smooth surface and $h\:\Sigma\to\RR$ be a smooth function.
+Let us define the integral $\int_R h$ of the function $h$ along a region $R\subset \Sigma$.
+(This definition can be applied to any Borel set of $R\subset \Sigma$.)
+
+First assume that there is a chart $(u,v)\mapsto s(u,v)$ of $\Sigma$ defined on an open set $U\subset\RR^2$ such that $R\subset s(U)$.
+In this case set
+\[\int_R h\df \iint_{s^{-1}(R)} h\circ s(u,v)\cdot |\tfrac{\partial s}{\partial v}(u,v)\times\tfrac{\partial s}{\partial u}(u,v)|  \cdot du\cdot dv.\eqlbl{eq:area-def}\]
+By the substitution rule for multiple variables (\ref{thm:mult-substitution}), the right hand side in  \ref{eq:area-def} does not depend on choice of $s$.
+That is, if $s_1\:U_1\to \Sigma$ is another chart such that $s_1(U_1)\supset R$, then 
+\[\iint_{s^{-1}(R)} h\circ s\cdot |\tfrac{\partial s}{\partial v}\times\tfrac{\partial s}{\partial u}|  \cdot du\cdot dv=\iint_{s_1^{-1}(R)} h\circ s_1\cdot |\tfrac{\partial s_1}{\partial v}\times\tfrac{\partial s_1}{\partial u}|  \cdot du\cdot dv.\]
+In other words, definition \ref{eq:area-def} makes sense.
+
+A general region $R$ can be subdivided into regions $R_1,R_2\dots$ such that each $R_i$ lies in the image of some chart.
+After that one could define the integral along $R$ as the sum
+\[\int_Rh=\int_{R_1}h+\int_{R_2}h+\dots\]
+
+
+\section*{Area}
+
+The area of a region $R$ in a smooth surface $\Sigma$ is defined as the surface integral 
+\[\area R=\int_R 1.\]
+
+\begin{thm}{Exercise}
+Prove the following identity 
+\[|\vec a\times \vec b|^2=\langle \vec a,\vec a\rangle\cdot\langle \vec b,\vec b\rangle-\langle \vec a,\vec b\rangle^2\]
+for any vectors $\vec a,\vec b\in\RR^3$.
+
+Use this identity to show that if the region $R$ of the surface $\Sigma$ is covered by a chart $s\:U\to \Sigma$, then
+\[\area R=\iint_{s^{-1}(R)} \sqrt{\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial u}\rangle\cdot\langle\tfrac{\partial s}{\partial v},\tfrac{\partial s}{\partial v}\rangle -\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle^2}\cdot du\cdot dv.\]
+\end{thm}
+
+\parbf{Remark.}
+The notion of area of surface is closely related to length of curve.
+However, to define length we uses a different idea --- it was defined as the least upper bound on the lengths of inscribed polygonal lines.
+It turns out that analogous definition does not work even for very simple surfaces;
+section \ref{sec:schwarz-boot} describes the so called \emph{Schwarz's boot} --- a classical example of that type.
+
+\section*{Flux and area}
+
+Let $\vec u$ be a vector field defined on a smooth oriented surface $\Sigma$ with unit normal filed $\Norm$.
+Recall that \emph{flux} of $\vec u$ thru $\Sigma$ is defined by the integral 
+\[\flux_{\vec u}\Sigma=\int_\Sigma \langle \vec u,\Norm\rangle.\]
+
+\begin{thm}{Observation}\label{obs:flux}
+Let $\vec u$ be a vector field defined on a smooth oriented surface $\Sigma$.
+Assume $|\vec u|\le 1$ at every point.
+Then 
+\[\flux_{\vec u}\Sigma \le \area\Sigma.\]
+\end{thm}
+
+\parit{Proof.}
+Since $|\vec u|\le 1$ and $|\Norm|=1$ at every point,
+we have that
+\[\langle\vec u,\Norm\rangle\le 1\]
+Therefore 
+\[\flux_{\vec u}\Sigma=\int_\Sigma \langle\vec u,\Norm\rangle\le \int_\Sigma1=\area\Sigma.\]
+\qedsf
+
+\begin{thm}{Exercise}
+Let $\Sigma$ be a compact smooth surface with boundary $\partial \Sigma$ in the $(x,y)$-plane.
+Denote by $\Delta$ the compact region in the $(x,y)$-plane bounded by the $\partial \Sigma$.
+Suppose that $\vec i,\vec j,\vec k$ is the standard basis in the the space.
+
+\begin{enumerate}[(a)]
+\item\label{ex:divergence}
+Assume that all the points of $\Sigma$ lie in the upper half-space of the $(x,y)$-plane.
+Use the divergence theorem (\ref{thm:div}) and the observation for the constant vector field $\vec k$
+to show that 
+\[\area\Sigma\ge\area\Delta.\]
+
+\item\label{ex:curl} 
+Use the curl theorem (\ref{thm:curl}) to prove the inequality in \ref{ex:divergence} for arbitrary smooth surface $\Sigma$ with boundary $\partial \Sigma$ in the $(x,y)$-plane, without assuming that the remaining points lie in the upper half-space.
+\end{enumerate}
+
+\end{thm}
+
+Further we denote by $\vec i,\vec j,\vec k$ the standard basis in a $(x,y,z)$-coordinate system of $\RR^3$.
+
+\begin{thm}{Exercise}
+Let $\Sigma$ be a smooth closed surface that lies between parallel planes on distance $1$ from the $(x,y)$-plane.
+Suppose that $\Sigma$ bounds a region $R$.
+Use the divergence theorem and the observation for the vector field $\vec u=z\cdot \vec k$ to  show that 
+\[\area \Sigma>\vol R.\]
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $\Sigma$ be a smooth closed surface that lies inside the infinite cylinder $x^2+y^2\le 1$.
+Suppose that $\Sigma$ bounds a region $R$.
+Use the divergence theorem and the observation for the vector field $\vec i,\vec j,\vec k$ to show that  
+\[\area \Sigma>2\cdot\vol R.\]
+\end{thm}
+
+\begin{thm}{Corollary}
+Let $\Sigma$ and $\Sigma'$ be a compact surfaces  with identical boundary lines;
+that is, $\partial \Sigma=\partial \Sigma'$.
+Suppose that $\Sigma$ is oriented and its unit normal field $\Norm$
+can be extended to a vector field $\vec u$ such that $|\vec u|= 1$ at every point
+and $\div \vec u= 0$ at every point between $\Sigma$ and $\Sigma'$. %???
+Then 
+\[\area\Sigma'\ge \area\Sigma.\]
+\end{thm} %???is it needed???
+
+The vector field $\vec u$ as in the corollary is called \emph{calibration} of $\Sigma$
+
+\section*{Mean curvature and divergence}
+
+The following lemma will be used to construct unit vector fields with vanishing or positive divergence.
+
+\begin{thm}{Lemma}\label{lem:div+H}
+Let $\Sigma$ be a smooth orented surface, $\Norm$ be the unit normal field on $\Sigma$.
+Suppose that a unit vector field $\vec u$ is a smooth extension of $\Norm$ in a neighborhood of $\Sigma$.
+Then at any point $p\in\Sigma$,
+\[\div_p \vec u+H(p)=0,\]
+where $H(p)$ is the mean curvature of $\Sigma$ at $p$.
+\end{thm}
+
+\parit{Proof.}
+Consider the tangent-normal coordinates $(x,y,z)$ of $\Sigma$ at $p$ such that the $x$-  and $y$-coordinates point in the principle directions of $\Sigma$.
+If $\vec i,\vec j,\vec k$ denotes the standard basis, then 
+\begin{align*}
+S_p(\vec i)&=k_1\cdot \vec i,
+&
+S_p(\vec j)&=k_2\cdot \vec j,
+\end{align*}
+where $S_p$ stands for the shape operator of $\Sigma$ at $p$.
+
+Proposition~\ref{prop:S=-D} implies that
+\[
+\frac{\partial\vec u}{\partial x}=\frac{\partial\Norm}{\partial x}=-S_p(\vec i),
+\quad\text{and}\quad
+\frac{\partial\vec u}{\partial y}=\frac{\partial\Norm}{\partial y}=-S_p(\vec j).
+\]
+It follows that
+\[
+\langle\tfrac{\partial\vec u}{\partial x},\vec i\rangle =-k_1, 
+\quad\text{and}\quad
+\langle\tfrac{\partial\vec u}{\partial y},\vec j\rangle=-k_2. \eqlbl{eq:divxy}
+\]
+
+
+Further, since $\vec u$ is unit, we have $\langle\vec u,\vec u\rangle\equiv 1$.
+Taking derivative of this identity, we get
+\begin{align*}
+0&=\tfrac{\partial}{\partial z} \langle\vec u,\vec u\rangle=
+\\
+&=2\cdot \langle\tfrac{\partial}{\partial z}\vec u,\vec u\rangle.
+\end{align*}
+In particular,
+\[\langle\tfrac{\partial}{\partial z}\vec u,\vec k\rangle_p=0.\eqlbl{eq:divz}\]
+
+Let us write the field $\vec u$ in the standard basis 
+$\vec u=u_1\cdot \vec i+u_2\cdot\vec j+u_3\cdot\vec k$.
+Since the basis $\vec i,\vec j,\vec k$ is orthonormal, the functions $u_1,u_2,u_3$ can be defined by
+\begin{align*}
+u_1&=\langle\vec u,\vec i\rangle,
+&
+u_2&=\langle\vec u,\vec j\rangle,
+&
+u_3&=\langle\vec u,\vec k\rangle.
+\end{align*}
+Applying the definition of divergence and using \ref{eq:divxy} and \ref{eq:divz}, we obtain
+\begin{align*}
+\div\vec u&=\tfrac{\partial u_1}{\partial x}+\tfrac{\partial u_2}{\partial y}+\tfrac{\partial u_3}{\partial z}=
+\\
+&=\tfrac{\partial}{\partial x}\langle\vec u,\vec i \rangle+\tfrac{\partial}{\partial y}\langle\vec u,\vec j \rangle+\tfrac{\partial}{\partial z}\langle\vec u,\vec k\rangle=
+\\
+&=\langle\tfrac{\partial\vec u}{\partial x},\vec i \rangle+\langle\tfrac{\partial\vec u}{\partial y},\vec j \rangle +\langle\tfrac{\partial\vec u}{\partial z},\vec k \rangle
+\\
+&=-k_1(p)-k_2(p)+0
+\\
+&=-H(p)
+\end{align*}
+\qedsf
+
+Let $V$ be a body in $\RR^3$ bounded by a closed smooth surface $\Sigma$;
+assume $\Sigma$ is equipped with orientation defined by unit normal field $\Norm$ that points outside $V$.
+We say that $V$ is \emph{mean-convex} if the mean curvature of $\Sigma$ is nonpositive.
+
+\begin{thm}{Exercise}\label{ex:mean-convex}
+Let $V$ be a mean-convex body in $\RR^3$ bounded by a closed smooth surface $\Sigma$.
+Denote by $W$ the outer region of $\Sigma$, it is a complement of the interior of $V$.
+
+\begin{enumerate}[(a)]
+\item\label{ex:mean-convex:u} 
+Suppose $V$ is star-shaped; that is, there is a point $p\in V$ such that for any other point $x\in V$ the line segment $[p,x]$ lies in $V$.
+
+Construct a unit vector field $\vec u$ on $W$ such that $\div  \vec u\ge 0$ at every point in $W$ and the restriction of $\vec u$ to $\Sigma$ is a normal field that points in $W$.
+ 
+\item\label{ex:mean-convex:area} Suppose that another body $V'$ is bounded by a closed smooth surface $\Sigma'$ and $V'\supset V$.
+Use part \ref{ex:mean-convex:u} and the divergence theorem to show that 
+\[\area\Sigma'\ge \area\Sigma\]
+if $V$ is star-shaped.
+
+\item Construct a non-star-shaped mean-convex body $V$ bounded by a smooth surface such that the inequality in\ref{ex:mean-convex:u} does not hold for some body $V'\supset V$ with smooth boundary $\Sigma'$.
+\end{enumerate}
+\end{thm}
+
+\section*{Area minimizing surfaces are minimal}
+
+A smooth surface $\Sigma$ is called \emph{area minimizing} if for any compact surfaces $\Delta$ in $\Sigma$ with boundary line $\partial \Delta$ 
+the following inequality 
+\[\area \Delta\le \area \Delta'\]
+holds for any other smooth compact surface $\Delta'$ with the same boundary line; that is, if $\partial\Delta'\z=\partial\Delta$.
+
+Recall that a surface with vanishing mean curvature is called \emph{minimal}.
+
+
+\begin{thm}{Proposition}\label{prop:minimizing-is-minimal}
+Any area minimizing surface is minimal.
+\end{thm}
+
+
+
+\parit{Proof.}
+Assume $\Sigma$ is a surface with nonzero mean curvature at some point $p$.
+Without loss of generality we may assume that it is positive,
+otherwise switch the orientation.
+
+Let $z=f(x,y)$ be a local description of $\Sigma$ in the tangent-normal coordinates at $p$.
+Denote by $H(x,y)$ and $\Norm(x,y)$ the mean curvature and the unit normal vector of the graph at the point $(x,y,f(x,y))$.
+Passing to a smaller domain of $f$, we can assume that 
+\[H(x,y)>0\] for any $(x,y)\in\Dom f$.
+
+Consider the vector field $\vec u$ on the domain $\Omega=\RR\times\Dom f$ defined by 
+$\vec u(x,y,z)=\Norm (x,y)$.
+Note that 
+\[(\div \vec u)(x,y,z)+H(x,y)=0.
+\eqlbl{div<0}\]
+Indeed, by construction, $\vec u$ is invariant with respect to shifts of $\Omega$ up or down.
+In particular the divergence $\div \vec u$ does only on $x$ and~$y$.
+Therefore it is sufficient to show \ref{div<0} for points on the graph $z=f(x,y)$.
+The latter follows from Lemma~\ref{lem:div+H}.
+
+Fix a closed $\eps$-neighborhood $D_\eps$ of the origin in the $(x,y)$-plane;
+we can assume that $D_\eps$ lies in the domain of $f$.
+Choose a smooth function $(x,y)\mapsto h(x,y)$ defined on $D_\eps$ in its interior and vanishes on its boundary;
+for example, $h=\eps^2-x^2-y^2$ will do.
+Set
+\[f_t(x,y)=f(x,y)+t\cdot h(x,y).\]
+Denote by $\Delta_t$ be the graph $z=f_t(x,y)$.
+Set $a(t)=\area\Delta_t$ and $b(t)\z=\flux_{\vec u} \Delta_t$.
+Observe that both functions $t\mapsto a(t)$ and $t\mapsto b(t)$ are smooth.
+
+By construction of $\vec u$, we have that $a(0)=b(0)$.
+By Observation \ref{obs:flux}, we have that $a(t)\ge b(t)$ for any $t$.
+Therefore
+\[a'(0)=b'(0).\eqlbl{eq:a'=b'}\]
+
+Fix $t>0$.
+Let $\Theta_t$ be the domain squeezed between $\Delta$ and $\Delta_t$;
+that is, 
+\[\Theta_t=\set{(x,y,z)}{f(x,y)< z< f_t(x,y)}.\]
+
+By divergence theorem, we have 
+\begin{align*}
+b(t)-b(0)&=\iiint_{\Theta_t}\div \vec u\cdot dx\cdot dy \cdot dz=
+\\
+&=-\iiint_{\Theta_t} H(x,y)\cdot dx\cdot dy \cdot dz=
+\\
+&=t\cdot\left[- \iint_\Delta H(x,y)\cdot h(x,y) dx\cdot dy\right].
+\end{align*}
+Since $H>0$ and $h>0$ in the interior of $\Delta$,
+the last integral is positive.
+It follows that $b(t)$ is a linear function with negative slope.
+By \ref{eq:a'=b'}, $a'(0)=b'(0)< 0$.
+In particular, 
+\[\area\Delta_t<\area \Delta\] for small $t>0$;
+that is, $\Sigma$ is not area minimizing.
+\qeds
+
+\section*{Area minimizing surfaces}
+
+The following two exercises show that minimal surface might be not area minimizing.
+Recall that catenoid and helicoid are minimal; see exercises \ref{ex:catenoid-is-minimal} and \ref{ex:helicoid-is-minimal}.
+The following exercise state that sufficienlty large piece of these surfaces are not area minimizing.
+
+\begin{thm}{Exercise}
+Show tha the \emph{catenoid}
+\[(\cosh z)^2=x^2+y^2.\]
+is not area minimizing.
+\end{thm}
+
+\begin{thm}{Exercise}
+Show that the \emph{helicoid} 
+\[s(u,v)=(u\cdot \sin v,u\cdot \cos v,v).\]
+ is not a area minimizing.
+\end{thm}
+
+\begin{thm}{Theorem}
+Let $\Sigma$ be a graph $z=f(x,y)$ of a smooth function $f$ defined on an open convex set in the $(x,y)$-plane.
+Suppose $\Sigma$ is minimal, then it is area minimizing.
+
+In particular, any minimal surface $\Sigma$ is \index{locally area minimizing surface}\emph{locally area minimizing};
+that is, some neighborhood of any point $p$ in $\Sigma$ is area minimizing.
+\end{thm}
+
+The proof of the theorem is built on the following lemmas which are interesting on their own.
+
+\begin{thm}{Lemma}
+Let $D$ be a closed domain in the $(x,y)$-plane bounded by a closed piecewise smooth simple curve $\gamma$,
+and $f$ a smooth function defined on $D$.
+Let $\Delta$ be the graph $z=f(x,y)$ and $\Delta'$ be another piecewise smooth surface that has the same boundary as $\Delta$ and lies in the cylinder $D\times \RR$.
+Then
+\[\area\Delta'\ge\area \Delta.\]
+Moreover in case of equality, we have $\Delta'=\Delta$.
+\end{thm}
+
+\parit{Proof.}
+Note that $\Delta'$ is oriented.
+Indeed, by ???, the complement of $\Delta'$ in $D\times \RR$ has two components (lower and upper), so we can equip $\Delta'$ with a unit normal vector field $\Norm'$ that points in upper component. 
+
+Let us denote by $\Norm(x,y)$ the unit normal vector at the point $(x,y,f(x,y))\in\Delta$ that points up;
+that is, its $z$-coordinate is positive at each point.
+Consider the vector field $\vec u$ on the domain $\RR\times D$ defined by 
+$\vec u(x,y,z)\z=\Norm (x,y)$.
+By construction $|\vec u|\equiv 1$ and according to Lemma~\ref{lem:div+H}, $\div \vec u\equiv -H\equiv 0$.
+Therefore $\vec u$ is a calibrating $\Delta$ in $\RR\times D$.
+In particular
+\[\begin{aligned}
+\area \Delta&=\flux_{\vec u}\Delta,
+\\
+\area \Delta'&\ge\flux_{\vec u}\Delta'.
+\end{aligned}
+\eqlbl{area=>=flux}\]
+
+Observe that $\RR\times D$ is contactable???.
+By ??? it follows that there is a vector field $\vec v$ such that $\curl \vec v=\vec u$.
+Since $\Delta$ and $\Delta'$ share the boundary, the curl theorem (???), implies that 
+\[\flux_{\vec u}\Delta=\flux_{\vec u}\Delta'.\]
+Finally observe that the last equality and \ref{area=>=flux} imply the main statement in the lemma.
+
+Recall that
+\[\flux_{\vec u}\Delta'\df\iint_{\Delta'}\langle\vec u,\Norm'\rangle.\]
+Therefore if the equality the second line of \ref{area=>=flux}, then normal $\vec u=\Norm'$ everywhere on $\Delta'$.
+In particular $\Delta'$ is a graph of 
+\qeds
+
+If the both surfaces $\Delta$ and $\Delta'$ would be oriented,
+then the statement can be proved the same way as previous lemma.
+However, it might be not the case.
+While reading the proof it would be useful to keep the following example in mind.
+
+\begin{thm}{Exercise}
+Construct a smooth embedded M\"obius strip with unit circle as a boundary. 
+\end{thm}
+
+\begin{thm}{Lemma}
+Let $f$ be a function defined on a open domain $\Omega$???
+Suppose that $\Delta$ is a surface in the graph $z=f(x,y)$ bounded by a smooth closed curve $\gamma$ and $\Delta'$ be another surface whtih the same boundary.
+Then
+\[\area\Delta'\ge\area \Delta.\]
+Moreover in case of equality, we have $\Delta'=\Delta$.
+\end{thm}
+
+
+
+\section*{Monotonicity}
+
+\begin{thm}{Proposition}
+Let $\Sigma$ be a area minimizing surface with boundary curve $\gamma$.
+Suppose $p\in \Sigma$ and $R$ is the distance from $p$ to $\gamma$.
+Given 
+\[f\:r\mapsto \frac{\area \Sigma_r}{r^2}\]
+is a nondecreasing function for $r\in (0,R]$;
+here $\Sigma_r=\Sigma\cap \cap B(p,r)$.
+\end{thm}
+
+\parit{Proof.}
+Without loss of generality we may assume that $p$ is the origin.
+
+According to ???, for almost all $r$, the intersection of the $r$-sphere centered at $p$ with $\Sigma$ is a collection of smooth curves.
+Denote by $\ell(r)$ the total length of this collection.
+
+Fix small $\eps>0$.
+Let us modify the surface $\Sigma$ in the ball $B(p,r)$ the following way.
+Consider the rescaled copy of the intersection $\Sigma_r$ with coefficient $1-\eps$ and a conic collar 
+formed by the line segments from $(1-\eps)\cdot x$ to $x$ for all points $x\in\gamma$.
+Note that the obtained piecewise smooth surface $\Sigma'$ has boundary $\gamma$, the same as the boundary of $\Sigma$.
+
+Denote by $a(r)$ the area of $\Sigma_r$.
+Note the rescaled copy of $\Sigma_r$ has area $(1-\eps)^2\cdot a(r)$
+and the area of collar is $(1-\tfrac\eps2)^2\cdot\ell\cdot r$.
+
+Since $\Sigma$ is area minimizing, we have
+\[\area\Sigma'\ge \area \Sigma.\]
+The latter is equivalent to 
+\[(1-\eps)^2\cdot a+(1-\tfrac\eps2)^2\cdot\ell\cdot r\ge a.\]
+Applying this inequality for $\eps\to 0+$, we get that
+\[\ell(r)\cdot r\ge 2\cdot a(r).\]
+
+According to the coarea formula, 
+\[a'(r)\ge \ell(r)\]
+if the left and right hand sides are defined at $r$.
+Whence 
+\[a'(r)\cdot r\ge 2\cdot a(r).\]
+
+
+
+
+

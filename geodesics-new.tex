@@ -10,7 +10,7 @@ Recall that $|p-q|_\Sigma$ denotes the induced length distance from $p$ to $q$;
 that is, the exact lower bound on lengths of paths in $\Sigma$ from $p$ to $q$.
 
 Note that if $\Sigma$ is smooth, then any two points in $\Sigma$ can be joined by a piecewise smooth path.
-Since any such path is rectifiable, the value $|p-q|_\Sigma$ is finite for any pair of points $p,q\in\Sigma$.
+Since any such path is rectifiable, the value $|p-q|_\Sigma$ is finite for any pair $p,q\in\Sigma$.
 
 A path $\gamma$ from $p$ to $q$ in $\Sigma$ that minimizes the length is called a \emph{shortest path} from $p$ to $q$.
 
@@ -18,13 +18,15 @@ The image of a shortest path between $p$ and $q$ in $\Sigma$ is usually denoted 
 In general there might be no shortest path between two given points on the surface
 and it might be many of them;
 this is shown in the following two examples.
-However if we write $[p,q]_\Sigma$, then we assume that a shortest path exists and we made a choice of one of them.
+
+Usually, if we write $[p,q]_\Sigma$, then we assume that a shortest path exists and we made a choice of one of them.
 
 \begin{wrapfigure}{r}{28 mm}
 \vskip-4mm
 \centering
 \includegraphics{asy/sphere}
-\vskip-3mm
+\bigskip
+\includegraphics{mppics/pic-79}
 \end{wrapfigure}
 
 \parbf{Nonuniqueness.} There are plenty of shortest paths between the poles on the sphere --- each meridian is a shortest path.
@@ -34,16 +36,10 @@ Consider two points $p=(1,0,0)$ and $q=(-1,0,0)$ in $\Sigma$.
 
 Note that $|p-q|_\Sigma=2$. 
 Indeed, given $\eps\z>0$, consider the point $s_\eps=(0,\eps,0)$.
-Note that the polygonal path $ps_\eps q$ lies in $\Sigma$ and its length $2\cdot\sqrt{1+\eps^2}$ approaches $2$ as $\eps\to0$.
+Observe that the polygonal path $ps_\eps q$ lies in $\Sigma$ and its length $2\cdot\sqrt{1+\eps^2}$ approaches $2$ as $\eps\to0$.
 It follows that $|p-q|_\Sigma\le 2$.
 On the other hand $|p-q|_\Sigma\ge |p-q|_{\RR^3}=2$; therefore $|p-q|_\Sigma= 2$.
 
-\begin{wrapfigure}{o}{28 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-79}
-\vskip-0mm
-\end{wrapfigure}
 
 It follows that a shortest path from $p$ to $q$, if it exists, must have length 2.
 By triangle inequality any curve of length 2 from $p$ to $q$ must run along the line segment $[p,q]$;
@@ -75,11 +71,14 @@ denote by $\gamma_\infty\:[0,1]\to\RR^3$ its limit.
 
 As a limit of uniformly continuous sequence, $\gamma_\infty$ is continuous;
 that is, $\gamma_\infty$ is a path.
-Evidently $\gamma_\infty$ runs from $p$ to $q$.
+Evidently $\gamma_\infty$ runs from $p$ to $q$;
+in particular
+\[\length\gamma_\infty\ge \ell.\]
 Since $\Sigma$ is a closed set, $\gamma_\infty$ lies in $\Sigma$.
 Finally, by \ref{thm:length-semicont}, 
-\[\gamma_\infty\le \ell;\]
-that is, $\gamma_\infty$ is a shortest path from $p$ to $q$.\qeds
+\[\length\gamma_\infty\le \ell.\]
+That is, $\gamma_\infty= \ell$ or, equivalently, $\gamma_\infty$ is a shortest path from $p$ to $q$.
+\qeds
 
 \section*{Closest point projection}
 
@@ -189,15 +188,15 @@ Taking least upper bound of each side of the inequality for all inscribed polygo
 It remains to prove the second statement.
 Suppose that there is a point $s\z=\gamma(t_1)\notin\Sigma$;
 note that $s\notin R$.
-Hence there is a plane $\Pi$ that cuts $s$ from $\Sigma$.
+By the separation lemma (\ref{lem:separation}) there is a plane $\Pi$ that cuts $s$ from $\Sigma$.
 The curve $\gamma$ must intersect at least at two points: one point before $t_1$ and one after;
 let $a=\gamma(t_0)$ and $b=\gamma(t_2)$ be these points.
 Note that the arc of $\gamma$ from $a$ to $b$ is strictly longer that $|a-b|$;
-indeed on the way $\gamma$ visits $s$ that is not on the plane $\Pi$ and therefore not on the lie segment $[a,b]$.
+indeed its length is at least $|a-s|+|s-b|$ and $|a-s|+|s-b|>|a-b|$ since $s\notin[a,b]$.
 
 Remove from $\gamma$ the arc from $a$ to $b$ and glue in the line segment $[a,b]$;
 denote the obtained curve by $\gamma_1$. 
-From above,
+From above, we have that
 \[\length\gamma>\length \gamma_1\]
 Note that $\gamma_1$ runs in $W$.
 Therefore by the first part of corollary, we have
@@ -205,11 +204,10 @@ Therefore by the first part of corollary, we have
 Whence the second statement follows.
 \qeds
 
-\begin{wrapfigure}{r}{25 mm}
-\begin{lpic}[t(-0 mm),b(-4 mm),r(0 mm),l(0 mm)]{pics/convex-hat(1)}
-\lbl{15,8.6;$\Sigma$}
-\lbl[w]{5,18.6;$\Delta$}
-\end{lpic}
+\begin{wrapfigure}{r}{27 mm}
+\vskip0mm
+\centering
+\includegraphics{mppics/pic-240}
 \end{wrapfigure}
 
 \begin{thm}{Exercise}\label{ex:hat-convex}
@@ -237,7 +235,7 @@ Show that the intrinsic diameter of $\Sigma$ cannot exceed $\pi$.
 
 \section*{Definitions}
 
-A smooth curve $\gamma$ on a smooth surface $\Sigma$ is called \emph{geodesic} if its acceleration $\gamma''(t)$ is perpendicular to the tangent plane $\T_{\gamma(t)}$ for each~$t$.
+A smooth curve $\gamma$ on a smooth surface $\Sigma$ is called \emph{geodesic} if its acceleration $\gamma''(t)$ is perpendicular to the tangent plane $\T_{\gamma(t)}$ at any~$t$.
 
 \begin{thm}{Exercise}\label{ex:reflection-geodesic}
 Assume that a smooth surface $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$.
@@ -254,8 +252,8 @@ is a geodesic on the cylindrical surface described by the equation $x^2\z+y^2=1$
 Recall that asymptotic line is defined on page~\pageref{page:asymptotic line}.
 
 \begin{thm}{Exercise}\label{ex:asymptotic-geodesic}
-Show that if a curve that is a geodesic and an asymptotic line on a smooth surface,
-then the curve is a line segment.
+Suppose that a curve $\gamma$ is a geodesic and, at the same time, is an asymptotic line on a smooth surface $\Sigma$.
+Show that $\gamma$ is a line segment.
 \end{thm}
 
 Physically, geodesics can be understood as the trajectories of a particle that slides on $\Sigma$ without friction.
@@ -264,7 +262,7 @@ Therefore, by the second Newton's laws of motion,
 we get that the acceleration $\gamma''$ is perpendicular to $\T_{\gamma(t)}$.
 
 The following lemma and proposition can be also interpreted physically;
-lemma states the conservation of energy and the proposition gives smooth dependence of trajectory of a particle depending on its initial position and velocity.
+lemma follow from the conservation of energy and the proposition gives smooth dependence of trajectory of a particle depending on its initial position and velocity.
 
 \begin{thm}{Lemma}\label{lem:constant-speed}
 Any geodesic $\gamma$ has constant speed; that is, $|\gamma'(t)|$ is constant.
@@ -282,22 +280,108 @@ Whence
 That is, $|\gamma'(t)|^2=\langle\gamma'(t),\gamma'(t)\rangle$ is constant.
 \qeds
 
-\begin{thm}{Proposition}\label{prop:geod-existance} 
+\begin{thm}{Proposition}\label{prop:geod-existence} 
 Let $\Sigma$ be  a smooth surface without boundary.
 Given a tangent vector ${\vec v}$ to $\Sigma$ at a point $p$
 there is a unique geodesic $\gamma\:\mathbb{I}\to \Sigma$ defined on a maximal open interval $\mathbb{I}\ni 0$ that starts at $p$ with velocity vector ${\vec v}$;
 that is, $\gamma(0)=p$ and $\gamma'(0)={\vec v}$.
 
 Moreover
-\begin{enumerate}[(a)]
-\item\label{prop:geod-existance:smooth} the map $(p,{\vec v},t)\mapsto \gamma(t)$ is smooth in its domain of definition.
-\item\label{prop:geod-existance:whole} if $\Sigma$ is proper, then $\mathbb{I}=\RR$; that is, the maximal interval is whole real line.
-\end{enumerate}
+\begin{subthm}{prop:geod-existence:smooth} the map $(p,{\vec v},t)\mapsto \gamma(t)$ is smooth in its domain of definition.
+\end{subthm}
+
+\begin{subthm}{prop:geod-existence:whole} if $\Sigma$ is proper, then $\mathbb{I}=\RR$; that is, the maximal interval is whole real line.
+\end{subthm}
 
 \end{thm}
 
-This proposition follows from the theorem on existance and uniqueness of the initial value problem (\ref{thm:ODE})
-but the proof contains few technical details, so we decided to write it separately in Section~\ref{sec:geod-existance}.
+This proposition follows from the theorem on existence and uniqueness of the initial value problem (\ref{thm:ODE}).
+
+\begin{thm}{Lemma}\label{lem:geodesic=2nd-order}
+A smooth curve $t\mapsto \gamma(t)=(x(t),y(t),z(t))$ is a geodesic in a graph $z=f(x,y)$ if and only if $z(t)=f(x(t),y(t))$ for any $t$ and the functions $t\mapsto x(t)$ and $t\mapsto y(t)$
+satisfy a differential equation
+\[
+\begin{cases}
+x''=g(x,y,x',y'),
+\\
+y''=h(x,y,x',y'),
+\end{cases}
+\]
+where the functions $g$ and $h$ are smooth functions of four variables that determined by $f$.
+\end{thm}
+
+The proof of the lemma is done by means of direct calculations.
+
+\parit{Proof.} In the following calculations, we often omit the arguments --- we may write $x$ instead of $x(t)$  and $f$ instead of $f(x,y)$ or $f(x(t),y(t))$ and so on.
+
+First let us calulate $z''(t)$ in terms of $f$, $x(t)$, and $y(t)$.
+\[
+\begin{aligned}
+z''(t)&=f(x(t),y(t))''=
+\\
+&=\left(\tfrac{\partial f}{\partial x}\cdot x'+\tfrac{\partial f}{\partial y}\cdot y'\right)'=
+\\
+&=\tfrac{\partial^2 f}{\partial x^2}\cdot (x')^2+\tfrac{\partial f}{\partial x}\cdot x''+\tfrac{\partial^2 f}{\partial y^2}\cdot (y')^2+\tfrac{\partial f}{\partial y}\cdot y''.
+\end{aligned}
+\eqlbl{eq:z''}
+\]
+Now observe that the equation 
+\[\gamma''(t)\perp\T_{\gamma(t)}\eqlbl{eq:def-geod}\] 
+means that 
+$\gamma''$ is perpendicular to two basis vectors in $\T_{\gamma(t)}$.
+Therefore the vector equation \ref{eq:def-geod} can be rewritten as the following system of two real equations
+\[
+\begin{cases}
+\langle \gamma''(t),\tfrac{\partial s}{\partial x}\rangle=0,
+\\
+\langle\gamma''(t),\tfrac{\partial s}{\partial y}\rangle=0,
+\end{cases}
+\]
+where $s(x,y)\df (x,y,f(x,y))$, $x=x(t)$, and $y=y(t)$.
+
+Observe that $\frac{\partial s}{\partial x}=(1,0,\tfrac{\partial f}{\partial x}$ and $\frac{\partial s}{\partial y}=(0,1,\tfrac{\partial f}{\partial y}$.
+Since $\gamma''=(x'',y'',z'')$, we can rewrite the system the following way.
+\[
+\begin{cases}
+x''+\tfrac{\partial f}{\partial x}\cdot z''=0,
+\\
+y''+\tfrac{\partial f}{\partial y}\cdot z''=0,
+\end{cases}
+\]
+It remains use expression \ref{eq:z''} for $z''$, combine like terms and simplify.
+\qeds
+
+
+\parit{Proof of \ref{prop:geod-existence}.}
+Let $z=f(x,y)$ be a description of $\Sigma$ in a tangent-normal coordinates at $p$.
+By Lemma \ref{lem:geodesic=2nd-order} the condition $\gamma''(t)\perp\T_{\gamma(t)}$ can be written as a second order differential equation.
+Applying the existence and uniqueness of the initial value problem (\ref{thm:ODE}) we get existence and uniqueness of geodesic $\gamma$ in a in a small interval $(-\eps,\eps)$ for some $\eps>0$.
+
+Let us extend $\gamma$ to a maximal open interval $\mathbb{I}$.
+Suppose there is another geodesic $\gamma_1$ with the same initial data that is defined on a maximal open interval $\mathbb{I}_1$.
+Suppose $\gamma_1$ splits from $\gamma$ at some time $t_0>0$;
+that is, $\gamma_1$ coincides with $\gamma$ on the interval $[0,t_0)$, but they are different on the interval $[0,t_0+\eps)$ for any $\eps>0$.
+By continuity $\gamma_1(t_0)=\gamma(t_0)$ and $\gamma'(t_0)=\gamma'(t_0)$.
+Therefore by the above argument $\gamma_1$ coinsides with $\gamma$ in a small neighborhood of $t_0$ --- a contradiction.
+
+The case $t_0<0$ can be proved along the same lines.
+It follows that $\gamma_1$ coincides with $\gamma$.
+
+Part (\ref{SHORT.prop:geod-existence:smooth}) follows since the solution of the initial value problem depends smoothly on the initial data (\ref{thm:ODE}).
+
+Suppose (\ref{SHORT.prop:geod-existence:whole}) does not hold;
+that is, the maximal interval $\mathbb{I}$ is a proper subset of the real line $\RR$.
+Without loss of generality we may assume that $b=\sup\mathbb{I}<\infty$.
+
+By \ref{lem:constant-speed} $|\gamma'|$ is constant, in particular $t\mapsto \gamma(t)$ is a uniformly continuous function.
+Therefore  the limit 
+\[q=\lim_{t\to b}\gamma(t)\] 
+is defined.
+Since $\Sigma$ is a proper surface, $q\in \Sigma$. 
+
+Applying the argument above in a tangent-normal coordinates at $q$ shows that $\gamma$ can be extended as a geodesic behind $q$.
+Therefore $\mathbb{I}$ is not a maximal interval --- a contradiction.
+\qeds
 
 
 \begin{thm}{Exercise}
@@ -307,11 +391,11 @@ Show that $\gamma$ is a geodesic if and only if it has constant speed and vanish
 
 \section*{Shortest paths are geodesics}
 
-The following proposition provides connection between intrinsic geometry of the surface and its extrinsic geometry.
+The following proposition provides the first connection between intrinsic geometry of the surface and its extrinsic geometry.
 This connection will be important later; in particular it plays the key role in the proof of the so-called \emph{Gauss remarkable theorem}.
 
-Intrinsic means that it can be expressed in terms of measuring things inside the surface, for example length of curves or angles between the curves that lie in the surface.
-Extrinsic means that we have to use ambient space in order to measure it.
+A property is called \emph{intrinsic} if it is defined in terms of measuring things inside the surface, for example length of curves or angles between the curves that lie in the surface.
+Otherwise, if a definition of property use ambient space, then it is called \emph{extrinsic}.
 
 For instance, a shortest path is an object of intrinsic geometry of a surface,
 while definition of geodesic is not intrinsic --- it requires acceleration which needs the ambient space.
@@ -320,7 +404,7 @@ Such a bijection sends geodesics in the cylinder to geodesics on the plane and t
 
 \begin{thm}{Proposition}\label{prop:gamma''}
 Let $\Sigma$ be a smooth regular surface.
-Then any shortest path $\gamma$ in $\Sigma$ parameterized proportional to its length is a geodesic in $\Sigma$.
+Then any shortest path $\gamma$ in $\Sigma$ parameterized proportional to its arc length is a geodesic in $\Sigma$.
 In particular $\gamma$ is a smooth curve.
 
 A partial converse to the first statement also holds: a sufficiently short arc of any geodesic is a shortest path.
@@ -330,15 +414,15 @@ More precisely, any point $p$ in $\Sigma$ has a neighborhood $U$ such that any g
 A geodesic might not form a shortest path, but if this is the case, then it is called \emph{minimizing geodesic}.
 Note that according to the claim, any shortest path is a reparametrization of a minimizing geodesic.
 
-A rigorous proof will be given in the next few sections.
-Before that, let us give an informal physical explanation why $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
-(In fact, if one assumes that $\gamma$ is smooth, then it is easy to convert this explanation into a rigorous proof.)
+A rigorous proof will be given in the sections \ref{sec:exp}--\ref{sec:proof-of-gamma''}, but the following informal physical explanation might be convincing.
+In fact, if one assumes that $\gamma$ is smooth, then it is easy to convert this explanation into a rigorous proof.
 
-One may think about a shortest path $\gamma$ as of stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
+\parit{Informal explanation.}
+Let us think about a shortest path $\gamma$ as of stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
 Since it is frictionless, the force density $N(t)$ that keeps the geodesic $\gamma$ in the surface must be proportional to the normal vector to the surface at $\gamma(t)$.
 
 The tension in the thread has to be the same at all points (otherwise the thread would move back or forth and it would not be stable).
-Denote by $T$ the tension.
+Denote  the tension by $T$.
 
 We can assume that $\gamma$ has unit speed;
 in this case the net force from tension to the arc $\gamma_{[t_0,t_1]}$ is $T\cdot(\gamma'(t_1)-\gamma'(t_0)$.
@@ -351,6 +435,7 @@ F(t_0)&=\lim_{t_1\to t_0}T\cdot\frac{\gamma'(t_1)-\gamma'(t_0)}{t_1-t_0}=
 According to the second Newton's law of motion, we have 
 \[F(t)+N(t)=0;\]
 which implies that  $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
+\qeds
 
 Note that according to the proposition above, any shortest path parameterized by its arc length is a smooth curve.
 This observation should help to solve in the following two exercises.
@@ -534,6 +619,5 @@ for any $t$.
 \end{enumerate}
 \end{thm}
 
-Note that our bound on total curvature given above goes to infinity as $\eps\to 0$,
-but in fact there is a bound independent of $\eps$;
-it is good of any closed convex surface \cite{lebedeva-petrunin}.
+Note that the obtained bound on total curvature goes to infinity as $\eps\to 0$.
+In fact there is a bound independent of $\eps$ \cite{lebedeva-petrunin}.
