@@ -124,7 +124,7 @@ K(p)_{\Sigma_1}&=k_1(p)_{\Sigma_1}\cdot k_2(p)_{\Sigma_1}\ge
 \end{align*}
 \qedsf
 
-\begin{thm}{Exercise}\label{ex:positive-gauss}
+\begin{thm}{Exercise}\label{ex:positive-gauss-0}
 Show that any closed surface in a unit ball has a point with Gauss curvature at least 1.
 \end{thm}
 
@@ -175,7 +175,7 @@ That is, $f$ is a strictly convex function in a neighborhood of the origin in th
 Finally since $\nabla f(0,0)=0$ and $f$ is strictly convex in a neighborhood of the origin it has a strict local minimum at the origin.
 \qeds
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:section-of-convex}
 Let $\Sigma$ be a smooth surface (without boundary) with positive Gauss curvature.
 Show that any connected component of intersection of $\Sigma$ with a plane is either a single point or a smooth regular plane that can be parameterized so that it has positive signed curvature.
 \end{thm}
@@ -254,14 +254,18 @@ $\Sigma$ is a graph $z=f(x,y)$ of a convex function $f$ defined on a convex open
 
 The following exercises will guide you thru the proof of both parts of the theorem.
 
-\begin{wrapfigure}{O}{33 mm}
+{
+
+\begin{wrapfigure}{r}{33 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-78}
-\vskip-0mm
+\bigskip
+\includegraphics{mppics/pic-81}
 \end{wrapfigure}
+%%%???redo the picture
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:convex-proper-sphere}
 Assume a convex compact region $R$ contains the origin in its interior and bounded by a smooth surface $\Sigma$.
 
 \begin{enumerate}[(i)]
@@ -272,14 +276,9 @@ that is, there is a positive function $\rho\:\SS^2\z\to\RR$ such that $\Sigma$ i
 \end{enumerate}
 \end{thm}
 
-\begin{wrapfigure}[15]{o}{28 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-81}
-\vskip-0mm
-\end{wrapfigure} %%%???redo the picture
+{
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:convex-proper-plane}
 Assume a strictly convex closed noncompact region $R$ contains the origin in its interior and bounded by a smooth surface $\Sigma$.
 
 \begin{enumerate}[(i)]
@@ -292,7 +291,11 @@ Show that projection of $\Sigma$ to the $(x,y)$ plane is an open convex set; den
 
 \end{thm}
 
-\begin{thm}{Exercise}
+}
+
+}
+
+\begin{thm}{Exercise}\label{ex:open+convex=plane}
 Show that any open surface $\Sigma$ with positive Gauss curvature is a topological plane;
 that is, there is an embedding $\RR^2\to\RR^3$ with image $\Sigma$.
 
@@ -303,6 +306,19 @@ Try to show that $\Sigma$ is a smooth plane; that is, the embedding $f$ can be m
 Show that any open smooth surface $\Sigma$ with positive Gauss curvature
 lies inside of an infinite circular cone. 
 \end{thm} 
+
+\begin{thm}{Exercise}\label{ex:intK}
+Suppose $\Sigma$ is a smooth convex surface. Show that 
+\begin{subthm}{}
+If $\Sigma$ is closed, then 
+\[\int_\Sigma K=4\cdot\pi.\]
+\end{subthm}
+\begin{subthm}{}
+If $\Sigma$ is open, then 
+\[\int_\Sigma K\le 2\cdot\pi.\]
+\end{subthm}
+\end{thm}
+
 
 
 \section*{Saddle surfaces}
@@ -335,7 +351,7 @@ A surface $\Sigma$ is called \emph{ruled} if for every point $p\in \Sigma$ there
 Show that any ruled surface $\Sigma$ is saddle.
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:saddle-to-infty}
 Suppose $\Sigma$ is an open saddle surface.
 Show that for any point $p\in \Sigma$ there is a curve $\gamma\:[0,\infty)\to\Sigma$ that starts at $p$ and monotonically escapes to infinity;
 that is, the function $t\mapsto|\gamma(t)|$ is increasing and $|\gamma(t)|\to\infty$ as $t\to\infty$.
@@ -345,7 +361,7 @@ A tangent direction on a smooth surface with vanishing normal curvature is calle
 A smooth regular curve that always runs in an asymptotic direction is called an
 \index{asymptotic line}\emph{asymptotic line}.\label{page:asymptotic line}
 
-\begin{thm}{Advanced exercise}
+\begin{thm}{Advanced exercise}\label{ex:panov}
 Let $\gamma$ be a closed smooth asymptotic line
 in a graph $z\z=f(x,y)$ of a smooth function $f$. 
 Assume $\Sigma$ is strictly saddle in a neighborhood of $\gamma$.
@@ -574,7 +590,7 @@ which is impossible by \ref{lem:region}.
 The following exercise gives a condition that guarantees that a saddle surface is a graph;
 it can be used in combination with Bernshtein's theorem.
 
-\begin{thm}{Advanced exercise}
+\begin{thm}{Advanced exercise}\label{ex:saddle-graph}
 Let $\Sigma$ be a smooth saddle disk in $\RR^3$.
 Assume that the orthogonal projection to the $(x,y)$-plane
 maps the boundary line of $\Sigma$

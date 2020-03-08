@@ -1,3 +1,134 @@
+The proof of the theorem is built on the following lemmas which are interesting on their own.
+
+\begin{thm}{Lemma}
+Let $D$ be a closed domain in the $(x,y)$-plane bounded by a closed piecewise smooth simple curve $\gamma$,
+and $f$ a smooth function defined on $D$.
+Let $\Delta$ be the graph $z=f(x,y)$ and $\Delta'$ be another piecewise smooth surface that has the same boundary as $\Delta$ and lies in the cylinder $D\times \RR$.
+Then
+\[\area\Delta'\ge\area \Delta.\]
+Moreover in case of equality, we have $\Delta'=\Delta$.
+\end{thm}
+
+\parit{Proof.}
+Note that $\Delta'$ is oriented.
+Indeed, by ???, the complement of $\Delta'$ in $D\times \RR$ has two components (lower and upper), so we can equip $\Delta'$ with a unit normal vector field $\Norm'$ that points in upper component. 
+
+Let us denote by $\Norm(x,y)$ the unit normal vector at the point $(x,y,f(x,y))\in\Delta$ that points up;
+that is, its $z$-coordinate is positive at each point.
+Consider the vector field $\vec u$ on the domain $\RR\times D$ defined by 
+$\vec u(x,y,z)\z=\Norm (x,y)$.
+By construction $|\vec u|\equiv 1$ and according to Lemma~\ref{lem:div+H}, $\div \vec u\equiv -H\equiv 0$.
+Therefore $\vec u$ is a calibrating $\Delta$ in $\RR\times D$.
+In particular
+\[\begin{aligned}
+\area \Delta&=\flux_{\vec u}\Delta,
+\\
+\area \Delta'&\ge\flux_{\vec u}\Delta'.
+\end{aligned}
+\eqlbl{area=>=flux}\]
+
+Observe that $\RR\times D$ is contactable???.
+By ??? it follows that there is a vector field $\vec v$ such that $\curl \vec v=\vec u$.
+Since $\Delta$ and $\Delta'$ share the boundary, the curl theorem (???), implies that 
+\[\flux_{\vec u}\Delta=\flux_{\vec u}\Delta'.\]
+Finally observe that the last equality and \ref{area=>=flux} imply the main statement in the lemma.
+
+Recall that
+\[\flux_{\vec u}\Delta'\df\iint_{\Delta'}\langle\vec u,\Norm'\rangle.\]
+Therefore if the equality the second line of \ref{area=>=flux}, then normal $\vec u=\Norm'$ everywhere on $\Delta'$.
+In particular $\Delta'$ is a graph of 
+\qeds
+
+If the both surfaces $\Delta$ and $\Delta'$ would be oriented,
+then the statement can be proved the same way as previous lemma.
+However, it might be not the case.
+While reading the proof it would be useful to keep the following example in mind.
+
+\begin{thm}{Exercise}
+Construct a smooth embedded M\"obius strip with unit circle as a boundary. 
+\end{thm}
+
+\begin{thm}{Lemma}
+Let $f$ be a function defined on a open domain $\Omega$???
+Suppose that $\Delta$ is a surface in the graph $z=f(x,y)$ bounded by a smooth closed curve $\gamma$ and $\Delta'$ be another surface whtih the same boundary.
+Then
+\[\area\Delta'\ge\area \Delta.\]
+Moreover in case of equality, we have $\Delta'=\Delta$.
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{Monotonicity}
+
+\begin{thm}{Proposition}
+Let $\Sigma$ be a area-minimizing surface with boundary curve $\gamma$.
+Suppose $p\in \Sigma$ and $R$ is the distance from $p$ to $\gamma$.
+Given 
+\[f\:r\mapsto \frac{\area \Sigma_r}{r^2}\]
+is a nondecreasing function for $r\in (0,R]$;
+here $\Sigma_r=\Sigma\cap \cap B(p,r)$.
+\end{thm}
+
+\parit{Proof.}
+Without loss of generality we may assume that $p$ is the origin.
+
+According to ???, for almost all $r$, the intersection of the $r$-sphere centered at $p$ with $\Sigma$ is a collection of smooth curves.
+Denote by $\ell(r)$ the total length of this collection.
+
+Fix small $\eps>0$.
+Let us modify the surface $\Sigma$ in the ball $B(p,r)$ the following way.
+Consider the rescaled copy of the intersection $\Sigma_r$ with coefficient $1-\eps$ and a conic collar 
+formed by the line segments from $(1-\eps)\cdot x$ to $x$ for all points $x\in\gamma$.
+Note that the obtained piecewise smooth surface $\Sigma'$ has boundary $\gamma$, the same as the boundary of $\Sigma$.
+
+Denote by $a(r)$ the area of $\Sigma_r$.
+Note the rescaled copy of $\Sigma_r$ has area $(1-\eps)^2\cdot a(r)$
+and the area of collar is $(1-\tfrac\eps2)^2\cdot\ell\cdot r$.
+
+Since $\Sigma$ is area-minimizing, we have
+\[\area\Sigma'\ge \area \Sigma.\]
+The latter is equivalent to 
+\[(1-\eps)^2\cdot a+(1-\tfrac\eps2)^2\cdot\ell\cdot r\ge a.\]
+Applying this inequality for $\eps\to 0+$, we get that
+\[\ell(r)\cdot r\ge 2\cdot a(r).\]
+
+According to the coarea formula, 
+\[a'(r)\ge \ell(r)\]
+if the left and right hand sides are defined at $r$.
+Whence 
+\[a'(r)\cdot r\ge 2\cdot a(r).\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Let $f$ be a function on $\RR^3$ and $c$ be a real constant.
 The set $L_c=\set{(x,y,z)\in\RR^3}{f(x,y,z)=c}$ is called \emph{level set} of $f$.
 Recall that if the gradient of $f$ is does not vanish on $L_c$, then $L_c$ is a smooth surface.

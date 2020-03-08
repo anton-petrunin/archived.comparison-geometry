@@ -10,7 +10,7 @@ A tangent field ${\vec v}(t)$ on $\gamma$ is called \emph{parallel} if ${\vec v}
 
 In general the family of tangent planes $\T_{\gamma(t)}\Sigma$ is not parallel.
 Therefore one cannot expect to have a truly parallel family ${\vec v}(t)$ with ${\vec v}'\equiv 0$.
-The condition ${\vec v}'(t)\perp\T_{\gamma(t)}$ means that this family is as parallel as possible --- it rotates together with the tangent plane, but does not rotate inside the plane.
+The condition ${\vec v}'(t)\perp\T_{\gamma(t)}$ means that the family is as parallel as possible --- it rotates together with the tangent plane, but does not rotate inside the plane.
 
 Note that by the definition of geodesic, the velocity field ${\vec v}(t)\z=\gamma'(t)$ of any geodesic $\gamma$ is parallel on $\gamma$.
 
@@ -30,21 +30,47 @@ Assume $p=\gamma(a)$ and $q=\gamma(b)$.
 Given a tangent vector ${\vec v}\in\T_p$ there is unique parallel field ${\vec v}(t)$ along $\gamma$ such that ${\vec v}(a)={\vec v}$.
 The latter follows from \ref{thm:ODE}; the uniqueness also follows from Exercise~\ref{ex:parallel}.
 
-The vector $\vec w={\vec v}(b)\in\T_q$ is called the \emph{parallel transport} of ${\vec v}$ along $\gamma$.
+The vector $\vec w={\vec v}(b)\in\T_q$ is called the \emph{parallel transport} of ${\vec v}$ along~$\gamma$ in $\Sigma$.
 
 The parallel transport is denoted by $\iota_\gamma$;
-so we can write $\vec w=\iota_\gamma({\vec v})$.
-From the Exercise~\ref{ex:parallel}, it follows that parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ is an an isometry;
-it depends on the choice of $\gamma$ --- for another curve $\gamma_1$ connecting $p$ to $q$ in $\Sigma$, the parallel transport $\iota_{\gamma_1}\:\T_p\to\T_q$ might be different.
+so we can write $\vec w=\iota_\gamma({\vec v})$ or we can write $\vec w=\iota_\gamma({\vec v})_\Sigma$ if we need to emphasize that we consider surface $\Sigma$.
+From the Exercise~\ref{ex:parallel}, it follows that parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ is an an isometry.
+In general, the parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ depends on the choice of $\gamma$; that is, for another curve $\gamma_1$ connecting $p$ to $q$ in $\Sigma$, the parallel transport $\iota_{\gamma_1}\:\T_p\to\T_q$ might be different.
 
-To interpret the parallel transport physically, 
-think of walking along $\gamma$ and carrying a perfectly balanced bike wheel in such a way that you touch only its axis and keep it normal to $\Sigma$.
+Suppose that $\gamma_1$ and $\gamma_2$ are two smooth curves in smooth surfaces $\Sigma_1$ and $\Sigma_2$.
+Denote by $\Norm_i\:\Sigma_i\to\SS^2$ the Gauss maps of $\Sigma_1$ and $\Sigma_2$.
+If $\Norm_1\circ\gamma_1(t)= \Norm_2\circ\gamma_2(t)$ for any $t$, then we say that curves $\gamma_1$ and $\gamma_2$ have \emph{identical spherical images} in $\Sigma_1$ and $\Sigma_2$ correspondingly.
+
+In this case tangent plane $\T_{\gamma_1(t)}\Sigma_1$ is parallel to $\T_{\gamma_2(t)}\Sigma_2$ for any $t$ and so we can identify $\T_{\gamma_1(t)}\Sigma_1$ and $\T_{\gamma_2(t)}\Sigma_2$.
+In particular if $\vec v(t)$ is a tangent vector field along $\gamma_1$,
+then it is also a tangent vector field along $\gamma_2$.
+Moreover $\vec v'(t)\perp \T_{\gamma_1(t)}\Sigma_1$ is equivalent to $\vec v'(t)\perp \T_{\gamma_2(t)}\Sigma_2$; that is, if $\vec v(t)$ is a parallel vector field along $\gamma_1$,
+then it is also a parallel vector field along $\gamma_2$.
+
+The dicussion above leads to the following observation that will play key role in the sequel.
+
+\begin{thm}{Observation}\label{obs:parallel=}
+Let $\gamma_1$ and $\gamma_2$ be two smooth curves in smooth surfaces $\Sigma_1$ and $\Sigma_2$.
+Suppose that $\gamma_1$ and $\gamma_2$ have identical spherical images in $\Sigma_1$ and $\Sigma_2$ correspondingly.
+Then the parallel transport $\iota_{\gamma_1}$ and $\iota_{\gamma_2}$ are identical. 
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:parallel-transport-support}
+Let $\Sigma_1$ and $\Sigma_2$ be two surfaces with common curve~$\gamma$.
+Suppose that $\Sigma_1$ bounds a region that contains $\Sigma_2$.
+Show that the parallel translations along $\gamma$ in $\Sigma_1$ 
+coincides the parallel translations along $\gamma$ in $\Sigma_2$. 
+\end{thm}
+
+The following physical interpretation of parallel translation was suggested by Mark Levi \cite{levi};
+it might help to build right intuition.
+
+Think of walking along $\gamma$ and carrying a perfectly balanced bike wheel keeping its axis normal to $\Sigma$ and touching only the axis.
 It should be physically evident that if the wheel is non-spinning at the starting point $p$, then it will not be spinning after stopping at $q$.
 (Indeed, by pushing the axis one cannot produce torque to spin the wheel.)
 The map that sends the initial position of the wheel to the final position is  the parallel transport~$\iota_\gamma$.
 
-This physical interpretation was suggested by Mark Levi \cite{levi};
-it will be used further.
+The observation above essentially states that \emph{moving axis of the wheel without changing its direction does not change the direction of the wheel's spikes.}
 
 On a more formal level, one can choose a partition $a=t_0<\dots\z<t_n=b$ of $[a,b]$
 and consider the sequence of orthogonal projections $\phi_i\:\T_{\gamma(t_{i-1})}\to\T_{\gamma(t_i)}$.
@@ -54,18 +80,17 @@ gives an approximation of $\iota_\gamma$.
 Each $\phi_i$ does not increase the magnitude of a vector and neither the composition.
 It is straightforward to see that if if the partition is sufficiently fine, then it is almost isometry; in particular it almost preserves the magnitudes of tangent vectors.
 
-\begin{thm}{Exercise}\label{ex:parallel-transport-equator}
-Let $\gamma$ be a smooth closed loop with base point $p$ on a smooth oriented surface $\Sigma$ with the unit normal field $\Norm$.
-Suppose that the spherical image of $\gamma$ lies in a great circle.
-Show that the parallel translation $\iota_\gamma\:\T_p\to \T_p$ along $\gamma$ is the identity map.
+\begin{thm}{Exercise}\label{ex:holonomy=not0}
+Construct a loop $\gamma$ in $\SS^2$ with base at $p$ such that the parallel transport $\iota_\gamma\:\T_p\to\T_p$ is not the identity map.
 \end{thm}
-
 
 \section*{Geodesic curvature}
 
 Plane is the simplest example of smooth surface.
 Earlier we introduced signed curvature of a plane curve.
-For a smooth curve $\gamma$ in general oriented smooth surface $\Sigma$ the analogous notion is called \emph{geodesic curvature} which we are about to introduce.
+Let us introduce the so called \emph{geodesic curvature} --- an analogous notion for a smooth curve $\gamma$ in general oriented smooth surface $\Sigma$.
+
+%???PIC
 
 Let $\Norm\:\Sigma\to \SS^2$ be the spherical map that defines the orientation on $\Sigma$.
 Without loss of generality we can assume that $\gamma$ has unit speed.
@@ -77,7 +102,8 @@ Since $\gamma$ is unit-speed, the acceleration $\gamma''(t)$ is perpendicular to
 therefore at any parameter value $t$, we have
 \[\gamma''(t)=k_g(t)\cdot \mu(t)-k_n(t)\cdot \Norm(t),\]
 for some real numbers $k_n(t)$ and $k_g(t)$.
-The numbers $k_n(t)$ and $k_g(t)$ are called \emph{normal} and \emph{geodesic curvature} of $\gamma$ at $t$ correspondingly.
+The numbers $k_n(t)$ and $k_g(t)$ are called \emph{normal} and \emph{geodesic curvature} of $\gamma$ at $t$ correspondingly;
+we may write $k_n(t)_\Sigma$ and $k_g(t)_\Sigma$ if we need to emphasize that we work in the surface $\Sigma$.
 
 Note that the geodesic curvature vanishes if $\gamma$ is a geodesic. 
 It measures how much a given curve diverges from being a geodesic;
@@ -87,7 +113,8 @@ it is positive if $\gamma$ turns left and negative if $\gamma$ turns right.
 
 The total geodesic curvature is defined as integral 
 \[\tgc\gamma\df \int_{\mathbb{I}} k_g(t)\cdot dt,\]
-assuming that $\gamma$ is defined on the real interval $\mathbb{I}$.
+assuming that $\gamma$ is a smooth unit-speed curve defined on the real interval $\mathbb{I}$.
+
 Note that if $\Sigma$ is a plane and $\gamma$ lies in $\Sigma$, then geodesic curvature of $\gamma$ equals to signed curvature and therefore total geodesic curvature equals to the total signed curvature.
 By that reason we use the same notation $\tgc\gamma$ as for total signed curvature; if we need to emphasize that we consider $\gamma$ as a curve in $\Sigma$, we write $\tgc\gamma_\Sigma$.
 
@@ -100,8 +127,8 @@ If $\gamma$ is closed, then
 \[\tgc\gamma=\tgc{\gamma_1}+\dots+\tgc{\gamma_n}+\theta_1+\dots+\theta_{n},\]
 where $\theta_n$ is the signed external angle at the joint $\gamma_n$ and $\gamma_1$.
 
-Note that if each arc $\gamma_i$ in the concatenation is a geodesic, then $\gamma$ is called \emph{broken geodesic}.
-Note that in this case $\tgc{\gamma_i}=0$ for each $i$ and therefore the total geodesic curvature of $\gamma$ is the sum of its signed external angles.
+If each arc $\gamma_i$ in the concatenation is a geodesic, then $\gamma$ is called \emph{broken geodesic}.
+In this case $\tgc{\gamma_i}=0$ for each $i$ and therefore the total geodesic curvature of $\gamma$ is the sum of its signed external angles.
 
 \begin{thm}{Proposition}\label{prop:pt+tgc}
 Assume $\gamma$ is a closed broken geodesic in a smooth oriented surface $\Sigma$ that starts and ends at the point $p$.
@@ -145,42 +172,6 @@ The case of piecewise regular smooth curve is a straightforward combination of t
 
 
 \section*{Spherical area}
-
-\begin{thm}{Lemma}\label{lem:area-spher-triangle}
-Let $\Delta$ be a spherical triangle;
-that is, $\Delta$ is the intersection of three closed half-spheres in the unit sphere $\SS^2$.
-Then 
-\[\area\Delta=\alpha+\beta+\gamma-\pi,\eqlbl{eq:area(Delta)}\]
-where $\alpha$, $\beta$ and $\gamma$ are the angles of $\Delta$.
-\end{thm}
-
-The value $\alpha+\beta+\gamma-\pi$ is called \emph{excess} of the triangle $\Delta$.
-
-\begin{wrapfigure}{o}{22 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-43}
-\vskip-0mm
-\end{wrapfigure}
-
-\parit{Proof.}
-Recall that 
-\[\area\SS^2=4\cdot\pi.\eqlbl{eq:area(S2)}\]
-
-Note that the area of a spherical slice $S_\alpha$ between two meridians meeting at angle $\alpha$ is proportional to $\alpha$.
-Since for $S_\pi$ is a half-sphere, from \ref{eq:area(S2)}, we get $\area S_\pi\z=2\cdot\pi$.
-Therefore the coefficient is 2; that is,
-\[\area S_\alpha=2\cdot \alpha.\eqlbl{eq:area(Sa)}\]
-
-Extending the sides of $\Delta$ we get 6 slices: two $S_\alpha$, two $S_\beta$ and two $S_\gamma$ which cover most of the sphere once,
-but the triangle $\Delta$ and its centrally symmetric copy $\Delta'$ are covered 3 times.
-It follows that
-\[2\cdot \area S_\alpha+2\cdot \area S_\beta+2\cdot \area S_\gamma
-=\area\SS^2+4\cdot\area\Delta.\]
-Substituting \ref{eq:area(S2)} and \ref{eq:area(Sa)} and simplifying, we get \ref{eq:area(Delta)}.
-\qeds
-
-
 
 If the contour $\partial\Delta$ of a spherical triangle with angles $\alpha$, $\beta$ and $\gamma$ is oriented such that the triangle lies on the left, then its external angles are  $\pi-\alpha$, $\pi-\beta$ and $\pi-\gamma$.
 Therefore the total geodesic curvature of $\partial\Delta$ is $\tgc{\partial\Delta}=3\cdot\pi-\alpha-\beta-\gamma$.
@@ -370,7 +361,7 @@ Suppose that $f\:\RR^2\to\RR$ is a $\sqrt{3}$-Lipschitz smooth convex function.
 Show that any geodesic in the surface defined by the graph $z=f(x,y)$ has no self-intersections.
 \end{thm}
 
-\begin{thm}{Advanced exercise}
+\begin{thm}{Advanced exercise}\label{ex:self-intersections}
 Let $\Sigma$ be a smooth regular sphere with positive Gauss curvature and $p\in\Sigma$. 
 Suppose $\gamma$ is a closed geodesic that does not pass thru $p$.
 Assume $\Sigma\backslash\{p\}$ parametrized by the plane.
@@ -407,3 +398,183 @@ On the other hand if $\theta$ is small, the lasso slips off as soon as the cowbo
 
 What is the critical angle $\theta_0$ at which the cowboy can no longer climb the ice-mountain?
 \end{thm}
+
+
+\section*{The remarkable theorem}
+
+Let $\Sigma_1$ and $\Sigma_2$ be two smooth regular surfaces in the Euclidean space.
+A map $f\:\Sigma_1\to \Sigma_2$ is called  length-preserving if for any curve $\gamma_1$ in $\Sigma_1$ the curve $\gamma_2=f\circ\gamma_1$ in $\Sigma_2$ has the same length. %???it is sufficient to consider smooth only curves???
+If in addition $f$ is smooth and bijective, then it is called \emph{intrinsic isometry}. 
+
+A simple example of intrinsic isometry can obtained by warping a plane into a cylinder.
+The following exercise produce slightly more interesting example.
+
+\begin{thm}{Exercise}\label{ex:deformation}
+Suppose $\gamma(t)=(x(t),y(t))$ is a smooth unit-speed curve in the plane such that $y(t)=a\cdot \cos t$.
+Let $\Sigma_\gamma$ be the surface of revolution of $\gamma$ around the $x$-axis.
+Show that a small open domain in $\Sigma_\gamma$ admits a smooth length-pereserving map to the unit sphere.
+
+Conclude that any round disc $\Delta$ in $\SS^2$ of intrinsic radius smaller than $\tfrac\pi2$ admits a smooth length preserving deformation; that is, there is one parameter family of surfaces with boundary $\Delta_t$, such that $\Delta_0=\Delta$ and $\Delta_t$ is not congruent to $\Delta_0$ for any $t\ne0$.\footnote{In fact any disc in $\SS^2$ of intrinsic radius smaller than $\pi$ admits a smooth length preserving deformation. %???REF
+}
+\end{thm}
+
+
+\begin{thm}{Theorem}\label{thm:remarkable}
+Suppose $f\:\Sigma_1\to \Sigma_2$ is an intrinsic isometry between two smooth regular surfaces in  the Euclidean space; $p_1\in \Sigma_1$ and $p_2=f(p_1)\in \Sigma_1$.
+Then 
+\[G(p_1)_{\Sigma_1}=G(p_2)_{\Sigma_2};\]
+that is, the Gauss curvature of $\Sigma_1$ at $p_1$ is the same as the Gauss curvature of $\Sigma_2$ at $p_2$.
+\end{thm}
+
+This theorem was proved by Carl Friedrich Gauss \cite{gauss} who called it \emph{Remarkable theorem} (Theorema Egregium).
+The theorem is indeed remarkable because the Gauss curvature is defined as a product of principle curvatures which might be different at these points; however, according to the theorem, their product can not change.
+
+In fact Gauss curvature of the surface at the given point can be found \emph{intrinsically},
+by measuring the lengths of curves in the surface.
+For example, Gauss curvature $G(p)$ in the following formula for the circumference $c(r)$ of a geodesic circle centered at $p$ in a surface: 
+\[c(r)=2\cdot\pi\cdot r-\tfrac\pi3\cdot G(p)\cdot r^3+o(r^3).\]
+
+Note that the theorem implies there is no smooth length-preserving map that sends an open region in the unit sphere to the plane.%
+\footnote{There are plenty of non-smooth length-preserving maps from the sphere to the plane; see \cite{petrunin-yashinski} and the references there in.}
+It follows since the Gauss curvature of the plane is zero and the unit sphere has Gauss curvature 1. 
+In other words, there is no map of a region on Earth without distortion.
+
+\parit{Proof.}
+Set $g_1=G(p_1)_{\Sigma_1}$ and $g_2=G(p_2)_{\Sigma_2}$;
+we need to show that 
+\[g_1=g_2.\eqlbl{eq:g=g}\]
+
+Suppose $\Delta_1$ is a small geodesic triangle in $\Sigma_1$ that contains $p_1$.
+Set $\Delta_2=f(\Delta_1)$.
+We may assume that the Gauss curvature is almost constant in $\Delta_1$ and $\Delta_2$;
+that is, given $\eps>0$, we can assume that 
+\[
+\begin{aligned}
+|G(x_1)_{\Sigma_1}-g_1|&<\eps,
+\\
+|G(x_2)_{\Sigma_2}-g_2|&<\eps
+\end{aligned}
+\eqlbl{eq:almost=}\]
+for any $x_1\in \Delta_1$ and $x_2\in \Delta_2$.
+
+Since $f$ is length-preserving the triangles $\Delta_2$ is geodesic and
+\[\area\Delta_1=\area\Delta_2.\eqlbl{eq:area=}\]
+Moreover, triangles $\Delta_1$ and $\Delta_2$ have the same corresponding angles; denote them by $\alpha$, $\beta$ and $\gamma$.
+
+By Gauss--Bonnet formula, we get that 
+\[\iint_{\Delta_1}G_{\Sigma_1}=\alpha+\beta+\gamma-\pi=\iint_{\Delta_2}G_{\Sigma_2}.\eqlbl{eq:gauss-int=}\]
+
+By \ref{eq:almost=}, 
+\begin{align*}
+\left|g_1-\frac1{\area\Delta_1}\cdot\iint_{\Delta_1}G_{\Sigma_1}\right|&<\eps,
+\\
+\left|g_2-\frac1{\area\Delta_2}\cdot\iint_{\Delta_2}G_{\Sigma_2}\right|&<\eps.
+\end{align*}
+By \ref{eq:area=} and \ref{eq:gauss-int=},
+\[\frac1{\area\Delta_1}\cdot\iint_{\Delta_1}G_{\Sigma_1}
+=
+\frac1{\area\Delta_2}\cdot\iint_{\Delta_2}G_{\Sigma_2},\]
+therefore
+\[|g_1-g_2|<2\cdot\eps.\]
+Since $\eps>0$ is arbitrary, \ref{eq:g=g} follows.
+\qeds
+
+
+\section*{Simple geodesic}
+
+The following theorem provides an interesting application of Gauss--Bonnet formula;
+it is proved by Stephan Cohn-Vossen \cite[Satz 9 in][]{convossen}.
+
+
+\begin{thm}{Theorem}\label{thm:cohn-vossen}
+Any open smooth regular surface with positive Gauss curvature has a simple two-sided infinite geodesic.
+\end{thm}
+
+\begin{thm}{Lemma}\label{lem:graph}
+Suppose $\Sigma$ is an open surface in with positive Gauss curvature in the Euclidean space.
+Then there is a convex function $f$ defined on a convex open region of $(x,y)$-plane 
+such that $\Sigma$ can be presented as a graph $z=f(x,y)$ in some $(x,y,z)$-coordinate system of the Euclidean space.
+
+Moreover 
+\[\iint_\Sigma G\le 2\cdot\pi.\eqlbl{eq:int=<2pi}\]
+
+\end{thm}
+
+\parit{Proof.}
+The surface $\Sigma$ is a boundary of an unbounded closed convex set $K$.
+
+Fix $p\in \Sigma$ and consider a sequence of points $x_n$ such that $|x_n-p|\z\to \infty$ as $n\to \infty$.
+Set $u_n=\tfrac{x_n-p}{|x_n-p|}$; the unit vector in the direction from $p$ to $x_n$.
+Since the unit sphere is compact, we can pass to a subsequence of $(x_n)$ such that $u_n$ converges to a unit vector $u$.
+
+Note that for any $q\in \Sigma$, the directions $v_n=\tfrac{x_n-q}{|x_n-q|}$ converge to $u$ as well.
+The half-line from $q$ in the direction of $u$ lies in $K$.
+Indeed any point on the half-line is a limit of points on the line segments $[q,x_n]$;
+since $K$ is closed, all of these poins lie in $K$.
+
+
+Let us choose the $z$-axis in the direction of $u$.
+Note that line segments can not lie in $\Sigma$, otherwise its Gauss curvature would vanish.
+It follows that any vertical line can intersect $\Sigma$ at most at one point.
+That is, $\Sigma$ is a graph of a function $z=f(x,y)$.
+Since $K$ is convex, the function $f$ is convex and it is defined in a region $\Omega$ which is convex.
+The domain $\Omega$ is the projection of $\Sigma$ to the $(x,y)$-plane.
+This projection is injective and by the inverse function theorem, it maps open sets in $\Sigma$ to open sets in the plane;
+hence $\Omega$ is open.
+
+It follows that the outer normal vectors to $\Sigma$ at any point, points to the south hemisphere $\SS^2_-=\set{(x,y,z)\in\SS^2}{z< 0}$.
+Therefore the area of the spherical image of $\Sigma$ is at most $\area\SS^2_-= 2\cdot\pi$.
+The area of this image is the integral of the Gauss curvature along $\Sigma$.
+That is,
+\begin{align*}
+\iint_{\Sigma}G&=\area[\Norm(\Sigma)]\le 
+\\
+&\le \area\SS^2_-=
+\\
+&=2\cdot\pi,
+\end{align*}
+where $\Norm(p)$ denotes the outer unit normal vector at $p$.
+Hence \ref{eq:int=<2pi} follows.
+\qeds
+
+\parit{Proof of \ref{thm:cohn-vossen}.}
+Let $\Sigma$ be an open surface in with positive Gauss curvature and $\gamma$ a two-sided infinite geodesic in $\Sigma$.
+The following is the key statement in the proof.
+
+\begin{thm}{Claim}
+The geodesic $\gamma$ contains at most one simple loop.
+\end{thm}
+
+Assume $\gamma$ has a simple loop $\ell$.
+By Lemma \ref{lem:graph}, $\Sigma$ is parameterized by a open convex region $\Omega$ in the plane;
+therefore $\ell$ bounds a disc in $\Sigma$; denote it by $\Delta$.
+If $\phi$ is the angle at the base of the loop, then by Gauss--Bonnet,
+\[\iint_\Delta G=\pi+\phi.\] 
+By Lemma \ref{lem:graph}, $\phi<\pi$; that is, $\gamma$ has no concave simple loops 
+
+Assume $\gamma$ has two simple loops, say $\ell_1$ and $\ell_2$ that bound discs $\Delta_1$ and $\Delta_2$.
+Then the disks $\Delta_1$ and $\Delta_2$ have to overlap,
+otherwise the curvature of $\Sigma$ would exceed $2\cdot\pi$.
+
+We may assume that $\Delta_1\not\subset \Delta_2$; the loop $\ell_2$ appears after $\ell_1$ on $\gamma$ and there are no other simple loops between them.
+In this case, after going around $\ell_1$ and before closing $\ell_2$, the curve $\gamma$ must enter $\Delta_1$ creating a concave loop.
+The latter contradicts the above observation.
+
+If a geodesic $\gamma$ has a self-intersection,
+then it contains a simple loop.
+From above, there is only one such loop;
+it cuts a disk from $\Sigma$ 
+and goes around it either clockwise or counterclockwise.
+This way we divide all the self-intersecting geodesics 
+into two sets which we will call {}\emph{clockwise} and {}\emph{counterclockwise}.
+
+Note that the geodesic $t\mapsto \gamma(t)$ is clockwise 
+if and only if the same geodesic traveled backwards
+$t\mapsto \gamma(-t)$
+is counterclockwise.
+By shooting unit-speed geodesics in all directions at a given point $p=\gamma(0)$,
+we get a one parameter family of geodesics $\gamma_s$ for $s\in[0,\pi]$ connecting the geodesic $t\mapsto \gamma(t)$ with
+the $t\mapsto \gamma(-t)$; that is, $\gamma_0(t)\z=\gamma(t)$ and $\gamma_\pi(t)=\gamma(-t)$. 
+It follows that there are geodesics 
+which aren't clockwise nor counterclockwise.
+Those geodesics have no self-intersections.\qeds

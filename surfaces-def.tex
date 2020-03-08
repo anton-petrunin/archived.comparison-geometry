@@ -130,7 +130,7 @@ of an open connected set $U\subset \RR^2$, then its image $\Sigma=s(U)$ is a smo
 Set 
 \[s(u,v)=(x_s(u,v),y_s(u,v),z_s(u,v)).\]
 Since $s$ is regular, its Jacobian matrix
-\[
+\[\Jac s=
 \renewcommand\arraystretch{1.3}
 \begin{pmatrix}
 \tfrac{\partial x_s}{\partial u}&\tfrac{\partial x_s}{\partial v}\\
@@ -151,7 +151,8 @@ the matrix
 \end{pmatrix},
 \] 
 is invertible.
-Note that this is the Jacobian matix of the map $(u,v)\mapsto (x_s(u,v),y_s(u,v))$.
+Note that this is the Jacobian matix of the map
+\[(u,v)\mapsto (x_s(u,v),y_s(u,v)).\]
 
 The inverse function theorem implies that there is a smooth regular function $h$ defined on an open set $W\ni 0$ in the $(x,y)$-plane
 such that 
@@ -187,7 +188,7 @@ A connected set $\Sigma\subset \RR^3$ is a smooth regular surface if $\Sigma$ ha
 \end{thm}
 
 
-\begin{thm}{Exercise}\label{ex:inversion}
+\begin{thm}{Exercise}\label{ex:inversion-chart}
 Consider the following map 
 \[s(u,v)=(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2}).\]
 Show that $s$ is a chart of the unit sphere centered at $(0,0,1)$; describe the image of $s$.
@@ -277,7 +278,7 @@ that is, $\rho(q)\z=o(|p-q|)$, where $q\in \Sigma$ and $\rho(q)$ denotes the dis
 Fix a chart $s$ at $p$.
 Assume $\gamma$ is a smooth curve that starts at~$p$.
 Without loss of generality, we can assume that $\gamma$ is covered by the chart;
-in particular, there are smooth function $u(t)$ and $v(t)$ such that 
+in particular, there are smooth functions $u(t)$ and $v(t)$ such that 
 \[\gamma(t)=s(u(t),v(t)).\]
 Applying chain rule, we get
 \[\gamma'=\tfrac{\partial s}{\partial u}\cdot u'+ \tfrac{\partial s}{\partial v}\cdot v';\]
@@ -304,6 +305,7 @@ Show that a neighborhood of $p$ in $\Sigma$ is a graph $z=f(x,y)$ of a smooth fu
 In this section we extend the definition of directional derivative to smooth functions defined on smooth surfaces.
 
 First let recall the standard definition of directional derivative.
+
 Suppose $f$ is a function defined at a point $p$ in the space, and $\vec w$ is a vector.
 Then directional derivative $D_{\vec w}f(p)$ is defined as the derivative at zero $h'(0)$ of the function
 \[h(t)=f(p+t\cdot\vec w).\]
@@ -326,7 +328,7 @@ Moreover, if $(u,v)\mapsto s(u,v)$ is a local chart at $p=s(u_p,v_p)$, and $\vec
 
 Note that our definition agrees with standard definition of directional derivative if $\Sigma$ is a plane.
 Indeed, in this case $\gamma(t)=p+\vec w\cdot t$ is a curve in $\Sigma$ that starts at $p$ with the velocity vector $\vec{w}$.
-For a general surface the point $p+\vec w\cdot t$ might not lie on the surface; therefore the function $f$ might be undefined at this point; therefore the standard definition will not work.
+For a general surface the point $p+\vec w\cdot t$ might not lie on the surface; therefore the function $f$ might be undefined at this point; therefore the standard definition does not work.
 
 \parit{Proof.}
 Without loss of generality, we may assume that $\gamma$ is covered by the chart $s$;
@@ -354,25 +356,105 @@ It follows that $(f\circ\gamma)'(0)$ depends only on $p$, $\vec w$ and $f$.
 The last statement follows from \ref{eq:f-gamma}.
 \qeds
 
-Any smooth map $f$ from a surface $\Sigma$ to $\RR^3$ can be described by its coordinate functions 
-$f(p)=(f_x(p),f_y(p),f_z(p))$.
+\section*{Linearization}
+
+Any smooth map $\theta$ from a surface $\Sigma$ to $\RR^3$ can be described by its coordinate functions 
+$\theta(p)=(\theta_x(p),\theta_y(p),\theta_z(p))$.
 To take a directional derivative of the map we should take the  directional derivative of each of its coordinate function.
-\[D_{\vec{w}}f\df(D_{\vec{w}}f_x,D_{\vec{w}}f_y,D_{\vec{w}}f_z).\]
+\[D_{\vec{w}}\theta\df(D_{\vec{w}}\theta_x,D_{\vec{w}}\theta_y,D_{\vec{w}}\theta_z).\]
 
-\begin{thm}{Exercise}\label{ex:differential-range}
-Assume $f$ is a smooth map from one smooth surface $\Sigma_0$ to another $\Sigma_1$ and $p\in \Sigma_0$.
-Show that $D_{\vec w}f(p)\in \T_{f(p)}\Sigma_1$ for any $\vec w\in \T_p$.
-\end{thm}
+Assume $\theta$ is a smooth map from one smooth surface $\Sigma_0$ to another $\Sigma_1$ and $p\in \Sigma_0$.
+Note that $D_{\vec w}\theta(p)\in \T_{\theta(p)}\Sigma_1$ for any $\vec w\in \T_p$.
+Indeed choose a curve $\gamma_0$ in $\Sigma_0$ such that $\gamma_0(0)=p$ and $\gamma_0'(0)=\vec w$.
+Observe that $\gamma_1=\theta\circ \gamma_0$ is a smooth curve in $\Sigma_1$ and 
+by the definition directional derivative, we have $D_{\vec w}\theta(p)=\gamma_1'(0)$.
+It remains to note that $\gamma_1(0)\z=\theta(p)$ and therefore its velocity $\gamma_1'(0)$ is in $\T_{\theta(p)}\Sigma_1$.
 
-\begin{thm}{Exercise}\label{ex:linerity}
-Assume $f$ is a smooth function defined on a smooth surface $\Sigma$.
-Show that the map $\vec w \mapsto D_{\vec w}f(p)$ defined for $\vec w\in \T_p$ is linear;
+Recall that \ref{def:directional-derivative} implies that 
+$L_p\theta\:\vec w \mapsto D_{\vec w}\theta$ defines a linear map $L_p\theta\:\T_p\Sigma_0\to \T_{\theta(p)}\Sigma_1$;
 that is,
-$D_{c\cdot \vec w}f=c\cdot D_{\vec w}f(p)$
-and 
-$D_{\vec v+ \vec w}f=D_{\vec v}f(p)+ D_{\vec w}f(p)$
+\[D_{c\cdot \vec w}\theta=c\cdot D_{\vec w}\theta(p)
+\quad\text{and}\quad D_{\vec v+ \vec w}\theta=D_{\vec v}\theta(p)+ D_{\vec w}\theta(p)\]
 for any $c\in\RR$ and $\vec v, \vec w\in\T_p$.
+Th map $L_p\theta$ is called a \emph{linearization} (or \emph{differential}) of $\theta$ at $p$.
+
+The linear map $L_p\theta$ can be written as a 2$\times$2-matrix $M$ in orthonormal basises of $\T_p$ and $\T_{\theta(p)}\Sigma_1$.
+Set $\jac_p\theta=|\det M|$; this value  
+does not depend on the choice orthonormal basises in $\T_p$ and $\T_{\theta(p)}\Sigma_1$. \label{page:|L|}
+
+Let $\phi\:\Sigma_1\to\Sigma_2$ be another smooth map between smooth surfaces $\Sigma_1$ and $\Sigma_2$.
+Suppose that $q=\theta(p)\in\Sigma_1$;
+observe that $L_p(\phi\circ\theta)=L_q\phi \circ L_p\theta$,
+It follows that
+\[\jac_p(\phi\circ\theta)
+=
+\jac_q\phi\cdot\jac_p\theta,\eqlbl{eq:jac-composition}\]
+where $q=\theta(p)\in\Sigma_1$.
+
+If $\Sigma_0$ is a domain in the $(u,v)$-plane, then the value $\jac_p\theta$ can be found using the following formulas 
+\begin{align*}
+\jac s
+&=|\tfrac{\partial s}{\partial v}\times\tfrac{\partial s}{\partial u}|=
+\\
+&=\sqrt{\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial u}\rangle\cdot\langle\tfrac{\partial s}{\partial v},\tfrac{\partial s}{\partial v}\rangle -\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle^2}=
+\\
+&=\sqrt{\det[\Jac^\top s\cdot \Jac s]}.
+\end{align*}
+where $\Jac s$ denotes the Jacobean matrix of $s$; it is a 2$\times$3 matrix with column vectors $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$.
+
+The value $\jac_p\theta$ has the following geometric meaning:
+if $P_0$ is a region in $\T_p$ and $P_1=(L_p\theta)(P_0)$, then
+\[\area P_1=\jac_p\theta\cdot \area P_0.\]
+This identity will become important in the definition of surface area.
+
+
+
+\section*{Surface integral and area}
+
+Let $\Sigma$ be a smooth surface and $h\:\Sigma\to\RR$ be a smooth function.
+Let us define the integral $\int_R h$ of the function $h$ along a region $R\subset \Sigma$.
+(This definition can be applied to any Borel set of $R\subset \Sigma$.)
+
+Assume that there is a chart $(u,v)\mapsto s(u,v)$ of $\Sigma$ defined on an open set $U\subset\RR^2$ such that $R\subset s(U)$.
+In this case set
+\[\int_R h\df \iint_{s^{-1}(R)} h\circ s(u,v)\cdot \jac_{(u,v)}s  \cdot du\cdot dv.\eqlbl{eq:area-def}\]
+($\jac_{(u,v)}s$ is defined in previous section.)
+
+By the substitution rule (\ref{thm:mult-substitution}), the right hand side in \ref{eq:area-def} does not depend on the choice of $s$.
+That is, if $s_1\:U_1\to \Sigma$ is another chart such that $s_1(U_1)\supset R$, then 
+\[\iint_{s^{-1}(R)} h\circ s(u,v)\cdot \jac_{(u,v)}s  \cdot du\cdot dv=\iint_{s_1^{-1}(R)} h\circ s_1(u,v)\cdot \jac_{(u,v)}s_1  \cdot du\cdot dv.\]
+In other words, the defining identity \ref{eq:area-def} makes sense.
+
+A general region $R$ can be subdivided into regions $R_1,R_2\dots$ such that each $R_i$ lies in the image of some chart.
+After that one could define the integral along $R$ as the sum
+\[\int_Rh
+\df
+\int_{R_1}h+\int_{R_2}h+\dots\]
+It is straightforward to check that the value $\int_Rh$ does not depend on the choice of subdivision.
+
+The area of a region $R$ in a smooth surface $\Sigma$ is defined as the surface integral 
+\[\area R=\int_R 1.\]
+
+The following proposition provides a substitution rule for surface integral.
+
+\begin{thm}{Proposition}\label{prop:surface-integral}
+Suppose $\theta\:\Sigma_0\to \Sigma_1$ is a smooth parameterization of a smooth surface $\Sigma_1$ by  a smooth surface $\Sigma_0$.
+Then for any region $R\subset \Sigma_0$ and any smooth function $f\:\Sigma_1\to\RR$ we have
+\[\int_R (f\circ\theta)\cdot \jac \theta=\int_{\theta(R)}f.\]
+In particular, if $f\equiv 1$, we have
+\[\int_R \jac \theta=\area [\theta(R)].\]
+
 \end{thm}
+
+\parit{Proof.}
+Follows from \ref{eq:jac-composition} and the definiton of surface integral.
+\qeds
+
+\parbf{Remark.}
+The notion of area of surface is closely related to length of curve.
+However, to define length we uses a different idea --- it was defined as the least upper bound on the lengths of inscribed polygonal lines.
+It turns out that analogous definition does not work even for very simple surfaces.
+Section \ref{sec:schwarz-boot} describes the so called \emph{Schwarz's boot} --- a classical example of that type.
 
 
 \section*{Tangent vectors as functionals*}
@@ -394,7 +476,7 @@ that satisfy the product rule \ref{eq:tangent-functional}.
 
 This new definition is less intuitive, but it is more convenient to use since it grabs the key algebraic property of tangent vectors.
 (It is an art to make a right definition.) 
-Many statements admit simpler proofs with this approach, for example linearity of the map $\vec w\mapsto D_{\vec w}f$ (\ref{ex:linerity}) becomes a tautology.
+Many statements admit simpler proofs with this approach, for example linearity of the map $\vec w\mapsto D_{\vec w}f$ becomes a tautology.
 
 
 \section*{Normal vector and orientation}
@@ -407,7 +489,7 @@ The choice of the field $\Norm$ is called the \emph{orientation} on $\Sigma$.
 A surface $\Sigma$ is called \emph{orientable} if it can be oriented.
 Note that each orientable surface admits two orientations $\Norm$ and $-\Norm$. %???
 
-\begin{wrapfigure}{o}{40 mm}
+\begin{wrapfigure}[8]{o}{40 mm}
 \vskip-0mm
 \centering
 \includegraphics{asy/moebius}
@@ -415,6 +497,7 @@ Note that each orientable surface admits two orientations $\Norm$ and $-\Norm$. 
 \end{wrapfigure}
 
 M\"obius strip shown on the diagram gives an example of a nonorientable surface --- there is no choice of normal vector field that is continuous along the middle of the strip (it changes the sign if you try to go around).
+
 
 Note that each surface is locally orientable.
 In fact each chart $f(u,v)$ admits an orientation 
@@ -452,7 +535,7 @@ For surfaces, the spherical map plays essentially the same role as the tangent i
 
 \section*{Sections}%???redo into sections
 
-\begin{thm}{Advanced exercise}
+\begin{thm}{Advanced exercise}\label{ex:plane-section}
 Show that any closed set in a plane can appear as an intersection of this plane with an open smooth regular surface.  
 \end{thm}
 

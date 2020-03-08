@@ -59,12 +59,14 @@ Conclude that
 \end{thm} %???make it a theorem for Lipschitz curves
 
 \begin{thm}{Advanced exercises}\label{adex:integral-length}
-\begin{enumerate}[(a)]
-\item Show that the formula \ref{eq:length} holds for any Lipschitz curve $\gamma\:[a,b]\z\to\RR^3$.
-\item Construct a simple curve $\gamma\:[a,b]\to\RR^3$ such that $\gamma'(t)=0$ almost everywhere.
-(In particular, the formula \ref{eq:length} does not hold for $\gamma$.).
 
-\end{enumerate}
+\begin{subthm}{adex:integral-length:a}Show that the formula \ref{eq:length} holds for any Lipschitz curve $\gamma\:[a,b]\z\to\RR^3$.
+\end{subthm}
+
+\begin{subthm}{adex:integral-length:b} Construct a simple curve $\gamma\:[a,b]\to\RR^3$ such that $\gamma'(t)=0$ almost everywhere.
+(In particular, the formula \ref{eq:length} does not hold for $\gamma$.).
+\end{subthm}
+
 \end{thm}
 
 
@@ -275,7 +277,7 @@ Moreover, equality holds if and only if $\gamma$ is convex.
 Use this statement to give another solution to Exercise~\ref{ex:convex-hull}.
 \end{thm}
 
-\begin{thm}{Exercise}\label{adex:more-croftons}
+\begin{thm}{Advanced exercise}\label{adex:more-croftons}
 Show that the length of a space curve is proportional to 
 \begin{enumerate}[(a)]
 \item the average length of its projections to all lines.
@@ -373,7 +375,7 @@ for any $n$.
 Let $\spc{X}$ be a metric space.
 Given two points $x,y$ in $\spc{X}$, denote by $d(x,y)$ the infimum of lengths of all paths connecting $x$ to $y$; if there is no such path, then $d(x,y)=\infty$.
 
-\begin{thm}{Exercise-Definition}
+\begin{thm}{Exercise-Definition}\label{ex-def:length-metric}
 Show that the function $d$ satisfies all the axioms of a metric except it might take infinite values.
 Therefore if any two points in $\spc{X}$ can be connected by a rectifiable curve, then $d$ defines a new metric on $\spc{X}$; in this case $d$ is called the \emph{induced length metric}.
 \end{thm}

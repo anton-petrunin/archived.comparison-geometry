@@ -45,7 +45,7 @@ If the domain of a parameterized curve is the closed unit interval $[0,1]$, then
 If in addition $p=\gamma(0)=\gamma(1)$, then $\gamma$ is called a loop;
 in this case the point $p$ is called the \emph{base} of the loop.
 
-\begin{thm}{Advanced exercise}
+\begin{thm}{Advanced exercise}\label{aex:simple-curve}
 Let $X$ be a subset of the plane.
 Suppose that two distinct points $p,q\in X$ can be connected by a path in $X$.
 Show that there is a simple arc in~$X$ connecting $p$ to $q$.
@@ -140,22 +140,23 @@ defines a regular smooth space curve if the set of solutions is connected and $0
 In this case it means that the gradients $\nabla f$ and $\nabla h$ are linearly independent at any point $p\in \gamma$.
 In other words, the Jacobian matrix
 \[
-\begin{pmatrix}
+\Jac_pF=\begin{pmatrix}
 \tfrac{\partial f}{\partial x}&\tfrac{\partial f}{\partial y}&\tfrac{\partial f}{\partial z}\\
-\tfrac{\partial h}{\partial x}&\tfrac{\partial h}{\partial y}&\tfrac{\partial f}{\partial z}
+\tfrac{\partial h}{\partial x}&\tfrac{\partial h}{\partial y}&\tfrac{\partial h}{\partial z}
 \end{pmatrix}
 \]
-for the map $F\:\RR^3\to\RR^2$ has rank 2 at any $p$ such that $f(p)=h(p)=0$.
+for the map $F\:\RR^3\to\RR^2$ has rank 2 at any point $p$ such that $f(p)=h(p)=0$.
 
 The way described above to define a curve is called \emph{implicit};
 if a curve is defined by its parametrization, we say that it is \emph{explicitly defined}.
 While implicit function theorem guarantees the existence of regular smooth parametrizations,
 when it comes to calculations, it is usualy easier to work directly with implicit representations. 
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:y^2=x^3}
 Consider the set in the plane described by the equation
 \[y^2=x^3.\]
-Is it a simple curve? Is it a smooth regular curve?
+Is it a simple curve?
+Is it a smooth regular curve?
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:viviani}

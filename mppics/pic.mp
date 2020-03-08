@@ -2658,7 +2658,7 @@ z.a2=(1.5,.5)*u;
 z.b0=(-1,.9)*u;
 z.b2=(1,1)*u;
 
-draw z.a0..z.p{z.w}..z.a2 pensemibold;
+draw z.a0..z.p{z.w}..z.a2 pensemibold withcolor .5;
 draw z.b0..z.p{z.w}..z.b2 pensemibold;
 
 drawarrow z.p--z.w;
@@ -2669,7 +2669,7 @@ dOt z.p;
 label.bot(btex $p$ etex, z.p);
 label.rt(btex $\vec w$ etex, z.w);
 label.top(btex $\Norm_p$ etex, z.nu);
-label.rt(btex $\gamma_1$ etex, z.a2);
+label.rt(btex {\color{darkgray} $\gamma_1$} etex, z.a2);
 label.rt(btex $\gamma_2$ etex, z.b2);
 label(btex $\Pi$ etex, .5[z.b0,z.nu]);
 endfig;
@@ -3110,5 +3110,38 @@ label.top (btex $\Delta$ etex, point .5 of p0);
 label.top (btex $\Sigma$ etex, point 1.5 of p0);
 label.ulft (btex $\Pi$ etex, 1.4[z.a,z.b]);
 
+endfig;
+
+beginfig(250)
+save u,p;
+path p[];
+u:=2.8cm;
+
+z.a=(0,0)*u;
+z.b=(1,0)*u;
+
+z.p=(.05,-.05)*u;
+z.q=(.8,.1)*u;
+z.pq=(.6,.15)*u;
+z.v=unitvector(-1,.1);
+
+p0=z.a{.7,1}..z.b{.6,-1}..cycle;
+p1=z.q..z.pq{z.v}..z.p;
+
+z.pp=z.pq+(arclength subpath (1,2) of p1)*z.v;
+
+draw p0;
+draw p1;
+draw z.pq--z.pp dashed evenly;
+
+rimmark(z.pq--z.pp, subpath (1,2) of p1);
+
+dOt z.p,z.q,z.pq,z.pp;
+
+label.top (btex {\Large $\Sigma$} etex, (0,10)+point 1.5 of p0);
+label.bot (btex $p$ etex, z.p);
+label.bot (btex $q$ etex, z.q);
+label.bot (btex $\gamma(t)$ etex, z.pq);
+label.top (btex $p_t$ etex, z.pp);
 endfig;
 end

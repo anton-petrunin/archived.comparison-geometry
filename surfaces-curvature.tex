@@ -66,16 +66,26 @@ the matrix $M_p$ in the new basis.
 
 Since the Hessian matrix $M_p$ is symmetric, it is diagonalizable by orthogonal matrices.
 That is, by rotating the $(x,y)$-plane we can assume that $m=0$ in \ref{eq:hessian}. %???+lin algebra material
-In this case the diagonal components of $M_p$ are called \emph{principle curvatures} of $\Sigma$ at $p$;
-they are denoted as $k_1(p)$ and $k_2(p)$, or $k_1(p)_\Sigma$ and $k_2(p)_\Sigma$ if we need to emphasize that these are the curvatures of the surface $\Sigma$.
+In this case
+\[M_p=\begin{pmatrix}
+   k_1
+   &0
+   \\
+   0
+   &k_2
+  \end{pmatrix},
+\]
+the diagonal components $k_1$ and $k_2$ of $M_p$ are called \emph{principle curvatures} of $\Sigma$ at $p$;
+they might also be denoted as $k_1(p)$ and $k_2(p)$, or $k_1(p)_\Sigma$ and $k_2(p)_\Sigma$;
+if we need to emphasise that we calculate it at the point $p$ for the surface $\Sigma$.
 We will always assume that $k_1\le k_2$.
 
 
 Note that if $x=f(x,y)$ is a local graph representation of $\Sigma$ in these coordinates, then 
 \[f(x,y)=\tfrac12\cdot(k_1\cdot x^2+k_2\cdot y^2)+o(x^2+y^2).\]
 
-The principle curvatures can be also defined as the eigenvalues of the Hessian matrix $M_p$;
-the eigendirections of $M_p$ are called \emph{principle directions} of $\Sigma$ at~$p$.
+The principle curvatures can be also defined as the eigenvalues of the Hessian matrix $M_p$.
+The eigendirections of $M_p$  are called \emph{principle directions} of $\Sigma$ at~$p$.
 Note that if $k_1(p)\ne k_2(p)$, then $p$ has exactly two principle directions, which are perpendicular to each other; if $k_1(p)= k_2(p)$ then all tangent directions at $p$ are principle.
 
 Note that if we revert the orientation of $\Sigma$, then the principle curvatures at each point switch their signs and indexes.
@@ -87,6 +97,34 @@ Assume that a smooth surface $\Sigma$ is mirror symmetric with respect to  a pla
 Suppose that $\Sigma$ and $\Pi$ intersect along a curve $\gamma$.
 Show that $\gamma$ is a line of curvature of $\Sigma$.
 \end{thm}
+
+
+\section*{More curvatures}
+
+Fix an oriented smooth surface $\Sigma$ and a point $p\in\Sigma$.
+
+The product 
+\[K=k_1(p)\cdot k_2(p)\]
+is called Gauss curvature at $p$.
+We may denote it by $K(p)$ or $K(p)_\Sigma$ if we need to specify the point $p$ and the surface $\Sigma$.
+The Gauss curvature can be also interpreted as the determinant of the Hessian matrix $M_p$.
+
+The sum 
+\[H(p)=k_1(p)+ k_2(p)\] 
+is called \emph{mean curvature}\footnote{Some authors define mean curvature as $\tfrac12\cdot(k_1(p)+ k_2(p))$ --- the mean value of the principle curvatures. It is suits the name better, but not as convenient when it comes to calculations.} at $p$.
+We may also denote it by $H(p)_\Sigma$.
+The mean curvature can be also interpreted as the trace of the Hessian matrix $M_p$, or, equivalently,  as the trace of the shape operator $S_p$. 
+
+Note that reverting orientaion of $\Sigma$ does not change Gauss curvatre and changes sign of mean curvature.
+In particular, the Gauss curvature is well defined for nonoriented surface $\Sigma$ and $p$.
+
+\begin{thm}{Exercise}\label{ex:gauss+orientable}
+Show that any surface with positive Gauss curvature is orientable. 
+%Show that any surface with positive mean curvature is orientable.
+\end{thm}
+
+A surface with vanishing mean curvature is called \emph{minimal};
+the reason for such a name will be given in Proposition~\ref{prop:minimizing-is-minimal}.
 
 \section*{Shape operator}
 
@@ -116,10 +154,14 @@ For a point $p\in \Sigma$ the shape operator of a tangent vector $\vec w\in \T_p
 otherwise we may use notations 
 \[S_p(\vec w)\quad\text{or even}\quad S_p(\vec w)_\Sigma.\]
 
+
 Since $M_p$ is symmetric, $S$ is \emph{self-adjoint}; that is
 \[\langle S(\vec v),\vec w\rangle=\langle \vec v,S(\vec w)\rangle\]
 for any $\vec v,\vec w\in\T_p$.
 Note also that principle curvatures of $\Sigma$ at $p$ are the eigenvalues of $S_p$ and the principle directions are the directions of principle vectors of $S_p$.
+
+The shape operator $S_p$ is defined using the Hessian matrix $M_p$, that depends on the choice of basis in $\T_p$;
+the following proposition implies in particular that $S_p$ does not depend on the choice of basis. 
 
 \begin{thm}{Proposition}\label{prop:shape=D2}
 Let $p$ be a point on a smooth oriented surface $\Sigma$.
@@ -188,7 +230,7 @@ where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(
 
 \parit{Proof.} 
 Note that 
-\[D_{\vec i}=\tfrac{\partial}{\partial x}\quad\text{and}\quad D_{\vec j}=\tfrac{\partial}{\partial y}.\]
+$D_{\vec i}=\tfrac{\partial}{\partial x}$ and $D_{\vec j}=\tfrac{\partial}{\partial y}$.
 It remains to use \ref{prop:shape=D2} and the expressions for $\ell$, $m$, and $n$ (see page~\pageref{page:lmn}).
 \qeds
 
@@ -198,13 +240,16 @@ In the following proposition we use the notion of directional derivative defined
 Let $\Sigma$ be a smooth surface with unit normal field $\Norm$.
 Suppose $p\in \Sigma$ and $S\:\T_p\to\T_p$ is the shape operator at $p$.
 Then 
-\[S(\vec w)=-D_{\vec w}\nu
+\[S(\vec w)=-D_{\vec w}\Norm
 \eqlbl{eq:shape=-dNorm}\]
 for any $\vec w\in \T_p$.
+Equivalently 
+\[S=-L_p\Norm,\eqlbl{eq:shape=-L}\] 
+where $L_p\Norm$ denotes linearization of the spherical map $\nu\:\Sigma\to\SS^2$ at $p$.
 \end{thm}
 
 
-The reason for minus sign in \ref{eq:shape=-dNorm} is the same as in the formula  
+The reason for minus sign in \ref{eq:shape=-dNorm} and \ref{eq:shape=-L}is the same as in the formula  
 for curvature of plane curve in its Frenet frame: $\norm'=-\skur\cdot\tan$.
 The proof is done by straightforward calculations.
 
@@ -276,9 +321,41 @@ Evaluating the above 6 identities at $(u,v)\z=(0,0)$, we get that
 &
 \langle -D_{\vec j}\nu,\vec k\rangle&=0,
 \end{align*}
-That is, $-D_{\vec i}\nu$ and $-D_{\vec j}\nu$ satisfy the same equalities as $S(\vec i)$ in \ref{cor:S(ij)}.
-Note that these equalities define $S$ completely; 
-therefore \ref{eq:shape=-dNorm} follows.
+That is, $-D_{\vec i}\nu$ and $-D_{\vec j}\nu$ satisfy the same equalities as $S(\vec i)$ and $S(\vec j)$in \ref{cor:S(ij)}.
+Since these equalities define $S$ completely, \ref{eq:shape=-dNorm} follows.
+\qeds
+
+\begin{thm}{Corollary}\label{cor:intK}
+Let $\Sigma$ be a smooth surface with orientation defined by unit normal field $\Norm$.
+Suppose the spherical map $\Norm\:\Sigma\to\SS^2$ is injective.
+Then 
+\[\int_\Sigma|K|=\area[\nu(\Sigma)].\]
+\end{thm}
+
+\parit{Proof.}
+Observe that the tangent planes $\T_p\Sigma=\T_{\Norm(p)}\SS^2$ are parallel for any $p\in\Sigma$.
+Indeed both of these planes are perpendicular to $\Norm(p)$. 
+
+
+Choose an orthonormal basis of $\T_p$ with in principle directions,
+so the shape operator can be expressed by matrix 
+$(\begin{smallmatrix}
+   k_1
+   &0
+   \\
+   0
+   &k_2
+  \end{smallmatrix})$.
+
+Since by \ref{prop:S=-D}, $S_p=-L_p\Norm$, we have
+\[\jac_p\Norm=|\det(\begin{smallmatrix}
+   k_1
+   &0
+   \\
+   0
+   &k_2
+  \end{smallmatrix})|=|K(p)|.\]
+By \ref{prop:surface-integral}, the statement follows.
 \qeds
 
 
@@ -300,44 +377,3 @@ Show that if $\gamma$ is a curvature line in $\Sigma_1$, then it is also a curva
 Conclude that if a smooth surface $\Sigma$ intersects a plane or sphere along a smooth curve $\gamma$,
 then $\gamma$ is a curvature line of $\Sigma$.
 \end{thm}
-
-
-\section*{More curvatures}
-
-Fix an oriented smooth surface $\Sigma$ and a point $p\in\Sigma$.
-
-The product 
-\[K(p)=k_1(p)\cdot k_2(p)\]
-is called Gauss curvature at $p$.
-We may denote it by $K(p)_\Sigma$ if we need to emphasize that this is curvature of $\Sigma$.
-The Gauss curvature can be also interpreted as the determinant of the Hessian matrix $M_p$, or, equivalently,  as the determinant of the shape operator $S_p$.
-
-The sum 
-\[H(p)=k_1(p)+ k_2(p)\] 
-is called \emph{mean curvature}\footnote{Some authors define mean curvature as $\tfrac12\cdot(k_1(p)+ k_2(p))$ --- the mean value of the principle curvatures. It is suits the name better, but not as convenient when it comes to calculations.} at $p$.
-We may also denote it by $H(p)_\Sigma$.
-The mean curvature can be also interpreted as the trace of the Hessian matrix $M_p$, or, equivalently,  as the trace of the shape operator $S_p$. 
-
-Note that reverting orientaion of $\Sigma$ does not change Gauss curvatre and changes sign of mean curvature.
-In particular, the Gauss curvature is well defined for nonoriented surface $\Sigma$ and $p$.
-
-\begin{thm}{Exercise}\label{ex:gauss+orientable}
-Show that any surface with positive Gauss curvature is orientable. 
-%Show that any surface with positive mean curvature is orientable.
-\end{thm}
-
-A surface with vanishing mean curvature is called \emph{minimal};
-the reason for such a name will be given in Proposition~\ref{prop:minimizing-is-minimal}.
-
-\begin{thm}{Exercise}\label{ex:catenoid-is-minimal}
-Show that \emph{catenoid} defined implicitly by equation
-\[(\cosh z)^2=x^2+y^2\]
-is a minimal surface.
-\end{thm}
-
-\begin{thm}{Exercise}\label{ex:helicoid-is-minimal}
-Show that \emph{helicoid} defined by the following parametric equation
-\[s(u,v)=(u\cdot \sin v,u\cdot \cos v,v)\]
-is a minimal surface.
-\end{thm}
-

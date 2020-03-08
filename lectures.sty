@@ -5,6 +5,8 @@
 \usepackage{gensymb}
 \usepackage{color}
 \usepackage{pifont}
+
+
 \usepackage[colorlinks=true,
 citecolor=black,
 linkcolor=black,
@@ -154,6 +156,9 @@ isbn=false]{biblatex}
 \def\TT{\mathbb{T}}
 \def\T{\mathrm{T}}
 
+\def\Jac{\mathop{\rm Jac}\nolimits}
+\def\jac{\mathop{\rm jac}\nolimits}
+
 \def\tan{\textsc{t}}
 \def\norm{\textsc{n}}
 \def\bi{\textsc{b}}
@@ -205,7 +210,7 @@ semi-pe-ri-me-ter}
 %NUMBERONCIRC
 \newcommand*{\numform}[1]{\@numform{\@nameuse{c@#1}}}
 \newcommand*{\@numform}[1]%
-{\ifcase #1\or \ding{202}\or \ding{203}\or \ding{204}\or \ding{205}\or \ding{206}\or \ding{207}\or \ding{208}\or \ding{209}\or \ding{210}\or \ding{211}\or \ding{212}\else\@ctrerr \fi}
+{\ifcase #1\or \ding{202}\or \ding{203}\or \ding{204}\or \ding{205}\or \ding{206}\or \ding{207}\or \ding{208}\or \ding{209}\or \ding{210}\or \ding{211}\or \ding{74}\or \ding{168} \or \ding{170}\or \ding{171}\or\ding{169}\else\@ctrerr \fi}
 
 %EQNUMBER
 \newcounter{eqtn}[section]
@@ -229,7 +234,7 @@ semi-pe-ri-me-ter}
 \renewcommand{\theclone}{\textit{\alph{subthm}}}
 \newenvironment{subthm}[1]{\ifthenelse{\equal{#1}{}}
 {\par\refstepcounter{subthm}\begin{itemize}\item[\alph{subthm})]}{\par\refstepcounter{subthm}\label{#1}\setcounter{clone}{\value{subthm}} \addtocounter{clone}{-1}\refstepcounter{clone}\label{SHORT.#1}\begin{itemize}
-\item [\alph{subthm})]}}{\end{itemize}}
+\item [(\alph{subthm})]}}{\end{itemize}}
 %SUBTHEOREM A
 \newcounter{subthmA}[thm]
 \renewcommand{\thesubthmA}{\thethm\textit{\hskip-0.05em \Alph{subthmA}}}

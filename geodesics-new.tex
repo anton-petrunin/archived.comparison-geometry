@@ -227,7 +227,15 @@ Let us define the \emph{intrinsic diameter} of a closed surface $\Sigma$ as the 
 
 \begin{thm}{Exercise}\label{ex:intrinsic-diameter}
 Assume that a closed smooth surface $\Sigma$ with positive Gauss curvature lies in a unit ball.
-Show that the intrinsic diameter of $\Sigma$ cannot exceed $\pi$.
+
+\begin{subthm}{} Show that the intrinsic diameter of $\Sigma$ cannot exceed $\pi$.
+ 
+\end{subthm}
+
+\begin{subthm}{}
+Show that the area of $\Sigma$ cannot exceed $4\cdot \pi$.
+\end{subthm}
+
 \end{thm}
 
 \chapter{Geodesics}
@@ -339,8 +347,8 @@ Therefore the vector equation \ref{eq:def-geod} can be rewritten as the followin
 \]
 where $s(x,y)\df (x,y,f(x,y))$, $x=x(t)$, and $y=y(t)$.
 
-Observe that $\frac{\partial s}{\partial x}=(1,0,\tfrac{\partial f}{\partial x}$ and $\frac{\partial s}{\partial y}=(0,1,\tfrac{\partial f}{\partial y}$.
-Since $\gamma''=(x'',y'',z'')$, we can rewrite the system the following way.
+Observe that $\frac{\partial s}{\partial x}=(1,0,\tfrac{\partial f}{\partial x})$ and $\frac{\partial s}{\partial y}=(0,1,\tfrac{\partial f}{\partial y})$.
+Since $\gamma''\z=(x'',y'',z'')$, we can rewrite the system the following way.
 \[
 \begin{cases}
 x''+\tfrac{\partial f}{\partial x}\cdot z''=0,
@@ -384,7 +392,7 @@ Therefore $\mathbb{I}$ is not a maximal interval --- a contradiction.
 \qeds
 
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:geodesic-curvature}
 Let $\gamma$ be a smooth regular curve in a smooth surface~$\Sigma$.
 Show that $\gamma$ is a geodesic if and only if it has constant speed and vanishing geodesic curvature.
 \end{thm}
@@ -454,14 +462,11 @@ Show that no shortest path in $\Sigma$ can cross $\Pi$ more than once.
 
 {
 
-\begin{wrapfigure}[12]{r}{39 mm}
-\begin{lpic}[t(-0 mm),b(-4 mm),r(0 mm),l(0 mm)]{pics/unbend(1)}
-\lbl[t]{11.5,29;$p$}
-\lbl[r]{10.5,37;$p_t$}
-\lbl[t]{32.5,26;$q$}
-\lbl[t]{26,30;$\gamma(t)$}
-\lbl{20,13;{\Large $\Sigma$}}
-\end{lpic}
+\begin{wrapfigure}{r}{48 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-250}
+\vskip-0mm
 \end{wrapfigure}
 
 \begin{thm}{Advanced exercise}\label{ex:milka}
@@ -480,6 +485,149 @@ Show that the statement does not hold without assuming that $\gamma$ is minimizi
 \end{thm}
 
 }
+
+
+
+
+\section*{Exponential map}\label{sec:exp}
+
+Let $\Sigma$ be smooth regular surface and $p\in \Sigma$.
+Given a tangent vector ${\vec v}\in \T_p$ consider a geodesic $\gamma_{\vec v}$ in $\Sigma$ that runs from $p$ with the initial velocity ${\vec v}$;  
+that is, $\gamma(0)=p$ and $\gamma'(0)={\vec v}$.
+
+The point $q=\gamma_{\vec v}(1)$ is called \emph{exponential map} of ${\vec v}$, or briefly $q=\exp_p{\vec v}$.
+(There is a reason to call this map \emph{exponential}, but it will take us too far from the subject.)
+By \ref{prop:geod-existence}, the map $\exp_p\:\T_p\to \Sigma$ is smooth and defined in a neighborhood of zero in $\T_p$;
+moreover, if $\Sigma$ is proper, then $\exp_p$ is defined on the whole space $\T_p$.
+
+\begin{thm}{Observation}
+The Jacobian of $\exp_p$ at zero is the identity matrix.
+\end{thm}
+
+\parit{Proof.} Let $z=f(x,y)$ be a local graph representation of $\Sigma$ in the tangent-normal coordinates.
+The tangent plane at $p$ is the $(x,y)$-plane.
+Let $\gamma_x$ and $\gamma_y$ be the geodesics starting from $p$ in the directions
+$(1,0,0)$
+and
+$(0,1,0)$
+correspondingly.
+A general tangent vector can be written as ${\vec v}=(x,y,0)$.
+Note that $\tfrac{\partial\exp_p}{\partial x}(0,0)=\gamma_x'(0)=(1,0,0)$ and  
+$\tfrac{\partial\exp_p}{\partial x}(0,0)=\gamma_y'(0)=(0,1,0)$.
+That is, the Jacobian matrix of $\exp_p$ at $(0,0)$ is
+\[\begin{pmatrix}
+1&0
+\\
+0&1
+\\
+0&0
+\end{pmatrix}.
+\]
+It follows that the Jacobian matrix of the projection of $\exp_p$ to the $(x,y)$-plane is the identity matrix.
+\qeds %???Jacobian matrix def
+
+Applying the observation together with the inverse function theorem (\ref{thm:inverse}), we get the following statement.
+
+\begin{thm}{Proposition}\label{prop:exp}
+Let $\Sigma$ be smooth surface and $p\in \Sigma$.
+Then the exponential map $\exp_p\:\T_p\to \Sigma$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$ by a neighborhood of $0$ in the tangent plane~$\T_p$.
+
+Moreover for any $p\in \Sigma$ there is $\eps>0$ such that for any $x\in \Sigma$ such that $|x-p|_\Sigma<\eps$ the map 
+$\exp_x\:\T_x\to \Sigma$ is a smooth regular parametrization of the $\eps$-neighborhood of $x$ in $\Sigma$ by the $\eps$-neighborhood of zero in the tangent plane~$\T_x$. %???
+\end{thm}
+
+\section*{Polar coordinates}
+
+Fix polar coordinates $(\theta,r)$ on tangent plane of $\Sigma$ at $p$.
+If $\vec v\in \T_p$ has coordinates $(\theta,r)$,
+then we say that $q=\exp_p\vec v$ be the point in $\Sigma$ with the polar coordinates $(\theta,r)$ with center at~$p$, or briefly $q=w_p(r,\theta)$.
+Note that according to Proposition~\ref{prop:exp} polar coordinates behave usual way in a neighborhood of the point in $p$;
+that is, there is $r_0>$ such that if $r_1,r_2<r_0$ then $w_p(r_1,\theta_1) = w_p(r_2,\theta_2)$ if and only if
+$r_1=r_2=0$ or $r_1=r_2$ and $\theta_1=\theta_2+2\cdot n\cdot\pi$ for an integer $n$.
+
+\begin{thm}{Lemma}\label{lem:palar-perp}
+Let $w_p(\theta,r)$ describes polar coordinates in a neingborhood of point $p$ of smooth surface $\Sigma$.
+Then
+\[\tfrac{\partial w_p}{\partial\theta}\perp\tfrac{\partial w_p}{\partial r}\]
+for any $r$ and $\theta$.
+\end{thm}
+
+\parit{Proof.}
+Note that by the definition of exponential map, for a fixed $\theta$, the curve $\gamma_\theta(t)=w(\theta,t)$ is a unit-speed geodesic that starts at $p$;
+in particular we have the following two identities:
+\begin{enumerate}[(i)]
+\item Since the geodesic has unit speed we have $|\tfrac{\partial}{\partial r}w_p|=|\gamma_\theta'(r)|=1$. In particular,
+ \[\tfrac{\partial}{\partial \theta}\langle\tfrac{\partial w_p}{\partial r},\tfrac{\partial w_p}{\partial r}\rangle=0\]
+\item Since $\tfrac{\partial^2w_p}{\partial r^2}=\gamma''_\theta(r)\perp\T_{\gamma_\theta(r)}$, we have 
+\[\langle\tfrac{\partial^2w_p}{\partial r^2},\tfrac{\partial w_p}{\partial \theta}\rangle=0\]
+\end{enumerate}
+Therefore
+\begin{align*}
+\tfrac{\partial}{\partial r}
+\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle
+&=\langle\tfrac{\partial^2 w_p}{\partial\theta\partial r},\tfrac{\partial w_p}{\partial r}\rangle
++
+\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial^2 w_p}{\partial r^2}\rangle=
+\\
+&=\tfrac12\cdot \tfrac{\partial}{\partial \theta}\langle\tfrac{\partial w_p}{\partial r},\tfrac{\partial w_p}{\partial r}\rangle=
+\\
+&=0
+\end{align*}
+That is $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$.
+
+Note that $w_p(\theta,0)=p$ for any $\theta$.
+Therefore
+$\tfrac{\partial w_p}{\partial\theta}=0$
+and in particular 
+\[\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0\]
+if $r=0$.
+Since $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$, 
+we get 
+\[\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0\]
+everywhere.
+Whence the statement follows.
+\qeds
+
+\section*{Proof of Proposition~\ref{prop:gamma''}}\label{sec:proof-of-gamma''}
+
+Let $\gamma\:[0,\ell]\to\Sigma$ be a shortest path parameterized by arc length.
+Suppose $\ell=\length\gamma$ is sufficiently small, so $\gamma$ can be described in the polar coordinates at $p$; assume $\gamma(t)=w_p(\theta(t),r(t))$ for some functions $t\mapsto \theta(t)$ and $t\mapsto r(t)$ such that $r(0)=0$. %???problem
+
+Note that by chain rule, we have
+\[\gamma'(t)=\tfrac{\partial w_p}{\partial \theta}\cdot \theta'(t)+\tfrac{\partial w_p}{\partial r}\cdot r'(t)
+\eqlbl{eq:chain(gamma)}\]
+if the left side is defined.
+By \ref{lem:palar-perp}, $\tfrac{\partial w_p}{\partial \theta}\perp\tfrac{\partial w_p}{\partial r}$ and by definition of polar coordinates $|\tfrac{\partial w_p}{\partial r}|=1$.
+Therefore \ref{eq:chain(gamma)} implies
+\[|\gamma'(t)|\ge r'(t).\eqlbl{eq:|gamma'|=r'}\]
+for any $t$ where $\gamma'(t)$ is defined.
+
+Since $\gamma$ parameterized by arc length, we have 
+\[|\gamma(t_2)-\gamma(t_1)|\le |t_2-t_1|.\]
+In particular, $\gamma$ is Lipschitz.
+Therefore by Rademacher's theorem (see \ref{thm:rademacher}) the derivative $\gamma'$ is defined almost everywhere.
+By~\ref{adex:integral-length:a}, we have that
+\begin{align*}
+\length\gamma&=\int_0^\ell|\gamma'(t)|\cdot dt\ge
+\\
+&\ge\int_0^\ell r'(t)\cdot dt=
+\\
+&=r(\ell).
+\end{align*}
+
+Note that by the definition of polar coordinates, there is a geodesic of length $r(\ell)$ from $p=\gamma(0)$ to $q=\gamma(\ell)$.
+Since $\gamma$ is a shortest path, we have therefore $r(\ell)=\ell$ and moreover $r(t)=t$ for any $t$.
+This equality holds if and only if we have equality in \ref{eq:|gamma'|=r'} for almost all $t$.
+The latter implies that $\gamma$ is a geodesic.
+
+Fix a point $p\in\Sigma$.
+Let $\eps>0$ be as in \ref{prop:exp}.
+Assume a geodesic $\gamma$ of length less than $\eps$ from $p$ to $q$ does not minimize the length between its endpoints.
+Then there is a shortest path from $p$ to $q$, which becomes a geodesic if parameterized by its arc length.
+That is, there are two geodesics from $p$ to $q$ of length smaller than $\eps$.
+In other words there are two vectors ${\vec v},\vec w\in\T_p$ such that $|{\vec v}|<\eps$, $|\vec w|<\eps$ and 
+$q=\exp_p\vec v=\exp_p\vec w$.
+But according to \ref{prop:exp}, the exponential map is injective in $\eps$-neighborhood of zero --- a contradiction.\qeds
 
 \section*{Liberman's lemma}
 
@@ -517,7 +665,7 @@ It follows that the right hand side in \ref{eq:z''} is nonnegative;
 whence the statement follows.
 \qeds
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:rho''}
 Assume $\gamma$ is a unit-speed geodesic on a smooth convex surface $\Sigma$ and $p$ in the interior of a convex set bounded by $\Sigma$.
 Set $\rho(t)=|p-\gamma(t)|^2$.
 Show that $\rho''(t)\le 2$ for any $t$.
@@ -566,7 +714,7 @@ It follows that
 \end{align*}
 \qedsf
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:usov-exact}
 Note that the graph $z=\ell\cdot\sqrt{x^2+y^2}$ with removed origin is a smooth surface; denote it by $\Sigma$.
 Show that it has an both side infinite geodesic $\gamma$ with total curvature exactly $2\cdot \ell$.
 \end{thm}
