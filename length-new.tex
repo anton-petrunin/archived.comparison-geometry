@@ -29,11 +29,13 @@ For a partition $a=t_0 < t_1 < \cdots < t_k=b$, set $p_i=\gamma(t_i)$.
 Then the polygonal line $p_0\dots p_k$ is called \emph{inscribed} in $\gamma$.
 If $\gamma$ is closed, then $p_0=p_k$, so the inscribed polygonal line is also closed.
 
-\begin{thm}{Exercise}\label{ex:integral-length}
-Let $\gamma\:[a,b] \to\RR^3$ be a curve and the function $\phi : [c,d] \to [a,b]$ is an monotonic continuous and $\phi(c)=a$, $\phi(d)=b$.
-We call the curve $\gamma \circ \phi$ a 
+\begin{thm}{Exercise}\label{ex:integral-length-0}
+Suppose $\gamma\:[a,b] \to\RR^3$ is a curve and the function $\phi : [c,d] \to [a,b]$ is an monotonic continuous and $\phi(c)=a$, $\phi(d)=b$.
+Then the curve $\gamma \circ \phi$ is calle a 
 \emph{reparametrization} of $\gamma$.
-Show that $\length (\gamma \circ \phi) = \length \gamma$.
+Show that 
+\[\length (\gamma \circ \phi) = \length \gamma.\]
+
 \end{thm}
 
 Note that the length of space curve $\gamma$ can be defined as the exact upper bound of the lengths of polygonal lines $p_0\dots p_k$ \emph{inscribed} in $\gamma$.
@@ -50,10 +52,12 @@ Show that
 \begin{thm}{Exercise}\label{ex:integral-length}
 Assume $\gamma\:[a,b]\to\RR^3$ is a smooth curve.
 Show that
-\begin{enumerate}[(a)]
-\item\label{ex:integral-length>} $\length \gamma\ge \int_a^b|\gamma'(t)|\cdot dt$,
-\item\label{ex:integral-length<} $\length \gamma\le \int_a^b|\gamma'(t)|\cdot dt$.
-\end{enumerate}
+\begin{subthm}{ex:integral-length>} $\length \gamma\ge \int_a^b|\gamma'(t)|\cdot dt$,
+\end{subthm}
+
+\begin{subthm}{ex:integral-length<} $\length \gamma\le \int_a^b|\gamma'(t)|\cdot dt$.
+\end{subthm}
+
 Conclude that 
 \[\length \gamma= \int_a^b|\gamma'(t)|\cdot dt.\eqlbl{eq:length}\]
 \end{thm} %???make it a theorem for Lipschitz curves
@@ -87,14 +91,16 @@ Three iterations and the resulting Koch snowflake are shown on the diagram.
 
 
 \begin{thm}{Exercise}\label{ex:nonrectifiable-curve}
-\begin{enumerate}[(a)]
-\item Show that the Koch snowflake is a closed simple curve; that is, it can be parameterized by a circle.
-\item\label{ex:nonrectifiable-curve:b} Show that the Koch snowflake is not rectifiable. 
-\end{enumerate}
+\begin{subthm}{} Show that the Koch snowflake is a closed simple curve; that is, it can be parameterized by a circle.
+\end{subthm}
+
+
+\begin{subthm}{ex:nonrectifiable-curve:b} Show that the Koch snowflake is not rectifiable. 
+\end{subthm}
 \end{thm}
   
   
-\section*{Arc length parametrization}
+\section*{Arc-length parametrization}
 
 We say that a curve $\gamma$ has an \emph{arc-length parametrization} (also called \emph{natural parametrization})
 if 
@@ -141,7 +147,7 @@ Most of the time we use $s$ for an arc-length parameter of a curve.
 \begin{thm}{Exercise}\label{ex:arc-length-helix}
 Reparametrize the helix 
 \[\gamma_{a,b}(t)=(a\cdot\cos t,a\cdot \sin t, b\cdot t)\]
-by its arc length.
+by its arc-length.
 \end{thm}
 
 We will be interested in the properties of curves that are invariant under a reparametrization.
@@ -279,10 +285,11 @@ Use this statement to give another solution to Exercise~\ref{ex:convex-hull}.
 
 \begin{thm}{Advanced exercise}\label{adex:more-croftons}
 Show that the length of a space curve is proportional to 
-\begin{enumerate}[(a)]
-\item the average length of its projections to all lines.
-\item the average length of its projections to all planes
-\end{enumerate}
+\begin{subthm}{}
+the average length of its projections to all lines.
+\end{subthm}
+\begin{subthm}{}the average length of its projections to all planes
+\end{subthm}
 Find the coefficients in each case.
 \end{thm}
 

@@ -382,14 +382,15 @@ The linear map $L_p\theta$ can be written as a 2$\times$2-matrix $M$ in orthonor
 Set $\jac_p\theta=|\det M|$; this value  
 does not depend on the choice orthonormal basises in $\T_p$ and $\T_{\theta(p)}\Sigma_1$. \label{page:|L|}
 
-Let $\phi\:\Sigma_1\to\Sigma_2$ be another smooth map between smooth surfaces $\Sigma_1$ and $\Sigma_2$.
-Suppose that $q=\theta(p)\in\Sigma_1$;
-observe that $L_p(\phi\circ\theta)=L_q\phi \circ L_p\theta$,
+Let $\theta_1\:\Sigma_1\to\Sigma_2$ be another smooth map between smooth surfaces $\Sigma_1$ and $\Sigma_2$.
+Suppose that ${p_1}=\theta(p)\in\Sigma_1$;
+observe that 
+\[L_p(\theta_1\circ\theta)=L_{p_1}\theta_1 \circ L_p\theta.\]
 It follows that
-\[\jac_p(\phi\circ\theta)
+\[\jac_p(\theta_1\circ\theta)
 =
-\jac_q\phi\cdot\jac_p\theta,\eqlbl{eq:jac-composition}\]
-where $q=\theta(p)\in\Sigma_1$.
+\jac_{p_1}\theta_1\cdot\jac_p\theta.\eqlbl{eq:jac-composition}\]
+
 
 If $\Sigma_0$ is a domain in the $(u,v)$-plane, then the value $\jac_p\theta$ can be found using the following formulas 
 \begin{align*}

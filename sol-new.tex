@@ -1,40 +1,182 @@
 \parbf{\ref{ex:9}.} The image of $\gamma$ might have a shape of digit $8$ or $9$.
 
 \parbf{\ref{aex:simple-curve}.}
+Let $\alpha$ be a path connecting $p$ to $q$.
+
+Passing to a subinterval if necessary,
+we can assume that $\alpha(t)\ne p,q$ for $t\ne0,1$.
+
+An open set $\Omega$ in $(0,1)$ will be called {}\emph{suitable}
+if for any connected component $(a,b)$ of $\Omega$ we have $\alpha(a)=\alpha(b)$.
+Show that the union of nested suitable sets is suitable.
+Therefore we can find a maximal suitable set $\hat \Omega$.
+
+Define $\beta(t)=\alpha(a)$ for any $t$ in a connected component $(a,b)\subset\Omega$.
+Note that for any $x\in [0,1]$ the set $\beta^{-1}\{\beta(x)\}$ is connected.
+
+It remains to re-parametrize $\beta$ to make it injective.
+In other words we need to construct a non-decreasing surjective function $\tau\:[0,1]\z\to[0,1]$ such that 
+$\tau(t_1)=\tau(t_2)$ if and only if there is a connected component $(a,b)$ such that $t_1,t_2\z\in [a,b]$.
+The construction is similar to the construction of devil's staircase.
+
 
 \parbf{\ref{ex:L-shape}.}
+Denote the union of two half-axis by $L$.
+Observe that $f(t)\to\infty$ as $t\to \infty$.
+Since $f(0)=0$, the intermediate value theorem implies that $f(t)$ takes all nonnegative values for $t\ge 0$.
+Use it to show that $L$ is the range of $\alpha$.
+
+Note that the function $f$
+is smooth.
+Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and direct calculations show that $f^{(n)}(0)=0$ for all $n$.
+Therefore $t\mapsto \alpha(t)=(f(t),f(-t))$ is smooth as well.
+
+Further, show that the function $f$ is strictly increasing for $t> 0$,
+and, moreover, if $0<t_0<t_1$, then $0<f(t_0)<f(t_1)$.
+Use it to show that the maps $t\mapsto \alpha(t)$ is injective.
+
+Summarizing we get that $\alpha$ is a smooth parametrization of $L$. 
+
+Now suppose $\beta\:t\mapsto (x(t),y(t))$ is a smooth parameterization of~$L$.
+Without loss of generality we may assume that $x(0)=y(0)=0$.
+Note that $x(t)\ge 0$ for any $t$ therefore $x'(0)=0$.
+The same way we get that $y'(0)=0$.
+That is, $\beta'(0)=0$;
+so $L$ does not admit a smooth regular parameterization.
 
 \parbf{\ref{ex:cycloid}.}
+Apply the definitions.
+For \ref{SHORT.ex:cycloid:regular} you need to check that $\gamma'_\ell\ne 0$.
+For \ref{SHORT.ex:cycloid:simple} you need to check that $\gamma_\ell(t_0)=\gamma(t_1)$ only if $t_0=t_1$.
 
 \parbf{\ref{ex:y^2=x^3}.}
+This is so called \emph{semicubical parabola}; it is shown on the diagram.
+Try to argue similarly to \ref{ex:L-shape}. %???+PIC
+
 
 \parbf{\ref{ex:viviani}.}
+For $\ell=0$ the system describes a pair of points $(0,0,\pm1)$, so we can assume that $\ell\ne 0$.
+Note that first equation desribes the unit sphere centered at the origin
+and the second equation describes a cylinder over the circle in the $(x,y)$-plane with diameter with opposite points $(0,0)$ and $(0,\ell)$.
+
+
+For $\ell\ne 0$,
+find the gradients $\nabla f$ and $\nabla h$ for the functions
+\begin{align*}
+ f(x,y,z)&=x^2+y^2+z^2-1
+ \\
+ h(x,y,z)&=x^2+\ell\cdot x+y^2
+\end{align*}
+and show that they are linearly dependent only on the $x$-axis.
+Conclude that for $\ell\ne\pm 1$ each connected component of the set of solutions is a smooth regular curve.
+
+Show that 
+\begin{itemize}
+\item if $|\ell|<1$, then the set has two connected components with $z>0$ and $z<0$.
+\item if $|\ell|\ge1$, then the set is connected.
+\end{itemize}
+
+Note that the condition on gradients provides only sufficient condition.
+Therefore he case $\ell=\pm1$ has to be checked by hands.
+In this case a neighborhood of $(\pm1,0,0)$ does not admit a smooth regular parametrization --- try to prove it. %???+PIC
+
+\parit{Remark.}
+In the case $\ell=\pm1$ it is called \emph{Viviani's curve}.
+It admits the following smooth regular parameterization with a self-intersection:
+\[t\mapsto(\pm(\cos t)^2,\cos t\cdot\sin t,\sin t).\]
+
 
 \parbf{\ref{ex:proper-curve}.}
+Without loss of generality we may assume that the origin does not lie on the curve.
 
-\parbf{\ref{ex:integral-length}.}
+Show that inversion of the plane $(x,y)\mapsto (\tfrac{x}{x^2+y^2},\tfrac{y}{x^2+y^2})$ maps our curve maps to a closed curve with removed origin.
+Apply Jordan's theorem for the obtained curve and use the inversion again.
+
+\parbf{\ref{ex:integral-length-0}.} Observe that if $c=\tau_0<\dots<\tau_n=d$ is a partition of $[c,d]$ if and only if $t_i=\phi(\tau_i)$ is a partition of $[a,b]$ and apply the definition of length (\ref{def:length}).
 
 \parbf{\ref{ex:length-image}.}
+Fix a partition $0=t_0<\dots <t_n=1$ of $[0,1]$.
+Set $\tau_0=0$ and $\tau_i=\max\set{\tau \in[0,1]}{\beta(\tau_i)=\alpha(t_i)}$.
+Show that $(\tau_i)$ is a partition of $[0,1]$;
+that is, $0=\tau_0<\tau_1<\dots<\tau_n=1$.
+
+By construction 
+\begin{align*}
+|\alpha(t_0)&-\alpha(t_1)|+|\alpha(t_1)-\alpha(t_2)|+\dots+|\alpha(t_{n-1})-\alpha(t_n)|=
+\\
+&=
+|\beta(\tau_0)-\beta(\tau_1)|+|\beta(\tau_1)-\beta(\tau_2)|+\dots+|\beta(\tau_{n-1})-\beta(\tau_n)|.
+\end{align*}
+Since the partition $(t_i)$ is arbitrary, we get 
+\[\length \beta\ge \length \alpha.\]
+
+\parit{Remark.}
+Note that the partition $(\tau_i)$ is not arbitrary, therefore the inequality might be strict; it might happen if $\beta$ runs back and forth along $\alpha$.
+
+
+
 
 \parbf{\ref{ex:integral-length}.} For (\ref{ex:integral-length>}), apply the fundamental theorem of calculus for each segment in a given partition. For (\ref{ex:integral-length<}) consider a partition such that the velocity vector $\alpha'(t)$ is nearly constant on each of its segments.
 
 \parbf{\ref{adex:integral-length}.} Use theorems of Rademacher and Lusin (\ref{thm:rademacher} and \ref{thm:lusin}).
 
-\parbf{\ref{ex:nonrectifiable-curve}.}
+\parbf{\ref{ex:nonrectifiable-curve}.} 
 
-\parbf{\ref{ex:arc-length-helix}.}
+\parbf{\ref{ex:arc-length-helix}.} 
+We have to assume that $a\ne 0$ or $b\ne0$;
+otherwise we get a constant curve.
+
+Show that the curve has constant velocity $|\gamma'(t)|\equiv \sqrt{a^2+b^2}$.
+Therefore 
+\[s=\tfrac{t}{\sqrt{a^2+b^2}}\] is an arc-length parameter.
+
 
 \parbf{\ref{ex:convex-hull}.}
 
-\parbf{\ref{ex:convex-croftons}.}
+\parbf{\ref{ex:convex-croftons}.} 
+Denote by $\ell_u$ the line segment 
+obtained orthogonal projection of $\gamma$ to the line in the direction $u$.
+Note that $\gamma_u$ runs back and forth along $\ell_u$, we get 
+\[\length\gamma_u\ge 2\cdot\length\ell_u.\]
+Applying the Crofton formula, we get that 
+\[\length\gamma\ge \pi \overline{\length\ell_u}.\]
+
+In the case of equality, the curve $\gamma_u$ runs exactly back and forth along $\ell_u$ without additional zigzags for almost all (and therefore for all) $u$.
+
+Let $K$ be a closed set bounded by $\gamma$.
+Observe that the last statement implies that every line may intersect $K$ only along a closed segment.
+In other words $K$ is convex.
 
 \parbf{\ref{adex:more-croftons}.}
+The proof is identical to the proof of the standard Crofton formula.
+To find the coefficient one has to find average length of projection of unit vector to a line.
+Which can be done by integration.
+\begin{align*}
+\frac1{k_a}&=\frac{1}{\area \SS^2}\cdot\int_{\SS^2} |x|;
+&
+\frac1{k_b}&=\frac{1}{\area \SS^2}\cdot\int_{\SS^2} \sqrt{1-x^2}.
+\end{align*}
+The answers are $k_a=2$ and $k_b=\tfrac4\pi$.
 
 \parbf{\ref{ex-def:length-metric}.}
 
 \parbf{\ref{ex:intrinsic-convex}.}
+The ``only-if'' part is trivial.
+To show the ``if'' part, assume $A$ is not convex;
+that is, there are points $x,y\in A$ and a point $z\notin A$ that lies between $x$ and $y$.
+
+Since $A$ is closed, its complement is open.
+That is, the ball $B(z,\eps)$ does not intersect $A$ for some $\eps>0$.
+
+Show that there is $\delta>0$ such that any path of length at most $|z-y|_{\RR^3}+\delta$ pass thru $B(z,\eps)$.
+It follows that $|z-y|_A\ge |z-y|_{\RR^3}+\delta$, 
+in particular$|z-y|_A\ne |z-y|_{\RR^3}$.
 
 \parbf{\ref{ex:antipodal}.}
+The spherical curve shown on the diagram does not have antipodal pairs of points.
+However it has three points $x,y,z$ on one of its sides and their antipodal points $-x,-y,-z$ on the other.
+Show that it is sufficient to conclude that the curve does not lie in any hemisphere.
+%???PIC
 
 \parbf{\ref{ex:bisection-of-S2}.}
 

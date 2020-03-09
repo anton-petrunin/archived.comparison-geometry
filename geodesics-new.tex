@@ -58,7 +58,7 @@ By the definition of induced length metric,
 there is a sequence of paths $\gamma_n$ from $p$ to $q$ in $\Sigma$ such that
 \[\length\gamma_n\to \ell\quad\text{as}\quad n\to \infty.\]
 
-Without loss of generality, we may assume that $\length\gamma_n<\ell+1$ for any $n$ and each $\gamma_n$ is parameterized proportional to its arc length.
+Without loss of generality, we may assume that $\length\gamma_n<\ell+1$ for any $n$ and each $\gamma_n$ is parameterized proportional to its arc-length.
 In particular each path $\gamma_n\:[0,1]\to\Sigma$ is $(\ell+1)$-Lipschitz; 
 that is,
 \[|\gamma(t_0)-\gamma(t_1)|\le (\ell+1)\cdot|t_0-t_1|\]
@@ -412,7 +412,7 @@ Such a bijection sends geodesics in the cylinder to geodesics on the plane and t
 
 \begin{thm}{Proposition}\label{prop:gamma''}
 Let $\Sigma$ be a smooth regular surface.
-Then any shortest path $\gamma$ in $\Sigma$ parameterized proportional to its arc length is a geodesic in $\Sigma$.
+Then any shortest path $\gamma$ in $\Sigma$ parameterized proportional to its arc-length is a geodesic in $\Sigma$.
 In particular $\gamma$ is a smooth curve.
 
 A partial converse to the first statement also holds: a sufficiently short arc of any geodesic is a shortest path.
@@ -445,7 +445,7 @@ According to the second Newton's law of motion, we have
 which implies that  $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
 \qeds
 
-Note that according to the proposition above, any shortest path parameterized by its arc length is a smooth curve.
+Note that according to the proposition above, any shortest path parameterized by its arc-length is a smooth curve.
 This observation should help to solve in the following two exercises.
 
 \begin{thm}{Exercise}\label{ex:two-min-geod}
@@ -590,7 +590,7 @@ Whence the statement follows.
 
 \section*{Proof of Proposition~\ref{prop:gamma''}}\label{sec:proof-of-gamma''}
 
-Let $\gamma\:[0,\ell]\to\Sigma$ be a shortest path parameterized by arc length.
+Let $\gamma\:[0,\ell]\to\Sigma$ be a shortest path parameterized by arc-length.
 Suppose $\ell=\length\gamma$ is sufficiently small, so $\gamma$ can be described in the polar coordinates at $p$; assume $\gamma(t)=w_p(\theta(t),r(t))$ for some functions $t\mapsto \theta(t)$ and $t\mapsto r(t)$ such that $r(0)=0$. %???problem
 
 Note that by chain rule, we have
@@ -602,7 +602,7 @@ Therefore \ref{eq:chain(gamma)} implies
 \[|\gamma'(t)|\ge r'(t).\eqlbl{eq:|gamma'|=r'}\]
 for any $t$ where $\gamma'(t)$ is defined.
 
-Since $\gamma$ parameterized by arc length, we have 
+Since $\gamma$ parameterized by arc-length, we have 
 \[|\gamma(t_2)-\gamma(t_1)|\le |t_2-t_1|.\]
 In particular, $\gamma$ is Lipschitz.
 Therefore by Rademacher's theorem (see \ref{thm:rademacher}) the derivative $\gamma'$ is defined almost everywhere.
@@ -623,7 +623,7 @@ The latter implies that $\gamma$ is a geodesic.
 Fix a point $p\in\Sigma$.
 Let $\eps>0$ be as in \ref{prop:exp}.
 Assume a geodesic $\gamma$ of length less than $\eps$ from $p$ to $q$ does not minimize the length between its endpoints.
-Then there is a shortest path from $p$ to $q$, which becomes a geodesic if parameterized by its arc length.
+Then there is a shortest path from $p$ to $q$, which becomes a geodesic if parameterized by its arc-length.
 That is, there are two geodesics from $p$ to $q$ of length smaller than $\eps$.
 In other words there are two vectors ${\vec v},\vec w\in\T_p$ such that $|{\vec v}|<\eps$, $|\vec w|<\eps$ and 
 $q=\exp_p\vec v=\exp_p\vec w$.

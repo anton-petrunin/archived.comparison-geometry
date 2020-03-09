@@ -2822,10 +2822,10 @@ z.b2=(1,1)*u;
 
 z.shift=(4.5,0)*u;
 
-drawarrow z.a0..origin{right}..z.a2;
+drawarrow z.a0..origin{right}..z.a2 withcolor .5;
 drawarrow z.b0..origin{right}..z.b2;
 
-drawarrow (z.a2..origin{left}..z.a0) shifted z.shift;
+drawarrow (z.a2..origin{left}..z.a0) shifted z.shift withcolor .5;
 drawarrow (z.b0..origin{right}..z.b2) shifted z.shift;
 
 dOt origin, z.shift;
@@ -2833,10 +2833,10 @@ dOt origin, z.shift;
 label.bot(btex cooriented etex, (0,-1)*u);
 label.bot(btex controriented etex, z.shift+(0,-1)*u);
 
-label.ulft(btex $\gamma_1$ etex, z.a0);
+label.ulft(btex {\color{darkgray}$\gamma_1$} etex, z.a0);
 label.llft(btex $\gamma_2$ etex, z.b0);
 
-label.urt(btex $\gamma_1$ etex, z.shift+z.a2);
+label.urt(btex {\color{darkgray}$\gamma_1$} etex, z.shift+z.a2);
 label.lrt(btex $\gamma_2$ etex, z.shift+z.b2);
 
 label.bot(btex $p$ etex, origin);

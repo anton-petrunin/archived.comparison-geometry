@@ -71,7 +71,7 @@ Regular smooth curves are among the main objects in differential geometry;
 colloquially, the term \emph{smooth curve} is often used as a shortcut for \emph{smooth regular curve}. 
 
 \begin{thm}{Exercise}\label{ex:L-shape}
-Note that the function 
+Let 
 \[f(t)=
 \begin{cases}
 0&\text{if}\ t\le 0,
@@ -79,9 +79,7 @@ Note that the function
 \frac{t}{e^{1\!/\!t}}&\text{if}\ t> 0.
 \end{cases}
 \]
-is smooth. Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and direct calculations show that $f^{(n)}(0)=0$ for all $n$.
-
-Show that $\gamma(t)=(f(t),f(-t))$ gives a smooth parametrization of a simple curve formed by the union of two half-axis in the plane.
+Show that $\alpha(t)=(f(t),f(-t))$ gives a smooth parametrization of a simple curve formed by the union of two half-axis in the plane.
 
 Show that any smooth parametrization of this curve has vanishing velocity vector at the origin.
 Conclude that this curve is not regular and smooth;
@@ -92,10 +90,14 @@ that is, it does not admit a regular smooth parametrization.
 \begin{thm}{Exercise}\label{ex:cycloid}
 Describe the set of real numbers $\ell $
 such that the plane curve $\gamma_\ell (t)= (t+\ell \cdot \sin t,\ell \cdot \cos t)$, $t\in\RR$ is
-\begin{enumerate}[(a)]
-\item regular;
-\item simple.
-\end{enumerate}
+
+\begin{subthm}{ex:cycloid:regular}
+regular;
+\end{subthm}
+
+\begin{subthm}{ex:cycloid:simple}
+simple.
+\end{subthm}
 
 \end{thm}
 
