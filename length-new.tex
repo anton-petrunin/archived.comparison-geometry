@@ -213,7 +213,7 @@ Therefore
 and the lemma follows.
 \qeds
 
-\begin{thm}{Corollary}
+\begin{thm}{Corollary}\label{cor:convex=>rectifiable}
 Any convex closed plane curve is rectifiable.  
 \end{thm}
 
@@ -241,7 +241,7 @@ Try to show that the statement holds for arbitrary closed plane curves $\alpha$,
 \end{thm}
 
 
-\section*{Crofton formulas*}
+\section*{Crofton formulas*}\label{page:crofton}
 
 Consider a smooth plane curve $\gamma\:[a,b]\to\RR^2$.
 Given a unit vector $u$, denote by $\gamma_u$ the curve that follows the orthogonal projection of $\gamma$ to the line in the direction $u$;
@@ -495,7 +495,7 @@ Show that
 
 
 \begin{thm}{Exercise}\label{ex:flaw}
-Consider the following problem, find a flaw in the given solution.
+Find a flaw in the solution of the following problem.
 Come up with a correct argument.
 \end{thm}
 
@@ -521,14 +521,15 @@ Given points $v,w\in\SS^2$, denote by $w_v$ the closest point to $w$ on the equa
 in other words, if $w^\perp$ is the projection of $w$ to the plane perpendicular to $v$, then $w_v$ is the unit vector in the direction of $w^\perp$.
 The vector $w_v$ is defined if $w\ne\pm v$.
 
-\begin{enumerate}
-\item \label{adex:crofton:crofton}
+\begin{subthm}{adex:crofton:crofton}
 Show that for any spherical curve $\gamma$ we have
 \[\length\gamma=\overline{\length\gamma_v},\]
 where $\overline{\length\gamma_v}$ denotes the average length of $\gamma _v$ with $v$ varying in $\SS^2$.
 (This is a spherical analog of Crofton's formula.)
-\item\label{adex:crofton:hemisphere} Give another proof of the hemisphere lemma using part (\ref{adex:crofton:crofton}). 
-\end{enumerate}
+\end{subthm}
+
+\begin{subthm}{adex:crofton:hemisphere} Give another proof of the hemisphere lemma using part (\ref{adex:crofton:crofton}). 
+\end{subthm}
  
 \end{thm}
 

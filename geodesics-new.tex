@@ -397,6 +397,107 @@ Let $\gamma$ be a smooth regular curve in a smooth surface~$\Sigma$.
 Show that $\gamma$ is a geodesic if and only if it has constant speed and vanishing geodesic curvature.
 \end{thm}
 
+\section*{Exponential map}\label{sec:exp}
+
+Let $\Sigma$ be smooth regular surface and $p\in \Sigma$.
+Given a tangent vector ${\vec v}\in \T_p$ consider a geodesic $\gamma_{\vec v}$ in $\Sigma$ that runs from $p$ with the initial velocity ${\vec v}$;  
+that is, $\gamma(0)=p$ and $\gamma'(0)={\vec v}$.
+
+The point $q=\gamma_{\vec v}(1)$ is called \emph{exponential map} of ${\vec v}$, or briefly $q=\exp_p{\vec v}$.
+(There is a reason to call this map \emph{exponential}, but it will take us too far from the subject.)
+By \ref{prop:geod-existence}, the map $\exp_p\:\T_p\to \Sigma$ is smooth and defined in a neighborhood of zero in $\T_p$;
+moreover, if $\Sigma$ is proper, then $\exp_p$ is defined on the whole space $\T_p$.
+
+The exponential map $\exp_p$ 
+is defined on the tangent plane $\T_p$ which is a smooth surfaces
+and its target is another smooth surface $\Sigma$.
+Observe that one can identify the plane plane $\T_p$
+with its tangent plane $\T_0\T_p$ so the linearization $L_0\exp_p$ is maps $\T_p$ to itself.
+
+\begin{thm}{Observation}
+The linearization $L_0(\exp_p)\:\T_p\to \T_p$ is the identity map.
+\end{thm}
+
+\parit{Proof.}
+Let $z=f(x,y)$ be a local graph representation of $\Sigma$ in the tangent-normal coordinates at $p$,
+so the tangent plane $\T_p$ is the $(x,y)$-plane. 
+
+Let $\gamma_x$ and $\gamma_y$ be the geodesics starting from $p$ in the directions
+$\vec v=(1,0,0)$
+and
+$\vec w=(0,1,0)$
+correspondingly;
+that is $\gamma_x(0)=\gamma_y(0)=(0,0,0)$, $\gamma'_x(0)=\vec v$, and $\gamma'_y(0)=\vec w$.
+
+By the definition of linearization we have that $L_0(\exp_p)(\vec v)=\vec v$
+and $L_0(\exp_p)(\vec w)=\vec w$.
+That is, $L_0(\exp_p)$ does not move a basis of $\T_p$.
+Since the linearization $L_0(\exp_p)$ is a linear map,
+it has to be identity.
+\qeds 
+
+Applying the observation together with the inverse function theorem (\ref{thm:inverse}), we get the following statement. %???+Jacobian matrix
+
+\begin{thm}{Proposition}\label{prop:exp}
+Let $\Sigma$ be smooth surface and $p\in \Sigma$.
+Then the exponential map $\exp_p\:\T_p\to \Sigma$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$ by a neighborhood of $0$ in the tangent plane~$\T_p$.
+
+Moreover for any $p\in \Sigma$ there is $\eps>0$ such that for any $x\in \Sigma$ such that $|x-p|_\Sigma<\eps$ the map 
+$\exp_x\:\T_x\to \Sigma$ is a smooth regular parametrization of the $\eps$-neighborhood of $x$ in $\Sigma$ by the $\eps$-neighborhood of zero in the tangent plane~$\T_x$. %???
+\end{thm}
+
+\section*{Polar coordinates}
+
+Fix polar coordinates $(\theta,r)$ on tangent plane of $\Sigma$ at $p$.
+If $\vec v\in \T_p$ has coordinates $(\theta,r)$,
+then we say that $q=\exp_p\vec v$ be the point in $\Sigma$ with the polar coordinates $(\theta,r)$ with center at~$p$, or briefly $q=w_p(r,\theta)$.
+Note that according to Proposition~\ref{prop:exp} polar coordinates behave usual way in a neighborhood of the point in $p$;
+that is, there is $r_0>$ such that if $r_1,r_2<r_0$ then $w_p(r_1,\theta_1) = w_p(r_2,\theta_2)$ if and only if
+$r_1=r_2=0$ or $r_1=r_2$ and $\theta_1=\theta_2+2\cdot n\cdot\pi$ for an integer $n$.
+
+\begin{thm}{Lemma}\label{lem:palar-perp}
+Let $w_p(\theta,r)$ describes polar coordinates in a neingborhood of point $p$ of smooth surface $\Sigma$.
+Then
+\[\tfrac{\partial w_p}{\partial\theta}\perp\tfrac{\partial w_p}{\partial r}\]
+for any $r$ and $\theta$.
+\end{thm}
+
+\parit{Proof.}
+Note that by the definition of exponential map, for a fixed $\theta$, the curve $\gamma_\theta(t)=w(\theta,t)$ is a unit-speed geodesic that starts at $p$;
+in particular we have the following two identities:
+\begin{enumerate}[(i)]
+\item Since the geodesic has unit speed we have $|\tfrac{\partial}{\partial r}w_p|=|\gamma_\theta'(r)|=1$. In particular,
+ \[\tfrac{\partial}{\partial \theta}\langle\tfrac{\partial w_p}{\partial r},\tfrac{\partial w_p}{\partial r}\rangle=0\]
+\item Since $\tfrac{\partial^2w_p}{\partial r^2}=\gamma''_\theta(r)\perp\T_{\gamma_\theta(r)}$, we have 
+\[\langle\tfrac{\partial^2w_p}{\partial r^2},\tfrac{\partial w_p}{\partial \theta}\rangle=0\]
+\end{enumerate}
+Therefore
+\begin{align*}
+\tfrac{\partial}{\partial r}
+\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle
+&=\langle\tfrac{\partial^2 w_p}{\partial\theta\partial r},\tfrac{\partial w_p}{\partial r}\rangle
++
+\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial^2 w_p}{\partial r^2}\rangle=
+\\
+&=\tfrac12\cdot \tfrac{\partial}{\partial \theta}\langle\tfrac{\partial w_p}{\partial r},\tfrac{\partial w_p}{\partial r}\rangle=
+\\
+&=0
+\end{align*}
+That is $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$.
+
+Note that $w_p(\theta,0)=p$ for any $\theta$.
+Therefore
+$\tfrac{\partial w_p}{\partial\theta}=0$
+and in particular 
+\[\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0\]
+if $r=0$.
+Since $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$, 
+we get 
+\[\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0\]
+everywhere.
+Whence the statement follows.
+\qeds
+
 \section*{Shortest paths are geodesics}
 
 The following proposition provides the first connection between intrinsic geometry of the surface and its extrinsic geometry.
@@ -485,108 +586,6 @@ Show that the statement does not hold without assuming that $\gamma$ is minimizi
 \end{thm}
 
 }
-
-
-
-
-\section*{Exponential map}\label{sec:exp}
-
-Let $\Sigma$ be smooth regular surface and $p\in \Sigma$.
-Given a tangent vector ${\vec v}\in \T_p$ consider a geodesic $\gamma_{\vec v}$ in $\Sigma$ that runs from $p$ with the initial velocity ${\vec v}$;  
-that is, $\gamma(0)=p$ and $\gamma'(0)={\vec v}$.
-
-The point $q=\gamma_{\vec v}(1)$ is called \emph{exponential map} of ${\vec v}$, or briefly $q=\exp_p{\vec v}$.
-(There is a reason to call this map \emph{exponential}, but it will take us too far from the subject.)
-By \ref{prop:geod-existence}, the map $\exp_p\:\T_p\to \Sigma$ is smooth and defined in a neighborhood of zero in $\T_p$;
-moreover, if $\Sigma$ is proper, then $\exp_p$ is defined on the whole space $\T_p$.
-
-\begin{thm}{Observation}
-The Jacobian of $\exp_p$ at zero is the identity matrix.
-\end{thm}
-
-\parit{Proof.} Let $z=f(x,y)$ be a local graph representation of $\Sigma$ in the tangent-normal coordinates.
-The tangent plane at $p$ is the $(x,y)$-plane.
-Let $\gamma_x$ and $\gamma_y$ be the geodesics starting from $p$ in the directions
-$(1,0,0)$
-and
-$(0,1,0)$
-correspondingly.
-A general tangent vector can be written as ${\vec v}=(x,y,0)$.
-Note that $\tfrac{\partial\exp_p}{\partial x}(0,0)=\gamma_x'(0)=(1,0,0)$ and  
-$\tfrac{\partial\exp_p}{\partial x}(0,0)=\gamma_y'(0)=(0,1,0)$.
-That is, the Jacobian matrix of $\exp_p$ at $(0,0)$ is
-\[\begin{pmatrix}
-1&0
-\\
-0&1
-\\
-0&0
-\end{pmatrix}.
-\]
-It follows that the Jacobian matrix of the projection of $\exp_p$ to the $(x,y)$-plane is the identity matrix.
-\qeds %???Jacobian matrix def
-
-Applying the observation together with the inverse function theorem (\ref{thm:inverse}), we get the following statement.
-
-\begin{thm}{Proposition}\label{prop:exp}
-Let $\Sigma$ be smooth surface and $p\in \Sigma$.
-Then the exponential map $\exp_p\:\T_p\to \Sigma$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$ by a neighborhood of $0$ in the tangent plane~$\T_p$.
-
-Moreover for any $p\in \Sigma$ there is $\eps>0$ such that for any $x\in \Sigma$ such that $|x-p|_\Sigma<\eps$ the map 
-$\exp_x\:\T_x\to \Sigma$ is a smooth regular parametrization of the $\eps$-neighborhood of $x$ in $\Sigma$ by the $\eps$-neighborhood of zero in the tangent plane~$\T_x$. %???
-\end{thm}
-
-\section*{Polar coordinates}
-
-Fix polar coordinates $(\theta,r)$ on tangent plane of $\Sigma$ at $p$.
-If $\vec v\in \T_p$ has coordinates $(\theta,r)$,
-then we say that $q=\exp_p\vec v$ be the point in $\Sigma$ with the polar coordinates $(\theta,r)$ with center at~$p$, or briefly $q=w_p(r,\theta)$.
-Note that according to Proposition~\ref{prop:exp} polar coordinates behave usual way in a neighborhood of the point in $p$;
-that is, there is $r_0>$ such that if $r_1,r_2<r_0$ then $w_p(r_1,\theta_1) = w_p(r_2,\theta_2)$ if and only if
-$r_1=r_2=0$ or $r_1=r_2$ and $\theta_1=\theta_2+2\cdot n\cdot\pi$ for an integer $n$.
-
-\begin{thm}{Lemma}\label{lem:palar-perp}
-Let $w_p(\theta,r)$ describes polar coordinates in a neingborhood of point $p$ of smooth surface $\Sigma$.
-Then
-\[\tfrac{\partial w_p}{\partial\theta}\perp\tfrac{\partial w_p}{\partial r}\]
-for any $r$ and $\theta$.
-\end{thm}
-
-\parit{Proof.}
-Note that by the definition of exponential map, for a fixed $\theta$, the curve $\gamma_\theta(t)=w(\theta,t)$ is a unit-speed geodesic that starts at $p$;
-in particular we have the following two identities:
-\begin{enumerate}[(i)]
-\item Since the geodesic has unit speed we have $|\tfrac{\partial}{\partial r}w_p|=|\gamma_\theta'(r)|=1$. In particular,
- \[\tfrac{\partial}{\partial \theta}\langle\tfrac{\partial w_p}{\partial r},\tfrac{\partial w_p}{\partial r}\rangle=0\]
-\item Since $\tfrac{\partial^2w_p}{\partial r^2}=\gamma''_\theta(r)\perp\T_{\gamma_\theta(r)}$, we have 
-\[\langle\tfrac{\partial^2w_p}{\partial r^2},\tfrac{\partial w_p}{\partial \theta}\rangle=0\]
-\end{enumerate}
-Therefore
-\begin{align*}
-\tfrac{\partial}{\partial r}
-\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle
-&=\langle\tfrac{\partial^2 w_p}{\partial\theta\partial r},\tfrac{\partial w_p}{\partial r}\rangle
-+
-\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial^2 w_p}{\partial r^2}\rangle=
-\\
-&=\tfrac12\cdot \tfrac{\partial}{\partial \theta}\langle\tfrac{\partial w_p}{\partial r},\tfrac{\partial w_p}{\partial r}\rangle=
-\\
-&=0
-\end{align*}
-That is $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$.
-
-Note that $w_p(\theta,0)=p$ for any $\theta$.
-Therefore
-$\tfrac{\partial w_p}{\partial\theta}=0$
-and in particular 
-\[\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0\]
-if $r=0$.
-Since $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$, 
-we get 
-\[\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0\]
-everywhere.
-Whence the statement follows.
-\qeds
 
 \section*{Proof of Proposition~\ref{prop:gamma''}}\label{sec:proof-of-gamma''}
 

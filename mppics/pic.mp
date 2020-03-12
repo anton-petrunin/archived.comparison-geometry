@@ -1976,7 +1976,7 @@ draw ddline(z.a0,z.a2)(.2,.2);
 dOt z.a0,z.a1,z.a2;
 
 label.bot(btex $\gamma_1(a)$ etex, z.a0);
-label.bot(btex $\gamma_1(s_0)$ etex, z.a1);
+label.bot(btex $\gamma_1(s_0)$ etex, z.a1+(-2,0));
 label.bot(btex $\gamma_1(b)$ etex, z.a2);
 label.top(btex $\vec u_1$ etex, z.a1+z.b1);
 endfig;
@@ -3143,5 +3143,27 @@ label.bot (btex $p$ etex, z.p);
 label.bot (btex $q$ etex, z.q);
 label.bot (btex $\gamma(t)$ etex, z.pq);
 label.top (btex $p_t$ etex, z.pp);
+endfig;
+
+beginfig(255)
+save u,p;
+path p[];
+u:=1cm;
+
+z0=origin;
+z1=(-1,.5)*u;
+z2=(0,1)*u;
+z3=(1,.7)*u;
+z4=(0,.3)*u;
+
+p1= z0{left}..z1{up}..z2{right}..z3{down}..{left}z4;
+draw subpath (0,2.7) of p1;
+draw subpath (2.7,3.3) of p1 dashed evenly;
+draw subpath (3.3,4) of p1;
+
+dOt z0,z4;
+
+label.bot (btex $\gamma_1(a)$ etex, z0);
+label.top (btex $\gamma_1(b)$ etex, z4);
 endfig;
 end

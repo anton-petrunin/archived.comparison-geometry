@@ -73,15 +73,16 @@ It follows that the indicatrix of a smooth regular curve $\gamma$ is regular if 
 Use the formulas \ref{eq:tantrix} and \ref{eq:curvature} to show that 
 for any smooth regular space curve $\gamma$ we have the following expressions for its curvature:
 
-\begin{enumerate}[(a)]
-\item\label{ex:curvature-formulas:a} \[\kur(t)=\frac{|\vec w(t)|}{|\gamma'(t)|^2},\]
+\begin{subthm}{ex:curvature-formulas:a} \[\kur(t)=\frac{|\vec w(t)|}{|\gamma'(t)|^2},\]
 where $\vec w(t)$ denotes the projection of $\gamma''(t)$ to the plane normal to $\gamma'(t)$;
-\item \[\kur(t)=\frac{|\gamma''(t)\times \gamma'(t)|}{|\gamma'(t)|^{3}},\]
+\end{subthm}
+
+\begin{subthm}{}
+\[\kur(t)=\frac{|\gamma''(t)\times \gamma'(t)|}{|\gamma'(t)|^{3}},\]
 where $\times$ denotes the \emph{vector product} (also known as \emph{cross product}).
-\end{enumerate}
+\end{subthm}
+
 \end{thm}
-
-
 
 
 \begin{thm}{Exercise}\label{ex:curvature-graph}
@@ -156,7 +157,9 @@ Applying the observation (\ref{obs:tantrix}) and the hemisphere lemma (\ref{lem:
 
 \begin{thm}{Exercise}\label{ex:length>=2pi}
 Show that a closed space curve $\gamma$ with curvature at most~$1$ cannot be shorter than the unit circle;
-that is, $\length\gamma\ge 2\cdot \pi$.
+that is, 
+\[\length\gamma\ge 2\cdot \pi.\]
+
 \end{thm}
 
 
@@ -198,21 +201,21 @@ The obtained curve $\gamma$ is called the
 The same definition of concatenation can be applied if $\alpha$ and/or $\beta$ are defied on semiopen intervals 
 $(a,b]$ and/or $[b,c)$.
 
-The concatenation can be also defined if the end point of the first curve coincides with the starting point of the second curve;
-if this is the case, then the time intervals of both curves can be shifted so that they fit together. 
-
-If in addition $\beta(c)=\alpha(a)$, then we can do cyclic concatination of these curves;
-this way we obtain a closed curve.
-
 \begin{wrapfigure}{o}{25 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-54}
 \end{wrapfigure}
 
+The concatenation can be also defined if the end point of the first curve coincides with the starting point of the second curve;
+if this is the case, then the time intervals of both curves can be shifted so that they fit together. 
+
+If in addition $\beta(c)=\alpha(a)$, then we can do cyclic concatination of these curves;
+this way we obtain a closed curve.
+
 If $\alpha'(b)$ and $\beta'(b)$ are defined, then the angle $\theta=\measuredangle(\alpha'(b),\beta'(b))$ is called \emph{external angle} of $\gamma$ at time $b$.
 
-Clearly, the assumption that the intervals $[a,b]$ and $[b,c]$ fit together is not essential, and we can concatenate any two curves $\alpha$ and $\beta$ as long as the endpoint of $\alpha$ coincides with the starting point of $\beta$. 
+Clearly, the assumption that the intervals $[a,b]$ and $[b,c]$ fit together is not essential, and we can concatenate any two curves $\alpha$ and $\beta$ as long as the endpoint of $\alpha$ coincides with the starting point of~$\beta$. 
 
 A space curve $\gamma$ is called \emph{piecewise smooth and regular} if it can be presented as an iterated concatination of a finite number of smooth regular curves; if $\gamma$ is closed, then the  concatination is assumed to be cyclic.
 
@@ -365,10 +368,13 @@ If $\gamma$ is an arc, the argument is analogous:
 \qedsf
 
 \begin{thm}{Exercise}\label{ex:sef-intersection}
-\begin{enumerate}[(a)]
-\item Draw a smooth regular plane curve $\gamma$ which has a self-intersection, such that $\tc\gamma<2\cdot\pi$.
-\item\label{ex:sef-intersection:>pi} Show that if a smooth regular curve $\gamma\:[a,b]\to\RR^3$ has a self-intersection, then $\tc\gamma>\pi$.
-\end{enumerate}
+
+\begin{subthm}{ex:sef-intersection:<2pi}Draw a smooth regular plane curve $\gamma$ which has a self-intersection, such that $\tc\gamma<2\cdot\pi$.
+\end{subthm}
+
+\begin{subthm}{ex:sef-intersection:>pi} Show that if a smooth regular curve $\gamma\:[a,b]\to\RR^3$ has a self-intersection, then $\tc\gamma>\pi$.
+\end{subthm}
+
 \end{thm}
 
 \begin{thm}{Proposition}\label{prop:fenchel=}
@@ -537,14 +543,17 @@ Hence the result.\qeds
 Let $\gamma\:[a,b]\to \RR^3$ be a smooth regular curve and $0<\theta\le\tfrac\pi2$.
 Assume 
 \[\tc\gamma\le 2\cdot\theta.\]
-\begin{enumerate}[(a)]
-\item\label{ex:length-dist:>} Show that 
-\[|\gamma(b)-\gamma(a)|> \cos\theta\cdot\length\gamma.\]
-\item Use part (\ref{ex:length-dist:>}) to give another solution of \ref{ex:sef-intersection}\ref{ex:sef-intersection:>pi}.
-\item Show that the inequality in (\ref{ex:length-dist:>}) is optimal; that is, given 
-$\theta$ there is a smooth regular curve $\gamma$ such that $\frac{|\gamma(b)-\gamma(a)|}{\length\gamma}$ is arbitrarily close to $\cos\theta$.
 
-\end{enumerate}
+\begin{subthm}{ex:length-dist:>} Show that
+\[|\gamma(b)-\gamma(a)|> \cos\theta\cdot\length\gamma.\]
+\end{subthm}
+
+\begin{subthm}{} Use part \ref{SHORT.ex:length-dist:>} to give another solution of \ref{ex:sef-intersection:>pi}.
+\end{subthm}
+
+\begin{subthm}{} Show that the inequality in \ref{SHORT.ex:length-dist:>} is optimal; that is, given 
+$\theta$ there is a smooth regular curve $\gamma$ such that $\frac{|\gamma(b)-\gamma(a)|}{\length\gamma}$ is arbitrarily close to $\cos\theta$.
+\end{subthm}
 
 \end{thm}
 

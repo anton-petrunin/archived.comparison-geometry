@@ -132,6 +132,28 @@ Therefore
 
 
 \parbf{\ref{ex:convex-hull}.}
+Choose a closed polygonal line $p_1\dots p_n$ inscribed in $\beta$.
+By \ref{cor:convex=>rectifiable}, we can assume that it length is arbitrary close to the length of $\beta$;
+that is, given $\eps>0$ 
+\[\length (p_1\dots p_n)>\length\beta-\eps.\]
+
+Show that we may assume in addition that each point $p_i$ lies on $\alpha$.
+
+Observe that since $\alpha$ is simple, the points $p_1,\dots,p_n$ appear on $\alpha$ in the same cyclic order;
+that is, the polygonal line $p_1\dots p_n$ is also inscribed in $\alpha$.
+In particular 
+\[\length\alpha\ge \length (p_1\dots p_n).\]
+It follows that 
+\[\length\alpha>\length\beta-\eps.\]
+for any $\eps>0$.
+Whence 
+\[\length\alpha\ge\length\beta.\]
+
+%???+PIC
+If $\alpha$ has self-intersections, then the points $p_1,\dots, p_n$ might appear on $\alpha$ in a different order, say $p_{i_1},\dots,p_{i_n}$.
+Apply triangle inequality to show that 
+\[\length(p_{i_1}\dots p_{i_n})\ge \length (p_1\dots p_n)\]
+and use it to modify the proof above.
 
 \parbf{\ref{ex:convex-croftons}.} 
 Denote by $\ell_u$ the line segment 
@@ -179,10 +201,31 @@ Show that it is sufficient to conclude that the curve does not lie in any hemisp
 %???PIC
 
 \parbf{\ref{ex:bisection-of-S2}.}
+Assume contrary, then by the hemisphere lemma (\ref{lem:hemisphere}) $\gamma$ lies in an open hemisphere.
+In particular it cannot divide $\SS^2$ into two regions of equal area --- a contradiction.
 
 \parbf{\ref{ex:flaw}.}
+The very first sentence is wrong --- it is \emph{not} sufficient to show that diameter iis at most 2.
+For example an equilateral triangle with circumradius slightly above $1$ may have diameter (which is defined as the maximal distance between its points) slightly bigger than $\sqrt3$, so it can be made smaller that $2$.
+%???+PIC
+
+On the other hand, it is easy to modify the proof of the hemisphere lemma (\ref{lem:hemisphere}) to get a correct solution.
+That is, (1) choose two points $p$ and $q$ on $\gamma$ that divide it into two arcs of the same length;
+(2) set $z$ to be a midpoint of $p$ and $q$,
+and (3) show that $\gamma$ lies in the unit disc centered at $z$.
+
 
 \parbf{\ref{adex:crofton}.}
+For \ref{SHORT.adex:crofton:crofton}, modify the proof of the original Crofton formula [see page \pageref{page:crofton}].
+
+\parit{\ref{SHORT.adex:crofton:hemisphere}.}
+Assume $\length \gamma<2\cdot\pi$.
+By \ref{SHORT.adex:crofton:crofton},
+\[\overline{\length \gamma_u}<2\cdot\pi.\]
+Therefore we can choose $u$ so that 
+\[\length \gamma_u<2\cdot\pi.\]
+
+Observe that $\gamma_u$ runs in a semicircle $h$ and therefore $\gamma$ lies in a hemisphere with $h$ as a diameter.
 
 
 \parbf{\ref{ex:curvature-of-spherical-curve}.} Differentiate the identity $\langle\gamma(s),\gamma(s)\rangle=1$ a couple of times.
@@ -194,25 +237,54 @@ Show that it is sufficient to conclude that the curve does not lie in any hemisp
 |\gamma'(t)|&=\sqrt{\langle \gamma'(t),\gamma'(t)\rangle}.\
 \end{align*}
 
-\parbf{\ref{ex:curvature-graph}.}
+\parbf{\ref{ex:curvature-graph}.} 
+Apply \ref{ex:curvature-formulas:a} for the parameterization $t\mapsto (t,f(t))$.
 
 \parbf{\ref{ex:helix-curvature}.}
+Show that $\gamma_{a,b}''\perp \gamma'_{a,b}$ and apply \ref{ex:curvature-formulas:a}.
 
-\parbf{\ref{ex:length>=2pi}.}
+\parbf{\ref{ex:length>=2pi}.} Apply Fenchel's theorem.
 
-\parbf{\ref{ex:gamma/|gamma|}.} Assume that $\gamma$ is unit-speed; show that $|\sigma'|\le \kur+\theta'$, where $\theta(s)=\angle(\gamma(s),\gamma'(s))$.
+\parbf{\ref{ex:gamma/|gamma|}.} Assume that $\gamma$ is unit-speed; show that $|\sigma'|\le \kur+\theta'$, where $\theta(s)=\measuredangle(\gamma(s),\gamma'(s))$.
 
-\parbf{\ref{ex:chord-lemma-optimal}.}
+\parbf{\ref{ex:chord-lemma-optimal}.} 
+Set $\alpha=\measuredangle(\vec w,\vec u)$ and $\beta=\measuredangle(\vec w,\vec v)$.
+Try to guess the example from the diagram;
+the shown curve is divide into three arcs. 
+The first arc turns from $\vec u$ to $\vec w$;
+it has total curvature $\alpha$.
+Analogously the third arc turns from $\vec w$ to $\vec v$  and has total curvature $\beta$. 
+The second arc goes very close and almost parallel to the chord and its total curvature can be made arbitrary small.
+%???+PIC
 
 \parbf{\ref{ex:monotonic-tc}.}
 Use that exterior angle of a triangle equals to the sum of the two remote interior angles;
 for the second part apply the induction on number of vertexes.
 
-\parbf{\ref{ex:sef-intersection}.}
+\parbf{\ref{ex:sef-intersection}.} An example for \ref{SHORT.ex:sef-intersection:<2pi} is shown on the diagram. %???+PIC
+
+\parit{\ref{SHORT.ex:sef-intersection:>pi}.} Assume $x$ is a point of self-intersection.
+Show that we may choose two points $y$ and $z$ on $\gamma$ so that the triangle $xyz$ iz nondegenerate.
+In particular, $\measuredangle xyz+\measuredangle yzx<\pi$, or, equivalently, 
+\[\tc{xyzx}>\pi;\]
+here we assume that $xyzx$ is polygonal line which is not closed. 
+It remains to apply \ref{prop:inscribed-total-curvature}.
 
 \parbf{\ref{ex:quadrisecant}.}
+Observe that 
+\[\tc{acbd}=4\cdot\pi,\]
+here we assume that $acbd$ denotes the closed polygonal line.
+It remains to apply \ref{prop:inscribed-total-curvature}.
 
+
+\begin{wrapfigure}{r}{22 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-255}
+\vskip0mm
+\end{wrapfigure}
 \parbf{\ref{ex:anti-bow}.}
+Start with $\gamma_1$ shown on the diagram decrease the curvature on the dashed arc.
 
 \parbf{\ref{ex:length-dist}.}
 Choose a value $s_0\in[a,b]$ that splits the total curvature into two equal parts, $\theta$ in each.
@@ -220,12 +292,24 @@ Observe that $\measuredangle(\gamma'(s_0),\gamma'(s))\le \theta$ for any~$s$.
 Use this inequality the same way as in the proof of the bow lemma.
 
 \parbf{\ref{ex:schwartz}.}
+Let $\ell=\length\gamma$.
+Suppose $\ell_1<\ell<\ell_2$.
+Let $\gamma_1$ be an arc of unit circle with length $\ell$.
 
-\parbf{\ref{ex:loop}.}
+Show that the distance between the ends of $\gamma_1$ is smallet than $|p-q|$ and apply the bow lemma (\ref{lem:bow}).
+
+
+\parbf{\ref{ex:loop}.} If $\length\gamma<2\cdot\pi$, apply the bow lemma (\ref{lem:bow}) to $\gamma$ and an arc of unit circle of the same length.
 
 \parbf{\ref{ex:tc-semicontinuous}.} Modify the proof of semi-continuity of length (\ref{thm:length-semicont}).
 
 \parbf{\ref{ex:gen-fenchel}.}
+Choose two distinct points $p$ and $q$ on $\gamma$.
+Consider a \emph{diangle} $pq$ (that is, a closed polygonal line with two vertexes $p$ and $q$).
+Observe that both external angles of the diangle have measure $\pi$.
+Therefore the total curvature of diangle is $2\cdot \pi$.
+
+It remains to apply the definition of total curvature for arbitrary curves (\ref{def:total-curv-poly}).
 
 \parbf{\ref{ex:tc-length}.}
 
