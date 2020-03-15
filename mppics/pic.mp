@@ -2207,26 +2207,6 @@ label.lft(btex $\dots$ etex rotated (angle (direction  1.5 of p0)), point 1.5 of
 label.lrt(btex $p_{2{\cdot} n}$ etex, z.p8);
 endfig;
 
-beginfig(66);
-save u;
-u:=1cm;
-
-z.a=(0,0)*u;
-z.b=(2,0)*u;
-z.c=(2,1)*u;
-z.d=(0,1)*u;
-
-save p; path p[];
-p0=z.a--z.b{right}..{left}z.c--z.d{left}..{right}cycle;
-
-hatchfill p0  withcolor (67, 1mm, -.5bp);
-draw p0;
-
-draw ddline(z.a,z.b)(.3,.3) dashed evenly;
-draw ddline(z.c,z.d)(.3,.3) dashed evenly;
-
-endfig;
-
 beginfig(67);
 save u;
 u:=.7cm;
@@ -3165,5 +3145,129 @@ dOt z0,z4;
 
 label.bot (btex $\gamma_1(a)$ etex, z0);
 label.top (btex $\gamma_1(b)$ etex, z4);
+endfig;
+
+beginfig(260)
+save u,p;
+path p[];
+u:=1.2cm;
+
+p8=(-1,0)*u{up}..origin..(1,0)*u{up}..origin..cycle;
+drawarrow subpath (0,2) of p8;
+drawarrow subpath (2,4) of p8;
+endfig;
+
+beginfig(261)
+save u,p;
+path p[];
+u:=.2cm;
+
+z1=(1,0)*u;
+z2=(2,0)*u;
+z3=(3,0)*u;
+z4=(4,0)*u;
+z5=(5,0)*u;
+
+p5=z1{up}..(-z1){down}..z2{up}..(-z2){down}..z3{up}..-z3{down}..z4{up}..(-z4){down}..z5{up}..(-z5){down}..cycle;
+draw p5;
+
+drawarrow subpath (0,2) of p5;
+drawarrow subpath (2,4) of p5;
+drawarrow subpath (4,6) of p5;
+drawarrow subpath (6,8) of p5;
+drawarrow subpath (8,10) of p5;
+
+endfig;
+
+beginfig(262)
+save u,p;
+path p[];
+u:=.7cm;
+z1=(1,0)*u;
+z2=(2,0)*u;
+z3=(3,0)*u;
+z4=(4,0)*u;
+
+
+p4=z1{up}..z4{down}..z3{up}..z2{down}..cycle;
+drawarrow subpath (0,.5) of p4;
+drawarrow subpath (.5,2.5) of p4;
+draw subpath (2.5,4) of p4;
+
+dOt z2,z3;
+endfig;
+
+beginfig(265);
+save u,p;
+path p[];
+u:=.5cm;
+
+z.a0=(0,-1)*u;
+z.a1=(-1,0)*u;
+z.a2=(0,1)*u;
+
+p0=arc(z.a0,z.a1,z.a2);
+
+for i=-80 step 3 until 90:
+draw p0 shifted (i,0);
+endfor
+
+clip currentpicture to (-5,-1)*u--(2,-1)*u--(2,1)*u--(-5,1)*u--cycle;
+
+draw (-5,-1)*u--(2,-1)*u;
+draw (-5,1)*u--(2,1)*u;
+endfig;
+
+beginfig(266);
+save u,p;
+path p[];
+u:=.5cm;
+
+z.a1=(0,-1)*u;
+z.a0=(-1,0)*u;
+z.a2=(1,0)*u;
+
+p0=ddarc(z.a0,z.a1,z.a2)(30,30);
+p1=ddarc(z.a0,z.a1,z.a2)(-90,30);
+p2=ddarc(z.a0,z.a1,z.a2)(30,-90);
+
+for i=0 step 3 until 50:
+draw p0 shifted (0,i);
+endfor
+
+for i=3 step 3 until 50:
+draw p1 shifted ((0,i) rotated -120);
+endfor
+
+for i=3 step 3 until 50:
+draw p2 shifted ((0,i) rotated 120);
+endfor
+
+p3=(0,2)*u--(0,2)*u rotated 120--(0,2)*u rotated -120--cycle;
+clip currentpicture to p3;
+
+draw p3;
+endfig;
+
+beginfig(267);
+save u,p;
+path p[];
+u:=.5cm;
+
+z.a0=(-1,0)*u;
+z.a1=(0,1)*u;
+z.a2=(1,0)*u;
+
+p0=ddarc(z.a0,z.a1,z.a2)(30,30);
+p1=ddarc(z.a2,z.a1,z.a0)(-30,-30) shifted (0,-u);
+p3=p0--reverse(p1)--cycle;
+
+for i=0 step 3 until 20:
+draw p0 shifted (0,-i);
+endfor
+
+clip currentpicture to p3;
+draw p3; 
+
 endfig;
 end

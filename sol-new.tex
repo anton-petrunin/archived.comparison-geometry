@@ -1,3 +1,11 @@
+\parbf{\ref{ex:ell-infty}.}
+
+\parbf{\ref{ex:B2inB1}.}
+
+\parbf{\ref{ex:shrt=>continuous}.}
+
+\parbf{\ref{ex:close-open}.}
+
 \parbf{\ref{ex:9}.} The image of $\gamma$ might have a shape of digit $8$ or $9$.
 
 \parbf{\ref{aex:simple-curve}.}
@@ -161,7 +169,7 @@ obtained orthogonal projection of $\gamma$ to the line in the direction $u$.
 Note that $\gamma_u$ runs back and forth along $\ell_u$, we get 
 \[\length\gamma_u\ge 2\cdot\length\ell_u.\]
 Applying the Crofton formula, we get that 
-\[\length\gamma\ge \pi \overline{\length\ell_u}.\]
+\[\length\gamma\ge \pi\cdot \overline{\length\ell_u}.\]
 
 In the case of equality, the curve $\gamma_u$ runs exactly back and forth along $\ell_u$ without additional zigzags for almost all (and therefore for all) $u$.
 
@@ -276,15 +284,20 @@ Observe that
 here we assume that $acbd$ denotes the closed polygonal line.
 It remains to apply \ref{prop:inscribed-total-curvature}.
 
+{
 
 \begin{wrapfigure}{r}{22 mm}
-\vskip-4mm
+\vskip-6mm
 \centering
 \includegraphics{mppics/pic-255}
 \vskip0mm
 \end{wrapfigure}
+
 \parbf{\ref{ex:anti-bow}.}
-Start with $\gamma_1$ shown on the diagram decrease the curvature on the dashed arc.
+Start with with the curve $\gamma_1$ shown on the diagram.
+To obtain $\gamma_2$, slightly unbend (that is, decrease the curvature of) the dashed arc of $\gamma_1$.
+
+}
 
 \parbf{\ref{ex:length-dist}.}
 Choose a value $s_0\in[a,b]$ that splits the total curvature into two equal parts, $\theta$ in each.
@@ -311,23 +324,96 @@ Therefore the total curvature of diangle is $2\cdot \pi$.
 
 It remains to apply the definition of total curvature for arbitrary curves (\ref{def:total-curv-poly}).
 
-\parbf{\ref{ex:tc-length}.}
+\parbf{\ref{ex:tc-length};} \ref{SHORT.ex:tc-length:rectifiable}.
+Observe that if $\tc\gamma\le 1$, then
+\[\length\gamma\le 2\cdot|\gamma(b)-\gamma(a)|.
+\eqlbl{eq:arc<2chord}\]
+Indeed, if $\tc\gamma\le 1$, then from the definition of total curvature [\ref{def:total-curv-poly}] it follows that for any polygonal line $p0\dots p_n$ inscribed in $\gamma$ the angle between any pair of edges does noe exceed $1$.
+Let $q_i$ be the orthogonal projection of $p_i$ to the line of its first edge $p_0p_1$.
+By the angle estimate, we have that the points $q_0,\dots,q_n$ appear on the line in the same order and 
+\[|q_i-q_{i-1}|> \tfrac12\cdot|p_i-p_{i-1}|.\]
+Therefore 
+\begin{align*}|\gamma(b)-\gamma(a)|&=|p_n-p_0|\ge 
+\\
+&\ge |q_n-q_0|=
+\\
+&=|q_n-q_{n-1}|+\dots+|q_1-q_0|>
+\\
+&>\tfrac12\cdot(|p_n-p_{n-1}|+\dots+|p_1-p_0|).
+\end{align*}
+Recall that length of $\gamma$ is defined as the exact upper bound for the  sum $|p_n-p_{n-1}|+\dots+|p_1-p_0|$.
+Therefore \ref{eq:arc<2chord} follows.
 
-\parbf{\ref{ex:helix-torsion}.}
+In general, if $\tc\gamma$ is bounded, we can subdivide $\gamma$ into arcs with total curvature at most $1$,
+apply the above argument to each of arc and sum up the results.
 
-\parbf{\ref{ex:beta-from-tau+nu}.}
+\parit{\ref{SHORT.ex:tc-length:example}.}
+The logarithmic spiral $\gamma[0,1]\to\RR^2$ is an example;
+it can be defined in polar coordinates by $\gamma(t)=(t,\ln t)$ if $t>0$ and $\gamma(0)$ is the origin. %???PIC
+
+It remains to show that indeed, $\gamma$ has infinite total curvature, but finite length.
+
+
+%PIC
+
+
+
+\parbf{\ref{ex:helix-torsion}.} 
+The arc-length parameter $s$ is already found in   \ref{ex:arc-length-helix}.
+It remains to find Frenet frame and calculate curvature and torsion.
+The latter can be done by straightforward calculations.
+
+One may be able to see the following geometrically, without calculations (or at least use the following observation to check the calculations).
+Suppose $\tg\theta\z=b/a$, then $\tan(0)\z=(0,\cos\theta, \sin\theta)$, $\norm(0)\z=(-1,0,0)$, $\bi(0)\z=(0,\sin\theta, -\cos\theta)$.
+Moreover if the helix is parameterized with arc-length then its Frenet frame rotates around $z$-axis with the angular velocity $\cos\theta$. 
+%???PIC
+
+If the calculations done right, then you should see that curvature $\kur$ and torsion $\tau$ do not depend on time and given.
+Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix $\gamma_{a,b}$ has curvature $\kur$ and torsion $\tor$.
+
+
+
+
+
+\parbf{\ref{ex:beta-from-tau+nu}.} By product rule, we get
+\begin{align*}
+\bi'&=(\tan\times \norm)'=
+\\
+&=\tan'\times \norm+\tan\times\norm'.
+\end{align*}
+It remains to substitute the values from \ref{eq:frenet-tau} and \ref{eq:frenet-nu} and simplify.
+
 
 \parbf{\ref{ex:torsion=0}.}
 Show and use that the binormal vector is constant.
 
-\parbf{\ref{ex:frenet}.}
+\parbf{\ref{ex:frenet}.} Observe that $\tfrac{\gamma'\times\gamma''}{|\gamma'\times\gamma''|}$ is a unit vector perpendicular to the plane spanned by $\gamma'$ and $\gamma''$, so, up to sign, it has to be equal to $\bi$. It remains to check that the sign is right.
 
-\parbf{\ref{ex:lancret}.}
+%???
+
+\parbf{\ref{ex:lancret}}, \ref{SHORT.ex:lancret:a}.
+Observe that 
+$\langle \vec w,\tan\rangle'=0$.
+Show that it implies that $\langle \vec w, \norm\rangle =0$.
+
+Further observe that 
+$\langle \vec w,\norm\rangle'=0$.
+Show that it implies that $\langle \vec w, -\kur\cdot\tan+\tor\cdot \bi\rangle =0$.
+
+\parit{\ref{SHORT.ex:lancret:a}.}
+Show that $\vec w'=0$;
+it implies that $\langle \vec w,\tan\rangle=\tfrac\tor\kur$.
+In particular, the velocity vector of $\gamma$ makes a constant angle with $\vec w$; that is, $\gamma$ has constant slope.
 
 \parbf{\ref{ex:evolvent-constant-slope}.}
 Show that $\langle w,\alpha\rangle$ is constant if $\gamma$ makes constant angle with a fixed vector $w$ and $\alpha$ is the evolvent of $\gamma$.
 
 \parbf{\ref{ex:spherical-frenet}.}
+Suppose $\langle \vec w,\tan\rangle$ is a constant.
+Show that $\langle \vec w,\alpha\rangle'=0$.
+It follows that $\langle \vec w,\alpha\rangle$ is a constant,
+so $\alpha$ lies in a plane perpendicular to $\vec w$.
+
 
 \parbf{\ref{ex:cur+tor=helix}.} Use the second statement in \ref{ex:helix-torsion}.
 
@@ -338,64 +424,243 @@ Express speed, curvature and torsion of $\gamma$ in terms of derivatives $\rho^{
 and apply \ref{ex:cur+tor=helix}.
 
 \parbf{\ref{ex:bike}.}
+Without loss of generality, we may assume that $\gamma_0$ is parameterized by its arc-length.
+Then
+\begin{align*}
+|\gamma_1'|&=|\gamma_0'+\tan'|=|\tan+\kur\cdot\norm|=
+\sqrt{1+\kur^2}\ge
+1=
+|\gamma_0'|;
+\end{align*}
+that is, $|\gamma_1'(t)|\ge|\gamma_0'(t)|$ for any $t\in[a,b]$
+The statement follows since 
+\[\length\gamma_i=\int_a^b|\gamma_i'(t)|\cdot dt.\]
+
+
+
+
 
 \parbf{\ref{ex:trochoids}.}
+Observe that
+\[\gamma'_a(t)=(1+a\cdot \cos t, -a\cdot \sin t);\]
+that is $\gamma'_a$ runs clockwise along a circle with center at $(1,0)$ and radius $1$.
+If $|a|>1$ then $\tan_a(t)=\gamma'_a/|\gamma'_a|$ runs clockwise and makes full turn in time $2\cdot\pi$.
+It follows that if $|a|>1$, then
+\[\Psi(\gamma_a)=-2\cdot\pi,\quad \tc\gamma_a=|\Psi(\gamma_a)|=2\cdot\pi.\]
+
+If $|a|<1$, set $\theta_a=\arcsin a$.
+Note that $\tan_a(t)=\gamma'_a/|\gamma'_a|$ starts with the horizontal direction $\tan_a(0)=(1,0)$, turns monotonically to angle $\theta_a$, then monotonically to $-\theta_a$ and then monotonically to back to $\tan_a(2\cdot\pi)=(1,0)$.
+It follows that if $|a|>1$, then
+\[\Psi(\gamma_a)=0,\quad \tc{\gamma_a}=4\cdot\theta_a.\]
+
+In the cases $a=-1$ the velocity $\gamma'_{-1}(t)$ vanish at $t=0$ and $2\cdot\pi$.
+Nevertheless, the curve admits a smooth regular parametrization --- show it.
+In this case $\Psi(\gamma_{-1})=-\pi$ and $\tc{\gamma_{-1}}=\pi$.
+
+In the cases $a=1$ the velocity $\gamma'_1(t)$ vanish at $t=\pi$.
+At $t=\pi$ the curve has a cusp;
+that is 
+\[\lim_{t\to\pi-}\tan_1(t)=-\lim_{t\to\pi+}\tan_1(t).\]
+So $\gamma_1(t)$ has undefined total signed curvature.
+The curve is a joint of two smooth arcs with external angle $\pi$,
+the total curvature of each arc is $\tfrac\pi2$, so 
+$\tc{\gamma_{1}}=\tfrac\pi2+\pi+\tfrac\pi2=2\cdot\pi$.
+
 
 \parbf{\ref{ex:zero-tsc}.}
+The two marked points in the last example (for part \ref{SHORT.ex:zero-tsc:2-4}) have parallel tangent lines.
 
-\parbf{\ref{ex:length'}.}
+\begin{figure}[h!]
+\begin{minipage}{.32\textwidth}
+\centering
+\includegraphics{mppics/pic-260}
+\end{minipage}\hfill
+\begin{minipage}{.32\textwidth}
+\centering
+\includegraphics{mppics/pic-261}
+\end{minipage}
+\hfill
+\begin{minipage}{.32\textwidth}
+\centering
+\includegraphics{mppics/pic-262}
+\end{minipage}
+\end{figure}
+
+\parbf{\ref{ex:length'}}; \ref{SHORT.ex:length':reg}.
+Show that
+\[
+\gamma_\ell'(t)=(1-\ell\cdot\skur(t))\cdot \gamma'(t).
+\]
+Since $\gamma$ is regular, $\gamma'\ne0$.
+Therefore if $\gamma_\ell'(t)=0$, then $\ell\cdot \skur(t)= 1$.
+
+\parit{\ref{SHORT.ex:length':formula}.} Observe that we can assume that $\gamma$ is parameterized by its arc-length, so $\gamma'(t)=\tan(t)$.
+Suppose $|\ell|<\frac{1}{\kur(t)}$ for any $t$.
+Then 
+\[
+|\gamma_\ell'(t)|=(1-\ell\cdot\skur(t)).
+\]
+\begin{align*}
+L(\ell)&=\int_a^b(1-\ell\cdot\skur(t))\cdot dt=
+\\
+&=\int_a^b 1\cdot dt-\ell\cdot \int_a^b\skur(t))\cdot dt=
+\\
+&=L(0)+\ell\cdot\Psi(\gamma).
+\end{align*}
+
+
+
+\parit{\ref{SHORT.ex:length':antiformula}.}
+Consider the unit circle $\gamma(t)=(\cos t,\sin t)$ for $t\in[0,2\cdot\pi]$ and $\gamma_\ell$ for $\ell=2$.
 
 \parbf{\ref{ex:inverse}.}
 Use the definition of osculating circle via order of contact and that inversion maps circles to circlines. 
 
 \parbf{\ref{ex:evolute-of-ellipse}.}
+Find $\tan(t)$ and $\norm(t)$.
+Use the formula in \ref{ex:curvature-formulas:b} to calculate curvature $\kur(t)$.
+Apply the formula given right before the exercise.
 
-\parbf{\ref{ex:3D-spiral}.}
 
-\parbf{\ref{ex:double-tangent}.}
+\parbf{\ref{ex:3D-spiral}.} The plane curve shown on the diagram can be approximated by a smooth regular curve with strictly monotonic and large torsion at the dashed arc. %???+PIC 
 
-\parbf{\ref{ex:vertex-support}.} Apply the spiral lemma (\ref{lem:spiral}).
+\parbf{\ref{ex:double-tangent}.} 
+Observe that if a line or circle is tangent to $\gamma$,
+then it is tangent to osculating circle at the same point
+and apply the spiral lemma (\ref{lem:spiral}).
 
-\parbf{\ref{ex:support}.}
+%\parit{\ref{SHORT.ex:double-tangent:a}.}
+%Suppose that a line $\ell$ is tangent to $\gamma$ at two points $p$ and $q$.
+%Let $\sigma_p$ and $\sigma_q$ be the osculating circles of $\gamma$ at $p$ and $q$ correspondingly.
+%Show that $\ell$ is tangent to $\sigma_p$ and $\sigma_q$.
 
-\parbf{\ref{ex:in-circle}.}
+%By \ref{lem:spiral}, we can assume that $\sigma_p$ is surrounded by $\sigma_q$.
+%In particular any line that tangent to $\sigma_q$ cannot intersect $\sigma_p$;
+%in particular, $\ell$ cannot be tangent to both $\sigma_p$ and $\sigma_q$ --- a contradiction. 
 
-\begin{wrapfigure}{r}{35 mm}
-\vskip1mm
+%\parit{\ref{SHORT.ex:double-tangent:b}.}
+%If a circle $\sigma$ is tangent to $\gamma$ at three points $x$, $y$, and $z$.
+%Then $\sigma$ is tangent to the osculating circles $\sigma_x$, $\sigma_y$, and $\sigma_z$.
+%By \ref{lem:spiral} we can assume that $\sigma_x$ is surrounded by $\sigma_y$ and $\sigma_y$ is surrounded by $\sigma_z$.
+%Observe that the first statement implies that $\sigma$ is squeezed between $\sigma_x$ and $\sigma_y$.
+%The second statement implies that $\sigma$ is squeezed between $\sigma_y$ and $\sigma_z$.
+%These two statements contradict each other.
+
+\parbf{\ref{ex:vertex-support}.}
+Apply the spiral lemma (\ref{lem:spiral}).
+
+\parbf{\ref{ex:support}.} Consider the coordinate system with $p$ as the origin and $x$-axis as the common tangent line to $\gamma_1$ and $\gamma_2$.
+We may assume that $\gamma_i$ are defined in $(-\eps,\eps)$ for some small $\eps>0$,
+so that they run almost horizontally to the right.
+
+Given $t\in[0,1]$ consider the curve $\gamma_t$ that is tangent and cooriented to the $x$ axis at  $\gamma_t(0)$ and has signed curvature defined by $\skur_t(s)=(1-t)\cdot\skur_0(s)+t\cdot\skur_1(s)$.
+It exists by \ref{thm:fund-curves-2D}.
+
+Fix $s\approx 0$.
+Consider the curve $\alpha_s\:t\mapsto \gamma_t(s)$.
+Show that $\alpha_s$ moves almost vertically up, while $\gamma_t$ moves almost horizontally to the right.
+Conclude that in a small neighborhood of $p$, the curve $\gamma_1$
+lies above $\gamma_0$.
+Whence the statement follows.
+
+\parbf{\ref{ex:in-circle}.} Let reduce the radius of the circle until it touches $\gamma$.
+Observe that the circle supports $\gamma$ and apply \ref{prop:supporting-circline}.
+
+
+\parbf{\ref{ex:between-parallels-1}, \ref{ex:in-triangle} and \ref{ex:lens}.}
+Observe that one of the arcs of curvature 1 in the families shown on the diagram suppots $\gamma$ and apply \ref{prop:supporting-circline}.
+\begin{figure}[h!]
+\begin{minipage}{.50\textwidth}
 \centering
-\includegraphics{mppics/pic-66}
-\vskip0mm
-\end{wrapfigure}
+\includegraphics{mppics/pic-265}
+\end{minipage}\hfill
+\begin{minipage}{.26\textwidth}
+\centering
+\includegraphics{mppics/pic-266}
+\end{minipage}
+\hfill
+\begin{minipage}{.20\textwidth}
+\centering
+\includegraphics{mppics/pic-267}
+\end{minipage}
+\end{figure}
+To do the second part in \ref{ex:between-parallels-1}, use shown family and another family of arcs curved in the opposite direction.
 
-\parbf{\ref{ex:between-parallels-1}.}
-Note that $\gamma$ lies in a figure $F$ as on the diagram.
-More precisely, $F$ is formed by a rectangle with pair of bases on the lines and two half discs attached to the sides of length $2$.
-
-Look at the right most or left most position of $F$ that still contains curve loop.
-
-To do the second part, try to modify the suggested proof.
-
-\parbf{\ref{ex:in-triangle}.}
-
-\parbf{\ref{ex:lens}.}
 
 \parbf{\ref{ex:convex small}.}
 Note that we can assume that $\gamma$ bounds a convex figure $F$, otherwise by \ref{prop:convex} its curvature changes the sign and therefore it has zero curvature at some point.
 Choose two points $x$ and $y$ surrounded by $\gamma$ such that $|x-y|>2$,
 look at the maximal lens bounded by two arcs with common chord $xy$ that lies in $F$ and apply supporting test (\ref{prop:supporting-circline}).
 
-\parbf{\ref{ex:line-curve-intersections}.}
+\parbf{\ref{ex:line-curve-intersections}}; \ref{SHORT.ex:line-curve-intersections:a}.
+Apply the lens lemma to show that if $p_2$ lies between $p_1$ and $p_3$, then the curvature of $\gamma$ switches its sign.
+
+\parit{\ref{SHORT.ex:line-curve-intersections:b}.} Show that in this $p_4$ lies between $p_2$ and $p_3$;
+further $p_5$ lies between $p_3$ and $p_4$;
+and so on.
+
+\parit{\ref{SHORT.ex:line-curve-intersections:b}.}
+According to \ref{SHORT.ex:line-curve-intersections:a}, the point $p_3$ might lie between $p_1$ and $p_2$ and then further order is determined uniquely or $p_1$ lies between $p_2$ and $p_3$.
+In the latter case we have two choices, either $p_4$ lies between $p_2$ and $p_3$ and then then further order is determined uniquely or $p_2$ lies between $p_3$ and $p_4$.
+In the latter case we get a choice again.
+
+Assume we make a first choice on the step number $k$.
+Without loss of generality we may assume that $p_k$ lies to the right from $p_{k-2}$.
+Then we have the following order:
+\[
+p_{k-2},p_{p-4},\dots,p_{p-5},p_{k-3},p_k,p_{k+2},\dots,p_{k+1},p_{k-1}.
+\]
+The case $k=7$ shown on the diagram.
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-29}
+\vskip0mm
+\end{figure}
 
 \parbf{\ref{ex:moon-rad}.} Note that $\gamma$ contains a simple loop; apply to it \ref{thm:moon-orginal}.
 
 \parbf{\ref{ex:curve-crosses-circle}.}
 Repeat the proof of theorem for each cyclic concatenation of an arc of $\gamma$ from $p_i$ to $p_{i+1}$ with large arc of the circle. 
 
-\parbf{\ref{ex:hyperboloinds}.}
+\parbf{\ref{ex:hyperboloinds}.} 
+Denote the set of solutions by $\Phi_\ell$.
 
-\parbf{\ref{ex:inversion-chart}.}
+Show that $\nabla_p f=0$ if and only if $p=(0,0,0)$.
+Use \ref{prop:implicit-surface} to conclude that if $\ell\ne 0$, then $\Phi_\ell$ is a union of disjoint smooth regular surfaces.
+
+Show that $\Phi_\ell$ is connected if and only if $\ell\le 0$.
+It follows that if $\ell<0$, then $\Phi_\ell$ is a smooth regular surface and if $\ell>0$ then it is not.
+
+The case $\ell=0$ has to be done by hands --- it does not satisfy the sufficient condition in \ref{prop:implicit-surface}, but it does not solely imply that $\Phi_0$ is not a smooth surface.
+
+Show that any neighborhood of origin in $\Phi_0$ can not be described by a graph in any coordinate system;
+so by the definition (page \pageref{page:def-smooth-surface}) $\Phi_0$ is not a smooth surface.
+
+\parbf{\ref{ex:inversion-chart}.} 
+First check that the image of $s$ lies in the the unit sphere centered at $(0,0,1)$;
+that is show that 
+\[\left(\tfrac{2\cdot u}{1+u^2+v^2}\right)^2
++
+\left(\tfrac{2\cdot v}{1+u^2+v^2}\right)^2
++\left(\tfrac{2}{1+u^2+v^2}-1\right)^2=1.\]
+for any $u$ and $v$.
+
+Further, show that the map 
+\[(x,y,z)\mapsto (\tfrac{2\cdot x}{x^2+y^2+z^2},\tfrac{2\cdot y}{x^2+y^2+z^2})\]
+describe the inverse map which is continuous away from the origin.
+In particular, $s$ is an embedding that covers whole sphere except the origin.
+
+It remains to show that $s$ is regular; that is, $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ are linearly independent at all points of the $(u,v)$-plane.
 
 \parbf{\ref{ex:revolution}.}
+Set
+\[s\:(t,\theta)\mapsto (x(t), y(t)\cdot\cos\theta,y(t)\cdot\sin\theta).\]
+Show that $s$ is regular; that is, $\tfrac{\partial s}{\partial t}$ and $\tfrac{\partial s}{\partial \theta}$ are linearly independent (in fact $\tfrac{\partial s}{\partial t}\perp\tfrac{\partial s}{\partial \theta}$).
+
+Show that $s$ is local embedding; that is, any $(t_0,\theta_0)$ admits a neighborhood $U$ in the $(t,\theta)$-plane such that the restriction $s|_U$ has a continuous inverse.
+It remains to apply \ref{cor:reg-parmeterization}.
 
 \parbf{\ref{ex:tangent-normal}.}
 
@@ -579,13 +844,6 @@ this statement implies the problem.
 
 \parbf{\ref{ex:deformation}.}
 
-\parbf{\ref{ex:ell-infty}.}
-
-\parbf{\ref{ex:B2inB1}.}
-
-\parbf{\ref{ex:shrt=>continuous}.}
-
-\parbf{\ref{ex:close-open}.}
 
 %\parbf{\ref{}.}
 

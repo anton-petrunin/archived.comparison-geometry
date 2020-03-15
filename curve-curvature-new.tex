@@ -77,7 +77,7 @@ for any smooth regular space curve $\gamma$ we have the following expressions fo
 where $\vec w(t)$ denotes the projection of $\gamma''(t)$ to the plane normal to $\gamma'(t)$;
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:curvature-formulas:b}
 \[\kur(t)=\frac{|\gamma''(t)\times \gamma'(t)|}{|\gamma'(t)|^{3}},\]
 where $\times$ denotes the \emph{vector product} (also known as \emph{cross product}).
 \end{subthm}
@@ -202,7 +202,7 @@ The same definition of concatenation can be applied if $\alpha$ and/or $\beta$ a
 $(a,b]$ and/or $[b,c)$.
 
 \begin{wrapfigure}{o}{25 mm}
-\vskip-0mm
+\vskip-2mm
 \centering
 \includegraphics{mppics/pic-54}
 \end{wrapfigure}
@@ -214,6 +214,7 @@ If in addition $\beta(c)=\alpha(a)$, then we can do cyclic concatination of thes
 this way we obtain a closed curve.
 
 If $\alpha'(b)$ and $\beta'(b)$ are defined, then the angle $\theta=\measuredangle(\alpha'(b),\beta'(b))$ is called \emph{external angle} of $\gamma$ at time $b$.
+If $\theta=\pi$, then we say that $\gamma$ has a \emph{cusp} at  time $b$.
 
 Clearly, the assumption that the intervals $[a,b]$ and $[b,c]$ fit together is not essential, and we can concatenate any two curves $\alpha$ and $\beta$ as long as the endpoint of $\alpha$ coincides with the starting point of~$\beta$. 
 
@@ -690,10 +691,16 @@ for any  closed space curve $\gamma$ (not necessary piecewise smooth and regular
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:tc-length}
+
+\begin{subthm}{ex:tc-length:rectifiable}
 Assume that a curve $\gamma\:[a,b]\to\RR^3$ has finite total curvature.
 Show that $\gamma$ is rectifiable.
+\end{subthm}
 
+\begin{subthm}{ex:tc-length:example}
 Construct a rectifiable curve $\gamma\:[a,b]\to\RR^3$ that has infinite total curvature.
+\end{subthm}
+
 \end{thm}
 
 For more on curves of finite total curvature read \cite{aleksandrov-reshetnyak,sullivan-curves}. 

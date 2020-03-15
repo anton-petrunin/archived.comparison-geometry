@@ -159,7 +159,10 @@ If $\mathbb{I}=[a,b]$, then
 where $\theta$ is as in \ref{cor:2D-angle}.
 
 If $\gamma$ is a piecewise smooth and regular plane curve, then we define its total signed curvature as the sum of the total signed curvatures of its arcs plus the sum of the signed external angles at its joints;
-it is positive if $\gamma$ turns left, negative if $\gamma$ turns right, 0 if it goes straight and undefined if it turns exactly backward.
+it is positive if $\gamma$ turns left, negative if $\gamma$ turns right, 0 if it goes straight.
+It is undefined if it turns exactly backward;
+that is, the curve has a cusp.
+undefined if it turns exactly backward.
 That is, if $\gamma$ is a concatenation of smooth and regular arcs $\gamma_1,\dots,\gamma_n$, then 
 \[\Psi(\gamma)=\Psi(\gamma_1)+\dots+\Psi(\gamma_n)+\theta_1+\dots+\theta_{n-1}\]
 where $\theta_i$ is the signed external angle at the joint between $\gamma_i$ and $\gamma_{i+1}$.
@@ -169,7 +172,6 @@ where $\theta_n$ is the signed external angle at the joint between $\gamma_n$ an
 
 Since $\left|\int \skur(s)\cdot ds\right|\le \int|\skur(s)|\cdot ds$, we have
 \[|\Psi(\gamma)|\le \tc\gamma\eqlbl{eq:tsc-tc}\] 
-
 for any smooth regular plane curve $\gamma$;
 that is, total signed curvature can not exceed total curvature by absolute value.
 Note that the equality holds if and only if the signed curvature does not change the sign.
@@ -279,26 +281,37 @@ Therefore instead of equation \ref{eq:delta=pi-alpha-beta-sum}, we have
 
 \begin{thm}{Exercise}\label{ex:zero-tsc}
 Draw a smooth regular closed plane curve $\gamma$ such that 
-\begin{enumerate}
-\item $\Psi(\gamma)=0$; 
-\item $\Psi(\gamma)=\tc\gamma=10\cdot\pi$.
-\item $\Psi(\gamma)=2\cdot \pi$ and $\tc\gamma=4\cdot\pi$
-\end{enumerate}
+
+\begin{subthm}{ex:zero-tsc:0}$\Psi(\gamma)=0$;
+\end{subthm}
+ 
+\begin{subthm}{ex:zero-tsc:5}$\Psi(\gamma)=\tc\gamma=10\cdot\pi$;
+\end{subthm}
+
+\begin{subthm}{ex:zero-tsc:2-4}$\Psi(\gamma)=2\cdot \pi$ and $\tc\gamma=4\cdot\pi$.
+\end{subthm}
+
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:length'}
 Let $\gamma\:[a,b]\to\RR$ be a smooth regular plane curve with Frenet frame $\tan,\norm$.
 Given a real parameter $\ell$, consider
-the curve $\gamma_\ell(t)=\gamma(t)+\ell\cdot\norm(t)$; it is called a \emph{parallel curve of $\gamma$ at signed distance $\ell$}.
+the curve $\gamma_\ell(t)=\gamma(t)+\ell\cdot\norm(t)$; it is called a \emph{parallel curve of $\gamma$ at signed distance~$\ell$}.
 
-\begin{enumerate}[(a)]
-\item Show that $\gamma_\ell$ is a regular curve if $\ell\cdot \skur(t)\ne 1$ for all $t$, where $\skur(t)$ denotes the signed curvature of $\gamma$. 
-\item Set $L(\ell)=\length\gamma_\ell$.
+\begin{subthm}{ex:length':reg}
+Show that $\gamma_\ell$ is a regular curve if $\ell\cdot \skur(t)\ne 1$ for all $t$, where $\skur(t)$ denotes the signed curvature of $\gamma$.
+\end{subthm}
+ 
+\begin{subthm}{ex:length':formula}
+Set $L(\ell)=\length\gamma_\ell$.
 Show that 
-\[L(\ell)=L(0)-\ell\cdot\Psi(\gamma)\]
+\[L(\ell)=L(0)-\ell\cdot\Psi(\gamma)\eqlbl{eq:length(parallel-curve)}\]
 for all $\ell$ sufficiently close to $0$. 
-Describe an example showing that this formula does not hold for all $\ell$. 
-\end{enumerate}
+\end{subthm}
+
+\begin{subthm}{ex:length':antiformula}
+Describe an example showing that formula \ref{eq:length(parallel-curve)} does not hold for all $\ell$. 
+\end{subthm}
 
 \end{thm}
 
@@ -389,7 +402,7 @@ It turns out that the osculating circles of the curve $\gamma$ give a peculiar f
 Also note that the curve $\gamma$ is tangent to a circle of the foliation at each of its points.
 However, it does not run along any of those circles.
 
-\begin{wrapfigure}[8]{o}{33 mm}
+\begin{wrapfigure}{o}{33 mm}
 \vskip-4mm
 \centering
 \begin{lpic}[t(-0 mm),b(-0 mm),r(0 mm),l(0 mm)]{mppics/pic-84}
@@ -443,7 +456,7 @@ in the proof we showed that $(\tfrac1{\skur})'\cdot\norm$ is its velocity vector
 
 \begin{thm}{Exercise}\label{ex:evolute-of-ellipse}
 Show that the stretched astroid 
-\[\alpha(t)=(\tfrac{a^2-b^2}{a}\cdot \cos^3 t,  \tfrac{b^2-a^2}{b}\cdot\sin^3 t)\]
+\[\omega(t)=(\tfrac{a^2-b^2}{a}\cdot \cos^3 t,  \tfrac{b^2-a^2}{b}\cdot\sin^3 t)\]
 is an evolute of the ellipse $\gamma(t)= (a\cdot \cos t, b\cdot\sin t)$.
 \end{thm}
 %???+PIC
@@ -473,10 +486,13 @@ That is, there are self-intersecting smooth regular space curves with strictly m
 
 \begin{thm}{Exercise}\label{ex:double-tangent}
 Assume that $\gamma$ is a smooth regular plane curve with positive strictly monotonic signed curvature.
-\begin{enumerate}[(a)]
-\item\label{ex:double-tangent:a}Show that no line can be tangent to $\gamma$ at two distinct points.
-\item Show that no circle can be tangent to $\gamma$ at three distinct points. 
-\end{enumerate}
+
+\begin{subthm}{ex:double-tangent:a}Show that no line can be tangent to $\gamma$ at two distinct points.
+\end{subthm}
+
+\begin{subthm}{ex:double-tangent:b}Show that no circle can be tangent to $\gamma$ at three distinct points. 
+\end{subthm}
+
 \end{thm} %???monotone or monotonic???
 
 {
@@ -600,11 +616,11 @@ Applying the second derivative test, we get the result.
 
 
 \begin{thm}{Advanced exercise}\label{ex:support}
-Let $\gamma_1$ and $\gamma_2$ be two smooth unit-speed simple plane curves that are tangent and cooriented at the point $p\z=\gamma_1(0)=\gamma_2(0)$.
-Assume $\skur_1(s)\ge\skur_2(s)$ for any $s$.
-Show that $\gamma_1$ locally supports $\gamma_2$ from the left at $p$.
+Let $\gamma_0$ and $\gamma_1$ be two smooth unit-speed simple plane curves that are tangent and cooriented at the point $p\z=\gamma_0(0)=\gamma_1(0)$.
+Assume $\skur_0(s)\le\skur_1(s)$ for any $s$.
+Show that $\gamma_0$ locally supports $\gamma_1$ from the right at $p$.
 
-Give an example of two proper curves $\gamma_1$ and $\gamma_2$ satisfying the above condition such that $\gamma_1$ does not globally support $\gamma_2$ at $p$.
+Give an example of two proper curves $\gamma_0$ and $\gamma_1$ satisfying the above condition such that $\gamma_0$ does not globally support $\gamma_1$ at $p$.
 \end{thm}
 
 Note that according to the DNA inequality (\ref{thm:DNA}) for any closed smooth regular curve that runs in a unit disc, the average of its absolute curvature at least 1; in particular it has a point with absolute curvature at lest 1.
@@ -745,23 +761,20 @@ Show that $\gamma$ has a point with absolute curvature less than 1.
 \begin{thm}{Exercise}\label{ex:line-curve-intersections}
 Suppose $\gamma$ is a simple smooth regular curve in the plane with positive curvature.
 Assume $\gamma$ crosses a line $\ell$ at the points $p_1,p_2,\dots p_n$ and these points appear on $\gamma$ in the same order.
-\begin{enumerate}[(a)]
 
-\item\label{ex:line-curve-intersections:a} Show that $p_2$ cannot lie between $p_1$ and $p_3$ on $\ell$.
+\begin{subthm}{ex:line-curve-intersections:a} Show that $p_2$ cannot lie between $p_1$ and $p_3$ on $\ell$.
+\end{subthm}
 
-\item\label{ex:line-curve-intersections:b} Show that if $p_3$ lies between $p_1$ and $p_2$ on $\ell$, then the points appear on $\ell$ in the following order:  
+\begin{subthm}{ex:line-curve-intersections:b} Show that if $p_3$ lies between $p_1$ and $p_2$ on $\ell$, then the points appear on $\ell$ in the following order:  
 \[p_1,p_3,\dots,p_4 ,p_2.\]
 
-\begin{figure}[h!]
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-29}
-\vskip0mm
-\end{figure}
+\end{subthm}
 
-\item Try to describe all possible orders when $p_1$ lies between $p_2$ and $p_3$ (see the diagram).
+\begin{subthm}{ex:line-curve-intersections:c}
+Describe all possible orders of $p_i$ on $\ell$.
 
-\end{enumerate}
+\end{subthm}
+
 \end{thm}
 
 \section*{Moon in a puddle}
