@@ -657,28 +657,74 @@ It remains to show that $s$ is regular; that is, $\tfrac{\partial s}{\partial u}
 \parbf{\ref{ex:revolution}.}
 Set
 \[s\:(t,\theta)\mapsto (x(t), y(t)\cdot\cos\theta,y(t)\cdot\sin\theta).\]
-Show that $s$ is regular; that is, $\tfrac{\partial s}{\partial t}$ and $\tfrac{\partial s}{\partial \theta}$ are linearly independent (in fact $\tfrac{\partial s}{\partial t}\perp\tfrac{\partial s}{\partial \theta}$).
+Show that $s$ is regular; that is, $\tfrac{\partial s}{\partial t}$ and $\tfrac{\partial s}{\partial \theta}$ are linearly independent.
+(It might help to observe that $\tfrac{\partial s}{\partial t}\perp\tfrac{\partial s}{\partial \theta}$).
 
 Show that $s$ is local embedding; that is, any $(t_0,\theta_0)$ admits a neighborhood $U$ in the $(t,\theta)$-plane such that the restriction $s|_U$ has a continuous inverse.
 It remains to apply \ref{cor:reg-parmeterization}.
 
 \parbf{\ref{ex:tangent-normal}.}
+Let $\gamma$ be a smooth curve in $\Sigma$.
+Observe that $f\circ\gamma(t)\equiv 0$.
+Differentiate this identity and apply the definition of tangent vector (\ref{def:tangent-vector}).
 
 \parbf{\ref{ex:vertical-tangent}.}
+Assume a neighborhood of $p$ in $\Sigma$ is a graph $z=f(x,y)$.
+In this case $s\:(u,v)\mpasto (u,v,f(u,v))$ is a smooth chart at $p$.
+Show that the plane spanned by $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ is not vertical;
+together with \ref{def:tangent-plane} it proves the if part.
+
+To prove the only-if part, fix a chart $s\:(u,v)\mapsto(x(u,v),y(u,v),z(u,v))$ at $p$ and apply the inverse function theorem for the map $(u,v)\mapsto(x(u,v),y(u,v))$.
 
 
 \parbf{\ref{ex:implicit-orientable}.} Show that $\Norm=\tfrac{\nabla h}{|\nabla h|}$ defines a unit normal field on $\Sigma$.
 
-\parbf{\ref{ex:plane-section}.}
+\parbf{\ref{ex:plane-section}.} 
+Fix a closed set $A$ in the $(x,y)$-plane.
+Show that there is a smooth nonnegative function $(x,y)\mapsto f(x,y)$ such that $(x,y)\in A$ if and only if $f(x,y)=0$.
+Observe that the graph $z=f(x,y)$ describes a required surface.
 
 \parbf{\ref{ex:line-of-curvature}.}
+Fix a point $p$ on $\gamma$.
+Since $\Sigma$ is mirror symmetric with respect to $\Pi$,
+so is the tangent plane $\T_p$.
 
-\parbf{\ref{ex:gauss+orientable}.}
+Choose $(x,y)$-coordinates on $\T_p$ so that the $x$-axis is the intersection $\Pi\cap  \T_p$.
+Suppose that the osculating paraboloid is described by the graph 
+\[z=\tfrac12\cdot(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)\]
+Since $\Sigma$ is mirror symmetric, so is the paraboloid;
+that is, changing $y$ to $(-y)$ does not change the value 
+$\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2$.
+In other words $m=0$, or equivalently, the $x$-axis points in the direction of curvature.
 
-\parbf{\ref{ex:normal-curvature=const}.}
+\parbf{\ref{ex:gauss+orientable}.} Note that the principle curvatures have the same sign at each point.
+Therefore we can choose a unit normal $\Norm$ at each point so that both principle curvatures are positive.
+Show that it defines a field on the surface.
 
-\parbf{\ref{ex:shape-curvature-line}.}  Denote by $\Norm_1(t)$ and $\Norm_2(t)$ the unit normal vectors to $\Sigma_1$ and $\Sigma_2$ at $\gamma(t)$.
-Note that $\langle \Norm_1(t),\Norm_2(t)\rangle$ is constant; take it derivative and apply \ref{thm:rodrigues}.
+\parbf{\ref{ex:normal-curvature=const}}; \ref{SHORT.ex:normal-curvature=const:a}.
+Observe that $\Sigma$ has unit Hessian matrix at each point and apply the definition of shape operator.
+
+\parit{\ref{SHORT.ex:normal-curvature=const:b}.} Fix a chart $s$ in $\Sigma$ and show that 
+\[\tfrac{\partial }{\partial u}(s(u,v)+\nu(u,v))
+=
+\tfrac{\partial }{\partial v}(s(u,v)+\nu(u,v))
+=
+0.\]
+Make a conclusion.
+
+\parbf{\ref{ex:shape-curvature-line}.} 
+We can assume that $\gamma$ is parameterized by its arc-length.
+Denote by $\Norm_1(s)$ and $\Norm_2(s)$ the unit normal vectors to $\Sigma_1$ and $\Sigma_2$ at $\gamma(s)$.
+Since $\gamma$ is a curvature line in $\Sigma_1$, we have 
+$\Norm_1'$ is proportional to $\gamma'$;
+in particular 
+\[\langle\Norm_1',\Norm_2\rangle=0.\]
+
+Note that $\langle \Norm_1(t),\Norm_2(t)\rangle$ is constant.
+By taking its derivative and applying the above identity show that
+\[\langle\Norm_1,\Norm_2'\rangle=0.\]
+Conclude that $\Norm_2'$ is proportional to $\gamma'$
+and therefore $\gamma$ is a curvature line in $\Sigma_2$.
 
 \parbf{\ref{ex:meusnier}.}
 
