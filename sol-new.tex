@@ -57,9 +57,16 @@ Apply the definitions.
 For \ref{SHORT.ex:cycloid:regular} you need to check that $\gamma'_\ell\ne 0$.
 For \ref{SHORT.ex:cycloid:simple} you need to check that $\gamma_\ell(t_0)=\gamma(t_1)$ only if $t_0=t_1$.
 
+\begin{wrapfigure}{r}{22 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-270}
+\vskip0mm
+\end{wrapfigure}
+
 \parbf{\ref{ex:y^2=x^3}.}
 This is so called \emph{semicubical parabola}; it is shown on the diagram.
-Try to argue similarly to \ref{ex:L-shape}. %???+PIC
+Try to argue similarly to \ref{ex:L-shape}.
 
 
 \parbf{\ref{ex:viviani}.}
@@ -157,7 +164,13 @@ for any $\eps>0$.
 Whence 
 \[\length\alpha\ge\length\beta.\]
 
-%???+PIC
+\begin{wrapfigure}{r}{25 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-275}
+\vskip0mm
+\end{wrapfigure}
+
 If $\alpha$ has self-intersections, then the points $p_1,\dots, p_n$ might appear on $\alpha$ in a different order, say $p_{i_1},\dots,p_{i_n}$.
 Apply triangle inequality to show that 
 \[\length(p_{i_1}\dots p_{i_n})\ge \length (p_1\dots p_n)\]
@@ -202,11 +215,17 @@ Show that there is $\delta>0$ such that any path of length at most $|z-y|_{\RR^3
 It follows that $|z-y|_A\ge |z-y|_{\RR^3}+\delta$, 
 in particular$|z-y|_A\ne |z-y|_{\RR^3}$.
 
+\begin{wrapfigure}{r}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-280}
+\vskip0mm
+\end{wrapfigure}
+
 \parbf{\ref{ex:antipodal}.}
 The spherical curve shown on the diagram does not have antipodal pairs of points.
 However it has three points $x,y,z$ on one of its sides and their antipodal points $-x,-y,-z$ on the other.
-Show that it is sufficient to conclude that the curve does not lie in any hemisphere.
-%???PIC
+Show that this property is sufficient to conclude that the curve does not lie in any hemisphere.
 
 \parbf{\ref{ex:bisection-of-S2}.}
 Assume contrary, then by the hemisphere lemma (\ref{lem:hemisphere}) $\gamma$ lies in an open hemisphere.
@@ -215,7 +234,6 @@ In particular it cannot divide $\SS^2$ into two regions of equal area --- a cont
 \parbf{\ref{ex:flaw}.}
 The very first sentence is wrong --- it is \emph{not} sufficient to show that diameter iis at most 2.
 For example an equilateral triangle with circumradius slightly above $1$ may have diameter (which is defined as the maximal distance between its points) slightly bigger than $\sqrt3$, so it can be made smaller that $2$.
-%???+PIC
 
 On the other hand, it is easy to modify the proof of the hemisphere lemma (\ref{lem:hemisphere}) to get a correct solution.
 That is, (1) choose two points $p$ and $q$ on $\gamma$ that divide it into two arcs of the same length;
@@ -263,7 +281,12 @@ The first arc turns from $\vec u$ to $\vec w$;
 it has total curvature $\alpha$.
 Analogously the third arc turns from $\vec w$ to $\vec v$  and has total curvature $\beta$. 
 The second arc goes very close and almost parallel to the chord and its total curvature can be made arbitrary small.
-%???+PIC
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-285}
+\vskip0mm
+\end{figure}
 
 \parbf{\ref{ex:monotonic-tc}.}
 Use that exterior angle of a triangle equals to the sum of the two remote interior angles;
@@ -670,7 +693,7 @@ Differentiate this identity and apply the definition of tangent vector (\ref{def
 
 \parbf{\ref{ex:vertical-tangent}.}
 Assume a neighborhood of $p$ in $\Sigma$ is a graph $z=f(x,y)$.
-In this case $s\:(u,v)\mpasto (u,v,f(u,v))$ is a smooth chart at $p$.
+In this case $s\:(u,v)\mapsto (u,v,f(u,v))$ is a smooth chart at $p$.
 Show that the plane spanned by $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ is not vertical;
 together with \ref{def:tangent-plane} it proves the if part.
 
@@ -728,19 +751,44 @@ and therefore $\gamma$ is a curvature line in $\Sigma_2$.
 
 \parbf{\ref{ex:meusnier}.}
 
-\parbf{\ref{ex:principle-revolution}.} Use \ref{ex:line-of-curvature} and \ref{cor:meusnier}.
+\parbf{\ref{ex:principle-revolution}.} Use \ref{ex:line-of-curvature} and Meusnier's theorem (\ref{thm:meusnier}).
 
-\parbf{\ref{ex:catenoid-is-minimal}.}
+\parbf{\ref{ex:catenoid-is-minimal}.} Use \ref{ex:principle-revolution}.
 
-\parbf{\ref{ex:helicoid-is-minimal}.}
+\parbf{\ref{ex:helicoid-is-minimal}.} Apply Meusnier's theorem (\ref{thm:meusnier}) to show that the coordinate curves $\alpha_v\:u\mapsto s(u,v)$ and $\beta_u\:v\mapsto s(u,v)$ are asymptotic; that is they have vanishing normal curvature.
+
+Observe that these two families are orthogonal to each other.
+Therefore the Hessian matrix in the frame $\tfrac{\partial s}{\partial u}/|\tfrac{\partial s}{\partial u}|$ and $\tfrac{\partial s}{\partial v}/|\tfrac{\partial s}{\partial v}|$ will have zeros on the diagonal.
+Apply that mean curvature is the trace of the Hessian matrix.
+
+
 
 \parbf{\ref{ex:moon-revolution}.} Use \ref{ex:line-of-curvature} and \ref{thm:moon-orginal}.
 
 \parbf{\ref{ex:lagunov-genus4}.} Drill an extra hole or combine two examples together.
 
-\parbf{\ref{ex:thin}.}
+\parbf{\ref{ex:thin}.} 
+Let us define \emph{cut locus} of $V$ as a closure of the set of points $x\in V$ such that there are at least two points on $\partial V$ that minimize the distance to $x$.
+
+Denote by $L$ the cut locus $L$ of $V$.
+
+Choose a connected component $\Sigma$ of the boundary $\partial V$.
+Show that $L$ is a smooth surface and the closest point projection $L\to \Sigma$ is a smooth regular parameterization.
+In particular there is unique point on $\Sigma$ that minimize the distance to a given point $x\in L$.
+It follows that there is another component $\Sigma'$ with the same property.
+
+Finally show that $\partial V$ can not be more than two components.
 
 \parbf{\ref{ex:PI-sphere}.}
+Read about Bing's two-room house.
+Try to thicken it to construct the needed example.
+
+Assume $V$ does not contain a ball of radius $r_3$.
+Show that its cut locus $L$ of $V$ is formed by a few smooth surfaces that meets by three at their boundary points.
+Show that $L$ is not simply connected that is there is a loop in $L$ that can not be deformed continuously to a trivial loop.
+Conclude that $V$ is not simply connected.
+
+Finally show that if $V$ is bounded by sphere, then $V$ is simply connected --- a contradiction. 
 
 \parbf{\ref{ex:divergence-1}.}
 

@@ -3270,4 +3270,118 @@ clip currentpicture to p3;
 draw p3; 
 
 endfig;
+
+beginfig(270);
+save u,p;
+path p[];
+u:=.7cm;
+
+draw 
+for i=-1.5 step 0.1 until 1.4:
+(i**2,i**3)*u..
+endfor
+(1.5**2,1.5**3)*u pensemibold;
+
+drawarrow ddline(origin,(1.5**2,0)*u)(.2,.2) penhair;
+drawarrow ddline((0,-1.5**3)*u,(0,1.5**3)*u)(.1,.1) penhair;
+endfig;
+
+beginfig(275);
+save u,p;
+path p[];
+u:=1cm;
+
+z.p0=(0,0)*u;
+z.p1=(1,0)*u;
+z.p2=(1.4,.8)*u;
+z.p3=(.6,1.3)*u;
+z.p4=(-.3,.9)*u;
+
+draw z.p0--z.p1--z.p2--z.p3--z.p4--cycle penhair;
+draw z.p0--z.p2--z.p4--z.p1--z.p3--cycle pensemibold;
+
+dOt z.p0,z.p1,z.p2,z.p3,z.p4;
+
+label.llft (btex $p_1$ etex, z.p0);
+label.lrt (btex $p_2$ etex, z.p1);
+label.lft (btex $p_n$ etex, z.p4);
+label (btex $\dots$ etex rotated angle (z.p3-z.p2), .5[z.p2,z.p3]+(2,3));
+endfig;
+
+beginfig(280);
+save u,p;
+path p[];
+u:=1cm;
+
+z.r=(0,1)*u;
+
+z.a0=z.r rotated 15;
+z.b0=z.r rotated -15;
+z.b1=z.b0 rotated 120;
+
+z.x=z.r;
+z.y=z.x rotated 120;
+z.z=z.x rotated -120;
+
+p1= z.a0{-z.a0}..z.b0{z.b0};
+p2= z.a0{-z.a0}..z.b1{z.b1};
+
+
+
+draw p1 dashed evenly;
+draw p1 rotated 120 dashed evenly;
+draw p1 rotated -120 dashed evenly;
+draw p2;
+draw p2 rotated 120;
+draw p2 rotated -120;
+
+draw circle(origin,z.r) penhair;
+
+dOt z.x,z.y,z.z,-z.x,-z.y,-z.z;
+
+label.top (btex $x$ etex, z.x);
+label.llft (btex $y$ etex, z.y);
+label.lrt (btex $z$ etex, z.z);
+label.bot (btex $-x$ etex, -z.x);
+label.urt (btex $-y$ etex, -z.y);
+label.ulft (btex $-z$ etex, -z.z);
+endfig;
+
+beginfig(285);
+save u,p;
+path p[];
+u:=1cm;
+
+z.p=(0,0)*u;
+z.pp=(1,.3)*u;
+z.q=(8,0)*u;
+z.qq=z.q-(1,.5)*u;
+
+z.u=(1.4,0)*u;
+z.v=z.u rotated 60;
+z.w=z.u rotated 80;
+
+p1=z.p{z.v}...z.pp{right}...z.qq{right}...{z.w}z.q;
+
+draw p1 pensemibold;
+draw z.p--z.q;
+drawarrow z.p--z.p+z.v;
+drawarrow z.q--z.q+z.w;
+drawarrow z.pp--z.pp+z.u;
+drawarrow z.qq--z.qq+z.u;
+
+dOt z.p,z.q,z.pp,z.qq;
+
+label.lft (btex $p$ etex, z.p);
+label.lrt (btex $q$ etex, z.q);
+label.urt (btex $\vec v$ etex, z.p+z.v);
+label.lrt (btex $\vec w$ etex, z.q+z.w);
+label.top (btex $\vec u$ etex, z.pp+z.u);
+label.bot (btex $\vec u$ etex, z.qq+z.u);
+
+label.top (btex I etex, point .7 of p1);
+label.bot (btex II etex, point 1.55 of p1);
+label.top (btex III etex, point 2.4 of p1);
+
+endfig;
 end
