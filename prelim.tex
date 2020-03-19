@@ -1,6 +1,6 @@
 \chapter{Multivariable calculus}
 
-\section{Regular values}
+\section*{Regular values}
 
 A map $\bm{f}\:\RR^n\to\RR^k$ can be thought as an array of functions 
 \[f_1,\dots,f_k\:\RR^n\to \RR.\]
@@ -77,7 +77,7 @@ The words \emph{almost all} means all values, with the possible exception of a s
 In particular if one chooses a random value equidistributed in an arbitrarily small ball $B\subset \RR^m$, then it is a regular value of $f$ with probability 1.
 
 
-\section{Multiple integral}
+\section*{Multiple integral}
 
 Set 
 \[\jac_{\bm{x}}\bm{f}\df|\det[\Jac_{\bm{x}}\bm{f}]|;\]
@@ -128,7 +128,7 @@ Therefore for any compact set $K'\subset U$ we have that %???compact
 \[\int_{K'}h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=\int_{\bm{f}(K_1)} h(\bm{f}^{-1}(\bm{y}))\cdot d\bm{y}.\]
 It remains to subdivide $K_1$ into a countable collection of subsets of that type and sum up the corresponding formulas.\qeds
 
-\section{Divergence theorem}
+\section*{Divergence theorem}
 
 \begin{thm}{Theorem}\label{thm:div}
 If a piecewise smooth surface $\Sigma$ bounds a body $V$ in $\RR^3$, then
@@ -137,7 +137,7 @@ assuming that the orientation on $\Sigma$ is defined by a unit normal field that
 \end{thm}
 
 
-\section{Curl theorem}
+\section*{Curl theorem}
 
 Given a vector field $\vec u$, set $\curl \vec u\df\nabla\times \vec u$;
 that is, if we write the field $\vec u$ in the standard basis 
@@ -158,7 +158,7 @@ Then, for any smooth vector field defined in a neighborhood of $\Sigma$, we have
 
 \chapter{Differential equations}
 
-\section{Initial value problem}
+\section*{Initial value problem}
 
 The following theorem guarantees existence and uniqueness of solutions of an initial value problem
 for a system of ordinary differential equations
@@ -197,7 +197,7 @@ Moreover
 
 \chapter{Real analysis}
 
-\section{Lipschitz condition}
+\section*{Lipschitz condition}
 
 Recall that a function $f$ between metric spaces is called Lipschitz if there is a constant $L$ such that 
 \[|f(x)-f(y)|\le L\cdot|x-y|\]
@@ -220,7 +220,7 @@ Then for any $\eps>0$, there is a continuous function $\psi_\eps\:[a,b]\to \RR$ 
 Moreover, if $\phi$ is bounded above and/or below by some constants, then we may assume that so is $\psi_\eps$.  
 \end{thm}
 
-\section{Uniform continuity and convergence}
+\section*{Uniform continuity and convergence}
 
 Let $f$ be a real function defined on a real interval.
 If  for any $\eps>0$ there is $\delta>0$ such that 
@@ -251,7 +251,7 @@ Any uniformly equicontinuous sequence of function $f_n\:[a,b]\to [c,d]$ has a su
 
 \chapter{Topology}
 
-\section{Jordan's theorem}
+\section*{Jordan's theorem}
 
 We sometimes use the following characterization of homeomorphisms between compact spaces.
 
@@ -286,7 +286,7 @@ Moreover the there is a diffeomorphism $h\:\RR^2\to \RR^2$ that maps the unit ci
 The proof of this statement is much simpler.
 An amusing proof can be found in \cite{chambers-liokumovich}.
 
-\section{Connectedness}
+\section*{Connectedness}
 
 Recall that a continuous map $\alpha$ from the unit interval $[0,1]$ to a metric space is called a \emph{path}. If $p=\alpha (0)$ and $q = \alpha (1)$, then we say that $\alpha$ connects $p$ to $q$.
 
@@ -338,7 +338,7 @@ It remains to note that \ref{eq:k+m=n+2} implies
 \[(k-2)\cdot\pi+(m-2)\cdot\pi=(n-2)\cdot\pi.\]
 \qedsf
 
-\section{Triangle inequality for angles}
+\section*{Triangle inequality for angles}
 
 The following theorem says that the triangle inequality holds for angles between half-lines from a fixed point.
 In particular it implies that a sphere with the angle metric is a metric space.
@@ -401,7 +401,7 @@ Whence
 \end{align*}
 \qedsf
 
-\section{Convexity}
+\section*{Convexity}
 
 A set $X$ in the Euclidean space is called \emph{convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in $X$.
 It is called  \emph{strictly convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
@@ -429,7 +429,7 @@ for any vector $w\ne 0$ in the $(x,y)$-plane.
 
 \chapter{Area}
 
-\section{Area of spherical triangle}
+\section*{Area of spherical triangle}
 
 \begin{thm}{Lemma}\label{lem:area-spher-triangle}
 Let $\Delta$ be a spherical triangle;
@@ -465,7 +465,7 @@ It follows that
 Substituting \ref{eq:area(S2)} and \ref{eq:area(Sa)} and simplifying, we get \ref{eq:area(Delta)}.
 \qeds
 
-\section{Schwarz's boot}\label{sec:schwarz-boot}
+\section*{Schwarz's boot}\label{sec:schwarz-boot}
 
 Recall that we defined length of curve as the exact upper bound on the length of inscribed polygonal lines.
 It suggests to define area of a surface as a exact upper bound on the area of polyhedrons inscribed in the surface.
