@@ -3384,4 +3384,115 @@ label.bot (btex II etex, point 1.55 of p1);
 label.top (btex III etex, point 2.4 of p1);
 
 endfig;
+
+beginfig(290);
+save u,p;
+path p[];
+u:=1cm;
+
+z.a0=(0,.5)*u;
+z.a1=(2,0)*u;
+z.a2=-z.a0;
+
+draw z.a0{1,-1}..z.a1{up}..{-1,-1}z.a2;
+
+endfig;
+
+beginfig(295);
+save u,p;
+path p[];
+u:=1cm;
+
+z[0]=(0,1)*u;
+z.k=(1-.01,.04);
+
+for i=1 step 1 until 1000:
+z[i]=z[i-1] zscaled z.k;
+endfor
+
+draw
+for i=0 step 1 until 1000:
+z[i]..
+endfor
+origin;
+
+endfig;
+
+beginfig(296);
+save u,p,t;
+path p[];
+u:=1cm;
+
+z[0]=(0,1)*u;
+z.k=(1-.01,.07);
+
+for i=1 step 1 until 1000:
+z[i]=z[i-1] zscaled z.k;
+endfor
+
+p0=
+for i=0 step 1 until 1000:
+z[i]..
+endfor
+origin;
+
+draw subpath (0,90) of p0;
+draw subpath (90,120) of p0 dashed evenly;
+draw subpath (120,300) of p0;
+
+endfig;
+
+beginfig(300);
+save u,p;
+path p[];
+u:=.05cm;
+
+p0=
+for i=-4 step 1/256 until 4:
+(.5*(mexp(256*i)+mexp(-256*i)),i)*u..tension 4..
+endfor
+
+for i=-4 step 1/256 until 4:
+(-.5*(mexp(256*i)+mexp(-256*i)),-i)*u..tension 4..
+endfor
+cycle;
+
+z.x0= point -.15 of p0;
+z.v0=direction -.15 of p0;
+p1= z.x0{z.v0}..z.x0 yscaled -1{-z.v0 yscaled -1};
+
+hatchfill p0  withcolor (87, 1mm, -.5bp);
+draw p0;
+draw p1 dashed evenly;
+draw p1 xscaled -1 dashed evenly;
+
+draw (0,-2)*10*u--(0,2)*10*u dashed linedot;
+
+endfig;
+
+beginfig(305);
+save u,p,t;
+path p[];
+u:=1cm;
+
+z[0]=(0,1)*u;
+z.k=(1-.01,.08);
+
+for i=1 step 1 until 1000:
+z[i]=z[i-1] zscaled z.k;
+endfor
+
+p0=
+for i=0 step 1 until 1000:
+z[i]..
+endfor
+origin;
+
+p1=subpath(20,220) of p0 ... reverse( subpath(0,200) of p0) rotated 90...cycle;
+
+draw p1;
+
+draw circle((-.3,-1)*u,u) penhair;
+
+endfig;
 end

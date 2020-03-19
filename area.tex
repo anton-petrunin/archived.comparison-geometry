@@ -26,16 +26,16 @@ Let $\Sigma$ be a compact smooth surface with boundary $\partial \Sigma$ in the 
 Denote by $\Delta$ the compact region in the $(x,y)$-plane bounded by the $\partial \Sigma$.
 Suppose that $\vec i,\vec j,\vec k$ is the standard basis in the the space.
 
-\begin{enumerate}[(a)]
-\item\label{ex:divergence}
+\begin{subthm}{ex:divergence}
 Assume that all the points of $\Sigma$ lie in the upper half-space of the $(x,y)$-plane.
 Use the divergence theorem (\ref{thm:div}) and the observation for the constant vector field $\vec k$
 to show that 
 \[\area\Sigma\ge\area\Delta.\]
+\end{subthm}
 
-\item\label{ex:curl} 
+\begin{subthm}{ex:curl} 
 Use the curl theorem (\ref{thm:curl}) to prove the inequality in \ref{ex:divergence} for arbitrary smooth surface $\Sigma$ with boundary $\partial \Sigma$ in the $(x,y)$-plane, without assuming that the remaining points lie in the upper half-space.
-\end{enumerate}
+\end{subthm}
 
 \end{thm}
 
@@ -145,19 +145,20 @@ We say that $V$ is \emph{mean-convex} if the mean curvature of $\Sigma$ is nonpo
 Let $V$ be a mean-convex body in $\RR^3$ bounded by a closed smooth surface $\Sigma$.
 Denote by $W$ the outer region of $\Sigma$, it is a complement of the interior of $V$.
 
-\begin{enumerate}[(a)]
-\item\label{ex:mean-convex:u} 
+\begin{subthm}{ex:mean-convex:u}
 Suppose $V$ is star-shaped; that is, there is a point $p\in V$ such that for any other point $x\in V$ the line segment $[p,x]$ lies in $V$.
 
 Construct a unit vector field $\vec u$ on $W$ such that $\div  \vec u\ge 0$ at every point in $W$ and the restriction of $\vec u$ to $\Sigma$ is a normal field that points in $W$.
+\end{subthm}
  
-\item\label{ex:mean-convex:area} Suppose that another body $V'$ is bounded by a closed smooth surface $\Sigma'$ and $V'\supset V$.
-Use part \ref{ex:mean-convex:u} and the divergence theorem to show that 
+\begin{subthm}{ex:mean-convex:area} Suppose that another body $V'$ is bounded by a closed smooth surface $\Sigma'$ and $V'\supset V$.
+Use part \ref{SHORT.ex:mean-convex:u} and the divergence theorem to show that 
 \[\area\Sigma'\ge \area\Sigma\]
 if $V$ is star-shaped.
+\end{subthm}
 
-\item Construct a non-star-shaped mean-convex body $V$ bounded by a smooth surface such that the inequality in\ref{ex:mean-convex:u} does not hold for some body $V'\supset V$ with smooth boundary $\Sigma'$.
-\end{enumerate}
+\begin{subthm}{ex:mean-convex:wrong} Construct a non-star-shaped mean-convex body $V$ bounded by a smooth surface such that the inequality in\ref{ex:mean-convex:u} does not hold for some body $V'\supset V$ with smooth boundary $\Sigma'$.
+\end{subthm}
 \end{thm}
 
 \section*{Area-minimizing surfaces}

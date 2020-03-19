@@ -1,10 +1,23 @@
-\parbf{\ref{ex:ell-infty}.}
+\parbf{\ref{ex:ell-infty}.} Check all the conditions in the definition of metric, page \pageref{page:def:metric}.
 
-\parbf{\ref{ex:B2inB1}.}
+\parbf{\ref{ex:B2inB1}}; \ref{SHORT.ex:B2inB1:a}.
+Observe that $|p-q|_{\spc{X}}\le 1$. 
+Apply the triangle inequality to show that $|p-x|_{\spc{X}}\le 2$ for any $x\in B[q,1]$.
+Make a conclusion.
 
-\parbf{\ref{ex:shrt=>continuous}.}
+\parit{\ref{SHORT.ex:B2inB1:b}.} Take $\spc{X}$ to be a half-line $[0,\infty)$ with the standard metric; $p=0$ and $q=\tfrac45$.
+
+\parbf{\ref{ex:shrt=>continuous}.} Show that the conditions in \ref{def:continous} hold for $\delta=\eps$.
 
 \parbf{\ref{ex:close-open}.}
+Suppose the complement $\Omega=\mathcal{X}\backslash Q$ is open.
+Then for each point $p\in \Omega$ there is $\eps>0$ such that $|p-q|_{\spc{X}}>\eps$ for any $q\in Q$.
+It follows that $p$ is not a limit point of any sequence $q_n\in Q$.
+That is, any limit of points in $Q$ lies in $Q$ which by definition means that $Q$ is closed.
+
+Now suppose $\Omega=\mathcal{X}\backslash Q$ is not open.
+Then there is a point $p\in \Omega$ such that for any natural $n$ there is a point $q_n\in Q$ such that $|p-q_n|_{\spc{X}}\z<\tfrac 1n$; in particular $q_n\to p$ and $n\to \infty$.
+Since $p\notin Q$, we get that $Q$ is not closed.
 
 \parbf{\ref{ex:9}.} The image of $\gamma$ might have a shape of digit $8$ or $9$.
 
@@ -91,9 +104,19 @@ Show that
 \item if $|\ell|\ge1$, then the set is connected.
 \end{itemize}
 
+\begin{wrapfigure}{o}{35 mm}
+\centering
+\begin{lpic}[t(-0mm),b(6mm),r(0mm),l(0mm)]{asy/viviani(1)}
+\lbl[r]{-.5,13;$x$}
+\lbl[l]{30.5,15;$y$}
+\lbl[b]{14,40;$z$}
+\end{lpic}
+\end{wrapfigure}
+
 Note that the condition on gradients provides only sufficient condition.
 Therefore he case $\ell=\pm1$ has to be checked by hands.
-In this case a neighborhood of $(\pm1,0,0)$ does not admit a smooth regular parametrization --- try to prove it. %???+PIC
+In this case a neighborhood of $(\pm1,0,0)$ does not admit a smooth regular parametrization --- try to prove it. 
+The case $\ell=0$ shown on the diagram.
 
 \parit{Remark.}
 In the case $\ell=\pm1$ it is called \emph{Viviani's curve}.
@@ -275,12 +298,7 @@ Show that $\gamma_{a,b}''\perp \gamma'_{a,b}$ and apply \ref{ex:curvature-formul
 
 \parbf{\ref{ex:chord-lemma-optimal}.} 
 Set $\alpha=\measuredangle(\vec w,\vec u)$ and $\beta=\measuredangle(\vec w,\vec v)$.
-Try to guess the example from the diagram;
-the shown curve is divide into three arcs. 
-The first arc turns from $\vec u$ to $\vec w$;
-it has total curvature $\alpha$.
-Analogously the third arc turns from $\vec w$ to $\vec v$  and has total curvature $\beta$. 
-The second arc goes very close and almost parallel to the chord and its total curvature can be made arbitrary small.
+Try to guess the example from the diagram.
 \begin{figure}[h!]
 \vskip-0mm
 \centering
@@ -288,11 +306,25 @@ The second arc goes very close and almost parallel to the chord and its total cu
 \vskip0mm
 \end{figure}
 
+The shown curve is divide into three arcs: I, II, and III. 
+Arc I turns from $\vec v$ to $\vec u$;
+it has total curvature $\alpha$.
+Analogously the arc III turns from $\vec u$ to $\vec w$  and has total curvature $\beta$. 
+Arc II goes very close and almost parallel to the chord $pq$ and its total curvature can be made arbitrary small.
+
+
 \parbf{\ref{ex:monotonic-tc}.}
 Use that exterior angle of a triangle equals to the sum of the two remote interior angles;
 for the second part apply the induction on number of vertexes.
 
-\parbf{\ref{ex:sef-intersection}.} An example for \ref{SHORT.ex:sef-intersection:<2pi} is shown on the diagram. %???+PIC
+\begin{wrapfigure}{r}{23 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-290}
+\vskip-4mm
+\end{wrapfigure}
+
+\parbf{\ref{ex:sef-intersection}.} An example for \ref{SHORT.ex:sef-intersection:<2pi} is shown on the diagram. 
 
 \parit{\ref{SHORT.ex:sef-intersection:>pi}.} Assume $x$ is a point of self-intersection.
 Show that we may choose two points $y$ and $z$ on $\gamma$ so that the triangle $xyz$ iz nondegenerate.
@@ -370,33 +402,47 @@ Therefore \ref{eq:arc<2chord} follows.
 In general, if $\tc\gamma$ is bounded, we can subdivide $\gamma$ into arcs with total curvature at most $1$,
 apply the above argument to each of arc and sum up the results.
 
+\begin{wrapfigure}{r}{15 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-295}
+\vskip0mm
+\end{wrapfigure}
+
 \parit{\ref{SHORT.ex:tc-length:example}.}
-The logarithmic spiral $\gamma[0,1]\to\RR^2$ is an example;
-it can be defined in polar coordinates by $\gamma(t)=(t,\ln t)$ if $t>0$ and $\gamma(0)$ is the origin. %???PIC
+A logarithmic spiral is an example;
+it can be defined in polar coordinates by $\gamma(t)=(t,a\cdot\ln t)$ if $t>0$ and $\gamma(0)$ is the origin; we may assume that $t\in[0,1]$.
 
 It remains to show that indeed, $\gamma$ has infinite total curvature, but finite length.
-
-
-%PIC
-
-
 
 \parbf{\ref{ex:helix-torsion}.} 
 The arc-length parameter $s$ is already found in   \ref{ex:arc-length-helix}.
 It remains to find Frenet frame and calculate curvature and torsion.
 The latter can be done by straightforward calculations.
 
-One may be able to see the following geometrically, without calculations (or at least use the following observation to check the calculations).
-Suppose $\tg\theta\z=b/a$, then $\tan(0)\z=(0,\cos\theta, \sin\theta)$, $\norm(0)\z=(-1,0,0)$, $\bi(0)\z=(0,\sin\theta, -\cos\theta)$.
-Moreover if the helix is parameterized with arc-length then its Frenet frame rotates around $z$-axis with the angular velocity $\cos\theta$. 
-%???PIC
-
 If the calculations done right, then you should see that curvature $\kur$ and torsion $\tau$ do not depend on time and given.
 Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix $\gamma_{a,b}$ has curvature $\kur$ and torsion $\tor$.
 
+\begin{wrapfigure}{r}{20 mm}
+\centering
+\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/helix(1)}
+\lbl[br]{8,24;$\norm$}
+\lbl[b]{2,26;$\bi$}
+\lbl[wl]{15,25;$\tan$}
+\end{lpic}
+\end{wrapfigure}
 
-
-
+One may also see it geometrically using that the helix is maped to itself by one parameter family of glide rotations around $z$-axis.
+Therefore, for the $t$-parametrization, Frenet frame rotates around $z$-axis with the angular velocity~$1$.
+It remains rewrite it for the arc-length parametrization and note that 
+\begin{align*}
+\tan(0)&=(0,\cos\theta, \sin\theta),
+\\
+\norm(0)&=(-1,0,0),
+\\
+\bi(0)&=(0,\sin\theta, -\cos\theta),
+\end{align*}
+where $\tg\theta\z=b/a$ if $a>0$. 
 
 \parbf{\ref{ex:beta-from-tau+nu}.} By product rule, we get
 \begin{align*}
@@ -417,11 +463,13 @@ Show and use that the binormal vector is constant.
 \parbf{\ref{ex:lancret}}, \ref{SHORT.ex:lancret:a}.
 Observe that 
 $\langle \vec w,\tan\rangle'=0$.
-Show that it implies that $\langle \vec w, \norm\rangle =0$.
+Show that it implies that
+\[\langle \vec w, \norm\rangle =0.\]
 
 Further observe that 
 $\langle \vec w,\norm\rangle'=0$.
-Show that it implies that $\langle \vec w, -\kur\cdot\tan+\tor\cdot \bi\rangle =0$.
+Show that it implies that 
+\[\langle \vec w, -\kur\cdot\tan+\tor\cdot \bi\rangle =0.\]
 
 \parit{\ref{SHORT.ex:lancret:a}.}
 Show that $\vec w'=0$;
@@ -544,8 +592,15 @@ Find $\tan(t)$ and $\norm(t)$.
 Use the formula in \ref{ex:curvature-formulas:b} to calculate curvature $\kur(t)$.
 Apply the formula given right before the exercise.
 
+\begin{wrapfigure}{r}{15 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-296}
+\vskip0mm
+\end{wrapfigure}
 
-\parbf{\ref{ex:3D-spiral}.} The plane curve shown on the diagram can be approximated by a smooth regular curve with strictly monotonic and large torsion at the dashed arc. %???+PIC 
+\parbf{\ref{ex:3D-spiral}.} Start with a plane spiral curve as shown on the diagram.
+Increase the torsion of the dashed arc without changing curvature until it a self-intersection appears.
 
 \parbf{\ref{ex:double-tangent}.} 
 Observe that if a line or circle is tangent to $\gamma$,
@@ -609,6 +664,8 @@ Observe that one of the arcs of curvature 1 in the families shown on the diagram
 \end{figure}
 To do the second part in \ref{ex:between-parallels-1}, use shown family and another family of arcs curved in the opposite direction.
 
+\parit{Remark.}
+Exercise \ref{ex:moon-rad} is a more general. 
 
 \parbf{\ref{ex:convex small}.}
 Note that we can assume that $\gamma$ bounds a convex figure $F$, otherwise by \ref{prop:convex} its curvature changes the sign and therefore it has zero curvature at some point.
@@ -644,8 +701,17 @@ The case $k=7$ shown on the diagram.
 
 \parbf{\ref{ex:moon-rad}.} Note that $\gamma$ contains a simple loop; apply to it \ref{thm:moon-orginal}.
 
+\begin{wrapfigure}{r}{25 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-305}
+\vskip0mm
+\end{wrapfigure}
+
 \parbf{\ref{ex:curve-crosses-circle}.}
 Repeat the proof of theorem for each cyclic concatenation of an arc of $\gamma$ from $p_i$ to $p_{i+1}$ with large arc of the circle. 
+
+An example for the second part can be guessed from the diagram.
 
 \parbf{\ref{ex:hyperboloinds}.} 
 Denote the set of solutions by $\Phi_\ell$.
@@ -749,9 +815,11 @@ By taking its derivative and applying the above identity show that
 Conclude that $\Norm_2'$ is proportional to $\gamma'$
 and therefore $\gamma$ is a curvature line in $\Sigma_2$.
 
-\parbf{\ref{ex:meusnier}.}
+\parbf{\ref{ex:meusnier}.} Use Meusnier's theorem (\ref{thm:meusnier}), to find center and radius of curvature of $\gamma$ in terms of normal curvature of $\gamma$ at $p$;
+make a conclusion.
 
-\parbf{\ref{ex:principle-revolution}.} Use \ref{ex:line-of-curvature} and Meusnier's theorem (\ref{thm:meusnier}).
+\parbf{\ref{ex:principle-revolution}.}
+Use \ref{ex:line-of-curvature} and Meusnier's theorem (\ref{thm:meusnier}).
 
 \parbf{\ref{ex:catenoid-is-minimal}.} Use \ref{ex:principle-revolution}.
 
@@ -790,26 +858,91 @@ Conclude that $V$ is not simply connected.
 
 Finally show that if $V$ is bounded by sphere, then $V$ is simply connected --- a contradiction. 
 
-\parbf{\ref{ex:divergence-1}.}
+\parbf{\ref{ex:divergence-1}}; \ref{SHORT.ex:divergence}.
+Since $\div\vec k=0$, applying the divergence theorem to the domain bounded by $\Delta$ and $\Sigma$, we get that 
+\[\flux_{\vec k}\Sigma=\flux_{\vec k}\Delta.\]
+Since $|\vec k|=1$, we have 
+\[\flux_{\vec k}\Sigma\le \area\Sigma.\]
+It remains to observe that
+\[\flux_{\vec k}\Delta=\area\Delta.\]
+
+
+\parit{\ref{SHORT.ex:curl}.} Consider the field $\vec u=x\cdot\vec j$.
+Observe that $\vec k=\curl \vec u$.
+Therefore by the curl theorem (\ref{thm:curl}) we have 
+\[\flux_{\vec k}\Sigma=\int_0^\ell\langle\vec u,\gamma'(t)\rangle\cdot dt=\flux_{\vec k}\Delta,\]
+where $\gamma\:[0,\ell]\to\RR^3$ is the common boundary of $\Sigma$ and $\Delta$ parameterized by its arc-length and with the right choice of orientation.
+
+The same argument as in \ref{SHORT.ex:divergence} finishes the proof.
+
+
 
 \parbf{\ref{ex:divergence-2}.}
+Observe that $\div\vec u=1$.
+Applying the divergence theorem and the observation (\ref{obs:flux}) we get
+\begin{align*}
+\vol R&=\iiint_R\div\vec u\cdot dx\cdot dy\cdot dz
+=
+\flux_{\vec u}\Sigma
+\le
+\area\Sigma.
+\end{align*}
 
-\parbf{\ref{ex:mean-convex}.} ???
-There are mean-convex bodies bodies $V$ that are not star-shaped for which the conclusion of the exercise does not hold.
-For example they can be found among bodies of revolution as shown on the picture --- one only has to check that mirror-symmetric figures $F$ and $F'$ as on the picture can be chosen in such a way that the body of revolution of $F$ is mean-convex wile the body of revolution of $F'$ has smaller surface area. 
 
-A proof of this stronger statement can be build on an analog of comparison theorem \ref{thm:comp}(\ref{thm:comp:toponogov}) for surfaces with Gauss curvature at least~1.
+
+
+\parbf{\ref{ex:mean-convex}}; \ref{SHORT.ex:mean-convex:u}.
+We may assume that $p$ is the origin of $\RR^3$.
+Let us extend the outer normal field $\Norm$ to $\Sigma$ to a field $\vec u$ defined in $\RR^3\backslash\{0\}$ by
+\[\vec u(\lambda\cdot q)=\Norm(q)\]
+for any $\lambda>0$ and $q\in\Sigma$.
+
+Observe that $\vec u(\lambda\cdot q)$ is normal to the surface 
+\[\lambda\cdot\Sigma=\set{\lambda\cdot q}{q\in\Sigma}.\]
+By \ref{lem:div+H}, we have
+\[\div \vec u=-H(\lambda\cdot q)_{\lambda\cdot\Sigma}\ge 0.\]
+
+\parit{\ref{SHORT.ex:mean-convex:area}.} Apply the divergence theorem for the region squeezed between $\Sigma$ and $\Sigma'$.
+
+\parit{\ref{SHORT.ex:mean-convex:wrong}.}
+An example they can be found among bodies of revolution as shown on the picture.
+The gutter in the middle can be chosen to be taken to be a catenoid which is a minimal surface; see \ref{ex:catenoid-is-minimal}.
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-300}
+\vskip0mm
+\end{figure}
+Show that if the gutter is sufficiently deep, then the surface of revolution of the dashed line can be made smaller.
 
 \parbf{\ref{ex:catenoid-nonmin}.}
+Consider the region of catenoid in the cylinder $x^2+y^2\le R^2$ for $R>1$.
+It is bounded by two circles defined by the equations 
+\[
+\begin{cases}
+x^2+y^2\le R^2,
+\\
+z=\pm r
+\end{cases}
+\]
+where $\cosh r=R$.
+
+Show that if $R$ is large, the area of this region is at least $\pi\cdot R^2$ --- the area of disc of radius $R$.
+
+Observe that the lateral surface of cylinder bounded by the two circles is $4\cdot \pi\cdot R\cdot r$.
+Since $r/R\to 0$ as $R\to infty$, we get that this surface has smaller area then region of catenoid.
+
 
 \parbf{\ref{ex:helicoid-nonmin}.}
+Show that for large $R$, the area of the helicoid in the cylinder defined by $|z|\le R$ and $x^2+y^2\le R^2$ exceeds the area of the surface of cylinder.
+Make a conclusion.
 
 \parbf{\ref{ex:surf-support}.}
+Choose curvatures such that 
+\[k_2(p)_{\Sigma_1}\z>k_2(p)_{\Sigma_2}> k_1(p)_{\Sigma_1}> k_1(p)_{\Sigma_2}\] and suppose that the first principle direction of $\Sigma_1$ coincides with the second principle direction of $\Sigma_2$ and the other way around.
 
-\parbf{\ref{ex:positive-gauss-0}.}
+\parbf{\ref{ex:positive-gauss-0} and \ref{ex:positive-gauss}.} Apply the same reasoning as in the problems \ref{ex:between-parallels-1}--\ref{ex:lens}, but use families of spheres instead.
 
-\parbf{\ref{ex:positive-gauss}.}
-Consider the minimal sphere that encloses the surface.
 
 \parbf{\ref{ex:convex-surf}.} Show and use that any tangent plane $\T_p$ supports $\Sigma$ at $p$.
 
@@ -818,6 +951,18 @@ Assume a maximal ball in $V$ touches its boundary at the points $p$ and $q$.
 Consider the projection of $V$ to a plane thru $p$, $q$ and the center of the ball. 
 
 \parbf{\ref{ex:section-of-convex}.}
+Suppose that a point $p$ lies in the intersection $\Pi\cap\Sigma$.
+
+Show that if the tangent plane $\T_p\Sigma$ is parallel to $\Pi$,
+then $p$ is an isolated point of the intersection $\Pi\cap\Sigma$.
+
+It follows that if $\gamma$ is a connected component of the intersection $\Pi\cap\Sigma$ that is not an isolated point,
+then at each point $p$ on $\gamma$ the tangent plane $\T_p\Sigma$ is transversal to $\Pi$.
+Apply the implicit function theorem to show that $\gamma$ is a smooth regular curve.
+
+Finally, observe that curvature of $\gamma$ can not be smaller than normal curvature of $\Sigma$ in the same direction.
+Whence $\gamma$ has no points with vanishing curvature.
+Therefore for a right choice of orientation of $\gamma$, we its signed curvature is positive.
 
 \parbf{\ref{ex:surrounds-disc}.}
 Look for a supporting spherical dome with the unit circle as the boundary.

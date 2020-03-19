@@ -139,8 +139,19 @@ assuming that the orientation on $\Sigma$ is defined by a unit normal field that
 
 \section{Curl theorem}
 
+Given a vector field $\vec u$, set $\curl \vec u\df\nabla\times \vec u$;
+that is, if we write the field $\vec u$ in the standard basis 
+\[\vec u=P\cdot \vec i+ Q\cdot\vec j+R\cdot \vec j,\]
+then 
+\[\curl \vec u\df \left(\tfrac{\partial R}{\partial y}-\tfrac{\partial Q}{\partial z} \right)\cdot \vec i 
++\left(\tfrac{\partial P}{\partial z}-\tfrac{\partial R}{\partial x}\right) \cdot \vec j +\left (\tfrac{\partial Q}{\partial x}-\tfrac{\partial P}{\partial y}\right)\cdot \vec k \]
+
 \begin{thm}{Theorem}\label{thm:curl}
-???
+Let $\Sigma$ be a compact oriented surface bounded by a curve $\gamma$.
+Assume that $\gamma\:[0,\ell]\to \RR^3$ is parameterized by its arc-length and oriented in such a way that $\Sigma$ lies on left from it.
+Then, for any smooth vector field defined in a neighborhood of $\Sigma$, we have
+\[\flux_{\curl\vec u}\Sigma=\int_0^\ell\langle\vec u,\gamma'(t)\rangle\cdot dt.\]
+
 \end{thm}
 
 
