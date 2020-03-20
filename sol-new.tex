@@ -306,7 +306,7 @@ Try to guess the example from the diagram.
 \vskip0mm
 \end{figure}
 
-The shown curve is divide into three arcs: I, II, and III. 
+The shown curve is divided into three arcs: I, II, and III. 
 Arc I turns from $\vec v$ to $\vec u$;
 it has total curvature $\alpha$.
 Analogously the arc III turns from $\vec u$ to $\vec w$  and has total curvature $\beta$. 
@@ -763,7 +763,8 @@ In this case $s\:(u,v)\mapsto (u,v,f(u,v))$ is a smooth chart at $p$.
 Show that the plane spanned by $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ is not vertical;
 together with \ref{def:tangent-plane} it proves the if part.
 
-To prove the only-if part, fix a chart $s\:(u,v)\mapsto(x(u,v),y(u,v),z(u,v))$ at $p$ and apply the inverse function theorem for the map $(u,v)\mapsto(x(u,v),y(u,v))$.
+To prove the only-if part, fix a chart 
+\[s\:(u,v)\mapsto(x(u,v),y(u,v),z(u,v))\] at $p$ and apply the inverse function theorem for the map $(u,v)\mapsto(x(u,v),y(u,v))$.
 
 
 \parbf{\ref{ex:implicit-orientable}.} Show that $\Norm=\tfrac{\nabla h}{|\nabla h|}$ defines a unit normal field on $\Sigma$.
@@ -994,8 +995,15 @@ The latter means that any two points in $\Sigma$ can be connected by a path that
 \parbf{\ref{ex:open+convex=plane}.}
 
 \parbf{\ref{ex:circular-cone}.}
+Choose a coordinate system so that $(x,y)$-plane supports $\Sigma$ at the origin, so $\Sigma$ lies in the upper half-space.
 
-\parbf{\ref{ex:intK}.}
+Show that there is $\eps>0$ such that any line starting from the origin with slope at most $\eps$ may intersect $\Sigma$ only in the unit ball centered at the origin;
+we may assume that $\eps$ is small, say $\eps<1$.
+Consider the cone formed by half-lines from the origin with slope $\eps$ shifted down by 10 and observe that entire surface lies in this cone.
+
+
+
+\parbf{\ref{ex:intK}.} 
 
 
 \parbf{\ref{ex:convex-revolution}.} Use \ref{ex:principle-revolution}.
