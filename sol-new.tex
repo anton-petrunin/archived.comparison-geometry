@@ -158,7 +158,28 @@ Note that the partition $(\tau_i)$ is not arbitrary, therefore the inequality mi
 
 \parbf{\ref{adex:integral-length}.} Use theorems of Rademacher and Lusin (\ref{thm:rademacher} and \ref{thm:lusin}).
 
-\parbf{\ref{ex:nonrectifiable-curve}.} 
+\parbf{\ref{ex:nonrectifiable-curve}}; \ref{SHORT.ex:nonrectifiable-curve:a}.
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-226}
+\vskip0mm
+\end{figure}
+Look at the diagram and guess the parameterization of an arc of the snow flake by $[0,1]$.
+Extend it to whole snow flake.
+Show that it is indeed describes an embedding of the circle in the plane.
+
+\parit{\ref{SHORT.ex:nonrectifiable-curve:b}.}
+Suppose that $\gamma\:[0,1]\to\RR^2$ is a rectifiable curve and $\gamma_k$ be a scaled copy of $\gamma$ with factor $k>0$;
+that is $\gamma_k(t)=k\cdot\gamma(t)$ for any $t$.
+Show that 
+\[\length\gamma_k=k\cdot\length \gamma.\]
+
+Now suppose the arc $\gamma$ of the Koch snowflake shown on the diagram is rectifiable; denote its length by $\ell$.
+Evidently $\ell>0$.
+Observe that it $\gamma$ can be divided into 4 arcs each of which is a scaled copy of $\gamma$ with factor $\tfrac13$.
+It follows that $\ell=\tfrac43\cdot\ell$ --- a contradiction.
+
 
 \parbf{\ref{ex:arc-length-helix}.} 
 We have to assume that $a\ne 0$ or $b\ne0$;
@@ -223,8 +244,6 @@ Which can be done by integration.
 \frac1{k_b}&=\frac{1}{\area \SS^2}\cdot\int_{\SS^2} \sqrt{1-x^2}.
 \end{align*}
 The answers are $k_a=2$ and $k_b=\tfrac4\pi$.
-
-\parbf{\ref{ex-def:length-metric}.}
 
 \parbf{\ref{ex:intrinsic-convex}.}
 The ``only-if'' part is trivial.
@@ -318,7 +337,7 @@ Use that exterior angle of a triangle equals to the sum of the two remote interi
 for the second part apply the induction on number of vertexes.
 
 \begin{wrapfigure}{r}{23 mm}
-\vskip-6mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-290}
 \vskip-4mm
@@ -752,6 +771,44 @@ Show that $s$ is regular; that is, $\tfrac{\partial s}{\partial t}$ and $\tfrac{
 Show that $s$ is local embedding; that is, any $(t_0,\theta_0)$ admits a neighborhood $U$ in the $(t,\theta)$-plane such that the restriction $s|_U$ has a continuous inverse.
 It remains to apply \ref{cor:reg-parmeterization}.
 
+\parbf{\ref{ex:star-shaped-disc}}; 
+The solutions of these exercises are build on the following general construction.
+
+Suppose that $\vec u_t$ is a smooth vector field on a plane.
+Consider the ordinary differential equation $x'(t)=\vec u_t(x(t))$.
+Consider the map $\iota\:x(0)\mapsto x(1)$ where $x(t)$ is a solution of the equation.
+Observe that according to \ref{thm:ODE} the map $\iota$ is smooth in its domain of definition;
+more over the same holds for its inverse since.
+The map $\iota$ is called \emph{flow} of vector field $\vec u_t$.
+
+Therefore, in order to construct a diffeomorphism from one open subset of the plane to another it sufficient to construct a smooth vector field such that iots flow maps one set to the other;
+such map is automatically a diffeomorphism.
+
+
+\parit{\ref{SHORT.ex:plane-n}.}
+Let us show first that there is a diffeomorphism of the plane to itself that moves a given point $x$ to an arbitrary point $y$ in its $\eps$-neighborhood and does not move points outside of $2\cdot\eps$-neighborhood of $x$.
+
+Choose a smooth function $f\:\RR^2\to [0,1]$ that takes value $1$ in the $\eps$-neighborhood of $x$, vanish outside of $2\cdot\eps$-neighborhood.
+Choose a constant vector field $\vec v$ on $\RR^2$ such that 
+$y=x+\vec v$.
+Consider the vector field $\vec u=f\cdot \vec v$.
+For any point $s\in \RR^2$ consider the solution $t\mapsto s(t)$ of ODE 
+$s'(t)=\vec u(s(t))$ with the initial value $s(0)=s$.
+Consider the map $\iota\:s\mapsto s(1)$.
+Observe that $\iota(x)=y$ and that $\iota$ does not move points outside of $2\cdot\eps$-neighborhood of $x$.
+Use \ref{thm:ODE} to show that $\iota\:\RR^2\to\RR^2$ is diffeomorphism and make a conclusion.
+
+By composing finitely many such diffeomorphisms one can move the deleted points arbitrary (while kipping them distinct).
+Hence the statement follows. 
+
+\parit{\ref{SHORT.ex:star-shaped-disc:smooth}.}
+Without loss of generality we can assume that the origin belongs to both $\Sigma_1$ and $\Sigma_2$.
+Observe that the boundary curves can be written in polar coordinates as 
+$(\theta, \rho_i(\theta)$ for smooth functions $\rho_i\:\SS^1\to\RR$.
+
+A diffeomorphsm can be found among the maps that can be written in palar coordinates as $(\theta,\rho)\mapsto  (\theta,f(\theta,\rho))$ for a smooth function $f$ of two variables.
+???
+
 \parbf{\ref{ex:tangent-normal}.}
 Let $\gamma$ be a smooth curve in $\Sigma$.
 Observe that $f\circ\gamma(t)\equiv 0$.
@@ -993,6 +1050,17 @@ The latter means that any two points in $\Sigma$ can be connected by a path that
 \parbf{\ref{ex:convex-proper-plane}.}
 
 \parbf{\ref{ex:open+convex=plane}.}
+By \ref{ex:convex-proper-plane:d}, $\Sigma$ is parameterized by an open convex plane domain $\Omega$.
+It remains to show that $\Omega$ can parameterize the whole plane.
+
+We may assume that the origin of the plane leis in $\Omega$.
+Show that in this case the boundary of $\Omega$ can be written in polar coordinates as $(\theta,f(\theta))$ where $f\:\SS^1\to\RR$ is a positive continuous function.
+Then homeomorphism to the plane can be described in polar coordinate for example as 
+$(\theta,r)\mapsto (\theta,
+\tfrac1{f(\theta)-r}-\tfrac1{f(\theta)})$.
+
+To do the second part ane may apply \ref{ex:star-shaped-disc:nonsmooth}.
+
 
 \parbf{\ref{ex:circular-cone}.}
 Choose a coordinate system so that $(x,y)$-plane supports $\Sigma$ at the origin, so $\Sigma$ lies in the upper half-space.
@@ -1003,7 +1071,9 @@ Consider the cone formed by half-lines from the origin with slope $\eps$ shifted
 
 
 
-\parbf{\ref{ex:intK}.} 
+\parbf{\ref{ex:intK}}; \ref{SHORT.ex:intK:4pi}
+
+\parit{\ref{SHORT.ex:intK:2pi}.}
 
 
 \parbf{\ref{ex:convex-revolution}.} Use \ref{ex:principle-revolution}.
@@ -1042,7 +1112,7 @@ To do this repeat the argument in \ref{lem:gauss=sphere} with the center at a po
 
 \parbf{\ref{ex:geodesic-curvature}.}
 
-\parbf{\ref{ex:two-min-geo}.}
+
 
 \parbf{\ref{ex:min-geod+plane}.}
 
@@ -1061,7 +1131,15 @@ To do this repeat the argument in \ref{lem:gauss=sphere} with the center at a po
 The suggested argument does not give the optimal bound for the Lipschitz constant that guarantees that $\gamma$ is simple, but
 later (see \ref{ex:sqrt(3)}) we will show that the exact bound is $\sqrt{3}=\tg\tfrac\pi3$ --- it is the same as in the exercise about mountain of with the shape of a perfect cone; see \ref{ex:lasso}.
 
-\parbf{\ref{ex:parallel}.}
+\parbf{\ref{ex:parallel}}; \ref{SHORT.ex:parallel:a}.
+Show and use that $\langle\vec v(t),\vec v'(t)\rangle=0$.
+
+\parit{\ref{SHORT.ex:parallel:b}}
+Show that $|\vec v(t)|$, $|\vec w(t)|$, and
+$\langle\vec v(t),\vec w(t)\rangle=0$,
+are constants; it can be done the same way as \ref{SHORT.ex:parallel:a}.
+Then use the formula 
+\[\langle\vec v(t),\vec w(t)\rangle=|\vec v(t)|\cdot|\vec w(t)|\cdot\cos\theta.\]
 
 \parbf{\ref{ex:parallel-transport-support}.}
 Observe $\Sigma_1$ supports $\Sigma_2$ at any point of $\gamma$.

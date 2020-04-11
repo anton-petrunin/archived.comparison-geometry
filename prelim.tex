@@ -1,28 +1,50 @@
 \chapter{Multivariable calculus}
 
-\section*{Regular values}
+\section*{Regular value}
 
-A map $\bm{f}\:\RR^n\to\RR^k$ can be thought as an array of functions 
-\[f_1,\dots,f_k\:\RR^n\to \RR.\]
+A map $\bm{f}\:\RR^m\to\RR^n$ can be thought as an array of functions 
+\[f_1,\dots,f_n\:\RR^m\to \RR.\]
 The map $\bm{f}$ is called \emph{smooth} if each function $f_i$ is smooth;
 that is, all partial derivatives of $f_i$ are defined in the domain of definition of $\bm{f}$.
 
-The following matrix
+The Jacobian matrix of $\bm{f}$ at $\bm{x}\in\RR^m$ is defined as
 \[\Jac_{\bm{x}}\bm{f}=
 \begin{pmatrix}
-\dfrac{\partial f_1}{\partial x_1} & \cdots & \dfrac{\partial f_1}{\partial x_n}\\
+\dfrac{\partial f_1}{\partial x_1} & \cdots & \dfrac{\partial f_1}{\partial x_m}\\
 \vdots & \ddots & \vdots\\
-\dfrac{\partial f_k}{\partial x_1} & \cdots & \dfrac{\partial f_k}{\partial x_n} \end{pmatrix}\]
-is called \emph{Jacobian matrix} of $\bm{f}$; we assume that the right hand side is evaluated at $\bm{x}=(x_1,\dots,x_n)$.
+\dfrac{\partial f_n}{\partial x_1} & \cdots & \dfrac{\partial f_n}{\partial x_m} \end{pmatrix};\]
+we assume that the right hand side is evaluated at $\bm{x}=(x_1,\dots,x_m)$.
 
-Inverse function theorem gives a sufficient condition for a smooth function to be invertible in a neighborhood of a given point $p$ in its domain.
-The condition is formulated in terms of the partial derivatives of $f_i$ at $p$.
+If the Jacobean matrix defines a surjective linear map $\RR^m\to\RR^n$ (that is, if $\rank(\Jac_{\bm{x}}\bm{f})=n$) then we say that 
+$\bm{x}$ is a \emph{regular point} of~$\bm{f}$.
 
-Implicit function theorem is a close relative to inverse function theorem;
+If for each point $\bm{x}$ such that $\bm{f}(\bm{x})=\bm{y}$ is regular,
+then we say that $\bm{y}$ is a \emph{regular value} of $\bm{f}$.
+The following lemma states that most values of a smooth map are regular;
+in particular, generic smooth functions satisfy the assumption of the theorem.
+
+\begin{thm}{Sard's lemma}\label{lem:sard}
+Given a smooth map $\bm{f}\colon U \z\to \RR^n$ defined on an open set $U\subset \RR^m$, almost all values in $\RR^n$ are regular.
+\end{thm}
+
+The words \emph{almost all} means all values, with the possible exception of a set of zero Lebesgue measure.
+In particular if one chooses a random value equidistributed in an arbitrarily small ball $B\subset \RR^n$, then it is a regular value of $\bm{f}$ with probability 1.
+
+Note that if $m<n$, then $\bm{f}$ has no regular points.
+Therefore the only regular value of $\bm{f}$ are the points in the complement of the image $\Im \bm{f}$.
+The theorem states that in this case almost all points in $\RR^n$, do \emph{not} belong to $\Im \bm{f}$.
+
+
+\section*{Inverse function theorem}
+
+The \emph{inverse function theorem} gives a sufficient condition for a smooth map $\bm{f}$ to be invertible in a neighborhood of a given point $\bm{x}$ in its domain.
+The condition is formulated in terms of the Jacobian matrix of $\bm{f}$ at $\bm{x}$.
+
+The \emph{implicit function theorem} is a close relative to the inverse function theorem;
 in fact it can be obtained as its corollary.
-It is used for instance when we need to pass from parametric to implicit description of curves and surfaces.
+It is used when we need to pass from parametric to implicit description of curves and surfaces.
 
-Both theorems reduce the existence of a map satisfying certain equation to a question in linear algebra that can be written in terms of its Jacobian matrix.
+Both theorems reduce the existence of a map satisfying certain equation to a question in linear algebra.
 We use these two theorems only for $n\le 3$.
 
 These two theorems are discussed in any course of multivariable calculus, the classical book of Walter Rudin \cite{rudin} is one of my favorites.
@@ -30,16 +52,12 @@ These two theorems are discussed in any course of multivariable calculus, the cl
 \begin{thm}{Inverse function theorem}\label{thm:inverse}
 Let $\bm{f}=(f_1,\dots,f_n)\:\RR^n\to\RR^n$ be a smooth map.
 Assume that the Jacobian matrix
-\[
-\begin{pmatrix}
-\dfrac{\partial f_1}{\partial x_1} & \cdots & \dfrac{\partial f_1}{\partial x_n}\\
-\vdots & \ddots & \vdots\\
-\dfrac{\partial f_n}{\partial x_1} & \cdots & \dfrac{\partial f_n}{\partial x_n} \end{pmatrix}\]
-is invertible at some point $p$ in the domain of definition of $\bm{f}$.
-Then there is a smooth function $\bm{h}\:\RR^m\to\RR^n$ defined in a neighborhood $\Omega_q$ of $q=\bm{f}(p)$ that is a \emph{local inverse of $\bm{f}$ at $p$};
-that is, there is a neighborhood $\Omega_p\ni p$ such that
-$\bm{f}$ defines a bijection $\Omega_p\to \Omega_q$ and
-$\bm(h) \circ \bm{f}(x)=x$ for any $x\in \Omega_p$.
+$\Jac_{\bm{x}}\bm{f}$
+is invertible at some point $\bm{x}$ in the domain of definition of $\bm{f}$.
+Then there is a smooth map $\bm{h}\:\RR^n\to\RR^n$ defined in a neighborhood $\Theta$ of ${\bm{y}}=\bm{f}(\bm{x})$ that is a \emph{local inverse of $\bm{f}$ at $\bm{x}$};
+that is, there is a neighborhood $\Omega\ni \bm{x}$ such that
+$\bm{f}$ defines a bijection $\Omega\to \Theta$ and
+$\bm{h} \circ \bm{f}$ is an identity map on $\Omega$.
 \end{thm}
 
 \begin{thm}{Implicit function theorem}\label{thm:imlicit}
@@ -54,28 +72,15 @@ M=\begin{pmatrix}
 \vdots & \ddots & \vdots\\
 \dfrac{\partial f_n}{\partial x_1} & \cdots & \dfrac{\partial f_n}{\partial x_n} \end{pmatrix}\]
 formed by the first $n$ columns of the Jacobian matrix.
-Assume $M$ is invertible at some point $p$ in the domain of definition of $\bm{f}$ and $\bm{f}(p)=0$.
-Then there is a neighborhood $\Omega_p\ni p$
-and a smooth function $\bm{h}\:\RR^m\to\RR^n$ defined in a neighborhood $\Omega_0\ni 0$ such that
-for any $(x_1,\dots,x_n,y_1,\dots y_m)\in \Omega_p$, the equality
+Assume $M$ is invertible at some point $\bm{x}=(x_1,\dots,x_n,y_1,\dots y_m)$ in the domain of definition of $\bm{f}$ and $\bm{f}(\bm{x})=0$.
+Then there is a neighborhood $\Omega\ni \bm{x}$
+and a smooth function $\bm{h}\:\RR^m\to\RR^n$ defined in a neighborhood $\Theta\ni 0$ such that
+for any $(x_1,\dots,x_n,y_1,\dots y_m)\in \Omega$, the equality
 \[\bm{f}(x_1,\dots,x_n,y_1,\dots y_m)=0\]
 holds if and only if 
 \[(x_1,\dots x_n)=\bm{h}(y_1,\dots y_m).\]
 
 \end{thm}
-
-If the assumption in the theorem holds for any point $p$ such that $\bm{f}(p)=0$,
-then we say that $0$ is a regular value of $\bm{f}$.
-The following lemma states that most values of a smooth map are regular;
-in particular, generic smooth functions satisfy the assumption of the theorem.
-
-\begin{thm}{Sard's lemma}\label{lem:sard}
-Given a smooth map $\bm{f}\colon U \z\to \RR^m$ defined on an open set $U\subset \RR^n$, most of the values in $\RR^m$ are regular.
-\end{thm}
-
-The words \emph{almost all} means all values, with the possible exception of a set of zero Lebesgue measure.
-In particular if one chooses a random value equidistributed in an arbitrarily small ball $B\subset \RR^m$, then it is a regular value of $f$ with probability 1.
-
 
 \section*{Multiple integral}
 
@@ -83,56 +88,32 @@ Set
 \[\jac_{\bm{x}}\bm{f}\df|\det[\Jac_{\bm{x}}\bm{f}]|;\]
 that is, $\jac_{\bm{x}}\bm{f}$ is the absolute value of the determinant of the Jacobian matrix of $\bm{f}$ at $\bm{x}$.
 
-The following theorem is a substitution rule for multiple variables.
+The following theorem plays the role of a substitution rule for multiple variables.
 
 \begin{thm}{Theorem}\label{thm:mult-substitution}
 Let $K\subset \RR^n$ be a compact set and $h\:K\to\RR$ be a bounded measurable function.
 Assume $\bm{f}\:K\to \RR^n$ is an injective smooth map.
 Then 
-\[\int_K h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}
+\[\int_{\bm{x}\in K} h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}
 =
-\int_{\bm{f}(K)} h\circ \bm{f}^{-1}(\bm{y})\cdot d\bm{y}.\]
+\int_{\bm{y}\in \bm{f}(K)} h\circ \bm{f}^{-1}(\bm{y}).\]
 
 \end{thm}
-
-
-\begin{thm}{Area formula}\label{thm:area-formula}
-Let $\bm{f}\:K\to\RR^n$ be a smooth map defined on a compact set $K\subset \RR^n$.
-Then for any function $h\:K\to \RR$
-\[\int_K h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=\int_{\bm{f}(K)} H_K(\bm{y})\cdot d\bm{y},\]
-where 
-\[H_K(\bm{y})=\sum_{\substack{\bm{x}\in K \\ \bm{f}(\bm{x})=\bm{y}}}h(\bm{x}).\]
-(The integrals are understood in the sense of Lebesgue.)
-\end{thm}
-
-Let us sketch the proof of area formula using  Sard's lemma (\ref{lem:sard}) and the substitution rule (\ref{thm:mult-substitution}).
-
-\parit{Sketch of proof.}
-Denote by $S\subset K$ the set of critical points of $\bm{f}$; that is, $\bm{x}\in S$ if $\jac_{\bm{x}}\bm{f}=0$.
-By Sard's lemma,
-\emph{$\bm{f}(S)$ has vanishing measure}.
-Note that 
-\[\int_S h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=0\]
-since $\jac_{\bm{x}}\bm{f}=0$
-and
-\[\int_{\bm{f}(S)} H_S(\bm{y})\cdot d\bm{y}\]
-since $\bm{f}(S)$ has vanishing measure.
-In particular,
-\[\int_S h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=\int_{\bm{f}(S)} H_S(\bm{y})\cdot d\bm{y};\]
-that is the area formula holds for $S$.
-
-It remains to prove that 
-\[\int_{K\backslash S} h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=\int_{\bm{f}(K\backslash S)} H_{K\backslash S}(\bm{y})\cdot d\bm{y}.\]
-Since $\jac_{\bm{x}}\bm{f}\ne 0$ for any $\bm{x}\in K\backslash S$, by inverse function theorem, the restriction of $\bm{f}$ to a neighborhood $U\ni\bm{x}$ has a smooth inverse.
-Therefore for any compact set $K'\subset U$ we have that %???compact
-\[\int_{K'}h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}\cdot d\bm{x}=\int_{\bm{f}(K_1)} h(\bm{f}^{-1}(\bm{y}))\cdot d\bm{y}.\]
-It remains to subdivide $K_1$ into a countable collection of subsets of that type and sum up the corresponding formulas.\qeds
 
 \section*{Divergence theorem}
 
+
+Consider a smooth vector field $\vec u$ defined on a domain $\Dom \vec u$ in $\RR^3$.
+Recall that divergence of $\vec u$ is defined as $\div\vec u=\langle \nabla,\vec u\rangle$.
+In other words, if $\vec i$, $\vec j$, and $\vec k$ denote the elements of the standard basis of  $\RR^3$ and
+$\vec u=P\cdot \vec i+Q\cdot\vec j+R\cdot\vec k$
+for some smooth functions $P,Q,R\:\Dom \vec u\to \RR$,
+then
+\[\div\vec u=\tfrac{\partial P}{\partial x}+\tfrac{\partial Q}{\partial y}+\tfrac{\partial R}{\partial z}.\]
+
 \begin{thm}{Theorem}\label{thm:div}
 If a piecewise smooth surface $\Sigma$ bounds a body $V$ in $\RR^3$, then
-\[\flux_{\vec u}\Sigma=\iiint_V\div \vec u,\]
+\[\flux_{\vec u}\Sigma=\int_V\div \vec u,\]
 assuming that the orientation on $\Sigma$ is defined by a unit normal field that points out of $V$.
 \end{thm}
 
@@ -149,7 +130,7 @@ then
 \begin{thm}{Theorem}\label{thm:curl}
 Let $\Sigma$ be a compact oriented surface bounded by a curve $\gamma$.
 Assume that $\gamma\:[0,\ell]\to \RR^3$ is parameterized by its arc-length and oriented in such a way that $\Sigma$ lies on left from it.
-Then, for any smooth vector field defined in a neighborhood of $\Sigma$, we have
+Then, for any smooth vector field $\vec u$ defined in a neighborhood of $\Sigma$, we have
 \[\flux_{\curl\vec u}\Sigma=\int_0^\ell\langle\vec u,\gamma'(t)\rangle\cdot dt.\]
 
 \end{thm}
@@ -166,7 +147,7 @@ for a system of ordinary differential equations
 \begin{cases}
 x_1'(t)&=f_1(x_1,\dots,x_n,t),
 \\
-&\dots
+&\vdots
 \\
 x_n'(t)&=f_n(x_1,\dots,x_n,t),
 \end{cases}
@@ -248,6 +229,36 @@ for all $x  \in X$.
 \begin{thm}{Arzel\'{a}-Ascoli Theorem}\label{lem:equicontinuous}
 Any uniformly equicontinuous sequence of function $f_n\:[a,b]\to [c,d]$ has a subsequence that converges uniformly to a continuous function. 
 \end{thm}
+
+\section*{Cutoffs and mollifiers}
+
+We use few examples of smooth functions that mimic behavior of some model functions.
+
+%???PIC
+
+For example, consider the function $h\:t\mapsto \max\{\,0,t\,\}$ and the following function
+\[f(t)=
+\begin{cases}
+0&\text{if}\ t\le 0,
+\\
+\frac{t}{e^{1\!/\!t}}&\text{if}\ t> 0.
+\end{cases}
+\]
+Note that $h$ and $f$ behave alike ---
+both vanish at $t\le 0$ and grows to infinity for positive $t$.
+The function $h$ is not smooth --- its derivative at $0$ is undefined.
+Unlike $h$, the function $f$ is smooth.
+Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and direct calculations show that $f^{(n)}(0)=0$ for all $n$.
+
+Other useful examples of that type are bell function --- a smooth function that is positive in an $\eps$-neighborhood of zero and vanishing outside this neighborhood.
+An example of such function can be constructed based using the function $f$ constructed above, say 
+\[b_\eps(t)=c\cdot f(\eps^2-t^2);\]
+the constant $c$ can be choosen to ensure that $\int b_\eps=1$.
+
+Another useful example is a smooth nondecreasing function that vanish for $t\le -\eps$ and takes value $1$ for any $t\ge \eps$.
+For example the following function
+\[\sigma_\eps(t)=\int_{-\infty}^t b_\eps(x)\cdot dx.\]
+
 
 \chapter{Topology}
 

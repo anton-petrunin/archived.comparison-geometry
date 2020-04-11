@@ -19,22 +19,38 @@ path3[] faces;
 
 for (int i=0; i<n; i+=2)
 {for (int j=0; j<m; ++j)
-{faces.push((sin(2*pi*j/m),cos(2*pi*j/m),i*h/n)--(sin(2*pi*(j+1)/m),cos(2*pi*(j+1)/m),i*h/n)--(sin(2*pi*(j+1/2)/m),cos(2*pi*(j+1/2)/m),(i+1)*h/n)--cycle);}
+{faces.push((sin(2*pi*j/m),cos(2*pi*j/m),i*h/n)
+--(sin(2*pi*(j+1)/m),cos(2*pi*(j+1)/m),i*h/n)
+--(sin(2*pi*(j+1/2)/m),cos(2*pi*(j+1/2)/m),(i+1)*h/n)
+--(sin(2*pi*(j+1/2)/m),cos(2*pi*(j+1/2)/m),(i+1)*h/n)
+--cycle);}
 }
 
 for (int i=2; i<=n; i+=2)
 {for (int j=0; j<m; ++j)
-{faces.push((sin(2*pi*j/m),cos(2*pi*j/m),i*h/n)--(sin(2*pi*(j+1)/m),cos(2*pi*(j+1)/m),i*h/n)--(sin(2*pi*(j+1/2)/m),cos(2*pi*(j+1/2)/m),(i-1)*h/n)--cycle);}
+{faces.push((sin(2*pi*j/m),cos(2*pi*j/m),i*h/n)
+--(sin(2*pi*(j+1)/m),cos(2*pi*(j+1)/m),i*h/n)
+--(sin(2*pi*(j+1/2)/m),cos(2*pi*(j+1/2)/m),(i-1)*h/n)
+--(sin(2*pi*(j+1/2)/m),cos(2*pi*(j+1/2)/m),(i-1)*h/n)
+--cycle);}
 }
 
 for (int i=1; i<n; i+=2)
 {for (int j=0; j<m; ++j)
-{faces.push((sin(2*pi*(j-1/2)/m),cos(2*pi*(j-1/2)/m),i*h/n)--(sin(2*pi*(j+1/2)/m),cos(2*pi*(j+1/2)/m),i*h/n)--(sin(2*pi*(j)/m),cos(2*pi*(j)/m),(i-1)*h/n)--cycle);}
+{faces.push((sin(2*pi*(j-1/2)/m),cos(2*pi*(j-1/2)/m),i*h/n)
+--(sin(2*pi*(j+1/2)/m),cos(2*pi*(j+1/2)/m),i*h/n)
+--(sin(2*pi*(j)/m),cos(2*pi*(j)/m),(i-1)*h/n)
+--(sin(2*pi*(j)/m),cos(2*pi*(j)/m),(i-1)*h/n)
+--cycle);}
 }
 
 for (int i=1; i<=n; i+=2)
 {for (int j=0; j<m; ++j)
-{faces.push((sin(2*pi*(j-1/2)/m),cos(2*pi*(j-1/2)/m),i*h/n)--(sin(2*pi*(j+1/2)/m),cos(2*pi*(j+1/2)/m),i*h/n)--(sin(2*pi*(j)/m),cos(2*pi*(j)/m),(i+1)*h/n)--cycle);}
+{faces.push((sin(2*pi*(j-1/2)/m),cos(2*pi*(j-1/2)/m),i*h/n)
+--(sin(2*pi*(j+1/2)/m),cos(2*pi*(j+1/2)/m),i*h/n)
+--(sin(2*pi*(j)/m),cos(2*pi*(j)/m),(i+1)*h/n)
+--(sin(2*pi*(j)/m),cos(2*pi*(j)/m),(i+1)*h/n)
+--cycle);}
 }
 
 
@@ -53,5 +69,5 @@ draw((sin(2*pi*0/m),cos(2*pi*0/m),h)--(sin(2*pi*1/m),cos(2*pi*1/m),h)--(sin(2*pi
 1bp+black+opacity(1));
 
 draw(faces,.5bp+black+opacity(1));
-draw(surface(faces),white+opacity(1),light=nolight);
+draw(surface(faces),white+opacity(.9),light=nolight);
 

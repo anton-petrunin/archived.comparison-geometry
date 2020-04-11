@@ -3040,6 +3040,51 @@ label(btex $\dots$ etex, .5[z4+.5*(z2 rotated -120)+2*z.shift,3*z.shift+z.extra+
 endfig;
 
 
+beginfig(226);
+save u,a,n;
+u:=2.8cm;
+a:=60;
+n:=5;
+
+z0=origin;
+z1=(1,0)*u;
+z2=z1+(z1 rotated a);
+z3=z2+(z1 rotated -a);
+z4=z3+z1;
+z.b=z4 rotated -60;
+x.r=abs(z1)/abs(z4);
+
+z.shift=(3.4,0)*u;
+z.extra=(1,0)*u;
+
+save p;
+path p[];
+
+p0=z0--z3;
+
+for i = 1 upto n: 
+p[i]=(p[i-1] scaled x.r)--(p[i-1] scaled x.r rotated a shifted z1)--(p[i-1] scaled x.r  rotated -a shifted z2)--(p[i-1] scaled x.r  shifted z3); 
+endfor
+
+draw p[n];
+
+Dot 
+z0,z1,z2,z3,z4,
+point 4 of p2,
+point 10 of p2,
+point 12 of p2;
+
+label.lft(btex $0$ etex, z0);
+label.rt(btex $1$ etex, z4);
+label.top(btex $\tfrac12$ etex, z2);
+label.lrt(btex $\tfrac14$ etex, z1);
+label.llft(btex $\tfrac34$ etex, z3);
+label.top(btex $\tfrac18$ etex, point 4 of p2);
+label.ulft(btex $\tfrac38$ etex, point 12 of p2);
+label.rt(btex $\tfrac7{16}$ etex, point 10 of p2);
+endfig;
+
+
 beginfig(230) 
 save u;
 u:=1cm;

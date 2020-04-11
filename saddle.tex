@@ -260,38 +260,58 @@ The following exercises will guide you thru the proof of both parts of the theor
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-78}
-\bigskip
-\includegraphics{mppics/pic-81}
 \end{wrapfigure}
 %%%???redo the picture
 
 \begin{thm}{Exercise}\label{ex:convex-proper-sphere}
 Assume a convex compact region $R$ contains the origin in its interior and bounded by a smooth surface $\Sigma$.
 
-\begin{enumerate}[(i)]
-\item Show that any half-line that starts at the origin intersects $\Sigma$ at a single point;
+\begin{subthm}{}
+Show that any half-line that starts at the origin intersects $\Sigma$ at a single point;
 that is, there is a positive function $\rho\:\SS^2\z\to\RR$ such that $\Sigma$ is formed by points $q\z=\rho(\xi)\cdot \xi$ for $\xi\in \SS^2$.
-\item Show that $\rho\:\SS^2\to\RR$ is a smooth function.
-\item Conclude that $\xi\mapsto \rho(\xi)\cdot \xi$ is a smooth regular parametrization $\SS^2\to \Sigma$.
-\end{enumerate}
+\end{subthm}
+
+\begin{subthm}{}
+Show that $\rho\:\SS^2\to\RR$ is a smooth function.
+\end{subthm}
+
+\begin{subthm}{}
+Conclude that $\xi\mapsto \rho(\xi)\cdot \xi$ is a smooth regular parametrization $\SS^2\to \Sigma$.
+\end{subthm}
+
 \end{thm}
 
-{
+\begin{wrapfigure}{r}{33 mm}
+\vskip-8mm
+\centering
+\includegraphics{mppics/pic-81}
+\end{wrapfigure}
+%%%???redo the picture
 
 \begin{thm}{Exercise}\label{ex:convex-proper-plane}
 Assume a strictly convex closed noncompact region $R$ contains the origin in its interior and bounded by a smooth surface $\Sigma$.
 
-\begin{enumerate}[(i)]
-\item Show that $R$ contains a half-line $\ell$.
-\item Show that any line parallel to $\ell$ intersects $\Sigma$ at most at one point.
-\item Consider $(x,y,z)$-coordinate system such that the $z$-axis points in the direction of $\ell$.
+\begin{subthm}{ex:convex-proper-plane:a}
+Show that $R$ contains a half-line $\ell$.
+\end{subthm}
+
+\begin{subthm}{ex:convex-proper-plane:b}
+Show that any line parallel to $\ell$ intersects $\Sigma$ at most at one point.
+\end{subthm}
+
+
+\begin{subthm}{ex:convex-proper-plane:c}
+Consider $(x,y,z)$-coordinate system such that the $z$-axis points in the direction of $\ell$.
 Show that projection of $\Sigma$ to the $(x,y)$ plane is an open convex set; denote it by $\Omega$.
-\item Conclude that $\Sigma$ is a graph $z=f(x,y)$ of a convex function $f$ defined on $\Omega$. 
-\end{enumerate}
+\end{subthm}
+
+\begin{subthm}{ex:convex-proper-plane:d}
+ Conclude that $\Sigma$ is a graph $z=f(x,y)$ of a convex function $f$ defined on $\Omega$. 
+\end{subthm}
 
 \end{thm}
 
-}
+
 
 }
 
@@ -311,11 +331,11 @@ lies inside of an infinite circular cone.
 Suppose $\Sigma$ is a smooth convex surface.
 Show that 
 
-\begin{subthm}{}
+\begin{subthm}{ex:intK:4pi}
 If $\Sigma$ is closed, then the spherical map $\Norm\:\Sigma\to \mathbb{S}^2$ is a bijection. Conclude that 
 \[\int_\Sigma K=4\cdot\pi.\]
 \end{subthm}
-\begin{subthm}{}
+\begin{subthm}{ex:intK:2pi}
 If $\Sigma$ is open, then  the spherical map $\Norm\:\Sigma\to \mathbb{S}^2$
 maps $\Sigma$ ineffectively into a subset of a hemisphere. Conclude that 
 \[\int_\Sigma K\le 2\cdot\pi.\]
