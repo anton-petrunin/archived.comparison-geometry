@@ -1609,15 +1609,15 @@ x.s=.5*u;
 draw (0,0)*u..(-x.s,-x.s)..(0,0)*u..(0,1)*u..(-x.s,u+x.s)..(0,1)*u..(1,1)*u..(u+x.s,u+x.s)..(1,1)*u..(1,0)*u..(u+x.s,-x.s)..(1,0)*u..cycle;
 dOt (0,0)*u,(0,0)*u,(0,1)*u,(0,1)*u,(1,1)*u,(1,1)*u,(1,0)*u,(1,0)*u;
 
-label.urt(btex $a$ etex, (0,0)*u);
-label.lrt(btex $b$ etex, (0,1)*u);
-label.llft(btex $c$ etex, (1,1)*u);
-label.ulft(btex $d$ etex, (1,0)*u);
+%label.urt(btex $a$ etex, (0,0)*u);
+%label.lrt(btex $b$ etex, (0,1)*u);
+%label.llft(btex $c$ etex, (1,1)*u);
+%label.ulft(btex $d$ etex, (1,0)*u);
 endfig;
 
 beginfig(47) 
 save u;
-u:=1cm;
+u:=.7cm;
 
 z.a=(0,1)*u;
 z.b=z.a rotated 120;
@@ -1626,9 +1626,9 @@ z.s=(4,0)*u;
 
 draw z.a..2*z.a{right}..z.a..z.b..2*z.b{dir 120}..z.b..z.c..2*z.c{dir -120}..z.c..cycle;
 
-draw z.a+z.s{dir -120}..origin+z.s{right}..z.a+z.s{dir 120}..z.b+z.s..2*z.b+z.s{dir 120}..z.b+z.s..z.c+z.s..2*z.c+z.s{dir -120}..z.c+z.s..cycle;
+%draw z.a+z.s{dir -120}..origin+z.s{right}..z.a+z.s{dir 120}..z.b+z.s..2*z.b+z.s{dir 120}..z.b+z.s..z.c+z.s..2*z.c+z.s{dir -120}..z.c+z.s..cycle;
 
-dOt z.a,z.b,z.c,z.a+z.s,z.b+z.s,z.c+z.s;
+%dOt z.a,z.b,z.c,z.a+z.s,z.b+z.s,z.c+z.s;
 
 z.e=(0,.5)*u;
 
@@ -1640,13 +1640,11 @@ z.d4=z.d0+4*z.e;
 z.d5=z.d0+5*z.e;
 z.d6=z.d0+6*z.e;
 
-draw z.d1..
-z.d2..
-z.d3..
-z.d4..
-z.d5{right}..z.d4{left}..z.d6{right}..z.d3{left}..z.d0{right}..z.d2{left}..cycle;
+%draw z.d1..z.d2..z.d3..z.d4..z.d5{right}..z.d4{left}..z.d6{right}..z.d3{left}..z.d0{right}..z.d2{left}..cycle;
 
-dOt z.a,z.b,z.c,z.a+z.s,z.b+z.s,z.c+z.s,z.d2,z.d3,z.d4;
+dOt z.a,z.b,z.c
+%,z.a+z.s,z.b+z.s,z.c+z.s,z.d2,z.d3,z.d4
+;
 
 endfig;
 

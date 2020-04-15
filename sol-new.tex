@@ -698,7 +698,7 @@ Apply the lens lemma to show that if $p_2$ lies between $p_1$ and $p_3$, then th
 further $p_5$ lies between $p_3$ and $p_4$;
 and so on.
 
-\parit{\ref{SHORT.ex:line-curve-intersections:b}.}
+\parit{\ref{SHORT.ex:line-curve-intersections:c}.}
 According to \ref{SHORT.ex:line-curve-intersections:a}, the point $p_3$ might lie between $p_1$ and $p_2$ and then further order is determined uniquely or $p_1$ lies between $p_2$ and $p_3$.
 In the latter case we have two choices, either $p_4$ lies between $p_2$ and $p_3$ and then then further order is determined uniquely or $p_2$ lies between $p_3$ and $p_4$.
 In the latter case we get a choice again.
@@ -772,41 +772,49 @@ Show that $s$ is local embedding; that is, any $(t_0,\theta_0)$ admits a neighbo
 It remains to apply \ref{cor:reg-parmeterization}.
 
 \parbf{\ref{ex:star-shaped-disc}}; 
-The solutions of these exercises are build on the following general construction.
+The solutions of these exercises are build on the following general construction known as the \emph{Moser trick}.
 
 Suppose that $\vec u_t$ is a smooth vector field on a plane.
 Consider the ordinary differential equation $x'(t)=\vec u_t(x(t))$.
 Consider the map $\iota\:x(0)\mapsto x(1)$ where $x(t)$ is a solution of the equation.
-Observe that according to \ref{thm:ODE} the map $\iota$ is smooth in its domain of definition;
-more over the same holds for its inverse since.
-The map $\iota$ is called \emph{flow} of vector field $\vec u_t$.
+The map $\iota$ is called \emph{flow} of vector field $\vec u_t$ for the time interval $[0,1]$.
+Observe that according to \ref{thm:ODE} the map $\iota$ is smooth in its domain of definition.
+Moreover the same holds for its inverse;
+indeed $\iota^{-1}$ is the flow for of the vector field $-\vec u_{1-t}$.
+That is, $\iota$ is a diffeomorphism from the domain of definition to its image. 
 
-Therefore, in order to construct a diffeomorphism from one open subset of the plane to another it sufficient to construct a smooth vector field such that iots flow maps one set to the other;
+
+Therefore, in order to construct a diffeomorphism from one open subset of the plane to another it sufficient to construct a smooth vector field such that flow maps one set to the other;
 such map is automatically a diffeomorphism.
 
 
 \parit{\ref{SHORT.ex:plane-n}.}
-Let us show first that there is a diffeomorphism of the plane to itself that moves a given point $x$ to an arbitrary point $y$ in its $\eps$-neighborhood and does not move points outside of $2\cdot\eps$-neighborhood of $x$.
+Suppose $\Sigma=\RR^2\backslash{p_1,\dots,p_n}$ and $\Theta=\RR^2\backslash{q_1,\dots,q_n}$.
+Choose smooth paths $\gamma_i\:[0,1]\to \RR^2$ such that $\gamma_i(0)=p_i$,
+$\gamma_i(1)=q_i$, and $\gamma_i(t)\ne \gamma_j(t)$ if $i\ne j$.
 
-Choose a smooth function $f\:\RR^2\to [0,1]$ that takes value $1$ in the $\eps$-neighborhood of $x$, vanish outside of $2\cdot\eps$-neighborhood.
-Choose a constant vector field $\vec v$ on $\RR^2$ such that 
-$y=x+\vec v$.
-Consider the vector field $\vec u=f\cdot \vec v$.
-For any point $s\in \RR^2$ consider the solution $t\mapsto s(t)$ of ODE 
-$s'(t)=\vec u(s(t))$ with the initial value $s(0)=s$.
-Consider the map $\iota\:s\mapsto s(1)$.
-Observe that $\iota(x)=y$ and that $\iota$ does not move points outside of $2\cdot\eps$-neighborhood of $x$.
-Use \ref{thm:ODE} to show that $\iota\:\RR^2\to\RR^2$ is diffeomorphism and make a conclusion.
+Choose a smooth vector field $\vec v_t$ such that $\vec v_t(\gamma_i(t))=\gamma'_i(t)$ for any $i$ and $t$.
+We can assume in addition that $\vec v_t$ vanish outside of a sufficiently large disc; it can be arranged by a multiplying the vector field to a function 
+$\sigma_1(R-|x|)$; see page \pageref{page:sigma-function}.
 
-By composing finitely many such diffeomorphisms one can move the deleted points arbitrary (while kipping them distinct).
-Hence the statement follows. 
+It remains to apply the Moser trick to the constructed vector field. 
 
 \parit{\ref{SHORT.ex:star-shaped-disc:smooth}.}
-Without loss of generality we can assume that the origin belongs to both $\Sigma_1$ and $\Sigma_2$.
+Without loss of generality we can assume that the origin belongs to both $\Sigma$ and $\Theta$.
+Observe that the boundary curves of $\Sigma$ and $\Theta$ can be written in polar coordinates as 
+$(\theta, f(\theta)$ and $(\theta, g(\theta)$ for smooth functions $f,g\:\SS^1\to\RR$.
+
+
+
+Denote by $\vec u_\theta$ the unit vector written as $(\theta,1)$ in the polar coordinates.
+Consider the vector field $[g(\theta)-f(\theta)]\cdot \vec u_\theta$ it is defined 
+Show that there is a vector field $\vec v$ defined on $\RR^2\backslash\{0\}$ that flows $\partial \Sigma$ to $\partial \Theta$;
+in fact such vector field can be found among radial fields 
+
+
 Observe that the boundary curves can be written in polar coordinates as 
 $(\theta, \rho_i(\theta)$ for smooth functions $\rho_i\:\SS^1\to\RR$.
 
-A diffeomorphsm can be found among the maps that can be written in palar coordinates as $(\theta,\rho)\mapsto  (\theta,f(\theta,\rho))$ for a smooth function $f$ of two variables.
 ???
 
 \parbf{\ref{ex:tangent-normal}.}
@@ -1055,7 +1063,8 @@ It remains to show that $\Omega$ can parameterize the whole plane.
 
 We may assume that the origin of the plane leis in $\Omega$.
 Show that in this case the boundary of $\Omega$ can be written in polar coordinates as $(\theta,f(\theta))$ where $f\:\SS^1\to\RR$ is a positive continuous function.
-Then homeomorphism to the plane can be described in polar coordinate for example as 
+Then homeomorphism to the plane can be described in polar coordinate by changing only the radial coordinate;
+for example as 
 $(\theta,r)\mapsto (\theta,
 \tfrac1{f(\theta)-r}-\tfrac1{f(\theta)})$.
 
@@ -1071,9 +1080,37 @@ Consider the cone formed by half-lines from the origin with slope $\eps$ shifted
 
 
 
-\parbf{\ref{ex:intK}}; \ref{SHORT.ex:intK:4pi}
+\parbf{\ref{ex:intK}}.
+Choose distinct points $p,q\in\Sigma$.
+Apply \ref{thm:convex-embedded} to show that the angle 
+$\measuredangle(\Norm(p),p-q)$ is acute and $\measuredangle(\Norm(q),p-q)$ is obtuse.
+Conclude that $\Norm(p)\ne\Norm(q)$;
+that is, $\Norm\:\Sigma\to\mathbb{S}^2$ is injective.
 
-\parit{\ref{SHORT.ex:intK:2pi}.}
+
+\parit{\ref{SHORT.ex:intK:4pi}.}
+Given a unit vector $\vec u$, consider a point $p\in \Sigma$ that maximize the scalar product $\langle p,\vec u\rangle$.
+Show that $\Norm(p)=\vec u$.
+Conclude that the spherical map $\Norm\:\Sigma\to\mathbb{S}^2$ is onto.
+It follows that $\Norm\:\Sigma\to\mathbb{S}^2$ is bijection.
+
+Applying \ref{cor:intK}, we get that 
+\begin{align*}
+\int_\Sigma K&=\area\mathbb{S}^2
+\\
+&=4\cdot\pi.
+\end{align*}
+
+\parit{\ref{SHORT.ex:intK:2pi}.} Choose an $(x,y,z)$-coordinate system provided by \ref{ex:convex-proper-plane:d}.
+Observe that for any $p$ the normal vector $\Norm(p)$ forms an obtuse angle with the direction of $z$-axis.
+It follows that the image $\Norm(\Sigma)$ lies in the south hemisphere.
+
+Applying \ref{cor:intK}, we get that 
+\begin{align*}
+\int_\Sigma K&\le \tfrac12\cdot\area\mathbb{S}^2
+\\
+&=2\cdot\pi.
+\end{align*}
 
 
 \parbf{\ref{ex:convex-revolution}.} Use \ref{ex:principle-revolution}.
@@ -1083,11 +1120,35 @@ Consider the cone formed by half-lines from the origin with slope $\eps$ shifted
 
 \parbf{\ref{ex:saddle-to-infty}.}
 
-\parbf{\ref{ex:panov}.}
+\parbf{\ref{ex:panov}.} Denote by $\Pi_t$ the tangent plane to $\Sigma$ at $\gamma(t)$ and by $\ell_t$ the tangent line of $\gamma$ at time $t$.
+
+Since $\gamma$ is asymptotic, the plane $\Pi_t$ rotates around $\ell_t$ as $t$ changes.
+Since $\Sigma$ is saddle, the speed of rotation cannot vanish.%
+\footnote{In fact by the Beltrami--Enneper theorem, if $\gamma$ has unit speed, then the speed of rotation is $\pm\sqrt{-K}$, where $K$ is the Gauss curvature which cannot vanish on a saddle surface.}
+
+Note that $\Pi_t$ is a graph of a linear function, say $h_t$, defined on the $(x, y)$-plane.
+Denote by $\bar\ell_t$ the projection of $\ell_t$ to the $(x, y)$-plane.
+The described rotation of $\Pi_t$ can be expressed algebraicaly:
+the derivative $\tfrac{d}{dt}h_t(w)$ vanishes at the point $w$ if and only if $w\in \bar\ell_t$ 
+and the derivative changes sign if $w$ changes the side of $\bar\ell_t$.
+
+Denote by $\bar\gamma$ the projection of $\gamma$ to the $(x, y)$-plane.
+If $\bar\gamma$ is star shaped with respect to a point $w$, then $w$ cannot cross $\bar\ell_t$.
+Therefore the function $t\mapsto h_t(w)$ is monotone on $\SS^1$.
+Observing that this function cannot be constant, we arrive to a contradiction.
+
+\parit{Soruse:} The problem is discuss by Dmitri Panov \cite{panov-curves}.
 
 \parbf{\ref{ex:length-of-bry}.} Use the \ref{lem:convex-saddle} and the hemisphere lemma (\ref{lem:hemisphere}).
 
 \parbf{\ref{ex:circular-cone-saddle}.}
+Assume $\Sigma$ is an open saddle surface that lies in a cone $K$.
+Show that there is a plane $\Pi$ that cuts $\Sigma$ and cuts from $K$ a compact region.
+Observe that $\Pi$ cuts from $\Sigma$ a compact region.
+
+By \ref{lem:reg-section} one can move plane $\Pi$ slightly so that it cuts from $\Sigma$ a compact surface with boundary.
+Apply \ref{lem:convex-saddle}.
+
 
 \parbf{\ref{ex:disc-hat}.} Observe that it is sufficient to construct a smooth parametrization of $\Delta_\eps$ by a closed hemisphere.
 To do this repeat the argument in \ref{lem:gauss=sphere} with the center at a point surrounded by the boundary line of $\Delta_\eps$ in its plane.
@@ -1148,18 +1209,38 @@ Conclude that $\gamma$ identical spherical images in $\Sigma_1$ and $\Sigma_2$ a
 \parbf{\ref{ex:holonomy=not0}.}
 
 \parbf{\ref{ex:half-sphere-total-curvature}.}
+Apply \ref{prop:pt+tgc} and \ref{prop:area-of-spher-polygon}.
 
 \parbf{\ref{ex:1=geodesic-curvature}.}
+By \ref{ex:convex-proper-sphere}, $\Sigma$ is a smooth sphere.
+By Jordan theorem (\ref{thm:jordan}) the curve $\gamma$ divides $\Sigma$  into two discs.
+Let us denote by $\Delta$ the disc that lies on the left from $\gamma$.
+
+Observe that $\tgc\gamma=\lenght\gamma$ and apply  the Gauss--Bonnet formula (\ref{thm:gb}) for $\Delta$.
 
 \parbf{\ref{ex:geodesic-half}.}
-
-\parbf{\ref{ex:aabbccdd}.} Estimate integral of Gauss curvature bounded by a simple geodesic loop and apply \ref{ex:int-gauss=4pi}.
-
+Apply \ref{cor:intK}, \ref{ex:intK:4pi}, and the Gauss--Bonnet formula (\ref{thm:gb}).
+To prove the last statement, apply \ref{ex:bisection-of-S2}.
 
 \parbf{\ref{ex:sqrt(3)}.} Note that it is sufficient to show that the surface has no geodesic loops.
 Estimate the integral of Gauss curvature of whole surface and a disc in it surrounded by a geodesic loop.
 
-\parbf{\ref{ex:self-intersections}.}
+\parbf{\ref{ex:self-intersections}}; \textit{(a)}.
+Consider the 4 regions bounded by loops.
+Apply Gauss--Bonnet formula (\ref{thm:gb}) to show that the integral of Gauss curvature on each of these region exceeds $\pi$.
+Therefore 
+\[\int_\Sigma K>4\cdot\pi.\]
+The latter contradicts \ref{ex:intK:4pi}.
+
+\parit{(b)}.
+Denote by $\alpha$, $\beta$, and $\gamma$ the angles of the triangle.
+Apply the Gauss--Bonnet formula (\ref{thm:gb}) to show that the loops surround regions with integral of Gauss curvature $\pi+\alpha$, $\pi+\beta$, and $\pi+\gamma$ correspondingly.
+
+Apply the Gauss--Bonnet formula for the triangular region to show that $\alpha+\beta+\gamma>\pi$.
+It follows that 
+\[\int_\Sigma K>(\pi+\alpha)+(\pi+\beta)+(\pi+\gamma)>4\cdot\pi\]
+which contradicts \ref{ex:intK:4pi}.
+ 
 
 \parbf{\ref{ex:lasso}.} Cut the lateral surface of the mountain by a line from the cowboy to the top, unfold it on the plane and try to figure out what is the image of the strained lasso.
 
