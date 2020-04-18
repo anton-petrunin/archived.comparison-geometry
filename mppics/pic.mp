@@ -3539,4 +3539,65 @@ draw circle((-.3,-1)*u,u) penhair;
 
 endfig;
 
+beginfig(308);
+save u,p,t;
+path p[];
+u:=1cm;
+
+z.p=(-.7,.6)*u;
+z.q=(.7,-.4)*u;
+
+z.a0=(-.8,1)*u;
+z.a3=(1.8,-.4)*u;
+
+z.b0=(-1.7,.7)*u;
+z.b3=(.8,-.8)*u;
+
+p1=z.a0..z.p..z.q..z.a3;
+p2=z.b0..z.p..z.q..z.b3;
+
+draw p1;
+draw p2;
+draw subpath(1,2) of p1 penbold;
+draw subpath(0,1) of p2 penbold;
+draw subpath(2,3) of p2 penbold;
+
+dOt z.p,z.q;
+
+
+label.llft (btex $p$ etex, z.p);
+label.llft (btex $q$ etex, z.q);
+label.top (btex $\alpha$ etex, z.b0);
+label.top (btex $\beta$ etex, z.a3);
+label.urt (btex $\alpha_1$ etex, point 1.5 of p2);
+label.llft (btex $\beta_1$ etex, point 1.5 of p1);
+endfig;
+
+beginfig(310);
+save u,p,t;
+path p[];
+u:=1cm;
+
+z.p=(-1.4,-.5)*u;
+z1=(-1,0)*u;
+z2=(1,0)*u;
+z.q=(1.4,-.6)*u;
+
+p1=z.p..z1..z2..z.q;
+
+draw subpath (0,1) of p1 pensemibold;
+draw subpath (1,2) of p1 dashed evenly pensemibold;
+draw (subpath (1,2) of p1 yscaled -1) pensemibold;
+draw subpath (2,3) of p1 pensemibold;
+draw ddline(z1,z2)(.4,.4);
+
+dOt z.p,z.q;
+
+label.bot (btex $p$ etex, z.p);
+label.bot (btex $q$ etex, z.q);
+label.top (btex $\alpha$ etex, point 1.5 of p1);
+label.bot (btex $\beta$ etex, point 1.5 of p1 yscaled -1);
+label.top (btex $\Pi$ etex, 1.3[z1,z2]);
+endfig;
+
 end

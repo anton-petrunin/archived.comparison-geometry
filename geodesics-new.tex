@@ -558,7 +558,8 @@ Show by example that nonoverlapping geodesics can cross each other an arbitrary 
 
 \begin{thm}{Exercise}\label{ex:min-geod+plane}
 Assume that a smooth regular surface $\Sigma$ is mirror symmetric with respect to a plane $\Pi$.
-Show that no shortest path in $\Sigma$ can cross $\Pi$ more than once.
+Show that no shortest path $\alpha$ in $\Sigma$ can \emph{cross} $\Pi$ more than once;
+that is, if you trave along $\alpha$, then you change the sides of $\Pi$ at most once. 
 \end{thm}
 
 {
@@ -644,22 +645,20 @@ that is, it has positive $z$-coordinate.
 
 Since $\gamma$ is a geodesic, we have $\gamma''(t)\perp\T_{\gamma(t)}$,
 or equivalently $\gamma''(t)$ is proportional to $\Norm_{\gamma(t)}$ for any $t$.
-By \ref{prop:normal-shape}, we have
-\[\langle \gamma''(t),\Norm_{\gamma(t)}\rangle=\langle S_{\gamma(t)}(\gamma'(t)),\gamma'(t)\rangle;\]
-hence
-\[\gamma''(t)=\Norm_{\gamma(t)}\cdot \langle S_{\gamma(t)}(\gamma'(t)),\gamma'(t)\rangle\]
-for any $t$.
+Further 
+\[\gamma''(t)=k(t)\cdot\Norm_{\gamma(t)},\]
+where $k(t)$ is the normal curvature at $\gamma(t)$ in the direction of $\gamma'(t)$.
 
 Therefore
-\[z''(t)=\cos(\theta_\gamma(t))\cdot\Norm_{\gamma(t)}\cdot \langle S_{\gamma(t)}(\gamma'(t)),\gamma'(t)\rangle,\eqlbl{eq:z''}\]
+\[z''(t)=\cos(\theta_\gamma(t))\cdot k(t)\cdot\Norm_{\gamma(t)},\eqlbl{eq:z''}\]
 where $\theta_\gamma(t)$ denotes the angle between $\Norm_{\gamma(t)}$ and the $z$-axis.
 
 Since $\Norm$ points up, we have $\theta_\gamma(t)<\tfrac\pi2$, or equivalently
 \[\cos(\theta_\gamma(t))>0\]
 for any $t$.
- 
+
 Since $f$ is convex, we have that tangent plane supports the graph from below at any point;
-in particular $\langle S_{\gamma(t)}(\gamma'(t)),\gamma'(t)\rangle\ge 0$.
+in particular $k(t)\ge 0$ for any $t$.
 It follows that the right hand side in \ref{eq:z''} is nonnegative;
 whence the statement follows.
 \qeds
@@ -715,7 +714,7 @@ It follows that
 
 \begin{thm}{Exercise}\label{ex:usov-exact}
 Note that the graph $z=\ell\cdot\sqrt{x^2+y^2}$ with removed origin is a smooth surface; denote it by $\Sigma$.
-Show that it has an both side infinite geodesic $\gamma$ with total curvature exactly $2\cdot \ell$.
+Show that any both side infinite geodesic $\gamma$ has total curvature exactly $2\cdot \ell$.
 \end{thm}
 
 Note that the function $f(x,y)=\ell\cdot\sqrt{x^2+y^2}$ is $\ell$-Lipschitz.

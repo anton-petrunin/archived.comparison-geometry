@@ -1178,14 +1178,98 @@ To do this repeat the argument in \ref{lem:gauss=sphere} with the center at a po
 \parbf{\ref{ex:min-geod+plane}.}
 
 \parbf{\ref{ex:two-min-geod}.}
+Assume that two shortest paths $\alpha$ and $\beta$ have two common point $p$ and $q$.
+Denote by $\alpha_1$ and $\beta_1$ the arcs of
+$\alpha$ and $\beta$ from $p$ to $q$.
+Suppose that $\alpha_1$ is distinct from $\beta_1$.
+
+\begin{wrapfigure}{r}{38 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-308}
+\vskip0mm
+\end{wrapfigure}
+
+Note that $\alpha_1$ and $\beta_1$ are shorest paths with the same endpoints;
+in particular they have the same length.
+Exchanging $\alpha_1$ in $\alpha$ to $\beta_1$ produces a shortest path, say $\hat\alpha$, that is distinct from $\alpha$.
+By \ref{prop:gamma''}, $\hat\alpha$ is a geodesic.
+
+Suppose $\alpha_1$ is a proper subarc of $\alpha$;
+that is, if $\alpha_1\ne\alpha$, or, equivalently, either $p$ or $q$ is not an endpoint of $\alpha$.
+Then $\alpha$ and $\hat\alpha$ share one point and velocity vector at this point.
+By \ref{prop:geod-existence} $\alpha$ coincides with $\hat\alpha$ --- a contradiction.
+
+It follows that $p$ and $q$ are the end points of $\alpha$.
+The same way we can show that $p$ and $q$ are the end points of $\beta$.
 
 \parbf{\ref{ex:min-geod+plane}.}
+Assume a shortest path $\alpha$ changes the sides of $\Pi$ at least twice.
+In this case there is an arc $\alpha_1$ of $\alpha$ that lies on one side on $\Pi$ and has ends on $\Pi$ and these ends are distinct from the ends of $\alpha$.
+
+\begin{wrapfigure}{r}{38 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-310}
+\vskip0mm
+\end{wrapfigure}
+
+Let us remove the arc $\alpha_1$ from $\alpha$ and exchange it to the reflection of $\alpha_1$ across $\Pi$.
+Note that the obtained curve, say $\beta$, lies in the surface; it has the same length as $\alpha$, and it connects the same pair of points, say $p$ and $q$.
+Therefore $\beta$ is another shortest path from $p$ to $q$ that is distinct from $\alpha$.
+
+By \ref{prop:gamma''}, $\alpha$ and $\beta$ are geodesics.
+Since $\alpha$ and $\beta$ have a common subarc, they share one point and velocity vector at this point;
+by \ref{prop:geod-existence} $\alpha$ coinsides with $\beta$ --- a contradiction.
+
+
 
 \parbf{\ref{ex:milka}.} Show that the concatenation of the line segment $[p_t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path in the closed region $W$ outside of $\Sigma$.
 
 \parbf{\ref{ex:rho''}.}
+Equip $\Sigma$ with unit normal field $\Norm$ that points inside.
+Denote by $k(t)$ the normal curvature of $\Sigma$ at $\gamma(t)$ in the direction of $\gamma'(t)$.
+Since $\Sigma$ is convex $k(t)\ge 0$ for any $t$.
 
-\parbf{\ref{ex:usov-exact}.}
+Since $\gamma$ is geodesic, we have $\gamma''(t)=k(t)\cdot\Norm_{\gamma(t)}$.
+
+Since $\gamma$ has unit speed, $\langle\gamma'(t),\gamma'(t)\rangle=1$ for any $t$.
+
+Without loss of generality, we can assume that $p$ is the origin of $\RR^3$.
+Since $p$ is inside $\Sigma$, we have that $\langle\gamma(t),\Norm_{\gamma(t)}\rangle\le 0$ for any $t$.
+It follows that 
+\[\langle\gamma''(t),\gamma(t)\rangle=k(t)\cdot \langle\gamma(t),\Norm_{\gamma(t)}\rangle\le 0\]
+for any $t$.
+
+Applying the above estimates, we get that 
+\begin{align*}
+\rho''(t)
+&=\langle\gamma(t),\gamma(t)\rangle''
+\\
+&=2\cdot\langle\gamma''(t),\gamma(t)\rangle+2\cdot\langle\gamma'(t),\gamma'(t)\rangle\le 
+\\
+&\le 2.
+\end{align*}
+
+\parbf{\ref{ex:usov-exact}.} 
+Suppose $\gamma(t)=(x(t),y(t),z(t))$. 
+Show that
+\[|\gamma'' (t)| =  z''(t)\cdot\sqrt{1+ \ell ^2}\eqlbl{eq:gamma''=z''}\]
+for any $t$.
+
+Observe that $z'(t)\to\pm \tfrac\ell{\sqrt{1+ \ell ^2}}$ as $t\to\pm\infty$.
+Conclude that 
+\[\int_{-\infty}^{+\infty}z''(t)\cdot dt
+=
+\tfrac{2\cdot\ell}{\sqrt{1+ \ell ^2}}.\eqlbl{eq:int z''}\]
+By \ref{eq:gamma''=z''} and \ref{eq:int z''}, we have
+\begin{align*}
+\tc\gamma&=\int_{-\infty}^{+\infty}|\gamma''(t)|\cdot dt=
+\\
+&=\sqrt{1+ \ell ^2}\cdot \int_{-\infty}^{+\infty}z''(t)\cdot dt=
+\\
+&=2\cdot \ell.
+\end{align*}
 
 \parbf{\ref{ex:rough-bound-mountain}.} Use \ref{thm:usov} and \ref{ex:sef-intersection}.
 
@@ -1207,6 +1291,7 @@ Observe $\Sigma_1$ supports $\Sigma_2$ at any point of $\gamma$.
 Conclude that $\gamma$ identical spherical images in $\Sigma_1$ and $\Sigma_2$ and apply Observation \ref{obs:parallel=}.
 
 \parbf{\ref{ex:holonomy=not0}.}
+Consider triangle that coordinate octant cuts form the sphere and try to argue that parallel transport around it rotates the tangent plane by angle $\tfrac\pi 2$. 
 
 \parbf{\ref{ex:half-sphere-total-curvature}.}
 Apply \ref{prop:pt+tgc} and \ref{prop:area-of-spher-polygon}.
@@ -1216,7 +1301,7 @@ By \ref{ex:convex-proper-sphere}, $\Sigma$ is a smooth sphere.
 By Jordan theorem (\ref{thm:jordan}) the curve $\gamma$ divides $\Sigma$  into two discs.
 Let us denote by $\Delta$ the disc that lies on the left from $\gamma$.
 
-Observe that $\tgc\gamma=\lenght\gamma$ and apply  the Gauss--Bonnet formula (\ref{thm:gb}) for $\Delta$.
+Observe that $\tgc\gamma=\length\gamma$ and apply  the Gauss--Bonnet formula (\ref{thm:gb}) for $\Delta$.
 
 \parbf{\ref{ex:geodesic-half}.}
 Apply \ref{cor:intK}, \ref{ex:intK:4pi}, and the Gauss--Bonnet formula (\ref{thm:gb}).
