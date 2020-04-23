@@ -1166,16 +1166,21 @@ To do this repeat the argument in \ref{lem:gauss=sphere} with the center at a po
 \parbf{\ref{ex:intrinsic-diameter}.} Use \ref{lem:closest-point-projection}.
 
 \parbf{\ref{ex:reflection-geodesic}.}
+Denote by $\mu$ a unit vector perpendicular to $\Pi$.
+Since $\gamma$ lies in $\Pi$, we have that $\gamma''$ is parallel to $\Pi$, or equivalently $\gamma''\perp \mu$.
+Since $\gamma$ is unit speed, \ref{prop:a'-pertp-a''} implies that $\gamma''\perp\gamma'$.
+
+Since $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$,
+the tangent palne $\T_{\gamma(t)}\Sigma$ is also mirror symmetric with respect to  a plane $\Pi$.
+It follows that $\T_{\gamma(t)}\Sigma$ is spanned by $\mu$ and $\gamma'(t)$.
+Therefore $\gamma''\perp \mu$ and $\gamma''\perp\gamma'$ imply $\gamma''\perp\T_{\gamma(t)}\Sigma$;
+that is, $\gamma$ is a geodesic.
 
 \parbf{\ref{ex:helix=geodesic}.}
 
 \parbf{\ref{ex:asymptotic-geodesic}.}
 
-\parbf{\ref{ex:geodesic-curvature}.}
 
-
-
-\parbf{\ref{ex:min-geod+plane}.}
 
 \parbf{\ref{ex:two-min-geod}.}
 Assume that two shortest paths $\alpha$ and $\beta$ have two common point $p$ and $q$.
@@ -1292,6 +1297,22 @@ Conclude that $\gamma$ identical spherical images in $\Sigma_1$ and $\Sigma_2$ a
 
 \parbf{\ref{ex:holonomy=not0}.}
 Consider triangle that coordinate octant cuts form the sphere and try to argue that parallel transport around it rotates the tangent plane by angle $\tfrac\pi 2$. 
+
+\parbf{\ref{ex:geodesic-curvature}.}
+Suppose $\tan(t),\mu(t),\Norm(t)$ is the frame as in the definition of geodesic curvature.
+
+If $\gamma$ is a geodesic, then by \ref{lem:constant-speed}, it has constant speed.
+Applying scaling, we may assume that the speed is 1.
+In this case 
+\[\gamma''(t)=k_g(t)\cdot \mu(t)-k_n(t)\cdot \Norm(t).\]
+Since $\gamma''(t)\perp\T_{\gamma(t)}$ we get that $k_g=0$. 
+That proves the ``only if'' part.
+
+Now assume that $\gamma$ has constant speed.
+Againg, applying scaling, we may assume that the speed is 1.
+In this case 
+\[\gamma''(t)=-k_n(t)\cdot \Norm(t).\]
+Therefore $\gamma''(t)\perp\T_{\gamma(t)}$.
 
 \parbf{\ref{ex:half-sphere-total-curvature}.}
 Apply \ref{prop:pt+tgc} and \ref{prop:area-of-spher-polygon}.
