@@ -20,6 +20,42 @@ we have that
 Therefore 
 \[\flux_{\vec u}\Sigma=\int_\Sigma \langle\vec u,\Norm\rangle\le \int_\Sigma1=\area\Sigma.\]
 \qedsf
+\section*{Divergence and curl}
+
+
+Consider a smooth vector field $\vec u$ defined on a domain $\Omega$ in $\RR^3$.
+Recall that divergence of $\vec u$ is defined as $\div\vec u=\langle \nabla,\vec u\rangle$.
+In other words, if $\vec i$, $\vec j$, and $\vec k$ denote the elements of the standard basis of  $\RR^3$ and
+$\vec u=P\cdot \vec i+Q\cdot\vec j+R\cdot\vec k$
+for some smooth functions $P,Q,R$,
+then
+\[\div\vec u=\tfrac{\partial P}{\partial x}+\tfrac{\partial Q}{\partial y}+\tfrac{\partial R}{\partial z}.\]
+Divergence is a function on $\Omega$;
+its value at a point $p$ is denoted by $\div_p\vec u$.
+
+The following two theorems are assumed to be known:
+
+\begin{thm}{Divergence theorem}\label{thm:div}
+If a piecewise smooth surface $\Sigma$ bounds a body $V$ in $\RR^3$, then
+\[\flux_{\vec u}\Sigma=\int_{p\in V}\div_p \vec u,\]
+assuming that the orientation on $\Sigma$ is defined by a unit normal field that points out of $V$.
+\end{thm}
+
+Given a vector field $\vec u$, set $\curl \vec u\df\nabla\times \vec u$;
+that is, if we write the field $\vec u$ in the standard basis 
+\[\vec u=P\cdot \vec i+ Q\cdot\vec j+R\cdot \vec j,\]
+then 
+\[\curl \vec u\df \left(\tfrac{\partial R}{\partial y}-\tfrac{\partial Q}{\partial z} \right)\cdot \vec i 
++\left(\tfrac{\partial P}{\partial z}-\tfrac{\partial R}{\partial x}\right) \cdot \vec j +\left (\tfrac{\partial Q}{\partial x}-\tfrac{\partial P}{\partial y}\right)\cdot \vec k \]
+
+\begin{thm}{Curl theorem}\label{thm:curl}
+Let $\Sigma$ be a compact oriented surface bounded by a curve $\gamma$.
+Assume that $\gamma\:[0,\ell]\to \RR^3$ is parameterized by its arc-length and oriented in such a way that $\Sigma$ lies on left from it.
+Then, for any smooth vector field $\vec u$ defined in a neighborhood of $\Sigma$, we have
+\[\flux_{\curl\vec u}\Sigma=\int_0^\ell\langle\vec u,\gamma'(t)\rangle\cdot dt.\]
+
+\end{thm}
+
 
 \begin{thm}{Exercise}\label{ex:divergence-1}
 Let $\Sigma$ be a compact smooth surface with boundary $\partial \Sigma$ in the $(x,y)$-plane.

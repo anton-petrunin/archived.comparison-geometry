@@ -3600,4 +3600,37 @@ label.bot (btex $\beta$ etex, point 1.5 of p1 yscaled -1);
 label.top (btex $\Pi$ etex, 1.3[z1,z2]);
 endfig;
 
+beginfig(320);
+save u,p,r;
+path p[];
+u:=.7cm;
+r:=3;
+
+draw (-r,0)*u--(0,0)*u--(r,r)*u
+penbold;
+
+drawarrow (-r,0)*u--(r,0)*u;
+drawarrow (0,-.5)*u--(0,r)*u;
+
+label.bot (btex $y=h(x)$ etex, (.4*r,r)*u);
+endfig;
+
+beginfig(321);
+save u,p,r;
+path p[];
+u:=.7cm;
+r:=3;
+
+draw (-r,0)*u--(0,0)*u
+for i=.1 step .1 until r:
+..(i,i/(2**(1/i)))*u
+endfor
+penbold;
+
+drawarrow (-r,0)*u--(r,0)*u;
+drawarrow (0,-.5)*u--(0,r)*u;
+
+label.bot (btex $y=f(x)$ etex, (.4*r,r)*u);
+endfig;
+
 end

@@ -434,15 +434,8 @@ it can be defined in polar coordinates by $\gamma(t)=(t,a\cdot\ln t)$ if $t>0$ a
 
 It remains to show that indeed, $\gamma$ has infinite total curvature, but finite length.
 
-\parbf{\ref{ex:helix-torsion}.} 
-The arc-length parameter $s$ is already found in   \ref{ex:arc-length-helix}.
-It remains to find Frenet frame and calculate curvature and torsion.
-The latter can be done by straightforward calculations.
-
-If the calculations done right, then you should see that curvature $\kur$ and torsion $\tau$ do not depend on time and given.
-Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix $\gamma_{a,b}$ has curvature $\kur$ and torsion $\tor$.
-
 \begin{wrapfigure}{r}{20 mm}
+\vskip-2mm
 \centering
 \begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/helix(1)}
 \lbl[br]{8,24;$\norm$}
@@ -450,6 +443,14 @@ Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix 
 \lbl[wl]{15,25;$\tan$}
 \end{lpic}
 \end{wrapfigure}
+
+\parbf{\ref{ex:helix-torsion}.} 
+The arc-length parameter $s$ is already found in   \ref{ex:arc-length-helix}.
+It remains to find Frenet frame and calculate curvature and torsion.
+The latter can be done by straightforward calculations.
+
+If the calculations done right, then you should see that curvature $\kur$ and torsion $\tau$ do not depend on time and given.
+Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix $\gamma_{a,b}$ has curvature $\kur$ and torsion~$\tor$.
 
 One may also see it geometrically using that the helix is maped to itself by one parameter family of glide rotations around $z$-axis.
 Therefore, for the $t$-parametrization, Frenet frame rotates around $z$-axis with the angular velocity~$1$.
@@ -1321,6 +1322,11 @@ By \ref{eq:gamma''=z''} and \ref{eq:int z''}, we have
 The suggested argument does not give the optimal bound for the Lipschitz constant that guarantees that $\gamma$ is simple, but
 later (see \ref{ex:sqrt(3)}) we will show that the exact bound is $\sqrt{3}=\tg\tfrac\pi3$ --- it is the same as in the exercise about mountain of with the shape of a perfect cone; see \ref{ex:lasso}.
 
+\parbf{\ref{ex:lasso}.} Cut the lateral surface of the mountain by a line from the cowboy to the top, unfold it on the plane and try to figure out what is the image of the strained lasso.
+
+Since the distance between points, can not be bigger than length of a path connecting them,
+this statement implies the problem.
+
 \parbf{\ref{ex:parallel}}; \ref{SHORT.ex:parallel:a}.
 Show and use that $\langle\vec v(t),\vec v'(t)\rangle=0$.
 
@@ -1386,12 +1392,6 @@ Apply the Gauss--Bonnet formula for the triangular region to show that $\alpha+\
 It follows that 
 \[\int_\Sigma K>(\pi+\alpha)+(\pi+\beta)+(\pi+\gamma)>4\cdot\pi\]
 which contradicts \ref{ex:intK:4pi}.
- 
-
-\parbf{\ref{ex:lasso}.} Cut the lateral surface of the mountain by a line from the cowboy to the top, unfold it on the plane and try to figure out what is the image of the strained lasso.
-
-Since the distance between points, can not be bigger than length of a path connecting them,
-this statement implies the problem.
 
 
 \parbf{\ref{ex:deformation}.}

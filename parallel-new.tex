@@ -1,5 +1,27 @@
 \chapter{Parallel transport}
 
+We start to study the intrinsic geometry of surfaces.
+The following exercise should help you to be in the right mood for this;
+it might look like a tedious problem in calculus, but actually it is an easy problem in geometry.
+
+\begin{wrapfigure}{r}{33 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-77}
+\vskip-0mm
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:lasso}
+There is a mountain of frictionless ice with the shape of a perfect cone with a circular base.
+A cowboy is at the bottom and he wants to climb the mountain.
+So, he throws up his lasso which slips neatly over the top of the cone, he pulls it tight and starts to climb.
+If the angle of inclination $\theta$ is large, there is no problem; the lasso grips tight and up he goes.
+On the other hand if $\theta$ is small, the lasso slips off as soon as the cowboy pulls on it.
+
+What is the critical angle $\theta_0$ at which the cowboy can no longer climb the ice-mountain?
+\end{thm}
+
+
 \section*{Parallel fields}
 
 Let $\Sigma$ be a smooth surface in the Euclidean space and $\gamma\:[a,b]\z\to \Sigma$ be a smooth curve.
@@ -145,17 +167,17 @@ Then the parallel transport $\iota_\gamma\:T_p\to\T_p$ is a rotation of the the 
 Moreover, the same statement holds for smooth closed curves and piecewise smooth curves.
 \end{thm}
 
+\parit{Proof.}
+Assume $\gamma$ is a cyclic concatenation of geodesics $\gamma_1,\dots,\gamma_n$.
+Fix a tangent vector ${\vec v}$ at $p$ and extend it to a parallel vector field along $\gamma$.
+Since ${\vec w}_i(t)=\gamma_i'(t)$ is parallel along $\gamma_i$, the angle $\phi_i$ between ${\vec v}$ and ${\vec w}_i$ stays constant on each $\gamma_i$.
+
 \begin{wrapfigure}{o}{22 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-48}
 \vskip-0mm
 \end{wrapfigure}
-
-\parit{Proof.}
-Assume $\gamma$ is a cyclic concatenation of geodesics $\gamma_1,\dots,\gamma_n$.
-Fix a tangent vector ${\vec v}$ at $p$ and extend it to a parallel vector field along $\gamma$.
-Since ${\vec w}_i(t)=\gamma_i'(t)$ is parallel along $\gamma_i$, the angle $\phi_i$ between ${\vec v}$ and ${\vec w}_i$ stays constant on each $\gamma_i$.
 
 If $\theta_i$ denotes the external angle at this vertex of switch from $\gamma_{i}$ to $\gamma_{i+1}$, we have that 
 \[\phi_{i+1}=\phi_i-\theta_i \pmod{2\cdot\pi}.\]
@@ -386,29 +408,6 @@ compare to \ref{ex:rough-bound-mountain}.
 Suppose that $f\:\RR^2\to\RR$ is a $\sqrt{3}$-Lipschitz smooth convex function.
 Show that any geodesic in the surface defined by the graph $z=f(x,y)$ has no self-intersections.
 \end{thm}
-
-
-We start to study the intrinsic geometry of surfaces.
-The following exercise should help you to be in the right mood for this;
-it might look like a tedious problem in calculus, but actually it is an easy problem in geometry.
-
-\begin{wrapfigure}{r}{33 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-77}
-\vskip-0mm
-\end{wrapfigure}
-
-\begin{thm}{Exercise}\label{ex:lasso}
-There is a mountain of frictionless ice with the shape of a perfect cone with a circular base.
-A cowboy is at the bottom and he wants to climb the mountain.
-So, he throws up his lasso which slips neatly over the top of the cone, he pulls it tight and starts to climb.
-If the angle of inclination $\theta$ is large, there is no problem; the lasso grips tight and up he goes.
-On the other hand if $\theta$ is small, the lasso slips off as soon as the cowboy pulls on it.
-
-What is the critical angle $\theta_0$ at which the cowboy can no longer climb the ice-mountain?
-\end{thm}
-
 
 \section*{The remarkable theorem}
 

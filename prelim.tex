@@ -1,5 +1,7 @@
 \chapter{Multivariable calculus}
 
+This material is discussed in any course of multivariable calculus, the classical book of Walter Rudin \cite{rudin} is one of our favorites.
+
 \section*{Regular value}
 
 A map $\bm{f}\:\RR^m\to\RR^n$ can be thought as an array of functions 
@@ -18,16 +20,15 @@ we assume that the right hand side is evaluated at $\bm{x}=(x_1,\dots,x_m)$.
 If the Jacobean matrix defines a surjective linear map $\RR^m\to\RR^n$ (that is, if $\rank(\Jac_{\bm{x}}\bm{f})=n$) then we say that 
 $\bm{x}$ is a \emph{regular point} of~$\bm{f}$.
 
-If for each point $\bm{x}$ such that $\bm{f}(\bm{x})=\bm{y}$ is regular,
+If for some $\bm{y}\in \RR^n$ each point $\bm{x}$ such that $\bm{f}(\bm{x})=\bm{y}$ is regular,
 then we say that $\bm{y}$ is a \emph{regular value} of $\bm{f}$.
-The following lemma states that most values of a smooth map are regular;
-in particular, generic smooth functions satisfy the assumption of the theorem.
+The following lemma states that {}\emph{most} values of a smooth map are regular.
 
 \begin{thm}{Sard's lemma}\label{lem:sard}
-Given a smooth map $\bm{f}\colon U \z\to \RR^n$ defined on an open set $U\subset \RR^m$, almost all values in $\RR^n$ are regular.
+Given a smooth map $\bm{f}\colon \Omega \z\to \RR^n$ defined on an open set $\Omega\subset \RR^m$, almost all values in $\RR^n$ are regular.
 \end{thm}
 
-The words \emph{almost all} means all values, with the possible exception of a set of zero Lebesgue measure.
+The words \emph{almost all} means all values, with the possible exceptions belong to a set with vanishing \emph{Lebesgue measure}.
 In particular if one chooses a random value equidistributed in an arbitrarily small ball $B\subset \RR^n$, then it is a regular value of $\bm{f}$ with probability 1.
 
 Note that if $m<n$, then $\bm{f}$ has no regular points.
@@ -37,7 +38,7 @@ The theorem states that in this case almost all points in $\RR^n$, do \emph{not}
 
 \section*{Inverse function theorem}
 
-The \emph{inverse function theorem} gives a sufficient condition for a smooth map $\bm{f}$ to be invertible in a neighborhood of a given point $\bm{x}$ in its domain.
+The \emph{inverse function theorem} gives a sufficient condition for a smooth map $\bm{f}$ to be invertible in a neighborhood of a given point $\bm{x}$.
 The condition is formulated in terms of the Jacobian matrix of $\bm{f}$ at $\bm{x}$.
 
 The \emph{implicit function theorem} is a close relative to the inverse function theorem;
@@ -47,21 +48,20 @@ It is used when we need to pass from parametric to implicit description of curve
 Both theorems reduce the existence of a map satisfying certain equation to a question in linear algebra.
 We use these two theorems only for $n\le 3$.
 
-These two theorems are discussed in any course of multivariable calculus, the classical book of Walter Rudin \cite{rudin} is one of my favorites.
-
 \begin{thm}{Inverse function theorem}\label{thm:inverse}
-Let $\bm{f}=(f_1,\dots,f_n)\:\RR^n\to\RR^n$ be a smooth map.
+Let $\bm{f}=(f_1,\dots,f_n)\:\Omega\to\RR^n$ be a smooth map
+defined on an open set $\Omega\subset \RR^n$.
 Assume that the Jacobian matrix
 $\Jac_{\bm{x}}\bm{f}$
-is invertible at some point $\bm{x}$ in the domain of definition of $\bm{f}$.
-Then there is a smooth map $\bm{h}\:\RR^n\to\RR^n$ defined in a neighborhood $\Theta$ of ${\bm{y}}=\bm{f}(\bm{x})$ that is a \emph{local inverse of $\bm{f}$ at $\bm{x}$};
-that is, there is a neighborhood $\Omega\ni \bm{x}$ such that
-$\bm{f}$ defines a bijection $\Omega\to \Theta$ and
-$\bm{h} \circ \bm{f}$ is an identity map on $\Omega$.
+is invertible at some point $\bm{x}\in \Omega$.
+Then there is a smooth map $\bm{h}\:\Theta\to\RR^n$ defined in an open neighborhood $\Theta$ of ${\bm{y}}\z=\bm{f}(\bm{x})$ that is a \emph{local inverse of $\bm{f}$ at $\bm{x}$};
+that is, there is a neighborhood $\Omega'\ni \bm{x}$ such that
+$\bm{f}$ defines a bijection $\Omega'\leftrightarrow \Theta$ and
+$\bm{h} \circ \bm{f}$ is an identity map on $\Omega'$.
 \end{thm}
 
 \begin{thm}{Implicit function theorem}\label{thm:imlicit}
-Let $\bm{f}=(f_1,\dots,f_n)\:\RR^{n+m}\to\RR^n$ be a smooth map,
+Let $\bm{f}=(f_1,\dots,f_n)\:\Omega\to\RR^n$ be a smooth map, defined on a open subset $\Omega\subset\RR^{n+m}$, where
 $m,n\ge 1$.
 Let us consider $\RR^{n+m}$ as a product space $\RR^n\times \RR^m$ with coodinates 
 $x_1,\dots,x_n,y_1,\dots,y_m$.
@@ -73,7 +73,7 @@ M=\begin{pmatrix}
 \dfrac{\partial f_n}{\partial x_1} & \cdots & \dfrac{\partial f_n}{\partial x_n} \end{pmatrix}\]
 formed by the first $n$ columns of the Jacobian matrix.
 Assume $M$ is invertible at some point $\bm{x}=(x_1,\dots,x_n,y_1,\dots y_m)$ in the domain of definition of $\bm{f}$ and $\bm{f}(\bm{x})=0$.
-Then there is a neighborhood $\Omega\ni \bm{x}$
+Then there is a neighborhood $\Omega'\ni \bm{x}$
 and a smooth function $\bm{h}\:\RR^m\to\RR^n$ defined in a neighborhood $\Theta\ni 0$ such that
 for any $(x_1,\dots,x_n,y_1,\dots y_m)\in \Omega$, the equality
 \[\bm{f}(x_1,\dots,x_n,y_1,\dots y_m)=0\]
@@ -91,7 +91,7 @@ that is, $\jac_{\bm{x}}\bm{f}$ is the absolute value of the determinant of the J
 The following theorem plays the role of a substitution rule for multiple variables.
 
 \begin{thm}{Theorem}\label{thm:mult-substitution}
-Let $K\subset \RR^n$ be a compact set and $h\:K\to\RR$ be a bounded measurable function.
+Let $h\:K\to\RR$ be a bounded measurable function on a measurable subset $K\subset \RR^n$.
 Assume $\bm{f}\:K\to \RR^n$ is an injective smooth map.
 Then 
 \[\int_{\bm{x}\in K} h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}
@@ -100,40 +100,6 @@ Then
 
 \end{thm}
 
-\section*{Divergence theorem}
-
-
-Consider a smooth vector field $\vec u$ defined on a domain $\Dom \vec u$ in $\RR^3$.
-Recall that divergence of $\vec u$ is defined as $\div\vec u=\langle \nabla,\vec u\rangle$.
-In other words, if $\vec i$, $\vec j$, and $\vec k$ denote the elements of the standard basis of  $\RR^3$ and
-$\vec u=P\cdot \vec i+Q\cdot\vec j+R\cdot\vec k$
-for some smooth functions $P,Q,R\:\Dom \vec u\to \RR$,
-then
-\[\div\vec u=\tfrac{\partial P}{\partial x}+\tfrac{\partial Q}{\partial y}+\tfrac{\partial R}{\partial z}.\]
-
-\begin{thm}{Theorem}\label{thm:div}
-If a piecewise smooth surface $\Sigma$ bounds a body $V$ in $\RR^3$, then
-\[\flux_{\vec u}\Sigma=\int_V\div \vec u,\]
-assuming that the orientation on $\Sigma$ is defined by a unit normal field that points out of $V$.
-\end{thm}
-
-
-\section*{Curl theorem}
-
-Given a vector field $\vec u$, set $\curl \vec u\df\nabla\times \vec u$;
-that is, if we write the field $\vec u$ in the standard basis 
-\[\vec u=P\cdot \vec i+ Q\cdot\vec j+R\cdot \vec j,\]
-then 
-\[\curl \vec u\df \left(\tfrac{\partial R}{\partial y}-\tfrac{\partial Q}{\partial z} \right)\cdot \vec i 
-+\left(\tfrac{\partial P}{\partial z}-\tfrac{\partial R}{\partial x}\right) \cdot \vec j +\left (\tfrac{\partial Q}{\partial x}-\tfrac{\partial P}{\partial y}\right)\cdot \vec k \]
-
-\begin{thm}{Theorem}\label{thm:curl}
-Let $\Sigma$ be a compact oriented surface bounded by a curve $\gamma$.
-Assume that $\gamma\:[0,\ell]\to \RR^3$ is parameterized by its arc-length and oriented in such a way that $\Sigma$ lies on left from it.
-Then, for any smooth vector field $\vec u$ defined in a neighborhood of $\Sigma$, we have
-\[\flux_{\curl\vec u}\Sigma=\int_0^\ell\langle\vec u,\gamma'(t)\rangle\cdot dt.\]
-
-\end{thm}
 
 
 
@@ -153,24 +119,24 @@ x_n'(t)&=f_n(x_1,\dots,x_n,t),
 \end{cases}
 \]
 where each $x_i=x_i(t)$ is a real valued function defined on a real interval $\mathbb{I}$
-and each $f_i$ is a smooth function defined on $\RR^n\times \mathbb{I}$.
+and each $f_i$ is a smooth function defined on an open subset $\Omega\subset \RR^n\times \RR$.
 
 The array of functions $(f_1,\dots,f_n)$ can be considered as one vector-valued function 
-$\bm{f}\:\RR^n\times \mathbb{I}\to \RR^n$ and the array $(x_1,\dots,x_n)$ can be considered as a vector  $\bm{x}\in\RR^n$.
+$\bm{f}\:\Omega\to \RR^n$ and the array $(x_1,\dots,x_n)$ can be considered as a vector  $\bm{x}\in\RR^n$.
 Therefore the system can be rewritten as one vector equation 
 \[\bm{x}'(t)=\bm{f}(\bm{x}, t).\] 
 
 %??? make it for arbitrary domain
 %??? higher order
 \begin{thm}{Theorem}\label{thm:ODE}
-Suppose $\mathbb{I}$ is a real interval and $\bm{f}\:\RR^n\times\mathbb{I}\to \RR^n$ is a smooth function.
-Then for any initial data $\bm{x}(t_0)=\bm{u}$ the differential equation 
+Suppose $\mathbb{I}$ is a real interval and $\bm{f}\:\Omega\to \RR^n$ is a smooth function defined on an open subset $\Omega\subset \RR^n\times \RR$.
+Then for any initial data $\bm{x}(t_0)=\bm{u}$ such that $(\bm{u},t)\in\Omega$ the differential equation 
 \[\bm{x}'(t)=\bm{f}(\bm{x},t)\]
-has a unique solution $\bm{x}(t)$ defined at a maximal subinterval $\mathbb{J}$ of $\mathbb{I}$ that contains $t_0$.
+has a unique solution $\bm{x}(t)$ defined at a maximal interval $\mathbb{J}$ that contains $t_0$.
 Moreover
 \begin{enumerate}[(a)]
-\item  if $\mathbb{J}\ne \mathbb{I}$ (that is, if an end $a$ of $\mathbb{J}$ lies in the interior of $\mathbb{I}$) then $\bm{x}(t)$ diverges as $t\to a$;
-\item  the function $(\bm{u},t_0,t)\mapsto \bm{x}(t)$ is smooth.
+\item  if $\mathbb{J}\ne \RR$ (that is, if an end $a$ of $\mathbb{J}$ is finite) then $\bm{x}(t)$ does not have a limit point in $\Omega$ as $t\to a$;
+\item  the function $(\bm{u},t_0,t)\mapsto \bm{x}(t)$ has open domain of definition in $\Omega\times \RR$ and it is smooth in this domain.
 \end{enumerate}
 
 
@@ -185,10 +151,12 @@ Recall that a function $f$ between metric spaces is called Lipschitz if there is
 for all values $x$ and $y$ in the domain of definition of $f$.
 %Although this definition makes sense for maps between metric spaces, we will only use it for real-to-real functions.
 
+The following theorem makes possible to extend number of results about smooth function to Lipschitz functions.
+Recall that \emph{almost all} means all values, with the possible exceptions belong to a set with vanishing \emph{Lebesgue measure}.
+
 \begin{thm}{Rademacher's theorem}\label{thm:rademacher}
 Let $f\:[a,b]\to\RR$ be a Lipschitz function.
-Then the derivative $f'(x)$ is defined for alomst all $x\in [a,b]$.
-Moreover the derivative $f'$ is a bounded measurable function defined almost everywhere in $[a,b]$ and it satisfies the fundamental theorem of calculus; that is, the following identity 
+Then the derivative $f'$ of $f$ is a bounded measurable function defined almost everywhere in $[a,b]$ and it satisfies the fundamental theorem of calculus; that is, the following identity 
 \[f(b)-f(a)=\int_a^b f'(x)\cdot dx,\]
 holds if the integral is understood in the sense of Lebesgue.
 \end{thm}
@@ -201,36 +169,51 @@ Then for any $\eps>0$, there is a continuous function $\psi_\eps\:[a,b]\to \RR$ 
 Moreover, if $\phi$ is bounded above and/or below by some constants, then we may assume that so is $\psi_\eps$.  
 \end{thm}
 
+\section*{Convex functions}
+
+A function of two variables $(x,y)\mapsto f(x,y)$ is called convex if 
+its epigraph $z\ge f(x,y)$ is a convex set.
+This is equivalent to the so-called \emph{Jensen's inequality}
+\[f \left (t\cdot x_1 + (1-t)\cdot x_2 \right ) \leq t\cdot f(x_1)+ (1-t)\cdot f(x_2)\]
+for $t\in[0,1]$.
+If $f$ is smooth, then the condition is equivalent to the following inequality for the second directional derivative:
+\[D^2_wf\ge 0\]
+for any vector $w\ne 0$ in the $(x,y)$-plane.
+
 \section*{Uniform continuity and convergence}
 
-Let $f$ be a real function defined on a real interval.
+Let $f\:{\spc{X}}\to \spc{Y}$ be a map between metric spaces.
 If  for any $\eps>0$ there is $\delta>0$ such that 
-\[|x_1-x_2|_X<\delta\quad\Longrightarrow\quad |f(x_1)-f(x_2)|_Y<\eps,\]
+\[|x_1-x_2|_{\spc{X}}<\delta\quad\Longrightarrow\quad |f(x_1)-f(x_2)|_\spc{Y}<\eps,\]
 then $f$ is called \emph{uniformly continuous}.
 
 Evidently every uniformly continuous function is continuous;
 the converse does not hold.
 For example, the function $f(x)=x^2$ is continuous, but not uniformly continuous.
 
-However if $f$ is continuous and defined on a closed interval $[a,b]$, then $f$ is uniformly continuous
+However if $f$ is continuous and defined on a closed interval $[a,b]$, then $f$ is uniformly continuous.
 
 If the condition above holds for any function $f_n$ in a sequence and $\delta$ depend solely on $\eps$,
 then the sequence $(f_n)$ is called uniformly equicontinuous.
 More precisely, 
-a sequence of functions $f_n:X\to Y$ is called \emph{uniformly equicontinuous} if 
+a sequence of functions $f_n:{\spc{X}}\to \spc{Y}$ is called \emph{uniformly equicontinuous} if 
 for any $\eps>0$ there is $\delta>0$ such that 
-\[|x_1-x_2|_X<\delta\quad\Longrightarrow\quad |f_n(x_1)-f_n(x_2)|_Y<\eps\]
+\[|x_1-x_2|_{\spc{X}}<\delta\quad\Longrightarrow\quad |f_n(x_1)-f_n(x_2)|_\spc{Y}<\eps\]
 for any $n$.
-Uniform equicontinuity is the condition in one of the most important convergence theorems in analysis. 
-We say that a sequence of functions $f_i : X \to Y$ converges uniformly to a function $f_{\infty}: X \to Y$ if for any 
+
+
+We say that a sequence of functions $f_i : {\spc{X}} \to \spc{Y}$ \emph{converges uniformly} to a function $f_{\infty}: {\spc{X}} \to \spc{Y}$ if for any 
 $\varepsilon >0$, there is a natural number $N$ such that for all $n \geq N$, we have $| f_{\infty} (x)- f_n (x) | < \varepsilon$
-for all $x  \in X$.
+for all $x  \in {\spc{X}}$.
 
 \begin{thm}{Arzel\'{a}-Ascoli Theorem}\label{lem:equicontinuous}
-Any uniformly equicontinuous sequence of function $f_n\:[a,b]\to [c,d]$ has a subsequence that converges uniformly to a continuous function. 
+Suppose $\spc{X}$ and $\spc{Y}$ are compact metric spaces. 
+Then any uniformly equicontinuous sequence of function $f_n\:\spc{X}\to \spc{Y}$ has a subsequence that converges uniformly to a continuous function $f_\infty\:\spc{X}\to \spc{Y}$. 
 \end{thm}
 
 \section*{Cutoffs and mollifiers}
+
+%???+3PICS
 
 We use few examples of smooth functions that mimic behavior of some model functions.
 
@@ -250,19 +233,33 @@ The function $h$ is not smooth --- its derivative at $0$ is undefined.
 Unlike $h$, the function $f$ is smooth.
 Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and direct calculations show that $f^{(n)}(0)=0$ for all $n$.
 
-Other useful examples of that type are bell function --- a smooth function that is positive in an $\eps$-neighborhood of zero and vanishing outside this neighborhood.
+\begin{figure}[h]
+\begin{minipage}{.48\textwidth}
+\centering
+\includegraphics{mppics/pic-320}
+\end{minipage}\hfill
+\begin{minipage}{.48\textwidth}
+\centering
+\includegraphics{mppics/pic-321}
+\end{minipage}
+\end{figure}
+
+Other useful examples of that type are the so called \emph{bell function} --- a smooth function that is positive in an $\eps$-neighborhood of zero and vanishing outside this neighborhood.
 An example of such function can be constructed based using the function $f$ constructed above, say 
 \[b_\eps(t)=c\cdot f(\eps^2-t^2);\]
-the constant $c$ can be choosen to ensure that $\int b_\eps=1$.
+the constant $c$ is chosen so that $\int b_\eps=1$.
 
-Another useful example is a smooth nondecreasing function that vanish for $t\le -\eps$ and takes value $1$ for any $t\ge \eps$.
+Another useful example is a sigmoid --- nondecreasing function that vanish for $t\le -\eps$ and takes value $1$ for any $t\ge \eps$.
 For example the following function \label{page:sigma-function}
 \[\sigma_\eps(t)=\int_{-\infty}^t b_\eps(x)\cdot dx.\]
 
 
 \chapter{Topology}
 
-\section*{Jordan's theorem}
+The following material is covered in any reasonable introductory text to topology; 
+one of our favorites is a textbook of Czes Kosniowski \cite{kosniowski}.
+
+\section*{Continuous inverse}
 
 We sometimes use the following characterization of homeomorphisms between compact spaces.
 
@@ -271,6 +268,7 @@ A continuous bijection $f$ between compact metric spaces has a continuous invers
 that is, $f$ is a homeomorphism.
 \end{thm}
 
+\section*{Jordan's theorem}
 
 The first part of the following theorem was proved by Camille Jordan, the second part is due to Arthur Schoenflies.
 
@@ -299,7 +297,8 @@ An amusing proof can be found in \cite{chambers-liokumovich}.
 
 \section*{Connectedness}
 
-Recall that a continuous map $\alpha$ from the unit interval $[0,1]$ to a metric space is called a \emph{path}. If $p=\alpha (0)$ and $q = \alpha (1)$, then we say that $\alpha$ connects $p$ to $q$.
+Recall that a continuous map $\alpha$ from the unit interval $[0,1]$ to a Euclidean space is called a \emph{path}.
+If $p=\alpha (0)$ and $q = \alpha (1)$, then we say that $\alpha$ connects $p$ to $q$.
 
 
 A set $X$ in the Euclidean space is called \emph{path connected} if any two points $x,y\in X$ can be connected by a path lying in $X$.
@@ -317,10 +316,14 @@ Given a point $x\in X$, the maximal connected subset of $X$ containing $x$ is ca
 
 \chapter{Elementary geometry}
 
+\section*{Polygons}
+
 \begin{thm}{Theorem}\label{thm:sum=(n-2)pi}
 The sum of all the internal angles of a simple $n$-gon is $(n-2)\cdot\pi$. 
 \end{thm}
 
+While this theorem is well known, it is hard to find a reference with a proof without cheating.
+So we present a proof here.
 
 \parit{Proof.}
 The proof is by induction on $n$.
@@ -344,10 +347,13 @@ Note that
 \[k+m=n+2;
 \eqlbl{eq:k+m=n+2}\]
 indeed each side of $P$ appears once as a side of $P$ or $Q$ plus the diagonal appears twice --- once as a side in $Q$ and once as a side of $R$.
-Note that the sum of the angles of $P$ is the sum of the angles of $Q$ and $R$, which by the induction hypothesis are $(k-2)\cdot\pi$ and $(m-2)\cdot\pi$ correspondingly.
-It remains to note that \ref{eq:k+m=n+2} implies
-\[(k-2)\cdot\pi+(m-2)\cdot\pi=(n-2)\cdot\pi.\]
-\qedsf
+
+Observe that $Q$ and $R$, which by the induction hypothesis are $(k\z-2)\cdot\pi$ and $(m-2)\cdot\pi$ correspondingly
+and the sum of angles of $P$ equals to the sum of angles in $Q$ and $Q$.
+Finally by \ref{eq:k+m=n+2} we have that
+\[(k-2)\cdot\pi+(m-2)\cdot\pi=(n-2)\cdot\pi\]
+which proves the theorem.
+\qeds
 
 \section*{Triangle inequality for angles}
 
@@ -360,10 +366,12 @@ The inequality
 holds for any three half-lines $oa$, $ob$ and $oc$ in the Euclidean space.
 \end{thm}
 
-The following lemma says that the angle of a triangle monotonically depends on the opposit side, assuming the we keep the other two sides fixed. It follows directly from the cosine rule.
+We will use the following lemma in the proof;
+it says that the angle of a triangle monotonically depends on the opposite side, assuming the we keep the other two sides fixed.
+It follows directly from the cosine rule.
 
 \begin{thm}{Lemma}\label{lem:angle-monotonicity}
-Let $x$, $y$, $z$, $x'$, $y'$ and $z'$ be 6 points such that $|x-y|=|x'-y'|>0$ and $|y-z|=|y'-z'|>0$.
+Let $x$, $y$, $z$, $x'$, $y'$ and $z'$ be 6 points such that $|x-y|\z=|x'-y'|>0$ and $|y-z|=|y'-z'|>0$.
 Then 
 \[\measuredangle xyz\ge \measuredangle x'y'z'
 \quad\text{if and only if}\quad
@@ -412,7 +420,7 @@ Whence
 \end{align*}
 \qedsf
 
-\section*{Convexity}
+\section*{Convex sets}
 
 A set $X$ in the Euclidean space is called \emph{convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in $X$.
 It is called  \emph{strictly convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
@@ -428,15 +436,6 @@ Let $K\subset \RR^3$ be a closed convex set.
 Then for any point $p\notin K$ there is a plane $\Pi$ that separates $K$ from $p$;
 that is, $K$ and $p$ lie on opposite open half-spaces separated by $\Pi$.
 \end{thm}
-
-A function of two variables $(x,y)\mapsto f(x,y)$ is called convex if 
-its epigraph $z\ge f(x,y)$ is a convex set.
-This is equivalent to the so-called \emph{Jensen's inequality}
-\[f \left (t\cdot x_1 + (1-t)\cdot x_2 \right ) \leq t\cdot f(x_1)+ (1-t)\cdot f(x_2)\]
-for $t\in[0,1]$.
-If $f$ is smooth, then the condition is equivalent to the following inequality for the second directional derivative:
-\[D^2_wf\ge 0\]
-for any vector $w\ne 0$ in the $(x,y)$-plane.
 
 \chapter{Area}
 
@@ -481,23 +480,22 @@ Substituting \ref{eq:area(S2)} and \ref{eq:area(Sa)} and simplifying, we get \re
 Recall that we defined length of curve as the exact upper bound on the length of inscribed polygonal lines.
 It suggests to define area of a surface as a exact upper bound on the area of polyhedrons inscribed in the surface.
 
-However as you will see from the following example, this idea fails badly even for cylindrical surface.
-Namely, we will show that if we define the area as the least upper bound of areas of inscribed polyhedral surfaces, 
-then the area of the lateral surface of the cylinder must be infinite.
-The latter contradicts correct intuition that the area of this surface should be the product of the circumference of the base circle and the height of the cylinder.
-
-
 \begin{wrapfigure}{r}{42 mm}
 \centering
 \includegraphics{asy/schwarz}
 \end{wrapfigure}
+
+However as you will see from the following example, this idea fails badly even for cylindrical surface.
+Namely, we will show that if we define the area as the least upper bound of areas of inscribed polyhedral surfaces, 
+then the area of the lateral surface of the cylinder must be infinite.
+The latter contradicts correct intuition that the area of this surface should be the product of the circumference of the base circle and the height of the cylinder.
 
 Let us divide the cylinder into $m$ equal cylinders by planes parallel to its base.
 This way we obtain $m+1$ circles on the lateral surface of a cylinder, including both bases.
 Further, let us divide each of these circles into $n$ equal arcs in such a way that the dividing points 
 of a circle will lie exactly above the midpoints of arcs on the circle under it.
 Consider all triangles formed by a chord of such arc and line segments connecting the ends of the chord with the points right above and right below the mid point of its arc.
-All the $2mn$ equal triangles form a polyhedral surface which is called Schwarz's boot.
+All the $2\cdot m\cdot n$ equal triangles form a polyhedral surface which is called Schwarz's boot.
 A Schwarz's boot for $m=8$ and $n=6$ is shown on the diagram.
 
 {
@@ -509,8 +507,8 @@ A Schwarz's boot for $m=8$ and $n=6$ is shown on the diagram.
 
 Consider one of the triangle $abc$ which form the Schwarz's boot.
 By construction, its base $ac$ lies in a horizontal plane and the projection $b'$ of $b$ on this plane bisects the arc $ac$.
-Therefore the vertexes of the triangle $ab'c$ are the three consequent vertexes of a regular $2n$-gone inscribed in a unit circle.
-Denote the triangle $ab'c$ by $s_n$; clearly it depends only on $n$ and the radius of the base.
+Therefore the vertexes of the triangle $ab'c$ are the three consequent vertexes of a regular $2\cdot n$-gone inscribed in a unit circle.
+Denote the triangle $ab'c$ by $s_n$; clearly it depends only on $n$ and the radius of the base circle.
 
 
 Both triangles $abc$ and $ab'c$ are isosceles with shares base $ac$.
