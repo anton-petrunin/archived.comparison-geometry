@@ -1,6 +1,13 @@
 \chapter{Parallel transport}
 
-We start to study the intrinsic geometry of surfaces.
+We start to study the \emph{intrinsic geometry} of surfaces.
+A property is called \index{intrinsic}\emph{intrinsic} if it is defined in terms of measuring things inside the surface, for example length of curves or angles between the curves that lie in the surface.
+Otherwise, if a definition of property use ambient space, then it is called \emph{extrinsic}.
+
+For instance, a shortest path is an object of intrinsic geometry of a surface,
+while definition of geodesic is not intrinsic --- it requires acceleration which needs the ambient space.
+However, from Proposition~\ref{prop:gamma''} it follows that there is an intrinsic definition of geodesics as \emph{locally shortest paths with constant-speed parameterization}.  
+
 The following exercise should help you to be in the right mood for this;
 it might look like a tedious problem in calculus, but actually it is an easy problem in geometry.
 
@@ -12,9 +19,9 @@ it might look like a tedious problem in calculus, but actually it is an easy pro
 \end{wrapfigure}
 
 \begin{thm}{Exercise}\label{ex:lasso}
-There is a mountain of frictionless ice with the shape of a perfect cone with a circular base.
-A cowboy is at the bottom and he wants to climb the mountain.
-So, he throws up his lasso which slips neatly over the top of the cone, he pulls it tight and starts to climb.
+There is a mountain of frictionless ice formed by a cone with a circular base.
+Suppose that a cowboy stands at the bottom and he wants to climb the mountain;
+he throws up his lasso which slips neatly over the top of the cone, pulls it tight and starts to climb.
 If the angle of inclination $\theta$ is large, there is no problem; the lasso grips tight and up he goes.
 On the other hand if $\theta$ is small, the lasso slips off as soon as the cowboy pulls on it.
 
@@ -59,7 +66,7 @@ The vector $\vec w={\vec v}(b)\in\T_q$ is called the \emph{parallel transport} o
 
 The parallel transport is denoted by $\iota_\gamma$;
 so we can write $\vec w=\iota_\gamma({\vec v})$ or we can write $\vec w=\iota_\gamma({\vec v})_\Sigma$ if we need to emphasize that we consider surface $\Sigma$.
-From the Exercise~\ref{ex:parallel}, it follows that parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ is an an isometry.
+From the Exercise~\ref{ex:parallel}, it follows that parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ is an isometry.
 In general, the parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ depends on the choice of $\gamma$; that is, for another curve $\gamma_1$ connecting $p$ to $q$ in $\Sigma$, the parallel transport $\iota_{\gamma_1}\:\T_p\to\T_q$ might be different.
 
 Suppose that $\gamma_1$ and $\gamma_2$ are two smooth curves in smooth surfaces $\Sigma_1$ and $\Sigma_2$.
@@ -103,7 +110,7 @@ For a fine partition, the composition
 \[\phi_n\circ\dots\circ\phi_1\:T_p\z\to\T_q\]
 gives an approximation of $\iota_\gamma$.
 Each $\phi_i$ does not increase the magnitude of a vector and neither the composition.
-It is straightforward to see that if if the partition is sufficiently fine, then it is almost isometry; in particular it almost preserves the magnitudes of tangent vectors.
+It is straightforward to see that if the partition is sufficiently fine, then it is almost isometry; in particular it almost preserves the magnitudes of tangent vectors.
 
 \begin{thm}{Exercise}\label{ex:holonomy=not0}
 Construct a loop $\gamma$ in $\SS^2$ with base at $p$ such that the parallel transport $\iota_\gamma\:\T_p\to\T_p$ is not the identity map.
@@ -162,7 +169,7 @@ In this case $\tgc{\gamma_i}=0$ for each $i$ and therefore the total geodesic cu
 
 \begin{thm}{Proposition}\label{prop:pt+tgc}
 Assume $\gamma$ is a closed broken geodesic in a smooth oriented surface $\Sigma$ that starts and ends at the point $p$.
-Then the parallel transport $\iota_\gamma\:T_p\to\T_p$ is a rotation of the the plane $\T_p$ clockwise by angle $\tgc\gamma$.
+Then the parallel transport $\iota_\gamma\:T_p\to\T_p$ is a rotation of the plane $\T_p$ clockwise by angle $\tgc\gamma$.
 
 Moreover, the same statement holds for smooth closed curves and piecewise smooth curves.
 \end{thm}
@@ -183,7 +190,7 @@ If $\theta_i$ denotes the external angle at this vertex of switch from $\gamma_{
 \[\phi_{i+1}=\phi_i-\theta_i \pmod{2\cdot\pi}.\]
 Therefore after going around we get that 
 \[\phi_{n+1}-\phi_1=-\theta_1-\dots-\theta_n=-\tgc\gamma.\]
-Hence the the first statement follows.
+Hence the first statement follows.
 
 For the smooth unit-speed curve $\gamma\:[a,b]\to\Sigma$, the proof is analogous.
 If $\phi(t)$ denotes the angle between ${\vec v}(t)$ and ${\vec w}(t)=\gamma'(t)$, then 
@@ -200,6 +207,7 @@ Whence the angle of rotation
 The case of piecewise regular smooth curve is a straightforward combination of the above two cases. 
 \qeds
 
+\chapter{Gauss--Bonnet formula}
 
 \section*{Spherical area}
 
