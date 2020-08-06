@@ -107,7 +107,17 @@ The product
 \[K=k_1(p)\cdot k_2(p)\]
 is called Gauss curvature at $p$.
 We may denote it by $K(p)$ or $K(p)_\Sigma$ if we need to specify the point $p$ and the surface $\Sigma$.
-The Gauss curvature can be also interpreted as the determinant of the Hessian matrix $M_p$.
+
+Since the product of principle values equals to determinant,
+the Gauss curvature equals to the determinant of the Hessian matrix 
+$M_p\z=
+(\begin{smallmatrix}
+\ell&m\\n&n
+\end{smallmatrix}
+)
+$;
+that is,
+\[K=\ell\cdot n-m^2.\]
 
 \begin{thm}{Exercise}\label{ex:gauss+orientable}
 Show that any surface with positive Gauss curvature is orientable. 
@@ -357,6 +367,26 @@ Since by \ref{prop:S=-D}, $S_p=-L_p\Norm$, we have
 By \ref{prop:surface-integral}, the statement follows.
 \qeds
 
+
+\begin{thm}{Exercise}\label{ex:shape-chart}
+Suppose that $(u,v)\mapsto s(u,v)$ is a chart of a smooth surface $\Sigma$ with unit normal field $\Norm$.
+Show that 
+\begin{align*}
+\langle S(\tfrac{\partial s}{\partial u}), \tfrac{\partial s}{\partial u}\rangle 
+&=\langle \tfrac{\partial^2 s}{\partial u^2},\Norm\rangle,
+&
+\langle S(\tfrac{\partial s}{\partial u}), \tfrac{\partial s}{\partial v}\rangle 
+&=\langle \tfrac{\partial^2 s}{\partial u \partial v},\Norm\rangle,
+\\
+\langle S(\tfrac{\partial s}{\partial v}), \tfrac{\partial s}{\partial u}\rangle 
+&=\langle \tfrac{\partial^2 s}{\partial u \partial v},\Norm\rangle,
+&
+\langle S(\tfrac{\partial s}{\partial v}), \tfrac{\partial s}{\partial v}\rangle 
+&=\langle \tfrac{\partial^2 s}{\partial v^2},\Norm\rangle
+\end{align*}
+for any $(u,v)$.
+
+\end{thm}
 
 \begin{thm}{Exercise}\label{ex:normal-curvature=const}
 Let $\Sigma$ be a smooth oriented surface with the unit normal field $\Norm$.

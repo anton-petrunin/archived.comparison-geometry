@@ -1648,6 +1648,129 @@ dOt z.a,z.b,z.c
 
 endfig;
 
+beginfig(471) 
+save u;
+u:=.7cm;
+
+z.a=(0,1)*u;
+z.b=z.a rotated 120;
+z.c=z.a rotated -120;
+z.s=(4,0)*u;
+
+draw z.a{dir -120}..(.3)*z.a{right}..z.a{dir 120}..z.b..2*z.b{dir 120}..z.b..z.c..2*z.c{dir -120}..z.c..cycle;
+
+%draw z.a+z.s{dir -120}..origin+z.s{right}..z.a+z.s{dir 120}..z.b+z.s..2*z.b+z.s{dir 120}..z.b+z.s..z.c+z.s..2*z.c+z.s{dir -120}..z.c+z.s..cycle;
+
+%dOt z.a,z.b,z.c,z.a+z.s,z.b+z.s,z.c+z.s;
+
+z.e=(0,.5)*u;
+
+z.d0=(0,-1)*u+1.7*z.s;
+z.d1=z.d0+z.e;
+z.d2=z.d0+2*z.e;
+z.d3=z.d0+3*z.e;
+z.d4=z.d0+4*z.e;
+z.d5=z.d0+5*z.e;
+z.d6=z.d0+6*z.e;
+
+%draw z.d1..z.d2..z.d3..z.d4..z.d5{right}..z.d4{left}..z.d6{right}..z.d3{left}..z.d0{right}..z.d2{left}..cycle;
+
+dOt z.a,z.b,z.c
+%,z.a+z.s,z.b+z.s,z.c+z.s,z.d2,z.d3,z.d4
+;
+
+endfig;
+
+beginfig(472) 
+save u,p;
+path p[];
+u:=1cm;
+
+z.a=(0,1)*u;
+z.b=z.a rotated 120;
+z.c=z.a rotated -120;
+z.s=(4,0)*u;
+
+p0= z.c..1.5*z.c{dir -120}..z.c..z.a{dir -120}..(.5)*z.a{right}..z.a{dir 120}..z.b..1.5*z.b{dir 120}..z.b..cycle;
+
+draw p0;
+
+p1= circle(z.a,.3*u) cutafter (subpath (5,6) of p0) cutbefore (subpath (2,3) of p0); 
+draw p1;
+
+p2= circle(origin,.3*u) rotated -90 shifted z.b cutafter (subpath (5,6) of p0) cutbefore (subpath (8,9) of p0); 
+draw p2;
+
+p3= circle(z.c,.3*u) cutafter (subpath (8,9) of p0) cutbefore (subpath (2,3) of p0); 
+draw p3;
+
+z.e=(0,.5)*u;
+
+z.d0=(0,-1)*u+1.7*z.s;
+z.d1=z.d0+z.e;
+z.d2=z.d0+2*z.e;
+z.d3=z.d0+3*z.e;
+z.d4=z.d0+4*z.e;
+z.d5=z.d0+5*z.e;
+z.d6=z.d0+6*z.e;
+
+dOt z.a,z.b,z.c;
+
+label.lrt(btex $z$ etex, point 1 of p0);
+label.rt(btex $b$ etex, point 2.5 of p0);
+label.bot(btex $x$ etex, point 4 of p0);
+label.lft(btex $c$ etex, point 5.5 of p0);
+label.llft(btex $y$ etex, point 7 of p0);
+label.bot(btex $a$ etex, point 8.5 of p0);
+
+label.top(btex $\alpha$ etex, (0,.3)*u +z.a);
+label.urt(btex $\beta$ etex, z.b + .3*(dir 30)*u);
+label.ulft(btex $\gamma$ etex, z.c + .3*(dir 150)*u);
+endfig;
+
+beginfig(473) 
+save u,p;
+path p[];
+u:=1cm;
+
+z.a=origin;
+z.b=(-1,2)*u;
+z.c=(1,1.9)*u;
+z.bb=(-.6,4.1)*u;
+z.cc=(.6,4.05)*u;
+
+p0=z.a{(z.b-z.a) rotated 5 }..z.b--z.b{(z.bb-z.b) rotated 5 }..z.bb--z.bb{(z.cc-z.bb) rotated 5 }..z.cc--z.cc{(z.c-z.cc) rotated 5}..z.c--z.c--cycle;
+draw p0;
+
+p2= circle(origin,.3*u) rotated -90 shifted z.a cutafter (subpath (0,1) of p0) cutbefore (subpath (8,9) of p0); 
+draw p2;
+
+p3= circle(origin,.3*u) rotated -90 shifted z.b cutafter (subpath (2,3) of p0) cutbefore (subpath (0,1) of p0); 
+draw p3;
+
+p4= circle(origin,.3*u) rotated -180 shifted z.bb cutafter (subpath (4,5) of p0) cutbefore (subpath (2,3) of p0); 
+draw p4;
+
+p5= circle(origin,.3*u) rotated 0 shifted z.cc cutafter (subpath (6,7) of p0) cutbefore (subpath (4,5) of p0); 
+draw p5;
+
+p6= circle(origin,.3*u) rotated 0 shifted z.c cutafter (subpath (8,9) of p0) cutbefore (subpath (6,7) of p0); 
+draw p6;
+
+
+label.lft(btex $c$ etex, point 0.5 of p0);
+label.lft(btex $c+y$ etex, point 2.5 of p0);
+label.top(btex $x$ etex, point 4.5 of p0);
+label.rt(btex $b+z$ etex, point 6.5 of p0);
+label.rt(btex $b$ etex, point 8.5 of p0);
+
+label.top (btex $\alpha$ etex, (dir 90)*.3*u+z.a);
+label.rt (btex $\pi{-}\beta$ etex, (dir 45)*.3*u+z.b);
+label.lft (btex $\pi{-}\gamma$ etex, (dir -135)*.3*u+z.c);
+label.top(btex $\pi{-}\alpha$ etex, (dir -90)*.7*u+ point 4.5 of p0);
+
+endfig;
+
 beginfig(48) 
 save u;
 u:=1cm;
@@ -3631,6 +3754,262 @@ drawarrow (-r,0)*u--(r,0)*u;
 drawarrow (0,-.5)*u--(0,r)*u;
 
 label.bot (btex $y=f(x)$ etex, (.4*r,r)*u);
+endfig;
+
+beginfig(2305) 
+save u;
+u:=1.4cm;
+
+z.p=(0,0)*u;
+z.x=(.2,1)*u;
+z.y=(1.2,.1)*u;
+z.z=.9[z.p,.4[z.x,z.y]];
+
+draw z.x..z.z..z.y;
+draw z.p{.1,1}..z.x;
+draw z.p{1,.1}..z.y;
+draw z.p{.5,.5}..z.z;
+
+dOt z.x,z.y,z.z,z.p;
+
+label.top(btex $x$ etex, z.x);
+label.rt(btex $z$ etex, z.y);
+label.urt(btex $y$ etex, z.z);
+label.llft(btex $p$ etex, z.p);
+
+endfig;
+
+beginfig(2308) 
+save u,p;
+path p[];
+u:=1cm;
+
+z.A=origin;
+z.B=(3,0)*u;
+z.C=(1,2)*u;
+
+draw z.A--z.B--z.C--cycle;
+
+arcs(z.B, z.A, z.C, 12);
+
+dOt z.A,z.B,z.C;
+
+
+label.rt(btex $\phi=\measuredangle\hinge x p q$ etex, z.A +14*unitvector(unitvector(z.B-z.A)+unitvector(z.C-z.A)) rotated 20);
+label(btex $a=\side\hinge x p q$ etex rotated angle(z.B-z.C), .5[z.B,z.C]+8*unitvector(z.B-z.C) zscaled (0,1));
+label.ulft(btex $b$ etex, .5[z.A,z.C]);
+label.bot(btex $c$ etex, .5[z.A,z.B]);
+endfig;
+
+beginfig(2310) 
+save u,p;
+path p[];
+u:=.7cm;
+
+z.x=(0,0)*u;
+z.p=(2,-3)*u;
+z.q=(2,4)*u;
+z.xx=.4[z.x,z.q];
+
+whitelabelarcsprof(z.p, z.x, z.q, 12, 25, btex $\le \mangle\hinge x p q$ etex);
+labelarcsprof2(z.p, z.xx, z.q, 12, 26, btex $\ge \mangle\hinge{x'}p q$ etex);
+
+draw z.q--z.x--z.p--z.xx;
+
+dOt z.p,z.q,z.x,z.xx;
+
+
+label.rt(btex $\tilde p$ etex, z.p);
+label.rt(btex $\tilde q$ etex, z.q);
+label.lft(btex $\tilde x$ etex, z.x);
+label.ulft(btex $\tilde x'$ etex, z.xx);
+
+endfig;
+
+beginfig(2315) 
+save u,p;
+path p[];
+u:=1cm;
+
+z.p=(0,0)*u;
+z.q=(6,0)*u;
+z.x0=(-2,2)*u;
+z.x1=.25[z.x0,z.q];
+z.x2=.5[z.x0,z.q];
+z.x3=.5[z.x2,z.p];
+z.x4=.5[z.x3,z.q];
+z.x5=.5[z.x4,z.p];
+
+draw z.x0--z.p;
+draw z.x0--z.q;
+draw z.x1--z.p;
+draw z.x2--z.p;
+draw z.x3--z.q;
+draw z.x4--z.p;
+draw z.x5--z.q;
+
+dOt z.p,z.q,z.x0,z.x1,z.x2,z.x3,z.x4,z.x5;
+
+label.bot(btex $p$ etex, z.p);
+label.bot(btex $q$ etex, z.q);
+label.top(btex $x_0$ etex, z.x0);
+label.urt(btex $x_1$ etex, z.x1);
+label.urt(btex $x_2$ etex, z.x2);
+label.ulft(btex $x_3$ etex, z.x3);
+whitelabel.urt(btex $x_4$ etex, z.x4);
+label.bot(btex $x_5$ etex, z.x5);
+
+endfig;
+
+beginfig(2320) 
+save u;
+u:=1.4cm;
+
+z.p=(0,0)*u;
+z.x=(.2,1)*u;
+z.y=(1.2,.1)*u;
+z.z=.9[z.p,.4[z.x,z.y]];
+
+draw z.x..z.z..z.y;
+draw z.p{.1,1}..z.x;
+draw z.p{1,.1}..z.y;
+draw z.p{.5,.5}..z.z;
+
+dOt z.x,z.y,z.z,z.p;
+
+label.top(btex $x$ etex, z.x);
+label.rt(btex $y$ etex, z.y);
+label.urt(btex $z$ etex, z.z);
+label.llft(btex $p$ etex, z.p);
+
+endfig;
+
+beginfig(2325) 
+save u,p;
+u:=1.7cm;
+path p[];
+
+z.x=(0,0)*u;
+z.y=(2,0)*u;
+z.z=.55[z.x,z.y];
+z.zx=z.z rotatedabout(z.x,-25);
+z.zxx=z.z rotatedabout(z.x,-15);
+z.zy=z.z rotatedabout(z.y,30);
+z.zyy=z.z rotatedabout(z.y,20);
+z.p=z.zy+((z.zx-z.zy) zscaled (.5,3));
+z.zxy=z.zx rotatedabout(z.p,-2);
+
+p0=arc(z.z,z.zxx,z.zx)--arc(z.zx,z.zxy,z.zy)--(arc(z.zy,z.zyy,z.z))--cycle;
+
+hatchfill p0 withcolor (40, 3, -.5bp);
+
+p1=arc(z.z,z.zxx,z.zx);
+
+for i=0 step 3 until abs(z.x-z.z):
+draw p1 shifted -z.x scaled ((abs(z.x-z.z)-i)/(abs(z.x-z.z))) shifted z.x;
+endfor
+
+p2=arc(z.zy,z.zyy,z.z);
+
+for i=0 step 3 until abs(z.y-z.z):
+draw p2 shifted -z.y scaled ((abs(z.y-z.z)-i)/(abs(z.y-z.z))) shifted z.y;
+endfor
+
+p3=arc(z.zx,z.zxy,z.zy);
+
+for i=0 step 3 until abs(z.p-z.zx):
+draw p3 shifted -z.p scaled ((abs(z.p-z.zx)-i)/(abs(z.p-z.zx))) shifted z.p;
+endfor
+
+draw z.x--z.y--z.p--cycle;
+draw z.x--z.zx--z.p--z.zy--z.y;
+
+
+dOt z.p,z.x,z.y,z.z,z.zx,z.zy;
+
+label.lft(btex $\tilde x$ etex, z.x);
+label.rt(btex $\tilde y$ etex, z.y);
+label.top(btex $\tilde z$ etex, z.z);
+label.llft(btex $\tilde z_y$ etex, z.zx);
+label.lrt(btex $\tilde z_x$ etex, z.zy);
+label.bot(btex $\tilde p$ etex, z.p);
+
+endfig;
+
+beginfig(2330) 
+save u,p;
+path p[];
+u:=1cm;
+
+z.p1=(.1,-1)*u;
+z.p2=(-.2,1)*u;
+z.x1=(-1,.1)*u;
+z.x2=(1,0)*u;
+z.z=whatever[z.p1,z.p2]=whatever[z.x1,z.x2];
+
+draw z.p1--z.p2--z.x1--z.p1--z.x2--z.p2;
+draw z.x1--z.x2 dashed evenly;
+
+dOt z.x1,z.x2,z.p1,z.p2,z.z;
+
+label.bot(btex $\dot p$ etex, z.p1);
+label.top(btex $\dot z$ etex, z.p2);
+label.lft(btex $\dot x$ etex, z.x1);
+label.rt(btex $\dot y$ etex, z.x2);
+label.urt(btex $\dot w$ etex, z.z);
+endfig;
+
+beginfig(2335) 
+save u,p,n;
+path p[];
+u:=1cm;
+n=5;
+
+z.p=origin;
+z.x=(-3,-4)*u;
+z.y=(3.5,-4)*u;
+
+draw z.x--z.y;
+draw z.p--z.x;
+draw z.p--z.y;
+
+z.x[0][n]=z.x;
+z.x[n][n]=z.y;
+for i=1 step 1 until n-1:
+z.x[i][n]=(i/n+normaldeviate/(20*n))[z.x,z.y];
+draw z.p--z.x[i][n];
+endfor
+
+for i=0 step 1 until n:
+for j=1 step 1 until n-1:
+z.x[i][j]=(j/n+normaldeviate/(20*n))[z.p,z.x[i][n]];
+endfor
+endfor
+
+for i=1 step 1 until n:
+for j=1 step 1 until n-1:
+draw z.x[i-1][j+1]--z.x[i][j]--z.x[i-1][j];
+endfor
+endfor
+
+for i=0 step 1 until n:
+for j=1 step 1 until n:
+dOt z.x[i][j];
+endfor
+endfor
+
+dOt z.p;
+
+
+label.urt(btex $p=x^{0,0}=\dots=x^{N,0}$ etex, z.p);
+label.lrt(btex $y=x^{N,N}$ etex, z.y);
+label.llft(btex $x^{0,N}=x$ etex, z.x);
+label.ulft(btex $x^{0,1}$ etex, z.x[0][1]);
+label.urt(btex $x^{N,1}$ etex, z.x[n][1]);
+label.bot(btex $x^{1,N}$ etex, z.x[1][n]);
+label.bot(btex $\dots$ etex, z.x[3][n]+(0,-2));
+label(btex $\dots$ etex rotated angle(z.p-z.x), z.x[0][3]+(-3,3));
+label(btex $\dots$ etex rotated angle(z.y-z.p), z.x[n][3]+(3,3));
 endfig;
 
 end

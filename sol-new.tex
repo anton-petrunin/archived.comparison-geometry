@@ -772,7 +772,7 @@ Show that $s$ is regular; that is, $\tfrac{\partial s}{\partial t}$ and $\tfrac{
 Show that $s$ is local embedding; that is, any $(t_0,\theta_0)$ admits a neighborhood $U$ in the $(t,\theta)$-plane such that the restriction $s|_U$ has a continuous inverse.
 It remains to apply \ref{cor:reg-parmeterization}.
 
-\parbf{\ref{ex:star-shaped-disc}}; 
+\parbf{\ref{ex:star-shaped-disc}.} 
 The solutions of these exercises are build on the following general construction known as the \emph{Moser trick}.
 
 Suppose that $\vec u_t$ is a smooth vector field on a plane.
@@ -830,7 +830,7 @@ Show that the plane spanned by $\tfrac{\partial s}{\partial u}$ and $\tfrac{\par
 together with \ref{def:tangent-plane} it proves the if part.
 
 To prove the only-if part, fix a chart 
-\[s\:(u,v)\mapsto(x(u,v),y(u,v),z(u,v))\] at $p$ and apply the inverse function theorem for the map $(u,v)\mapsto(x(u,v),y(u,v))$.
+\[s\:(u,v)\mapsto(x(u,v),y(u,v),z(u,v))\] at $p$ and apply the inverse function theorem for the map $(u,v)\z\mapsto(x(u,v),y(u,v))$.
 
 
 \parbf{\ref{ex:implicit-orientable}.} Show that $\Norm=\tfrac{\nabla h}{|\nabla h|}$ defines a unit normal field on $\Sigma$.
@@ -856,6 +856,8 @@ In other words $m=0$, or equivalently, the $x$-axis points in the direction of c
 \parbf{\ref{ex:gauss+orientable}.} Note that the principle curvatures have the same sign at each point.
 Therefore we can choose a unit normal $\Norm$ at each point so that both principle curvatures are positive.
 Show that it defines a field on the surface.
+
+\parbf{\ref{ex:shape-chart}.} %???
 
 \parbf{\ref{ex:normal-curvature=const}}; \ref{SHORT.ex:normal-curvature=const:a}.
 Observe that $\Sigma$ has unit Hessian matrix at each point and apply the definition of shape operator.
@@ -1100,7 +1102,7 @@ It follows that $\Norm\:\Sigma\to\mathbb{S}^2$ is bijection.
 
 Applying \ref{cor:intK}, we get that 
 \begin{align*}
-\int_\Sigma K&=\area\mathbb{S}^2
+\int_\Sigma K&=\area\mathbb{S}^2=
 \\
 &=4\cdot\pi.
 \end{align*}
@@ -1111,7 +1113,7 @@ It follows that the image $\Norm(\Sigma)$ lies in the south hemisphere.
 
 Applying \ref{cor:intK}, we get that 
 \begin{align*}
-\int_\Sigma K&\le \tfrac12\cdot\area\mathbb{S}^2
+\int_\Sigma K&\le \tfrac12\cdot\area\mathbb{S}^2=
 \\
 &=2\cdot\pi.
 \end{align*}
@@ -1281,7 +1283,7 @@ Since $\gamma$ is geodesic, we have $\gamma''(t)=k(t)\cdot\Norm_{\gamma(t)}$.
 
 Since $\gamma$ has unit speed, $\langle\gamma'(t),\gamma'(t)\rangle=1$ for any $t$.
 
-Without loss of generality, we can assume that $p$ is the origin of $\RR^3$.
+Without loss of generality, we can assume that $p$ is the origin of~$\RR^3$.
 Since $p$ is inside $\Sigma$, we have that $\langle\gamma(t),\Norm_{\gamma(t)}\rangle\le 0$ for any $t$.
 It follows that 
 \[\langle\gamma''(t),\gamma(t)\rangle=k(t)\cdot \langle\gamma(t),\Norm_{\gamma(t)}\rangle\le 0\]
@@ -1290,7 +1292,7 @@ for any $t$.
 Applying the above estimates, we get that 
 \begin{align*}
 \rho''(t)
-&=\langle\gamma(t),\gamma(t)\rangle''
+&=\langle\gamma(t),\gamma(t)\rangle''=
 \\
 &=2\cdot\langle\gamma''(t),\gamma(t)\rangle+2\cdot\langle\gamma'(t),\gamma'(t)\rangle\le 
 \\
@@ -1380,14 +1382,14 @@ To prove the last statement, apply \ref{ex:bisection-of-S2}.
 \parbf{\ref{ex:sqrt(3)}.} Note that it is sufficient to show that the surface has no geodesic loops.
 Estimate the integral of Gauss curvature of whole surface and a disc in it surrounded by a geodesic loop.
 
-\parbf{\ref{ex:self-intersections}}; \textit{(a)}.
+\parbf{\ref{ex:self-intersections}}; \textit{(easy)}.
 Consider the 4 regions bounded by loops.
 Apply Gauss--Bonnet formula (\ref{thm:gb}) to show that the integral of Gauss curvature on each of these region exceeds $\pi$.
 Therefore 
 \[\int_\Sigma K>4\cdot\pi.\]
 The latter contradicts \ref{ex:intK:4pi}.
 
-\parit{(b)}.
+\parit{(tricky)}.
 Denote by $\alpha$, $\beta$, and $\gamma$ the angles of the triangle.
 Apply the Gauss--Bonnet formula (\ref{thm:gb}) to show that the loops surround regions with integral of Gauss curvature $\pi+\alpha$, $\pi+\beta$, and $\pi+\gamma$ respectively.
 
@@ -1396,6 +1398,38 @@ It follows that
 \[\int_\Sigma K>(\pi+\alpha)+(\pi+\beta)+(\pi+\gamma)>4\cdot\pi\]
 which contradicts \ref{ex:intK:4pi}.
 
+\begin{wrapfigure}{r}{33 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-472}
+\bigskip
+\includegraphics{mppics/pic-473}
+\vskip4mm
+\end{wrapfigure}
+
+\parit{(advanced)}.
+Assume a convex surface $\Sigma$ with such geodesic exists;
+suppose that arcs and angles are labeled by their lengths.
+
+Apply Gauss--Bonnet formula to show that
+\[2\cdot\alpha<\beta+\gamma\]
+and 
+\[2\cdot\beta+2\cdot \gamma<\pi+\alpha.\]
+Conclude that $\alpha <\tfrac \pi 3$.
+
+Consider the part of geodesic without the arc~$a$.
+Pass to its convex hull;
+denote its surface by $\Sigma'$.
+
+Note that $\Sigma'$ is divided by the curve into 4 parts, one pentagon and three monogons.
+Each of these pieces can be developed in the plane, moreover the resulting figure is convex.
+
+Consider the plane figure that corresponds to the pentagon. 
+Its sides are formed by convex curves with marked lengths, the angles of the pentagon are marked as well.
+It remains to show that there is no pentagon with these properties.
+
+
+\parbf{\ref{ex:diam-angle}.}
 
 \parbf{\ref{ex:deformation}.}
 

@@ -1,0 +1,440 @@
+\chapter{Semigeodesic chart}\label{chap:semigeodesic}
+
+This chapter contains formal computational proofs of several statements discussed above;
+the calculations performed in so called semigeodesic charts --- a special type of charts on smooth surface.
+
+\section*{Polar coordinates}
+
+The property of exponential map in \ref{prop:exp} can be used to define \index{polar coordinates}\emph{polar coordinates} in a smooth surface $\Sigma$ with respect to a point $p\in \Sigma$.
+
+Namely, fix polar coordinates $(\theta,r)$ on tangent plane $\T_p$.
+If $\vec v\in \T_p$ has coordinates $(\theta,r)$,
+then we say that $q=\exp_p\vec v$ is the point in $\Sigma$ with the polar coordinates $(\theta,r)$, or briefly $q\z=w_p(r,\theta)$.
+Note that according to Proposition~\ref{prop:exp} polar coordinates behave usual way in a neighborhood of $p$;
+that is, there is $r_0>$ such that if $r_1,r_2<r_0$ then $w_p(r_1,\theta_1) = w_p(r_2,\theta_2)$ if and only if
+$r_1=r_2=0$ or $r_1=r_2$ and $\theta_1=\theta_2+2\cdot n\cdot\pi$ for an integer $n$.
+
+The following statement is known as \index{Gauss lemma}\emph{Gauss lemma},
+it will play key role in the proof of \ref{prop:gamma''}.
+
+\begin{thm}{Lemma}\label{lem:palar-perp}
+Let $w_p(\theta,r)$ describes polar coordinates in a neingborhood of point $p$ of smooth surface $\Sigma$.
+Then
+\[\tfrac{\partial w_p}{\partial\theta}\perp\tfrac{\partial w_p}{\partial r}\]
+for any $r$ and $\theta$.
+\end{thm}
+
+
+\parit{Proof.}
+Note that by the definition of exponential map, for a fixed $\theta$, the curve $\gamma_\theta(t)=w(\theta,t)$ is a unit-speed geodesic that starts at $p$;
+in particular we have the following two identities:
+\begin{enumerate}[(i)]
+\item Since the geodesic has unit speed we have $|\tfrac{\partial}{\partial r}w_p|=|\gamma_\theta'(r)|=1$. In particular,
+ \[\tfrac{\partial}{\partial \theta}\langle\tfrac{\partial w_p}{\partial r},\tfrac{\partial w_p}{\partial r}\rangle=0\]
+\item Since $\tfrac{\partial^2w_p}{\partial r^2}=\gamma''_\theta(r)\perp\T_{\gamma_\theta(r)}$, we have 
+\[\langle\tfrac{\partial^2w_p}{\partial r^2},\tfrac{\partial w_p}{\partial \theta}\rangle=0\]
+\end{enumerate}
+Therefore
+\begin{align*}
+\tfrac{\partial}{\partial r}
+\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle
+&=\langle\tfrac{\partial^2 w_p}{\partial\theta\partial r},\tfrac{\partial w_p}{\partial r}\rangle
++
+\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial^2 w_p}{\partial r^2}\rangle=
+\\
+&=\tfrac12\cdot \tfrac{\partial}{\partial \theta}\langle\tfrac{\partial w_p}{\partial r},\tfrac{\partial w_p}{\partial r}\rangle=
+\\
+&=0
+\end{align*}
+That is $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$.
+
+Note that $w_p(\theta,0)=p$ for any $\theta$.
+Therefore
+$\tfrac{\partial w_p}{\partial\theta}=0$
+and in particular 
+\[\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0\]
+if $r=0$.
+Since $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$, 
+we get 
+\[\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0\]
+everywhere.
+Whence the statement follows.
+\qeds
+
+\section*{Shortest paths are geodesics: a formal proof}
+
+The following proof relies on the construction of polar coordinates in a smooth surface see Appendix~\ref{chap:semigeodesic} and the Gauss lemma \ref{lem:palar-perp}.
+
+\parit{Proof of \ref{prop:gamma''}.}\label{page:proof-of-gamma''}
+Let $\gamma\:[0,\ell]\to\Sigma$ be a shortest path parameterized by arc-length.
+Suppose $\ell=\length\gamma$ is sufficiently small, so $\gamma$ can be described in the polar coordinates at $p$;
+say $\gamma(t)=w_p(\theta(t),r(t))$ for some functions $t\mapsto \theta(t)$ and $t\mapsto r(t)$ such that $r(0)=0$. %???problem
+
+Note that by chain rule, we have
+\[\gamma'(t)=\tfrac{\partial w_p}{\partial \theta}\cdot \theta'(t)+\tfrac{\partial w_p}{\partial r}\cdot r'(t)
+\eqlbl{eq:chain(gamma)}\]
+if the left side is defined.
+By Gauss lemma \ref{lem:palar-perp}, $\tfrac{\partial w_p}{\partial \theta}\perp\tfrac{\partial w_p}{\partial r}$ and by definition of polar coordinates $|\tfrac{\partial w_p}{\partial r}|=1$.
+Therefore \ref{eq:chain(gamma)} implies
+\[|\gamma'(t)|\ge r'(t).\eqlbl{eq:|gamma'|=r'}\]
+for any $t$ where $\gamma'(t)$ is defined.
+
+Since $\gamma$ parameterized by arc-length, we have 
+\[|\gamma(t_2)-\gamma(t_1)|\le |t_2-t_1|.\]
+In particular, $\gamma$ is Lipschitz.
+Therefore by Rademacher's theorem (\ref{thm:rademacher}) the derivative $\gamma'$ is defined almost everywhere.
+By~\ref{adex:integral-length:a}, we have that
+\begin{align*}
+\length\gamma&=\int_0^\ell|\gamma'(t)|\cdot dt\ge
+\\
+&\ge\int_0^\ell r'(t)\cdot dt=
+\\
+&=r(\ell).
+\end{align*}
+
+Note that by the definition of polar coordinates, there is a geodesic of length $r(\ell)$ from $p=\gamma(0)$ to $q=\gamma(\ell)$.
+Since $\gamma$ is a shortest path, we have therefore $r(\ell)=\ell$ and moreover $r(t)=t$ for any $t$.
+This equality holds if and only if we have equality in \ref{eq:|gamma'|=r'} for almost all $t$.
+The latter implies that $\gamma$ is a geodesic.
+
+It remains to prove the partial converse.
+
+Fix a point $p\in\Sigma$.
+Let $\eps>0$ be as in \ref{prop:exp}.
+Assume a geodesic $\gamma$ of length less than $\eps$ from $p$ to $q$ does not minimize the length between its endpoints.
+Then there is a shortest path from $p$ to $q$, which becomes a geodesic if parameterized by its arc-length.
+That is, there are two geodesics from $p$ to $q$ of length smaller than $\eps$.
+In other words there are two vectors ${\vec v},\vec w\in\T_p$ such that $|{\vec v}|<\eps$, $|\vec w|<\eps$ and 
+$q=\exp_p\vec v=\exp_p\vec w$.
+But according to \ref{prop:exp}, the exponential map is injective in $\eps$-neighborhood of zero --- a contradiction.\qeds
+
+\section*{Gauss curvature}
+
+A chart $(u,v)\mapsto s(u,v)$ of smooth surface $\Sigma$ is called \index{semigeodesic chart}\emph{semigeodesic} if $|\tfrac{\partial s}{\partial u}|=1$ and $\tfrac{\partial s}{\partial u}\perp\tfrac{\partial s}{\partial v}$ for any $(u,v)$.
+
+\begin{thm}{Proposition}
+Any point $p$ on a smooth surface $\Sigma$ can be covered by a semigeodesic chart.
+\end{thm}
+
+\parit{Proof.}
+By Gauss lemma (\ref{lem:palar-perp}) polar coordinates is an example of a semigeodesic chart.
+It remains to find a point $q\ne p$ such that polar coordinates on $\Sigma$ with center at $q$ cover $p$;
+any sufficiently close point will do the trick. %??? needs bit more
+\qeds
+
+A chart $(u,v)\mapsto s(u,v)$ is called \emph{orthogonal} if $\tfrac{\partial s}{\partial u}\perp\tfrac{\partial s}{\partial v}$ for any $(u,v)$.
+Note that any semigeodesic chart is orthogonal.
+
+\begin{thm}{Lemma}\label{lem:K(orthogonal)}
+Let $(u,v)\mapsto s(u,v)$ be a orthogonal chart of smooth surface $\Sigma$.
+Then 
+\[K=\tfrac1{a\cdot b}\cdot\left(
+\tfrac{\partial }{\partial u}
+(\tfrac1a\cdot\tfrac{\partial }{\partial u}b)
++
+\tfrac{\partial }{\partial v}
+(\tfrac1b\cdot\tfrac{\partial }{\partial v}a)
+\right)\eqlbl{eq:K(orthonormal)}\]
+where 
+$a=a(u,v)\df|\tfrac{\partial s}{\partial u}|$,
+$b=b(u,v)\df|\tfrac{\partial s}{\partial v}|$,
+and
+$K=K(u,v)$ denotes the Gauss curvature of $\Sigma$ at $s(u,v)$.
+
+In particular, if $(u,v)\mapsto s(u,v)$ is a semigeodesic chart, then $a\equiv 1$ and therefore
+\[K=\tfrac1b\cdot\tfrac{\partial^2 b}{\partial u^2}.\]
+
+\end{thm}
+
+\parit{Proof.}
+Set $\vec u(u,v)\df\tfrac1a\cdot\tfrac{\partial s}{\partial u}$
+and 
+$\vec v(u,v)\df\tfrac1b\cdot \tfrac{\partial s}{\partial v}$.
+Recall that $\Norm(u,v)$ denotes the unit normal vector to $\Sigma$ at $s(u,v)$.
+
+Observe that $\vec u, \vec v,\Norm$ form an orthonormal frame for any $(u,v)$.
+Without loss of generality we may assume that the frame $\vec u, \vec v,\Norm$ is oriented; that is, $\Norm=\vec u\times \vec v$ for any $(u,v)$.
+
+Suppose that $\ell=\ell(u,v)$, $m=m(u,v)$, and $n=n(u,v)$ be the components of the matrix describing the shape operator in the frame $\vec u, \vec v$.
+Since $\vec u, \vec v$ is an orthonormal frame, by \ref{ex:shape-chart} we have
+\[
+\begin{aligned}
+\tfrac1{a^2}
+\cdot
+\langle \tfrac{\partial^2s}{\partial u^2},\Norm\rangle
+=
+\langle S(\vec u),\vec u\rangle
+&=\ell,
+&
+\tfrac1{a\cdot b}
+\cdot
+\langle\tfrac{\partial^2s}{\partial u\partial v},\Norm\rangle
+=
+\langle S(\vec u),\vec v\rangle&=m,
+\\
+\tfrac1{a\cdot b}
+\cdot
+\langle\tfrac{\partial^2s}{\partial v\partial u},\Norm\rangle
+=
+\langle S(\vec v),\vec u\rangle&=m,
+&
+\tfrac1{b^2}
+\cdot
+\langle \tfrac{\partial^2s}{\partial v^2},\Norm\rangle
+=
+\langle S(\vec v),\vec v\rangle&=n.
+\end{aligned}
+\eqlbl{eq:shape-lmn}
+\]
+
+First let us show that the statement follows from the following identities:
+\[
+\begin{aligned}
+\tfrac{\partial}{\partial u}\vec u
+&=
+-\tfrac1{b}\cdot \tfrac{\partial a}{\partial v}
+\cdot
+\vec v 
++
+a\cdot \ell\cdot \Norm
+,
+&
+\tfrac{\partial}{\partial u}\vec v
+&=
+\tfrac1{b}\cdot \tfrac{\partial a}{\partial v}
+\cdot \vec u
++
+a\cdot m\cdot \Norm
+\\
+\tfrac{\partial}{\partial v}\vec u
+&=
+-\tfrac1{a}\cdot \tfrac{\partial b}{\partial u}\cdot\vec v
++
+b\cdot m\cdot \Norm
+,
+&
+\tfrac{\partial}{\partial v}\vec v
+&=\tfrac1{a}\cdot \tfrac{\partial b}{\partial u}\cdot\vec u
++
+b\cdot n\cdot \Norm
+\end{aligned}
+\eqlbl{eq:key-orthogonal}
+\]
+
+Indeed, recall that the Gauss curvature equals to the determinant of the matrix $
+(\begin{smallmatrix}
+\ell&m\\n&n
+\end{smallmatrix}
+)
+$;
+that is, $K=\ell\cdot n-m^2$.
+Therefore 
+\begin{align*}
+\langle\tfrac{\partial}{\partial u}\vec u,\tfrac{\partial}{\partial v}\vec v\rangle 
+-
+\langle\tfrac{\partial}{\partial v}\vec u,\tfrac{\partial}{\partial u}\vec v\rangle
+&=a\cdot b\cdot(\ell\cdot n-m^2)=
+\\
+&=a\cdot b\cdot K.
+\intertext{On the other hand}
+\langle\tfrac{\partial}{\partial u}\vec u,\tfrac{\partial}{\partial v}\vec v\rangle 
+-
+\langle\tfrac{\partial}{\partial v}\vec u,\tfrac{\partial}{\partial u}\vec v\rangle
+&= 
+\left(\tfrac{\partial}{\partial v}\langle\tfrac{\partial}{\partial u}\vec u,\vec v\rangle -\langle\tfrac{\partial^2}{\partial u\partial v}\vec u,\vec v\rangle\right)-
+\\
+&-
+\left(\tfrac{\partial}{\partial u}\langle\tfrac{\partial}{\partial v}\vec u,\vec v\rangle-\langle\tfrac{\partial^2}{\partial u\partial v}\vec u,\vec v\rangle\right)=
+\\
+&=\tfrac{\partial}{\partial v}(-\tfrac1{b}\cdot \tfrac{\partial a}{\partial v})
+-
+\tfrac{\partial}{\partial u}(\tfrac1{a}\cdot \tfrac{\partial b}{\partial u})
+\end{align*}
+The identity \ref{eq:K(orthonormal)} follows since the left hand sides in the last two equations are identical.
+
+It remains to prove \ref{eq:key-orthogonal}.
+Since the frame $\vec u, \vec v,\Norm$ is orthonormal,
+first two vector identities are equivalent to the following six real identities:
+\[
+\begin{aligned}
+\langle\tfrac{\partial}{\partial u}\vec u,\vec u\rangle
+&=0,
+&
+\langle\tfrac{\partial}{\partial u}\vec v,\vec u\rangle
+&=
+\tfrac1{b}\cdot \tfrac{\partial a}{\partial v},
+\\
+\langle\tfrac{\partial}{\partial u}\vec u,\vec v\rangle
+&=-\tfrac1{b}\cdot \tfrac{\partial a}{\partial v},
+&
+\langle\tfrac{\partial}{\partial u}\vec v,\vec v\rangle
+&=0,
+\\
+\langle\tfrac{\partial}{\partial u}\vec u,\Norm\rangle
+&=a\cdot \ell,
+&
+\langle\tfrac{\partial}{\partial u}\vec v,\Norm\rangle
+&=
+a\cdot m.
+\end{aligned}
+\eqlbl{eq:key-orthogonal/2}
+\]
+
+By taking partial derivatives of the identities
+$\langle\vec u,\vec u\rangle=1$,
+$\langle\vec u,\vec v\rangle=0$, and
+$\langle\vec v,\vec v\rangle=1$,
+we get 
+\begin{align*}
+\langle\tfrac{\partial}{\partial u}\vec u,\vec u\rangle
+&=0,
+&
+\langle\tfrac{\partial}{\partial u}\vec v,\vec v\rangle
+&=0,
+&
+\langle\tfrac{\partial}{\partial u}\vec v,\vec u\rangle
+&=
+-
+\langle\vec v,\tfrac{\partial}{\partial u}\vec u\rangle.
+\end{align*}
+
+
+Further, observe that
+\[
+\begin{aligned}
+\tfrac{\partial}{\partial u}\vec v
+&=
+\tfrac{\partial}{\partial v}
+(\tfrac1b\cdot \tfrac{\partial s}{\partial v})=
+\\
+&=\tfrac1b\cdot\tfrac{\partial^2s}{\partial u\partial v}
++
+\tfrac{\partial}{\partial u}(\tfrac1b)
+\cdot
+\tfrac{\partial s}{\partial v}.
+\end{aligned}
+\eqlbl{eq:dv/du}
+\]
+Therefore 
+\begin{align*}
+\langle\tfrac{\partial}{\partial u}\vec v,\vec u\rangle
+&=
+\tfrac1{a\cdot b}\cdot \langle\tfrac{\partial^2s}{\partial v\partial u},\tfrac{\partial s}{\partial u}\rangle
+=
+\\
+&=\tfrac1{2\cdot a\cdot b}\cdot \tfrac{\partial}{\partial v}\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial u}\rangle=
+\\
+&=\tfrac1{2\cdot a\cdot b}\cdot \tfrac{\partial a^2}{\partial v}=
+\\
+&=\tfrac1{b}\cdot \tfrac{\partial a}{\partial v}
+\intertext{and}
+\langle\vec v,\tfrac{\partial}{\partial u}\vec u\rangle
+&=-\tfrac1{b}\cdot \tfrac{\partial a}{\partial v}.
+\end{align*}
+Since
+$0=\tfrac{\partial}{\partial u}\langle\vec v,\vec u\rangle=
+\langle\tfrac{\partial}{\partial u}\vec v,\vec u\rangle
++
+\langle\vec v,\tfrac{\partial}{\partial u}\vec u\rangle$,
+we get
+\begin{align*}
+\langle\tfrac{\partial}{\partial u}\vec v,\vec u\rangle
+=
+-
+\langle\vec v,\tfrac{\partial}{\partial u}\vec u\rangle
+&=\tfrac1{b}\cdot \tfrac{\partial a}{\partial v}.
+\end{align*}
+
+Applying \ref{eq:shape-lmn} and \ref{eq:dv/du}, we get
+\begin{align*}
+\langle\tfrac{\partial}{\partial u}\vec u,\Norm\rangle
+&=
+\tfrac1{a}\cdot \langle\tfrac{\partial^2s}{\partial u^2},\Norm\rangle
+=a\cdot \ell,
+\\
+\langle\tfrac{\partial}{\partial u}\vec v,\Norm\rangle
+&=
+\tfrac1{a}\cdot \langle\tfrac{\partial^2s}{\partial u\partial v},\Norm\rangle
+=a\cdot m,
+\end{align*}
+that implies the last two equalities in \ref{eq:key-orthogonal/2}.
+Therefore the first two identities in \ref{eq:key-orthogonal} are proved.
+The other two identities in \ref{eq:key-orthogonal} can be proved along the same lines.
+\qeds
+
+\section*{The remarkable theorem}
+
+Let $\Sigma_1$ and $\Sigma_2$ be two smooth regular surfaces in the Euclidean space.
+A map $f\:\Sigma_1\to \Sigma_2$ is called  length-preserving if for any curve $\gamma_1$ in $\Sigma_1$ the curve $\gamma_2=f\circ\gamma_1$ in $\Sigma_2$ has the same length. %???it is sufficient to consider smooth only curves???
+If in addition $f$ is smooth and bijective, then it is called \emph{intrinsic isometry}. 
+
+A simple example of intrinsic isometry can obtained by warping a plane into a cylinder.
+The following exercise produce slightly more interesting example.
+
+\begin{thm}{Exercise}\label{ex:deformation}
+Suppose $\gamma(t)=(x(t),y(t))$ is a smooth unit-speed curve in the plane such that $y(t)=a\cdot \cos t$.
+Let $\Sigma_\gamma$ be the surface of revolution of $\gamma$ around the $x$-axis.
+Show that a small open domain in $\Sigma_\gamma$ admits a smooth length-pereserving map to the unit sphere.
+
+Conclude that any round disc $\Delta$ in $\SS^2$ of intrinsic radius smaller than $\tfrac\pi2$ admits a smooth length preserving deformation; that is, there is one parameter family of surfaces with boundary $\Delta_t$, such that $\Delta_0=\Delta$ and $\Delta_t$ is not congruent to $\Delta_0$ for any $t\ne0$.\footnote{In fact any disc in $\SS^2$ of intrinsic radius smaller than $\pi$ admits a smooth length preserving deformation. %???REF
+}
+\end{thm}
+
+
+\begin{thm}{Theorem}\label{thm:remarkable}
+Suppose $f\:\Sigma_1\to \Sigma_2$ is an intrinsic isometry between two smooth regular surfaces in  the Euclidean space; $p_1\in \Sigma_1$ and $p_2=f(p_1)\in \Sigma_1$.
+Then 
+\[K(p_1)_{\Sigma_1}=K(p_2)_{\Sigma_2};\]
+that is, the Gauss curvature of $\Sigma_1$ at $p_1$ is the same as the Gauss curvature of $\Sigma_2$ at $p_2$.
+\end{thm}
+
+This theorem was proved by Carl Friedrich Gauss \cite{gauss} who called it \emph{Remarkable theorem} (Theorema Egregium).
+The theorem is indeed remarkable because the Gauss curvature is defined as a product of principle curvatures which might be different at these points; however, according to the theorem, their product can not change.
+In other words, the Gaussian curvature is an \emph{intrinsic invariant}.
+
+In fact Gauss curvature of the surface at the given point can be found \emph{intrinsically},
+by measuring the lengths of curves in the surface.
+For example, Gauss curvature $K(p)$ in the following formula for the circumference $c(r)$ of a geodesic circle centered at $p$ in a surface: 
+\[c(r)=2\cdot\pi\cdot r-\tfrac\pi3\cdot K(p)\cdot r^3+o(r^3).\]
+
+Note that the theorem implies there is no smooth length-preserving map that sends an open region in the unit sphere to the plane.%
+\footnote{There are plenty of non-smooth length-preserving maps from the sphere to the plane; see \cite{petrunin-yashinski} and the references there in.}
+It follows since the Gauss curvature of the plane is zero and the unit sphere has Gauss curvature 1. 
+In other words, there is no map of a region on Earth without distortion.
+
+\parit{Proof.}
+
+\section*{Gauss--Bonnet formula: a formal proof}\label{page:gauss--bonnet:formal}
+
+The following proof relies on two statements.
+
+First, the following identity in polar coordinates $(r,\theta)\mapsto w_p(r,\theta)$ on a smooth surface:
+\[K=\tfrac1b\cdot\tfrac{\partial^2 b}{\partial \theta^2},\]
+where $b=|\tfrac{\partial w_p}{\partial \theta}|$; see \ref{lem:K(orthogonal)}.
+
+Second, is the Green formula which can be formulated the following way.
+Let $\gamma$ be a piecewise smooth simple closed curve in a plane that bounds a compact region $D$.
+Suppose that $\gamma$ is oriented in such a way that $D$ lies on the left from $\gamma$.
+Then for any two smooth functions $P$ and $Q$ defined on $D$ we have
+\[\iint_D (\tfrac{\partial Q}{\partial x}-\tfrac{\partial P}{\partial y})\cdot dx\cdot dy=\int_\gamma (P\cdot dx+Q\cdot dy).\]
+
+Note that Green and similar to Gauss--Bonnet formulas are similar --- they relate the integral along a disc and its boundary curve.
+So it should be not surprising Green helps to prove Gauss--Bonnet.
+
+\begin{thm}{Lemma}
+Let $\vec u,\vec v,\vec w$ be two tangent vector fields along a piecewise smooth curve $\gamma$ on a smooth surface $\Sigma$.
+Suppose that $\gamma$ is parametrized by length and
+at each point the frame $\vec u(s),\vec v(s)$ is oriented and orthonormal for any $s$;
+that is, $|\vec u|=|\vec v|=1$ and $\vec v$ obtained from $\vec u$ by counterclockwise rotation of the tangent plane at each point.
+Further suppose that $\vec w$ is a parallel vector field.
+Then there is a smooth function $\phi(s)$ such that $\vec u(s)$ is a counterclockwise rotation of $\vec w(s)$ and
+\[\phi'(s)=\langle\vec u'(s),\vec v(s)\rangle\]
+for any $s$.
+
+Moreover if $\gamma\:[a,b]\to\Sigma$ is a loop based at a point $p$ then the parallel transport $\iota\:\T_p\to\T_p$ along $\gamma$ is a counterclockwise roatation by angle
+\[\omega=\phi(a)-\phi(b)=-\int_a^b\phi'(s)\cdot ds.\]
+\end{thm}
+
+\begin{thm}{Corollary}
+Suppose that $\gamma$ is a piecewise smooth loop on a smooth surface $\Sigma$.
+\end{thm}

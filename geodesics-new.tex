@@ -14,12 +14,12 @@ Since any such path is rectifiable, the value $|p-q|_\Sigma$ is finite for any p
 
 A path $\gamma$ from $p$ to $q$ in $\Sigma$ that minimizes the length is called a \emph{shortest path} from $p$ to $q$.
 
-The image of a shortest path between $p$ and $q$ in $\Sigma$ is usually denoted by $[p,q]_\Sigma$.
+The image of a shortest path between $p$ and $q$ in $\Sigma$ is usually denoted by $[pq]$ or by $[pq]_\Sigma$.
 In general there might be no shortest path between two given points on the surface
 and it might be many of them;
 this is shown in the following two examples.
 
-Usually, if we write $[p,q]_\Sigma$, then we assume that a shortest path exists and we made a choice of one of them.
+Usually, if we write $[pq]_\Sigma$, then we assume that a shortest path exists and we made a choice of one of them.
 
 \begin{wrapfigure}{r}{28 mm}
 \vskip-4mm
@@ -42,7 +42,7 @@ On the other hand $|p-q|_\Sigma\ge |p-q|_{\RR^3}=2$; therefore $|p-q|_\Sigma= 2$
 
 
 It follows that a shortest path from $p$ to $q$, if it exists, must have length 2.
-By triangle inequality any curve of length 2 from $p$ to $q$ must run along the line segment $[p,q]$;
+By triangle inequality any curve of length 2 from $p$ to $q$ must run along the line segment $[pq]$;
 in particular it must pass thru the origin.
 Since the origin does not lie in $\Sigma$, there is no shortest from $p$ to $q$ in $\Sigma$ 
 
@@ -137,8 +137,8 @@ It remains to prove inequality \ref{eq:short-cpp}.
 We can assume that $\bar p\ne\bar q$, otherwise there is nothing to prove.
 Note that if $p\ne \bar p$ (that is, if $p\notin R$), 
 then $\angle p \bar p \bar q$ is right or obtuse.
-Otherwise there would be a point $x$ on the line segment $[\bar q,\bar p]$ that is closer to $p$ than $\bar p$.
-Since $R$ is convex, the line segment $[\bar q,\bar p]$ and therefore $x$ lie in $R$.
+Otherwise there would be a point $x$ on the line segment $[\bar q\bar p]$ that is closer to $p$ than $\bar p$.
+Since $R$ is convex, the line segment $[\bar q\bar p]$ and therefore $x$ lie in $R$.
 Hence $\bar p$ is not closest to $p$ --- a contradiction.
 
 The same way we can show that  if $q\z\ne \bar q$, then $\angle q \bar q \bar p$ is right or obtuse.
@@ -148,7 +148,7 @@ We have to consider the following 4 cases:
 (2) $p= \bar p$ and $q\ne \bar q$,
 (3) $p\ne \bar p$ and $q= \bar q$,
 (4) $p= \bar p$ and $q= \bar q$.
-In all these cases the obtained angle estimates imply that the orthogonal projection of the line segment $[p,q]$ to the line $\bar p\bar q$ contains the line segment $[\bar p,\bar q]$.
+In all these cases the obtained angle estimates imply that the orthogonal projection of the line segment $[pq]$ to the line $\bar p\bar q$ contains the line segment $[\bar p\bar q]$.
 In particular 
 \[|p-q|\ge |\bar p-\bar q|.\]
 \qedsf
@@ -194,9 +194,9 @@ By the separation lemma (\ref{lem:separation}) there is a plane $\Pi$ that cuts 
 The curve $\gamma$ must intersect at least at two points: one point before $t_1$ and one after;
 let $a=\gamma(t_0)$ and $b=\gamma(t_2)$ be these points.
 Note that the arc of $\gamma$ from $a$ to $b$ is strictly longer that $|a-b|$;
-indeed its length is at least $|a-s|+|s-b|$ and $|a-s|+|s-b|>|a-b|$ since $s\notin[a,b]$.
+indeed its length is at least $|a-s|+|s-b|$ and $|a-s|+|s-b|>|a-b|$ since $s\notin[ab]$.
 
-Remove from $\gamma$ the arc from $a$ to $b$ and glue in the line segment $[a,b]$;
+Remove from $\gamma$ the arc from $a$ to $b$ and glue in the line segment $[ab]$;
 denote the obtained curve by $\gamma_1$. 
 From above, we have that
 \[\length\gamma>\length \gamma_1\]
@@ -446,65 +446,7 @@ By \ref{obs:d(exp)=1}, the linearization $L_0s$ is the identity.
 Applying the inverse function theorem (\ref{thm:inverse}) we get the first part of the proposition.
 
 The second part can be proved along the same lines, using the second part the inverse function theorem (\ref{thm:inverse});
-it guarantees that the size of the neighborhood in $\T_q$ for all points $q$ sufficiently close to $p$.
-\qeds
-
-\section*{Polar coordinates}
-
-The property of exponential map in \ref{prop:exp} can be used to define polar coordinates in a smooth surface $\Sigma$ with respect to a point $p\in \Sigma$.
-
-Namely, fix polar coordinates $(\theta,r)$ on tangent plane $\T_p$.
-If $\vec v\in \T_p$ has coordinates $(\theta,r)$,
-then we say that $q=\exp_p\vec v$ is the point in $\Sigma$ with the polar coordinates $(\theta,r)$, or briefly $q\z=w_p(r,\theta)$.
-Note that according to Proposition~\ref{prop:exp} polar coordinates behave usual way in a neighborhood of $p$;
-that is, there is $r_0>$ such that if $r_1,r_2<r_0$ then $w_p(r_1,\theta_1) = w_p(r_2,\theta_2)$ if and only if
-$r_1=r_2=0$ or $r_1=r_2$ and $\theta_1=\theta_2+2\cdot n\cdot\pi$ for an integer $n$.
-
-The following statement is known as \index{Gauss lemm}\emph{Gauss lemma},
-it will play key role in the proof of \ref{prop:gamma''}.
-
-\begin{thm}{Lemma}\label{lem:palar-perp}
-Let $w_p(\theta,r)$ describes polar coordinates in a neingborhood of point $p$ of smooth surface $\Sigma$.
-Then
-\[\tfrac{\partial w_p}{\partial\theta}\perp\tfrac{\partial w_p}{\partial r}\]
-for any $r$ and $\theta$.
-\end{thm}
-
-
-\parit{Proof.}
-Note that by the definition of exponential map, for a fixed $\theta$, the curve $\gamma_\theta(t)=w(\theta,t)$ is a unit-speed geodesic that starts at $p$;
-in particular we have the following two identities:
-\begin{enumerate}[(i)]
-\item Since the geodesic has unit speed we have $|\tfrac{\partial}{\partial r}w_p|=|\gamma_\theta'(r)|=1$. In particular,
- \[\tfrac{\partial}{\partial \theta}\langle\tfrac{\partial w_p}{\partial r},\tfrac{\partial w_p}{\partial r}\rangle=0\]
-\item Since $\tfrac{\partial^2w_p}{\partial r^2}=\gamma''_\theta(r)\perp\T_{\gamma_\theta(r)}$, we have 
-\[\langle\tfrac{\partial^2w_p}{\partial r^2},\tfrac{\partial w_p}{\partial \theta}\rangle=0\]
-\end{enumerate}
-Therefore
-\begin{align*}
-\tfrac{\partial}{\partial r}
-\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle
-&=\langle\tfrac{\partial^2 w_p}{\partial\theta\partial r},\tfrac{\partial w_p}{\partial r}\rangle
-+
-\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial^2 w_p}{\partial r^2}\rangle=
-\\
-&=\tfrac12\cdot \tfrac{\partial}{\partial \theta}\langle\tfrac{\partial w_p}{\partial r},\tfrac{\partial w_p}{\partial r}\rangle=
-\\
-&=0
-\end{align*}
-That is $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$.
-
-Note that $w_p(\theta,0)=p$ for any $\theta$.
-Therefore
-$\tfrac{\partial w_p}{\partial\theta}=0$
-and in particular 
-\[\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0\]
-if $r=0$.
-Since $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$, 
-we get 
-\[\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0\]
-everywhere.
-Whence the statement follows.
+it guarantees that the size of the neighborhood in $\T_q$ for all points $q$ sufficiently close to~$p$.
 \qeds
 
 \section*{Shortest paths are geodesics}
@@ -519,9 +461,9 @@ More precisely, any point $p$ in $\Sigma$ has a neighborhood $U$ such that any g
 \end{thm}
 
 A geodesic might not form a shortest path, but if this is the case, then it is called a \emph{minimizing geodesic}.
-Note that according to the claim, any shortest path is a reparametrization of a minimizing geodesic.
+Note that according to the proposition, any shortest path is a reparametrization of a minimizing geodesic.
 
-A proof will be given at the end of the section. 
+A formal proof will be given much latter; see page \pageref{page:proof-of-gamma''}. 
 The following informal physical explanation might be sufficiently convincing.
 In fact, if one assumes that $\gamma$ is smooth, then it is easy to convert this explanation into a rigorous proof.
 
@@ -582,55 +524,12 @@ where $\gamma'(t)$ denotes the velocity vector of $\gamma$ at $t$.
 
 Show that for any $t\in (0,\ell)$,
 one {}\emph{cannot see}  $q$ from $p_t$;
-that is, the line segment $[p_t,q]$ intersects $\Sigma$ at a point distinct from $q$.
+that is, the line segment $[p_tq]$ intersects $\Sigma$ at a point distinct from $q$.
 
 Show that the statement does not hold without assuming that $\gamma$ is minimizing.
 \end{thm}
 
 }
-
-\parit{Proof of \ref{prop:gamma''}.}\label{sec:proof-of-gamma''}
-Let $\gamma\:[0,\ell]\to\Sigma$ be a shortest path parameterized by arc-length.
-Suppose $\ell=\length\gamma$ is sufficiently small, so $\gamma$ can be described in the polar coordinates at $p$;
-say $\gamma(t)=w_p(\theta(t),r(t))$ for some functions $t\mapsto \theta(t)$ and $t\mapsto r(t)$ such that $r(0)=0$. %???problem
-
-Note that by chain rule, we have
-\[\gamma'(t)=\tfrac{\partial w_p}{\partial \theta}\cdot \theta'(t)+\tfrac{\partial w_p}{\partial r}\cdot r'(t)
-\eqlbl{eq:chain(gamma)}\]
-if the left side is defined.
-By \ref{lem:palar-perp}, $\tfrac{\partial w_p}{\partial \theta}\perp\tfrac{\partial w_p}{\partial r}$ and by definition of polar coordinates $|\tfrac{\partial w_p}{\partial r}|=1$.
-Therefore \ref{eq:chain(gamma)} implies
-\[|\gamma'(t)|\ge r'(t).\eqlbl{eq:|gamma'|=r'}\]
-for any $t$ where $\gamma'(t)$ is defined.
-
-Since $\gamma$ parameterized by arc-length, we have 
-\[|\gamma(t_2)-\gamma(t_1)|\le |t_2-t_1|.\]
-In particular, $\gamma$ is Lipschitz.
-Therefore by Rademacher's theorem (\ref{thm:rademacher}) the derivative $\gamma'$ is defined almost everywhere.
-By~\ref{adex:integral-length:a}, we have that
-\begin{align*}
-\length\gamma&=\int_0^\ell|\gamma'(t)|\cdot dt\ge
-\\
-&\ge\int_0^\ell r'(t)\cdot dt=
-\\
-&=r(\ell).
-\end{align*}
-
-Note that by the definition of polar coordinates, there is a geodesic of length $r(\ell)$ from $p=\gamma(0)$ to $q=\gamma(\ell)$.
-Since $\gamma$ is a shortest path, we have therefore $r(\ell)=\ell$ and moreover $r(t)=t$ for any $t$.
-This equality holds if and only if we have equality in \ref{eq:|gamma'|=r'} for almost all $t$.
-The latter implies that $\gamma$ is a geodesic.
-
-It remains to prove the partial converse.
-
-Fix a point $p\in\Sigma$.
-Let $\eps>0$ be as in \ref{prop:exp}.
-Assume a geodesic $\gamma$ of length less than $\eps$ from $p$ to $q$ does not minimize the length between its endpoints.
-Then there is a shortest path from $p$ to $q$, which becomes a geodesic if parameterized by its arc-length.
-That is, there are two geodesics from $p$ to $q$ of length smaller than $\eps$.
-In other words there are two vectors ${\vec v},\vec w\in\T_p$ such that $|{\vec v}|<\eps$, $|\vec w|<\eps$ and 
-$q=\exp_p\vec v=\exp_p\vec w$.
-But according to \ref{prop:exp}, the exponential map is injective in $\eps$-neighborhood of zero --- a contradiction.\qeds
 
 \section*{Liberman's lemma}
 
