@@ -1903,13 +1903,15 @@ dOt origin;
 
 endfig;
 
-beginfig(52) 
-save u;
+beginfig(52)
+save u,p;
+path p[];
 u:=1cm;
 
 z.z=origin;
 z.r=(1,1)*u;
-draw circle(z.z,z.r);
+
+p0=circle(z.z,z.r);
 
 z.p=(.3,-.2)*u;
 z.q=-z.p;
@@ -1917,7 +1919,7 @@ z.q=-z.p;
 draw z.p--z.q;
 
 z.s=(.5,-.5)*u;
-save p; path p[];
+
 p1= z.p{up}..z.r..z.q{-1,-1}..z.s..cycle;
 
 draw p1;
@@ -1926,6 +1928,8 @@ p2=(subpath (0,2) of p1) rotated 180;
 
 draw p2 dashed evenly;
 
+clip currentpicture to p0;
+draw p0;
 
 dOt z.p,z.q,z.r,-z.r,z.z;
 
@@ -2301,7 +2305,7 @@ endfig;
 
 beginfig(65);
 save u;
-u:=1cm;
+u:=.8cm;
 
 save p; path p[];
 p0= circle(origin,1*u);
@@ -2428,17 +2432,17 @@ save p; path p[];
 p0=arc(z.x,z.a,z.y);
 p1=arc(z.y,z.b,z.x);
 
-hatchfill (reverse p0)--p1--cycle  withcolor (67, 1mm, -.5bp);
+hatchfill p0--p1--cycle  withcolor (67, 1mm, -.5bp);
 
 draw p0;
 draw p1;
 
 
-z.c0=point .6 of p0;
+z.c0=point .3 of p0;
 z.c1=(0,1)*u;
-z.c2=point 1.7 of p0;
+z.c2=point 1.5 of p0;
 
-draw z.c0{up}..z.c1{.2,-1}..{down}z.c2 penbold;
+draw z.c0{up}..z.c1{.2,-.5}..{down}z.c2 penbold;
 
 dOt z.x, z.y, z.c0, z.c2;
 
@@ -3901,7 +3905,7 @@ z.zxy=z.zx rotatedabout(z.p,-2);
 
 p0=arc(z.z,z.zxx,z.zx)--arc(z.zx,z.zxy,z.zy)--(arc(z.zy,z.zyy,z.z))--cycle;
 
-hatchfill p0 withcolor (40, 3, -.5bp);
+fill p0 withcolor 0;
 
 p1=arc(z.z,z.zxx,z.zx);
 

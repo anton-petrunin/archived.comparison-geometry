@@ -1,7 +1,6 @@
-\chapter{Semigeodesic chart}\label{chap:semigeodesic}
+\chapter{Semigeodesic charts}\label{chap:semigeodesic}
 
-This chapter contains formal computational proofs of several statements discussed above;
-the calculations performed in so called semigeodesic charts --- a special type of charts on smooth surface.
+This chapter contains formal computational proofs of several statements discussed above.
 
 \section*{Polar coordinates}
 
@@ -11,11 +10,11 @@ Namely, fix polar coordinates $(\theta,r)$ on tangent plane $\T_p$.
 If $\vec v\in \T_p$ has coordinates $(\theta,r)$,
 then we say that $q=\exp_p\vec v$ is the point in $\Sigma$ with the polar coordinates $(\theta,r)$, or briefly $q\z=w_p(r,\theta)$.
 Note that according to Proposition~\ref{prop:exp} polar coordinates behave usual way in a neighborhood of $p$;
-that is, there is $r_0>$ such that if $r_1,r_2<r_0$ then $w_p(r_1,\theta_1) = w_p(r_2,\theta_2)$ if and only if
+that is, there is $r_0>0$ such that if $r_1,r_2<r_0$ then $w_p(r_1,\theta_1) = w_p(r_2,\theta_2)$ if and only if
 $r_1=r_2=0$ or $r_1=r_2$ and $\theta_1=\theta_2+2\cdot n\cdot\pi$ for an integer $n$.
 
 The following statement is known as \index{Gauss lemma}\emph{Gauss lemma},
-it will play key role in the proof of \ref{prop:gamma''}.
+it will play a key role in the formal proof that shortest paths are geodesics; see \ref{prop:gamma''}.
 
 \begin{thm}{Lemma}\label{lem:palar-perp}
 Let $w_p(\theta,r)$ describes polar coordinates in a neingborhood of point $p$ of smooth surface $\Sigma$.
@@ -29,12 +28,13 @@ for any $r$ and $\theta$.
 Note that by the definition of exponential map, for a fixed $\theta$, the curve $\gamma_\theta(t)=w(\theta,t)$ is a unit-speed geodesic that starts at $p$;
 in particular we have the following two identities:
 \begin{enumerate}[(i)]
-\item Since the geodesic has unit speed we have $|\tfrac{\partial}{\partial r}w_p|=|\gamma_\theta'(r)|=1$. In particular,
+\item Since the geodesic has unit speed we have $|\tfrac{\partial}{\partial r}w_p|=|\gamma_\theta'(r)|=1$.
+In particular,
  \[\tfrac{\partial}{\partial \theta}\langle\tfrac{\partial w_p}{\partial r},\tfrac{\partial w_p}{\partial r}\rangle=0\]
-\item Since $\tfrac{\partial^2w_p}{\partial r^2}=\gamma''_\theta(r)\perp\T_{\gamma_\theta(r)}$, we have 
+\item Since $\gamma_\theta$ is a geodesic, we have $\tfrac{\partial^2w_p}{\partial r^2}=\gamma''_\theta(r)\perp\T_{\gamma_\theta(r)}$ and therefore 
 \[\langle\tfrac{\partial^2w_p}{\partial r^2},\tfrac{\partial w_p}{\partial \theta}\rangle=0\]
 \end{enumerate}
-Therefore
+It follows that
 \begin{align*}
 \tfrac{\partial}{\partial r}
 \langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle
@@ -44,26 +44,21 @@ Therefore
 \\
 &=\tfrac12\cdot \tfrac{\partial}{\partial \theta}\langle\tfrac{\partial w_p}{\partial r},\tfrac{\partial w_p}{\partial r}\rangle=
 \\
-&=0
+&=0;
 \end{align*}
-That is $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$.
+that is, for fixed $\theta$, the value $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$.
 
 Note that $w_p(\theta,0)=p$ for any $\theta$.
 Therefore
 $\tfrac{\partial w_p}{\partial\theta}=0$
 and in particular 
 \[\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0\]
-if $r=0$.
-Since $\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle$ does not depend on $r$, 
-we get 
-\[\langle\tfrac{\partial w_p}{\partial\theta},\tfrac{\partial w_p}{\partial r}\rangle=0\]
-everywhere.
-Whence the statement follows.
+if $r=0$ and therefore it holds for any $r$.
 \qeds
 
 \section*{Shortest paths are geodesics: a formal proof}
 
-The following proof relies on the construction of polar coordinates in a smooth surface see Appendix~\ref{chap:semigeodesic} and the Gauss lemma \ref{lem:palar-perp}.
+Let us use the construction of polar coordinates and the Gauss lemma \ref{lem:palar-perp} to prove Proposition~\ref{prop:gamma''}.
 
 \parit{Proof of \ref{prop:gamma''}.}\label{page:proof-of-gamma''}
 Let $\gamma\:[0,\ell]\to\Sigma$ be a shortest path parameterized by arc-length.
@@ -112,23 +107,31 @@ But according to \ref{prop:exp}, the exponential map is injective in $\eps$-neig
 
 A chart $(u,v)\mapsto s(u,v)$ of smooth surface $\Sigma$ is called \index{semigeodesic chart}\emph{semigeodesic} if $|\tfrac{\partial s}{\partial u}|=1$ and $\tfrac{\partial s}{\partial u}\perp\tfrac{\partial s}{\partial v}$ for any $(u,v)$.
 
-\begin{thm}{Proposition}
-Any point $p$ on a smooth surface $\Sigma$ can be covered by a semigeodesic chart.
+A chart $(u,v)\mapsto s(u,v)$ is called \emph{orthogonal} if $\tfrac{\partial s}{\partial u}\perp\tfrac{\partial s}{\partial v}$ for any $(u,v)$.
+Note that any semigeodesic chart is orthogonal.
+
+\begin{thm}{Proposition}\label{prop:K(semigeodesic)}
+Any point $p$ on a smooth surface $\Sigma$ can be covered by a semigeodesic chart $(u,v)\mapsto s(u,v)$.
+
+Moreover, the Gauss curvature $K=K(u,v)$ can be expressed as
+\[K=-\tfrac1b\cdot\tfrac{\partial^2 b}{\partial u^2},\]
+where $b=b(u,v)\df|\tfrac{\partial s}{\partial v}|$.
 \end{thm}
 
 \parit{Proof.}
 By Gauss lemma (\ref{lem:palar-perp}) polar coordinates is an example of a semigeodesic chart.
 It remains to find a point $q\ne p$ such that polar coordinates on $\Sigma$ with center at $q$ cover $p$;
 any sufficiently close point will do the trick. %??? needs bit more
-\qeds
 
-A chart $(u,v)\mapsto s(u,v)$ is called \emph{orthogonal} if $\tfrac{\partial s}{\partial u}\perp\tfrac{\partial s}{\partial v}$ for any $(u,v)$.
-Note that any semigeodesic chart is orthogonal.
+The last statement follows from \ref{lem:K(orthogonal)}.
+Indeed, since the chart is semigeodesic it is orthogonal  and 
+$a=a(u,v)\df|\tfrac{\partial s}{\partial u}|\equiv 1$.
+\qeds
 
 \begin{thm}{Lemma}\label{lem:K(orthogonal)}
 Let $(u,v)\mapsto s(u,v)$ be a orthogonal chart of smooth surface $\Sigma$.
 Then 
-\[K=\tfrac1{a\cdot b}\cdot\left(
+\[K=-\tfrac1{a\cdot b}\cdot\left(
 \tfrac{\partial }{\partial u}
 (\tfrac1a\cdot\tfrac{\partial }{\partial u}b)
 +
@@ -140,10 +143,6 @@ $a=a(u,v)\df|\tfrac{\partial s}{\partial u}|$,
 $b=b(u,v)\df|\tfrac{\partial s}{\partial v}|$,
 and
 $K=K(u,v)$ denotes the Gauss curvature of $\Sigma$ at $s(u,v)$.
-
-In particular, if $(u,v)\mapsto s(u,v)$ is a semigeodesic chart, then $a\equiv 1$ and therefore
-\[K=\tfrac1b\cdot\tfrac{\partial^2 b}{\partial u^2}.\]
-
 \end{thm}
 
 \parit{Proof.}
@@ -362,6 +361,15 @@ Therefore the first two identities in \ref{eq:key-orthogonal} are proved.
 The other two identities in \ref{eq:key-orthogonal} can be proved along the same lines.
 \qeds
 
+\begin{thm}{Exericse}
+Suppose that $(u,v)\mapsto s(u,v)$ is a \index{conformal chart}\emph{conformal chart};
+that is, $\tfrac{\partial s}{\partial u}\perp\tfrac{\partial s}{\partial v}$ and $|\tfrac{\partial s}{\partial u}|=|\tfrac{\partial s}{\partial v}|$ for any $(u,v)$.
+Show that Gauss curvature can be expressed as 
+\[K=-\frac{\triangle (\ln b)}{b^2},\]
+where $\triangle$ denotes the \emph{laplacian}; that is $\triangle=\tfrac{\partial^2}{\partial u^2}+\tfrac{\partial^2}{\partial v^2}$.
+\end{thm}
+
+
 \section*{The remarkable theorem}
 
 Let $\Sigma_1$ and $\Sigma_2$ be two smooth regular surfaces in the Euclidean space.
@@ -403,6 +411,31 @@ It follows since the Gauss curvature of the plane is zero and the unit sphere ha
 In other words, there is no map of a region on Earth without distortion.
 
 \parit{Proof.}
+Choose a chart $(u,v)\mapsto s_1(u,v)$ on $\Sigma_1$ and set
+$s_2 f\circ s_1$.
+Note that $s_2$ is a chart of $\Sigma_2$ and 
+\begin{align*}
+\langle\tfrac{\partial s_1}{\partial u},\tfrac{\partial s_1}{\partial u}\rangle
+&=
+\langle\tfrac{\partial s_2}{\partial u},\tfrac{\partial s_2}{\partial u}\rangle,
+\\
+\langle\tfrac{\partial s_1}{\partial u},\tfrac{\partial s_1}{\partial v}\rangle
+&=
+\langle\tfrac{\partial s_2}{\partial u},\tfrac{\partial s_2}{\partial v}\rangle,
+\\
+\langle\tfrac{\partial s_1}{\partial v},\tfrac{\partial s_1}{\partial v}\rangle
+&=
+\langle\tfrac{\partial s_2}{\partial v},\tfrac{\partial s_2}{\partial v}\rangle
+\end{align*}
+at any $(u,v)$.
+Indeed the first and the third identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\mapsto s(t,v)$ or  $\gamma\:t\z\mapsto s(u,t)$.
+Taking this into account, the second identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\z\mapsto s(t,c-t)$ for some constant $c$.
+
+It follows that if $s_1$ is a semigeodesic chart of $\Sigma_1$,
+then $s_2$ is a semigeodesic chart of $\Sigma_2$.
+It remains to apply \ref{prop:K(semigeodesic)}.
+\qeds
+
 
 \section*{Gauss--Bonnet formula: a formal proof}\label{page:gauss--bonnet:formal}
 
@@ -438,3 +471,52 @@ Moreover if $\gamma\:[a,b]\to\Sigma$ is a loop based at a point $p$ then the par
 \begin{thm}{Corollary}
 Suppose that $\gamma$ is a piecewise smooth loop on a smooth surface $\Sigma$.
 \end{thm}
+
+\section*{Rauch comparison}
+
+The following proposition is a baby case of the so called \emph{Rauch comparison theorem}.
+
+\begin{thm}{Proposition}
+Suppose that $p$ is a point on a smooth surface $\Sigma$ and $\exp_p\:\T_p\to \Sigma$ is the exponential map.
+Given a curve $\tilde\gamma$ in the tangent plane $\T_p$, set 
+\[\gamma=\exp_p\circ\tilde\gamma;\]
+note that $\gamma$ is a curve in $\Sigma$.
+
+\begin{subthm}{}
+If $\Sigma$ has nonnegative Gauss curvature, then $\exp_p$ is length nonexpanding in a small neighborhood of $0$;
+that is, there is $r_0>0$ such that $\tilde\gamma$ lies in a $r_0$ neighborhood of $0$ in the tangent plane $\T_p$, then
+\[\length \gamma\le \length \tilde\gamma.\]
+\end{subthm}
+
+\begin{subthm}{}
+If $\Sigma$ has nonpositive Gauss curvature, then $\exp_p$ is length noncontractin in a small neighborhood of $0$;
+that is, there is $r_0>0$ such that $\tilde\gamma$ lies in a $r_0$ neighborhood of $0$ in the tangent plane $\T_p$, then
+\[\length \gamma\ge \length \tilde\gamma.\]
+\end{subthm}
+
+\end{thm}
+
+\parit{Proof.}
+Without loss of generality we may assume that $\tilde\gamma\:[a,b]\to \T_p$ is parameterized by length;
+in particular it is a Lischitz curve.
+
+Suppose $t\mapsto (\theta(t),r(t})$ is the curve $\tilde\gamma$ in polar coordinates.
+Note that $\gamma(t)=w_p(\theta(t),r(t})$; that is, $\gamma$ has polar coordinates $(\theta(t),r(t})$ on $\Sigma$.
+Set $b(\theta,r)\df|\tfrac{\partial w_p}{\partial \theta}|$.
+
+By \ref{prop:K(semigeodesic)}
+\[\tfrac{\partial^2 b}{\partial u^2}=-K\cdot b.\]
+If $K\ge 0$, then $r\mapsto b(\theta,r)$ is concave
+and
+if $K\le 0$, then $r\mapsto b(\theta,r)$ is convex for any fixed $\theta$.
+Observe that $b(\theta,0)=0$ and $\tfrac{\partial b}{\partial \theta}(\theta,0)=1$.
+Therefor $b(\theta,r)\le r$ if $K\ge 0$ and $b(\theta,r)\ge r$ if $K\le 0$.
+
+Note that
+\begin{align*}
+\length\tilde\gamma&=\int_a^b\sqrt{r'(t)^2+r(t)^2\cdot\theta'(t)^2}.
+\intertext{Applying \ref{lem:palar-perp}, we get}
+\length\gamma&=\int_a^b\sqrt{r'(t)^2+b(\theta(t),r(t))^2\cdot\theta'(t)^2}.
+\end{align*}
+Whence the statement follows.
+\qeds

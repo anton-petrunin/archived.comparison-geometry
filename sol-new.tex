@@ -421,11 +421,16 @@ Therefore \ref{eq:arc<2chord} follows.
 In general, if $\tc\gamma$ is bounded, we can subdivide $\gamma$ into arcs with total curvature at most $1$,
 apply the above argument to each of arc and sum up the results.
 
-\begin{wrapfigure}{r}{15 mm}
+\begin{wrapfigure}{r}{20 mm}
 \vskip-6mm
 \centering
 \includegraphics{mppics/pic-295}
-\vskip0mm
+\bigskip
+\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/helix(1)}
+\lbl[br]{8,24;$\norm$}
+\lbl[b]{2,26;$\bi$}
+\lbl[wl]{15,25;$\tan$}
+\end{lpic}
 \end{wrapfigure}
 
 \parit{\ref{SHORT.ex:tc-length:example}.}
@@ -433,16 +438,6 @@ A logarithmic spiral is an example;
 it can be defined in polar coordinates by $\gamma(t)=(t,a\cdot\ln t)$ if $t>0$ and $\gamma(0)$ is the origin; we may assume that $t\in[0,1]$.
 
 It remains to show that indeed, $\gamma$ has infinite total curvature, but finite length.
-
-\begin{wrapfigure}{r}{20 mm}
-\vskip-2mm
-\centering
-\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/helix(1)}
-\lbl[br]{8,24;$\norm$}
-\lbl[b]{2,26;$\bi$}
-\lbl[wl]{15,25;$\tan$}
-\end{lpic}
-\end{wrapfigure}
 
 \parbf{\ref{ex:helix-torsion}.} 
 The arc-length parameter $s$ is already found in   \ref{ex:arc-length-helix}.
@@ -1002,7 +997,7 @@ where $\cosh r=R$.
 Show that if $R$ is large, the area of this region is at least $\pi\cdot R^2$ --- the area of disc of radius $R$.
 
 Observe that the lateral surface of cylinder bounded by the two circles is $4\cdot \pi\cdot R\cdot r$.
-Since $r/R\to 0$ as $R\to infty$, we get that this surface has smaller area then region of catenoid.
+Since $r/R\to 0$ as $R\to \infty$, we get that this surface has smaller area then region of catenoid.
 
 
 \parbf{\ref{ex:helicoid-nonmin}.}
@@ -1404,7 +1399,7 @@ which contradicts \ref{ex:intK:4pi}.
 \includegraphics{mppics/pic-472}
 \bigskip
 \includegraphics{mppics/pic-473}
-\vskip4mm
+\vskip8mm
 \end{wrapfigure}
 
 \parit{(advanced)}.
