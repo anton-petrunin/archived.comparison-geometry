@@ -3030,6 +3030,64 @@ label.lrt(btex $c$ etex, z.C);
 label.ulft(btex $p$ etex, z.K);
 endfig;
 
+beginfig(110) 
+save u,p;
+path p[];
+u:=1cm;
+
+draw (0,0)*u{up}..(1,1)*u{1,-.5}..(1.5,.5)*u{-1,-.4}..(1,1)*u{up}..(2,.5)*u{1,-1}..(2,0)*u{left}..(2,.5)*u{1,1}..(3,1)*u;
+
+label.bot(btex curve etex, (1.5,-.5)*u);
+endfig;
+
+beginfig(115) 
+save u,p;
+path p[];
+u:=1cm;
+
+draw (0,0)*u{up}..(1,1)*u{1,-.5}..(1.5,.5)*u{-1,-.4}..(1,1)*u{up}..(2,.5)*u{1,-1}..(2,0)*u{left}..(2,.5)*u..(3,1)*u..tension 2..cycle;
+
+label.bot(btex closed curve etex, (1.5,-.5)*u);
+endfig;
+
+beginfig(120) 
+save u,p;
+path p[];
+u:=1cm;
+
+draw (0,0)*u{up}..(1,1)*u{1,-.5}..(1.5,.5)*u{1,.4}..(2,.5)*u{1,-1}..(2,0)*u{right}..(3,1)*u{down};
+
+label.bot(btex simple curve etex, (1.5,-.5)*u);
+endfig;
+
+beginfig(125) 
+save u,p;
+path p[];
+u:=1cm;
+
+
+draw (0,0)*u{up}..(1,1)*u{1,-.5}..(1.5,.5)*u{1,.4}..(2,.5)*u{1,-1}..(2,0)*u{right}..(3,1)*u{down}..tension 1.8..cycle;
+
+label.bot(btex simple closed curve etex, (1.5,-.5)*u);
+endfig;
+
+beginfig(130) 
+save u,p;
+path p[];
+u:=1cm;
+
+p0=origin{(1,1)}..(1,1)*u{.4,1}..{down}origin;
+
+drawarrow subpath (0,1) of p0;
+draw subpath (1,2) of p0;
+dOt origin;
+
+label.bot(btex $p$ etex, origin);
+label.rt(btex $\gamma$ etex, (1,1)*u);
+endfig;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 beginfig(220);
 save u,a,n;
 u:=.7cm;
@@ -3759,6 +3817,8 @@ drawarrow (0,-.5)*u--(0,r)*u;
 
 label.bot (btex $y=f(x)$ etex, (.4*r,r)*u);
 endfig;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 beginfig(2305) 
 save u;
