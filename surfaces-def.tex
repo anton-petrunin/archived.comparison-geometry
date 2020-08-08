@@ -345,12 +345,12 @@ Then the derivative $(f\circ\gamma)'(0)$
 depends only on $f$, $p$ and $\vec{w}$;
 it is called \emph{directional derivative of $f$ along $\vec{w}$ at $p$}
 and denoted by
-\[D_{\vec{w}}f,\quad(D_{\vec{w}})f(p), \quad\text{or}\quad (D_{\vec{w}})f(p)_\Sigma\] 
+\[D_{\vec{w}}f,\quad D_{\vec{w}}f(p), \quad\text{or}\quad D_{\vec{w}}f(p)_\Sigma\] 
 --- we may omit $p$ and $\Sigma$ if it is clear from the context.
 
-Moreover, if $(u,v)\mapsto s(u,v)$ is a local chart at $p=s(u_p,v_p)$, and $\vec{w}=a\cdot s_u(u_p,v_p)+b\cdot s_v(u_p,v_p)$, then 
-\[D_{\vec{w}}f(p)=a\cdot\tfrac{\partial f\circ s}{\partial u}(u_p,v_p)+b\cdot \tfrac{\partial f\circ s}{\partial v}(u_p,v_p).\]
-
+Moreover, if $(u,v)\mapsto s(u,v)$ is a local chart at $p$, then 
+\[D_{\vec{w}}f=a\cdot f_u+b\cdot f_v,\]
+where $\vec{w}=a\cdot s_u +b\cdot s_v$. 
 \end{thm}
 
 Note that our definition agrees with standard definition of directional derivative if $\Sigma$ is a plane.
@@ -367,15 +367,17 @@ $u(0)=u_p$ and $v(0)=v_p$.
 
 Applying the chain rule, we get that
 \begin{align*}
-\gamma'(0)&=u'(0)\cdot s_u(u_p,v_p)+v'(0)\cdot s_v(u_p,v_p).
+\gamma'(0)&=u'(0)\cdot s_u+v'(0)\cdot s_v
 \end{align*}
+at $(u_p,v_p)$.
 Since $\vec{w}=\gamma'(0)$ and the vectors $s_u$, $s_v$ are linearly independent, we get that $a=u'(0)$ and $b=v'(0)$.
 
 Applying the chain rule again, we get that
 \[
-(f\circ\gamma)'(0)=a\cdot \tfrac{\partial f\circ s}{\partial u}(u_p,v_p)+b\cdot \tfrac{\partial f\circ s}{\partial v}(u_p,v_p).
+(f\circ\gamma)'(0)=a\cdot f_u+b\cdot f_v.
 \eqlbl{eq:f-gamma}
 \]
+at $(u_p,v_p)$.
 
 Notice that the left hand side in \ref{eq:f-gamma} does not depend on the choice of the chart $s$ and the right hand side depends only on $p$, $\vec w$, $f$, and $s$. 
 It follows that $(f\circ\gamma)'(0)$ depends only on $p$, $\vec w$ and $f$.

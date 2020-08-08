@@ -256,43 +256,71 @@ Equivalently
 \[S=-L_p\Norm,\eqlbl{eq:shape=-L}\] 
 where $L_p\Norm$ denotes linearization of the spherical map $\nu\:\Sigma\to\SS^2$ at $p$.
 \end{thm}
+%???notation???
 
 
 The reason for minus sign in \ref{eq:shape=-dNorm} and \ref{eq:shape=-L}is the same as in the formula  
 for curvature of plane curve in its Frenet frame: $\norm'=-\skur\cdot\tan$.
 The proof is done by straightforward calculations.
 
-%???\Norm\circ s --> Norm
+
 \parit{Proof of \ref{prop:S=-D}.}
 Let $\Sigma$ be a smooth surface with unit normal field $\Norm$.
 Suppose $(u,v)\mapsto s(u,v)$ is a local chart of $\Sigma$ at $p$.
-Since $\Norm$ is unit we have the identity
-\[1=\langle\Norm{\circ} s,\Norm{\circ} s\rangle.\]
-Note that the vectors $s_u(u,v)$ and $s_v(u,v)$ are tangent to $\Sigma$ at $s(u,v)$.
-Since $\Norm_p\perp\T_p$ for any $p\in\Sigma$, we have two more identities:
+Denote by $\Norm(u,v)$ the unit normal vector at $s(u,v)$.
+
+Since the vectors $s_u(u,v)$ and $s_v(u,v)$ are tangent to $\Sigma$ at $s(u,v)$ and $\Norm(u,v)$ is a unit normal vector, we get that
 \begin{align*}
- 0&=\langle\tfrac{\partial}{\partial u} s,\Norm{\circ} s\rangle,
- &
- 0&=\langle\tfrac{\partial}{\partial u} s,\Norm{\circ} s\rangle\rangle.
+1&=\langle\Norm,\Norm\rangle,
+&
+0&=\langle s_u,\Norm\rangle,
+&
+0&=\langle s_v,\Norm\rangle.
 \end{align*}
+
 Taking partial derivatives of these there identities and applying the product rule,
-we get the following six identities:
+we get the following six:
 \begin{align*}
-0&=\tfrac{\partial}{\partial u}\langle\Norm{\circ} s,\Norm{\circ} s\rangle
+0&=\tfrac{\partial}{\partial u}\langle\Norm ,\Norm \rangle
 =
-2\cdot \langle\tfrac{\partial}{\partial u}\Norm{\circ} s,\Norm{\circ} s\rangle,
+2\cdot \langle\Norm_u,\Norm\rangle,
 \\
-0&=\tfrac{\partial}{\partial v}\langle\Norm{\circ} s,\Norm{\circ} s\rangle=2\cdot \langle\tfrac{\partial}{\partial v}\Norm{\circ} s,\Norm{\circ} s\rangle,
+0
+&=\tfrac{\partial}{\partial v}\langle\Norm,\Norm\rangle
+=
+2\cdot \langle\Norm_v,\Norm\rangle,
 \\
-0&=\tfrac{\partial}{\partial u}\langle\tfrac{\partial}{\partial u} s,\Norm{\circ} s\rangle=\langle\tfrac{\partial^2}{\partial u^2} s,\Norm{\circ} s\rangle+\langle\tfrac{\partial}{\partial u} s,\tfrac{\partial}{\partial u}\Norm{\circ} s\rangle,
-\\
-0&=\tfrac{\partial}{\partial v}\langle\tfrac{\partial}{\partial u} s,\Norm{\circ} s\rangle=\langle\tfrac{\partial^2}{\partial v\partial u} s,\Norm{\circ} s\rangle+\langle\tfrac{\partial}{\partial u} s,\tfrac{\partial}{\partial v}\Norm{\circ} s\rangle
-\\
-0&=\tfrac{\partial}{\partial u}\langle\tfrac{\partial}{\partial v} s,\Norm{\circ} s\rangle=\langle\tfrac{\partial^2}{\partial u\partial v} s,\Norm{\circ} s\rangle+\langle\tfrac{\partial}{\partial v} s,\tfrac{\partial}{\partial u}\Norm{\circ} s\rangle,
-\\
-0&=\tfrac{\partial}{\partial v}\langle\tfrac{\partial}{\partial v} s,\Norm{\circ} s\rangle=\langle\tfrac{\partial^2}{\partial v^2} s,\Norm{\circ} s\rangle
+0&=\tfrac{\partial}{\partial u}
+\langle s_u,\Norm\rangle
+=
+\langle s_{uu},\Norm\rangle
 +
-\langle\tfrac{\partial}{\partial v} s,\tfrac{\partial}{\partial v}\Norm{\circ} s\rangle.
+\langle s_u,\Norm_u\rangle,
+\\
+0&=
+\tfrac{\partial}{\partial v}\langle s_u,\Norm\rangle
+=
+\langle s_{uv},\Norm\rangle
++
+\langle s_u,\Norm_v\rangle
+\\
+0
+&=
+\tfrac{\partial}{\partial u}
+\langle s_v,\Norm\rangle
+=
+\langle s_{uv},\Norm\rangle
++
+\langle s_v,\Norm_u\rangle,
+\\
+0
+&=
+\tfrac{\partial}{\partial v}
+\langle s_v,\Norm\rangle
+=
+\langle s_{vv},\Norm\rangle
++
+\langle s_v, \Norm_v\rangle.
 \end{align*}
 
 Now suppose $z=f(x,y)$ be a local description of $\Sigma$ in the tangent-normal coordinates at $p$.
@@ -303,19 +331,19 @@ describes a chart of $\Sigma$ at $p$.
 Denote by $\vec i$, $\vec j$ and $\vec k$ the standard basis in the $(x,y,z)$-coordinates.
 Note that $s(0,0)=p$ and 
 \begin{align*}
-\tfrac{\partial}{\partial u} s(0,0)&=\vec i,
+s_u(0,0)&=\vec i,
 &
-\tfrac{\partial}{\partial v} s(0,0)&=\vec j,
+s_v(0,0)&=\vec j,
 &
-\nu\circ s(0,0)&=\vec k,
-\intertext{In particular $D_{\vec i}\nu=\tfrac{\partial}{\partial u}\Norm{\circ} s(0,0)$ and $D_{\vec j}\nu=\tfrac{\partial}{\partial v}\Norm{\circ} s(0,0)$. Further,}
-\tfrac{\partial^2}{\partial u^2} s(0,0)&=\ell\cdot \vec k,
+\nu(0,0)&=\vec k,
+\intertext{In particular $D_{\vec i}\Norm=\Norm_u(0,0)$ and $D_{\vec j}\Norm=\Norm_v(0,0)$. Further,}
+s_{uu}(0,0)&=\ell\cdot \vec k,
 &
-\tfrac{\partial^2}{\partial v\partial u} s(0,0)&=m\cdot \vec k,
+s_{uv}(0,0)&=m\cdot \vec k,
 &
-\tfrac{\partial^2}{\partial v^2} s(0,0)&=n\cdot \vec k,
+s_{vv}(0,0)&=n\cdot \vec k,
 \end{align*}
-where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$ defined on page \pageref{page:lmn}.
+where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$; see page \pageref{page:lmn}.
 
 Evaluating the above 6 identities at $(u,v)\z=(0,0)$, we get that
 \begin{align*}

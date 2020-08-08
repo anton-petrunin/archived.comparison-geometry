@@ -29,7 +29,7 @@ In other words, if $\vec i$, $\vec j$, and $\vec k$ denote the elements of the s
 $\vec u=P\cdot \vec i+Q\cdot\vec j+R\cdot\vec k$
 for some smooth functions $P,Q,R$,
 then
-\[\div\vec u=\tfrac{\partial P}{\partial x}+\tfrac{\partial Q}{\partial y}+\tfrac{\partial R}{\partial z}.\]
+\[\div\vec u= P_x+Q_y+R_z.\]
 Divergence is a function on $\Omega$;
 its value at a point $p$ is denoted by $\div_p\vec u$.
 
@@ -45,8 +45,13 @@ Given a vector field $\vec u$, set $\curl \vec u\df\nabla\times \vec u$;
 that is, if we write the field $\vec u$ in the standard basis 
 \[\vec u=P\cdot \vec i+ Q\cdot\vec j+R\cdot \vec j,\]
 then 
-\[\curl \vec u\df \left(\tfrac{\partial R}{\partial y}-\tfrac{\partial Q}{\partial z} \right)\cdot \vec i 
-+\left(\tfrac{\partial P}{\partial z}-\tfrac{\partial R}{\partial x}\right) \cdot \vec j +\left (\tfrac{\partial Q}{\partial x}-\tfrac{\partial P}{\partial y}\right)\cdot \vec k \]
+\[\curl \vec u
+\df
+\left(R_y-Q_z \right)\cdot \vec i 
++
+\left(P_z-R_x\right) \cdot \vec j
++
+\left (Q_x-P_y\right)\cdot \vec k \]
 
 \begin{thm}{Curl theorem}\label{thm:curl}
 Let $\Sigma$ be a compact oriented surface bounded by a curve $\gamma$.
@@ -127,15 +132,23 @@ where $S_p$ stands for the shape operator of $\Sigma$ at $p$.
 
 Proposition~\ref{prop:S=-D} implies that
 \[
-\frac{\partial\vec u}{\partial x}=\frac{\partial\Norm}{\partial x}=-S_p(\vec i),
+\vec u_x
+=
+\Norm_x
+=
+-S_p(\vec i),
 \quad\text{and}\quad
-\frac{\partial\vec u}{\partial y}=\frac{\partial\Norm}{\partial y}=-S_p(\vec j).
+\vec u_y
+=
+\Norm_y
+=
+-S_p(\vec j).
 \]
 It follows that
 \[
-\langle\tfrac{\partial\vec u}{\partial x},\vec i\rangle =-k_1, 
+\langle \vec u_x,\vec i\rangle =-k_1, 
 \quad\text{and}\quad
-\langle\tfrac{\partial\vec u}{\partial y},\vec j\rangle=-k_2. \eqlbl{eq:divxy}
+\langle \vec u_y,\vec j\rangle=-k_2. \eqlbl{eq:divxy}
 \]
 
 
@@ -144,28 +157,37 @@ Taking derivative of this identity, we get
 \begin{align*}
 0&=\tfrac{\partial}{\partial z} \langle\vec u,\vec u\rangle=
 \\
-&=2\cdot \langle\tfrac{\partial}{\partial z}\vec u,\vec u\rangle.
+&=2\cdot \langle \vec u_z,\vec u\rangle.
 \end{align*}
 In particular,
-\[\langle\tfrac{\partial}{\partial z}\vec u,\vec k\rangle_p=0.\eqlbl{eq:divz}\]
+\[\langle \vec u_z,\vec k\rangle_p=0.\eqlbl{eq:divz}\]
 
 Let us write the field $\vec u$ in the standard basis 
-$\vec u=u_1\cdot \vec i+u_2\cdot\vec j+u_3\cdot\vec k$.
-Since the basis $\vec i,\vec j,\vec k$ is orthonormal, the functions $u_1,u_2,u_3$ can be defined by
+$\vec u=P\cdot \vec i+Q\cdot\vec j+R\cdot\vec k$.
+Since the basis $\vec i,\vec j,\vec k$ is orthonormal, the functions $P,Q,R$ can be defined by
 \begin{align*}
-u_1&=\langle\vec u,\vec i\rangle,
+P&=\langle\vec u,\vec i\rangle,
 &
-u_2&=\langle\vec u,\vec j\rangle,
+Q&=\langle\vec u,\vec j\rangle,
 &
-u_3&=\langle\vec u,\vec k\rangle.
+R&=\langle\vec u,\vec k\rangle.
 \end{align*}
 Applying the definition of divergence and using \ref{eq:divxy} and \ref{eq:divz}, we obtain
 \begin{align*}
-\div\vec u&=\tfrac{\partial u_1}{\partial x}+\tfrac{\partial u_2}{\partial y}+\tfrac{\partial u_3}{\partial z}=
+\div\vec u&=P_x+Q_y+R_z=
 \\
-&=\tfrac{\partial}{\partial x}\langle\vec u,\vec i \rangle+\tfrac{\partial}{\partial y}\langle\vec u,\vec j \rangle+\tfrac{\partial}{\partial z}\langle\vec u,\vec k\rangle=
+&=\tfrac{\partial}{\partial x}\langle\vec u,\vec i \rangle
++
+\tfrac{\partial}{\partial y}\langle\vec u,\vec j \rangle
++
+\tfrac{\partial}{\partial z}\langle\vec u,\vec k\rangle
+=
 \\
-&=\langle\tfrac{\partial\vec u}{\partial x},\vec i \rangle+\langle\tfrac{\partial\vec u}{\partial y},\vec j \rangle +\langle\tfrac{\partial\vec u}{\partial z},\vec k \rangle
+&=\langle\vec u_x,\vec i \rangle
++
+\langle \vec u_y,\vec j \rangle
++
+\langle\vec u_z,\vec k \rangle
 \\
 &=-k_1(p)-k_2(p)+0
 \\

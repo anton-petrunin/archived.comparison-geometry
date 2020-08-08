@@ -334,9 +334,16 @@ First let us calulate $z''(t)$ in terms of $f$, $x(t)$, and $y(t)$.
 \begin{aligned}
 z''(t)&=f(x(t),y(t))''=
 \\
-&=\left(\tfrac{\partial f}{\partial x}\cdot x'+\tfrac{\partial f}{\partial y}\cdot y'\right)'=
+&=\left(f_x\cdot x'+ f_y\cdot y'\right)'=
 \\
-&=\tfrac{\partial^2 f}{\partial x^2}\cdot (x')^2+\tfrac{\partial f}{\partial x}\cdot x''+\tfrac{\partial^2 f}{\partial y^2}\cdot (y')^2+\tfrac{\partial f}{\partial y}\cdot y''.
+&=
+f_{xx}\cdot (x')^2
++
+f_x\cdot x''
++
+f_{yy}\cdot (y')^2
++
+f_y\cdot y''.
 \end{aligned}
 \]
 Now observe that the equation 
@@ -346,20 +353,23 @@ $\gamma''$ is perpendicular to two basis vectors in $\T_{\gamma(t)}$.
 Therefore the vector equation \ref{eq:def-geod} can be rewritten as the following system of two real equations
 \[
 \begin{cases}
-\langle \gamma''(t),\tfrac{\partial s}{\partial x}\rangle=0,
+\langle \gamma''(t),s_x\rangle=0,
 \\
-\langle\gamma''(t),\tfrac{\partial s}{\partial y}\rangle=0,
+\langle\gamma''(t),s_y\rangle=0,
 \end{cases}
 \]
 where $s(x,y)\df (x,y,f(x,y))$, $x=x(t)$, and $y=y(t)$.
 
-Observe that $\frac{\partial s}{\partial x}=(1,0,\tfrac{\partial f}{\partial x})$ and $\frac{\partial s}{\partial y}=(0,1,\tfrac{\partial f}{\partial y})$.
+Observe that 
+$s_x=(1,0, f_x)$ 
+and 
+$s_y=(0,1, f_y)$.
 Since $\gamma''\z=(x'',y'',z'')$, we can rewrite the system the following way.
 \[
 \begin{cases}
-x''+\tfrac{\partial f}{\partial x}\cdot z''=0,
+x''+ f_x\cdot z''=0,
 \\
-y''+\tfrac{\partial f}{\partial y}\cdot z''=0,
+y''+ f_y\cdot z''=0,
 \end{cases}
 \]
 It remains use expression \ref{eq:z''} for $z''$, combine like terms and simplify.
