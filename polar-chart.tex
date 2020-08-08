@@ -2,7 +2,7 @@
 
 This chapter contains formal computational proofs of several statements discussed above.
 
-\section*{Polar coordinates}
+\section{Polar coordinates}
 
 The property of exponential map in \ref{prop:exp} can be used to define \index{polar coordinates}\emph{polar coordinates} in a smooth surface $\Sigma$ with respect to a point $p\in \Sigma$.
 
@@ -56,7 +56,7 @@ and in particular
 if $r=0$ and therefore it holds for any $r$.
 \qeds
 
-\section*{Shortest paths are geodesics: a formal proof}
+\section{Shortest paths are geodesics: a formal proof}
 
 Let us use the construction of polar coordinates and the Gauss lemma \ref{lem:palar-perp} to prove Proposition~\ref{prop:gamma''}.
 
@@ -103,7 +103,7 @@ In other words there are two vectors ${\vec v},\vec w\in\T_p$ such that $|{\vec 
 $q=\exp_p\vec v=\exp_p\vec w$.
 But according to \ref{prop:exp}, the exponential map is injective in $\eps$-neighborhood of zero --- a contradiction.\qeds
 
-\section*{Gauss curvature}
+\section{Gauss curvature}
 
 A chart $(u,v)\mapsto s(u,v)$ of smooth surface $\Sigma$ is called \index{semigeodesic chart}\emph{semigeodesic} if $|\tfrac{\partial s}{\partial u}|=1$ and $\tfrac{\partial s}{\partial u}\perp\tfrac{\partial s}{\partial v}$ for any $(u,v)$.
 
@@ -370,7 +370,7 @@ where $\triangle$ denotes the \emph{laplacian}; that is $\triangle=\tfrac{\parti
 \end{thm}
 
 
-\section*{The remarkable theorem}
+\section{The remarkable theorem}
 
 Let $\Sigma_1$ and $\Sigma_2$ be two smooth regular surfaces in the Euclidean space.
 A map $f\:\Sigma_1\to \Sigma_2$ is called  length-preserving if for any curve $\gamma_1$ in $\Sigma_1$ the curve $\gamma_2=f\circ\gamma_1$ in $\Sigma_2$ has the same length. %???it is sufficient to consider smooth only curves???
@@ -437,7 +437,7 @@ It remains to apply \ref{prop:K(semigeodesic)}.
 \qeds
 
 
-\section*{Gauss--Bonnet formula: a formal proof}\label{page:gauss--bonnet:formal}
+\section{Gauss--Bonnet formula: a formal proof}\label{page:gauss--bonnet:formal}
 
 The following proof relies on two statements.
 
@@ -472,23 +472,23 @@ Moreover if $\gamma\:[a,b]\to\Sigma$ is a loop based at a point $p$ then the par
 Suppose that $\gamma$ is a piecewise smooth loop on a smooth surface $\Sigma$.
 \end{thm}
 
-\section*{Rauch comparison}
+\section{Rauch comparison}
 
 The following proposition is a baby case of the so called \emph{Rauch comparison theorem}.
 
-\begin{thm}{Proposition}
+\begin{thm}{Proposition}\label{prop:rauch}
 Suppose that $p$ is a point on a smooth surface $\Sigma$ and $\exp_p\:\T_p\to \Sigma$ is the exponential map.
 Given a curve $\tilde\gamma$ in the tangent plane $\T_p$, set 
 \[\gamma=\exp_p\circ\tilde\gamma;\]
 note that $\gamma$ is a curve in $\Sigma$.
 
-\begin{subthm}{}
+\begin{subthm}{prop:rauch:K>=0}
 If $\Sigma$ has nonnegative Gauss curvature, then $\exp_p$ is length nonexpanding in a small neighborhood of $0$;
 that is, there is $r_0>0$ such that $\tilde\gamma$ lies in a $r_0$ neighborhood of $0$ in the tangent plane $\T_p$, then
 \[\length \gamma\le \length \tilde\gamma.\]
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{prop:rauch:K=<0}
 If $\Sigma$ has nonpositive Gauss curvature, then $\exp_p$ is length noncontractin in a small neighborhood of $0$;
 that is, there is $r_0>0$ such that $\tilde\gamma$ lies in a $r_0$ neighborhood of $0$ in the tangent plane $\T_p$, then
 \[\length \gamma\ge \length \tilde\gamma.\]
@@ -497,26 +497,33 @@ that is, there is $r_0>0$ such that $\tilde\gamma$ lies in a $r_0$ neighborhood 
 \end{thm}
 
 \parit{Proof.}
-Without loss of generality we may assume that $\tilde\gamma\:[a,b]\to \T_p$ is parameterized by length;
-in particular it is a Lischitz curve.
+Suppose $(\theta(t),r(t))$ are polar coordinates of $\tilde\gamma(t)$.
+Note that $\gamma(t)=w_p(\theta(t),r(t))$; that is, $(\theta(t),r(t))$ are polar coordinates of $\gamma(t)$ on $\Sigma$.
 
-Suppose $t\mapsto (\theta(t),r(t})$ is the curve $\tilde\gamma$ in polar coordinates.
-Note that $\gamma(t)=w_p(\theta(t),r(t})$; that is, $\gamma$ has polar coordinates $(\theta(t),r(t})$ on $\Sigma$.
 Set $b(\theta,r)\df|\tfrac{\partial w_p}{\partial \theta}|$.
-
 By \ref{prop:K(semigeodesic)}
 \[\tfrac{\partial^2 b}{\partial u^2}=-K\cdot b.\]
 If $K\ge 0$, then $r\mapsto b(\theta,r)$ is concave
 and
 if $K\le 0$, then $r\mapsto b(\theta,r)$ is convex for any fixed $\theta$.
-Observe that $b(\theta,0)=0$ and $\tfrac{\partial b}{\partial \theta}(\theta,0)=1$.
-Therefor $b(\theta,r)\le r$ if $K\ge 0$ and $b(\theta,r)\ge r$ if $K\le 0$.
+Note that $b(\theta,0)=0$ and by \ref{obs:d(exp)=1}, $\tfrac{\partial b}{\partial \theta}(\theta,0)=1$.
+Therefore 
+\[
+\begin{aligned}
+b(\theta,r)\le r\quad\text{if}\quad K&\ge 0 \quad\text{and}
+\\
+b(\theta,r)\ge r\quad\text{if}\quad K&\le 0.
+\end{aligned}
+\eqlbl{eq:b-K}
+\]
 
+Without loss of generality we may assume that $\tilde\gamma\:[a,b]\to \T_p$ is parameterized by length;
+in particular it is a Lischitz curve.
 Note that
 \begin{align*}
 \length\tilde\gamma&=\int_a^b\sqrt{r'(t)^2+r(t)^2\cdot\theta'(t)^2}.
 \intertext{Applying \ref{lem:palar-perp}, we get}
 \length\gamma&=\int_a^b\sqrt{r'(t)^2+b(\theta(t),r(t))^2\cdot\theta'(t)^2}.
 \end{align*}
-Whence the statement follows.
+By \ref{eq:b-K} the statement follows.
 \qeds

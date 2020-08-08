@@ -3,7 +3,7 @@
 
 
 
-\section*{Shortest paths}
+\section{Definition}
 
 Let $p$ and $q$ be two points on a surface $\Sigma$.
 Recall that $|p-q|_\Sigma$ denotes the induced length distance from $p$ to $q$;
@@ -80,7 +80,7 @@ Finally, by \ref{thm:length-semicont},
 That is, $\gamma_\infty= \ell$ or, equivalently, $\gamma_\infty$ is a shortest path from $p$ to $q$.
 \qeds
 
-\section*{Closest point projection}
+\section{Closest point projection}
 
 \begin{thm}{Lemma}\label{lem:closest-point-projection}
 Let $R$ be a closed convex set in $\RR^3$.
@@ -122,7 +122,7 @@ Hence the existence follows.
 
 Assume there are two distinct points $\bar p, \bar p'\in R$ that minimize the distance to $p$.
 Since $R$ is convex, their midpoint $m=\tfrac12\cdot (\bar p+\bar p')$ lies in~$R$.
-Note that $|p-\bar p|\z=|p-\bar p'|=\ell$; that is, $\triangle p\bar p\bar p'$ is isosceles and therefore $\triangle p\bar p m$ is right with the right angle at~$m$.
+Note that $|p-\bar p|\z=|p-\bar p'|=\ell$; that is, the triangle $[p\bar p\bar p']$ is isosceles and therefore the triangle $[p\bar p m]$ is right with the right angle at~$m$.
 Since a leg of a right triangle is shorter than its hypotenuse, we have $|p-m|<\ell$ --- a contradiction. 
 
 It remains to prove inequality \ref{eq:short-cpp}.
@@ -243,7 +243,7 @@ Show that the area of $\Sigma$ cannot exceed $4\cdot \pi$.
 \chapter{Geodesics}
 
 
-\section*{Definition}
+\section{Definition}
 
 A smooth curve $\gamma$ on a smooth surface $\Sigma$ is called \emph{geodesic} if for any~$t$, the acceleration $\gamma''(t)$ is perpendicular to the tangent plane $\T_{\gamma(t)}$.
 
@@ -271,7 +271,7 @@ Indeed, since there is no friction, the force that keeps the particle on $\Sigma
 Therefore, by the second Newton's laws of motion,
 we get that the acceleration $\gamma''$ is perpendicular to $\T_{\gamma(t)}$.
 
-\section*{Existence}
+\section{Existence}
 
 The following lemma and proposition can be also interpreted physically;
 lemma follow from the conservation of energy and the proposition gives smooth dependence of trajectory of a particle depending on its initial position and velocity.
@@ -400,7 +400,7 @@ Therefore $\mathbb{I}$ is not a maximal interval --- a contradiction.
 
 
 
-\section*{Exponential map}\label{sec:exp}
+\section{Exponential map}\label{sec:exp}
 
 Let $\Sigma$ be smooth regular surface and $p\in \Sigma$.
 Given a tangent vector ${\vec v}\in \T_p$ consider a geodesic $\gamma_{\vec v}$ in $\Sigma$ that runs from $p$ with the initial velocity ${\vec v}$;  
@@ -449,7 +449,7 @@ The second part can be proved along the same lines, using the second part the in
 it guarantees that the size of the neighborhood in $\T_q$ for all points $q$ sufficiently close to~$p$.
 \qeds
 
-\section*{Shortest paths are geodesics}
+\section{Shortest paths are geodesics}
 
 \begin{thm}{Proposition}\label{prop:gamma''}
 Let $\Sigma$ be a smooth regular surface.
@@ -531,7 +531,7 @@ Show that the statement does not hold without assuming that $\gamma$ is minimizi
 
 }
 
-\section*{Liberman's lemma}
+\section{Liberman's lemma}
 
 The following lemma is a smooth analog of lemma proved by Joseph Liberman \cite{liberman}.
 
@@ -573,7 +573,7 @@ Show that $\rho''(t)\le 2$ for any $t$.
 
 
 
-\section*{Bound on total curvature}
+\section{Total curvature of geodesics}
 
 \begin{thm}{Theorem}\label{thm:usov}
 Assume $\Sigma$ is a graph $z=f(x,y)$ of a convex $\ell$-Lipschitz function $f$ defined on an open set in the $(x,y)$-plane.

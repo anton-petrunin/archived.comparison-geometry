@@ -1,6 +1,6 @@
 \chapter{Curvature}
 
-\section*{Acceleration of a unit-speed curve}
+\section{Acceleration of a unit-speed curve}
 
 Recall that any regular smooth curve can be parameterized by its arc-length.
 The obtained parameterized curve, say $\gamma$, remains to be smooth and it has unit speed; 
@@ -25,7 +25,7 @@ Differentiating both sides,
 whence $\gamma''\perp\gamma'$.
 \qeds
 
-\section*{Curvature}
+\section{Curvature}
 
 For a unit-speed smooth space curve $\gamma$ the magnitude of its acceleration $|\gamma''(s)|$ is called its \emph{curvature} at the time $s$.
 \label{page:curvature}
@@ -42,7 +42,7 @@ for curves, it measures how fast it deviates from a straight line.
 Show that any regular smooth unit-speed spherical curve has curvature at least 1 at each time.
 \end{thm}
 
-\section*{Tangent indicatrix}
+\section{Tangent indicatrix}
 
 Let $\gamma$ be a regular smooth space curve.
 Let us consider another curve 
@@ -92,7 +92,7 @@ then its graph $y=f(x)$  has curvature
 at the point $p=(x,f(x))$.
 \end{thm}
 
-\section*{Tangent curves}
+\section{Tangent curves}
 
 Let $\gamma$ be a smooth regular space curve and $\tan$ its tangent indicatrix.
 The line thru $\gamma(t)$ in the direction of $\tan(t)$ is called the \emph{tangent line} at~$t$.
@@ -106,7 +106,7 @@ if $\gamma_1(s_1)=\gamma_2(s_2)$ and the tangent line of $\gamma_1$ at $s_1$ coi
 if both curves are simple we can also say that they are tangent at the point $p=\gamma_1(s_1)\z=\gamma_2(s_2)$ without ambiguity.
 
 
-\section*{Total curvature}
+\section{Total curvature}
 
 Let $\gamma\:\mathbb{I}\to\RR^3$ be a smooth unit-speed curve and $\tan$ its tangent indicatrix.
 The integral 
@@ -181,7 +181,7 @@ whence
 
 
 
-\section*{Piecewise smooth curves}
+\section{Piecewise smooth curves}
 
 
 
@@ -297,7 +297,7 @@ $\tc\gamma$ is arbitrarily close to $\measuredangle(\vec w,\vec u)+\measuredangl
 
 \end{thm}
 
-\section*{Polygonal lines} 
+\section{Polygonal lines} 
 
 Polygonal lines are a particular case of piecewise smooth regular curves;
 each arc in its concatenation is a line segment.
@@ -451,7 +451,7 @@ Lines crossing a curve at four points as in the above exercise are called \emph{
 It turns out that any \emph{nontrivial knot} admits an alternating quadrisecant \cite{denne};
 according to the exercise the latter implies the so-called \emph{F\'ary--Milnor theorem} --- the total curvature any knot exceeds $4\cdot \pi$.
 
-\section*{Bow lemma}
+\section{Bow lemma}
 
 \begin{thm}{Lemma}\label{lem:bow}
 Let $\gamma_1\:[a,b]\to\RR^2$ and $\gamma_2\:[a,b] \to\RR^3$ be two smooth unit-speed curves.
@@ -579,7 +579,7 @@ Show that
 \end{thm}
 
 
-\section*{DNA inequality*}
+\section{DNA inequality*}
 
 Recall that the curvature of a spherical curve is at least $1$
 (Exercise~\ref{ex:curvature-of-spherical-curve}).
@@ -626,7 +626,7 @@ Applying \ref{eq:<gamma'',gamma>>=-k}, we get that
 whence the result.
 \qeds
 
-\section*{Nonsmooth curves*}
+\section{Nonsmooth curves*}
 
 \begin{thm}{Theorem}\label{thm:total-curvature=}
 For any regular smooth space curve $\gamma$ we have that 
@@ -705,7 +705,7 @@ Construct a rectifiable curve $\gamma\:[a,b]\to\RR^3$ that has infinite total cu
 
 For more on curves of finite total curvature read \cite{aleksandrov-reshetnyak,sullivan-curves}. 
 
-\section*{DNA inequality revisited*}
+\section{DNA inequality revisited*}
 
 In this section we will give an alternative proof of the DNA inequality (\ref{thm:DNA}) that works for arbitrary, not necessarily smooth, curves.
 In the proof we use \ref{def:total-curv-poly} to define the total curvature;
@@ -748,9 +748,9 @@ such that the points $q_0,q_1,\dots,q_{n+1}$ lie on one line in that order and a
 \vskip0mm
 \end{figure}
 
-Since $p_0=p_n$ and $p_1=p_{n+1}$, we have that
-\[\triangle q_{n}s_nq_{n+1}\cong 
-\triangle p_nop_{n+1}=\triangle p_0op_1\cong\triangle q_{0}s_0q_1,\]
+Since $p_0=p_n$ and $p_1=p_{n+1}$, we have the followng congruence:
+\[[q_{n}s_nq_{n+1}]\cong 
+[p_nop_{n+1}]=[p_0op_1]\cong[q_{0}s_0q_1],\]
 so $s_0q_0q_ns_n$ is a parallelogram.
 Therefore
 \begin{align*}

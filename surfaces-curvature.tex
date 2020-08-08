@@ -1,6 +1,6 @@
 \chapter{Curvatures}
 
-\section*{Tangent-normal coordinates} 
+\section{Tangent-normal coordinates} 
 
 Fix a point $p$ in a smooth oriented surface $\Sigma$.
 Consider a coordinate system $(x,y,z)$ with origin at $p$ such that the $(x,y)$-plane coincides with $\T_p$ and the $z$-axis in the direction of the normal vector $\Norm_p$.
@@ -9,9 +9,9 @@ Note that $f$ satisfies the following additional properties:
 \begin{align*}
 f(0,0)&=0,
 &
-(\tfrac{\partial}{\partial x}f)(0,0)&=0,
+f_x(0,0)&=0,
 &
-(\tfrac{\partial}{\partial y}f)(0,0)&=0.
+f_y(0,0)&=0.
 \end{align*}
 The first equality holds since $p=(0,0,0)$ lies on the graph and the last two equalities mean that the tangent plane at $p$ is horizontal.
 
@@ -24,11 +24,11 @@ The first equality holds since $p=(0,0,0)$ lies on the graph and the last two eq
 
 Set \label{page:lmn}
 \begin{align*}
-\ell&=(\tfrac{\partial^2}{\partial x^2}f)(0,0),
+\ell&=f_{xx}(0,0),
 \\
-m&=(\tfrac{\partial^2}{\partial x\partial y}f)(0,0)=(\tfrac{\partial^2}{\partial y\partial x}f)(0,0),
+m&=f_{xy}(0,0)=f_{yx}(0,0),
 \\
-n&=(\tfrac{\partial^2}{\partial y^2}f)(0,0).
+n&=f_{yy}(0,0).
 \end{align*}
 The Taylor series %???Taylor series
 for $f$ at $(0,0)$ up to the second oreder term can be then written as
@@ -57,7 +57,7 @@ where
 \]
 it is called the Hessian matrix of $f$ at $(0,0)$.
 
-\section*{Principle curvatures}
+\section{Principle curvatures}
 
 Note that tangent-normal coordinates give an almost canonical coordinate system in a neighborhood of $p$;
 it is unique up to a rotation of  the $(x,y)$-plane.
@@ -99,7 +99,7 @@ Show that $\gamma$ is a line of curvature of $\Sigma$.
 \end{thm}
 
 
-\section*{More curvatures}
+\section{More curvatures}
 
 Fix an oriented smooth surface $\Sigma$ and a point $p\in\Sigma$.
 
@@ -135,7 +135,7 @@ In particular, the Gauss curvature is well defined for nonoriented surface $\Sig
 A surface with vanishing mean curvature is called \emph{minimal};
 the reason for such a name will be given in Proposition~\ref{prop:minimizing-is-minimal}.
 
-\section*{Shape operator}
+\section{Shape operator}
 
 Let $p$ be a point on a smooth oriented surface $\Sigma$.
 Suppose $z=f(x,y)$ is a local description of $\Sigma$ in a tangent-normal coordinates at $p$
@@ -262,12 +262,13 @@ The reason for minus sign in \ref{eq:shape=-dNorm} and \ref{eq:shape=-L}is the s
 for curvature of plane curve in its Frenet frame: $\norm'=-\skur\cdot\tan$.
 The proof is done by straightforward calculations.
 
+%???\Norm\circ s --> Norm
 \parit{Proof of \ref{prop:S=-D}.}
 Let $\Sigma$ be a smooth surface with unit normal field $\Norm$.
 Suppose $(u,v)\mapsto s(u,v)$ is a local chart of $\Sigma$ at $p$.
 Since $\Norm$ is unit we have the identity
 \[1=\langle\Norm{\circ} s,\Norm{\circ} s\rangle.\]
-Note that the vectors $\tfrac{\partial s}{\partial u}(u,v)$ and $\tfrac{\partial s}{\partial v}(u,v)$ are tangent to $\Sigma$ at $s(u,v)$.
+Note that the vectors $s_u(u,v)$ and $s_v(u,v)$ are tangent to $\Sigma$ at $s(u,v)$.
 Since $\Norm_p\perp\T_p$ for any $p\in\Sigma$, we have two more identities:
 \begin{align*}
  0&=\langle\tfrac{\partial}{\partial u} s,\Norm{\circ} s\rangle,
@@ -372,17 +373,17 @@ By \ref{prop:surface-integral}, the statement follows.
 Suppose that $(u,v)\mapsto s(u,v)$ is a chart of a smooth surface $\Sigma$ with unit normal field $\Norm$.
 Show that 
 \begin{align*}
-\langle S(\tfrac{\partial s}{\partial u}), \tfrac{\partial s}{\partial u}\rangle 
-&=\langle \tfrac{\partial^2 s}{\partial u^2},\Norm\rangle,
+\langle S(s_u), s_u\rangle 
+&=\langle s_{uu},\Norm\rangle,
 &
-\langle S(\tfrac{\partial s}{\partial u}), \tfrac{\partial s}{\partial v}\rangle 
-&=\langle \tfrac{\partial^2 s}{\partial u \partial v},\Norm\rangle,
+\langle S(s_u), s_v\rangle 
+&=\langle s_{uv},\Norm\rangle,
 \\
-\langle S(\tfrac{\partial s}{\partial v}), \tfrac{\partial s}{\partial u}\rangle 
-&=\langle \tfrac{\partial^2 s}{\partial u \partial v},\Norm\rangle,
+\langle S(s_v), s_u\rangle 
+&=\langle s_{uv},\Norm\rangle,
 &
-\langle S(\tfrac{\partial s}{\partial v}), \tfrac{\partial s}{\partial v}\rangle 
-&=\langle \tfrac{\partial^2 s}{\partial v^2},\Norm\rangle
+\langle S(s_v), s_v\rangle 
+&=\langle s_{vv},\Norm\rangle
 \end{align*}
 for any $(u,v)$.
 

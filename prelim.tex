@@ -339,10 +339,10 @@ Applying a rotation if necessary, we can assume that all its vertexes have diffe
 Let $v$ be a vertex of $P$ that minimizes the $x$-coordinate;
 denote by $u$ and $w$ its adjacent vertexes.
 Let us choose the diagonal $uw$ if it lies in $P$.
-Otherwise the triangle $\triangle uvw$ contains another vertex of $P$.
-Choose a vertex $s$ in the interior of $\triangle uvw$ that maximizes the distance to line $uw$.
+Otherwise the triangle $[uvw]$ contains another vertex of $P$.
+Choose a vertex $s$ in the interior of the triangle $[uvw]$ that maximizes the distance to line $uw$.
 Note that the diagonal $vs$ lies in $P$;
-if it is not the case, then $vs$ crosses another side $pq$ of $P$, one of the vertices $p$ or $q$ has larger distance to the line and it lies in the interior of $\triangle uvw$ --- a contradiction.
+if it is not the case, then $vs$ crosses another side $pq$ of $P$, one of the vertices $p$ or $q$ has larger distance to the line and it lies in the interior of the triangle $[uvw]$ --- a contradiction.
 
 Note that the diagonal divides $P$ into two polygons, say $Q$ and $R$, with smaller number of sides in each, say $k$ and $m$ respectively.
 Note that 
@@ -407,7 +407,7 @@ Then by the triangle inequality
 \]
 
 Note that in the triangles $aob$ and $aob'$ the side $ao$ is shared, so $\measuredangle aob\z=\measuredangle aob'$ and $|o-b|=|o-b'|$.
-By side-angle-side congruence condition, we have that $\triangle aob\cong \triangle aob'$;
+By side-angle-side congruence condition, we have that $[aob]\cong [aob']$;
 in particular $|a-b'|=|a-b|$.
 Therefore from \ref{eq:triangle-inq-abcb'} we get 
 \[|b-c|\ge |b'-c|.\]
@@ -517,11 +517,11 @@ Both triangles $abc$ and $ab'c$ are isosceles with shares base $ac$.
 Note that the altitude $bp$ is larger than the altitude $b'p$.
 Therefore
 \begin{align*}
-\area (\triangle abc)&=\tfrac12\cdot |a-c|\cdot |b-p|>
+\area [abc]&=\tfrac12\cdot |a-c|\cdot |b-p|>
 \\
 &>\tfrac12\cdot |a-c|\cdot |b'-p|=
 \\
-&=\area (\triangle ab'c)=
+&=\area [ab'c]=
 \\
 &=s_n.
 \end{align*}

@@ -1,6 +1,6 @@
 \chapter{Supporting surfaces}
 
-\section*{Definitions}
+\section{Definitions}
 
 Assume two orientable surfaces $\Sigma_1$ and $\Sigma_2$ have a common point $p$.
 If there is a neighborhood $U$ of $p$ such that $\Sigma_1\cap U$ lies on one side from $\Sigma_2$ in $U$, then we say that $\Sigma_2$ \emph{locally supports} $\Sigma_1$ at $p$.
@@ -97,19 +97,21 @@ that is, $k_2(p)_{\Sigma_1}\ge k_2(p)_{\Sigma_2}$.
 Let $\Sigma_1$ and $\Sigma_2$ be oriented surfaces.
 Assume $\Sigma_1$ locally supports $\Sigma_2$ from inside at the point $p$.
 Then
-\begin{enumerate}[(a)]
-\item\label{cor:surf-support:mean} $H(p)_{\Sigma_1}\ge H(p)_{\Sigma_2}$;
-\item\label{cor:surf-support:gauss} If $k_1(p)_{\Sigma_2}\ge 0$, then $K(p)_{\Sigma_1}\ge K(p)_{\Sigma_2}$.
-\end{enumerate}
+
+\begin{subthm}{cor:surf-support:mean}$H(p)_{\Sigma_1}\ge H(p)_{\Sigma_2}$;
+\end{subthm}
+
+\begin{subthm}{cor:surf-support:gauss} If $k_1(p)_{\Sigma_2}\ge 0$, then $K(p)_{\Sigma_1}\ge K(p)_{\Sigma_2}$.
+\end{subthm}
  
 \end{thm}
 
-\parit{Proof.}
-Part (\ref{cor:surf-support:mean}) follows from  \ref{prop:surf-support} and the definition of mean curvature
+\parit{Proof; \ref{SHORT.cor:surf-support:mean}}
+The statement follows from  \ref{prop:surf-support} and the definition of mean curvature
 \[H(p)_{\Sigma_i}=k_1(p)_{\Sigma_i}+k_2(p)_{\Sigma_i}.\]
 
 
-\parit{(\ref{cor:surf-support:gauss}).} Since $k_2(p)_{\Sigma_i}\ge k_1(p)_{\Sigma_i}$ and $k_1(p)_{\Sigma_2}\ge 0$, we get that all the principle curvatures 
+\parit{\ref{SHORT.cor:surf-support:gauss}.} Since $k_2(p)_{\Sigma_i}\ge k_1(p)_{\Sigma_i}$ and $k_1(p)_{\Sigma_2}\ge 0$, we get that all the principle curvatures 
 $k_1(p)_{\Sigma_1}$, 
 $k_1(p)_{\Sigma_2}$, 
 $k_2(p)_{\Sigma_1}$, and 
@@ -132,7 +134,7 @@ Show that any closed surface in a unit ball has a point with Gauss curvature at 
 Show that any closed surface that lies on the distance at most 1 from a straight line has a point with Gauss curvature at least~1.
 \end{thm}
 
-\section*{Convex surfaces}
+\section{Convex surfaces}
 
 A proper surface without boundary that bounds a convex region is called \index{convex surface}\emph{convex}.
 
@@ -344,7 +346,7 @@ maps $\Sigma$ ineffectively into a subset of a hemisphere. Conclude that
 
 
 
-\section*{Saddle surfaces}
+\section{Saddle surfaces}
 
 \begin{wrapfigure}{r}{43 mm}
 \vskip-8mm
@@ -391,7 +393,7 @@ Assume $\Sigma$ is strictly saddle in a neighborhood of $\gamma$.
 Show that the projection of $\gamma$ to the $(x,y)$-plane cannot be star-shaped. %???star-shaped is not defined
 \end{thm}
 
-\section*{Hats}
+\section{Hats}
 
 Note that a closed surface cannot be saddle.
 Indeed consider a smallest sphere that contains a closed surface $\Sigma$ inside;
@@ -491,7 +493,7 @@ Let $L\:\RR^3\to\RR^3$ be an affine transformation; that is, $L$ is an invertabl
 Show that for any saddle surface $\Sigma$ the image $L(\Sigma)$ is also a saddle surface.
 \end{thm}
 
-\section*{Saddle graphs}
+\section{Saddle graphs}
 
 The following theorem was proved by Sergei Bernstein \cite{bernstein}.
 
@@ -624,7 +626,7 @@ In particular, $\Sigma$ is the graph $z=f(x,y)$ of a function $f$ defined on a c
 \end{thm}
 
 
-\section*{Remarks}
+\section{Remarks}
 
 Note that Bernstein's theorem and the lemma in its proof do not hold for nonstrictly saddle surfaces;
 counterexamples can be found among infinite cylinders over smooth regular curves.
@@ -633,5 +635,4 @@ a proof is based on the same idea, but more technical.
 
 By \ref{prop:hat}, saddle surfaces can be defined as smooth surfaces without hats.
 This definition can be used for arbitrary surfaces, not necessarily smooth.
-Some results, for example Bernshtein's characterization of saddle graphs can be extended to generalized saddle surfaces, but this class of surfaces is far from being understood.
-Some nontrivial properties were proved by Samuil Shefel \cite{shefel}; see also \cite[Capter 4]{akp}.
+Some results, for example Bernshtein's characterization of saddle graphs can be extended to generalized saddle surfaces, but this class of surfaces is far from being understood; see \cite[Capter 4]{alexander-kapovitch-petrunin2019} and the references there in.

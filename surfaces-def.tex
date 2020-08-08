@@ -1,6 +1,6 @@
 \chapter{Definitions}
 
-\section*{Topological surfaces}
+\section{Topological surfaces}
 
 We will be mostly interested in smooth regular surfaces defined in the following section.
 However few times we will use the following general definition.
@@ -12,7 +12,7 @@ that can be parameterized by an open subset in the Euclidean plane; %???paramete
 that is, there is an injective continuous map $U\to W$ from an open set $U\subset \RR^2$ such that its inverse $W\to U$ is also continuous.
 
 
-\section*{Smooth surfaces}
+\section{Smooth surfaces}
 
 Recall that a function $f$ of two variables $x$ and $y$ is called \emph{smooth} if all its partial derivatives $\frac{\partial^{m+n}}{\partial x^m\partial y^n}f$ are defined and are continuous in the domain of definition of $f$. 
 
@@ -48,7 +48,7 @@ where each function $f_\pm,g_\pm,h_\pm$ is defined in an open unit disc.
 Any point $p\in\SS^2$ lies in one of these graphs therefore $\SS^2$ is a surface.
 Since each function is smooth, so is $\SS^2$.
 
-\section*{Surfaces with boundary}
+\section{Surfaces with boundary}
 A connected subset in a surface that is bounded by one or more 
 curves is called \emph{surface with boundary}; the curves form the \emph{boundary line} of the surface.
 
@@ -56,7 +56,7 @@ When we say \emph{surface} we usually mean a \emph{smooth regular surface withou
 we may use the terms \emph{surface without boundary} if we need to emphasise it;
 otherwise we may use the term \emph{surface with possibly nonempty boundary}.
 
-\section*{Proper, closed and open surfaces}
+\section{Proper, closed and open surfaces}
 If the surface $\Sigma$ is formed by a closed set, then it is called \emph{proper}.
 For example, for any smooth function $f$, defined on whole plane, its graph $z=f(x,y)$ is a proper surface.
 The sphere $\SS^2$ gives another example of proper surface.
@@ -85,7 +85,7 @@ We omit its proof since it would take us far away from the main subject.
 The complement of any proper topological surface without boundary (or, equivalently any open or closed topological surface) has exactly two connected components. 
 \end{thm}
 
-\section*{Implicitly defined surfaces}
+\section{Implicitly defined surfaces}
 
 \begin{thm}{Proposition}\label{prop:implicit-surface}
 Let $f\:\RR^3\to \RR$ be a smooth function.
@@ -97,8 +97,8 @@ Then any connected component $\Sigma$ of the set of solutions of the equation $f
 \parit{Proof.}
 Fix $p\in\Sigma$.
 Since $\nabla_p f\ne 0$ we have 
-\[\tfrac{\partial f}{\partial x}(p)\ne 0,\quad \tfrac{\partial f}{\partial y}(p)\ne 0,\quad \text{or}\quad\tfrac{\partial f}{\partial z}(p)\ne 0.\]
-We may assume $\tfrac{\partial f}{\partial z}(p)\ne 0$;
+\[f_x(p)\ne 0,\quad f_y(p)\ne 0,\quad \text{or}\quad f_z(p)\ne 0.\]
+We may assume thate $f_z(p)\ne 0$;
 otherwise permute the coordinates $x,y,z$.
 
 The implicit function theorem (\ref{thm:imlicit}) implies that a neighborhood of $p$ in $\Sigma$ is the graph $z=h(x,y)$ of a smooth function $h$ defined on an open domain in $\RR^2$.
@@ -114,12 +114,12 @@ x^2+y^2-z^2&=\ell
 describes a smooth regular surface.
 \end{thm}
 
-\section*{Local parametrizations}
+\section{Local parametrizations}
 
 Let $U$ be an open domain in $\RR^2$ and $s\:U\to \RR^3$ be a smooth map.
 We say that $s$ is regular if its Jacobian has maximal rank;
-in this case it means that the vectors $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ are linearly independent at any $(u,v)\in U$;
-equivalently $\tfrac{\partial s}{\partial u}\times\tfrac{\partial s}{\partial v}\ne 0$, where $\times$ denotes the vector product.
+in this case it means that the vectors $s_u$ and $s_v$ are linearly independent at any $(u,v)\in U$;
+equivalently $s_u\times s_v\ne 0$, where $\times$ denotes the vector product.
 
 \begin{thm}{Proposition}\label{prop:graph-chart}
 If $s\:U\to \RR^3$ is a smooth regular embedding %???embedding???
@@ -128,14 +128,14 @@ of an open connected set $U\subset \RR^2$, then its image $\Sigma=s(U)$ is a smo
 
 \parit{Proof.}
 Set 
-\[s(u,v)=(x_s(u,v),y_s(u,v),z_s(u,v)).\]
+\[s(u,v)=(x(u,v),y(u,v),z(u,v)).\]
 Since $s$ is regular, its Jacobian matrix
 \[\Jac s=
 \renewcommand\arraystretch{1.3}
 \begin{pmatrix}
-\tfrac{\partial x_s}{\partial u}&\tfrac{\partial x_s}{\partial v}\\
-\tfrac{\partial y_s}{\partial u}&\tfrac{\partial y_s}{\partial v}\\
-\tfrac{\partial z_s}{\partial u}&\tfrac{\partial z_s}{\partial v}
+x_u&x_v\\
+y_u&y_v\\
+z_u&z_v
 \end{pmatrix}
 \]
 has rank two at any pint $(u,v)\in U$.
@@ -146,19 +146,19 @@ the matrix
 \[
 \renewcommand\arraystretch{1.3}
 \begin{pmatrix}
-\tfrac{\partial x_s}{\partial u}&\tfrac{\partial x_s}{\partial v}\\
-\tfrac{\partial y_s}{\partial u}&\tfrac{\partial y_s}{\partial v}
+x_u&x_v\\
+y_u&y_v
 \end{pmatrix},
 \] 
 is invertible.
 Note that this is the Jacobian matix of the map
-\[(u,v)\mapsto (x_s(u,v),y_s(u,v)).\]
+\[(u,v)\mapsto (x(u,v),y(u,v)).\]
 
 The inverse function theorem implies that there is a smooth regular function $h$ defined on an open set $W\ni 0$ in the $(x,y)$-plane
 such that 
-\[(x_s\circ h)(x,y)=x\quad\text{and}\quad (y_s\circ h)(x,y)=y\]
+\[(x\circ h)(x,y)=x\quad\text{and}\quad (y\circ h)(x,y)=y\]
 for any $(x,y)\in W$.
-It follows that the graph $z=z_s\circ h(x,y)$ for $(x,y)\in W$ is a subset in $\Sigma$.
+It follows that the graph $z=z\circ h(x,y)$ for $(x,y)\in W$ is a subset in $\Sigma$.
 Clearly this graph is open in $\Sigma$. %???why
 Since $p$ is arbitrary, we get that $\Sigma$ is a surface.
 \qeds
@@ -177,8 +177,8 @@ If $W$ is a graph $z=h(x,y)$ of a smooth function $h$, then the map
 Indeed, $s$ has an inverse $(u,v,h(u,v))\mapsto (u,v)$ which is continuous;
 that is, $s$ is an embedding.
 Further,
-$\tfrac{\partial s}{\partial u}=(1,0,\tfrac{\partial h}{\partial u})$ and $\tfrac{\partial s}{\partial v}=(0,1,\tfrac{\partial h}{\partial v})$. 
-Whence $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ are linearly independent;
+$s_u=(1,0,h_u)$ and $s_v=(0,1,h_v)$. 
+Whence the partial derivatives $s_u$ and $s_v$ are linearly independent;
 that is, $s$ is a regular map.
 
 Note that from \ref{prop:graph-chart}, we obtain the following corollary.
@@ -218,7 +218,7 @@ Show that surface of revolution of $\gamma$ around the $x$-axis is a smooth regu
 \end{thm}
 
 
-\section*{Global parametrizations} 
+\section{Global parametrizations} 
 A surface can be described by an embedding from a known surface to the space.
 
 For example, consider the ellipsoid
@@ -278,7 +278,7 @@ and if $s$ is smooth, it might be called \emph{smooth plane}.
 
 \chapter{First order structure}
 
-\section*{Tangent plane}
+\section{Tangent plane}
 
 \begin{thm}{Definition}\label{def:tangent-vector}
 Let $\Sigma$ be a smooth surface.
@@ -292,7 +292,7 @@ Then the set of tangent vectors of $\Sigma$ at $p$ forms a plane;
 this plane is called \emph{tangent plane} of $\Sigma$ at $p$.
 
 Moreover if $s\:U\to \Sigma$ is a local chart and $p=s(u_p,v_p)$, then 
-the tangent plane of $\Sigma$ at $p$ is spanned by vectors $\tfrac{\partial s}{\partial u}(u_p,v_p)$ and $\tfrac{\partial s}{\partial v}(u_p,v_p)$.
+the tangent plane of $\Sigma$ at $p$ is spanned by vectors $s_u(u_p,v_p)$ and $s_v(u_p,v_p)$.
 \end{thm}
 
 The tangent plane to $\Sigma$ at $p$ is usually denoted by $\T_p$ or $\T_p\Sigma$.
@@ -308,10 +308,10 @@ Without loss of generality, we can assume that $\gamma$ is covered by the chart;
 in particular, there are smooth functions $u(t)$ and $v(t)$ such that 
 \[\gamma(t)=s(u(t),v(t)).\]
 Applying chain rule, we get
-\[\gamma'=\tfrac{\partial s}{\partial u}\cdot u'+ \tfrac{\partial s}{\partial v}\cdot v';\]
-that is, $\gamma'$ is a linear combination of $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$.
+\[\gamma'=s_u\cdot u'+ s_v\cdot v';\]
+that is, $\gamma'$ is a linear combination of $s_u$ and $s_v$.
 
-Since the smooth functions $u(t)$ and $v(t)$ can be chosen arbitrary, any linear combination of $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$ is a tangent vector at the corresponding point. 
+Since the smooth functions $u(t)$ and $v(t)$ can be chosen arbitrary, any linear combination of $s_u$ and $s_v$ is a tangent vector at the corresponding point. 
 \qeds
 
 
@@ -327,7 +327,7 @@ Show that a neighborhood of $p$ in $\Sigma$ is a graph $z=f(x,y)$ of a smooth fu
 \end{thm}
 
 
-\section*{Directional derivative}
+\section{Directional derivative}
 
 In this section we extend the definition of directional derivative to smooth functions defined on smooth surfaces.
 
@@ -348,7 +348,7 @@ and denoted by
 \[D_{\vec{w}}f,\quad(D_{\vec{w}})f(p), \quad\text{or}\quad (D_{\vec{w}})f(p)_\Sigma\] 
 --- we may omit $p$ and $\Sigma$ if it is clear from the context.
 
-Moreover, if $(u,v)\mapsto s(u,v)$ is a local chart at $p=s(u_p,v_p)$, and $\vec{w}=a\cdot \tfrac{\partial s}{\partial u}(u_p,v_p)+b\cdot \tfrac{\partial s}{\partial v}(u_p,v_p)$, then 
+Moreover, if $(u,v)\mapsto s(u,v)$ is a local chart at $p=s(u_p,v_p)$, and $\vec{w}=a\cdot s_u(u_p,v_p)+b\cdot s_v(u_p,v_p)$, then 
 \[D_{\vec{w}}f(p)=a\cdot\tfrac{\partial f\circ s}{\partial u}(u_p,v_p)+b\cdot \tfrac{\partial f\circ s}{\partial v}(u_p,v_p).\]
 
 \end{thm}
@@ -367,9 +367,9 @@ $u(0)=u_p$ and $v(0)=v_p$.
 
 Applying the chain rule, we get that
 \begin{align*}
-\gamma'(0)&=u'(0)\cdot \tfrac{\partial s}{\partial u}(u_p,v_p)+v'(0)\cdot \tfrac{\partial s}{\partial v}(u_p,v_p).
+\gamma'(0)&=u'(0)\cdot s_u(u_p,v_p)+v'(0)\cdot s_v(u_p,v_p).
 \end{align*}
-Since $\vec{w}=\gamma'(0)$ and the vectors $\tfrac{\partial s}{\partial u}$, $\tfrac{\partial s}{\partial v}$ are linearly independent, we get that $a=u'(0)$ and $b=v'(0)$.
+Since $\vec{w}=\gamma'(0)$ and the vectors $s_u$, $s_v$ are linearly independent, we get that $a=u'(0)$ and $b=v'(0)$.
 
 Applying the chain rule again, we get that
 \[
@@ -383,7 +383,7 @@ It follows that $(f\circ\gamma)'(0)$ depends only on $p$, $\vec w$ and $f$.
 The last statement follows from \ref{eq:f-gamma}.
 \qeds
 
-\section*{Linearization}
+\section{Linearization}
 
 Any smooth map $\theta$ from a surface $\Sigma$ to $\RR^3$ can be described by its coordinate functions 
 $\theta(p)=(\theta_x(p),\theta_y(p),\theta_z(p))$.
@@ -422,13 +422,13 @@ It follows that
 If $\Sigma_0$ is a domain in the $(u,v)$-plane, then the value $\jac_p\theta$ can be found using the following formulas 
 \begin{align*}
 \jac s
-&=|\tfrac{\partial s}{\partial v}\times\tfrac{\partial s}{\partial u}|=
+&=|s_v\times s_u|=
 \\
-&=\sqrt{\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial u}\rangle\cdot\langle\tfrac{\partial s}{\partial v},\tfrac{\partial s}{\partial v}\rangle -\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle^2}=
+&=\sqrt{\langle s_u, s_u\rangle\cdot\langle s_v, s_v\rangle -\langle s_u, s_v\rangle^2}=
 \\
 &=\sqrt{\det[\Jac^\top s\cdot \Jac s]}.
 \end{align*}
-where $\Jac s$ denotes the Jacobean matrix of $s$; it is a 2$\times$3 matrix with column vectors $\tfrac{\partial s}{\partial u}$ and $\tfrac{\partial s}{\partial v}$.
+where $\Jac s$ denotes the Jacobean matrix of $s$; it is a 2$\times$3 matrix with column vectors $s_u$ and $ s_v$.
 
 The value $\jac_p\theta$ has the following geometric meaning:
 if $P_0$ is a region in $\T_p$ and $P_1=(L_p\theta)(P_0)$, then
@@ -437,7 +437,7 @@ This identity will become important in the definition of surface area.
 
 
 
-\section*{Surface integral and area}
+\section{Surface integral and area}
 
 Let $\Sigma$ be a smooth surface and $h\:\Sigma\to\RR$ be a smooth function.
 Let us define the integral $\int_R h$ of the function $h$ along a region $R\subset \Sigma$.
@@ -485,7 +485,7 @@ It turns out that analogous definition does not work even for very simple surfac
 Section \ref{sec:schwarz-boot} describes the so called \emph{Schwarz's boot} --- a classical example of that type.
 
 
-\section*{Tangent vectors as functionals*}
+\section{Tangent vectors as functionals*}
 
 In this section we introduce a more conceptual way to define tangent vectors.
 We will not use this approach in the sequel, but it is better to know about it.
@@ -507,7 +507,7 @@ This new definition is less intuitive, but it is more convenient to use since it
 Many statements admit simpler proofs with this approach, for example linearity of the map $\vec w\mapsto D_{\vec w}f$ becomes a tautology.
 
 
-\section*{Normal vector and orientation}
+\section{Normal vector and orientation}
 A unit vector that is normal to $\T_p$ is usually denoted by $\Norm_p$;
 it is uniquely defined up to sign.
 
@@ -530,9 +530,9 @@ M\"obius strip shown on the diagram gives an example of a nonorientable surface 
 Note that each surface is locally orientable.
 In fact each chart $f(u,v)$ admits an orientation 
 \[\Norm=
-\frac{\tfrac{\partial f}{\partial u}\times \tfrac{\partial f}{\partial v}}
-{\left|\tfrac{\partial f}{\partial u}\times \tfrac{\partial f}{\partial v}\right|}.\]
-Indeed the vectors $\tfrac{\partial f}{\partial u}$ and $\tfrac{\partial f}{\partial v}$ are tangent vectors at $p$; 
+\frac{f_u\times f_v}
+{\left|f_u\times f_v\right|}.\]
+Indeed the vectors $f_u$ and $f_v$ are tangent vectors at $p$; 
 since they are linearly independent, their vector product does not vanish and it is perpendicular to the tangent plane.
 Evidently $(u,v)\mapsto \Norm(u,v)$ is a continuous map.
 Therefore $\Norm$ is a unit normal field. 
@@ -554,14 +554,14 @@ In particular it follows that the M\"obius strip cannot be extended to an open o
 
 %??? +orientability of piecewise smooth surfaces
 
-\section*{Spherical map}
+\section{Spherical map}
 
 Let $\Sigma$ be a smooth oriented surface with unit normal field $\Norm$.
 The map $\Norm\:\Sigma\to \SS^2$ defined by $p\mapsto \Norm_p$ is called \emph{spherical map} or \emph{Gauss map}.
 
 For surfaces, the spherical map plays essentially the same role as the tangent indicatrix for curves.
 
-\section*{Sections}%???redo into sections
+\section{Sections}%???redo into sections
 
 \begin{thm}{Advanced exercise}\label{ex:plane-section}
 Show that any closed set in a plane can appear as an intersection of this plane with an open smooth regular surface.  
