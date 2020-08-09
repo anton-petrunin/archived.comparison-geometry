@@ -12,7 +12,7 @@ that is, the exact lower bound on lengths of paths in $\Sigma$ from $p$ to $q$.
 Note that if $\Sigma$ is smooth, then any two points in $\Sigma$ can be joined by a piecewise smooth path.
 Since any such path is rectifiable, the value $|p-q|_\Sigma$ is finite for any pair $p,q\in\Sigma$.
 
-A path $\gamma$ from $p$ to $q$ in $\Sigma$ that minimizes the length is called a \emph{shortest path} from $p$ to $q$.
+A path $\gamma$ from $p$ to $q$ in $\Sigma$ that minimizes the length is called a \index{shortest path}\emph{shortest path} from $p$ to $q$.
 
 The image of a shortest path between $p$ and $q$ in $\Sigma$ is usually denoted by $[pq]$ or by $[pq]_\Sigma$.
 In general there might be no shortest path between two given points on the surface
@@ -93,7 +93,7 @@ that is,
 for any pair of points $p,q\in \RR^3$.
 \end{thm}
 
-The map $p\mapsto \bar p$ is called the \emph{closest point projection};
+The map $p\mapsto \bar p$ is called the \index{closest point projection}\emph{closest point projection};
 it maps the Euclidean space to $R$.
 Note that if $p\in R$, then $\bar p=p$.
 
@@ -225,7 +225,7 @@ then the entire path lies in $\Delta$.
 \end{thm}
 
 
-Let us define the \emph{intrinsic diameter} of a closed surface $\Sigma$ as the exact upper bound on the lengths of shortest paths in the surface.
+Let us define the \index{intrinsic diameter}\emph{intrinsic diameter} of a closed surface $\Sigma$ as the exact upper bound on the lengths of shortest paths in the surface.
 
 \begin{thm}{Exercise}\label{ex:intrinsic-diameter}
 Assume that a closed smooth surface $\Sigma$ with positive Gauss curvature lies in a unit ball.
@@ -245,7 +245,7 @@ Show that the area of $\Sigma$ cannot exceed $4\cdot \pi$.
 
 \section{Definition}
 
-A smooth curve $\gamma$ on a smooth surface $\Sigma$ is called \emph{geodesic} if for any~$t$, the acceleration $\gamma''(t)$ is perpendicular to the tangent plane $\T_{\gamma(t)}$.
+A smooth curve $\gamma$ on a smooth surface $\Sigma$ is called \index{geodesic}\emph{geodesic} if for any~$t$, the acceleration $\gamma''(t)$ is perpendicular to the tangent plane $\T_{\gamma(t)}$.
 
 \begin{thm}{Exercise}\label{ex:helix=geodesic}
 Show that the helix 
@@ -416,8 +416,8 @@ Let $\Sigma$ be smooth regular surface and $p\in \Sigma$.
 Given a tangent vector ${\vec v}\in \T_p$ consider a geodesic $\gamma_{\vec v}$ in $\Sigma$ that runs from $p$ with the initial velocity ${\vec v}$;  
 that is, $\gamma(0)=p$ and $\gamma'(0)={\vec v}$.
 
-The point $q=\gamma_{\vec v}(1)$ is called \emph{exponential map} of ${\vec v}$, or briefly $q=\exp_p{\vec v}$.
-(There is a reason to call this map \emph{exponential}, but it will take us too far from the subject.)
+The point $q=\gamma_{\vec v}(1)$ is called \index{exponential map}\emph{exponential map} of ${\vec v}$, or briefly $q=\exp_p{\vec v}$.
+(There is a reason to call this map {}\emph{exponential}, but it will take us too far from the subject.)
 By \ref{prop:geod-existence}, the map $\exp_p\:\T_p\to \Sigma$ is smooth and defined in a neighborhood of zero in $\T_p$;
 moreover, if $\Sigma$ is proper, then $\exp_p$ is defined on the whole space $\T_p$.
 
@@ -470,7 +470,7 @@ A partial converse to the first statement also holds: a sufficiently short arc o
 More precisely, any point $p$ in $\Sigma$ has a neighborhood $U$ such that any geodesic that lies completely in $U$ is a shortest path.
 \end{thm}
 
-A geodesic might not form a shortest path, but if this is the case, then it is called a \emph{minimizing geodesic}.
+A geodesic might not form a shortest path, but if this is the case, then it is called a \index{minimizing geodesic}\emph{minimizing geodesic}.
 Note that according to the proposition, any shortest path is a reparametrization of a minimizing geodesic.
 
 A formal proof will be given much latter; see page \pageref{page:proof-of-gamma''}. 
@@ -509,7 +509,7 @@ Show by example that nonoverlapping geodesics can cross each other an arbitrary 
 
 \begin{thm}{Exercise}\label{ex:min-geod+plane}
 Assume that a smooth regular surface $\Sigma$ is mirror symmetric with respect to a plane $\Pi$.
-Show that no shortest path $\alpha$ in $\Sigma$ can \emph{cross} $\Pi$ more than once.
+Show that no shortest path $\alpha$ in $\Sigma$ can {}\emph{cross} $\Pi$ more than once.
 
 
 In other words, if you travel along $\alpha$, then you change the sides of $\Pi$ at most once. 

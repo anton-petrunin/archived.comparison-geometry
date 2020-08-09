@@ -3,20 +3,21 @@
 \section{Definitions}
 
 Assume two orientable surfaces $\Sigma_1$ and $\Sigma_2$ have a common point $p$.
-If there is a neighborhood $U$ of $p$ such that $\Sigma_1\cap U$ lies on one side from $\Sigma_2$ in $U$, then we say that $\Sigma_2$ \emph{locally supports} $\Sigma_1$ at $p$.
+If there is a neighborhood $U$ of $p$ such that $\Sigma_1\cap U$ lies on one side from $\Sigma_2$ in $U$, then we say that $\Sigma_2$ \index{local support of surface}\emph{locally supports} $\Sigma_1$ at $p$.
 
 Let us describe $\Sigma_2$ locally at $p$ as a graph $z=f_2(x,y)$ in a tangent-normal coordinates at $p$.
-If $\Sigma_2$ \emph{locally supports} $\Sigma_1$ at $p$, then we may assume that all points of $\Sigma_1$ near $p$ lie above the graph $z=f_2(x,y)$.
+If $\Sigma_2$ locally supports $\Sigma_1$ at $p$, then we may assume that all points of $\Sigma_1$ near $p$ lie above the graph $z=f_2(x,y)$.
 In particular the tangent plane of $\Sigma_1$ at $p$ is horizontal;
 that is, the tangent planes of $\Sigma_1$ and $\Sigma_2$ at $p$ coincide.
 
-It follows that, we can assume that $\Sigma_1$ and $\Sigma_2$ are \emph{cooriented} at $p$;
+It follows that, we can assume that $\Sigma_1$ and $\Sigma_2$ are \index{cooriented!surfaces}\emph{cooriented} at $p$;
 that is, they have common unit normal vector at $p$.
-If not, we can revert the orientation of one of the surfaces.
+If the normal vectors are opposite, we say that $\Sigma_1$ and $\Sigma_2$ are \index{controriented!surfaces}\emph{countroriented} at $p$;
+in this case reverting the orientation of one of the surfaces makes them cooriented.
 
 If $\Sigma_2$ locally supports $\Sigma_1$ and cooriented at $p$,
-then we can say that $\Sigma_1$ supports $\Sigma_2$ from \emph{inside} or from \emph{outside},
-assuming that the normal vector points \emph{inside} the domain bounded by surface $\Sigma_2$ in $U$.
+then we can say that $\Sigma_1$ supports $\Sigma_2$ \index{support from inside}\emph{from inside} or \index{support from outside}\emph{from outside},
+assuming that the normal vector points {}\emph{inside} the domain bounded by surface $\Sigma_2$ in $U$.
 
 More precisely, we can use for $\Sigma_1$ and $\Sigma_2$ a common tangent-normal coordinate system at $p$.
 This way we write $\Sigma_1$ and $\Sigma_2$ locally as graphs: $z=f_1(x,y)$  and $z=f_2(x,y)$ respectively.
@@ -147,7 +148,7 @@ Assume $R$ is a convex body in $\RR^3$ bounded by a surface with principle curva
 Show that $R$ contains a unit ball.
 \end{thm}
 
-Recall that a region $R$ in the Euclidean space is called  \emph{strictly convex} if for any two points $x,y\in R$, any point $z$ between $x$ and $y$ lies in the interior of $R$.
+Recall that a region $R$ in the Euclidean space is called  \index{strictly convex region}\emph{strictly convex} if for any two points $x,y\in R$, any point $z$ between $x$ and $y$ lies in the interior of $R$.
 
 Clearly any open convex set is strictly convex;
 the cube (as well as any convex polyhedron) gives an example of a convex set which is not strictly convex.
@@ -201,7 +202,7 @@ that is, $\Norm$ points inside of $R$ at any point of $\Sigma$.
 Fix $p\in\Sigma$; let $z=f(x,y)$ be a local description of $\Sigma$ in the tangent-normal coordinates at $p$.
 By \ref{lem:gauss+=>convexity}, $f$ is strictly convex in a neighborhood of the origin.
 In particular the intersection of a small ball centered at $p$ with the epigraph $z\ge f(x,y)$ is strictly convex.
-In other words, $R$ is \emph{locally strictly convex};
+In other words, $R$ is \index{locally strictly convex}\emph{locally strictly convex};
 that is, for any point $p\in R$, the intersection of $R$ with a small ball centered at $p$ is strictly convex.
 
 Since $\Sigma$ is connected, so is $R$;
@@ -229,7 +230,7 @@ Since $R$ is locally strictly convex, its boundary $\Sigma$ contains no line seg
 Therefore $R$ is strictly convex.
 \qeds
 
-Note that the proof above implies that \emph{any connected locally convex region is convex}.
+Note that the proof above implies that {}\emph{any connected locally convex region is convex}.
 
 \begin{thm}{Exercise}\label{ex:surrounds-disc}
 Assume that a closed surface $\Sigma$ surrounds a unit circle.
@@ -355,11 +356,11 @@ maps $\Sigma$ ineffectively into a subset of a hemisphere. Conclude that
 \vskip0mm
 \end{wrapfigure}
 
-A surface is called \emph{saddle} if its Gauss curvature at each point is nonpositive;
+A surface is called \index{saddle surface}\emph{saddle} if its Gauss curvature at each point is nonpositive;
 in other words principle curvatures at each point have opposite signs or one of them is zero.
 
 If the Gauss curvature is negative at each point,
-then the surface is called \emph{strictly saddle};
+then the surface is called \index{strictly saddle surface}\emph{strictly saddle};
 equivalently it means that the principle curvatures have opposite signs at each point.
 Note that in this case the tangent plane does not support the surface even locally --- moving along the surface in the principle directions at a given point, one goes above and below the tangent plane at this point.  
 
@@ -370,7 +371,7 @@ Show that the surface of revolution of the graph $y\z=f(x)$ around the $x$-axis
  is saddle if and only if $f$ is convex; that is, if $f''(x)\ge0$ for any $x$.
 \end{thm}
 
-A surface $\Sigma$ is called \emph{ruled} if for every point $p\in \Sigma$ there is a line segment $\ell_p\subset \Sigma_p$ thru $p$ that is infinite or has its endpoint(s) on the boundary line of $\Sigma$.
+A surface $\Sigma$ is called \index{ruled surface}\emph{ruled} if for every point $p\in \Sigma$ there is a line segment $\ell_p\subset \Sigma_p$ thru $p$ that is infinite or has its endpoint(s) on the boundary line of $\Sigma$.
 
 \begin{thm}{Exercise}\label{ex:ruled=>saddle}
 Show that any ruled surface $\Sigma$ is saddle.
@@ -382,7 +383,7 @@ Show that for any point $p\in \Sigma$ there is a curve $\gamma\:[0,\infty)\to\Si
 that is, the function $t\mapsto|\gamma(t)|$ is increasing and $|\gamma(t)|\to\infty$ as $t\to\infty$.
 \end{thm}
 
-A tangent direction on a smooth surface with vanishing normal curvature is called \emph{asymptotic}.
+A tangent direction on a smooth surface with vanishing normal curvature is called \index{asymptotic direction}\emph{asymptotic}.
 A smooth regular curve that always runs in an asymptotic direction is called an
 \index{asymptotic line}\emph{asymptotic line}.\label{page:asymptotic line}
 
@@ -439,14 +440,14 @@ Show that the statement does not hold without assuming that $\Delta$ is a disc.
 \end{thm}
 
 If $\Delta$ is as in the exercise, then in fact $\area \Delta\ge \pi$.
-The proof of this statement can be obtained by applying the so called \emph{coarea fromula} together with the inequality in the exercise. 
+The proof of this statement can be obtained by applying the so called \index{coarea fromula}\emph{coarea fromula} together with the inequality in the exercise. 
 
 \begin{thm}{Exercise}\label{ex:circular-cone-saddle}
 Show that an open saddle surface
 cannot lie inside of an infinite circular cone. 
 \end{thm}
 
-A disc $\Delta$ in a surface $\Sigma$ is called a \emph{hat} of $\Sigma$
+A disc $\Delta$ in a surface $\Sigma$ is called a \index{hat}\emph{hat} of $\Sigma$
 if its boundary line $\partial\Delta$ lies in a plane $\Pi$ and the remaining points of $\Delta$ lie on one side of $\Pi$.
 
 \begin{thm}{Proposition}\label{prop:hat}

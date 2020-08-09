@@ -27,7 +27,7 @@ whence $\gamma''\perp\gamma'$.
 
 \section{Curvature}
 
-For a unit-speed smooth space curve $\gamma$ the magnitude of its acceleration $|\gamma''(s)|$ is called its \emph{curvature} at the time $s$.
+For a unit-speed smooth space curve $\gamma$ the magnitude of its acceleration $|\gamma''(s)|$ is called its \index{curvature of curve}\emph{curvature} at the time $s$.
 \label{page:curvature}
 If $\gamma$ is simple, then we can say that $|\gamma''(s)|$ is the curvature at the point $p=\gamma(s)$ without ambiguity.
 The curvature is usually denoted by $\kur(s)$ or $\kur(s)_\gamma$ and in the case of simple curves it might be also denoted by $\kur(p)$ or $\kur(p)_\gamma$.
@@ -35,7 +35,7 @@ The curvature is usually denoted by $\kur(s)$ or $\kur(s)_\gamma$ and in the cas
 The curvature measures how fast the curve turns;
 if you drive along a plane curve, then curvature describes the position of your steering wheel at the given point (note that it does not depend on your speed).
 
-In general, the term \emph{curvature} is used for anything that measures how much a \emph{geometric object} deviates from being \emph{straight};
+In general, the term {}\emph{curvature} is used for anything that measures how much a {}\emph{geometric object} deviates from being {}\emph{straight};
 for curves, it measures how fast it deviates from a straight line.
 
 \begin{thm}{Exercise}\label{ex:curvature-of-spherical-curve}
@@ -47,7 +47,7 @@ Show that any regular smooth unit-speed spherical curve has curvature at least 1
 Let $\gamma$ be a regular smooth space curve.
 Let us consider another curve 
 \[\tan(t)=\tfrac{\gamma'(t)}{|\gamma'(t)|}\eqlbl{eq:tantrix}\] 
-called \emph{tangent indicatrix} of $\gamma$.
+called \index{tangent indicatrix}\emph{tangent indicatrix} of $\gamma$.
 Note that $|\tan(t)|=1$ for any $t$;
 that is, $\tan$ is a spherical curve.
 
@@ -79,7 +79,7 @@ where $\vec w(t)$ denotes the projection of $\gamma''(t)$ to the plane normal to
 
 \begin{subthm}{ex:curvature-formulas:b}
 \[\kur(t)=\frac{|\gamma''(t)\times \gamma'(t)|}{|\gamma'(t)|^{3}},\]
-where $\times$ denotes the \emph{vector product} (also known as \emph{cross product}).
+where $\times$ denotes the \index{vector product}\emph{vector product} (also known as \index{cross product}\emph{cross product}).
 \end{subthm}
 
 \end{thm}
@@ -95,13 +95,13 @@ at the point $p=(x,f(x))$.
 \section{Tangent curves}
 
 Let $\gamma$ be a smooth regular space curve and $\tan$ its tangent indicatrix.
-The line thru $\gamma(t)$ in the direction of $\tan(t)$ is called the \emph{tangent line} at~$t$.
+The line thru $\gamma(t)$ in the direction of $\tan(t)$ is called the \index{tangent line}\emph{tangent line} at~$t$.
 
-The tangent line could be also defined as a unique line that has that has \emph{first order of contact} with $\gamma$ at $s$;
+The tangent line could be also defined as a unique line that has that has \index{order of contact}\emph{first order of contact} with $\gamma$ at $s$;
 
 that is, $\rho(\ell)=o(\ell)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to the line.
 
-We say that smooth regular curve $\gamma_1$ at $s_1$ is \emph{tangent} to a smooth regular curve $\gamma_2$ at $s_2$
+We say that smooth regular curve $\gamma_1$ at $s_1$ is \index{tangent curves}\emph{tangent} to a smooth regular curve $\gamma_2$ at $s_2$
 if $\gamma_1(s_1)=\gamma_2(s_2)$ and the tangent line of $\gamma_1$ at $s_1$ coincides with the tangent line of $\gamma_2$ at $s_2$;
 if both curves are simple we can also say that they are tangent at the point $p=\gamma_1(s_1)\z=\gamma_2(s_2)$ without ambiguity.
 
@@ -111,7 +111,7 @@ if both curves are simple we can also say that they are tangent at the point $p=
 Let $\gamma\:\mathbb{I}\to\RR^3$ be a smooth unit-speed curve and $\tan$ its tangent indicatrix.
 The integral 
 \[\tc\gamma:=\int_{\mathbb{I}}\kur(s)\cdot ds\]
-is called \emph{total curvature of}\label{page:total curvature of:smooth-def}
+is called \index{total curvature of}\emph{total curvature of}\label{page:total curvature of:smooth-def}
 $\gamma$.
 
 When $\gamma$ is not parameterized by arc-length, by a change of variables, the above integral takes the form
@@ -213,12 +213,12 @@ if this is the case, then the time intervals of both curves can be shifted so th
 If in addition $\beta(c)=\alpha(a)$, then we can do cyclic concatination of these curves;
 this way we obtain a closed curve.
 
-If $\alpha'(b)$ and $\beta'(b)$ are defined, then the angle $\theta=\measuredangle(\alpha'(b),\beta'(b))$ is called \emph{external angle} of $\gamma$ at time $b$.
-If $\theta=\pi$, then we say that $\gamma$ has a \emph{cusp} at  time $b$.
+If $\alpha'(b)$ and $\beta'(b)$ are defined, then the angle $\theta=\measuredangle(\alpha'(b),\beta'(b))$ is called \index{external angle}\emph{external angle} of $\gamma$ at time $b$.
+If $\theta=\pi$, then we say that $\gamma$ has a \index{cusp}\emph{cusp} at  time $b$.
 
 Clearly, the assumption that the intervals $[a,b]$ and $[b,c]$ fit together is not essential, and we can concatenate any two curves $\alpha$ and $\beta$ as long as the endpoint of $\alpha$ coincides with the starting point of~$\beta$. 
 
-A space curve $\gamma$ is called \emph{piecewise smooth and regular} if it can be presented as an iterated concatination of a finite number of smooth regular curves; if $\gamma$ is closed, then the  concatination is assumed to be cyclic.
+A space curve $\gamma$ is called \index{piecewise smooth regular curve}\emph{piecewise smooth and regular} if it can be presented as an iterated concatination of a finite number of smooth regular curves; if $\gamma$ is closed, then the  concatination is assumed to be cyclic.
 
 If $\gamma$ is a concatination of smooth regular arcs $\gamma_1,\dots,\gamma_n$, then the total curvature of $\gamma$ is defined as a sum of the total curvatures of $\gamma_i$ and the external angles;
 that is, 
@@ -447,9 +447,9 @@ Show that
 
 \end{thm}
 
-Lines crossing a curve at four points as in the above exercise are called \emph{alternating quadrisecants}.
-It turns out that any \emph{nontrivial knot} admits an alternating quadrisecant \cite{denne};
-according to the exercise the latter implies the so-called \emph{F\'ary--Milnor theorem} --- the total curvature any knot exceeds $4\cdot \pi$.
+Lines crossing a curve at four points as in the above exercise are called \index{alternating quadrisecants}\emph{alternating quadrisecants}.
+It turns out that any {}\emph{nontrivial knot} admits an alternating quadrisecant \cite{denne};
+according to the exercise the latter implies the so-called \index{F\'ary--Milnor theorem}\emph{F\'ary--Milnor theorem} --- the total curvature any knot exceeds $4\cdot \pi$.
 
 \section{Bow lemma}
 
@@ -584,7 +584,7 @@ Show that
 Recall that the curvature of a spherical curve is at least $1$
 (Exercise~\ref{ex:curvature-of-spherical-curve}).
 In particular, the length of a spherical curve cannot exceed its total curvature.
-The following theorem shows that the same inequality holds for \emph{closed} curves in a unit ball.
+The following theorem shows that the same inequality holds for {}\emph{closed} curves in a unit ball.
 
 \begin{thm}{Theorem}\label{thm:DNA}
 Let $\gamma$ be a smooth regular closed curve that lies in a unit ball.
@@ -660,7 +660,7 @@ Fix a partition $a\z=t_0\z<\dots<t_k=b$ and consider the corresponding inscribed
 Let $\tau=\xi_1\dots\xi_k$ be a spherical polygonal line
 with the vertexes $\xi_i\z=\tfrac{p_i-p_{i-1}}{|p_i-p_{i-1}|}$.
 We can assume that $\tau$ has constant speed on each arc and $\tau(t_i)=\xi_i$ for each $i$. 
-The spherical polygonal line $\tau$ will be called tangent indicatrix for $\beta$.
+The spherical polygonal line $\tau$ will be called \index{tangent indicatrix!of polygonal line}\emph{tangent indicatrix} for $\beta$.
 
 Consider a sequence of finer and finer partitions, denote by $\beta_n$ and $\tau_n$ the corresponding inscribed polygonal lines and their tangent indicatrixes.
 Note that since $\gamma$ is smooth, the idicatrixes $\tau_n$ converge pointwise to $\tan$ --- the tangent indicatrix of $\gamma$.

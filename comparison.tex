@@ -5,14 +5,14 @@ This chapter based on material in the book os Stephanie Alexander, Vitali Kapovi
 \section{Model triangles and angles}
 
 Recall that a shortest path between points $x$ and $y$ in a surface $\Sigma$ will be denoted as $[xy]$ or $[xy]_\Sigma$, and
-$|x-y|_\Sigma$ denotes the \emph{intrinsic distance} from $x$ to $y$ in $\Sigma$.
+$|x-y|_\Sigma$ denotes the \index{intrinsic distance}\emph{intrinsic distance} from $x$ to $y$ in $\Sigma$.
 
-A \emph{geodesic triangle} in a surface $\Sigma$ is a triple of points $x,y,z\in \Sigma$ with choice of minimizing geodesics $[xy]$, $[yz]$ and $[zx]$.
-The points $x,y,z$ are called \emph{vertexes} of the geodesic triangle,
+A \index{geodesic triangle}\emph{geodesic triangle} in a surface $\Sigma$ is a triple of points $x,y,z\in \Sigma$ with choice of minimizing geodesics $[xy]$, $[yz]$ and $[zx]$.
+The points $x,y,z$ are called {}\emph{vertexes} of the geodesic triangle,
 the minimizing geodesics $[xy]$, $[yz]$ and $[zx]$ are called its sides;
 the triangle itself is denoted by $[xyz]$.
 
-A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\RR^2$ is called \emph{model triangle} of the triangle $[xyz]$,
+A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\RR^2$ is called \index{model triangle}\emph{model triangle} of the triangle $[xyz]$,
 briefly $[\tilde x\tilde y\tilde z]=\tilde \triangle xyz$, if its corresponding sides are equal;
 that is,
 \[|\tilde x-\tilde y|_{\RR^2}=|x-y|_\Sigma,
@@ -22,18 +22,18 @@ that is,
 |\tilde z-\tilde x|_{\RR^2}=|z-x|_\Sigma.
 \]
 
-A pair of minimizing geodesics $[xy]$ and $[xz]$ starting from one point $x$ is called \emph{hinge} and denoted as $\hinge xyz$.
+A pair of minimizing geodesics $[xy]$ and $[xz]$ starting from one point $x$ is called \index{hinge}\emph{hinge} and denoted as $\hinge xyz$.
 The angle between these geodesics at $x$ is denoted by $\measuredangle\hinge xyz$.
 The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in the model triangle $[\tilde x\tilde y\tilde z]=\tilde \triangle xyz$ is denoted by $\angk xyz$.
 
 \section{Formulations}
 
-Part \textit{\ref{SHORT.thm:comp:toponogov}} of the following theorem is called \emph{Toponogov comparison theorem} and sometimes \emph{Alexandrov comparison theorem};
+Part \textit{\ref{SHORT.thm:comp:toponogov}} of the following theorem is called \index{Toponogov comparison theorem}\emph{Toponogov comparison theorem} and sometimes \index{Alexandrov comparison theorem}\emph{Alexandrov comparison theorem};
 it is was proved by Paolo Pizzetti \cite{pizzetti} and latter independently by Alexandr Alexandrov \cite{alexandrov}; 
 generalizations were obtained by  Victor Toponogov \cite{toponogov}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{BGP}.
 %We present a proof from \cite{AKP} which is also very close to the one given by Urs Lang and Viktor Schroeder in \cite{lang-schroeder}.???
 
-Part \textit{\ref{SHORT.thm:comp:cat}} is called \emph{Cartan--Hadamard theorem};
+Part \textit{\ref{SHORT.thm:comp:cat}} is called \index{Cartan--Hadamard theorem}\emph{Cartan--Hadamard theorem};
 it was proved by 
 Hans von Mangoldt \cite{mangoldt} and generalized by Elie Cartan \cite{cartan}, Jacques Hadamard \cite{hadamard},
 Herbert Busemann \cite{busemann},
@@ -75,7 +75,7 @@ The corresponding internal angle might be $\measuredangle\hinge {x}{y}{z}$ or $2
 
 \begin{itemize}
 \item Since the angles of any plane triangle sum up to $\pi$,
-the part (\ref{thm:comp:toponogov}) of the theorem implies that angles of any triangle in a surface with nonnegative Gauss curvature have sum at least $\pi$.
+part \ref{SHORT.thm:comp:toponogov} implies that angles of any triangle in a surface with nonnegative Gauss curvature have sum at least $\pi$.
 
 \item The triangle may not bound a disc%
 \footnote{For example equator on the cyclinder is formed by a geodesic triangle that does not bound a disc.}, but  if it does, then by Gauss--Bonnet formula the sum of its {}\emph{internal} angles is at least~$\pi$.
@@ -94,7 +94,7 @@ forms a triangle with all angles $\pi$, which contradict the comparison in~\ref{
 Let $p$ and $q$ be points on a closed convex surface $\Sigma$ that lie on maximal intrinsic distance from each other;
 that is, $|p-q|_\Sigma\ge|x-y|_\Sigma$ for any $x,y\in \Sigma$.
 Show that 
-\[\angk xpq\ge \tfrac\pi3\]
+\[\measuredangle\hinge xpq\ge \tfrac\pi3\]
 for any point $x\in \Sigma\backslash\{p,q\}$.
 \end{thm}
 
@@ -130,9 +130,9 @@ Note that
 \begin{align*}
 \measuredangle \hinge 0{\vec v}{\vec w}_{\T_x}&=\measuredangle \hinge xyz_\Sigma,
 \\
-|x-\vec v|_{\T_x}&=|x-y|_\Sigma, 
+|\vec v|_{\T_x}&=|x-y|_\Sigma, 
 \\
-|x-\vec w|_{\T_x}&=|x-z|_\Sigma.
+|\vec w|_{\T_x}&=|x-z|_\Sigma.
 \end{align*}
 
 \parit{\ref{SHORT.thm:loc-comp:cbb}.}
@@ -181,7 +181,7 @@ Then the following expressions have the same signs:
 \end{figure}
 
 \parit{Proof.} 
-In the proof we use the following \emph{monotonicity property}:
+In the proof we use the following \index{monotonicity property}\emph{monotonicity property}:
 if two sides adjacent to an angle in a plane triangle are fixed, 
 then the angle is increases if the opposite side increase.
 
@@ -228,7 +228,7 @@ Then the following expressions have the same signs:
 
 In this section we formulate conditions equivalent to the conclusion of the comparison theorem (\ref{thm:comp}).
 
-A triangle $[xyz]$ in a surface is called \emph{fat} (or, respectively, \emph{thin})
+A triangle $[xyz]$ in a surface is called \index{fat triangle}\emph{fat} (or, respectively, \index{thin triangle}\emph{thin})
 if for any two points $p$ and $q$ on the sides of the triangle and the corresponding points 
 $\tilde p$ and $\tilde q$ on the sides of its model triangle $[\tilde x\tilde y\tilde z]\z=\tilde \triangle xyz$ we have
 $|p-q|\ge |\tilde p-\tilde q|$ (or respectively $|p-q|\le |\tilde p-\tilde q|$).
@@ -284,14 +284,15 @@ Note that $\angk xwy\to \measuredangle\hinge xpz$ as $w,y\to x$, whence the impl
 
 In the following exercises you can apply the globalization theorem.
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:sum=<2pi}
 Let $\Sigma$ be a closed (or open) regular surface and with nonnegative Gauss curvature.
 Show that 
 \[\angk pxy+\angk pyz+\angk pzx\le2\cdot \pi.\]
 for any four distinct points $p,x,y,z$ on $\Sigma$.
 \end{thm}
 
-\begin{thm}{Exercise}Let $\Sigma$ be an open smooth regular surface
+\begin{thm}{Exercise}\label{ex:geod-convexity}
+Let $\Sigma$ be an open smooth regular surface
 and $\gamma$ be a unit-speed geodesic in $\Sigma$ and $p\in\Sigma$.
 
 Consider the function
@@ -303,7 +304,7 @@ Consider the function
 \end{enumerate}
 \end{thm}
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:arm-lemma}
 Let $\tilde x_1\dots\tilde x_n$ be a convex plane polygon and
 $x_1\dots x_n$ be a broken geodesic in an open simply connected surface $\Sigma$ with nonpositive curvature.
 Assume that
@@ -313,11 +314,11 @@ $\measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}\ge \measuredangle\hinge{x_{i-1}}{x_
 Show that \[|x_1-x_n|_\Sigma\ge |\tilde x_1\z-\tilde x_n|_{\RR^2}.\]
 \end{thm}
 
-For $\Sigma=\RR^2$, the exercise above is the so called \emph{arm lemma}; 
+For $\Sigma=\RR^2$, the exercise above is the so called \index{arm lemma}\emph{arm lemma}; 
 you can use it without proof.
 
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:midpoints}
 Let $x'$ and $y'$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in an open smooth regular surface $\Sigma$.
 \begin{enumerate}[(a)]
  \item Show that if the Gauss curvature of $\Sigma$ is nonnegative, then 
@@ -365,7 +366,7 @@ holds for any hinge $\hinge x y z$ with $\dist{x}{y}{}+\dist{x}{z}{}<\ell$.
 \parit{Proof.} 
 Given a hinge $\hinge x p q$ consider a triangle in the plane
 with angle $\measuredangle\hinge x p q$ and two adjacent sides $|x-p|$ and $|x-q|$.
-Let us denote by $\side \hinge x p q$ the third side of this triangle; let us call it \emph{model side} of the hinge.
+Let us denote by $\side \hinge x p q$ the third side of this triangle; let us call it \index{model side}\emph{model side} of the hinge.
 
 Note that the inequalities 
 \[\measuredangle\hinge x p q\ge \angk x p q\quad\text{and}\quad\side \hinge x p q
@@ -475,7 +476,7 @@ In particular
 \qeds
 
 
-\begin{thm}{Exercise} 
+\begin{thm}{Exercise}\label{ex:convex-polyhon}
 Assume a disc $\Delta$ lies in open smooth regular surface $\Sigma$ with nonnegative Gauss curvature and bounded by a closed broken geodesic $x_1\dots x_n$ with positive exterior angles; that is, when you travel along the boundary, you always turn to the side where $\Delta$ is.
 
 Show that there is a convex plane polygon $\tilde x_1\dots \tilde x_n$ which sides are equal to the corresponding sides of $x_1\dots x_n$ and with internal angles at not bigger than in the corresponding angles  of $x_1\dots x_n$.
@@ -493,7 +494,7 @@ The following lemma will play key role in the proof of \ref{thm:comp:cat}.
 
 \begin{thm}{Inheritance Lemma}
 \label{lem:inherit-angle} 
-Assume that a triangle $\trig p x y$ in a surface $\Sigma$ \emph{decomposes}\index{decomposed triangle} 
+Assume that a triangle $\trig p x y$ in a surface $\Sigma$ \index{decomposed triangle}\emph{decomposes} 
 into two triangles $\trig p x z$ and $\trig p y z$;
 that is, $\trig p x z$ and $\trig p y z$ have common side $[p z]$, and the sides $[x z]$ and $[z y]$ together form the side $[x y]$ of $\trig p x y$.
 
@@ -543,27 +544,27 @@ Note that
 Applying monotonicity propery, we get that
 \[\measuredangle\hinge{\dot p}{\dot x}{\dot y}\le \measuredangle\hinge{\tilde  p}{\tilde  x}{\tilde  y}.\]
 It follows that there are nonoverlapping triangles 
-$\trig{\tilde p}{\tilde x}{\tilde z_y}\cong\trig {\dot p}{\dot x}{\dot z}$ 
+$\trig{\tilde p}{\tilde x}{\tilde w}\cong\trig {\dot p}{\dot x}{\dot z}$ 
 and 
-$\trig{\tilde p}{\tilde y}{\tilde z_x}\cong\trig {\dot p}{\dot y}{\dot z}$
- inside triangle $\trig{\tilde p}{\tilde x}{\tilde y}$.
+$\trig{\tilde p}{\tilde y}{\tilde v}\cong\trig {\dot p}{\dot y}{\dot z}$
+ inside of the triangle $\trig{\tilde p}{\tilde x}{\tilde y}$.
 
 
 Connect points in each pair
-$(\tilde z,\tilde z_x)$, 
-$(\tilde z_x,\tilde z_y)$ 
-and $(\tilde z_y,\tilde z)$ 
+$(\tilde z,\tilde v)$, 
+$(\tilde v,\tilde w)$ 
+and $(\tilde w,\tilde z)$ 
 with arcs of circles centered at 
 $\tilde y$, $\tilde p$, and $\tilde x$ respectively. 
 Define $F$ as follows.
 \begin{itemize}
-\item Map  $\solidtriangle{\tilde p}{\tilde x}{\tilde z_y}$ isometrically onto  $\solidtriangle {\dot p}{\dot x}{\dot y}$;
-similarly map $\solidtriangle{\tilde p}{\tilde y}{\tilde z_x}$ onto $\solidtriangle {\dot p}{\dot y}{\dot z}$.
+\item Map  $\solidtriangle{\tilde p}{\tilde x}{\tilde w}$ isometrically onto  $\solidtriangle {\dot p}{\dot x}{\dot y}$;
+similarly map $\solidtriangle{\tilde p}{\tilde y}{\tilde v}$ onto $\solidtriangle {\dot p}{\dot y}{\dot z}$.
 \item If a point $w$ lies in one of the three circular sectors, say at distance $r$ from center of the circle, let $F(w)$ be the point on the corresponding segment 
 $[\dot p \dot z]$, 
 $[\dot x \dot z]$ 
 or $[\dot y \dot z]$ whose distance from the lefthand endpoint of the segment is $r$.
-\item Finally, if $w$ lies in the remaining curvilinear triangle $\tilde z \tilde z_x \tilde z_y$, 
+\item Finally, if $w$ lies in the remaining curvilinear triangle $\tilde z \tilde v \tilde w$, 
 set $F(w) =\dot z$. 
 \end{itemize}
 By construction, $F$ satisfies the remaining conditions of the lemma. 
@@ -668,7 +669,7 @@ In particular, $\trig p x y=\trig{p}{\,x^{0,N}}{\,x^{N,N}}$ is thin.
 \qeds
 
 
-\begin{thm}{Exercise}
+\begin{thm}{Exercise}\label{ex:convex-dist}
 Assume $\gamma_1$ and $\gamma_2$ be two geodesics in an open smooth regular simply connected surface $\Sigma$ with nonpositive Gauss curvature.
 Show that the function
 \[h(t)=|\gamma_1(t)-\gamma_2(t)|_\Sigma\]

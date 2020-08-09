@@ -3818,6 +3818,72 @@ drawarrow (0,-.5)*u--(0,r)*u;
 label.bot (btex $y=f(x)$ etex, (.4*r,r)*u);
 endfig;
 
+beginfig(8) 
+save u,k;
+u:=.7cm;
+k=.4;
+
+
+z.p0=(0,0)*u;
+z.p1=(2,1)*u;
+z.q0=(1,-2)*u;
+z.q1=(3,-2.2)*u;
+
+z.a=k[z.p0,z.p1];
+z.b=k[z.q0,z.p1];
+z.c=k[z.q0,z.q1];
+
+draw z.p0--z.p1--z.q0--z.q1;
+draw z.a--z.b--z.c penhair dashed evenly;
+draw z.a--z.c penhair;
+draw z.p0--z.q0 penhair;
+draw z.p1--z.q1 penhair;
+
+dOt z.p0,z.p1,z.q0,z.q1,z.a,z.b,z.c;
+
+label.lft(btex $\gamma_1(0)$ etex, z.p0);
+label.urt(btex {\small $\gamma_1(1)=\delta(1)$} etex, z.p1);
+label.bot(btex $\gamma_2(1)$ etex, z.q1);
+label.llft(btex {\small $\gamma_2(0)=\delta(0)$} etex, z.q0);
+label.top(btex $\gamma_1(t)$ etex, z.a);
+label.rt(btex $\delta(t)$ etex, z.b);
+label.bot(btex $\gamma_2(t)$ etex, z.c);
+endfig;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+beginfig(1650) 
+save u,k;
+u:=.9cm;
+k=.5;
+
+
+z.p0=(0,0)*u;
+z.p1=(2,1)*u;
+z.q0=(1,-2)*u;
+z.q1=(3,-2.2)*u;
+
+z.a=k[z.p0,z.p1];
+z.b=k[z.q0,z.p1];
+z.c=k[z.q0,z.q1];
+
+draw z.p0--z.p1--z.q0--z.q1;
+draw z.a--z.b--z.c penhair dashed evenly;
+draw z.a--z.c penhair;
+draw z.p0--z.q0 penhair;
+draw z.p1--z.q1 penhair;
+
+dOt z.p0,z.p1,z.q0,z.q1,z.a,z.b,z.c;
+
+label.lft(btex $\gamma_1(0)$ etex, z.p0);
+label.urt(btex {\small $\gamma_1(1)=\delta(1)$} etex, z.p1);
+label.bot(btex $\gamma_2(1)$ etex, z.q1);
+label.llft(btex {\small $\gamma_2(0)=\delta(0)$} etex, z.q0);
+label.top(btex $\gamma_1(\tfrac12)$ etex, z.a);
+label.rt(btex $\delta(\tfrac12)$ etex, z.b);
+label.bot(btex $\gamma_2(\tfrac12)$ etex, z.c);
+endfig;
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 beginfig(2305) 
@@ -3994,8 +4060,8 @@ dOt z.p,z.x,z.y,z.z,z.zx,z.zy;
 label.lft(btex $\tilde x$ etex, z.x);
 label.rt(btex $\tilde y$ etex, z.y);
 label.top(btex $\tilde z$ etex, z.z);
-label.llft(btex $\tilde z_y$ etex, z.zx);
-label.lrt(btex $\tilde z_x$ etex, z.zy);
+label.llft(btex $\tilde w$ etex, z.zx);
+label.lrt(btex $\tilde v$ etex, z.zy);
 label.bot(btex $\tilde p$ etex, z.p);
 
 endfig;

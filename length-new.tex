@@ -2,11 +2,11 @@
  
 Recall that a sequence 
 \[a=t_0 < t_1 < \cdots < t_k=b.\]
-is called a \emph{partition} of the interval $[a,b]$.
+is called a \index{partition}\emph{partition} of the interval $[a,b]$.
 
 \begin{thm}{Definition}\label{def:length}
 Let $\gamma\:[a,b]\to \mathcal{X}$ be a curve in a metric space.
-The \emph{length}\index{length of curve} of $\gamma$ is defined as
+The \index{length of curve}\emph{length} of $\gamma$ is defined as
 \begin{align*}
 \length \gamma
 = 
@@ -18,7 +18,7 @@ where the supremum is taken over all partitions
 \[a=t_0 < t_1 < \cdots < t_k=b.\]
 
 The length of $\gamma$ is a nonnegative real number or infinity;
-the curve $\gamma$ is called \emph{rectifiable}\index{rectifiable curve} if its length is finite. 
+the curve $\gamma$ is called \index{rectifiable curve}\emph{rectifiable} if its length is finite. 
 
 The length of a closed curve is defined as the length of the corresponding loop.
 If a curve is defined on an open or semi-open interval, then its length is defined as the exact upper bound for lengths of all its arcs.
@@ -26,7 +26,7 @@ If a curve is defined on an open or semi-open interval, then its length is defin
 
 Suppose $\gamma\:[a,b]\to \RR^3$ is a parameterized space curve.
 For a partition $a=t_0 < t_1 < \cdots < t_k=b$, set $p_i=\gamma(t_i)$.
-Then the polygonal line $p_0\dots p_k$ is called \emph{inscribed} in $\gamma$.
+Then the polygonal line $p_0\dots p_k$ is called \index{inscribed polygonal line}\emph{inscribed} in $\gamma$.
 If $\gamma$ is closed, then $p_0=p_k$, so the inscribed polygonal line is also closed.
 
 \begin{thm}{Exercise}\label{ex:integral-length-0}
@@ -38,7 +38,7 @@ Show that
 
 \end{thm}
 
-Note that the length of space curve $\gamma$ can be defined as the exact upper bound of the lengths of polygonal lines $p_0\dots p_k$ \emph{inscribed} in $\gamma$.
+Note that the length of space curve $\gamma$ can be defined as the exact upper bound of the lengths of polygonal lines $p_0\dots p_k$ inscribed in $\gamma$.
 
 \begin{thm}{Exercise}\label{ex:length-image}
 Let $\alpha\:[0,1]\to\RR^3$ be a parametrization of a simple arc.
@@ -75,7 +75,7 @@ Conclude that
 
 
 \section{Nonrectifiable curves}
-A classical example of a nonrectifiable curve is the so-called \emph{Koch snowflake};
+A classical example of a nonrectifiable curve is the so-called \index{Koch snowflake}\emph{Koch snowflake};
 it is a fractal curve that can be constructed as follows:
 
 Start with an equilateral triangle, divide each side into three segments of equal length and add an equilateral triangle with base the middle segment.
@@ -103,7 +103,7 @@ Three iterations and the resulting Koch snowflake are shown on the diagram.
   
 \section{Arc-length parametrization}
 
-We say that a curve $\gamma$ has an \emph{arc-length parametrization} (also called \emph{natural parametrization})
+We say that a curve $\gamma$ has an \index{arc-length parametrization}\emph{arc-length parametrization} (also called \index{natural parametrization}\emph{natural parametrization})
 if 
 \[t_2-t_1=\length \gamma|_{[t_1,t_2]}\]
 for any two values of parameters $t_1<t_2$;
@@ -112,7 +112,7 @@ that is, the arc of $\gamma$ from $t_1$ to $t_2$ has length $t_2-t_1$.
 Note that a smooth space curve $\gamma(t)=(x(t),y(t),z(t))$ is an arc-length parametrization if and only if it has unit velocity vector at all times;
 that is, 
 \[|\gamma'(t)|=\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}=1\]
-for all $t$; by that reason smooth curves equipped with an arc-length parametrization are also called \emph{unit-speed curves}.
+for all $t$; by that reason smooth curves equipped with an arc-length parametrization are also called \index{unit-speed curve}\emph{unit-speed curves}.
 Note that smooth unit-speed curves are automatically regular.
 
 Note that any rectifiable curve $\gamma$ can be parameterized by its arc length.
@@ -162,7 +162,7 @@ usually it is more convenient to use the original parametrization.
 
 \section{Convex curves}
 
-A simple plane curve is called \emph{convex} if it bounds a convex region.
+A simple plane curve is called \index{convex curve}\emph{convex} if it bounds a convex region.
 
 \begin{thm}{Proposition}\label{prop:convex-curve}
 Assume a convex closed curve $\alpha$ lies inside the domain bounded by a simple closed plane curve $\beta$.
@@ -245,15 +245,15 @@ Try to show that the statement holds for arbitrary closed plane curves $\alpha$,
 \section{Crofton formulas*}\label{page:crofton}
 
 Consider a smooth plane curve $\gamma\:[a,b]\to\RR^2$.
-Given a unit vector $u$, denote by $\gamma_u$ the curve that follows the orthogonal projection of $\gamma$ to the line in the direction $u$;
+Given a unit vector ${\vec u}$, denote by $\gamma_{\vec u}$ the curve that follows the orthogonal projection of $\gamma$ to the line in the direction ${\vec u}$;
 that is, 
-\[\gamma_u(t)=\langle u,\gamma(t)\rangle\cdot u.\]
+\[\gamma_{\vec u}(t)=\langle {\vec u},\gamma(t)\rangle\cdot {\vec u}.\]
 
 Note that 
-\[|\gamma_u'(t)|=|\langle u,\gamma'(t)\rangle|\] for any $t$.
-Note that for any plane vector $w$, the average magnitude of its projections is proportional to its magnitude; that is,
-\[|w|=k\cdot \overline{|w_u|},\]
-where $\overline{|w_u|}$ denotes the average value of $|w_u|$ for all unit vectors $u$.
+\[|\gamma_{\vec u}'(t)|=|\langle {\vec u},\gamma'(t)\rangle|\] for any $t$.
+Note that for any plane vector ${\vec w}$, the average magnitude of its projections is proportional to its magnitude; that is,
+\[|{\vec w}|=k\cdot \overline{|{\vec w}_{\vec u}|},\]
+where $\overline{|{\vec w}_{\vec u}|}$ denotes the average value of $|{\vec w}_{\vec u}|$ for all unit vectors ${\vec u}$.
 (The value $k$ is the average value of $|\cos\phi|$ for $\phi\in [0,2\cdot\pi]$; it can be found by integration, but soon we will show another way to find it.)
 
 If the curve $\gamma$ is smooth, then according to Exercise~\ref{ex:integral-length}
@@ -261,18 +261,18 @@ If the curve $\gamma$ is smooth, then according to Exercise~\ref{ex:integral-len
 \length\gamma
 &=\int_a^b|\gamma'(t)|\cdot dt=
 \\
-&=\int_a^b  k\cdot \overline{|\gamma_u'(t)|}\cdot dt=
+&=\int_a^b  k\cdot \overline{|\gamma_{\vec u}'(t)|}\cdot dt=
 \\
-&=k\cdot \overline{\length\gamma_u}.
+&=k\cdot \overline{\length\gamma_{\vec u}}.
 \end{align*}
-This formula and its relatives are called \emph{Crofton formulas}.
+This formula and its relatives are called \index{Crofton formulas}\emph{Crofton formulas}.
 Since $k$ in universal for any curve, we can take $\gamma$ to be the unit circle to compute $k$: the left hand side is $2\cdot\pi$.
-Note that for any unit vector $u$, the curve $\gamma_u$ runs back and forth along an interval of length 2.
-Therefore $\length\gamma_u=4$ and hence its average value is also 4.
+Note that for any unit vector ${\vec u}$, the curve $\gamma_{\vec u}$ runs back and forth along an interval of length 2.
+Therefore $\length\gamma_{\vec u}=4$ and hence its average value is also 4.
 It follows that the coefficient $k$ has to satisfy the equation $2\cdot \pi =k\cdot 4$; hence 
 \[
 \length\gamma
-=\tfrac\pi2\cdot \overline{\length\gamma_u}.
+=\tfrac\pi2\cdot \overline{\length\gamma_{\vec u}}.
 \]
 
 The Crofton's formula holds for arbitrary rectifiable curves, not necessary smooth; it can be proved using Exercise~\ref{adex:integral-length}.
@@ -384,10 +384,11 @@ Let $\spc{X}$ be a metric space.
 Given two points $x,y$ in $\spc{X}$, denote by $d(x,y)$ the infimum of lengths of all paths connecting $x$ to $y$; if there is no such path, then $d(x,y)=\infty$.
 
 It is straightforward to see that the function $d$ satisfies all the axioms of a metric except it might take infinite values.
-Therefore if any two points in $\spc{X}$ can be connected by a rectifiable curve, then $d$ defines a new metric on $\spc{X}$; in this case $d$ is called the \emph{induced length metric}.
+Therefore if any two points in $\spc{X}$ can be connected by a rectifiable curve, then $d$ defines a new metric on $\spc{X}$;
+in this case $d$ is called the \index{induced length metric}\emph{induced length metric}.
 
 Evidently $d(x,y)\ge |x-y|$ for any pair of points $x,y\in \spc{X}$.
-If the equality holds for all pairs, then the metric $|-|$ is said to be a \emph{length metric} and the space is called \emph{length-metric space}.
+If the equality holds for all pairs, then the metric $|-|$ is said to be a \index{length metric}\emph{length metric} and the space is called \index{length-metric space}\emph{length-metric space}.
 
 Most of the time we consider length-metric spaces.
 In particular the Euclidean space is a length-metric space.
@@ -407,7 +408,7 @@ for any $x,y\in A$
 
 Let us denote by $\SS^2$ the unit sphere in the space; that is,
 \[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
-A space curve $\gamma$ is called \emph{spherical} if it runs in the unit sphere;
+A space curve $\gamma$ is called \index{spherical curve}\emph{spherical} if it runs in the unit sphere;
 that is, $|\gamma(t)|=1$, or equivalently, $\gamma(t)\in\SS^2$  for any $t$.
 
 Recall that $\measuredangle(u,v)$ denotes the angle between two vectors $u$ and $v$.
@@ -512,18 +513,18 @@ whence \ref{eq:|pq|=<2} follows.
 \qedsf
 
 \begin{thm}{Advanced exercises} \label{adex:crofton}
-Given points $v,w\in\SS^2$, denote by $w_v$ the closest point to $w$ on the equator with pole at $v$;
-in other words, if $w^\perp$ is the projection of $w$ to the plane perpendicular to $v$, then $w_v$ is the unit vector in the direction of $w^\perp$.
-The vector $w_v$ is defined if $w\ne\pm v$.
+Given unit vectors ${\vec v},{\vec w}\in\SS^2$, denote by ${\vec w}_{\vec v}$ the closest point to ${\vec w}$ on the equator with pole at ${\vec v}$;
+in other words, if ${\vec w}^\perp$ is the projection of ${\vec w}$ to the plane perpendicular to ${\vec v}$, then ${\vec w}_{\vec v}$ is the unit vector in the direction of ${\vec w}^\perp$.
+The vector ${\vec w}_{\vec v}$ is defined if ${\vec w}\ne\pm {\vec v}$.
 
 \begin{subthm}{adex:crofton:crofton}
 Show that for any spherical curve $\gamma$ we have
-\[\length\gamma=\overline{\length\gamma_v},\]
-where $\overline{\length\gamma_v}$ denotes the average length of $\gamma _v$ with $v$ varying in $\SS^2$.
+\[\length\gamma=\overline{\length\gamma_{\vec v}},\]
+where $\overline{\length\gamma_{\vec v}}$ denotes the average length of $\gamma_{\vec v}$ with ${\vec v}$ varying in $\SS^2$.
 (This is a spherical analog of Crofton's formula.)
 \end{subthm}
 
-\begin{subthm}{adex:crofton:hemisphere} Give another proof of the hemisphere lemma using part (\ref{adex:crofton:crofton}). 
+\begin{subthm}{adex:crofton:hemisphere} Give another proof of the hemisphere lemma using \ref{adex:crofton:crofton}. 
 \end{subthm}
  
 \end{thm}

@@ -10,7 +10,7 @@ so the velocity vector $\tan(s)=\gamma'(s)$ is unit.
 
 Assume its curvature does not vanish at some time $s$;
 in other words, $\gamma''(s)\ne 0$.
-Then we can define the so-called \emph{normal vector} at $s$ as
+Then we can define the so-called \index{normal vector}\emph{normal vector} at $s$ as
 \[\norm(s)=\frac{\gamma''(s)}{|\gamma''(s)|}.\]
 Note that 
 \[\tan'(s)=\gamma''(s)=\kur(s)\cdot\norm(s).\]
@@ -36,12 +36,12 @@ in particular, we have that
 \eqlbl{eq:orthornomal}
 \]
 
-The orthonormal basis $\tan(s),\norm(s),\bi(s)$ is called \emph{Frenet frame} at $s$; the vectors in the frame are called \emph{tangent}, \emph{normal} and \emph{binormal} respectively.\label{page:frenet-frame}
+The orthonormal basis $\tan(s),\norm(s),\bi(s)$ is called \index{Frenet frame}\emph{Frenet frame} at $s$; the vectors in the frame are called \index{tangent}\emph{tangent}, \index{normal}\emph{normal} and \index{binormal}\emph{binormal} respectively.\label{page:frenet-frame}
 Note that the frame $\tan(s),\norm(s),\bi(s)$ is defined only if $k(s)\ne 0$.
 
-The plane $\Pi_s$ thru $\gamma(s)$ spanned by vectors $\tan(s)$ and $\norm(s)$ is called \emph{osculating plane} at $s$;
+The plane $\Pi_s$ thru $\gamma(s)$ spanned by vectors $\tan(s)$ and $\norm(s)$ is called \index{osculating plane}\emph{osculating plane} at $s$;
 equivalently it can be defined as a plane thru $\gamma(s)$ that is perpendicular to the binormal vector $\bi(s)$.
-This is the unique plane that has \emph{second order of contact} with $\gamma$ at $s$;
+This is the unique plane that has \index{order of contact}\emph{second order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\Pi_s$.
 
 \section{Torsion*}
@@ -50,7 +50,7 @@ Let $\gamma$ be a smooth unit-speed space curve
 and $\tan(s),\norm(s),\bi(s)$ is its Frenet frame.
 The value 
 \[\tor(s)=\langle \norm'(s),\bi(s)\rangle\]
-is called the \emph{torsion} of $\gamma$ at $s$.
+is called the \index{torsion}\emph{torsion} of $\gamma$ at $s$.
 
 Note that the torsion $\tor(s)$ is defined if $\kur(s)\ne0$.
 Indeed, if $\kur(s)\ne 0$, then Frenet frame $\tan(s),\norm(s),\bi(s)$ is defined at $s$.
@@ -156,7 +156,7 @@ Use this formula to show that
 
 \section{Curves of constant slope*}
 
-We say that a smooth regular space curve $\gamma$ has \emph{constant slope} if its velocity vector makes a constant angle with a fixed direction.
+We say that a smooth regular space curve $\gamma$ has \index{constant slope}\emph{constant slope} if its velocity vector makes a constant angle with a fixed direction.
 The following theorem was proved by Michel Ange Lancret~\cite{lancret} more than two centuries ago.
 
 \begin{thm}{Theorem}\label{thm:const-slope}
@@ -192,7 +192,7 @@ Conclude that $\gamma$ has constant slope; it proves the ``if'' part of the theo
 Let $\gamma$ be a smooth unit-speed curve and $s_0$ a fixed real number. 
 Then the curve 
 \[\alpha(s)=\gamma(s)+(s_0-s)\cdot \gamma'(s)\]
-is called the \emph{evolvent} of $\gamma$.
+is called the \index{evolvent}\emph{evolvent} of $\gamma$.
 Note that if $\ell(s)$ denotes the tangent line to $\gamma$ at $s$,
 then $\alpha(s)\in \ell(s)$ and $\alpha'(s)\perp \ell$ for all $s$.
 
@@ -248,8 +248,8 @@ It proves the ``if'' part of the theorem.
 For a unit-speed curve $\gamma$ with nonzero curvature and torsion at $s$,
 the sphere $\Sigma_s$ with center
 \[p(s)=\gamma(s)+\tfrac1{\kur(s)}\cdot \norm(s)+\tfrac{\kur'(s)}{\kur^2(s)\cdot\tor(s)}\cdot\bi(s)\]
-and passing thru $\gamma(s)$ is called the \emph{osculating sphere} of $\gamma$ at $s$.
-This is the unique sphere that has \emph{third order of contact} with $\gamma$ at $s$;
+and passing thru $\gamma(s)$ is called the \index{osculating sphere}\emph{osculating sphere} of $\gamma$ at $s$.
+This is the unique sphere that has \index{order of contact}\emph{third order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)=o(\ell^3)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\Sigma_s$.
  
 \section{Fundamental theorem of space curves*}

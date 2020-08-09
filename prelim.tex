@@ -6,7 +6,7 @@ This material is discussed in any course of multivariable calculus, the classica
 
 A map $\bm{f}\:\RR^m\to\RR^n$ can be thought as an array of functions 
 \[f_1,\dots,f_n\:\RR^m\to \RR.\]
-The map $\bm{f}$ is called \emph{smooth} if each function $f_i$ is smooth;
+The map $\bm{f}$ is called \index{smooth map}\emph{smooth} if each function $f_i$ is smooth;
 that is, all partial derivatives of $f_i$ are defined in the domain of definition of $\bm{f}$.
 
 The Jacobian matrix of $\bm{f}$ at $\bm{x}\in\RR^m$ is defined as
@@ -18,30 +18,30 @@ The Jacobian matrix of $\bm{f}$ at $\bm{x}\in\RR^m$ is defined as
 we assume that the right hand side is evaluated at $\bm{x}=(x_1,\dots,x_m)$.
 
 If the Jacobean matrix defines a surjective linear map $\RR^m\to\RR^n$ (that is, if $\rank(\Jac_{\bm{x}}\bm{f})=n$) then we say that 
-$\bm{x}$ is a \emph{regular point} of~$\bm{f}$.
+$\bm{x}$ is a \index{regular point}\emph{regular point} of~$\bm{f}$.
 
 If for some $\bm{y}\in \RR^n$ each point $\bm{x}$ such that $\bm{f}(\bm{x})=\bm{y}$ is regular,
-then we say that $\bm{y}$ is a \emph{regular value} of $\bm{f}$.
+then we say that $\bm{y}$ is a \index{regular value}\emph{regular value} of $\bm{f}$.
 The following lemma states that {}\emph{most} values of a smooth map are regular.
 
 \begin{thm}{Sard's lemma}\label{lem:sard}
 Given a smooth map $\bm{f}\colon \Omega \z\to \RR^n$ defined on an open set $\Omega\subset \RR^m$, almost all values in $\RR^n$ are regular.
 \end{thm}
 
-The words \emph{almost all} means all values, with the possible exceptions belong to a set with vanishing \emph{Lebesgue measure}.
+The words \index{almost all}\emph{almost all} means all values, with the possible exceptions belong to a set with vanishing {}\emph{Lebesgue measure}.
 In particular if one chooses a random value equidistributed in an arbitrarily small ball $B\subset \RR^n$, then it is a regular value of $\bm{f}$ with probability 1.
 
 Note that if $m<n$, then $\bm{f}$ has no regular points.
 Therefore the only regular value of $\bm{f}$ are the points in the complement of the image $\Im \bm{f}$.
-The theorem states that in this case almost all points in $\RR^n$, do \emph{not} belong to $\Im \bm{f}$.
+The theorem states that in this case almost all points in $\RR^n$, do {}\emph{not} belong to $\Im \bm{f}$.
 
 
 \section*{Inverse function theorem}
 
-The \emph{inverse function theorem} gives a sufficient condition for a smooth map $\bm{f}$ to be invertible in a neighborhood of a given point $\bm{x}$.
+The \index{inverse function theorem}\emph{inverse function theorem} gives a sufficient condition for a smooth map $\bm{f}$ to be invertible in a neighborhood of a given point $\bm{x}$.
 The condition is formulated in terms of the Jacobian matrix of $\bm{f}$ at $\bm{x}$.
 
-The \emph{implicit function theorem} is a close relative to the inverse function theorem;
+The \index{implicit function theorem}\emph{implicit function theorem} is a close relative to the inverse function theorem;
 in fact it can be obtained as its corollary.
 It is used when we need to pass from parametric to implicit description of curves and surfaces.
 
@@ -54,7 +54,7 @@ defined on an open set $\Omega\subset \RR^n$.
 Assume that the Jacobian matrix
 $\Jac_{\bm{x}}\bm{f}$
 is invertible at some point $\bm{x}\in \Omega$.
-Then there is a smooth map $\bm{h}\:\Theta\to\RR^n$ defined in an open neighborhood $\Theta$ of ${\bm{y}}\z=\bm{f}(\bm{x})$ that is a \emph{local inverse of $\bm{f}$ at $\bm{x}$};
+Then there is a smooth map $\bm{h}\:\Theta\to\RR^n$ defined in an open neighborhood $\Theta$ of ${\bm{y}}\z=\bm{f}(\bm{x})$ that is a {}\emph{local inverse of $\bm{f}$ at $\bm{x}$};
 that is, there is a neighborhood $\Omega'\ni \bm{x}$ such that
 $\bm{f}$ defines a bijection $\Omega'\leftrightarrow \Theta$ and
 $\bm{h} \circ \bm{f}$ is an identity map on $\Omega'$.
@@ -148,13 +148,13 @@ Moreover
 
 \section*{Lipschitz condition}
 
-Recall that a function $f$ between metric spaces is called Lipschitz if there is a constant $L$ such that 
+Recall that a function $f$ between metric spaces is called \index{Lipschitz function}\emph{Lipschitz} if there is a constant $L$ such that 
 \[|f(x)-f(y)|\le L\cdot|x-y|\]
 for all values $x$ and $y$ in the domain of definition of $f$.
 %Although this definition makes sense for maps between metric spaces, we will only use it for real-to-real functions.
 
 The following theorem makes possible to extend number of results about smooth function to Lipschitz functions.
-Recall that \emph{almost all} means all values, with the possible exceptions belong to a set with vanishing \emph{Lebesgue measure}.
+Recall that {}\emph{almost all} means all values, with the possible exceptions belong to a set with vanishing {}\emph{Lebesgue measure}.
 
 \begin{thm}{Rademacher's theorem}\label{thm:rademacher}
 Let $f\:[a,b]\to\RR$ be a Lipschitz function.
@@ -173,21 +173,22 @@ Moreover, if $\phi$ is bounded above and/or below by some constants, then we may
 
 \section*{Convex functions}
 
-A function of two variables $(x,y)\mapsto f(x,y)$ is called convex if 
+A function of two variables $(x,y)\mapsto f(x,y)$ is called \index{convex function}\emph{convex} if 
 its epigraph $z\ge f(x,y)$ is a convex set.
-This is equivalent to the so-called \emph{Jensen's inequality}
+This is equivalent to the so-called \index{Jensen's inequality}\emph{Jensen's inequality}
 \[f \left (t\cdot x_1 + (1-t)\cdot x_2 \right ) \leq t\cdot f(x_1)+ (1-t)\cdot f(x_2)\]
 for $t\in[0,1]$.
+
 If $f$ is smooth, then the condition is equivalent to the following inequality for the second directional derivative:
-\[D^2_wf\ge 0\]
-for any vector $w\ne 0$ in the $(x,y)$-plane.
+\[D^2_{\vec w}f\ge 0\]
+for any vector $\vec w$ in the $(x,y)$-plane.
 
 \section*{Uniform continuity and convergence}
 
 Let $f\:{\spc{X}}\to \spc{Y}$ be a map between metric spaces.
 If  for any $\eps>0$ there is $\delta>0$ such that 
 \[|x_1-x_2|_{\spc{X}}<\delta\quad\Longrightarrow\quad |f(x_1)-f(x_2)|_\spc{Y}<\eps,\]
-then $f$ is called \emph{uniformly continuous}.
+then $f$ is called \index{uniformly continuous}\emph{uniformly continuous}.
 
 Evidently every uniformly continuous function is continuous;
 the converse does not hold.
@@ -196,15 +197,15 @@ For example, the function $f(x)=x^2$ is continuous, but not uniformly continuous
 However if $f$ is continuous and defined on a closed interval $[a,b]$, then $f$ is uniformly continuous.
 
 If the condition above holds for any function $f_n$ in a sequence and $\delta$ depend solely on $\eps$,
-then the sequence $(f_n)$ is called uniformly equicontinuous.
+then the sequence $(f_n)$ is called \index{uniformly continuous}\emph{uniformly equicontinuous}.
 More precisely, 
-a sequence of functions $f_n:{\spc{X}}\to \spc{Y}$ is called \emph{uniformly equicontinuous} if 
+a sequence of functions $f_n:{\spc{X}}\to \spc{Y}$ is called {}\emph{uniformly equicontinuous} if 
 for any $\eps>0$ there is $\delta>0$ such that 
 \[|x_1-x_2|_{\spc{X}}<\delta\quad\Longrightarrow\quad |f_n(x_1)-f_n(x_2)|_\spc{Y}<\eps\]
 for any $n$.
 
 
-We say that a sequence of functions $f_i : {\spc{X}} \to \spc{Y}$ \emph{converges uniformly} to a function $f_{\infty}: {\spc{X}} \to \spc{Y}$ if for any 
+We say that a sequence of functions $f_i : {\spc{X}} \to \spc{Y}$ \index{uniform convergence}\emph{converges uniformly} to a function $f_{\infty}: {\spc{X}} \to \spc{Y}$ if for any 
 $\varepsilon >0$, there is a natural number $N$ such that for all $n \geq N$, we have $| f_{\infty} (x)- f_n (x) | < \varepsilon$
 for all $x  \in {\spc{X}}$.
 
@@ -246,7 +247,7 @@ Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and
 \end{minipage}
 \end{figure}
 
-Other useful examples of that type are the so called \emph{bell function} --- a smooth function that is positive in an $\eps$-neighborhood of zero and vanishing outside this neighborhood.
+Other useful examples of that type are the so called \index{bell function}\emph{bell function} --- a smooth function that is positive in an $\eps$-neighborhood of zero and vanishing outside this neighborhood.
 An example of such function can be constructed based using the function $f$ constructed above, say 
 \[b_\eps(t)=c\cdot f(\eps^2-t^2);\]
 the constant $c$ is chosen so that $\int b_\eps=1$.
@@ -299,20 +300,20 @@ An amusing proof can be found in \cite{chambers-liokumovich}.
 
 \section*{Connectedness}
 
-Recall that a continuous map $\alpha$ from the unit interval $[0,1]$ to a Euclidean space is called a \emph{path}.
+Recall that a continuous map $\alpha$ from the unit interval $[0,1]$ to a Euclidean space is called a \index{path}\emph{path}.
 If $p=\alpha (0)$ and $q = \alpha (1)$, then we say that $\alpha$ connects $p$ to $q$.
 
 
-A set $X$ in the Euclidean space is called \emph{path connected} if any two points $x,y\in X$ can be connected by a path lying in $X$.
+A set $X$ in the Euclidean space is called \index{path connected set}\emph{path connected} if any two points $x,y\in X$ can be connected by a path lying in $X$.
 
-A set $X$ in the Euclidean space is called \emph{connected} if one cannot cover $X$ with two disjoint open sets $V$ and $W$ such that both intersections $X\cap V$ and $X\cap W$ are nonempty.
+A set $X$ in the Euclidean space is called \index{connected set}\emph{connected} if one cannot cover $X$ with two disjoint open sets $V$ and $W$ such that both intersections $X\cap V$ and $X\cap W$ are nonempty.
 
 \begin{thm}{Proposition}
 Any path connected set is connected.
 Moreover, any open connected set in the Euclidean space or  plane is path connected.
 \end{thm}
 
-Given a point $x\in X$, the maximal connected subset of $X$ containing $x$ is called the \emph{connected component} of $x$ in $X$.
+Given a point $x\in X$, the maximal connected subset of $X$ containing $x$ is called the \index{connected component}\emph{connected component} of $x$ in $X$.
 
 
 
@@ -424,14 +425,14 @@ Whence
 
 \section*{Convex sets}
 
-A set $X$ in the Euclidean space is called \emph{convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in $X$.
-It is called  \emph{strictly convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
+A set $X$ in the Euclidean space is called \index{convex set}\emph{convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in $X$.
+It is called  \index{strictly convex set}\emph{strictly convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
 
 From the definition, it is easy to see that the intersection of an arbitrary family of convex sets is convex. 
-The intersection of all convex sets containing $X$ is called the \emph{convex hull} of $X$;
+The intersection of all convex sets containing $X$ is called the \index{convex hull}\emph{convex hull} of $X$;
 it is the minimal convex set containing the set $X$.
 
-We will use the following corollary of the so called \emph{hyperplane separation theorem}:
+We will use the following corollary of the so called \index{hyperplane separation theorem}\emph{hyperplane separation theorem}:
 
 \begin{thm}{Lemma}\label{lem:separation}
 Let $K\subset \RR^3$ be a closed convex set.
@@ -451,13 +452,13 @@ Then
 where $\alpha$, $\beta$ and $\gamma$ are the angles of $\Delta$.
 \end{thm}
 
-The value $\alpha+\beta+\gamma-\pi$ is called \emph{excess} of the triangle $\Delta$.
+The value $\alpha+\beta+\gamma-\pi$ is called \index{excess of triangle}\emph{excess of the triangle} $\Delta$.
 
-\begin{wrapfigure}{o}{22 mm}
+\begin{wrapfigure}{r}{22 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-43}
-\vskip-0mm
+\vskip2mm
 \end{wrapfigure}
 
 \parit{Proof.}
@@ -497,7 +498,7 @@ This way we obtain $m+1$ circles on the lateral surface of a cylinder, including
 Further, let us divide each of these circles into $n$ equal arcs in such a way that the dividing points 
 of a circle will lie exactly above the midpoints of arcs on the circle under it.
 Consider all triangles formed by a chord of such arc and line segments connecting the ends of the chord with the points right above and right below the mid point of its arc.
-All the $2\cdot m\cdot n$ equal triangles form a polyhedral surface which is called Schwarz's boot.
+All the $2\cdot m\cdot n$ equal triangles form a polyhedral surface which is called \index{Schwarz's boot}\emph{Schwarz's boot}.
 A Schwarz's boot for $m=8$ and $n=6$ is shown on the diagram.
 
 {

@@ -1,25 +1,27 @@
 \chapter{Signed curvature}
 
+\section{Definitions}
+
 Suppose $\gamma$ is a smooth unit-speed plane curve,
 so $\tan(s)=\gamma'(s)$ is its unit tangent vector for any $s$.
 
 Let us rotate $\tan(s)$ by the angle $\tfrac\pi 2$ counterclockwise; 
 denote the obtained vector by $\norm(s)$.
-The pair $\tan(s),\norm(s)$ is an oriented orthonormal frame in the plane which is analogous to the Frenet frame defined on page \pageref{page:frenet-frame}; we will keep the name \emph{Frenet frame} for it.
+The pair $\tan(s),\norm(s)$ is an oriented orthonormal frame in the plane which is analogous to the Frenet frame defined on page \pageref{page:frenet-frame}; we will keep the name \index{Frenet frame}\emph{Frenet frame} for it.
 
 Recall that $\gamma''(s)\perp \gamma'(s)$ (see \ref{prop:a'-pertp-a''}).
 Therefore 
 \[\tan'(s)=\skur(s)\cdot \norm(s).\eqlbl{eq:tau'}\]
 for some real number $\skur(s)$;
-the value $\skur(s)$ is called \emph{signed curvature} of $\gamma$ at $s$.
+the value $\skur(s)$ is called \index{signed curvature}\emph{signed curvature} of $\gamma$ at $s$.
 We may use notation $\skur(s)_\gamma$ if we need to specify the curve $\gamma$.
 
 Note that 
 \[\kur(s)=|\skur(s)|;\]
 that is, up to sign, the signed curvature $\skur(s)$ equals the curvature $\kur(s)$  of $\gamma$ at $s$  defined on page \pageref{page:curvature};
 the sign tells us in which direction it turns --- if $\gamma$ is turning left at time $s$, then $\skur (s)>0$.
-If we want to emphasise that we are working with the \emph{nonsigned} curvature of the curve, 
-we call it \emph{absolute curvature}.
+If we want to emphasise that we are working with the {}\emph{nonsigned} curvature of the curve, 
+we call it \index{absolute curvature}\emph{absolute curvature}.
 
 Note that if we reverse the parametrization of $\gamma$ or change the orientation of the plane, then
 the signed curvature changes its sign.
@@ -149,7 +151,7 @@ for all $s$, where
 \section{Total signed curvature}
 
 Let $\gamma\:\mathbb{I}\to\RR^2$ be a smooth unit-speed plane curve.
-The \emph{total signed curvature} of $\gamma$, denoted by $\Psi(\gamma)$, is defined as the integral
+The \index{total signed curvature}\emph{total signed curvature} of $\gamma$, denoted by $\Psi(\gamma)$, is defined as the integral
 of its signed curvature;
 \[\Psi(\gamma)= \int_\mathbb{I} \skur(s)\cdot ds,\eqlbl{eq:tsc-k}\]
 where $\skur$ denotes the signed curvature of $\gamma$.
@@ -184,7 +186,7 @@ Trochoid is a curve traced out by a point fixed to a wheel as it rolls along a s
 \end{figure}
 
 \begin{thm}{Exercise}\label{ex:trochoids}
-Consider the family of \emph{trochoids} $\gamma_a\:[0,2\cdot\pi]\to \RR^2$ defined by 
+Consider the family of \index{trochoid}\emph{trochoids} $\gamma_a\:[0,2\cdot\pi]\to \RR^2$ defined by 
 \[\gamma_a(t)=(t+a\cdot \sin t, a\cdot \cos t).\]
 \begin{enumerate}[(a)]
 \item Given $a\in \RR$, find $\Psi(\gamma_a)$ if it is defined.
@@ -199,7 +201,7 @@ if the region bounded by $\gamma$ lies on the left from it and  $-2\cdot\pi$ oth
 Moreover the same statement holds for any closed piecewise simple smooth regular plane curve $\gamma$ if its total signed curvature is defined.
 \end{thm}
 
-This proposition is called sometimes \emph{Umlaufsatz}; it is a differential-geometric analog of the theorem about the sum of the internal angles of a polygon (\ref{thm:sum=(n-2)pi}) which we use in the proof.
+This proposition is called sometimes \index{Umlaufsatz}\emph{Umlaufsatz}; it is a differential-geometric analog of the theorem about the sum of the internal angles of a polygon (\ref{thm:sum=(n-2)pi}) which we use in the proof.
 A more conceptual proof was given by Heinz Hopf \cite{hopf}, \cite[p. 42]{hopf-book}.
 
 \parit{Proof.}
@@ -296,7 +298,7 @@ Draw a smooth regular closed plane curve $\gamma$ such that
 \begin{thm}{Exercise}\label{ex:length'}
 Let $\gamma\:[a,b]\to\RR$ be a smooth regular plane curve with Frenet frame $\tan,\norm$.
 Given a real parameter $\ell$, consider
-the curve $\gamma_\ell(t)=\gamma(t)+\ell\cdot\norm(t)$; it is called a \emph{parallel curve of $\gamma$ at signed distance~$\ell$}.
+the curve $\gamma_\ell(t)=\gamma(t)+\ell\cdot\norm(t)$; it is called a {}\emph{parallel curve of $\gamma$ at signed distance~$\ell$}.
 
 \begin{subthm}{ex:length':reg}
 Show that $\gamma_\ell$ is a regular curve if $\ell\cdot \skur(t)\ne 1$ for all $t$, where $\skur(t)$ denotes the signed curvature of $\gamma$.
@@ -328,7 +330,7 @@ Moreover, if $\skur=0$, then $\sigma(s)=p+s\cdot \tan$ which runs along a line;
 if $\skur\ne 0$, then $\sigma$ runs around the circle of radius $\tfrac1{|\skur|}$ and center $p+\tfrac1\skur\cdot \norm$, where $\tan,\norm$ is an oriented orthonoral frame.
 \end{thm}
 
-Further we will use the term \emph{circline} for \emph{a circle or a line};
+Further we will use the term \index{circline}\emph{circline} for {}\emph{a circle or a line};
 these are the only plane curves with constant signed curvature.
 
 \parit{Proof.}
@@ -365,12 +367,12 @@ which is the circle of radius $r=\tfrac1{|\skur|}$ centered at $(0,\tfrac1\skur)
 Let $\gamma$ be a smooth unit-speed plane curve;
 denote by $\skur(s)$ the signed curvature of $\gamma$ at $s$.
 
-The unit-speed curve $\sigma$ of constant signed curvature $\skur(s)$ that starts at $\gamma(s)$ in the direction $\gamma'(s)$ is called the \emph{osculating circline} of $\gamma$ at~$s$.
+The unit-speed curve $\sigma$ of constant signed curvature $\skur(s)$ that starts at $\gamma(s)$ in the direction $\gamma'(s)$ is called the \index{osculating circline}\emph{osculating circline} of $\gamma$ at~$s$.
 
-The center and radius of the osculating circle at a given point are called \emph{center of curvature} and \emph{radius of curvature} of the curve at that point.
+The center and radius of the osculating circle at a given point are called \index{center of curvature}\emph{center of curvature} and \index{radius of curvature}\emph{radius of curvature} of the curve at that point.
 \end{thm}
 
-The osculating circle $\sigma_s$ can be also defined as the unique circline that has \emph{second order of contact} with $\gamma$ at $s$;
+The osculating circle $\sigma_s$ can be also defined as the unique circline that has \index{order of contact}\emph{second order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)\z=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\sigma_s$.
 
 The following exercise would is recommended to the reader familiar with the notion of inversion.
@@ -448,7 +450,7 @@ is strictly less than the difference between their radii.
 Therefore the osculating circle at $s_0$ lies inside the osculating circle at $s_1$ without touching it.
 \qeds
 
-The curve $s\mapsto \omega(s)$ is called the \emph{evolute} of $\gamma$; 
+The curve $s\mapsto \omega(s)$ is called the \index{evolute}\emph{evolute} of $\gamma$; 
 it traces the centers of curvature of the curve. 
 The evolute of $\gamma$ can be written as 
 \[\omega(t)=\gamma(t)+\tfrac1{\skur(t)}\cdot \norm(t)\] and  
@@ -514,7 +516,7 @@ Assume that $\gamma$ is a smooth regular plane curve with positive strictly mono
 \vskip0mm
 \end{wrapfigure}
 
-Note that part (\ref{ex:double-tangent:a}) does not hold if we allow the curvature to be negative; an example is shown on the diagram.
+Note that part \ref{SHORT.ex:double-tangent:a} does not hold if we allow the curvature to be negative; an example is shown on the diagram.
 
 }
 
@@ -527,7 +529,7 @@ Recall that the curves $\gamma_1$ and $\gamma_2$ are tangent at the  time parame
 if $\gamma_1(t_1)=\gamma_2(t_2)$
 and they share the tangent line at these time parameters.
 
-In this case the point $p=\gamma_1(t_1)=\gamma_2(t_2)$ is called a \emph{point of tangency} of the curves.
+In this case the point $p=\gamma_1(t_1)=\gamma_2(t_2)$ is called a \index{point of tangency}\emph{point of tangency} of the curves.
 If both curves are simple, then we may say that $\gamma_1$ and $\gamma_2$ are tangent at the point $p$ 
 without ambiguity.
 
@@ -539,8 +541,8 @@ then the velocity vectors $\gamma_1'(t_1)$ and $\gamma_2'(t_2)$ are parallel.
 \includegraphics{mppics/pic-85}
 \vskip0mm
 \end{figure}
-If $\gamma_1'(t_1)$ and $\gamma_2'(t_2)$ point in the same direction we say that the curves are \emph{cooriented},
-if these directions are opposite, we say that the curves are \emph{controriented}.
+If $\gamma_1'(t_1)$ and $\gamma_2'(t_2)$ point in the same direction we say that the curves are \index{cooriented!curves}\emph{cooriented},
+if these directions are opposite, we say that the curves are \index{controriented!curves}\emph{controriented}.
 
 
 Note that reverting the parametrization of one of the curves, cooriented curves become counteroriented and vice versa; so we can always assume that the curves are cooriented at a given point of tangency.
@@ -549,8 +551,8 @@ Note that reverting the parametrization of one of the curves, cooriented curves 
 
 Let $\gamma_1$ and $\gamma_2$ be two smooth regular plane curves that share a point \[p=\gamma_1(t_1)=\gamma_2(t_2)\] which is not an endpoint of any of the curves.
 Suppose that there is $\eps>0$ such that the arc $\gamma_2|_{[t_2-\eps, t_2+\eps]}$ lies in a closed plane region $R$ with the arc $\gamma_1|_{[t_1-\eps, t_1+\eps]}$ in its boundary,
-then we say that $\gamma_1$ \emph{locally supports} $\gamma_2$ at the time parameters $t_1$ and $t_2$.
-If both curves are simple, then we also could say that $\gamma_1$ \emph{locally supports} $\gamma_2$ at the point $p$ without ambiguity.
+then we say that $\gamma_1$ \index{local support}\emph{locally supports} $\gamma_2$ at the time parameters $t_1$ and $t_2$.
+If both curves are simple, then we also could say that $\gamma_1$ {}\emph{locally supports} $\gamma_2$ at the point $p$ without ambiguity.
 
 \begin{wrapfigure}{o}{43 mm}
 \vskip-3mm
@@ -559,12 +561,12 @@ If both curves are simple, then we also could say that $\gamma_1$ \emph{locally 
 \vskip0mm
 \end{wrapfigure}
 
-If $\gamma_1$ is simple proper curve, so it divides the plane into two closed region that lie on left and right from $\gamma_1$, then we say that $\gamma_1$ \emph{globally supports} $\gamma_2$ at $t_2$ 
+If $\gamma_1$ is simple proper curve, so it divides the plane into two closed region that lie on left and right from $\gamma_1$, then we say that $\gamma_1$ \index{global support}\emph{globally supports} $\gamma_2$ at $t_2$ 
 if $\gamma_2$ runs in one of these closed regions and 
 $\gamma_2(t_2)$ lies on $\gamma$.
 
 If $\gamma_2$ is a closed curve so it divides the plane into two regions a bounded inside and unbounded outside.
-In this case we say if $\gamma_1$ supports $\gamma_2$ \emph{from inside} (\emph{from outside}) if $\gamma_1$ supports $\gamma_2$ and in the region inside it (respectively outside it). 
+In this case we say if $\gamma_1$ supports $\gamma_2$ \index{support from inside}\emph{from inside} (\index{support from outside}\emph{from outside}) if $\gamma_1$ supports $\gamma_2$ and in the region inside it (respectively outside it). 
 
 Note that if $\gamma_1$ and $\gamma_2$ share a point $p=\gamma_1(t_1)=\gamma_2(t_2)$ and not tangent at $t_1$ and $t_2$, then  $\gamma_2$ crosses $\gamma_1$ at $t_2$ moving from one of its sides to the other.
 It follows that $\gamma_1$ can not locally support $\gamma_2$ at the time parameters $t_1$ and $t_2$.
@@ -582,7 +584,7 @@ $\gamma_1$ supports $\gamma_2$ from the left (respectively right).
 
 If the curves on the diagram oriented according the arrows, then $\gamma_1$ supports $\gamma_2$ from the right at $p$ (as well as $\gamma_2$ supports $\gamma_1$ from the left at $p$).
 
-We say that a smooth regular plane curve $\gamma$ has a \emph{vertex} at $s$
+We say that a smooth regular plane curve $\gamma$ has a \index{vertex of  curve}\emph{vertex} at $s$
 if the signed curvature function is critical at $s$;
 that is, if $\skur'(s)_\gamma=0$.
 If $\gamma$ is simple we could say that the point $p=\gamma(s)$ is a vertex of $\gamma$ without ambiguity.
@@ -805,7 +807,7 @@ Assume $\gamma$ is a simple closed smooth regular plane loop with absolute curva
 Then it surrounds a unit disc.
 \end{thm}
 
-This theorem gives a simple but nontrivial example of the so-called \emph{local to global theorems} --- based on some local data (in this case the curvature of a curve) we conclude a global property (in this case existence of a large disc surrounded by the curve).
+This theorem gives a simple but nontrivial example of the so-called \index{local to global theorem}\emph{local to global theorems} --- based on some local data (in this case the curvature of a curve) we conclude a global property (in this case existence of a large disc surrounded by the curve).
 
 \begin{wrapfigure}{o}{32 mm}
 \vskip-0mm
@@ -846,7 +848,7 @@ Assume contrary; that is, the osculating circle at each point $p\in \gamma$ does
 Given a point $p\in\gamma$ let us consider the maximal circle $\sigma$ that lies completely in $F$ and tangent to $\gamma$ at $p$.
 Note that $\sigma$ has to touch $\gamma$ at another point;
 otherwise if we increase its radius $r$ slightly the resulting circle will still stay in $F$.
-The circle $\sigma$ will be called the \emph{incircle} of $F$ at $p$.
+The circle $\sigma$ will be called the {}\emph{incircle} of $F$ at $p$.
 
 
 Fix a point $p_1$ and let $\sigma_1$ be the incircle at $p_1$.

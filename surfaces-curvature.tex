@@ -34,10 +34,10 @@ The Taylor series %???Taylor series
 for $f$ at $(0,0)$ up to the second oreder term can be then written as
 \[f(x,y)=\tfrac12(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)+o(x^2+y^2).\]
 Note that values $\ell$, $m$, and $n$ are completely determined by this equation.
-The so-called \emph{osculating paraboloid}
+The so-called \index{osculating paraboloid}\emph{osculating paraboloid}
 \[z=\tfrac12\cdot(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)\]
 gives the best approximation of the surface at $p$;
-it has \emph{second order of contact} with $\Sigma$ at $p$.
+it has \index{order of contact}\emph{second order of contact} with $\Sigma$ at $p$.
 
 Note that 
 \[\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2=\langle M_p\cdot (\begin{smallmatrix}
@@ -55,7 +55,7 @@ where
   \end{pmatrix};
 \eqlbl{eq:hessian}
 \]
-it is called the Hessian matrix of $f$ at $(0,0)$.
+it is called the \index{Hessian matrix}\emph{Hessian matrix} of $f$ at $(0,0)$.
 
 \section{Principle curvatures}
 
@@ -75,7 +75,7 @@ In this case
    &k_2
   \end{pmatrix},
 \]
-the diagonal components $k_1$ and $k_2$ of $M_p$ are called \emph{principle curvatures} of $\Sigma$ at $p$;
+the diagonal components $k_1$ and $k_2$ of $M_p$ are called \index{principle curvatures}\emph{principle curvatures} of $\Sigma$ at $p$;
 they might also be denoted as $k_1(p)$ and $k_2(p)$, or $k_1(p)_\Sigma$ and $k_2(p)_\Sigma$;
 if we need to emphasise that we calculate it at the point $p$ for the surface $\Sigma$.
 We will always assume that $k_1\le k_2$.
@@ -85,12 +85,12 @@ Note that if $x=f(x,y)$ is a local graph representation of $\Sigma$ in these coo
 \[f(x,y)=\tfrac12\cdot(k_1\cdot x^2+k_2\cdot y^2)+o(x^2+y^2).\]
 
 The principle curvatures can be also defined as the eigenvalues of the Hessian matrix $M_p$.
-The eigendirections of $M_p$  are called \emph{principle directions} of $\Sigma$ at~$p$.
+The eigendirections of $M_p$  are called \index{principle directions}\emph{principle directions} of $\Sigma$ at~$p$.
 Note that if $k_1(p)\ne k_2(p)$, then $p$ has exactly two principle directions, which are perpendicular to each other; if $k_1(p)= k_2(p)$ then all tangent directions at $p$ are principle.
 
 Note that if we revert the orientation of $\Sigma$, then the principle curvatures at each point switch their signs and indexes.
 
-A smooth regular curve on a surface $\Sigma$ that always runs in the principle directions is called a \emph{line of curvature} of $\Sigma$.  
+A smooth regular curve on a surface $\Sigma$ that always runs in the principle directions is called a \index{line of curvature}\emph{line of curvature} of $\Sigma$.  
 
 \begin{thm}{Exercise}\label{ex:line-of-curvature}
 Assume that a smooth surface $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$.
@@ -125,14 +125,14 @@ Show that any surface with positive Gauss curvature is orientable.
 
 The sum 
 \[H(p)=k_1(p)+ k_2(p)\] 
-is called \emph{mean curvature}\footnote{Some authors define mean curvature as $\tfrac12\cdot(k_1(p)+ k_2(p))$ --- the mean value of the principle curvatures. It is suits the name better, but not as convenient when it comes to calculations.} at $p$.
+is called \index{mean curvature}\emph{mean curvature}\footnote{Some authors define mean curvature as $\tfrac12\cdot(k_1(p)+ k_2(p))$ --- the mean value of the principle curvatures. It is suits the name better, but not as convenient when it comes to calculations.} at $p$.
 We may also denote it by $H(p)_\Sigma$.
 The mean curvature can be also interpreted as the trace of the Hessian matrix $M_p$. 
 
 Note that reverting orientaion of $\Sigma$ does not change Gauss curvatre and changes sign of mean curvature.
 In particular, the Gauss curvature is well defined for nonoriented surface $\Sigma$ and $p$.
 
-A surface with vanishing mean curvature is called \emph{minimal};
+A surface with vanishing mean curvature is called \index{minimal surface}\emph{minimal};
 the reason for such a name will be given in Proposition~\ref{prop:minimizing-is-minimal}.
 
 \section{Shape operator}
@@ -150,7 +150,7 @@ and
 \]
 is the Hessian matrix of $f$ at $(0,0)$; the components $\ell$, $m$, and $n$ are defined on page \pageref{page:lmn}.
 
-The multiplication by the Hessian matrix defies the so called \emph{shape operator}
+The multiplication by the Hessian matrix defies the so called \index{shape operator}\emph{shape operator}
 \[S\:(\begin{smallmatrix}
 x\\y
 \end{smallmatrix})
@@ -164,7 +164,7 @@ otherwise we may use notations
 \[S_p(\vec w)\quad\text{or even}\quad S_p(\vec w)_\Sigma.\]
 
 
-Since $M_p$ is symmetric, $S$ is \emph{self-adjoint}; that is
+Since $M_p$ is symmetric, $S$ is \index{self-adjoint operator}\emph{self-adjoint}; that is
 \[\langle S(\vec v),\vec w\rangle=\langle \vec v,S(\vec w)\rangle\]
 for any $\vec v,\vec w\in\T_p$.
 Note also that principle curvatures of $\Sigma$ at $p$ are the eigenvalues of $S_p$ and the principle directions are the directions of principle vectors of $S_p$.
