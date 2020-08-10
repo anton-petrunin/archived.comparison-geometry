@@ -129,7 +129,6 @@ isbn=false]{biblatex}
 \newcommand*{\tgc}[1]{\Psi({#1})}
 \newcommand*{\hinge}[3]{[#1\,{}^{#2}_{#3}]}
 \newcommand*{\angk}[3]{\tilde\measuredangle(#1\,{}^{#2}_{#3}\hspace{-0.2ex})}
-\def\mangle{\measuredangle}
 \def\side{\tilde\curlyvee}
 \newcommand*{\trig}[3]{[#1{#2}{#3}]}
 \def\modtrig{\tilde\triangle}
@@ -210,8 +209,6 @@ semi-pe-ri-me-ter}
 %chaptername
 %\renewcommand{\chaptername}{}
 
-\renewcommand{\thesection}{\thechapter\Alph{section}}
-
 %NUMBERONCIRC
 \newcommand*{\numform}[1]{\@numform{\@nameuse{c@#1}}}
 \newcommand*{\@numform}[1]%
@@ -258,3 +255,6 @@ semi-pe-ri-me-ter}
 \item [\arabic{subthmN})]}}{\end{itemize}}
 
 \newcounter{lastnumber}
+
+\makeatletter\renewcommand{\p@section}{\thechapter}\makeatother
+\renewcommand{\thesection}{\Alph{section}}

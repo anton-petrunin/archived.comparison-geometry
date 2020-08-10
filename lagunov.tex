@@ -57,13 +57,6 @@ according to the proposition,
 \[k_{\vec v}=\langle S_p(\vec v),\vec v\rangle\]
 for any unit vector $\vec v$ in $\T_p$.
 
-
-
-
-
-
-%???+PIC
-
 Let $p$ be a point on a smooth surface $\Sigma$.
 Assume we choose the tangent-normal coordinates at $p$ so that the Hessian matrix is diagonalized, we can assume that
 \[M_p=\begin{pmatrix}
@@ -100,7 +93,7 @@ The last identity is called \index{Euler's formula}\emph{Euler's formula}.
 
 \begin{thm}{Meusnier's theorem}\label{thm:meusnier}
 Let $\gamma$ be a regular smooth curve that runs in a smooth oriented surface $\Sigma$.
-Suppose $p=\gamma(t_0)$ and ${\vec v}\z=\gamma'(t_0)$ and $\alpha=\angle(\Norm(p),\norm(t_0))$;
+Suppose $p=\gamma(t_0)$ and ${\vec v}\z=\gamma'(t_0)$ and $\alpha=\measuredangle(\Norm(p),\norm(t_0))$;
 that is, $\alpha$ is the angle between the unit normal to $\Sigma$ at $p$ and the unit normal vector in the Frenet frame of $\gamma$ at~$t_0$.
 Then the following identity holds for the curvature $\kur(t_0)$ and the normal curvature $k_n(t_0)$ of $\gamma$ at $t_0$:  
 \[\kur(t_0)\cdot\cos\alpha=k_{n}(t_0).\]
@@ -157,7 +150,7 @@ Show that \index{helicoid}\emph{helicoid} defined by the following parametric eq
 is a minimal surface.
 \end{thm}
 
-\section{Lagunov's example}
+\section{(Lagunov's example)}
 
 \begin{thm}{Exercise}\label{ex:moon-revolution}
 Assume $V$ is a body in $\RR^3$ bounded by a smooth surface of revolution with principle curvatures at most 1 in absolute value.
@@ -179,26 +172,31 @@ The following example was constructed by Vladimir Lagunov \cite{lagunov}.
 
 
 \parit{Construction.}
-Let us start with a body of revolution $V_1$ with cross section shown on the diagram.
+Let us start with a body of revolution $V_1$ with cross section shown on the diagram below.
 The boundary curve of the cross section consists of 6 long vertical line segments smoothly jointed into 3 closed simple curves. 
 The boundary of $V_1$ has 3 components, each of which is a smooth sphere.
 
-\begin{figure}[h!]%{r}{43 mm}
-%\vskip-4mm
+\begin{wrapfigure}{o}{20 mm}
+\vskip-0mm
 \centering
-\includegraphics{mppics/pic-33}
+\includegraphics{mppics/pic-910}
 \vskip0mm
-\end{figure}
+\end{wrapfigure}
 
-We assume that the curves have curvature at most 1.
+We assume that the curves have curvature at most~1.
 Moreover with the exception for almost vertical parts, the curve have absolute curvature about 1 all the time.
 The only thick part in $V$ is the place where all three boundary components come together;
 the remaining part of $V$ is assumed to be very thin.
 It could be arranged that the radius $r$ of the maximal ball in $V$ is just a little bit above 
 $r_2=\tfrac2{\sqrt{3}}-1$.
-($r_2$ is the radius of the smallest circle tangent to three unit circles that are tangent to each other.%+PIC???
-)
+(Assuming that the three big circles on the diagram are circles, the small black disc has radius $r_2$.)
 In particular, we may assume that $r<\tfrac16$.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{mppics/pic-33}
+\vskip0mm
+\end{figure}
 
 Exercise \ref{ex:principle-revolution} gives formulas for the principle curvatures of the boundary of $V$;
 which imply that both principle curvatures are at most 1 by absolute value.  
@@ -237,7 +235,7 @@ This way we get a sphere with two handles; that is, it has genus 2.
 Modify Lagunov's construction to make the boundary surface a sphere with 4 handles.
 \end{thm}
 
-\section{Variations*}
+\section{(Variations)}
 
 In this section we will discuss few results related to \ref{quest:lagunov}.
 
@@ -247,7 +245,7 @@ be the radius of the smallest sphere tangent to four unit spheres that are tange
 Direct calculations show that 
 \[r_2=\tfrac2{\sqrt{3}}-1< \tfrac16\quad\text{and}\quad r_3=\sqrt{\tfrac32}-1>\tfrac15.\]
 
-The following example shows that the bound obtained in the construction of the Lagunov's example is optimal.
+The exercise claims that the bound obtained in the construction of the Lagunov's example is optimal.
 
 %???REF
 
@@ -274,9 +272,9 @@ Note that Lagunov's example shows that the estimate is sharp.
 
 \begin{thm}{Very advanced exercise}\label{ex:PI-sphere}
 Suppose a body $V\subset \RR^3$ is bounded by a smooth sphere with principle curvatures bounded in absolute value by 1.
-Show that $V$ contains a ball of radius $r_3$.
+Show that $V$ contains a ball of radius~$r_3$.
 
-Show that this bound is sharp; that is there are examples of $V$ as above that contain a ball of maximal radius arbitrary close to $r_3$
+Show that this bound is sharp; that is, there are examples of $V$ as above that contain a ball of maximal radius arbitrary close to~$r_3$
 \end{thm}
 
 

@@ -400,21 +400,21 @@ by the definition directional derivative, we have $D_{\vec w} s(p)=\gamma_1'(0)$
 It remains to note that $\gamma_1(0)\z= s(p)$ and therefore its velocity $\gamma_1'(0)$ is in $\T_{ s(p)}\Sigma_1$.
 
 Recall that \ref{def:directional-derivative} implies that 
-$L_p s\:\vec w \mapsto D_{\vec w} s$ defines a linear map $L_p s\:\T_p\Sigma_0\to \T_{ s(p)}\Sigma_1$;
+$d_p s\:\vec w \mapsto D_{\vec w} s$ defines a linear map $d_p s\:\T_p\Sigma_0\to \T_{ s(p)}\Sigma_1$;
 that is,
 \[D_{c\cdot \vec w} s=c\cdot D_{\vec w} s(p)
 \quad\text{and}\quad D_{\vec v+ \vec w} s=D_{\vec v} s(p)+ D_{\vec w} s(p)\]
 for any $c\in\RR$ and $\vec v, \vec w\in\T_p$.
-Th map $L_p s$ is called a \index{linearization}\emph{linearization} (or \index{differential}\emph{differential}) of $s$ at $p$.
+The map $d_p s$ is called a \index{differential of map}\emph{differential} of $s$ at $p$.
 
-The linear map $L_p s$ can be written as a 2$\times$2-matrix $M$ in orthonormal basises of $\T_p$ and $\T_{ s(p)}\Sigma_1$.
+The linear map $d_p s$ can be written as a 2$\times$2-matrix $M$ in orthonormal basises of $\T_p$ and $\T_{ s(p)}\Sigma_1$.
 Set $\jac_p s=|\det M|$; this value  
 does not depend on the choice orthonormal basises in $\T_p$ and $\T_{ s(p)}\Sigma_1$. \label{page:|L|}
 
 Let $ s_1\:\Sigma_1\to\Sigma_2$ be another smooth map between smooth surfaces $\Sigma_1$ and $\Sigma_2$.
 Suppose that ${p_1}= s(p)\in\Sigma_1$;
 observe that 
-\[L_p( s_1\circ s)=L_{p_1} s_1 \circ L_p s.\]
+\[d_p( s_1\circ s)=d_{p_1} s_1 \circ d_p s.\]
 It follows that
 \[\jac_p( s_1\circ s)
 =
@@ -433,7 +433,7 @@ If $\Sigma_0$ is a domain in the $(u,v)$-plane, then the value $\jac_p s$ can be
 where $\Jac s$ denotes the Jacobean matrix of $s$; it is a 2$\times$3 matrix with column vectors $s_u$ and $ s_v$.
 
 The value $\jac_p s$ has the following geometric meaning:
-if $P_0$ is a region in $\T_p$ and $P_1=(L_p s)(P_0)$, then
+if $P_0$ is a region in $\T_p$ and $P_1=(d_p s)(P_0)$, then
 \[\area P_1=\jac_p s\cdot \area P_0.\]
 This identity will become important in the definition of surface area.
 
@@ -487,7 +487,7 @@ It turns out that analogous definition does not work even for very simple surfac
 Section \ref{sec:schwarz-boot} describes the so called \index{Schwarz's boot}\emph{Schwarz's boot} --- a classical example of that type.
 
 
-\section{Tangent vectors as functionals*}
+\section{(Tangent vectors as functionals)}
 
 In this section we introduce a more conceptual way to define tangent vectors.
 We will not use this approach in the sequel, but it is better to know about it.
@@ -563,7 +563,7 @@ The map $\Norm\:\Sigma\to \SS^2$ defined by $p\mapsto \Norm_p$ is called \index{
 
 For surfaces, the spherical map plays essentially the same role as the tangent indicatrix for curves.
 
-\section{Sections}%???redo into sections
+\section{Sections}
 
 \begin{thm}{Advanced exercise}\label{ex:plane-section}
 Show that any closed set in a plane can appear as an intersection of this plane with an open smooth regular surface.  

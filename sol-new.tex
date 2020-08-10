@@ -171,7 +171,7 @@ Show that it is indeed describes an embedding of the circle in the plane.
 
 \parit{\ref{SHORT.ex:nonrectifiable-curve:b}.}
 Suppose that $\gamma\:[0,1]\to\RR^2$ is a rectifiable curve and $\gamma_k$ be a scaled copy of $\gamma$ with factor $k>0$;
-that is $\gamma_k(t)=k\cdot\gamma(t)$ for any $t$.
+that is, $\gamma_k(t)=k\cdot\gamma(t)$ for any $t$.
 Show that 
 \[\length\gamma_k=k\cdot\length \gamma.\]
 
@@ -347,7 +347,11 @@ for the second part apply the induction on number of vertexes.
 
 \parit{\ref{SHORT.ex:sef-intersection:>pi}.} Assume $x$ is a point of self-intersection.
 Show that we may choose two points $y$ and $z$ on $\gamma$ so that the triangle $xyz$ iz nondegenerate.
-In particular, $\measuredangle xyz+\measuredangle yzx<\pi$, or, equivalently, 
+In particular, 
+$\measuredangle\hinge yxz
++
+\measuredangle\hinge zyx
+<\pi$, or, equivalently, 
 \[\tc{xyzx}>\pi;\]
 here we assume that $xyzx$ is polygonal line which is not closed. 
 It remains to apply \ref{prop:inscribed-total-curvature}.
@@ -529,7 +533,7 @@ The statement follows since
 \parbf{\ref{ex:trochoids}.}
 Observe that
 \[\gamma'_a(t)=(1+a\cdot \cos t, -a\cdot \sin t);\]
-that is $\gamma'_a$ runs clockwise along a circle with center at $(1,0)$ and radius $1$.
+that is, $\gamma'_a$ runs clockwise along a circle with center at $(1,0)$ and radius $1$.
 If $|a|>1$ then $\tan_a(t)=\gamma'_a/|\gamma'_a|$ runs clockwise and makes full turn in time $2\cdot\pi$.
 It follows that if $|a|>1$, then
 \[\Psi(\gamma_a)=-2\cdot\pi,\quad \tc\gamma_a=|\Psi(\gamma_a)|=2\cdot\pi.\]
@@ -545,7 +549,7 @@ In this case $\Psi(\gamma_{-1})=-\pi$ and $\tc{\gamma_{-1}}=\pi$.
 
 In the cases $a=1$ the velocity $\gamma'_1(t)$ vanish at $t=\pi$.
 At $t=\pi$ the curve has a cusp;
-that is 
+that is, 
 \[\lim_{t\to\pi-}\tan_1(t)=-\lim_{t\to\pi+}\tan_1(t).\]
 So $\gamma_1(t)$ has undefined total signed curvature.
 The curve is a joint of two smooth arcs with external angle $\pi$,
@@ -727,7 +731,7 @@ so by the definition (page \pageref{page:def-smooth-surface}) $\Phi_0$ is not a 
 
 \parbf{\ref{ex:inversion-chart}.} 
 First check that the image of $s$ lies in the unit sphere centered at $(0,0,1)$;
-that is show that 
+that is, show that 
 \[\left(\tfrac{2\cdot u}{1+u^2+v^2}\right)^2
 +
 \left(\tfrac{2\cdot v}{1+u^2+v^2}\right)^2
@@ -871,7 +875,7 @@ Use \ref{ex:line-of-curvature} and Meusnier's theorem (\ref{thm:meusnier}).
 
 \parbf{\ref{ex:catenoid-is-minimal}.} Use \ref{ex:principle-revolution}.
 
-\parbf{\ref{ex:helicoid-is-minimal}.} Apply Meusnier's theorem (\ref{thm:meusnier}) to show that the coordinate curves $\alpha_v\:u\mapsto s(u,v)$ and $\beta_u\:v\mapsto s(u,v)$ are asymptotic; that is they have vanishing normal curvature.
+\parbf{\ref{ex:helicoid-is-minimal}.} Apply Meusnier's theorem (\ref{thm:meusnier}) to show that the coordinate curves $\alpha_v\:u\mapsto s(u,v)$ and $\beta_u\:v\mapsto s(u,v)$ are asymptotic; that is, they have vanishing normal curvature.
 
 Observe that these two families are orthogonal to each other.
 Therefore the Hessian matrix in the frame $s_u/|s_u|$ and $s_v/|s_v|$ will have zeros on the diagonal.
@@ -901,7 +905,7 @@ Try to thicken it to construct the needed example.
 
 Assume $V$ does not contain a ball of radius $r_3$.
 Show that its cut locus $L$ of $V$ is formed by a few smooth surfaces that meets by three at their boundary points.
-Show that $L$ is not simply connected that is there is a loop in $L$ that can not be deformed continuously to a trivial loop.
+Show that $L$ is not simply connected; that is, there is a loop in $L$ that can not be deformed continuously to a trivial loop.
 Conclude that $V$ is not simply connected.
 
 Finally show that if $V$ is bounded by sphere, then $V$ is simply connected --- a contradiction. 
@@ -1135,7 +1139,7 @@ Apply \ref{lem:convex-saddle}.
 \parbf{\ref{ex:disc-hat}.} Observe that it is sufficient to construct a smooth parametrization of $F_\eps$ by a closed hemisphere.
 
 Consider the radial projection of $F_\eps$ to the sphere $\Sigma$ with the center at $p=(0,0,\eps)$;
-that is a point $q\in F_\eps$ is mapped to a point $s(q)$ on the sphere that lies on the ray $pq$.
+that is, a point $q\in F_\eps$ is mapped to a point $s(q)$ on the sphere that lies on the ray $pq$.
 
 Show that $s$ is a diffeomorphism from $F_\eps$ to a south hemisphere of~$\Sigma$.
 
@@ -1148,7 +1152,7 @@ Show that $s$ is a diffeomorphism from $F_\eps$ to a south hemisphere of~$\Sigma
 \parbf{\ref{ex:saddle-graph}.}
 Suppose that orthogonal projection of $\Sigma$ to the $(x,y)$-plane is not injective.
 Show that there is a point $p\in\Sigma$ with vertical tangent plane;
-that is $\T_p\Sigma$ is perpendicular to the $(x,y)$-plane.
+that is, $\T_p\Sigma$ is perpendicular to the $(x,y)$-plane.
 
 Let $\Gamma_p$ be the connected component of $p$ in the intersection of $\Sigma$ and $\T_p$.
 Show that (1) $\Gamma_p$ is a tree, (2) each vertex of $\Gamma_p$ has degree 4 or 1, (3) $p$ is a vertex of degree 4, and (4) each endvertex lies on the bounary of $\Sigma$.
@@ -1466,6 +1470,6 @@ on the Euclidean plane the proof is just as hard.
 
 \parbf{\ref{ex:conformal}.}
 
-%\parbf{\ref{}.}
+\parbf{\ref{ex:K=0}.}
 
 %\parbf{\ref{}.}

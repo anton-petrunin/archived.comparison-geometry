@@ -136,12 +136,12 @@ It remains to prove inequality \ref{eq:short-cpp}.
 
 We can assume that $\bar p\ne\bar q$, otherwise there is nothing to prove.
 Note that if $p\ne \bar p$ (that is, if $p\notin R$), 
-then $\angle p \bar p \bar q$ is right or obtuse.
+then the angle $p \bar p \bar q$ is right or obtuse.
 Otherwise there would be a point $x$ on the line segment $[\bar q\bar p]$ that is closer to $p$ than $\bar p$.
 Since $R$ is convex, the line segment $[\bar q\bar p]$ and therefore $x$ lie in $R$.
 Hence $\bar p$ is not closest to $p$ --- a contradiction.
 
-The same way we can show that  if $q\z\ne \bar q$, then $\angle q \bar q \bar p$ is right or obtuse.
+The same way we can show that  if $q\z\ne \bar q$, then the angle ${q}{\bar q}{\bar p}$ is right or obtuse.
 
 We have to consider the following 4 cases:
 (1) $p\ne \bar p$ and $q\ne \bar q$,
@@ -425,15 +425,15 @@ Note that the exponential map $\exp_p$
 is defined on the tangent plane $\T_p$, which is a smooth surfaces,
 and its target is another smooth surface $\Sigma$.
 Observe that one can identify the plane $\T_p$
-with its tangent plane $\T_0\T_p$ so the linearization $L_0\exp_p$ maps $\T_p$ to itself.
-Further note that by the definition of exponential map we have that $L_0\exp_p(\vec v)=
+with its tangent plane $\T_0\T_p$ so the differenial $d_0\exp_p\:\vec v\mapsto D_{\vec v}\exp_p$ maps $\T_p$ to itself.
+Further note that by the definition of exponential map we have that this differential is the identity map; that is, $d_0\exp_p(\vec v)=
 \vec v$ for any $\vec v\in \T_p$.
 
 The above discussion is summarized in the following statement. 
 
 \begin{thm}{Observation}\label{obs:d(exp)=1}
 Let $\Sigma$ be a smooth surface and $p\in \Sigma$.
-Then the exponential map $\exp_p\:\T_p\to \Sigma$ is smooth and its linearization $L_0(\exp_p)\:\T_p\to \T_p$ is the identity map. %%%????linearization
+Then the exponential map $\exp_p\:\T_p\to \Sigma$ is smooth and its differential $d_0(\exp_p)\:\T_p\to \T_p$ is the identity map. 
 \end{thm}
 
 
@@ -452,7 +452,7 @@ Let $z=f(x,y)$ be a local graph representation of $\Sigma$ in the tangent-normal
 Note that $(x,y)$-plane coincides with the tangent plane $\T_p$.
 
 Denote by $s$ be the composition of  the exponential map $\exp_p$ with the orthogonal projection $(x,y,z)\mapsto (x,y)$.
-By \ref{obs:d(exp)=1}, the linearization $L_0s$ is the identity.
+By \ref{obs:d(exp)=1}, the differential $d_0s$ is the identity.
 Applying the inverse function theorem (\ref{thm:inverse}) we get the first part of the proposition.
 
 The second part can be proved along the same lines, using the second part the inverse function theorem (\ref{thm:inverse});

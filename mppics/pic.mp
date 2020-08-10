@@ -206,6 +206,7 @@ draw subpath (2,3) of p2 penbold;
 
 endfig;
 
+
 beginfig(9) 
 save u;
 u:=1cm;
@@ -3818,36 +3819,76 @@ drawarrow (0,-.5)*u--(0,r)*u;
 label.bot (btex $y=f(x)$ etex, (.4*r,r)*u);
 endfig;
 
-beginfig(8) 
-save u,k;
+beginfig(325);
+save u,p,r,eps;
+path p[];
 u:=.7cm;
-k=.4;
+r:=3;
+eps:=.5;
 
+p0=(-r,0)*u--(-eps,0)*u{right}..tension 3..(0,5*eps)*u{right}..tension 3..(eps,0)*u{right}--(r,0)*u;
+draw p0 penbold;
 
-z.p0=(0,0)*u;
-z.p1=(2,1)*u;
-z.q0=(1,-2)*u;
-z.q1=(3,-2.2)*u;
+drawarrow (-r,0)*u--(r,0)*u;
+drawarrow (0,-.5)*u--(0,r)*u;
 
-z.a=k[z.p0,z.p1];
-z.b=k[z.q0,z.p1];
-z.c=k[z.q0,z.q1];
+label.urt (btex $y=b_\eps(x)$ etex, point 2.4 of p0);
+endfig;
 
-draw z.p0--z.p1--z.q0--z.q1;
-draw z.a--z.b--z.c penhair dashed evenly;
-draw z.a--z.c penhair;
-draw z.p0--z.q0 penhair;
-draw z.p1--z.q1 penhair;
+beginfig(326);
+save u,p,r,eps;
+path p[];
+u:=.7cm;
+r:=3;
+eps:=.5;
 
-dOt z.p0,z.p1,z.q0,z.q1,z.a,z.b,z.c;
+p0=(-r,0)*u--(-eps,0)*u{right}..tension 1.4..(eps,1)*u{right}--(r,1)*u;
+draw p0 penbold;
 
-label.lft(btex $\gamma_1(0)$ etex, z.p0);
-label.urt(btex {\small $\gamma_1(1)=\delta(1)$} etex, z.p1);
-label.bot(btex $\gamma_2(1)$ etex, z.q1);
-label.llft(btex {\small $\gamma_2(0)=\delta(0)$} etex, z.q0);
-label.top(btex $\gamma_1(t)$ etex, z.a);
-label.rt(btex $\delta(t)$ etex, z.b);
-label.bot(btex $\gamma_2(t)$ etex, z.c);
+drawarrow (-r,0)*u--(r,0)*u;
+drawarrow (0,-.5)*u--(0,r)*u;
+
+label.top (btex $y=\sigma_\eps(x)$ etex, point 2.4 of p0);
+endfig;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+beginfig(910) 
+save u,p;
+path p[];
+u:=1cm;
+
+z.o=origin;
+z.a=(0,1)*u;
+z.b=z.a rotated 120;
+z.c=z.a rotated -120;
+
+z.ab=.5[z.a,z.b];
+z.bc=.5[z.b,z.c];
+z.ca=.5[z.c,z.a];
+
+z.abc=z.ab rotatedabout(z.b,-30);
+z.bca=z.bc rotatedabout(z.c,-30);
+z.cab=z.ca rotatedabout(z.a,-30);
+
+draw ddarc(z.ab,z.abc,z.bc)(30,30);
+draw ddarc(z.bc,z.bca,z.ca)(30,30);
+draw ddarc(z.ca,z.cab,z.ab)(30,30);
+
+fill circle(z.o,z.abc) withcolor 0;
+
+draw z.a--z.b--z.c--cycle;
+
+dOt z.a,z.b,z.c;
+
+rimmark(z.a--z.ab,z.b--z.ab,z.c--z.ca,z.a--z.ca,z.b--z.bc,z.c--z.bc);
+
+%label.bot (btex $1$ etex, .5[z.b,z.bc]);
+%label.bot (btex $1$ etex, .5[z.c,z.bc]);
+%label.urt (btex $1$ etex, .5[z.a,z.ca]);
+%label.urt (btex $1$ etex, .5[z.c,z.ca]);
+%label.ulft (btex $1$ etex, .5[z.a,z.ab]);
+%label.ulft (btex $1$ etex, .5[z.b,z.ab]);
 endfig;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3941,8 +3982,8 @@ z.p=(2,-3)*u;
 z.q=(2,4)*u;
 z.xx=.4[z.x,z.q];
 
-whitelabelarcsprof(z.p, z.x, z.q, 12, 25, btex $\le \mangle\hinge x p q$ etex);
-labelarcsprof2(z.p, z.xx, z.q, 12, 26, btex $\ge \mangle\hinge{x'}p q$ etex);
+whitelabelarcsprof(z.p, z.x, z.q, 12, 25, btex $\le \measuredangle\hinge x p q$ etex);
+labelarcsprof2(z.p, z.xx, z.q, 12, 26, btex $\ge \measuredangle\hinge{x'}p q$ etex);
 
 draw z.q--z.x--z.p--z.xx;
 

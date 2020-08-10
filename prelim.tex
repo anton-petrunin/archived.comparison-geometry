@@ -2,7 +2,7 @@
 
 This material is discussed in any course of multivariable calculus, the classical book of Walter Rudin \cite{rudin} is one of our favorites.
 
-\section*{Regular value}
+\subsection*{Regular value}
 
 A map $\bm{f}\:\RR^m\to\RR^n$ can be thought as an array of functions 
 \[f_1,\dots,f_n\:\RR^m\to \RR.\]
@@ -36,7 +36,7 @@ Therefore the only regular value of $\bm{f}$ are the points in the complement of
 The theorem states that in this case almost all points in $\RR^n$, do {}\emph{not} belong to $\Im \bm{f}$.
 
 
-\section*{Inverse function theorem}
+\subsection*{Inverse function theorem}
 
 The \index{inverse function theorem}\emph{inverse function theorem} gives a sufficient condition for a smooth map $\bm{f}$ to be invertible in a neighborhood of a given point $\bm{x}$.
 The condition is formulated in terms of the Jacobian matrix of $\bm{f}$ at $\bm{x}$.
@@ -84,7 +84,7 @@ holds if and only if
 
 \end{thm}
 
-\section*{Multiple integral}
+\subsection*{Multiple integral}
 
 Set 
 \[\jac_{\bm{x}}\bm{f}\df|\det[\Jac_{\bm{x}}\bm{f}]|;\]
@@ -107,7 +107,7 @@ Then
 
 \section{Differential equations}
 
-\section*{Initial value problem}
+\subsection*{Initial value problem}
 
 The following theorem guarantees existence and uniqueness of solutions of an initial value problem
 for a system of ordinary differential equations
@@ -146,7 +146,7 @@ Moreover
 
 \section{Real analysis}
 
-\section*{Lipschitz condition}
+\subsection*{Lipschitz condition}
 
 Recall that a function $f$ between metric spaces is called \index{Lipschitz function}\emph{Lipschitz} if there is a constant $L$ such that 
 \[|f(x)-f(y)|\le L\cdot|x-y|\]
@@ -171,7 +171,7 @@ Then for any $\eps>0$, there is a continuous function $\psi_\eps\:[a,b]\to \RR$ 
 Moreover, if $\phi$ is bounded above and/or below by some constants, then we may assume that so is $\psi_\eps$.  
 \end{thm}
 
-\section*{Convex functions}
+\subsection*{Convex functions}
 
 A function of two variables $(x,y)\mapsto f(x,y)$ is called \index{convex function}\emph{convex} if 
 its epigraph $z\ge f(x,y)$ is a convex set.
@@ -183,7 +183,7 @@ If $f$ is smooth, then the condition is equivalent to the following inequality f
 \[D^2_{\vec w}f\ge 0\]
 for any vector $\vec w$ in the $(x,y)$-plane.
 
-\section*{Uniform continuity and convergence}
+\subsection*{Uniform continuity and convergence}
 
 Let $f\:{\spc{X}}\to \spc{Y}$ be a map between metric spaces.
 If  for any $\eps>0$ there is $\delta>0$ such that 
@@ -214,28 +214,26 @@ Suppose $\spc{X}$ and $\spc{Y}$ are compact metric spaces.
 Then any uniformly equicontinuous sequence of function $f_n\:\spc{X}\to \spc{Y}$ has a subsequence that converges uniformly to a continuous function $f_\infty\:\spc{X}\to \spc{Y}$. 
 \end{thm}
 
-\section*{Cutoffs and mollifiers}
-
-%???+3PICS
+\subsection*{Cutoffs and mollifiers}
 
 We use few examples of smooth functions that mimic behavior of some model functions.
 
-%???PIC
-
-For example, consider the function $h\:t\mapsto \max\{\,0,t\,\}$ and the following function
-\[f(t)=
+For example, consider the following functions
+\begin{align*}
+h(t)&=
+\begin{cases}
+0&\text{if}\ t\le 0,
+\\
+t&\text{if}\ t> 0.
+\end{cases}
+&
+f(t)&=
 \begin{cases}
 0&\text{if}\ t\le 0,
 \\
 \frac{t}{e^{1\!/\!t}}&\text{if}\ t> 0.
 \end{cases}
-\]
-Note that $h$ and $f$ behave alike ---
-both vanish at $t\le 0$ and grows to infinity for positive $t$.
-The function $h$ is not smooth --- its derivative at $0$ is undefined.
-Unlike $h$, the function $f$ is smooth.
-Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and direct calculations show that $f^{(n)}(0)=0$ for all $n$.
-
+\end{align*}
 \begin{figure}[h]
 \begin{minipage}{.48\textwidth}
 \centering
@@ -246,11 +244,27 @@ Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and
 \includegraphics{mppics/pic-321}
 \end{minipage}
 \end{figure}
+Note that $h$ and $f$ behave alike ---
+both vanish at $t\le 0$ and grows to infinity for positive $t$.
+The function $h$ is not smooth --- its derivative at $0$ is undefined.
+Unlike $h$, the function $f$ is smooth.
+Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and direct calculations show that $f^{(n)}(0)=0$ for all $n$.
 
 Other useful examples of that type are the so called \index{bell function}\emph{bell function} --- a smooth function that is positive in an $\eps$-neighborhood of zero and vanishing outside this neighborhood.
 An example of such function can be constructed based using the function $f$ constructed above, say 
 \[b_\eps(t)=c\cdot f(\eps^2-t^2);\]
 the constant $c$ is chosen so that $\int b_\eps=1$.
+
+\begin{figure}[h!]
+\begin{minipage}{.48\textwidth}
+\centering
+\includegraphics{mppics/pic-325}
+\end{minipage}\hfill
+\begin{minipage}{.48\textwidth}
+\centering
+\includegraphics{mppics/pic-326}
+\end{minipage}
+\end{figure}
 
 Another useful example is a sigmoid --- nondecreasing function that vanish for $t\le -\eps$ and takes value $1$ for any $t\ge \eps$.
 For example the following function \label{page:sigma-function}
@@ -262,7 +276,7 @@ For example the following function \label{page:sigma-function}
 The following material is covered in any reasonable introductory text to topology; 
 one of our favorites is a textbook of Czes Kosniowski \cite{kosniowski}.
 
-\section*{Continuous inverse}
+\subsection*{Continuous inverse}
 
 We sometimes use the following characterization of homeomorphisms between compact spaces.
 
@@ -271,7 +285,8 @@ A continuous bijection $f$ between compact metric spaces has a continuous invers
 that is, $f$ is a homeomorphism.
 \end{thm}
 
-\section*{Jordan's theorem}
+\subsection*{Jordan's theorem}
+\index{Jordan's theorem}
 
 The first part of the following theorem was proved by Camille Jordan, the second part is due to Arthur Schoenflies.
 
@@ -298,7 +313,7 @@ Moreover the there is a diffeomorphism $h\:\RR^2\to \RR^2$ that maps the unit ci
 The proof of this statement is much simpler.
 An amusing proof can be found in \cite{chambers-liokumovich}.
 
-\section*{Connectedness}
+\subsection*{Connectedness}
 
 Recall that a continuous map $\alpha$ from the unit interval $[0,1]$ to a Euclidean space is called a \index{path}\emph{path}.
 If $p=\alpha (0)$ and $q = \alpha (1)$, then we say that $\alpha$ connects $p$ to $q$.
@@ -319,7 +334,7 @@ Given a point $x\in X$, the maximal connected subset of $X$ containing $x$ is ca
 
 \section{Elementary geometry}
 
-\section*{Polygons}
+\subsection*{Polygons}
 
 \begin{thm}{Theorem}\label{thm:sum=(n-2)pi}
 The sum of all the internal angles of a simple $n$-gon is $(n-2)\cdot\pi$. 
@@ -327,6 +342,8 @@ The sum of all the internal angles of a simple $n$-gon is $(n-2)\cdot\pi$.
 
 While this theorem is well known, it is hard to find a reference with a proof without cheating.
 So we present a proof here.
+
+A triangle with vertexes $x$, $y$, and $z$ will be denoted by $[xyz]$.
 
 \parit{Proof.}
 The proof is by induction on $n$.
@@ -358,15 +375,22 @@ Finally by \ref{eq:k+m=n+2} we have that
 which proves the theorem.
 \qeds
 
-\section*{Triangle inequality for angles}
+\subsection*{Triangle inequality for angles}
+
+The \index{angle measure}\emph{measure} of angle with sides $[px]$ and $[py]$ will be denoted by $\measuredangle\hinge pxy$\index{$\measuredangle\hinge pxy$};
+it takes a value in the interval $[0,\pi]$.
 
 The following theorem says that the triangle inequality holds for angles between half-lines from a fixed point.
 In particular it implies that a sphere with the angle metric is a metric space.
 
 \begin{thm}{Theorem}\label{thm:spherical-triangle-inq}
 The inequality
-\[\measuredangle aob+\measuredangle boc\ge\measuredangle aoc\]
-holds for any three half-lines $oa$, $ob$ and $oc$ in the Euclidean space.
+\[\measuredangle\hinge oab
++
+\measuredangle\hinge obc
+\ge
+\measuredangle\hinge oac\]
+holds for any three line segments $[oa]$, $[ob]$ and $[oc]$ in the Euclidean space.
 \end{thm}
 
 We will use the following lemma in the proof;
@@ -376,7 +400,9 @@ It follows directly from the cosine rule.
 \begin{thm}{Lemma}\label{lem:angle-monotonicity}
 Let $x$, $y$, $z$, $x'$, $y'$ and $z'$ be 6 points such that $|x-y|\z=|x'-y'|>0$ and $|y-z|=|y'-z'|>0$.
 Then 
-\[\measuredangle xyz\ge \measuredangle x'y'z'
+\[\measuredangle\hinge yxz
+\ge
+\measuredangle\hinge {y'}{x'}{z'}
 \quad\text{if and only if}\quad
 |x-z|\ge |x'-z'|.\]
 \end{thm}
@@ -389,11 +415,17 @@ Then
 \end{wrapfigure}
 
 \parit{Proof of \ref{thm:spherical-triangle-inq}.}
-We can assume that $\measuredangle aob<\measuredangle aoc$; otherwise the statement is evident.
+We can assume that 
+$\measuredangle\hinge oab<
+ \measuredangle\hinge oac$; otherwise the statement is evident.
 In this case there is a half-line $ob'$ in the angle $aoc$ such that 
-\[\measuredangle aob=\measuredangle aob',\]
+\[\measuredangle\hinge oab
+=\measuredangle\hinge oa{b'},\]
 so in particular we have that
-\[\measuredangle aob'+\measuredangle b'oc=\measuredangle aoc.\]
+\[
+\measuredangle\hinge oa{b'}+
+\measuredangle\hinge o{b'}c=
+\measuredangle\hinge oac.\]
 Without loss of generality we can assume that  $|o-b|=|o-b'|$ and $b'$ lies on a line segment $ac$, so
 \[|a-b'|+|b'-c|=|a-c|.\]
 
@@ -407,23 +439,32 @@ Then by the triangle inequality
 \eqlbl{eq:triangle-inq-abcb'}
 \]
 
-Note that in the triangles $aob$ and $aob'$ the side $ao$ is shared, so $\measuredangle aob\z=\measuredangle aob'$ and $|o-b|=|o-b'|$.
+Note that in the triangles $aob$ and $aob'$ the side $ao$ is shared, so 
+$
+\measuredangle\hinge oab\z=
+\measuredangle\hinge oab'$ and $|o-b|=|o-b'|$.
 By side-angle-side congruence condition, we have that $[aob]\cong [aob']$;
 in particular $|a-b'|=|a-b|$.
 Therefore from \ref{eq:triangle-inq-abcb'} we get 
 \[|b-c|\ge |b'-c|.\]
 Applying the angle monotonicity (\ref{lem:angle-monotonicity}) we obtain
-\[\measuredangle boc\ge \measuredangle b'oc.\]
+\[
+\measuredangle\hinge obc\ge 
+\measuredangle\hinge o{b'}c.\]
 Whence
 \begin{align*}
-\measuredangle aob+\measuredangle boc
-&\ge \measuredangle aob'+\measuredangle b'oc=
+\measuredangle\hinge oab+
+\measuredangle\hinge obc
+&\ge 
+\measuredangle\hinge oa{b'}+
+\measuredangle\hinge o{b'}c=
 \\
-&=\measuredangle aoc.
+&=
+\measuredangle\hinge oac.
 \end{align*}
 \qedsf
 
-\section*{Convex sets}
+\subsection*{Convex sets}
 
 A set $X$ in the Euclidean space is called \index{convex set}\emph{convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in $X$.
 It is called  \index{strictly convex set}\emph{strictly convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
@@ -442,7 +483,7 @@ that is, $K$ and $p$ lie on opposite open half-spaces separated by $\Pi$.
 
 \section{Area}
 
-\section*{Area of spherical triangle}
+\subsection*{Area of spherical triangle}
 
 \begin{thm}{Lemma}\label{lem:area-spher-triangle}
 Let $\Delta$ be a spherical triangle;
@@ -478,7 +519,7 @@ It follows that
 Substituting \ref{eq:area(S2)} and \ref{eq:area(Sa)} and simplifying, we get \ref{eq:area(Delta)}.
 \qeds
 
-\section*{Schwarz's boot}\label{sec:schwarz-boot}
+\subsection*{Schwarz's boot}\label{sec:schwarz-boot}
 
 Recall that we defined length of curve as the exact upper bound on the length of inscribed polygonal lines.
 It suggests to define area of a surface as a exact upper bound on the area of polyhedrons inscribed in the surface.

@@ -1,3 +1,1541 @@
+\chapter{Positive Gauss curvature}
+
+
+
+
+\section*{Closed surfaces}
+
+\begin{thm}{Lemma}\label{lem:gauss=sphere}
+Assume $\Sigma$ is a closed smooth surface with positive Gauss curvature.
+Then $\Sigma$ is a smooth sphere; that is, $\Sigma$ admits a smooth regular parametrization by $\SS^2$.
+\end{thm}
+
+\begin{wrapfigure}{O}{33 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-78}
+\vskip-0mm
+\end{wrapfigure}
+
+\parit{Proof.}
+Without loss of generality we can assume that the origin lies in the interior of the convex region $R$ bounded by $\Sigma$.
+
+By convexity of $R$, any half-line starting at the origin intersects $\Sigma$ at a single point;
+that is, there is a positive function $\rho\:\SS^2\to\RR$ such that $\Sigma$ is formed by points $q=\rho(\xi)\cdot \xi$ for $\xi\in \SS^2$.
+
+Let us show that $\rho$ is a smooth function.
+Fix a point $p=(x_p,y_p,z_p)$ on $\Sigma$.
+Consider a local implicit description of $\Sigma$ at $p$ as a solution of equation $h(x,y,z)=0$ with nonvanishing gradient;
+so $h(p)=0$.
+Note that for any point $q$ in a neighborhood of $p$, we have that 
+\[h(q)=0 \iff q\in \Sigma \iff q=\rho(\xi)\cdot\xi\] for some $\xi\in \SS^2$.
+In other words $h$ defines implicitly $\rho$ as in the implicit function theorem.
+
+
+
+Recall that $\nabla_p h\perp \T_p$.
+Since the origin lies in the interior of $R$, it cannot lie on $\T_p$;
+that is, $\langle\nabla_p f,p \rangle\ne0$;
+or equivalently $D_\eta h(p)\ne 0$, where $\eta=\tfrac{p}{|p|}$ is the unit vector in the direction of $p$ and $D$ denotes the directional derivative.
+
+Fix a $(u,v)$ chart $s$ on $\SS^2$ in a neighborhood of $\eta$;
+note that the map 
+\[S\:(u,v,w)\mapsto w\cdot s(u,v)\] 
+is smooth and regular for $w>0$; that is, the vectors 
+\[\tfrac{\partial S}{\partial u},\quad \tfrac{\partial S}{\partial v},\quad  \tfrac{\partial S}{\partial w}=w\] are linearly independent.
+Note that the function $h\circ S$ is smooth and
+$\tfrac{\partial h\circ S}{\partial \rho}(p)=D_\eta h(p)\ne 0$.
+Applying implicit function theorem, we get that $\rho$ is smooth in a neighborhood of $\eta$;
+since $\eta$ is arbitrary, $\rho$ is smooth on whole $\SS^2$.
+\qeds
+
+
+If one only needs to show that $\Sigma$ is a topological sphere, then one only needs to show that $\rho$ is continuous.
+The latter is a consequence of another classical result in topology --- the so-called \index{closed graph theorem}\emph{closed graph theorem}.
+
+
+
+
+
+\section*{Open surfaces}
+
+\begin{thm}{Lemma}\label{lem:graph}
+Suppose $\Sigma$ is an open surface with positive Gauss curvature.
+Then there is a coordinate system such that 
+$\Sigma$ is a graph $z=f(x,y)$ of a convex function $f$ defined on a convex open region of the $(x,y)$-plane.
+\end{thm}
+
+\parit{Proof.}
+The surface $\Sigma$ is a boundary of an unbounded closed convex region $R$.
+
+We can assume that the origin lies on $\Sigma$.
+Consider a sequence of points $x_n\in \Sigma$ such that $|x_n|\z\to \infty$ as $n\to \infty$.
+Set $u_n=\tfrac{x_n}{|x_n|}$; this is the unit vector in the direction from $x_n$.
+Since the unit sphere is compact, we can pass to a subsequence of $(x_n)$ such that $u_n$ converges to a unit vector $u$.
+
+\begin{wrapfigure}[15]{o}{28 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-81}
+\vskip-0mm
+\end{wrapfigure}
+
+Note that for any $q\in \Sigma$, the directions $v_n=\tfrac{x_n-q}{|x_n-q|}$ converge to $u$ as well.
+Indeed, the sequences of vectors $\tfrac{x_n-q}{|x_n-q|}$, $\tfrac{x_n-q}{|x_n|}$ and 
+$\tfrac{x_n}{|x_n|}$ have the same limit since $\tfrac{|q|}{|x_n|}\to 0$
+and $\tfrac{|x_n|}{|x_n-q|}\to 1$ as $n\to \infty$;
+the latter follows since
+\begin{align*}
+|\tfrac{|x_n|}{|x_n-q|}-1|&=|\tfrac{|x_n|-|x_n-q|}{|x_n-q|}-1|\le
+\\
+&\le\tfrac{|p-q|}{|x_n-q|}.
+\end{align*}
+
+Morover, the half-line from $q$ in the direction of $u$ lies in $R$.
+Indeed any point on the half-line is a limit of points on the line segments $[q,x_n]$;
+since $R$ is closed, all of these points lie in $R$.
+
+
+Let us choose the $z$-axis in the direction of $u$.
+Note that there is no point $p\in\Sigma$ with vertical tangent plane.
+Otherwise $\Sigma$ would contain a vertical half-line starting from $p$ and therefore Gauss curvature of $\Sigma$ would vanish.
+It follows that any vertical line can intersect $\Sigma$ at most at one point.
+That is, $\Sigma$ is a graph $z=f(x,y)$ of a smooth convex function $f$.
+
+Let $\Omega$ be the domain of definition of $f$.
+Note that $\Omega$ is the projection of $\Sigma$ to the $(x,y)$-plane 
+which is the same as the projection of $R$.
+Since $R$ is convex, so is $\Omega$.
+
+Since no tangent plane is vertical, the projection from $\Sigma$ to the $(x,y)$-plane is regular.
+By inverse function theorem, the set $\Omega$ is open.\qeds
+
+ 
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{Immersed surfaces}
+
+It seems that first formulation and proof of the following theorem was given by James Stoker \cite{stoker} who attributed it to Jacques Hadamard, who proved a closely relevant statement in \cite[item 23]{hadamard}.
+
+
+\begin{thm}{Theorem}\label{thm:convex-immersed}
+Any closed connected immersed surface with positive Gauss curvature is embedded.
+\end{thm}
+
+\begin{wrapfigure}{o}{20 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-35}
+\vskip-0mm
+\end{wrapfigure}
+
+In other words such surface can not have self-intersections.
+Note that an analogous statement does not hold in the plane;
+on the diagram you can see a closed curve with a self-intersection and positive curvature at all points.
+Exercise~\ref{ex:convex+2pi} gives a condition that guarantees simplicity of a locally convex plane curve;
+it will be used in the following proof.
+
+
+
+Before going into the proof, note that theorems \ref{thm:convex-immersed} and \ref{thm:convex-embedded}
+imply the following:
+
+\begin{thm}{Corollary}
+Any closed connected immersed surface with positive Gauss curvature is an embedded sphere that bounds a convex region.
+\end{thm}
+
+In the following sections we will give one complete proof and sketch an alternative proof.
+
+The first proof uses a \index{Morse-type argument}\emph{Morse-type argument} for the height function;
+that is, we study how the part of the surface that lies below a plane changes when we move the plane upward.
+Little more careful analysis of this changes would imply the corollary above directly, without using Theorem~\ref{thm:convex-embedded}.
+
+The sketch use equidistants surfaces and the Gauss map.
+We will not proove a topological statement relying on intuition.
+
+In the proof we abuse notation slightly;
+we say a {}\emph{point of the immersed surface} instead of a {}\emph{point in the parameter domain of the immersed surface}.
+So each point of self-intersection is considered as two or more ``distinct'' points of the surface.
+
+\section*{Morse-type proof}
+
+Let $\Sigma$ be a closed surface with positive Gauss curvature, possibly with self-intersections. 
+
+Fix a horizontal plane $\Pi_h$ defined by the equation $z=h$ in an $(x,y,z)$-coordinate system.
+Note that the intersection $W_h=\Sigma\cap\Pi_h$ is formed by a finite collection of closed curves and isolated points.
+(These curves and isolated points might intersect in the Euclidean space, but they are disjoint in the domain of parameters of $\Sigma$.)
+
+Indeed, if $\T_p=\Pi_h$, then, since the principle curvatures are positive, $p$ is a local minimum or local maximum of the height function.
+In both cases, $p$ is an isolated point of $W_h$ in $\Sigma$.
+If the tangent plane $\T_p$ is not $\Pi_h$, then it is not perpendicular to $(x,z)$-plane or $(y,z)$-plane.
+Therefore by Proposition~\ref{prop:perp}, the surface can be written locally as a graph $x=f(y,z)$ or $y=f(x,z)$;
+in both cases $p$ lies on the curve $x=f(y,h)$ or $y=f(x,h)$ respectively.
+
+Summarizing, the closed set $W_h\subset \Sigma$ locally looks like a curve or an isolated point.
+Since $\Sigma$ is compact, so is $W$.
+Therefore $W$ is a finite disjoint collection of isolated points and closed simple curves in $\Sigma$.
+
+Assume $\alpha_{h_0}$ is a closed curve in $W_{h_0}$.
+Note that its neighborhood is swept by curves $\alpha_h$ in $W_{h}$ for $h\approx h_0$.
+Indeed a neighborhood of $\alpha_{h_0}$ in $\Sigma$ can be covered by a finite number of graphs of the type $x=f(y,z)$ (or $y=f(x,z)$) and the curves $\alpha_h$ can be described locally as curves of the form $t\mapsto (f(t,h),t,h)$ (or respectively $t\z\mapsto(t,f(t,h),h)$) for $h\approx h_0$.
+
+As $\alpha_h$ is the intersection of a locally convex surface with a plane,
+the curvature of $\alpha_h$ has fixed sign;
+so if we choose an orientation for the curves properly, we can assume that they all have positive curvature.
+
+The family $\alpha_h$ depends smoothly on $h$ and the same holds for its tangent indicatrix.
+Therefore the total signed curvature $K_h$ of $\alpha_h$ depends continuously on $h$.
+If $K_h=2\cdot\pi$ for some $h$, then $K_h=2\cdot\pi$ for every $h$.
+It follows since, the function $h\mapsto K_h$ is continuous and its value is a multiple of $2\cdot\pi$.
+In this case, by Exercise~\ref{ex:convex+2pi}, all curves $\alpha_h$ are simple and each one bounds a convex region in the plane $\Pi_h$.
+
+Summarizing, if one of the curves in the constructed family $\alpha_{h}$ is simple,
+then each curve in the family is simple and each $\alpha_{h}$ bounds a convex region in the plane $\Pi_h$. 
+
+Choose a point $p\in \Sigma$ that minimizes the height function $z$.
+Without loss of generality we may assume that $p$ is the origin and therefore the surface lies in the upper half-space.
+
+Fix $h>0$.
+The intersection of the set $z\le h$ with the surface may contain several connected components;
+one of them contains $p$, denote this component by $\Sigma_h$.\footnote{These components might intersect in the space, but they are disjoint in the domain of parameters. Note also that from the corollary, it follows that there is only one component $\Sigma_h$, but we can not use it before the theorem is proved.}
+
+
+From above, $\Sigma_h$ is a surface with possibly nonempty boundary.
+Indeed it might be bounded only by few closed curves in $W_h$;
+any isolated point of $W_h$ either lies in $\Sigma_h$ together with its neighborhood or does not lie in $\Sigma_h$.
+
+
+Note that for small values of $h$, the surface $\Sigma_h$ is an embedded disc.
+Indeed, if $z=f(x,y)$ is a graph represetation of $\Sigma$ around $p$,
+then $\Sigma_h$ is a graph of $f$ over 
+\[\Delta=\set{(x,y)\in\RR^2}{f(x,y)\le h}.\]
+Since the Gauss curvature is positive, the function $f$ is convex and therefore $\Delta$ is convex and bounded by a smooth curve;
+any such set can be parameterized by a disc.
+
+\begin{wrapfigure}{o}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-36}
+\vskip-0mm
+\end{wrapfigure}
+
+Let $H>0$ be the maximal value such that $\Sigma_h$ has no self-intersections for any $h<H$.
+For a sequence $h_n\to H^-$, choose a point $q_n$ on the boundary of $\Sigma_h$ and pass to a partial limit $q$ of $q_n$ in $\Sigma$;
+that is, $q$ is a limit of a subsequence of~$(q_n)$.
+
+If the tangent plane at $q$ is {}\emph{not} horizontal, 
+then there is a closed curve $\alpha_H$ in $\Sigma$ that passes thru $q$ and lies on the plane $z=H$.
+From the above discussion, the curve $\alpha_H$, as well as all $\alpha_h$ with $h\approx H$ are closed embedded convex curves.
+Hence $\Sigma_h$ has no self-intersections for some $h>H$ --- a contradiction.
+
+If the tangent plane at $q$ is horizontal,
+then the surface $\Sigma_H$ has no boundary.
+Since $\Sigma$ is connected, $\Sigma_H=\Sigma$.
+Since $\Sigma_h$ has no self-intersections for $h<H$, we get that $\Sigma$ is an embedded surface.
+\qeds
+
+\begin{thm}{Exercise}
+Modify the proof of the theorem to show that any open immersed surface with positive Gauss curvature is embedded.
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section*{DNA inequality revisited*}
+
+In this section we will give an alternative proof of \ref{thm:DNA} that works for arbitrary, not necessarily smooth, curves.
+In the proof we use \ref{def:total-curv-poly} to define for the total curvature;
+according to \ref{thm:total-curvature=}, it is more general than the smooth definition given on page \pageref{page:total curvature of:smooth-def}.
+
+\parit{Alternative proof of \ref{thm:DNA}.}
+We will show that 
+\[\tc\gamma> \length\gamma.\]
+for any closed polygonal line $\gamma=p_1\dots p_{n}$ in a unit ball.
+It implies the theorem since in any nontrivial closed curve we can inscribe a closed polygonal line with arbitrary close total curvature and length.
+
+The indexes are taken modulo $n$, in particular $p_{n}=p_0$, $p_{n+1}=p_1$ and so on.
+Denote by $\theta_i$ the external angle of $\gamma$ at $p_i$;
+that is,
+\[\theta_i=\pi-\measuredangle p_{i-1}p_ip_{i+1}.\]
+
+Denote by $o$ the center of the ball.
+Consider a sequence of $n+1$ plane triangles
+\begin{align*}
+[q_0s_0q_1]
+&\cong 
+[p_0op_1],
+\\
+[q_1s_1q_2]
+&\cong 
+[p_1op_2],
+\\
+&\dots
+\\
+[q_{n}s_nq_{n+1}]
+&\cong 
+[p_nop_{n+1}],
+\end{align*}
+such that the points $q_0,q_1\dots$ lie on one line in that order and all the points $s_0,\dots,s_n$ lie on one side from this line.
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-16}
+\vskip0mm
+\end{figure}
+
+Since $p_0=p_n$ and $p_1=p_{n+1}$, we have that congruence of the following triangles:
+\[[q_{n}s_nq_{n+1}]\cong 
+[p_nop_{n+1}]=[p_0op_1]\cong[q_{0}s_0q_1],\]
+so $s_0q_0q_ns_n$ is a parallelogram.
+Therefore
+\begin{align*}
+|s_0-s_1|+\dots+|s_{n-1}-s_n|
+&\ge|s_n-s_0|=
+\\
+&=|q_0-q_n|=
+\\
+&=|p_0-p_1|+\dots+|p_{n-1}-p_n|
+\\
+&=\length \gamma.
+\end{align*}
+
+Note that 
+\begin{align*}
+\theta_i&=\pi-\measuredangle p_{i-1}p_ip_{i+1}\ge
+\\
+&\ge\pi-\measuredangle p_{i-1}p_io-\measuredangle op_ip_{i+1}=
+\\
+&=\pi-\measuredangle q_{i-1}q_is_{i-1}-\measuredangle s_iq_iq_{i+1}=
+\\
+&=\measuredangle s_{i-1}q_is_i>
+\\
+&>|s_{i-1}-s_i|;
+\end{align*}
+the last inequality follows since $|q_i-s_{i-1}|=|q_i-s_i|=|p_i-o|\le 1$.
+That is, 
+\[\theta_i>|s_{i-1}-s_i|\]
+for each $i$.
+
+It follows that
+\begin{align*}
+\tc \gamma
+&=\theta_1+\dots+\theta_n>
+\\
+&> |s_{0}-s_1|+\dots |s_{n-1}-s_n|\ge 
+\\
+&\ge\length \gamma.
+\end{align*}
+Hence the result.
+\qeds
+
+
+Let us mention the following closely related statement:
+
+\begin{thm}{Theorem}
+Suppose a closed regular smooth curve $\gamma$ lies in a convex figure with the perimeter $2\cdot \pi$.
+Then 
+\[\tc\gamma\ge \length\gamma.\]
+
+\end{thm}
+
+It was  conjectured by Serge Tabachnikov~\cite{tabachnikov} and proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso}; latter a simpler proof was given by Alexander Nazarov and Fedor Petrov~\cite{nazarov-petrov}.
+Despite the simplicity of the formulation, the proof is annoyingly difficult.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Spherical map}
+
+
+
+
+
+\section*{Spherical image}
+
+
+\begin{thm}{Theorem}\label{thm:spherical-image}
+Let $\Sigma$ be an oriented proper surface without boundary and with positive Gauss curvature.
+Then the spherical map $\Norm\:\Sigma\to\SS^2$ is injective and
+\[\int_R K=\area[\Norm(R)]\]
+for any region $R$ in $\Sigma$. %??? measurable
+\end{thm}
+
+\parit{Proof.} 
+Fix two distinct points $p,q\in\Sigma$.
+Recall that $\Sigma$ bounds a strictly convex region.
+Therefore the $\Norm_p$ makes an obtuse angle with the line segment $[p,q]$. %??? why
+The same way we can show that $\Norm_q$ makes an obtuse angle with the line segment $[q,p]$.
+In other words the projections of $\Norm_p$ and $\Norm_q$ on the line $pq$ point in the opposite directions.
+In particular $\Norm_p\ne \Norm_q$; that is, the spherical map is injective.
+
+It remains to prove the identity.
+Note that we can assume that the region $R$ is covered by one chart $(u,v)\mapsto s(u,v)$; if not cut $R$ into smaller regions and sum up the results.
+
+Applying the definition of integral, we have the following expression for the left hand side
+\[\int_R K \df \iint_{s^{-1}(R)} K[s(u,v)]\cdot |\tfrac{\partial s}{\partial v}(u,v)\times\tfrac{\partial s}{\partial u}(u,v)|  \cdot du\cdot dv.\]
+Applying the definition of area, we have the following expression for the right hand side
+\[\area[\Norm(R)] \df \iint_{s^{-1}(R)}  |\tfrac{\partial \Norm\circ s}{\partial v}(u,v)\times\tfrac{\partial \Norm\circ s}{\partial u}(u,v)|  \cdot du\cdot dv.\]
+Therefore it is sufficient to show that 
+\[\tfrac{\partial \Norm\circ s}{\partial v}(u,v)\times\tfrac{\partial \Norm\circ s}{\partial u}(u,v)=K[s(u,v)]\cdot \tfrac{\partial s}{\partial v}(u,v)\times\tfrac{\partial s}{\partial u}(u,v)\eqlbl{eq:gauss-curv}\]
+for any $(u,v)$ in the domain of definition. 
+
+Fix a point $p=s(u,v)$.
+Recall that 
+\[\tfrac{\partial \Norm\circ s}{\partial u}=S_p(\tfrac{\partial  s}{\partial u})\quad\text{and}\quad\tfrac{\partial \Norm\circ s}{\partial v}=S_p(\tfrac{\partial  s}{\partial v}).\]
+Therefore 
+\[\tfrac{\partial \Norm\circ s}{\partial v}\times\tfrac{\partial \Norm\circ s}{\partial u}=\det S_p\cdot \tfrac{\partial s}{\partial v}\times\tfrac{\partial s}{\partial u}.\]
+Since $K(p)=\det S_p$, \ref{eq:gauss-curv} follows.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:int-gauss=4pi}
+Let $\Sigma$ be a closed surface with positive Gauss curvature.
+Show that 
+\[\int_\Sigma K=4\cdot\pi.\]
+
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:gauss-integral-open}
+Let $\Sigma$ be an open surface with positive Gauss curvature.
+Show that 
+\[\int_\Sigma K\le 2\cdot\pi.\]
+
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Geodesics vs shortest paths}
+
+Let $\Sigma$ be a smooth surface.
+A smooth curve $\gamma$ on $\Sigma$ is called geodesic if its osculation is perpendicular to $\Sigma$ at each point;
+that is, if $\gamma''(t)\perp\T_{\gamma(t)}$ at any time $t$.
+
+\begin{thm}{Proposition}
+Given an initial point $p\in \Sigma$ and a tangent vector $v\in\T_p\Sigma$ there is unique geodesic $\gamma$ defined on a maximal open interval containing zero that starts at $p$ with velocity $v$; that is,
+such that $\gamma(0)=p$ and $\gamma'(0)=v$.
+\end{thm}
+
+\parit{Informal sketch.}
+Consider a local description of $\Sigma$ as a graph $z=f(x,y)$ in the tangent-normal coordinates at $p$.
+Any curve $\gamma$ in $\Sigma$ that starts at $p$ can be written locally as 
+$\gamma(t)=(x(t),y(t),f(x(t),y(t)))$ in a neighborhood of $0$.
+
+Let us show that the condition $\gamma''(t)\perp\T_{\gamma(t)}$ can be written as an odinary differential equation.
+Indeed, the tangent plane is spanned by two vectors $(1,0,\tfrac{\partial f}{\partial x})$ and $(0,1,\tfrac{\partial f}{\partial y})$.
+The acceleration of $\gamma$ can be written as $\gamma''(t)=(x'',y'',\tfrac{\partial^2 f}{\partial x^2}\cdot (x')^2+\tfrac{\partial^2 f}{\partial y^2}\cdot (y')^2+\tfrac{\partial f}{\partial x}\cdot x''+\tfrac{\partial f}{\partial y}\cdot y'')$.
+Therefore we get $\gamma''(t)\perp\T_{\gamma(t)}$ is equivalent two equations:
+
+
+
+
+The smoothness should be intuitively obvious; at least the curve should be twice differentiable otherwise it can be shortened.
+
+Let us give an informal physical explanation why $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
+One may think about the geodesic $\gamma$ as of stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
+Since it is frictionless, the force density $N(t)$ that keeps the geodesic $\gamma$ in the surface must be therefore proportional to the normal vector to the surface at $\gamma(t)$.
+The tension in the thread has to be the same at all points (otherwise the thread would move back or forth and it would not be stable).
+The tension at the ends of small arc is roughly proportional to the angle between the tangent lines at the ends of the arc. 
+Passing to the limit as the length of the arc goes to zero, we get that the density of this force $F(t)$ is proportional to $\gamma''(t)$.
+According to the second Newton's law, we have $F(t)+N(t)=0$;
+which implies that  $\gamma''(t)$ is perpendicular to $\T_{\gamma(t)}\Sigma$.%
+\footnote{In fact $\gamma''(t)+\nu\cdot \langle s(\gamma'(t)),\gamma'(t)\rangle=0$, where $s$ is the shape operator of $\Sigma$ at $\gamma(t)$ or equivalently,
+$\gamma''(t)+\nu\cdot  \langle S(\gamma'(t)),\gamma'(t)\rangle=0$, where $S$ is the shape operator of $\Sigma$ at $\gamma(t)$.}
+
+The third statement can be also understood using physical intuition --- $\gamma(t)$ is the trajectory of a particle that slides on $\Sigma$ without friction and with initial velocity $v$.
+Formally, existence and uniqueness follows from Picard's theorem (the  fundamental theorem of ordinary differential equations).
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Local comparison}
+
+\section{First variation formula}
+
+\begin{thm}{Proposition}\label{prop:first-var}
+Assume $(s,t)\mapsto w(s,t)$ be a local parametrization of an oriented smooth regular surface $\Sigma$ such that 
+$\tfrac{\partial}{\partial s}w\perp \tfrac{\partial}{\partial t}w$, $|\tfrac{\partial}{\partial s}w|=1$ and the vector $\tfrac{\partial}{\partial s}w$ points to the right from $\tfrac{\partial}{\partial t}w$ at any parameter value $(s,t)$.
+
+Fix a closed real interval $[a,b]$ and consider a one parameter family of curves $\sigma_s\:[a,b]\to \Sigma$  defined as the coordinate lines $\sigma_s(t)=w(s,t)$.
+Set $\ell(s)=\length \sigma_s$.
+Then
+\[\ell'(s)=\Theta_{\sigma_s}\]
+for any $s$.
+\end{thm}
+
+The proof is done by direct calculations.
+
+\parit{Proof.}
+Since $\tfrac{\partial}{\partial s}w\perp \tfrac{\partial}{\partial t}w$, we have that
+\[\langle\tfrac{\partial}{\partial s}w, \tfrac{\partial}{\partial t}w\rangle=0\]
+and therefore
+\[\langle\tfrac{\partial^2}{\partial s\partial t}w, \tfrac{\partial}{\partial t}w\rangle
++\langle\tfrac{\partial}{\partial s}w, \tfrac{\partial^2}{\partial t^2}w\rangle=\tfrac{\partial}{\partial t}\langle\tfrac{\partial}{\partial s}w, \tfrac{\partial}{\partial t}w\rangle=0.\]
+
+Note that $|\gamma'_s(t)|=|\tfrac{\partial}{\partial t}w(s,t)|$ and therefore
+\begin{align*}
+\tfrac \partial {\partial s}|\gamma'_s(t)|&=\tfrac \partial {\partial s}\sqrt{\langle \tfrac{\partial}{\partial t}w(s,t),\tfrac{\partial}{\partial t}w(s,t)\rangle}=
+\\
+&=\frac{\langle \tfrac{\partial^2}{\partial s\partial t}w(s,t),\tfrac{\partial}{\partial t}w(s,t)\rangle}{\sqrt{\langle \tfrac{\partial}{\partial t}w(s,t),\tfrac{\partial}{\partial t}w(s,t)\rangle}}=
+\\
+&=-\frac{\langle\tfrac{\partial}{\partial s}w, \tfrac{\partial^2}{\partial t^2}w\rangle}{|\gamma'_s(t)|}=
+\\
+&=-\frac{\langle\tfrac{\partial}{\partial s}w, \gamma''_s(t)\rangle}{|\gamma'_s(t)|}.
+\end{align*}
+
+The values $\ell(s)$ do not change if we reparametrize $\gamma_s$,
+so we can assume that for a fixed value $s$ the curve $\sigma_s$ is unit-speed.
+Since $|\tfrac{\partial}{\partial s}w|=1$ and $\tfrac{\partial}{\partial s}w$ points to the right from $\tfrac{\partial}{\partial t}w=\gamma'_s(t)$, the last expression equals to $k_g(s,t)$,
+where $k_g(s,t)$ denotes the geodesic curvature of $\sigma_s$ at $t$. 
+Therefore, for this particular $s$ we have
+\begin{align*}
+\ell'(s)&= \int_a^b \tfrac \partial {\partial s} |\gamma'_s(t)|\cdot dt =
+\\
+&= \int_a^b k_g(s,t)\cdot dt=
+\\
+&=\Theta_{\sigma_s}.
+\end{align*}
+Since the left hand side and the right hands side of this formula do not depend on the parametrization of $\sigma_s$, this formula holds for all $s$.\footnote{One may avoid passing the a unit-speed parametrization by using the following formula for geodesic curvature which holds for any regular parametrization: 
+\[k_g(t,s)=\langle \Norm(\sigma_s(t)),[\sigma'_s(t),\sigma''_s(t)]\rangle/|\sigma_s'(t)|^3;\]
+it saves thinking but makes the calculations longer.}
+\qeds
+
+The parametrization of a surface satisfying the conditions in the proposition are called \index{semigeodesic coordinates}\emph{semigeodesic coordinates}.
+The following exercise explains the reason for this name.
+
+\begin{thm}{Exercise}\label{ex:geod-semigeod}
+Assume $(s,t)\mapsto w(s,t)$ be a local parametrization of an oriented smooth regular surface $\Sigma$ as in the proposition above.
+Show that for any fixed $t$ the curve $\gamma_t(s)= w(s,t)$ is a geodesic.
+\end{thm}
+
+
+
+
+
+
+
+\section{Local comparison}
+
+The following proposition is a special case of the so a comparison theorem, proved by Harry Rauch \cite{rauch}.
+
+\begin{thm}{Theorem}\label{thm:rauch}
+Let $\Sigma$ be a smooth regular surface and $p\in\Sigma$.
+Assume $\~\gamma\:[a,b]$ is a curve the tangent plane $\T_p\Sigma$ that runs in a sufficiently small neighborhood of the origin; 
+consider the curve 
+\[\gamma=\exp_p\circ\gamma\] in $\Sigma$.
+
+\begin{enumerate}[(i)]
+ \item If Gauss curvature of $\Sigma$ is nonnegative, then 
+ \[\length \gamma\le \length \~\gamma\]
+\item If Gauss curvature of $\Sigma$ is nonpositive, then 
+ \[\length \gamma\ge \length \~\gamma.\]
+\end{enumerate}
+\end{thm}
+
+The proof is a direct application of Corollary \ref{cor:w<w}.
+
+\parit{Proof.}
+Let us denote $\~w(\theta,r)$ and $w(\theta,r)$ the polar coordinates of $\T_p$ and $\Sigma$ at $p$
+Recall that 
+\begin{align*}
+\tfrac{\partial \~w}{\partial\theta}&\perp \tfrac{\partial \~w}{\partial r};
+&
+|\tfrac{\partial \~w}{\partial r}|&=1;
+\\
+\tfrac{\partial w}{\partial\theta}&\perp \tfrac{\partial w}{\partial r};
+&
+|\tfrac{\partial w}{\partial r}|&=1;
+\intertext{By Corollary \ref{cor:w<w}, we also have}
+|\tfrac{\partial \~w}{\partial \theta}|&\ge |\tfrac{\partial \~w}{\partial \theta}|;
+&
+|\tfrac{\partial \~w}{\partial \theta}|&\le |\tfrac{\partial \~w}{\partial \theta}|;
+\end{align*}
+if Gauss curvature is nonnegative or nonpositive respectively.
+
+It is sufficient to show that
+\[|\gamma'(t)|\le |\~\gamma'(t)|\quad\text{or, correspondingly}\quad|\gamma'(t)|\ge |\~\gamma'(t)|\eqlbl{gamma<gamma}\]
+for any $t$.
+
+Note that both curves $\gamma(t)$ and $\~\gamma(t)$ described the same way in the polar coordinates;
+denote these coordinates by $(\theta(t),r(t))$.
+Then 
+\begin{align*}
+\gamma'(t)|^2&=|\tfrac{\partial w}{\partial\theta}\cdot\theta'(t)+\tfrac{\partial w}{\partial r}\cdot r'(t)|^2=
+\\
+&=|\tfrac{\partial w}{\partial\theta}|^2\cdot|\theta'(t)|^2+|r'(t)|^2
+\intertext{The same way} 
+\~\gamma'(t)|^2&=|\tfrac{\partial \~w}{\partial\theta}|^2\cdot|\theta'(t)|^2+|r'(t)|^2;
+\end{align*}
+hence \ref{gamma<gamma} follows.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Semieodesic coordinates}
+
+\section*{Semigeodesic map}
+
+Let $(u,v)\mapsto s(u,v)$ be a smooth map from a rectangle $(a,b)\times(c,d)$ to a smooth surface $\Sigma$.
+If the first coordinate lines $u\mapsto s(u,v)$ are unit-speed geodesics in $\Sigma$, then the map $s$ is called semigeodesic.
+One might think that $v$ is the parameter in a family of unit-speed geodesics $\gamma_v:u\mapsto s(u,v)$.
+
+\begin{thm}{Proposition}\label{prop:semigeodesic}
+Let $(u,v)\mapsto s(u,v)$ be a semigedesic map to a smooth surface.
+Then the value $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle$ does not depend on $u$.
+
+In particular,
+if for some fixed $u_0$ the point $s(u_0,v)$ does not depend on $v$, 
+then $\tfrac{\partial s}{\partial u}\perp \tfrac{\partial s}{\partial v}$ for all $u$ and $v$.
+
+\end{thm}
+
+\parit{Proof.}
+Fix $v$; we need to show that 
+\[\tfrac{\partial}{\partial u}\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle=0.\]
+
+Since $u\to s(u,v)$ is a unit-speed curve we have $|\tfrac{\partial s}{\partial u}|=1$,
+or equivalently,
+\[\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial u}\rangle=1.\]
+Therefore
+\begin{align*}
+0
+&=\tfrac{\partial}{\partial v}\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial u}\rangle=
+\\
+&=2\cdot\langle\tfrac{\partial s}{\partial u},\tfrac{\partial^2 s}{\partial u\partial v}\rangle.
+\end{align*}
+In particular,
+\[\langle\tfrac{\partial s}{\partial u},\tfrac{\partial^2 s}{\partial u\partial v}\rangle=0.\]
+
+Further the equation for geodesic for $u\to s(u,v)$ implies that $\tfrac{\partial^2 s}{\partial u^2}(u,v)$ is perpendicular to the tangent plane $T_{s(u,v)}$.
+Since $\tfrac{\partial s}{\partial u}(u,v)$ and $\tfrac{\partial s}{\partial v}(u,v)$ are tangent vectors at $s(u,v)$, we have the following two identities:
+\begin{align*}
+\langle\tfrac{\partial^2 s}{\partial u^2},\tfrac{\partial s}{\partial u}\rangle&=0,
+\\
+\langle\tfrac{\partial^2 s}{\partial u^2},\tfrac{\partial s}{\partial v}\rangle&=0.
+\end{align*}
+
+Therefore
+\begin{align*}
+\tfrac{\partial}{\partial u}\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle
+&=\langle\tfrac{\partial^2 s}{\partial u^2},\tfrac{\partial s}{\partial v}\rangle
++
+\langle\tfrac{\partial s}{\partial u},\tfrac{\partial^2 s}{\partial u\partial v}\rangle=
+\\
+&=0;
+\end{align*}
+that is, for fixed $v$, the value $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle$ is constant.
+
+If $v\mapsto s(u_0,v)$ is constant, then $\tfrac{\partial s}{\partial u}(u_0,v)=0$.
+In particular $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle(u_0,v)=0$ for any $v$.
+Since $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle$ does not depend on $u$, we have that $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle(u,v)=0$, or equivalently
+$\tfrac{\partial s}{\partial u}\perp \tfrac{\partial s}{\partial v}$ for any $u$ and~$v$.
+\qeds
+
+\section*{Polar coordinates}
+
+Fix a point $p$ in a smooth oriented surface $\Sigma$ and a unit tangent vector $u\in\T_p$.
+Let us construct an analog of polar coordinates in a neighborhood of $p$.
+
+Fix a pair or real numbers $(\theta,\rho)$.
+Denote by $w$ the counterclockwise rotation of $u$ by angle $\theta$ and let $\gamma_\theta$ be the unit-speed geodesic that runs from $p$ in the direction $w$.
+Further set $s(\theta,\rho)=\gamma_\theta(\rho)$.
+
+Note that the function $s\:\RR\times \RR\to \Sigma$ could be also defined as 
+\[s(\theta,\rho)=\exp_p\tilde s(\theta,\rho),\]
+where $\tilde s(\theta,\rho)$ denotes the vector in $\T_p$ with polar coordinates $(\theta,\rho)$, if one takes the axis in the direction of $u$.
+By ???, it follows that there is $\eps>$ such that $s(\theta,\rho)$ is defined if $|\rho|<\eps$;
+moreover, if $|\rho_i|<\eps$, then $s(\theta_1,\rho_1)=s(\theta_2,\rho_2)$ if and only if $\rho_1=\rho_2=0$ or $\theta_1=\theta_2+\pi\cdot n$ and $\rho_1=(-1)^n\cdot \rho_2$ for some integer $n$;
+that is, in the strip described by the inequality $|\rho|<\eps$ the polar coordinates on $\Sigma$ behave as usual polar coordinates.
+
+Consider the polar coordinates $(\theta,\rho)$ in the tangent plane $\T_p$.
+Recall that the polar coordinates of a point are not uniquely defined;
+first of all the origin has can be described by coordinates $(\theta,0)$ for any $\theta$ and also 
+the coordinates $(\theta,r)$, $(\theta\pm\pi,-r)$, $(\theta\pm2\cdot \pi,r),\dots$ describe the same point for all real pairs $(\theta,r)$.
+
+Let us use the exponential map to transfer the polar coordinates to the surface.
+That is, a point has polar coordinates $(r,\theta)$ is 
+
+\begin{thm}{Proposition}
+For any point $p$ in a smooth surface $\Sigma$ there is a positive function $\eps$
+such that any geodesic of length less than $\eps$ that starts at $p$ is a shortest path.  
+\end{thm}
+
+\parit{Proof.} Let $\eps$ be as in ???.
+Consider a curve $\alpha$ with arc-length parametrization in $\Sigma$ that starts at $p$.
+Assume $\length\alpha<\eps$.
+
+Consider the polar coordinates $(\theta,\rho)\mapsto s(\theta,\rho)$ at $p$.
+Note that the polar coordinates at $p$ satisfy the conditions in \ref{prop:semigeodesic}.
+In particular
+\[\tfrac{\partial s}{\partial\theta}\perp\tfrac{\partial s}{\partial\rho}.\eqlbl{eq:perp-partial}\]
+
+Let us reqrite $\alpha$ in the polar coordinates 
+\[\alpha(t)=s(\theta(t),\rho(t)).\]
+Applying the chain rule, we get 
+\[\alpha'=\tfrac{\partial s}{\partial\theta}\cdot\theta'+\tfrac{\partial s}{\partial\rho}\cdot\rho'.\]
+By \ref{eq:perp-partial}, 
+\[|\alpha'|\ge \tfrac{\partial s}{\partial\rho}\cdot\rho'\]
+and the equality holds if and only if $\theta'=0$ and $\rho'\ge 0$.
+Taking the integral, we get 
+\[\length(\alpha|_{[0,t]}\ge\rho(t)\]
+for any $t>0$ and the equality holds only if $\alpha$ always runs in a radial direction in the polar coordinates.
+
+It follows that 
+\[|p-s(\theta,\rho)|_\Sigma\ge |\rho|\]
+for any point $s(\theta,\rho)$ in the ???.
+On the other hand the geodesic $t\mapsto s(\theta,t)$ for $t\in[0,\rho]$ has length $\rho$ and therefore 
+\[|p-s(\theta,\rho)|_\Sigma\le |\rho|\]
+It follows that 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{tmp}
+
+
+
+
+
+\section*{Signed area}
+The formula \ref{eq:sphere-gauss-bonnet} holds modulo $2\cdot \pi$ for any closed broken geodesic, if one use \index{signed area}\emph{signed area} surrounded by curve instead of usual area;
+that is, we count area of the regions taking into account how many times the curve goes around the region.
+
+Namely, we have to choose a {}\emph{south pole} and state that its region has zero multiplicity.
+When you cross the curve the mulitplicity changes by $\pm1$; we add 1 if the curve crosses your path from left to right and we subtract 1 otherwise.
+The signed area surrounded by a closed curve is the sum of area of all the regions counted with multiplicities.
+
+\begin{wrapfigure}{o}{32 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-44}
+\vskip-0mm
+\end{wrapfigure}
+
+Here is an example of a broken line with multiplicities assuming that the big region has the south pole inside.
+
+This signed-area formula can be proved in a similar way:
+Apply the formula for each triangle with vertex at the north pole and base at each edge of the broken geodesic.
+Sum the resulting identities taking each with a sign: plus if the triangle lies on the left from the edge and minus if the triangle lies on the right from edge.
+
+Choosing a different pole will change all the coefficients by the same number.
+So the resulting formula holds only modulo the area of $\SS^2$, which is $4\cdot \pi$ --- this will not destroy identity modulo $2\cdot\pi$.
+
+Furthermore, by approximation, the signed-area formula holds for any reasonable curve, say piecewise smooth regular curves on the sphere.
+Summarizing, we hope the discussion above convinced the reader that the following statement holds.
+
+A domain $\Delta$ in a surface is called a \index{disc}\emph{disc} (or more precisely \index{topological disc}\emph{topological disc}) if it is bounded by a closed simple curve and can be parameterized by a unit plane disc 
+\[\DD=\set{(x,y)\in\RR^2}{x^2+y^2\le1}.\]
+That is, there is a continuous bijection $\DD\to\Delta$.
+
+\begin{thm}{Proposition}\label{prop:spherical-gb}
+For any closed piecewise smooth regular curve $\alpha$ on the sphere, 
+we have that 
+\[\tgc\alpha+\area\alpha=0 \pmod{2\cdot\pi},\]
+where $\area\alpha$ denotes the signed area surrounded by $\alpha$ and $\tgc\alpha$ the total geodesic curvature of $\alpha$.
+
+Moreover, if $\alpha$ is a simple curve that bounds a disc $\Delta$ on the left from it, then we have 
+\[\tgc\alpha+\area\Delta=2\cdot\pi.\]
+
+\end{thm}
+
+
+
+
+
+\section*{Gauss--Bonnet formula}
+
+
+\begin{thm}{Theorem}\label{thm:gb}
+Let $\Delta$ be a disc in a smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$ that is oriented in such a way that $\Delta$ lies on its left.
+Then 
+\[\tgc{\partial\Delta}+\iint_\Delta G=2\cdot \pi,\eqlbl{eq:g-b}\]
+where $G$ denotes the Gauss curvature of $\Sigma$.
+\end{thm}
+
+For geodesic triangles this theorem was proved by Carl Friedrich Gauss \cite{gauss};
+Pierre Bonnet and Jacques Binet independently generalized the statement for arbitrary curves. 
+The modern formulation described below was given by Wilhelm Blaschke. 
+
+
+\parit{Remarks; (1).}
+For a general compact domain $\Delta$ (not necessary a disc) we have that
+\[\tgc{\partial\Delta}+\iint_{\Delta} G=2\cdot  \pi\cdot\chi(\Delta),\eqlbl{eq:g-b-euler}\]
+where $\chi(\Delta)$ is the so called \index{Euler's characteristic}\emph{Euler's characteristic} of $\Delta$.
+The Euler's characteristic is \index{topological invariant}\emph{topological invariant}, in particular preserved in a continuous deformation.
+
+If a surface $\Sigma$ (possibly with boundary) can be divided into $f$ discs by drawing $e$ edges connecting $v$ vertexes, then 
+\[\chi(\Sigma)=v-e+f.\]
+For example the disc $\DD$ has Euler's characteristic $1$; 
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-49}
+\vskip-0mm
+\end{figure}
+it can be divided into discs many ways, 
+but each time we have $v-e=f=1$.
+The latter agrees with \ref{eq:g-b} and \ref{eq:g-b-euler}.
+It is useful to know that $\chi(\SS^2)=2$; $\chi(\TT^2)=0$ where $\TT^2$ denotes torus; 
+$\chi(S_g)=2-2\cdot g$, where $S_g$ is a surface of genus $g$;
+that is, sphere with $g$ handles.
+
+\parit{(2).} Note that if $\Sigma$ is a plane, then a geodesic in $\Sigma$ are formed by line segments.
+In this case the statement of theorem follows from Exercise~\ref{ex:pm2pi}.
+
+\parit{(3).} If $\Sigma$ is the unit sphere, then $G\equiv1$ and therefore formula \ref{eq:g-b} can be rewritten as 
+\[\tgc{\partial\Delta}+\area\Delta=2\cdot \pi,\]
+which follows from Proposition~\ref{prop:spherical-gb}.
+
+\medskip
+
+We will give an informal proof of \ref{thm:gb} based on the bike wheel interpretation described above.
+We suppose that it is intuitively clear that moving the axis of the wheel without changing its direction does not change the direction of the wheel's spikes.
+
+More precisely, assume we keep the axis of a non-spinning bike wheel and perform the following two experiments:
+\begin{enumerate}[(i)]
+\item We move it around and bring the axis back to the original position. 
+As a result the wheel might rotate by some angle; let us measure this angle.
+
+\item
+We move the direction of the axis the same way as before without moving the center of the wheel.
+After that we measure the angle of rotation.
+\end{enumerate}
+Then the resulting angle in these two experiments is the same. 
+
+Consider a oriented smooth surface $\Sigma$ with the spherical; map $\Norm\:\Sigma\to \SS^2$.
+Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\Norm(p)}\SS^2$; so we can identify these tangent spaces.
+From the experiments above, we get the following:
+
+\begin{thm}{Lemma}\label{lem:spherical-image}
+Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\Norm\:\Sigma\to \SS^2$.
+Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\Norm\circ\alpha$ in $\SS^2$.
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $\Sigma$ be a smooth closed surface with positive Gauss curvature.
+Given a line $\ell$ denote by $\omega_\ell$ the closed curve formed by points with tangent planes parallel to $\ell$.\footnote{Equivalently the normal vector at any point of $\omega_\ell$ is perpendicular to $\ell$. If the light falls on $\Sigma$ from one side parallel to $\ell$, then $\omega_\ell$ divides the bright and dark sides of~$\Sigma$.}
+Show that parallel transport around $\omega_\ell$ is the identity map.
+\end{thm}
+
+Now we are ready to prove the theorem.
+
+\parit{Proof of \ref{thm:gb}.}
+Let $\alpha$ be the boundary $\partial\Delta$ parameterized in such a way that $\Delta$ lies on the left from it.
+Assume $p$ is the point where $\alpha$ starts and ends.
+
+Set $\beta=\Norm\circ\gamma$ and $q=\Norm(p)$, so the spherical curve $\beta$ starts and ends at $q$.
+
+By Lemma \ref{lem:spherical-image} the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta$ in $\SS^2$.
+By Proposition~\ref{prop:pt+tgc}, it follows that 
+\[\tgc{\alpha,\Sigma}=\tgc{\beta,\SS^2} \pmod{2\cdot \pi}.\]
+
+By Proposition~\ref{prop:spherical-gb},
+\[\tgc{\beta,\SS^2}+\area\beta=0\pmod{2\cdot \pi}.\]
+Therefore 
+\[\tgc{\alpha,\Sigma}+\area\beta=0\pmod{2\cdot \pi}.\]
+
+Recall that the shape  operator $s_p\: T_p\Sigma \to \T_{\Norm(p)}\SS^2=T_p\Sigma$ is the Jacobian of the Gauss map $\Norm\:\Sigma\to \SS^2$ at the point $p$.
+In appropriately chosen coordinates in $T_p$, the shape operator can be presented by a diagonal matrix 
+$\left(\begin{smallmatrix}
+k_1&0
+\\
+0&k_2
+\end{smallmatrix}\right)$, where $k_1$ and $k_2$ are the principle curvatures at $p$.
+Therefore, the determinant of $s_p$ is the Gauss curvature at~$p$.
+
+If $\Sigma$ is a closed surface with positive Gauss curvature, then the Gauss map $\Norm\:\Sigma\to\SS^2$ is a smooth bijection.
+Therefore 
+\[\iint_\Delta G=\area[\Norm(\Delta)].\]
+
+In the general case we have to count the area $\Norm(\Delta)$ taking orientation and multiplicity of the Gauss map into account.
+In this case 
+\[\iint_\Delta G=\area\beta,\]
+where $\area\beta$ is the signed area surrounded by $\beta$; it is defined above.
+Therefore 
+\[\tgc{\alpha,\Sigma}+\iint_\Delta G=0\pmod{2\cdot \pi}.\eqlbl{eq:gb(mod2pi)}\]
+
+If $\Delta$ is a disc in the plane, then Gauss curvature vanishes and by Exercise~\ref{ex:pm2pi}, we have 
+\[\tgc{\partial\Delta}+\iint_\Delta G=2\cdot \pi.\]
+Assunme that $\Sigma_t$ is a smooth one parameter family of surfaces with 
+a one parameter family of discs $\Delta_t\subset \Sigma_t$ and $\alpha_t$ is the boundary $\partial\Delta_t$ parameterized in such a way that $\Delta_t$ lies on the left from it.
+The value 
+\[f(t)=\tgc{\alpha_t}+\iint_\Delta G\]
+is continuous in $t$ and by \ref{eq:gb(mod2pi)} it has to be constant.
+
+If $\Sigma_0$ is a plane, then 
+\[\tgc{\partial\Delta_0}+\iint_{\Delta_0} G=2\cdot \pi.\]
+Intuitively it is clear that any disc can be obtained as a resultof continuous deformation of plane disc.
+Therefore 
+\[\tgc{\partial\Delta_1}+\iint_{\Delta_1} G=2\cdot \pi\]
+for arbitrary disc $\Delta_1$; whence \ref{eq:g-b} follows.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Gauss--Bonnet formula}
+
+
+
+
+
+
+
+\parbf{Signed area.}
+The formula \ref{eq:sphere-gauss-bonnet} holds modulo $2\cdot \pi$ for any closed broken geodesic, if one use \index{signed area}\emph{signed area} surrounded by curve instead of usual area;
+that is, we count area of the regions taking into account how many times the curve goes around the region.
+
+Namely, we have to choose a {}\emph{south pole} and state that its region has zero multiplicity.
+When you cross the curve the mulitplicity changes by $\pm1$; we add 1 if the curve crosses your path from left to right and we subtract 1 otherwise.
+The signed area surrounded by a closed curve is the sum of area of all the regions counted with multiplicities.
+
+\begin{wrapfigure}{o}{32 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-44}
+\vskip-0mm
+\end{wrapfigure}
+
+Here is an example of a broken line with multiplicities assuming that the big region has the south pole inside.
+
+This signed-area formula can be proved in a similar way:
+Apply the formula for each triangle with vertex at the north pole and base at each edge of the broken geodesic.
+Sum the resulting identities taking each with a sign: plus if the triangle lies on the left from the edge and minus if the triangle lies on the right from edge.
+
+Choosing a different pole will change all the coefficients by the same number.
+So the resulting formula holds only modulo the area of $\SS^2$, which is $4\cdot \pi$ --- this will not destroy identity modulo $2\cdot\pi$.
+
+Furthermore, by approximation, the signed-area formula holds for any reasonable curve, say piecewise smooth regular curves on the sphere.
+Summarizing, we hope the discussion above convinced the reader that the following statement holds.
+
+A domain $\Delta$ in a surface is called a \index{disc}\emph{disc} (or more precisely \index{topological disc}\emph{topological disc}) if it is bounded by a closed simple curve and can be parameterized by a unit plane disc 
+\[\DD=\set{(x,y)\in\RR^2}{x^2+y^2\le1}.\]
+That is there is a continuous bijection $\DD\to\Delta$.
+
+\begin{thm}{Proposition}\label{prop:spherical-gb}
+For any closed piecewise smooth regular curve $\alpha$ on the sphere, 
+we have that 
+\[\tgc\alpha+\area\alpha=0 \pmod{2\cdot\pi},\]
+where $\area\alpha$ denotes the signed area surrounded by $\alpha$ and $\tgc\alpha$ the total geodesic curvature of $\alpha$.
+
+Moreover, if $\alpha$ is a simple curve that bounds a disc $\Delta$ on the left from it, then we have 
+\[\tgc\alpha+\area\Delta=2\cdot\pi.\]
+
+\end{thm}
+
+
+
+
+
+\section{Gauss--Bonnet formula}
+
+
+\begin{thm}{Theorem}\label{thm:gb}
+Let $\Delta$ be a topological disc in a smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$ that is oriented in such a way that $\Delta$ lies on its left.
+Then 
+\[\tgc{\partial\Delta}+\iint_\Delta K=2\cdot \pi,\eqlbl{eq:g-b}\]
+where $G$ denotes the Gauss curvature of $\Sigma$.
+\end{thm}
+
+For geodesic triangles this theorem was proved by Carl Friedrich Gauss \cite{gauss};
+Pierre Bonnet and Jacques Binet independently generalized the statement for arbitrary curves. 
+The modern formulation described below was given by Wilhelm Blaschke. 
+
+
+\parit{Remarks; (1).}
+For a general compact domain $\Delta$ (not necessary a disc) we have that
+\[\tgc{\partial\Delta}+\iint_{\Delta} K=2\cdot  \pi\cdot\chi(\Delta),\eqlbl{eq:g-b-euler}\]
+where $\chi(\Delta)$ is the so called \index{Euler's characteristic}\emph{Euler's characteristic} of $\Delta$.
+The Euler's characteristic is \index{topological invariant}\emph{topological invariant}, in particular preserved in a continuous deformation.
+
+If a surface $\Sigma$ (possibly with boundary) can be divided into $f$ discs by drawing $e$ edges connecting $v$ vertexes, then 
+\[\chi(\Sigma)=v-e+f.\]
+For example the disc $\DD$ has Euler's characteristic $1$; 
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-49}
+\vskip-0mm
+\end{figure}
+it can be divided into discs many ways, 
+but each time we have $v-e=f=1$.
+The latter agrees with \ref{eq:g-b} and \ref{eq:g-b-euler}.
+It is useful to know that $\chi(\SS^2)=2$; $\chi(\TT^2)=0$ where $\TT^2$ denotes torus; 
+$\chi( S_g)=2-2\cdot g$, where $S_g$ is a surface of genus $g$; that is, sphere with $g$ handles.
+
+\parit{(2).} Note that if $\Sigma$ is a plane, then a geodesic in $\Sigma$ are formed by line segments.
+In this case the statement of theorem follows from Exercise~\ref{ex:pm2pi}.
+
+\parit{(3).} If $\Sigma$ is the unit sphere, then $K\equiv1$. Therefore the formula \ref{eq:g-b} can be rewritten as 
+\[\tgc{\partial\Delta}+\area\Delta=2\cdot \pi,\]
+which follows from Proposition~\ref{prop:spherical-gb}.
+
+\medskip
+
+We will give an informal proof of \ref{thm:gb} based on the bike wheel interpretation described above.
+We suppose that it is intuitively clear that moving the axis of the wheel without changing its direction does not change the direction of the wheel's spikes.
+
+More precisely, assume we keep the axis of a non-spinning bike wheel and perform the following two experiments:
+\begin{enumerate}[(i)]
+\item We move it around and bring the axis back to the original position. 
+As a result the wheel might rotate by some angle; let us measure this angle.
+
+\item
+We move the direction of the axis the same way as before without moving the center of the wheel.
+After that we measure the angle of rotation.
+\end{enumerate}
+Then the resulting angle in these two experiments is the same. 
+
+Consider a surface $\Sigma$ with a Gauss map $\nu\:\Sigma\to \SS^2$.
+Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\nu(p)}\SS^2$; so we can identify these tangent spaces.
+From the experiments above, we get the following:
+
+\begin{thm}{Lemma}\label{lem:spherical-image}
+Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\nu\:\Sigma\to \SS^2$.
+Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\nu\circ\alpha$ in $\SS^2$.
+\end{thm}
+
+\begin{thm}{Exercise}
+Let $\Sigma$ be a smooth closed surface with positive Gauss curvature.
+Given a line $\ell$ denote by $\omega_\ell$ the closed curve formed by points with tangent planes parallel to $\ell$.\footnote{Equivalently the normal vector at any point of $\omega_\ell$ is perpendicular to $\ell$. If the light falls on $\Sigma$ from one side parallel to $\ell$, then $\omega_\ell$ divides the bright and dark sides of~$\Sigma$.}
+Show that parallel transport around $\omega_\ell$ is the identity map.
+\end{thm}
+
+Now we are ready to prove the theorem.
+
+\parit{Proof of \ref{thm:gb}.}
+Let $\alpha$ be the boundary $\partial\Delta$ parameterized in such a way that $\Delta$ lies on the left from it.
+Assume $p$ is the point where $\alpha$ starts and ends.
+
+Set $\beta=\nu\circ\gamma$ and $q=\nu(p)$, so the spherical curve $\beta$ starts and ends at $q$.
+
+By Lemma \ref{lem:spherical-image} the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta$ in $\SS^2$.
+By Proposition~\ref{prop:pt+tgc}, it follows that 
+\[\tgc{\alpha,\Sigma}=\tgc{\beta,\SS^2} \pmod{2\cdot \pi}.\]
+
+By Proposition~\ref{prop:spherical-gb},
+\[\tgc{\beta,\SS^2}+\area\beta=0\pmod{2\cdot \pi}.\]
+Therefore 
+\[\tgc{\alpha,\Sigma}+\area\beta=0\pmod{2\cdot \pi}.\]
+
+Recall that the shape  operator $s_p\: T_p\Sigma \to \T_{\nu(p)}\SS^2=T_p\Sigma$ is the Jacobian of the Gauss map $\nu\:\Sigma\to \SS^2$ at the point $p$.
+In appropriately chosen coordinates in $T_p$, the shape operator can be presented by a diagonal matrix 
+$\left(\begin{smallmatrix}
+k_1&0
+\\
+0&k_2
+\end{smallmatrix}\right)$, where $k_1$ and $k_2$ are the principle curvatures at $p$.
+Therefore, the determinant of $s_p$ is the Gauss curvature at~$p$.
+
+If $\Sigma$ is a closed surface with positive Gauss curvature, then the Gauss map $\nu\:\Sigma\to\SS^2$ is a smooth bijection.
+Therefore 
+\[\iint_\Delta K=\area[\nu(\Delta)].\]
+
+In the general case we have to count the area $\nu(\Delta)$ taking orientation and multiplicity of the Gauss map into account.
+In this case 
+\[\iint_\Delta K=\area\beta,\]
+where $\area\beta$ is the signed area surrounded by $\beta$; it is defined above.
+Therefore 
+\[\tgc{\alpha,\Sigma}+\iint_\Delta K=0\pmod{2\cdot \pi}.\eqlbl{eq:gb(mod2pi)}\]
+
+If $\Delta$ is a disc in the plane, then Gauss curvature vanishes and by Exercise~\ref{ex:pm2pi}, we have 
+\[\tgc{\partial\Delta}+\iint_\Delta K=2\cdot \pi.\]
+Assunme that $\Sigma_t$ is a smooth one parameter family of surfaces with 
+a one parameter family of discs $\Delta_t\subset \Sigma_t$ and $\alpha_t$ is the boundary $\partial\Delta_t$ parameterized in such a way that $\Delta_t$ lies on the left from it.
+The value 
+\[f(t)=\tgc{\alpha_t}+\iint_\Delta K\]
+is continuous in $t$ and by \ref{eq:gb(mod2pi)} it has to be constant.
+
+If $\Sigma_0$ is a plane, then 
+\[\tgc{\partial\Delta_0}+\iint_{\Delta_0} K=2\cdot \pi.\]
+Intuitively it is clear that any disc can be obtained as a resultof continuous deformation of plane disc.
+Therefore 
+\[\tgc{\partial\Delta_1}+\iint_{\Delta_1} K=2\cdot \pi\]
+for arbitrary disc $\Delta_1$; whence \ref{eq:g-b} follows.
+\qeds
+
+
+
+
+
+\begin{thm}{Exercise}
+ Assume $\gamma$ is a closed simple curve with constant geodesic curvature $1$ in a smooth convex closed surface $\Sigma$.
+ Show that 
+ \[\length\gamma\le 2\cdot\pi;\]
+that is, the length of $\gamma$ can not exceed the length of the unit circle in the plane.  
+\end{thm}
+
+
+\begin{thm}{Exercise}
+Let $\gamma$ be a closed simple geodesic on a smooth convex closed surface $\Sigma$.
+Assume $\nu\:\Sigma\to\SS^2$ is a Gauss map.
+Show that the curve $\alpha=\nu\circ\gamma$ divides the sphere into regions of equal area.
+
+Conclude that
+\[\length \alpha\ge 2\cdot\pi.\]
+\end{thm}
+
+{
+
+\begin{wrapfigure}{o}{32 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-46}
+\vskip-0mm
+\end{wrapfigure}
+
+\begin{thm}{Exercise}
+Let $\Sigma$ be a smooth closed surface with a closed geodesic $\gamma$.
+Assume $\gamma$ has exactly 4 self-intersection at the points $a$, $b$, $c$ and $d$ that appear on $\gamma$ in the order $a,a,b,b,c,c,d,d$.
+Show that $\Sigma$ can not have positive Gauss curvature.\footnote{Hint: estimate integral of Gauss curvature bounded by a simple geodesic loop.}
+\end{thm}
+
+\begin{thm}{Advanced exercise}
+Let $\Sigma$ be a smooth regular sphere with positive Gauss curvature and $p\in\Sigma$. 
+Suppose $\gamma$ be a closed geodesic that does not pass thru $p$.
+Assume $\Sigma\backslash\{p\}$ parametrized by the plane.
+Can it happen that in this parametrization,  $\gamma$ looks like one of the curves on the diagram?
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-47}
+\vskip-0mm
+\end{figure}
+Say as much as possible about possible/impossible diagrams of that type.
+\end{thm}
+
+}
+
+\section{The remarkable theorem}
+
+Let $\Sigma_1$ and $\Sigma_2$ be two smooth regular surfaces in the Euclidean space.
+A map $f\:\Sigma_1\to \Sigma_2$ is called  length-preserving if for any curve $\gamma_1$ in $\Sigma_1$ the curve $\gamma_2=f\circ\gamma_1$ in $\Sigma_2$ has the same length. %???it is sufficient to consider smooth only curves???
+If in addition $f$ is smooth and bijective, then it is called \index{intrinsic isometry}\emph{intrinsic isometry}. 
+
+A simple example of intrinsic isometry can obtained by warping a plane into a cylinder.
+The following exercise produce slightly more interesting example.
+
+\begin{thm}{Exercise}
+Suppose $\gamma(t)=(x(t),y(t))$ is a smooth unit-curve in the plane such that $y(t)=a\cdot \cos t$.
+Let $\Sigma_\gamma$ be the surface of revolution of $\gamma$ around the $x$-axis.
+Show that a small open domain in $\Sigma_\gamma$ admits a smooth length-pereserving map to the unit sphere.
+
+Conclude that any round disc $\Delta$ in $\SS^2$ of intrinsic radius smaller than $\tfrac\pi2$ admits a smooth length preserving deformation; that is, there is one parameter family of surfaces with boundary $\Delta_t$, such that $\Delta_0=\Delta$ and $\Delta_t$ is not congruent to $\Delta_0$ for any $t\ne0$.\footnote{In fact any disc in $\SS^2$ of intrinsic radius smaller than $\pi$ admits a smooth length preserving deformation. %???REF
+}
+\end{thm}
+
+
+\begin{thm}{Theorem}\label{thm:remarkable}
+Suppose $f\:\Sigma_1\to \Sigma_2$ is an intrinsic isometry between two smooth regular surfaces in  the Euclidean space; $p_1\in \Sigma_1$ and $p_2=f(p_1)\in \Sigma_1$.
+Then 
+\[K(p_1)_{\Sigma_1}=K(p_2)_{\Sigma_2};\]
+that is, the Gauss curvature of $\Sigma_1$ at $p_1$ is the same as the Gauss curvature of $\Sigma_2$ at $p_2$.
+\end{thm}
+
+This theorem was proved by Carl Friedrich Gauss \cite{gauss} who called it \index{Remarkable theorem}\emph{Remarkable theorem} (\index{Theorema Egregium}\emph{Theorema Egregium}).
+The theorem is indeed remarkable because the Gauss curvature is defined as a product of principle curvatures which might be different at these points; however, according to the theorem, their product can not change.
+
+In fact Gauss curvature of the surface at the given point can be found {}\emph{intrinsically},
+by measuring the lengths of curves in the surface.
+For example, Gauss curvature $K(p)$ in the following formula for the circumference $c(r)$ of a geodesic circle centered at $p$ in a surface: 
+\[c(r)=2\cdot\pi\cdot r-\tfrac\pi3\cdot K(p)\cdot r^3+o(r^3).\]
+
+Note that the theorem implies there is no smooth length-preserving map that sends an open region in the unit sphere to the plane.%
+\footnote{There are plenty of non-smooth length-preserving maps from the sphere to the plane; see \cite{petrunin-yashinski} and the references there in.}
+It follows since the Gauss curvature of the plane is zero and the unit sphere has Gauss curvature 1. 
+In other words, there is no map of a region on Earth without distortion.
+
+\parit{Proof.}
+Set $g_1=K(p_1)_{\Sigma_1}$ and $g_2=K(p_2)_{\Sigma_2}$;
+we need to show that 
+\[g_1=g_2.\eqlbl{eq:g=g}\]
+
+Suppose $\Delta_1$ is a small geodesic triangle in $\Sigma_1$ that contains $p_1$.
+Set $\Delta_2=f(\Delta_1)$.
+We may assume that the Gauss curvature is almost constant in $\Delta_1$ and $\Delta_2$;
+that is, given $\eps>0$, we can assume that 
+\[
+\begin{aligned}
+|K(x_1)_{\Sigma_1}-g_1|&<\eps,
+\\
+|K(x_2)_{\Sigma_2}-g_2|&<\eps
+\end{aligned}
+\eqlbl{eq:almost=}\]
+for any $x_1\in \Delta_1$ and $x_2\in \Delta_2$.
+
+Since $f$ is length-preserving the triangles $\Delta_2$ is geodesic and
+\[\area\Delta_1=\area\Delta_2.\eqlbl{eq:area=}\]
+Moreover, triangles $\Delta_1$ and $\Delta_2$ have the same corresponding angles; denote them by $\alpha$, $\beta$ and $\gamma$.
+
+By Gauss--Bonnet formula, we get that 
+\[\iint_{\Delta_1}K_{\Sigma_1}=\alpha+\beta+\gamma-\pi=\iint_{\Delta_2}K_{\Sigma_2}.
+\eqlbl{eq:gauss-int=}\]
+
+By \ref{eq:almost=}, 
+\begin{align*}
+\left|g_1-\frac1{\area\Delta_1}\cdot\iint_{\Delta_1}K_{\Sigma_1}\right|&<\eps,
+\\
+\left|g_2-\frac1{\area\Delta_2}\cdot\iint_{\Delta_2}K_{\Sigma_2}\right|&<\eps.
+\end{align*}
+By \ref{eq:area=} and \ref{eq:gauss-int=},
+\[\frac1{\area\Delta_1}\cdot\iint_{\Delta_1}K_{\Sigma_1}
+=
+\frac1{\area\Delta_2}\cdot\iint_{\Delta_2}K_{\Sigma_2},\]
+therefore
+\[|g_1-g_2|<2\cdot\eps.\]
+Since $\eps>0$ is arbitrary, \ref{eq:g=g} follows.
+\qeds
+
+
+\section{Simple geodesic}
+
+The following theorem provides an interesting application of Gauss--Bonnet formula;
+it is proved by Stephan Cohn-Vossen \cite[Satz 9 in][]{convossen}.
+
+
+\begin{thm}{Theroem}\label{thm:cohn-vossen}
+Any open smooth regular surface with positive Gauss curvature has a simple two-sided infinite geodesic.
+\end{thm}
+
+\begin{thm}{Lemma}\label{lem:graph}
+Suppose $\Sigma$ is an open surface in with positive Gauss curvature in the Euclidean space.
+Then there is a convex function $f$ defined on a convex open region of $(x,y)$-plane 
+such that $\Sigma$ can be presented as a graph $z=f(x,y)$ in some $(x,y,z)$-coordinate system of the Euclidean space.
+
+Moreover 
+\[\iint_\Sigma K\le 2\cdot\pi.\eqlbl{eq:int=<2pi}\]
+
+\end{thm}
+
+\parit{Proof.}
+The surface $\Sigma$ is a boundary of an unbounded closed convex set $K$.
+
+Fix $p\in \Sigma$ and consider a sequence of points $x_n$ such that $|x_n-p|\z\to \infty$ as $n\to \infty$.
+Set $u_n=\tfrac{x_n-p}{|x_n-p|}$; the unit vector in the direction from $p$ to $x_n$.
+Since the unit sphere is compact, we can pass to a subsequence of $(x_n)$ such that $u_n$ converges to a unit vector $u$.
+
+Note that for any $q\in \Sigma$, the directions $v_n=\tfrac{x_n-q}{|x_n-q|}$ converge to $u$ as well.
+The half-line from $q$ in the direction of $u$ lies in $K$.
+Indeed any point on the half-line is a limit of points on the line segments $[q,x_n]$;
+since $K$ is closed, all of these poins lie in $K$.
+
+
+Let us choose the $z$-axis in the direction of $u$.
+Note that line segments can not lie in $\Sigma$, otherwise its Gauss curvature would vanish.
+It follows that any vertical line can intersect $\Sigma$ at most at one point.
+That is, $\Sigma$ is a graph of a function $z=f(x,y)$.
+Since $K$ is convex, the function $f$ is convex and it is defined in a region $\Omega$ which is convex.
+The domain $\Omega$ is the projection of $\Sigma$ to the $(x,y)$-plane.
+This projection is injective and by the inverse function theorem, it maps open sets in $\Sigma$ to open sets in the plane;
+hence $\Omega$ is open.
+
+It follows that the outer normal vectors to $\Sigma$ at any point, points to the south hemisphere $\SS^2_-=\set{(x,y,z)\in\SS^2}{z< 0}$.
+Therefore the area of the spherical image of $\Sigma$ is at most $\area\SS^2_-= 2\cdot\pi$.
+The area of this image is the integral of the Gauss curvature along $\Sigma$.
+That is,
+\begin{align*}
+\iint_{\Sigma}K&=\area[\nu(\Sigma)]\le 
+\\
+&\le \area\SS^2_-=
+\\
+&=2\cdot\pi,
+\end{align*}
+where $\nu(p)$ denotes the outer unit normal vector at $p$.
+Hence \ref{eq:int=<2pi} follows.
+\qeds
+
+\parit{Proof of \ref{thm:cohn-vossen}.}
+Let $\Sigma$ be an open surface in with positive Gauss curvature and $\gamma$ a two-sided infinite geodesic in $\Sigma$.
+The following is the key statement in the proof.
+
+\begin{thm}{Claim}
+The geodesic $\gamma$ contains at most one simple loop.
+\end{thm}
+
+Assume $\gamma$ has a simple loop $\ell$.
+By Lemma \ref{lem:graph}, $\Sigma$ is parameterized by a open convex region $\Omega$ in the plane;
+therefore $\ell$ bounds a disc in $\Sigma$; denote it by $\Delta$.
+If $\phi$ is the angle at the base of the loop, then by Gauss--Bonnet,
+\[\iint_\Delta K=\pi+\phi.\] 
+By Lemma \ref{lem:graph}, $\phi<\pi$; that is $\gamma$ has no concave simple loops 
+
+Assume $\gamma$ has two simple loops, say $\ell_1$ and $\ell_2$ that bound discs $\Delta_1$ and $\Delta_2$.
+Then the disks $\Delta_1$ and $\Delta_2$ have to overlap,
+otherwise the curvature of $\Sigma$ would exceed $2\cdot\pi$.
+
+We may assume that $\Delta_1\not\subset \Delta_2$; the loop $\ell_2$ appears after $\ell_1$ on $\gamma$ and there are no other simple loops between them.
+In this case, after going around $\ell_1$ and before closing $\ell_2$, the curve $\gamma$ must enter $\Delta_1$ creating a concave loop.
+The latter contradicts the above observation.
+
+If a geodesic $\gamma$ has a self-intersection,
+then it contains a simple loop.
+From above, there is only one such loop;
+it cuts a disk from $\Sigma$ 
+and goes around it either clockwise or counterclockwise.
+This way we divide all the self-intersecting geodesics 
+into two sets which we will call {}\emph{clockwise} and {}\emph{counterclockwise}.
+
+Note that the geodesic $t\mapsto \gamma(t)$ is clockwise 
+if and only if the same geodesic traveled backwards
+$t\mapsto \gamma(-t)$
+is counterclockwise.
+By shooting unit-speed geodesics in all directions at a given point $p=\gamma(0)$,
+we get a one parameter family of geodesics $\gamma_s$ for $s\in[0,\pi]$ connecting the geodesic $t\mapsto \gamma(t)$ with
+the $t\mapsto \gamma(-t)$; that is, $\gamma_0(t)\z=\gamma(t)$ and $\gamma_\pi(t)=\gamma(-t)$. 
+It follows that there are geodesics 
+which aren't clockwise nor counterclockwise.
+Those geodesics have no self-intersections.\qeds
+
+\begin{thm}{Exercise}
+Suppose that $f\:\RR^2\to\RR$ is a $\sqrt{3}$-Lipshitz smooth convex function.
+Show that any geodesic in the surface defined by the graph $z=f(x,y)$ has no self-intersections.
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section*{The remarkable theorem}
 
 Let $\Sigma_1$ and $\Sigma_2$ be two smooth regular surfaces in the Euclidean space.

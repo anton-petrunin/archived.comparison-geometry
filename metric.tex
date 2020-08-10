@@ -7,7 +7,7 @@ it also contain all necessary references with complete proof.
 The fist section on metric spaces is most important;
 we suggest to read in before going further.
 
-\section{Metric spaces}\label{app:metric-spcaes}
+\section{Metric spaces}\label{sec:metric-spcaes}
 
 We assume that the reader is familiar with the notion of metric in 
 Euclidean space.
@@ -28,13 +28,13 @@ $$\Dist(x, z) \le \Dist(x, y) + \Dist(y, z).$$
 
 A set with a metric is called \index{metric space}\emph{metric space} and the elements of the set are called \index{point}\emph{points}.
 
-\parbf{Shortcut for distance.}
+\subsection*{Shortcut for distance}
 Usually we consider only one metric on a set, therefore we can denote the metric space and its underlying set by the same letter, say $\mathcal X$.
 In this case we also use a shortcut notations $|x-y|$ or $|x-y|_\mathcal X$ for the {}\emph{distance $\Dist(x,y)$ from $x$ to $y$ in $\mathcal X$}.
 For example, the triangle inequality can be written as 
 $$|x-z|_{\mathcal X}\le |x-y|_{\mathcal X}+|y-z|_{\mathcal X}.$$
 
-\parbf{Examples.}
+\subsection*{Examples}
 Euclidean space and plane as well as real line will be the most important examples of metric spaces for us.
 In these examples the introduced notation $|x-y|$ for the distance from $x$ to $y$ has perfect sense as a norm of the vector $x-y$.
 However, in general metric space the expression $x-y$ has no sense, but anyway we use expression $|x-y|$ for the distance.
@@ -51,12 +51,12 @@ Show that $\Dist$ is a metric on $\RR^2$.
 
 Let us mention another example: the \index{discrete space}\emph{discrete space} --- arbitrary nonempty set $\mathcal X$ with the metric defined as $|x\z-y|_{\mathcal X}=0$ if $x=y$ and $|x-y|_{\mathcal X}=1$ otherwise.
 
-\parbf{Subspaces.}
+\subsection*{Subspaces}
 Any subset of a metric space is also a metric space, by restricting the original metric to the subset;
 the obtained metric space is called a \index{subspace of metric space}\emph{subspace}.
 In particular, all subsets of Euclidean space are metric spaces.
 
-\parbf{Balls.}
+\subsection*{Balls}
 Given a point $p$ in a metric space ${\mathcal X}$ and a real number $R\ge 0$, the set of points $x$ on the distance less then $R$ (at most $R$) from $p$ is called \index{open ball}\emph{open} (respectively \index{closed ball}\emph{closed}) \emph{ball} of radius $R$ with center at $p$.
 The {}\emph{open ball} is denoted as $B(p,R)$ or $B(p,R)_{\mathcal X}$;
 the second notation is used if we need to emphasize that the ball lies in the metric space $\mathcal X$.

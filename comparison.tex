@@ -13,7 +13,7 @@ the minimizing geodesics $[xy]$, $[yz]$ and $[zx]$ are called its {}\emph{sides}
 the triangle itself is denoted by $[xyz]$.
 
 A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\RR^2$ is called \index{model triangle}\emph{model triangle} of the triangle $[xyz]$,
-briefly $[\tilde x\tilde y\tilde z]=\tilde \triangle xyz$, if its corresponding sides are equal;
+briefly $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$, if its corresponding sides are equal;
 that is,
 \[|\tilde x-\tilde y|_{\RR^2}=|x-y|_\Sigma,
 \quad
@@ -24,7 +24,7 @@ that is,
 
 A pair of minimizing geodesics $[xy]$ and $[xz]$ starting from one point $x$ is called \index{hinge}\emph{hinge} and denoted as $\hinge xyz$.
 The angle between these geodesics at $x$ is denoted by $\measuredangle\hinge xyz$.
-The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in the model triangle $[\tilde x\tilde y\tilde z]=\tilde \triangle xyz$ is denoted by $\angk xyz$.
+The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in the model triangle $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$ is denoted by $\angk xyz$.
 
 \section{Formulations}
 
@@ -128,7 +128,7 @@ Note that we can assume that $U$ is simply connected therefore this condition is
 Assume $y=\exp_x\vec v$ and $z=\exp_x\vec w$ for two small vectors $\vec v,\vec w\in\T_x$.
 Note that 
 \begin{align*}
-\measuredangle \hinge 0{\vec v}{\vec w}_{\T_x}&=\measuredangle \hinge xyz_\Sigma,
+\measuredangle\hinge 0{\vec v}{\vec w}_{\T_x}&=\measuredangle\hinge xyz_\Sigma,
 \\
 |\vec v|_{\T_x}&=|x-y|_\Sigma, 
 \\
@@ -141,8 +141,8 @@ By Rauch comparison (\ref{prop:rauch:K>=0}), we have
 \[\length\gamma\le \length \tilde \gamma.\]
 Since $|\vec v-\vec w|_{\T_x}=\length\tilde \gamma$ and $|y-z|_{\Sigma}\le \length\gamma$, we get 
 \[|\vec v-\vec w|_{\T_x}\ge |y-z|_\Sigma.\]
-Since increasing a side in a plane triangel increases the opposite angle, we get
-\[\angk xzy\le\measuredangle \hinge 0{\vec v}{\vec w}_{\T_x},\]
+By angle monotonicity (\ref{lem:angle-monotonicity}), we get
+\[\angk xzy\le\measuredangle\hinge 0{\vec v}{\vec w}_{\T_x},\]
 whence the result.
 
 \parit{\ref{SHORT.thm:loc-comp:cba}.}
@@ -151,8 +151,8 @@ By Rauch comparison (\ref{prop:rauch:K=<0}), we have
 \[\length\gamma\ge \length \tilde \gamma.\]
 Since $|\vec v-\vec w|_{\T_x}\le\length\tilde \gamma$ and $|y-z|_{\Sigma}= \length\gamma$, we get 
 \[|\vec v-\vec w|_{\T_x}\ge |y-z|_\Sigma.\]
-Since increasing a side in a plane triangel increases the opposite angle, we get
-\[\angk xzy\ge\measuredangle \hinge 0{\vec v}{\vec w}_{\T_x}.\]
+By angle monotonicity (\ref{lem:angle-monotonicity}), we get
+\[\angk xzy\ge\measuredangle\hinge 0{\vec v}{\vec w}_{\T_x}.\]
 whence the result.
 \qedsf
 %??? take care of size of the nbhd
@@ -181,15 +181,11 @@ Then the following expressions have the same signs:
 \end{figure}
 
 \parit{Proof.} 
-In the proof we use the following \index{monotonicity property}\emph{monotonicity property}:
-if two sides adjacent to an angle in a plane triangle are fixed, 
-then the angle is increases if the opposite side increase.
-
 Take 
 a point $\bar z$ on the extension of 
 $[xy]$ beyond $y$ so that $\dist{y}{\bar z}{}=\dist{y}{z}{}$ (and therefore $\dist{x}{\bar z}{}=\dist{x'}{z'}{}$). 
  
-From monotonicity, 
+From angle monotonicity (\ref{lem:angle-monotonicity}), 
 the following expressions have the same sign:
 \begin{enumerate}[(i)]
 \item $|p-y|-|p'-y'|$;
@@ -215,7 +211,7 @@ Further we will use the following reformulation of this lemma that is using lang
 \label{lem:alex}
 Assume $[pxz]$ be a triangle in a surface $\Sigma$ and 
 the point $y$ lies on the side $[xz]$.
-Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde \triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x\tilde z]$.
+Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x\tilde z]$.
 Then the following expressions have the same signs:
 \begin{enumerate}[(i)]
  \item $|p-y|_\Sigma-|\tilde p-\tilde y|_{\RR^2}$;
@@ -230,7 +226,7 @@ In this section we formulate conditions equivalent to the conclusion of the comp
 
 A triangle $[xyz]$ in a surface is called \index{fat triangle}\emph{fat} (or, respectively, \index{thin triangle}\emph{thin})
 if for any two points $p$ and $q$ on the sides of the triangle and the corresponding points 
-$\tilde p$ and $\tilde q$ on the sides of its model triangle $[\tilde x\tilde y\tilde z]\z=\tilde \triangle xyz$ we have
+$\tilde p$ and $\tilde q$ on the sides of its model triangle $[\tilde x\tilde y\tilde z]\z=\tilde\triangle xyz$ we have
 $|p-q|\ge |\tilde p-\tilde q|$ (or respectively $|p-q|\le |\tilde p-\tilde q|$).
 
 
@@ -346,7 +342,7 @@ Applying the lemma few times we will get that the comparison holds for arbitrary
 \begin{thm}{Key lemma}\label{key-lem:globalization}  
 Let $\Sigma$ be an open smooth regular surface.
 Assume that the comparison
-\[\mangle\hinge x y z
+\[\measuredangle\hinge x y z
 \ge\angk x y z\eqlbl{eq:key-lem:globalization}\]
 holds for any hinge $\hinge x y z$ with 
 $\dist{x}{y}{}+\dist{x}{z}{}
@@ -400,10 +396,10 @@ Then \ref{eq:thm:=def-loc-fourstar} follows since the length of $[x'p]$ can not 
 Further, note that 
 $\dist{p}{x}{}\z+\dist{x}{x'}{},\dist{p}{x'}{}\z+\dist{x'}{x}{}<\tfrac{2}{3}\cdot\ell $.
 In particular, 
-\[\mangle\hinge x p{x'}
+\[\measuredangle\hinge x p{x'}
 \ge\angk x p{x'}
 \ \ \text{and}\ \ 
-\mangle\hinge {x'}p x
+\measuredangle\hinge {x'}p x
 \ge\angk {x'}p x.
 \eqlbl{eq:thm:=def-loc-threestar}\]
 
@@ -412,18 +408,18 @@ Consider the model triangle
 $\trig{\tilde x}{\tilde x'}{\tilde p}=\modtrig xx'p$.
 Take $\tilde  q$ on the extension of $[\tilde  x\tilde  x']$ beyond $x'$ such that $\dist{\tilde x}{\tilde q}{}=\dist{x}{q}{}$ (and therefore $\dist{\tilde x'}{\tilde q}{}=\dist{x'}{q}{}$).
 From \ref{eq:thm:=def-loc-threestar},
-\[\mangle\hinge x p q
-=\mangle\hinge  x p{x'}\ge\angk x p{x'}\ \ \Rightarrow\ \ 
+\[\measuredangle\hinge x p q
+=\measuredangle\hinge  x p{x'}\ge\angk x p{x'}\ \ \Rightarrow\ \ 
 \side \hinge x q p\ge\dist{\tilde p}{\tilde q}{}.\]
-Since $\mangle\hinge{x'}p x+\mangle\hinge{x'}p q= \pi$,
+Since $\measuredangle\hinge{x'}p x+\measuredangle\hinge{x'}p q= \pi$,
 \ref{eq:thm:=def-loc-threestar} implies
 \[
 \pi
 -\angk{x'}p x
 \ge
-\pi-\mangle\hinge{x'}p x
+\pi-\measuredangle\hinge{x'}p x
 \ge
-\mangle\hinge{x'}p q.
+\measuredangle\hinge{x'}p q.
 \]
 Therefore
 $\dist{\tilde p}{\tilde q}{}\ge\side \hinge{x'}q p$ and \ref{eq:thm:=def-loc-fivestar} follows.
@@ -449,9 +445,9 @@ whence inequality \ref{eq:thm:=def-loc*} follows.
 If the sequence does not terminate, then $r_n\ge\tfrac{2}{3}\cdot\ell$ for all $n$.
 Since $(r_n)$ is nonincreasing, $r_n\to r\ge |p-q|_\Sigma$ as $n\to\infty$.
 
-Let us show that $\mangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
+Let us show that $\measuredangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
 
-Indeed assume $\mangle\hinge{x_n}p q\le \pi-\eps$ for some $\eps>0$.
+Indeed assume $\measuredangle\hinge{x_n}p q\le \pi-\eps$ for some $\eps>0$.
 Without loss of generality we can assume that $x_{n+1}\in [x_nq]$;
 otherwise switch $p$ and $q$ further.
 Note that $|x_n-x_{n+1}|,|p-x_n|>\tfrac\ell{100}$.
@@ -461,10 +457,10 @@ for some fixed $\delta=\delta(\eps)>0$.
 Therefore $r_n-r_{n+1}>\delta$.
 The latter can not hold for large $n$, otherwise the sequence $r_n$ would not converge.
 
-It follows that for any $\eps>0$ we have that $\mangle\hinge{x_n}p q> \pi-\eps$ for all large $n$;
-that is, $\mangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
+It follows that for any $\eps>0$ we have that $\measuredangle\hinge{x_n}p q> \pi-\eps$ for all large $n$;
+that is, $\measuredangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
 
-Since $\mangle\hinge{x_n}p q\to \pi$, we have 
+Since $\measuredangle\hinge{x_n}p q\to \pi$, we have 
 $s_n-r_n\to 0$ as $n\to\infty$;
 that is, $s_n\to r$.
 
@@ -541,7 +537,7 @@ Note that
 \\
 &=|\tilde  x-\tilde  y|.
 \end{align*}
-Applying monotonicity propery, we get that
+Applying angle monotonicity (\ref{lem:angle-monotonicity}), we get that
 \[\measuredangle\hinge{\dot p}{\dot x}{\dot y}\le \measuredangle\hinge{\tilde  p}{\tilde  x}{\tilde  y}.\]
 It follows that there are nonoverlapping triangles 
 $\trig{\tilde p}{\tilde x}{\tilde w}\cong\trig {\dot p}{\dot x}{\dot z}$ 
@@ -675,3 +671,5 @@ Show that the function
 \[h(t)=|\gamma_1(t)-\gamma_2(t)|_\Sigma\]
 is convex.
 \end{thm}
+
+%???+Splitting theorem???

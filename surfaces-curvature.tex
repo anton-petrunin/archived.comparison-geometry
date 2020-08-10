@@ -253,10 +253,10 @@ Then
 \eqlbl{eq:shape=-dNorm}\]
 for any $\vec w\in \T_p$.
 Equivalently 
-\[S=-L_p\Norm,\eqlbl{eq:shape=-L}\] 
-where $L_p\Norm$ denotes linearization of the spherical map $\nu\:\Sigma\to\SS^2$ at $p$.
+\[S=-d_p\Norm,\eqlbl{eq:shape=-L}\] 
+where $d_p\Norm$ denotes differential of the spherical map $\nu\:\Sigma\to\SS^2$ at $p$; that is, $d_p\Norm(\vec v)=(D_{\vec v}\Norm)(p)$.
 \end{thm}
-%???notation???
+
 
 
 The reason for minus sign in \ref{eq:shape=-dNorm} and \ref{eq:shape=-L}is the same as in the formula  
@@ -385,7 +385,7 @@ $(\begin{smallmatrix}
    &k_2
   \end{smallmatrix})$.
 
-Since by \ref{prop:S=-D}, $S_p=-L_p\Norm$, we have
+Since by \ref{prop:S=-D}, $S_p=-d_p\Norm$, we have
 \[\jac_p\Norm=|\det(\begin{smallmatrix}
    k_1
    &0

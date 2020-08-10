@@ -129,7 +129,7 @@ The total curvature of a smooth regular curve is the length of its tangent indic
 
 \parit{Proof.}
 Combine \ref{eq:tocurv} and \ref{eq:curvature}.
-\qedsf %???other cases --- colsed curves, semiopen intervals...
+\qedsf %???other cases --- closed curves, semiopen intervals...
 
 
 \begin{thm}{Fenchel's theorem}\label{thm:fenchel}
@@ -262,7 +262,7 @@ Applying the observation (\ref{obs:tantrix}), we get \ref{eq:gen-fenchel}.
 \begin{thm}{Chord lemma}\label{lem:chord}
 Let $\ell$ be the chord to a smooth regular arc $\gamma\:[a,b]\to\RR^3$.
 Assume $\gamma$ meets $\ell$ at angles $\alpha$ and $\beta$ at $\gamma (a)$ and $\gamma (b)$, respectively;
-that is 
+that is,
 \[\alpha=\measuredangle(\vec w,\gamma'(a))\quad\text{and}\quad \beta=\measuredangle(\vec w,\gamma'(b)),\]
 where $\vec w=\gamma(b)-\gamma(a)$.
 Then 
@@ -323,7 +323,8 @@ Moreover if $\gamma$ is closed we allow the inscribed polygonal line $\beta$ to 
 
 \parit{Proof.}
 Since the curvature of line segments vanishes, 
-the total curvature of polygonal line is the sum of external angles $\theta_i=\pi-\measuredangle p_{i-1}p_ip_{i+1}$.
+the total curvature of polygonal line is the sum of external angles $\theta_i=\pi-
+\measuredangle\hinge {p_i}{p_{i-1}}{p_{i+1}}$.
 
 \begin{wrapfigure}{o}{40 mm}
 \vskip-0mm
@@ -337,11 +338,11 @@ Set
 \begin{align*}
 \vec w_i&=p_{i+1}-p_i,& \vec v_i&=\gamma'(t_i),
 \\
-\alpha_i&=\measuredangle (\vec w_i,\vec v_i),&\beta_i&=\measuredangle (\vec w_{i-1},\vec v_i).
+\alpha_i&=\measuredangle(\vec w_i,\vec v_i),&\beta_i&=\measuredangle(\vec w_{i-1},\vec v_i).
 \end{align*}
 In the case of a closed curve we use indexes modulo $n$, in particular $p_{n+1}\z=p_1$.
 
-Note that $\theta_i=\measuredangle (\vec w_{i-1},\vec w_i)$.
+Note that $\theta_i=\measuredangle(\vec w_{i-1},\vec w_i)$.
 By triangle inequality for angles \ref{thm:spherical-triangle-inq}, we get that
 \[\theta_i\le \alpha_i+\beta_i.\]
 By the chord lemma, the total curvature of the arc of $\gamma$ from $p_i$ to $p_{i+1}$ is at least $\alpha_i+\beta_{i+1}$. 
@@ -389,25 +390,45 @@ The proof is an application of Proposition~\ref{prop:inscribed-total-curvature}.
 Consider an inscribed quadraliteral $abcd$ in $\gamma$.
 By the definition of total curvature, we have that
 \begin{align*}
-\tc{abcd}&=(\pi-\measuredangle dab)+(\pi-\measuredangle abc)+(\pi-\measuredangle bcd)+(\pi-\measuredangle cda)=
+\tc{abcd}&=(\pi-
+\measuredangle\hinge adb)+(\pi-
+\measuredangle\hinge bac)+(\pi-
+\measuredangle\hinge cbd)+(\pi-
+\measuredangle\hinge dca)=
 \\
-&=4\cdot\pi -(\measuredangle dab+\measuredangle abc+\measuredangle bcd+\measuredangle cda))
+&=4\cdot\pi -(
+\measuredangle\hinge adb
++
+\measuredangle\hinge bac
++
+\measuredangle\hinge cbd
++
+\measuredangle\hinge dca))
 \end{align*}
 
 
 Note that 
 \[
-\measuredangle abc\le\measuredangle abd+ \measuredangle dbc
+\measuredangle\hinge bac
+\le
+\measuredangle\hinge bad
++ 
+\measuredangle\hinge bdc
 \quad\text{and}\quad
-\measuredangle cda\le\measuredangle cdb+ \measuredangle bda.
+\measuredangle\hinge dca\le
+\measuredangle\hinge dcb
++ 
+\measuredangle\hinge dba.
 \eqlbl{eq:spheric-triangle}
 \]
 
 The sum of angles in any triangle is $\pi$, so combining these inequalities, we get that 
 \begin{align*}
 \tc{abcd}&\ge 4\cdot \pi 
-- (\measuredangle dab+\measuredangle abd+ \measuredangle bda)
--(\measuredangle bcd+\measuredangle cdb +\measuredangle dbc)=
+- (\measuredangle\hinge adb+\measuredangle\hinge bad+ 
+\measuredangle\hinge dba)
+-(\measuredangle\hinge cbd+\measuredangle\hinge dcb 
++\measuredangle\hinge  bdc)=
 \\
 &=2\cdot\pi.
 \end{align*}
@@ -579,7 +600,7 @@ Show that
 \end{thm}
 
 
-\section{DNA inequality*}
+\section{(DNA inequality)}
 
 Recall that the curvature of a spherical curve is at least $1$
 (Exercise~\ref{ex:curvature-of-spherical-curve}).
@@ -626,7 +647,7 @@ Applying \ref{eq:<gamma'',gamma>>=-k}, we get that
 whence the result.
 \qeds
 
-\section{Nonsmooth curves*}
+\section{(Nonsmooth curves)}
 
 \begin{thm}{Theorem}\label{thm:total-curvature=}
 For any regular smooth space curve $\gamma$ we have that 
@@ -705,7 +726,7 @@ Construct a rectifiable curve $\gamma\:[a,b]\to\RR^3$ that has infinite total cu
 
 For more on curves of finite total curvature read \cite{aleksandrov-reshetnyak,sullivan-curves}. 
 
-\section{DNA inequality revisited*}
+\section{(DNA inequality revisited)}
 
 In this section we will give an alternative proof of the DNA inequality (\ref{thm:DNA}) that works for arbitrary, not necessarily smooth, curves.
 In the proof we use \ref{def:total-curv-poly} to define the total curvature;
@@ -720,24 +741,24 @@ It implies the theorem since in any nontrivial closed curve we can inscribe a cl
 The indexes are taken modulo $n$, in particular $p_{n}=p_0$, $p_{n+1}=p_1$ and so on.
 Denote by $\theta_i$ the external angle of $\gamma$ at $p_i$;
 that is,
-\[\theta_i=\pi-\measuredangle p_{i-1}p_ip_{i+1}.\]
+\[\theta_i=\pi-\measuredangle\hinge {p_i}{p_{i-1}}{p_{i+1}}.\]
 
 Denote by $o$ the center of the ball.
 Consider a sequence of $n+1$ plane triangles
 \begin{align*}
-\triangle q_0s_0q_1
+[q_0s_0q_1]
 &\cong 
-\triangle p_0op_1,
+[p_0op_1],
 \\
-\triangle q_1s_1q_2
+[q_1s_1q_2]
 &\cong 
-\triangle p_1op_2,
+[p_1op_2],
 \\
 &\dots
 \\
-\triangle q_{n}s_nq_{n+1}
+[q_{n}s_nq_{n+1}]
 &\cong 
-\triangle p_nop_{n+1},
+[p_nop_{n+1}],
 \end{align*}
 such that the points $q_0,q_1,\dots,q_{n+1}$ lie on one line in that order and all the points $s_0,\dots,s_n$ lie on one side from this line.
 
@@ -765,17 +786,23 @@ Therefore
 \end{align*}
 
 Since $|q_i-s_{i-1}|=|q_i-s_i|=|p_i-o|\le 1$, we have that
-\[\measuredangle s_{i-1}q_is_i>|s_{i-1}-s_i|\]%???angle
+\[\measuredangle\hinge {q_i}{s_{i-1}}{s_i}>|s_{i-1}-s_i|\]%???angle
 for each $i$.
 Therefore
 \begin{align*}
-\theta_i&=\pi-\measuredangle p_{i-1}p_ip_{i+1}\ge
+\theta_i
+&=
+\pi
+-
+\measuredangle\hinge {p_i}{p_{i-1}}{p_{i+1}}
+\ge
 \\
-&\ge\pi-\measuredangle p_{i-1}p_io-\measuredangle op_ip_{i+1}=
+&\ge\pi-\measuredangle\hinge {p_i}{p_{i-1}}o-\measuredangle\hinge {p_i}o{p_{i+1}}=
 \\
-&=\pi-\measuredangle q_{i-1}q_is_{i-1}-\measuredangle s_iq_iq_{i+1}=
+&=\pi-\measuredangle\hinge {q_i}{q_{i-1}}{s_{i-1}}-\measuredangle\hinge {q_i}{s_i}{q_{i+1}}=
 \\
-&=\measuredangle s_{i-1}q_is_i>
+&=\measuredangle\hinge {q_i}{s_{i-1}}{s_i}
+>
 \\
 &>|s_{i-1}-s_i|.
 \end{align*}
