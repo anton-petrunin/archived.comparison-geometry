@@ -4,7 +4,7 @@
 
 Let $\vec u$ be a vector field defined on a smooth oriented surface $\Sigma$ with unit normal filed $\Norm$.
 Recall that \index{flux}\emph{flux} of $\vec u$ thru $\Sigma$ is defined by the integral 
-\[\flux_{\vec u}\Sigma=\int_\Sigma \langle \vec u,\Norm\rangle.\]
+\[\flux_{\vec u}\Sigma=\iint_\Sigma \langle \vec u,\Norm\rangle.\]
 
 \begin{thm}{Observation}\label{obs:flux}
 Let $\vec u$ be a vector field defined on a smooth oriented surface $\Sigma$.
@@ -18,7 +18,7 @@ Since $|\vec u|\le 1$ and $|\Norm|=1$ at every point,
 we have that
 \[\langle\vec u,\Norm\rangle\le 1\]
 Therefore 
-\[\flux_{\vec u}\Sigma=\int_\Sigma \langle\vec u,\Norm\rangle\le \int_\Sigma1=\area\Sigma.\]
+\[\flux_{\vec u}\Sigma=\iint_\Sigma \langle\vec u,\Norm\rangle\le \iint_\Sigma1=\area\Sigma.\]
 \qedsf
 \section{Divergence and curl}
 
@@ -37,7 +37,7 @@ The following two theorems are assumed to be known:
 
 \begin{thm}{Divergence theorem}\label{thm:div}
 If a piecewise smooth surface $\Sigma$ bounds a body $V$ in $\RR^3$, then
-\[\flux_{\vec u}\Sigma=\int_{p\in V}\div_p \vec u,\]
+\[\flux_{\vec u}\Sigma=\iiint_{p\in V}\div_p \vec u,\]
 assuming that the orientation on $\Sigma$ is defined by a unit normal field that points out of $V$.
 \end{thm}
 
@@ -57,7 +57,9 @@ then
 Let $\Sigma$ be a compact oriented surface bounded by a curve $\gamma$.
 Assume that $\gamma\:[0,\ell]\to \RR^3$ is parameterized by its arc-length and oriented in such a way that $\Sigma$ lies on left from it.
 Then, for any smooth vector field $\vec u$ defined in a neighborhood of $\Sigma$, we have
-\[\flux_{\curl\vec u}\Sigma=\int_0^\ell\langle\vec u,\gamma'(t)\rangle\cdot dt.\]
+\[\flux_{\curl\vec u}\Sigma
+=
+\int_0^\ell\langle\vec u,\gamma'(t)\rangle\cdot dt.\]
 
 \end{thm}
 

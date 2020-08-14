@@ -96,9 +96,9 @@ The following theorem plays the role of a substitution rule for multiple variabl
 Let $h\:K\to\RR$ be a bounded measurable function on a measurable subset $K\subset \RR^n$.
 Assume $\bm{f}\:K\to \RR^n$ is an injective smooth map.
 Then 
-\[\int_{\bm{x}\in K} h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}
+\[\idotsint_{\bm{x}\in K} h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}
 =
-\int_{\bm{y}\in \bm{f}(K)} h\circ \bm{f}^{-1}(\bm{y}).\]
+\idotsint_{\bm{y}\in \bm{f}(K)} h\circ \bm{f}^{-1}(\bm{y}).\]
 
 \end{thm}
 
@@ -268,7 +268,9 @@ the constant $c$ is chosen so that $\int b_\eps=1$.
 
 Another useful example is a sigmoid --- nondecreasing function that vanish for $t\le -\eps$ and takes value $1$ for any $t\ge \eps$.
 For example the following function \label{page:sigma-function}
-\[\sigma_\eps(t)=\int_{-\infty}^t b_\eps(x)\cdot dx.\]
+\[\sigma_\eps(t)
+=
+\int_{-\infty}^t b_\eps(x)\cdot dx.\]
 
 
 \section{Topology}

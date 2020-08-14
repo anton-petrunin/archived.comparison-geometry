@@ -442,12 +442,12 @@ This identity will become important in the definition of surface area.
 \section{Surface integral and area}
 
 Let $\Sigma$ be a smooth surface and $h\:\Sigma\to\RR$ be a smooth function.
-Let us define the integral $\int_R h$ of the function $h$ along a region $R\subset \Sigma$.
+Let us define the integral $\iint_R h$ of the function $h$ along a region $R\subset \Sigma$.
 (This definition can be applied to any Borel set of $R\subset \Sigma$.)
 
 Assume that there is a chart $(u,v)\mapsto s(u,v)$ of $\Sigma$ defined on an open set $U\subset\RR^2$ such that $R\subset s(U)$.
 In this case set
-\[\int_R h\df \iint_{s^{-1}(R)} h\circ s(u,v)\cdot \jac_{(u,v)}s  \cdot du\cdot dv.\eqlbl{eq:area-def}\]
+\[\iint_R h\df \iint_{s^{-1}(R)} h\circ s(u,v)\cdot \jac_{(u,v)}s  \cdot du\cdot dv.\eqlbl{eq:area-def}\]
 ($\jac_{(u,v)}s$ is defined in previous section.)
 
 By the substitution rule (\ref{thm:mult-substitution}), the right hand side in \ref{eq:area-def} does not depend on the choice of $s$.
@@ -457,22 +457,22 @@ In other words, the defining identity \ref{eq:area-def} makes sense.
 
 A general region $R$ can be subdivided into regions $R_1,R_2\dots$ such that each $R_i$ lies in the image of some chart.
 After that one could define the integral along $R$ as the sum
-\[\int_Rh
+\[\iint_Rh
 \df
-\int_{R_1}h+\int_{R_2}h+\dots\]
-It is straightforward to check that the value $\int_Rh$ does not depend on the choice of subdivision.
+\iint_{R_1}h+\iint_{R_2}h+\dots\]
+It is straightforward to check that the value $\iint_Rh$ does not depend on the choice of subdivision.
 
 The area of a region $R$ in a smooth surface $\Sigma$ is defined as the surface integral 
-\[\area R=\int_R 1.\]
+\[\area R=\iint_R 1.\]
 
 The following proposition provides a substitution rule for surface integral.
 
 \begin{thm}{Proposition}\label{prop:surface-integral}
 Suppose $ s\:\Sigma_0\to \Sigma_1$ is a smooth parameterization of a smooth surface $\Sigma_1$ by  a smooth surface $\Sigma_0$.
 Then for any region $R\subset \Sigma_0$ and any smooth function $f\:\Sigma_1\to\RR$ we have
-\[\int_R (f\circ s)\cdot \jac  s=\int_{ s(R)}f.\]
+\[\iint_R (f\circ s)\cdot \jac  s=\int_{ s(R)}f.\]
 In particular, if $f\equiv 1$, we have
-\[\int_R \jac  s=\area [ s(R)].\]
+\[\iint_R \jac  s=\area [ s(R)].\]
 
 \end{thm}
 

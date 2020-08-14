@@ -239,9 +239,9 @@ The proof is identical to the proof of the standard Crofton formula.
 To find the coefficient one has to find average length of projection of unit vector to a line.
 Which can be done by integration.
 \begin{align*}
-\frac1{k_a}&=\frac{1}{\area \SS^2}\cdot\int_{\SS^2} |x|;
+\frac1{k_a}&=\frac{1}{\area \SS^2}\cdot\iint_{\SS^2} |x|;
 &
-\frac1{k_b}&=\frac{1}{\area \SS^2}\cdot\int_{\SS^2} \sqrt{1-x^2}.
+\frac1{k_b}&=\frac{1}{\area \SS^2}\cdot\iint_{\SS^2} \sqrt{1-x^2}.
 \end{align*}
 The answers are $k_a=2$ and $k_b=\tfrac4\pi$.
 
@@ -524,11 +524,9 @@ Then
 \end{align*}
 that is, $|\gamma_1'(t)|\ge|\gamma_0'(t)|$ for any $t\in[a,b]$
 The statement follows since 
-\[\length\gamma_i=\int_a^b|\gamma_i'(t)|\cdot dt.\]
-
-
-
-
+\[\length\gamma_i
+=
+\int_a^b|\gamma_i'(t)|\cdot dt.\]
 
 \parbf{\ref{ex:trochoids}.}
 Observe that
@@ -591,9 +589,12 @@ Then
 |\gamma_\ell'(t)|=(1-\ell\cdot\skur(t)).
 \]
 \begin{align*}
-L(\ell)&=\int_a^b(1-\ell\cdot\skur(t))\cdot dt=
+L(\ell)
+&=
+\int_a^b(1-\ell\cdot\skur(t))\cdot dt=
 \\
-&=\int_a^b 1\cdot dt-\ell\cdot \int_a^b\skur(t))\cdot dt=
+&=
+\int_a^b 1\cdot dt-\ell\cdot \int_a^b\skur(t))\cdot dt=
 \\
 &=L(0)+\ell\cdot\Psi(\gamma).
 \end{align*}
@@ -922,7 +923,11 @@ It remains to observe that
 \parit{\ref{SHORT.ex:curl}.} Consider the field $\vec u=x\cdot\vec j$.
 Observe that $\vec k=\curl \vec u$.
 Therefore by the curl theorem (\ref{thm:curl}) we have 
-\[\flux_{\vec k}\Sigma=\int_0^\ell\langle\vec u,\gamma'(t)\rangle\cdot dt=\flux_{\vec k}\Delta,\]
+\[\flux_{\vec k}\Sigma
+=
+\int_0^\ell\langle\vec u,\gamma'(t)\rangle\cdot dt
+=
+\flux_{\vec k}\Delta,\]
 where $\gamma\:[0,\ell]\to\RR^3$ is the common boundary of $\Sigma$ and $\Delta$ parameterized by its arc-length and with the right choice of orientation.
 
 The same argument as in \ref{SHORT.ex:divergence} finishes the proof.
@@ -1084,7 +1089,7 @@ It follows that $\Norm\:\Sigma\to\mathbb{S}^2$ is bijection.
 
 Applying \ref{cor:intK}, we get that 
 \begin{align*}
-\int_\Sigma K&=\area\mathbb{S}^2=
+\iint_\Sigma K&=\area\mathbb{S}^2=
 \\
 &=4\cdot\pi.
 \end{align*}
@@ -1095,7 +1100,7 @@ It follows that the image $\Norm(\Sigma)$ lies in the south hemisphere.
 
 Applying \ref{cor:intK}, we get that 
 \begin{align*}
-\int_\Sigma K&\le \tfrac12\cdot\area\mathbb{S}^2=
+\iint_\Sigma K&\le \tfrac12\cdot\area\mathbb{S}^2=
 \\
 &=2\cdot\pi.
 \end{align*}
@@ -1359,7 +1364,20 @@ Observe that $\tgc\gamma=\length\gamma$ and apply  the Gauss--Bonnet formula (\r
 
 \parbf{\ref{ex:geodesic-half}.}
 Apply \ref{cor:intK}, \ref{ex:intK:4pi}, and the Gauss--Bonnet formula (\ref{thm:gb}).
-To prove the last statement, apply \ref{ex:bisection-of-S2}.
+
+For the last part, apply \ref{ex:bisection-of-S2}.
+
+\parbf{\ref{ex:closed-geodesic}.} For the first part apply the Gauss--Bonnet formula (\ref{thm:gb}).
+
+For the second part, arguing by contradiction, assume that two closed geodesics $\gamma_1$ and $\gamma_2$ do not intersect.
+
+Note that $\gamma_2$ lies in one of the regions, say $R_1$, that $\gamma_1$ cuts  from $\Sigma$.
+Similarly $\gamma_1$ lies in one of the regions, say $R_2$, that $\gamma_2$ cuts  from $\Sigma$.
+
+Observe that $R_1$ and $R_2$ cover $\Sigma$ with overlap.
+Therefore the first part implies that 
+\[\iint_\Sigma K< 4\cdot\pi.\]
+The latter contradicts \ref{ex:intK:4pi}.
 
 \parbf{\ref{ex:sqrt(3)}.} Note that it is sufficient to show that the surface has no geodesic loops.
 Estimate the integral of Gauss curvature of whole surface and a disc in it surrounded by a geodesic loop.
@@ -1368,7 +1386,7 @@ Estimate the integral of Gauss curvature of whole surface and a disc in it surro
 Consider the 4 regions bounded by loops.
 Apply Gauss--Bonnet formula (\ref{thm:gb}) to show that the integral of Gauss curvature on each of these region exceeds $\pi$.
 Therefore 
-\[\int_\Sigma K>4\cdot\pi.\]
+\[\iint_\Sigma K>4\cdot\pi.\]
 The latter contradicts \ref{ex:intK:4pi}.
 
 \parit{(tricky)}.
@@ -1377,7 +1395,7 @@ Apply the Gauss--Bonnet formula (\ref{thm:gb}) to show that the loops surround r
 
 Apply the Gauss--Bonnet formula for the triangular region to show that $\alpha+\beta+\gamma>\pi$.
 It follows that 
-\[\int_\Sigma K>(\pi+\alpha)+(\pi+\beta)+(\pi+\gamma)>4\cdot\pi\]
+\[\iint_\Sigma K>(\pi+\alpha)+(\pi+\beta)+(\pi+\gamma)>4\cdot\pi\]
 which contradicts \ref{ex:intK:4pi}.
 
 \begin{wrapfigure}{r}{33 mm}

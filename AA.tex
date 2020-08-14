@@ -1,3 +1,176 @@
+\begin{thm}{Lemma}\label{lem:graph}
+Suppose $\Sigma$ is an open surface in with positive Gauss curvature in the Euclidean space.
+Then there is a convex function $f$ defined on a convex open region of $(x,y)$-plane 
+such that $\Sigma$ can be presented as a graph $z=f(x,y)$ in some $(x,y,z)$-coordinate system of the Euclidean space.
+
+Moreover 
+\[\iint_\Sigma K\le 2\cdot\pi.\eqlbl{eq:int=<2pi}\]
+
+\end{thm}
+
+\parit{Proof.}
+The surface $\Sigma$ is a boundary of an unbounded closed convex set $K$.
+
+Fix $p\in \Sigma$ and consider a sequence of points $x_n$ such that $|x_n-p|\z\to \infty$ as $n\to \infty$.
+Set $u_n=\tfrac{x_n-p}{|x_n-p|}$; the unit vector in the direction from $p$ to $x_n$.
+Since the unit sphere is compact, we can pass to a subsequence of $(x_n)$ such that $u_n$ converges to a unit vector $u$.
+
+Note that for any $q\in \Sigma$, the directions $v_n=\tfrac{x_n-q}{|x_n-q|}$ converge to $u$ as well.
+The half-line from $q$ in the direction of $u$ lies in $K$.
+Indeed any point on the half-line is a limit of points on the line segments $[qx_n]$;
+since $K$ is closed, all of these poins lie in $K$.
+
+
+Let us choose the $z$-axis in the direction of $u$.
+Note that line segments can not lie in $\Sigma$, otherwise its Gauss curvature would vanish.
+It follows that any vertical line can intersect $\Sigma$ at most at one point.
+That is, $\Sigma$ is a graph of a function $z=f(x,y)$.
+Since $K$ is convex, the function $f$ is convex and it is defined in a region $\Omega$ which is convex.
+The domain $\Omega$ is the projection of $\Sigma$ to the $(x,y)$-plane.
+This projection is injective and by the inverse function theorem, it maps open sets in $\Sigma$ to open sets in the plane;
+hence $\Omega$ is open.
+
+It follows that the outer normal vectors to $\Sigma$ at any point, points to the south hemisphere $\SS^2_-=\set{(x,y,z)\in\SS^2}{z< 0}$.
+Therefore the area of the spherical image of $\Sigma$ is at most $\area\SS^2_-= 2\cdot\pi$.
+The area of this image is the integral of the Gauss curvature along $\Sigma$.
+That is,
+\begin{align*}
+\iint_{\Sigma}K&=\area[\Norm(\Sigma)]\le 
+\\
+&\le \area\SS^2_-=
+\\
+&=2\cdot\pi,
+\end{align*}
+where $\Norm(p)$ denotes the outer unit normal vector at $p$.
+Hence \ref{eq:int=<2pi} follows.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Since $\Sigma_0$ is a plane domain, we have $\area[\Norm_0(\Delta_0)]=0$.
+Therefore by \ref{prop:total-signed-curvature} we gave 
+\[\tgc{\partial\Delta_0}_{\Sigma_0}+\area[\Norm_0(\Delta_0)]=2\cdot \pi.\]
+
+Note that 
+\[\tgc{\partial\Delta_t}_{\Sigma_t}+\area[\Norm_t(\Delta_t)]\]
+depends continuously on $t$.
+According to \ref{eq:sum=2pin}, its value is a multiple of $2\cdot\pi$;
+therefore it has to be constant.
+Whence the Gauss--Bonnet formula follows.
+
+If $\Delta$ does not lie in one graph, then one could divide it into smaller discs, apply the formula for each and sum up the result.
+The proof is done along the same lines as \ref{prop:area-of-spher-polygon}.
+
+By \ref{prop:K(semigeodesic)},
+it is suffucient to prove the formula in case when $\Delta$ is covered by a semigeodesic chart.
+The same argument shows that it is suffucient to prove the formula in case when $\Delta$ lies in a graph of a smooth function.
+
+
+Now applying
+\ref{prop:pt+tgc},
+\ref{lem:rotation-parallel},
+and \ref{lem:rotation-semigeoesic} to $\Delta$, we
+get
+\[\rot_\gamma\vec+\iint_{\Delta}=2\cdot n\cdot \pi
+\eqlbl{eq:rot-intK}\]
+for an integer $n$.
+Since $\Delta$ is a disc, we can \index{homotopy}\emph{homotop} (deform) $\gamma$ continuousely to a point.
+Namely we can choose a continuous map $(t,\tau)\mapsto \gamma_\tau(t)$ such that $\gamma_1(t)$ is constant,
+$\gamma(t)=\gamma_0(t)$ for any $t$,
+and $t\to \gamma_\tau(t)$ is a simple loop for any fixed $\tau\in [0,1]$.
+
+Denote by $\Delta_\tau$ the disc bounded by $\gamma_\tau$;
+it degenerates to a point for $\tau=1$.
+Therefore we have 
+\[\rot_{\gamma_1}\vec+\iint_{\Delta_1}K=0.\]
+Now note that value $\rot_{\gamma_\tau}\vec+\iint_{\Delta_\tau}K$ depend continusely on $\tau$ and it must be an integer multiple of $2\cdot\pi$.
+Therefore this value does not depend on $\tau$;
+whence $n=0$ in \ref{eq:rot-intK}. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{thm}{Exercise}\label{ex:cohn-vossen}
+Suppose that $\Sigma$ is an open smooth regular surface with positive Gauss curvature.
+Show that any two both side infinite geodesics on $\Sigma$ have a common point.
+\end{thm}
+
+\parbf{\ref{ex:cohn-vossen}.}
+Suppose that $\gamma_1$ and $\gamma_2$ are two both-side infinite geodesics on $\Sigma$.
+
+Consider the following cases:
+\begin{itemize}
+ \item both $\gamma_1$ and $\gamma_2$;
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Positive Gauss curvature}
 
 

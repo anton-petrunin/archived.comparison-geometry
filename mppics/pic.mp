@@ -3206,16 +3206,17 @@ for i = 1 upto n :
 p[i]=(p[i-1] scaled x.r)--(p[i-1] scaled x.r rotated a shifted z1)--(p[i-1] scaled x.r  rotated -a shifted z2)--(p[i-1] scaled x.r  shifted z3); 
 endfor
 
-fill p[0]--(p[0] rotated -120 shifted z4)--(p[0] rotated 120 shifted z.b)--cycle withcolor .7;
+hatchfill   
+p[0]--(p[0] rotated -120 shifted z4)--(p[0] rotated 120 shifted z.b)--cycle withcolor (87, 1mm, -.5bp);
 draw p[0]--(p[0] rotated -120 shifted z4)--(p[0] rotated 120 shifted z.b)--cycle ;
 
-fill (p[1]--(p[1] rotated -120 shifted z4)--(p[1] rotated 120 shifted z.b)--cycle) shifted z.shift withcolor .7;
+hatchfill (p[1]--(p[1] rotated -120 shifted z4)--(p[1] rotated 120 shifted z.b)--cycle) shifted z.shift withcolor (87, 1mm, -.5bp);
 draw (p[1]--(p[1] rotated -120 shifted z4)--(p[1] rotated 120 shifted z.b)--cycle) shifted z.shift ;
 
-fill (p[2]--(p[2] rotated -120 shifted z4)--(p[2] rotated 120 shifted z.b)--cycle) shifted (2*z.shift) withcolor .7;
+hatchfill (p[2]--(p[2] rotated -120 shifted z4)--(p[2] rotated 120 shifted z.b)--cycle) shifted (2*z.shift) withcolor (87, 1mm, -.5bp);
 draw (p[2]--(p[2] rotated -120 shifted z4)--(p[2] rotated 120 shifted z.b)--cycle) shifted (2*z.shift);
 
-fill (p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle) shifted (3*z.shift+z.extra) withcolor .7;
+hatchfill (p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle) shifted (3*z.shift+z.extra) withcolor (87, 1mm, -.5bp);
 draw (p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle) shifted (3*z.shift+z.extra) penhair;
 
 label(btex $\dots$ etex, .5[z4+.5*(z2 rotated -120)+2*z.shift,3*z.shift+z.extra+.5*(z2 rotated -120)]);
@@ -3893,6 +3894,28 @@ endfig;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+beginfig(1550)
+save u,p;
+path p[];
+u:=.7cm;
+
+z.a=(0,1)*u;
+z.b=(-1,0)*u;
+z.c=(1,0)*u;
+
+p0=z.b{right}..z.a..z.b{1,-1}..z.c{1,1}..{-1,0}z.a;
+
+hatchfill (subpath (0,2) of p0)--cycle  withcolor (87, 1mm, -.5bp);
+
+draw subpath (0,2) of p0;
+drawarrow subpath (2,4) of p0;
+
+whitelabel (btex $\Delta_1$ etex, .5[z.a,z.b]+(0,2));
+label.lrt (btex $\gamma$ etex, point 2.5 of p0);
+endfig;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 beginfig(1650) 
 save u,k;
 u:=.9cm;
@@ -3925,6 +3948,57 @@ label.rt(btex $\delta(\tfrac12)$ etex, z.b);
 label.bot(btex $\gamma_2(\tfrac12)$ etex, z.c);
 endfig;
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+beginfig(1750) 
+save u,p;
+path p[];
+u:=1.4cm;
+
+
+z.p=(0,1)*u;
+z.q=(0,-1)*u;
+
+p0=z.p{.4,-1}..{0,-1}z.q;
+p1=z.p{-1,.4}..{1,.1}z.q;
+p2=z.p{1,.2}..{-1,-.3}z.q;
+
+p11=circle(origin,8) rotated 90 shifted z.p cutafter p0 cutbefore p1;
+p12=circle(origin,10) rotated 90 shifted z.p cutafter p2 cutbefore p0;
+p21=circle(origin,8) rotated -90 shifted z.q cutafter p1 cutbefore p0;
+p22=circle(origin,10) rotated -90 shifted z.q cutafter p0 cutbefore p2;
+
+z.phi1= point arctime (.5*arclength p11) of p11 of p11;
+z.psi1= point arctime (.5*arclength p21) of p21 of p21;
+z.phi2= point arctime (.5*arclength p12) of p12 of p12;
+z.psi2= point arctime (.5*arclength p22) of p22 of p22;
+
+drawarrow subpath (0,.5) of p0;
+draw subpath (.5,1) of p0;
+drawarrow subpath (0,.5) of p1;
+draw subpath (.5,1) of p1;
+drawarrow subpath (0,.5) of p2;
+draw subpath (.5,1) of p2;
+draw p11;
+draw p12;
+draw p21;
+draw p22;
+
+label.llft(btex $\phi_1$ etex, z.phi1);
+label.ulft(btex $\psi_1$ etex, z.psi1);
+label.lrt(btex $\phi_2$ etex, z.phi2+(-1,0));
+label.urt(btex $\psi_2$ etex, z.psi2+(-1,0));
+label(btex $\Delta_1$ etex, 
+.5[point .5 of p0,point .5 of p1]);
+label(btex $\Delta_2$ etex, 
+.5[point .5 of p0,point .5 of p2]);
+label.lft(btex $\delta$ etex, 
+point .5 of p0);
+label.lft(btex $\gamma_1$ etex, 
+point .5 of p1);
+label.rt(btex $\gamma_2$ etex, 
+point .5 of p2);
+endfig;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 beginfig(2305) 
