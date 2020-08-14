@@ -16,6 +16,6 @@ Go into subfolder `comparison-geometry/mppics/`, run `mpost pic` come back to `c
 
 Run `pdflatex` and `biber`:
 
-`pdflatex comparison-geometry.tex`<br/>
-`biber comparison-geometry`<br/>
-`pdflatex comparison-geometry.tex`<br/>
+`pdflatex curves-and-surfaces.tex`<br/>
+`biber curves-and-surfaces`<br/>
+`pdflatex curves-and-surfaces.tex`<br/>
