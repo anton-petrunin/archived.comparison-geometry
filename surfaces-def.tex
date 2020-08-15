@@ -33,9 +33,9 @@ $f(x,y)=a\cdot x+b\cdot y+c$ for some constants $a$, $b$ and $c$
 (assuming the plane is not perpendicular to the $(x,y)$-plane).
 
 A more interesting example is the unit sphere 
-\[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
+\[\mathbb{S}^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
 This set is not the graph of any function,
-but $\SS^2$ is locally a graph;
+but $\mathbb{S}^2$ is locally a graph;
 it can be covered by the following 6 graphs:
 \begin{align*}
 z&=f_\pm(x,y)=\pm \sqrt{1-x^2-y^2},
@@ -45,8 +45,8 @@ y&=g_\pm(x,z)=\pm \sqrt{1-x^2-z^2},
 x&=h_\pm(y,z)=\pm \sqrt{1-y^2-z^2},
 \end{align*}
 where each function $f_\pm,g_\pm,h_\pm$ is defined in an open unit disc.
-Any point $p\in\SS^2$ lies in one of these graphs therefore $\SS^2$ is a surface.
-Since each function is smooth, so is $\SS^2$.
+Any point $p\in\mathbb{S}^2$ lies in one of these graphs therefore $\mathbb{S}^2$ is a surface.
+Since each function is smooth, so is $\mathbb{S}^2$.
 
 \section{Surfaces with boundary}
 A connected subset in a surface that is bounded by one or more 
@@ -59,7 +59,7 @@ otherwise we may use the term {}\emph{surface with possibly nonempty boundary}.
 \section{Proper, closed and open surfaces}
 If the surface $\Sigma$ is formed by a closed set, then it is called \index{proper surface}\emph{proper}.
 For example, for any smooth function $f$, defined on whole plane, its graph $z=f(x,y)$ is a proper surface.
-The sphere $\SS^2$ gives another example of proper surface.
+The sphere $\mathbb{S}^2$ gives another example of proper surface.
 
 On the other hand, the open disc 
 \[\set{(x,y,z)\in\RR^3}{x^2+y^2<1,\  z=0}\]
@@ -72,7 +72,7 @@ A proper noncompact surface without boundary is called \index{open surfac}\emph{
 
 For example, the paraboloid $z=x^2+y^2$
 is an open surface; 
-sphere $\SS^2$ is a closed surface.
+sphere $\mathbb{S}^2$ is a closed surface.
 
 Note that any proper surface without boundary is either closed or open.
 
@@ -166,7 +166,7 @@ Since $p$ is arbitrary, we get that $\Sigma$ is a surface.
 If we have $s$ and $\Sigma$ as in the proposition, then we say that $s$ is a \index{smooth parametrization}\emph{smooth parametrization} of the surface $\Sigma$. 
 
 Not all the smooth surfaces can be described by such a parametrization;
-for example the sphere $\SS^2$ cannot.
+for example the sphere $\mathbb{S}^2$ cannot.
 But any smooth surface $\Sigma$ admits a local parametrization; that is, any point $p\in\Sigma$ admits an open neighborhood $W\subset \Sigma$ with a smooth regular parametrization~$s$.
 In this case any point in $W$ can be described by two parameters, usually denoted by $u$ and $v$, 
 which are called \index{local coordinates}\emph{local coordinates} at $p$.
@@ -230,7 +230,7 @@ then
 \[\nabla f(x,y,z)=(\tfrac{2}{a^2}\cdot x,\tfrac{2}{b^2}\cdot y,\tfrac{2}{c^2}\cdot z).\]
 Therefore $\nabla f\ne0$ if $f=1$; that is, $1$ is a regular value of $f$.
 
-Note that $\Sigma_{a,b,c}$ can be defined as the image of the map $s\:\SS^2\to\RR^3$, defined as the restriction of the following map to the unit sphere $\SS^2$:
+Note that $\Sigma_{a,b,c}$ can be defined as the image of the map $s\:\mathbb{S}^2\to\RR^3$, defined as the restriction of the following map to the unit sphere $\mathbb{S}^2$:
 \[(x,y,z)\z\mapsto (a\cdot x, b\cdot y,c\cdot z).\]
 
 For a surface $\Sigma$, a map $s\: \Sigma \to \RR ^3$ is called a 
@@ -270,9 +270,9 @@ Evidently the parametric definition includes the embedded surfaces defined previ
 But parametrized surfaces are more general, in particular they  might  have self-intersections.
 
 If $\Sigma$ is a known surface for example a sphere or a plane, the parameterized surface $s\:\Sigma\to\RR^3$ might be called by the same name.
-For example, any embedding $s\:\SS^2\to\RR^3$ might be called a \index{topological sphere}\emph{topological sphere}
+For example, any embedding $s\:\mathbb{S}^2\to\RR^3$ might be called a \index{topological sphere}\emph{topological sphere}
 and if $s$ is smooth and regular, then it might be called \index{smooth sphere}\emph{smooth sphere}.
-(A smooth regular map $s\:\SS^2\to\RR^3$ which is not necessary an embedding is called a \index{smooth immersion}\emph{smooth immersion}, so we can say that $s$ describes a \index{smooth immersed sphere}\emph{smooth immersed sphere}.) 
+(A smooth regular map $s\:\mathbb{S}^2\to\RR^3$ which is not necessary an embedding is called a \index{smooth immersion}\emph{smooth immersion}, so we can say that $s$ describes a \index{smooth immersed sphere}\emph{smooth immersed sphere}.) 
 Similarly an embedding $s\:\RR^2\to\RR^3$ might be called \index{topological plane}\emph{topological plane},
 and if $s$ is smooth, it might be called \index{smooth plane}\emph{smooth plane}.
 
@@ -559,7 +559,7 @@ In particular it follows that the M\"obius strip cannot be extended to an open o
 \section{Spherical map}
 
 Let $\Sigma$ be a smooth oriented surface with unit normal field $\Norm$.
-The map $\Norm\:\Sigma\to \SS^2$ defined by $p\mapsto \Norm_p$ is called \index{spherical map}\emph{spherical map} or \index{Gauss map}\emph{Gauss map}.
+The map $\Norm\:\Sigma\to \mathbb{S}^2$ defined by $p\mapsto \Norm_p$ is called \index{spherical map}\emph{spherical map} or \index{Gauss map}\emph{Gauss map}.
 
 For surfaces, the spherical map plays essentially the same role as the tangent indicatrix for curves.
 

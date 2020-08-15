@@ -105,7 +105,7 @@ Fix an oriented smooth surface $\Sigma$ and a point $p\in\Sigma$.
 
 The product 
 \[K=k_1(p)\cdot k_2(p)\]
-is called \index{Gauss curvature}\emph{Gauss curvature} at $p$.
+is called \index{$K$}\index{Gauss curvature}\emph{Gauss curvature} at $p$.
 We may denote it by $K(p)$ or $K(p)_\Sigma$ if we need to specify the point $p$ and the surface $\Sigma$.
 
 Since the product of principle values equals to determinant,
@@ -123,7 +123,7 @@ that is,
 Show that any surface with positive Gauss curvature is orientable. 
 \end{thm}
 
-The sum 
+The sum \index{$H$}
 \[H(p)=k_1(p)+ k_2(p)\] 
 is called \index{mean curvature}\emph{mean curvature}\footnote{Some authors define mean curvature as $\tfrac12\cdot(k_1(p)+ k_2(p))$ --- the mean value of the principle curvatures. It is suits the name better, but not as convenient when it comes to calculations.} at $p$.
 We may also denote it by $H(p)_\Sigma$.
@@ -151,34 +151,34 @@ and
 is the Hessian matrix of $f$ at $(0,0)$; the components $\ell$, $m$, and $n$ are defined on page \pageref{page:lmn}.
 
 The multiplication by the Hessian matrix defies the so called \index{shape operator}\emph{shape operator}
-\[S\:(\begin{smallmatrix}
+\[\Shape\:(\begin{smallmatrix}
 x\\y
 \end{smallmatrix})
 \mapsto
 M_p\cdot(\begin{smallmatrix}
 x\\y
 \end{smallmatrix});\]
-it is a linear operator $S\:\T_p\to \T_p$.
-For a point $p\in \Sigma$ the shape operator of a tangent vector $\vec w\in \T_p$ will be denoted by $S(\vec w)$ if it is clear from the context which base point $p$ and which surface we are working with;
+it is a linear operator $\Shape\:\T_p\to \T_p$.
+For a point $p\in \Sigma$ the shape operator of a tangent vector $\vec w\in \T_p$ will be denoted by $\Shape(\vec w)$ if it is clear from the context which base point $p$ and which surface we are working with;
 otherwise we may use notations 
-\[S_p(\vec w)\quad\text{or even}\quad S_p(\vec w)_\Sigma.\]
+\[\Shape_p(\vec w)\quad\text{or even}\quad \Shape_p(\vec w)_\Sigma.\]
 
 
-Since $M_p$ is symmetric, $S$ is \index{self-adjoint operator}\emph{self-adjoint}; that is
-\[\langle S(\vec v),\vec w\rangle=\langle \vec v,S(\vec w)\rangle\]
+Since $M_p$ is symmetric, $\Shape$ is \index{self-adjoint operator}\emph{self-adjoint}; that is
+\[\langle \Shape(\vec v),\vec w\rangle=\langle \vec v,\Shape(\vec w)\rangle\]
 for any $\vec v,\vec w\in\T_p$.
-Note also that principle curvatures of $\Sigma$ at $p$ are the eigenvalues of $S_p$ and the principle directions are the directions of principle vectors of $S_p$.
+Note also that principle curvatures of $\Sigma$ at $p$ are the eigenvalues of $\Shape_p$ and the principle directions are the directions of principle vectors of $\Shape_p$.
 
-The shape operator $S_p$ is defined using the Hessian matrix $M_p$, that depends on the choice of basis in $\T_p$;
-the following proposition implies in particular that $S_p$ does not depend on the choice of basis. 
+The shape operator $\Shape_p$ is defined using the Hessian matrix $M_p$, that depends on the choice of basis in $\T_p$;
+the following proposition implies in particular that $\Shape_p$ does not depend on the choice of basis. 
 
 \begin{thm}{Proposition}\label{prop:shape=D2}
 Let $p$ be a point on a smooth oriented surface $\Sigma$.
 Suppose $\Sigma$ is described locally as a graph $z=f(x,y)$ in a tangent-normal coordinates at $p$.
 Then
-\[\langle S(\vec v),\vec w\rangle=D_{\vec w}D_{\vec v}f(0,0)\]
+\[\langle \Shape(\vec v),\vec w\rangle=D_{\vec w}D_{\vec v}f(0,0)\]
 for any $\vec v,\vec w\in\T_p$.
-Moreover $S$ is unique linear operator $\T_p\to\T_p$ that satisfies the above condition.
+Moreover $\Shape$ is unique linear operator $\T_p\to\T_p$ that satisfies the above condition.
 \end{thm}
 
 Here $D_{\vec v}f$ denoted directional derivative of $f$ along vector $\vec v$;
@@ -212,7 +212,7 @@ D_{\vec w}D_{\vec v}f(0,0)&=a\cdot c\cdot\ell
 \\
 &=\langle M_p\cdot \vec v,\vec w\rangle=\langle \vec v,M_p\cdot \vec w\rangle=
 \\
-&=\langle S(\vec v),\vec w\rangle=\langle \vec v,S(\vec w)\rangle.
+&=\langle \Shape(\vec v),\vec w\rangle=\langle \vec v,\Shape(\vec w)\rangle.
 \end{align*}
 \qedsf
 
@@ -222,17 +222,17 @@ Suppose $\Sigma$ is described locally as a graph $z=f(x,y)$ in a tangent-normal 
 Denote by $\vec i$, $\vec j$ and $\vec k$ the standard basis in the $(x,y,z)$-coordinates.
 Then
 \begin{align*}
-\langle S(\vec i),\vec i\rangle&=\ell,
+\langle \Shape(\vec i),\vec i\rangle&=\ell,
 &
-\langle S(\vec i),\vec j\rangle&=m,
+\langle \Shape(\vec i),\vec j\rangle&=m,
 &
-\langle S(\vec i),\vec k\rangle&=0,
+\langle \Shape(\vec i),\vec k\rangle&=0,
 \\
-\langle S(\vec j),\vec i\rangle&=m,
+\langle \Shape(\vec j),\vec i\rangle&=m,
 &
-\langle S(\vec j),\vec j\rangle&=n,
+\langle \Shape(\vec j),\vec j\rangle&=n,
 &
-\langle S(\vec j),\vec k\rangle&=0,
+\langle \Shape(\vec j),\vec k\rangle&=0,
 \end{align*}
 where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$ defined on page \pageref{page:lmn}.
 \end{thm}
@@ -247,14 +247,14 @@ In the following proposition we use the notion of directional derivative defined
 
 \begin{thm}{Proposition}\label{prop:S=-D}
 Let $\Sigma$ be a smooth surface with unit normal field $\Norm$.
-Suppose $p\in \Sigma$ and $S\:\T_p\to\T_p$ is the shape operator at $p$.
+Suppose $p\in \Sigma$ and $\Shape\:\T_p\to\T_p$ is the shape operator at $p$.
 Then 
-\[S(\vec w)=-D_{\vec w}\Norm
+\[\Shape(\vec w)=-D_{\vec w}\Norm
 \eqlbl{eq:shape=-dNorm}\]
 for any $\vec w\in \T_p$.
 Equivalently 
-\[S=-d_p\Norm,\eqlbl{eq:shape=-L}\] 
-where $d_p\Norm$ denotes differential of the spherical map $\nu\:\Sigma\to\SS^2$ at $p$; that is, $d_p\Norm(\vec v)=(D_{\vec v}\Norm)(p)$.
+\[\Shape=-d_p\Norm,\eqlbl{eq:shape=-L}\] 
+where $d_p\Norm$ denotes differential of the spherical map $\nu\:\Sigma\to\mathbb{S}^2$ at $p$; that is, $d_p\Norm(\vec v)=(D_{\vec v}\Norm)(p)$.
 \end{thm}
 
 
@@ -359,19 +359,19 @@ Evaluating the above 6 identities at $(u,v)\z=(0,0)$, we get that
 &
 \langle -D_{\vec j}\nu,\vec k\rangle&=0,
 \end{align*}
-That is, $-D_{\vec i}\nu$ and $-D_{\vec j}\nu$ satisfy the same equalities as $S(\vec i)$ and $S(\vec j)$in \ref{cor:S(ij)}.
+That is, $-D_{\vec i}\nu$ and $-D_{\vec j}\nu$ satisfy the same equalities as $\Shape(\vec i)$ and $\Shape(\vec j)$in \ref{cor:S(ij)}.
 Since these equalities define $S$ completely, \ref{eq:shape=-dNorm} follows.
 \qeds
 
 \begin{thm}{Corollary}\label{cor:intK}
 Let $\Sigma$ be a smooth surface with orientation defined by unit normal field $\Norm$.
-Suppose the spherical map $\Norm\:\Sigma\to\SS^2$ is injective.
+Suppose the spherical map $\Norm\:\Sigma\to\mathbb{S}^2$ is injective.
 Then 
 \[\iint_\Sigma|K|=\area[\nu(\Sigma)].\]
 \end{thm}
 
 \parit{Proof.}
-Observe that the tangent planes $\T_p\Sigma=\T_{\Norm(p)}\SS^2$ are parallel for any $p\in\Sigma$.
+Observe that the tangent planes $\T_p\Sigma=\T_{\Norm(p)}\mathbb{S}^2$ are parallel for any $p\in\Sigma$.
 Indeed both of these planes are perpendicular to $\Norm(p)$. 
 
 
@@ -385,7 +385,7 @@ $(\begin{smallmatrix}
    &k_2
   \end{smallmatrix})$.
 
-Since by \ref{prop:S=-D}, $S_p=-d_p\Norm$, we have
+Since by \ref{prop:S=-D}, $\Shape_p=-d_p\Norm$, we have
 \[\jac_p\Norm=|\det(\begin{smallmatrix}
    k_1
    &0
@@ -401,16 +401,16 @@ By \ref{prop:surface-integral}, the statement follows.
 Suppose that $(u,v)\mapsto s(u,v)$ is a chart of a smooth surface $\Sigma$ with unit normal field $\Norm$.
 Show that 
 \begin{align*}
-\langle S(s_u), s_u\rangle 
+\langle \Shape(s_u), s_u\rangle 
 &=\langle s_{uu},\Norm\rangle,
 &
-\langle S(s_u), s_v\rangle 
+\langle \Shape(s_u), s_v\rangle 
 &=\langle s_{uv},\Norm\rangle,
 \\
-\langle S(s_v), s_u\rangle 
+\langle \Shape(s_v), s_u\rangle 
 &=\langle s_{uv},\Norm\rangle,
 &
-\langle S(s_v), s_v\rangle 
+\langle \Shape(s_v), s_v\rangle 
 &=\langle s_{vv},\Norm\rangle
 \end{align*}
 for any $(u,v)$.
@@ -421,7 +421,7 @@ for any $(u,v)$.
 Let $\Sigma$ be a smooth oriented surface with the unit normal field $\Norm$.
 Suppose that $\Sigma$ has unit principle curvatures at any point.
 
-\begin{subthm}{ex:normal-curvature=const:a} Show that $S_p(w)=w$ for any $p\in\Sigma$ and $w\in \T_p\Sigma$.
+\begin{subthm}{ex:normal-curvature=const:a} Show that $\Shape_p(w)=w$ for any $p\in\Sigma$ and $w\in \T_p\Sigma$.
 \end{subthm}
 
 \begin{subthm}{ex:normal-curvature=const:b}Show that $p+\Norm_p$ is constant; that is, the point $c=p+\Norm_p$ does not depend on $p\in\Sigma$.

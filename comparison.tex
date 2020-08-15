@@ -13,7 +13,9 @@ the minimizing geodesics $[xy]$, $[yz]$ and $[zx]$ are called its {}\emph{sides}
 the triangle itself is denoted by $[xyz]$.
 
 A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\RR^2$ is called \index{model triangle}\emph{model triangle} of the triangle $[xyz]$,
-briefly $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$, if its corresponding sides are equal;
+briefly $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$,
+\index{$\tilde\triangle$}
+if its corresponding sides are equal;
 that is,
 \[|\tilde x-\tilde y|_{\RR^2}=|x-y|_\Sigma,
 \quad
@@ -22,7 +24,7 @@ that is,
 |\tilde z-\tilde x|_{\RR^2}=|z-x|_\Sigma.
 \]
 
-A pair of minimizing geodesics $[xy]$ and $[xz]$ starting from one point $x$ is called \index{hinge}\emph{hinge} and denoted as $\hinge xyz$.
+A pair of minimizing geodesics $[xy]$ and $[xz]$ starting from one point $x$ is called \index{hinge}\emph{hinge} and denoted as $\hinge xyz$.\index{$\hinge xyz$}
 The angle between these geodesics at $x$ is denoted by $\measuredangle\hinge xyz$.
 The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in the model triangle $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$ is denoted by $\angk xyz$.
 
@@ -477,6 +479,14 @@ Assume a disc $\Delta$ lies in open smooth regular surface $\Sigma$ with nonnega
 
 Show that there is a convex plane polygon $\tilde x_1\dots \tilde x_n$ which sides are equal to the corresponding sides of $x_1\dots x_n$ and with internal angles at not bigger than in the corresponding angles  of $x_1\dots x_n$.
 \end{thm}
+
+\begin{thm}{Advanced exercise}\label{ex:dist-to-bry}
+Suppose that a closed geodesic $\delta$ bounds a disc $\Delta$ in a closed convex surface $\Sigma$.
+Given a point $p\in\Delta$, denote by $f(p)$ the distance from $p$ to $\delta$.
+Show that the function $f$ is concave;
+that is, for any geodesic $\gamma$ in $\Delta$ the function $t\mapsto f\circ\gamma(t)$ is concave.
+\end{thm}
+
 
 \section{Inheritance lemma}
 

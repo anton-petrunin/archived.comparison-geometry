@@ -3941,11 +3941,70 @@ dOt z.p0,z.p1,z.q0,z.q1,z.a,z.b,z.c;
 
 label.lft(btex $\gamma_1(0)$ etex, z.p0);
 label.urt(btex {\small $\gamma_1(1)=\delta(1)$} etex, z.p1);
-label.bot(btex $\gamma_2(1)$ etex, z.q1);
+label.lrt(btex $\gamma_2(1)$ etex, z.q1);
 label.llft(btex {\small $\gamma_2(0)=\delta(0)$} etex, z.q0);
 label.top(btex $\gamma_1(\tfrac12)$ etex, z.a);
 label.rt(btex $\delta(\tfrac12)$ etex, z.b);
 label.bot(btex $\gamma_2(\tfrac12)$ etex, z.c);
+endfig;
+
+beginfig(1680) 
+save u,p;
+path p[];
+u:=1.2cm;
+
+z.qq=origin;
+z.pp=(0,2)*u;
+z.xx=(.7,2.3)*u;
+z.yy=(x.xx,0);
+
+z.shift=(0,3.5)*u;
+
+z.p=z.pp+z.shift;
+z.q=z.qq+z.shift;
+z.x=z.xx+z.shift+(-1,2);
+z.y=z.yy+z.shift+(0,1);
+z.z=(z.yy xscaled -1)+z.shift+(0,1);
+
+draw ddarc(z.z,z.q,z.y)(-1,4) pensemibold;
+p0=z.p--z.q;
+draw p0;
+p1=-.5*z.x+1.5*z.p+(1,-2)..z.p..z.x..1.5*z.x-.5*z.p+(1,-2);
+draw p1 pensemibold;
+p2=z.q{z.x-z.q+(1,-2)}..z.x;
+draw p2;
+draw z.y{z.x-z.y+(4,0)}..z.x;
+
+labelarcsprof(z.xx, z.pp, z.qq, 6, 4, btex $\tilde\phi$ etex);
+labelarcsprof(z.xx, z.qq, z.pp, 18, 20, btex $\tilde\psi$ etex);
+p11=circle(origin,6) rotated 90 shifted z.p cutafter p1 cutbefore p0;
+draw p11;
+p22=circle(origin,18) shifted z.q cutafter p0 cutbefore p2;
+draw p22;
+
+draw ddline(z.qq,z.yy)(.8,.6) pensemibold;
+draw z.xx--z.qq--z.pp--z.xx--z.yy;
+
+dOt z.xx,z.yy,z.pp,z.qq,z.x,z.y,z.p,z.q;
+
+rimmark(z.p--z.q,z.pp--z.qq);
+rimmark2(subpath (1,2) of p1,z.pp--z.xx);
+rimmark3(p2,z.qq--z.xx);
+
+label.top(btex $\tilde x$ etex, z.xx);
+label.top(btex $\tilde p$ etex, z.pp);
+label.bot(btex $\tilde q$ etex, z.qq);
+label.bot(btex $\tilde y$ etex, z.yy);
+label.top(btex $x$ etex, z.x);
+label.top(btex $p$ etex, z.p);
+label.bot(btex $q$ etex, z.q);
+label.bot(btex $y$ etex, z.y);
+label.lrt(btex $\phi$ etex, z.p+(3,-3));
+label.urt(btex $\psi$ etex, z.q+(-2,18));
+label.llft(btex $\gamma$ etex,-.5*z.x+1.5*z.p+(1,-2));
+label(btex $\delta$ etex,z.z);
+label.lft(btex $\tilde\delta$ etex,(-.8)[z.qq,z.yy]);
+
 endfig;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

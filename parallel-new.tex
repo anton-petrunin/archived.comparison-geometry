@@ -70,7 +70,7 @@ From the Exercise~\ref{ex:parallel}, it follows that parallel transport $\iota_\
 In general, the parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ depends on the choice of $\gamma$; that is, for another curve $\gamma_1$ connecting $p$ to $q$ in $\Sigma$, the parallel transport $\iota_{\gamma_1}\:\T_p\to\T_q$ might be different.
 
 Suppose that $\gamma_1$ and $\gamma_2$ are two smooth curves in smooth surfaces $\Sigma_1$ and $\Sigma_2$.
-Denote by $\Norm_i\:\Sigma_i\to\SS^2$ the Gauss maps of $\Sigma_1$ and $\Sigma_2$.
+Denote by $\Norm_i\:\Sigma_i\to\mathbb{S}^2$ the Gauss maps of $\Sigma_1$ and $\Sigma_2$.
 If $\Norm_1\circ\gamma_1(t)= \Norm_2\circ\gamma_2(t)$ for any $t$, then we say that curves $\gamma_1$ and $\gamma_2$ have {}\emph{identical spherical images} in $\Sigma_1$ and $\Sigma_2$ respectively.
 
 In this case tangent plane $\T_{\gamma_1(t)}\Sigma_1$ is parallel to $\T_{\gamma_2(t)}\Sigma_2$ for any $t$ and so we can identify $\T_{\gamma_1(t)}\Sigma_1$ and $\T_{\gamma_2(t)}\Sigma_2$.
@@ -113,7 +113,7 @@ Each $\phi_i$ does not increase the magnitude of a vector and neither the compos
 It is straightforward to see that if the partition is sufficiently fine, then it is almost isometry; in particular it almost preserves the magnitudes of tangent vectors.
 
 \begin{thm}{Exercise}\label{ex:holonomy=not0}
-Construct a loop $\gamma$ in $\SS^2$ with base at $p$ such that the parallel transport $\iota_\gamma\:\T_p\to\T_p$ is not the identity map.
+Construct a loop $\gamma$ in $\mathbb{S}^2$ with base at $p$ such that the parallel transport $\iota_\gamma\:\T_p\to\T_p$ is not the identity map.
 \end{thm}
 
 \section{Geodesic curvature}
@@ -124,7 +124,7 @@ Let us introduce the so called \index{geodesic curvature}\emph{geodesic curvatur
 
 %???PIC
 
-Let $\Norm\:\Sigma\to \SS^2$ be the spherical map that defines the orientation on $\Sigma$.
+Let $\Norm\:\Sigma\to \mathbb{S}^2$ be the spherical map that defines the orientation on $\Sigma$.
 Without loss of generality we can assume that $\gamma$ has unit speed.
 Then for any $t$ the vectors $\Norm(t)=\Norm(\gamma(t))_\Sigma$ and the velocity vector $\tan(t)=\gamma'(t)$ are unit vectors that are normal to each other.
 Denote by $\mu(t)$ the unit vector that is normal to both $\Norm(t)$ and $\tan(t)$ that points to the left from $\gamma$; that is, $\mu=\Norm\times \tan$.
@@ -241,7 +241,7 @@ that is, the length of $\gamma$ cannot exceed the length of the unit circle in t
 
 \begin{thm}{Exercise}\label{ex:geodesic-half}
 Let $\gamma$ be a closed simple geodesic on a smooth closed surface $\Sigma$ with positive Gauss curvature.
-Assume $\Norm\:\Sigma\to\SS^2$ is a Gauss map.
+Assume $\Norm\:\Sigma\to\mathbb{S}^2$ is a Gauss map.
 Show that the curve $\alpha=\Norm\circ\gamma$ divides the sphere into regions of equal area.
 
 Conclude that $\length \alpha\ge 2\cdot\pi.$
@@ -397,9 +397,9 @@ We omit the proof of the latter statement, but it can be done along the same lin
 
 
 \begin{thm}{Exercise}\label{ex:half-sphere-total-curvature}
-Assume $\gamma$ is a simple piecewise smooth loop on $\SS^2$ that divides its area into two equal parts.
+Assume $\gamma$ is a simple piecewise smooth loop on $\mathbb{S}^2$ that divides its area into two equal parts.
 Denote by $p$ the base point of $\gamma$.
-Show that the parallel transport $\iota_\gamma\:\T_p\SS^2\to\T_p\SS^2$ is the identity map.
+Show that the parallel transport $\iota_\gamma\:\T_p\mathbb{S}^2\to\T_p\mathbb{S}^2$ is the identity map.
 \end{thm}
 
 
@@ -424,13 +424,13 @@ After that we measure the angle of rotation.
 Then the resulting angles in these two experiments is the same. 
 
 
-Consider a surface $\Sigma$ with a Gauss map $\Norm\:\Sigma\to \SS^2$.
-Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\Norm(p)}\SS^2$; so we can identify these tangent spaces.
+Consider a surface $\Sigma$ with a Gauss map $\Norm\:\Sigma\to \mathbb{S}^2$.
+Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\Norm(p)}\mathbb{S}^2$; so we can identify these tangent spaces.
 From the experiments above, we get the following:
 
 \begin{thm}{Lemma}\label{lem:spherical-image}
-Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\Norm\:\Sigma\to \SS^2$.
-Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\Norm\circ\alpha$ in $\SS^2$.
+Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\Norm\:\Sigma\to \mathbb{S}^2$.
+Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\Norm\circ\alpha$ in $\mathbb{S}^2$.
 \end{thm}
 
 \parit{Proof of partial case of \ref{thm:gb}.}
@@ -446,10 +446,10 @@ Consider the parallel translation $\iota\:\T_p\to\T_p$ along $\alpha$.
 According to \ref{prop:pt+tgc}, $\iota$ is a clockwise rotation by angle $\tgc{\alpha}_\Sigma$.
 
 Set $\beta=\Norm\circ\alpha$.
-According to \ref{lem:spherical-image}, $\iota$ is also parallel translation along $\beta$ in $\SS^2$.
-In particular $\iota$ is a clockwise rotation by angle $\tgc{\beta}_{\SS^2}$.
+According to \ref{lem:spherical-image}, $\iota$ is also parallel translation along $\beta$ in $\mathbb{S}^2$.
+In particular $\iota$ is a clockwise rotation by angle $\tgc{\beta}_{\mathbb{S}^2}$.
 By \ref{prop:area-of-spher-polygon} 
-\[\GB(\Norm(\Delta))=\tgc{\beta}_{\SS^2}+\area[\Norm(\Delta)]-2\cdot \pi=0.\]
+\[\GB(\Norm(\Delta))=\tgc{\beta}_{\mathbb{S}^2}+\area[\Norm(\Delta)]-2\cdot \pi=0.\]
 Therefore 
 $\iota$ is a counterclockwise rotation by $\area[\Norm(\Delta)]$
 

@@ -239,9 +239,9 @@ The proof is identical to the proof of the standard Crofton formula.
 To find the coefficient one has to find average length of projection of unit vector to a line.
 Which can be done by integration.
 \begin{align*}
-\frac1{k_a}&=\frac{1}{\area \SS^2}\cdot\iint_{\SS^2} |x|;
+\frac1{k_a}&=\frac{1}{\area \mathbb{S}^2}\cdot\iint_{\mathbb{S}^2} |x|;
 &
-\frac1{k_b}&=\frac{1}{\area \SS^2}\cdot\iint_{\SS^2} \sqrt{1-x^2}.
+\frac1{k_b}&=\frac{1}{\area \mathbb{S}^2}\cdot\iint_{\mathbb{S}^2} \sqrt{1-x^2}.
 \end{align*}
 The answers are $k_a=2$ and $k_b=\tfrac4\pi$.
 
@@ -271,7 +271,7 @@ Show that this property is sufficient to conclude that the curve does not lie in
 
 \parbf{\ref{ex:bisection-of-S2}.}
 Assume contrary, then by the hemisphere lemma (\ref{lem:hemisphere}) $\gamma$ lies in an open hemisphere.
-In particular it cannot divide $\SS^2$ into two regions of equal area --- a contradiction.
+In particular it cannot divide $\mathbb{S}^2$ into two regions of equal area --- a contradiction.
 
 \parbf{\ref{ex:flaw}.}
 The very first sentence is wrong --- it is {}\emph{not} sufficient to show that diameter iis at most 2.
@@ -786,7 +786,7 @@ It remains to apply the Moser trick to the constructed vector field.
 \parit{\ref{SHORT.ex:star-shaped-disc:smooth}.}
 Without loss of generality we can assume that the origin belongs to both $\Sigma$ and $\Theta$.
 Observe that the boundary curves of $\Sigma$ and $\Theta$ can be written in polar coordinates as 
-$(\theta, f(\theta)$ and $(\theta, g(\theta)$ for smooth functions $f,g\:\SS^1\to\RR$.
+$(\theta, f(\theta)$ and $(\theta, g(\theta)$ for smooth functions $f,g\:\mathbb{S}^1\to\RR$.
 
 
 
@@ -797,7 +797,7 @@ in fact such vector field can be found among radial fields
 
 
 Observe that the boundary curves can be written in polar coordinates as 
-$(\theta, \rho_i(\theta)$ for smooth functions $\rho_i\:\SS^1\to\RR$.
+$(\theta, \rho_i(\theta)$ for smooth functions $\rho_i\:\mathbb{S}^1\to\RR$.
 
 ???
 
@@ -1055,7 +1055,7 @@ By \ref{ex:convex-proper-plane:d}, $\Sigma$ is parameterized by an open convex p
 It remains to show that $\Omega$ can parameterize the whole plane.
 
 We may assume that the origin of the plane leis in $\Omega$.
-Show that in this case the boundary of $\Omega$ can be written in polar coordinates as $(\theta,f(\theta))$ where $f\:\SS^1\to\RR$ is a positive continuous function.
+Show that in this case the boundary of $\Omega$ can be written in polar coordinates as $(\theta,f(\theta))$ where $f\:\mathbb{S}^1\to\RR$ is a positive continuous function.
 Then homeomorphism to the plane can be described in polar coordinate by changing only the radial coordinate;
 for example as 
 $(\theta,r)\mapsto (\theta,
@@ -1125,7 +1125,7 @@ and the derivative changes sign if $w$ changes the side of $\bar\ell_t$.
 
 Denote by $\bar\gamma$ the projection of $\gamma$ to the $(x, y)$-plane.
 If $\bar\gamma$ is star shaped with respect to a point $w$, then $w$ cannot cross $\bar\ell_t$.
-Therefore the function $t\mapsto h_t(w)$ is monotone on $\SS^1$.
+Therefore the function $t\mapsto h_t(w)$ is monotone on $\mathbb{S}^1$.
 Observing that this function cannot be constant, we arrive to a contradiction.
 
 \parit{Soruse:} The problem is discuss by Dmitri Panov \cite{panov-curves}.
@@ -1446,6 +1446,75 @@ Apply \ref{thm:comp:toponogov}.
 \parbf{\ref{ex:midpoints}.}
 
 \parbf{\ref{ex:convex-polyhon}.}
+
+\begin{wrapfigure}[19]{r}{27 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1680}
+\vskip8mm
+\end{wrapfigure}
+
+\parbf{\ref{ex:dist-to-bry}.}
+Suppose $\gamma$ is a unit-speed geodesic in $\Delta$ and $\gamma(0)=p$. 
+Denote by $q$ a point on $\delta$ that minimize the distance to $p$.
+Denote by $\phi$ the angle between $\gamma$ and $[pq]$ at $p$.
+Note that it is sufficient to show that 
+\[f\circ\gamma(t)\le |p-q|_\Sigma+t\cdot\cos\phi\eqlbl{eq:dist<cosphi}\]
+for $t$ sufficiently close to $0$.
+
+Chose small $t>0$ and set $x\z=\gamma(t)$.
+Consider a model triangle $[\tilde p\tilde q\tilde x]\z=\tilde\triangle(pqx)$.
+Let $\tilde\delta$ be the line thru $\tilde q$ perpendicular to $[\tilde p\tilde q]$.
+Denote by $\tilde y$ the orthogonal projection of $\tilde x$ to $\tilde\delta$.
+
+By comparison we have that 
+\begin{align*}
+\phi
+&\df\measuredangle\hinge qpx
+\ge \angk qpx
+\mathrel{=:}\tilde\phi
+\\
+\psi&\df
+\measuredangle\hinge pqx
+\ge 
+\angk pqx
+\mathrel{=:}\tilde \psi
+\end{align*}
+
+
+Since $t=|\tilde p-\tilde x|_{\RR^2}$ is small, so is the distances $|\tilde q-\tilde y|_{\RR^2}$.
+Therefore we can choose a point $y$ on $\delta$ such that $|q-y|_\Sigma=|\tilde q-\tilde y|_{\RR^2}$;
+moreover we can assume that $y$ is chosen so that we have $\measuredangle\hinge qxy= \tfrac\pi2-\psi$.
+
+By construction and comparison, we have 
+\begin{align*}
+\measuredangle\hinge {\tilde q}{\tilde x}{\tilde y}&=\tfrac\pi2-\tilde\psi
+\ge
+\\
+&\ge
+\tfrac\pi2-\psi
+=
+\\
+&=
+\measuredangle\hinge q x y
+\ge 
+\\
+&\ge \angk q x y.
+\end{align*}
+Therefore $|x-y|_\Sigma\le |\tilde x-\tilde y|_{\RR}$.
+Since $\tilde\phi\le\phi$, we get that
+\begin{align*}
+f\circ\gamma(t)&\le |x-y|_\Sigma\le 
+\\
+&\le|\tilde x-\tilde y|_{\RR}=
+\\
+&=|p-q|_\Sigma+t\cdot\cos\tilde\phi
+\le
+\\
+&\le|p-q|_\Sigma+t\cdot\cos\phi.
+\end{align*}
+That is, we proved \ref{eq:dist<cosphi} for small $t>0$.
+The case $t<0$ can be done along the same lines. 
 
 \parbf{\ref{ex:convex-dist}.}
 It is sufficient to prove the Jensen inequality;

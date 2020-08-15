@@ -30,14 +30,14 @@ The domain $\Omega$ is the projection of $\Sigma$ to the $(x,y)$-plane.
 This projection is injective and by the inverse function theorem, it maps open sets in $\Sigma$ to open sets in the plane;
 hence $\Omega$ is open.
 
-It follows that the outer normal vectors to $\Sigma$ at any point, points to the south hemisphere $\SS^2_-=\set{(x,y,z)\in\SS^2}{z< 0}$.
-Therefore the area of the spherical image of $\Sigma$ is at most $\area\SS^2_-= 2\cdot\pi$.
+It follows that the outer normal vectors to $\Sigma$ at any point, points to the south hemisphere $\mathbb{S}^2_-=\set{(x,y,z)\in\mathbb{S}^2}{z< 0}$.
+Therefore the area of the spherical image of $\Sigma$ is at most $\area\mathbb{S}^2_-= 2\cdot\pi$.
 The area of this image is the integral of the Gauss curvature along $\Sigma$.
 That is,
 \begin{align*}
 \iint_{\Sigma}K&=\area[\Norm(\Sigma)]\le 
 \\
-&\le \area\SS^2_-=
+&\le \area\mathbb{S}^2_-=
 \\
 &=2\cdot\pi,
 \end{align*}
@@ -180,7 +180,7 @@ Consider the following cases:
 
 \begin{thm}{Lemma}\label{lem:gauss=sphere}
 Assume $\Sigma$ is a closed smooth surface with positive Gauss curvature.
-Then $\Sigma$ is a smooth sphere; that is, $\Sigma$ admits a smooth regular parametrization by $\SS^2$.
+Then $\Sigma$ is a smooth sphere; that is, $\Sigma$ admits a smooth regular parametrization by $\mathbb{S}^2$.
 \end{thm}
 
 \begin{wrapfigure}{O}{33 mm}
@@ -194,14 +194,14 @@ Then $\Sigma$ is a smooth sphere; that is, $\Sigma$ admits a smooth regular para
 Without loss of generality we can assume that the origin lies in the interior of the convex region $R$ bounded by $\Sigma$.
 
 By convexity of $R$, any half-line starting at the origin intersects $\Sigma$ at a single point;
-that is, there is a positive function $\rho\:\SS^2\to\RR$ such that $\Sigma$ is formed by points $q=\rho(\xi)\cdot \xi$ for $\xi\in \SS^2$.
+that is, there is a positive function $\rho\:\mathbb{S}^2\to\RR$ such that $\Sigma$ is formed by points $q=\rho(\xi)\cdot \xi$ for $\xi\in \mathbb{S}^2$.
 
 Let us show that $\rho$ is a smooth function.
 Fix a point $p=(x_p,y_p,z_p)$ on $\Sigma$.
 Consider a local implicit description of $\Sigma$ at $p$ as a solution of equation $h(x,y,z)=0$ with nonvanishing gradient;
 so $h(p)=0$.
 Note that for any point $q$ in a neighborhood of $p$, we have that 
-\[h(q)=0 \iff q\in \Sigma \iff q=\rho(\xi)\cdot\xi\] for some $\xi\in \SS^2$.
+\[h(q)=0 \iff q\in \Sigma \iff q=\rho(\xi)\cdot\xi\] for some $\xi\in \mathbb{S}^2$.
 In other words $h$ defines implicitly $\rho$ as in the implicit function theorem.
 
 
@@ -211,7 +211,7 @@ Since the origin lies in the interior of $R$, it cannot lie on $\T_p$;
 that is, $\langle\nabla_p f,p \rangle\ne0$;
 or equivalently $D_\eta h(p)\ne 0$, where $\eta=\tfrac{p}{|p|}$ is the unit vector in the direction of $p$ and $D$ denotes the directional derivative.
 
-Fix a $(u,v)$ chart $s$ on $\SS^2$ in a neighborhood of $\eta$;
+Fix a $(u,v)$ chart $s$ on $\mathbb{S}^2$ in a neighborhood of $\eta$;
 note that the map 
 \[S\:(u,v,w)\mapsto w\cdot s(u,v)\] 
 is smooth and regular for $w>0$; that is, the vectors 
@@ -219,7 +219,7 @@ is smooth and regular for $w>0$; that is, the vectors
 Note that the function $h\circ S$ is smooth and
 $\tfrac{\partial h\circ S}{\partial \rho}(p)=D_\eta h(p)\ne 0$.
 Applying implicit function theorem, we get that $\rho$ is smooth in a neighborhood of $\eta$;
-since $\eta$ is arbitrary, $\rho$ is smooth on whole $\SS^2$.
+since $\eta$ is arbitrary, $\rho$ is smooth on whole $\mathbb{S}^2$.
 \qeds
 
 
@@ -606,7 +606,7 @@ Despite the simplicity of the formulation, the proof is annoyingly difficult.
 
 \begin{thm}{Theorem}\label{thm:spherical-image}
 Let $\Sigma$ be an oriented proper surface without boundary and with positive Gauss curvature.
-Then the spherical map $\Norm\:\Sigma\to\SS^2$ is injective and
+Then the spherical map $\Norm\:\Sigma\to\mathbb{S}^2$ is injective and
 \[\int_R K=\area[\Norm(R)]\]
 for any region $R$ in $\Sigma$. %??? measurable
 \end{thm}
@@ -1063,7 +1063,7 @@ Apply the formula for each triangle with vertex at the north pole and base at ea
 Sum the resulting identities taking each with a sign: plus if the triangle lies on the left from the edge and minus if the triangle lies on the right from edge.
 
 Choosing a different pole will change all the coefficients by the same number.
-So the resulting formula holds only modulo the area of $\SS^2$, which is $4\cdot \pi$ --- this will not destroy identity modulo $2\cdot\pi$.
+So the resulting formula holds only modulo the area of $\mathbb{S}^2$, which is $4\cdot \pi$ --- this will not destroy identity modulo $2\cdot\pi$.
 
 Furthermore, by approximation, the signed-area formula holds for any reasonable curve, say piecewise smooth regular curves on the sphere.
 Summarizing, we hope the discussion above convinced the reader that the following statement holds.
@@ -1120,7 +1120,7 @@ For example the disc $\DD$ has Euler's characteristic $1$;
 it can be divided into discs many ways, 
 but each time we have $v-e=f=1$.
 The latter agrees with \ref{eq:g-b} and \ref{eq:g-b-euler}.
-It is useful to know that $\chi(\SS^2)=2$; $\chi(\TT^2)=0$ where $\TT^2$ denotes torus; 
+It is useful to know that $\chi(\mathbb{S}^2)=2$; $\chi(\TT^2)=0$ where $\TT^2$ denotes torus; 
 $\chi(S_g)=2-2\cdot g$, where $S_g$ is a surface of genus $g$;
 that is, sphere with $g$ handles.
 
@@ -1147,13 +1147,13 @@ After that we measure the angle of rotation.
 \end{enumerate}
 Then the resulting angle in these two experiments is the same. 
 
-Consider a oriented smooth surface $\Sigma$ with the spherical; map $\Norm\:\Sigma\to \SS^2$.
-Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\Norm(p)}\SS^2$; so we can identify these tangent spaces.
+Consider a oriented smooth surface $\Sigma$ with the spherical; map $\Norm\:\Sigma\to \mathbb{S}^2$.
+Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\Norm(p)}\mathbb{S}^2$; so we can identify these tangent spaces.
 From the experiments above, we get the following:
 
 \begin{thm}{Lemma}\label{lem:spherical-image}
-Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\Norm\:\Sigma\to \SS^2$.
-Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\Norm\circ\alpha$ in $\SS^2$.
+Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\Norm\:\Sigma\to \mathbb{S}^2$.
+Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\Norm\circ\alpha$ in $\mathbb{S}^2$.
 \end{thm}
 
 \begin{thm}{Exercise}
@@ -1170,16 +1170,16 @@ Assume $p$ is the point where $\alpha$ starts and ends.
 
 Set $\beta=\Norm\circ\gamma$ and $q=\Norm(p)$, so the spherical curve $\beta$ starts and ends at $q$.
 
-By Lemma \ref{lem:spherical-image} the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta$ in $\SS^2$.
+By Lemma \ref{lem:spherical-image} the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta$ in $\mathbb{S}^2$.
 By Proposition~\ref{prop:pt+tgc}, it follows that 
-\[\tgc{\alpha,\Sigma}=\tgc{\beta,\SS^2} \pmod{2\cdot \pi}.\]
+\[\tgc{\alpha,\Sigma}=\tgc{\beta,\mathbb{S}^2} \pmod{2\cdot \pi}.\]
 
 By Proposition~\ref{prop:spherical-gb},
-\[\tgc{\beta,\SS^2}+\area\beta=0\pmod{2\cdot \pi}.\]
+\[\tgc{\beta,\mathbb{S}^2}+\area\beta=0\pmod{2\cdot \pi}.\]
 Therefore 
 \[\tgc{\alpha,\Sigma}+\area\beta=0\pmod{2\cdot \pi}.\]
 
-Recall that the shape  operator $s_p\: T_p\Sigma \to \T_{\Norm(p)}\SS^2=T_p\Sigma$ is the Jacobian of the Gauss map $\Norm\:\Sigma\to \SS^2$ at the point $p$.
+Recall that the shape  operator $s_p\: T_p\Sigma \to \T_{\Norm(p)}\mathbb{S}^2=T_p\Sigma$ is the Jacobian of the Gauss map $\Norm\:\Sigma\to \mathbb{S}^2$ at the point $p$.
 In appropriately chosen coordinates in $T_p$, the shape operator can be presented by a diagonal matrix 
 $\left(\begin{smallmatrix}
 k_1&0
@@ -1188,7 +1188,7 @@ k_1&0
 \end{smallmatrix}\right)$, where $k_1$ and $k_2$ are the principle curvatures at $p$.
 Therefore, the determinant of $s_p$ is the Gauss curvature at~$p$.
 
-If $\Sigma$ is a closed surface with positive Gauss curvature, then the Gauss map $\Norm\:\Sigma\to\SS^2$ is a smooth bijection.
+If $\Sigma$ is a closed surface with positive Gauss curvature, then the Gauss map $\Norm\:\Sigma\to\mathbb{S}^2$ is a smooth bijection.
 Therefore 
 \[\iint_\Delta G=\area[\Norm(\Delta)].\]
 
@@ -1282,7 +1282,7 @@ Apply the formula for each triangle with vertex at the north pole and base at ea
 Sum the resulting identities taking each with a sign: plus if the triangle lies on the left from the edge and minus if the triangle lies on the right from edge.
 
 Choosing a different pole will change all the coefficients by the same number.
-So the resulting formula holds only modulo the area of $\SS^2$, which is $4\cdot \pi$ --- this will not destroy identity modulo $2\cdot\pi$.
+So the resulting formula holds only modulo the area of $\mathbb{S}^2$, which is $4\cdot \pi$ --- this will not destroy identity modulo $2\cdot\pi$.
 
 Furthermore, by approximation, the signed-area formula holds for any reasonable curve, say piecewise smooth regular curves on the sphere.
 Summarizing, we hope the discussion above convinced the reader that the following statement holds.
@@ -1339,7 +1339,7 @@ For example the disc $\DD$ has Euler's characteristic $1$;
 it can be divided into discs many ways, 
 but each time we have $v-e=f=1$.
 The latter agrees with \ref{eq:g-b} and \ref{eq:g-b-euler}.
-It is useful to know that $\chi(\SS^2)=2$; $\chi(\TT^2)=0$ where $\TT^2$ denotes torus; 
+It is useful to know that $\chi(\mathbb{S}^2)=2$; $\chi(\TT^2)=0$ where $\TT^2$ denotes torus; 
 $\chi( S_g)=2-2\cdot g$, where $S_g$ is a surface of genus $g$; that is, sphere with $g$ handles.
 
 \parit{(2).} Note that if $\Sigma$ is a plane, then a geodesic in $\Sigma$ are formed by line segments.
@@ -1365,13 +1365,13 @@ After that we measure the angle of rotation.
 \end{enumerate}
 Then the resulting angle in these two experiments is the same. 
 
-Consider a surface $\Sigma$ with a Gauss map $\nu\:\Sigma\to \SS^2$.
-Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\nu(p)}\SS^2$; so we can identify these tangent spaces.
+Consider a surface $\Sigma$ with a Gauss map $\nu\:\Sigma\to \mathbb{S}^2$.
+Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\nu(p)}\mathbb{S}^2$; so we can identify these tangent spaces.
 From the experiments above, we get the following:
 
 \begin{thm}{Lemma}\label{lem:spherical-image}
-Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\nu\:\Sigma\to \SS^2$.
-Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\nu\circ\alpha$ in $\SS^2$.
+Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\nu\:\Sigma\to \mathbb{S}^2$.
+Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\nu\circ\alpha$ in $\mathbb{S}^2$.
 \end{thm}
 
 \begin{thm}{Exercise}
@@ -1388,16 +1388,16 @@ Assume $p$ is the point where $\alpha$ starts and ends.
 
 Set $\beta=\nu\circ\gamma$ and $q=\nu(p)$, so the spherical curve $\beta$ starts and ends at $q$.
 
-By Lemma \ref{lem:spherical-image} the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta$ in $\SS^2$.
+By Lemma \ref{lem:spherical-image} the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta$ in $\mathbb{S}^2$.
 By Proposition~\ref{prop:pt+tgc}, it follows that 
-\[\tgc{\alpha,\Sigma}=\tgc{\beta,\SS^2} \pmod{2\cdot \pi}.\]
+\[\tgc{\alpha,\Sigma}=\tgc{\beta,\mathbb{S}^2} \pmod{2\cdot \pi}.\]
 
 By Proposition~\ref{prop:spherical-gb},
-\[\tgc{\beta,\SS^2}+\area\beta=0\pmod{2\cdot \pi}.\]
+\[\tgc{\beta,\mathbb{S}^2}+\area\beta=0\pmod{2\cdot \pi}.\]
 Therefore 
 \[\tgc{\alpha,\Sigma}+\area\beta=0\pmod{2\cdot \pi}.\]
 
-Recall that the shape  operator $s_p\: T_p\Sigma \to \T_{\nu(p)}\SS^2=T_p\Sigma$ is the Jacobian of the Gauss map $\nu\:\Sigma\to \SS^2$ at the point $p$.
+Recall that the shape  operator $s_p\: T_p\Sigma \to \T_{\nu(p)}\mathbb{S}^2=T_p\Sigma$ is the Jacobian of the Gauss map $\nu\:\Sigma\to \mathbb{S}^2$ at the point $p$.
 In appropriately chosen coordinates in $T_p$, the shape operator can be presented by a diagonal matrix 
 $\left(\begin{smallmatrix}
 k_1&0
@@ -1406,7 +1406,7 @@ k_1&0
 \end{smallmatrix}\right)$, where $k_1$ and $k_2$ are the principle curvatures at $p$.
 Therefore, the determinant of $s_p$ is the Gauss curvature at~$p$.
 
-If $\Sigma$ is a closed surface with positive Gauss curvature, then the Gauss map $\nu\:\Sigma\to\SS^2$ is a smooth bijection.
+If $\Sigma$ is a closed surface with positive Gauss curvature, then the Gauss map $\nu\:\Sigma\to\mathbb{S}^2$ is a smooth bijection.
 Therefore 
 \[\iint_\Delta K=\area[\nu(\Delta)].\]
 
@@ -1447,7 +1447,7 @@ that is, the length of $\gamma$ can not exceed the length of the unit circle in 
 
 \begin{thm}{Exercise}
 Let $\gamma$ be a closed simple geodesic on a smooth convex closed surface $\Sigma$.
-Assume $\nu\:\Sigma\to\SS^2$ is a Gauss map.
+Assume $\nu\:\Sigma\to\mathbb{S}^2$ is a Gauss map.
 Show that the curve $\alpha=\nu\circ\gamma$ divides the sphere into regions of equal area.
 
 Conclude that
@@ -1499,7 +1499,7 @@ Suppose $\gamma(t)=(x(t),y(t))$ is a smooth unit-curve in the plane such that $y
 Let $\Sigma_\gamma$ be the surface of revolution of $\gamma$ around the $x$-axis.
 Show that a small open domain in $\Sigma_\gamma$ admits a smooth length-pereserving map to the unit sphere.
 
-Conclude that any round disc $\Delta$ in $\SS^2$ of intrinsic radius smaller than $\tfrac\pi2$ admits a smooth length preserving deformation; that is, there is one parameter family of surfaces with boundary $\Delta_t$, such that $\Delta_0=\Delta$ and $\Delta_t$ is not congruent to $\Delta_0$ for any $t\ne0$.\footnote{In fact any disc in $\SS^2$ of intrinsic radius smaller than $\pi$ admits a smooth length preserving deformation. %???REF
+Conclude that any round disc $\Delta$ in $\mathbb{S}^2$ of intrinsic radius smaller than $\tfrac\pi2$ admits a smooth length preserving deformation; that is, there is one parameter family of surfaces with boundary $\Delta_t$, such that $\Delta_0=\Delta$ and $\Delta_t$ is not congruent to $\Delta_0$ for any $t\ne0$.\footnote{In fact any disc in $\mathbb{S}^2$ of intrinsic radius smaller than $\pi$ admits a smooth length preserving deformation. %???REF
 }
 \end{thm}
 
@@ -1608,14 +1608,14 @@ The domain $\Omega$ is the projection of $\Sigma$ to the $(x,y)$-plane.
 This projection is injective and by the inverse function theorem, it maps open sets in $\Sigma$ to open sets in the plane;
 hence $\Omega$ is open.
 
-It follows that the outer normal vectors to $\Sigma$ at any point, points to the south hemisphere $\SS^2_-=\set{(x,y,z)\in\SS^2}{z< 0}$.
-Therefore the area of the spherical image of $\Sigma$ is at most $\area\SS^2_-= 2\cdot\pi$.
+It follows that the outer normal vectors to $\Sigma$ at any point, points to the south hemisphere $\mathbb{S}^2_-=\set{(x,y,z)\in\mathbb{S}^2}{z< 0}$.
+Therefore the area of the spherical image of $\Sigma$ is at most $\area\mathbb{S}^2_-= 2\cdot\pi$.
 The area of this image is the integral of the Gauss curvature along $\Sigma$.
 That is,
 \begin{align*}
 \iint_{\Sigma}K&=\area[\nu(\Sigma)]\le 
 \\
-&\le \area\SS^2_-=
+&\le \area\mathbb{S}^2_-=
 \\
 &=2\cdot\pi,
 \end{align*}
@@ -1723,7 +1723,7 @@ Suppose $\gamma(t)=(x(t),y(t))$ is a smooth unit-speed curve in the plane such t
 Let $\Sigma_\gamma$ be the surface of revolution of $\gamma$ around the $x$-axis.
 Show that a small open domain in $\Sigma_\gamma$ admits a smooth length-pereserving map to the unit sphere.
 
-Conclude that any round disc $\Delta$ in $\SS^2$ of intrinsic radius smaller than $\tfrac\pi2$ admits a smooth length preserving deformation; that is, there is one parameter family of surfaces with boundary $\Delta_t$, such that $\Delta_0=\Delta$ and $\Delta_t$ is not congruent to $\Delta_0$ for any $t\ne0$.\footnote{In fact any disc in $\SS^2$ of intrinsic radius smaller than $\pi$ admits a smooth length preserving deformation. %???REF
+Conclude that any round disc $\Delta$ in $\mathbb{S}^2$ of intrinsic radius smaller than $\tfrac\pi2$ admits a smooth length preserving deformation; that is, there is one parameter family of surfaces with boundary $\Delta_t$, such that $\Delta_0=\Delta$ and $\Delta_t$ is not congruent to $\Delta_0$ for any $t\ne0$.\footnote{In fact any disc in $\mathbb{S}^2$ of intrinsic radius smaller than $\pi$ admits a smooth length preserving deformation. %???REF
 }
 \end{thm}
 
@@ -2125,26 +2125,26 @@ The unit normal described in the proof of the claim will be called \emph{outer n
 
 \begin{thm}{Lemma}\label{lem:gauss-inverse}
 Assume $\Sigma$ is a closed connected immersed surface with positive Gauss curvature.
-Then the Gauss map $\Norm\:\Sigma \to \SS^2$ has a smooth regular inverse;
+Then the Gauss map $\Norm\:\Sigma \to \mathbb{S}^2$ has a smooth regular inverse;
 in particular, $\Sigma$ is a sphere.
 \end{thm}
 
 This lemma follows from two facts:
 (1) if Gauss curvature does not vanish, then the  Gauss map is regular, in particular this map has a local inverse at each point
 and
-(2) the sphere $\SS^2$ is \emph{simply connected};
-that is, $\SS^2$ is connected any closed curve in $\SS^2$ can be deformed continuously into a trivial curve that stays at one point.
+(2) the sphere $\mathbb{S}^2$ is \emph{simply connected};
+that is, $\mathbb{S}^2$ is connected any closed curve in $\mathbb{S}^2$ can be deformed continuously into a trivial curve that stays at one point.
 The proof is standard in topology, we hope that the statement is intuitively obvious.
-The reader might be able to reinvent the theory by trying to prove that if the map $\phi\:\SS^2\to\SS^2$ is smooth and regular, then it has an inverse.
+The reader might be able to reinvent the theory by trying to prove that if the map $\phi\:\mathbb{S}^2\to\mathbb{S}^2$ is smooth and regular, then it has an inverse.
 
 \parbf{Equidistant surfaces.}
-Assume $\Norm\:\Sigma\to \SS^2$ is a Gauss map of a smooth surface $\Sigma$.
+Assume $\Norm\:\Sigma\to \mathbb{S}^2$ is a Gauss map of a smooth surface $\Sigma$.
 Fix a real number $R$ and consider the map $h_R\:\Sigma\z\to\RR^3$ defined by $h_R\:p\mapsto p+R\cdot\Norm_p$.
 The map $h_R$ describe the so called \emph{equidistant surface};
 it is smooth by definition, but in general it does not have to be regular.
 
 \begin{thm}{Lemma}\label{lem:curc<1/R}
-Suppose $\Norm\:\Sigma\to \SS^2$ is a Gauss map of a surface $\Sigma$.
+Suppose $\Norm\:\Sigma\to \mathbb{S}^2$ is a Gauss map of a surface $\Sigma$.
 Assume the corresponding principle curvatures are nonnegative at all points. 
 Then the equidistant surface $\Sigma_R$ is regular and its principle curvatures are positive and strictly smaller than $\tfrac1R$.
 \end{thm}
@@ -2197,9 +2197,9 @@ the parameters $\set{(x,y)}{f(x,y)<\eps}$ coincide with a neighborhood of $p$ in
 Hence the general case follows.\qeds
 
 \parit{Proof assembling.}
-Let $s\:\SS^2\z\to\RR^3$ be the parametization of $\Sigma$ provided by Lemma~\ref{lem:gauss-inverse}.
-Then the equidistant surface $\Sigma_R$ can be parametrized by $s_R(u)= s(u)+R\cdot u$ for $u\in\SS^2$.
-Rescaling $s_R$ by a  factor of $\tfrac1r$ we get the map $u\mapsto \tfrac1R\cdot s(u)+u$ which converges smoothly to the indentity map on the sphere $\SS^2$.
+Let $s\:\mathbb{S}^2\z\to\RR^3$ be the parametization of $\Sigma$ provided by Lemma~\ref{lem:gauss-inverse}.
+Then the equidistant surface $\Sigma_R$ can be parametrized by $s_R(u)= s(u)+R\cdot u$ for $u\in\mathbb{S}^2$.
+Rescaling $s_R$ by a  factor of $\tfrac1r$ we get the map $u\mapsto \tfrac1R\cdot s(u)+u$ which converges smoothly to the indentity map on the sphere $\mathbb{S}^2$.
 Therefore $\Sigma_R$ is embedded for sufficiently large $R$.
 
 \begin{wrapfigure}{o}{47 mm}
@@ -2963,10 +2963,10 @@ Let us present the formal calculations for two vectors $a\cdot \vec u+b\cdot\vec
 
 
 
-According to \ref{ex:differential-range}, the shape operator takes a tangent vector at $p$ and spits a tangent vector to $\SS^2$ at $\nu_p$.
-Note that $\nu_p$ is the normal vector to $\SS^2$ at $\nu_p$.
-In other words the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\nu_p}\SS^2$,
-or $\T_p\Sigma=\T_{\nu_p}\SS^2$, if we consider the tangent planes as linear spaces. 
+According to \ref{ex:differential-range}, the shape operator takes a tangent vector at $p$ and spits a tangent vector to $\mathbb{S}^2$ at $\nu_p$.
+Note that $\nu_p$ is the normal vector to $\mathbb{S}^2$ at $\nu_p$.
+In other words the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\nu_p}\mathbb{S}^2$,
+or $\T_p\Sigma=\T_{\nu_p}\mathbb{S}^2$, if we consider the tangent planes as linear spaces. 
 
 
 
@@ -2979,15 +2979,15 @@ or $\T_p\Sigma=\T_{\nu_p}\SS^2$, if we consider the tangent planes as linear spa
 
 
 
-Let us write $\Sigma$ in the spherical $(\rho,u)$-coordinates where $\rho\ge 0$ and $u\in\SS^2$.
+Let us write $\Sigma$ in the spherical $(\rho,u)$-coordinates where $\rho\ge 0$ and $u\in\mathbb{S}^2$.
 
 
 
-Consider the map $f\:\Sigma\to\SS^2$ defined by $f(x)=\tfrac1{|x|}\cdot x$.
+Consider the map $f\:\Sigma\to\mathbb{S}^2$ defined by $f(x)=\tfrac1{|x|}\cdot x$.
 By construction $f$ is a smooth map.
 Since $R$ is convex, and $\Sigma$ is bounded, on any ray from the origin there is exactly one point of $\Sigma$;
-that is, $f$ gives a continuous bijection between $\Sigma$ and $\SS^2$.
-Since $\SS^2$ is compact, the inverse map $f^{-1}\:\SS^2\to \Sigma$ is continuous; 
+that is, $f$ gives a continuous bijection between $\Sigma$ and $\mathbb{S}^2$.
+Since $\mathbb{S}^2$ is compact, the inverse map $f^{-1}\:\mathbb{S}^2\to \Sigma$ is continuous; 
 this is, $f$ is a homeomorphism.
 The latter statement is a standard result in topology \ref{thm:Hausdorff-compact}.
 
@@ -3018,7 +3018,7 @@ $s(u,v)$ can not point in the direction of the tangent plane $\T_{s(u,v)}$;
 that is, three vectors $s(u,v)$, $\frac{\partial s}{\partial u}(u,v)$ and $\frac{\partial s}{\partial v}(u,v)$ are linearly independent.
 Whence the projections $\left(\frac{\partial s}{\partial u}\right)^\perp_s$ and $ \left(\frac{\partial s}{\partial v}\right)^\perp_s$ are linearly independent
 and therefore $f$ is regular.
-By the inverse function theorem the inverse $f^{-1}\:\SS^2\to \Sigma$ is also regular;
+By the inverse function theorem the inverse $f^{-1}\:\mathbb{S}^2\to \Sigma$ is also regular;
 that is, $\Sigma$ is a smooth sphere.
 \qeds
 
@@ -3414,7 +3414,7 @@ Since any smooth simple closed curve can be approximated by a polygon, we get th
 
 
 
-Let $\Sigma$ be a smooth regular oriented surface and $\nu\:\Sigma\to \SS^2$ be its Gauss map.
+Let $\Sigma$ be a smooth regular oriented surface and $\nu\:\Sigma\to \mathbb{S}^2$ be its Gauss map.
 Assume $\alpha$ is a smooth unit-speed curve in $\Sigma$. 
 Then for any $t$ the vectors $\nu(t)=\nu(\gamma(t))$ and the velocity vector $\tau(t)\gamma'(t)$ are unit vectos that are normal to each other.
 Denote by $\mu(t)$ the unit vector that is normal to both $\nu(t)$ and $\tau(t)$ such that for any $t$ the triple $(\tau(t),\mu(t),\nu(t)$ is an oriented basis (say $\mu(t)=[\nu(t),\tau(t)]$, where $[{*},{*}]$ denotes the vector product).
@@ -3490,7 +3490,7 @@ The unit normal vector $\nu(p)$ is defined uniquely up to sign at each point $p\
 If the choice of the sign is made so that the map $\nu\:p\mapsto \nu(p)$ is continuous,
 then the map $\nu$ is called \emph{Gauss map}.
 
-The Gauss map sends the surface $\Sigma$ to the unit sphere $\SS^2$.
+The Gauss map sends the surface $\Sigma$ to the unit sphere $\mathbb{S}^2$.
 It can be always defined locally (that is in a neighborhood of a point);
 if it can be defined globally, then the surface $\Sigma$ is called \emph{oriented}.
 
@@ -3505,8 +3505,8 @@ Note that $v$ lie in $T_p$ --- the tangent plane at $p$.
 
 Further $w\in \T_p$ as well.
 Indeed $\nu\circ\alpha$ is a curve that starts at $\nu(p)$;
-so $w=(\nu\circ\alpha)'(0)$ lies in the tangent plane $\T_{\nu(p)}\SS^2$.
-But at $\nu(p)$, the sphere $\SS^2$ has normal $\nu(p)$ and therefore its tangent plane $\T_{\nu(p)}\SS^2$ is parallel $T_p$, so $\T_{\nu(p)}\SS^2$ and $T_p$ are identical as vector spaces.
+so $w=(\nu\circ\alpha)'(0)$ lies in the tangent plane $\T_{\nu(p)}\mathbb{S}^2$.
+But at $\nu(p)$, the sphere $\mathbb{S}^2$ has normal $\nu(p)$ and therefore its tangent plane $\T_{\nu(p)}\mathbb{S}^2$ is parallel $T_p$, so $\T_{\nu(p)}\mathbb{S}^2$ and $T_p$ are identical as vector spaces.
 
 Further note that since Gauss map is smooth,
 the vector $w$ depends only on $v$;
@@ -3547,7 +3547,7 @@ The Gauss map can be defined (globally) if and only if the surface is orientable
 \section{Tennis ball theorem}
 
 Suppose that a curve $\alpha$ runs on the unit sphere 
-\[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\] 
+\[\mathbb{S}^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\] 
 Let us denote by $\alpha''(t)^\top$ the projection of vector $\alpha''(t)$ to the tanget plane of the sphere at $\alpha(t)$.
 
 Assume $\alpha$ is a unit-speed curve.
@@ -3558,7 +3558,7 @@ counterclockwise by angle $\tfrac\pi2$ in the tangent plane to the sphere at $\a
 for some real number $\kappa(t)$;
 this number is called \emph{signed geodesic curvature of $\alpha$ at $t$}.
 
-The geodesic curvature measures how $\alpha$ diverges from an equator --- the most straight curve on the curved $\SS^2$.
+The geodesic curvature measures how $\alpha$ diverges from an equator --- the most straight curve on the curved $\mathbb{S}^2$.
 TBC
 
 

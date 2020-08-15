@@ -273,7 +273,7 @@ If the curve $\gamma$ is smooth, then according to Exercise~\ref{ex:integral-len
 \\
 &=k\cdot \overline{\length\gamma_{\vec u}}.
 \end{align*}
-This formula and its relatives are called \index{Crofton formulas}\emph{Crofton formulas}.
+This formula and its relatives are called \index{Crofton formula}\emph{Crofton formulas}.
 Since $k$ in universal for any curve, we can take $\gamma$ to be the unit circle to compute $k$: the left hand side is $2\cdot\pi$.
 Note that for any unit vector ${\vec u}$, the curve $\gamma_{\vec u}$ runs back and forth along an interval of length 2.
 Therefore $\length\gamma_{\vec u}=4$ and hence its average value is also 4.
@@ -414,23 +414,23 @@ for any $x,y\in A$
 
 \section{Spherical curves}
 
-Let us denote by $\SS^2$ the unit sphere in the space; that is,
-\[\SS^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
+Let us denote by $\mathbb{S}^2$ the unit sphere in the space; that is,
+\[\mathbb{S}^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
 A space curve $\gamma$ is called \index{spherical curve}\emph{spherical} if it runs in the unit sphere;
-that is, $|\gamma(t)|=1$, or equivalently, $\gamma(t)\in\SS^2$  for any $t$.
+that is, $|\gamma(t)|=1$, or equivalently, $\gamma(t)\in\mathbb{S}^2$  for any $t$.
 
 Recall that $\measuredangle(u,v)$ denotes the angle between two vectors $u$ and $v$.
 
 \begin{thm}{Observation}
-For any $u,v\in \SS^2$, we have
-\[|u-v|_{\SS^2}=\measuredangle(u,v)\]
+For any $u,v\in \mathbb{S}^2$, we have
+\[|u-v|_{\mathbb{S}^2}=\measuredangle(u,v)\]
 
 \end{thm}
 
 \parit{Proof.}
-The short arc $\gamma$ of a great circle  from $u$ to $v$ in $\SS^2$ has length $\measuredangle(u,v)$.
+The short arc $\gamma$ of a great circle  from $u$ to $v$ in $\mathbb{S}^2$ has length $\measuredangle(u,v)$.
 Therefore
-\[|u-v|_{\SS^2}\le\measuredangle(u,v).\]
+\[|u-v|_{\mathbb{S}^2}\le\measuredangle(u,v).\]
 
 It remains to prove the opposite inequality.
 In other words, we need to show that given a polygonal line $\beta=p_0\dots p_n$ inscribed in $\gamma$ there is a polygonal line
@@ -492,7 +492,7 @@ Describe a simple closed spherical curve that does not pass thru a pair of antip
 
 
 \begin{thm}{Exercise}\label{ex:bisection-of-S2}
-Suppose that a closed simple spherical curve $\gamma$ divides $\SS^2$ into two regions of equal area.
+Suppose that a closed simple spherical curve $\gamma$ divides $\mathbb{S}^2$ into two regions of equal area.
 Show that 
 \[\length\gamma\ge2\cdot\pi.\]
 \end{thm}
@@ -521,14 +521,14 @@ whence \ref{eq:|pq|=<2} follows.
 \qedsf
 
 \begin{thm}{Advanced exercises} \label{adex:crofton}
-Given unit vectors ${\vec v},{\vec w}\in\SS^2$, denote by ${\vec w}_{\vec v}$ the closest point to ${\vec w}$ on the equator with pole at ${\vec v}$;
+Given unit vectors ${\vec v},{\vec w}\in\mathbb{S}^2$, denote by ${\vec w}_{\vec v}$ the closest point to ${\vec w}$ on the equator with pole at ${\vec v}$;
 in other words, if ${\vec w}^\perp$ is the projection of ${\vec w}$ to the plane perpendicular to ${\vec v}$, then ${\vec w}_{\vec v}$ is the unit vector in the direction of ${\vec w}^\perp$.
 The vector ${\vec w}_{\vec v}$ is defined if ${\vec w}\ne\pm {\vec v}$.
 
 \begin{subthm}{adex:crofton:crofton}
 Show that for any spherical curve $\gamma$ we have
 \[\length\gamma=\overline{\length\gamma_{\vec v}},\]
-where $\overline{\length\gamma_{\vec v}}$ denotes the average length of $\gamma_{\vec v}$ with ${\vec v}$ varying in $\SS^2$.
+where $\overline{\length\gamma_{\vec v}}$ denotes the average length of $\gamma_{\vec v}$ with ${\vec v}$ varying in $\mathbb{S}^2$.
 (This is a spherical analog of Crofton's formula.)
 \end{subthm}
 
