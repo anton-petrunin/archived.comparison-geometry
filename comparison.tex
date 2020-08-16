@@ -482,7 +482,9 @@ Show that there is a convex plane polygon $\tilde x_1\dots \tilde x_n$ which sid
 
 \begin{thm}{Advanced exercise}\label{ex:dist-to-bry}
 Suppose that a closed geodesic $\delta$ bounds a disc $\Delta$ in a closed convex surface $\Sigma$.
-Given a point $p\in\Delta$, denote by $f(p)$ the distance from $p$ to $\delta$.
+Given a point $p\in\Delta$, denote by $f(p)$ the intrinsic distance from $p$ to $\delta$;
+that is,
+\[f(p)=\inf\set{|p-x|_\Sigma}{x\in\delta}.\]
 Show that the function $f$ is concave;
 that is, for any geodesic $\gamma$ in $\Delta$ the function $t\mapsto f\circ\gamma(t)$ is concave.
 \end{thm}
@@ -676,10 +678,20 @@ In particular, $\trig p x y=\trig{p}{\,x^{0,N}}{\,x^{N,N}}$ is thin.
 
 
 \begin{thm}{Exercise}\label{ex:convex-dist}
-Assume $\gamma_1$ and $\gamma_2$ be two geodesics in an open smooth regular simply connected surface $\Sigma$ with nonpositive Gauss curvature.
+Assume $\gamma_1$ and $\gamma_2$ are two geodesics in an open smooth regular simply connected surface $\Sigma$ with nonpositive Gauss curvature.
 Show that the function
 \[h(t)=|\gamma_1(t)-\gamma_2(t)|_\Sigma\]
 is convex.
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:convex-dist+}
+Suppose $\delta$ is a geodesics in an open smooth regular simply connected surface $\Sigma$ with nonpositive Gauss curvature.
+Given a point $p\in\Delta$, denote by $f(p)$ the intrinsic distance from $p$ to $\delta$;
+that is,
+\[f(p)=\inf\set{|p-x|_\Sigma}{x\in\delta}.\]
+Use \ref{ex:convex-dist}to show that the function $f$ is convex;
+that is, for any geodesic $\gamma$ in $\Sigma$ the function $t\mapsto f\circ\gamma(t)$ is concave.
+\end{thm}
+
 
 %???+Splitting theorem???

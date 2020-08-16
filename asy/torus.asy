@@ -10,7 +10,7 @@ size(3cm,0);
 currentprojection=perspective(1.3,-1.5,.3);
 
 
-triple  f(pair z) {return (sin(z.x)-sin(2*z.x)/18,cos(z.y)*(2+cos(z.x)+cos(2*z.x)/18),sin(z.y)*(2+cos(z.x)+cos(2*z.x)/18));}
+triple  f(pair z) {return (sin(z.x)-sin(2*z.x)/18, cos(z.y)*(2+cos(z.x)+cos(2*z.x)/18), sin(z.y)*(2+cos(z.x)+cos(2*z.x)/18));}
 
 draw((-3,0,0)--(0,0,0),black + linewidth(.7pt));
 

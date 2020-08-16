@@ -1553,10 +1553,42 @@ on the Euclidean plane the proof is just as hard.
 
 }
 
-\parbf{\ref{ex:deformation}.}
+\parbf{\ref{ex:convex-dist+}.}
+Choose two points $x,z\in\Sigma$;
+let $y$ be the midpoint of $[xz]$.
+It is sufficient to show that 
+\[f(y)\le \tfrac12(f(x)+f(z)).\]
 
-\parbf{\ref{ex:conformal}.}
+Denote by $\bar x$ and $\bar z$ the points on $\delta$ that minimize the distances to $x$ and $z$ respectively;
+so we have
+\begin{align*}
+f(x)
+&=|x-\bar x|_\Sigma,
+&
+f(z)
+&=|z-\bar z|_\Sigma.
+\end{align*}
 
-\parbf{\ref{ex:K=0}.}
+By \ref{ex:unique-geod}, $[\bar x\bar z]$ is an arc of $\delta$.
+Therefore the midpoint of $[\bar x\bar z]$, say  $\bar y$, lies on $\delta$.
+
+By \ref{ex:dist-to-bry}, we have 
+\begin{align*}
+f(y)&\le |y-\bar y|_\Sigma\le
+\\
+&\le\tfrac12\cdot(|x-\bar x|_\Sigma
++
+|z-\bar z|_\Sigma)=
+\\
+&=\tfrac12(f(x)+f(z))
+\end{align*}
+
+\parbf{\ref{ex:conformal}.} Apply \ref{lem:K(orthogonal)} and simplify.
+
+\parbf{\ref{ex:deformation}.} Show that Gauss curvature equals to 1 at every point of $\Sigma_\gamma$ and use \ref{ex:K=1}.
+
+\parbf{\ref{ex:K=0}.} Note and use that by \ref{prop:rauch}, $\exp_p$ is length-preserving.
+
+\parbf{\ref{ex:K=1}.} Modify the proof of \ref{prop:rauch} showing that $K\equiv 1$ implies that $b(\theta,r)=\sin r$ for all small $r\ge 0$.
 
 %\parbf{\ref{}.}

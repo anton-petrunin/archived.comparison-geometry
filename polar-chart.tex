@@ -397,21 +397,6 @@ Therefore the first two identities in \ref{eq:key-orthogonal} are proved.
 The other two identities in \ref{eq:key-orthogonal} can be proved along the same lines.
 \qeds
 
-
-\begin{thm}{Corollary}
-Let $(u,v)\mapsto s(u,v)$ be a orthogonal chart of smooth surface $\Sigma$.
-Set 
-$a=a(u,v)\df|s_u|$,
-$b=b(u,v)\df| s_v|$,
-$\vec u(u,v)\df\tfrac{s_u}a$,
-and 
-$\vec v(u,v)\df\tfrac{s_v}b$.
-Then $\vec u,\vec v$ are unit tangent fields orthogonal to each other and
-for any tangent vector $\vec w\in \T_p$ and 
-$\langle\vec u_u\vec v\rangle=0$, $\langle\vec u_v\vec v\rangle=b_u$ 
-\end{thm}
-
-
 \begin{thm}{Exericse}\label{ex:conformal}
 Suppose that $(u,v)\mapsto s(u,v)$ is a \index{conformal chart}\emph{conformal chart};
 that is, $ s_u\perp s_v$ and $| s_u|=| s_v|$ for any $(u,v)$.
@@ -419,75 +404,6 @@ Show that Gauss curvature can be expressed as
 \[K=-\frac{\triangle (\ln b)}{b^2},\]
 where $\triangle$ denotes the \index{laplacian}\emph{laplacian}; that is, $\triangle=\tfrac{\partial^2}{\partial u^2}+\tfrac{\partial^2}{\partial v^2}$.
 \end{thm}
-
-
-\section{The remarkable theorem}
-
-Let $\Sigma$ and $\hat{\Sigma}$ be two smooth regular surfaces in the Euclidean space.
-A map $f\:\Sigma\to \hat{\Sigma}$ is called  \index{length-preserving}\emph{length-preserving} if for any curve $\gamma$ in $\Sigma$ the curve $\hat\gamma=f\circ\gamma$ in $\hat{\Sigma}$ has the same length. %???it is sufficient to consider smooth only curves???
-If in addition $f$ is smooth and bijective, then it is called \index{intrinsic isometry}\emph{intrinsic isometry}. 
-
-A simple example of intrinsic isometry can obtained by warping a plane into a cylinder.
-The following exercise produce slightly more interesting example.
-
-%???+PIC
-
-\begin{thm}{Exercise}\label{ex:deformation}
-Suppose $\gamma(t)=(x(t),y(t))$ is a smooth unit-speed curve in the plane such that $y(t)=a\cdot \cos t$.
-Let $\Sigma_\gamma$ be the surface of revolution of $\gamma$ around the $x$-axis.
-Show that a small open domain in $\Sigma_\gamma$ admits a smooth length-pereserving map to the unit sphere.
-
-Conclude that any round disc $\Delta$ in $\mathbb{S}^2$ of intrinsic radius smaller than $\tfrac\pi2$ admits a smooth length preserving deformation; that is, there is one parameter family of surfaces with boundary $\Delta_t$, such that $\Delta_0=\Delta$ and $\Delta_t$ is not congruent to $\Delta_0$ for any $t\ne0$.\footnote{In fact any disc in $\mathbb{S}^2$ of intrinsic radius smaller than $\pi$ admits a smooth length preserving deformation. %???REF
-}
-\end{thm}
-
-
-\begin{thm}{Theorem}\label{thm:remarkable}
-Suppose $f\:\Sigma\to \hat{\Sigma}$ is an intrinsic isometry between two smooth regular surfaces in  the Euclidean space; $p\in \Sigma$ and $\hat p\z=f(p)\in \Sigma$.
-Then 
-\[K(p)_{\Sigma}=K(\hat p)_{\hat{\Sigma}};\]
-that is, the Gauss curvature of $\Sigma$ at $p$ is the same as the Gauss curvature of $\hat{\Sigma}$ at $\hat p$.
-\end{thm}
-
-This theorem was proved by Carl Friedrich Gauss \cite{gauss} who called it \index{Remarkable theorem}\emph{Remarkable theorem} (\index{Theorema Egregium}\emph{Theorema Egregium}).
-The theorem is indeed remarkable because the Gauss curvature is defined as a product of principle curvatures which might be different at these points; however, according to the theorem, their product can not change.
-In other words, the Gaussian curvature is an {}\emph{intrinsic invariant}.
-
-In fact Gauss curvature of the surface at the given point can be found {}\emph{intrinsically},
-by measuring the lengths of curves in the surface.
-For example, Gauss curvature $K(p)$ in the following formula for the circumference $c(r)$ of a geodesic circle centered at $p$ in a surface: 
-\[c(r)=2\cdot\pi\cdot r-\tfrac\pi3\cdot K(p)\cdot r^3+o(r^3).\]
-
-Note that the theorem implies there is no smooth length-preserving map that sends an open region in the unit sphere to the plane.%
-\footnote{There are plenty of non-smooth length-preserving maps from the sphere to the plane; see \cite{petrunin-yashinski} and the references there in.}
-It follows since the Gauss curvature of the plane is zero and the unit sphere has Gauss curvature 1. 
-In other words, there is no map of a region on Earth without distortion.
-
-\parit{Proof.}
- Choose a chart $(u,v)\mapsto s(u,v)$ on $\Sigma$ and set
-$\hat s =f\circ s$.
-Note that $\hat s$ is a chart of $\hat{\Sigma}$ and 
-\begin{align*}
-\langle s_u,s_u\rangle
-&=
-\langle \hat s_u, \hat s_u\rangle,
-&
-\langle s_u, s_v\rangle
-&=
-\langle \hat s_u, \hat s_v\rangle,
-&
-\langle s_v, s_v\rangle
-&=
-\langle \hat s_v, \hat s_v\rangle
-\end{align*}
-at any $(u,v)$.
-Indeed the first and the third identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\mapsto s(t,v)$ or  $\gamma\:t\z\mapsto s(u,t)$.
-Taking this into account, the second identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\z\mapsto s(t,c-t)$ for some constant $c$.
-
-It follows that if $s$ is a semigeodesic chart of $\Sigma$,
-then $\hat s$ is a semigeodesic chart of $\hat{\Sigma}$.
-It remains to apply \ref{prop:K(semigeodesic)}.
-\qeds
 
 \section{Rotation of a vector field}
 
@@ -595,6 +511,11 @@ Let us write $\gamma$ in the $(u,v)$-coordinates: $\gamma(t)=s(u(t),v(t))$. Set 
 
 \section{Gauss--Bonnet formula: a formal proof}\label{page:gauss--bonnet:formal}
 
+Recall that for a topological disc $\Delta$ in a smooth oriented surface $\Sigma$ we set
+\[\GB(\Delta)=\tgc{\partial\Delta}+\iint_\Delta K-2\cdot \pi,\]
+where we assume that $\partial \Delta$ is oriented in such a way that $\Delta$ lies on its left.
+So the Gauss--Bonnet formula can be written as $\GB(\Delta)=0$.
+
 \parit{Proof of the Gauss--Bonnet formula (\ref{thm:gb}).}
 First assume that $\Delta$ is covered by a semigeodesic chart.
 Note that the following weaker formula follows from \ref{prop:pt+tgc},
@@ -694,3 +615,86 @@ Suppose that a smooth surface $\Sigma$ has vanishing Gauss curvature.
 Show that $\Sigma$ is \index{locally flat surface}\emph{locally flat};
 that is, a neighborhood of any point in $\Sigma$ admits an intrinsic isometry to an open domain in the Euclidean plane.  
 \end{thm}
+
+\begin{thm}{Exercise}\label{ex:K=1}
+Suppose that a smooth surface $\Sigma$ has unit Gauss curvature at every point.
+Show that a neighborhood of any point in $\Sigma$ admits an intrinsic isometry to an open domain in the unit sphere.
+\end{thm}
+
+\section{The remarkable theorem}
+
+Let $\Sigma$ and $\hat{\Sigma}$ be two smooth regular surfaces in the Euclidean space.
+A map $f\:\Sigma\to \hat{\Sigma}$ is called  \index{length-preserving}\emph{length-preserving} if for any curve $\gamma$ in $\Sigma$ the curve $\hat\gamma=f\circ\gamma$ in $\hat{\Sigma}$ has the same length. %???it is sufficient to consider smooth only curves???
+If in addition $f$ is smooth and bijective, then it is called \index{intrinsic isometry}\emph{intrinsic isometry}. 
+
+A simple example of intrinsic isometry can obtained by warping a plane into a cylinder.
+The following exercise produce slightly more interesting example.
+
+\begin{thm}{Exercise}\label{ex:deformation}
+Suppose $\gamma(t)=(x(t),y(t))$ is a smooth unit-speed curve in the plane such that $y(t)=a\cdot \cos t$.
+Let $\Sigma_a$ be the surface of revolution of $\gamma$ around the $x$-axis.
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\begin{lpic}[t(-0mm),b(6mm),r(0mm),l(0mm)]{asy/deformation(1.2)}
+\lbl[t]{7,0;$a=2$}
+\lbl[t]{24,3;$a=\sqrt{2}$}
+\lbl[t]{41,4;$a=1$}
+\lbl[t]{57,7;$a=\tfrac1{\sqrt{2}}$}
+\lbl[t]{73,8;$a=\tfrac12$}
+\end{lpic}
+\vskip-0mm
+\end{figure}
+Show that the surface $\Sigma_a$ has unit Gauss curvature at each point.
+
+Use \ref{ex:K=1} to conclude that any small round disc $\Delta$ in $\mathbb{S}^2$ admits a smooth length-preserving deformation; that is, there is one parameter family of surfaces with boundary $\Delta_t$, such that $\Delta_0=\Delta$ and $\Delta_t$ is not congruent to $\Delta_0$ for any $t\ne0$.\footnote{In fact any disc in $\mathbb{S}^2$ admits a smooth length preserving deformation. However if the the disc is larger than half-sphere, then the proof is quite hard. %???REF
+}
+\end{thm}
+
+
+\begin{thm}{Theorem}\label{thm:remarkable}
+Suppose $f\:\Sigma\to \hat{\Sigma}$ is an intrinsic isometry between two smooth regular surfaces in  the Euclidean space; $p\in \Sigma$ and $\hat p\z=f(p)\in \Sigma$.
+Then 
+\[K(p)_{\Sigma}=K(\hat p)_{\hat{\Sigma}};\]
+that is, the Gauss curvature of $\Sigma$ at $p$ is the same as the Gauss curvature of $\hat{\Sigma}$ at $\hat p$.
+\end{thm}
+
+This theorem was proved by Carl Friedrich Gauss \cite{gauss} who called it \index{Remarkable theorem}\emph{Remarkable theorem} (\index{Theorema Egregium}\emph{Theorema Egregium}).
+The theorem is indeed remarkable because the Gauss curvature is defined as a product of principle curvatures which might be different at these points; however, according to the theorem, their product can not change.
+In other words, the Gaussian curvature is an {}\emph{intrinsic invariant}.
+
+In fact Gauss curvature of the surface at the given point can be found {}\emph{intrinsically},
+by measuring the lengths of curves in the surface.
+For example, Gauss curvature $K(p)$ in the following formula for the circumference $c(r)$ of a geodesic circle centered at $p$ in a surface: 
+\[c(r)=2\cdot\pi\cdot r-\tfrac\pi3\cdot K(p)\cdot r^3+o(r^3).\]
+
+Note that the theorem implies there is no smooth length-preserving map that sends an open region in the unit sphere to the plane.%
+\footnote{There are plenty of non-smooth length-preserving maps from the sphere to the plane; see \cite{petrunin-yashinski} and the references there in.}
+It follows since the Gauss curvature of the plane is zero and the unit sphere has Gauss curvature 1. 
+In other words, there is no map of a region on Earth without distortion.
+
+\parit{Proof.}
+ Choose a chart $(u,v)\mapsto s(u,v)$ on $\Sigma$ and set
+$\hat s =f\circ s$.
+Note that $\hat s$ is a chart of $\hat{\Sigma}$ and 
+\begin{align*}
+\langle s_u,s_u\rangle
+&=
+\langle \hat s_u, \hat s_u\rangle,
+&
+\langle s_u, s_v\rangle
+&=
+\langle \hat s_u, \hat s_v\rangle,
+&
+\langle s_v, s_v\rangle
+&=
+\langle \hat s_v, \hat s_v\rangle
+\end{align*}
+at any $(u,v)$.
+Indeed the first and the third identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\mapsto s(t,v)$ or  $\gamma\:t\z\mapsto s(u,t)$.
+Taking this into account, the second identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\z\mapsto s(t,c-t)$ for some constant $c$.
+
+It follows that if $s$ is a semigeodesic chart of $\Sigma$,
+then $\hat s$ is a semigeodesic chart of $\hat{\Sigma}$.
+It remains to apply \ref{prop:K(semigeodesic)}.
+\qeds
