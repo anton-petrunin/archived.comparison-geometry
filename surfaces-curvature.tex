@@ -15,8 +15,8 @@ f_y(0,0)&=0.
 \end{align*}
 The first equality holds since $p=(0,0,0)$ lies on the graph and the last two equalities mean that the tangent plane at $p$ is horizontal.
 
-\begin{wrapfigure}[8]{o}{40 mm}
-\vskip-0mm
+\begin{wrapfigure}[7]{o}{40 mm}
+\vskip-4mm
 \centering
 \includegraphics{asy/paraboloid}
 \vskip-3mm
@@ -30,8 +30,8 @@ m&=f_{xy}(0,0)=f_{yx}(0,0),
 \\
 n&=f_{yy}(0,0).
 \end{align*}
-The Taylor series %???Taylor series
-for $f$ at $(0,0)$ up to the second oreder term can be then written as
+The \index{Taylor series}\emph{Taylor series} %???Taylor series
+for $f$ at $(0,0)$ up to the second order term can be then written as
 \[f(x,y)=\tfrac12(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)+o(x^2+y^2).\]
 Note that values $\ell$, $m$, and $n$ are completely determined by this equation.
 The so-called \index{osculating paraboloid}\emph{osculating paraboloid}
@@ -65,7 +65,7 @@ Rotating the $(x,y)$-plane results in the rewriting
 the matrix $M_p$ in the new basis.
 
 Since the Hessian matrix $M_p$ is symmetric, it is diagonalizable by orthogonal matrices.
-That is, by rotating the $(x,y)$-plane we can assume that $m=0$ in \ref{eq:hessian}. %???+lin algebra material
+That is, by rotating the $(x,y)$-plane we can assume that $m=0$ in \ref{eq:hessian}; see \ref{thm:spectral}.
 In this case
 \[M_p=\begin{pmatrix}
    k_1
@@ -86,7 +86,7 @@ Note that if $x=f(x,y)$ is a local graph representation of $\Sigma$ in these coo
 
 The principle curvatures can be also defined as the eigenvalues of the Hessian matrix $M_p$.
 The eigendirections of $M_p$  are called \index{principle directions}\emph{principle directions} of $\Sigma$ at~$p$.
-Note that if $k_1(p)\ne k_2(p)$, then $p$ has exactly two principle directions, which are perpendicular to each other; if $k_1(p)= k_2(p)$ then all tangent directions at $p$ are principle.
+Note that if $k_1(p)\ne k_2(p)$, then $p$ has exactly two principle directions, which are perpendicular to each other; if $k_1(p)\z= k_2(p)$ then all tangent directions at $p$ are principle.
 
 Note that if we revert the orientation of $\Sigma$, then the principle curvatures at each point switch their signs and indexes.
 
@@ -178,7 +178,7 @@ Suppose $\Sigma$ is described locally as a graph $z=f(x,y)$ in a tangent-normal 
 Then
 \[\langle \Shape(\vec v),\vec w\rangle=D_{\vec w}D_{\vec v}f(0,0)\]
 for any $\vec v,\vec w\in\T_p$.
-Moreover $\Shape$ is unique linear operator $\T_p\to\T_p$ that satisfies the above condition.
+Moreover $\Shape\:\T_p\to\T_p$ is a unique linear operator that satisfies the above condition.
 \end{thm}
 
 Here $D_{\vec v}f$ denoted directional derivative of $f$ along vector $\vec v$;

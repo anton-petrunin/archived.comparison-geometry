@@ -1,7 +1,34 @@
 \chapter{Shortest paths}
 
+\section{Intrinsic geometry}
 
+We start to study the \index{intrinsic geometry}\emph{intrinsic geometry} of surfaces.
+A property is called \index{intrinsic property}\emph{intrinsic} if it is defined in terms of measuring things inside the surface, for example length of curves or angles between the curves that lie in the surface.
+Otherwise, if a definition of property use ambient space, then it is called \index{extrinsic}\emph{extrinsic}.
 
+For instance, a shortest path is an object of intrinsic geometry of a surface,
+while definition of geodesic is not intrinsic --- it requires acceleration which needs the ambient space.
+However, from Proposition~\ref{prop:gamma''} it follows that there is an intrinsic definition of geodesics as {}\emph{locally shortest paths with constant-speed parameterization}.  
+
+The following exercise should help you to be in the right mood for this;
+it might look like a tedious problem in calculus, but actually it is an easy problem in geometry.
+
+\begin{wrapfigure}{r}{33 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-77}
+\vskip-0mm
+\end{wrapfigure}
+
+\begin{thm}{Exercise}\label{ex:lasso}
+There is a mountain of frictionless ice formed by a cone with a circular base.
+Suppose that a cowboy stands at the bottom and he wants to climb the mountain;
+he throws up his lasso which slips neatly over the top of the cone, pulls it tight and starts to climb.
+If the angle of inclination $\theta$ is large, there is no problem; the lasso grips tight and up he goes.
+On the other hand if $\theta$ is small, the lasso slips off as soon as the cowboy pulls on it.
+
+What is the critical angle $\theta_0$ at which the cowboy can no longer climb the ice-mountain?
+\end{thm}
 
 \section{Definition}
 
@@ -93,7 +120,14 @@ that is,
 for any pair of points $p,q\in \RR^3$.
 \end{thm}
 
-The map $p\mapsto \bar p$ is called the \index{closest point projection}\emph{closest point projection};
+\begin{wrapfigure}{o}{22 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-40}
+\vskip-0mm
+\end{wrapfigure}
+
+The map $p\mapsto \bar p$ is called the \label{closest point projection}\index{closest point projection}\emph{closest point projection};
 it maps the Euclidean space to $R$.
 Note that if $p\in R$, then $\bar p=p$.
 
@@ -101,13 +135,6 @@ Note that if $p\in R$, then $\bar p=p$.
 Fix a point $p$ and set 
 \[\ell=\inf\set{|p-x|}{x\in R}.\]
 Choose a sequence $x_n\in R$ such that $|p-x_n|\to \ell$ as $n\to\infty$.
-
-\begin{wrapfigure}{o}{22 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-40}
-\vskip-0mm
-\end{wrapfigure}
 
 Without loss of generality, we can assume that all the points $x_n$ lie in a ball of radius $\ell+1$ centered at~$p$.
 Therefore we can pass to a partial limit $\bar p$ of $x_n$; that is, $\bar p$ is a limit of a subsequence of $x_n$.
@@ -442,7 +469,7 @@ Let $\Sigma$ be smooth surface and $p\in \Sigma$.
 Then the exponential map $\exp_p\:\T_p\to \Sigma$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$ by a neighborhood of $0$ in the tangent plane~$\T_p$.
 
 Moreover for any $p\in \Sigma$ there is $\eps>0$ such that for any $q\in \Sigma$ such that $|q-p|_\Sigma<\eps$ the map 
-$\exp_q\:\T_q\to \Sigma$ is a smooth regular parametrization of the $\eps$-neighborhood of $q$ in $\Sigma$ by the $\eps$-neighborhood of zero in the tangent plane~$\T_q$. %???
+$\exp_q\:\T_q\to \Sigma$ is a smooth regular parametrization of the $\eps$-neighborhood of $q$ in $\Sigma$ by the $\eps$-neighborhood of zero in the tangent plane~$\T_q$.
 \end{thm}
 
 The proposition follows from the observation and the inverse function theorem (\ref{thm:inverse}). %???+Jacobian matrix

@@ -429,12 +429,6 @@ apply the above argument to each of arc and sum up the results.
 \vskip-6mm
 \centering
 \includegraphics{mppics/pic-295}
-\bigskip
-\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/helix(1)}
-\lbl[br]{8,24;$\norm$}
-\lbl[b]{2,26;$\bi$}
-\lbl[wl]{15,25;$\tan$}
-\end{lpic}
 \end{wrapfigure}
 
 \parit{\ref{SHORT.ex:tc-length:example}.}
@@ -443,10 +437,21 @@ it can be defined in polar coordinates by $\gamma(t)=(t,a\cdot\ln t)$ if $t>0$ a
 
 It remains to show that indeed, $\gamma$ has infinite total curvature, but finite length.
 
+
 \parbf{\ref{ex:helix-torsion}.} 
 The arc-length parameter $s$ is already found in   \ref{ex:arc-length-helix}.
 It remains to find Frenet frame and calculate curvature and torsion.
 The latter can be done by straightforward calculations.
+
+\begin{wrapfigure}{r}{20 mm}
+\vskip0mm
+\centering
+\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/helix(1)}
+\lbl[br]{8,24;$\norm$}
+\lbl[b]{2,26;$\bi$}
+\lbl[wl]{15,25;$\tan$}
+\end{lpic}
+\end{wrapfigure}
 
 If the calculations done right, then you should see that curvature $\kur$ and torsion $\tau$ do not depend on time and given.
 Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix $\gamma_{a,b}$ has curvature $\kur$ and torsion~$\tor$.
@@ -475,9 +480,8 @@ It remains to substitute the values from \ref{eq:frenet-tau} and \ref{eq:frenet-
 \parbf{\ref{ex:torsion=0}.}
 Show and use that the binormal vector is constant.
 
-\parbf{\ref{ex:frenet}.} Observe that $\tfrac{\gamma'\times\gamma''}{|\gamma'\times\gamma''|}$ is a unit vector perpendicular to the plane spanned by $\gamma'$ and $\gamma''$, so, up to sign, it has to be equal to $\bi$. It remains to check that the sign is right.
-
-%???
+\parbf{\ref{ex:frenet}.} Observe that $\tfrac{\gamma'\times\gamma''}{|\gamma'\times\gamma''|}$ is a unit vector perpendicular to the plane spanned by $\gamma'$ and $\gamma''$, so, up to sign, it has to be equal to $\bi$.
+It remains to check that the sign is right.
 
 \parbf{\ref{ex:lancret}}, \ref{SHORT.ex:lancret:a}.
 Observe that 
@@ -758,7 +762,7 @@ It remains to apply \ref{cor:reg-parmeterization}.
 \parbf{\ref{ex:star-shaped-disc}.} 
 The solutions of these exercises are build on the following general construction known as the \index{Moser trick}\emph{Moser trick}.
 
-Suppose that $\vec u_t$ is a smooth vector field on a plane.
+Suppose that $\vec u_t$ is a smooth time-dependent vector field on a plane.
 Consider the ordinary differential equation $x'(t)=\vec u_t(x(t))$.
 Consider the map $\iota\:x(0)\mapsto x(1)$ where $t\mapsto x(t)$ is a solution of the equation.
 The map $\iota$ is called \index{flow}\emph{flow} of vector field $\vec u_t$ for the time interval $[0,1]$.
@@ -783,23 +787,12 @@ $\sigma_1(R-|x|)$; see page \pageref{page:sigma-function}.
 
 It remains to apply the Moser trick to the constructed vector field. 
 
-\parit{\ref{SHORT.ex:star-shaped-disc:smooth}.}
+\parit{\ref{SHORT.ex:star-shaped-disc:smooth}--\ref{SHORT.ex:star-shaped-disc:star-shaped}.}
 Without loss of generality we can assume that the origin belongs to both $\Sigma$ and $\Theta$.
-Observe that the boundary curves of $\Sigma$ and $\Theta$ can be written in polar coordinates as 
-$(\theta, f(\theta)$ and $(\theta, g(\theta)$ for smooth functions $f,g\:\mathbb{S}^1\to\RR$.
 
-
-
-Denote by $\vec u_\theta$ the unit vector written as $(\theta,1)$ in the polar coordinates.
-Consider the vector field $[g(\theta)-f(\theta)]\cdot \vec u_\theta$ it is defined 
-Show that there is a vector field $\vec v$ defined on $\RR^2\backslash\{0\}$ that flows $\partial \Sigma$ to $\partial \Theta$;
-in fact such vector field can be found among radial fields 
-
-
-Observe that the boundary curves can be written in polar coordinates as 
-$(\theta, \rho_i(\theta)$ for smooth functions $\rho_i\:\mathbb{S}^1\to\RR$.
-
-???
+In each case show that there is a vector field $\vec v$ defined on $\RR^2\backslash\{0\}$ that flows $\Sigma$ to $\Theta$.
+In fact one can choose radial fields of that type,
+but be careful with with the cases \ref{SHORT.ex:star-shaped-disc:nonsmooth} and \ref{SHORT.ex:star-shaped-disc:star-shaped} --- they are not as easy.
 
 \parbf{\ref{ex:tangent-normal}.}
 Let $\gamma$ be a smooth curve in $\Sigma$.
@@ -973,6 +966,22 @@ The gutter in the middle can be chosen to be taken to be a catenoid which is a m
 Show that if the gutter is sufficiently deep, then the surface of revolution of the dashed line can be made smaller.
 
 \parbf{\ref{ex:area-ball-intersection}.}
+By \ref{lem:reg-section}, varying $r$ slightly, we can assume that $\Sigma$ intersects the sphere $S(p,r)$ along a finite collection of closed curves.
+
+These curves bound a domain $D$ with area at most $2\cdot \pi\cdot r^2$.
+Assume $D$ is connected.
+Since $\Sigma$ is area minimizing the area of $\Delta$ cannot be smaller than the area of $\Sigma\cap B(p,r)$;
+whence the result.
+
+If $D$ is not connected, then
+it can be made connected by attaching tiny tubes between its connected components.
+The extra area of these tubes can be made smaller than any given $\eps>0$.
+Therefore we get 
+\[\area[\Sigma\cap B(p,r)]\le 2\cdot \pi\cdot r^2+\eps.\]
+The statement follows since $\eps>0$ is arbitrary.
+
+
+
 
 \parbf{\ref{ex:catenoid-nonmin}.}
 Consider the region of catenoid in the cylinder $x^2+y^2\le R^2$ for $R>1$.
@@ -1047,8 +1056,30 @@ the intrinsic diameter of $\Sigma$ can not exceed $\pi$.
 The latter means that any two points in $\Sigma$ can be connected by a path that lies in $\Sigma$ and has length at most~$\pi$.
 
 \parbf{\ref{ex:convex-proper-sphere}.}
+To prove \ref{SHORT.ex:convex-proper-sphere:single} use convexity of $R$.
+To prove \ref{SHORT.ex:convex-proper-sphere:smooth} observe that the map $\Sigma\to\mathbb{S}^2$ is smooth and regular, then apply the inverse function theorem to show that inverse is smooth as well.
+
+\begin{wrapfigure}[16]{o}{28 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1182}
+\vskip-0mm
+\end{wrapfigure}
 
 \parbf{\ref{ex:convex-proper-plane}.}
+We can assume that the origin lies on $\Sigma$.
+Consider a sequence of points $x_n\in \Sigma$ such that $|x_n|\z\to \infty$ as $n\to \infty$.
+Set $u_n=\tfrac{x_n}{|x_n|}$; this is the unit vector in the direction from $x_n$.
+Since the unit sphere is compact, we can pass to a subsequence of $(x_n)$ such that $u_n$ converges to a unit vector $u$.
+Show that the half-line from the origin in the direction of $u$ can be taken as $\ell$; that will solve \ref{SHORT.ex:convex-proper-plane:a}.
+
+To solve \ref{SHORT.ex:convex-proper-plane:b},
+Note and use that for any $q\in \Sigma$, the directions $v_n=\tfrac{x_n-q}{|x_n-q|}$ converge to $u$ as well.
+
+Since $R$ is convex, so its projection $\Omega$.
+Show that $\Sigma$ has no vertical tangent planes;
+therefore projection $\Omega$ of $\Sigma$ to $(x,y)$-plane is regular.
+Use the inverse function theorem to show that $\Omega$ is open; hence \ref{SHORT.ex:convex-proper-plane:b}.
 
 \parbf{\ref{ex:open+convex=plane}.}
 By \ref{ex:convex-proper-plane:d}, $\Sigma$ is parameterized by an open convex plane domain $\Omega$.
@@ -1110,6 +1141,15 @@ Applying \ref{cor:intK}, we get that
 \parbf{\ref{ex:ruled=>saddle}.} Prove and use that each point $p\in\Sigma$ has a direction with vanishing normal curvature.
 
 \parbf{\ref{ex:saddle-to-infty}.}
+Use the definition of saddle surface to show for any point $x\in\Sigma$ there is an arc $\gamma\:[0,1]\to\Sigma$ that starts from $x$ such that 
+the function $f\:t\mapsto |p-\gamma(t)|$ is monotonically increasing and $f(1)>f(0)+\eps(x)$ for some $\eps(x)>0$.
+(In fact such a curve can be choosen among graphs over line segments in the tangent-normal coordinates at $x$.)
+
+Further, show that the function $x\mapsto\eps(x)$ can be assumed to be continuous.
+Conclude that for any $R$ there is $\eps>0$ such that $\eps(x)>\eps$ for any $x\in\Sigma\cap B(p,R)$.
+
+Now construct the needed curve as an infinite concatenation of the deacribed arcs.
+Observe that the described property guranees that it will escape from any ball in finite number of steps.
 
 \parbf{\ref{ex:panov}.} Denote by $\Pi_t$ the tangent plane to $\Sigma$ at $\gamma(t)$ and by $\ell_t$ the tangent line of $\gamma$ at time $t$.
 
@@ -1165,6 +1205,21 @@ Show that (1) $\Gamma_p$ is a tree, (2) each vertex of $\Gamma_p$ has degree 4 o
 Observe that $\T_p$ meets the boundary of $\Sigma$ at two points,
 therefore $\Gamma$ has 2 endpoints.
 Use it to get a contradiction.
+
+{
+
+\begin{wrapfigure}{o}{24 mm}
+\vskip-8mm
+\centering
+\includegraphics{mppics/pic-1250}
+\vskip-0mm
+\end{wrapfigure}
+
+\parbf{\ref{ex:lasso}.} Cut the lateral surface of the mountain by a line from the cowboy to the tip, unfold it on the plane and try to figure out what is the image of the strained lasso.
+
+}
+
+\parit{Source:} I learned this problem from Joel Fine, who attributed it so Frederic Bourgeois \cite{fine}.
 
 \parbf{\ref{ex:hat-convex}.} Assume the contrary,
 then there is a minimizing geodesic $\gamma\not\subset\Delta$ with ends $p$ and $q$ in $\Delta$.
@@ -1311,14 +1366,6 @@ By \ref{eq:gamma''=z''} and \ref{eq:int z''}, we have
 The suggested argument does not give the optimal bound for the Lipschitz constant that guarantees that $\gamma$ is simple, but
 later (see \ref{ex:sqrt(3)}) we will show that the exact bound is $\sqrt{3}=\tg\tfrac\pi3$ --- it is the same as in the exercise about mountain of with the shape of a perfect cone; see \ref{ex:lasso}.
 
-\parbf{\ref{ex:lasso}.} Cut the lateral surface of the mountain by a line from the cowboy to the top, unfold it on the plane and try to figure out what is the image of the strained lasso.
-
-Since the distance between points, can not be bigger than length of a path connecting them,
-this statement implies the problem.
-
-
-\parit{Source:} I learned this problem from Joel Fine, who attributed it so Frederic Bourgeois \cite{fine}.
-
 \parbf{\ref{ex:parallel}}; \ref{SHORT.ex:parallel:a}.
 Show and use that $\langle\vec v(t),\vec v'(t)\rangle=0$.
 
@@ -1428,6 +1475,7 @@ Consider the plane figure that corresponds to the pentagon.
 Its sides are formed by convex curves with marked lengths, the angles of the pentagon are marked as well.
 It remains to show that there is no pentagon with these properties.
 
+%???move to comparison
 
 \parbf{\ref{ex:diam-angle}.}
 Observe that $|p-x|_\Sigma\le |p-q|_\Sigma$ and $|q-x|_\Sigma\le |p-q|_\Sigma$.
@@ -1439,20 +1487,41 @@ Observe that
 \[\measuredangle\hinge pxy+\measuredangle\hinge pyz+\measuredangle\hinge pzx\le2\cdot \pi.\]
 Apply \ref{thm:comp:toponogov}.
 
-\parbf{\ref{ex:geod-convexity}.}
+\parbf{\ref{ex:geod-convexity}.} Apply \ref{angk>angk} and \ref{angk<angk}.
 
-\parbf{\ref{ex:arm-lemma}.}
 
-\parbf{\ref{ex:midpoints}.}
+
+
+\parbf{\ref{ex:midpoints}.} Use \ref{angk>angk} or \ref{angk<angk} twice:
+first for the triangle $[pxy]$ and $x'\in [px]$
+and 
+second for the triangle $[px'y]$ and $y'\in [py]$.
+Then apply the angle monotonicity (\ref{lem:angle-monotonicity}).
+
+\parbf{\ref{ex:open-comparison}.} To prove \ref{SHORT.ex:open-comparison:positive}, apply Rauch comparison \ref{prop:rauch} and the property of exponential map in \ref{prop:exp}.
+
+For \ref{SHORT.ex:open-comparison:almost-min}, argue by contradiction;
+if the statement does not hold then for any $p\in\Sigma$ there is a point $q=q(p)\in \Sigma$ such that 
+\[
+q(p)\in B(p,100\cdot R_p)
+\quad\text{and}\quad
+R_{q(p)}<(1-\tfrac1{100})\cdot R_p.
+\]
+
+Start with any point $p_0$ and consider a sequence $p_n$ defined by $p_{n+1}=q(p_n)$.
+Show that $p_n$ converges and $R_{p_n}\to 0$ as $n\to\infty$.
+Arrive to a contradiction using  \ref{SHORT.ex:open-comparison:positive}.
+
+For \ref{SHORT.ex:open-comparison:proof}, repeat the proof assuming that $p$ is provided by \ref{SHORT.ex:open-comparison:almost-min}.
 
 \parbf{\ref{ex:convex-polyhon}.}
+Let us consider $\Delta$ with induced length-metric.
 
-\begin{wrapfigure}[19]{r}{27 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-1680}
-\vskip8mm
-\end{wrapfigure}
+Note that repeating the proof of \ref{thm:comp:toponogov} we can show that the the comparison holds in $\Delta$.
+
+Now choose a vertex of $\Delta$ and connect it to the remaining vertexes by minimizing geodesics.
+It divides $\Delta$ into triangles, take a model triangle so that they share sides as in $\Delta$.
+Use the comparison to show that these plane triangles form a required polygon.
 
 \parbf{\ref{ex:dist-to-bry}.}
 Suppose $\gamma$ is a unit-speed geodesic in $\Delta$ and $\gamma(0)=p$. 
@@ -1485,6 +1554,13 @@ By comparison we have that
 Since $t=|\tilde p-\tilde x|_{\RR^2}$ is small, so is the distances $|\tilde q-\tilde y|_{\RR^2}$.
 Therefore we can choose a point $y$ on $\delta$ such that $|q-y|_\Sigma=|\tilde q-\tilde y|_{\RR^2}$;
 moreover we can assume that $y$ is chosen so that we have $\measuredangle\hinge qxy= \tfrac\pi2-\psi$.
+
+\begin{wrapfigure}[19]{r}{27 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1680}
+\vskip8mm
+\end{wrapfigure}
 
 By construction and comparison, we have 
 \begin{align*}
@@ -1583,9 +1659,7 @@ f(y)&\le |y-\bar y|_\Sigma\le
 &=\tfrac12(f(x)+f(z))
 \end{align*}
 
-\parbf{\ref{ex:conformal}.} Apply \ref{lem:K(orthogonal)} and simplify.
-
-\parbf{\ref{ex:deformation}.} Show that Gauss curvature equals to 1 at every point of $\Sigma_\gamma$ and use \ref{ex:K=1}.
+\parbf{\ref{ex:conformal}.} Apply \ref{lem:K(orthogonal)} assuming that $a=b$ and simplify.
 
 \parbf{\ref{ex:K=0}.} Note and use that by \ref{prop:rauch}, $\exp_p$ is length-preserving.
 

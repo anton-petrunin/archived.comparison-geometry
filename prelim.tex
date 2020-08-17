@@ -1,3 +1,17 @@
+\section{Linear algebra}
+
+\begin{thm}{Spectral theorem}\label{thm:spectral}
+Any symmetric matrix is diagonalizable  by orthogonal matrix.
+\end{thm}
+
+We will use this theorem only for $2{\times}2$ matrices.
+In this case it can be restated as follows:
+Consider a function 
+\[f(x,y)=\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2,\]
+that is defined on a $(x,y)$-coordinate plane.
+Then after proper rotation of the coordinates, one can assume that $m=0$. %???REF
+
+
 \section{Multivariable calculus}
 
 This material is discussed in any course of multivariable calculus, the classical book of Walter Rudin \cite{rudin} is one of our favorites.
@@ -105,12 +119,12 @@ Then
 
 
 
-\section{Differential equations}
+\section{Ordinary differential equations}
 
-\subsection*{Initial value problem}
+\subsection*{Systems of first order}
 
 The following theorem guarantees existence and uniqueness of solutions of an initial value problem
-for a system of ordinary differential equations
+for a system of ordinary first order differential equations
 \[
 \begin{cases}
 x_1'(t)&=f_1(x_1,\dots,x_n,t),
@@ -128,8 +142,6 @@ $\bm{f}\:\Omega\to \RR^n$ and the array $(x_1,\dots,x_n)$ can be considered as a
 Therefore the system can be rewritten as one vector equation 
 \[\bm{x}'(t)=\bm{f}(\bm{x}, t).\] 
 
-%??? make it for arbitrary domain
-%??? higher order
 \begin{thm}{Theorem}\label{thm:ODE}
 Suppose $\mathbb{I}$ is a real interval and $\bm{f}\:\Omega\to \RR^n$ is a smooth function defined on an open subset $\Omega\subset \RR^n\times \RR$.
 Then for any initial data $\bm{x}(t_0)=\bm{u}$ such that $(\bm{u},t)\in\Omega$ the differential equation 
@@ -141,8 +153,29 @@ Moreover
 \item  the function $(\bm{u},t_0,t)\mapsto \bm{x}(t)$ has open domain of definition in $\Omega\times \RR$ and it is smooth in this domain.
 \end{enumerate}
 
-
 \end{thm}
+
+\subsection*{Higher order}
+
+Suppose we have an ordinary differential equation of order $k$
+\[\bm{x}^{(k)}=\bm{f}(\bm{x},\dots,\bm{x}^{(k-1)},t),\]
+where $\bm{x}=\bm{x}(t)$ is a function from a real inerval to $\RR^n$.
+
+This equation can be rewritten as $k$ first order equations as follows:
+\[
+\begin{cases}
+\bm{x}'&=\bm{y}_1
+\\
+\bm{y}_1'&=\bm{y}_2
+\\
+&\,\,\vdots
+\\
+\bm{y}_{k-1}'(t)&=\bm{f}(\bm{x},\bm{y}_{1},\dots,\bm{y}_{k-1},t),
+\end{cases}
+\]
+
+Using this trick one can reduce a higher order ordinary differential equation to a first order equation. 
+In particular we get local existence and uniqueness for solutions of higher order equations as in Theorem \ref{thm:ODE}.
 
 \section{Real analysis}
 

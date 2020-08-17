@@ -78,7 +78,7 @@ Note that any proper surface without boundary is either closed or open.
 
 The following claim is a two-dimesional analog of \ref{ex:proper-curve};
 hopefully it is intuitively obvious. 
-Its proof is not at all trivial; a standard proof uses the so-called \index{Alexander's duality}\emph{Alexander's duality} which is a classical technique in algebraic topology. %???+ref
+Its proof is not at all trivial; a standard proof uses the so-called \index{Alexander's duality}\emph{Alexander's duality} which is a classical technique in algebraic topology \cite[see][]{hatcher}.
 We omit its proof since it would take us far away from the main subject.
 
 \begin{thm}{Claim}\label{clm:proper-divides}
@@ -122,7 +122,7 @@ in this case it means that the vectors $s_u$ and $s_v$ are linearly independent 
 equivalently $s_u\times s_v\ne 0$, where $\times$ denotes the vector product.
 
 \begin{thm}{Proposition}\label{prop:graph-chart}
-If $s\:U\to \RR^3$ is a smooth regular embedding %???embedding???
+If $s\:U\to \RR^3$ is a smooth regular embedding %???add embedding to prelim???
 of an open connected set $U\subset \RR^2$, then its image $\Sigma=s(U)$ is a smooth surface.
 \end{thm}
 
@@ -150,16 +150,15 @@ x_u&x_v\\
 y_u&y_v
 \end{pmatrix},
 \] 
-is invertible.
+is invertible at $p$.
 Note that this is the Jacobian matix of the map
 \[(u,v)\mapsto (x(u,v),y(u,v)).\]
 
-The inverse function theorem implies that there is a smooth regular function $h$ defined on an open set $W\ni 0$ in the $(x,y)$-plane
-such that 
-\[(x\circ h)(x,y)=x\quad\text{and}\quad (y\circ h)(x,y)=y\]
-for any $(x,y)\in W$.
-It follows that the graph $z=z\circ h(x,y)$ for $(x,y)\in W$ is a subset in $\Sigma$.
-Clearly this graph is open in $\Sigma$. %???why
+The inverse function theorem (\ref{thm:inverse}) implies that there is a smooth regular map
+$w\:(x,y)\mapsto (u,v)$ defined on an open set $W\ni 0$ in the $(x,y)$-plane
+such that $s\circ w(x,y)=(x,y,f(x,y))$ for some smooth function~$f$;
+that is, the graph $z=f(x,y)$ for $(x,y)\in W$ is a subset in $\Sigma$.
+By the inverse function theorem this graph is open in $\Sigma$.
 Since $p$ is arbitrary, we get that $\Sigma$ is a surface.
 \qeds
 
@@ -194,13 +193,21 @@ Consider the following map
 Show that $s$ is a chart of the unit sphere centered at $(0,0,1)$; describe the image of $s$.
 \end{thm}
 
+\begin{wrapfigure}{o}{31 mm}
+\vskip-7mm
+\centering
+\includegraphics{mppics/pic-750}
+\vskip0mm
+\end{wrapfigure}
+
+
 The map $s$ in the exercise can be visualized using the following map
 \[(u,v,1)\mapsto (\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})\]
 which is called \index{stereographic projection}\emph{stereographic projection} from the plane $z=1$ to the unit sphere with center at $(0,0,1)$.
-Note that the point $(u,v,1)$ and its image $(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})$ lie on one half-line starting at the origin. %???+PIC???
+Note that the point $(u,v,1)$ and its image $(\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})$ lie on one half-line starting at the origin. 
 
-\begin{wrapfigure}{o}{31 mm}
-\vskip-0mm
+\begin{wrapfigure}[9]{o}{31 mm}
+\vskip-4mm
 \centering
 \includegraphics{asy/torus}
 \vskip-0mm
@@ -517,7 +524,7 @@ A surface $\Sigma$ is called \index{oriented surface}\emph{oriented} if it is eq
 that is, a continuous map $p\mapsto \Norm_p$ such that $\Norm_p\perp\T_p$ and $|\Norm_p|=1$ for any $p$.
 The choice of the field $\Norm$ is called the \index{orientation}\emph{orientation} on $\Sigma$.
 A surface $\Sigma$ is called \index{orientable}\emph{orientable} if it can be oriented.
-Note that each orientable surface admits two orientations $\Norm$ and $-\Norm$. %???
+Note that each orientable surface admits two orientations $\Norm$ and $-\Norm$.
 
 \begin{wrapfigure}[8]{o}{40 mm}
 \vskip-0mm

@@ -68,7 +68,7 @@ Conclude that
 \[\length \gamma
 =
 \int_a^b|\gamma'(t)|\cdot dt.\eqlbl{eq:length}\]
-\end{thm} %???make it a theorem for Lipschitz curves
+\end{thm}
 
 \begin{thm}{Advanced exercises}\label{adex:integral-length}
 
@@ -195,14 +195,14 @@ Then
 
 
 \begin{wrapfigure}{o}{24 mm}
-\vskip-2mm
+\vskip3mm
 \centering
 \includegraphics{mppics/pic-7}
-\vskip2mm
+\vskip3mm
 %\caption*{}
 \end{wrapfigure}
 
-\parit{Proof.} %??? redo the proof with closest point projection
+\parit{Proof.} 
 Note that by the triangle inequality,
 the inequality
 \[\perim P\le \perim Q\]
@@ -221,6 +221,9 @@ Therefore
 \end{align*}
 and the lemma follows.
 \qeds
+
+\parit{Comment.}
+Another proof of \ref{lem:perimeter} can be built on the closest point projection discuses on page \pageref{closest point projection}.  
 
 \begin{thm}{Corollary}\label{cor:convex=>rectifiable}
 Any convex closed plane curve is rectifiable.  
@@ -402,10 +405,10 @@ Most of the time we consider length-metric spaces.
 In particular the Euclidean space is a length-metric space.
 A subspace $A$ of a length-metric space $\spc{X}$ is not necessarily length-metric space;
 the induced length distance between points $x$ and $y$ in the subspace $A$ will be denoted as $|x-y|_A$;
-that is, $|x-y|_A$ is the infimum of the lengths of paths in $A$ from $x$ to $y$.
+that is, $|x-y|_A$ is the greatest lower bound of the lengths of paths in $A$ from $x$ to $y$.
 
 \begin{thm}{Exercise}\label{ex:intrinsic-convex}
-Let $A\subset \RR^3$ be a closed subset. %???subset is A
+Let $A\subset \RR^3$ be a closed subset.
 Show that $A$ is convex if and only if
 \[|x-y|_A=|x-y|_{\RR^3}\]
 for any $x,y\in A$

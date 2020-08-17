@@ -1,3 +1,42 @@
+\begin{thm}{Advanced exercise}\label{ex:arm-lemma}
+Let $\tilde x_1\dots\tilde x_n$ be a convex plane polygon and
+$x_1\dots x_n$ be a broken geodesic in an open simply connected surface $\Sigma$ with nonpositive curvature.
+Assume that
+$|x_i-x_{i-1}|_\Sigma=|\tilde x_i-\tilde x_{i-1}|_{\RR^2}$ and
+$\measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}\ge \measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}$
+ for each $i$.
+Show that \[|x_1-x_n|_\Sigma\ge |\tilde x_1\z-\tilde x_n|_{\RR^2}.\]
+\end{thm}
+
+For $\Sigma=\RR^2$, the exercise above is the so called \index{arm lemma}\emph{arm lemma} \cite{sabitov}; 
+you can use it without proof.
+
+\parbf{\ref{ex:arm-lemma}.} 
+This problem is very hard, we put it as a joke.
+
+One way is to use the so called \emph{Reshetnyak majorization theorem} and standard arm lemma; it is done this way in \cite{alexander-kapovitch-petrunin2027}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{thm}{Lemma}\label{lem:graph}
 Suppose $\Sigma$ is an open surface in with positive Gauss curvature in the Euclidean space.
 Then there is a convex function $f$ defined on a convex open region of $(x,y)$-plane 
@@ -239,49 +278,7 @@ $\Sigma$ is a graph $z=f(x,y)$ of a convex function $f$ defined on a convex open
 \end{thm}
 
 \parit{Proof.}
-The surface $\Sigma$ is a boundary of an unbounded closed convex region $R$.
-
-We can assume that the origin lies on $\Sigma$.
-Consider a sequence of points $x_n\in \Sigma$ such that $|x_n|\z\to \infty$ as $n\to \infty$.
-Set $u_n=\tfrac{x_n}{|x_n|}$; this is the unit vector in the direction from $x_n$.
-Since the unit sphere is compact, we can pass to a subsequence of $(x_n)$ such that $u_n$ converges to a unit vector $u$.
-
-\begin{wrapfigure}[15]{o}{28 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-81}
-\vskip-0mm
-\end{wrapfigure}
-
-Note that for any $q\in \Sigma$, the directions $v_n=\tfrac{x_n-q}{|x_n-q|}$ converge to $u$ as well.
-Indeed, the sequences of vectors $\tfrac{x_n-q}{|x_n-q|}$, $\tfrac{x_n-q}{|x_n|}$ and 
-$\tfrac{x_n}{|x_n|}$ have the same limit since $\tfrac{|q|}{|x_n|}\to 0$
-and $\tfrac{|x_n|}{|x_n-q|}\to 1$ as $n\to \infty$;
-the latter follows since
-\begin{align*}
-|\tfrac{|x_n|}{|x_n-q|}-1|&=|\tfrac{|x_n|-|x_n-q|}{|x_n-q|}-1|\le
-\\
-&\le\tfrac{|p-q|}{|x_n-q|}.
-\end{align*}
-
-Morover, the half-line from $q$ in the direction of $u$ lies in $R$.
-Indeed any point on the half-line is a limit of points on the line segments $[q,x_n]$;
-since $R$ is closed, all of these points lie in $R$.
-
-
-Let us choose the $z$-axis in the direction of $u$.
-Note that there is no point $p\in\Sigma$ with vertical tangent plane.
-Otherwise $\Sigma$ would contain a vertical half-line starting from $p$ and therefore Gauss curvature of $\Sigma$ would vanish.
-It follows that any vertical line can intersect $\Sigma$ at most at one point.
-That is, $\Sigma$ is a graph $z=f(x,y)$ of a smooth convex function $f$.
-
-Let $\Omega$ be the domain of definition of $f$.
-Note that $\Omega$ is the projection of $\Sigma$ to the $(x,y)$-plane 
-which is the same as the projection of $R$.
-Since $R$ is convex, so is $\Omega$.
-
-Since no tangent plane is vertical, the projection from $\Sigma$ to the $(x,y)$-plane is regular.
-By inverse function theorem, the set $\Omega$ is open.\qeds
+\qeds
 
  
 

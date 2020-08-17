@@ -2713,7 +2713,7 @@ save p; path p[];
 p0= circle(origin, 2*u);
 p1=(1.2,0)*u{.1,1}..(0,1.1)*u{-1,.2}..(-1,0)*u{-.3,-1}..(0,-1)*u{1,-.2}..cycle;
 
-hatchfill p1  withcolor (87, 1mm, -.5bp);
+hatchfill p1  withcolor (87, 2mm, -.5bp);
 draw p0 pensemibold;
 draw p1 pensemibold;
 
@@ -2780,41 +2780,7 @@ label.rt(btex $\gamma_2$ etex, z.b2);
 label(btex $\Pi$ etex, .5[z.b0,z.nu]);
 endfig;
 
-beginfig(81);
-save u;
-u:=1cm;
 
-z.a0=(-1,6)*u;
-z.a1=(0,0)*u;
-z.a2=(1,6)*u;
-
-save p; path p[];
-p0=z.a0{down}...z.a1{1,-.1}...z.a2{up};
-z.x1=point 1.3 of p0;
-z.xn=point 1.9 of p0;
-z.dots=point 1.6 of p0;
-z.q=point .8 of p0;
-z.Sigma=point .3 of p0;
-
-draw p0 pensemibold;
-
-draw z.a1--(x.a1,y.a0) dashed evenly;
-draw z.a1--z.x1;
-draw z.a1--z.xn;
-draw z.q--(x.q,y.a0) dashed evenly;
-drawarrow z.a1--(z.a1+(0,1)*u);
-
-dOt z.a1, z.xn, z.q, z.x1;
-
-label.bot(btex $p$ etex, z.a1);
-label.llft(btex $q$ etex, z.q);
-label.rt(btex $x_n$ etex, z.xn);
-label.rt(btex $x_1$ etex, z.x1);
-label.lft(btex $\Sigma$ etex, z.Sigma);
-label.rt(btex $R$ etex, (x.a1,y.Sigma));
-label.lft(btex $u$ etex,z.a1+(0,1)*u);
-label.rt(btex $\dots$ etex rotated angle(direction 1.6 of p0), z.dots);
-endfig;
 
 beginfig(82);
 save u;
@@ -3854,6 +3820,32 @@ endfig;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+beginfig(750);
+save u,p;
+path p[];
+u:=.8cm;
+
+z.o=(0,-1)*u;
+p0=ddline((-1,0)*u,(1,0)*u)(.2,.5);
+p1=circle(origin,1*u);
+z.p=point .4 of p1;
+z.q=whatever[z.o,z.p]=(whatever,0);
+
+draw p1 pensemibold;
+draw p0 pensemibold;
+drawarrow p0 shifted z.o;
+drawarrow ddline((0,-1)*u,(0,1)*u)(.2,.2);
+
+draw ddline(z.o,z.p)(.2,.2);
+dOt z.p,z.q, z.o;
+
+label.lrt (btex $0$ etex, z.o);
+whitelabel.lrt (btex $(u,v,1)$ etex, z.q);
+label.rt (btex $s(u,v)$ etex, z.p);
+endfig;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 beginfig(910) 
 save u,p;
 path p[];
@@ -3890,6 +3882,93 @@ rimmark(z.a--z.ab,z.b--z.ab,z.c--z.ca,z.a--z.ca,z.b--z.bc,z.c--z.bc);
 %label.urt (btex $1$ etex, .5[z.c,z.ca]);
 %label.ulft (btex $1$ etex, .5[z.a,z.ab]);
 %label.ulft (btex $1$ etex, .5[z.b,z.ab]);
+endfig;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+beginfig(1181);
+save u;
+u:=1cm;
+
+z.a0=(-1,6)*u;
+z.a1=(0,0)*u;
+z.a2=(1,6)*u;
+
+save p; path p[];
+p0=z.a0{down}...z.a1{1,-.1}...z.a2{up};
+z.dots=point 1.6 of p0;
+z.q=point .7 of p0;
+z.Sigma=point .3 of p0;
+
+hatchfill p0--cycle  withcolor (57, 2mm, -.5bp);
+draw p0 pensemibold;
+
+draw z.a1--(x.a1,y.a0);
+draw ddline(z.q,(x.q,y.a0))(.1,0);
+
+dOt z.a1, z.q;
+
+label.lft(btex $\Sigma$ etex, z.Sigma);
+whitelabel.rt(btex $R$ etex, (x.a1,y.Sigma)+(5,0));
+whitelabel.rt(btex $\ell$ etex, (x.a1,y.Sigma/2));
+whitelabel.rt(btex $m$ etex, (x.q,y.Sigma/2));
+endfig;
+
+beginfig(1182);
+save u;
+u:=1cm;
+
+z.a0=(-1,6)*u;
+z.a1=(0,0)*u;
+z.a2=(1,6)*u;
+
+save p; path p[];
+p0=z.a0{down}...z.a1{1,-.1}...z.a2{up};
+z.x1=point 1.3 of p0;
+z.xn=point 1.9 of p0;
+z.dots=point 1.6 of p0;
+z.q=point .8 of p0;
+z.Sigma=point .3 of p0;
+
+draw p0 pensemibold;
+
+draw z.a1--(x.a1,y.a0) dashed evenly;
+draw z.a1--z.x1;
+draw z.a1--z.xn;
+draw z.q--(x.q,y.a0) dashed evenly;
+drawarrow z.a1--(z.a1+(0,1)*u);
+
+dOt z.a1, z.xn, z.q, z.x1;
+
+label.bot(btex $p$ etex, z.a1);
+label.llft(btex $q$ etex, z.q);
+label.rt(btex $x_n$ etex, z.xn);
+label.rt(btex $x_1$ etex, z.x1);
+label.lft(btex $\Sigma$ etex, z.Sigma);
+label.rt(btex $R$ etex, (x.a1,y.Sigma));
+label.lft(btex $u$ etex,z.a1+(0,1)*u);
+label.rt(btex $\dots$ etex rotated angle(direction 1.6 of p0), z.dots);
+endfig;
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+beginfig(1250)
+save u,p,a;
+path p[];
+u:=.7cm;
+a:=75;
+
+z.o=origin;
+z.r1=(0,-1.4)*u;
+z.r0=z.r1 rotated -a;
+z.r2=z.r1 rotated a;
+
+draw arc(z.r0,z.r1,z.r2)--z.o--cycle;
+draw z.r0--z.r2 dashed evenly;
+
+dOt z.o;
+
+label.top(btex tip etex, z.o);
 endfig;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

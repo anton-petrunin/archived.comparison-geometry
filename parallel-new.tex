@@ -1,33 +1,5 @@
 \chapter{Parallel transport}
 
-We start to study the \index{intrinsic geometry}\emph{intrinsic geometry} of surfaces.
-A property is called \index{intrinsic property}\emph{intrinsic} if it is defined in terms of measuring things inside the surface, for example length of curves or angles between the curves that lie in the surface.
-Otherwise, if a definition of property use ambient space, then it is called \index{extrinsic}\emph{extrinsic}.
-
-For instance, a shortest path is an object of intrinsic geometry of a surface,
-while definition of geodesic is not intrinsic --- it requires acceleration which needs the ambient space.
-However, from Proposition~\ref{prop:gamma''} it follows that there is an intrinsic definition of geodesics as {}\emph{locally shortest paths with constant-speed parameterization}.  
-
-The following exercise should help you to be in the right mood for this;
-it might look like a tedious problem in calculus, but actually it is an easy problem in geometry.
-
-\begin{wrapfigure}{r}{33 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-77}
-\vskip-0mm
-\end{wrapfigure}
-
-\begin{thm}{Exercise}\label{ex:lasso}
-There is a mountain of frictionless ice formed by a cone with a circular base.
-Suppose that a cowboy stands at the bottom and he wants to climb the mountain;
-he throws up his lasso which slips neatly over the top of the cone, pulls it tight and starts to climb.
-If the angle of inclination $\theta$ is large, there is no problem; the lasso grips tight and up he goes.
-On the other hand if $\theta$ is small, the lasso slips off as soon as the cowboy pulls on it.
-
-What is the critical angle $\theta_0$ at which the cowboy can no longer climb the ice-mountain?
-\end{thm}
-
 
 \section{Parallel fields}
 
@@ -122,7 +94,16 @@ Plane is the simplest example of smooth surface.
 Earlier we introduced signed curvature of a plane curve.
 Let us introduce the so called \index{geodesic curvature}\emph{geodesic curvature} --- an analogous notion for a smooth curve $\gamma$ in general oriented smooth surface $\Sigma$.
 
-%???PIC
+\begin{wrapfigure}{o}{40 mm}
+\vskip-0mm
+\centering
+\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/paraboloid+curve(1)}
+\lbl[ul]{34,14;$\tan$}
+\lbl[b]{20,43;$\Norm$}
+\lbl[bl]{38,35;$\mu$}
+\end{lpic}
+\vskip-0mm
+\end{wrapfigure}
 
 Let $\Norm\:\Sigma\to \mathbb{S}^2$ be the spherical map that defines the orientation on $\Sigma$.
 Without loss of generality we can assume that $\gamma$ has unit speed.
@@ -467,7 +448,7 @@ The integer $n$ cannot change in the process of deformation since the left hand 
 whence $n=0$ for the result of the deformation.
 \qeds
 
-\section{(Simple geodesic)}
+\section{Simple geodesic}
 
 The following theorem provides an interesting application of Gauss--Bonnet formula;
 it is proved by Stephan Cohn-Vossen \cite[Satz 9 in][]{convossen}.
@@ -475,8 +456,6 @@ it is proved by Stephan Cohn-Vossen \cite[Satz 9 in][]{convossen}.
 \begin{thm}{Theorem}\label{thm:cohn-vossen}
 Any open smooth regular surface with positive Gauss curvature has a simple two-sided infinite geodesic.
 \end{thm}
-
-%???PICS
 
 \parit{Proof of \ref{thm:cohn-vossen}.}
 Let $\Sigma$ be an open surface in with positive Gauss curvature and $\gamma$ a two-sided infinite geodesic in $\Sigma$.

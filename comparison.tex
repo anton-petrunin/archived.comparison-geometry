@@ -33,7 +33,6 @@ The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in
 Part \textit{\ref{SHORT.thm:comp:toponogov}} of the following theorem is called \index{Toponogov comparison theorem}\emph{Toponogov comparison theorem} and sometimes \index{Alexandrov comparison theorem}\emph{Alexandrov comparison theorem};
 it is was proved by Paolo Pizzetti \cite{pizzetti} and latter independently by Alexandr Alexandrov \cite{alexandrov}; 
 generalizations were obtained by  Victor Toponogov \cite{toponogov}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{BGP}.
-%We present a proof from \cite{AKP} which is also very close to the one given by Urs Lang and Viktor Schroeder in \cite{lang-schroeder}.???
 
 Part \textit{\ref{SHORT.thm:comp:cat}} is called \index{Cartan--Hadamard theorem}\emph{Cartan--Hadamard theorem};
 it was proved by 
@@ -157,7 +156,6 @@ By angle monotonicity (\ref{lem:angle-monotonicity}), we get
 \[\angk xzy\ge\measuredangle\hinge 0{\vec v}{\vec w}_{\T_x}.\]
 whence the result.
 \qedsf
-%??? take care of size of the nbhd
 
 \section{Alexandrov's lemma}
 
@@ -235,45 +233,59 @@ $|p-q|\ge |\tilde p-\tilde q|$ (or respectively $|p-q|\le |\tilde p-\tilde q|$).
 \begin{thm}{Proposition}\label{prop:comp-reformulations}
 Let $\Sigma$ be a proper smooth regular surface.
 Then the following three conditions are equivalent:
-\begin{enumerate}[(i$^{+}$)]
-\item For any geodesic triangle $[xyz]$ in $\Sigma$ we have
+
+\begin{subthm}{mang>angk}
+For any geodesic triangle $[xyz]$ in $\Sigma$ we have
  \[\measuredangle\hinge {x}{y}{z}\ge\angk xyz.\]
-\item For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[xz]$ we have
+\end{subthm}
+
+\begin{subthm}{angk>angk} For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[xz]$ we have
  \[\angk xpy \ge \angk xpz.\]
-\item Any geodesic triangle in $\Sigma$ is fat.
-\end{enumerate}
+ 
+\end{subthm}
+
+\begin{subthm}{fat}
+ Any geodesic triangle in $\Sigma$ is fat.
+\end{subthm}
+
 
 \medskip
 
 Similarly, following three conditions are equivalent:
-\begin{enumerate}[(i$^{-}$)]
-\item For any geodesic triangle $[xyz]$ in $\Sigma$ we have
+
+\begin{subthmA}{mang<angk}
+For any geodesic triangle $[xyz]$ in $\Sigma$ we have
  \[\measuredangle\hinge {x}{y}{z}\le\angk xyz.\]
-\item For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[xz]$ we have
+\end{subthmA}
+
+\begin{subthmA}{angk<angk} For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[xz]$ we have
  \[\angk xpy \le \angk xpz.\]
-\item Any geodesic triangle in $\Sigma$ is thin.
-\end{enumerate}
+\end{subthmA}
+
+\begin{subthmA}{thin}
+Any geodesic triangle in $\Sigma$ is thin.
+\end{subthmA}
 
 \end{thm}
 
-\parit{Proof.} We will prove the implications \textit{(i$^{+}$)$\Rightarrow$(ii$^{+}$)$\Rightarrow$(iii$^{+}$)$\Rightarrow$(i$^{+}$)}.
-The implications \textit{(i$^{-}$)$\Rightarrow$(ii$^{-}$)$\Rightarrow$(iii$^{-}$)$\Rightarrow$(i$^{-}$)} can be done the same way.
+\parit{Proof.} We will prove the implications \ref{SHORT.mang>angk}$\Rightarrow$\ref{SHORT.angk>angk}$\Rightarrow$\ref{SHORT.fat}$\Rightarrow$\ref{SHORT.mang>angk}.
+The implications \ref{SHORT.mang<angk}$\Rightarrow$\ref{SHORT.angk<angk}$\Rightarrow$\ref{SHORT.thin}$\Rightarrow$\ref{SHORT.mang<angk} can be done the same way.
 
-\parit{(i$^{+}$)$\Rightarrow$(ii$^{+}$).}
+\parit{\ref{SHORT.mang>angk}$\Rightarrow$\ref{SHORT.angk>angk}.}
 Note that $\measuredangle\hinge ypx+\measuredangle\hinge ypz=\pi$.
-By \textit{(i$^{+}$)}, 
+By \textit{\ref{SHORT.mang>angk}}, 
 \[\angk ypx+\angk ypz\le \pi.\]
 It reamains to apply Alexandrov's lemma (\ref{lem:alex-reformulation}).
 
 
-\parit{(ii$^{+}$)$\Rightarrow$(iii$^{+}$).}
-Applying \textit{(i$^{+}$)} twice, first for $y\in [xz]$ and then for $w\in [px]$, we get that
+\parit{\ref{SHORT.angk>angk}$\Rightarrow$\ref{SHORT.fat}.}
+Applying \textit{\ref{SHORT.mang>angk}} twice, first for $y\in [xz]$ and then for $w\in [px]$, we get that
 \[\angk xwy \ge \angk xpy \ge \angk xpz\]
 and therefore
 \[|w-y|_\Sigma\ge |\tilde w-\tilde y|_{\RR^2},\]
 where $\tilde w$ and $\tilde y$ are the points corresponding to $w$ and $y$ points on the sides of the model triangle. Hence the implication follows.
 
-\parit{(iii$^{+}$)$\Rightarrow$(i$^{+}$).}
+\parit{\ref{SHORT.fat}$\Rightarrow$\ref{SHORT.mang>angk}.}
 Since the triangle is fat, we have 
 \[\angk xwy \ge \angk xpz\]
 for any $w\in \left]xp\right]$ and $y\in \left]xz\right]$.
@@ -302,19 +314,6 @@ Consider the function
 \end{enumerate}
 \end{thm}
 
-\begin{thm}{Exercise}\label{ex:arm-lemma}
-Let $\tilde x_1\dots\tilde x_n$ be a convex plane polygon and
-$x_1\dots x_n$ be a broken geodesic in an open simply connected surface $\Sigma$ with nonpositive curvature.
-Assume that
-$|x_i-x_{i-1}|_\Sigma=|\tilde x_i-\tilde x_{i-1}|_{\RR^2}$ and
-$\measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}\ge \measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}$
- for each $i$.
-Show that \[|x_1-x_n|_\Sigma\ge |\tilde x_1\z-\tilde x_n|_{\RR^2}.\]
-\end{thm}
-
-For $\Sigma=\RR^2$, the exercise above is the so called \index{arm lemma}\emph{arm lemma}; 
-you can use it without proof.
-
 
 \begin{thm}{Exercise}\label{ex:midpoints}
 Let $x'$ and $y'$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in an open smooth regular surface $\Sigma$.
@@ -330,16 +329,18 @@ Let $x'$ and $y'$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in 
 
 \section{Nonnegative curvature}
 
-In this section we will prove \ref{thm:comp:toponogov}, assuming that $\Sigma$ is compact; the general case requires only minor modifications.
+We will prove \ref{thm:comp:toponogov}, first assuming that $\Sigma$ is compact.
+The general case requires only minor modifications; they are indicated in Exercise \ref{ex:open-comparison} at the end of the section.
+The proof is taken from \cite{alexander-kapovitch-petrunin2027} and it is very close to the proof given by Urs Lang and Viktor Schroeder \cite{lang-schroeder}.
 
-Since $\Sigma$ is compact, from the local theorem (\ref{thm:loc-comp}), we get that there is $\eps>0$ such that the inequality 
-\[\measuredangle\hinge {x}{y}{z}\ge\angk xyz.\]
-holds for any hinge $\hinge {x}{y}{z}$ such that $|x-y|+|x-z|<\eps$.
-The following lemma states that in this case the same holds for any hinge $\hinge {x}{y}{z}$ such that $|x-y|+|x-z|<\tfrac32\cdot\eps$.
-Applying the lemma few times we will get that the comparison holds for arbitrary hinge, which will prove \ref{thm:comp:toponogov}.
-
-
-
+\parit{Proof of \ref{thm:comp:toponogov} in compact case.}\label{proof(thm:comp:toponogov)}
+Assume $\Sigma$ is compact. 
+From the local theorem (\ref{thm:loc-comp}), we get that there is $\eps>0$ such that the inequality 
+\[\measuredangle\hinge {x}{p}{q}\ge\angk xpq.\]
+holds for any hinge $\hinge {x}{p}{q}$ such that $|x-p|+|x-q|<\eps$.
+The following lemma states that in this case the same holds for any hinge $\hinge {x}{p}{q}$ such that $|x-p|+|x-q|<\tfrac32\cdot\eps$.
+Applying the key lemma (\ref{key-lem:globalization}) few times we will get that the comparison holds for arbitrary hinge, which will prove \mbox{\ref{thm:comp:toponogov}}.
+\qeds
 
 \begin{thm}{Key lemma}\label{key-lem:globalization}  
 Let $\Sigma$ be an open smooth regular surface.
@@ -473,9 +474,37 @@ In particular
 \[\side\hinge spq=s_0\ge |p-q|,\] so we obtain \ref{eq:thm:=def-loc*}.
 \qeds
 
+\begin{thm}{Exercise}\label{ex:open-comparison}
+Let $\Sigma$ be an open surface with nonnegative Gauss curvature.
+Given $p\in\Sigma$, denote by $R_p$ 
+(the \index{comparison radius}\emph{comparison radius} at $p$) 
+the maximal value (possibly $\infty$) such that the comparison 
+\[\measuredangle\hinge x p y
+\ge\angk x p y\]
+holds for any hinge $\hinge x p y$ with $\dist{p}{x}{}+\dist{x}{y}{}<R_p$.
 
-\begin{thm}{Exercise}\label{ex:convex-polyhon}
-Assume a disc $\Delta$ lies in open smooth regular surface $\Sigma$ with nonnegative Gauss curvature and bounded by a closed broken geodesic $x_1\dots x_n$ with positive exterior angles; that is, when you travel along the boundary, you always turn to the side where $\Delta$ is.
+\begin{subthm}{ex:open-comparison:positive}
+Show that for any compact subset $K\subset \Sigma$, there is $\eps>0$ such that $R_p>\eps$ for any $p\in K$.
+\end{subthm}
+
+\begin{subthm}{ex:open-comparison:almost-min}
+Use part \ref{SHORT.ex:open-comparison:positive} to show that 
+there is a point $p\in\Sigma$ such that 
+\[R_q>(1-\tfrac1{100})\cdot R_p,\]
+for any $q\in B(p,100\cdot R_p)_\Sigma$.
+\end{subthm}
+
+\begin{subthm}{ex:open-comparison:proof}
+Use \ref{SHORT.ex:open-comparison:almost-min} to extend the proof on page \pageref{proof(thm:comp:toponogov)} to open surfaces. 
+(Show that $R_p=\infty$ for any $p\in\Sigma$.) 
+\end{subthm}
+
+
+\end{thm}
+
+
+\begin{thm}{Advanced exercise}\label{ex:convex-polyhon}
+Assume a disc $\Delta$ lies in an open smooth regular surface $\Sigma$ with nonnegative Gauss curvature and bounded by a closed broken geodesic $x_1\dots x_n$ with positive exterior angles; that is, when you travel along the boundary, you always turn to the side where $\Delta$ is.
 
 Show that there is a convex plane polygon $\tilde x_1\dots \tilde x_n$ which sides are equal to the corresponding sides of $x_1\dots x_n$ and with internal angles at not bigger than in the corresponding angles  of $x_1\dots x_n$.
 \end{thm}

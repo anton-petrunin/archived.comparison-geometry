@@ -152,7 +152,7 @@ Recall that a region $R$ in the Euclidean space is called  \index{strictly conve
 
 Clearly any open convex set is strictly convex;
 the cube (as well as any convex polyhedron) gives an example of a convex set which is not strictly convex.
-It is easy to see that a closed convex region is strictly convex if and only if its boundary does not contain a line segment. %???+to Appendix
+It is easy to see that a closed convex region is strictly convex if and only if its boundary does not contain a line segment. %???+to prelim
 
 \begin{thm}{Lemma}\label{lem:gauss+=>convexity}
 Let $z=f(x,y)$ be the local description of a smooth surface $\Sigma$ in a tangent-normal coordinates at some point $p\in\Sigma$.
@@ -264,21 +264,20 @@ The following exercises will guide you thru the proof of both parts of the theor
 \centering
 \includegraphics{mppics/pic-78}
 \end{wrapfigure}
-%%%???redo the picture
 
 \begin{thm}{Exercise}\label{ex:convex-proper-sphere}
 Assume a convex compact region $R$ contains the origin in its interior and bounded by a smooth surface $\Sigma$.
 
-\begin{subthm}{}
+\begin{subthm}{ex:convex-proper-sphere:single}
 Show that any half-line that starts at the origin intersects $\Sigma$ at a single point;
 that is, there is a positive function $\rho\:\mathbb{S}^2\z\to\RR$ such that $\Sigma$ is formed by points $q\z=\rho(\xi)\cdot \xi$ for $\xi\in \mathbb{S}^2$.
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:convex-proper-sphere:smooth}
 Show that $\rho\:\mathbb{S}^2\to\RR$ is a smooth function.
 \end{subthm}
 
-\begin{subthm}{}
+\begin{subthm}{ex:convex-proper-sphere:regular}
 Conclude that $\xi\mapsto \rho(\xi)\cdot \xi$ is a smooth regular parametrization $\mathbb{S}^2\to \Sigma$.
 \end{subthm}
 
@@ -287,9 +286,9 @@ Conclude that $\xi\mapsto \rho(\xi)\cdot \xi$ is a smooth regular parametrizatio
 \begin{wrapfigure}{r}{33 mm}
 \vskip-8mm
 \centering
-\includegraphics{mppics/pic-81}
+\includegraphics{mppics/pic-1181}
 \end{wrapfigure}
-%%%???redo the picture
+
 
 \begin{thm}{Exercise}\label{ex:convex-proper-plane}
 Assume a strictly convex closed noncompact region $R$ contains the origin in its interior and bounded by a smooth surface $\Sigma$.
@@ -299,7 +298,7 @@ Show that $R$ contains a half-line $\ell$.
 \end{subthm}
 
 \begin{subthm}{ex:convex-proper-plane:b}
-Show that any line parallel to $\ell$ intersects $\Sigma$ at most at one point.
+Show that any line $m$ parallel to $\ell$ intersects $\Sigma$ at most at one point.
 \end{subthm}
 
 
@@ -387,11 +386,13 @@ A tangent direction on a smooth surface with vanishing normal curvature is calle
 A smooth regular curve that always runs in an asymptotic direction is called an
 \index{asymptotic line}\emph{asymptotic line}.\label{page:asymptotic line}
 
+Recall that a set $R$ in the plane is called \index{star-shaped set}\emph{star-shaped} if there is a point $p\in R$ such that for any $x\in R$ the lie segment $[p,x]$ belongs to~$R$.
+
 \begin{thm}{Advanced exercise}\label{ex:panov}
 Let $\gamma$ be a closed smooth asymptotic line
 in a graph $z\z=f(x,y)$ of a smooth function $f$. 
 Assume $\Sigma$ is strictly saddle in a neighborhood of $\gamma$.
-Show that the projection of $\gamma$ to the $(x,y)$-plane cannot be star-shaped. %???star-shaped is not defined
+Show that the projection of $\gamma$ to the $(x,y)$-plane cannot be star-shaped. 
 \end{thm}
 
 \section{Hats}
