@@ -94,7 +94,7 @@ Plane is the simplest example of smooth surface.
 Earlier we introduced signed curvature of a plane curve.
 Let us introduce the so called \index{geodesic curvature}\emph{geodesic curvature} --- an analogous notion for a smooth curve $\gamma$ in general oriented smooth surface $\Sigma$.
 
-\begin{wrapfigure}{o}{40 mm}
+\begin{wrapfigure}{o}{42 mm}
 \vskip-0mm
 \centering
 \begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/paraboloid+curve(1)}
@@ -241,44 +241,42 @@ Any two closed simple geodesics on $\Sigma$ have a common point.
 \begin{thm}{Exercise}\label{ex:self-intersections}
 Let $\Sigma$ be a smooth regular sphere with positive Gauss curvature and $p\in\Sigma$. 
 Suppose $\gamma$ is a closed geodesic that is covered by one chart.
-Can it happen that in this chart, the curve $\gamma$ looks like one the curves on the following diagrams?
+Show that $\gamma$ cannot look like one the curves on the following diagrams.
 
 \begin{figure}[h]
-\begin{minipage}{.32\textwidth}
+\begin{minipage}{.48\textwidth}
 \centering
 \includegraphics{mppics/pic-46}
 \end{minipage}
 \hfill
-\begin{minipage}{.32\textwidth}
+\begin{minipage}{.48\textwidth}
 \centering
 \includegraphics{mppics/pic-47}
 \end{minipage}
-\hfill
-\begin{minipage}{.32\textwidth}
-\centering
-\includegraphics{mppics/pic-471}
-\end{minipage}
-
 
 \medskip
 
-\begin{minipage}{.32\textwidth}
+\begin{minipage}{.48\textwidth}
 \centering
 \caption*{\textit{(easy)}}
 \end{minipage}\hfill
-\begin{minipage}{.32\textwidth}
+\begin{minipage}{.48\textwidth}
 \centering
 \caption*{\textit{(tricky)}}
-\end{minipage}
-\hfill
-\begin{minipage}{.32\textwidth}
-\centering
-\caption*{\textit{(advanced)}}
 \end{minipage}
 \vskip-4mm
 \end{figure}
 
 \end{thm}
+
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-471}
+\end{wrapfigure}
+
+In fact $\gamma$ also cannot look like the curve on the right, but the proof requires more than Gauss--Bonnet; see \ref{ex:self-intersections-hard}.
 
 The following exercise gives the optimal bound on Lipschitz constant of a convex function that guarantees that its geodesics have no self-intersections;
 compare to \ref{ex:rough-bound-mountain}.
@@ -298,7 +296,7 @@ Show that any two points in $\Sigma$ are connected by a unique geodesic.
 Let $\Delta$ be a topological disc in a smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$ that is oriented in such a way that $\Delta$ lies on its left.
 Set
 \[\GB(\Delta)=\tgc{\partial\Delta}+\iint_\Delta K-2\cdot \pi,
-\eqlbl{eq:GB}\]
+\eqlbl{eq:GB}\]\index{$\GB(\Delta)$}
 where $K$ denotes the Gauss curvature of $\Sigma$.
 
 Note the Gauss--Bonnet formula states that 
@@ -312,8 +310,8 @@ Then
 \]
 \end{thm}
 
-\begin{wrapfigure}{r}{40 mm}
-\vskip-0mm
+\begin{wrapfigure}[8]{r}{40 mm}
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-1750}
 \end{wrapfigure}
@@ -354,7 +352,7 @@ Assume $\partial P$ is oriented such that $P$ lies on the left from $\partial P$
 Then 
 \[\GB(P)=\tgc{\partial P}+\area P-2\cdot \pi=0.\]
 
-Moreover the same formula holds for any spherical region $P$ bounded by piecewise smooth simple closed curve $\partial P$.
+Moreover the same formula holds for any spherical region bounded by piecewise smooth simple closed curve.
 \end{thm}
 
 This proposition will be used in the informal proof given below.
@@ -477,7 +475,7 @@ Then the disks $\Delta_1$ and $\Delta_2$ have to overlap,
 otherwise the curvature of $\Sigma$ would exceed $2\cdot\pi$;
 the latter contradicts \ref{intK=<2pi+}.
 
-\begin{wrapfigure}{r}{20 mm}
+\begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-1550}

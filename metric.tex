@@ -24,13 +24,13 @@ $$\Dist(x,y)=0.$$
 \item\label{def:metric-space:c} Symmetry: $$\Dist(x, y) = \Dist(y, x).$$
 \item\label{def:metric-space:d} Triangle inequality: 
 $$\Dist(x, z) \le \Dist(x, y) + \Dist(y, z).$$
-\end{enumerate}\
+\end{enumerate}
 
 A set with a metric is called \index{metric space}\emph{metric space} and the elements of the set are called \index{point}\emph{points}.
 
 \subsection*{Shortcut for distance}
 Usually we consider only one metric on a set, therefore we can denote the metric space and its underlying set by the same letter, say $\mathcal X$.
-In this case we also use a shortcut notations $|x-y|$ or $|x-y|_\mathcal X$ for the {}\emph{distance $\Dist(x,y)$ from $x$ to $y$ in $\mathcal X$}.
+In this case we also use a shortcut notations $|x-y|$ or $|x-y|_{\mathcal X}$  for the {}\emph{distance $\Dist(x,y)$ from $x$ to $y$ in $\mathcal X$}.\index{$\lvert x-y\rvert$}\index{$\lvert x-y\rvert_{\spc{X}}$}
 For example, the triangle inequality can be written as 
 $$|x-z|_{\mathcal X}\le |x-y|_{\mathcal X}+|y-z|_{\mathcal X}.$$
 
@@ -62,8 +62,10 @@ The {}\emph{open ball} is denoted as $B(p,R)$ or $B(p,R)_{\mathcal X}$;
 the second notation is used if we need to emphasize that the ball lies in the metric space $\mathcal X$.
 Formally speaking
 \[B(p,R)=B(p,R)_{\mathcal X}=\set{x\in \mathcal X}{|x-p|_{\mathcal X}< R}.\]
+\index{$B(p,R)_{\mathcal X}$}
 Analogously, the {}\emph{closed ball} is denoted as $\bar B[p,R]$ or $\bar B[p,R]_{\mathcal X}$ and
 \[\bar B[p,R]=\bar B[p,R]_{\mathcal X}=\set{x\in \mathcal X}{|x-p|_{\mathcal X}\le R}.\]
+\index{$\bar B[p,R]_{\mathcal X}$}
 
 \begin{thm}{Exercise}\label{ex:B2inB1}
 Let $\mathcal X$ be a metric space.

@@ -11,7 +11,7 @@ The pair $\tan(s),\norm(s)$ is an oriented orthonormal frame in the plane which 
 
 Recall that $\gamma''(s)\perp \gamma'(s)$ (see \ref{prop:a'-pertp-a''}).
 Therefore 
-\[\tan'(s)=\skur(s)\cdot \norm(s).\eqlbl{eq:tau'}\]
+\[\tan'(s)=\skur(s)\cdot \norm(s).\eqlbl{eq:tau'}\]\index{$\skur$}
 for some real number $\skur(s)$;
 the value $\skur(s)$ is called \index{signed curvature}\emph{signed curvature} of $\gamma$ at $s$.
 We may use notation $\skur(s)_\gamma$ if we need to specify the curve $\gamma$.
@@ -77,7 +77,7 @@ Show that
 
 The curves $\gamma_0$ and $\gamma_1$ in the exercise above describe the tracks of an idealized bicycle with  distance 1 from the rear to the front wheel.
 Thus by the exercise, the front wheel must have longer track.
-For more on the geometry of bicycle tracks, see \cite{FLT} and the references therein.
+For more on the geometry of bicycle tracks, see \cite{foote-levi-tabachnikov} and the references therein.
 
 \section{Fundamental theorem of plane curves}
 
@@ -157,7 +157,7 @@ The \index{total signed curvature}\emph{total signed curvature} of $\gamma$, den
 of its signed curvature;
 \[\Psi(\gamma)
 =
-\int_\mathbb{I} \skur(s)\cdot ds,\eqlbl{eq:tsc-k}\]
+\int_\mathbb{I} \skur(s)\cdot ds,\eqlbl{eq:tsc-k}\]\index{$\Psi(\gamma)$}
 where $\skur$ denotes the signed curvature of $\gamma$.
 
 If $\mathbb{I}=[a,b]$, then 
@@ -206,7 +206,7 @@ Moreover the same statement holds for any closed piecewise simple smooth regular
 \end{thm}
 
 This proposition is called sometimes \index{Umlaufsatz}\emph{Umlaufsatz}; it is a differential-geometric analog of the theorem about the sum of the internal angles of a polygon (\ref{thm:sum=(n-2)pi}) which we use in the proof.
-A more conceptual proof was given by Heinz Hopf \cite{hopf}, \cite[p. 42]{hopf-book}.
+A more conceptual proof was given by Heinz Hopf \cite{hopf1935}, \cite[p. 42]{hopf1989}.
 
 \parit{Proof.}
 Without loss of generality we may assume that $\gamma$ is oriented in such a way that the region bounded by $\gamma$ lies on the left from it.
@@ -215,13 +215,6 @@ We can also assume that it is parametrized by arc-length.
 Consider a closed polygonal line $\beta=p_1\dots p_n$ inscribed in $\gamma$.
 We can assume that the arcs between the vertexes are sufficiently small;
 in this case the polygonal line is simple and each arc $\gamma_i$ from $p_i$ to $p_{i+1}$ has small total absolute curvature, say  $\tc{\gamma_i}<\pi$ for each $i$.
-
-\begin{wrapfigure}{o}{43 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-59}
-\vskip0mm
-\end{wrapfigure}
 
 As usual we use indexes modulo $n$, in particular $p_{n+1}\z=p_1$.
 Assume $p_i=\gamma(t_i)$.
@@ -232,6 +225,13 @@ Set
 \alpha_i&=\measuredangle(\vec v_i,\vec w_i),&\beta_i&=\measuredangle(\vec w_{i-1},\vec v_i),
 \end{align*}
 where $\alpha_i,\beta_i\in(-\pi,\pi]$ are signed angles --- $\alpha_i$ is positive if $\vec w_i$ points to the left from $\vec v_i$.
+
+\begin{wrapfigure}{o}{43 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-59}
+\vskip0mm
+\end{wrapfigure}
 
 By \ref{eq:tsc-theta}, the value
 \[\Psi(\gamma_i)-\alpha_i-\beta_{i+1}\eqlbl{eq:Psi-alpha-beta}\]
@@ -401,14 +401,14 @@ and later rediscovered by Adolf Kneser \cite{kneser}.
 
 \begin{thm}{Lemma}\label{lem:spiral}
 Assume that $\gamma$ is a smooth regular plane curve with strictly decreasing positive signed curvature. Then the osculating circles of $\gamma$ are nested; that is, if $\sigma_s$ denoted the osculating circle of $\gamma$ at $s$,
-then $\sigma_{s_0}$ lies in the open disc bounded by $\sigma_{s_1}$ for any $s_0<s_1$. 
+then $\sigma_{s_0}$ lies in the open disc bounded by $\sigma_{s_1}$ for any $s_0<s_1$. \index{$\sigma_s$}
 \end{thm}
 
 It turns out that the osculating circles of the curve $\gamma$ give a peculiar foliation of an annulus by circles; it has the following property: if a smooth function is constant on each osculating circle it must be constant in the annulus \cite[see][Lecture 10]{fuchs-tabachnikov}.
 Also note that the curve $\gamma$ is tangent to a circle of the foliation at each of its points.
 However, it does not run along any of those circles.
 
-\begin{wrapfigure}{o}{33 mm}
+\begin{wrapfigure}{o}{35 mm}
 \vskip-4mm
 \centering
 \begin{lpic}[t(-0 mm),b(-0 mm),r(0 mm),l(0 mm)]{mppics/pic-84}
@@ -798,7 +798,7 @@ Describe all possible orders of $p_i$ on $\ell$.
 
 \section{Moon in a puddle}
 
-The following theorem is a slight generalization of the theorem proved by Vladimir Ionin and German Pestov in \cite{pestov-ionin}.
+The following theorem is a slight generalization of the theorem proved by Vladimir Ionin and German Pestov in \cite{ionin-pestov}.
 For convex curves, this result was known earlier \cite[\S 24]{blaschke}.
 
 

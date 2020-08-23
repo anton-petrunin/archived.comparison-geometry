@@ -28,7 +28,7 @@ The Jacobian matrix of $\bm{f}$ at $\bm{x}\in\RR^m$ is defined as
 \begin{pmatrix}
 \dfrac{\partial f_1}{\partial x_1} & \cdots & \dfrac{\partial f_1}{\partial x_m}\\
 \vdots & \ddots & \vdots\\
-\dfrac{\partial f_n}{\partial x_1} & \cdots & \dfrac{\partial f_n}{\partial x_m} \end{pmatrix};\]
+\dfrac{\partial f_n}{\partial x_1} & \cdots & \dfrac{\partial f_n}{\partial x_m} \end{pmatrix};\]\index{$\Jac_{\bm{x}}\bm{f}$}
 we assume that the right hand side is evaluated at $\bm{x}=(x_1,\dots,x_m)$.
 
 If the Jacobean matrix defines a surjective linear map $\RR^m\to\RR^n$ (that is, if $\rank(\Jac_{\bm{x}}\bm{f})=n$) then we say that 
@@ -101,7 +101,7 @@ holds if and only if
 \subsection*{Multiple integral}
 
 Set 
-\[\jac_{\bm{x}}\bm{f}\df|\det[\Jac_{\bm{x}}\bm{f}]|;\]
+\[\jac_{\bm{x}}\bm{f}\df|\det[\Jac_{\bm{x}}\bm{f}]|;\]\index{$\jac_{\bm{x}}\bm{f}$}
 that is, $\jac_{\bm{x}}\bm{f}$ is the absolute value of the determinant of the Jacobian matrix of $\bm{f}$ at $\bm{x}$.
 
 The following theorem plays the role of a substitution rule for multiple variables.
@@ -161,7 +161,7 @@ Suppose we have an ordinary differential equation of order $k$
 \[\bm{x}^{(k)}=\bm{f}(\bm{x},\dots,\bm{x}^{(k-1)},t),\]
 where $\bm{x}=\bm{x}(t)$ is a function from a real inerval to $\RR^n$.
 
-This equation can be rewritten as $k$ first order equations as follows:
+This equation can be rewritten as $k$ first order equations as follows with $k-1$ new variables $\bm{y}_i=\bm{x}^{(i)}$:
 \[
 \begin{cases}
 \bm{x}'&=\bm{y}_1
@@ -449,11 +449,11 @@ Then
 |x-z|\ge |x'-z'|.\]
 \end{thm}
 
-\begin{wrapfigure}{o}{30 mm}
+\begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-69}
-\vskip0mm
+\vskip4mm
 \end{wrapfigure}
 
 \parit{Proof of \ref{thm:spherical-triangle-inq}.}

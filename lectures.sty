@@ -7,6 +7,9 @@
 \usepackage{pifont}
 \usepackage[makeroom]{cancel}
 
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+
 
 \usepackage[colorlinks=true,
 citecolor=black,
@@ -40,10 +43,7 @@ urlcolor=black%
 
 \usepackage[nottoc]{tocbibind}
 
-\csname @openrightfalse\endcsname
-
-\usepackage[T1,T2A]{fontenc}
-\usepackage[utf8]{inputenc}
+%\csname @openrightfalse\endcsname
 
 \usepackage[
 sorting=debug,
@@ -51,7 +51,7 @@ bibencoding=auto,
 backend=biber,
 maxnames=10,
 %babel=other,
-autolang=other,
+%autolang=other,
 doi=false,
 url=false,
 style=numeric-comp,
@@ -61,6 +61,8 @@ isbn=false]{biblatex}
 \AtEveryBibitem{\clearlist{note}}
 \renewbibmacro{in:}{}
 \renewcommand*{\bibfont}{\scriptsize}
+
+
 \addbibresource{library.bib}
 
 

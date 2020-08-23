@@ -442,9 +442,11 @@ Note that
 It follows that 
 \begin{align*}
 \langle\vec u'(t),\vec v(t)\rangle
-&=\phi'(t)\cdot(\cos[\phi(t)]^2\cdot \langle\vec x(t),\vec x(t)\rangle]+\sin[\phi(t)]^2\cdot \langle\vec y(t),\vec y(t)\rangle])=
+=\phi'(t)\cdot\biggl(&\cos[\phi(t)]^2\cdot \langle\vec x(t),\vec x(t)\rangle]+
 \\
-&=\phi'(t).
+&+\sin[\phi(t)]^2\cdot \langle\vec y(t),\vec y(t)\rangle]\biggr)=
+\\
+=\phi'(t).\ &
 \end{align*}
 
 Therefore
@@ -462,7 +464,7 @@ Observe that
 
 \item $\vec u(0))$ is a counterclockwise rotation of $\vec x(0)$ by angle $\phi(0)=0$, and 
 
-\item $\vec u(1)$ is a counterclockwise rotation of $\vec x(1)$ by angle $\phi(1)=\rot_\gamma\vec u$,
+\item $\vec u(1)$ is a counterclockwise rotation of $\vec x(1)$ by angle $\phi(1)\z=\rot_\gamma\vec u$,
 
 \item $\vec u(0))=\vec u(1)$.
 \end{itemize}
@@ -612,7 +614,7 @@ By \ref{eq:b-K} the statement follows.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:K=0}
-Suppose that a smooth surface $\Sigma$ has vanishing Gauss curvature.
+Suppose that the Gauss curvature of a smooth surface $\Sigma$ vanishes.
 Show that $\Sigma$ is \index{locally flat surface}\emph{locally flat};
 that is, a neighborhood of any point in $\Sigma$ admits an intrinsic isometry to an open domain in the Euclidean plane.  
 \end{thm}

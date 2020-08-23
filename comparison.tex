@@ -32,7 +32,7 @@ The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in
 
 Part \textit{\ref{SHORT.thm:comp:toponogov}} of the following theorem is called \index{Toponogov comparison theorem}\emph{Toponogov comparison theorem} and sometimes \index{Alexandrov comparison theorem}\emph{Alexandrov comparison theorem};
 it is was proved by Paolo Pizzetti \cite{pizzetti} and latter independently by Alexandr Alexandrov \cite{alexandrov}; 
-generalizations were obtained by  Victor Toponogov \cite{toponogov}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{BGP}.
+generalizations were obtained by  Victor Toponogov \cite{toponogov1957}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{burago-gromov-perelman}.
 
 Part \textit{\ref{SHORT.thm:comp:cat}} is called \index{Cartan--Hadamard theorem}\emph{Cartan--Hadamard theorem};
 it was proved by 
@@ -40,7 +40,7 @@ Hans von Mangoldt \cite{mangoldt} and generalized by Elie Cartan \cite{cartan}, 
 Herbert Busemann \cite{busemann},
 Willi Rinow \cite{rinow},
 Mikhael Gromov \cite[p.~119]{gromov},
-Stephanie Alexander and Richard Bishop \cite{a-b:h-c}.
+Stephanie Alexander and Richard Bishop \cite{alexander-bishop1990}.
 
 A surface $\Sigma$ is called \index{simply connected surface}\emph{simply connected} if any closed simple curve in $\Sigma$ bounds a disc.
 Equivalently any closed curve in $\Sigma$ can be continuously deformed into a \index{trivial curve}\emph{trivial curve}; that is, a curve that stands at one point all the time.
@@ -208,7 +208,6 @@ Further we will use the following reformulation of this lemma that is using lang
 \end{wrapfigure}
 
 \begin{thm}{Reformulation}\label{lem:alex-reformulation}
-\label{lem:alex}
 Assume $[pxz]$ be a triangle in a surface $\Sigma$ and 
 the point $y$ lies on the side $[xz]$.
 Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x\tilde z]$.
@@ -502,12 +501,29 @@ Use \ref{SHORT.ex:open-comparison:almost-min} to extend the proof on page \pager
 
 \end{thm}
 
+\begin{wrapfigure}{r}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-471}
+\end{wrapfigure}
 
-\begin{thm}{Advanced exercise}\label{ex:convex-polyhon}
-Assume a disc $\Delta$ lies in an open smooth regular surface $\Sigma$ with nonnegative Gauss curvature and bounded by a closed broken geodesic $x_1\dots x_n$ with positive exterior angles; that is, when you travel along the boundary, you always turn to the side where $\Delta$ is.
 
+\begin{thm}{Advanced exercise}\label{ex:convex-polyhon+self-intersections}
+Let $\Sigma$ be a smooth regular surface with nonnegative Gauss curvature.
+Suppose a closed broken geodesic $x_1\dots x_n$ cuts from $\Sigma$ a disc $\Delta$ with positive exterior angles; that is, when you travel along the boundary, you always turn to the side where $\Delta$ is.
+
+\begin{subthm}{ex:convex-polyhon}
 Show that there is a convex plane polygon $\tilde x_1\dots \tilde x_n$ which sides are equal to the corresponding sides of $x_1\dots x_n$ and with internal angles at not bigger than in the corresponding angles  of $x_1\dots x_n$.
+\end{subthm}
+
+\begin{subthm}{ex:self-intersections-hard}
+Use \ref{SHORT.ex:convex-polyhon} to show that a closed geodesic in  a smooth regular sphere with positive Gauss curvature
+Show that $\gamma$ cannot look like the curves on the diagram in some chart.
+\end{subthm}
+
 \end{thm}
+
+
 
 \begin{thm}{Advanced exercise}\label{ex:dist-to-bry}
 Suppose that a closed geodesic $\delta$ bounds a disc $\Delta$ in a closed convex surface $\Sigma$.
@@ -634,7 +650,7 @@ Thus
 \[\angk{z}{p}{x}+\angk{z}{p}{y}
 \ge
 \pi.\]
-By Alexandrov's lemma (\ref{lem:alex}), this is equivalent to 
+By Alexandrov's lemma (\ref{lem:alex-reformulation}), this is equivalent to 
 \[\angk x p z\le\angk x p y.
 \eqlbl{eq:for|pz|}\]
 

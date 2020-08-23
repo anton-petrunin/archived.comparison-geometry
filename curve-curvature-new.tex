@@ -54,7 +54,7 @@ that is, $\tan$ is a spherical curve.
 
 If $s\mapsto \gamma(s)$ is a unit-speed parametrization, then $\tan(s)=\gamma'(s)$.
 In this case we have the following expression for curvature: 
-\[\kur(s)\z=|\tan'(s)|\z=|\gamma''(s)|.\]
+\[\kur(s)\z=|\tan'(s)|\z=|\gamma''(s)|.\]\index{$\kur$}
 
 When $\gamma$ is not necessarily parameterized by arc-length, then
 \[ \kur(t)=\frac{|\tan'(t)|}{|\gamma'(t)|}.\eqlbl{eq:curvature}\]
@@ -186,7 +186,7 @@ whence
 
 
 Assume $\alpha\:[a,b]\to \RR^3$ and $\beta\:[b,c]\z\to \RR^3$ are two curves such that $\alpha(b)=\beta(b)$.
-Then one can combine these two curves into one $\gamma\:[a,c]\z\to \RR^3$ by the rule 
+Note that these two curves can be combined into one $\gamma\:[a,c]\z\to \RR^3$ by the rule 
 \[\gamma(t)=
 \begin{cases}
 \alpha(t)&\text{if}\quad t\le b,
@@ -243,7 +243,7 @@ Then
 Suppose $\gamma$ is a cyclic concatenation of $n$ smooth regular arcs $\gamma_1,\dots,\gamma_n$.
 Denote by $\theta_1,\dots,\theta_n$ its external angles.
 We need to show that
-\[\tc{\gamma_1}+\dots+\tc{\gamma_n}+\theta_1+\dots+\theta_n\ge2\cdot\pi.\eqlbl{eq:gen-fenchel}\]
+\[\tc{\gamma_1}+\dots+\tc{\gamma_n}+\theta_1+\dots+\theta_n\ge2\cdot\pi.\eqlbl{eq:gen-fenchel}\]\index{$\tc{\gamma}$}
 
 Consider the tangent indicatrix $\tan_1,\dots,\tan_n$ for each arc $\gamma_1,\dots,\gamma_n$;
 these are smooth spherical arcs.
@@ -424,13 +424,14 @@ Note that
 
 The sum of angles in any triangle is $\pi$, so combining these inequalities, we get that 
 \begin{align*}
-\tc{abcd}&\ge 4\cdot \pi 
-- (\measuredangle\hinge adb+\measuredangle\hinge bad+ 
-\measuredangle\hinge dba)
--(\measuredangle\hinge cbd+\measuredangle\hinge dcb 
+\tc{abcd}\ge 4\cdot \pi 
+&- (\measuredangle\hinge adb+\measuredangle\hinge bad+ 
+\measuredangle\hinge dba)-
+\\
+&-(\measuredangle\hinge cbd+\measuredangle\hinge dcb 
 +\measuredangle\hinge  bdc)=
 \\
-&=2\cdot\pi.
+=2\cdot\pi.&
 \end{align*}
 
 \begin{wrapfigure}{r}{40 mm}
@@ -601,7 +602,7 @@ Show that
 \end{thm}
 
 
-\section{(DNA inequality)}
+\section{DNA inequality}
 
 Recall that the curvature of a spherical curve is at least $1$
 (Exercise~\ref{ex:curvature-of-spherical-curve}).
@@ -615,9 +616,9 @@ Then
 
 \end{thm}
 
-This theorem was proved by Don Chakerian \cite{chakerian};
-for plane curves it was proved earlier by Istv\'{a}n F\'{a}ry \cite{fary-DNA}.
-We present the proof given by Don Chakerian in \cite{chakerian-short};
+This theorem was proved by Don Chakerian \cite{chakerian1962};
+for plane curves it was proved earlier by Istv\'{a}n F\'{a}ry \cite{fary1950}.
+We present the proof given by Don Chakerian in \cite{chakerian1964};
 few other proofs of this theorem are discussed by Serge Tabachnikov~\cite{tabachnikov}.
 
 \parit{Proof.}
@@ -698,13 +699,16 @@ By the semi-continuity of the length (\ref{thm:length-semicont}), we get that
 \end{align*}
 \qeds
 
+
+
 \begin{thm}{Exercise}\label{ex:tc-semicontinuous}
-Show that the total curvature is lower semi-continuous with respect to pointwise convergence of curves.
+Show that the total curvature is lower semicontinuous with respect to pointwise convergence of curves.
 That is, if a sequence
 of curves $\gamma_n\:[a,b]\to \RR^3$ converges pointwise 
 to a nontrivial curve $\gamma_\infty\:[a,b]\z\to \RR^3$, then 
 \[\liminf_{n\to\infty} \tc{\gamma_n} \ge \tc{\gamma_\infty}.\]
 \end{thm}
+
 
 \begin{thm}{Exercise}\label{ex:gen-fenchel}
 Generalize Fenchel's theorem to all nontrivial closed space curves.
@@ -781,7 +785,7 @@ Therefore
 \\
 &=|q_0-q_n|=
 \\
-&=|p_0-p_1|+\dots+|p_{n-1}-p_n|
+&=|p_0-p_1|+\dots+|p_{n-1}-p_n|=
 \\
 &=\length \gamma.
 \end{align*}

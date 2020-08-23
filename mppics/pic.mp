@@ -3976,7 +3976,7 @@ endfig;
 beginfig(1550)
 save u,p;
 path p[];
-u:=.7cm;
+u:=1cm;
 
 z.a=(0,1)*u;
 z.b=(-1,0)*u;

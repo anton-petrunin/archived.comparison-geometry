@@ -70,7 +70,7 @@ Apply the definitions.
 For \ref{SHORT.ex:cycloid:regular} you need to check that $\gamma'_\ell\ne 0$.
 For \ref{SHORT.ex:cycloid:simple} you need to check that $\gamma_\ell(t_0)=\gamma(t_1)$ only if $t_0=t_1$.
 
-\begin{wrapfigure}{r}{22 mm}
+\begin{wrapfigure}{r}{24 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-270}
@@ -871,11 +871,13 @@ Use \ref{ex:line-of-curvature} and Meusnier's theorem (\ref{thm:meusnier}).
 
 \parbf{\ref{ex:helicoid-is-minimal}.} Apply Meusnier's theorem (\ref{thm:meusnier}) to show that the coordinate curves $\alpha_v\:u\mapsto s(u,v)$ and $\beta_u\:v\mapsto s(u,v)$ are asymptotic; that is, they have vanishing normal curvature.
 
+{\sloppy
+
 Observe that these two families are orthogonal to each other.
 Therefore the Hessian matrix in the frame $s_u/|s_u|$ and $s_v/|s_v|$ will have zeros on the diagonal.
 Apply that mean curvature is the trace of the Hessian matrix.
 
-
+}
 
 \parbf{\ref{ex:moon-revolution}.} Use \ref{ex:line-of-curvature} and \ref{thm:moon-orginal}.
 
@@ -1059,7 +1061,7 @@ The latter means that any two points in $\Sigma$ can be connected by a path that
 To prove \ref{SHORT.ex:convex-proper-sphere:single} use convexity of $R$.
 To prove \ref{SHORT.ex:convex-proper-sphere:smooth} observe that the map $\Sigma\to\mathbb{S}^2$ is smooth and regular, then apply the inverse function theorem to show that inverse is smooth as well.
 
-\begin{wrapfigure}[16]{o}{28 mm}
+\begin{wrapfigure}[16]{o}{29 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-1182}
@@ -1445,37 +1447,6 @@ It follows that
 \[\iint_\Sigma K>(\pi+\alpha)+(\pi+\beta)+(\pi+\gamma)>4\cdot\pi\]
 which contradicts \ref{ex:intK:4pi}.
 
-\begin{wrapfigure}{r}{33 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-472}
-\bigskip
-\includegraphics{mppics/pic-473}
-\vskip8mm
-\end{wrapfigure}
-
-\parit{(advanced)}.
-Assume a convex surface $\Sigma$ with such geodesic exists;
-suppose that arcs and angles are labeled by their lengths.
-
-Apply Gauss--Bonnet formula to show that
-\[2\cdot\alpha<\beta+\gamma\]
-and 
-\[2\cdot\beta+2\cdot \gamma<\pi+\alpha.\]
-Conclude that $\alpha <\tfrac \pi 3$.
-
-Consider the part of geodesic without the arc~$a$.
-Pass to its convex hull;
-denote its surface by $\Sigma'$.
-
-Note that $\Sigma'$ is divided by the curve into 4 parts, one pentagon and three monogons.
-Each of these pieces can be developed in the plane, moreover the resulting figure is convex.
-
-Consider the plane figure that corresponds to the pentagon. 
-Its sides are formed by convex curves with marked lengths, the angles of the pentagon are marked as well.
-It remains to show that there is no pentagon with these properties.
-
-%???move to comparison
 
 \parbf{\ref{ex:diam-angle}.}
 Observe that $|p-x|_\Sigma\le |p-q|_\Sigma$ and $|q-x|_\Sigma\le |p-q|_\Sigma$.
@@ -1514,7 +1485,7 @@ Arrive to a contradiction using  \ref{SHORT.ex:open-comparison:positive}.
 
 For \ref{SHORT.ex:open-comparison:proof}, repeat the proof assuming that $p$ is provided by \ref{SHORT.ex:open-comparison:almost-min}.
 
-\parbf{\ref{ex:convex-polyhon}.}
+\parbf{\ref{ex:convex-polyhon+self-intersections};} \ref{SHORT.ex:convex-polyhon}.
 Let us consider $\Delta$ with induced length-metric.
 
 Note that repeating the proof of \ref{thm:comp:toponogov} we can show that the the comparison holds in $\Delta$.
@@ -1522,6 +1493,33 @@ Note that repeating the proof of \ref{thm:comp:toponogov} we can show that the t
 Now choose a vertex of $\Delta$ and connect it to the remaining vertexes by minimizing geodesics.
 It divides $\Delta$ into triangles, take a model triangle so that they share sides as in $\Delta$.
 Use the comparison to show that these plane triangles form a required polygon.
+
+
+\begin{wrapfigure}{r}{35 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-472}
+\bigskip
+\includegraphics{mppics/pic-473}
+\vskip8mm
+\end{wrapfigure}
+
+\parit{\ref{SHORT.ex:self-intersections-hard}}.
+Assume a convex surface $\Sigma$ with such geodesic exists;
+suppose that arcs and angles are labeled by their lengths.
+
+Apply Gauss--Bonnet formula to show that
+\[2\cdot\alpha<\beta+\gamma\]
+and 
+\[2\cdot\beta+2\cdot \gamma<\pi+\alpha.\]
+Conclude that $\alpha <\tfrac \pi 3$.
+
+Consider the part of geodesic without the arc~$a$.
+It cuts from $\Sigma$ a pentagon with sides and angles as shown on the diagram. 
+By \ref{ex:convex-polyhon}, we can find a pentagon on the plane with convex sides of the same length and angles at most as big.
+
+It remains to show that such plane pentagon does not exist.
+
 
 \parbf{\ref{ex:dist-to-bry}.}
 Suppose $\gamma$ is a unit-speed geodesic in $\Delta$ and $\gamma(0)=p$. 
@@ -1555,7 +1553,9 @@ Since $t=|\tilde p-\tilde x|_{\RR^2}$ is small, so is the distances $|\tilde q-\
 Therefore we can choose a point $y$ on $\delta$ such that $|q-y|_\Sigma=|\tilde q-\tilde y|_{\RR^2}$;
 moreover we can assume that $y$ is chosen so that we have $\measuredangle\hinge qxy= \tfrac\pi2-\psi$.
 
-\begin{wrapfigure}[19]{r}{27 mm}
+{
+
+\begin{wrapfigure}[12]{r}{27 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-1680}
@@ -1603,9 +1603,11 @@ that is,
 \tfrac12\cdot \dist{\gamma_1(1)}{\gamma_2(1)}{}.
 \]
 
+}
+
 {
 
-\begin{wrapfigure}{o}{45 mm}
+\begin{wrapfigure}{o}{46 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-1650}
@@ -1656,13 +1658,17 @@ f(y)&\le |y-\bar y|_\Sigma\le
 +
 |z-\bar z|_\Sigma)=
 \\
-&=\tfrac12(f(x)+f(z))
+&=\tfrac12\cdot(f(x)+f(z))
 \end{align*}
 
 \parbf{\ref{ex:conformal}.} Apply \ref{lem:K(orthogonal)} assuming that $a=b$ and simplify.
 
 \parbf{\ref{ex:K=0}.} Note and use that by \ref{prop:rauch}, $\exp_p$ is length-preserving.
 
+{
+
 \parbf{\ref{ex:K=1}.} Modify the proof of \ref{prop:rauch} showing that $K\equiv 1$ implies that $b(\theta,r)=\sin r$ for all small $r\ge 0$.
+
+}
 
 %\parbf{\ref{}.}
