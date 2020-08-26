@@ -284,7 +284,8 @@ and (3) show that $\gamma$ lies in the unit disc centered at $z$.
 
 
 \parbf{\ref{adex:crofton}.}
-For \ref{SHORT.adex:crofton:crofton}, modify the proof of the original Crofton formula [see page \pageref{page:crofton}].
+For \ref{SHORT.adex:crofton:crofton}, modify the proof of the original Crofton formula
+[Section~\ref{sec:crofton}].
 
 \parit{\ref{SHORT.adex:crofton:hemisphere}.}
 Assume $\length \gamma<2\cdot\pi$.
@@ -731,8 +732,8 @@ It follows that if $\ell<0$, then $\Phi_\ell$ is a smooth regular surface and if
 
 The case $\ell=0$ has to be done by hands --- it does not satisfy the sufficient condition in \ref{prop:implicit-surface}, but it does not solely imply that $\Phi_0$ is not a smooth surface.
 
-Show that any neighborhood of origin in $\Phi_0$ can not be described by a graph in any coordinate system;
-so by the definition (page \pageref{page:def-smooth-surface}) $\Phi_0$ is not a smooth surface.
+Show that any neighborhood of origin in $\Phi_0$ cannot be described by a graph in any coordinate system;
+so by the definition (Section~\ref{sec:def-smooth-surface}) $\Phi_0$ is not a smooth surface.
 
 \parbf{\ref{ex:inversion-chart}.} 
 First check that the image of $s$ lies in the unit sphere centered at $(0,0,1)$;
@@ -1316,7 +1317,7 @@ by \ref{prop:geod-existence} $\alpha$ coinsides with $\beta$ --- a contradiction
 
 
 
-\parbf{\ref{ex:milka}.} Show that the concatenation of the line segment $[p_t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path in the closed region $W$ outside of $\Sigma$.
+\parbf{\ref{ex:milka}.} Show that the concatenation of the line segment $[p^t\,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path from $p^t$ to $q$ in the closed region $W$ outside of $\Sigma$.
 
 \parbf{\ref{ex:rho''}.}
 Equip $\Sigma$ with unit normal field $\Norm$ that points inside.
@@ -1366,7 +1367,9 @@ By \ref{eq:gamma''=z''} and \ref{eq:int z''}, we have
 \parbf{\ref{ex:rough-bound-mountain}.} Use \ref{thm:usov} and \ref{ex:sef-intersection}.
 
 The suggested argument does not give the optimal bound for the Lipschitz constant that guarantees that $\gamma$ is simple, but
-later (see \ref{ex:sqrt(3)}) we will show that the exact bound is $\sqrt{3}=\tg\tfrac\pi3$ --- it is the same as in the exercise about mountain of with the shape of a perfect cone; see \ref{ex:lasso}.
+later (see \ref{ex:sqrt(3)}) we will show that the exact bound is $\sqrt{3}=\tg\tfrac\pi3$ --- it is the same as in the exercise about mountain of with the shape of a perfect cone; see~\ref{ex:lasso}.
+
+\parbf{\ref{ex:bound-tc}.} %???
 
 \parbf{\ref{ex:parallel}}; \ref{SHORT.ex:parallel:a}.
 Show and use that $\langle\vec v(t),\vec v'(t)\rangle=0$.
@@ -1485,7 +1488,17 @@ Arrive to a contradiction using  \ref{SHORT.ex:open-comparison:positive}.
 
 For \ref{SHORT.ex:open-comparison:proof}, repeat the proof assuming that $p$ is provided by \ref{SHORT.ex:open-comparison:almost-min}.
 
-\parbf{\ref{ex:convex-polyhon+self-intersections};} \ref{SHORT.ex:convex-polyhon}. %??? to be finished
+\parbf{\ref{ex:convex-polyhon+self-intersections};} \ref{SHORT.ex:convex-polyhon+self-intersections:angles}.
+Apply the Gauss--Bonnet formula for each region that $\gamma$ cuts from $\Sigma$ and simplify.
+
+\begin{wrapfigure}{r}{50 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-474}
+\vskip8mm
+\end{wrapfigure}
+
+\ref{SHORT.ex:convex-polyhon}. %??? to be finished
 Consider the pentagon $\Delta$ with induced length-metric.
 Note that all its angles cannot exceed $\pi$.
 Repeat the proof of \ref{thm:comp:toponogov} to show that the comparison holds in $\Delta$.
@@ -1495,31 +1508,10 @@ Divide $\Delta$ into triangles by joining $v$ to other vertexes of the broken ge
 Take a model triangle for each so that they share sides as in $\Delta$.
 Use the comparison to show that these plane triangles form a required polygon.
 
-
-\begin{wrapfigure}{r}{35 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-472}
-\bigskip
-\includegraphics{mppics/pic-473}
-\vskip8mm
-\end{wrapfigure}
-
 \parit{\ref{SHORT.ex:self-intersections-hard}}.
-Assume a convex surface $\Sigma$ with such geodesic exists;
-suppose that arcs and angles are labeled by their lengths.
-
-Apply Gauss--Bonnet formula to show that
-\[2\cdot\alpha<\beta+\gamma\]
-and 
-\[2\cdot\beta+2\cdot \gamma<\pi+\alpha.\]
-Conclude that $\alpha <\tfrac \pi 3$.
-
-Consider the part of geodesic without the arc~$a$.
-It cuts from $\Sigma$ a pentagon with sides and angles as shown on the diagram. 
-By \ref{ex:convex-polyhon}, we can find a pentagon on the plane with convex sides of the same length and angles at most as big.
-
-It remains to show that such plane pentagon does not exist.
+It remains to show that the plane pentagon provided by \ref{SHORT.ex:convex-polyhon} cannot exist.
+Imagine that there air pressure in the pentagon, it should not move it; so the total force should vanish.
+Use part \ref{SHORT.ex:convex-polyhon+self-intersections:angles} to show that this is not the case.
 
 
 \parbf{\ref{ex:dist-to-bry}.}

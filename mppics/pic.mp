@@ -1772,6 +1772,43 @@ label.rt(btex $\pi{-}\alpha$ etex, (dir -45)*8+ z.cc);
 label.rt(btex $\pi{-}\alpha$ etex, (dir 45)*8+ z.bb);
 endfig;
 
+beginfig(474) 
+save u,p,k;
+path p[];
+u:=1cm;
+k:=3;
+
+z.a=origin;
+z.b=(-2,-1)*u;
+z.c=(-1.9,1)*u;
+z.bb=(-4.1,-.6)*u;
+z.cc=(-4.05,.6)*u;
+
+p0=z.a{(z.b-z.a) rotated 5 }..z.b--z.b{(z.bb-z.b) rotated 5 }..z.bb--z.bb{(z.cc-z.bb) rotated 5 }..z.cc--z.cc{(z.c-z.cc) rotated 5}..z.c--z.c--cycle;
+draw p0 pensemibold;
+
+z0= point 0 of p0;
+z1= point .5 of p0;
+z2= point 1 of p0;
+z3= point 2.5 of p0;
+z4= point 3 of p0;
+z5= point 5 of p0;
+z6= point 6.5 of p0;
+z7= point 7 of p0;
+z8= point 8.5 of p0;
+
+draw z0{dir (180+k*5)}..z2;
+draw z0{dir (180+k*3)}..z3;
+draw z0{dir (180+k)}..z4;
+draw z0{dir (180-k)}..z5;
+draw z0{dir (180-k*3)}..z6;
+draw z0{dir (180-k*5)}..z7;
+
+dOt z0,z1,z2,z3,z4,z5,z6,z7,z8;
+
+label.rt (btex $v$ etex, z.a);
+endfig;
+
 beginfig(48) 
 save u;
 u:=1cm;
@@ -3318,7 +3355,7 @@ label.top (btex {\Large $\Sigma$} etex, (0,10)+point 1.5 of p0);
 label.bot (btex $p$ etex, z.p);
 label.bot (btex $q$ etex, z.q);
 label.bot (btex $\gamma(t)$ etex, z.pq);
-label.top (btex $p_t$ etex, z.pp);
+label.top (btex $p^t$ etex, z.pp);
 endfig;
 
 beginfig(255)

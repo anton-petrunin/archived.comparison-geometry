@@ -1,6 +1,6 @@
 \chapter{Curvatures}
 
-\section{Tangent-normal coordinates} 
+\section{Tangent-normal coordinates} \label{sec:lmn}
 
 Fix a point $p$ in a smooth oriented surface $\Sigma$.
 Consider a coordinate system $(x,y,z)$ with origin at $p$ such that the $(x,y)$-plane coincides with $\T_p$ and the $z$-axis in the direction of the normal vector $\Norm_p$.
@@ -22,7 +22,7 @@ The first equality holds since $p=(0,0,0)$ lies on the graph and the last two eq
 \vskip-3mm
 \end{wrapfigure}
 
-Set \label{page:lmn}
+Set 
 \begin{align*}
 \ell&=f_{xx}(0,0),
 \\
@@ -148,7 +148,7 @@ and
    &n
   \end{pmatrix};
 \]
-is the Hessian matrix of $f$ at $(0,0)$; the components $\ell$, $m$, and $n$ are defined on page \pageref{page:lmn}.
+is the Hessian matrix of $f$ at $(0,0)$; the components $\ell$, $m$, and $n$ are defined in Section~\ref{sec:lmn}.
 
 The multiplication by the Hessian matrix defies the so called \index{shape operator}\emph{shape operator}
 \[\Shape\:(\begin{smallmatrix}
@@ -234,13 +234,13 @@ Then
 &
 \langle \Shape(\vec j),\vec k\rangle&=0,
 \end{align*}
-where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$ defined on page \pageref{page:lmn}.
+where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$ defined in Section~\ref{sec:lmn}.
 \end{thm}
 
 \parit{Proof.} 
 Note that 
 $D_{\vec i}=\tfrac{\partial}{\partial x}$ and $D_{\vec j}=\tfrac{\partial}{\partial y}$.
-It remains to use \ref{prop:shape=D2} and the expressions for $\ell$, $m$, and $n$ (see page~\pageref{page:lmn}).
+It remains to use \ref{prop:shape=D2} and the expressions for $\ell$, $m$, and $n$; see Section~\ref{sec:lmn}.
 \qeds
 
 In the following proposition we use the notion of directional derivative defined in \ref{def:directional-derivative}.
@@ -343,7 +343,7 @@ s_{uv}(0,0)&=m\cdot \vec k,
 &
 s_{vv}(0,0)&=n\cdot \vec k,
 \end{align*}
-where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$; see page \pageref{page:lmn}.
+where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$; see Section~\ref{sec:lmn}.
 
 Evaluating the above 6 identities at $(u,v)\z=(0,0)$, we get that
 \begin{align*}

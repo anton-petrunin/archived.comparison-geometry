@@ -123,7 +123,7 @@ Finally, since length is semicontinuous (\ref{thm:length-semicont}), we get that
 Therefore $\length\gamma_\infty= \ell$ or, equivalently, $\gamma_\infty$ is a shortest path from $p$ to $q$.
 \qeds
 
-\section{Closest point projection}
+\section{Closest point projection}\label{sec:closest-point-projection}
 
 \begin{thm}{Lemma}\label{lem:closest-point-projection}
 Let $R$ be a closed convex set in $\RR^3$.
@@ -201,7 +201,7 @@ Indeed consider the closest point projection $\bar\gamma$ of~$\gamma$.
 Note that $\bar\gamma$ lies in $\Sigma$ and connects $p$ to $q$ therefore 
 \[\length\bar\gamma\ge |p-q|_\Sigma.\]
 
-To prove the first statemnt, it is sufficient to show that 
+Therefore, in order to prove the first statement, it is sufficient to show that 
 \[\length\gamma\ge\length\bar\gamma.\eqlbl{bar-gamma=<gamma}\]
 
 Consider an inscribed polygonal line $p_0\dots p_n$ in $\gamma$.
@@ -306,8 +306,8 @@ we get that the acceleration $\gamma''$ is perpendicular to $\T_{\gamma(t)}$.
 
 \section{Existence}
 
-The following lemma and proposition can be also interpreted physically;
-lemma follow from the conservation of energy and the proposition gives smooth dependence of trajectory of a particle depending on its initial position and velocity.
+The following lemma and proposition can be interpreted physically as follows:
+the lemma follows from the conservation of energy and the proposition gives smooth dependence of trajectory of a particle depending on its initial position and velocity.
 
 \begin{thm}{Lemma}\label{lem:constant-speed}
 Any geodesic has constant speed.
@@ -342,7 +342,7 @@ Moreover
 
 \end{thm}
 
-The proof of this proposition relies on the existence and uniqueness of the initial value problem (\ref{thm:ODE}).
+The proof of this proposition on the existence theorem for an initial value problem (\ref{thm:ODE}).
 
 \begin{thm}{Lemma}\label{lem:geodesic=2nd-order}
 Let $f$ be  a smooth function defined on an open domain in $\RR^2$.
@@ -386,9 +386,9 @@ $\gamma''$ is perpendicular to two basis vectors in $\T_{\gamma(t)}$.
 Therefore the vector equation \ref{eq:def-geod} can be rewritten as the following system of two real equations
 \[
 \begin{cases}
-\langle \gamma''(t),s_x\rangle=0,
+\langle \gamma'',s_x\rangle=0,
 \\
-\langle\gamma''(t),s_y\rangle=0,
+\langle\gamma'',s_y\rangle=0,
 \end{cases}
 \]
 where $s(x,y)\df (x,y,f(x,y))$, $x=x(t)$, and $y=y(t)$.
@@ -422,16 +422,18 @@ By continuity $\gamma_1(t_0)=\gamma(t_0)$ and $\gamma'(t_0)=\gamma'(t_0)$.
 Applying uniqueness of the initial value problem (\ref{thm:ODE}) again, we get that $\gamma_1$ coincides with $\gamma$ in a small neighborhood of $t_0$ --- a contradiction.
 
 The case $t_0<0$ can be proved along the same lines.
-It follows that $\gamma_1$ coincides with $\gamma$.
+It follows that $\gamma_1$ coincides with $\gamma$;
+in particular $\mathbb{I}_1=\mathbb{I}$.
 
 Part \ref{SHORT.prop:geod-existence:smooth} follows since the solution of the initial value problem depends smoothly on the initial data (\ref{thm:ODE}).
 
 Suppose \ref{SHORT.prop:geod-existence:whole} does not hold;
 that is, the maximal interval $\mathbb{I}$ is a proper subset of the real line $\RR$.
 Without loss of generality we may assume that $b=\sup\mathbb{I}<\infty$.
+(If not switch the direction of $\gamma$.)
 
 By \ref{lem:constant-speed} $|\gamma'|$ is constant, in particular $t\mapsto \gamma(t)$ is a uniformly continuous function.
-Therefore  the limit 
+Therefore  the limit point
 \[q=\lim_{t\to b}\gamma(t)\] 
 is defined.
 Since $\Sigma$ is a proper surface, $q\in \Sigma$. 
@@ -449,8 +451,10 @@ Let $\Sigma$ be smooth regular surface and $p\in \Sigma$.
 Given a tangent vector ${\vec v}\in \T_p$ consider a geodesic $\gamma_{\vec v}$ in $\Sigma$ that runs from $p$ with the initial velocity ${\vec v}$;  
 that is, $\gamma(0)=p$ and $\gamma'(0)={\vec v}$.
 
-The point $q=\gamma_{\vec v}(1)$ is called \index{exponential map}\emph{exponential map} of ${\vec v}$, or briefly $q=\exp_p{\vec v}$.
-(There is a reason to call this map {}\emph{exponential}, but it will take us too far from the subject.)
+The map 
+\[\exp_p\:\vec v\mapsto \gamma_{\vec v}(1)\]
+is called \index{exponential map}\emph{exponential}.%
+\footnote{There is a reason to call this map {}\emph{exponential}, but it will take us too far from the subject.}
 By \ref{prop:geod-existence}, the map $\exp_p\:\T_p\to \Sigma$ is smooth and defined in a neighborhood of zero in $\T_p$;
 moreover, if $\Sigma$ is proper, then $\exp_p$ is defined on the whole space $\T_p$.
 
@@ -462,7 +466,7 @@ with its tangent plane $\T_0\T_p$ so the differenial $d_0\exp_p\:\vec v\mapsto D
 Further note that by the definition of exponential map we have that this differential is the identity map; that is, $d_0\exp_p(\vec v)=
 \vec v$ for any $\vec v\in \T_p$.
 
-The above discussion is summarized in the following statement. 
+Summarizing, we get the following statement:
 
 \begin{thm}{Observation}\label{obs:d(exp)=1}
 Let $\Sigma$ be a smooth surface and $p\in \Sigma$.
@@ -474,17 +478,18 @@ Then the exponential map $\exp_p\:\T_p\to \Sigma$ is smooth and its differential
 Let $\Sigma$ be smooth surface and $p\in \Sigma$.
 Then the exponential map $\exp_p\:\T_p\to \Sigma$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$ by a neighborhood of $0$ in the tangent plane~$\T_p$.
 
-Moreover for any $p\in \Sigma$ there is $\eps>0$ such that for any $q\in \Sigma$ such that $|q-p|_\Sigma<\eps$ the map 
+Moreover we have a {}\emph{local control} on the size of the neighborhood;
+that is, for any $p\in \Sigma$ there is $\eps>0$ such that for any $q\in \Sigma$ such that $|q-p|_\Sigma<\eps$ the map 
 $\exp_q\:\T_q\to \Sigma$ is a smooth regular parametrization of the $\eps$-neighborhood of $q$ in $\Sigma$ by the $\eps$-neighborhood of zero in the tangent plane~$\T_q$.
 \end{thm}
 
-The proposition follows from the observation and the inverse function theorem (\ref{thm:inverse}). %???+Jacobian matrix
+The proposition uses the observation and the inverse function theorem (\ref{thm:inverse}). %???+Jacobian matrix
 
 \parit{Proof.}
 Let $z=f(x,y)$ be a local graph representation of $\Sigma$ in the tangent-normal coordinates at $p$.
 Note that $(x,y)$-plane coincides with the tangent plane $\T_p$.
 
-Denote by $s$ be the composition of  the exponential map $\exp_p$ with the orthogonal projection $(x,y,z)\mapsto (x,y)$.
+Denote by $s$ the composition of  the exponential map $\exp_p$ with the orthogonal projection $(x,y,z)\mapsto (x,y)$.
 By \ref{obs:d(exp)=1}, the differential $d_0s$ is the identity.
 Applying the inverse function theorem (\ref{thm:inverse}) we get the first part of the proposition.
 
@@ -506,13 +511,13 @@ More precisely, any point $p$ in $\Sigma$ has a neighborhood $U$ such that any g
 A geodesic might not form a shortest path, but if this is the case, then it is called a \index{minimizing geodesic}\emph{minimizing geodesic}.
 Note that according to the proposition, any shortest path is a reparametrization of a minimizing geodesic.
 
-A formal proof will be given much latter; see page \pageref{page:proof-of-gamma''}. 
+A formal proof will be given much latter; see Section~\ref{sec:proof-of-gamma''}. 
 The following informal physical explanation might be sufficiently convincing.
 In fact, if one assumes that $\gamma$ is smooth, then it is easy to convert this explanation into a rigorous proof.
 
 \parit{Informal explanation.}
 Let us think about a shortest path $\gamma$ as of stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
-Since it is frictionless, the force density $N(t)$ that keeps the geodesic $\gamma$ in the surface must be proportional to the normal vector to the surface at $\gamma(t)$.
+Since it is frictionless, the force density $N(t)$ that keeps $\gamma$ in the surface must be proportional to the normal vector to the surface at $\gamma(t)$.
 
 The tension in the thread has to be the same at all points (otherwise the thread would move back or forth and it would not be stable).
 Denote  the tension by $T$.
@@ -562,12 +567,12 @@ Let $\Sigma$ be a smooth closed strictly convex surface
 in $\RR^3$ 
 and $\gamma\:[0,\ell]\z\to \Sigma$ be a unit-speed minimizing geodesic.
 Set $p\z=\gamma(0)$, $q=\gamma(\ell)$ and 
-$$p_t=\gamma(t)-t\cdot\gamma'(t),$$ 
+$$p^t=\gamma(t)-t\cdot\gamma'(t),$$ 
 where $\gamma'(t)$ denotes the velocity vector of $\gamma$ at $t$.
 
 Show that for any $t\in (0,\ell)$,
-one {}\emph{cannot see}  $q$ from $p_t$;
-that is, the line segment $[p_tq]$ intersects $\Sigma$ at a point distinct from $q$.
+one {}\emph{cannot see}  $q$ from $p^t$;
+that is, the line segment $[p^tq]$ intersects $\Sigma$ at a point distinct from $q$.
 
 Show that the statement does not hold without assuming that $\gamma$ is minimizing.
 \end{thm}
@@ -595,14 +600,15 @@ Further
 where $k(t)$ is the normal curvature at $\gamma(t)$ in the direction of $\gamma'(t)$.
 
 Therefore
-\[z''(t)=\cos(\theta_\gamma(t))\cdot k(t)\cdot\Norm_{\gamma(t)},\eqlbl{eq:z''}\]
+\[z''(t)=\cos(\theta_\gamma(t))\cdot k(t),
+\eqlbl{eq:z''}\]
 where $\theta_\gamma(t)$ denotes the angle between $\Norm_{\gamma(t)}$ and the $z$-axis.
 
 Since $\Norm$ points up, we have $\theta_\gamma(t)<\tfrac\pi2$, or equivalently
 \[\cos(\theta_\gamma(t))>0\]
 for any $t$.
 
-Since $f$ is convex, we have that tangent plane supports the graph from below at any point;
+Since $f$ is convex, we have that the tangent plane supports the graph from below at any point;
 in particular $k(t)\ge 0$ for any $t$.
 It follows that the right hand side in \ref{eq:z''} is nonnegative;
 whence the statement follows.
@@ -634,11 +640,14 @@ $z(t)$ is convex.
 Since the slope of $f$ is at most $\ell$, we have
 \[|z'(t)|\le \tfrac{\ell}{\sqrt{1+\ell^2}}.\]
 If $\gamma$ is defined on the interval $[a,b]$, then
-\begin{align*}
+\[
+\begin{aligned}
 \int_a^b z''(t)&=z'(b)-z'(a)\le 
 \\
 &\le 2\cdot \tfrac{\ell}{\sqrt{1+\ell^2}}.
-\end{align*}
+\end{aligned}
+\eqlbl{eq:intz''}
+\]
 
 Further, note that $z''$ is the projection of $\gamma''$ to the $z$-axis.
 Since $f$ is $\ell$-Lipschitz, the tangent plane $\T_{\gamma (t)} \Sigma$ cannot have slope greater than $\ell$ for any $t$.
@@ -646,7 +655,7 @@ Because $\gamma ''$ is perpendicular to that plane, we have that
 \[|\gamma'' (t)|  \le  z''(t)\cdot\sqrt{1+ \ell ^2}.\]
 
 Recall that $\tc\gamma$ denotes the total curvature of curve $\gamma$.
-It follows that 
+By \ref{eq:intz''}, we get that
 \begin{align*}
 \tc\gamma&=\int_a^b|\gamma'' (t)|\cdot dt\le 
 \\
