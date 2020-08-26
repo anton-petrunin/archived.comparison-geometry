@@ -501,24 +501,50 @@ Use \ref{SHORT.ex:open-comparison:almost-min} to extend the proof on page \pager
 
 \end{thm}
 
+
 \begin{wrapfigure}{r}{30 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-471}
 \end{wrapfigure}
 
-
 \begin{thm}{Advanced exercise}\label{ex:convex-polyhon+self-intersections}
-Let $\Sigma$ be a smooth regular surface with nonnegative Gauss curvature.
-Suppose a closed broken geodesic $x_1\dots x_n$ cuts from $\Sigma$ a disc $\Delta$ with positive exterior angles; that is, when you travel along the boundary, you always turn to the side where $\Delta$ is.
+Let $\Sigma$ be a closed smooth regular surface with nonnegative Gauss curvature.
+The following sketch that shows that a closed geodesic $\gamma$ on $\Sigma$ cannot have self-intersections as shown on the diagram;
+in other words, $\gamma$ cannot cut $\Sigma$ into 3 monogons, one quadrangle, and one pentagon. 
+
+Make a complete proof from it.
+
+Arguing by contradiction, suppose that such geodesic exists;
+assume that arcs and angles are labeled as on the left diagram.
+
+\begin{figure}[h!]
+\begin{minipage}{.38\textwidth}
+\centering
+\includegraphics{mppics/pic-472}
+\end{minipage}\hfill
+\begin{minipage}{.58\textwidth}
+\centering
+\includegraphics{mppics/pic-473}
+\end{minipage}
+\end{figure}
+
+\begin{subthm}{ex:convex-polyhon+self-intersections:angles}
+Apply Gauss--Bonnet formula to show that
+\[2\cdot\alpha<\beta+\gamma\]
+and 
+\[2\cdot\beta+2\cdot \gamma<\pi+\alpha.\]
+Conclude that $\alpha <\tfrac \pi 3$.
+\end{subthm}
 
 \begin{subthm}{ex:convex-polyhon}
-Show that there is a convex plane polygon $\tilde x_1\dots \tilde x_n$ which sides are equal to the corresponding sides of $x_1\dots x_n$ and with internal angles at not bigger than in the corresponding angles  of $x_1\dots x_n$.
+Consider the part of the geodesic $\gamma$ without the arc~$a$.
+It cuts from $\Sigma$ a pentagon with sides and angles as shown on the diagram. 
+Show that there is a plane pentagon with convex sides of the same length and angles at most as big.
 \end{subthm}
 
 \begin{subthm}{ex:self-intersections-hard}
-Use \ref{SHORT.ex:convex-polyhon} to show that a closed geodesic in  a smooth regular sphere with positive Gauss curvature
-Show that $\gamma$ cannot look like the curves on the diagram in some chart.
+Arrive to a contradiction using \ref{SHORT.ex:convex-polyhon+self-intersections:angles} and \ref{SHORT.ex:convex-polyhon}. 
 \end{subthm}
 
 \end{thm}

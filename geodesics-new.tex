@@ -6,9 +6,10 @@ We start to study the \index{intrinsic geometry}\emph{intrinsic geometry} of sur
 A property is called \index{intrinsic property}\emph{intrinsic} if it is defined in terms of measuring things inside the surface, for example length of curves or angles between the curves that lie in the surface.
 Otherwise, if a definition of property use ambient space, then it is called \index{extrinsic}\emph{extrinsic}.
 
-For instance, a shortest path is an object of intrinsic geometry of a surface,
-while definition of geodesic is not intrinsic --- it requires acceleration which needs the ambient space.
-However, from Proposition~\ref{prop:gamma''} it follows that there is an intrinsic definition of geodesics as {}\emph{locally shortest paths with constant-speed parameterization}.  
+For instance, mean as well as Gauss curvature are defined via principle curvatures, which are extrinsic.
+Latter (\ref{thm:remarkable}) it will be shown that \emph{remarkably} Gauss curvature is actually intrinsic --- it can be calculated based on measurements inside the surface.
+The mean curvature is not intrinsic, for example intrinsic geometry of the $(x,y)$-plane is not distinguishable from the intrinsic geometry of the graph $z=\cos(x+y)$,
+while the mean curvature of former vanish at all points, the mean curvature of the latter does not vanish, say at $p=(0,0,1)$.  
 
 The following exercise should help you to be in the right mood for this;
 it might look like a tedious problem in calculus, but actually it is an easy problem in geometry.
@@ -48,30 +49,44 @@ this is shown in the following two examples.
 
 Usually, if we write $[pq]_\Sigma$, then we assume that a shortest path exists and we made a choice of one of them.
 
+{
+
 \begin{wrapfigure}{r}{28 mm}
-\vskip-4mm
+\vskip-6mm
 \centering
 \includegraphics{asy/sphere}
-\bigskip
-\includegraphics{mppics/pic-79}
 \end{wrapfigure}
 
-\parbf{Nonuniqueness.} There are plenty of shortest paths between the poles on the sphere --- each meridian is a shortest path.
+\parbf{Nonuniqueness.} There are plenty of shortest paths between the poles on a round sphere --- each meridian is a shortest path.
 
 \parbf{Nonexistence.} Let $\Sigma$ be the $(x,y)$-plane with removed origin.
 Consider two points $p=(1,0,0)$ and $q=(-1,0,0)$ in $\Sigma$.
 
+}
+
+\begin{thm}{Claim}
+There is no shortest path from $p$ to $q$ in $\Sigma$.
+\end{thm}
+
+\begin{wrapfigure}{r}{28 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-79}
+\end{wrapfigure}
+
+\parit{Proof.}
 Note that $|p-q|_\Sigma=2$. 
 Indeed, given $\eps\z>0$, consider the point $s_\eps=(0,\eps,0)$.
 Observe that the polygonal path $ps_\eps q$ lies in $\Sigma$ and its length $2\cdot\sqrt{1+\eps^2}$ approaches $2$ as $\eps\to0$.
 It follows that $|p-q|_\Sigma\le 2$.
-On the other hand $|p-q|_\Sigma\ge |p-q|_{\RR^3}=2$; therefore $|p-q|_\Sigma= 2$.
+Since $|p-q|_\Sigma\ge |p-q|_{\RR^3}=2$, we get $|p-q|_\Sigma=2$.
 
 
 It follows that a shortest path from $p$ to $q$, if it exists, must have length 2.
 By triangle inequality any curve of length 2 from $p$ to $q$ must run along the line segment $[pq]$;
 in particular it must pass thru the origin.
 Since the origin does not lie in $\Sigma$, there is no shortest from $p$ to $q$ in $\Sigma$ 
+\qeds
 
 \begin{thm}{Proposition}\label{prop:shortest-paths-exist}
 Any two points in a proper smooth surface can be joined by a shortest path. 
@@ -81,7 +96,7 @@ Any two points in a proper smooth surface can be joined by a shortest path.
 Fix a proper smooth surface $\Sigma$ with two points $p$ and $q$.
 Set $\ell=|p-q|_\Sigma$.
 
-By the definition of induced length metric,
+By the definition of induced length metric (Section~\ref{sec:Length metric}),
 there is a sequence of paths $\gamma_n$ from $p$ to $q$ in $\Sigma$ such that
 \[\length\gamma_n\to \ell\quad\text{as}\quad n\to \infty.\]
 
@@ -96,15 +111,16 @@ It follows that the coordinate functions of $\gamma_n$ are uniformly equicontinu
 By \ref{lem:equicontinuous}, we can pass to a converging subsequence of $\gamma_n$;
 denote by $\gamma_\infty\:[0,1]\to\RR^3$ its limit.
 
-As a limit of uniformly continuous sequence, $\gamma_\infty$ is continuous;
+By the Arzel\'{a}-Ascoli theorem (\ref{lem:equicontinuous}),
+a limit of uniformly continuous sequence, $\gamma_\infty$ is continuous;
 that is, $\gamma_\infty$ is a path.
 Evidently $\gamma_\infty$ runs from $p$ to $q$;
 in particular
 \[\length\gamma_\infty\ge \ell.\]
 Since $\Sigma$ is a closed set, $\gamma_\infty$ lies in $\Sigma$.
-Finally, by \ref{thm:length-semicont}, 
+Finally, since length is semicontinuous (\ref{thm:length-semicont}), we get that
 \[\length\gamma_\infty\le \ell.\]
-That is, $\gamma_\infty= \ell$ or, equivalently, $\gamma_\infty$ is a shortest path from $p$ to $q$.
+Therefore $\length\gamma_\infty= \ell$ or, equivalently, $\gamma_\infty$ is a shortest path from $p$ to $q$.
 \qeds
 
 \section{Closest point projection}
@@ -120,13 +136,6 @@ that is,
 for any pair of points $p,q\in \RR^3$.
 \end{thm}
 
-\begin{wrapfigure}{o}{22 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-40}
-\vskip-0mm
-\end{wrapfigure}
-
 The map $p\mapsto \bar p$ is called the \label{closest point projection}\index{closest point projection}\emph{closest point projection};
 it maps the Euclidean space to $R$.
 Note that if $p\in R$, then $\bar p=p$.
@@ -137,7 +146,7 @@ Fix a point $p$ and set
 Choose a sequence $x_n\in R$ such that $|p-x_n|\to \ell$ as $n\to\infty$.
 
 Without loss of generality, we can assume that all the points $x_n$ lie in a ball of radius $\ell+1$ centered at~$p$.
-Therefore we can pass to a partial limit $\bar p$ of $x_n$; that is, $\bar p$ is a limit of a subsequence of $x_n$.
+Therefore we can pass to a \index{partial limit}\emph{partial limit} $\bar p$ of $x_n$; that is, $\bar p$ is a limit of a subsequence of $x_n$.
 Since $R$ is closed, $\bar p\in R$.
 By construction 
 \begin{align*}
@@ -147,35 +156,32 @@ By construction
 \end{align*}
 Hence the existence follows.
 
+\begin{wrapfigure}{r}{22 mm}
+\vskip-10mm
+\centering
+\includegraphics{mppics/pic-40}
+\vskip-0mm
+\end{wrapfigure}
+
 Assume there are two distinct points $\bar p, \bar p'\in R$ that minimize the distance to $p$.
 Since $R$ is convex, their midpoint $m=\tfrac12\cdot (\bar p+\bar p')$ lies in~$R$.
 Note that $|p-\bar p|\z=|p-\bar p'|=\ell$; that is, the triangle $[p\bar p\bar p']$ is isosceles and therefore the triangle $[p\bar p m]$ is right with the right angle at~$m$.
 Since a leg of a right triangle is shorter than its hypotenuse, we have $|p-m|<\ell$ --- a contradiction. 
 
-It remains to prove inequality \ref{eq:short-cpp}.
-
-\begin{wrapfigure}{o}{37 mm}
+\begin{wrapfigure}{l}{37 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-41}
 \vskip-0mm
 \end{wrapfigure}
 
+It remains to prove inequality \ref{eq:short-cpp}.
 We can assume that $\bar p\ne\bar q$, otherwise there is nothing to prove.
-Note that if $p\ne \bar p$ (that is, if $p\notin R$), 
-then the angle $p \bar p \bar q$ is right or obtuse.
-Otherwise there would be a point $x$ on the line segment $[\bar q\bar p]$ that is closer to $p$ than $\bar p$.
-Since $R$ is convex, the line segment $[\bar q\bar p]$ and therefore $x$ lie in $R$.
-Hence $\bar p$ is not closest to $p$ --- a contradiction.
 
-The same way we can show that  if $q\z\ne \bar q$, then the angle ${q}{\bar q}{\bar p}$ is right or obtuse.
-
-We have to consider the following 4 cases:
-(1) $p\ne \bar p$ and $q\ne \bar q$,
-(2) $p= \bar p$ and $q\ne \bar q$,
-(3) $p\ne \bar p$ and $q= \bar q$,
-(4) $p= \bar p$ and $q= \bar q$.
-In all these cases the obtained angle estimates imply that the orthogonal projection of the line segment $[pq]$ to the line $\bar p\bar q$ contains the line segment $[\bar p\bar q]$.
+Note that $\measuredangle \hinge{\bar p}{p}{\bar q}\ge \tfrac\pi2$ if the left hand side is defined.
+Therefore the orthogonal projection of $p$ to the line $\bar p\bar q$ lies behind $\bar p$, or coincides with $\bar p$.
+The same way we show that the orthogonal projection of $q$ to the line $\bar p\bar q$ lies behind $\bar q$, or coincides with $\bar q$.
+It implies that the orthogonal projection of the line segment $[pq]$ to the line $\bar p\bar q$ contains the line segment $[\bar p\bar q]$.
 In particular 
 \[|p-q|\ge |\bar p-\bar q|.\]
 \qedsf
@@ -233,8 +239,8 @@ Therefore by the first part of corollary, we have
 Whence the second statement follows.
 \qeds
 
-\begin{wrapfigure}{r}{27 mm}
-\vskip0mm
+\begin{wrapfigure}[5]{r}{27 mm}
+\vskip-8mm
 \centering
 \includegraphics{mppics/pic-240}
 \end{wrapfigure}

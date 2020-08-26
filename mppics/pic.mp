@@ -1687,22 +1687,22 @@ save u,p;
 path p[];
 u:=1cm;
 
-z.a=(0,1)*u;
+z.a=(1,0)*u;
 z.b=z.a rotated 120;
 z.c=z.a rotated -120;
-z.s=(4,0)*u;
+z.s=(0,4)*u;
 
-p0= z.c..1.5*z.c{dir -120}..z.c..z.a{dir -120}..(.5)*z.a{right}..z.a{dir 120}..z.b..1.5*z.b{dir 120}..z.b..cycle;
+p0= z.c..1.5*z.c{dir (-120-90)}..z.c..z.a{dir (-120-90)}..(.5)*z.a{dir (-90)}..z.a{dir (120-90)}..z.b..1.5*z.b{dir (120-90)}..z.b..cycle;
 
-draw p0;
+draw p0 pensemibold;
 
-p1= circle(z.a,.3*u) cutafter (subpath (5,6) of p0) cutbefore (subpath (2,3) of p0); 
+p1= circle(origin,8) rotated -90 shifted z.a cutafter (subpath (5,6) of p0) cutbefore (subpath (2,3) of p0); 
 draw p1;
 
-p2= circle(origin,.3*u) rotated -90 shifted z.b cutafter (subpath (5,6) of p0) cutbefore (subpath (8,9) of p0); 
+p2= circle(origin,8) rotated -140 shifted z.b cutafter (subpath (5,6) of p0) cutbefore (subpath (8,9) of p0); 
 draw p2;
 
-p3= circle(z.c,.3*u) cutafter (subpath (8,9) of p0) cutbefore (subpath (2,3) of p0); 
+p3= circle(z.c,8) cutafter (subpath (8,9) of p0) cutbefore (subpath (2,3) of p0); 
 draw p3;
 
 z.e=(0,.5)*u;
@@ -1717,16 +1717,16 @@ z.d6=z.d0+6*z.e;
 
 dOt z.a,z.b,z.c;
 
-label.lrt(btex $z$ etex, point 1 of p0);
-label.rt(btex $b$ etex, point 2.5 of p0);
-label.bot(btex $x$ etex, point 4 of p0);
-label.lft(btex $c$ etex, point 5.5 of p0);
-label.llft(btex $y$ etex, point 7 of p0);
-label.bot(btex $a$ etex, point 8.5 of p0);
+label.llft(btex $z$ etex, point 1 of p0);
+label.bot(btex $b$ etex, point 2.3 of p0);
+label.lft(btex $x$ etex, point 4 of p0);
+label.top(btex $c$ etex, point 5.7 of p0);
+label.ulft(btex $y$ etex, point 7 of p0);
+label.lft(btex $a$ etex, point 8.55 of p0);
 
-label.top(btex $\alpha$ etex, (0,.3)*u +z.a);
-label.urt(btex $\beta$ etex, z.b + .3*(dir 30)*u);
-label.ulft(btex $\gamma$ etex, z.c + .3*(dir 150)*u);
+label.rt(btex $\alpha$ etex, z.a+(8,0));
+label.lrt(btex $\beta$ etex, z.b +(5,-6));
+label.urt(btex $\gamma$ etex, z.c +(5,6));
 endfig;
 
 beginfig(473) 
@@ -1735,41 +1735,41 @@ path p[];
 u:=1cm;
 
 z.a=origin;
-z.b=(-1,2)*u;
-z.c=(1,1.9)*u;
-z.bb=(-.6,4.1)*u;
-z.cc=(.6,4.05)*u;
+z.b=(-2,-1)*u;
+z.c=(-1.9,1)*u;
+z.bb=(-4.1,-.6)*u;
+z.cc=(-4.05,.6)*u;
 
 p0=z.a{(z.b-z.a) rotated 5 }..z.b--z.b{(z.bb-z.b) rotated 5 }..z.bb--z.bb{(z.cc-z.bb) rotated 5 }..z.cc--z.cc{(z.c-z.cc) rotated 5}..z.c--z.c--cycle;
-draw p0;
+draw p0 pensemibold;
 
-p2= circle(origin,.3*u) rotated -90 shifted z.a cutafter (subpath (0,1) of p0) cutbefore (subpath (8,9) of p0); 
+p2= circle(origin,8) rotated -90 shifted z.a cutafter (subpath (0,1) of p0) cutbefore (subpath (8,9) of p0); 
 draw p2;
 
-p3= circle(origin,.3*u) rotated -90 shifted z.b cutafter (subpath (2,3) of p0) cutbefore (subpath (0,1) of p0); 
+p3= circle(origin,8) rotated -90 shifted z.b cutafter (subpath (2,3) of p0) cutbefore (subpath (0,1) of p0); 
 draw p3;
 
-p4= circle(origin,.3*u) rotated -180 shifted z.bb cutafter (subpath (4,5) of p0) cutbefore (subpath (2,3) of p0); 
+p4= circle(origin,8) rotated -180 shifted z.bb cutafter (subpath (4,5) of p0) cutbefore (subpath (2,3) of p0); 
 draw p4;
 
-p5= circle(origin,.3*u) rotated 0 shifted z.cc cutafter (subpath (6,7) of p0) cutbefore (subpath (4,5) of p0); 
+p5= circle(origin,8) rotated -140 shifted z.cc cutafter (subpath (6,7) of p0) cutbefore (subpath (4,5) of p0); 
 draw p5;
 
-p6= circle(origin,.3*u) rotated 0 shifted z.c cutafter (subpath (8,9) of p0) cutbefore (subpath (6,7) of p0); 
+p6= circle(origin,8) rotated 0 shifted z.c cutafter (subpath (8,9) of p0) cutbefore (subpath (6,7) of p0); 
 draw p6;
 
 
-label.lft(btex $c$ etex, point 0.5 of p0);
-label.lft(btex $c+y$ etex, point 2.5 of p0);
-label.top(btex $x$ etex, point 4.5 of p0);
-label.rt(btex $b+z$ etex, point 6.5 of p0);
-label.rt(btex $b$ etex, point 8.5 of p0);
+label.lrt(btex $c$ etex, point 0.5 of p0);
+label.bot(btex $c+y$ etex rotated -10, point 2.5 of p0);
+label.lft(btex $x$ etex, point 4.5 of p0);
+label.top(btex $b+z$ etex rotated 10, point 6.5 of p0);
+label.urt(btex $b$ etex, point 8.5 of p0);
 
-label.top (btex $\alpha$ etex, (dir 90)*.3*u+z.a);
-label.rt (btex $\pi{-}\beta$ etex, (dir 45)*.3*u+z.b);
-label.lft (btex $\pi{-}\gamma$ etex, (dir -135)*.3*u+z.c);
-label.top(btex $\pi{-}\alpha$ etex, (dir -90)*.7*u+ point 4.5 of p0);
-
+label.lft (btex $\alpha$ etex, (dir 180)*8+z.a);
+label.top (btex $\pi{-}\beta$ etex, (dir 90)*8+z.b);
+label.bot (btex $\pi{-}\gamma$ etex, (dir -90)*8+z.c);
+label.rt(btex $\pi{-}\alpha$ etex, (dir -45)*8+ z.cc);
+label.rt(btex $\pi{-}\alpha$ etex, (dir 45)*8+ z.bb);
 endfig;
 
 beginfig(48) 
