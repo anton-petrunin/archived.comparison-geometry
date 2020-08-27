@@ -23,8 +23,9 @@ Go into subfolder `asy/`, run `asy` for each `.asy`-file, come back to `comparis
 
 ### LaTeX
 
-Run `pdflatex` and `biber`:
+Run `pdflatex`, `makeindex curves-and-surfaces` and `biber`:
 
 `pdflatex curves-and-surfaces.tex`<br/>
+`makeindex curves-and-surfaces`<br/>
 `biber curves-and-surfaces`<br/>
 `pdflatex curves-and-surfaces.tex`<br/>
