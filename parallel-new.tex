@@ -10,7 +10,7 @@ the vector ${\vec v}(t)$ lies in the tangent plane $\T_{\gamma(t)}\Sigma$ for ea
 A tangent field ${\vec v}(t)$ on $\gamma$ is called \index{parallel field}\emph{parallel} if ${\vec v}'(t)\perp\T_{\gamma(t)}$ for any~$t$.
 
 In general the family of tangent planes $\T_{\gamma(t)}\Sigma$ is not parallel.
-Therefore one cannot expect to have a truly parallel family ${\vec v}(t)$ with ${\vec v}'\equiv 0$.
+Therefore one cannot expect to have a {}\emph{truly} parallel family ${\vec v}(t)$ with ${\vec v}'\equiv 0$.
 The condition ${\vec v}'(t)\perp\T_{\gamma(t)}$ means that the family is as parallel as possible --- it rotates together with the tangent plane, but does not rotate inside the plane.
 
 Note that by the definition of geodesic, the velocity field ${\vec v}(t)\z=\gamma'(t)$ of any geodesic $\gamma$ is parallel on $\gamma$.
@@ -36,10 +36,10 @@ The latter follows from \ref{thm:ODE}; the uniqueness also follows from Exercise
 
 The vector $\vec w={\vec v}(b)\in\T_q$ is called the \index{parallel transport}\emph{parallel transport} of ${\vec v}$ along~$\gamma$ in $\Sigma$.
 
-The parallel transport is denoted by $\iota_\gamma$;
+The parallel transport along $\gamma$ will be denoted by $\iota_\gamma$;
 so we can write $\vec w=\iota_\gamma({\vec v})$ or we can write $\vec w=\iota_\gamma({\vec v})_\Sigma$ if we need to emphasize that we consider surface $\Sigma$.
 From the Exercise~\ref{ex:parallel}, it follows that parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ is an isometry.
-In general, the parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ depends on the choice of $\gamma$; that is, for another curve $\gamma_1$ connecting $p$ to $q$ in $\Sigma$, the parallel transport $\iota_{\gamma_1}\:\T_p\to\T_q$ might be different.
+In general, the parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ depends on the choice of $\gamma$; that is, for another curve $\gamma_1$ connecting $p$ to $q$ in $\Sigma$, the parallel transports $\iota_{\gamma_1},\iota_{\gamma}\:\T_p\to\T_q$ might be different.
 
 Suppose that $\gamma_1$ and $\gamma_2$ are two smooth curves in smooth surfaces $\Sigma_1$ and $\Sigma_2$.
 Denote by $\Norm_i\:\Sigma_i\to\mathbb{S}^2$ the Gauss maps of $\Sigma_1$ and $\Sigma_2$.
@@ -69,7 +69,7 @@ coincides the parallel translations along $\gamma$ in $\Sigma_2$.
 The following physical interpretation of parallel translation was suggested by Mark Levi \cite{levi};
 it might help to build right intuition.
 
-Think of walking along $\gamma$ and carrying a perfectly balanced bike wheel keeping its axis normal to $\Sigma$ and touching only the axis.
+Think of walking along $\gamma$ and carrying a perfectly balanced bike wheel touching only the axis and keeping it normal to $\Sigma$.
 It should be physically evident that if the wheel is non-spinning at the starting point $p$, then it will not be spinning after stopping at $q$.
 (Indeed, by pushing the axis one cannot produce torque to spin the wheel.)
 The map that sends the initial position of the wheel to the final position is  the parallel transport~$\iota_\gamma$.
@@ -81,8 +81,9 @@ and consider the sequence of orthogonal projections $\phi_i\:\T_{\gamma(t_{i-1})
 For a fine partition, the composition 
 \[\phi_n\circ\dots\circ\phi_1\:T_p\z\to\T_q\]
 gives an approximation of $\iota_\gamma$.
-Each $\phi_i$ does not increase the magnitude of a vector and neither the composition.
-It is straightforward to see that if the partition is sufficiently fine, then it is almost isometry; in particular it almost preserves the magnitudes of tangent vectors.
+
+(Note that each $\phi_i$ does not increase the magnitude of a vector and neither the composition.
+It is straightforward to see that if the partition is sufficiently fine, then it is almost isometry; in particular it almost preserves the magnitudes of tangent vectors.)
 
 \begin{thm}{Exercise}\label{ex:holonomy=not0}
 Construct a loop $\gamma$ in $\mathbb{S}^2$ with base at $p$ such that the parallel transport $\iota_\gamma\:\T_p\to\T_p$ is not the identity map.
@@ -139,7 +140,7 @@ Note that if $\Sigma$ is a plane and $\gamma$ lies in $\Sigma$, then geodesic cu
 By that reason we use the same notation $\tgc\gamma$ as for total signed curvature; if we need to emphasize that we consider $\gamma$ as a curve in $\Sigma$, we write $\tgc\gamma_\Sigma$.
 
 If $\gamma$ is a piecewise smooth regular curve in $\Sigma$, then
-its total geodesic curvature is defined as a sum of all total geodesic curvature of its arcs and the sum signed exterior angles of $\gamma$ at the joints.
+its total geodesic curvatures is defined as a sum of all total geodesic curvature of its arcs and the sum signed exterior angles of $\gamma$ at the joints.
 More precisely, if $\gamma$ is a concatenation of smooth regular curves $\gamma_1,\dots,\gamma_n$, then
 \[\tgc\gamma=\tgc{\gamma_1}+\dots+\tgc{\gamma_n}+\theta_1+\dots+\theta_{n-1},\]
 where $\theta_i$ is the signed external angle at the joint $\gamma_i$ and $\gamma_{i+1}$; it is positive if we turn left and negative if we turn right, it is undefined if we turn to the opposite direction.
@@ -434,8 +435,12 @@ $\iota$ is a counterclockwise rotation by $\area[\Norm(\Delta)]$
 Summarizing, the clockwise rotation by $\tgc{\alpha}_\Sigma$ is identical to a counterclockwise rotation by $\area[\Norm(\Delta)]$.
 The rotations are identical if the angles are equal modulo $2\cdot\pi$.
 Therefore 
-\[\GB(\Norm(\Delta))\tgc{\partial\Delta}_\Sigma+\area[\Norm(\Delta)]-2\cdot \pi
-=2\cdot n \cdot \pi
+\[
+\begin{aligned}
+\GB(\Norm(\Delta))&=\tgc{\partial\Delta}_\Sigma+\area[\Norm(\Delta)]-2\cdot \pi=
+\\
+&=2\cdot n \cdot \pi
+\end{aligned}
 \eqlbl{eq:sum=2pin}\]
 for an integer $n$.
 
