@@ -30,7 +30,7 @@ Then the polygonal line $p_0\dots p_k$ is called \index{inscribed polygonal line
 If $\gamma$ is closed, then $p_0=p_k$, so the inscribed polygonal line is also closed.
 
 \begin{thm}{Exercise}\label{ex:integral-length-0}
-Suppose $\gamma\:[a,b] \to\RR^3$ is a curve and the function $\phi : [c,d] \to [a,b]$ is an monotonic continuous and $\phi(c)=a$, $\phi(d)=b$.
+Suppose $\gamma\:[a,b] \to\RR^3$ is a curve and the function $\phi : [c,d] \to [a,b]$ is surjective, continuous, and non-decreasing.
 Then the curve $\gamma \circ \phi$ is called a 
 \emph{reparametrization} of $\gamma$.
 Show that 
@@ -38,7 +38,7 @@ Show that
 
 \end{thm}
 
-Note that the length of space curve $\gamma$ can be defined as the exact upper bound of the lengths of polygonal lines $p_0\dots p_k$ inscribed in $\gamma$.
+Note that the length of a space curve $\gamma$ can be defined as the exact upper bound of the lengths of polygonal lines $p_0\dots p_k$ inscribed in $\gamma$.
 
 \begin{thm}{Exercise}\label{ex:length-image}
 Let $\alpha\:[0,1]\to\RR^3$ be a parametrization of a simple arc.
@@ -86,13 +86,12 @@ Conclude that
 A classical example of a nonrectifiable curve is the so-called \index{Koch snowflake}\emph{Koch snowflake};
 it is a fractal curve that can be constructed as follows:
 
-Start with an equilateral triangle, divide each side into three segments of equal length and add an equilateral triangle with base the middle segment.
+Start with an equilateral triangle. For each side, divide it into three segments of equal length and then add an equilateral triangle with the middle segment as its base.
 Repeat this construction recursively with the obtained polygons.
 \begin{figure}[h!]
 \centering
 \includegraphics{mppics/pic-225}
 \end{figure}
-Repeat this construction recursively to the obtained polygons.
 The Koch snowflake is the boundary of the union of all the polygons.
 Three iterations and the resulting Koch snowflake are shown on the diagram.
 
@@ -100,7 +99,7 @@ Three iterations and the resulting Koch snowflake are shown on the diagram.
 
 \begin{thm}{Exercise}\label{ex:nonrectifiable-curve}
 
-\begin{subthm}{ex:nonrectifiable-curve:a} Show that the Koch snowflake is a closed simple curve; that is, it can be parameterized by a circle.
+\begin{subthm}{ex:nonrectifiable-curve:a} Show that the Koch snowflake is a simple closed curve; that is, it can be parameterized by a circle.
 \end{subthm}
 
 
@@ -114,8 +113,8 @@ Three iterations and the resulting Koch snowflake are shown on the diagram.
 We say that a curve $\gamma$ has an \index{arc-length parametrization}\emph{arc-length parametrization} (also called \index{natural parametrization}\emph{natural parametrization})
 if 
 \[t_2-t_1=\length \gamma|_{[t_1,t_2]}\]
-for any two values of parameters $t_1<t_2$;
-that is, the arc of $\gamma$ from $t_1$ to $t_2$ has length $t_2-t_1$.
+for any two parameter values $t_1<t_2$;
+that is, the arc of $\gamma$ from $\gamma ( t_1 ) $ to $\gamma ( t_2 )$ has length $t_2-t_1$.
 
 Note that a smooth space curve $\gamma(t)=(x(t),y(t),z(t))$ is an arc-length parametrization if and only if it has unit velocity vector at all times;
 that is, 
@@ -142,13 +141,13 @@ Moreover, the arc-length parameter $s$ of $\gamma$ can be written as an integral
 \end{thm}
 
 \parit{Proof.} The function $t\mapsto s(t)$ defined by \ref{s(t)} is a smooth increasing function.
-Further by fundamental theorem of calculus, $s'(t)=|\gamma'(t)|$.
-Therefore if $\gamma$ is regular, then $s'(t)\ne0$ for any parameter value $t$.
+Furthermore, by the fundamental theorem of calculus, $s'(t)=|\gamma'(t)|$.
+Since $\gamma$ is regular, $s'(t)\ne0$ for any parameter value $t$.
 
-By inverse function theorem (\ref{thm:inverse}) the inverse function $s^{-1}(t)$ is also smooth
+By the inverse function theorem (\ref{thm:inverse}) the inverse function $s^{-1}(t)$ is also smooth
 and $|(\gamma\circ s^{-1})'|\equiv1$.
 Therefore $\gamma\circ s^{-1}$ is a unit-speed reparametrization  of $\gamma$.
-By construction $\gamma\circ s^{-1}$ is smooth and since $|(\gamma\circ s^{-1})'|\equiv1$ it is regular.
+By construction, $\gamma\circ s^{-1}$ is smooth, and since $|(\gamma\circ s^{-1})'|\equiv1$, it is regular.
 \qeds
 
 Most of the time we use $s$ for an arc-length parameter of a curve.
@@ -162,11 +161,11 @@ by its arc-length.
 We will be interested in the properties of curves that are invariant under a reparametrization.
 Therefore we can always assume that any given smooth regular curve comes with an arc-length parametrization.
 A nice property of arc-length parametrizations is that they are almost canonical --- these parametrizations differ only by a sign and an additive constant.
-By that reason, it is easier to express parametrization-independent quatities using arc-length parametrizations.
+By that reason, it is easier to express parametrization-independent quantities using arc-length parametrizations.
 This observation will be used in the definition of curvature and torsion.
 
-On the other hand, it is often impossible to find an arc-length parametrization in explicit form, which makes it hard to perform calculations;
-usually it is more convenient to use the original parametrization.
+On the other hand, it is usually impossible to find an explicit arc-length parametrization, which makes it hard to perform calculations;
+therefore it is often convenient to use the original parametrization.
 
 \section{Convex curves}
 
@@ -210,7 +209,7 @@ holds
 if $P$ can be obtained from $Q$ by cutting it along a chord;
 that is, a line segment in $Q$ that runs from boundary to boundary.
 
-Note that there is an increasing sequence of polygons 
+Observe that there is an increasing sequence of polygons 
 $$P=P_0\subset P_1\subset\dots\subset P_n=Q$$
 such that $P_{i-1}$ obtained from $P_{i}$ by cutting along a chord.
 Therefore 
@@ -223,7 +222,7 @@ and the lemma follows.
 \qeds
 
 \parit{Comment.}
-Another proof of \ref{lem:perimeter} can be built on the closest point projection; see Section~\ref{sec:closest-point-projection}.  
+Another proof of \ref{lem:perimeter} can be obtained using closest point projection; see Section~\ref{sec:closest-point-projection}.  
 
 \begin{thm}{Corollary}\label{cor:convex=>rectifiable}
 Any convex closed plane curve is rectifiable.  
@@ -233,12 +232,12 @@ Any convex closed plane curve is rectifiable.
 Any closed curve is bounded.
 Indeed, the curve can be described as an image of a loop $\alpha\:[0,1]\to\RR^2$, $\alpha(t)=(x(t),y(t))$.
 The coordinate functions $x(t)$ and $y(t)$ are continous functions defined on $[0,1]$.
-Therefore the absolute values of bothfunctions are bounded by some constant $C$.
+Therefore the absolute values of both functions are bounded by some constant $C$.
 Therefore, $\alpha$ lies in the square defined by the inequalities $|x|\le C$ and $|y|\le C$.
 
 
 By Proposition~\ref{prop:convex-curve}, the length of the curve cannot exceed the perimeter of the square --- this is a finite number equal to $8\cdot C$. 
-Whence the result.
+Hence the result.
 \qeds
 
 Recall that the convex hull of a set $X$ is the smallest convex set that contains $X$; equivalently, the convex hull of $X$ is the intersection of all convex sets containing $X$.
@@ -255,19 +254,18 @@ Try to show that the statement holds for arbitrary closed plane curves $\alpha$,
 
 \section{(Crofton formulas)}\label{sec:crofton}
 
-Consider a smooth plane curve $\gamma\:[a,b]\to\RR^2$.
-Given a unit vector ${\vec u}$, denote by $\gamma_{\vec u}$ the curve that follows the orthogonal projection of $\gamma$ to the line in the direction ${\vec u}$;
-that is, 
-\[\gamma_{\vec u}(t)=\langle {\vec u},\gamma(t)\rangle\cdot {\vec u}.\]
+For $d = 1$ or $2$ and a continuous function $f: \mathbb{S}^d \to \mathbb{R}$, we will denote its average value as $\overline{f( \vec u )}$. For a plane (resp. space) vector $ \vec w $, and a unit plane (resp. space) vector $\vec u $, we will denote by $\vec w _{\vec u }$ the orthogonal projection of $\vec w$ to the line in the direction $\vec u$; that is,
+\[   \vec w _{\vec u}  = \langle \vec u , \vec w \rangle \cdot \vec u .   \]
+Similarly, we will denote by $\vec w _{  \vec u ^{ \bot } }$ the orthogonal projection of $\vec w$ to the line (resp. plane) perpendicular to $\vec u$; that is,
+\[  \vec w _{\vec u ^{\bot }} =  \vec w - \vec w_{\vec u}  .  \] 
 
-Note that 
-\[|\gamma_{\vec u}'(t)|=|\langle {\vec u},\gamma'(t)\rangle|\] for any $t$.
-Note that for any plane vector ${\vec w}$, the average magnitude of its projections is proportional to its magnitude; that is,
-\[|{\vec w}|=k\cdot \overline{|{\vec w}_{\vec u}|},\]
-where $\overline{|{\vec w}_{\vec u}|}$ denotes the average value of $|{\vec w}_{\vec u}|$ for all unit vectors ${\vec u}$.
-(The value $k$ is the average value of $|\cos\phi|$ for $\phi\in [0,2\cdot\pi]$; it can be found by integration, but soon we will show another way to find it.)
+For any plane vector ${\vec w}$, its length is proportional to the average magnitude of its projections; that is,
+\[|{\vec w}|=k\cdot \overline{|{\vec w}_{\vec u}|}\]
+for some $k \in \mathbb{R}$. The exact value of $k$ can be found by integration, but we will soon show another way to find it. % the value of k is 1 / (average of $| cos |$)
 
-If the curve $\gamma$ is smooth, then according to Exercise~\ref{ex:integral-length}
+For a smooth plane curve $\gamma\:[a,b]\to\RR^2$,  note that for any $t$,
+\[   | \gamma^{\prime}_{\vec u} (t) |  =  | \langle \vec u , \gamma^{\prime} (t) \rangle |    . \]
+ Then, according to Exercise~\ref{ex:integral-length},
 \begin{align*}
 \length\gamma
 &=\int_a^b|\gamma'(t)|\cdot dt=
@@ -276,17 +274,17 @@ If the curve $\gamma$ is smooth, then according to Exercise~\ref{ex:integral-len
 \\
 &=k\cdot \overline{\length\gamma_{\vec u}}.
 \end{align*}
-This formula and its relatives are called \index{Crofton formula}\emph{Crofton formulas}.
-Since $k$ in universal for any curve, we can take $\gamma$ to be the unit circle to compute $k$: the left hand side is $2\cdot\pi$.
-Note that for any unit vector ${\vec u}$, the curve $\gamma_{\vec u}$ runs back and forth along an interval of length 2.
-Therefore $\length\gamma_{\vec u}=4$ and hence its average value is also 4.
+This formula and its relatives are called the \index{Crofton formula}\emph{Crofton formulas}. % Who is Crofton? Name?
+Since $k$ is universal for any curve, we can compute it by taking $\gamma$ to be the unit circle: the left hand side is $2\cdot\pi$.
+Note that for any unit plane vector ${\vec u}$, the curve $\gamma_{\vec u}$ runs back and forth along an interval of length 2.
+Therefore $\length\gamma_{\vec u}=4$ and $\overline{\length\gamma_{\vec u}  } =4$.
 It follows that the coefficient $k$ has to satisfy the equation $2\cdot \pi =k\cdot 4$; hence 
 \[
 \length\gamma
 =\tfrac\pi2\cdot \overline{\length\gamma_{\vec u}}.
 \]
 
-The Crofton's formula holds for arbitrary rectifiable curves, not necessary smooth; it can be proved using Exercise~\ref{adex:integral-length}.
+Crofton's formula holds for arbitrary rectifiable curves, not necessary smooth; this can be proved using Exercise~\ref{adex:integral-length}.
 
 \begin{thm}{Exercise}\label{ex:convex-croftons}
 Show that any closed plane curve $\gamma$ has length at least $\pi\cdot s$, where $s$ is the average length of pojections of $\gamma$ to lines.
@@ -298,11 +296,17 @@ Use this statement to give another solution to Exercise~\ref{ex:convex-hull}.
 \begin{thm}{Advanced exercise}\label{adex:more-croftons}
 Show that the length of a space curve is proportional to 
 \begin{subthm}{}
-the average length of its projections to all lines.
+the average length of its projections to all lines; that is,
+\[    \length\gamma
+= k \cdot \overline{\length\gamma_{\vec u}}   \]
+for some $k \in \mathbb{R}$.
 \end{subthm}
-\begin{subthm}{}the average length of its projections to all planes
+\begin{subthm}{}the average length of its projections to all planes; that is,
+\[    \length\gamma
+= k \cdot \overline{\length\gamma_{\vec u ^{\bot}}}   \]
+for some $k \in \mathbb{R}$.
 \end{subthm}
-Find the coefficients in each case.
+Find the value of $k$ in each case.
 \end{thm}
 
 \section{Semicontinuity of length}
