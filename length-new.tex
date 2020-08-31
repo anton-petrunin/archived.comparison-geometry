@@ -352,25 +352,10 @@ Note that
 \[\Sigma_n\le\length\gamma_n\]
 for each $n$.
 Hence
-$$\liminf_{n\to\infty} \length\gamma_n \ge \Sigma_\infty.\eqlbl{>=Sigma-infty}$$
+$$\liminf_{n\to\infty} \length\gamma_n \ge \Sigma_\infty.$$
 
-If $\gamma_\infty$ is rectifiable, we can assume that 
-\begin{align*}
-\length\gamma_\infty<\Sigma_\infty+\eps.
-\end{align*}
-for any given $\eps>0$.
-By \ref{>=Sigma-infty} it follows that 
-$$\liminf_{n\to\infty} \length\gamma_n > \length\gamma_\infty-\eps$$
-for any $\eps>0$; whence \ref{eq:semicont-length} follows.
-
-It remains to consider the case when $\gamma_\infty$ is not rectifiable; 
-that is, $\length\gamma_\infty=\infty$.
-In this case we can choose a partition so that $\Sigma_\infty>L$ for any real number $L$.
-By \ref{>=Sigma-infty} it follows that 
-$$\liminf_{n\to\infty} \length\gamma_n > L$$
-for any given $L$; whence 
-\[\liminf_{n\to\infty}\length\gamma_n=\infty\]
-and \ref{eq:semicont-length} follows.
+  
+Since the partition was arbitrary, by the definition of length, the inequality  \ref{eq:semicont-length} is obtained.
 \qeds
 
 
