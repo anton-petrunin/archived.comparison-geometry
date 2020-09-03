@@ -315,30 +315,29 @@ Show that $\gamma_{a,b}''\perp \gamma'_{a,b}$ and apply \ref{ex:curvature-formul
 \parbf{\ref{ex:length>=2pi}.} Apply Fenchel's theorem.
 
 \parbf{\ref{ex:gamma/|gamma|}.}
-Assume that $\gamma$ has unit-speed.
+We can assume that $\gamma$ has a unit-speed curve.
 Set $\theta(s)=\measuredangle(\gamma(s),\gamma'(s))$.
 Observe that it is sufficient to show that
-\[\kur\ge |\sigma'|+\theta'
+\[\kur\ge |\sigma'|+\theta'.
 \eqlbl{|sigma'|<kur-theta'}\]
-if $\sin\theta\ne0$.
+Moreover, it sufficient to show that \ref{|sigma'|<kur-theta'} holds if $\theta\ne0,\pi$;
+that is, if $\sin\theta\ne0$.
 
-In order to prove \ref{|sigma'|<kur-theta'}, note that there is an orthonormal frame $\tan(s), \vec v(s), \vec w(s)$ 
-such that $\tan=\gamma'$ and $\sigma=\cos\theta\cdot\tan+\sin\theta\cdot\vec v$; in particular $\sigma$ lies in the plane spanned by $\tan$ and $\vec v$.
-Observe that $\tan'\perp \tan$ and $\langle \tan,\sigma\rangle=\cos\theta$;
+Since $\langle\tan,\tan\rangle=1$, we have $\tan'\perp \tan$.
+Observe that $\langle \tan,\sigma\rangle=\cos\theta$;
 therefore
 \begin{align*}
-\kappa&=|\tan'|\ge
+\kappa\cdot \sin\theta&=|\tan'|\cdot \sin\theta\ge
 \\
-&\ge  -\langle \tan',\vec v\rangle=
+&\ge -\langle \tan',\sigma\rangle=
 \\
-&= -\frac{\langle \tan',\sigma\rangle}{\sin\theta}=
+&= \langle \tan,\sigma'\rangle-\langle \tan,\sigma\rangle'=
 \\
-&= \frac{\langle \tan,\sigma'\rangle-\langle \tan,\sigma\rangle'}{\sin\theta}=
-\\
-&= |\sigma'|+\theta'.
+&= (|\sigma'|+\theta')\cdot \sin\theta.
 \end{align*}
+Whence \ref{|sigma'|<kur-theta'} follows if $\theta\ne0,\pi$.
 
-There is \parit{an alternative solution} by means of elementary geometry based on \ref{prop:inscribed-total-curvature}.
+There is \emph{an alternative solution} by means of elementary geometry based on \ref{prop:inscribed-total-curvature}.
 
 \parbf{\ref{ex:chord-lemma-optimal}.} 
 Set $\alpha=\measuredangle(\vec w,\vec u)$ and $\beta=\measuredangle(\vec w,\vec v)$.
@@ -658,6 +657,16 @@ and apply the spiral lemma (\ref{lem:spiral}).
 
 \parbf{\ref{ex:vertex-support}.}
 Apply the spiral lemma (\ref{lem:spiral}).
+
+\parit{Direct solution.} We may assume that $\gamma$ is a unit-speed curve and $p=\gamma(0)$.
+Further, we may assume that be the center of curvature of $\gamma$ at $p$ is the origin;
+in other words, $\kappa(0)\cdot\gamma(0)+ \norm(0)=0$.
+
+Since the osculating circle supports $\gamma$ at $p$,
+we get that the function $f\:t\mapsto \langle\gamma(t),\gamma(t)\rangle$ has local minimum or maximum at $0$.
+
+Direct calculations show that $f'(0)=0$ and $f''(0)=0$ therefore $f'''(0)=0$.
+It remains to perform calculations and show that the latter implies that $\kappa'(0)=0$.
 
 \parbf{\ref{ex:support}.} Consider the coordinate system with $p$ as the origin and $x$-axis as the common tangent line to $\gamma_1$ and $\gamma_2$.
 We may assume that $\gamma_i$ are defined in $(-\eps,\eps)$ for some small $\eps>0$,
