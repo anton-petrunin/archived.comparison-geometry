@@ -314,7 +314,31 @@ Show that $\gamma_{a,b}''\perp \gamma'_{a,b}$ and apply \ref{ex:curvature-formul
 
 \parbf{\ref{ex:length>=2pi}.} Apply Fenchel's theorem.
 
-\parbf{\ref{ex:gamma/|gamma|}.} Assume that $\gamma$ is unit-speed; show that $|\sigma'|\le \kur+\theta'$, where $\theta(s)=\measuredangle(\gamma(s),\gamma'(s))$.
+\parbf{\ref{ex:gamma/|gamma|}.}
+Assume that $\gamma$ has unit-speed.
+Set $\theta(s)=\measuredangle(\gamma(s),\gamma'(s))$.
+Observe that it is sufficient to show that
+\[\kur\ge |\sigma'|+\theta'
+\eqlbl{|sigma'|<kur-theta'}\]
+if $\sin\theta\ne0$.
+
+In order to prove \ref{|sigma'|<kur-theta'}, note that there is an orthonormal frame $\tan(s), \vec v(s), \vec w(s)$ 
+such that $\tan=\gamma'$ and $\sigma=\cos\theta\cdot\tan+\sin\theta\cdot\vec v$; in particular $\sigma$ lies in the plane spanned by $\tan$ and $\vec v$.
+Observe that $\tan'\perp \tan$ and $\langle \tan,\sigma\rangle=\cos\theta$;
+therefore
+\begin{align*}
+\kappa&=|\tan'|\ge
+\\
+&\ge  -\langle \tan',\vec v\rangle=
+\\
+&= -\frac{\langle \tan',\sigma\rangle}{\sin\theta}=
+\\
+&= \frac{\langle \tan,\sigma'\rangle-\langle \tan,\sigma\rangle'}{\sin\theta}=
+\\
+&= |\sigma'|+\theta'.
+\end{align*}
+
+There is \parit{an alternative solution} by means of elementary geometry based on \ref{prop:inscribed-total-curvature}.
 
 \parbf{\ref{ex:chord-lemma-optimal}.} 
 Set $\alpha=\measuredangle(\vec w,\vec u)$ and $\beta=\measuredangle(\vec w,\vec v)$.
