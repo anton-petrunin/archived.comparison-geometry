@@ -3493,7 +3493,7 @@ z.a2=(1,0)*u;
 
 p0=ddarc(z.a0,z.a1,z.a2)(30,30);
 p1=ddarc(z.a2,z.a1,z.a0)(-30,-30) shifted (0,-u);
-p3=p0--reverse(p1)--cycle;
+p3=p0--p1--cycle;
 
 for i=0 step 3 until 20:
 draw p0 shifted (0,-i);
