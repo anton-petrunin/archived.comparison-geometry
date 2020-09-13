@@ -257,6 +257,14 @@ lie in $\Delta$,
 then the entire path lies in $\Delta$.
 \end{thm}
 
+\begin{thm}{Exercise}\label{ex:length-dist}
+Suppose $\Sigma$ is a proper smooth surface with positive Gauss curvature and $\Norm$ is the unit normal field on $\Sigma$.
+Show that for any two points $p,q\in \Sigma$ we have the following inequality:
+\[|p-q|_\Sigma\le 2\cdot \frac{|p-q|}{|\Norm(p)+\Norm(q)|}.\]
+
+\end{thm}
+
+
 
 Let us define the \index{intrinsic diameter}\emph{intrinsic diameter} of a closed surface $\Sigma$ as the exact upper bound on the lengths of shortest paths in the surface.
 
@@ -304,7 +312,7 @@ Indeed, since there is no friction, the force that keeps the particle on $\Sigma
 Therefore, by the second Newton's laws of motion,
 we get that the acceleration $\gamma''$ is perpendicular to $\T_{\gamma(t)}$.
 
-\section{Existence}
+\section{Existence and uniqueness}
 
 The following lemma and proposition can be interpreted physically as follows:
 the lemma follows from the conservation of energy and the proposition gives smooth dependence of trajectory of a particle depending on its initial position and velocity.
@@ -442,8 +450,11 @@ Applying the argument above in a tangent-normal coordinates at $q$ shows that $\
 Therefore $\mathbb{I}$ is not a maximal interval --- a contradiction.
 \qeds
 
-
-
+\begin{thm}{Exercise}\label{ex:round-torus}
+Let $\Sigma$ be a smooth torus of revolution; that is,
+a smooth surface of revolution with closed generatrix.
+Show that any closed geodesic on $\Sigma$ is noncontractible.
+\end{thm}
 
 \section{Exponential map}\label{sec:exp}
 
@@ -624,6 +635,16 @@ Show that $\rho''(t)\le 2$ for any $t$.
 
 \section{Total curvature of geodesics}
 
+Recall that $\tc\gamma$ denotes the total curvature of curve $\gamma$.
+
+\begin{thm}{Exercise}\label{ex:tc-spherical-image}
+Let $\gamma$ be a geodesic on an oriented smooth surface $\Sigma$
+with unit normal field $\Norm$.
+Show that 
+\[\length(\Norm\circ\gamma)\ge \tc\gamma.\]
+\end{thm}
+
+
 \begin{thm}{Theorem}\label{thm:usov}
 Assume $\Sigma$ is a graph $z=f(x,y)$ of a convex $\ell$-Lipschitz function $f$ defined on an open set in the $(x,y)$-plane.
 Then the total curvature of any geodesic in $\Sigma$ is at most $2\cdot \ell$.
@@ -654,7 +675,6 @@ Since $f$ is $\ell$-Lipschitz, the tangent plane $\T_{\gamma (t)} \Sigma$ cannot
 Because $\gamma ''$ is perpendicular to that plane, we have that
 \[|\gamma'' (t)|  \le  z''(t)\cdot\sqrt{1+ \ell ^2}.\]
 
-Recall that $\tc\gamma$ denotes the total curvature of curve $\gamma$.
 By \ref{eq:intz''}, we get that
 \begin{align*}
 \tc\gamma&=\int_a^b|\gamma'' (t)|\cdot dt\le 
@@ -720,3 +740,12 @@ for any $t$.
 
 Note that the obtained bound on total curvature goes to infinity as $\eps\to 0$.
 In fact there is a bound independent of $\eps$ \cite{lebedeva-petrunin}.
+(According to Exercise~\ref{ex:tc-spherical-image}, it would also follow if the length of spherical image of $\gamma$ can be bounded above; 
+that is, $\length(\Norm\circ\gamma)\le C$ for a universal constant $C$.
+The latter was conjectured by Aleksei Pogorelov \cite{pogorelov};
+counterexamples to the different forms of this conjecture were found 
+by Viktor Zalgaller in \cite{zalgaller},
+Anatoliy Milka in \cite{milka}
+and Vladimir Usov in \cite{usov};
+these results were partly rediscovered later 
+by J\'{a}nos Pach \cite{pach}.)
