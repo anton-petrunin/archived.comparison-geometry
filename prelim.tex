@@ -127,26 +127,26 @@ The following theorem guarantees existence and uniqueness of solutions of an ini
 for a system of ordinary first order differential equations
 \[
 \begin{cases}
-x_1'(t)&=f_1(x_1,\dots,x_n,t),
+x_1'&=f_1(x_1,\dots,x_n,t),
 \\
-&\vdots
+&\,\,\vdots
 \\
-x_n'(t)&=f_n(x_1,\dots,x_n,t),
+x_n'&=f_n(x_1,\dots,x_n,t),
 \end{cases}
 \]
-where each $x_i=x_i(t)$ is a real valued function defined on a real interval $\mathbb{I}$
+where each $t\mapsto x_i=x_i(t)$ is a real valued function defined on a real interval $\mathbb{I}$
 and each $f_i$ is a smooth function defined on an open subset $\Omega\subset \RR^n\times \RR$.
 
 The array of functions $(f_1,\dots,f_n)$ can be considered as one vector-valued function 
 $\bm{f}\:\Omega\to \RR^n$ and the array $(x_1,\dots,x_n)$ can be considered as a vector  $\bm{x}\in\RR^n$.
 Therefore the system can be rewritten as one vector equation 
-\[\bm{x}'(t)=\bm{f}(\bm{x}, t).\] 
+\[\bm{x}'=\bm{f}(\bm{x}, t).\] 
 
 \begin{thm}{Theorem}\label{thm:ODE}
 Suppose $\mathbb{I}$ is a real interval and $\bm{f}\:\Omega\to \RR^n$ is a smooth function defined on an open subset $\Omega\subset \RR^n\times \RR$.
 Then for any initial data $\bm{x}(t_0)=\bm{u}$ such that $(\bm{u},t)\in\Omega$ the differential equation 
-\[\bm{x}'(t)=\bm{f}(\bm{x},t)\]
-has a unique solution $\bm{x}(t)$ defined at a maximal interval $\mathbb{J}$ that contains $t_0$.
+\[\bm{x}'=\bm{f}(\bm{x},t)\]
+has a unique solution $t\mapsto \bm{x}(t)$ defined at a maximal interval $\mathbb{J}$ that contains $t_0$.
 Moreover
 \begin{enumerate}[(a)]
 \item  if $\mathbb{J}\ne \RR$ (that is, if an end $a$ of $\mathbb{J}$ is finite) then $\bm{x}(t)$ does not have a limit point in $\Omega$ as $t\to a$;

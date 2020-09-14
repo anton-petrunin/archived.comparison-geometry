@@ -332,7 +332,7 @@ Whence
 \\
 &=0.
 \end{align*}
-That is, $|\gamma'(t)|^2=\langle\gamma'(t),\gamma'(t)\rangle$ is constant.
+That is, $|\gamma'|^2=\langle\gamma',\gamma'\rangle$ is constant.
 \qeds
 
 \begin{thm}{Proposition}\label{prop:geod-existence} 
@@ -528,7 +528,7 @@ In fact, if one assumes that $\gamma$ is smooth, then it is easy to convert this
 
 \parit{Informal explanation.}
 Let us think about a shortest path $\gamma$ as of stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
-Since it is frictionless, the force density $N(t)$ that keeps $\gamma$ in the surface must be proportional to the normal vector to the surface at $\gamma(t)$.
+Since it is frictionless, the force density $\vec n=\vec n(t)$ that keeps $\gamma$ in the surface must be proportional to the normal vector to the surface at $\gamma(t)$.
 
 The tension in the thread has to be the same at all points (otherwise the thread would move back or forth and it would not be stable).
 Denote  the tension by $T$.
@@ -537,12 +537,12 @@ We can assume that $\gamma$ has unit speed;
 in this case the net force from tension to the arc $\gamma_{[t_0,t_1]}$ is $T\cdot(\gamma'(t_1)-\gamma'(t_0)$.
 Hence the density of net force from tension at $t_0$ is 
 \begin{align*}
-F(t_0)&=\lim_{t_1\to t_0}T\cdot\frac{\gamma'(t_1)-\gamma'(t_0)}{t_1-t_0}=
+\vec f(t_0)&=\lim_{t_1\to t_0}T\cdot\frac{\gamma'(t_1)-\gamma'(t_0)}{t_1-t_0}=
 \\
 &=T\cdot\gamma''(t_0).
 \end{align*}
 According to the second Newton's law of motion, we have 
-\[F(t)+N(t)=0;\]
+$\vec f+\vec n=0$;
 which implies that  $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
 \qeds
 
@@ -603,21 +603,21 @@ Then $t\mapsto z(t)$ is a convex function; that is, $z''(t)\ge 0$ for any $t$.
 \parit{Proof.}
 Choose the orientation on the graph so that the unit normal vector $\Norm$ always points up;
 that is, it has positive $z$-coordinate.
+Let us use shortcut $\Norm(t)$ for $\Norm(\gamma(t))$.
 
 Since $\gamma$ is a geodesic, we have $\gamma''(t)\perp\T_{\gamma(t)}$,
-or equivalently $\gamma''(t)$ is proportional to $\Norm_{\gamma(t)}$ for any $t$.
+or equivalently $\gamma''(t)$ is proportional to $\Norm(t)$ for any $t$.
 Further 
-\[\gamma''(t)=k(t)\cdot\Norm_{\gamma(t)},\]
-where $k(t)$ is the normal curvature at $\gamma(t)$ in the direction of $\gamma'(t)$.
+\[\gamma''=k\cdot\Norm,\]
+where $k=k(t)$ is the normal curvature at $\gamma(t)$ in the direction of $\gamma'(t)$.
 
 Therefore
-\[z''(t)=\cos(\theta_\gamma(t))\cdot k(t),
+\[z''=k\cdot\cos\theta,
 \eqlbl{eq:z''}\]
-where $\theta_\gamma(t)$ denotes the angle between $\Norm_{\gamma(t)}$ and the $z$-axis.
+where $\theta=\theta(t)$ denotes the angle between $\Norm(t)$ and the $z$-axis.
 
-Since $\Norm$ points up, we have $\theta_\gamma(t)<\tfrac\pi2$, or equivalently
-\[\cos(\theta_\gamma(t))>0\]
-for any $t$.
+Since $\Norm$ points up, we have $\theta(t)<\tfrac\pi2$, or equivalently
+\[\cos\theta>0.\]
 
 Since $f$ is convex, we have that the tangent plane supports the graph from below at any point;
 in particular $k(t)\ge 0$ for any $t$.

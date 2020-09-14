@@ -1226,7 +1226,46 @@ Observing that this function cannot be constant, we arrive to a contradiction.
 
 \parit{Soruse:} The problem is discuss by Dmitri Panov \cite{panov-curves}.
 
-\parbf{\ref{ex:length-of-bry}.} Use the \ref{lem:convex-saddle} and the hemisphere lemma (\ref{lem:hemisphere}).
+\parbf{\ref{ex:crosss}.}
+This problem follows easily from the so called \emph{Morse lemma}.
+We present an elementary argument.
+A more instructive proof can be built using the Moser's trick \cite{palais}.
+
+Choose a tangent-normal coordinates at $p$ so that the axis point in the principle directions of $\Sigma$ at $p$;
+let $z=f(x,y)$ be the local graph representation of $\Sigma$.
+We need to show that the solution of equation $f(x,y)=0$ is a union of two smooth curves that intersect transversely at $p$.
+
+Prove the following claim:
+\begin{itemize}
+ \item Suppose that  $x\mapsto h(x)$ is a smooth function defined in an open interval $\mathbb{I}\ni0$ such that $h(0)=h'(0)=0$ and $h''(0)>0$.
+ Then, passing to a smaller interval $\mathbb{J}\ni0$ if necessary, we can find a unique smooth function $r$ such that $h=r^2$, $r(0)=0$ and $r'(0)> 0$.
+\end{itemize}
+Note that by passing to a smaller rectangular domain of $f$ we can assume that $f_{xx}>\eps$ and $f_{yy}<-\eps$ for a fixed $\eps>0$. 
+Show that we can assume that for every $x$ there is unique $y(x)$ such that $f_x(x,y(x))=0$; 
+moreover the function $x\mapsto y(x)$ is smooth.
+
+Set $h(x)=f(x,y(x))$.
+Note that $h(0)=h'(0)=0$ and $h''>0$.
+Applynig the claim, we get that $h(x)=-s^2(x)$, where $s(0)=0$ and $s'(0)>0$.
+
+Observe that $g(x,y)=h(x)-f(x,y)\ge 0$ and $g_y(x,y(x))=g(x,y(x))=0$ and $g_{yy}>0$.
+Applying the claim for each functions $y\mapsto g(x,y)$ with fixed $x$, we get that $g(x,y)=r(x,y)^2$ for a smooth function $r$ such that 
+$r(x,y(x))=0$ and $r_y(x,y(x))>0$.
+
+It follows that 
+\begin{align*}
+f(x,y)&=s(x)^2-r(x,y)^2-=
+\\
+&=(s(x)-r(x,y))\cdot (s(x)+r(x,y)).
+\end{align*}
+That is $f(x,y)=0$ if $s(x)\pm r(x,y) =0$.
+It remains to that the two functions $g_\pm(x,y)=s(x)\pm r(x,y)$ have distinct non-zero gradients at $0$ and apply the implicit function theorem.
+
+
+
+
+
+\parbf{\ref{ex:length-of-bry}.} Use \ref{lem:convex-saddle} and the hemisphere lemma (\ref{lem:hemisphere}).
 
 \parbf{\ref{ex:circular-cone-saddle}.}
 Assume $\Sigma$ is an open saddle surface that lies in a cone $K$.
@@ -1245,6 +1284,19 @@ that is, a point $q\in F_\eps$ is mapped to a point $s(q)$ on the sphere that li
 Show that $s$ is a diffeomorphism from $F_\eps$ to a south hemisphere of~$\Sigma$.
 
 \parbf{\ref{ex:saddle-linear}.} Apply \ref{prop:hat}.
+
+\parbf{\ref{ex:saddle-intersection};} \ref{SHORT.ex:saddle-intersection:graph}.
+Choose $p\in\Gamma$.
+
+If $\T_p\nparallel\Pi$, then implicit function theorem implies that a neighborhood of $p$ in $\Gamma$ admits a smooth parameterization by an real interval.
+
+If  $\T_p\parallel\Pi$, then \ref{ex:crosss} implies that $p$ is a cross point of two smooth curves in $\Gamma$.
+
+It follows that $\Gamma$ is a smooth graph and every vertex of $\Gamma$ in the interior of $\Delta$ has degree $4$.
+No cycle condition follows from Jordan's theorem \ref{thm:jordan} and \ref{lem:convex-saddle}.
+
+\parit{\ref{SHORT.ex:saddle-intersection:graphik}.} Show that if $\Sigma$ is not a graph, then it has a vertical tangent $\T_p$ plane at some point $p$.
+Apply part \ref{SHORT.ex:saddle-intersection:graph} for the intersection of $\Sigma$ with $\T_p$.
 
 \parbf{\ref{ex:between-parallels}.} Look for an example among the surfaces of revolution and use \ref{ex:principle-revolution}.
 
@@ -1297,18 +1349,25 @@ and by \ref{cor:shorts+convex}
 This means that $\gamma$ is not length minimizing, 
 a contradiction.
 
+\parbf{\ref{ex:length-dist}.} 
+Note that by \ref{thm:convex-embedded}, $\Sigma$ bounds a strictly convex region.
+Therefore we can assume that $\Norm(p)\ne\Norm(q)$, otherwise $p=q$ and the inequality is evident.
+
+Further, we can assume that $\Norm(p)+\Norm(q)\ne 0$, otherwise the right hand side is undefined.
+
+
+In the remaining case the tangent planes $\T_p$ and $\T_q$ intersect along a line, say $\ell$.
+Set $\alpha=\tfrac12\cdot\measuredangle(\Norm(p),\Norm(q))$;
+observe that $\cos\alpha= |\Norm(p)+\Norm(q)|/2$.
+Let $x\in \ell$ be the point that minimize the sum $|p-x|\z+|x-q|$.
+Observe that $\measuredangle\hinge xpq\ge \pi-2\cdot\alpha$.
+Conclude that 
+\[|p-x|+|x-q|\le \frac{|p-q|}{\cos\alpha}.\]
+
+Finally, apply \ref{cor:shorts+convex} to show that
+\[|p-q|_\Sigma\le |p-x|+|x-q|.\]
+
 \parbf{\ref{ex:intrinsic-diameter}.} Use \ref{lem:closest-point-projection}.
-
-\parbf{\ref{ex:reflection-geodesic}.}
-Denote by $\mu$ a unit vector perpendicular to $\Pi$.
-Since $\gamma$ lies in $\Pi$, we have that $\gamma''$ is parallel to $\Pi$, or equivalently $\gamma''\perp \mu$.
-Since $\gamma$ is unit speed, \ref{prop:a'-pertp-a''} implies that $\gamma''\perp\gamma'$.
-
-Since $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$,
-the tangent palne $\T_{\gamma(t)}\Sigma$ is also mirror symmetric with respect to  a plane $\Pi$.
-It follows that $\T_{\gamma(t)}\Sigma$ is spanned by $\mu$ and $\gamma'(t)$.
-Therefore $\gamma''\perp \mu$ and $\gamma''\perp\gamma'$ imply $\gamma''\perp\T_{\gamma(t)}\Sigma$;
-that is, $\gamma$ is a geodesic.
 
 \parbf{\ref{ex:helix=geodesic}.}
 Show that $\Norm_{\gamma(t)}=(\cos t,\sin t, 0)$.
@@ -1322,6 +1381,26 @@ Therefore
 where $k_n(s)$ is the normal curvature of $\gamma$ at time $s$.
 Since $\gamma$ is asymptotic, $k_n(s)\equiv 0$;
 that is, $\gamma''(s)\equiv 0$, therefore $\gamma'$ is constant and $\gamma$ runs along a line segment.
+
+\parbf{\ref{ex:reflection-geodesic}.}
+Denote by $\mu$ a unit vector perpendicular to $\Pi$.
+Since $\gamma$ lies in $\Pi$, we have that $\gamma''$ is parallel to $\Pi$, or equivalently $\gamma''\perp \mu$.
+Since $\gamma$ is unit speed, \ref{prop:a'-pertp-a''} implies that $\gamma''\perp\gamma'$.
+
+Since $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$,
+the tangent palne $\T_{\gamma(t)}\Sigma$ is also mirror symmetric with respect to  a plane $\Pi$.
+It follows that $\T_{\gamma(t)}\Sigma$ is spanned by $\mu$ and $\gamma'(t)$.
+Therefore $\gamma''\perp \mu$ and $\gamma''\perp\gamma'$ imply $\gamma''\perp\T_{\gamma(t)}\Sigma$;
+that is, $\gamma$ is a geodesic.
+
+\parbf{\ref{ex:round-torus}.}
+By \ref{ex:reflection-geodesic}, any meridian of $\Sigma$ is a closed geodesic.
+Consider an arbitrary closed geodesic $\gamma$.
+
+Note that if $\gamma$ is tangent to a meridian at some point, then by uniqueness, $\gamma$ runs along the meridian; in particular it is non-contractible.
+
+It remains to consider the case when $\gamma$ intersect meridians transitively. So the longitude of $\gamma$ is monotone.
+Whence again $\gamma$ is non-contractible.
 
 \parbf{\ref{ex:two-min-geod}.}
 Assume that two shortest paths $\alpha$ and $\beta$ have two common point $p$ and $q$.
@@ -1421,8 +1500,6 @@ By \ref{eq:gamma''=z''} and \ref{eq:int z''}, we have
 
 The suggested argument does not give the optimal bound for the Lipschitz constant that guarantees that $\gamma$ is simple, but
 later (see \ref{ex:sqrt(3)}) we will show that the exact bound is $\sqrt{3}=\tg\tfrac\pi3$ --- it is the same as in the exercise about mountain of with the shape of a perfect cone; see~\ref{ex:lasso}.
-
-\parbf{\ref{ex:bound-tc}.} %???
 
 \parbf{\ref{ex:parallel}}; \ref{SHORT.ex:parallel:a}.
 Show and use that $\langle\vec v(t),\vec v'(t)\rangle=0$.

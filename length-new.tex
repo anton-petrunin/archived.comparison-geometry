@@ -125,11 +125,13 @@ Note that smooth unit-speed curves are automatically regular.
 Note that any rectifiable curve $\gamma$ can be parameterized by its arc length.
 Indeed fix a value $t_0$ in the interval of parameters of $\gamma$ and set 
 \[s(t)=
-\begin{cases}
+\left\{
+\begin{tabu}{rcr}
 \length\gamma|_{[t_0,t]}&\text{if\ }t\ge t_0,
 \\
-\length\gamma|_{[t,t_0]}&\text{if\ }t\le t_0,
-\end{cases}
+-\length\gamma|_{[t,t_0]}&\text{if\ }t\le t_0.
+\end{tabu}
+\right.
 \]
 
 
