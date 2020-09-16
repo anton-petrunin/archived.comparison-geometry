@@ -3516,7 +3516,7 @@ endfor
 (1.5**2,1.5**3)*u pensemibold;
 
 drawarrow ddline(origin,(1.5**2,0)*u)(.2,.2) penhair;
-drawarrow ddline((0,-1.5**3)*u,(0,1.5**3)*u)(.1,.1) penhair;
+drawarrow ddline((0,-1.5**3)*u,(0,1.5**3)*u)(0,0) penhair;
 endfig;
 
 beginfig(275);

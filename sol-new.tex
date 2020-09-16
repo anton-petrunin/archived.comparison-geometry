@@ -58,6 +58,13 @@ Use it to show that the maps $t\mapsto \alpha(t)$ is injective.
 
 Summarizing we get that $\alpha$ is a smooth parametrization of $L$. 
 
+\begin{wrapfigure}[12]{r}{24 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-270}
+\vskip0mm
+\end{wrapfigure}
+
 Now suppose $\beta\:t\mapsto (x(t),y(t))$ is a smooth parameterization of~$L$.
 Without loss of generality we may assume that $x(0)=y(0)=0$.
 Note that $x(t)\ge 0$ for any $t$ therefore $x'(0)=0$.
@@ -68,14 +75,7 @@ so $L$ does not admit a smooth regular parameterization.
 \parbf{\ref{ex:cycloid}.}
 Apply the definitions.
 For \ref{SHORT.ex:cycloid:regular} you need to check that $\gamma'_\ell\ne 0$.
-For \ref{SHORT.ex:cycloid:simple} you need to check that $\gamma_\ell(t_0)=\gamma(t_1)$ only if $t_0=t_1$.
-
-\begin{wrapfigure}{r}{24 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-270}
-\vskip0mm
-\end{wrapfigure}
+For \ref{SHORT.ex:cycloid:simple} you need to check that $\gamma_\ell(t_0)\z=\gamma(t_1)$ only if $t_0=t_1$.
 
 \parbf{\ref{ex:y^2=x^3}.}
 This is so called \index{semicubical parabola}\emph{semicubical parabola}; it is shown on the diagram.
@@ -87,6 +87,16 @@ For $\ell=0$ the system describes a pair of points $(0,0,\pm1)$, so we can assum
 Note that first equation desribes the unit sphere centered at the origin
 and the second equation describes a cylinder over the circle in the $(x,y)$-plane with diameter with opposite points $(0,0)$ and $(0,\ell)$.
 
+{
+
+\begin{wrapfigure}{o}{35 mm}
+\centering
+\begin{lpic}[t(2mm),b(0mm),r(0mm),l(0mm)]{asy/viviani(1)}
+\lbl[r]{-.5,13;$x$}
+\lbl[l]{30.5,15;$y$}
+\lbl[b]{14,40;$z$}
+\end{lpic}
+\end{wrapfigure}
 
 For $\ell\ne 0$,
 find the gradients $\nabla f$ and $\nabla h$ for the functions
@@ -104,14 +114,7 @@ Show that
 \item if $|\ell|\ge1$, then the set is connected.
 \end{itemize}
 
-\begin{wrapfigure}{o}{35 mm}
-\centering
-\begin{lpic}[t(-0mm),b(6mm),r(0mm),l(0mm)]{asy/viviani(1)}
-\lbl[r]{-.5,13;$x$}
-\lbl[l]{30.5,15;$y$}
-\lbl[b]{14,40;$z$}
-\end{lpic}
-\end{wrapfigure}
+}
 
 Note that the condition on gradients provides only sufficient condition.
 Therefore he case $\ell=\pm1$ has to be checked by hands.
@@ -760,14 +763,14 @@ The case $k=7$ shown on the diagram.
 \vskip0mm
 \end{figure}
 
-\parbf{\ref{ex:moon-rad}.} Note that $\gamma$ contains a simple loop; apply to it \ref{thm:moon-orginal}.
-
 \begin{wrapfigure}{r}{25 mm}
-\vskip-0mm
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-305}
 \vskip0mm
 \end{wrapfigure}
+
+\parbf{\ref{ex:moon-rad}.} Note that $\gamma$ contains a simple loop; apply to it \ref{thm:moon-orginal}.
 
 \parbf{\ref{ex:curve-crosses-circle}.}
 Repeat the proof of theorem for each cyclic concatenation of an arc of $\gamma$ from $p_i$ to $p_{i+1}$ with large arc of the circle. 
@@ -859,8 +862,9 @@ In this case $s\:(u,v)\mapsto (u,v,f(u,v))$ is a smooth chart at $p$.
 Show that the plane spanned by $s_u$ and $s_v$ is not vertical;
 together with \ref{def:tangent-plane} it proves the if part.
 
-To prove the only-if part, fix a chart 
-\[s\:(u,v)\mapsto(x(u,v),y(u,v),z(u,v))\] at $p$ and apply the inverse function theorem for the map $(u,v)\z\mapsto(x(u,v),y(u,v))$.
+For the only-if part, fix a chart 
+$s\:(u,v)\mapsto(x(u,v),y(u,v),z(u,v))$,
+and apply the inverse function theorem for the map $(u,v)\z\mapsto(x(u,v),y(u,v))$.
 
 
 \parbf{\ref{ex:implicit-orientable}.} Show that $\Norm=\tfrac{\nabla h}{|\nabla h|}$ defines a unit normal field on $\Sigma$.
@@ -1105,6 +1109,13 @@ Therefore the surface bounds a convex region that contains a line segment of len
 Use \ref{ex:curvature-graph} and \ref{thm:meusnier} to show that the Gauss curvature of the surface of revolution of the graph $y=a\cdot \sin x$ for $x\in(0,\pi)$ cannot exceed $1$.
 Try to support the surface $\Sigma$ from inside by a surface of revolution of the described type. 
 
+\begin{wrapfigure}[16]{r}{29 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-1182}
+\vskip-0mm
+\end{wrapfigure}
+
 \parit{Remark.}
 In fact if Gauss curvature of $\Sigma$ is at least $1$,
 then
@@ -1115,12 +1126,7 @@ The latter means that any two points in $\Sigma$ can be connected by a path that
 To prove \ref{SHORT.ex:convex-proper-sphere:single} use convexity of $R$.
 To prove \ref{SHORT.ex:convex-proper-sphere:smooth} observe that the map $\Sigma\to\mathbb{S}^2$ is smooth and regular, then apply the inverse function theorem to show that inverse is smooth as well.
 
-\begin{wrapfigure}[16]{o}{29 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-1182}
-\vskip-0mm
-\end{wrapfigure}
+
 
 \parbf{\ref{ex:convex-proper-plane}.}
 We can assume that the origin lies on $\Sigma$.
@@ -1227,9 +1233,11 @@ Observing that this function cannot be constant, we arrive to a contradiction.
 \parit{Soruse:} The problem is discuss by Dmitri Panov \cite{panov-curves}.
 
 \parbf{\ref{ex:crosss}.}
-This problem follows easily from the so called \emph{Morse lemma}.
-We present an elementary argument.
+This problem follows easily from the so called \index{Morse lemma}\emph{Morse lemma}.
+The following sketch is a slightly stripped version of it.
 A more instructive proof can be built using the Moser's trick \cite{palais}.
+
+\medskip
 
 Choose a tangent-normal coordinates at $p$ so that the axis point in the principle directions of $\Sigma$ at $p$;
 let $z=f(x,y)$ be the local graph representation of $\Sigma$.
@@ -1238,28 +1246,30 @@ We need to show that the solution of equation $f(x,y)=0$ is a union of two smoot
 Prove the following claim:
 \begin{itemize}
  \item Suppose that  $x\mapsto h(x)$ is a smooth function defined in an open interval $\mathbb{I}\ni0$ such that $h(0)=h'(0)=0$ and $h''(0)>0$.
- Then, passing to a smaller interval $\mathbb{J}\ni0$ if necessary, we can find a unique smooth function $r$ such that $h=r^2$, $r(0)=0$ and $r'(0)> 0$.
+ Then, for a smaller interval $\mathbb{J}\ni0$ there is a unique smooth function $a\:\mathbb{J}\to\RR$ such that $h=a^2$, $a(0)=0$ and $a'(0)> 0$.
 \end{itemize}
-Note that by passing to a smaller rectangular domain of $f$ we can assume that $f_{xx}>\eps$ and $f_{yy}<-\eps$ for a fixed $\eps>0$. 
-Show that we can assume that for every $x$ there is unique $y(x)$ such that $f_x(x,y(x))=0$; 
+Note that by passing to a small rectangular domain $|x|,|y|<\eps$, we can assume that $f_{xx}>\eps$ and $f_{yy}<-\eps$. 
+Show that if $\eps$ is small, then for every $x$ there is unique $y(x)$ such that $f_x(x,y(x))=0$; 
 moreover the function $x\mapsto y(x)$ is smooth.
 
 Set $h(x)=f(x,y(x))$.
 Note that $h(0)=h'(0)=0$ and $h''>0$.
-Applynig the claim, we get that $h(x)=-s^2(x)$, where $s(0)=0$ and $s'(0)>0$.
+Applying the claim, we get a function $a$ such that that $h=a^2$, where $a(0)=0$ and $a'(0)>0$.
 
-Observe that $g(x,y)=h(x)-f(x,y)\ge 0$ and $g_y(x,y(x))=g(x,y(x))=0$ and $g_{yy}>0$.
-Applying the claim for each functions $y\mapsto g(x,y)$ with fixed $x$, we get that $g(x,y)=r(x,y)^2$ for a smooth function $r$ such that 
-$r(x,y(x))=0$ and $r_y(x,y(x))>0$.
+Observe that $g(x,y)=h(x)-f(x,y)\ge 0$ and $g_y(x,y(x))\z=g(x,y(x))\z=0$ and $g_{yy}>0$.
+Applying the claim for each functions $y\mapsto g(x,y)$ with fixed $x$, we get that $g(x,y)=b(x,y)^2$ for a smooth function $b$ such that 
+$b(x,y(x))=0$ and $b_y(x,y(x))>0$.
 
 It follows that 
 \begin{align*}
-f(x,y)&=s(x)^2-r(x,y)^2-=
+f(x,y)&=a(x)^2-b(x,y)^2-=
 \\
-&=(s(x)-r(x,y))\cdot (s(x)+r(x,y)).
+&=(a(x)-b(x,y))\cdot (a(x)+b(x,y)).
 \end{align*}
-That is $f(x,y)=0$ if $s(x)\pm r(x,y) =0$.
-It remains to that the two functions $g_\pm(x,y)=s(x)\pm r(x,y)$ have distinct non-zero gradients at $0$ and apply the implicit function theorem.
+That is $f(x,y)=0$ if $a(x)\pm b(x,y) =0$.
+
+It remains to observe that the two functions $g_\pm(x,y)=a(x)\pm b(x,y)$ have distinct non-zero gradients at $0$ and apply the implicit function theorem.
+Therefore each equation $a(x)\pm b(x,y) =0$ defines a smooth regular curve in a neighborhood of $p$.
 
 
 
@@ -1314,10 +1324,10 @@ Observe that $\T_p$ meets the boundary of $\Sigma$ at two points,
 therefore $\Gamma$ has 2 endpoints.
 Use it to get a contradiction.
 
-{
 
-\begin{wrapfigure}{o}{24 mm}
-\vskip-8mm
+
+\begin{wrapfigure}{r}{24 mm}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-1250}
 \vskip-0mm
@@ -1325,9 +1335,28 @@ Use it to get a contradiction.
 
 \parbf{\ref{ex:lasso}.} Cut the lateral surface of the mountain by a line from the cowboy to the tip, unfold it on the plane and try to figure out what is the image of the strained lasso.
 
-}
+
 
 \parit{Source:} I learned this problem from Joel Fine, who attributed it so Frederic Bourgeois \cite{fine}.
+
+\parbf{\ref{ex:length-dist}.} 
+Note that by \ref{thm:convex-embedded}, $\Sigma$ bounds a strictly convex region.
+Therefore we can assume that $\Norm(p)\ne\Norm(q)$, otherwise $p=q$ and the inequality is evident.
+
+Further, we can assume that $\Norm(p)+\Norm(q)\ne 0$, otherwise the right hand side is undefined.
+
+
+In the remaining case the tangent planes $\T_p$ and $\T_q$ intersect along a line, say $\ell$.
+Set $\alpha=\tfrac12\cdot\measuredangle(\Norm(p),\Norm(q))$;
+observe that $\cos\alpha= |\Norm(p)+\Norm(q)|/2$.
+Let $x\in \ell$ be the point that minimize the sum $|p-x|\z+|x-q|$.
+Observe that $\measuredangle\hinge xpq\ge \pi-2\cdot\alpha$.
+Conclude that 
+\[|p-x|+|x-q|\le \frac{|p-q|}{\cos\alpha}.\]
+
+Finally, apply \ref{cor:shorts+convex} to show that
+\[|p-q|_\Sigma\le |p-x|+|x-q|.\]
+
 
 \parbf{\ref{ex:hat-convex}.} Assume the contrary,
 then there is a minimizing geodesic $\gamma\not\subset\Delta$ with ends $p$ and $q$ in $\Delta$.
@@ -1348,24 +1377,6 @@ and by \ref{cor:shorts+convex}
 \[\length\bar\gamma<\length\gamma.\]
 This means that $\gamma$ is not length minimizing, 
 a contradiction.
-
-\parbf{\ref{ex:length-dist}.} 
-Note that by \ref{thm:convex-embedded}, $\Sigma$ bounds a strictly convex region.
-Therefore we can assume that $\Norm(p)\ne\Norm(q)$, otherwise $p=q$ and the inequality is evident.
-
-Further, we can assume that $\Norm(p)+\Norm(q)\ne 0$, otherwise the right hand side is undefined.
-
-
-In the remaining case the tangent planes $\T_p$ and $\T_q$ intersect along a line, say $\ell$.
-Set $\alpha=\tfrac12\cdot\measuredangle(\Norm(p),\Norm(q))$;
-observe that $\cos\alpha= |\Norm(p)+\Norm(q)|/2$.
-Let $x\in \ell$ be the point that minimize the sum $|p-x|\z+|x-q|$.
-Observe that $\measuredangle\hinge xpq\ge \pi-2\cdot\alpha$.
-Conclude that 
-\[|p-x|+|x-q|\le \frac{|p-q|}{\cos\alpha}.\]
-
-Finally, apply \ref{cor:shorts+convex} to show that
-\[|p-q|_\Sigma\le |p-x|+|x-q|.\]
 
 \parbf{\ref{ex:intrinsic-diameter}.} Use \ref{lem:closest-point-projection}.
 
@@ -1644,6 +1655,13 @@ Imagine that there air pressure in the pentagon, it should not move it; so the t
 Use part \ref{SHORT.ex:convex-polyhon+self-intersections:angles} to show that this is not the case.
 
 
+\begin{wrapfigure}[19]{r}{27 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-1680}
+\vskip8mm
+\end{wrapfigure}
+
 \parbf{\ref{ex:dist-to-bry}.}
 Suppose $\gamma$ is a unit-speed geodesic in $\Delta$ and $\gamma(0)=p$. 
 Denote by $q$ a point on $\delta$ that minimize the distance to $p$.
@@ -1651,15 +1669,6 @@ Denote by $\phi$ the angle between $\gamma$ and $[pq]$ at $p$.
 Note that it is sufficient to show that 
 \[f\circ\gamma(t)\le |p-q|_\Sigma+t\cdot\cos\phi\eqlbl{eq:dist<cosphi}\]
 for $t$ sufficiently close to $0$.
-
-{
-
-\begin{wrapfigure}[12]{r}{27 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-1680}
-\vskip8mm
-\end{wrapfigure}
 
 Chose small $t>0$ and set $x\z=\gamma(t)$.
 Consider a model triangle $[\tilde p\tilde q\tilde x]\z=\tilde\triangle(pqx)$.
@@ -1728,7 +1737,7 @@ that is,
 \tfrac12\cdot \dist{\gamma_1(1)}{\gamma_2(1)}{}.
 \]
 
-}
+
 
 {
 
