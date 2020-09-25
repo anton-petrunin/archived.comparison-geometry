@@ -1,16 +1,16 @@
 \chapter{Comparison theorems}
 
-This chapter based on material in the book os Stephanie Alexander, Vitali Kapovitch and the third author \cite{alexander-kapovitch-petrunin2027}.
+This chapter based on material in the book os Stephanie Alexander, Vitali Kapovitch and the first author \cite{alexander-kapovitch-petrunin2027}.
 
 \section{Model triangles and angles}
 
 Recall that a shortest path between points $x$ and $y$ in a surface $\Sigma$ will be denoted as $[xy]$ or $[xy]_\Sigma$, and
 $|x-y|_\Sigma$ denotes the \index{intrinsic distance}\emph{intrinsic distance} from $x$ to $y$ in $\Sigma$.
 
-A \index{geodesic triangle}\emph{geodesic triangle} in a surface $\Sigma$ is a triple of points $x,y,z\in \Sigma$ with choice of minimizing geodesics $[xy]$, $[yz]$ and $[zx]$.
+A \index{geodesic triangle}\emph{geodesic triangle} in a surface $\Sigma$ is defined as a triple of points $x,y,z\in \Sigma$ with choice of minimizing geodesics $[xy]_\Sigma$, $[yz]_\Sigma$ and $[zx]_\Sigma$.
 The points $x,y,z$ are called {}\emph{vertexes} of the geodesic triangle,
 the minimizing geodesics $[xy]$, $[yz]$ and $[zx]$ are called its {}\emph{sides};
-the triangle itself is denoted by $[xyz]$.
+the triangle itself is denoted by $[xyz]$, or by $[xyz]_\Sigma$, if we need to emphasize that it lies in $\Sigma$.
 
 A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\RR^2$ is called \index{model triangle}\emph{model triangle} of the triangle $[xyz]$,
 briefly $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$,
@@ -31,7 +31,7 @@ The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in
 \section{Formulations}
 
 Part \textit{\ref{SHORT.thm:comp:toponogov}} of the following theorem is called \index{Toponogov comparison theorem}\emph{Toponogov comparison theorem} and sometimes \index{Alexandrov comparison theorem}\emph{Alexandrov comparison theorem};
-it is was proved by Paolo Pizzetti \cite{pizzetti} and latter independently by Alexandr Alexandrov \cite{alexandrov}; 
+it was proved by Paolo Pizzetti \cite{pizzetti} and latter independently by Alexandr Alexandrov \cite{alexandrov}; 
 generalizations were obtained by  Victor Toponogov \cite{toponogov1957}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{burago-gromov-perelman}.
 
 Part \textit{\ref{SHORT.thm:comp:cat}} is called \index{Cartan--Hadamard theorem}\emph{Cartan--Hadamard theorem};
@@ -44,7 +44,7 @@ Stephanie Alexander and Richard Bishop \cite{alexander-bishop1990}.
 
 Recall that a surface $\Sigma$ is called {}\emph{simply connected} if any closed simple curve in $\Sigma$ bounds a disc.
 
-\begin{thm}{Comparison theorem}\label{thm:comp}
+\begin{thm}{Comparison theorems}\label{thm:comp}
 Let $\Sigma$ be a proper smooth regular surface.
 
 \begin{subthm}{thm:comp:toponogov}
@@ -62,30 +62,42 @@ for any geodesic triangle $[xyz]$.
 
 \end{thm}
 
-
-Let us make two remarks about the statement.
-
-First, the angle $\measuredangle\hinge {x}{y}{z}$ is a number in the interval $[0,\pi]$.
-If the triangle $[xyz]$ bounds a disc $\Delta$ and $\theta$ is the external angle at  $x$ which used in Gauss--Bonnet formula, 
-then $\measuredangle\hinge {x}{y}{z}=|\pi-\theta|$.
-The corresponding internal angle might be $\measuredangle\hinge {x}{y}{z}$ or $2\cdot\pi-\measuredangle\hinge {x}{y}{z}$ depending on which side lies the disc $\Delta$.
-
-\begin{itemize}
-\item Since the angles of any plane triangle sum up to $\pi$,
-part \ref{SHORT.thm:comp:toponogov} implies that angles of any triangle in a surface with nonnegative Gauss curvature have sum at least $\pi$.
-
-\item The triangle may not bound a disc%
-\footnote{For example equator on the cyclinder is formed by a geodesic triangle that does not bound a disc.}, but  if it does, then by Gauss--Bonnet formula the sum of its {}\emph{internal} angles is at least~$\pi$.
-\end{itemize}
-
-These two statements are closely related, but they are not equivalent.
-Indeed, if $\alpha$ is the angle in the comparison theorem, then the internal angle might be $\alpha$ or $2\cdot\pi-\alpha$; while Gauss--Bonnet formula gives a lower bound on the sum of internal angles it does not forbid that each of these angles is close to $2\cdot \pi$.
-However the latter is impossible by the comparison theorem.
-
-Second, note that without condition that $\Sigma$ is simply connected, the statement \ref{SHORT.thm:comp:cat} does not hold.
+Note that without condition that $\Sigma$ is simply connected, the statement \ref{SHORT.thm:comp:cat} does not hold.
 For example the equator $z=0$ of the hyperboloid (which is not simply connected)
 \[\set{(x,y,z)\in\RR^3}{x^2+y^2-z^2=1}\]
 forms a triangle with all angles $\pi$, which contradict the comparison in~\ref{SHORT.thm:comp:cat}.
+
+Let us discuss the relations between Gauss--Bonnet formula and the comparison theorems.
+Suppose that a disc $\Delta$ is bounded by a geodesic triangle $[xyz]$ with internal angles $\alpha$, $\beta$ and $\gamma$.
+Then Gauss--Bonnet implies that 
+\[\alpha+\beta+\gamma-\pi=\iint_\Delta K;\]
+in particular in particular right and left hand sides have the same sign.
+It follows that
+\begin{itemize}
+\item if $K_\Sigma\ge 0$ then $\alpha+\beta+\gamma\ge\pi$, and
+\item if $K_\Sigma\le 0$ then $\alpha+\beta+\gamma\le\pi$.
+\end{itemize}
+
+Set 
+\begin{align*}
+\hat \alpha&=\min\{\,\alpha,2\cdot\pi-\alpha\,\},
+\\
+\hat\beta &=\min\{\,\beta,2\cdot\pi-\beta\,\},
+\\
+\hat\gamma&=\min\{\,\gamma,2\cdot\pi-\gamma\,\}.
+\end{align*}
+Note that, $\measuredangle\hinge {x}{y}{z}=\hat\alpha$,
+$\measuredangle\hinge {y}{z}{x}=\hat\beta$,
+and $\measuredangle\hinge {z}{x}{y}=\hat\gamma$.
+Since the angles of any plane triangle sum up to $\pi$, from the comparison theorems, we get that
+\begin{itemize}
+\item if $K_\Sigma\ge 0$ then $\hat\alpha+\hat\beta+\hat\gamma\ge\pi$, and
+\item if $K_\Sigma\le 0$ then $\hat\alpha+\hat\beta+\hat\gamma\le\pi$.
+\end{itemize}
+
+It shows that relation between Gauss--Bonnet and comparisons is not straightforward.
+For example, Gauss--Bonnet theorem does not forbid the internal angles $\alpha$, $\beta$, and $\gamma$ to be close to $2\cdot\pi$, but in this case $\hat\alpha$, $\hat\beta$, and $\hat\gamma$ are close to $0$ which is impossible by the comparison theorem.
+
 
 \begin{thm}{Exercise}\label{ex:diam-angle}
 Let $p$ and $q$ be points on a closed convex surface $\Sigma$ that lie on maximal intrinsic distance from each other;
@@ -104,7 +116,8 @@ for any four distinct points $p,x,y,z$ on $\Sigma$.
 
 \section{Local comparisons}
 
-First we prove the following local version of comparison theorem and then use it to prove the global version.
+The following local version of comparison theorem follows from the Rauch comparison (\ref{prop:rauch}).
+It will be used in the proof the global version (\ref{thm:comp}).
 
 \begin{thm}{Theorem}\label{thm:loc-comp}
 The comparison theorem (\ref{thm:comp}) holds in a small neighborhood of any point.
@@ -125,11 +138,15 @@ for any geodesic triangle $[xyz]$ in $U$.
 \end{subthm}
 \end{thm}
 
-Note that we can assume that $U$ is simply connected therefore this condition is not necessary to include in part \ref{SHORT.thm:loc-comp:cba}.
+Passing to a smaller neighborhood if necessary, we can assume that $U$ is simply connected.
+Therefore this condition is not necessary to include in local version of part \ref{SHORT.thm:loc-comp:cba}.
 
 \parit{Proof.}
-Assume $y=\exp_x\vec v$ and $z=\exp_x\vec w$ for two small vectors $\vec v,\vec w\in\T_x$.
-Note that 
+Choose $p\in\Sigma$;
+suppose that $\eps>0$ is provided by \ref{prop:exp}.
+Take $U$ to be the $\tfrac\eps{4}$-neighborhood of $x$ in $\Sigma$.
+
+Note that $y=\exp_x\vec v$ and $z=\exp_x\vec w$ for two vectors $\vec v,\vec w\in\T_x$ such that $|\vec v|, |\vec w|<\tfrac\eps2$, and
 \begin{align*}
 \measuredangle\hinge 0{\vec v}{\vec w}_{\T_x}&=\measuredangle\hinge xyz_\Sigma,
 \\
@@ -149,7 +166,11 @@ By angle monotonicity (\ref{lem:angle-monotonicity}), we get
 whence the result.
 
 \parit{\ref{SHORT.thm:loc-comp:cba}.}
-Consider a minimizing geodesic $\gamma$ joining $y$ to $z$ in $\Sigma$ and let $\tilde \gamma$ be the corresponding curve joining $\vec v$ to $\vec w$ in $\T_x$; that is,  $\gamma=\exp_x\circ\tilde \gamma$.
+Consider a minimizing geodesic $\gamma$ joining $y$ to $z$ in $\Sigma$.
+Since $|x-y|,|x-z|<\tfrac\eps{2}$, the triangle inequality implies that $\gamma$ lies in $\eps$-neighborhood of $x$.
+In particular, there is a curve $\tilde \gamma$ in a $\eps$-neighborhood of zero in $\T_x$ that corresponds to $\gamma$; that is,  $\gamma=\exp_x\circ\tilde \gamma$.
+Note that $\tilde\gamma$ connects $\vec v$ to $\vec w$ in $\T_x$;
+
 By Rauch comparison (\ref{prop:rauch:K=<0}), we have
 \[\length\gamma\ge \length \tilde \gamma.\]
 Since $|\vec v-\vec w|_{\T_x}\le\length\tilde \gamma$ and $|y-z|_{\Sigma}= \length\gamma$, we get 
@@ -201,26 +222,6 @@ and
 \[\measuredangle\hinge{y}{\bar z}{p}+\measuredangle\hinge{y}{x}{p}=\pi.\]
 \qedsf
 
-Further we will use the following reformulation of this lemma that is using language of comparison triangles and angles.
-
-\begin{wrapfigure}{r}{25mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-2305}
-\end{wrapfigure}
-
-\begin{thm}{Reformulation}\label{lem:alex-reformulation}
-Assume $[pxz]$ be a triangle in a surface $\Sigma$ and 
-the point $y$ lies on the side $[xz]$.
-Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x\tilde z]$.
-Then the following expressions have the same signs:
-\begin{enumerate}[(i)]
- \item $|p-y|_\Sigma-|\tilde p-\tilde y|_{\RR^2}$;
- \item $\angk xpy-\angk {x}{p}{z}$;
- \item $\pi-\angk ypx-\angk ypz$;
-\end{enumerate}
-\end{thm}
-
 \section{Reformulations}
 
 In this section we formulate conditions equivalent to the conclusion of the comparison theorem (\ref{thm:comp}).
@@ -269,6 +270,26 @@ Any geodesic triangle in $\Sigma$ is thin.
 
 \end{thm}
 
+In the proof we will use the following translation of Alexandrov lemma to the language of comparison triangles and angles.
+
+\begin{wrapfigure}{r}{25mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-2305}
+\end{wrapfigure}
+
+\begin{thm}{Reformulation}\label{lem:alex-reformulation}
+Assume $[pxz]$ be a triangle in a surface $\Sigma$ and 
+the point $y$ lies on the side $[xz]$.
+Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x\tilde z]$.
+Then the following expressions have the same signs:
+\begin{enumerate}[(i)]
+ \item $|p-y|_\Sigma-|\tilde p-\tilde y|_{\RR^2}$;
+ \item $\angk xpy-\angk {x}{p}{z}$;
+ \item $\pi-\angk ypx-\angk ypz$;
+\end{enumerate}
+\end{thm}
+
 \parit{Proof.} We will prove the implications \ref{SHORT.mang>angk}$\Rightarrow$\ref{SHORT.angk>angk}$\Rightarrow$\ref{SHORT.fat}$\Rightarrow$\ref{SHORT.mang>angk}.
 The implications \ref{SHORT.mang<angk}$\Rightarrow$\ref{SHORT.angk<angk}$\Rightarrow$\ref{SHORT.thin}$\Rightarrow$\ref{SHORT.mang<angk} can be done the same way.
 
@@ -310,12 +331,12 @@ Consider the function
 
 
 \begin{thm}{Exercise}\label{ex:midpoints}
-Let $x'$ and $y'$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in an open smooth regular surface $\Sigma$.
+Let $\bar x$ and $\bar y$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in an open smooth regular surface $\Sigma$.
 \begin{enumerate}[(a)]
  \item Show that if the Gauss curvature of $\Sigma$ is nonnegative, then 
- \[2\cdot |x'-y'|_\Sigma\ge |x-y|_\Sigma.\]
+ \[2\cdot |\bar x-\bar y|_\Sigma\ge |x-y|_\Sigma.\]
  \item Show that if $\Sigma$ is simply connected and has nonpositive Gauss curvature, then 
- \[2\cdot |x'-y'|_\Sigma\le |x-y|_\Sigma.\]
+ \[2\cdot |\bar x-\bar y|_\Sigma\le |x-y|_\Sigma.\]
 \end{enumerate}
 
 \end{thm}
@@ -327,7 +348,7 @@ We will prove \ref{thm:comp:toponogov}, first assuming that $\Sigma$ is compact.
 The general case requires only minor modifications; they are indicated in Exercise \ref{ex:open-comparison} at the end of the section.
 The proof is taken from \cite{alexander-kapovitch-petrunin2027} and it is very close to the proof given by Urs Lang and Viktor Schroeder \cite{lang-schroeder}.
 
-\parit{Proof of \ref{thm:comp:toponogov} in compact case.}\label{proof(thm:comp:toponogov)}
+\parit{Proof of \ref{thm:comp:toponogov} in the compact case.}\label{proof(thm:comp:toponogov)}
 Assume $\Sigma$ is compact. 
 From the local theorem (\ref{thm:loc-comp}), we get that there is $\eps>0$ such that the inequality 
 \[\measuredangle\hinge {x}{p}{q}\ge\angk xpq.\]
@@ -352,8 +373,6 @@ holds for any hinge $\hinge x y z$ with $\dist{x}{y}{}+\dist{x}{z}{}<\ell$.
 \begin{wrapfigure}{r}{35mm}
 \centering
 \includegraphics{mppics/pic-2308}
-\bigskip
-\includegraphics{mppics/pic-2310}
 \end{wrapfigure}
 
 \parit{Proof.} 
@@ -370,17 +389,23 @@ So it is sufficient to prove that
 \ge\dist{p}{q}{}.\eqlbl{eq:thm:=def-loc*}\] 
 for any hinge $\hinge x p q$ with $\dist{x}{p}{}+\dist{x}{q}{}<\ell$.
 
-
-Given a hinge $\hinge x p q$ such that 
-\[\tfrac{2}{3}\cdot\ell \le\dist{p}{x}{}\z+\dist{x}{q}{}< \ell,\]
-let us construct a new smaller hinge $\hinge{x'}p q$; that is,
+Let us describe a construction that produce a new hinge $\hinge{x'}p q$ for a
+a given hinge $\hinge x p q$ such that 
+\[\tfrac{2}{3}\cdot\ell \le\dist{p}{x}{}\z+\dist{x}{q}{}< \ell.\]
+The new hinge $\hinge{x'}p q$ will satisfy the following properties:
+$x'\in [xp]\cup [xq]$, in particular
 \[
-\dist{p}{x}{}+\dist{x}{q}{}\ge\dist{p}{x'}{}+\dist{x'}{q}{}
+\dist{p}{x}{}+\dist{x}{q}{}\ge\dist{p}{x'}{}+\dist{x'}{q}{},
 \eqlbl{eq:thm:=def-loc-fourstar}\]
-and such that 
+and 
 \[\side \hinge x p q
 \ge\side \hinge{x'}p q.
 \eqlbl{eq:thm:=def-loc-fivestar}\]
+
+\begin{wrapfigure}{r}{35mm}
+\centering
+\includegraphics{mppics/pic-2310}
+\end{wrapfigure}
 
 %\parit{Construction of $\hinge{x'}p q$.}
 Assume $\dist{x}{q}{}\ge\dist{x}{p}{}$, otherwise switch the roles of $p$ and $q$ in the following construction.
