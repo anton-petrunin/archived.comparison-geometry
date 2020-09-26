@@ -68,12 +68,12 @@ defined on an open set $\Omega\subset \RR^n$.
 Assume that the Jacobian matrix
 $\Jac_{\bm{x}}\bm{f}$
 is invertible at some point $\bm{x}\in \Omega$.
-Then there is a smooth map $\bm{h}\:\Theta\to\RR^n$ defined in an open neighborhood $\Theta$ of ${\bm{y}}\z=\bm{f}(\bm{x})$ that is a {}\emph{local inverse of $\bm{f}$ at $\bm{x}$};
-that is, there is a neighborhood $\Omega'\ni \bm{x}$ such that
-$\bm{f}$ defines a bijection $\Omega'\leftrightarrow \Theta$ and
-$\bm{h} \circ \bm{f}$ is an identity map on $\Omega'$.
+Then there is a smooth map $\bm{h}\:\Phi\to\RR^n$ defined in an open neighborhood $\Phi$ of ${\bm{y}}\z=\bm{f}(\bm{x})$ that is a {}\emph{local inverse of $\bm{f}$ at $\bm{x}$};
+that is, there is a neighborhood $\Psi\ni \bm{x}$ such that
+$\bm{f}$ defines a bijection $\Psi\leftrightarrow \Phi$ and
+$\bm{h} \circ \bm{f}$ is an identity map on $\Psi$.
 
-More over if an $\Omega$ contains an $\eps$-neighborhood of $\bm{x}$, and the first and second partial derivatives $\tfrac{\partial f_i}{\partial x_j}$, $\tfrac{\partial^2 f_i}{\partial x_j\partial x_k}$ are bounded by a constant $C$ for all $i$, $j$, and $k$, then we can assume that $\Theta$ is a $\delta$-neighborhood of $\bm{y}$, for some $\delta>0$ that depends only on $\eps$ and $C$. 
+Moreover if an $\Omega$ contains an $\eps$-neighborhood of $\bm{x}$, and the first and second partial derivatives $\tfrac{\partial f_i}{\partial x_j}$, $\tfrac{\partial^2 f_i}{\partial x_j\partial x_k}$ are bounded by a constant $C$ for all $i$, $j$, and $k$, then we can assume that $\Phi$ is a $\delta$-neighborhood of $\bm{y}$, for some $\delta>0$ that depends only on $\eps$ and $C$. 
 \end{thm}
 
 \begin{thm}{Implicit function theorem}\label{thm:imlicit}
@@ -89,8 +89,8 @@ M=\begin{pmatrix}
 \dfrac{\partial f_n}{\partial x_1} & \cdots & \dfrac{\partial f_n}{\partial x_n} \end{pmatrix}\]
 formed by the first $n$ columns of the Jacobian matrix.
 Assume $M$ is invertible at some point $\bm{x}=(x_1,\dots,x_n,y_1,\dots y_m)$ in the domain of definition of $\bm{f}$ and $\bm{f}(\bm{x})=0$.
-Then there is a neighborhood $\Omega'\ni \bm{x}$
-and a smooth function $\bm{h}\:\RR^m\to\RR^n$ defined in a neighborhood $\Theta\ni 0$ such that
+Then there is a neighborhood $\Psi\ni \bm{x}$
+and a smooth function $\bm{h}\:\RR^m\to\RR^n$ defined in a neighborhood $\Phi\ni 0$ such that
 for any $(x_1,\dots,x_n,y_1,\dots y_m)\in \Omega$, the equality
 \[\bm{f}(x_1,\dots,x_n,y_1,\dots y_m)=0\]
 holds if and only if 
@@ -440,13 +440,13 @@ it says that the angle of a triangle monotonically depends on the opposite side,
 It follows directly from the cosine rule.
 
 \begin{thm}{Lemma}\label{lem:angle-monotonicity}
-Let $x$, $y$, $z$, $x'$, $y'$ and $z'$ be 6 points such that $|x-y|\z=|x'-y'|>0$ and $|y-z|=|y'-z'|>0$.
+Let $x$, $y$, $z$, $x^{*}$, $y^{*}$ and $z^{*}$ be 6 points such that $|x-y|\z=|x^{*}-y^{*}|>0$ and $|y-z|=|y^{*}-z^{*}|>0$.
 Then 
 \[\measuredangle\hinge yxz
 \ge
-\measuredangle\hinge {y'}{x'}{z'}
+\measuredangle\hinge {y^{*}}{x^{*}}{z^{*}}
 \quad\text{if and only if}\quad
-|x-z|\ge |x'-z'|.\]
+|x-z|\ge |x^{*}-z^{*}|.\]
 \end{thm}
 
 \begin{wrapfigure}{r}{30 mm}
@@ -460,46 +460,46 @@ Then
 We can assume that 
 $\measuredangle\hinge oab<
  \measuredangle\hinge oac$; otherwise the statement is evident.
-In this case there is a half-line $ob'$ in the angle $aoc$ such that 
+In this case there is a half-line $ob^{*}$ in the angle $aoc$ such that 
 \[\measuredangle\hinge oab
-=\measuredangle\hinge oa{b'},\]
+=\measuredangle\hinge oa{b^{*}},\]
 so in particular we have that
 \[
-\measuredangle\hinge oa{b'}+
-\measuredangle\hinge o{b'}c=
+\measuredangle\hinge oa{b^{*}}+
+\measuredangle\hinge o{b^{*}}c=
 \measuredangle\hinge oac.\]
-Without loss of generality we can assume that  $|o-b|=|o-b'|$ and $b'$ lies on a line segment $ac$, so
-\[|a-b'|+|b'-c|=|a-c|.\]
+Without loss of generality we can assume that  $|o-b|=|o-b^{*}|$ and $b^{*}$ lies on a line segment $ac$, so
+\[|a-b^{*}|+|b^{*}-c|=|a-c|.\]
 
 Then by the triangle inequality 
 \[
 \begin{aligned}
 |a-b|+|b-c|&\ge |a-c|=
 \\
-&=|a-b'|+|b'-c|.
+&=|a-b^{*}|+|b^{*}-c|.
 \end{aligned}
 \eqlbl{eq:triangle-inq-abcb'}
 \]
 
-Note that in the triangles $aob$ and $aob'$ the side $ao$ is shared, so 
+Note that in the triangles $aob$ and $aob^{*}$ the side $ao$ is shared, so 
 $
 \measuredangle\hinge oab\z=
-\measuredangle\hinge oab'$ and $|o-b|=|o-b'|$.
-By side-angle-side congruence condition, we have that $[aob]\cong [aob']$;
-in particular $|a-b'|=|a-b|$.
+\measuredangle\hinge oab^{*}$ and $|o-b|=|o-b^{*}|$.
+By side-angle-side congruence condition, we have that $[aob]\cong [aob^{*}]$;
+in particular $|a-b^{*}|=|a-b|$.
 Therefore from \ref{eq:triangle-inq-abcb'} we get 
-\[|b-c|\ge |b'-c|.\]
+\[|b-c|\ge |b^{*}-c|.\]
 Applying the angle monotonicity (\ref{lem:angle-monotonicity}) we obtain
 \[
 \measuredangle\hinge obc\ge 
-\measuredangle\hinge o{b'}c.\]
+\measuredangle\hinge o{b^{*}}c.\]
 Whence
 \begin{align*}
 \measuredangle\hinge oab+
 \measuredangle\hinge obc
 &\ge 
-\measuredangle\hinge oa{b'}+
-\measuredangle\hinge o{b'}c=
+\measuredangle\hinge oa{b^{*}}+
+\measuredangle\hinge o{b^{*}}c=
 \\
 &=
 \measuredangle\hinge oac.
@@ -554,7 +554,7 @@ Therefore the coefficient is 2; that is,
 \[\area S_\alpha=2\cdot \alpha.\eqlbl{eq:area(Sa)}\]
 
 Extending the sides of $\Delta$ we get 6 slices: two $S_\alpha$, two $S_\beta$ and two $S_\gamma$ which cover most of the sphere once,
-but the triangle $\Delta$ and its centrally symmetric copy $\Delta'$ are covered 3 times.
+but the triangle $\Delta$ and its centrally symmetric copy $\Delta^{*}$ are covered 3 times.
 It follows that
 \[2\cdot \area S_\alpha+2\cdot \area S_\beta+2\cdot \area S_\gamma
 =\area\mathbb{S}^2+4\cdot\area\Delta.\]
@@ -592,20 +592,20 @@ A Schwarz's boot for $m=8$ and $n=6$ is shown on the diagram.
 \end{wrapfigure}
 
 Consider one of the triangle $abc$ which form the Schwarz's boot.
-By construction, its base $ac$ lies in a horizontal plane and the projection $b'$ of $b$ on this plane bisects the arc $ac$.
-Therefore the vertexes of the triangle $ab'c$ are the three consequent vertexes of a regular $2\cdot n$-gone inscribed in a unit circle.
-Denote the triangle $ab'c$ by $s_n$; clearly it depends only on $n$ and the radius of the base circle.
+By construction, its base $ac$ lies in a horizontal plane and the projection $b^{*}$ of $b$ on this plane bisects the arc $ac$.
+Therefore the vertexes of the triangle $ab^{*}c$ are the three consequent vertexes of a regular $2\cdot n$-gone inscribed in a unit circle.
+Denote the triangle $ab^{*}c$ by $s_n$; clearly it depends only on $n$ and the radius of the base circle.
 
 
-Both triangles $abc$ and $ab'c$ are isosceles with shares base $ac$.
-Note that the altitude $bp$ is larger than the altitude $b'p$.
+Both triangles $abc$ and $ab^{*}c$ are isosceles with shares base $ac$.
+Note that the altitude $bp$ is larger than the altitude $b^{*}p$.
 Therefore
 \begin{align*}
 \area [abc]&=\tfrac12\cdot |a-c|\cdot |b-p|>
 \\
-&>\tfrac12\cdot |a-c|\cdot |b'-p|=
+&>\tfrac12\cdot |a-c|\cdot |b^{*}-p|=
 \\
-&=\area [ab'c]=
+&=\area [ab^{*}c]=
 \\
 &=s_n.
 \end{align*}

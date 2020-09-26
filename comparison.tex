@@ -278,7 +278,7 @@ In the proof we will use the following translation of Alexandrov lemma to the la
 \includegraphics{mppics/pic-2305}
 \end{wrapfigure}
 
-\begin{thm}{Reformulation}\label{lem:alex-reformulation}
+\begin{thm}{Reformulation of Alexandrov lemma}\label{lem:alex-reformulation}\\
 Assume $[pxz]$ be a triangle in a surface $\Sigma$ and 
 the point $y$ lies on the side $[xz]$.
 Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x\tilde z]$.
@@ -393,16 +393,17 @@ Let us describe a construction that produce a new hinge $\hinge{x'}p q$ for a
 a given hinge $\hinge x p q$ such that 
 \[\tfrac{2}{3}\cdot\ell \le\dist{p}{x}{}\z+\dist{x}{q}{}< \ell.\]
 The new hinge $\hinge{x'}p q$ will satisfy the following properties:
-$x'\in [xp]\cup [xq]$, in particular
-\[
-\dist{p}{x}{}+\dist{x}{q}{}\ge\dist{p}{x'}{}+\dist{x'}{q}{},
-\eqlbl{eq:thm:=def-loc-fourstar}\]
-and 
 \[\side \hinge x p q
-\ge\side \hinge{x'}p q.
+\ge\side \hinge{x'}p q
 \eqlbl{eq:thm:=def-loc-fivestar}\]
+and 
+$x'\in [xp]\z\cup [xq]$; in particular
+\[
+\dist{p}{x}{}+\dist{x}{q}{}\ge\dist{p}{x'}{}+\dist{x'}{q}{}.
+\eqlbl{eq:thm:=def-loc-fourstar}\]
 
 \begin{wrapfigure}{r}{35mm}
+\vskip -4mm
 \centering
 \includegraphics{mppics/pic-2310}
 \end{wrapfigure}
@@ -413,10 +414,15 @@ Take $x'\in [x q]$ such that
 \[\dist{p}{x}{}+3\cdot\dist{x}{x'}{}
 =\tfrac{2}{3}\cdot\ell \eqlbl{3|xx'|}\]
 Choose a geodesic $[x' p]$ and consider the  hinge $\hinge{x'}p q$ fromed by $[x'p]$ and $[x' q]\subset [x q]$. 
-Then \ref{eq:thm:=def-loc-fourstar} follows since the length of $[x'p]$ can not exceed the total length of $[x'x]$ and $[x'p]$.
+Then \ref{eq:thm:=def-loc-fourstar} follows since
+\[|x'-p|_\Sigma\le |x'-x|_\Sigma+|x'-p|_\Sigma.\]
 
-Further, note that 
-$\dist{p}{x}{}\z+\dist{x}{x'}{},\dist{p}{x'}{}\z+\dist{x'}{x}{}<\tfrac{2}{3}\cdot\ell $.
+By \ref{3|xx'|}, we have that 
+\begin{align*}
+\dist{p}{x}{\Sigma}\z+\dist{x}{x'}{\Sigma}&<\tfrac{2}{3}\cdot\ell,
+\\
+\dist{p}{x'}{\Sigma}\z+\dist{x'}{x}{\Sigma}&<\tfrac{2}{3}\cdot\ell.
+\end{align*}
 In particular, 
 \[\measuredangle\hinge x p{x'}
 \ge\angk x p{x'}
@@ -523,7 +529,7 @@ Use \ref{SHORT.ex:open-comparison:almost-min} to extend the proof on page \pager
 
 
 \begin{wrapfigure}{r}{30 mm}
-\vskip-0mm
+\vskip4mm
 \centering
 \includegraphics{mppics/pic-471}
 \end{wrapfigure}
@@ -625,6 +631,12 @@ Then there is a short map
 that maps $\tilde p$, $\tilde x$, $\tilde y$ and $\tilde z$ to $\dot p$, $\dot x$, $\dot y$ and $\dot z$ respectively.
 \end{thm}
 
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-2324}
+\end{figure}
+
 \begin{wrapfigure}{r}{45 mm}
 \vskip-4mm
 \centering
@@ -663,7 +675,7 @@ similarly map $\solidtriangle{\tilde p}{\tilde y}{\tilde v}$ onto $\solidtriangl
 $[\dot p \dot z]$, 
 $[\dot x \dot z]$ 
 or $[\dot y \dot z]$ whose distance from the lefthand endpoint of the segment is $r$.
-\item Finally, if $w$ lies in the remaining curvilinear triangle $\tilde z \tilde v \tilde w$, 
+\item Finally, if $w$ lies in the remaining curved triangle $\tilde z \tilde v \tilde w$, 
 set $F(w) =\dot z$. 
 \end{itemize}
 By construction, $F$ satisfies the remaining conditions of the lemma. 
@@ -719,24 +731,25 @@ that is, the triangle $\trig p x y$ is thin.
 
 \section{Nonpositive curvature}
 
-Assume $\Sigma$ is an open smooth regular surface with nonpositive curvature.
-As it follow from Exercise \ref{ex:unique-geod} any two points $x$ and $y$ in $\Sigma$ are joined by unique geodesic $[xy]$.
+\begin{thm}{Lemma}
+Let $\Sigma$ be an open smooth regular surface with nonpositive Gauss curvature.
+Then for any two points $x$ and $y$ in $\Sigma$ are joined by unique geodesic $[xy]$.
 
-\begin{figure}[h!]
-\vskip0mm
-\centering
-\includegraphics{mppics/pic-2335}
-\end{figure}
-
-Note that the geodesic $[xy]$ depends continuously on its endpoints $x$ and $y$. 
+Moreover the geodesic $[xy]$ depends continuously on its endpoints $x$ and $y$. 
 That is, if $\gamma_{[xy]}\:[0,1]\to \Sigma$ is the constant speed parametrization of $[xy]$ from $x$ to $y$,
 then the map $(x,y,t)\mapsto \gamma_{[xy]}(t)$ is continuous in three arguments.
-Indeed, assume contrary, that is, $x_n\to x$, $y_n\to y$ and $t_n\to t$ as $n\to \infty$ and 
+\end{thm}
+
+\parit{Proof.}
+The first part of lemma follows from \ref{ex:unique-geod}.
+
+For the second part, assume contrary, that is, $x_n\to x$, $y_n\to y$ and $t_n\to t$ as $n\to \infty$ and 
 $\gamma_{[x_ny_n]}(t_n)$ does not converge to $\gamma_{[xy]}(t)$. 
 Then we can pass to a subsequence such that $\gamma_{[x_ny_n]}(t_n)$ converges to a point distinct from $w\ne \gamma_{[xy]}(t)$.
 Note that $w\notin [xy]$. 
 Therefore there will be two distinct geodesics from $x$ to $y$;
-one is $[xy]$ and the other is the limit of $[x_ny_n]$ which passes thru $w$.
+one is $[xy]$ which does not contain $w$ and the other is the limit of $[x_ny_n]$ which contains $w$ --- a contradiction.
+\qeds
 
 \parit{Proof of \ref{thm:comp:cat}.}
 Fix a triangle $[p x y]$; 
@@ -748,6 +761,12 @@ Assume $N$ is large.
 Since the geodesic depends continuously on its end points, we can assume that each triangle 
  $\trig{x^{i,j}}{\,x^{i,j+1}}{\,x^{i+1,j+1}}$ and $\trig{x^{i,j}}{\,x^{i+1,j}}{\,x^{i+1,j+1}}$ is small;
  in particular, by local comparison (\ref{thm:loc-comp}), each of these triangles is thin. 
+ 
+\begin{figure}[h!]
+\vskip0mm
+\centering
+\includegraphics{mppics/pic-2335}
+\end{figure}
 
 Now we show that the thin property propagates to $\trig p x y$ by repeated application of the inheritance lemma (\ref{lem:inherit-angle}):
 \begin{itemize}
