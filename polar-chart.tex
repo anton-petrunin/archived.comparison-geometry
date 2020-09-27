@@ -563,22 +563,29 @@ Since a neighborhood of any point of $\Sigma$ can be covered by such a graph, ap
 The following proposition is a baby case of the so called \index{Rauch comparison theorem}\emph{Rauch comparison theorem}.
 
 \begin{thm}{Proposition}\label{prop:rauch}
-Suppose that $p$ is a point on a smooth surface $\Sigma$ and $\exp_p\:\T_p\to \Sigma$ is the exponential map.
-Assume $\exp_p$ is injective in a $r$-neighborhood of $0$.
+Suppose that $p$ is a point on a smooth surface $\Sigma$ and $r\le \inj(p)$.
+$\exp_p\:\T_p\to \Sigma$ is the exponential map.
 Given a curve $\tilde\gamma$ in the $r$-neighborhood of $0$ of $\T_p$, set 
-\[\gamma=\exp_p\circ\tilde\gamma;\]
+\[\gamma=\exp_p\circ\tilde\gamma
+\quad
+\text{or, equivalently}
+\quad
+\log_p\circ\gamma=\tilde\gamma
+;\]
 note that $\gamma$ is a curve in $\Sigma$.
 
 \begin{subthm}{prop:rauch:K>=0}
-If $\Sigma$ has nonnegative Gauss curvature, then $\exp_p$ is length nonexpanding in the $r$-neighborhood of $0$ of $\T_p$;
+If $\Sigma$ has nonnegative Gauss curvature, then the exponential map $\exp_p$ is length nonexpanding in the $r$-neighborhood of $0$ of $\T_p$;
 that is, 
-\[\length \gamma\le \length \tilde\gamma.\]
+\[\length \gamma\le \length \tilde\gamma\]
+for any curve $\gamma$ in the open ball $B(0,r)_{\T_p}$.
 \end{subthm}
 
 \begin{subthm}{prop:rauch:K=<0}
-If $\Sigma$ has nonpositive Gauss curvature, then $\exp_p$ is length noncontracting in the $r$-neighborhood of $0$ of $\T_p$;
+If $\Sigma$ has nonpositive Gauss curvature, then the logarithmic map $\log_p$ is length nonexpanding in the $r$-neighborhood of $0$ of $\T_p$;
 that is, 
-\[\length \gamma\ge \length \tilde\gamma.\]
+\[\length \gamma\ge \length \tilde\gamma\]
+for any curve $\gamma$ in the open ball $B(0,r)_{\T_p}$.
 \end{subthm}
 
 \end{thm}
@@ -617,8 +624,8 @@ By \ref{eq:b-K} the statement follows.
 
 \section{Intrinsic isometries}
 
-Let $\Sigma$ and $\hat{\Sigma}$ be two smooth regular surfaces in the Euclidean space.
-A map $f\:\Sigma\to \hat{\Sigma}$ is called  \index{length-preserving}\emph{length-preserving} if for any curve $\gamma$ in $\Sigma$ the curve $\hat\gamma=f\circ\gamma$ in $\hat{\Sigma}$ has the same length. 
+Let $\Sigma$ and $\Sigma^{*}$ be two smooth regular surfaces in the Euclidean space.
+A map $f\:\Sigma\to \Sigma^{*}$ is called  \index{length-preserving}\emph{length-preserving} if for any curve $\gamma$ in $\Sigma$ the curve $\gamma^{*}=f\circ\gamma$ in $\Sigma^{*}$ has the same length. 
 If in addition $f$ is smooth and bijective, then it is called \index{intrinsic isometry}\emph{intrinsic isometry}. 
 
 \begin{thm}{Exercise}\label{ex:K=0}
@@ -661,10 +668,10 @@ However if the the disc is larger than half-sphere, then the proof is quite hard
 
 
 \begin{thm}{Theorem}\label{thm:remarkable}
-Suppose $f\:\Sigma\to \hat{\Sigma}$ is an intrinsic isometry between two smooth regular surfaces in  the Euclidean space; $p\in \Sigma$ and $\hat p\z=f(p)\in \Sigma$.
+Suppose $f\:\Sigma\to \Sigma^{*}$ is an intrinsic isometry between two smooth regular surfaces in  the Euclidean space; $p\in \Sigma$ and $p^{*}\z=f(p)\in \Sigma$.
 Then 
-\[K(p)_{\Sigma}=K(\hat p)_{\hat{\Sigma}};\]
-that is, the Gauss curvature of $\Sigma$ at $p$ is the same as the Gauss curvature of $\hat{\Sigma}$ at $\hat p$.
+\[K(p)_{\Sigma}=K(p^{*})_{\Sigma^{*}};\]
+that is, the Gauss curvature of $\Sigma$ at $p$ is the same as the Gauss curvature of $\Sigma^{*}$ at $p^{*}$.
 \end{thm}
 
 This theorem was proved by Carl Friedrich Gauss \cite{gauss} who called it \index{Remarkable theorem}\emph{Remarkable theorem} (\index{Theorema Egregium}\emph{Theorema Egregium}).
@@ -683,26 +690,26 @@ In other words, there is no map of a region on Earth without distortion.
 
 \parit{Proof.}
  Choose a chart $(u,v)\mapsto s(u,v)$ on $\Sigma$ and set
-$\hat s =f\circ s$.
-Note that $\hat s$ is a chart of $\hat{\Sigma}$ and 
+$s^{*} =f\circ s$.
+Note that $s^{*}$ is a chart of $\Sigma^{*}$ and 
 \begin{align*}
 \langle s_u,s_u\rangle
 &=
-\langle \hat s_u, \hat s_u\rangle,
+\langle s_u^{*}, s_u^{*}\rangle,
 &
 \langle s_u, s_v\rangle
 &=
-\langle \hat s_u, \hat s_v\rangle,
+\langle s_u^{*}, s_v^{*}\rangle,
 &
 \langle s_v, s_v\rangle
 &=
-\langle \hat s_v, \hat s_v\rangle
+\langle s_v^{*}, s_v^{*}\rangle
 \end{align*}
 at any $(u,v)$.
 Indeed the first and the third identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\mapsto s(t,v)$ or  $\gamma\:t\z\mapsto s(u,t)$.
 Taking this into account, the second identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\z\mapsto s(t,c-t)$ for some constant $c$.
 
 It follows that if $s$ is a semigeodesic chart of $\Sigma$,
-then $\hat s$ is a semigeodesic chart of $\hat{\Sigma}$.
+then $s^{*}$ is a semigeodesic chart of $\Sigma^{*}$.
 It remains to apply \ref{prop:K(semigeodesic)}.
 \qeds

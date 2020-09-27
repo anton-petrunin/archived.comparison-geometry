@@ -467,7 +467,7 @@ that is, $\gamma(0)=p$ and $\gamma'(0)={\vec v}$.
 The map 
 \[\exp_p\:\vec v\mapsto \gamma_{\vec v}(1)\]
 is called \index{exponential map}\emph{exponential}.%
-\footnote{There is a reason to call this map {}\emph{exponential}, but it will take us too far from the subject.}
+\footnote{There is a good reason to call this map {}\emph{exponential}, but it is far from the subject.}
 By \ref{prop:geod-existence}, the map $\exp_p\:\T_p\to \Sigma$ is smooth and defined in a neighborhood of zero in $\T_p$;
 moreover, if $\Sigma$ is proper, then $\exp_p$ is defined on the whole space $\T_p$.
 
@@ -475,7 +475,7 @@ Note that the exponential map $\exp_p$
 is defined on the tangent plane $\T_p$, which is a smooth surfaces,
 and its target is another smooth surface $\Sigma$.
 Observe that one can identify the plane $\T_p$
-with its tangent plane $\T_0\T_p$ so the differenial $d_0\exp_p\:\vec v\mapsto D_{\vec v}\exp_p$ maps $\T_p$ to itself.
+with its tangent plane $\T_0\T_p$ so the differenial $d_0(\exp_p)\:\vec v\mapsto D_{\vec v}\exp_p$ maps $\T_p$ to itself.
 Further note that by the definition of exponential map we have that this differential is the identity map; that is, $d_0\exp_p(\vec v)=
 \vec v$ for any $\vec v\in \T_p$.
 
@@ -488,15 +488,22 @@ Then the exponential map $\exp_p\:\T_p\to \Sigma$ is smooth and its differential
 
 
 \begin{thm}{Proposition}\label{prop:exp}
-Let $\Sigma$ be smooth surface and $p\in \Sigma$.
-Then the exponential map $\exp_p\:\T_p\to \Sigma$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$ by a neighborhood of $0$ in the tangent plane~$\T_p$.
+Let $\Sigma$ be smooth surface (without boundary) and $p\in \Sigma$.
+Then there is $r_p>0$ such that
+the exponential map $\exp_p$ is defined on the open ball $B=B(0,r_p)_{\T_p}$
+and the restriction $\exp_p|_B$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$.
 
-Moreover we have a {}\emph{local control} on the size of the neighborhood;
-that is, for any $p\in \Sigma$ there is $\eps>0$ such that for any $q\in \Sigma$ such that $|q-p|_\Sigma<\eps$ the map 
-$\exp_q\:\T_q\to \Sigma$ is a smooth regular parametrization of the $\eps$-neighborhood of $q$ in $\Sigma$ by the $\eps$-neighborhood of zero in the tangent plane~$\T_q$.
+Moreover we have a {}\emph{local control} on $r_p$;
+that is, for any $q\in \Sigma$ there is $\eps>0$ such that if $|q-p|_\Sigma<\eps$, then we can assume that $r_p\ge\eps$.
 \end{thm}
 
-The proposition uses the observation and the inverse function theorem (\ref{thm:inverse}). %???+Jacobian matrix
+Given $p\in \Sigma$, the least upper bound on $r_p$ that satisfies the proposition is called \index{injectivity radius}\emph{injectivity radius} of $\Sigma$ at $p$;
+it is denoted by $\inj(p)$.
+The proposition states that \emph{injectivity radius is positive and locally bounded away from zero}.
+In fact a stronger statement holds: \emph{the function $p\mapsto \inj(p)$ is lower semicontinuous and positive}, but we will not use it in the sequel. %???REF
+
+
+The proof of the proposition uses the observation and the inverse function theorem (\ref{thm:inverse}). %???+Jacobian matrix
 
 \parit{Proof.}
 Let $z=f(x,y)$ be a local graph representation of $\Sigma$ in the tangent-normal coordinates at $p$.
@@ -527,6 +534,16 @@ Note that according to the proposition, any shortest path is a reparametrization
 A formal proof will be given much latter; see Section~\ref{sec:proof-of-gamma''}. 
 The following informal physical explanation might be sufficiently convincing.
 In fact, if one assumes that $\gamma$ is smooth, then it is easy to convert this explanation into a rigorous proof.
+
+
+\begin{thm}{Corollary}
+Let $\Sigma$ be a smooth regular surface, $p\in\Sigma$ and $r\le \inj(p)$.
+Then  the exponential map $\exp_p$ is a diffeomorphism from $B(0,r)_{\T_p}$ to $B(p,r)_\Sigma$.
+\end{thm}
+
+According to the corollary, the restriction $\exp_p|_{\T_p}$ admits an inverse map that is called \emph{logarithmic map at $p$};
+it is denoted by \[\log_p\:B(p,r)_\Sigma\to B(0,r)_{\T_p}.\]
+
 
 \parit{Informal explanation.}
 Let us think about a shortest path $\gamma$ as of stable position of a stretched elastic thread that is forced to lie on a frictionless surface.

@@ -1,3 +1,250 @@
+\section{Inheritance lemma}
+
+The following lemma will play key role in the proof of \ref{thm:comp:cat}.
+
+\begin{wrapfigure}{r}{25mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-2320}
+\end{wrapfigure}
+
+\begin{thm}{Inheritance Lemma}
+\label{lem:inherit-angle} 
+Assume that a triangle $\trig p x y$ in a surface $\Sigma$ \index{decomposed triangle}\emph{decomposes} 
+into two triangles $\trig p x z$ and $\trig p y z$;
+that is, $\trig p x z$ and $\trig p y z$ have common side $[p z]$, and the sides $[x z]$ and $[z y]$ together form the side $[x y]$ of $\trig p x y$.
+
+If  both triangles $\trig p x z$ and $\trig p y z$ are thin, 
+then so is  $\trig p x y$.
+\end{thm} 
+
+We shall need the following lemma in plane geometry.
+
+
+\begin{thm}{Lemma}\label{lem:quadrangle}
+Let $\solidtriangle{\tilde p}{\tilde x}{\tilde y}$ be a solid plane triangle; that is, $\solidtriangle{\tilde p}{\tilde x}{\tilde y}\z=\Conv\{{\tilde p},{\tilde x},{\tilde y}\}$.
+Given  $\tilde z\in[\tilde x\tilde y]$,
+consider  points $\dot p, \dot x, \dot z, \dot y$ in the plane such that 
+\begin{align*}
+\dist{\dot p}{\dot x}{}&=\dist{\tilde p}{\tilde x}{},
+&
+\dist{\dot p}{\dot y}{}&=\dist{\tilde p}{\tilde y}{},
+&
+\dist{\dot p}{\dot z}{}&\le \dist{\tilde p}{\tilde z}{},
+\\
+\dist{\dot x}{\dot z}{}&=\dist{\tilde x}{\tilde z}{},
+&
+\dist{\dot y}{\dot z}{}&=\dist{\tilde y}{\tilde z}{},
+\end{align*}
+where points $\dot x$ and $\dot y$ lie on either side of $[\dot p\dot z]$.
+Then there is a short map 
+\[F\:\solidtriangle{\tilde p}{\tilde x}{\tilde y}\to \solidtriangle{\dot p}{\dot x}{\dot z}\cup \solidtriangle{\dot p} {\dot y} {\dot z}\]
+that maps $\tilde p$, $\tilde x$, $\tilde y$ and $\tilde z$ to $\dot p$, $\dot x$, $\dot y$ and $\dot z$ respectively.
+\end{thm}
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-2324}
+\end{figure}
+
+\begin{wrapfigure}{r}{45 mm}
+\vskip-4mm
+\centering
+\includegraphics{mppics/pic-2325}
+\end{wrapfigure}
+
+\parit{Proof.} 
+Note that 
+\begin{align*}
+|\dot x-\dot y|&\le |\dot x-\dot z|+|\dot z-\dot y|=
+\\
+&=|\tilde  x-\tilde  z|+|\tilde  z-\tilde  y|
+\\
+&=|\tilde  x-\tilde  y|.
+\end{align*}
+Applying angle monotonicity (\ref{lem:angle-monotonicity}), we get that
+\[\measuredangle\hinge{\dot p}{\dot x}{\dot y}\le \measuredangle\hinge{\tilde  p}{\tilde  x}{\tilde  y}.\]
+It follows that there are nonoverlapping triangles 
+$\trig{\tilde p}{\tilde x}{\tilde w}\cong\trig {\dot p}{\dot x}{\dot z}$ 
+and 
+$\trig{\tilde p}{\tilde y}{\tilde v}\cong\trig {\dot p}{\dot y}{\dot z}$
+ inside of the triangle $\trig{\tilde p}{\tilde x}{\tilde y}$.
+
+
+Connect points in each pair
+$(\tilde z,\tilde v)$, 
+$(\tilde v,\tilde w)$ 
+and $(\tilde w,\tilde z)$ 
+with arcs of circles centered at 
+$\tilde y$, $\tilde p$, and $\tilde x$ respectively. 
+Define $F$ as follows.
+\begin{itemize}
+\item Map  $\solidtriangle{\tilde p}{\tilde x}{\tilde w}$ isometrically onto  $\solidtriangle {\dot p}{\dot x}{\dot y}$;
+similarly map $\solidtriangle{\tilde p}{\tilde y}{\tilde v}$ onto $\solidtriangle {\dot p}{\dot y}{\dot z}$.
+\item If a point $w$ lies in one of the three circular sectors, say at distance $r$ from center of the circle, let $F(w)$ be the point on the corresponding segment 
+$[\dot p \dot z]$, 
+$[\dot x \dot z]$ 
+or $[\dot y \dot z]$ whose distance from the lefthand endpoint of the segment is $r$.
+\item Finally, if $w$ lies in the remaining curved triangle $\tilde z \tilde v \tilde w$, 
+set $F(w) =\dot z$. 
+\end{itemize}
+By construction, $F$ satisfies the remaining conditions of the lemma. 
+\qeds
+
+
+\parit{Proof of the inheritance lemma (\ref{lem:inherit-angle}).}
+Construct model triangles $\trig{\dot p}{\dot x}{\dot z}\z=\modtrig(p x z)$ 
+and $\trig {\dot p} {\dot y} {\dot z}=\modtrig(p y z)$ so that $\dot x$ and $\dot y$ lie on opposite sides of $[\dot p\dot z]$.
+
+\begin{wrapfigure}{r}{30 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-2330}
+\end{wrapfigure}
+
+Suppose
+\[\angk{z}{p}{x}+\angk{z}{p}{y}
+<
+\pi.\]
+Then for some point $\dot w\in[\dot p\dot z]$, we have \[\dist{\dot x}{\dot w}{}+\dist{\dot w}{\dot y}{}
+<
+\dist{\dot x}{\dot z}{}+\dist{\dot z}{\dot y}{}=\dist{x}{y}{}.\]
+Let $w\in[p z]$ correspond to $\dot w$; that is, $\dist{z}{w}{}=\dist{\dot z}{\dot w}{}$. 
+Since $\trig p x z$ and $\trig p y z$ are thin, we have 
+\[\dist{x}{w}{}+\dist{w}{y}{}<\dist{x}{y}{},\]
+contradicting the triangle inequality. 
+
+Thus 
+\[\angk{z}{p}{x}+\angk{z}{p}{y}
+\ge
+\pi.\]
+By Alexandrov's lemma (\ref{lem:alex-reformulation}), this is equivalent to 
+\[\angk x p z\le\angk x p y.
+\eqlbl{eq:for|pz|}\]
+
+Let $\trig{\tilde  p}{\tilde  x}{\tilde  y}=\modtrig (p x y)$ 
+and $\tilde  z\in[\tilde  x\tilde  y]$ correspond to $z$; that is, $\dist{x}{z}{}=\dist{\tilde  x}{\tilde  z}{}$.
+Inequality~\ref{eq:for|pz|} is equivalent to $\dist{ p}{ z}{}\le \dist{\tilde  p}{\tilde  z}{}$.
+Hence  Lemma~\ref{lem:quadrangle} applies;
+let $F\:\solidtriangle{\tilde  p}{\tilde  x}{\tilde  y}\to\solidtriangle {\dot p}{\dot x}{\dot z}\cup \solidtriangle {\dot p} {\dot y} {\dot z}$ be the provided short map.
+
+Fix $v,w$ on the sides of $\trig p x y$;
+let $\tilde v,\tilde w$ be the corresponding points on the sides of the model triangle $\trig {\tilde p}{\tilde x}{\tilde y}=\modtrig p x y$
+and $\dot v,\dot w$ be the corresponding points on the sides of the model triangles $\trig {\dot p} {\dot x}{\dot z}=\modtrig p x z$ and $\trig {\dot p} {\dot y}{\dot z}=\modtrig p y z$.
+Denote by $\ell$ the length of shortest curve from $\dot v$ to $\dot w$ in $\solidtriangle {\dot p}{\dot x}{\dot z}\cup \solidtriangle {\dot p} {\dot y} {\dot z}$.
+Since $F$ is short, $|\tilde v-\tilde w|_{\RR^2}\ge \ell$.
+Since both triangles $\trig p x z$ and $\trig p y z$ are thin, $\ell\ge|v-w|_{\Sigma}$.
+
+It follows that $|\tilde v-\tilde w|_{\RR^2}\ge |v-w|_{\Sigma}$ for any $v$ and $w$;
+that is, the triangle $\trig p x y$ is thin.
+\qeds
+
+\section{Nonpositive curvature}
+
+\begin{thm}{Lemma}
+Let $\Sigma$ be an open smooth regular surface with nonpositive Gauss curvature.
+Then for any two points $x$ and $y$ in $\Sigma$ are joined by unique geodesic $[xy]$.
+
+Moreover the geodesic $[xy]$ depends continuously on its endpoints $x$ and $y$. 
+That is, if $\gamma_{[xy]}\:[0,1]\to \Sigma$ is the constant speed parametrization of $[xy]$ from $x$ to $y$,
+then the map $(x,y,t)\mapsto \gamma_{[xy]}(t)$ is continuous in three arguments.
+\end{thm}
+
+\parit{Proof.}
+The first part of lemma follows from \ref{ex:unique-geod}.
+
+For the second part, assume contrary, that is, $x_n\to x$, $y_n\to y$ and $t_n\to t$ as $n\to \infty$ and 
+$\gamma_{[x_ny_n]}(t_n)$ does not converge to $\gamma_{[xy]}(t)$. 
+Then we can pass to a subsequence such that $\gamma_{[x_ny_n]}(t_n)$ converges to a point distinct from $w\ne \gamma_{[xy]}(t)$.
+Note that $w\notin [xy]$. 
+Therefore there will be two distinct geodesics from $x$ to $y$;
+one is $[xy]$ which does not contain $w$ and the other is the limit of $[x_ny_n]$ which contains $w$ --- a contradiction.
+\qeds
+
+\parit{Proof of \ref{thm:comp:cat}.}
+Fix a triangle $[p x y]$; 
+by Proposition~\ref{prop:comp-reformulations}, it is sufficient to show that the triangle $\trig p x y$ is thin.   
+
+Divide $[xy]$ by points $x=x^{0,N},\dots,x^{N,N}=y$ into $N$ equal parts.
+Further divide each geodesic $[p\,x^{i,N}]$ into $N$ equal parts by points $p=x^{i,0},\dots,x^{i,N}$.
+Assume $N$ is large.
+Since the geodesic depends continuously on its end points, we can assume that each triangle 
+ $\trig{x^{i,j}}{\,x^{i,j+1}}{\,x^{i+1,j+1}}$ and $\trig{x^{i,j}}{\,x^{i+1,j}}{\,x^{i+1,j+1}}$ is small;
+ in particular, by local comparison (\ref{thm:loc-comp}), each of these triangles is thin. 
+ 
+\begin{figure}[h!]
+\vskip0mm
+\centering
+\includegraphics{mppics/pic-2335}
+\end{figure}
+
+Now we show that the thin property propagates to $\trig p x y$ by repeated application of the inheritance lemma (\ref{lem:inherit-angle}):
+\begin{itemize}
+\item 
+First, for fixed $i$, 
+sequentially applying the lemma shows  that the triangles 
+$\trig{x}{\,x^{i,1}}{\,x^{i+1,2}}$, 
+$\trig{x}{\,x^{i,2}}{\,x^{i+1,2}}$, 
+$\trig{x}{\,x^{i,2}}{\,x^{i+1,3}}$,
+and so on are thin. 
+\end{itemize}
+In particular, for each $i$, the long triangle $\trig{x}{\,x^{i,N}}{\,x^{i+1,N}}$ is thin.
+\begin{itemize} 
+\item 
+Applying the lemma again shows that the  triangles $\trig{x}{\,x^{0,N}}{\,x^{2,N}}$, $\trig{x}{\,x^{0,N}}{\,x^{3,N}}$, and so on are thin. 
+\end{itemize}
+In particular, $\trig p x y=\trig{p}{\,x^{0,N}}{\,x^{N,N}}$ is thin.
+\qeds
+
+
+\begin{thm}{Exercise}\label{ex:convex-dist}
+Assume $\gamma_1$ and $\gamma_2$ are two geodesics in an open smooth regular simply connected surface $\Sigma$ with nonpositive Gauss curvature.
+Show that the function
+\[h(t)=|\gamma_1(t)-\gamma_2(t)|_\Sigma\]
+is convex.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:convex-dist+}
+Suppose $\delta$ is a geodesic in an open smooth regular simply connected surface $\Sigma$ with nonpositive Gauss curvature.
+Given a point $p\in\Delta$, denote by $f(p)$ the intrinsic distance from $p$ to $\delta$;
+that is,
+\[f(p)=\inf\set{|p-x|_\Sigma}{x\in\delta}.\]
+Use \ref{ex:convex-dist} to show that the function $f$ is convex;
+that is, for any geodesic $\gamma$ in $\Sigma$ the function $t\mapsto f\circ\gamma(t)$ is concave.
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection*{Morse lemma}
 
 \begin{thm}{Lemma}\label{lem:morse}
