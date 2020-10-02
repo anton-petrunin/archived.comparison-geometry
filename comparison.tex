@@ -47,12 +47,6 @@ Recall that a surface $\Sigma$ is called {}\emph{simply connected} if any closed
 \begin{thm}{Comparison theorems}\label{thm:comp}
 Let $\Sigma$ be a proper smooth regular surface.
 
-\begin{subthm}{thm:comp:toponogov}
-If $\Sigma$ has nonnegative Gauss curvature, then 
- \[\measuredangle\hinge {x}{y}{z}\ge\angk xyz\]
-for any geodesic triangle $[xyz]$.
-\end{subthm}
-
 \begin{subthm}{thm:comp:cat}
 If $\Sigma$ is simply connected and has nonpositive Gauss curvature,
  then 
@@ -60,9 +54,15 @@ If $\Sigma$ is simply connected and has nonpositive Gauss curvature,
 for any geodesic triangle $[xyz]$.
 \end{subthm}
 
+\begin{subthm}{thm:comp:toponogov}
+If $\Sigma$ has nonnegative Gauss curvature, then 
+ \[\measuredangle\hinge {x}{y}{z}\ge\angk xyz\]
+for any geodesic triangle $[xyz]$.
+\end{subthm}
+
 \end{thm}
 
-The proof of part \ref{SHORT.thm:comp:cat} will be given at the end of Section~\ref{sec:loc-comp}.
+The proof of part \ref{SHORT.thm:comp:cat} will be given at the end of Section~\ref{sec:nonpos-comp}.
 The proof of part \ref{SHORT.thm:comp:toponogov} will be finished in  Section~\ref{sec:nonneg-comp}.
 
 Note that without condition that $\Sigma$ is simply connected, the statement \ref{SHORT.thm:comp:cat} does not hold.
@@ -128,17 +128,20 @@ The comparison theorem (\ref{thm:comp}) holds in a small neighborhood of any poi
 Moreover, suppose $\Sigma$ be a smooth regular surface without boundary,
 then for any $p\in \Sigma$ there is $r>0$ such that $\inj(x)_\Sigma>r$ if $|p-x|_\Sigma$ and the following statements hold:
 
-\begin{subthm}{thm:loc-comp:cbb}
-If $\Sigma$ has nonnegative Gauss curvature, then 
-\[\measuredangle\hinge {x}{y}{z}\ge\angk xyz\]
-for any geodesic triangle $[xyz]$ in $B(p,\tfrac r4)_\Sigma$.
-\end{subthm}
 
 \begin{subthm}{thm:loc-comp:cba}
 If $\Sigma$ has nonpositive Gauss curvature, then 
 \[\measuredangle\hinge {x}{y}{z}\le\angk xyz\]
 for any geodesic triangle $[xyz]$  in $B(p,\tfrac r4)_\Sigma$.
 \end{subthm}
+
+\begin{subthm}{thm:loc-comp:cbb}
+If $\Sigma$ has nonnegative Gauss curvature, then 
+\[\measuredangle\hinge {x}{y}{z}\ge\angk xyz\]
+for any geodesic triangle $[xyz]$ in $B(p,\tfrac r4)_\Sigma$.
+\end{subthm}
+
+
 \end{thm}
 
 
@@ -179,175 +182,14 @@ By angle monotonicity (\ref{lem:angle-monotonicity}), we get
 whence the result.
 \qeds
 
+\section{Nonpositive curvature}\label{sec:nonpos-comp}
+
 \parit{Proof of \ref{thm:comp:cat}.}
 Sine $\Sigma$ is simply connected, \ref{ex:unique-geod} implies that 
 \[\inj(p)_\Sigma=\infty\]
 for any $p\in\Sigma$.
 Therefore \ref{SHORT.thm:loc-comp:cba} implies \ref{thm:comp:cat}.
 \qeds
-
-
-\section{Alexandrov's lemma}
-
-It this section we prove the following lemma in the plane geometry.
-
-\begin{thm}{Lemma}
-\label{lem:alex}
-Assume $[pxyz]$ and $[p'x'y'z']$ be two quadraliterals in the plane with equal corresponding sides.
-Assume that the sides $[x'y']$ and $[y'z']$ extend each other; that is, $y'$ lies on the line segment $[x'z']$.
-Then the following expressions have the same signs:
-\begin{enumerate}[(i)]
- \item $|p-y|-|p'-y'|$;
- \item $\measuredangle\hinge xpy-\measuredangle\hinge {x'}{p'}{y'}$;
- \item $\pi-\measuredangle\hinge ypx-\measuredangle\hinge ypz$;
-\end{enumerate}
-\end{thm}
-
-\begin{figure}[h!]
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-50}
-\vskip-0mm
-\end{figure}
-
-\parit{Proof.} 
-Take 
-a point $\bar z$ on the extension of 
-$[xy]$ beyond $y$ so that $\dist{y}{\bar z}{}=\dist{y}{z}{}$ (and therefore $\dist{x}{\bar z}{}=\dist{x'}{z'}{}$). 
- 
-From angle monotonicity (\ref{lem:angle-monotonicity}), 
-the following expressions have the same sign:
-\begin{enumerate}[(i)]
-\item $|p-y|-|p'-y'|$;
-\item $\measuredangle\hinge{x}{y}{p}-\measuredangle\hinge{x'}{y'}{p'}=\measuredangle\hinge{x}{\bar z}{p}-\measuredangle\hinge{x'}{z'}{p'}$;
-\item $|p-\bar z|-|p'-z'|$;
-\item $\measuredangle\hinge{y}{\bar z}{p}-\measuredangle\hinge{y'}{z'}{p'}$;
-\end{enumerate}
-The statement follows since
-\[\measuredangle\hinge{y'}{z'}{p'}+\measuredangle\hinge{y'}{x'}{p'}=\pi\]
-and
-\[\measuredangle\hinge{y}{\bar z}{p}+\measuredangle\hinge{y}{x}{p}=\pi.\]
-\qedsf
-
-\section{Reformulations}
-
-In this section we formulate conditions equivalent to the conclusion of the comparison theorem (\ref{thm:comp}).
-
-A triangle $[xyz]$ in a surface is called \index{fat triangle}\emph{fat} (or, respectively, \index{thin triangle}\emph{thin})
-if for any two points $p$ and $q$ on the sides of the triangle and the corresponding points 
-$\tilde p$ and $\tilde q$ on the sides of its model triangle $[\tilde x\tilde y\tilde z]\z=\tilde\triangle xyz$ we have
-$|p-q|\ge |\tilde p-\tilde q|$ (or respectively $|p-q|\le |\tilde p-\tilde q|$).
-
-
-\begin{thm}{Proposition}\label{prop:comp-reformulations}
-Let $\Sigma$ be a proper smooth regular surface.
-Then the following three conditions are equivalent:
-
-\begin{subthm}{mang>angk}
-For any geodesic triangle $[xyz]$ in $\Sigma$ we have
- \[\measuredangle\hinge {x}{y}{z}\ge\angk xyz.\]
-\end{subthm}
-
-\begin{subthm}{angk>angk} For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[xz]$ we have
- \[\angk xpy \ge \angk xpz.\]
- 
-\end{subthm}
-
-\begin{subthm}{fat}
- Any geodesic triangle in $\Sigma$ is fat.
-\end{subthm}
-
-
-\medskip
-
-Similarly, following three conditions are equivalent:
-
-\begin{subthmA}{mang<angk}
-For any geodesic triangle $[xyz]$ in $\Sigma$ we have
- \[\measuredangle\hinge {x}{y}{z}\le\angk xyz.\]
-\end{subthmA}
-
-\begin{subthmA}{angk<angk} For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[xz]$ we have
- \[\angk xpy \le \angk xpz.\]
-\end{subthmA}
-
-\begin{subthmA}{thin}
-Any geodesic triangle in $\Sigma$ is thin.
-\end{subthmA}
-
-\end{thm}
-
-In the proof we will use the following translation of Alexandrov lemma to the language of comparison triangles and angles.
-
-\begin{wrapfigure}{r}{25mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-2305}
-\end{wrapfigure}
-
-\begin{thm}{Reformulation of Alexandrov lemma}\label{lem:alex-reformulation}\\
-Assume $[pxz]$ be a triangle in a surface $\Sigma$ and 
-the point $y$ lies on the side $[xz]$.
-Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x\tilde z]$.
-Then the following expressions have the same signs:
-\begin{enumerate}[(i)]
- \item $|p-y|_\Sigma-|\tilde p-\tilde y|_{\RR^2}$;
- \item $\angk xpy-\angk {x}{p}{z}$;
- \item $\pi-\angk ypx-\angk ypz$;
-\end{enumerate}
-\end{thm}
-
-\parit{Proof.} We will prove the implications \ref{SHORT.mang>angk}$\Rightarrow$\ref{SHORT.angk>angk}$\Rightarrow$\ref{SHORT.fat}$\Rightarrow$\ref{SHORT.mang>angk}.
-The implications \ref{SHORT.mang<angk}$\Rightarrow$\ref{SHORT.angk<angk}$\Rightarrow$\ref{SHORT.thin}$\Rightarrow$\ref{SHORT.mang<angk} can be done the same way.
-
-\parit{\ref{SHORT.mang>angk}$\Rightarrow$\ref{SHORT.angk>angk}.}
-Note that $\measuredangle\hinge ypx+\measuredangle\hinge ypz=\pi$.
-By \textit{\ref{SHORT.mang>angk}}, 
-\[\angk ypx+\angk ypz\le \pi.\]
-It reamains to apply Alexandrov's lemma (\ref{lem:alex-reformulation}).
-
-
-\parit{\ref{SHORT.angk>angk}$\Rightarrow$\ref{SHORT.fat}.}
-Applying \textit{\ref{SHORT.mang>angk}} twice, first for $y\in [xz]$ and then for $w\in [px]$, we get that
-\[\angk xwy \ge \angk xpy \ge \angk xpz\]
-and therefore
-\[|w-y|_\Sigma\ge |\tilde w-\tilde y|_{\RR^2},\]
-where $\tilde w$ and $\tilde y$ are the points corresponding to $w$ and $y$ points on the sides of the model triangle. Hence the implication follows.
-
-\parit{\ref{SHORT.fat}$\Rightarrow$\ref{SHORT.mang>angk}.}
-Since the triangle is fat, we have 
-\[\angk xwy \ge \angk xpz\]
-for any $w\in \left]xp\right]$ and $y\in \left]xz\right]$.
-Note that $\angk xwy\to \measuredangle\hinge xpz$ as $w,y\to x$, whence the implication follows.
-\qeds
-
-In the following exercises you can apply the globalization theorem.
-
-\begin{thm}{Exercise}\label{ex:geod-convexity}
-Let $\Sigma$ be an open smooth regular surface
-and $\gamma$ be a unit-speed geodesic in $\Sigma$ and $p\in\Sigma$.
-
-Consider the function
-\[h(t)=|p-\gamma(t)|_\Sigma^2-t^2.\]
-
-\begin{enumerate}[(a)]
-\item Show that if the Gauss curvature of $\Sigma$ is nonnegative, then the function $h$ is concave.
-\item Show that if $\Sigma$ is simply connected and the Gauss curvature of $\Sigma$ is nonpositive, then the function $h$ is convex.
-\end{enumerate}
-\end{thm}
-
-
-\begin{thm}{Exercise}\label{ex:midpoints}
-Let $\bar x$ and $\bar y$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in an open smooth regular surface $\Sigma$.
-\begin{enumerate}[(a)]
- \item Show that if the Gauss curvature of $\Sigma$ is nonnegative, then 
- \[2\cdot |\bar x-\bar y|_\Sigma\ge |x-y|_\Sigma.\]
- \item Show that if $\Sigma$ is simply connected and has nonpositive Gauss curvature, then 
- \[2\cdot |\bar x-\bar y|_\Sigma\le |x-y|_\Sigma.\]
-\end{enumerate}
-
-\end{thm}
-
 
 \section{Nonnegative curvature}\label{sec:nonneg-comp}
 
@@ -582,19 +424,344 @@ Arrive to a contradiction using \ref{SHORT.ex:convex-polyhon+self-intersections:
 
 \end{thm}
 
+\section{Alexandrov's lemma}
+
+It this section we prove the following lemma in the plane geometry.
+
+\begin{thm}{Lemma}
+\label{lem:alex}
+Assume $[pxyz]$ and $[p'x'y'z']$ be two quadraliterals in the plane with equal corresponding sides.
+Assume that the sides $[x'y']$ and $[y'z']$ extend each other; that is, $y'$ lies on the line segment $[x'z']$.
+Then the following expressions have the same signs:
+\begin{enumerate}[(i)]
+ \item $|p-y|-|p'-y'|$;
+ \item $\measuredangle\hinge xpy-\measuredangle\hinge {x'}{p'}{y'}$;
+ \item $\pi-\measuredangle\hinge ypx-\measuredangle\hinge ypz$;
+\end{enumerate}
+\end{thm}
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-50}
+\vskip-0mm
+\end{figure}
+
+\parit{Proof.} 
+Take 
+a point $\bar z$ on the extension of 
+$[xy]$ beyond $y$ so that $\dist{y}{\bar z}{}=\dist{y}{z}{}$ (and therefore $\dist{x}{\bar z}{}=\dist{x'}{z'}{}$). 
+ 
+From angle monotonicity (\ref{lem:angle-monotonicity}), 
+the following expressions have the same sign:
+\begin{enumerate}[(i)]
+\item $|p-y|-|p'-y'|$;
+\item $\measuredangle\hinge{x}{y}{p}-\measuredangle\hinge{x'}{y'}{p'}=\measuredangle\hinge{x}{\bar z}{p}-\measuredangle\hinge{x'}{z'}{p'}$;
+\item $|p-\bar z|-|p'-z'|$;
+\item $\measuredangle\hinge{y}{\bar z}{p}-\measuredangle\hinge{y'}{z'}{p'}$;
+\end{enumerate}
+The statement follows since
+\[\measuredangle\hinge{y'}{z'}{p'}+\measuredangle\hinge{y'}{x'}{p'}=\pi\]
+and
+\[\measuredangle\hinge{y}{\bar z}{p}+\measuredangle\hinge{y}{x}{p}=\pi.\]
+\qedsf
+
+\section{Reformulations}
+
+In this section we formulate conditions equivalent to the conclusion of the comparison theorem (\ref{thm:comp}).
+
+A triangle $[xyz]$ in a surface is called \index{fat triangle}\emph{fat} (or, respectively, \index{thin triangle}\emph{thin})
+if for any two points $p$ and $q$ on the sides of the triangle and the corresponding points 
+$\tilde p$ and $\tilde q$ on the sides of its model triangle $[\tilde x\tilde y\tilde z]\z=\tilde\triangle xyz$ we have
+$|p-q|\ge |\tilde p-\tilde q|$ (or respectively $|p-q|\le |\tilde p-\tilde q|$).
 
 
-\begin{thm}{Advanced exercise}\label{ex:dist-to-bry}
-Suppose that a closed geodesic $\delta$ bounds a disc $\Delta$ in a closed convex surface $\Sigma$.
-Given a point $p\in\Delta$, denote by $f(p)$ the intrinsic distance from $p$ to $\delta$;
-that is,
-\[f(p)=\inf\set{|p-x|_\Sigma}{x\in\delta}.\]
-Show that the function $f$ is concave;
-that is, for any geodesic $\gamma$ in $\Delta$ the function $t\mapsto f\circ\gamma(t)$ is concave.
+\begin{thm}{Proposition}\label{prop:comp-reformulations}
+Let $\Sigma$ be a proper smooth regular surface.
+Then the following three conditions are equivalent:
+
+\begin{subthm}{mang>angk}
+For any geodesic triangle $[xyz]$ in $\Sigma$ we have
+ \[\measuredangle\hinge {x}{y}{z}\ge\angk xyz.\]
+\end{subthm}
+
+\begin{subthm}{angk>angk} For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[xz]$ we have
+ \[\angk xpy \ge \angk xpz.\]
+ 
+\end{subthm}
+
+\begin{subthm}{fat}
+ Any geodesic triangle in $\Sigma$ is fat.
+\end{subthm}
+
+
+\medskip
+
+Similarly, following three conditions are equivalent:
+
+\begin{subthmA}{mang<angk}
+For any geodesic triangle $[xyz]$ in $\Sigma$ we have
+ \[\measuredangle\hinge {x}{y}{z}\le\angk xyz.\]
+\end{subthmA}
+
+\begin{subthmA}{angk<angk} For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[xz]$ we have
+ \[\angk xpy \le \angk xpz.\]
+\end{subthmA}
+
+\begin{subthmA}{thin}
+Any geodesic triangle in $\Sigma$ is thin.
+\end{subthmA}
+
+\end{thm}
+
+In the proof we will use the following translation of Alexandrov lemma to the language of comparison triangles and angles.
+
+\begin{wrapfigure}{r}{25mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-2305}
+\end{wrapfigure}
+
+\begin{thm}{Reformulation of Alexandrov lemma}\label{lem:alex-reformulation}\\
+Assume $[pxz]$ be a triangle in a surface $\Sigma$ and 
+the point $y$ lies on the side $[xz]$.
+Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x\tilde z]$.
+Then the following expressions have the same signs:
+\begin{enumerate}[(i)]
+ \item $|p-y|_\Sigma-|\tilde p-\tilde y|_{\RR^2}$;
+ \item $\angk xpy-\angk {x}{p}{z}$;
+ \item $\pi-\angk ypx-\angk ypz$;
+\end{enumerate}
+\end{thm}
+
+\parit{Proof.} We will prove the implications \ref{SHORT.mang>angk}$\Rightarrow$\ref{SHORT.angk>angk}$\Rightarrow$\ref{SHORT.fat}$\Rightarrow$\ref{SHORT.mang>angk}.
+The implications \ref{SHORT.mang<angk}$\Rightarrow$\ref{SHORT.angk<angk}$\Rightarrow$\ref{SHORT.thin}$\Rightarrow$\ref{SHORT.mang<angk} can be done the same way.
+
+\parit{\ref{SHORT.mang>angk}$\Rightarrow$\ref{SHORT.angk>angk}.}
+Note that $\measuredangle\hinge ypx+\measuredangle\hinge ypz=\pi$.
+By \textit{\ref{SHORT.mang>angk}}, 
+\[\angk ypx+\angk ypz\le \pi.\]
+It reamains to apply Alexandrov's lemma (\ref{lem:alex-reformulation}).
+
+
+\parit{\ref{SHORT.angk>angk}$\Rightarrow$\ref{SHORT.fat}.}
+Applying \textit{\ref{SHORT.mang>angk}} twice, first for $y\in [xz]$ and then for $w\in [px]$, we get that
+\[\angk xwy \ge \angk xpy \ge \angk xpz\]
+and therefore
+\[|w-y|_\Sigma\ge |\tilde w-\tilde y|_{\RR^2},\]
+where $\tilde w$ and $\tilde y$ are the points corresponding to $w$ and $y$ points on the sides of the model triangle. Hence the implication follows.
+
+\parit{\ref{SHORT.fat}$\Rightarrow$\ref{SHORT.mang>angk}.}
+Since the triangle is fat, we have 
+\[\angk xwy \ge \angk xpz\]
+for any $w\in \left]xp\right]$ and $y\in \left]xz\right]$.
+Note that $\angk xwy\to \measuredangle\hinge xpz$ as $w,y\to x$, whence the implication follows.
+\qeds
+
+In the following exercises you can apply the globalization theorem.
+
+\begin{thm}{Exercise}\label{ex:geod-convexity}
+Let $\Sigma$ be an open smooth regular surface
+and $\gamma$ be a unit-speed geodesic in $\Sigma$ and $p\in\Sigma$.
+
+Consider the function
+\[h(t)=|p-\gamma(t)|_\Sigma^2-t^2.\]
+
+\begin{subthm}{}
+Show that if $\Sigma$ is simply connected and the Gauss curvature of $\Sigma$ is nonpositive, then the function $h$ is convex.
+\end{subthm}
+
+\begin{subthm}{} Show that if the Gauss curvature of $\Sigma$ is nonnegative, then the function $h$ is concave.
+\end{subthm}
+
 \end{thm}
 
 
+\begin{thm}{Exercise}\label{ex:midpoints}
+Let $\bar x$ and $\bar y$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in an open smooth regular surface $\Sigma$.
+
+\begin{subthm}{}
+ Show that if $\Sigma$ is simply connected and has nonpositive Gauss curvature, then 
+ \[2\cdot |\bar x-\bar y|_\Sigma\le |x-y|_\Sigma.\]
+ \end{subthm}
+ 
+\begin{subthm}{} Show that if the Gauss curvature of $\Sigma$ is nonnegative, then 
+ \[2\cdot |\bar x-\bar y|_\Sigma\ge |x-y|_\Sigma.\]
+\end{subthm}
+
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:convex-dist}
+Assume $\gamma_1$ and $\gamma_2$ are two geodesics in an open smooth regular simply connected surface $\Sigma$ with nonpositive Gauss curvature.
+Show that the function
+\[h(t)=|\gamma_1(t)-\gamma_2(t)|_\Sigma\]
+is convex.
+\end{thm}
+
+\begin{thm}{Advanced exercise}\label{ex:dist-to-bry}
+Suppose that a smooth curve $\delta$ bounds a convex disc $\Delta$ in a proper smooth surface $\Sigma$;
+that is, for any two points $x,y\in\Delta$, any shortest path $[xy]_\Sigma$ lies in $\Delta$.
+
+Denote by $f\:\Sigma\to\RR$ the intrinsic distance function to $\delta$;
+that is, 
+\[f(x)=\inf_{y\in\delta}\{\,|x-y|_\Sigma\,\}.\]
+
+Show that
+
+\begin{subthm}{ex:dist-to-bry:+}
+If $\Sigma$ is simply connected and $K_\Sigma\le 0$, then the restriction of $f$ to the complement of $\Delta$ is convex;
+that is, for any any geodesic $\gamma$ in $\Sigma\backslash\Delta$ the function $t\mapsto f\circ\gamma(t)$ is convex.
+\end{subthm}
+
+\begin{subthm}{ex:dist-to-bry:+}
+If $K_\Sigma\ge 0$, then the restriction of $f$ to $\Delta$ is concave;
+that is, for any any geodesic $\gamma$ in $\Delta$ the function $t\mapsto f\circ\gamma(t)$ is concave.
+\end{subthm}
+
+\end{thm}
+
+\section{Buseman function}
+
+A unit-speed geodesic $\gamma\:[0,\infty)\to \spc{X}$ is called a \index{half-line}\emph{half-line} if it is minimizing on each interval $[a,b]\subset [0,\infty)$. 
+
+
+\begin{thm}{Proposition}\label{prop:busemann}
+Suppose $\Sigma$ is a smooth regular surface and $\gamma\:[0,\infty)\to \spc{X}$ is a half-line. 
+Then the \index{Busemann function}\emph{Busemann function} $\bus_\gamma\:\Sigma\z\to \RR$ 
+\[\bus_\gamma(x)=\lim_{t\to\infty}\dist{\gamma(t)}{x}{\Sigma}- t\eqlbl{eq:def:busemann*}\]
+is defined
+and $1$-Lipschitz.
+
+
+\begin{subthm}{prop:busemann-}
+If $\Sigma$ is an open simply connected surface with nonpositive Gauss curvature, then $\bus_\gamma$ is convex;
+that is, for any geodesic $\alpha$ the real-to-real function 
+$t\mapsto \bus_\gamma\circ\alpha(t)$ is convex.
+\end{subthm}
+
+\begin{subthm}{prop:busemann+}
+If $\Sigma$ is an open surface with nonnegative Gauss curvature, then $\bus_\gamma$ is concave;
+that is, for any geodesic $\alpha$ the real-to-real function 
+$t\mapsto \bus_\gamma\circ\alpha(t)$ is concave.
+\end{subthm}
+
+\end{thm}
+
+\parit{Proof.}
+As  follows from the triangle inequality, the function \[t\mapsto\dist{\gamma(t)}{x}{}- t\] is nonincreasing in $t$.  
+Clearly $\dist{\gamma(t)}{x}{\Sigma}- t\ge-\dist{\gamma(0)}{x}{}$;
+that is, for each $x$, the values $\dist{\gamma(t)}{x}{\Sigma}- t$ bounded below.
+Thus the limit in \ref{eq:def:busemann*} is defined.
+
+Observe that each function $x\mapsto \dist{\gamma(t)}{x}{\Sigma}- t$ is 1-Lipschitz.
+Therefore its limit $x\mapsto\bus_\gamma(x)$ is Lipschitz as well.
+
+It remains to prove the last two statements.
+Choose a geodesic~$\alpha$.
+Given $\tau\ge 0$, consider the the function $h_\tau(t)=|{\gamma(\tau)}-{\alpha(t)}|_{\Sigma}^2-t^2$.
+
+
+Observe that $\frac{|\gamma(\tau)-x|}{\tau}\to 1$ for any fixed $x\in\Sigma$ as $\tau\to\infty$.
+Therefore
+\begin{align*}
+\bus_\gamma\circ\alpha(t)
+&=
+\lim_{\tau\to\infty}\frac{h_\tau(t)}{\tau}
+\end{align*}
+According to \ref{ex:geod-convexity}, 
+$t\mapsto h_\tau(t)$ is convex or concave the function assuming the conditions in  \ref{SHORT.prop:busemann-} or \ref{SHORT.prop:busemann+} respectively.
+Whence \ref{SHORT.prop:busemann-} and \ref{SHORT.prop:busemann+} follow.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:half-line}
+Let $\Sigma$ be an open surface and $p\in\Sigma$.
+
+\begin{subthm}{}
+Show that a half-line starts at $p$. 
+\end{subthm}
+
+\begin{subthm}{}
+Suppose $\Sigma$ has nonnegative Gauss curvature at any point.
+Consider the function
+\[f(x)=\inf_\gamma\bus_\gamma(x),\]
+where the infimum is taken for all half-lines $\gamma$ that stat at $p$.
+Show that $f$ is concave function and its supsets 
+\[S_c=\set{x\in\Sigma}{f(x)\ge c}\] 
+are compact for any $c\in\RR$.
+\end{subthm}
+
+\begin{subthm}{}
+Let $s=\max\set{f(x)}{x\in\Sigma}$.
+Show that the set $S_s$ is either one-point, a geodesic arc or a closed geodesic.
+\end{subthm}
 
 
 
-%???+Splitting theorem???
+\end{thm}
+
+\section{Line splitting theorem}
+
+A line in a smooth regular surface $\Sigma$ is defined as a both side infinite geodesic $\gamma\:\RR\to\Sigma$ that minimze on each interval $[a,b]\subset \RR$.
+
+\begin{thm}{Line splitting theorem}\label{thm:splitting}
+Let $\Sigma$  be an open smooth regular surface with nonnegative Gauss curvature
+and $\gamma$ be a line in $\Sigma$. 
+Then $\Sigma$ admits an intrinsic isometry to the Euclidean plane or a circular cylinder $\set{(x,y,z)\in \RR^2}{x^2+y^2=r^2}$ for some $r>0$.
+\end{thm}
+
+
+This theorem was proved by Stefan Cohn-Vossen \cite[Satz 5 in][]{convossen}
+and it has a sequence of variations in differential geometry:
+\begin{itemize}
+ \item Victor Toponogov \cite{toponogov-globalization+splitting} proved a version of splitting theorem for Riemannian manifolds with nonnegative sectional curvature;
+ \item Jeff Cheeger and Detlef Gromoll \cite{cheeger-gromoll-split} generalized it further to Riemannian manifolds with nonnegative Ricci curvature;
+ \item Jost-Hinrich Eshenburg \cite{eshenburg-split} proved a splitting theorem for space-time with nonnegative Ricci curvature in timelike directions.
+\end{itemize}
+
+
+\parit{Proof.} Consider two Busemann's functions $\bus_+$ and $\bus_-$ asociated with half-lines $\gamma:[0,\infty)\to \Sigma$ and $\gamma:(-\infty,0]\to \Sigma$; that is,
+\[
+\bus_\pm(x)
+=
+\lim_{t\to\infty}\dist{\gamma(\pm t)}{x}{}- t.
+\]
+
+Let us show that
+\[
+\bus_+(x)+\bus_-(x)= 0
+\eqlbl{eq:bus+-=0}
+\]
+for any $x\in \Sigma$.
+
+Fix $x\in \Sigma$.
+Since $\gamma$ is a line, we have that 
+\[\dist{\gamma( t)}{x}{}+\dist{\gamma(- t)}{x}{}\ge 2\cdot t.\]
+Passing to the limit as $t\to\infty$, we get
+\[\bus_+(x)+\bus_-(x)\ge0.\]
+
+On the other hand, by \ref{ex:geod-convexity} 
+$h(t)=|\gamma(t)-x|^2-t^2$ 
+is concave.
+In particular, $f(t)\le t^2+at+b$ for some constants $a,b\in\RR$. 
+Passing to the limit as $t\to\pm\infty$, we get \[\bus_+(x)+\bus_-(x)\le0;\]
+hence \ref{eq:bus+-=0} follows.
+
+According to \ref{prop:busemann}, 
+both functions $\bus_\pm$ are concave.
+In particular the functions $\bus_\pm$ are affine;
+that is they are convex and concave at the same time.
+It follows that each level set 
+\[L_a=\set{x\in\Sigma}{\bus_+(x)=a}\]
+is geodesic;
+that is, if a geodesic $\alpha$ has two common points with $L_a$, then $\alpha$ lies in $L_a$.
+In other words, each level set $L_a$ is either a closed or both sides infinite geodesic.
+
+TBC
+\qeds
+
+\begin{thm}{Exercise}\label{ex:line+half-line}
+Let $\Sigma$ be an open smooth surface with nonnegative Gauss curvature.
+Suppose that $\Sigma$ has a line and a half-line that meet at exactly one point.
+Show that $\Sigma$ is admits an intrinsic isometry to Euclidean plane.
+\end{thm}
+

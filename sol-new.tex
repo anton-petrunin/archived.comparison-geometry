@@ -1592,6 +1592,31 @@ It follows that
 which contradicts \ref{ex:intK:4pi}.
 
 
+
+\parbf{\ref{ex:conformal}.} Apply \ref{lem:K(orthogonal)} assuming that $a=b$ and simplify.
+
+\parbf{\ref{ex:K=0}.} Note and use that by \ref{prop:rauch}, $\exp_p$ is length-preserving.
+
+{
+
+\parbf{\ref{ex:K=1}.} Modify the proof of \ref{prop:rauch} showing that $K\equiv 1$ implies that $b(\theta,r)\z=\sin r$ for all small $r\ge 0$.
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \parbf{\ref{ex:diam-angle}.}
 Observe that $|p-x|_\Sigma\le |p-q|_\Sigma$ and $|q-x|_\Sigma\le |p-q|_\Sigma$.
 Conclude that $\angk xpq\ge \tfrac\pi3$.
@@ -1662,7 +1687,7 @@ Use part \ref{SHORT.ex:convex-polyhon+self-intersections:angles} to show that th
 \vskip8mm
 \end{wrapfigure}
 
-\parbf{\ref{ex:dist-to-bry}.}
+\parbf{\ref{ex:dist-to-bry}.}%???generalize
 Suppose $\gamma$ is a unit-speed geodesic in $\Delta$ and $\gamma(0)=p$. 
 Denote by $q$ a point on $\delta$ that minimize the distance to $p$.
 Denote by $\phi$ the angle between $\gamma$ and $[pq]$ at $p$.
@@ -1726,6 +1751,36 @@ f\circ\gamma(t)&\le |x-y|_\Sigma\le
 That is, we proved \ref{eq:dist<cosphi} for small $t>0$.
 The case $t<0$ can be done along the same lines. 
 
+%???
+Choose two points $x,z\in\Sigma$;
+let $y$ be the midpoint of $[xz]$.
+It is sufficient to show that 
+\[f(y)\le \tfrac12(f(x)+f(z)).\]
+
+Denote by $\bar x$ and $\bar z$ the points on $\delta$ that minimize the distances to $x$ and $z$ respectively;
+so we have
+\begin{align*}
+f(x)
+&=|x-\bar x|_\Sigma,
+&
+f(z)
+&=|z-\bar z|_\Sigma.
+\end{align*}
+
+By \ref{ex:unique-geod}, $[\bar x\bar z]$ is an arc of $\delta$.
+Therefore the midpoint of $[\bar x\bar z]$, say  $\bar y$, lies on $\delta$.
+
+By \ref{ex:dist-to-bry}, we have 
+\begin{align*}
+f(y)&\le |y-\bar y|_\Sigma\le
+\\
+&\le\tfrac12\cdot(|x-\bar x|_\Sigma
++
+|z-\bar z|_\Sigma)=
+\\
+&=\tfrac12\cdot(f(x)+f(z))
+\end{align*}
+
 \parbf{\ref{ex:convex-dist}.}
 It is sufficient to prove the Jensen inequality;
 that is, 
@@ -1765,44 +1820,12 @@ on the Euclidean plane the proof is just as hard.
 
 }
 
-\parbf{\ref{ex:convex-dist+}.}
-Choose two points $x,z\in\Sigma$;
-let $y$ be the midpoint of $[xz]$.
-It is sufficient to show that 
-\[f(y)\le \tfrac12(f(x)+f(z)).\]
+\parbf{\ref{ex:half-line}.}
 
-Denote by $\bar x$ and $\bar z$ the points on $\delta$ that minimize the distances to $x$ and $z$ respectively;
-so we have
-\begin{align*}
-f(x)
-&=|x-\bar x|_\Sigma,
-&
-f(z)
-&=|z-\bar z|_\Sigma.
-\end{align*}
-
-By \ref{ex:unique-geod}, $[\bar x\bar z]$ is an arc of $\delta$.
-Therefore the midpoint of $[\bar x\bar z]$, say  $\bar y$, lies on $\delta$.
-
-By \ref{ex:dist-to-bry}, we have 
-\begin{align*}
-f(y)&\le |y-\bar y|_\Sigma\le
-\\
-&\le\tfrac12\cdot(|x-\bar x|_\Sigma
-+
-|z-\bar z|_\Sigma)=
-\\
-&=\tfrac12\cdot(f(x)+f(z))
-\end{align*}
-
-\parbf{\ref{ex:conformal}.} Apply \ref{lem:K(orthogonal)} assuming that $a=b$ and simplify.
-
-\parbf{\ref{ex:K=0}.} Note and use that by \ref{prop:rauch}, $\exp_p$ is length-preserving.
-
-{
-
-\parbf{\ref{ex:K=1}.} Modify the proof of \ref{prop:rauch} showing that $K\equiv 1$ implies that $b(\theta,r)\z=\sin r$ for all small $r\ge 0$.
-
-}
+\parbf{\ref{ex:line+half-line}.}
 
 %\parbf{\ref{}.}
+%\parbf{\ref{}.}
+%\parbf{\ref{}.}
+%\parbf{\ref{}.}
+
