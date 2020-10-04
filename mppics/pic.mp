@@ -4226,6 +4226,9 @@ label.lrt(btex $y$ etex, z.y);
 label.top(btex $z_0$ etex, z.z0);
 label.top(btex $z_1$ etex, z.z1);
 
+label(btex $\delta_a^{x_0}$ etex rotated angle(z.y-z.x0), .8[z.x0,z.y]+(0,-7));
+label(btex $\delta_a^{z_0}$ etex rotated angle(z.y-z.z0), .8[z.z0,z.y]+(0,7));
+
 label.rt(btex $\gamma$ etex, (r,y.y));
 label.rt(btex $\xi$ etex, (r,y.x));
 label.rt(btex $\zeta$ etex, (r,y.z));
