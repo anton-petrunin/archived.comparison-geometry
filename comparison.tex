@@ -731,7 +731,9 @@ and it has a sequence of variations in differential geometry:
 \end{itemize}
 
 
-\parit{Proof.} 
+\parit{Proof.} The proof will be divided into steps.
+
+
 Consider two Busemann functions $\bus_+$ and $\bus_-$ asociated with half-lines $\lambda:[0,\infty)\to \Sigma$ and $\lambda:(-\infty,0]\to \Sigma$; that is,
 \[
 \bus_\pm(x)
@@ -739,6 +741,7 @@ Consider two Busemann functions $\bus_+$ and $\bus_-$ asociated with half-lines 
 \lim_{t\to\infty}\dist{\lambda(\pm t)}{x}{}- t.
 \]
 
+\parit{Step 1.}
 Let us show that
 \[
 \bus_+(x)+\bus_-(x)= 0
@@ -761,6 +764,9 @@ In particular,
 for some constants $a,b\in\RR$. 
 Passing to the limit as $t\to\pm\infty$, we get \[\bus_+(x)+\bus_-(x)\le0;\]
 whence \ref{eq:bus+-=0} follows.
+
+\parit{Step 2.}
+Let us show that, the surface $\Sigma$ can be subdivided into lines that run in the direction of gradient of $\bus_-$.
 
 According to \ref{prop:busemann}, 
 both functions $\bus_\pm$ are concave.
@@ -815,8 +821,14 @@ Since $\zeta$ is a unit-speed geodesic and $\bus_-$ is 1-Lipschitz, we get
 &=|t_1-t_0|.
 \end{align*}
 Whence $\zeta$ is a line for any $x$ and $\zeta$ always runs in the direction of $\vec u$.
-It follows that, the surface $\Sigma$ can be subdivided into lines that run in the direction of $\vec u$.
 
+\parit{Step 3.}
+Let us show that the distances between points on two lines in the direction of $\vec u$ behave the same way as the distances between parallel lines in Euclidean plane; see \ref{clm:parallel}.
+
+Let $\xi$ be a line in the direction of $\vec u$; choose 
+$x=\xi(b)$ for some $b$.
+We assume that $\xi$ is parametrized as above;
+in particular $b=\bus_-(x)$.
 Let $t\to\delta^x_a(t)$ be the parametrization of $[x\,\lambda(a)]$ by arc length starting from $x$.
 Since $\measuredangle(\vec u,\vec w^a)\to 0$ as $a\to\infty$,
 the comparison implies that
@@ -827,15 +839,18 @@ Analogously, since $\measuredangle(\vec u,\vec w^a)\to \pi$ as $a\to-\infty$, an
 \[\delta^x_a(t)\to\zeta(b-t)\quad\text{as}\quad a\to-\infty\]
 for any fixed $t\ge0$.
 
-\begin{thm}{Claim}
-The distances between points on two lines in the direction of $\vec u$ behave the same way as the distances between parallel lines in Euclidean plane.
-
-More precisely, let $\xi$ and $\zeta$ be two lines in $\Sigma$ that run in the direction of $\vec u$.
+\begin{clm}{}\label{clm:parallel}
+Let $\xi$ and $\zeta$ be two lines in $\Sigma$ that run in the direction of $\vec u$.
 Suppose that $\xi$ and $\zeta$ are parametrized so that $\bus_-\circ \xi(t)=\bus_-\circ \zeta(t)=t$ for any $t$;
 further set $x_0=\xi(0)$, $z_0=\zeta(0)$, $x_1=\xi(s)$, $z_1=\zeta(t)$ for some $s,t$. 
 Then
 \[|x_1-z_1|_\Sigma^2=|x_0-z_0|_\Sigma^2+(s-t)^2.\]
-\end{thm}
+\end{clm}
+
+\begin{figure}[h!]
+\centering
+\includegraphics{mppics/pic-1775}
+\end{figure}
 
 Suppose first that $s,t\ge 0$.
 Recall that
@@ -859,15 +874,11 @@ Whence
 if $s,t\ge0$.
 The same argument proves \ref{ex:|x-y|=|x-y|} if $s,t\le 0$.
 Applying it couple of times for $s_1=t_1\ge 0$ and $s_2,t_2\le 0$, we get that \ref{ex:|x-y|=|x-y|} holds 
-for the pair $s=s_1+s_2$ and $t=t_1+t_2$ and the claim follows.
+for the pair $s=s_1+s_2$ and $t=t_1+t_2$.
+Whence the claim follows for any pair $s$ and $t$.
 
-
-
-
-
-
-
-Finally note that since $\bus_-$ is affine, the level set 
+\parit{Final step.}
+Note that since $\bus_-$ is affine, the level set 
 \[L=\set{x\in\Sigma}{\bus_-(x)=0}\]
 is geodesic;
 that is, if a geodesic $\alpha$ has two common points with $L$, then $\alpha$ lies in $L$.
@@ -876,7 +887,7 @@ In other words, each level set $L$ is either a closed or both sides infinite geo
 If $L$ is both sides infinite geodesic, then any point $x$ of $\Sigma$ can be uniquely described by two numbers $u=\bus_-(x)$ and the parameter $v$ of the intersection of the line thru $x$ in the direction of $\vec u$ with $L$.
 By the claim $x\mapsto (u,v)$ produces an intrinsic isometry from $\Sigma$ to the Euclidean plane.
 
-Analogously, if $L$ is is a closed geodesis, then claim implies existence  of an intrinsic isometry from $\Sigma$ to the circular cylinder.
+Analogously, if $L$ is is a closed geodesic, then claim implies existence  of an intrinsic isometry from $\Sigma$ to a circular cylinder.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:line+half-line}

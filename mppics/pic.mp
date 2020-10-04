@@ -4183,6 +4183,53 @@ point .5 of p1);
 label.rt(btex $\gamma_2$ etex, 
 point .5 of p2);
 endfig;
+
+beginfig(1775) 
+save u,p,r;
+path p[];
+u:=1cm;
+r:=10cm;
+
+y.x=0*u;
+y.y=.6*u;
+y.z=1.4*u;
+
+p0=(0,y.y)--(r,y.y);
+p1=(0,y.x)--(r,y.x);
+p2=(0,y.z)--(r,y.z);
+
+z.x0=point .05 of p1;
+z.z0=point .05 of p2;
+z.x1=point .45 of p1;
+z.z1=point .5 of p2;
+z.y=point .95 of p0;
+z.xx=z.x0+abs(z.x1-z.x0)*unitvector(z.y-z.x0);
+z.zz=z.z0+abs(z.z1-z.z0)*unitvector(z.y-z.z0);
+
+draw p0;
+draw p1;
+draw p2;
+
+rimmark((-.03)[z.x0,z.x1]--z.x1, z.x0--z.xx);
+rimmark2((-.03)[z.z0,z.z1]--z.z1, z.z0--z.zz);
+
+draw z.x0--z.y;
+draw z.z0--z.y;
+draw z.x0--z.z0 dashed evenly;
+draw z.xx--z.zz dashed evenly;
+
+dOt z.x0,z.x1,z.z0,z.z1,z.y,z.xx,z.zz;
+
+label.bot(btex $x_0$ etex, z.x0);
+label.bot(btex $x_1$ etex, z.x1);
+label.lrt(btex $y$ etex, z.y);
+label.top(btex $z_0$ etex, z.z0);
+label.top(btex $z_1$ etex, z.z1);
+
+label.rt(btex $\gamma$ etex, (r,y.y));
+label.rt(btex $\xi$ etex, (r,y.x));
+label.rt(btex $\zeta$ etex, (r,y.z));
+endfig;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 beginfig(2305) 
