@@ -4202,7 +4202,7 @@ z.x0=point .05 of p1;
 z.z0=point .05 of p2;
 z.x1=point .45 of p1;
 z.z1=point .5 of p2;
-z.y=point .95 of p0;
+z.y=point .92 of p0;
 z.xx=z.x0+abs(z.x1-z.x0)*unitvector(z.y-z.x0);
 z.zz=z.z0+abs(z.z1-z.z0)*unitvector(z.y-z.z0);
 
@@ -4222,16 +4222,16 @@ dOt z.x0,z.x1,z.z0,z.z1,z.y,z.xx,z.zz;
 
 label.bot(btex $x_0$ etex, z.x0);
 label.bot(btex $x_1$ etex, z.x1);
-label.lrt(btex $y$ etex, z.y);
+label.lrt(btex $\gamma(a)$ etex, z.y);
 label.top(btex $z_0$ etex, z.z0);
 label.top(btex $z_1$ etex, z.z1);
 
 label(btex $\delta_a^{x_0}$ etex rotated angle(z.y-z.x0), .8[z.x0,z.y]+(0,-7));
 label(btex $\delta_a^{z_0}$ etex rotated angle(z.y-z.z0), .8[z.z0,z.y]+(0,7));
 
-label.rt(btex $\gamma$ etex, (r,y.y));
-label.rt(btex $\xi$ etex, (r,y.x));
-label.rt(btex $\zeta$ etex, (r,y.z));
+label.lft(btex $\gamma$ etex, (0,y.y));
+label.lft(btex $\xi$ etex, (0,y.x));
+label.lft(btex $\zeta$ etex, (0,y.z));
 endfig;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

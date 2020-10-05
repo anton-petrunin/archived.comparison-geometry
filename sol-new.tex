@@ -1627,17 +1627,6 @@ Observe that
 \[\measuredangle\hinge pxy+\measuredangle\hinge pyz+\measuredangle\hinge pzx\le2\cdot \pi.\]
 Apply \ref{thm:comp:toponogov}.
 
-\parbf{\ref{ex:geod-convexity}.} Apply \ref{angk>angk} and \ref{angk<angk}.
-
-
-
-
-\parbf{\ref{ex:midpoints}.} Use \ref{angk>angk} or \ref{angk<angk} twice:
-first for the triangle $[pxy]$ and $\bar x\in [px]$
-and 
-second for the triangle $[p\bar xy]$ and $\bar y\in [py]$.
-Then apply the angle monotonicity (\ref{lem:angle-monotonicity}).
-
 \parbf{\ref{ex:open-comparison}.} To prove \ref{SHORT.ex:open-comparison:positive}, apply Rauch comparison \ref{prop:rauch} and the property of exponential map in \ref{prop:exp}.
 
 For \ref{SHORT.ex:open-comparison:almost-min}, argue by contradiction;
@@ -1674,20 +1663,67 @@ Divide $\Delta$ into triangles by joining $v$ to other vertexes of the broken ge
 Take a model triangle for each so that they share sides as in $\Delta$.
 Use the comparison to show that these plane triangles form a required polygon.
 
+\parbf{\ref{ex:geod-convexity}.} Apply \ref{angk>angk} and \ref{angk<angk}.
+
+\parbf{\ref{ex:midpoints}.} Use \ref{angk>angk} or \ref{angk<angk} twice:
+first for the triangle $[pxy]$ and $\bar x\in [px]$
+and 
+second for the triangle $[p\bar xy]$ and $\bar y\in [py]$.
+Then apply the angle monotonicity (\ref{lem:angle-monotonicity}).
+
 \parit{\ref{SHORT.ex:self-intersections-hard}}.
 It remains to show that the plane pentagon provided by \ref{SHORT.ex:convex-polyhon} cannot exist.
 Imagine that there air pressure in the pentagon, it should not move it; so the total force should vanish.
 Use part \ref{SHORT.ex:convex-polyhon+self-intersections:angles} to show that this is not the case.
 
+\parbf{\ref{ex:convex-dist}.}
+It is sufficient to prove the Jensen inequality;
+that is, 
+\[
+\dist{\gamma_1(\tfrac12)}{\gamma_2(\tfrac12)}{}
+\le
+\tfrac12\cdot\dist{\gamma_1(0)}{\gamma_2(0)}{}
++
+\tfrac12\cdot \dist{\gamma_1(1)}{\gamma_2(1)}{}.
+\]
 
-\begin{wrapfigure}[19]{r}{27 mm}
-\vskip-6mm
+
+
+{
+
+\begin{wrapfigure}{o}{46 mm}
+\vskip-4mm
 \centering
-\includegraphics{mppics/pic-1680}
-\vskip8mm
+\includegraphics{mppics/pic-1650}
 \end{wrapfigure}
 
-\parbf{\ref{ex:dist-to-bry}.}%???generalize
+Let $\delta$ be the geodesic path from $\gamma_2(0)$ to $\gamma_1(1)$.
+From \ref{ex:midpoints}, we have
+\begin{align*}
+\dist{\gamma_1(\tfrac12)}{\delta(\tfrac12)}{}
+&\le
+\tfrac12\cdot\dist{\gamma_1(0)}{\delta(0)}{}
+\\
+\dist{\delta(\tfrac12)}{\gamma_2(\tfrac12)}{}
+&\le
+\tfrac12\cdot\dist{\delta(1)}{\gamma_2(1)}{}
+\end{align*}
+It remains to sum it up and apply the triangle inequality.
+
+\parit{Remark.} Note that modulo the comparison theorem 
+on the Euclidean plane the proof is just as hard.
+
+}
+
+
+\begin{wrapfigure}{r}{27 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1680}
+\vskip0mm
+\end{wrapfigure}
+
+\parbf{\ref{ex:dist-to-bry}.} %???generalize
 Suppose $\gamma$ is a unit-speed geodesic in $\Delta$ and $\gamma(0)=p$. 
 Denote by $q$ a point on $\delta$ that minimize the distance to $p$.
 Denote by $\phi$ the angle between $\gamma$ and $[pq]$ at $p$.
@@ -1781,44 +1817,6 @@ f(y)&\le |y-\bar y|_\Sigma\le
 &=\tfrac12\cdot(f(x)+f(z))
 \end{align*}
 
-\parbf{\ref{ex:convex-dist}.}
-It is sufficient to prove the Jensen inequality;
-that is, 
-\[
-\dist{\gamma_1(\tfrac12)}{\gamma_2(\tfrac12)}{}
-\le
-\tfrac12\cdot\dist{\gamma_1(0)}{\gamma_2(0)}{}
-+
-\tfrac12\cdot \dist{\gamma_1(1)}{\gamma_2(1)}{}.
-\]
-
-
-
-{
-
-\begin{wrapfigure}{o}{46 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-1650}
-\end{wrapfigure}
-
-Let $\delta$ be the geodesic path from $\gamma_2(0)$ to $\gamma_1(1)$.
-From \ref{ex:midpoints}, we have
-\begin{align*}
-\dist{\gamma_1(\tfrac12)}{\delta(\tfrac12)}{}
-&\le
-\tfrac12\cdot\dist{\gamma_1(0)}{\delta(0)}{}
-\\
-\dist{\delta(\tfrac12)}{\gamma_2(\tfrac12)}{}
-&\le
-\tfrac12\cdot\dist{\delta(1)}{\gamma_2(1)}{}
-\end{align*}
-It remains to sum it up and apply the triangle inequality.
-
-\parit{Remark.} Note that modulo the comparison theorem 
-on the Euclidean plane the proof is just as hard.
-
-}
 
 \parbf{\ref{ex:half-line}.}
 

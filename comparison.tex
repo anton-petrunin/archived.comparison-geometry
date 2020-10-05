@@ -731,28 +731,31 @@ and it has a sequence of variations in differential geometry:
 \end{itemize}
 
 
-\parit{Proof.} The proof will be divided into steps.
-
-
+\parit{Proof.} 
 Consider two Busemann functions $\bus_+$ and $\bus_-$ asociated with half-lines $\lambda:[0,\infty)\to \Sigma$ and $\lambda:(-\infty,0]\to \Sigma$; that is,
 \[
 \bus_\pm(x)
 =
-\lim_{t\to\infty}\dist{\lambda(\pm t)}{x}{}- t.
+\lim_{t\to\infty}\dist{\lambda(\pm t)}{x}{\Sigma}- t.
 \]
 
 \parit{Step 1.}
-Let us show that
+Let us show and use that
 \[
 \bus_+(x)+\bus_-(x)= 0
 \eqlbl{eq:bus+-=0}
 \]
 for any $x\in \Sigma$.
-In particular, by \ref{prop:busemann} we get $\bus_\pm\circ\lambda(t)=\mp t$ for any~$t$.
+
 
 Fix $x\in \Sigma$.
-Since $\lambda$ is a line, we have that 
-\[\dist{\lambda( t)}{x}{}+\dist{\lambda(- t)}{x}{}\ge 2\cdot t.\]
+Since $\lambda$ is a line, the triangle inequality implies that
+\begin{align*}
+\dist{\lambda(t)}{x}{\Sigma}+\dist{\lambda(- t)}{x}{\Sigma}
+&\ge \dist{\lambda(t)}{\lambda(-t)}{\Sigma}=
+\\
+&=2\cdot t.
+\end{align*}
 Passing to the limit as $t\to\infty$, we get
 \[\bus_+(x)+\bus_-(x)\ge0.\]
 
@@ -760,13 +763,13 @@ On the other hand, by \ref{ex:geod-convexity}, we have
 $h(t)=|\lambda(t)-x|^2-t^2$ 
 is concave.
 In particular, 
-\[|\lambda(t)-x|\le \sqrt{t^2+at+b}\]
+\[|\lambda(t)-x|_\Sigma\le \sqrt{t^2+at+b}\]
 for some constants $a,b\in\RR$. 
 Passing to the limit as $t\to\pm\infty$, we get \[\bus_+(x)+\bus_-(x)\le0;\]
 whence \ref{eq:bus+-=0} follows.
 
-\parit{Step 2.}
-Let us show that, the surface $\Sigma$ can be subdivided into lines that run in the direction of gradient of $\bus_-$.
+\parit{Conclusions.}
+Note that by \ref{prop:busemann}, it implies that $\bus_\pm\circ\lambda(t)=\mp t$ for any~$t$.
 
 According to \ref{prop:busemann}, 
 both functions $\bus_\pm$ are concave.
@@ -781,10 +784,12 @@ Denote by $\vec u$ the gradient vector field of $\bus_-$;
 that is, $\vec u$ is a tangent vector field such that for any tangent field $\vec v$ the following identity holds
 \[\langle\vec u,\vec v\rangle=D_{\vec v}(\bus_-).\]
 
+\parit{Step 2.}
+Let us show that, the surface $\Sigma$ can be subdivided into lines that run in the direction of $\vec u$.
 
 Fix a point $x$.
 Given a real value $a$ choose a shortest path $[x\,\lambda(a)]$;
-denote by $\vec w^a\in\T_x$ the unit vector in the direction at $x$ of geodesic $[x\,\lambda(a)]$. 
+denote by $\vec w^a\in\T_x$ the unit vector in the direction of geodesic $[x\,\lambda(a)]$. 
 Since $|\vec w^a|=1$ and $\bus_-$ is affine, we get that 
 \begin{align*}
 |\vec u|&\ge \limsup_{a\to\infty}\langle\vec u,\vec w^a\rangle =
@@ -792,9 +797,9 @@ Since $|\vec w^a|=1$ and $\bus_-$ is affine, we get that
 &=\limsup_{a\to\infty} D_{\vec w^a}\bus_-=
 \\
 &=
-\limsup_{a\to\infty}\frac{\bus_-\circ\lambda(a)-\bus_-(x)}{|x-\lambda(a)|_\Sigma}\ge
+\limsup_{a\to\infty}\frac{\bus_-\circ\lambda(a)-\bus_-(x)}{|x-\lambda(a)|_\Sigma}=
 \\
-&\ge\limsup_{a\to\infty} \frac{a-\bus_-(x)}{a+|x-\lambda(0)|_\Sigma}=
+&=\limsup_{a\to\infty} \frac{a-\bus_-(x)}{a}=
 \\
 &=1.
 \end{align*}
@@ -805,7 +810,7 @@ Whence
 It follows that
 \begin{align*}
 \lim_{a\to\infty}\measuredangle(\vec u,\vec w^a)&=0;
-\intertext{and analogously, we get}
+\intertext{analogously, we get}
 \lim_{a\to-\infty}\measuredangle(\vec u,\vec w^a)&=\pi.
 \end{align*}
 
@@ -823,7 +828,7 @@ Since $\zeta$ is a unit-speed geodesic and $\bus_-$ is 1-Lipschitz, we get
 Whence $\zeta$ is a line for any $x$ and $\zeta$ always runs in the direction of $\vec u$.
 
 \parit{Step 3.}
-Let us show that the distances between points on two lines in the direction of $\vec u$ behave the same way as the distances between parallel lines in Euclidean plane; see \ref{clm:parallel}.
+Let us show that the distances between points on two lines in the direction of $\vec u$ behave the same way as the distances between parallel lines in Euclidean plane; a precise formulation is given in \ref{clm:parallel}.
 
 Let $\xi$ be a line in the direction of $\vec u$; choose 
 $x=\xi(b)$ for some $b$.
@@ -831,7 +836,7 @@ We assume that $\xi$ is parametrized as above;
 in particular $b=\bus_-(x)$.
 Let $t\to\delta^x_a(t)$ be the parametrization of $[x\,\lambda(a)]$ by arc length starting from $x$.
 Since $\measuredangle(\vec u,\vec w^a)\to 0$ as $a\to\infty$,
-the comparison implies that
+the comparison (\ref{thm:comp:toponogov}) implies that
 \[\delta^x_a(t)\to\zeta(b+t)\quad\text{as}\quad a\to\infty\]
 for any fixed $t\ge0$.
 
@@ -847,7 +852,7 @@ Then
 \[|x_1-z_1|_\Sigma^2=|x_0-z_0|_\Sigma^2+(s-t)^2.\]
 \end{clm}
 
-Suppose first that $s,t\ge 0$.
+Assume that $s,t\ge 0$.
 Recall that
 \begin{align*}
 x_1&=\lim_{a\to\infty}\delta^{x_0}_a(s),
@@ -855,19 +860,21 @@ x_1&=\lim_{a\to\infty}\delta^{x_0}_a(s),
 z_1&=\lim_{a\to\infty}\delta^{z_0}_a(t).
 \end{align*}
 
-\begin{figure}[h!]
+Since the triangle $[x_0\,\gamma(a)\,z_0]$ is fat (\ref{fat}) and if $a$ is large, then the two long sides of the triangle are close to $a$.
+Therefore we get a lower bound for the distance $|\delta^{x_0}_a(s)-\delta^{z_0}_a(t)|_\Sigma$;
+passing to the limit as $a\to \infty$, we get
+\[|x_1-z_1|_\Sigma^2\ge|{x_0}-{z_0}|_\Sigma^2+(s-t)^2.\]
+
+\begin{figure}
 \centering
 \includegraphics{mppics/pic-1775}
 \end{figure}
 
-Set $y=\gamma(a)$.
-Since the triangle $[x_0yz_0]$ is fat (\ref{fat}) we get a lower bound for the distance $|\delta^{x_0}_a(s)-\delta^{z_0}_a(t)|_\Sigma$;
-passing to the limit as $a\to \infty$, we get
-\[|x_1-z_1|_\Sigma^2\ge|{x_0}-{z_0}|_\Sigma^2+(s-t)^2.\]
 
 Now let swap ${x_0}$ with $x_1$ and ${z_0}$ with $z_1$,
-and repeat the argument above for $a\to-\infty$;
-we get 
+and repeat the argument above for $a\to-\infty$.
+Note that the two longer sides the triangle are close to  $s-a$ and $t-a$.
+Therefore we get the opposite inequality
 \[|x_1-z_1|_\Sigma^2\le|{x_0}-{z_0}|_\Sigma^2+(s-t)^2.\]
 
 Whence 
@@ -876,19 +883,18 @@ if $s,t\ge0$.
 The same argument proves \ref{ex:|x-y|=|x-y|} if $s,t\le 0$.
 Applying it couple of times for $s_1=t_1\ge 0$ and $s_2,t_2\le 0$, we get that \ref{ex:|x-y|=|x-y|} holds 
 for the pair $s=s_1+s_2$ and $t=t_1+t_2$.
-Whence the claim follows for any pair $s$ and $t$.
+Whence \ref{clm:parallel} follows for any pair $s$ and~$t$.
 
 \parit{Final step.}
 Note that since $\bus_-$ is affine, the level set 
 \[L=\set{x\in\Sigma}{\bus_-(x)=0}\]
-is geodesic;
+is closed \index{totally convex}\emph{totally convex} and \index{totally geodesic}\emph{geodesic};
 that is, if a geodesic $\alpha$ has two common points with $L$, then $\alpha$ lies in $L$.
-In other words, each level set $L$ is either a closed or both sides infinite geodesic.
+It follows that $L$ is either a closed or both sides infinite geodesic.
 
-If $L$ is both sides infinite geodesic, then any point $x$ of $\Sigma$ can be uniquely described by two numbers $u=\bus_-(x)$ and the parameter $v$ of the intersection of the line thru $x$ in the direction of $\vec u$ with $L$.
-By the claim $x\mapsto (u,v)$ produces an intrinsic isometry from $\Sigma$ to the Euclidean plane.
-
-Analogously, if $L$ is is a closed geodesic, then claim implies existence  of an intrinsic isometry from $\Sigma$ to a circular cylinder.
+Choose its reparametrization $v\mapsto\gamma(v)$ of $L$ by arc length by circle (or line).
+Denote by $\lambda^v$ the line thru $\gamma(v)$ in the direction of $\vec u$ with the parametrization as above that is $\bus_-\circ\lambda^v(u)=u$ for any $u$ and $v$.
+According to \ref{clm:parallel}, $(u,v)\mapsto \lambda^v(u)$ is an intrinsic isometry from a circular cylinder (or, respectively, the Euclidean plane) to $\Sigma$.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:line+half-line}
