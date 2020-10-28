@@ -3,15 +3,15 @@
 \section{Intrinsic geometry}
 
 We start to study the \index{intrinsic geometry}\emph{intrinsic geometry} of surfaces.
-A property is called \index{intrinsic property}\emph{intrinsic} if it is defined in terms of measuring things inside the surface, for example length of curves or angles between the curves that lie in the surface.
-Otherwise, if a definition of property use ambient space, then it is called \index{extrinsic}\emph{extrinsic}.
+A property is called \index{intrinsic property}\emph{intrinsic} if it can be checked measuring things inside the surface, for example length of curves or angles between the curves that lie in the surface.
+Otherwise, if a definition of property essentially use the ambient space, then it is called \index{extrinsic}\emph{extrinsic}.
 
-For instance, mean as well as Gauss curvature are defined via principle curvatures, which are extrinsic.
-Latter (\ref{thm:remarkable}) it will be shown that \emph{remarkably} Gauss curvature is actually intrinsic --- it can be calculated based on measurements inside the surface.
+For instance, mean curvature as well as Gauss curvature are defined via principle curvatures, which are extrinsic.
+Later (\ref{thm:remarkable}) it will be shown that \emph{remarkably} Gauss curvature is actually intrinsic --- it can be calculated based on measurements inside the surface.
 The mean curvature is not intrinsic, for example intrinsic geometry of the $(x,y)$-plane is not distinguishable from the intrinsic geometry of the graph $z=\cos(x+y)$,
 while the mean curvature of former vanish at all points, the mean curvature of the latter does not vanish, say at $p=(0,0,1)$.  
 
-The following exercise should help you to be in the right mood for this;
+The following exercise should help you to be in the right mood;
 it might look like a tedious problem in calculus, but actually it is an easy problem in geometry.
 
 \begin{wrapfigure}{r}{33 mm}
@@ -24,7 +24,7 @@ it might look like a tedious problem in calculus, but actually it is an easy pro
 \begin{thm}{Exercise}\label{ex:lasso}
 There is a mountain of frictionless ice formed by a cone with a circular base.
 Suppose that a cowboy stands at the bottom and he wants to climb the mountain;
-he throws up his lasso which slips neatly over the top of the cone, pulls it tight and starts to climb.
+he throws up his lasso which slips neatly over the tip of the cone, pulls it tight and starts to climb.
 If the angle of inclination $\theta$ is large, there is no problem; the lasso grips tight and up he goes.
 On the other hand if $\theta$ is small, the lasso slips off as soon as the cowboy pulls on it.
 
@@ -108,11 +108,8 @@ for any $t_0,t_1\in[0,1]$.
 
 Note that the image of $\gamma_n$ lies in the closed ball $\bar B[p,\ell+1]$ for any $n$.
 It follows that the coordinate functions of $\gamma_n$ are uniformly equicontinuous and uniformly bounded.
-By \ref{lem:equicontinuous}, we can pass to a converging subsequence of $\gamma_n$;
-denote by $\gamma_\infty\:[0,1]\to\RR^3$ its limit.
-
-By the Arzel\'{a}-Ascoli theorem (\ref{lem:equicontinuous}),
-a limit of uniformly continuous sequence, $\gamma_\infty$ is continuous;
+By Arzel\'{a}--Ascoli theorem (\ref{lem:equicontinuous})
+ there is a converging subsequence of $\gamma_n$ and its limit, say $\gamma_\infty\:[0,1]\to\RR^3$, is continuous;
 that is, $\gamma_\infty$ is a path.
 Evidently $\gamma_\infty$ runs from $p$ to $q$;
 in particular
@@ -150,9 +147,7 @@ Therefore we can pass to a \index{partial limit}\emph{partial limit} $\bar p$ of
 Since $R$ is closed, $\bar p\in R$.
 By construction 
 \begin{align*}
-|p-\bar p|&=\lim_{n\to\infty}|p-x_n|=
-\\
-&=\ell.
+|p-\bar p|&=\lim_{n\to\infty}|p-x_n|=\ell.
 \end{align*}
 Hence the existence follows.
 
@@ -175,11 +170,15 @@ Since a leg of a right triangle is shorter than its hypotenuse, we have $|p-m|<\
 \vskip-0mm
 \end{wrapfigure}
 
-It remains to prove inequality \ref{eq:short-cpp}.
+It remains to prove \ref{eq:short-cpp}.
 We can assume that $\bar p\ne\bar q$, otherwise there is nothing to prove.
 
-Note that $\measuredangle \hinge{\bar p}{p}{\bar q}\ge \tfrac\pi2$ if the left hand side is defined.
-Therefore the orthogonal projection of $p$ to the line $\bar p\bar q$ lies behind $\bar p$, or coincides with $\bar p$.
+Note that if $\measuredangle \hinge{\bar p}{p}{\bar q}< \tfrac\pi2$, then $\dist{p}{z}{}\z<\dist{p}{\bar p}{}$ for some point $x\in [\bar p\bar q]$.
+Since $[\bar p\bar q]\subset K$,
+the latter is impossible.
+
+Therefore $p=\bar p$ or $\measuredangle \hinge{\bar p}{p}{\bar q}\ge \tfrac\pi2$.
+In both cases the orthogonal projection of $p$ to the line $\bar p\bar q$ lies behind $\bar p$, or coincides with $\bar p$.
 The same way we show that the orthogonal projection of $q$ to the line $\bar p\bar q$ lies behind $\bar q$, or coincides with $\bar q$.
 It implies that the orthogonal projection of the line segment $[pq]$ to the line $\bar p\bar q$ contains the line segment $[\bar p\bar q]$.
 In particular 
@@ -201,13 +200,12 @@ Indeed consider the closest point projection $\bar\gamma$ of~$\gamma$.
 Note that $\bar\gamma$ lies in $\Sigma$ and connects $p$ to $q$ therefore 
 \[\length\bar\gamma\ge |p-q|_\Sigma.\]
 
-Therefore, in order to prove the first statement, it is sufficient to show that 
+To prove the first statement, it is remains to show that 
 \[\length\gamma\ge\length\bar\gamma.\eqlbl{bar-gamma=<gamma}\]
 
-Consider an inscribed polygonal line $p_0\dots p_n$ in $\gamma$.
-Denote by $\bar p_i$ the closest point projection of $p_i$ to $R$.
-Note that the polygonal line  $\bar p_0\dots \bar p_n$ is inscribed in $\bar\gamma$;
-moreover any inscribed polygonal line in $\bar\gamma$ can appear this way.
+Consider a polygonal line $\bar p_0\dots \bar p_n$ inscribed in $\bar\gamma$.
+Let $p_0\dots p_n$ be the corresponding polygonal line inscribed in in $\gamma$;
+that is $p_i=\gamma(t_i)$ if $\bar p_i=\bar\gamma(t_i)$.
 By \ref{lem:closest-point-projection} $|p_i-p_{i-1}|\z\ge|\bar p_i-\bar p_{i-1}|$ for any $i$.
 Therefore 
 \[\length p_0\dots p_n\ge \length \bar p_0\dots \bar p_n.\]
@@ -221,25 +219,25 @@ Taking least upper bound of each side of the inequality for all inscribed polygo
 \end{wrapfigure}
 
 It remains to prove the second statement.
-Suppose that there is a point $s\z=\gamma(t_1)\notin\Sigma$;
-note that $s\notin R$.
-By the separation lemma (\ref{lem:separation}) there is a plane $\Pi$ that cuts $s$ from $\Sigma$.
-The curve $\gamma$ must intersect at least at two points: one point before $t_1$ and one after;
-let $a=\gamma(t_0)$ and $b=\gamma(t_2)$ be these points.
+Suppose that there is a point $w\z=\gamma(t_1)\notin\Sigma$;
+note that $w\notin R$.
+By the separation lemma (\ref{lem:separation}) there is a plane $\Pi$ that cuts $w$ from $\Sigma$.
+The curve $\gamma$ must intersect $\Pi$ at two points: one point before $t_1$ and one after.
+Let $a=\gamma(t_0)$ and $b=\gamma(t_2)$ be these points.
 Note that the arc of $\gamma$ from $a$ to $b$ is strictly longer that $|a-b|$;
-indeed its length is at least $|a-s|+|s-b|$ and $|a-s|+|s-b|>|a-b|$ since $s\notin[ab]$.
+indeed its length is at least $|a-w|+|w-b|$ and $|a-w|+|w-b|>|a-b|$ since $w\notin[ab]$.
 
 Remove from $\gamma$ the arc from $a$ to $b$ and glue in the line segment $[ab]$;
 denote the obtained curve by $\gamma_1$. 
 From above, we have that
 \[\length\gamma>\length \gamma_1\]
 Note that $\gamma_1$ runs in $W$.
-Therefore by the first part of corollary, we have
+Therefore by the first part of the corollary, we have
 \[\length \gamma_1\ge |p-q|_\Sigma.\]
 Whence the second statement follows.
 \qeds
 
-\begin{thm}{Exercise}\label{ex:length-dist}
+\begin{thm}{Exercise}\label{ex:length-dist-conv}
 Suppose $\Sigma$ is a proper smooth surface with positive Gauss curvature and $\Norm$ is the unit normal field on $\Sigma$.
 Show that for any two points $p,q\in \Sigma$ we have the following inequality:
 \[|p-q|_\Sigma\le 2\cdot \frac{|p-q|}{|\Norm(p)+\Norm(q)|}.\]
@@ -288,10 +286,15 @@ Show that the area of $\Sigma$ cannot exceed $4\cdot \pi$.
 
 A smooth curve $\gamma$ on a smooth surface $\Sigma$ is called \index{geodesic}\emph{geodesic} if for any~$t$, the acceleration $\gamma''(t)$ is perpendicular to the tangent plane $\T_{\gamma(t)}$.
 
+Physically, geodesics can be understood as the trajectories of a particle that slides on $\Sigma$ without friction.
+Indeed, since there is no friction, the force that keeps the particle on $\Sigma$ must be perpendicular to $\Sigma$.
+Therefore, by the second Newton's laws of motion,
+we get that the acceleration $\gamma''$ is perpendicular to $\T_{\gamma(t)}$.
+
 \begin{thm}{Exercise}\label{ex:helix=geodesic}
-Show that the helix 
-\[\gamma(t)=(\cos t,\sin t, a\cdot t)\]
-is a geodesic on the cylindrical surface described by the equation $x^2\z+y^2=1$.
+Let $\Sigma$ be the cylindrical surface described by the equation $x^2\z+y^2=1$.
+Show that one turn of helix $\gamma\:[0,2\cdot\pi]\to \Sigma$ defined by $\gamma(t)=(\cos t,\sin t, t)$
+is a geodesic, but not a shortest path on $\Sigma$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:reflection-geodesic}
@@ -300,17 +303,12 @@ Suppose that $\Sigma$ and $\Pi$ intersect along a smooth regular curve $\gamma$.
 Show that $\gamma$ parameterized by its arc-length is a geodesic on $\Sigma$.
 \end{thm}
 
-Recall that asymptotic line is defined on page~\pageref{page:asymptotic line}.
+Recall that asymptotic line is defined in Section~\ref{sec:saddle}.
 
 \begin{thm}{Exercise}\label{ex:asymptotic-geodesic}
 Suppose that a curve $\gamma$ is a geodesic and, at the same time, is an asymptotic line on a smooth surface $\Sigma$.
 Show that $\gamma$ is a line segment.
 \end{thm}
-
-Physically, geodesics can be understood as the trajectories of a particle that slides on $\Sigma$ without friction.
-Indeed, since there is no friction, the force that keeps the particle on $\Sigma$ must be perpendicular to $\Sigma$.
-Therefore, by the second Newton's laws of motion,
-we get that the acceleration $\gamma''$ is perpendicular to $\T_{\gamma(t)}$.
 
 \section{Existence and uniqueness}
 
@@ -328,9 +326,7 @@ Since $\gamma'(t)$ is a tangent vector at $\gamma(t)$,
 we have that $\gamma''(t)\z\perp\gamma'(t)$, or equivalently $\langle\gamma'',\gamma'\rangle=0$ for any $t$.
 Whence 
 \begin{align*}
-\langle\gamma',\gamma'\rangle'&=2\cdot \langle\gamma'',\gamma'\rangle=
-\\
-&=0.
+\langle\gamma',\gamma'\rangle'&=2\cdot \langle\gamma'',\gamma'\rangle=0.
 \end{align*}
 That is, $|\gamma'|^2=\langle\gamma',\gamma'\rangle$ is constant.
 \qeds
@@ -349,6 +345,12 @@ Moreover
 \end{subthm}
 
 \end{thm}
+
+A surface that satisfies the conclusion of \ref{SHORT.prop:geod-existence:whole} for any tangent vector ${\vec v}$ is called \index{geodesically complete}\emph{geodesically complete}.
+So part \ref{SHORT.prop:geod-existence:whole} says that any proper surface is geodesically complete.
+The latter statement is a part of the \index{Hopf--Rinow theorem}\emph{Hopf--Rinow theorem} \cite{hopf-rinow} which provides a converse;
+moreover, 
+\emph{if there is a point $p\in \Sigma$ such that for any tangent vector ${\vec v}\in\T_p\Sigma$ there is a both side infinite geodesic $\gamma$ with $\gamma'(0)={\vec v}$, then $\Sigma$ is proper.}
 
 The proof of this proposition on the existence theorem for an initial value problem (\ref{thm:ODE}).
 
@@ -373,7 +375,7 @@ The proof of the lemma is done by means of direct calculations.
 First let us calulate $z''(t)$ in terms of $f$, $x(t)$, and $y(t)$.
 \[
 \begin{aligned}
-z''(t)&=f(x(t),y(t))''=
+z''&=f(x,y)''=
 \\
 &=\left(f_x\cdot x'+ f_y\cdot y'\right)'=
 \\
@@ -386,9 +388,10 @@ f_{yy}\cdot (y')^2
 +
 f_y\cdot y''.
 \end{aligned}
+\eqlbl{eq:def-geod}
 \]
 Now observe that the equation 
-\[\gamma''(t)\perp\T_{\gamma(t)}\eqlbl{eq:def-geod}\] 
+\[\gamma''(t)\perp\T_{\gamma(t)}\] 
 means that 
 $\gamma''$ is perpendicular to two basis vectors in $\T_{\gamma(t)}$.
 Therefore the vector equation \ref{eq:def-geod} can be rewritten as the following system of two real equations
@@ -430,8 +433,8 @@ By continuity $\gamma_1(t_0)=\gamma(t_0)$ and $\gamma'(t_0)=\gamma'(t_0)$.
 Applying uniqueness of the initial value problem (\ref{thm:ODE}) again, we get that $\gamma_1$ coincides with $\gamma$ in a small neighborhood of $t_0$ --- a contradiction.
 
 The case $t_0<0$ can be proved along the same lines.
-It follows that $\gamma_1$ coincides with $\gamma$;
-in particular $\mathbb{I}_1=\mathbb{I}$.
+It follows that $\gamma_1=\gamma$;
+in particular, $\mathbb{I}_1=\mathbb{I}$.
 
 Part \ref{SHORT.prop:geod-existence:smooth} follows since the solution of the initial value problem depends smoothly on the initial data (\ref{thm:ODE}).
 
@@ -455,13 +458,15 @@ Let $\Sigma$ be a smooth torus of revolution; that is,
 a smooth surface of revolution with closed generatrix.
 Show that any closed geodesic on $\Sigma$ is noncontractible.
 
-(In other words, if $s\:\RR^2\to \Sigma$ is the natural bi-periodic parameterization of $\Sigma$, then $s\circ\gamma$ is not a geodesic for any closed curve $\gamma$ in $\RR^2$.)
+(In other words, if $s\:\RR^2\to \Sigma$ is the natural bi-periodic parameterization of $\Sigma$, then
+there is no closed curve $\gamma$ in $\RR^2$ such that $s\circ\gamma$ is a geodesic.)
 \end{thm}
+
 
 \section{Exponential map}\label{sec:exp}
 
-Let $\Sigma$ be smooth regular surface and $p\in \Sigma$.
-Given a tangent vector ${\vec v}\in \T_p$ consider a geodesic $\gamma_{\vec v}$ in $\Sigma$ that runs from $p$ with the initial velocity ${\vec v}$;  
+Let $\Sigma$ be a smooth regular surface and $p\in \Sigma$.
+Given a tangent vector ${\vec v}\in \T_p$, consider a geodesic $\gamma_{\vec v}$ in $\Sigma$ that runs from $p$ with the initial velocity ${\vec v}$;  
 that is, $\gamma(0)=p$ and $\gamma'(0)={\vec v}$.
 
 The map 
@@ -483,8 +488,20 @@ Summarizing, we get the following statement:
 
 \begin{thm}{Observation}\label{obs:d(exp)=1}
 Let $\Sigma$ be a smooth surface and $p\in \Sigma$.
-Then the exponential map $\exp_p\:\T_p\to \Sigma$ is smooth and its differential $d_0(\exp_p)\:\T_p\to \T_p$ is the identity map. 
+Then 
+\begin{subthm}{}
+$\exp_p$ is a smooth map and its domain contains a neighborhood of the origin in $\T_p$, 
+\end{subthm}
+
+\begin{subthm}{}
+the differential $d_0(\exp_p)\:\T_p\to \T_p$ is the identity map.
+\end{subthm}
+
 \end{thm}
+
+In fact it is easy to see that $\Dom(\exp_p)$ --- the domain of definition of $\exp_p$ --- is an open \index{star-shaped}\emph{star-shaped} region of $\T_p$;
+the latter means that if $\vec v\in \Dom(\exp_p)$, then $\lambda\cdot\vec v\in \Dom(\exp_p)$ for any $0\le \lambda\le 1$.
+Note also that \ref{prop:geod-existence:whole} implies that \emph{if $\Sigma$ is proper, then $\Dom(\exp_p)=\T_p$}.
 
 
 \begin{thm}{Proposition}\label{prop:exp}
@@ -494,7 +511,7 @@ the exponential map $\exp_p$ is defined on the open ball $B=B(0,r_p)_{\T_p}$
 and the restriction $\exp_p|_B$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$.
 
 Moreover we have a {}\emph{local control} on $r_p$;
-that is, for any $q\in \Sigma$ there is $\eps>0$ such that if $|q-p|_\Sigma<\eps$, then we can assume that $r_p\ge\eps$.
+that is, for any $q\in \Sigma$ there is $\eps>0$ such that if $|q-p|_\Sigma<\eps$, then $r_p\ge\eps$.
 \end{thm}
 
 Given $p\in \Sigma$, the least upper bound on $r_p$ that satisfies the proposition is called \index{injectivity radius}\emph{injectivity radius} of $\Sigma$ at $p$;
@@ -514,7 +531,7 @@ By \ref{obs:d(exp)=1}, the differential $d_0s$ is the identity.
 Applying the inverse function theorem (\ref{thm:inverse}) we get the first part of the proposition.
 
 The second part can be proved along the same lines, using the second part the inverse function theorem (\ref{thm:inverse});
-it guarantees that the size of the neighborhood in $\T_q$ for all points $q$ sufficiently close to~$p$.
+it guarantees that the size of the neighborhood in $\T_p$ for all points $p$ sufficiently close to~$q$.
 \qeds
 
 \section{Shortest paths are geodesics}
@@ -531,19 +548,10 @@ More precisely, any point $p$ in $\Sigma$ has a neighborhood $U$ such that any g
 A geodesic might not form a shortest path, but if this is the case, then it is called a \index{minimizing geodesic}\emph{minimizing geodesic}.
 Note that according to the proposition, any shortest path is a reparametrization of a minimizing geodesic.
 
-A formal proof will be given much latter; see Section~\ref{sec:proof-of-gamma''}. 
+A formal proof will be given much latter; see Section~\ref{sec:proof-of-gamma''}.
+
 The following informal physical explanation might be sufficiently convincing.
 In fact, if one assumes that $\gamma$ is smooth, then it is easy to convert this explanation into a rigorous proof.
-
-
-\begin{thm}{Corollary}
-Let $\Sigma$ be a smooth regular surface, $p\in\Sigma$ and $r\le \inj(p)$.
-Then  the exponential map $\exp_p$ is a diffeomorphism from $B(0,r)_{\T_p}$ to $B(p,r)_\Sigma$.
-\end{thm}
-
-According to the corollary, the restriction $\exp_p|_{\T_p}$ admits an inverse map that is called \emph{logarithmic map at $p$};
-it is denoted by \[\log_p\:B(p,r)_\Sigma\to B(0,r)_{\T_p}.\]
-
 
 \parit{Informal explanation.}
 Let us think about a shortest path $\gamma$ as of stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
@@ -561,9 +569,17 @@ Hence the density of net force from tension at $t_0$ is
 &=\tau\cdot\gamma''(t_0).
 \end{align*}
 According to the second Newton's law of motion, we have 
-$\vec f+\vec n=0$;
-which implies that  $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
+$\vec f+\vec n=0$.
+The latter implies that  $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
 \qeds
+
+\begin{thm}{Corollary}
+Let $\Sigma$ be a smooth regular surface, $p\in\Sigma$ and $r\le \inj(p)$.
+Then  the exponential map $\exp_p$ is a diffeomorphism from $B(0,r)_{\T_p}$ to $B(p,r)_\Sigma$.
+\end{thm}
+
+According to the corollary, the restriction $\exp_p|_{\T_p}$ admits an inverse map that is called \emph{logarithmic map at $p$};
+it is denoted by \[\log_p\:B(p,r)_\Sigma\to B(0,r)_{\T_p}.\]
 
 Note that according to the proposition above, any shortest path parameterized by its arc-length is a smooth curve.
 This observation should help to solve in the following two exercises.
@@ -614,14 +630,14 @@ Show that the statement does not hold without assuming that $\gamma$ is minimizi
 The following lemma is a smooth analog of lemma proved by Joseph Liberman \cite{liberman}.
 
 \begin{thm}{Liberman's lemma}\label{lem:liberman}
-Assume $\gamma$ is a unit-speed geodesic on the graph $z=f(x,y)$ of a smooth convex function $f$ defined on an open subset of the plane.
-Suppose that $\gamma(t)=(x(t),y(t),z(t))$
+Let $f$ be a smooth convex function  defined on an open subset of the plane.
+Suppose that $t\mapsto \gamma(t)\z=(x(t),y(t),z(t))$ is a unit-speed geodesic on the graph $z=f(x,y)$.
 Then $t\mapsto z(t)$ is a convex function; that is, $z''(t)\ge 0$ for any $t$.
 \end{thm}
 
 \parit{Proof.}
 Choose the orientation on the graph so that the unit normal vector $\Norm$ always points up;
-that is, it has positive $z$-coordinate.
+that is, $\Norm$ has positive $z$-coordinate.
 Let us use shortcut $\Norm(t)$ for $\Norm(\gamma(t))$.
 
 Since $\gamma$ is a geodesic, we have $\gamma''(t)\perp\T_{\gamma(t)}$,
@@ -645,7 +661,7 @@ whence the statement follows.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:rho''}
-Assume $\gamma$ is a unit-speed geodesic on a smooth convex surface $\Sigma$ and $p$ in the interior of a convex set bounded by $\Sigma$.
+Assume $\gamma$ is a unit-speed geodesic on a smooth convex surface $\Sigma$ and a point $p$ lies in the interior of a convex set bounded by $\Sigma$.
 Set $\rho(t)=|p-\gamma(t)|^2$.
 Show that $\rho''(t)\le 2$ for any $t$.
 \end{thm}
@@ -669,13 +685,13 @@ Assume $\Sigma$ is a graph $z=f(x,y)$ of a convex $\ell$-Lipschitz function $f$ 
 Then the total curvature of any geodesic in $\Sigma$ is at most $2\cdot \ell$.
 \end{thm}
 
-The above theorem was proved by Vladimir Usov \cite{usov},
+This theorem proved by Vladimir Usov \cite{usov},
 an amusing generalization was found by David Berg \cite{berg}.
 
 \parit{Proof.}
-Let $\gamma(t)=(x(t),y(t),z(t))$ be a unit-speed geodesic on $\Sigma$.
-According to Liberman's lemma 
-$z(t)$ is convex.
+Let $t\mapsto\gamma(t)=(x(t),y(t),z(t))$ be a unit-speed geodesic on $\Sigma$.
+According to Liberman's lemma, the function
+$t\mapsto z(t)$ is convex.
 
 Since the slope of $f$ is at most $\ell$, we have
 \[|z'(t)|\le \tfrac{\ell}{\sqrt{1+\ell^2}}.\]
@@ -706,12 +722,11 @@ By \ref{eq:intz''}, we get that
 
 \begin{thm}{Exercise}\label{ex:usov-exact}
 Note that the graph $z=\ell\cdot\sqrt{x^2+y^2}$ with removed origin is a smooth surface; denote it by $\Sigma$.
-Show that any both side infinite geodesic $\gamma$ has total curvature exactly $2\cdot \ell$.
+Show that any both side infinite geodesic $\gamma$ in $\Sigma$ has total curvature exactly $2\cdot \ell$.
 \end{thm}
 
-Note that the function $f(x,y)=\ell\cdot\sqrt{x^2+y^2}$ is $\ell$-Lipschitz.
-The graph $z=f(x,y)$ in the exercise can be smoothed in a neighborhood of the origin while keeping it convex.
-It follows that the estimate in the Usov's theorem is optimal.
+Note that the last exercise implies that the estimate in the Usov's theorem is optimal. Smooth the function $f(x,y)=\ell\cdot\sqrt{x^2+y^2}$ in a small neighborhood of the origin keeping it convex and $\ell$-Lipschitz,
+and note that we can assume that the geodesic $\gamma$ does not enter the smoothed part of the graph.
 
 
 \begin{thm}{Exercise}\label{ex:rough-bound-mountain}
@@ -743,7 +758,7 @@ The following exercise will guide you thru the proof of the theorem.
 Let $\Sigma$ be as in the theorem and $\gamma$ be a unit-speed shortest path in $\Sigma$.
 Denote by $\Norm_p$ the unit normal vector that points outside of $\Sigma$;
 denote by $\theta_p$ the angle between $\Norm_p$ and the direction from the origin to a point $p\in\Sigma$.
-Set $\rho(t)\z=|\gamma(t)|^2$; let $k(t)$ be the curvature of $\gamma$ at $t$.
+Set $\rho(t)\z=|\gamma(t)|^2$; denote by $k(t)$ the curvature of $\gamma$ at $t$.
 \begin{enumerate}[(a)]
 \item Show that $\cos\theta_p\ge \eps$ for any $p\in \Sigma$.
 \item Show that $|\rho'(t)|\le 2$ for any $t$.
@@ -758,9 +773,9 @@ for any $t$.
 \end{thm}
 
 Note that the obtained bound on total curvature goes to infinity as $\eps\to 0$.
-In fact there is a bound independent of $\eps$ \cite{lebedeva-petrunin}.
+In fact there is a bound that is independent of $\eps$ \cite{lebedeva-petrunin}.
 (According to Exercise~\ref{ex:tc-spherical-image}, it would also follow if the length of spherical image of $\gamma$ can be bounded above; 
-that is, $\length(\Norm\circ\gamma)\le C$ for a universal constant $C$.
+that is, if $\length(\Norm\circ\gamma)\le C$ for a universal constant $C$.
 The latter was conjectured by Aleksei Pogorelov \cite{pogorelov};
 counterexamples to the different forms of this conjecture were found 
 by Viktor Zalgaller in \cite{zalgaller},

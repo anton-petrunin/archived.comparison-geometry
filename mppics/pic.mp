@@ -2850,7 +2850,7 @@ whitelabel.lrt(btex $p$ etex, z.p);
 whitelabel.llft(btex $q$ etex, z.q);
 label.ulft(btex $a$ etex, z.a);
 label.urt(btex $b$ etex, z.b);
-label.top(btex $s$ etex, z.s);
+label.top(btex $w$ etex, z.s);
 label.rt(btex $\Sigma$ etex, z.Sigma);
 label.bot(btex $\Pi$ etex, 1.5[z.a,z.b]);
 whitelabel(btex $R$ etex, (0,-.5)*u);

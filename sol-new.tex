@@ -78,7 +78,7 @@ For \ref{SHORT.ex:cycloid:regular} you need to check that $\gamma'_\ell\ne 0$.
 For \ref{SHORT.ex:cycloid:simple} you need to check that $\gamma_\ell(t_0)\z=\gamma(t_1)$ only if $t_0=t_1$.
 
 \parbf{\ref{ex:y^2=x^3}.}
-This is so called \index{semicubical parabola}\emph{semicubical parabola}; it is shown on the diagram.
+This is so-called \index{semicubical parabola}\emph{semicubical parabola}; it is shown on the diagram.
 Try to argue similarly to \ref{ex:L-shape}.
 
 
@@ -311,6 +311,17 @@ Observe that $\gamma_u$ runs in a semicircle $h$ and therefore $\gamma$ lies in 
 
 \parbf{\ref{ex:curvature-graph}.} 
 Apply \ref{ex:curvature-formulas:a} for the parameterization $t\mapsto (t,f(t))$.
+
+\parbf{\ref{ex:approximation-const-curvature}.}
+Without loss of generality we may assume that $\gamma$ has a unit-speed parametrization.
+
+Consider the tangent indicatrix $\tan(s)=\gamma'(s)$.
+Note that $\tan$ is a spherical curve and $|\tan'|\le 1$.
+Use it to construct a sequence of unit-speed spherical curves $\tan_n\:\mathbb{I}\to\SS^2$ such that $\tan_n(s)\to \tan(s)$ as $n\to\infty$ for any $s$.
+
+It remains to show that the sequence of curves defined by
+\[\gamma_n(s)=\gamma(a)+\int_a^s\tan_n(t)\cdot dt\]
+solves the exercise.
 
 \parbf{\ref{ex:helix-curvature}.}
 Show that $\gamma_{a,b}''\perp \gamma'_{a,b}$ and apply \ref{ex:curvature-formulas:a}.
@@ -1234,7 +1245,7 @@ Observing that this function cannot be constant, we arrive to a contradiction.
 \parit{Soruse:} The problem is discuss by Dmitri Panov \cite{panov-curves}.
 
 \parbf{\ref{ex:crosss}.}
-This problem follows easily from the so called \index{Morse lemma}\emph{Morse lemma}.
+This problem follows easily from the so-called \index{Morse lemma}\emph{Morse lemma}.
 The following sketch is a slightly stripped version of it.
 A more instructive proof can be built using the Moser's trick \cite{palais}.
 
@@ -1340,7 +1351,7 @@ Use it to get a contradiction.
 
 \parit{Source:} I learned this problem from Joel Fine, who attributed it so Frederic Bourgeois \cite{fine}.
 
-\parbf{\ref{ex:length-dist}.} 
+\parbf{\ref{ex:length-dist-conv}.} 
 Note that by \ref{thm:convex-embedded}, $\Sigma$ bounds a strictly convex region.
 Therefore we can assume that $\Norm(p)\ne\Norm(q)$, otherwise $p=q$ and the inequality is evident.
 
