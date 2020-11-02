@@ -4039,6 +4039,19 @@ label.top (btex $\gamma$ etex, point 2.5 of p0);
 label.top (btex $\gamma$ etex, point 2.5 of p1);
 endfig;
 
+beginfig(1575) 
+save u,p;
+path p[];
+u:=1cm;
+
+p0=origin{.3,1}..tension .8..(1,1)*u{.1,-1}..tension .8..{-.3,-1}origin;
+
+draw p0;
+dOt origin;
+
+label.rt(btex $\alpha$ etex, (1,1)*u);
+endfig;
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 beginfig(1650) 
