@@ -312,8 +312,8 @@ Show that $\gamma$ is a line segment.
 
 \section{Existence and uniqueness}
 
-The following lemma and proposition can be interpreted physically as follows:
-the lemma follows from the conservation of energy and the proposition gives smooth dependence of trajectory of a particle depending on its initial position and velocity.
+The following lemma, exercise, and proposition can be interpreted physically as follows.
+The lemma follows from the conservation of energy.
 
 \begin{thm}{Lemma}\label{lem:constant-speed}
 Any geodesic has constant speed.
@@ -330,6 +330,21 @@ Whence
 \end{align*}
 That is, $|\gamma'|^2=\langle\gamma',\gamma'\rangle$ is constant.
 \qeds
+
+The statement in the following exercise is called \emph{Clairaut's relation};
+it can be obtained from the lemma above and the conservation angular momentum.
+
+\begin{thm}{Exercise}\label{ex:clairaut}
+Let $\gamma$ be a geodesic on a smooth surface of revolution.
+Suppose that $r(t)$ denotes the distance from $\gamma(t)$ to the axis of rotation
+and $\theta(t)$ --- the angle between $\gamma'(t)$ and the latitudinal circle thru $\gamma(t)$. 
+
+Show that the value $r(t)\cdot \cos\theta(t)$ is constant. 
+\end{thm}
+
+
+The following proposition gives smooth dependence of trajectory of a particle depending on its initial position and velocity.
+
 
 \begin{thm}{Proposition}\label{prop:geod-existence} 
 Let $\Sigma$ be  a smooth surface without boundary.
@@ -511,14 +526,23 @@ the exponential map $\exp_p$ is defined on the open ball $B=B(0,r_p)_{\T_p}$
 and the restriction $\exp_p|_B$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$.
 
 Moreover we have a {}\emph{local control} on $r_p$;
-that is, for any $q\in \Sigma$ there is $\eps>0$ such that if $|q-p|_\Sigma<\eps$, then $r_p\ge\eps$.
+that is, for any $q\in \Sigma$ there is $\eps>0$ such that if $|q-p|_\Sigma<\eps$, then $r_p\ge\eps$. %???r_p -->r???
 \end{thm}
 
 Given $p\in \Sigma$, the least upper bound on $r_p$ that satisfies the proposition is called \index{injectivity radius}\emph{injectivity radius} of $\Sigma$ at $p$;
 it is denoted by $\inj(p)$.
-The proposition states that \emph{injectivity radius is positive and locally bounded away from zero}.
-In fact a stronger statement holds: \emph{the function $p\mapsto \inj(p)$ is lower semicontinuous and positive}, but we will not use it in the sequel. %???REF
+The proposition states that {}\emph{injectivity radius is positive and locally bounded away from zero}.
 
+\parbf{Remarks.}
+The proofs of the following two statements are not hard,
+but we omit them since we will not use them in the sequel.
+
+\begin{itemize}
+\item {}\emph{The function $p\mapsto \inj(p)$ is lower semicontinuous and positive}.
+\item \emph{If $\exp_p$ is injective in $B(0,r_p)_{\T_p}$, then the restriction $\exp_p|_{B(0,r_p)}$ is a diffeomorphism to its image}.
+In other words, the injectivity radius could be defined as the least upper bound on $r_p$ such that $\exp_p$ is injective in the ball $B(0,r_p)_{\T_p}$.
+\end{itemize}
+%???REF
 
 The proof of the proposition uses the observation and the inverse function theorem (\ref{thm:inverse}). %???+Jacobian matrix
 

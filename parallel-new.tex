@@ -1,7 +1,7 @@
 \chapter{Parallel transport}
 
 
-\section{Parallel fields}
+\section{Parallel tangent fields}
 
 Let $\Sigma$ be a smooth surface in the Euclidean space and $\gamma\:[a,b]\z\to \Sigma$ be a smooth curve.
 A smooth vector-valued function $t\mapsto {\vec v}(t)$ is called a \index{tangent field}\emph{tangent field} on $\gamma$ if
@@ -17,29 +17,31 @@ Note that by the definition of geodesic, the velocity field ${\vec v}(t)\z=\gamm
 
 \begin{thm}{Exercise}\label{ex:parallel}
 Let $\Sigma$ be a smooth regular surface in the Euclidean space, 
-$\gamma\:[a,b]\to \Sigma$ a smooth curve 
-and ${\vec v}(t)$, $\tan(t)$ parallel vector fields along $\gamma$.
+$\gamma\:[a,b]\to \Sigma$ a smooth curve.
+Suppose that ${\vec v}(t)$, $\vec w(t)$ are parallel vector fields along $\gamma$.
 
 \begin{subthm}{ex:parallel:a} Show that $|{\vec v}(t)|$ is constant.
 \end{subthm}
 
-\begin{subthm}{ex:parallel:b} Show that the angle $\theta(t)$ between ${\vec v}(t)$ and $\tan(t)$ is constant.
+\begin{subthm}{ex:parallel:b} Show that the angle $\theta(t)$ between ${\vec v}(t)$ and $\vec w(t)$ is constant.
 \end{subthm}
 
 \end{thm}
 
 \section{Parallel transport}
 
+Let $\Sigma$ be a smooth surface in the Euclidean space and $\gamma\:[a,b]\z\to \Sigma$ be a smooth curve.
 Assume $p=\gamma(a)$ and $q=\gamma(b)$.
+
 Given a tangent vector ${\vec v}\in\T_p$ there is unique parallel field ${\vec v}(t)$ along $\gamma$ such that ${\vec v}(a)={\vec v}$.
 The latter follows from \ref{thm:ODE}; the uniqueness also follows from Exercise~\ref{ex:parallel}.
 
 The vector $\vec w={\vec v}(b)\in\T_q$ is called the \index{parallel transport}\emph{parallel transport} of ${\vec v}$ along~$\gamma$ in $\Sigma$.
 
 The parallel transport along $\gamma$ will be denoted by $\iota_\gamma$;
-so we can write $\vec w=\iota_\gamma({\vec v})$ or we can write $\vec w=\iota_\gamma({\vec v})_\Sigma$ if we need to emphasize that we consider surface $\Sigma$.
+so we can write $\vec w=\iota_\gamma({\vec v})$ or we can write $\vec w=\iota_\gamma({\vec v})_\Sigma$ if we need to emphasize that $\gamma$ lies in the surface $\Sigma$.
 From the Exercise~\ref{ex:parallel}, it follows that parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ is an isometry.
-In general, the parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ depends on the choice of $\gamma$; that is, for another curve $\gamma_1$ connecting $p$ to $q$ in $\Sigma$, the parallel transports $\iota_{\gamma_1},\iota_{\gamma}\:\T_p\to\T_q$ might be different.
+In general, the parallel transport $\iota_\gamma\:\T_p\z\to\T_q$ depends on the choice of $\gamma$; that is, for another curve $\gamma_1$ connecting $p$ to $q$ in $\Sigma$, the parallel transports $\iota_{\gamma_1}$ and $\iota_{\gamma}$ might be different.
 
 Suppose that $\gamma_1$ and $\gamma_2$ are two smooth curves in smooth surfaces $\Sigma_1$ and $\Sigma_2$.
 Denote by $\Norm_i\:\Sigma_i\to\mathbb{S}^2$ the Gauss maps of $\Sigma_1$ and $\Sigma_2$.
@@ -66,10 +68,14 @@ Show that the parallel translations along $\gamma$ in $\Sigma_1$
 coincides the parallel translations along $\gamma$ in $\Sigma_2$. 
 \end{thm}
 
-The following physical interpretation of parallel translation was suggested by Mark Levi \cite{levi};
-it might help to build right intuition.
+\section{Bike wheel and projections}
 
-Think of walking along $\gamma$ and carrying a perfectly balanced bike wheel touching only the axis and keeping it normal to $\Sigma$.
+In this section we describe two interpretations of parallel transport;
+they might help to build right intuition, but will not help to write a rigorous proof.
+The first one is physical use \emph{bike wheel} it was suggested by Mark Levi \cite{levi} and the second via orthogonal projections of tangent planes.
+
+Think of walking along $\gamma$ and carrying a perfectly balanced bike wheel.
+Imagine that you keep its axis normal to $\Sigma$ and touch only its axis.
 It should be physically evident that if the wheel is non-spinning at the starting point $p$, then it will not be spinning after stopping at $q$.
 (Indeed, by pushing the axis one cannot produce torque to spin the wheel.)
 The map that sends the initial position of the wheel to the final position is  the parallel transport~$\iota_\gamma$.
@@ -92,7 +98,7 @@ Construct a loop $\gamma$ in $\mathbb{S}^2$ with base at $p$ such that the paral
 \section{Geodesic curvature}
 
 Plane is the simplest example of smooth surface.
-Earlier we introduced signed curvature of a plane curve.
+Earlier, in Section~\ref{sec:def(skur)}, we introduced signed curvature of a plane curve.
 Let us introduce the so-called \index{geodesic curvature}\emph{geodesic curvature} --- an analogous notion for a smooth curve $\gamma$ in general oriented smooth surface $\Sigma$.
 
 \begin{wrapfigure}{o}{42 mm}
@@ -118,10 +124,10 @@ therefore at any parameter value $t$, we have
 for some real numbers $k_n(t)$ and $k_g(t)$.
 The numbers $k_n(t)$ and $k_g(t)$ are called \index{normal curvature}\emph{normal} and \index{geodesic curvature}\emph{geodesic curvature} of $\gamma$ at $t$ respectively;
 we may write $k_n(t)_\Sigma$ and $k_g(t)_\Sigma$ if we need to emphasize that we work in the surface $\Sigma$.
-
-Note that the geodesic curvature vanishes if $\gamma$ is a geodesic. 
-It measures how much a given curve diverges from being a geodesic;
+ 
+Geodesic curvature measures how much a given curve diverges from being a geodesic;
 it is positive if $\gamma$ turns left and negative if $\gamma$ turns right.
+In particular, by the following exercise, geodesics have vanishing geodesic curvature.
 
 \begin{thm}{Exercise}\label{ex:geodesic-curvature}
 Let $\gamma$ be a smooth regular curve in a smooth surface~$\Sigma$.
@@ -170,7 +176,7 @@ Since $\tan_i(t)=\gamma_i'(t)$ is parallel along $\gamma_i$, the angle $\phi_i$ 
 \vskip-0mm
 \end{wrapfigure}
 
-If $\theta_i$ denotes the external angle at this vertex of switch from $\gamma_{i}$ to $\gamma_{i+1}$, we have that 
+If $\theta_i$ denotes the external angle at the vertex of switch from $\gamma_{i}$ to $\gamma_{i+1}$, we have that 
 \[\phi_{i+1}=\phi_i-\theta_i \pmod{2\cdot\pi}.\]
 Therefore after going around we get that 
 \[\phi_{n+1}-\phi_1=-\theta_1-\dots-\theta_n=-\tgc\gamma.\]
@@ -222,15 +228,15 @@ Pierre Bonnet and Jacques Binet independently
 generalized the statement for arbitrary curves.
 
 \begin{thm}{Theorem}\label{thm:gb}
-Let $\Delta$ be a topological disc in a smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$ that is oriented in such a way that $\Delta$ lies on its left.
+Let $\Delta$ be a topological disc in a smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$.
+Suppose that $\partial \Delta$ oriented in such a way that $\Delta$ lies on its left.
 Then 
 \[\tgc{\partial\Delta}+\iint_\Delta K=2\cdot \pi,\eqlbl{eq:g-b}\]
 where $K$ denotes the Gauss curvature of $\Sigma$.
 \end{thm}
 
-We will give an informal proof of \ref{thm:gb} in a leading partial case
-based on the bike wheel interpretation described above.
-A formal computational proof will be given much latter; see Section~\ref{sec:gauss--bonnet:formal}.
+We will give an informal proof of this formula in a leading partial case.
+A formal computational proof will be given in Section~\ref{sec:gauss--bonnet:formal}.
 
 Before going into the proofs, we suggest to solve the following exercises using the Gauss--Bonnet formula.
 
@@ -251,14 +257,13 @@ Conclude that $\length \alpha\ge 2\cdot\pi.$
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:closed-geodesic}
-Let $R$ be a region that a closed geodesics cuts from a smooth closed surface $\Sigma$ with positive Gauss curvature.
+Let $\gamma$ be a closed geodesic on a smooth closed surface $\Sigma$ with positive Gauss curvature.
+Suppose that $R$ is one of the regions that $\gamma$ cuts from $\Sigma$.
 Show that 
 \[\iint_R K\le 2\cdot\pi.\]
 
 Conclude that any two closed geodesics on $\Sigma$ have a common point.
 \end{thm}
-
-Any two closed simple geodesics on $\Sigma$ have a common point.
 
 \begin{thm}{Exercise}\label{ex:self-intersections}
 Let $\Sigma$ be a smooth regular sphere with positive Gauss curvature and $p\in\Sigma$. 
@@ -298,14 +303,15 @@ Show that $\gamma$ cannot look like one the curves on the following diagrams.
 \includegraphics{mppics/pic-471}
 \end{wrapfigure}
 
-In fact $\gamma$ also cannot look like the curve on the right, but the proof requires more than Gauss--Bonnet; see \ref{ex:convex-polyhon+self-intersections}.
+In fact $\gamma$ also cannot look like the curve on the right, but the proof requires a more advanced teqnique;
+see \ref{ex:convex-polyhon+self-intersections}.
 
 The following exercise gives the optimal bound on Lipschitz constant of a convex function that guarantees that its geodesics have no self-intersections;
 compare to \ref{ex:rough-bound-mountain}.
 
 \begin{thm}{Exercise}\label{ex:sqrt(3)}
 Suppose that $f\:\RR^2\to\RR$ is a $\sqrt{3}$-Lipschitz smooth convex function.
-Show that any geodesic in the surface defined by the graph $z=f(x,y)$ has no self-intersections.
+Show that any geodesic in the graph $z=f(x,y)$ has no self-intersections.
 \end{thm}
 
 A surface $\Sigma$ is called \index{simply connected surface}\emph{simply connected} if any closed simple curve in $\Sigma$ bounds a disc.
@@ -315,25 +321,25 @@ Observe that a plane or a sphere are examples of simply connected surfaces, whil
 
 \begin{thm}{Exercise}\label{ex:unique-geod}
 Suppose that $\Sigma$ is a simply connected open surface with nonpositive Gauss curvature.
-\begin{subthm}{}
+\begin{subthm}{ex:unique-geod:unique}
 Show that any two points in $\Sigma$ are connected by a unique geodesic.
 \end{subthm}
-\begin{subthm}{}
-Conculude that for any $p\in \T_p$,
-the exponential map $\exp_p\:\T_p\z\to\Sigma$ is a diffeomorphism.
+\begin{subthm}{ex:unique-geod:diffeomorphism}
+Conculude that for any point $p\in \Sigma$,
+the exponential map $\exp_p$ is a diffeomorphism from the tangent plane $\T_p$ to $\Sigma$.
 In particular $\Sigma$ is diffeomorphic to the plane.
 \end{subthm}
 \end{thm}
 
 \section{Additivity}
 
-Let $\Delta$ be a topological disc in a smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$ that is oriented in such a way that $\Delta$ lies on its left.
+Let $\Delta$ be a topological disc in a smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$.
+As before we suppose that $\partial \Delta$ oriented in such a way that $\Delta$ lies on its left.
 Set
 \[\GB(\Delta)=\tgc{\partial\Delta}+\iint_\Delta K-2\cdot \pi,
 \eqlbl{eq:GB}\]\index{$\GB(\Delta)$}
 where $K$ denotes the Gauss curvature of $\Sigma$.
-
-Note the Gauss--Bonnet formula states that 
+Here $\GB$ stands for Gauss--Bonnet formula; it can be states as
 \[\GB(\Delta)=0.\]
 
 \begin{thm}{Lemma}\label{lem:GB-sum}
@@ -351,8 +357,11 @@ Then
 \end{wrapfigure}
 
 \parit{Proof.}
-Then $\Delta_1$ is bounded by an arc $\gamma_1$ of $\partial \Delta$ and $\delta$.
-Similarly $\Delta_2$ is bounded by an arc $\gamma_2$ of $\partial \Delta$ and $\delta$.
+Let us subdivide $\partial \Delta$ into two curves $\gamma_1$ and $\gamma_2$ that share the endpoints with $\delta$ so that
+\begin{itemize}
+\item $\Delta_1$ is bounded by an arc $\gamma_1$  and~$\delta$.
+\item Similarly, $\Delta_2$ is bounded by $\gamma_2$ and~$\delta$.
+\end{itemize}
 
 Denote by $\phi_1$, $\phi_2$, $\psi_1$, and $\psi_2$ the angles between $\delta$ and $\gamma_i$ marked on the diagram.
 Further, suppose that the arcs $\gamma_1$, $\gamma_2$, and $\delta$ are oriented as on the diagram. 
@@ -366,16 +375,16 @@ Then
 \\
 \iint_\Delta K&=\iint_{\Delta_1} K+\iint_{\Delta_2} K.
 \end{align*}
-It remains to apply \ref{eq:GB}.
+It remains to plug in the results in the formulas for $\GB(\Delta)$, $\GB(\Delta_1)$, and $\GB(\Delta_2)$.
 \qeds
 
 \section{Spherical case}
 
-Note that if $\Sigma$ is a plane, then the Gauss curvatue vanished;
+Note that if $\Sigma$ is a plane, then the Gauss curvature vanished;
 therefore the Gauss--Bonnet formula \ref{eq:g-b} can be written as 
 \[\tgc{\partial\Delta}=2\cdot \pi,\]
 and it follows from \ref{prop:total-signed-curvature}.
-In other words, $\GB(\Delta)=0$ for any plane disc $\Delta$.
+In other words, $\GB(\Delta)=0$ for any disc~$\Delta$ in the plane.
 
 If $\Sigma$ is the unit sphere, then $K\equiv1$;
 in this case Theorem \ref{thm:gb} can be formulated the following way:
@@ -392,14 +401,20 @@ Moreover the same formula holds for any spherical region bounded by piecewise sm
 This proposition will be used in the informal proof given below.
 
 \parit{Sketch of proof.}
-If the contour $\partial\Delta$ of a spherical triangle with angles $\alpha$, $\beta$ and $\gamma$ is oriented such that the triangle lies on the left, then its external angles are  $\pi-\alpha$, $\pi-\beta$ and $\pi-\gamma$.
-Therefore the total geodesic curvature of $\partial\Delta$ is $\tgc{\partial\Delta}=3\cdot\pi-\alpha-\beta-\gamma$
+Suppose that a spherical triangle $\Delta$ has angles 
+$\alpha$, $\beta$, and $\gamma$.
+According to \ref{lem:area-spher-triangle},
+\[\area\Delta=\alpha+\beta+\gamma-\pi.\]
+
+Suppose that the contour $\partial\Delta$ is oriented such that $\Delta$ lies on its left. 
+Then its external angles are  $\pi-\alpha$, $\pi-\beta$ and $\pi-\gamma$.
+Therefore 
+\[\tgc{\partial\Delta}=3\cdot\pi-\alpha-\beta-\gamma\]
 which implies that
 \[\GB(\Delta)=0.\]
-
-Applying the additivity lemma (\ref{lem:GB-sum}) finite number of times 
-Note that we can subdivide a given spherical polygon $P$ into triangles by dividing a polgon into two on each step.
-By the additivity lemma (\ref{lem:GB-sum}),
+ 
+Note that we can subdivide a given spherical polygon $P$ inто triangles by dividing a polgon in two on each step.
+By the additivity lemma (\ref{lem:GB-sum}), we get
 \[\GB(P)=0\]
 for any spherical polygon $P$.
 
@@ -418,47 +433,21 @@ Show that the parallel transport $\iota_\gamma\:\T_p\mathbb{S}^2\to\T_p\mathbb{S
 
 \section{Intuitive proof}
 
-We will suppose that it is intuitively clear that moving the axis of the wheel
-without changing its direction 
-does not change the direction of the wheel's spikes.
+In this section we prove the Gauss--Bonnet in a partial case.
+This case is leading --- the general case can be proved similarly, but one has to use the signed area counted with multiplicity.
 
-More precisely, assume we keep the axis of a non-spinning bike wheel 
-and perform the following two experiments:
-\begin{enumerate}[(i)]
-\item We move it around and bring the axis back to the original position. 
-As a result the wheel might turn by some angle;
-let us measure this angle.
-
-\item
-We move the direction of the axis the same way as before without moving the center of the wheel.
-After that we measure the angle of rotation.
-\end{enumerate}
-Then the resulting angles in these two experiments is the same. 
-
-
-Consider a surface $\Sigma$ with a Gauss map $\Norm\:\Sigma\to \mathbb{S}^2$.
-Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\Norm(p)}\mathbb{S}^2$; so we can identify these tangent spaces.
-From the experiments above, we get the following:
-
-\begin{thm}{Lemma}\label{lem:spherical-image}
-Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\Norm\:\Sigma\to \mathbb{S}^2$.
-Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\Norm\circ\alpha$ in $\mathbb{S}^2$.
-\end{thm}
-
-\parit{Proof of partial case of \ref{thm:gb}.}
-We will prove the formula for proper surface $\Sigma$ with positive Gauss curvature.%
-\footnote{This case is leading --- the general case can be proved similarly, but one has to use the signed area counted with multiplicity.}
-In this case, by \ref{cor:intK} the formula can be rewritten as 
-\[\GB(\Delta)=\tgc{\partial\Delta}+\area[\Norm(\Delta)]-2\cdot \pi=0.
+\parit{Proof of \ref{thm:gb} for proper surfaces with positive Gauss curvature.}
+By \ref{cor:intK}, in this case, we have
+\[\GB(\Delta)=\tgc{\partial\Delta}+\area[\Norm(\Delta)]-2\cdot \pi.
 \eqlbl{eq:gb-area}\]
 
 Fix $p\in \partial\Delta$;
 assume the loop $\alpha$ runs along $\partial\Delta$ so that $\Delta$ lies on the left from it.
-Consider the parallel translation $\iota\:\T_p\to\T_p$ along $\alpha$.
-According to \ref{prop:pt+tgc}, $\iota$ is a clockwise rotation by angle $\tgc{\alpha}_\Sigma$.
+Consider the parallel translation $\iota_\alpha\:\T_p\to\T_p$ along $\alpha$.
+According to \ref{prop:pt+tgc}, $\iota_\alpha$ is a clockwise rotation by angle $\tgc{\alpha}_\Sigma$.
 
 Set $\beta=\Norm\circ\alpha$.
-According to \ref{lem:spherical-image}, $\iota$ is also parallel translation along $\beta$ in $\mathbb{S}^2$.
+By \ref{obs:parallel=}, the map $\iota_\alpha=\iota_\beta$ where $\beta$ is considered as a curve in the unit sphere.
 In particular $\iota$ is a clockwise rotation by angle $\tgc{\beta}_{\mathbb{S}^2}$.
 By \ref{prop:area-of-spher-polygon} 
 \[\GB(\Norm(\Delta))=\tgc{\beta}_{\mathbb{S}^2}+\area[\Norm(\Delta)]-2\cdot \pi=0.\]
@@ -496,12 +485,12 @@ Any open smooth regular surface with positive Gauss curvature has a simple two-s
 \parit{Proof.}
 Let $\Sigma$ be an open surface with positive Gauss curvature and $\gamma$ a two-sided infinite geodesic in $\Sigma$.
 
-Note that if $\gamma$ has a self-intersection, then it contains a simple loop;
+If $\gamma$ has a self-intersection, then it contains a simple loop;
 that is, a restriction $\ell=\gamma|_{[a,b]}$ for some closed interval $[a,b]$ is a simple loop.
 
-By \ref{ex:convex-proper-plane}, $\Sigma$ is parameterized by a open convex region $\Omega$ in the plane.
+By \ref{ex:convex-proper-plane}, $\Sigma$ is parameterized by an open convex region $\Omega$ in the plane.
 By Jordan's theorem (\ref{thm:jordan}), $\ell$ bounds a disc in $\Sigma$; denote it by~$\Delta$.
-If $\phi$ is the angle at the base of the loop, then by Gauss--Bonnet,
+If $\phi$ is the angle at the base of the loop, then by Gauss--Bonnet formula,
 \[\iint_\Delta K=\pi+\phi.\] 
 
 Recall that by \ref{ex:intK:2pi}, we have
@@ -519,8 +508,10 @@ It follows that after leaving $\Delta_1$, the geodesic $\gamma$ has to enter it 
 \centering
 \includegraphics{mppics/pic-1550}
 \end{figure}
-It forces $\gamma$ to create another nonoverlapping loop (left picture) or a concave simple loop (right picture);
-both are not possible.
+Consider the moment when $\gamma$ enters $\Delta_1$;
+two possible scenarios are shown on the picture.
+On the left picture we get two nonoverlapping discs which, as we know, is impossible.
+The right picture is impossible as well --- in this case we get a concave simple loop.
 
 It follows that $\gamma$ contains only one simple loop.
 This loop cuts a disk from $\Sigma$ 
@@ -534,19 +525,28 @@ $t\mapsto \gamma(-t)$
 is counterclockwise.
 
 Let us shoot a unit-speed geodesic in all directions at a given point $p\z=\gamma(0)$.
-It gives a one parameter family of geodesics $\gamma_s$ for $s\in[0,\pi]$ connecting the geodesic $t\mapsto \gamma(t)$ with
+It gives a one-parameter family of geodesics $\gamma_s$ for $s\in[0,\pi]$ connecting the geodesic $t\mapsto \gamma(t)$ with
 the $t\mapsto \gamma(-t)$; that is, $\gamma_0(t)\z=\gamma(t)$ and $\gamma_\pi(t)=\gamma(-t)$.
 
 Observe that the subset of values $s\in [0,\pi]$ such that $\gamma_s$ is right (or left) is open.
 That is, if $\gamma_s$ is right, then so is $\gamma_t$ for all $t$ sufficiently close to $s$.
-Since $0<\phi_s<\pi$, we have that the self-intersection at the base of the loop of $\gamma_s$ is transverse; therefore it survives in $\gamma_t$ for all $t$ sufficiently close to $s$.
+Indeed, denote by $\phi_s$ the angle of the simple loop of $\gamma_s$.
+From abve we have $0<\phi_s<\pi$.
+Therefore the self-intersection at the base of the loop of $\gamma_s$ is transverse.
+It follows that the self-intersection survives in $\gamma_t$ for all $t$ sufficiently close to $s$.
 
 Since $[0,\pi]$ is connected, it cannot be subdivided into two nonempty open sets.
 It follows that for some $s$, the geodesic $\gamma_s$ is neither  clockwise nor counterclockwise;
 that is, $\gamma_s$ has no self-intersections.
 \qeds
 
-%???+ex
+\begin{thm}{Exercise}\label{ex:cohn-vossen}
+Let $\Sigma$ be an open smooth regular surface with positive Gauss curvature.
+Suppose $\alpha\:[0,1]\to \Sigma$ is a smooth regular loop such that $\alpha'(0)+\alpha'(1)=0$.
+Show that there is a simple two-sided infinite geodesic $\gamma$ that is tangent to $\alpha$ at some point.
+\end{thm}
+
+%???+PIC
 
 \section{A generalization}
 

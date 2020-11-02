@@ -495,7 +495,7 @@ The latter can be done by straightforward calculations.
 If the calculations done right, then you should see that curvature $\kur$ and torsion $\tau$ do not depend on time and given.
 Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix $\gamma_{a,b}$ has curvature $\kur$ and torsion~$\tor$.
 
-One may also see it geometrically using that the helix is maped to itself by one parameter family of glide rotations around $z$-axis.
+One may also see it geometrically using that the helix is maped to itself by one-parameter family of glide rotations around $z$-axis.
 Therefore, for the $t$-parametrization, Frenet frame rotates around $z$-axis with the angular velocity~$1$.
 It remains rewrite it for the arc-length parametrization and note that 
 \begin{align*}
@@ -1416,6 +1416,23 @@ It follows that $\T_{\gamma(t)}\Sigma$ is spanned by $\mu$ and $\gamma'(t)$.
 Therefore $\gamma''\perp \mu$ and $\gamma''\perp\gamma'$ imply $\gamma''\perp\T_{\gamma(t)}\Sigma$;
 that is, $\gamma$ is a geodesic.
 
+\parbf{\ref{ex:clairaut}.} 
+We can assume that the origin lies on the axis of revolution and $\vec i$ points in the direction of the axis.
+Use \ref{lem:constant-speed} to show that it is sufficient to prove that 
+$\langle\gamma'\times \gamma,\vec i\rangle$
+is constant.
+
+Since $\gamma''(t)\perp\T_{\gamma(t)}$ we have that three vectors $\vec i$, $\gamma$, and $\gamma''$ lie in the same plane.
+In particular $\langle\gamma''\times \gamma,\vec i\rangle=0$.
+Therefore
+\begin{align*}
+\langle\gamma'\times \gamma,\vec i\rangle'
+&=
+\langle\gamma'\times \gamma',\vec i\rangle+\langle\gamma''\times \gamma,\vec i\rangle =0.
+\end{align*}
+
+
+
 \parbf{\ref{ex:round-torus}.}
 By \ref{ex:reflection-geodesic}, any meridian of $\Sigma$ is a closed geodesic.
 Consider an arbitrary closed geodesic $\gamma$.
@@ -1583,9 +1600,6 @@ Therefore the first part implies that
 \[\iint_\Sigma K< 4\cdot\pi.\]
 The latter contradicts \ref{ex:intK:4pi}.
 
-\parbf{\ref{ex:sqrt(3)}.} Note that it is sufficient to show that the surface has no geodesic loops.
-Estimate the integral of Gauss curvature of whole surface and a disc in it surrounded by a geodesic loop.
-
 \parbf{\ref{ex:self-intersections}}; \textit{(easy)}.
 Consider the 4 regions bounded by loops.
 Apply Gauss--Bonnet formula (\ref{thm:gb}) to show that the integral of Gauss curvature on each of these region exceeds $\pi$.
@@ -1602,7 +1616,19 @@ It follows that
 \[\iint_\Sigma K>(\pi+\alpha)+(\pi+\beta)+(\pi+\gamma)>4\cdot\pi\]
 which contradicts \ref{ex:intK:4pi}.
 
+\parbf{\ref{ex:sqrt(3)}.} Note that it is sufficient to show that the surface has no geodesic loops.
+Estimate the integral of Gauss curvature of whole surface and a disc in it surrounded by a geodesic loop.
 
+\parbf{\ref{ex:unique-geod}}; \ref{SHORT.ex:unique-geod:unique}.
+By \ref{prop:shortest-paths-exist} and \ref{prop:gamma''} any two points in $\Sigma$ can be connected by a geodesic.
+Suppose that points $p$ and $q$ can be connected by two distinct geodesics $\gamma_1$ and $\gamma_2$.
+Passing to their arcs, we can assume that $\gamma_1$ and $\gamma_2$ share only their endpoints.
+Since the surface is simply connected, $\gamma_1$ and $\gamma_2$ together bound a disc, say $\Delta\subset\Sigma$.
+It remains to Gauss--Bonnet formula to $\Delta$ and make a conclusion.
+ 
+%\parit{\ref{SHORT.ex:unique-geod:diffeomorphism}.} ???PROBLEM --- we need second fed of inj rad.
+
+\parbf{\ref{ex:cohn-vossen}.} Repeat the proof of \ref{thm:cohn-vossen} for one-parameter family of geodesics $\gamma_\tau$ defined by $\gamma_\tau(0)=\alpha(\tau)$ and $\gamma'(0)=\alpha'(\tau)$. 
 
 \parbf{\ref{ex:conformal}.} Apply \ref{lem:K(orthogonal)} assuming that $a=b$ and simplify.
 

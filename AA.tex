@@ -1,3 +1,41 @@
+We will suppose that it is intuitively clear that moving the axis of the wheel
+without changing its direction 
+does not change the direction of the wheel's spikes.
+
+More precisely, assume we keep the axis of a non-spinning bike wheel 
+and perform the following two experiments:
+\begin{enumerate}[(i)]
+\item We move it around and bring the axis back to the original position. 
+As a result the wheel might turn by some angle;
+let us measure this angle.
+
+\item
+We move the direction of the axis the same way as before without moving the center of the wheel.
+After that we measure the angle of rotation.
+\end{enumerate}
+Then the resulting angles in these two experiments is the same. 
+
+
+Consider a surface $\Sigma$ with a Gauss map $\Norm\:\Sigma\to \mathbb{S}^2$.
+Note that for any point $p$ on $\Sigma$, the tangent plane $\T_p\Sigma$ is parallel to the tangent plane $\T_{\Norm(p)}\mathbb{S}^2$; so we can identify these tangent spaces.
+From the experiments above, we get the following:
+
+\begin{thm}{Lemma}\label{lem:spherical-image}
+Suppose $\alpha$ is a piecewise smooth regular curve in a smooth regular surface $\Sigma$ which has a Gauss map $\Norm\:\Sigma\to \mathbb{S}^2$.
+Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta=\Norm\circ\alpha$ in $\mathbb{S}^2$.
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -334,13 +372,13 @@ $\measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}\ge \measuredangle\hinge{x_{i-1}}{x_
 Show that \[|x_1-x_n|_\Sigma\ge |\tilde x_1\z-\tilde x_n|_{\RR^2}.\]
 \end{thm}
 
-For $\Sigma=\RR^2$, the exercise above is the so called \index{arm lemma}\emph{arm lemma} \cite{sabitov}; 
+For $\Sigma=\RR^2$, the exercise above is the so-called \index{arm lemma}\emph{arm lemma} \cite{sabitov}; 
 you can use it without proof.
 
 \parbf{\ref{ex:arm-lemma}.} 
 This problem is very hard, we put it as a joke.
 
-One way is to use the so called \emph{Reshetnyak majorization theorem} and standard arm lemma; it is done this way in \cite{alexander-kapovitch-petrunin2027}.
+One way is to use the so-called \emph{Reshetnyak majorization theorem} and standard arm lemma; it is done this way in \cite{alexander-kapovitch-petrunin2027}.
 
 
 
@@ -1428,7 +1466,7 @@ The modern formulation described below was given by Wilhelm Blaschke.
 \parit{Remarks; (1).}
 For a general compact domain $\Delta$ (not necessary a disc) we have that
 \[\tgc{\partial\Delta}+\iint_{\Delta} G=2\cdot  \pi\cdot\chi(\Delta),\eqlbl{eq:g-b-euler}\]
-where $\chi(\Delta)$ is the so called \index{Euler's characteristic}\emph{Euler's characteristic} of $\Delta$.
+where $\chi(\Delta)$ is the so-called \index{Euler's characteristic}\emph{Euler's characteristic} of $\Delta$.
 The Euler's characteristic is \index{topological invariant}\emph{topological invariant}, in particular preserved in a continuous deformation.
 
 If a surface $\Sigma$ (possibly with boundary) can be divided into $f$ discs by drawing $e$ edges connecting $v$ vertexes, then 
@@ -1647,7 +1685,7 @@ The modern formulation described below was given by Wilhelm Blaschke.
 \parit{Remarks; (1).}
 For a general compact domain $\Delta$ (not necessary a disc) we have that
 \[\tgc{\partial\Delta}+\iint_{\Delta} K=2\cdot  \pi\cdot\chi(\Delta),\eqlbl{eq:g-b-euler}\]
-where $\chi(\Delta)$ is the so called \index{Euler's characteristic}\emph{Euler's characteristic} of $\Delta$.
+where $\chi(\Delta)$ is the so-called \index{Euler's characteristic}\emph{Euler's characteristic} of $\Delta$.
 The Euler's characteristic is \index{topological invariant}\emph{topological invariant}, in particular preserved in a continuous deformation.
 
 If a surface $\Sigma$ (possibly with boundary) can be divided into $f$ discs by drawing $e$ edges connecting $v$ vertexes, then 
@@ -2463,7 +2501,7 @@ The reader might be able to reinvent the theory by trying to prove that if the m
 \parbf{Equidistant surfaces.}
 Assume $\Norm\:\Sigma\to \mathbb{S}^2$ is a Gauss map of a smooth surface $\Sigma$.
 Fix a real number $R$ and consider the map $h_R\:\Sigma\z\to\RR^3$ defined by $h_R\:p\mapsto p+R\cdot\Norm_p$.
-The map $h_R$ describe the so called \emph{equidistant surface};
+The map $h_R$ describe the so-called \emph{equidistant surface};
 it is smooth by definition, but in general it does not have to be regular.
 
 \begin{thm}{Lemma}\label{lem:curc<1/R}
@@ -3163,7 +3201,7 @@ Let us present the formal calculations for two vectors $a\cdot \vec u+b\cdot\vec
  
  In the next paragraph, you have "... they are uniquely defined up to sign; they are denoted as k1(p) and k2(p) or k1(p)Σ and k2(p)Σ if we need to emphasize that these are the curvatures of the surface Σ;" which should include "a change in the" between "to" and "sign," as well as a comma after k2(p). 
  
- On page 69, above 7.2, you have "The last identity is the so called Euler’s formula. A smooth regular curve on a surface Σ that always runs in the principle directions is called line of curvature of Σ." "So called" should be hyphenated and there should be an "a" added between "called" and "line." 
+ On page 69, above 7.2, you have "The last identity is the so-called Euler’s formula. A smooth regular curve on a surface Σ that always runs in the principle directions is called line of curvature of Σ." "So called" should be hyphenated and there should be an "a" added between "called" and "line." 
  
  On page 70, in the first two paragraphs, you use the phrase "... if we need to emphasize that this is curvature of Σ." I believe writing "... if we need to emphasize that this is a curvature value of Σ." would be more clear given the context.  In the third paragraph, "up to sign" should be "up to a change in the sign." On page 73, just below equation (5), "derection" should be "direction." 
  
@@ -3207,7 +3245,7 @@ Let us present the formal calculations for two vectors $a\cdot \vec u+b\cdot\vec
  
  On page 83, in the proof of 9.2, "sets" should be "set" in the sentence "Therefore the interior of R is a convex sets." 
  
- On page 84, right above the Open Surfaces section, "... classical result it topology — the so called closed graph theorem," should have "so called" hyphenated and "it" should be "in." 
+ On page 84, right above the Open Surfaces section, "... classical result it topology — the so-called closed graph theorem," should have "so called" hyphenated and "it" should be "in." 
  
  Further down this page, in the 9.4 Lemma, "in" should be removed from the sentence "Suppose Σ is an open surface in with positive Gauss..." 
  
