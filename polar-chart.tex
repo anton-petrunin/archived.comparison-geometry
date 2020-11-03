@@ -9,62 +9,65 @@ The property of exponential map in \ref{prop:exp} can be used to define \index{p
 
 Namely, fix polar coordinates $(\theta,r)$ on tangent plane $\T_p$.
 If $\vec v\in \T_p$ has coordinates $(\theta,r)$,
-then we say that $q=\exp_p\vec v$ is the point in $\Sigma$ with the polar coordinates $(\theta,r)$, or briefly $q\z=w(r,\theta)$.
+then we say that $s(\theta,r)=\exp_p\vec v$ is the point in $\Sigma$ with the polar coordinates $(\theta,r)$.
 Note that according to Proposition~\ref{prop:exp} polar coordinates behave usual way in a neighborhood of $p$;
-that is, there is $r_0>0$ such that if $0\le r_1,r_2<r_0$ then $w(r_1,\theta_1) = w(r_2,\theta_2)$ if and only if
-$r_1=r_2=0$ or $r_1=r_2$ and $\theta_1=\theta_2+2\cdot n\cdot\pi$ for an integer $n$.
+that is, there is $r_0>0$ such that if $0\le r_1,r_2<r_0$ then $s(r_1,\theta_1) \z= s(r_2,\theta_2)$ if and only if
+$r_1=r_2=0$ or $r_1=r_2$ and $\theta_1\z=\theta_2+2\cdot n\cdot\pi$ for an integer $n$.
 
-The following statement is known as \index{Gauss lemma}\emph{Gauss lemma},
-it will play a key role in the formal proof that shortest paths are geodesics; Section~\ref{sec:proof-of-gamma''}.
+The following statement will play a key role in the formal proof that shortest paths are geodesics; see Section~\ref{sec:proof-of-gamma''}.
 
-\begin{thm}{Lemma}\label{lem:palar-perp}
-Let $w(\theta,r)$ describes polar coordinates with respect to a point $p$ of smooth surface $\Sigma$.
+\begin{thm}{Gauss lemma}\label{lem:palar-perp}
+Let $s(\theta,r)$ describes polar coordinates with respect to a point $p$ of smooth surface $\Sigma$.
 Then
-$w_\theta\perp w_r$
+$s_\theta\perp s_r$
 for any $r$ and~$\theta$.
 \end{thm}
 
 
 \parit{Proof.}
 Choose $\theta$.
-By the definition of exponential map, the curve $\gamma(t)=w(\theta,t)$ is a unit-speed geodesic that starts at $p$;
+By the definition of exponential map, the curve $\gamma(t)=s(\theta,t)$ is a unit-speed geodesic that starts at $p$;
 in particular we have the following two identities:
 \begin{enumerate}[(i)]
-\item Since the geodesic has unit speed we have $|w_r|=|\gamma'|=1$.
+\item Since the geodesic has unit speed we have $|s_r|=|\gamma'|=1$.
 In particular,
  \[
  \tfrac{\partial}{\partial \theta}
- \langle w_r,w_r\rangle=0\]
-\item Since $\gamma$ is a geodesic, we have $w_{rr}(\theta,r)=\gamma''(r)\perp\T_{\gamma(r)}$ and therefore 
+ \langle s_r,s_r\rangle=0\]
+\item Since $\gamma$ is a geodesic, we have $s_{rr}(\theta,r)=\gamma''(r)\perp\T_{\gamma(r)}$ and therefore 
 \[
-\langle w_\theta, w_{rr}\rangle=0\]
+\langle s_\theta, s_{rr}\rangle=0\]
 \end{enumerate}
 It follows that
-\begin{align*}
+\[
+\begin{aligned}
 \tfrac{\partial}{\partial r}
-\langle w_\theta, w_r\rangle
+\langle s_\theta, s_r\rangle
 &=
-\langle w_{\theta r},w_r\rangle
+\langle s_{\theta r},s_r\rangle
 +
-\cancel{\langle w_\theta,w_{rr}\rangle}=
+\cancel{\langle s_\theta,s_{rr}\rangle}=
 \\
 &=
 \tfrac12
 \cdot 
 \tfrac{\partial}{\partial \theta}
-\langle w_r, w_r\rangle=
+\langle s_r, s_r\rangle=
 \\
 &=0.
-\end{align*}
+\end{aligned}
+\eqlbl{eq:<s',s'>'=0}
+\]
 It follows that for fixed $\theta$, the value 
-$\langle  w_\theta, w_r\rangle$ does not depend on $r$.
+$\langle  s_\theta, s_r\rangle$ does not depend on $r$.
 
-Note that $w(\theta,0)=p$ for any $\theta$.
+Note that $s(\theta,0)=p$ for any $\theta$.
 Therefore
-$w_\theta(\theta,0)=0$
+$s_\theta(\theta,0)=0$
 and in particular 
-\[\langle w_\theta, w_r\rangle=0\]
-for $r=0$ and therefore it holds for any $r$.
+\[\langle s_\theta, s_r\rangle=0\]
+for $r=0$.
+By \ref{eq:<s',s'>'=0} the same holds for any $r$.
 \qeds
 
 \section{Shortest paths are geodesics: a formal proof}
@@ -75,13 +78,13 @@ In this section we use the construction of polar coordinates and the Gauss lemma
 \parit{Proof of \ref{prop:gamma''}.}
 Let $\gamma\:[0,\ell]\to\Sigma$ be a shortest path parameterized by arc-length.
 Suppose $\ell=\length\gamma$ is sufficiently small, so $\gamma$ can be described in the polar coordinates at $p$;
-say $\gamma(t)=w(\theta(t),r(t))$ for some functions $t\mapsto \theta(t)$ and $t\mapsto r(t)$ such that $r(0)=0$.
+say $\gamma(t)=s(\theta(t),r(t))$ for some functions $t\mapsto \theta(t)$ and $t\mapsto r(t)$ such that $r(0)=0$.
 
 Note that by chain rule, we have
-\[\gamma'= w_\theta\cdot \theta'+ w_r\cdot r'
+\[\gamma'= s_\theta\cdot \theta'+ s_r\cdot r'
 \eqlbl{eq:chain(gamma)}\]
 if the left side is defined.
-By Gauss lemma \ref{lem:palar-perp}, $w_\theta\perp w_r$ and by definition of polar coordinates $|w_r|=1$.
+By Gauss lemma \ref{lem:palar-perp}, $s_\theta\perp s_r$ and by definition of polar coordinates $|s_r|=1$.
 Therefore \ref{eq:chain(gamma)} implies
 \[|\gamma'(t)|\ge r'(t).\eqlbl{eq:|gamma'|=r'}\]
 for any $t$ where $\gamma'(t)$ is defined.
@@ -113,7 +116,7 @@ Then there is a shortest path from $p$ to $q$, which becomes a geodesic if param
 That is, there are two geodesics from $p$ to $q$ of length smaller than $\eps$.
 In other words there are two vectors ${\vec v},\vec w\in\T_p$ such that $|{\vec v}|<\eps$, $|\vec w|<\eps$ and 
 $q=\exp_p\vec v=\exp_p\vec w$.
-But according to \ref{prop:exp}, the exponential map is injective in $\eps$-neighborhood of zero --- a contradiction.\qeds
+But according to \ref{prop:exp}, the exponential map is injective in the $\eps$-neighborhood of zero --- a contradiction.\qeds
 
 \section{Gauss curvature}
 
@@ -132,9 +135,9 @@ and
 $\vec v(u,v)\df\tfrac{s_v}b$,
 then 
 \begin{align*}
-\langle\vec u_u,\vec v\rangle&=0,
-\\
-\langle\vec u_v,\vec v\rangle&=b_u,
+\langle\vec u_u,\vec u\rangle&=0,
+&
+\langle\vec u_v,\vec v\rangle&=-b_u,
 \end{align*}
 and 
 \[K=-\frac{b_{uu}}b,\]
@@ -144,19 +147,27 @@ where $K=K(u,v)$ denotes the Gauss curvature of $\Sigma$ at $s(u,v)$.
 
 \parit{Proof.}
 By Gauss lemma (\ref{lem:palar-perp}), polar coordinates with respect to $q$ is produce a semigeodesic chart at any near by point.
-To prove the first statement, it is sufficient to find a point $q\ne p$ such that polar coordinates on $\Sigma$ with respect to $q$ cover $p$;
-any sufficiently close point will do the trick.
+To prove the first statement, it is sufficient to find a point $q\ne p$ such that polar coordinates on $\Sigma$ with respect to $q$ cover $p$.
+By \ref{prop:exp}, any $q$ sufficiently close to $p$ does the trick.
 
 The last statements follows from \ref{lem:K(orthogonal)}.
-Indeed since $s$ is semigeodesic, it is orthogonal with $a\df|s_u|\equiv1$.
-Therefore the identities $\langle\vec u_u,\vec v\rangle=0$,
-$\langle\vec u_v,\vec v\rangle=b_u$ follow from \ref{eq:key-orthogonal} in the proof of \ref{lem:K(orthogonal)}
-and the expression for Gauss curvature follows directly from \ref{lem:K(orthogonal)}.
 \qeds
 
 \begin{thm}{Lemma}\label{lem:K(orthogonal)}
 Let $(u,v)\mapsto s(u,v)$ be a orthogonal chart of smooth surface $\Sigma$.
+Suppose that 
+$a=a(u,v)\df|s_u|$,
+$b=b(u,v)\df|s_v|$,
+$\vec u(u,v)\df\tfrac{s_u}a$,
+and 
+$\vec v(u,v)\df\tfrac{s_v}b$.
 Then 
+\begin{align*}
+\langle\vec u_u,\vec u\rangle&=0,
+&
+\langle\vec u_v,\vec v\rangle&=\tfrac1a\cdot b_u,
+\end{align*}
+and 
 \[K=-\frac1{a\cdot b}\cdot
 \left(
 \frac{\partial}{\partial u}
@@ -167,49 +178,43 @@ Then
 \right)
 \eqlbl{eq:K(orthonormal)}\]
 where 
-$a=a(u,v)\df|s_u|$,
-$b=b(u,v)\df| s_v|$,
-and
 $K=K(u,v)$ denotes the Gauss curvature of $\Sigma$ at $s(u,v)$.
 \end{thm}
 
 \parit{Proof.}
-Set $\vec u(u,v)\df\tfrac{s_u}a$
-and 
-$\vec v(u,v)\df\tfrac{s_v}b$.
 Recall that $\Norm(u,v)$ denotes the unit normal vector to $\Sigma$ at $s(u,v)$.
-
 Observe that $\vec u, \vec v,\Norm$ form an orthonormal frame for any $(u,v)$.
 Without loss of generality we may assume that the frame $\vec u, \vec v,\Norm$ is oriented; that is, $\Norm=\vec u\times \vec v$ for any $(u,v)$.
 
-Suppose that $\ell=\ell(u,v)$, $m=m(u,v)$, and $n=n(u,v)$ be the components of the matrix describing the shape operator in the frame $\vec u, \vec v$.
+Suppose that $\ell=\ell(u,v)$, $m=m(u,v)$, and $n=n(u,v)$ be the components of the matrix describing the shape operator in the frame $\vec u, \vec v$;
+that is,
+\begin{align*}
+\Shape(\vec u)&=\ell\cdot \vec u+ m\cdot \vec v,
+&
+\Shape(\vec v)&=m\cdot \vec u+ n\cdot \vec v.
+\end{align*}
 Since $\vec u, \vec v$ is an orthonormal frame, by \ref{ex:shape-chart} we have
 \[
 \begin{aligned}
 \tfrac1{a^2}
 \cdot
 \langle s_{uu},\Norm\rangle
-=
-\langle S(\vec u),\vec u\rangle
 &=\ell,
 &
 \tfrac1{a\cdot b}
 \cdot
 \langle s_{uv},\Norm\rangle
-=
-\langle S(\vec u),\vec v\rangle&=m,
+&=m,
 \\
 \tfrac1{a\cdot b}
 \cdot
 \langle s_{vu},\Norm\rangle
-=
-\langle S(\vec v),\vec u\rangle&=m,
+&=m,
 &
 \tfrac1{b^2}
 \cdot
 \langle s_{vv},\Norm\rangle
-=
-\langle S(\vec v),\vec v\rangle&=n.
+&=n.
 \end{aligned}
 \eqlbl{eq:shape-lmn}
 \]
@@ -235,13 +240,14 @@ a\cdot m\cdot \Norm
 \\
 \vec u_v
 &=
--\tfrac1{a}\cdot b_u\cdot\vec v
+\tfrac1{a}\cdot b_u\cdot\vec v
 +
 b\cdot m\cdot \Norm
 ,
 &
 \vec v_v
-&=\tfrac1{a}\cdot b_u\cdot\vec u
+&=
+-\tfrac1{a}\cdot b_u\cdot\vec u
 +
 b\cdot n\cdot \Norm
 \end{aligned}
@@ -299,15 +305,15 @@ first two vector identities are equivalent to the following six real identities:
 \langle\vec u_u,\vec u\rangle
 &=0,
 &
-\langle\vec v_u,\vec u\rangle
-&=
-\tfrac1{b}\cdot a_v,
+\langle\vec v_u,\vec v\rangle
+&=0,
 \\
 \langle\vec u_u,\vec v\rangle
 &=-\tfrac1{b}\cdot a_v,
 &
-\langle\vec v_u,\vec v\rangle
-&=0,
+\langle\vec v_u,\vec u\rangle
+&=
+\tfrac1{b}\cdot a_v,
 \\
 \langle\vec u_u,\Norm\rangle
 &=a\cdot \ell,
@@ -319,27 +325,10 @@ a\cdot m.
 \eqlbl{eq:key-orthogonal/2}
 \]
 
-By taking partial derivatives of the identities
-$\langle\vec u,\vec u\rangle=1$,
-$\langle\vec u,\vec v\rangle=0$, and
-$\langle\vec v,\vec v\rangle=1$,
-we get 
-\[
-\begin{aligned}
-\langle\vec u_u,\vec u\rangle
-&=0,
-&
-\langle\vec v_u,\vec v\rangle
-&=0,
-&
-\langle\vec v_u,\vec u\rangle
-&=
--
-\langle\vec v,\vec u_u\rangle.
-\end{aligned}
-\eqlbl{eq:00-}
-\]
-
+Taking partial derivative of the identities
+$\langle\vec u,\vec u\rangle=1$ and
+$\langle\vec v,\vec v\rangle=1$ by $u$
+we get the first two identities in \ref{eq:key-orthogonal/2}.
 
 Further, observe that
 \[
@@ -357,7 +346,7 @@ Further, observe that
 \end{aligned}
 \eqlbl{eq:dv/du}
 \]
-Therefore 
+Since $s_u\perp s_v$, it follows that
 \begin{align*}
 \langle\vec v_u,\vec u\rangle
 &=
@@ -370,17 +359,19 @@ Therefore
 \\
 &=\tfrac1{b}\cdot a_v.
 \end{align*}
-By \ref{eq:00-},
+Taking partial derivative of
+$\langle\vec u,\vec v\rangle=0$  by $u$
+we get
 we get
 \begin{align*}
-\langle\vec v_u,\vec u\rangle
-=
--
+\langle\vec v_u,\vec u\rangle+
 \langle\vec v,\vec u_u\rangle
-&=\tfrac1{b}\cdot a_v.
+&=0.
 \end{align*}
+Hence we get two more identities in \ref{eq:key-orthogonal/2}.
 
-Applying \ref{eq:shape-lmn} and \ref{eq:dv/du}, we get
+
+Applying \ref{eq:shape-lmn}, \ref{eq:dv/du}, and $s_v\perp\Norm$ we get
 \begin{align*}
 \langle\vec u_u,\Norm\rangle
 &=
@@ -393,8 +384,8 @@ Applying \ref{eq:shape-lmn} and \ref{eq:dv/du}, we get
 =a\cdot m,
 \end{align*}
 that implies the last two equalities in \ref{eq:key-orthogonal/2}.
-Therefore the first two identities in \ref{eq:key-orthogonal} are proved.
-The other two identities in \ref{eq:key-orthogonal} can be proved along the same lines.
+Therefore the first two identities in \ref{eq:key-orthogonal} are proved;
+the remaining two identities can be proved along the same lines.
 \qeds
 
 \begin{thm}{Exericse}\label{ex:conformal}
@@ -409,9 +400,9 @@ where $\triangle$ denotes the \index{laplacian}\emph{laplacian}; that is, $\tria
 
 \section{Rotation of a vector field}
 
-Let $\Sigma$ be a smooth oriented surface and $\gamma$ a simple closed path in $\Sigma$.
+Let $\Sigma$ be a smooth oriented surface and $\gamma$ a simple closed path in~$\Sigma$.
 Suppose that $\vec u$ is a field of unit tangent vectors to $\Sigma$ defined in a neighborhood of $\gamma$.
-Denote by $\vec v$ the field obtained from by a counterclockwise rotation of the tangent plane at each point; it could be also defined by $\vec v=\Norm\times\vec u$.
+Denote by $\vec v$ the field obtained from $\vec u$ by a counterclockwise rotation of the tangent plane at each point; it could be also defined by $\vec v=\Norm\times\vec u$.
 Then the \index{rotation}\emph{rotation} of $\vec u$ around $\gamma$ is defined as the integral
 \[\rot_\gamma\vec u
 \df
@@ -437,18 +428,17 @@ Since $\vec x(0)=\vec u(0)$, we can (and will) assume that $\phi(0)=0$.
 
 Note that
 \begin{align*}
-\vec u(t)&=\cos[\phi(t)]\cdot \vec x(t)+\sin[\phi(t)]\cdot \vec y(t)
+\vec u&=\cos\phi\cdot \vec x+\sin\phi\cdot \vec y
 \\
-\vec v(t)&=-\sin[\phi(t)]\cdot \vec x(t)+\cos[\phi(t)]\cdot \vec y(t)
+\vec v&=-\sin\phi\cdot \vec x+\cos\phi\cdot \vec y
 \end{align*}
 It follows that 
 \begin{align*}
-\langle\vec u'(t),\vec v(t)\rangle
-=\phi'(t)\cdot\biggl(&\cos[\phi(t)]^2\cdot \langle\vec x(t),\vec x(t)\rangle]+
+\langle\vec u',\vec v\rangle
+=\phi'\cdot\biggl(&(\cos\phi)^2\cdot \langle\vec x,\vec x\rangle+(\sin\phi)^2\cdot \langle\vec y,\vec y\rangle
+\biggr)=
 \\
-&+\sin[\phi(t)]^2\cdot \langle\vec y(t),\vec y(t)\rangle]\biggr)=
-\\
-=\phi'(t).\ &
+=\phi'.\ &
 \end{align*}
 
 Therefore
@@ -464,14 +454,16 @@ Observe that
 \begin{itemize}
 \item $\iota_\gamma(\vec x(0))=\vec x(1)$,
 
-\item $\vec u(0))$ is a counterclockwise rotation of $\vec x(0)$ by angle $\phi(0)=0$, and 
+\item $\vec u(0)$ is a counterclockwise rotation of $\vec x(0)$ by angle $\phi(0)=0$, and 
 
 \item $\vec u(1)$ is a counterclockwise rotation of $\vec x(1)$ by angle $\phi(1)\z=\rot_\gamma\vec u$,
 
-\item $\vec u(0))=\vec u(1)$.
+\item $\vec u(0)=\vec u(1)$.
 \end{itemize}
 It follows that $\vec x(1)$ is a {}\emph{clockwise} rotation of $\vec x(0)$ by angle $\rot_\gamma\vec u$, and the result follows.
 \qeds
+
+The following lemma will play a key role in the proof of Gauss--Bonnet formula given in the next section.
 
 \begin{thm}{Lemma}\label{lem:rotation-semigeoesic}
 Let $(u,v)\mapsto s(u,v)$ be a semigeodesic chart on a smooth surface $\Sigma$.
@@ -489,19 +481,19 @@ Then for any two smooth functions $P$ and $Q$ defined on $D$ we have
 \[\iint_D (Q_u- P_v)\cdot du\cdot dv=\int_\alpha (P\cdot du+Q\cdot dv).\]
 Note that the Green formula can be proved by applying the Curl theorem (\ref{thm:curl}) assuming that the $(u,v)$-plane is a coordinate plane in $\RR^3$ and $\vec u=P\cdot\vec i+Q\cdot \vec j$.
 
-This lemma will play a key role in the proof of Gauss--Bonnet formula given in the next section.
 Note that Green and Gauss--Bonnet formulas are similar --- they relate the integral along a disc and its boundary curve.
 So it should be not surprising that Green helps to prove Gauss--Bonnet.
 
 \parit{Proof.}
 Let us write $\gamma$ in the $(u,v)$-coordinates: $\gamma(t)=s(u(t),v(t))$. Set $\vec v=\tfrac{s_v}{b}$, note that $\vec v$ is a unit vector field orthogonal to $\vec u$ and we can assume that it is counterclockwise rotation of $\vec u$ by angle $\tfrac{\pi}2$.
 
+Therefore
 \begin{align*}
-\rot_\gamma \vec u&=\int_0^1\langle\vec u'(t),\vec v(t)\rangle\cdot dt=
+\rot_\gamma \vec u&=\int_0^1\langle\vec u',\vec v\rangle\cdot dt=
 \intertext{by the chain rule}
-&=\int_0^1[\langle\vec u_u,\vec v(t)\rangle\cdot u'(t)+\langle\vec u_v,\vec v(t)\rangle\cdot v'(t)]\cdot dt=
+&=\int_0^1[\langle\vec u_u,\vec v\rangle\cdot u'+\langle\vec u_v,\vec v\rangle\cdot v']\cdot dt=
 \intertext{by \ref{prop:K(semigeodesic)}; here $b=|s_v|$:}
-&=\int_0^1b_u\cdot v'(t)\cdot dt=
+&=\int_0^1b_u\cdot v'\cdot dt=
 \\
 &=\int_{s^{-1}\circ\gamma}b_u\cdot dv=
 \intertext{by the Green formula}
@@ -530,10 +522,8 @@ and \ref{lem:rotation-semigeoesic}:
 where $n=n(\Delta)$ is an integer.
 
 By \ref{prop:K(semigeodesic)}, any point can be covered by a semigeodesic chart.
-Therefore applying Lemma~\ref{lem:GB-sum} finite number of times we can show that 
-\ref{eq:gb(n)} holds for any given disc $\Delta$ in $\Sigma$.
-
-By \ref{prop:total-signed-curvature} we have that $\GB(\Delta)=0$ if $\Sigma$ is a plane.
+Therefore applying \ref{lem:GB-sum} finite number of times, we get that 
+\ref{eq:gb(n)} holds for any disc $\Delta$ in $\Sigma$.
 
 Assume that $\Delta$ lies in a local graph realization $z=f(x,y)$ of~$\Sigma$.
 Consider one-parameter family $\Sigma_t$ of graphs $z=t\cdot f(x,y)$ and denote by $\Delta_t$ the corresponding disc in $\Sigma_t$, so $\Delta_1=\Delta$ amd $\Delta_0$ is its projection to the $(x,y)$-plane.
@@ -560,11 +550,10 @@ Since a neighborhood of any point of $\Sigma$ can be covered by such a graph, ap
 
 \section{Rauch comparison}
 
-The following proposition is a baby case of the so-called \index{Rauch comparison theorem}\emph{Rauch comparison theorem}.
+The following proposition is a partial case of the so-called \index{Rauch comparison theorem}\emph{Rauch comparison theorem}.
 
 \begin{thm}{Proposition}\label{prop:rauch}
 Suppose that $p$ is a point on a smooth surface $\Sigma$ and $r\le \inj(p)$.
-$\exp_p\:\T_p\to \Sigma$ is the exponential map.
 Given a curve $\tilde\gamma$ in the $r$-neighborhood of $0$ of $\T_p$, set 
 \[\gamma=\exp_p\circ\tilde\gamma
 \quad
@@ -575,26 +564,26 @@ Given a curve $\tilde\gamma$ in the $r$-neighborhood of $0$ of $\T_p$, set
 note that $\gamma$ is a curve in $\Sigma$.
 
 \begin{subthm}{prop:rauch:K>=0}
-If $\Sigma$ has nonnegative Gauss curvature, then the exponential map $\exp_p$ is length nonexpanding in the $r$-neighborhood of $0$ of $\T_p$;
+If $\Sigma$ has nonnegative Gauss curvature, then the exponential map $\exp_p$ is length nonexpanding in the $r$-neighborhood of $0$ in $\T_p$;
 that is, 
 \[\length \gamma\le \length \tilde\gamma\]
-for any curve $\gamma$ in the open ball $B(0,r)_{\T_p}$.
+for any curve $\tilde\gamma$ in the open ball $B(0,r)_{\T_p}$.
 \end{subthm}
 
 \begin{subthm}{prop:rauch:K=<0}
-If $\Sigma$ has nonpositive Gauss curvature, then the logarithmic map $\log_p$ is length nonexpanding in the $r$-neighborhood of $0$ of $\T_p$;
+If $\Sigma$ has nonpositive Gauss curvature, then the logarithmic map $\log_p$ is length nonexpanding in the $r$-neighborhood of $p$ in $\Sigma$;
 that is, 
 \[\length \gamma\ge \length \tilde\gamma\]
-for any curve $\gamma$ in the open ball $B(0,r)_{\T_p}$.
+for any curve $\gamma$ in the open ball $B(p,r)_{\Sigma}$.
 \end{subthm}
 
 \end{thm}
 
 \parit{Proof.}
 Suppose $(\theta(t),r(t))$ are polar coordinates of $\tilde\gamma(t)$.
-Note that $\gamma(t)=w(\theta(t),r(t))$; that is, $(\theta(t),r(t))$ are polar coordinates of $\gamma(t)$ on $\Sigma$.
+Note that $\gamma(t)=s(\theta(t),r(t))$; that is, $(\theta(t),r(t))$ are polar coordinates of $\gamma(t)$ on $\Sigma$.
 
-Set $b(\theta,r)\df|w_\theta|$.
+Set $b(\theta,r)\df|s_\theta|$.
 By \ref{prop:K(semigeodesic)}
 \[b_{rr}=-K\cdot b.\]
 If $K\ge 0$, then $r\mapsto b(\theta,r)$ is concave
@@ -619,7 +608,7 @@ Note that
 \intertext{Applying \ref{lem:palar-perp}, we get}
 \length\gamma&=\int_a^b\sqrt{r'(t)^2+b(\theta(t),r(t))^2\cdot\theta'(t)^2}.
 \end{align*}
-By \ref{eq:b-K} the statement follows.
+By \ref{eq:b-K}, both statements follow.
 \qeds
 
 \section{Intrinsic isometries}
@@ -640,10 +629,10 @@ Show that a neighborhood of any point in $\Sigma$ admits an intrinsic isometry t
 \end{thm}
 
 A simple example of intrinsic isometry can obtained by warping a plane into a cylinder.
-The following exercise produce slightly more interesting example.
+The following exercise produces a more interesting example.
 
 \begin{thm}{Exercise}\label{ex:deformation}
-Suppose $\gamma(t)=(x(t),y(t))$ is a smooth unit-speed curve in the plane such that $y(t)=a\cdot \cos t$.
+Suppose $\gamma(t)=(x(t),y(t))$ is a smooth unit-speed curve in the plane such that $y(t)=a\cdot \cos t$ for a constant $a$.
 Let $\Sigma_a$ be the surface of revolution of $\gamma$ around the $x$-axis.
 \begin{figure}[h!]
 \vskip-0mm
@@ -659,8 +648,8 @@ Let $\Sigma_a$ be the surface of revolution of $\gamma$ around the $x$-axis.
 \end{figure}
 Show that the surface $\Sigma_a$ has unit Gauss curvature at each point.
 
-Use \ref{ex:K=1} to conclude that any small round disc $\Delta$ in $\mathbb{S}^2$ admits a smooth length-preserving deformation; that is, there is one-parameter family of surfaces with boundary $\Delta_t$, such that $\Delta_0=\Delta$ and $\Delta_t$ is not congruent to $\Delta_0$ for any $t\ne0$.\footnote{In fact any disc in $\mathbb{S}^2$ admits a smooth length preserving deformation.
-However if the the disc is larger than half-sphere, then the proof is quite hard. %???REF
+Use \ref{ex:K=1} to conclude that any small round disc $\Delta$ in $\mathbb{S}^2$ admits a smooth length-preserving deformation; that is, there is one-parameter family of surfaces with boundary $\Delta_t$, such that $\Delta_0=\Delta$ and $\Delta_t$ is not congruent to $\Delta_0$ for $t\ne0$.\footnote{In fact any disc in $\mathbb{S}^2$ admits a smooth length preserving deformation.
+However if the the disc is larger than half-sphere, then the proof requires more. %???REF
 }
 \end{thm}
 
