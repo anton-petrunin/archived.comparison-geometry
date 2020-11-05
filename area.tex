@@ -233,7 +233,7 @@ Suppose $\Sigma$ is a compact area-minimizing surface with boundary line $\parti
 Let $p$ be a point in $\Sigma$.
 Show that if the ball $B(p,r)$ does not intersect $\partial \Sigma$, then 
 \[\area [\Sigma\cap B(p,r)]\le 2\cdot \pi\cdot r^2;\]
-that is, this area can not exceed half of the area of sphere of radius $r$.
+that is, this area cannot exceed half of the area of sphere of radius $r$.
 \end{thm}
 
 
@@ -332,3 +332,107 @@ that is, some neighborhood of any point $p$ in $\Sigma$ is area-minimizing.
 We omit its proof altho it is not hard;
 it can be build on the ideas from the solutions of \ref{ex:mean-convex} and \ref{prop:minimizing-is-minimal}.
 
+%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\parbf{\ref{ex:divergence-1}}; \ref{SHORT.ex:divergence}.
+Since $\div\vec k=0$, applying the divergence theorem to the domain bounded by $\Delta$ and $\Sigma$, we get that 
+\[\flux_{\vec k}\Sigma=\flux_{\vec k}\Delta.\]
+Since $|\vec k|=1$, we have 
+\[\flux_{\vec k}\Sigma\le \area\Sigma.\]
+It remains to observe that
+\[\flux_{\vec k}\Delta=\area\Delta.\]
+
+
+\parit{\ref{SHORT.ex:curl}.} Consider the field $\vec u=x\cdot\vec j$.
+Observe that $\vec k=\curl \vec u$.
+Therefore by the curl theorem (\ref{thm:curl}) we have 
+\[\flux_{\vec k}\Sigma
+=
+\int_0^\ell\langle\vec u,\gamma'(t)\rangle\cdot dt
+=
+\flux_{\vec k}\Delta,\]
+where $\gamma\:[0,\ell]\to\RR^3$ is the common boundary of $\Sigma$ and $\Delta$ parameterized by its arc-length and with the right choice of orientation.
+
+The same argument as in \ref{SHORT.ex:divergence} finishes the proof.
+
+
+
+\parbf{\ref{ex:divergence-2}.}
+Observe that $\div\vec u=1$.
+Applying the divergence theorem and the observation (\ref{obs:flux}) we get
+\begin{align*}
+\vol R&=\iiint_R\div\vec u\cdot dx\cdot dy\cdot dz
+=
+\flux_{\vec u}\Sigma
+\le
+\area\Sigma.
+\end{align*}
+
+
+
+
+\parbf{\ref{ex:mean-convex}}; \ref{SHORT.ex:mean-convex:u}.
+We may assume that $p$ is the origin of $\RR^3$.
+Let us extend the outer normal field $\Norm$ to $\Sigma$ to a field $\vec u$ defined in $\RR^3\backslash\{0\}$ by
+\[\vec u(\lambda\cdot q)=\Norm(q)\]
+for any $\lambda>0$ and $q\in\Sigma$.
+
+Observe that $\vec u(\lambda\cdot q)$ is normal to the surface 
+\[\lambda\cdot\Sigma=\set{\lambda\cdot q}{q\in\Sigma}.\]
+By \ref{lem:div+H}, we have
+\[\div \vec u=-H(\lambda\cdot q)_{\lambda\cdot\Sigma}\ge 0.\]
+
+\parit{\ref{SHORT.ex:mean-convex:area}.} Apply the divergence theorem for the region squeezed between $\Sigma$ and $\Sigma'$.
+
+\parit{\ref{SHORT.ex:mean-convex:wrong}.}
+An example they can be found among bodies of revolution as shown on the picture.
+The gutter in the middle can be chosen to be taken to be a catenoid which is a minimal surface; see \ref{ex:catenoid-is-minimal}.
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-300}
+\vskip0mm
+\end{figure}
+Show that if the gutter is sufficiently deep, then the surface of revolution of the dashed line can be made smaller.
+
+\parbf{\ref{ex:area-ball-intersection}.}
+By \ref{lem:reg-section}, varying $r$ slightly, we can assume that $\Sigma$ intersects the sphere $S(p,r)$ along a finite collection of closed curves.
+
+These curves bound a domain $D$ with area at most $2\cdot \pi\cdot r^2$.
+Assume $D$ is connected.
+Since $\Sigma$ is area minimizing the area of $\Delta$ cannot be smaller than the area of $\Sigma\cap B(p,r)$;
+whence the result.
+
+If $D$ is not connected, then
+it can be made connected by attaching tiny tubes between its connected components.
+The extra area of these tubes can be made smaller than any given $\eps>0$.
+Therefore we get 
+\[\area[\Sigma\cap B(p,r)]\le 2\cdot \pi\cdot r^2+\eps.\]
+The statement follows since $\eps>0$ is arbitrary.
+
+
+
+
+\parbf{\ref{ex:catenoid-nonmin}.}
+Consider the region of catenoid in the cylinder $x^2+y^2\le R^2$ for $R>1$.
+It is bounded by two circles defined by the equations 
+\[
+\begin{cases}
+x^2+y^2\le R^2,
+\\
+z=\pm r
+\end{cases}
+\]
+where $\cosh r=R$.
+
+Show that if $R$ is large, the area of this region is at least $\pi\cdot R^2$ --- the area of disc of radius $R$.
+
+Observe that the lateral surface of cylinder bounded by the two circles is $4\cdot \pi\cdot R\cdot r$.
+Since $r/R\to 0$ as $R\to \infty$, we get that this surface has smaller area then region of catenoid.
+
+
+\parbf{\ref{ex:helicoid-nonmin}.}
+Show that for large $R$, the area of the helicoid in the cylinder defined by $|z|\le R$ and $x^2+y^2\le R^2$ exceeds the area of the surface of cylinder.
+Make a conclusion.

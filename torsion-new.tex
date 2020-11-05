@@ -377,3 +377,83 @@ Let $\gamma$ be a smooth regular space curve such that the distance $|\gamma(t)-
 Show that $\gamma$ is a helix, possibly degenerate to a line or a circle.
 \end{thm}
 
+
+
+\parbf{\ref{ex:helix-torsion}.} 
+The arc-length parameter $s$ is already found in   \ref{ex:arc-length-helix}.
+It remains to find Frenet frame and calculate curvature and torsion.
+The latter can be done by straightforward calculations.
+
+\begin{wrapfigure}{r}{20 mm}
+\vskip0mm
+\centering
+\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/helix(1)}
+\lbl[br]{8,24;$\norm$}
+\lbl[b]{2,26;$\bi$}
+\lbl[wl]{15,25;$\tan$}
+\end{lpic}
+\end{wrapfigure}
+
+If the calculations done right, then you should see that curvature $\kur$ and torsion $\tau$ do not depend on time and given.
+Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix $\gamma_{a,b}$ has curvature $\kur$ and torsion~$\tor$.
+
+One may also see it geometrically using that the helix is maped to itself by one-parameter family of glide rotations around $z$-axis.
+Therefore, for the $t$-parametrization, Frenet frame rotates around $z$-axis with the angular velocity~$1$.
+It remains rewrite it for the arc-length parametrization and note that 
+\begin{align*}
+\tan(0)&=(0,\cos\theta, \sin\theta),
+\\
+\norm(0)&=(-1,0,0),
+\\
+\bi(0)&=(0,\sin\theta, -\cos\theta),
+\end{align*}
+where $\tg\theta\z=b/a$ if $a>0$. 
+
+\parbf{\ref{ex:beta-from-tau+nu}.} By product rule, we get
+\begin{align*}
+\bi'&=(\tan\times \norm)'=
+\\
+&=\tan'\times \norm+\tan\times\norm'.
+\end{align*}
+It remains to substitute the values from \ref{eq:frenet-tau} and \ref{eq:frenet-nu} and simplify.
+
+
+\parbf{\ref{ex:torsion=0}.}
+Show and use that the binormal vector is constant.
+
+\parbf{\ref{ex:frenet}.} Observe that $\tfrac{\gamma'\times\gamma''}{|\gamma'\times\gamma''|}$ is a unit vector perpendicular to the plane spanned by $\gamma'$ and $\gamma''$, so, up to sign, it has to be equal to $\bi$.
+It remains to check that the sign is right.
+
+\parbf{\ref{ex:lancret}}, \ref{SHORT.ex:lancret:a}.
+Observe that 
+$\langle \vec w,\tan\rangle'=0$.
+Show that it implies that
+\[\langle \vec w, \norm\rangle =0.\]
+
+Further observe that 
+$\langle \vec w,\norm\rangle'=0$.
+Show that it implies that 
+\[\langle \vec w, -\kur\cdot\tan+\tor\cdot \bi\rangle =0.\]
+
+\parit{\ref{SHORT.ex:lancret:a}.}
+Show that $\vec w'=0$;
+it implies that $\langle \vec w,\tan\rangle=\tfrac\tor\kur$.
+In particular, the velocity vector of $\gamma$ makes a constant angle with $\vec w$; that is, $\gamma$ has constant slope.
+
+\parbf{\ref{ex:evolvent-constant-slope}.}
+Show that $\langle w,\alpha\rangle$ is constant if $\gamma$ makes constant angle with a fixed vector $w$ and $\alpha$ is the evolvent of $\gamma$.
+
+\parbf{\ref{ex:spherical-frenet}.}
+Suppose $\langle \vec w,\tan\rangle$ is a constant.
+Show that $\langle \vec w,\alpha\rangle'=0$.
+It follows that $\langle \vec w,\alpha\rangle$ is a constant,
+so $\alpha$ lies in a plane perpendicular to $\vec w$.
+
+
+\parbf{\ref{ex:cur+tor=helix}.} Use the second statement in \ref{ex:helix-torsion}.
+
+\parbf{\ref{ex:const-dist}.} Note that the function
+\[\rho(\ell)=|\gamma(t+\ell)-\gamma(t)|^2=\langle \gamma(t+\ell)-\gamma(t),\gamma(t+\ell)-\gamma(t)\rangle\] 
+is smooth and does not depend on $t$.
+Express speed, curvature and torsion of $\gamma$ in terms of derivatives $\rho^{(n)}(0)$
+and apply \ref{ex:cur+tor=helix}.

@@ -477,84 +477,6 @@ it can be defined in polar coordinates by $\gamma(t)=(t,a\cdot\ln t)$ if $t>0$ a
 It remains to show that indeed, $\gamma$ has infinite total curvature, but finite length.
 
 
-\parbf{\ref{ex:helix-torsion}.} 
-The arc-length parameter $s$ is already found in   \ref{ex:arc-length-helix}.
-It remains to find Frenet frame and calculate curvature and torsion.
-The latter can be done by straightforward calculations.
-
-\begin{wrapfigure}{r}{20 mm}
-\vskip0mm
-\centering
-\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/helix(1)}
-\lbl[br]{8,24;$\norm$}
-\lbl[b]{2,26;$\bi$}
-\lbl[wl]{15,25;$\tan$}
-\end{lpic}
-\end{wrapfigure}
-
-If the calculations done right, then you should see that curvature $\kur$ and torsion $\tau$ do not depend on time and given.
-Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix $\gamma_{a,b}$ has curvature $\kur$ and torsion~$\tor$.
-
-One may also see it geometrically using that the helix is maped to itself by one-parameter family of glide rotations around $z$-axis.
-Therefore, for the $t$-parametrization, Frenet frame rotates around $z$-axis with the angular velocity~$1$.
-It remains rewrite it for the arc-length parametrization and note that 
-\begin{align*}
-\tan(0)&=(0,\cos\theta, \sin\theta),
-\\
-\norm(0)&=(-1,0,0),
-\\
-\bi(0)&=(0,\sin\theta, -\cos\theta),
-\end{align*}
-where $\tg\theta\z=b/a$ if $a>0$. 
-
-\parbf{\ref{ex:beta-from-tau+nu}.} By product rule, we get
-\begin{align*}
-\bi'&=(\tan\times \norm)'=
-\\
-&=\tan'\times \norm+\tan\times\norm'.
-\end{align*}
-It remains to substitute the values from \ref{eq:frenet-tau} and \ref{eq:frenet-nu} and simplify.
-
-
-\parbf{\ref{ex:torsion=0}.}
-Show and use that the binormal vector is constant.
-
-\parbf{\ref{ex:frenet}.} Observe that $\tfrac{\gamma'\times\gamma''}{|\gamma'\times\gamma''|}$ is a unit vector perpendicular to the plane spanned by $\gamma'$ and $\gamma''$, so, up to sign, it has to be equal to $\bi$.
-It remains to check that the sign is right.
-
-\parbf{\ref{ex:lancret}}, \ref{SHORT.ex:lancret:a}.
-Observe that 
-$\langle \vec w,\tan\rangle'=0$.
-Show that it implies that
-\[\langle \vec w, \norm\rangle =0.\]
-
-Further observe that 
-$\langle \vec w,\norm\rangle'=0$.
-Show that it implies that 
-\[\langle \vec w, -\kur\cdot\tan+\tor\cdot \bi\rangle =0.\]
-
-\parit{\ref{SHORT.ex:lancret:a}.}
-Show that $\vec w'=0$;
-it implies that $\langle \vec w,\tan\rangle=\tfrac\tor\kur$.
-In particular, the velocity vector of $\gamma$ makes a constant angle with $\vec w$; that is, $\gamma$ has constant slope.
-
-\parbf{\ref{ex:evolvent-constant-slope}.}
-Show that $\langle w,\alpha\rangle$ is constant if $\gamma$ makes constant angle with a fixed vector $w$ and $\alpha$ is the evolvent of $\gamma$.
-
-\parbf{\ref{ex:spherical-frenet}.}
-Suppose $\langle \vec w,\tan\rangle$ is a constant.
-Show that $\langle \vec w,\alpha\rangle'=0$.
-It follows that $\langle \vec w,\alpha\rangle$ is a constant,
-so $\alpha$ lies in a plane perpendicular to $\vec w$.
-
-
-\parbf{\ref{ex:cur+tor=helix}.} Use the second statement in \ref{ex:helix-torsion}.
-
-\parbf{\ref{ex:const-dist}.} Note that the function
-\[\rho(\ell)=|\gamma(t+\ell)-\gamma(t)|^2=\langle \gamma(t+\ell)-\gamma(t),\gamma(t+\ell)-\gamma(t)\rangle\] 
-is smooth and does not depend on $t$.
-Express speed, curvature and torsion of $\gamma$ in terms of derivatives $\rho^{(n)}(0)$
-and apply \ref{ex:cur+tor=helix}.
 
 \parbf{\ref{ex:bike}.}
 Without loss of generality, we may assume that $\gamma_0$ is parameterized by its arc-length.
@@ -963,7 +885,7 @@ Show that $L$ is a smooth surface and the closest point projection $L\to \Sigma$
 In particular there is unique point on $\Sigma$ that minimize the distance to a given point $x\in L$.
 It follows that there is another component $\Sigma'$ with the same property.
 
-Finally show that $\partial V$ can not be more than two components.
+Finally show that $\partial V$ cannot be more than two components.
 
 \parbf{\ref{ex:PI-sphere}.}
 Read about Bing's two-room house.
@@ -971,111 +893,11 @@ Try to thicken it to construct the needed example.
 
 Assume $V$ does not contain a ball of radius $r_3$.
 Show that its cut locus $L$ of $V$ is formed by a few smooth surfaces that meets by three at their boundary points.
-Show that $L$ is not simply connected; that is, there is a loop in $L$ that can not be deformed continuously to a trivial loop.
+Show that $L$ is not simply connected; that is, there is a loop in $L$ that cannot be deformed continuously to a trivial loop.
 Conclude that $V$ is not simply connected.
 
 Finally show that if $V$ is bounded by sphere, then $V$ is simply connected --- a contradiction. 
 
-\parbf{\ref{ex:divergence-1}}; \ref{SHORT.ex:divergence}.
-Since $\div\vec k=0$, applying the divergence theorem to the domain bounded by $\Delta$ and $\Sigma$, we get that 
-\[\flux_{\vec k}\Sigma=\flux_{\vec k}\Delta.\]
-Since $|\vec k|=1$, we have 
-\[\flux_{\vec k}\Sigma\le \area\Sigma.\]
-It remains to observe that
-\[\flux_{\vec k}\Delta=\area\Delta.\]
-
-
-\parit{\ref{SHORT.ex:curl}.} Consider the field $\vec u=x\cdot\vec j$.
-Observe that $\vec k=\curl \vec u$.
-Therefore by the curl theorem (\ref{thm:curl}) we have 
-\[\flux_{\vec k}\Sigma
-=
-\int_0^\ell\langle\vec u,\gamma'(t)\rangle\cdot dt
-=
-\flux_{\vec k}\Delta,\]
-where $\gamma\:[0,\ell]\to\RR^3$ is the common boundary of $\Sigma$ and $\Delta$ parameterized by its arc-length and with the right choice of orientation.
-
-The same argument as in \ref{SHORT.ex:divergence} finishes the proof.
-
-
-
-\parbf{\ref{ex:divergence-2}.}
-Observe that $\div\vec u=1$.
-Applying the divergence theorem and the observation (\ref{obs:flux}) we get
-\begin{align*}
-\vol R&=\iiint_R\div\vec u\cdot dx\cdot dy\cdot dz
-=
-\flux_{\vec u}\Sigma
-\le
-\area\Sigma.
-\end{align*}
-
-
-
-
-\parbf{\ref{ex:mean-convex}}; \ref{SHORT.ex:mean-convex:u}.
-We may assume that $p$ is the origin of $\RR^3$.
-Let us extend the outer normal field $\Norm$ to $\Sigma$ to a field $\vec u$ defined in $\RR^3\backslash\{0\}$ by
-\[\vec u(\lambda\cdot q)=\Norm(q)\]
-for any $\lambda>0$ and $q\in\Sigma$.
-
-Observe that $\vec u(\lambda\cdot q)$ is normal to the surface 
-\[\lambda\cdot\Sigma=\set{\lambda\cdot q}{q\in\Sigma}.\]
-By \ref{lem:div+H}, we have
-\[\div \vec u=-H(\lambda\cdot q)_{\lambda\cdot\Sigma}\ge 0.\]
-
-\parit{\ref{SHORT.ex:mean-convex:area}.} Apply the divergence theorem for the region squeezed between $\Sigma$ and $\Sigma'$.
-
-\parit{\ref{SHORT.ex:mean-convex:wrong}.}
-An example they can be found among bodies of revolution as shown on the picture.
-The gutter in the middle can be chosen to be taken to be a catenoid which is a minimal surface; see \ref{ex:catenoid-is-minimal}.
-\begin{figure}[h!]
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-300}
-\vskip0mm
-\end{figure}
-Show that if the gutter is sufficiently deep, then the surface of revolution of the dashed line can be made smaller.
-
-\parbf{\ref{ex:area-ball-intersection}.}
-By \ref{lem:reg-section}, varying $r$ slightly, we can assume that $\Sigma$ intersects the sphere $S(p,r)$ along a finite collection of closed curves.
-
-These curves bound a domain $D$ with area at most $2\cdot \pi\cdot r^2$.
-Assume $D$ is connected.
-Since $\Sigma$ is area minimizing the area of $\Delta$ cannot be smaller than the area of $\Sigma\cap B(p,r)$;
-whence the result.
-
-If $D$ is not connected, then
-it can be made connected by attaching tiny tubes between its connected components.
-The extra area of these tubes can be made smaller than any given $\eps>0$.
-Therefore we get 
-\[\area[\Sigma\cap B(p,r)]\le 2\cdot \pi\cdot r^2+\eps.\]
-The statement follows since $\eps>0$ is arbitrary.
-
-
-
-
-\parbf{\ref{ex:catenoid-nonmin}.}
-Consider the region of catenoid in the cylinder $x^2+y^2\le R^2$ for $R>1$.
-It is bounded by two circles defined by the equations 
-\[
-\begin{cases}
-x^2+y^2\le R^2,
-\\
-z=\pm r
-\end{cases}
-\]
-where $\cosh r=R$.
-
-Show that if $R$ is large, the area of this region is at least $\pi\cdot R^2$ --- the area of disc of radius $R$.
-
-Observe that the lateral surface of cylinder bounded by the two circles is $4\cdot \pi\cdot R\cdot r$.
-Since $r/R\to 0$ as $R\to \infty$, we get that this surface has smaller area then region of catenoid.
-
-
-\parbf{\ref{ex:helicoid-nonmin}.}
-Show that for large $R$, the area of the helicoid in the cylinder defined by $|z|\le R$ and $x^2+y^2\le R^2$ exceeds the area of the surface of cylinder.
-Make a conclusion.
 
 \parbf{\ref{ex:surf-support}.}
 Choose curvatures such that 
@@ -1100,7 +922,7 @@ It follows that if $\gamma$ is a connected component of the intersection $\Pi\ca
 then at each point $p$ on $\gamma$ the tangent plane $\T_p\Sigma$ is transversal to $\Pi$.
 Apply the implicit function theorem to show that $\gamma$ is a smooth regular curve.
 
-Finally, observe that curvature of $\gamma$ can not be smaller than normal curvature of $\Sigma$ in the same direction.
+Finally, observe that curvature of $\gamma$ cannot be smaller than normal curvature of $\Sigma$ in the same direction.
 Whence $\gamma$ has no points with vanishing curvature.
 Therefore for a right choice of orientation of $\gamma$, we its signed curvature is positive.
 
@@ -1131,7 +953,7 @@ Try to support the surface $\Sigma$ from inside by a surface of revolution of th
 \parit{Remark.}
 In fact if Gauss curvature of $\Sigma$ is at least $1$,
 then
-the intrinsic diameter of $\Sigma$ can not exceed $\pi$.
+the intrinsic diameter of $\Sigma$ cannot exceed $\pi$.
 The latter means that any two points in $\Sigma$ can be connected by a path that lies in $\Sigma$ and has length at most~$\pi$.
 
 \parbf{\ref{ex:convex-proper-sphere}.}
@@ -1854,13 +1676,35 @@ f(y)&\le |y-\bar y|_\Sigma\le
 &=\tfrac12\cdot(f(x)+f(z))
 \end{align*}
 
+\parbf{\ref{ex:half-line}}; \ref{SHORT.ex:half-line:exist}.
+Choose a sequence of points $x_n\in K$ that escapes to infinity; that is, such that $\dist{p}{x_n}{\Sigma}\to\infty$ as $n\to\infty$.
+Denote by $\vec u_n\in\T_p$ the unit vector in the direction of $[px_n]$.
+Let $\vec u_\infty$ be a partial limit of $\vec u_n$.
 
-\parbf{\ref{ex:half-line}.}
+Show that the geodesic that starts from $p$ in the direction of $\vec u_\infty$ is a half-line that runs in $K$.
+
+\parit{\ref{SHORT.ex:half-line:suplevel}.} The concavity of $f$ follows from \ref{prop:busemann+}.
+Whence the convexity of $S_c$ follows.
+
+If $S_c$ is not compact then by \ref{SHORT.ex:half-line:exist} there is a half-line $\lambda$ that starts at $p$ and runs in $S_c$ for some $c$.
+It remains to observe that $f\circ\lambda(t)+t=0$ and use it to arrive to a contradiction.
+
+\parit{\ref{SHORT.ex:half-line:soul}.}
+Show that 
+\[f(x)-c=\Dist_{\partial S_c}x\]
+for any $x\in S_c$.
+Conclude that $S_s$ has no interior points.
+Since $S_s$ is convex, the first part follows.
+
+In the Euclidean plane $S_s$ is a single point.
+In the cylinder, $S_s$ is a circle.
+The surface of $r$-neighborhood of infinite rectangle provides an example with a line segment as $S_s$; this example is not smooth, but it can be smoothed keeping this property.
+
+
 
 \parbf{\ref{ex:line+half-line}.}
+Show that cylinder does not contain a line and half-line that meet at exactly one point.
+It remains to apply the line splitting theorem (\ref{thm:splitting}).
 
-%\parbf{\ref{}.}
-%\parbf{\ref{}.}
-%\parbf{\ref{}.}
-%\parbf{\ref{}.}
+
 

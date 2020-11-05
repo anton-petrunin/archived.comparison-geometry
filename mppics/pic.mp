@@ -4287,10 +4287,10 @@ arcs(z.B, z.A, z.C, 12);
 dOt z.A,z.B,z.C;
 
 
-label.rt(btex $\phi=\measuredangle\hinge x p q$ etex, z.A +14*unitvector(unitvector(z.B-z.A)+unitvector(z.C-z.A)) rotated 20);
-label(btex $a=\side\hinge x p q$ etex rotated angle(z.B-z.C), .5[z.B,z.C]+8*unitvector(z.B-z.C) zscaled (0,1));
-label.ulft(btex $b$ etex, .5[z.A,z.C]);
-label.bot(btex $c$ etex, .5[z.A,z.B]);
+label.urt(btex $\measuredangle\hinge x p q$ etex rotated (.5*angle(z.C-z.A)), z.A +7*unitvector(unitvector(z.B-z.A)+unitvector(z.C-z.A)) rotated -25);
+label(btex $\side\hinge x p q$ etex rotated angle(z.B-z.C), .5[z.B,z.C]+8*unitvector(z.B-z.C) zscaled (0,1));
+label(btex $\dist{x}{p}{\Sigma}$ etex rotated angle(z.C-z.A), .5[z.A,z.C] + 7*unitvector(z.C-z.A) rotated 90 );
+label.bot(btex $\dist{x}{q}{\Sigma}$ etex, .5[z.A,z.B]);
 endfig;
 
 beginfig(2310) 
