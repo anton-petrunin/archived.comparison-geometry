@@ -1452,6 +1452,166 @@ It remains to Gauss--Bonnet formula to $\Delta$ and make a conclusion.
 
 \parbf{\ref{ex:cohn-vossen}.} Repeat the proof of \ref{thm:cohn-vossen} for one-parameter family of geodesics $\gamma_\tau$ defined by $\gamma_\tau(0)=\alpha(\tau)$ and $\gamma'(0)=\alpha'(\tau)$. 
 
+\parbf{\ref{lem:K(orthogonal)}}; \ref{SHORT.lem:K(orthogonal):uu-vv}.
+Since the frame $\vec u, \vec v,\Norm$ is orthonormal,
+first two vector identities are equivalent to the following six real identities:
+\[
+\begin{aligned}
+\langle\vec u_u,\vec u\rangle
+&=0,
+&
+\langle\vec v_u,\vec v\rangle
+&=0,
+\\
+\langle\vec u_u,\vec v\rangle
+&=-\tfrac1{b}\cdot a_v,
+&
+\langle\vec v_u,\vec u\rangle
+&=
+\tfrac1{b}\cdot a_v,
+\\
+\langle\vec u_u,\Norm\rangle
+&=a\cdot \ell,
+&
+\langle\vec v_u,\Norm\rangle
+&=
+a\cdot m.
+\end{aligned}
+\eqlbl{eq:key-orthogonal/2}
+\]
+
+Taking partial derivative of the identities
+$\langle\vec u,\vec u\rangle=1$ and
+$\langle\vec v,\vec v\rangle=1$ by $u$
+we get the first two identities in \ref{eq:key-orthogonal/2}.
+
+Further, observe that
+\[
+\begin{aligned}
+\vec v_u
+&=
+\tfrac{\partial}{\partial v}
+(\tfrac1b\cdot  s_v)=
+\\
+&=\tfrac1b\cdot s_{uv}
++
+\tfrac{\partial}{\partial u}(\tfrac1b)
+\cdot
+ s_v.
+\end{aligned}
+\eqlbl{eq:dv/du}
+\]
+Since $s_u\perp s_v$, it follows that
+\begin{align*}
+\langle\vec v_u,\vec u\rangle
+&=
+\tfrac1{a\cdot b}\cdot \langle s_{vu}, s_u\rangle
+=
+\\
+&=\tfrac1{2\cdot a\cdot b}\cdot \tfrac{\partial}{\partial v}\langle s_u, s_u\rangle=
+\\
+&=\tfrac1{2\cdot a\cdot b}\cdot \tfrac{\partial a^2}{\partial v}=
+\\
+&=\tfrac1{b}\cdot a_v.
+\end{align*}
+Taking partial derivative of
+$\langle\vec u,\vec v\rangle=0$  by $u$
+we get
+we get
+\begin{align*}
+\langle\vec v_u,\vec u\rangle+
+\langle\vec v,\vec u_u\rangle
+&=0.
+\end{align*}
+Hence we get two more identities in \ref{eq:key-orthogonal/2}.
+
+Since $\vec u, \vec v$ is an orthonormal frame, by \ref{ex:shape-chart} we have
+\[
+\begin{aligned}
+\tfrac1{a^2}
+\cdot
+\langle s_{uu},\Norm\rangle
+&=\ell,
+&
+\tfrac1{a\cdot b}
+\cdot
+\langle s_{uv},\Norm\rangle
+&=m,
+\\
+\tfrac1{a\cdot b}
+\cdot
+\langle s_{vu},\Norm\rangle
+&=m,
+&
+\tfrac1{b^2}
+\cdot
+\langle s_{vv},\Norm\rangle
+&=n.
+\end{aligned}
+\eqlbl{eq:shape-lmn}
+\]
+
+Applying  \ref{eq:dv/du}, \ref{eq:shape-lmn}, and $s_v\perp\Norm$ we get
+\begin{align*}
+\langle\vec u_u,\Norm\rangle
+&=
+\tfrac1{a}\cdot \langle s_{uu},\Norm\rangle
+=a\cdot \ell,
+\\
+\langle\vec v_u,\Norm\rangle
+&=
+\tfrac1{a}\cdot \langle s_{uv},\Norm\rangle
+=a\cdot m,
+\end{align*}
+that implies the last two equalities in \ref{eq:key-orthogonal/2}.
+
+Therefore the first two identities in \ref{SHORT.lem:K(orthogonal):uu-vv} are proved;
+the remaining two identities can be proved along the same lines.
+
+\parit{\ref{SHORT.lem:K(orthogonal):K}.}
+Recall that the Gauss curvature equals to the determinant of the matrix $
+(\begin{smallmatrix}
+\ell&m
+\\
+m&n
+\end{smallmatrix}
+)
+$;
+that is, $K=\ell\cdot n-m^2$.
+Therefore 
+\begin{align*}
+\langle\vec u_u,\vec v_v\rangle 
+-
+\langle\vec u_v,\vec v_u\rangle
+&=a\cdot b\cdot(\ell\cdot n-m^2)=
+\\
+&=a\cdot b\cdot K.
+\intertext{On the other hand}
+\langle\vec u_u,\vec v_v\rangle 
+-
+\langle\vec u_v,\vec v_u\rangle
+&= 
+\left(
+\tfrac{\partial}{\partial v}
+\langle\vec u_u,\vec v\rangle
+-
+\cancel{\langle\vec u_{uv},\vec v\rangle}
+\right)-
+\\
+&-
+\left(
+\tfrac{\partial}{\partial u}
+\langle\vec u_v,\vec v\rangle
+-
+\cancel{\langle\vec u_{uv},\vec v\rangle}
+\right)=
+\\
+&=\tfrac{\partial}{\partial v}(-\tfrac1{b}\cdot a_v)
+-
+\tfrac{\partial}{\partial u}(\tfrac1{a}\cdot b_u)
+\end{align*}
+The required identity follows since the left hand sides in the last two equations are identical.
+
 \parbf{\ref{ex:conformal}.} Apply \ref{lem:K(orthogonal)} assuming that $a=b$ and simplify.
 
 \parbf{\ref{ex:K=0}.} Note and use that by \ref{prop:rauch}, $\exp_p$ is length-preserving.

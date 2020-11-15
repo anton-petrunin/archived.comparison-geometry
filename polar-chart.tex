@@ -1,3 +1,40 @@
+The four vector identities in \ref{eq:uu-vv} can be
+rewritten as 12 scalar identities;
+each of those can be proved by applying  \ref{ex:shape-chart} and taking partial derivatives of the six identities that that state that $\Norm,\vec u,\vec v$ is an orthogonal frame:
+\begin{align*}
+\langle\Norm,\Norm\rangle&=1,
+&
+\langle\vec u,\vec u\rangle&=1,
+&
+\langle\vec v,\vec v\rangle&=1,
+\\
+\langle\vec u,\vec v\rangle&=0,
+&
+\langle\vec u,\Norm\rangle&=0,
+&
+\langle\Norm,\vec v\rangle&=0.
+\end{align*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Semigeodesic charts}\label{chap:semigeodesic}
 
 This chapter contains computational proofs of several statements discussed above, including a formal proof of Gauss--Bonnet formula.
@@ -10,7 +47,11 @@ The property of exponential map in \ref{prop:exp} can be used to define \index{p
 Namely, fix polar coordinates $(\theta,r)$ on tangent plane $\T_p$.
 If $\vec v\in \T_p$ has coordinates $(\theta,r)$,
 then we say that $s(\theta,r)=\exp_p\vec v$ is the point in $\Sigma$ with the polar coordinates $(\theta,r)$.
-Note that according to Proposition~\ref{prop:exp} polar coordinates behave usual way in a neighborhood of $p$;
+
+
+Since there might be many geodesics from $p$ to a given point $x$,
+the point $x$ might have many different polar coordinates.
+However, according to Proposition~\ref{prop:exp} polar coordinates behave usual way for small values $r$;
 that is, there is $r_0>0$ such that if $0\le r_1,r_2<r_0$ then $s(r_1,\theta_1) \z= s(r_2,\theta_2)$ if and only if
 $r_1=r_2=0$ or $r_1=r_2$ and $\theta_1\z=\theta_2+2\cdot n\cdot\pi$ for an integer $n$.
 
@@ -58,7 +99,7 @@ It follows that
 \end{aligned}
 \eqlbl{eq:<s',s'>'=0}
 \]
-It follows that for fixed $\theta$, the value 
+Therefore, for fixed $\theta$, the value 
 $\langle  s_\theta, s_r\rangle$ does not depend on $r$.
 
 Note that $s(\theta,0)=p$ for any $\theta$.
@@ -120,106 +161,199 @@ But according to \ref{prop:exp}, the exponential map is injective in the $\eps$-
 
 \section{Gauss curvature}
 
-A chart $(u,v)\mapsto s(u,v)$ of smooth surface $\Sigma$ is called \index{semigeodesic chart}\emph{semigeodesic} if $|s_u|=1$ and $s_u\perp s_v$ for any $(u,v)$.
+Let $s$ be a smooth map from a (possibly infinite) coordinate rectangle in the $(u,v)$-plane to a smooth surface $\Sigma$.
+The map $s$ is called \index{semigeodesic map}\emph{semigeodesic} if for any fixed $v$ the $u\mapsto s(u,v)$ is a unit-speed geodesic and $s_u\perp s_v$ for any $(u,v)$.
+
+Suppose that $\Sigma$ has an orientation defined by a unit normal field $\Norm$.
+Let us use shortcut $\Norm(u,v)$ for $\Norm(s(u,v))$.
+At each point $s(u,v)$ let us consider an orthonormal frame $\Norm$, $\vec u=s_u$ and $\vec v=\Norm\times \vec u$.
+
+Recall that $s_v\perp \vec u$ and $s_v\perp \Norm$.
+The latter follows since the vector $s_v(u,v)$ is tangent to $\Sigma$ at $s(u,v)$.
+Therefore we have that $s_v=b\cdot\vec v$ for some smooth function $(u,v)\mapsto b(u,v)$.
+
+
+\begin{thm}{Proposition}\label{prop:jaccobi}
+Suppose $(u,v)\mapsto s(u,v)$ is a semigeodesic map to a smooth surface $\Sigma$ and $\Norm$, $\vec u$, $\vec v$ and $b$ are described above.
+Then 
+\[b\cdot K+b_{uu}=0.\]
+where $K=K(u,v)$ is the Gauss curvature of $\Sigma$ at the point $s(u,v)$.
+\end{thm}
+
+The proof is done by lengthy, but straightforward computations.
+
+\parit{Proof.}
+Suppose that $\ell=\ell(u,v)$, $m=m(u,v)$, and $n=n(u,v)$ be the components of the matrix describing the shape operator in the frame $\vec u, \vec v$;
+that is,
+\[
+\begin{aligned}
+\Shape(\vec u)&=\ell\cdot \vec u+ m\cdot \vec v,
+&
+\Shape(\vec v)&=m\cdot \vec u+ n\cdot \vec v.
+\end{aligned}
+\eqlbl{eq:Shape(u,v)}
+\]
+Recall that (see Section \ref{sec:More curvatures})
+\[K=\ell\cdot n-m^2.\]
+
+The following four identities is a key to the proof:
+\[
+\begin{aligned}
+\vec u_u&=\ell\cdot \Norm,
+&
+\vec u_v&=\phantom{-}b_u\cdot \vec v+b\cdot m\cdot\Norm,
+\\
+\vec v_u&=m\cdot \Norm,
+&
+\vec v_v&=-b_u\cdot \vec u+b\cdot n\cdot\Norm.
+\end{aligned}
+\eqlbl{eq:uu-vv}
+\]
+
+Suppose that the identities in \ref{eq:uu-vv} are proved already.
+Then the proposition follows,
+indeed
+\begin{align*}
+b\cdot K&=b\cdot (\ell\cdot n-m^2)=
+\\
+&=\langle\vec u_u,\vec v_v\rangle-\langle\vec u_v,\vec v_u\rangle=
+\\
+&= 
+\left(
+\tfrac{\partial}{\partial v}
+\langle\vec u_u,\vec v\rangle
+-
+\cancel{\langle\vec u_{uv},\vec v\rangle}
+\right)-
+\left(
+\tfrac{\partial}{\partial u}
+\langle\vec u_v,\vec v\rangle
+-
+\cancel{\langle\vec u_{uv},\vec v\rangle}
+\right)=
+\\
+&=-b_{uu}.
+\end{align*}
+
+It remains to prove the four identities in \ref{eq:uu-vv}.
+
+\parit{Proof of $\vec u_u=\ell\cdot \Norm$.} This vector identity can be rewritten as the following three scalar identities:
+\[
+\begin{aligned}
+\langle\vec u_u,\vec u\rangle&=0,
+&
+\langle\vec u_u,\vec v\rangle&=0,
+&
+\langle\vec u_u,\Norm\rangle&=\ell.
+\end{aligned}
+\eqlbl{eq:uu-vv:1}
+\]
+Since $u\mapsto s(u,v)$ is a geodesic we have that $\vec u_u=s_{uu}(u,v)\perp\T_{s(u,v)}$.
+Hence the first two identities follow.
+
+The remaining identity 
+$\langle\vec u_u,\Norm\rangle=\ell$ follow from \ref{ex:shape-chart} and \ref{eq:Shape(u,v)}.
+Indeed
+\begin{align*}
+\langle\vec u_u,\Norm\rangle
+&=\langle s_{uu},\Norm\rangle=
+\\
+&=\langle \Shape s_u,s_u\rangle=
+\\
+&=\langle \Shape \vec u,\vec u\rangle=
+\\
+&=\ell.
+\end{align*}
+
+\parit{Proof of $\vec u_v=-b_u\cdot \vec v+b\cdot m\cdot\Norm$.}
+This vector identity can be rewritten as the following three scalar identities:
+\[
+\begin{aligned}
+\langle\vec u_v,\vec u\rangle&=0,
+&
+\langle\vec u_v,\vec v\rangle&=b_u,
+&
+\langle\vec u_v,\Norm\rangle&=b\cdot m.
+\end{aligned}
+\eqlbl{eq:uu-vv:2}
+\]
+
+Since $\langle\vec u,\vec u\rangle=1$, we get 
+$0=\tfrac{\partial}{\partial v}\langle\vec u,\vec u\rangle=2\cdot\langle\vec u_v,\vec u\rangle$; 
+hence the first identity in \ref{eq:uu-vv:2} follows.
+
+Since
+$\langle \vec v,\vec v\rangle=1$,
+$0=\tfrac{\partial}{\partial u}\langle \vec v,\vec v\rangle=2\cdot\langle \vec v_u,\vec v\rangle$,
+and $s_v=b\cdot \vec v$,
+we get
+\begin{align*}
+\langle\vec u_v,\vec v\rangle&=\langle s_{vu},\vec v\rangle=
+\\
+&=\langle \tfrac{\partial}{\partial u} (b\cdot\vec v),\vec v\rangle =
+\\
+&=b_u\cdot \langle \vec v,\vec v\rangle+b\cdot \langle \vec v_u,\vec v\rangle=
+\\
+&=b_u; 
+\end{align*}
+hence the first identity in \ref{eq:uu-vv:2} follows.
+
+Finally, applying \ref{ex:shape-chart}, \ref{eq:Shape(u,v)}, and $s_v=b\cdot \vec v$, we get
+\begin{align*}
+\langle\vec u_v,\Norm\rangle
+&=\langle s_{uv},\Norm\rangle=
+\\
+&=\langle \Shape s_u,s_v\rangle=
+\\
+&=\langle \Shape \vec u,b\cdot \vec v\rangle=
+\\
+&=b\cdot m.
+\end{align*}
+
+\parit{Proof of $\vec v_u=m\cdot \Norm$ and $\vec v_v=-b_u\cdot \vec u+b\cdot n\cdot\Norm$.}
+Since $\vec v=\Norm\times \vec u$, we have
+\[\begin{aligned}
+\vec v_u&=\Norm_u\times \vec u+\Norm\times \vec u_u,
+&
+\vec v_v&=\Norm_v\times \vec u+\Norm\times \vec u_v,
+\end{aligned}
+\eqlbl{eq:uu-vv:3+4}
+\]
+Expressions for $\vec u_u$ and $\vec u_v$ in \ref{eq:uu-vv} are proved already.
+Further
+\begin{align*}
+\Norm_u&=\Shape s_u=
+&
+\Norm_v&=\Shape s_v=
+\\
+&=\Shape \vec u=
+&
+&=b\cdot\Shape \vec v=
+\\
+&=\ell\cdot\vec u+m\cdot\vec v,
+&
+&=b\cdot(m\cdot \vec u+ n\cdot \vec v),
+\end{align*}
+It remains to plug these four expressions in \ref{eq:uu-vv:3+4}.
+\qeds
 
 A chart $(u,v)\mapsto s(u,v)$ is called \index{orthogonal chart}\emph{orthogonal} if $s_u\perp s_v$ for any $(u,v)$.
 Note that any semigeodesic chart is orthogonal.
 
-\begin{thm}{Proposition}\label{prop:K(semigeodesic)}
-Any point $p$ on a smooth surface $\Sigma$ can be covered by a semigeodesic chart $(u,v)\mapsto s(u,v)$.
+A solution of the following exercise is very similar to \ref{prop:jaccobi}.
 
-Moreover, if $(u,v)\mapsto s(u,v)$ is a semigeodesic chart, 
-$b=b(u,v)\z\df|s_v|$,
-$\vec u(u,v)\df s_u$,
-and 
-$\vec v(u,v)\df\tfrac{s_v}b$,
-then 
-\begin{align*}
-\langle\vec u_u,\vec u\rangle&=0,
-&
-\langle\vec u_v,\vec v\rangle&=-b_u,
-\end{align*}
-and 
-\[K=-\frac{b_{uu}}b,\]
-where $K=K(u,v)$ denotes the Gauss curvature of $\Sigma$ at $s(u,v)$.
-
-\end{thm}
-
-\parit{Proof.}
-By Gauss lemma (\ref{lem:palar-perp}), polar coordinates with respect to $q$ is produce a semigeodesic chart at any near by point.
-To prove the first statement, it is sufficient to find a point $q\ne p$ such that polar coordinates on $\Sigma$ with respect to $q$ cover $p$.
-By \ref{prop:exp}, any $q$ sufficiently close to $p$ does the trick.
-
-The last statements follows from \ref{lem:K(orthogonal)}.
-\qeds
-
-\begin{thm}{Lemma}\label{lem:K(orthogonal)}
+\begin{thm}{Exercise}\label{lem:K(orthogonal)}
 Let $(u,v)\mapsto s(u,v)$ be a orthogonal chart of smooth surface $\Sigma$.
-Suppose that 
-$a=a(u,v)\df|s_u|$,
+Denote by $K=K(u,v)$ the Gauss curvature of $\Sigma$ at $s(u,v)$.
+Set $a=a(u,v)\df|s_u|$,
 $b=b(u,v)\df|s_v|$,
 $\vec u(u,v)\df\tfrac{s_u}a$,
 and 
 $\vec v(u,v)\df\tfrac{s_v}b$.
-Then 
-\begin{align*}
-\langle\vec u_u,\vec u\rangle&=0,
-&
-\langle\vec u_v,\vec v\rangle&=\tfrac1a\cdot b_u,
-\end{align*}
-and 
-\[K=-\frac1{a\cdot b}\cdot
-\left(
-\frac{\partial}{\partial u}
-\left(\frac{b_u}a \right)
-+
-\frac{\partial}{\partial v}
-\left(\frac{a_v}b\right)
-\right)
-\eqlbl{eq:K(orthonormal)}\]
-where 
-$K=K(u,v)$ denotes the Gauss curvature of $\Sigma$ at $s(u,v)$.
-\end{thm}
+Let $\Norm=\Norm(u,v)$ be the unit normal vector at $s(u,v)$.
 
-\parit{Proof.}
-Recall that $\Norm(u,v)$ denotes the unit normal vector to $\Sigma$ at $s(u,v)$.
-Observe that $\vec u, \vec v,\Norm$ form an orthonormal frame for any $(u,v)$.
-Without loss of generality we may assume that the frame $\vec u, \vec v,\Norm$ is oriented; that is, $\Norm=\vec u\times \vec v$ for any $(u,v)$.
-
-Suppose that $\ell=\ell(u,v)$, $m=m(u,v)$, and $n=n(u,v)$ be the components of the matrix describing the shape operator in the frame $\vec u, \vec v$;
-that is,
-\begin{align*}
-\Shape(\vec u)&=\ell\cdot \vec u+ m\cdot \vec v,
-&
-\Shape(\vec v)&=m\cdot \vec u+ n\cdot \vec v.
-\end{align*}
-Since $\vec u, \vec v$ is an orthonormal frame, by \ref{ex:shape-chart} we have
-\[
-\begin{aligned}
-\tfrac1{a^2}
-\cdot
-\langle s_{uu},\Norm\rangle
-&=\ell,
-&
-\tfrac1{a\cdot b}
-\cdot
-\langle s_{uv},\Norm\rangle
-&=m,
-\\
-\tfrac1{a\cdot b}
-\cdot
-\langle s_{vu},\Norm\rangle
-&=m,
-&
-\tfrac1{b^2}
-\cdot
-\langle s_{vv},\Norm\rangle
-&=n.
-\end{aligned}
-\eqlbl{eq:shape-lmn}
-\]
-
-First let us show that the statement follows from the following identities:
+\begin{subthm}{lem:K(orthogonal):uu-vv}
+Show that 
 \[
 \begin{aligned}
 \vec u_u
@@ -249,153 +383,35 @@ b\cdot m\cdot \Norm
 &=
 -\tfrac1{a}\cdot b_u\cdot\vec u
 +
-b\cdot n\cdot \Norm
+b\cdot n\cdot \Norm,
 \end{aligned}
-\eqlbl{eq:key-orthogonal}
 \]
+where $\ell=\ell(u,v)$, $m=m(u,v)$, and $n=n(u,v)$ be the components of the matrix describing the shape operator in the frame $\vec u, \vec v$.
+\end{subthm}
 
-Indeed, recall that the Gauss curvature equals to the determinant of the matrix $
-(\begin{smallmatrix}
-\ell&m
-\\
-m&n
-\end{smallmatrix}
-)
-$;
-that is, $K=\ell\cdot n-m^2$.
-Therefore 
-\begin{align*}
-\langle\vec u_u,\vec v_v\rangle 
--
-\langle\vec u_v,\vec v_u\rangle
-&=a\cdot b\cdot(\ell\cdot n-m^2)=
-\\
-&=a\cdot b\cdot K.
-\intertext{On the other hand}
-\langle\vec u_u,\vec v_v\rangle 
--
-\langle\vec u_v,\vec v_u\rangle
-&= 
+\begin{subthm}{lem:K(orthogonal):K}
+Show that
+\[K=-\frac1{a\cdot b}\cdot
 \left(
-\tfrac{\partial}{\partial v}
-\langle\vec u_u,\vec v\rangle
--
-\cancel{\langle\vec u_{uv},\vec v\rangle}
-\right)-
-\\
-&-
-\left(
-\tfrac{\partial}{\partial u}
-\langle\vec u_v,\vec v\rangle
--
-\cancel{\langle\vec u_{uv},\vec v\rangle}
-\right)=
-\\
-&=\tfrac{\partial}{\partial v}(-\tfrac1{b}\cdot a_v)
--
-\tfrac{\partial}{\partial u}(\tfrac1{a}\cdot b_u)
-\end{align*}
-The identity \ref{eq:K(orthonormal)} follows since the left hand sides in the last two equations are identical.
-
-It remains to prove \ref{eq:key-orthogonal}.
-Since the frame $\vec u, \vec v,\Norm$ is orthonormal,
-first two vector identities are equivalent to the following six real identities:
-\[
-\begin{aligned}
-\langle\vec u_u,\vec u\rangle
-&=0,
-&
-\langle\vec v_u,\vec v\rangle
-&=0,
-\\
-\langle\vec u_u,\vec v\rangle
-&=-\tfrac1{b}\cdot a_v,
-&
-\langle\vec v_u,\vec u\rangle
-&=
-\tfrac1{b}\cdot a_v,
-\\
-\langle\vec u_u,\Norm\rangle
-&=a\cdot \ell,
-&
-\langle\vec v_u,\Norm\rangle
-&=
-a\cdot m.
-\end{aligned}
-\eqlbl{eq:key-orthogonal/2}
-\]
-
-Taking partial derivative of the identities
-$\langle\vec u,\vec u\rangle=1$ and
-$\langle\vec v,\vec v\rangle=1$ by $u$
-we get the first two identities in \ref{eq:key-orthogonal/2}.
-
-Further, observe that
-\[
-\begin{aligned}
-\vec v_u
-&=
-\tfrac{\partial}{\partial v}
-(\tfrac1b\cdot  s_v)=
-\\
-&=\tfrac1b\cdot s_{uv}
+\frac{\partial}{\partial u}
+\left(\frac{b_u}a \right)
 +
-\tfrac{\partial}{\partial u}(\tfrac1b)
-\cdot
- s_v.
-\end{aligned}
-\eqlbl{eq:dv/du}
-\]
-Since $s_u\perp s_v$, it follows that
-\begin{align*}
-\langle\vec v_u,\vec u\rangle
-&=
-\tfrac1{a\cdot b}\cdot \langle s_{vu}, s_u\rangle
-=
-\\
-&=\tfrac1{2\cdot a\cdot b}\cdot \tfrac{\partial}{\partial v}\langle s_u, s_u\rangle=
-\\
-&=\tfrac1{2\cdot a\cdot b}\cdot \tfrac{\partial a^2}{\partial v}=
-\\
-&=\tfrac1{b}\cdot a_v.
-\end{align*}
-Taking partial derivative of
-$\langle\vec u,\vec v\rangle=0$  by $u$
-we get
-we get
-\begin{align*}
-\langle\vec v_u,\vec u\rangle+
-\langle\vec v,\vec u_u\rangle
-&=0.
-\end{align*}
-Hence we get two more identities in \ref{eq:key-orthogonal/2}.
+\frac{\partial}{\partial v}
+\left(\frac{a_v}b\right)
+\right).\]
+\end{subthm}
+\end{thm}
 
-
-Applying \ref{eq:shape-lmn}, \ref{eq:dv/du}, and $s_v\perp\Norm$ we get
-\begin{align*}
-\langle\vec u_u,\Norm\rangle
-&=
-\tfrac1{a}\cdot \langle s_{uu},\Norm\rangle
-=a\cdot \ell,
-\\
-\langle\vec v_u,\Norm\rangle
-&=
-\tfrac1{a}\cdot \langle s_{uv},\Norm\rangle
-=a\cdot m,
-\end{align*}
-that implies the last two equalities in \ref{eq:key-orthogonal/2}.
-Therefore the first two identities in \ref{eq:key-orthogonal} are proved;
-the remaining two identities can be proved along the same lines.
-\qeds
 
 \begin{thm}{Exericse}\label{ex:conformal}
 Suppose that $(u,v)\mapsto s(u,v)$ is a \index{conformal chart}\emph{conformal chart};
 that is, $s_u\perp s_v$ and $b=|s_u|=|s_v|$ for any $(u,v)$;
 in this case the function $(u,v)\mapsto b(u,v)$ is called \index{conformal factor}\emph{conformal factor} of $s$.
 
-Show that Gauss curvature can be expressed as 
+Use \ref{lem:K(orthogonal)} to show that Gauss curvature can be expressed as 
 \[K=-\frac{\triangle (\ln b)}{b^2},\]
-where $\triangle$ denotes the \index{laplacian}\emph{laplacian}; that is, $\triangle=\tfrac{\partial^2}{\partial u^2}+\tfrac{\partial^2}{\partial v^2}$.
+where $\triangle$ denotes the \index{laplacian}\emph{laplacian}; that is, $\triangle=\tfrac{\partial^2}{\partial u^2}+\tfrac{\partial^2}{\partial v^2}$ and 
+ $K=K(u,v)$ is the Gauss curvature of $\Sigma$ at $s(u,v)$.
 \end{thm}
 
 \section{Rotation of a vector field}
