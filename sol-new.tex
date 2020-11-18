@@ -1452,6 +1452,39 @@ It remains to Gauss--Bonnet formula to $\Delta$ and make a conclusion.
 
 \parbf{\ref{ex:cohn-vossen}.} Repeat the proof of \ref{thm:cohn-vossen} for one-parameter family of geodesics $\gamma_\tau$ defined by $\gamma_\tau(0)=\alpha(\tau)$ and $\gamma'(0)=\alpha'(\tau)$. 
 
+\parbf{\ref{ex:semigeodesc-chart}.}
+By Gauss lemma (\ref{lem:palar-perp}), polar coordinates with respect to $q$ is produce a semigeodesic chart at any near by point.
+Therefore, it is sufficient to find a point $q\ne p$ such that polar coordinates on $\Sigma$ with respect to $q$ cover $p$.
+By \ref{prop:exp}, any $q$ sufficiently close to $p$ does the trick.
+
+\parbf{\ref{ex:inj-rad}}; \ref{SHORT.ex:inj-rad:sign}.
+Show that we can choose right orientation on $\Sigma$ so that $b_r(0,\theta)\z=1$ for any $\theta$.
+Conclude that we can assume that $b(r,\theta)>0$ for small positive values $r$.
+
+Suppose $b(r_1,\theta_1)<0$ at some pair $(r_1,\theta_1)$ with $0<r_1<r_0$.
+Observe that if $\theta_2$ is sufficiency close to $\theta_1$ then the radial curves $r\mapsto b(r,\theta_1)$ and $r\mapsto b(r,\theta_2)$ defined on the interval $(0,r_1)$ intersect each other.
+Therefore $\exp_p$ is not injective in $B$ --- a contradiction.
+
+\parit{\ref{SHORT.ex:inj-rad:0}.}
+Suppose that $b(r_1,\theta_1)=0$.
+Apply \ref{SHORT.ex:inj-rad:sign} to show that $b_r(r_1,\theta_1)=0$.
+
+Apply \ref{prop:jaccobi} to conclude $b(r,\theta_1)=0$ for any $r$.
+The latter contradicts that $b_r(0,\theta_1)=1$.
+
+\parit{\ref{SHORT.ex:inj-rad:prop:inj-rad}.}
+We need to show that $\exp_p$ is regular in $B$.
+Suppose that vector $\vec v\in B$ has polar coordinates $(r,\theta)$ for some $r>0$.
+Show that $\exp_p$ is regular at $\vec v$ if $b(r,\theta)\ne 0$.
+Conclude that $\exp_p$ is regular in $B\backslash \{0\}$.
+
+By \ref{obs:d(exp)=1}, $\exp_p$ is regular at $0$.
+Whence $\exp_p|_B$ is a regular injective smooth map;
+therefore it is a diffeomorphism. 
+ 
+
+
+
 \parbf{\ref{lem:K(orthogonal)}}; \ref{SHORT.lem:K(orthogonal):uu-vv}.
 Since the frame $\vec u, \vec v,\Norm$ is orthonormal,
 first two vector identities are equivalent to the following six real identities:

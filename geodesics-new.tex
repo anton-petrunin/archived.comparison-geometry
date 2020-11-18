@@ -529,23 +529,6 @@ Moreover we have a {}\emph{local control} on $r_p$;
 that is, for any $q\in \Sigma$ there is $\eps>0$ such that if $|q-p|_\Sigma<\eps$, then $r_p\ge\eps$. %???r_p -->r???
 \end{thm}
 
-%???(a)+(b)about diffeomorphism + it has to be proved in semigodesic chart.
-
-Given $p\in \Sigma$, the least upper bound on $r_p$ that satisfies the proposition is called \index{injectivity radius}\emph{injectivity radius} of $\Sigma$ at $p$;
-it is denoted by $\inj(p)$.
-The proposition states that {}\emph{injectivity radius is positive and locally bounded away from zero}.
-
-\parbf{Remarks.}
-The proofs of the following two statements are not hard,
-but we omit them since we will not use them in the sequel.
-
-\begin{itemize}
-\item {}\emph{The function $p\mapsto \inj(p)$ is lower semicontinuous and positive}.
-\item \emph{If $\exp_p$ is injective in $B(0,r_p)_{\T_p}$, then the restriction $\exp_p|_{B(0,r_p)}$ is a diffeomorphism to its image}.
-In other words, the injectivity radius could be defined as the least upper bound on $r_p$ such that $\exp_p$ is injective in the ball $B(0,r_p)_{\T_p}$.
-\end{itemize}
-%???REF+remove
-
 The proof of the proposition uses the observation and the inverse function theorem (\ref{thm:inverse}). %???+Jacobian matrix
 
 \parit{Proof.}
@@ -559,6 +542,21 @@ Applying the inverse function theorem (\ref{thm:inverse}) we get the first part 
 The second part can be proved along the same lines, using the second part the inverse function theorem (\ref{thm:inverse});
 it guarantees that the size of the neighborhood in $\T_p$ for all points $p$ sufficiently close to~$q$.
 \qeds
+
+Given $p\in \Sigma$, the least upper bound on $r_p$ that satisfies \ref{prop:exp} is called \index{injectivity radius}\emph{injectivity radius} of $\Sigma$ at $p$;
+it is denoted by $\inj(p)$.
+The proposition states that {}\emph{injectivity radius is positive and locally bounded away from zero}.
+
+In fact it is not hard to prove that the function {}\emph{$p\mapsto \inj(p)$ is lower semicontinuous and positive}. %???ref
+
+The proof of the following statement will be indicated in \ref{ex:inj-rad}.
+
+\begin{thm}{Proposition}\label{prop:inj-rad}
+Let $\Sigma$ be smooth surface (without boundary) and $p\in \Sigma$.
+If $\exp_p$ is injective in $B(0,r)_{\T_p}$, then the restriction $\exp_p|_{B(0,r)}$ is a diffeomorphism to its image.
+
+In other words, the injectivity radius at $p$ can be defined as the least upper bound on $r$ such that $\exp_p$ is injective in the ball $B(0,r)_{\T_p}$.
+\end{thm}
 
 \section{Shortest paths are geodesics}
 
