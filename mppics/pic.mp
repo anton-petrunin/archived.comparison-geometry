@@ -3921,6 +3921,87 @@ rimmark(z.a--z.ab,z.b--z.ab,z.c--z.ca,z.a--z.ca,z.b--z.bc,z.c--z.bc);
 %label.ulft (btex $1$ etex, .5[z.b,z.ab]);
 endfig;
 
+beginfig(920) 
+save u;
+u:=.6cm;
+path p[];
+
+z.a=(1,0)*u rotated 45;
+z.b=z.a rotated 90;
+z.c=z.a rotated 180;
+z.d=z.a rotated -90;
+z.shift=(2.6,0)*u;
+z.vshift=(0,-3.3)*u;
+
+z.x=(.8,.3)*u;
+z.y=z.x yscaled -1;
+
+
+p1=z.a{-1,1}..z.b{-1,-1}..z.c{1,-1}..z.d{1,1}..cycle;
+p2=z.x..tension 2..z.y..tension 2..cycle;
+
+draw p1;
+draw p2 rotated 140 dashed evenly;
+fill p2 rotated 140 dashed evenly withcolor .5;
+draw p2 rotated -140 dashed evenly;
+fill p2 rotated -140 dashed evenly withcolor .5;
+draw p1 shifted z.shift;
+draw p2 rotated 0 shifted z.shift dashed evenly;
+fill p2 rotated 0 shifted z.shift withcolor .5;
+draw p1 shifted (2*z.shift);
+draw p2 rotated 180 shifted (2*z.shift) dashed evenly;
+fill p2 rotated 180 shifted (2*z.shift) withcolor .5;
+
+z.l=(-2,0)*u;
+z.p=(-1.6,.1)*u;
+z.q=(-1,.1)*u;
+
+p3=z.a{-1,1}..z.b{-1,-1}..z.l..z.c{1,-1}..z.d{1,1}..cycle;
+p4=z.p{1,-2}..{1,2}z.q;
+p5=p4 yscaled -1 cutafter ((-1.4,0)*u--(-.4,0)*u) cutbefore ((-1.4,0)*u--(-2,0)*u); 
+p6=z.a{-1,1}..z.b{-1,-1}..z.c{1,-1}..z.d{1,1}..
+tension .8
+..z.c+z.shift{1,-1}..z.d+z.shift{1,1}..z.a+z.shift{-1,1}..z.b+z.shift{-1,-1}..
+tension .8
+..cycle;
+
+draw p3 shifted z.vshift;
+draw p4 shifted z.vshift;
+draw p5 shifted z.vshift;
+draw p2 rotated 0 shifted z.vshift dashed evenly;
+fill p2 rotated 0 shifted z.vshift withcolor .5;
+draw p6 shifted z.vshift shifted z.shift;
+draw p2 rotated 180 shifted z.vshift shifted z.shift dashed evenly;
+fill p2 rotated 180 shifted z.vshift shifted z.shift withcolor .5;
+draw p2 rotated 40 shifted z.vshift shifted (2*z.shift) dashed evenly;
+fill p2 rotated 40 shifted z.vshift shifted (2*z.shift) withcolor .5;
+draw p2 rotated -40 shifted z.vshift shifted (2*z.shift) dashed evenly;
+fill p2 rotated -40 shifted z.vshift shifted (2*z.shift) withcolor .5;
+
+p11=z.a{-1,1}..z.b{-1,-1}..z.l..z.c{1,-1}..z.d{1,1}..
+tension .8
+..z.c+z.shift{1,-1}..z.d+z.shift{1,1}..
+tension .8
+..z.c+(2*z.shift){1,-1}..z.d+(2*z.shift){1,1}..
+-z.l+(2*z.shift)..
+z.a+(2*z.shift){-1,1}..z.b+(2*z.shift){-1,-1}..
+tension .8
+..
+z.a+z.shift{-1,1}..z.b+z.shift{-1,-1}..
+tension .8
+..cycle;
+
+draw p11 shifted (2*z.vshift);
+draw p4 shifted (2*z.vshift);
+draw p5 shifted (2*z.vshift);
+draw p4 xscaled -1 shifted (2*z.vshift) shifted (2*z.shift);
+draw p5 xscaled -1 shifted (2*z.vshift) shifted (2*z.shift);
+
+label.lft (btex $\partial V_1$ etex, (-1,0)*u);
+label.lft (btex $\partial V_2$ etex, z.l+z.vshift);
+label.lft (btex $\partial V_3$ etex, z.l+2*z.vshift);
+endfig;
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 beginfig(1181);
