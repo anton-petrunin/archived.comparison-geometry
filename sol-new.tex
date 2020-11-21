@@ -137,7 +137,8 @@ Apply Jordan's theorem for the obtained curve and use the inversion again.
 
 \parbf{\ref{ex:length-image}.}
 Fix a partition $0=t_0<\dots <t_n=1$ of $[0,1]$.
-Set $\tau_0=0$ and $\tau_i=\max\set{\tau \in[0,1]}{\beta(\tau_i)=\alpha(t_i)}$.
+Set $\tau_0=0$ and 
+\[\tau_i=\max\set{\tau \in[0,1]}{\beta(\tau_i)=\alpha(t_i)}.\]
 Show that $(\tau_i)$ is a partition of $[0,1]$;
 that is, $0=\tau_0<\tau_1<\dots<\tau_n=1$.
 
@@ -341,13 +342,11 @@ Since $\langle\tan,\tan\rangle=1$, we have $\tan'\perp \tan$.
 Observe that $\langle \tan,\sigma\rangle=\cos\theta$;
 therefore
 \begin{align*}
-\kappa\cdot \sin\theta&=|\tan'|\cdot \sin\theta\ge
-\\
-&\ge -\langle \tan',\sigma\rangle=
-\\
-&= \langle \tan,\sigma'\rangle-\langle \tan,\sigma\rangle'=
-\\
-&= (|\sigma'|+\theta')\cdot \sin\theta.
+\kappa\cdot \sin\theta
+&=|\tan'|\cdot \sin\theta\ge
+-\langle \tan',\sigma\rangle=
+\langle \tan,\sigma'\rangle-\langle \tan,\sigma\rangle'=
+(|\sigma'|+\theta')\cdot \sin\theta.
 \end{align*}
 Whence \ref{|sigma'|<kur-theta'} follows if $\theta\ne0,\pi$.
 
@@ -450,9 +449,10 @@ Let $q_i$ be the orthogonal projection of $p_i$ to the line of its first edge $p
 By the angle estimate, we have that the points $q_0,\dots,q_n$ appear on the line in the same order and 
 \[|q_i-q_{i-1}|> \tfrac12\cdot|p_i-p_{i-1}|.\]
 Therefore 
-\begin{align*}|\gamma(b)-\gamma(a)|&=|p_n-p_0|\ge 
-\\
-&\ge |q_n-q_0|=
+\begin{align*}
+|\gamma(b)-\gamma(a)|&=|p_n-p_0|
+\ge 
+|q_n-q_0|=
 \\
 &=|q_n-q_{n-1}|+\dots+|q_1-q_0|>
 \\
@@ -553,15 +553,13 @@ Then
 \[
 |\gamma_\ell'(t)|=(1-\ell\cdot\skur(t)).
 \]
+Therefore
 \begin{align*}
 L(\ell)
 &=
 \int_a^b(1-\ell\cdot\skur(t))\cdot dt=
-\\
-&=
 \int_a^b 1\cdot dt-\ell\cdot \int_a^b\skur(t))\cdot dt=
-\\
-&=L(0)+\ell\cdot\Psi(\gamma).
+L(0)+\ell\cdot\Psi(\gamma).
 \end{align*}
 
 
@@ -980,6 +978,8 @@ Show that $\Sigma$ has no vertical tangent planes;
 therefore projection $\Omega$ of $\Sigma$ to $(x,y)$-plane is regular.
 Use the inverse function theorem to show that $\Omega$ is open; hence \ref{SHORT.ex:convex-proper-plane:b}.
 
+%???cde???
+
 \parbf{\ref{ex:open+convex=plane}.}
 By \ref{ex:convex-proper-plane:d}, $\Sigma$ is parameterized by an open convex plane domain $\Omega$.
 It remains to show that $\Omega$ can parameterize the whole plane.
@@ -1019,9 +1019,9 @@ It follows that $\Norm\:\Sigma\to\mathbb{S}^2$ is bijection.
 
 Applying \ref{cor:intK}, we get that 
 \begin{align*}
-\iint_\Sigma K&=\area\mathbb{S}^2=
-\\
-&=4\cdot\pi.
+\iint_\Sigma K
+&=\area\mathbb{S}^2=
+4\cdot\pi.
 \end{align*}
 
 \parit{\ref{SHORT.ex:intK:2pi}.} Choose an $(x,y,z)$-coordinate system provided by \ref{ex:convex-proper-plane:d}.
@@ -1030,25 +1030,16 @@ It follows that the image $\Norm(\Sigma)$ lies in the south hemisphere.
 
 Applying \ref{cor:intK}, we get that 
 \begin{align*}
-\iint_\Sigma K&\le \tfrac12\cdot\area\mathbb{S}^2=
-\\
-&=2\cdot\pi.
+\iint_\Sigma K&\le \tfrac12\cdot\area\mathbb{S}^2=2\cdot\pi.
 \end{align*}
 
 \parbf{\ref{ex:convex-revolution}.} Use \ref{ex:principle-revolution}.
 
 \parbf{\ref{ex:ruled=>saddle}.} Prove and use that each point $p\in\Sigma$ has a direction with vanishing normal curvature.
 
-\parbf{\ref{ex:saddle-to-infty}.}
-Use the definition of saddle surface to show for any point $x\in\Sigma$ there is an arc $\gamma\:[0,1]\to\Sigma$ that starts from $x$ such that 
-the function $f\:t\mapsto |p-\gamma(t)|$ is monotonically increasing and $f(1)>f(0)+\eps(x)$ for some $\eps(x)>0$.
-(In fact such a curve can be choosen among graphs over line segments in the tangent-normal coordinates at $x$.)
+\parbf{\ref{ex:saddle-convex}.} Suppose $p$ is a point of local maximum.
+Arrive to a contradiction by showing that $\Sigma$ is supported by the tangent plane at $p$.
 
-Further, show that the function $x\mapsto\eps(x)$ can be assumed to be continuous.
-Conclude that for any $R$ there is $\eps>0$ such that $\eps(x)>\eps$ for any $x\in\Sigma\cap B(p,R)$.
-
-Now construct the needed curve as an infinite concatenation of the deacribed arcs.
-Observe that the described property guranees that it will escape from any ball in finite number of steps.
 
 \parbf{\ref{ex:panov}.} Denote by $\Pi_t$ the tangent plane to $\Sigma$ at $\gamma(t)$ and by $\ell_t$ the tangent line of $\gamma$ at time $t$.
 
@@ -1100,8 +1091,7 @@ $b(x,y(x))=0$ and $b_y(x,y(x))>0$.
 It follows that 
 \begin{align*}
 f(x,y)&=a(x)^2-b(x,y)^2-=
-\\
-&=(a(x)-b(x,y))\cdot (a(x)+b(x,y)).
+(a(x)-b(x,y))\cdot (a(x)+b(x,y)).
 \end{align*}
 That is $f(x,y)=0$ if $a(x)\pm b(x,y) =0$.
 
@@ -1132,15 +1122,6 @@ Show that $s$ is a diffeomorphism from $F_\eps$ to a south hemisphere of~$\Sigma
 
 \parbf{\ref{ex:saddle-linear}.} Apply \ref{prop:hat}.
 
-\parbf{\ref{ex:saddle-intersection};} \ref{SHORT.ex:saddle-intersection:graph}.
-Choose $p\in\Gamma$.
-
-If $\T_p\nparallel\Pi$, then implicit function theorem implies that a neighborhood of $p$ in $\Gamma$ admits a smooth parameterization by an real interval.
-
-If  $\T_p\parallel\Pi$, then \ref{ex:crosss} implies that $p$ is a cross point of two smooth curves in $\Gamma$.
-
-It follows that $\Gamma$ is a smooth graph and every vertex of $\Gamma$ in the interior of $\Delta$ has degree $4$.
-No cycle condition follows from Jordan's theorem \ref{thm:jordan} and \ref{lem:convex-saddle}.
 
 \parit{\ref{SHORT.ex:saddle-intersection:graphik}.} Show that if $\Sigma$ is not a graph, then it has a vertical tangent $\T_p$ plane at some point $p$.
 Apply part \ref{SHORT.ex:saddle-intersection:graph} for the intersection of $\Sigma$ with $\T_p$.
@@ -1149,7 +1130,7 @@ Apply part \ref{SHORT.ex:saddle-intersection:graph} for the intersection of $\Si
 
 \parbf{\ref{ex:one-side-bernshtein}.} Look at the sections of the graph by planes parallel to the $(x,y)$-plane and to the $(x,z)$-plane, then apply Meusnier’s theorem (\ref{thm:meusnier}).
 
-\parbf{\ref{ex:saddle-graph}.}
+\parbf{\ref{ex:saddle-graph}.} %???fix
 Suppose that orthogonal projection of $\Sigma$ to the $(x,y)$-plane is not injective.
 Show that there is a point $p\in\Sigma$ with vertical tangent plane;
 that is, $\T_p\Sigma$ is perpendicular to the $(x,y)$-plane.
@@ -1161,7 +1142,15 @@ Observe that $\T_p$ meets the boundary of $\Sigma$ at two points,
 therefore $\Gamma$ has 2 endpoints.
 Use it to get a contradiction.
 
+\parbf{\ref{ex:saddle-intersection};} \ref{SHORT.ex:saddle-intersection:graph}.
+Choose $p\in\Gamma$.
 
+If $\T_p\nparallel\Pi$, then implicit function theorem implies that a neighborhood of $p$ in $\Gamma$ admits a smooth parameterization by an real interval.
+
+If  $\T_p\parallel\Pi$, then \ref{ex:crosss} implies that $p$ is a cross point of two smooth curves in $\Gamma$.
+
+It follows that $\Gamma$ is a smooth graph and every vertex of $\Gamma$ in the interior of $\Delta$ has degree $4$.
+No cycle condition follows from Jordan's theorem \ref{thm:jordan} and \ref{lem:convex-saddle}.
 
 \begin{wrapfigure}{r}{24 mm}
 \vskip-0mm
@@ -1333,11 +1322,9 @@ for any $t$.
 Applying the above estimates, we get that 
 \begin{align*}
 \rho''(t)
-&=\langle\gamma(t),\gamma(t)\rangle''=
-\\
-&=2\cdot\langle\gamma''(t),\gamma(t)\rangle+2\cdot\langle\gamma'(t),\gamma'(t)\rangle\le 
-\\
-&\le 2.
+&=\langle\gamma(t),\gamma(t)\rangle''
+=2\cdot\langle\gamma''(t),\gamma(t)\rangle+2\cdot\langle\gamma'(t),\gamma'(t)\rangle
+\le 2.
 \end{align*}
 
 \parbf{\ref{ex:usov-exact}.} 
@@ -1354,10 +1341,7 @@ Conclude that
 By \ref{eq:gamma''=z''} and \ref{eq:int z''}, we have
 \begin{align*}
 \tc\gamma&=\int_{-\infty}^{+\infty}|\gamma''(t)|\cdot dt=
-\\
-&=\sqrt{1+ \ell ^2}\cdot \int_{-\infty}^{+\infty}z''(t)\cdot dt=
-\\
-&=2\cdot \ell.
+\sqrt{1+ \ell ^2}\cdot \int_{-\infty}^{+\infty}z''(t)\cdot dt=2\cdot \ell.
 \end{align*}
 
 \parbf{\ref{ex:rough-bound-mountain}.} Use \ref{thm:usov} and \ref{ex:sef-intersection}.
@@ -1496,18 +1480,18 @@ first two vector identities are equivalent to the following six real identities:
 \langle\vec u_u,\vec u\rangle
 &=0,
 &
-\langle\vec v_u,\vec v\rangle
-&=0,
-\\
 \langle\vec u_u,\vec v\rangle
 &=-\tfrac1{b}\cdot a_v,
+&
+\langle\vec u_u,\Norm\rangle
+&=a\cdot \ell,
+\\
+\langle\vec v_u,\vec v\rangle
+&=0,
 &
 \langle\vec v_u,\vec u\rangle
 &=
 \tfrac1{b}\cdot a_v,
-\\
-\langle\vec u_u,\Norm\rangle
-&=a\cdot \ell,
 &
 \langle\vec v_u,\Norm\rangle
 &=
@@ -1527,9 +1511,7 @@ Further, observe that
 \vec v_u
 &=
 \tfrac{\partial}{\partial v}
-(\tfrac1b\cdot  s_v)=
-\\
-&=\tfrac1b\cdot s_{uv}
+(\tfrac1b\cdot  s_v)=\tfrac1b\cdot s_{uv}
 +
 \tfrac{\partial}{\partial u}(\tfrac1b)
 \cdot
@@ -1543,12 +1525,9 @@ Since $s_u\perp s_v$, it follows that
 &=
 \tfrac1{a\cdot b}\cdot \langle s_{vu}, s_u\rangle
 =
-\\
-&=\tfrac1{2\cdot a\cdot b}\cdot \tfrac{\partial}{\partial v}\langle s_u, s_u\rangle=
-\\
-&=\tfrac1{2\cdot a\cdot b}\cdot \tfrac{\partial a^2}{\partial v}=
-\\
-&=\tfrac1{b}\cdot a_v.
+\tfrac1{2\cdot a\cdot b}\cdot \tfrac{\partial}{\partial v}\langle s_u, s_u\rangle=
+\tfrac1{2\cdot a\cdot b}\cdot \tfrac{\partial a^2}{\partial v}=
+\tfrac1{b}\cdot a_v.
 \end{align*}
 Taking partial derivative of
 $\langle\vec u,\vec v\rangle=0$  by $u$
@@ -1593,7 +1572,7 @@ Applying  \ref{eq:dv/du}, \ref{eq:shape-lmn}, and $s_v\perp\Norm$ we get
 &=
 \tfrac1{a}\cdot \langle s_{uu},\Norm\rangle
 =a\cdot \ell,
-\\
+&
 \langle\vec v_u,\Norm\rangle
 &=
 \tfrac1{a}\cdot \langle s_{uv},\Norm\rangle
@@ -1619,9 +1598,7 @@ Therefore
 \langle\vec u_u,\vec v_v\rangle 
 -
 \langle\vec u_v,\vec v_u\rangle
-&=a\cdot b\cdot(\ell\cdot n-m^2)=
-\\
-&=a\cdot b\cdot K.
+&=a\cdot b\cdot(\ell\cdot n-m^2)=a\cdot b\cdot K.
 \intertext{On the other hand}
 \langle\vec u_u,\vec v_v\rangle 
 -
@@ -1633,8 +1610,6 @@ Therefore
 -
 \cancel{\langle\vec u_{uv},\vec v\rangle}
 \right)-
-\\
-&-
 \left(
 \tfrac{\partial}{\partial u}
 \langle\vec u_v,\vec v\rangle
@@ -1796,7 +1771,7 @@ By comparison we have that
 \phi
 &\df\measuredangle\hinge qpx
 \ge \angk qpx
-\mathrel{=:}\tilde\phi
+\mathrel{=:}\tilde\phi,
 \\
 \psi&\df
 \measuredangle\hinge pqx
@@ -1810,34 +1785,24 @@ Since $t=|\tilde p-\tilde x|_{\RR^2}$ is small, so is the distances $|\tilde q-\
 Therefore we can choose a point $y$ on $\delta$ such that $|q-y|_\Sigma=|\tilde q-\tilde y|_{\RR^2}$;
 moreover we can assume that $y$ is chosen so that we have $\measuredangle\hinge qxy= \tfrac\pi2-\psi$.
 
-
-
 By construction and comparison, we have 
 \begin{align*}
 \measuredangle\hinge {\tilde q}{\tilde x}{\tilde y}&=\tfrac\pi2-\tilde\psi
 \ge
-\\
-&\ge
 \tfrac\pi2-\psi
 =
-\\
-&=
 \measuredangle\hinge q x y
 \ge 
-\\
-&\ge \angk q x y.
+\angk q x y.
 \end{align*}
 Therefore $|x-y|_\Sigma\le |\tilde x-\tilde y|_{\RR}$.
 Since $\tilde\phi\le\phi$, we get that
 \begin{align*}
 f\circ\gamma(t)&\le |x-y|_\Sigma\le 
-\\
-&\le|\tilde x-\tilde y|_{\RR}=
-\\
-&=|p-q|_\Sigma+t\cdot\cos\tilde\phi
+|\tilde x-\tilde y|_{\RR}=
+|p-q|_\Sigma+t\cdot\cos\tilde\phi
 \le
-\\
-&\le|p-q|_\Sigma+t\cdot\cos\phi.
+|p-q|_\Sigma+t\cdot\cos\phi.
 \end{align*}
 That is, we proved \ref{eq:dist<cosphi} for small $t>0$.
 The case $t<0$ can be done along the same lines. 
@@ -1864,12 +1829,10 @@ Therefore the midpoint of $[\bar x\bar z]$, say  $\bar y$, lies on $\delta$.
 By \ref{ex:dist-to-bry}, we have 
 \begin{align*}
 f(y)&\le |y-\bar y|_\Sigma\le
-\\
-&\le\tfrac12\cdot(|x-\bar x|_\Sigma
+\le\tfrac12\cdot(|x-\bar x|_\Sigma
 +
 |z-\bar z|_\Sigma)=
-\\
-&=\tfrac12\cdot(f(x)+f(z))
+\tfrac12\cdot(f(x)+f(z))
 \end{align*}
 
 \parbf{\ref{ex:half-line}}; \ref{SHORT.ex:half-line:exist}.
