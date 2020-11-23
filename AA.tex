@@ -1,3 +1,149 @@
+\subsection*{Schwarz's boot}\label{sec:schwarz-boot}
+
+One may try to define area of a surface as a exact upper bound on the area of polyhedrons inscribed in the surface.
+
+\begin{wrapfigure}{o}{42 mm}
+\centering
+\includegraphics{asy/schwarz}
+\end{wrapfigure}
+
+Schwarz's boot is a classical example showing that this idea  fails badly.
+Namely, it shows that if we define the area as the least upper bound of areas of inscribed polyhedral surfaces, 
+then the area of the lateral surface of the cylinder must be infinite.
+The latter contradicts \emph{correct} intuition that the area of this surface should be the product of the circumference of the base circle and the height of the cylinder.
+
+Let us divide the cylinder into $m$ equal cylinders by planes parallel to its base.
+This way we obtain $m+1$ circles on the lateral surface of a cylinder, including both bases.
+Further, let us divide each of these circles into $n$ equal arcs in such a way that the dividing points 
+of a circle will lie exactly above the midpoints of arcs on the circle under it.
+Consider all triangles formed by a chord of such arc and line segments connecting the ends of the chord with the points right above and right below the mid point of its arc.
+All the $2\cdot m\cdot n$ equal triangles form a polyhedral surface which is called \index{Schwarz's boot}\emph{Schwarz's boot}.
+A Schwarz's boot for $m=8$ and $n=6$ is shown on the diagram.
+
+{
+
+\begin{wrapfigure}{o}{40 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-87}
+\end{wrapfigure}
+
+Consider one of the triangle $[abc]$ which form Schwarz's boot.
+By construction, its base $[a,c]$ lies in a horizontal plane and the projection $b^{*}$ of $b$ on this plane bisects the arc $ac$.
+Therefore the vertexes of the triangle $[ab^{*}c]$ are the three consequent vertexes of a regular $2\cdot n$-gone inscribed in a unit circle.
+Denote the area of triangle $[ab^{*}c]$ by $s_n$; clearly it depends only on $n$ and the radius of the base circle.
+
+
+Both triangles $[abc]$ and $[ab^{*}c]$ are isosceles with shares base $[a,c]$.
+Note that the altitude $[b,p]$ is larger than the altitude $[b^{*},p]$.
+Therefore
+\begin{align*}
+\area [abc]&=\tfrac12\cdot |a-c|\cdot |b-p|>
+\\
+&>\tfrac12\cdot |a-c|\cdot |b^{*}-p|=
+\\
+&=\area [ab^{*}c]=
+\\
+&=s_n.
+\end{align*}
+
+}
+
+Denote by $S_{m,n}$ the total area of Schwarz's boot.
+Then from above we have that
+\[S_{m,n}>2\cdot m\cdot n\cdot s_n.\]
+Consider the pairs $(m,n)$ such that $m$ is much larger than $n$; namely $m>\tfrac1{s_n}$.
+Then
+\[S_{m,n}> 2\cdot  m\cdot  n\cdot  s_n>2\cdot  \tfrac1{s_n}\cdot  n\cdot  s_n=2\cdot n.\]
+Therefore $S_{m,n}\to \infty$ as $n\to \infty$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+So we present a proof here.
+
+A triangle with vertexes $x$, $y$, and $z$ will be denoted by $[xyz]$.
+
+\parit{Proof.}
+The proof is by induction on $n$.
+For $n=3$ it says that sum of internal angles of a triangle is $\pi$, which is assumed to be known.
+
+First let us show that for any $n\ge4$, any $n$-gon has a diagonal that lies inside of it.
+Assume this holds true for all polygons with at most $n-1$ vertices.
+
+Fix an $n$-gon $P$, $n\ge4$.
+Applying a rotation if necessary, we can assume that all its vertexes have different $x$-coordinates.
+Let $v$ be a vertex of $P$ that minimizes the $x$-coordinate;
+denote by $u$ and $w$ its adjacent vertexes.
+Let us choose the diagonal $uw$ if it lies in $P$.
+Otherwise the triangle $[uvw]$ contains another vertex of $P$.
+Choose a vertex $s$ in the interior of the triangle $[uvw]$ that maximizes the distance to line $uw$.
+Note that the diagonal $vs$ lies in $P$;
+if it is not the case, then $vs$ crosses another side $pq$ of $P$, one of the vertices $p$ or $q$ has larger distance to the line and it lies in the interior of the triangle $[uvw]$ --- a contradiction.
+
+Note that the diagonal divides $P$ into two polygons, say $Q$ and $R$, with smaller number of sides in each, say $k$ and $m$ respectively.
+Note that 
+\[k+m=n+2;
+\eqlbl{eq:k+m=n+2}\]
+indeed each side of $P$ appears once as a side of $P$ or $Q$ plus the diagonal appears twice --- once as a side in $Q$ and once as a side of $R$.
+
+Observe that $Q$ and $R$, which by the induction hypothesis are $(k\z-2)\cdot\pi$ and $(m-2)\cdot\pi$ respectively,
+and the sum of angles of $P$ equals to the sum of angles in $Q$ and $Q$.
+Finally by \ref{eq:k+m=n+2} we have that
+\[(k-2)\cdot\pi+(m-2)\cdot\pi=(n-2)\cdot\pi\]
+which proves the theorem.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Evidently the parametric definition includes the embedded surfaces defined previously --- as the domain of parameters we can take the surface itself and the identity map as $s$.
 But parametrized surfaces are more general, in particular they  might  have self-intersections.
 

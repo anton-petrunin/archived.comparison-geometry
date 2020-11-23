@@ -1,10 +1,10 @@
 \addtocounter{chapter}{-1}
 \chapter{Preliminaries}
 
-The chapter should be used as a quick reference when reading the book;
+This chapter should be used as a quick reference while reading the rest of the book;
 it also contain all necessary references with complete proof.
 
-The fist section on metric spaces is most important;
+The fist section on metric spaces is an exception;
 we suggest to read in before going further.
 
 \section{Metric spaces}\label{sec:metric-spcaes}
@@ -12,6 +12,8 @@ we suggest to read in before going further.
 We assume that the reader is familiar with the notion of metric in 
 Euclidean space.
 In this chapter briefly discuss its generalization and fix notations that will be used further.
+
+A introductory part of the book by Dmitri Burago, Yuri Burago, and Sergei Ivanov \cite{burago-burago-ivanov} contains all the needed material.
 
 \subsection*{Definitions}
 
@@ -34,10 +36,11 @@ In this case we also use a shortcut notations $|x-y|$ or $|x-y|_{\mathcal X}$  f
 For example, the triangle inequality can be written as 
 $$|x-z|_{\mathcal X}\le |x-y|_{\mathcal X}+|y-z|_{\mathcal X}.$$
 
-\subsection*{Examples}
 Euclidean space and plane as well as real line will be the most important examples of metric spaces for us.
 In these examples the introduced notation $|x-y|$ for the distance from $x$ to $y$ has perfect sense as a norm of the vector $x-y$.
 However, in general metric space the expression $x-y$ has no sense, but anyway we use expression $|x-y|$ for the distance.
+
+\subsection*{More examples}
 
 Usually, if we say {}\emph{plane} or {}\emph{space} we mean {}\emph{Eucledean} plane or space.
 However the plane (as well as the space) admits many other metrics, for example the so-called \index{Manhattan metric}\emph{Manhattan metric} from the following exercise.
@@ -49,7 +52,7 @@ where $p=(x_1,y_1)$ and $q=(x_2,y_2)$ are points in the coordinate plane $\RR^2$
 Show that $\Dist$ is a metric on $\RR^2$.
 \end{thm}
 
-Let us mention another example: the \index{discrete space}\emph{discrete space} --- arbitrary nonempty set $\mathcal X$ with the metric defined as $|x\z-y|_{\mathcal X}=0$ if $x=y$ and $|x-y|_{\mathcal X}=1$ otherwise.
+Another example: the \index{discrete space}\emph{discrete space} --- arbitrary nonempty set $\mathcal X$ with the metric defined as $|x\z-y|_{\mathcal X}=0$ if $x=y$ and $|x-y|_{\mathcal X}=1$ otherwise.
 
 \subsection*{Subspaces}
 Any subset of a metric space is also a metric space, by restricting the original metric to the subset;
@@ -83,8 +86,6 @@ $B(p,\tfrac32)\subset B(q,1)$ holds.
 
 \subsection*{Continuity}
 
-In this section we will extend standard notions from calculus to the metric spaces.
-
 \begin{thm}{Definition}
  Let ${\mathcal X}$ be a metric space.
 A sequence of points $x_1, x_2, \ldots$ in ${\mathcal X}$ is called \index{convergent sequence of points}\emph{convergent}
@@ -107,7 +108,7 @@ we have $f(x_n) \to f(x_\infty)$ in ${\mathcal Y}$.
 
 Equivalently, $f\:{\mathcal X}\to {\mathcal Y}$ is continuous if for any $x\in {\mathcal X}$ and any $\eps>0$,
 there is $\delta>0$ such that 
-$$|x-y|_{\mathcal X}<\delta\quad \text{ implies }\quad |f(x)-f(y)|_{\mathcal Y}<\eps.$$
+$$|x-y|_{\mathcal X}<\delta\quad \text{ implies that }\quad |f(x)-f(y)|_{\mathcal Y}<\eps.$$
 
 \end{thm}
 
@@ -117,6 +118,8 @@ Let ${\mathcal X}$ and ${\mathcal Y}$ be metric spaces $f\:{\mathcal X}\to {\mat
 for any $x,y\in \mathcal X$.
 Show that $f$ is continuous.
 \end{thm}
+
+\subsection*{Homeomorphisms}
 
 \begin{thm}{Definition}
 Let ${\mathcal X}$ and ${\mathcal Y}$ be metric spaces.
@@ -132,8 +135,10 @@ or  $\mathcal X$ and ${\mathcal Y}$ are {}\emph{homeomorphic}.
 If a metric space $\mathcal X$ is homeomorphic to a known space, for example plane, sphere, disc, circle and so on,
 we may also say that $\mathcal X$ is a \index{topological}\emph{topological} plane, sphere, disc, circle and so on.
 
+\subsection*{Closed and open sets}
+
 \begin{thm}{Definition}
-A subset $A$ of a metric space $\mathcal{X}$ is called \index{closed set}\emph{closed} if whenever a sequence $(x_n)$ of points from $A$ converges in $\mathcal{X}$, we have that $\lim_{n\to\infty} x_n \in A$.
+A subset $C$ of a metric space $\mathcal{X}$ is called \index{closed set}\emph{closed} if whenever a sequence $(x_n)$ of points from $C$ converges in $\mathcal{X}$, we have that $\lim_{n\to\infty} x_n \in C$.
 
 A set $\Omega \subset \mathcal{X}$ is called \index{open set}\emph{open} if for any $z\in \Omega$, 
 there is $\eps>0$ such that $B(z,\eps)\subset\Omega$.

@@ -23,8 +23,10 @@
 
 \section{Simple curves}
 
-In the following definition we use the notion of {}\emph{metric space} which is discussed in the preliminaries; see \ref{sec:metric-spcaes}.
-The Euclidean plane and space are the main examples of metric spaces that one should keep in mind. A {}\emph{real interval} is a connected subset of the real numbers.
+In the following definition we use the notion of {}\emph{metric space} which is discussed in Section~\ref{sec:metric-spcaes}.
+The Euclidean plane and space are the main examples of metric spaces that one should keep in mind.
+
+Recall that \index{real interval}\emph{real interval} is defined as a connected subset of the real numbers.
 
 Recall that a bijective continuous map $f\:X\to Y$ between subsets of some metric spaces is called a {}\emph{homeomorphism} if its inverse $f^{-1}\:Y\z\to X$ is continuous.  
 
@@ -33,15 +35,17 @@ A connected subset $\gamma$ in a metric space is called a \index{simple curve}\e
 \end{thm}
 
 It turns out that any simple curve $\gamma$ can be \index{parametrization of curve}\emph{parametrized} by a real interval or a circle.
-That is, there is a homeomorphism $G\to\gamma$ 
-where $G$ is a real interval (open, closed or semi-open) or the circle
-\[\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}.\]
-A proof of this statement would take us away from the subject, so we will omit it. We hope that the statement is intuitively clear, but a full proof can be found in . % Lafontaine, J. (2012). Introduction aux variétés différentielles. EDP sciences.
+That is, there is a homeomorphism $\GG\to\gamma$ 
+where $\GG$ is a real interval (open, closed or semi-open) or the circle
+\[\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}.\] 
+A complete proof of the latter statement is given by David Gale \cite{gale}.
+The proof is not hard, but we do not present it here since it would take us away from the main subject.
+A finickity reader may add this property in the definition of curve.
 
-If $G$ is an open interval or a circle, we say that $\gamma$ is a \index{endpoints}\emph{curve without endpoints}, otherwise it is 
+If $\GG$ is an open interval or a circle, we say that $\gamma$ is a \index{endpoints}\emph{curve without endpoints}, otherwise it is 
 called a {}\emph{curve with endpoints}.
-In the case when $G$ is a circle we say that the curve is \index{closed curve}\emph{closed}. 
-When $G$ is a closed interval, $\gamma$ is called an \index{arc}\emph{arc}.
+In the case when $\GG$ is a circle we say that the curve is \index{closed curve}\emph{closed}. 
+When $\GG$ is a closed interval, $\gamma$ is called an \index{arc}\emph{arc}.
 
 
 A parametrization describes a curve completely.
@@ -79,7 +83,7 @@ Show that there is a simple arc in~$X$ connecting $p$ to $q$.
 
 \section{Smooth curves}
 
-Curves in Euclidean space or plane are called \index{space curve}\emph{space} or \index{plane curve}\emph{plane curves}, respectively.
+Curves in Euclidean space or plane are called \index{space curve}\emph{space curves} or, respectively, \index{plane curve}\emph{plane curves}.
 
 A parameterized space curve can be described by its coordinate functions 
 \[\gamma(t)=(x(t),y(t),z(t)).\]
@@ -92,12 +96,12 @@ If the \index{velocity vector}\emph{velocity vector}
 \[\gamma'(t)=(x'(t),y'(t),z'(t))\] 
 does not vanish at any point, then the parameterized curve $\gamma$ is called \index{regular curve}\emph{regular}.
 
-A simple space curve is called \index{smooth curve}\emph{smooth} (resp. \index{regular curve}\emph{regular}) if it admits a smooth (resp. regular) parametrization.
+A simple space curve is called \index{smooth curve}\emph{smooth} (respectively, \index{regular curve}\emph{regular}) if it admits a smooth (respectively, regular) parametrization.
 Regular smooth curves are among the main objects in differential geometry;
 colloquially, the term \index{smooth curve}\emph{smooth curve} is often used as a shortcut for {}\emph{smooth regular curve}. 
 
 \begin{thm}{Exercise}\label{ex:L-shape}
-Let 
+Recall that the function 
 \[f(t)=
 \begin{cases}
 0&\text{if}\ t\le 0,
@@ -105,6 +109,8 @@ Let
 \frac{t}{e^{1\!/\!t}}&\text{if}\ t> 0.
 \end{cases}
 \]
+is smooth; see Section \ref{sec:analysis}.
+
 Show that $\alpha(t)=(f(t),f(-t))$ gives a smooth parametrization of a simple curve formed by the union of two half-axis in the plane.
 
 Show that any smooth parametrization of this curve has vanishing velocity vector at the origin.
@@ -132,7 +138,8 @@ simple.
 \end{thm}
 
 \section{Periodic parametrization}
-A natural way to describe a closed simple curve is as a \index{periodic parameterization}\emph{periodic} parameterized curve $\gamma\: \RR\to \mathcal{X}$; that is, a curve such that $\gamma(t+\ell)=\gamma(t)$ for a fixed period $\ell > 0$ and all $t$.
+
+Any smooth regular closed curve can be described by a \index{periodic parameterization}\emph{periodic} parameterized curve $\gamma\: \RR\to \mathcal{X}$; that is, a curve such that $\gamma(t+\ell)=\gamma(t)$ for a fixed period $\ell > 0$ and all $t$.
 For example, the unit circle in the plane can be described by the $2{\cdot}\pi$-periodic parametrization $\gamma(t)=(\cos t,\sin t)$.
 
 {
@@ -143,7 +150,7 @@ For example, the unit circle in the plane can be described by the $2{\cdot}\pi$-
 \includegraphics{mppics/pic-51}
 \end{wrapfigure}
 
-Any smooth regular closed curve can be described by a smooth regular loop.
+Any smooth regular closed curve can be also described by a smooth regular loop.
 But in general the closed curve described by a smooth regular loop might fail to be regular at its base; an example is shown on the diagram.
 
 }
@@ -155,8 +162,7 @@ that is, all its partial derivatives are defined in its domain of definition.
 Let $\gamma\subset \RR^2$ be the set of solutions of the equation $f(x,y)=0$.
 
 Assume $\gamma$ is connected.
-According to the implicit function theorem (\ref{thm:imlicit}), the set $\gamma$ is a smooth regular simple curve if $0$ is a \index{regular value}\emph{regular value} of $f$.
-This condition is equivalent to the gradient $\nabla f$ not vanishing at any point $p\in \gamma$.
+According to the implicit function theorem (\ref{thm:imlicit}), the set $\gamma$ is a smooth regular simple curve if $0$ is a \index{regular value}\emph{regular value} of~$f$; that is, the gradient $\nabla f$ does not vanish at any point $p\in \gamma$.
 In other words, if $f(p)=0$, then   
 $f_x(p)\ne 0$ or $f_y(p)\ne 0$.%
 \footnote{Here $f_x$ is a shortcut notation for the partial derivative
@@ -182,10 +188,12 @@ h_x&h_y&h_z
 \]
 for the map $F\:\RR^3\to\RR^2$ has rank 2 at any point $p \in \gamma$.
 
-The way described above to define a curve is called \index{implicitly defined curve}\emph{implicit};
-if a curve is defined by its parametrization, we say that it is \index{explicitly defined curve}\emph{explicitly defined}.
-While implicit function theorem guarantees the existence of regular smooth parametrizations,
-when it comes to calculations, it is usualy easier to work directly with implicit representations. 
+If a curve $\gamma$ is described in such a way,
+then we say that it is \index{implicitly defined curve}\emph{implicitly defined}.
+If a curve is defined by its parametrization, we say that it is \index{explicitly defined curve}\emph{explicitly defined}.
+
+The implicit function theorem guarantees the existence of regular smooth parametrizations for any implicitly defined curve.
+However, when it comes to calculations, it is usually easier to work directly with implicit representations. 
 
 \begin{thm}{Exercise}\label{ex:y^2=x^3}
 Consider the set in the plane described by the equation
@@ -210,17 +218,31 @@ describes a smooth regular curve.
 A parametrized curve $\gamma$ in a metric space $\spc{X}$ is called \index{proper curve}\emph{proper} if for any compact set $K \subset \spc{X}$, the inverse image $\gamma^{-1}(K)$ is compact.
 
 For example, the curve $\gamma(t)=(e^t,0,0)$ defined on the real line is not proper.
-Indeed, the half-line $(-\infty,0]$ is not compact, but it is the inverse image of the unit closed ball around the origin.  
+Indeed, the half-line $(-\infty,0]$ is not compact, but it is the inverse image of the unit closed ball around the origin.
 
-Note that closed curves and arcs are automatically proper since the parameter set is compact.
+\begin{thm}{Exercise}\label{ex:open-curve}
+Suppose $\gamma\:\RR\to\RR^2$ is a proper curve.
+Show that $|\gamma(t)|\to\infty$ as $t\to\pm\infty$.
+\end{thm}
+
+
+Recall that a closed interval is compact (\ref{thm:Heine--Borel}) and closed subsets of compact set are compact;
+see Section~\ref{sec:topology}.
+It follows that closed curves and arcs are automatically proper since the parameter set is compact.
 
 A simple curve is called proper if it admits a proper parametrization.
-It turns out that a simple curve is proper if and only if its image is a closed set.
+
+\begin{thm}{Exercise}\label{ex:proper-closed}
+Show that simple curve is proper if and only if its image is a closed set.
+
 In particular, any implicitly defined plane or space curve is proper.
-We leave the proof of this statement as an easy exercise to the reader. %??? ref
+\end{thm}
+
+A proper simple plane curve without endpoints is called \index{open curve}\emph{open}.
+(Here word open curve used as opposite from closed curve --- these terms have nothing to do with open and closed sets.)
 
 \begin{thm}{Exercise}\label{ex:proper-curve}
-Use the Jordan's theorem (\ref{thm:jordan}) to show that any proper simple plane curve without endpoints divides the plane in two connected components.  
+Use the Jordan's theorem (\ref{thm:jordan}) to show that any simple open curve divides the plane in two connected components.  
 \end{thm}
 
 
