@@ -179,6 +179,51 @@ Hence the result.
 \qeds
 
 
+\parbf{\ref{ex:tc-semicontinuous}.} Modify the proof of semi-continuity of length (\ref{thm:length-semicont}).
+
+\parbf{\ref{ex:gen-fenchel}.}
+Choose two distinct points $p$ and $q$ on $\gamma$.
+Consider a {}\emph{diangle} $pq$ (that is, a closed polygonal line with two vertexes $p$ and $q$).
+Observe that both external angles of the diangle have measure $\pi$.
+Therefore the total curvature of diangle is $2\cdot \pi$.
+
+It remains to apply the definition of total curvature for arbitrary curves (\ref{def:total-curv-poly}).
+
+\parbf{\ref{ex:tc-length};} \ref{SHORT.ex:tc-length:rectifiable}.
+Observe that if $\tc\gamma\le 1$, then
+\[\length\gamma\le 2\cdot|\gamma(b)-\gamma(a)|.
+\eqlbl{eq:arc<2chord}\]
+Indeed, if $\tc\gamma\le 1$, then from the definition of total curvature [\ref{def:total-curv-poly}] it follows that for any polygonal line $p0\dots p_n$ inscribed in $\gamma$ the angle between any pair of edges does noe exceed $1$.
+Let $q_i$ be the orthogonal projection of $p_i$ to the line of its first edge $p_0p_1$.
+By the angle estimate, we have that the points $q_0,\dots,q_n$ appear on the line in the same order and 
+\[|q_i-q_{i-1}|> \tfrac12\cdot|p_i-p_{i-1}|.\]
+Therefore 
+\begin{align*}
+|\gamma(b)-\gamma(a)|&=|p_n-p_0|
+\ge 
+|q_n-q_0|=
+\\
+&=|q_n-q_{n-1}|+\dots+|q_1-q_0|>
+\\
+&>\tfrac12\cdot(|p_n-p_{n-1}|+\dots+|p_1-p_0|).
+\end{align*}
+Recall that length of $\gamma$ is defined as least upper bound for the  sum $|p_n-p_{n-1}|+\dots+|p_1-p_0|$.
+Therefore \ref{eq:arc<2chord} follows.
+
+In general, if $\tc\gamma$ is bounded, we can subdivide $\gamma$ into arcs with total curvature at most $1$,
+apply the above argument to each of arc and sum up the results.
+
+\begin{wrapfigure}{r}{20 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-295}
+\end{wrapfigure}
+
+\parit{\ref{SHORT.ex:tc-length:example}.}
+A logarithmic spiral is an example;
+it can be defined in polar coordinates by $\gamma(t)=(t,a\cdot\ln t)$ if $t>0$ and $\gamma(0)$ is the origin; we may assume that $t\in[0,1]$.
+
+It remains to show that indeed, $\gamma$ has infinite total curvature, but finite length.
 
 
 

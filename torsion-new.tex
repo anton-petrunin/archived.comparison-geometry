@@ -1,9 +1,8 @@
 \chapter{Torsion}
 
-This section provides a useful practice in computations.
-
-Except for the definition in Section \ref{sec:frenet-frame},
-the result in this chapter will not be used further in the sequel.
+This section provides mostly a practice in computations.
+Except for the definitions in Section \ref{sec:frenet-frame},
+this chapter is not be used in the sequel.
 
 
 \section{Frenet frame}\label{sec:frenet-frame}
@@ -382,32 +381,4 @@ Show that $\gamma$ is a helix, possibly degenerate to a line or a circle.
 
 
 
-\parbf{\ref{ex:helix-torsion}.} 
-The arc-length parameter $s$ is already found in   \ref{ex:arc-length-helix}.
-It remains to find Frenet frame and calculate curvature and torsion.
-The latter can be done by straightforward calculations.
 
-\begin{wrapfigure}{r}{20 mm}
-\vskip0mm
-\centering
-\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/helix(1)}
-\lbl[br]{8,24;$\norm$}
-\lbl[b]{2,26;$\bi$}
-\lbl[wl]{15,25;$\tan$}
-\end{lpic}
-\end{wrapfigure}
-
-If the calculations done right, then you should see that curvature $\kur$ and torsion $\tau$ do not depend on time and given.
-Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix $\gamma_{a,b}$ has curvature $\kur$ and torsion~$\tor$.
-
-One may also see it geometrically using that the helix is maped to itself by one-parameter family of glide rotations around $z$-axis.
-Therefore, for the $t$-parametrization, Frenet frame rotates around $z$-axis with the angular velocity~$1$.
-It remains rewrite it for the arc-length parametrization and note that 
-\begin{align*}
-\tan(0)&=(0,\cos\theta, \sin\theta),
-\\
-\norm(0)&=(-1,0,0),
-\\
-\bi(0)&=(0,\sin\theta, -\cos\theta),
-\end{align*}
-where $\tg\theta\z=b/a$ if $a>0$. 
