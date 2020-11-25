@@ -45,7 +45,7 @@ A finickity reader may add this property in the definition of curve.
 If $\GG$ is an open interval or a circle, we say that $\gamma$ is a \index{endpoints}\emph{curve without endpoints}, otherwise it is 
 called a {}\emph{curve with endpoints}.
 In the case when $\GG$ is a circle we say that the curve is \index{closed curve}\emph{closed}. 
-When $\GG$ is a closed interval, $\gamma$ is called an \index{arc}\emph{arc}.
+When $\GG$ is a closed interval, $\gamma$ is called a \index{simple arc}\emph{simple arc}.
 
 
 A parametrization describes a curve completely.
@@ -71,7 +71,8 @@ For a parameterized curve we do not assume that $\gamma$ is injective; in other 
 
 If we say \index{curve}\emph{curve} it means we do not want to specify whether it is a parameterized curve or a simple curve.
 
-Whenever the domain of a parameterized curve is the closed unit interval $[0,1]$, then it is also called a \index{path}\emph{path}.
+If the domain of a parameterized curve is a closed interval $[a,b]$, then the curve is called an \index{arc}\emph{arc}.
+Further, if it is the unit interval $[0,1]$, then it is also called a \index{path}\emph{path}.
 If in addition $p=\gamma(0)=\gamma(1)$, then $\gamma$ is called a \index{loop}\emph{loop};
 in this case the point $p$ is called the \index{base of loop}\emph{base} of the loop.
 
@@ -213,7 +214,7 @@ x^2+\ell\cdot x+y^2&=0
 describes a smooth regular curve.
 \end{thm}
 
-\section{Proper curves}
+\section{Proper curves}\label{sec:proper-curves}
 
 A parametrized curve $\gamma$ in a metric space $\spc{X}$ is called \index{proper curve}\emph{proper} if for any compact set $K \subset \spc{X}$, the inverse image $\gamma^{-1}(K)$ is compact.
 
@@ -222,7 +223,7 @@ Indeed, the half-line $(-\infty,0]$ is not compact, but it is the inverse image 
 
 \begin{thm}{Exercise}\label{ex:open-curve}
 Suppose $\gamma\:\RR\to\RR^2$ is a proper curve.
-Show that $|\gamma(t)|\to\infty$ as $t\to\pm\infty$.
+Show that $|\gamma(t)|\z\to\infty$ as $t\to\pm\infty$.
 \end{thm}
 
 

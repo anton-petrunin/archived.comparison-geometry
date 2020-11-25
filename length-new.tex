@@ -9,28 +9,22 @@ Let $\gamma\:[a,b]\to \mathcal{X}$ be a curve in a metric space.
 The \index{length of curve}\emph{length} of $\gamma$ is defined as
 \begin{align*}
 \length \gamma
-= 
-\sup \{|\gamma(t_0)-\gamma(t_1)|&+|\gamma(t_1)-\gamma(t_2)|+\dots
-\\
-&\dots+|\gamma(t_{k-1})-\gamma(t_k)|\},
+&= 
+\sup \{|\gamma(t_0)-\gamma(t_1)|+\dots+|\gamma(t_{k-1})-\gamma(t_k)|\},
 \end{align*}\index{$\length \gamma$}
-where the supremum is taken over all partitions
-\[a=t_0 < t_1 < \cdots < t_k=b.\]
+where the least upper bound is taken over all partitions $(t_i)$ of $[a,b]$.
 
 The length of $\gamma$ is a nonnegative real number or infinity;
 the curve $\gamma$ is called \index{rectifiable curve}\emph{rectifiable} if its length is finite. 
 
 The length of a closed curve is defined as the length of the corresponding loop.
-If a curve is defined on an open or semi-open interval, then its length is defined as the exact upper bound for lengths of all its arcs.
+If a curve is defined on an open or semi-open interval, then its length is defined as the least upper bound for lengths of all its arcs.
 \end{thm}
 
-Suppose $\gamma\:[a,b]\to \RR^3$ is a parameterized space curve.
-For a partition $a=t_0 < t_1 < \cdots < t_k=b$, set $p_i=\gamma(t_i)$.
-Then the polygonal line $p_0\dots p_k$ is called \index{inscribed polygonal line}\emph{inscribed} in $\gamma$.
-If $\gamma$ is closed, then $p_0=p_k$, so the inscribed polygonal line is also closed.
 
-\begin{thm}{Exercise}\label{ex:integral-length-0}
-Suppose $\gamma\:[a,b] \to\RR^3$ is a curve and the function $\phi : [c,d] \to [a,b]$ is surjective, continuous, and non-decreasing.
+\begin{thm}{Exercise-Definition}\label{ex:integral-length-0}
+Let $\gamma\:[a,b] \to\RR^3$ be a curve.
+Suppose that the function $\phi : [c,d] \to [a,b]$ is surjective, continuous, and monotone.
 Then the curve $\gamma \circ \phi$ is called a 
 \emph{reparametrization} of $\gamma$.
 Show that 
@@ -38,10 +32,17 @@ Show that
 
 \end{thm}
 
-Note that the length of a space curve $\gamma$ can be defined as the exact upper bound of the lengths of polygonal lines $p_0\dots p_k$ inscribed in $\gamma$.
+Suppose $\gamma\:[a,b]\to \RR^3$ is a parameterized space curve.
+For a partition $a=t_0 < t_1 < \cdots < t_k=b$, set $p_i=\gamma(t_i)$.
+Then the polygonal line $p_0\dots p_k$ is called \index{inscribed polygonal line}\emph{inscribed} in $\gamma$.
+If $\gamma$ is closed, then $p_0=p_k$, so the inscribed polygonal line is also closed.
+
+%???+PIC
+
+Note that the length of a space curve $\gamma$ can be defined as the least upper bound of the lengths of polygonal lines $p_0\dots p_k$ inscribed in $\gamma$.
 
 \begin{thm}{Exercise}\label{ex:length-image}
-Let $\alpha\:[0,1]\to\RR^3$ be a parametrization of a simple arc.
+Let $\alpha\:[0,1]\to\RR^3$ be simple path.
 Suppose a path $\beta\:[0,1]\to\RR^3$ has the same image as $\alpha$;
 that is, $\beta([0,1])=\alpha([0,1])$.
 Show that 
@@ -83,8 +84,9 @@ Conclude that
 
 
 \section{Nonrectifiable curves}
-A classical example of a nonrectifiable curve is the so-called \index{Koch snowflake}\emph{Koch snowflake};
-it is a fractal curve that can be constructed as follows:
+
+Let us describe the so-called \index{Koch snowflake}\emph{Koch snowflake} ---
+a classical example of a nonrectifiable curve.
 
 Start with an equilateral triangle. For each side, divide it into three segments of equal length and then add an equilateral triangle with the middle segment as its base.
 Repeat this construction recursively with the obtained polygons.
@@ -114,26 +116,26 @@ We say that a curve $\gamma$ has an \index{arc-length parametrization}\emph{arc-
 if 
 \[t_2-t_1=\length \gamma|_{[t_1,t_2]}\]
 for any two parameter values $t_1<t_2$;
-that is, the arc of $\gamma$ from $\gamma ( t_1 ) $ to $\gamma ( t_2 )$ has length $t_2-t_1$.
+that is, the arc of $\gamma$ from $t_1$ to $t_2$ has length $t_2-t_1$.
 
 Note that a smooth space curve $\gamma(t)=(x(t),y(t),z(t))$ is an arc-length parametrization if and only if it has unit velocity vector at all times;
 that is, 
 \[|\gamma'(t)|=\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}=1\]
 for all $t$; by that reason smooth curves equipped with an arc-length parametrization are also called \index{unit-speed curve}\emph{unit-speed curves}.
-Note that smooth unit-speed curves are automatically regular.
+Observe that smooth unit-speed curves are automatically regular.
 
 Note that any rectifiable curve $\gamma$ can be parameterized by its arc length.
-Indeed fix a value $t_0$ in the interval of parameters of $\gamma$ and set 
+Indeed, for fixed a value $t_0$, 
 \[s(t)=
 \left\{
 \begin{tabu}{rcr}
 \length\gamma|_{[t_0,t]}&\text{if\ }t\ge t_0,
 \\
--\length\gamma|_{[t,t_0]}&\text{if\ }t\le t_0.
+-\length\gamma|_{[t,t_0]}&\text{if\ }t\le t_0
 \end{tabu}
 \right.
 \]
-
+defines an arc-length parameter of the curve $\gamma$.
 
 \begin{thm}{Proposition}
 If $t\mapsto \gamma(t)$ is a smooth regular curve, 
@@ -172,6 +174,7 @@ therefore it is often convenient to use the original parametrization.
 \section{Convex curves}
 
 A simple plane curve is called \index{convex curve}\emph{convex} if it bounds a convex region.
+Since boundary is closed, any convex curve is either closed or open (see Section \ref{sec:proper-curves}).
 
 \begin{thm}{Proposition}\label{prop:convex-curve}
 Assume a convex closed curve $\alpha$ lies inside the domain bounded by a simple closed plane curve $\beta$.
@@ -179,10 +182,7 @@ Then
 \[\length\alpha\le \length\beta.\]
 \end{thm}
 
-Let us denote by $\perim P$ the perimeter of a polygon $P$.
-Note that it is sufficient to show that for any polygon  $P$ inscribed in $\alpha$ there is a polygon $Q$ inscribed in $\beta$ such that
-$\perim P\le \perim Q$.
-
+Note that it is sufficient to show that for any polygon  $P$ inscribed in $\alpha$ there is a polygon $Q$ inscribed in $\beta$ with equal or larger perimeter.
 Therefore it is sufficient to prove the following lemma.
 
 
@@ -190,13 +190,13 @@ Therefore it is sufficient to prove the following lemma.
 Let $P$ and $Q$ be polygons.
 Assume $P$ is convex and $Q\supset P$.
 Then 
-\[\perim P\le \perim Q.\]
-
+\[\perim P\le \perim Q,\]
+where $\perim P$ denoted perimeter of $P$.
 \end{thm}
 
 
 \begin{wrapfigure}{o}{24 mm}
-\vskip3mm
+\vskip-3mm
 \centering
 \includegraphics{mppics/pic-7}
 \vskip3mm
@@ -238,7 +238,7 @@ Therefore the absolute values of both functions are bounded by some constant $C$
 Therefore, $\alpha$ lies in the square defined by the inequalities $|x|\le C$ and $|y|\le C$.
 
 
-By Proposition~\ref{prop:convex-curve}, the length of the curve cannot exceed the perimeter of the square --- this is a finite number equal to $8\cdot C$. 
+By Proposition~\ref{prop:convex-curve}, the length of the curve cannot exceed $8\cdot C$ --- the perimeter of the square. 
 Hence the result.
 \qeds
 
@@ -254,16 +254,27 @@ Try to show that the statement holds for arbitrary closed plane curves $\alpha$,
 \end{thm}
 
 
-\section{(Crofton formulas)}\label{sec:crofton}
+\section{Crofton's formulas}\label{sec:crofton}
 
-For $d = 1$ or $2$ and a continuous function $f: \mathbb{S}^d \to \mathbb{R}$, we will denote its average value as $\overline{f( \vec u )}$. For a plane (resp. space) vector $ \vec w $, and a unit plane (resp. space) vector $\vec u $, we will denote by $\vec w _{\vec u }$ the orthogonal projection of $\vec w$ to the line in the direction $\vec u$; that is,
-\[   \vec w _{\vec u}  = \langle \vec u , \vec w \rangle \cdot \vec u .   \]
-Similarly, we will denote by $\vec w _{  \vec u ^{ \bot } }$ the orthogonal projection of $\vec w$ to the line (resp. plane) perpendicular to $\vec u$; that is,
-\[  \vec w _{\vec u ^{\bot }} =  \vec w - \vec w_{\vec u}  .  \] 
+For a function $f: \mathbb{S}^1 \to \mathbb{R}$, we will denote its average value as $\overline{f(\vec u)}$.
+For a vector $\vec w$, and unit vector $\vec u$, we will denote by $\vec w_{\vec u}$ the orthogonal projection of $\vec w$ to the line in the direction $\vec u$;
+that is,
+\[\vec w_{\vec u}=\langle\vec u,\vec w\rangle\cdot\vec u.\] 
 
-For any plane vector ${\vec w}$, its length is proportional to the average magnitude of its projections; that is,
+\begin{thm}{Theorem}
+For any plane curve $\gamma$ we have
+\[
+\length\gamma
+=\tfrac\pi2\cdot \overline{\length\gamma_{\vec u}},
+\]
+where the average is taken for all unit vectors $\vec u$.
+\end{thm}
+
+\parit{Proof.}
+Note that the magnitude of any plane vector ${\vec w}$ is proportional to the average magnitude of its projections; that is,
 \[|{\vec w}|=k\cdot \overline{|{\vec w}_{\vec u}|}\]
-for some $k \in \mathbb{R}$. The exact value of $k$ can be found by integration, but we will soon show another way to find it. % the value of k is 1 / (average of $| cos |$)
+for some $k \in \mathbb{R}$.
+The exact value of $k$ can be found by integration\footnote{It is the average value of $|\cos|$.}, but we will find it another way.
 
 For a smooth plane curve $\gamma\:[a,b]\to\RR^2$,  note that for any $t$,
 \[   | \gamma^{\prime}_{\vec u} (t) |  =  | \langle \vec u , \gamma^{\prime} (t) \rangle |    . \]
@@ -276,17 +287,31 @@ For a smooth plane curve $\gamma\:[a,b]\to\RR^2$,  note that for any $t$,
 \\
 &=k\cdot \overline{\length\gamma_{\vec u}}.
 \end{align*}
-This formula and its relatives are called the \index{Crofton formula}\emph{Crofton formulas}. % Who is Crofton? Name?
-Since $k$ is universal for any curve, we can compute it by taking $\gamma$ to be the unit circle: the left hand side is $2\cdot\pi$.
+
+Since $k$ is a universal constant, we can compute it by taking $\gamma$ to be the unit circle.
+In this case
+\[\length \gamma=2\cdot\pi.\]
 Note that for any unit plane vector ${\vec u}$, the curve $\gamma_{\vec u}$ runs back and forth along an interval of length 2.
-Therefore $\length\gamma_{\vec u}=4$ and $\overline{\length\gamma_{\vec u}  } =4$.
-It follows that the coefficient $k$ has to satisfy the equation $2\cdot \pi =k\cdot 4$; hence 
-\[
-\length\gamma
-=\tfrac\pi2\cdot \overline{\length\gamma_{\vec u}}.
+Therefore $\length\gamma_{\vec u}=4$ for any $\vec u$.
+Therefore 
+\[\overline{\length\gamma_{\vec u}} =4.\]
+It follows that $2\cdot \pi =k\cdot 4$.
+Therefore Crofton's formula holds for arbitrary smooth curves.
+
+Applying the same argument together with \ref{adex:integral-length}, we get that Crofton's formula holds for arbitrary rectifiable curves.
+
+It remains to consider nonrectifiable case;
+we have to show that 
+\[\length\gamma=\infty
+\quad\Longrightarrow\quad
+\overline{\length\gamma_{\vec u}}=\infty.
 \]
 
-Crofton's formula holds for arbitrary rectifiable curves, not necessary smooth; this can be proved using Exercise~\ref{adex:integral-length}.
+Observe that from the definition of length, we get
+\[\length\gamma_{\vec u}+\length\gamma_{\vec v}\ge \length\gamma\]
+for any plane curve $\gamma$.
+Therefore, if $\gamma$ has infinite length, then the average of lengths of $\gamma_{\vec u}$ is infinte as well.
+\qeds
 
 \begin{thm}{Exercise}\label{ex:convex-croftons}
 Show that any closed plane curve $\gamma$ has length at least $\pi\cdot s$, where $s$ is the average length of pojections of $\gamma$ to lines.
@@ -294,6 +319,17 @@ Moreover, equality holds if and only if $\gamma$ is convex.
 
 Use this statement to give another solution to Exercise~\ref{ex:convex-hull}.
 \end{thm}
+
+The following exercise gives analogous formulas in the Euclidean space.
+
+As before, we denote by $\vec w_{\vec u}$ the projection of $\vec w$ to the line of $\vec u$.
+Further let us denote by $\vec w_{\vec u}^\bot$ the projection of $\vec w$ to the plane orthogonal to $\vec u$;
+that is,
+\[\vec w_\vec u^\bot=\vec w - \vec w_{\vec u}.\]
+
+We will use notation 
+$\overline{f(\vec u)}$ for the average value
+of a function $f$ defined on $\mathbb{S}^2$.
 
 \begin{thm}{Advanced exercise}\label{adex:more-croftons}
 Show that the length of a space curve is proportional to 
@@ -305,7 +341,7 @@ for some $k \in \mathbb{R}$.
 \end{subthm}
 \begin{subthm}{}the average length of its projections to all planes; that is,
 \[    \length\gamma
-= k \cdot \overline{\length\gamma_{\vec u ^{\bot}}}   \]
+= k \cdot \overline{\length\gamma_{\vec u}^\bot}   \]
 for some $k \in \mathbb{R}$.
 \end{subthm}
 Find the value of $k$ in each case.
@@ -326,7 +362,7 @@ Length is a lower semicontinuous with respect to pointwise convergence of curves
 More precisely, assume that a sequence
 of curves $\gamma_n\:[a,b]\to \spc{X}$ in a metric space $\spc{X}$ converges pointwise 
 to a curve $\gamma_\infty\:[a,b]\to \spc{X}$;
-that is, for any fixed $t \in [a,b]$, $\gamma_n(t)\z\to\gamma_\infty(t)$ as $n\to\infty$. 
+that is, for any fixed $t \in [a,b]$, we have $\gamma_n(t)\z\to\gamma_\infty(t)$ as $n\to\infty$. 
 Then 
 $$\liminf_{n\to\infty} \length\gamma_n \ge \length\gamma_\infty.\eqlbl{eq:semicont-length}$$
 \end{thm}
@@ -362,14 +398,14 @@ Since the partition was arbitrary, by the definition of length, the inequality  
 
 
 \begin{wrapfigure}{o}{20 mm}
-\vskip-0mm
+\vskip3mm
 \centering
 \includegraphics{mppics/pic-6}
 \end{wrapfigure}
 
 
-Note that the inequality \ref{eq:semicont-length} might be strict.
-For example the diagonal $\gamma_\infty$ of the unit square 
+The inequality \ref{eq:semicont-length} might be strict.
+For example, the diagonal $\gamma_\infty$ of the unit square 
 can be  approximated by a stairs-like
 polygonal curves $\gamma_n$
 with sides parallel to the sides of the square ($\gamma_6$ is on the picture).
@@ -383,7 +419,7 @@ for any $n$.
 \section{Length metric}\label{sec:Length metric}
 
 Let $\spc{X}$ be a metric space.
-Given two points $x,y$ in $\spc{X}$, denote by $d(x,y)$ the infimum of lengths of all paths connecting $x$ to $y$; if there is no such path, then $d(x,y)=\infty$.
+Given two points $x,y$ in $\spc{X}$, denote by $d(x,y)$ the greatest lower bound of lengths of all paths connecting $x$ to $y$; if there is no such path, then $d(x,y)=\infty$.
 
 It is straightforward to see that the function $d$ satisfies all the axioms of a metric except it might take infinite values.
 Therefore if any two points in $\spc{X}$ can be connected by a rectifiable curve, then $d$ defines a new metric on $\spc{X}$;
@@ -443,12 +479,13 @@ and \ref{eq:length beta=<length beta} follows.
 Any closed spherical curve of length less than $2\cdot \pi$ lies in an open hemisphere. 
 \end{thm}
 
-This lemma is a keystone in the proof of Fenchel's theorem (see \ref{thm:fenchel}).
+This lemma is a keystone in the proof of Fenchel's theorem that will be proven in the next chapter; see \ref{thm:fenchel}.
 The lemma is not as simple as you might think --- try to prove it yourself before reading the proof.
 The following proof is due to Stephanie Alexander.
 
 \parit{Proof.}
-Let $\gamma$ be a closed curve in $\mathbb{S}^2$ of length $2\cdot\ell$, with $\ell<\pi$.
+Let $\gamma$ be a closed curve in $\mathbb{S}^2$ of length $2\cdot\ell$.
+Suppose $\ell<\pi$.
 
 
 \begin{wrapfigure}[8]{o}{35mm}
@@ -457,7 +494,8 @@ Let $\gamma$ be a closed curve in $\mathbb{S}^2$ of length $2\cdot\ell$, with $\
 \includegraphics{mppics/pic-52}
 \end{wrapfigure}
 
-Let us divide $\gamma$ into two arcs $\gamma_1$ and $\gamma_2$ of length $\ell$, with endpoints $p$ and $q$. 
+Let us divide $\gamma$ into two arcs $\gamma_1$ and $\gamma_2$ of length $\ell$;
+denote their endpoints by $p$ and $q$. 
 Note that 
 \begin{align*}
 \measuredangle(p,q)&\le \length \gamma_1=
@@ -515,18 +553,19 @@ whence \ref{eq:|pq|=<2} follows.
 \qedsf
 
 \begin{thm}{Advanced exercises} \label{adex:crofton}
-Given unit vectors ${\vec v},{\vec w}\in\mathbb{S}^2$, denote by ${\vec w}_{\vec v}$ the closest point to ${\vec w}$ on the equator with pole at ${\vec v}$;
-in other words, if ${\vec w}^\perp$ is the projection of ${\vec w}$ to the plane perpendicular to ${\vec v}$, then ${\vec w}_{\vec v}$ is the unit vector in the direction of ${\vec w}^\perp$.
-The vector ${\vec w}_{\vec v}$ is defined if ${\vec w}\ne\pm {\vec v}$.
+Given unit vectors ${\vec u},{\vec w}\in\mathbb{S}^2$, denote by ${\vec w}_{\vec u}$ the closest point to ${\vec w}$ on the equator with pole at ${\vec u}$;
+in other words, if ${\vec w}^\perp$ is the projection of ${\vec w}$ to the plane perpendicular to ${\vec u}$, then ${\vec w}_{\vec u}$ is the unit vector in the direction of ${\vec w}^\perp$.
+The vector ${\vec w}_{\vec u}$ is defined if ${\vec w}\ne\pm {\vec u}$.
 
 \begin{subthm}{adex:crofton:crofton}
 Show that for any spherical curve $\gamma$ we have
-\[\length\gamma=\overline{\length\gamma_{\vec v}},\]
-where $\overline{\length\gamma_{\vec v}}$ denotes the average length of $\gamma_{\vec v}$ with ${\vec v}$ varying in $\mathbb{S}^2$.
+\[\length\gamma=\overline{\length\gamma_{\vec u}},\]
+where $\overline{\length\gamma_{\vec u}}$ denotes the average length of $\gamma_{\vec u}$ with ${\vec u}$ varying in $\mathbb{S}^2$.
 (This is a spherical analog of Crofton's formula.)
 \end{subthm}
 
-\begin{subthm}{adex:crofton:hemisphere} Give another proof of the hemisphere lemma using \ref{adex:crofton:crofton}. 
+\begin{subthm}{adex:crofton:hemisphere}
+Use \ref{SHORT.adex:crofton:crofton} to give another proof of the hemisphere lemma (\ref{lem:hemisphere}). 
 \end{subthm}
  
 \end{thm}

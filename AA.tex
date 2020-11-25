@@ -1,3 +1,206 @@
+
+
+
+
+
+
+
+\section{(Nonsmooth curves)}
+
+
+
+This theorem is a refinement of Proposition~\ref{prop:inscribed-total-curvature}.
+It shows that the following definition of total curvature of arbitrary curves, 
+generalize the original definition that works only for (piecewise) smooth and regular curves.
+
+We say that a parameterized curve is trivial if it is constant; that is, it stays at one point.
+
+\begin{thm}{Definition}\label{def:total-curv-poly}
+The total curvature of a nontrivial parameterized space curve $\gamma$ is the least upper bound on the total curvatures of inscribed nondegenerate polygonal lines;
+if $\gamma$ is closed, then we assume that the inscribed polygonal lines are closed as well.
+\end{thm}
+
+\parit{Proof of the theorem.}
+Note that the inequality 
+\[\tc\gamma\ge \tc\beta\]
+follows from \ref{prop:inscribed-total-curvature};
+it remains to show 
+\[\tc\gamma\le\sup\{\tc\beta\}. \eqlbl{eq:tc=<tc}\]
+
+Let $\gamma\:[a,b]\to\RR^3$ be a smooth curve.
+Fix a partition $a\z=t_0\z<\dots<t_k=b$ and consider the corresponding inscribed polygonal line $\beta=p_0\dots p_k$.
+(If $\gamma$ is closed, then  $p_0=p_k$ and $\beta$ is closed as well.)
+
+Let $\tau=\xi_1\dots\xi_k$ be a spherical polygonal line
+with the vertexes $\xi_i\z=\tfrac{p_i-p_{i-1}}{|p_i-p_{i-1}|}$.
+We can assume that $\tau$ has constant speed on each arc and $\tau(t_i)=\xi_i$ for each $i$. 
+The spherical polygonal line $\tau$ will be called \index{tangent indicatrix!of polygonal line}\emph{tangent indicatrix} for $\beta$.
+
+Consider a sequence of finer and finer partitions, denote by $\beta_n$ and $\tau_n$ the corresponding inscribed polygonal lines and their tangent indicatrixes.
+Note that since $\gamma$ is smooth, the idicatrixes $\tau_n$ converge pointwise to $\tan$ --- the tangent indicatrix of $\gamma$.
+By the semi-continuity of the length (\ref{thm:length-semicont}), we get that  
+\begin{align*}
+\tc\gamma&=\length \tan\le  
+\\
+&\le \liminf_{n\to\infty}\length \tau_n=
+\\
+&= \liminf_{n\to\infty}\tc {\beta_n}\le
+\\
+&\le \sup\{\tc\beta\}.
+\end{align*}
+\qeds
+
+
+
+\begin{thm}{Exercise}\label{ex:tc-semicontinuous}
+Show that the total curvature is lower semicontinuous with respect to pointwise convergence of curves.
+That is, if a sequence
+of curves $\gamma_n\:[a,b]\to \RR^3$ converges pointwise 
+to a nontrivial curve $\gamma_\infty\:[a,b]\z\to \RR^3$, then 
+\[\liminf_{n\to\infty} \tc{\gamma_n} \ge \tc{\gamma_\infty}.\]
+\end{thm}
+
+
+\begin{thm}{Exercise}\label{ex:gen-fenchel}
+Generalize Fenchel's theorem to all nontrivial closed space curves.
+That is, show that \[\tc\gamma\ge2\cdot\pi\]
+for any  closed space curve $\gamma$ (not necessary piecewise smooth and regular).
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:tc-length}
+
+\begin{subthm}{ex:tc-length:rectifiable}
+Assume that a curve $\gamma\:[a,b]\to\RR^3$ has finite total curvature.
+Show that $\gamma$ is rectifiable.
+\end{subthm}
+
+\begin{subthm}{ex:tc-length:example}
+Construct a rectifiable curve $\gamma\:[a,b]\to\RR^3$ that has infinite total curvature.
+\end{subthm}
+
+\end{thm}
+
+For more on curves of finite total curvature read \cite{aleksandrov-reshetnyak,sullivan-curves}. 
+
+\section{(DNA inequality revisited)}
+
+In this section we will give an alternative proof of the DNA inequality (\ref{thm:DNA}) that works for arbitrary, not necessarily smooth, curves.
+In the proof we use \ref{def:total-curv-poly} to define the total curvature;
+according to \ref{thm:total-curvature=}, it is more general than the smooth definition given on page \pageref{page:total curvature of:smooth-def}.
+
+\parit{Alternative proof of \ref{thm:DNA}.}
+We will show that 
+\[\tc\gamma> \length\gamma.\]
+for any closed polygonal line $\gamma=p_1\dots p_{n}$ in a unit ball.
+It implies the theorem since in any nontrivial closed curve we can inscribe a closed polygonal line with arbitrary close total curvature and length.
+
+The indexes are taken modulo $n$, in particular $p_{n}=p_0$, $p_{n+1}=p_1$ and so on.
+Denote by $\theta_i$ the external angle of $\gamma$ at $p_i$;
+that is,
+\[\theta_i=\pi-\measuredangle\hinge {p_i}{p_{i-1}}{p_{i+1}}.\]
+
+Denote by $o$ the center of the ball.
+Consider a sequence of $n+1$ plane triangles
+\begin{align*}
+[q_0s_0q_1]
+&\cong 
+[p_0op_1],
+\\
+[q_1s_1q_2]
+&\cong 
+[p_1op_2],
+\\
+&\dots
+\\
+[q_{n}s_nq_{n+1}]
+&\cong 
+[p_nop_{n+1}],
+\end{align*}
+such that the points $q_0,q_1,\dots,q_{n+1}$ lie on one line in that order and all the points $s_0,\dots,s_n$ lie on one side from this line.
+
+\begin{figure}[h!]
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-16}
+\vskip0mm
+\end{figure}
+
+Since $p_0=p_n$ and $p_1=p_{n+1}$, we have the followng congruence:
+\[[q_{n}s_nq_{n+1}]\cong 
+[p_nop_{n+1}]=[p_0op_1]\cong[q_{0}s_0q_1],\]
+so $s_0q_0q_ns_n$ is a parallelogram.
+Therefore
+\begin{align*}
+|s_0-s_1|+\dots+|s_{n-1}-s_n|
+&\ge|s_n-s_0|=
+\\
+&=|q_0-q_n|=
+\\
+&=|p_0-p_1|+\dots+|p_{n-1}-p_n|=
+\\
+&=\length \gamma.
+\end{align*}
+
+Since $|q_i-s_{i-1}|=|q_i-s_i|=|p_i-o|\le 1$, we have that
+\[\measuredangle\hinge {q_i}{s_{i-1}}{s_i}>|s_{i-1}-s_i|\]
+for each $i$.
+Therefore
+\begin{align*}
+\theta_i
+&=
+\pi
+-
+\measuredangle\hinge {p_i}{p_{i-1}}{p_{i+1}}
+\ge
+\\
+&\ge\pi-\measuredangle\hinge {p_i}{p_{i-1}}o-\measuredangle\hinge {p_i}o{p_{i+1}}=
+\\
+&=\pi-\measuredangle\hinge {q_i}{q_{i-1}}{s_{i-1}}-\measuredangle\hinge {q_i}{s_i}{q_{i+1}}=
+\\
+&=\measuredangle\hinge {q_i}{s_{i-1}}{s_i}
+>
+\\
+&>|s_{i-1}-s_i|.
+\end{align*}
+That is, 
+\[\theta_i>|s_{i-1}-s_i|\]
+for each $i$.
+
+It follows that
+\begin{align*}
+\tc \gamma
+&=\theta_1+\dots+\theta_n>
+\\
+&> |s_{0}-s_1|+\dots |s_{n-1}-s_n|\ge 
+\\
+&\ge\length \gamma.
+\end{align*}
+Hence the result.
+\qeds
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection*{Schwarz's boot}\label{sec:schwarz-boot}
 
 One may try to define area of a surface as a exact upper bound on the area of polyhedrons inscribed in the surface.

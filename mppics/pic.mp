@@ -1977,8 +1977,8 @@ label.urt(btex $z$ etex, z.z);
 label.urt(btex $r$ etex, z.r);
 label.llft(btex $r^{*}$ etex, -z.r);
 
-label.ulft(btex $\alpha_1$ etex, point 1.6 of p1+(1,0));
-label.ulft(btex $\alpha_1^{*}$ etex, point .6 of p2+(1,0));
+label.ulft(btex $\gamma_1$ etex, point 1.6 of p1+(1,0));
+label.ulft(btex $\gamma_1^{*}$ etex, point .6 of p2+(1,0));
 endfig;
 
 beginfig(53) 
@@ -3853,6 +3853,37 @@ drawarrow (-r,0)*u--(r,0)*u;
 drawarrow (0,-.5)*u--(0,r)*u;
 
 label.top (btex $y=\sigma_\eps(x)$ etex, point 2.4 of p0);
+endfig;
+
+
+beginfig(354) 
+save u;
+u:=1cm;
+
+z.a=(1,.7)*u;
+z.a1=(2,1)*u;
+z.a2=(2,.2)*u;
+z.b=(1.5,0)*u;
+z.b1=(1.6,-.3)*u;
+z.b2=(1.5,-1)*u;
+z.c=(1,-1)*u;
+
+save p; path p[];
+p0=z.b{0,-1}..z.b2..z.c..z.a..{-1,-.5}z.b;
+
+z.aa=.7*u*unitvector(direction 5 of p0);
+z.bb=.7*u*unitvector(direction 0 of p0);
+
+labelarcsprof(z.b+z.aa, z.b, z.b+z.bb, 10,7, btex $\theta$ etex);
+
+drawarrow z.b--z.b+z.aa penhair;
+drawarrow z.b--z.b+z.bb penhair;
+draw p0;
+
+dOt z.b;
+
+whitelabel.lft (btex $\gamma'(b)$ etex, z.b+z.aa);
+whitelabel.lrt (btex $\gamma'(a)$ etex, z.b+z.bb+(-8,2));
 endfig;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
