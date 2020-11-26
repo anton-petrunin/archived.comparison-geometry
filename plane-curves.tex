@@ -16,7 +16,7 @@ Therefore
 \[\tan'(s)=\skur(s)\cdot \norm(s).\eqlbl{eq:tau'}\]\index{$\skur$}
 for some real number $\skur(s)$;
 the value $\skur(s)$ is called \index{signed curvature}\emph{signed curvature} of $\gamma$ at $s$.
-We may use notation $\skur(s)_\gamma$ if we need to specify the curve $\gamma$.
+We may use notation $\skur(s)_\gamma$ if we need to specify the curve~$\gamma$.
 
 Note that 
 \[\kur(s)=|\skur(s)|;\]
@@ -79,7 +79,7 @@ Show that
 
 The curves $\gamma_0$ and $\gamma_1$ in the exercise above describe the tracks of an idealized bicycle with  distance 1 from the rear to the front wheel.
 Thus by the exercise, the front wheel must have longer track.
-For more on the geometry of bicycle tracks, see \cite{foote-levi-tabachnikov} and the references therein.
+For more on the geometry of bicycle tracks, see the survey of Robert Foote, Mark Levi, and Serge Tabachnikov \cite{foote-levi-tabachnikov} and the references therein.
 
 \section{Fundamental theorem of plane curves}
 
@@ -116,13 +116,15 @@ Note that
 \\
 &=\skur(s)\cdot \norm(s).
 \end{align*}
-So $\skur(s)$ is the signed curvature of $\gamma$ at $s$. This proves the existence.
+So $\skur(s)$ is the signed curvature of $\gamma$ at $s$. 
 
+This proves the existence;
 it remains to prove uniqueness.
+
 Assume $\gamma_1$ and $\gamma_2$ are two curves that satisfy the assumptions of the theorem.
 Applying a rigid motion, we can assume that $\gamma_1(s_0)\z=\gamma_2(s_0)\z=0$ and the Frenet frame of both curves at $s_0$ is formed by the coordinate frame $(1,0),(0,1)$.
 Let us denote by $\tan_1,\norm_1$ and $\tan_2,\norm_2$ the Frenet frames of $\gamma_1$ and $\gamma_2$ respectively.
-The triples $\gamma_i,\tan_i,\norm_i$ satisfy the same system of ordinary differential equations 
+Both triples $\gamma_i,\tan_i,\norm_i$ satisfy the following system of ordinary differential equations 
 \[
 \begin{cases}
 \gamma_i'=\tan_i,
@@ -134,7 +136,7 @@ The triples $\gamma_i,\tan_i,\norm_i$ satisfy the same system of ordinary differ
 \]
 
 Moreover, they have the same initial values at $s_0$.
-By Theorem \ref{thm:ODE}, $\gamma_1=\gamma_2$.
+By uniqueness of a solution of ordinary differential equation (\ref{thm:ODE}), we have $\gamma_1=\gamma_2$.
 \qeds
 
 Note that from the proof of theorem we obtain the following corollary:
@@ -142,7 +144,7 @@ Note that from the proof of theorem we obtain the following corollary:
 
 
 \begin{thm}{Corollary}\label{cor:2D-angle}
-Let $\gamma\:\mathbb{I}\to\RR^2$ be a smooth unit-speed curve and $s_0\in \mathbb{I}$.
+Let $\gamma\:\mathbb{I}\to\RR^2$ be a smooth unit-speed curve and $s_0\z\in \mathbb{I}$.
 Denote by $\skur$ the signed curvature of $\gamma$.
 Assume an oriented $(x,y)$-coordinate system is chosen in such a way that $\gamma(s_0)$ is the origin and $\gamma'(s_0)$ points in the direction of the $x$-axis.
 Then 
@@ -156,21 +158,19 @@ for all $s$, where
 
 Let $\gamma\:\mathbb{I}\to\RR^2$ be a smooth unit-speed plane curve.
 The \index{total signed curvature}\emph{total signed curvature} of $\gamma$, denoted by $\Psi(\gamma)$, is defined as the integral
-of its signed curvature;
 \[\Psi(\gamma)
 =
 \int_\mathbb{I} \skur(s)\cdot ds,\eqlbl{eq:tsc-k}\]\index{$\Psi(\gamma)$}
 where $\skur$ denotes the signed curvature of $\gamma$.
 
-If $\mathbb{I}=[a,b]$, then 
+Note that if $\mathbb{I}=[a,b]$, then 
 \[\Psi(\gamma)=\theta(b)-\theta(a),\eqlbl{eq:tsc-theta}\]
 where $\theta$ is as in \ref{cor:2D-angle}.
 
-If $\gamma$ is a piecewise smooth and regular plane curve, then we define its total signed curvature as the sum of the total signed curvatures of its arcs plus the sum of the signed external angles at its joints;
+If $\gamma$ is a piecewise smooth and regular plane curve, then we define its total signed curvature as the sum of the total signed curvatures of its arcs plus the sum of the \emph{signed} external angles at its joints;
 it is positive if $\gamma$ turns left, negative if $\gamma$ turns right, 0 if it goes straight.
 It is undefined if it turns exactly backward;
-that is, the curve has a cusp.
-undefined if it turns exactly backward.
+that is, if the curve has a cusp.
 That is, if $\gamma$ is a concatenation of smooth and regular arcs $\gamma_1,\dots,\gamma_n$, then 
 \[\Psi(\gamma)=\Psi(\gamma_1)+\dots+\Psi(\gamma_n)+\theta_1+\dots+\theta_{n-1}\]
 where $\theta_i$ is the signed external angle at the joint between $\gamma_i$ and $\gamma_{i+1}$.
@@ -181,18 +181,16 @@ where $\theta_n$ is the signed external angle at the joint between $\gamma_n$ an
 Since $\left|\int \skur(s)\cdot ds\right|\le \int|\skur(s)|\cdot ds$, we have
 \[|\Psi(\gamma)|\le \tc\gamma\eqlbl{eq:tsc-tc}\] 
 for any smooth regular plane curve $\gamma$;
-that is, total signed curvature cannot exceed total curvature by absolute value.
+that is, the total signed curvature $\Psi$ cannot exceed the total curvature $\tc{}$ by absolute value.
 Note that the equality holds if and only if the signed curvature does not change the sign.
 
+\begin{thm}{Exercise}\label{ex:trochoids}
 Trochoid is a curve traced out by a point fixed to a wheel as it rolls along a straight line.
 \begin{figure}[h!]
 \centering
 \includegraphics{asy/trochoids}
-\caption*{Trochoids $\gamma_a$ for different values $a$.}
 \end{figure}
-
-\begin{thm}{Exercise}\label{ex:trochoids}
-Consider the family of \index{trochoid}\emph{trochoids} $\gamma_a\:[0,2\cdot\pi]\to \RR^2$ defined by 
+A family of \index{trochoid}\emph{trochoids} $\gamma_a\:[0,2\cdot\pi]\to \RR^2$ (see the picture) can be parameterized as
 \[\gamma_a(t)=(t+a\cdot \sin t, a\cdot \cos t).\]
 \begin{enumerate}[(a)]
 \item Given $a\in \RR$, find $\Psi(\gamma_a)$ if it is defined.
@@ -216,7 +214,14 @@ We can also assume that it is parametrized by arc-length.
 
 Consider a closed polygonal line $\beta=p_1\dots p_n$ inscribed in $\gamma$.
 We can assume that the arcs between the vertexes are sufficiently small;
-in this case the polygonal line is simple and each arc $\gamma_i$ from $p_i$ to $p_{i+1}$ has small total absolute curvature, say  $\tc{\gamma_i}<\pi$ for each $i$.
+so the polygonal line is simple and each arc $\gamma_i$ from $p_i$ to $p_{i+1}$ has small total absolute curvature, say  $\tc{\gamma_i}<\pi$ for each $i$.
+
+\begin{wrapfigure}[13]{o}{43 mm}
+\vskip4mm
+\centering
+\includegraphics{mppics/pic-59}
+\vskip4mm
+\end{wrapfigure}
 
 As usual we use indexes modulo $n$, in particular $p_{n+1}\z=p_1$.
 Assume $p_i=\gamma(t_i)$.
@@ -228,22 +233,14 @@ Set
 \end{align*}
 where $\alpha_i,\beta_i\in(-\pi,\pi]$ are signed angles --- $\alpha_i$ is positive if $\vec w_i$ points to the left from $\vec v_i$.
 
-\begin{wrapfigure}[13]{o}{43 mm}
-\vskip4mm
-\centering
-\includegraphics{mppics/pic-59}
-\vskip4mm
-\end{wrapfigure}
-
 By \ref{eq:tsc-theta}, the value
 \[\Psi(\gamma_i)-\alpha_i-\beta_{i+1}\eqlbl{eq:Psi-alpha-beta}\]
 is a multiple of $2\cdot\pi$.
 Since $\tc{\gamma_i}<\pi$, by the chord lemma (\ref{lem:chord}), we also have that $|\alpha_i|\z+|\beta_i|<\pi$.
 By \ref{eq:tsc-tc}, we have that $|\Psi(\gamma_i)|\le\tc{\gamma_i}$;
 therefore the value in \ref{eq:Psi-alpha-beta} vanishes.
-In other word, the equality
-\[\Psi(\gamma_i)=\alpha_i+\beta_{i+1}\]
-holds for each $i$.
+In other word,for each $i$ we have
+\[\Psi(\gamma_i)=\alpha_i+\beta_{i+1}.\]
 
 Note that 
 \[\delta_i=\pi-\alpha_i-\beta_i\eqlbl{eq:delta=pi-alpha-beta}\] 
@@ -334,8 +331,8 @@ a unit vector $\tan$
 and a real number $\skur$, there is a unique smooth unit-speed curve $\sigma\:\RR\to\RR^2$ 
 that starts at $p$ in the direction of $\tan$ and has constant signed curvature $\skur$.
 
-Moreover, if $\skur=0$, then $\sigma(s)=p+s\cdot \tan$ which runs along a line;
-if $\skur\ne 0$, then $\sigma$ runs around the circle of radius $\tfrac1{|\skur|}$ and center $p+\tfrac1\skur\cdot \norm$, where $\tan,\norm$ is an oriented orthonoral frame.
+Moreover, if $\skur=0$, then it is a line $\sigma(s)=p+s\cdot \tan$;
+if $\skur\ne 0$, then $\sigma$ runs around a circle of radius $\tfrac1{|\skur|}$ with center at $p+\tfrac1\skur\cdot \norm$, where $\tan,\norm$ is an oriented orthonoral frame.
 \end{thm}
 
 Further we will use the term \index{circline}\emph{circline} for {}\emph{a circle or a line};
@@ -383,7 +380,7 @@ The center and radius of the osculating circle at a given point are called \inde
 The osculating circle $\sigma_s$ can be also defined as the unique circline that has \index{order of contact}\emph{second order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)\z=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\sigma_s$.
 
-The following exercise would is recommended to the reader familiar with the notion of inversion.
+The following exercise would is recommended to the reader familiar with the notion of \index{inversion}\emph{inversion}.
 
 \begin{thm}{Advanced exercise}\label{ex:inverse}
 Suppose $\gamma$ is a smooth regular plane curve that does not pass thru the origin.
@@ -397,7 +394,7 @@ Show that osculating circline of $\hat\gamma$ at $s$ is the inversion of osculat
 The following lemma was proved by Peter Tait \cite{tait}
 and later rediscovered by Adolf Kneser \cite{kneser}.
 
-\begin{wrapfigure}{o}{31 mm}
+\begin{wrapfigure}{r}{31 mm}
 \vskip-4mm
 \begin{lpic}[t(-0 mm),b(-2 mm),r(0 mm),l(0 mm)]{mppics/pic-61}
 \end{lpic}
@@ -412,19 +409,19 @@ It turns out that the osculating circles of the curve $\gamma$ give a peculiar f
 Also note that the curve $\gamma$ is tangent to a circle of the foliation at each of its points.
 However, it does not run along any of those circles.
 
-\begin{wrapfigure}{o}{35 mm}
-\vskip-4mm
-\centering
-\begin{lpic}[t(-0 mm),b(-0 mm),r(0 mm),l(0 mm)]{mppics/pic-84}
-\end{lpic}
-\end{wrapfigure}
-
 \parit{Proof.}
 Let $\tan(s),\norm(s)$ be the Frenet frame,
 $\omega(s)$, $r(s)$
 the center and radius of curvature of $\gamma$.
 By \ref{prop:circline},
 \[\omega(s)=\gamma(s)+r(s)\cdot \norm(s).\]
+
+\begin{wrapfigure}{o}{35 mm}
+\vskip-0mm
+\centering
+\begin{lpic}[t(-0 mm),b(-0 mm),r(0 mm),l(0 mm)]{mppics/pic-84}
+\end{lpic}
+\end{wrapfigure}
 
 Since $\skur>0$, we have that $r(s)\cdot\skur(s)=1$.
 Therefore applying Frenet formula \ref{eq:nu'}, we get that
@@ -453,9 +450,18 @@ Therefore
 \end{align*}
 
 In other words, the distance between the centers of $\sigma_{s_1}$ and $\sigma_{s_0}$
-is strictly less than the difference between their radii.
+is strictly less than the difference between their raduses.
 Therefore the osculating circle at $s_0$ lies inside the osculating circle at $s_1$ without touching it.
 \qeds
+
+{
+
+\begin{wrapfigure}{r}{32 mm}
+\vskip-4mm
+\centering
+\includegraphics{asy/ellipse-astroid}
+\vskip-0mm
+\end{wrapfigure}
 
 The curve $s\mapsto \omega(s)$ is called the \index{evolute}\emph{evolute} of $\gamma$; 
 it traces the centers of curvature of the curve. 
@@ -463,14 +469,6 @@ The evolute of $\gamma$ can be written as
 \[\omega(t)=\gamma(t)+\tfrac1{\skur(t)}\cdot \norm(t)\] and  
 in the proof we showed that $(\tfrac1{\skur})'\cdot\norm$ is its velocity vector.
 
-{
-
-\begin{wrapfigure}{r}{35 mm}
-\vskip-0mm
-\centering
-\includegraphics{asy/ellipse-astroid}
-\vskip-0mm
-\end{wrapfigure}
 
 \begin{thm}{Exercise}\label{ex:evolute-of-ellipse}
 Show that the stretched astroid 
@@ -642,7 +640,7 @@ Show that $\gamma_0$ locally supports $\gamma_1$ from the right at $p$.
 Give an example of two proper curves $\gamma_0$ and $\gamma_1$ satisfying the above condition such that $\gamma_0$ does not globally support $\gamma_1$ at $p$.
 \end{thm}
 
-Note that according to the DNA inequality (\ref{thm:DNA}) for any closed smooth regular curve that runs in a unit disc, the average of its absolute curvature at least 1; in particular it has a point with absolute curvature at lest 1.
+Note that according to \ref{thm:DNA} for any closed smooth regular curve that runs in a unit disc, the average of its absolute curvature at least 1; in particular it has a point with absolute curvature at lest 1.
 The following exercise says that the last statement holds for loops.
 
 \begin{thm}{Exercise}\label{ex:in-circle}
