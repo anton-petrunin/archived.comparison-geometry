@@ -355,6 +355,51 @@ Whence \ref{|sigma'|<kur-theta'} follows if $\theta\ne0,\pi$.
 
 There is \emph{an alternative solution} by means of elementary geometry based on \ref{prop:inscribed-total-curvature}.
 
+
+
+\parbf{\ref{ex:DNA}}; \ref{SHORT.ex:DNA:c''c>=k}.
+Observe that
+\[\langle\gamma'(s),\gamma'(s)\rangle=1,
+\quad 
+\text{and}
+\quad 
+\langle \gamma(s),\gamma(s)\rangle\le 1.\]
+Therefore
+\[\begin{aligned}
+\langle\gamma''(s),\gamma(s)\rangle&\ge -|\gamma''(s)|\cdot|\gamma(s)|\ge
+\\
+&\ge-\kur(s)
+\end{aligned}\eqlbl{eq:<gamma'',gamma>>=-k}\]
+for all $s$.
+
+\parit{\ref{SHORT.ex:DNA:int>=length-tc}.}
+Since $\gamma$ is unit-speed, we have $\ell=\length\gamma$.
+Therefore
+\begin{align*}
+\int_0^\ell\langle\gamma(s),\gamma'(s)\rangle'\cdot ds
+&=
+\int_0^\ell\langle\gamma'(s),\gamma'(s)\rangle\cdot ds+\int_0^\ell\langle\gamma(s),\gamma''(s)\rangle\cdot ds\ge
+\\
+&\ge \length\gamma-\tc\gamma.
+\end{align*}
+
+\parit{\ref{SHORT.ex:DNA:end}.}
+By the fundamental theorem of calculus, we have
+\begin{align*}
+\int_0^\ell\langle\gamma(s),\gamma'(s)\rangle'\cdot ds
+&=\langle\gamma(\ell),\gamma'(\ell)\rangle
+-
+\langle\gamma(0),\gamma'(0)\rangle.
+\end{align*}
+Since $\gamma(0)=\gamma(\ell)$ and $\gamma'(0)=\gamma'(\ell)$, the right hand side vanishes.
+
+Note that without loss of generality we can assume the curve in \ref{thm:DNA} is described by a loop $\gamma\:[0,\ell]\to\RR^3$ parameterized by its arc-length.
+We can also assume that the origin is the center of the ball; that is $|\gamma|\le 1$.
+Since $\gamma$ is a smooth closed curve, we have 
+$\gamma'(0)=\gamma'(\ell)$ and $\gamma(0)=\gamma(\ell)$.
+
+Therefore \ref{SHORT.ex:DNA:int>=length-tc} and \ref{SHORT.ex:DNA:end} imply \ref{thm:DNA}.
+
 \parbf{\ref{ex:chord-lemma-optimal}.} 
 Set $\alpha=\measuredangle(\vec w,\vec u)$ 
 and $\beta=\measuredangle(\vec v,\vec u)$.
@@ -376,6 +421,21 @@ Arc II goes very close and almost parallel to the chord $pq$ and its total curva
 \parbf{\ref{ex:monotonic-tc}.}
 Use that exterior angle of a triangle equals to the sum of the two remote interior angles;
 for the second part apply the induction on number of vertexes.
+
+\parbf{\ref{ex:total-curvature=}.}
+By \ref{prop:inscribed-total-curvature}, $\tc\gamma\ge \tc\beta$;
+it remains to show that
+$\tc\gamma\le\sup\{\tc\beta\}$.
+In other words, 
+given $\eps>0$ and any polygonal line $\sigma=\vec u_0\dots \vec u_k$ inscribed in the tangent idicatrix $\tan$ of $\gamma$, 
+we need to construct a polygonal line $\beta$ inscribed in $\gamma$ such that
+\[\length\sigma<\tc\beta+\eps.
+\eqlbl{eq:tc=<tc}\]
+
+Suppose $\vec u_i=\tan(s_i)$;
+choose $p_{2\cdot i}$ and $p_{2\cdot i+1}$ sufficiency close to $\gamma(s_i)$.
+Observe that we can assume the direction of $p_{2\cdot i+1}-p_{2\cdot i}$ is sufficiency close to $\vec u_i$ for each $i$.
+Conclude that \ref{eq:tc=<tc} holds true for the polygonal line $\beta=p_0\dots p_{2\cdot k}$.
 
 \begin{wrapfigure}{r}{23 mm}
 \vskip-0mm
@@ -714,8 +774,8 @@ Consider the ordinary differential equation $x'(t)=\vec u_t(x(t))$.
 Consider the map $\iota\:x(0)\mapsto x(1)$ where $t\mapsto x(t)$ is a solution of the equation.
 The map $\iota$ is called \index{flow}\emph{flow} of vector field $\vec u_t$ for the time interval $[0,1]$.
 Observe that according to \ref{thm:ODE} the map $\iota$ is smooth in its domain of definition.
-Moreover the same holds for its inverse;
-indeed $\iota^{-1}$ is the flow for of the vector field $-\vec u_{1-t}$.
+Moreover the same holds for its inverse $\iota^{-1}$;
+indeed, $\iota^{-1}$ is the flow for of the vector field $-\vec u_{1-t}$.
 That is, $\iota$ is a diffeomorphism from the domain of definition to its image. 
 
 
@@ -725,7 +785,7 @@ such map is automatically a diffeomorphism.
 
 \parit{\ref{SHORT.ex:plane-n}.}
 Suppose $\Sigma=\RR^2\backslash{p_1,\dots,p_n}$ and $\Theta=\RR^2\backslash{q_1,\dots,q_n}$.
-Choose smooth paths $\gamma_i\:[0,1]\to \RR^2$ such that $\gamma_i(0)=p_i$,
+Choose smooth paths $\gamma_i\:[0,1]\z\to \RR^2$ such that $\gamma_i(0)=p_i$,
 $\gamma_i(1)=q_i$, and $\gamma_i(t)\ne \gamma_j(t)$ if $i\ne j$.
 
 Choose a smooth vector field $\vec v_t$ such that $\vec v_t(\gamma_i(t))=\gamma'_i(t)$ for any $i$ and $t$.

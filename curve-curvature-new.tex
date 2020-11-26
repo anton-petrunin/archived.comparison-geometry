@@ -187,11 +187,49 @@ it takes length $\pi$ each way,
 whence 
 \[\length\sigma\ge 2\cdot\pi.\]
 
+Recall that the curvature of a spherical curve is at least $1$
+(see \ref{ex:curvature-of-spherical-curve}).
+In particular, the length of a spherical curve cannot exceed its total curvature.
+The following theorem shows that the same inequality holds for {}\emph{closed} curves in a unit ball.
 
+\begin{thm}{Theorem}\label{thm:DNA}
+Let $\gamma$ be a smooth regular closed curve that lies in a unit ball.
+Then 
+\[\tc\gamma\ge \length\gamma.\]
+
+\end{thm}
+
+The 2-dimensional case of this theorem was proved by Istv\'{a}n F\'{a}ry \cite{fary1950}.
+It was generalized by Don Chakerian \cite{chakerian1962} to higher dimensions.
+This theorem has many very interesting and very different proofs;
+a number of them are collected by Serge Tabachnikov~\cite{tabachnikov}.
+The following exercise will guide you thru another proof of Don Chakerian \cite{chakerian1964}:
+
+\begin{thm}{Exercise}\label{ex:DNA}
+Let $\gamma\:[0,\ell]\to\RR^3$ be a smooth unit-speed closed curve that lies in the unit ball; that is, $|\gamma|\le 1$.
+
+\begin{subthm}{ex:DNA:c''c>=k}
+Show that 
+\[\langle\gamma''(s),\gamma(s)\rangle\ge-\kur(s)\]
+for any $s$.
+\end{subthm}
+
+\begin{subthm}{ex:DNA:int>=length-tc}
+Use part \ref{SHORT.ex:DNA:c''c>=k} to show that 
+\[\int_0^\ell\langle\gamma(s),\gamma'(s)\rangle'\cdot ds\ge
+\length\gamma-\tc\gamma.\]
+
+\end{subthm}
+
+\begin{subthm}{ex:DNA:end}
+Suppose that $\gamma(0)=\gamma(\ell)$ and $\gamma'(0)=\gamma'(\ell)$.
+Show that 
+\[\int_0^\ell\langle\gamma(s),\gamma'(s)\rangle'\cdot ds=0.\]
+Use this equality together with  part \ref{SHORT.ex:DNA:int>=length-tc} to prove \ref{thm:DNA}.
+\end{subthm}
+\end{thm}
 
 \section{Piecewise smooth curves}
-
-
 
 Assume $\alpha\:[a,b]\to \RR^3$ and $\beta\:[b,c]\z\to \RR^3$ are two curves such that $\alpha(b)\z=\beta(b)$.
 Note that these two curves can be combined into one $\gamma\:[a,c]\z\to \RR^3$ by the rule 
@@ -276,7 +314,9 @@ By \ref{obs:tantrix}, the statement follows.
 \qedsf
 
 \begin{thm}{Chord lemma}\label{lem:chord}
-Let $\ell$ be the chord to a smooth regular arc $\gamma\:[a,b]\z\to\RR^3$.
+Let $\gamma\:[a,b]\z\to\RR^3$
+be a smooth regular arc, and
+$\ell$ be its chord.
 Assume $\gamma$ meets $\ell$ at angles $\alpha$ and $\beta$ at $\gamma (a)$ and $\gamma (b)$, respectively;
 that is,
 \[\alpha=\measuredangle(\vec w,\gamma'(a))\quad\text{and}\quad \beta=\measuredangle(\vec w,\gamma'(b)),\]
@@ -286,18 +326,19 @@ Then
 
 \end{thm}
 
-\begin{wrapfigure}{o}{45 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-53}
-\vskip0mm
-\end{wrapfigure}
-
 %??? is it really due to Reshetnyak???
 
 \parit{Proof.}
 Let us parameterize the chord $\ell$ from $\gamma(b)$ to $\gamma(a)$ and consider the cyclic concatenation $\bar\gamma$ of $\gamma$ and $\ell$.
 The closed curve $\bar\gamma$ has two external angles $\pi-\alpha$ and $\pi-\beta$.
+
+\begin{wrapfigure}{o}{45 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-53}
+\vskip0mm
+\end{wrapfigure}
+
 Since the curvature of $\ell$ vanishes, we get 
 \[\tc{\bar\gamma}=\tc\gamma+(\pi-\alpha)+(\pi-\beta).\]
 According to the generalized Fenechel's theorem (\ref{thm:gen-fenchel}),
@@ -386,6 +427,21 @@ If $\gamma$ is an arc, the argument is analogous:
 \end{align*}
 \qedsf
 
+The following exercise states that the inequality in \ref{prop:inscribed-total-curvature} is optimal.
+
+\begin{thm}{Exercise}\label{ex:total-curvature=}
+Show that for any regular smooth space curve $\gamma$ we have that 
+\[\tc\gamma=\sup\{\tc\beta\},\]
+where the least upper bound is taken over all polygonal lines~$\beta$ inscribed in $\gamma$
+(if $\gamma$ is closed we assume that so is $\beta$).
+\end{thm}
+
+This exercise can be used to generalize the notion of total curvature of arbitrary curve $\gamma$.
+Namely it can be defined as \emph{the least upper bound on the total curvatures of inscribed nondegenerate polygonal lines inscribed in $\gamma$.}
+
+It is possible to generalze most of the statments in this chapter to the (nonsmooth) curves of finite total curvature;
+a good survey on the subject is written by John Sullivan \cite{sullivan-curves}.
+
 \begin{thm}{Exercise}\label{ex:sef-intersection}
 
 \begin{subthm}{ex:sef-intersection:<2pi}Draw a smooth regular plane curve $\gamma$ that has a self-intersection and such that $\tc\gamma<2\cdot\pi$.
@@ -439,6 +495,13 @@ Note that
 \eqlbl{eq:spheric-triangle}
 \]
 
+\begin{wrapfigure}{r}{40 mm}
+\vskip2mm
+\centering
+\includegraphics{mppics/pic-56}
+\vskip0mm
+\end{wrapfigure}
+
 The sum of angles in any triangle is $\pi$, so combining these inequalities, we get that 
 \begin{align*}
 \tc{abcd}\ge 4\cdot \pi 
@@ -450,13 +513,6 @@ The sum of angles in any triangle is $\pi$, so combining these inequalities, we 
 \\
 =2\cdot\pi.&
 \end{align*}
-
-\begin{wrapfigure}{r}{40 mm}
-\vskip-7mm
-\centering
-\includegraphics{mppics/pic-56}
-\vskip0mm
-\end{wrapfigure}
 
 By \ref{prop:inscribed-total-curvature},
 \[\tc{abcd}\le \tc\gamma\le 2\cdot\pi.\]
@@ -471,8 +527,8 @@ Further, since any quadrilateral inscribed in $\gamma$ is a convex,
 we get that $\gamma$ is a convex plane curve. 
 \qeds
 
-\begin{wrapfigure}{o}{30 mm}
-\vskip-4mm
+\begin{wrapfigure}{r}{30 mm}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-20}
 \vskip0mm
@@ -516,13 +572,6 @@ that $\kur(s)_{\gamma_1}>\kur(s)_{\gamma_2}>0$ for any $s$ and
 
 }
 
-\begin{wrapfigure}{o}{36 mm}
-\vskip-7mm
-\centering
-\includegraphics{mppics/pic-57}
-\vskip0mm
-\end{wrapfigure}
-
 \parit{Proof.}
 Denote by $\tan_1$ and $\tan_2$ the tangent indicatrixes of $\gamma_1$ and $\gamma_2$, respectively.
 
@@ -535,6 +584,18 @@ Consider two unit vectors
 
 Since $\gamma_1$ is an arc of a convex curve, its indicatrix $\tan_1$ runs in one direction along the unit circle.
 Suppose $s\le s_0$, then 
+
+{
+
+\begin{wrapfigure}{o}{39 mm}
+\vskip14mm
+\centering
+\includegraphics{mppics/pic-57}
+\vskip0mm
+\end{wrapfigure}
+
+\vskip-4mm
+
 \begin{align*}
 \measuredangle(\gamma'_1(s),\vec u_1)&=\measuredangle(\tan_1(s),\tan_1(s_0))=
 \\
@@ -562,6 +623,8 @@ That is,
 if $s\ge s_0$.
 The same argument shows that \ref{<gamma',u} holds true for $s\ge s_0$.
 Therefore the inequality \ref{<gamma',u} holds for any $s$.
+
+}
 
 Since
 \[1=|\gamma_1'(s)|=|\gamma_2'(s)|=|\vec u_1|=|\vec u_2|,\] 
@@ -626,83 +689,4 @@ Show that
 
 \end{thm}
 
-
-\section{DNA inequality}
-
-Recall that the curvature of a spherical curve is at least $1$
-(see \ref{ex:curvature-of-spherical-curve}).
-In particular, the length of a spherical curve cannot exceed its total curvature.
-The following theorem shows that the same inequality holds for {}\emph{closed} curves in a unit ball.
-
-\begin{thm}{Theorem}\label{thm:DNA}\index{DNA inequality}
-Let $\gamma$ be a smooth regular closed curve that lies in a unit ball.
-Then 
-\[\tc\gamma\ge \length\gamma.\]
-
-\end{thm}
-
-\parit{Proof.}
-Without loss of generality we can assume the curve is described by a loop $\gamma\:[0,\ell]\to\RR^3$ parameterized by its arc-length, so $\ell=\length\gamma$.
-We can also assume that the origin is the center of the ball.
-It follows that
-\[\langle\gamma'(s),\gamma'(s)\rangle=1,\qquad |\gamma(s)|\le 1\]
-and in particular 
-\[\begin{aligned}
-\langle\gamma''(s),\gamma(s)\rangle&\ge -|\gamma''(s)|\cdot|\gamma(s)|\ge
-\\
-&\ge-\kur(s)
-\end{aligned}\eqlbl{eq:<gamma'',gamma>>=-k}\]
-for all $s$. Since $\gamma$ is a smooth closed curve, we have 
-$\gamma'(0)=\gamma'(\ell)$ and $\gamma(0)=\gamma(\ell)$.
-Applying \ref{eq:<gamma'',gamma>>=-k}, we get that
-\begin{align*}
-0&=\langle\gamma(\ell),\gamma'(\ell)\rangle
--
-\langle\gamma(0),\gamma'(0)\rangle=
-\\
-&=\int_0^\ell\langle\gamma(s),\gamma'(s)\rangle'\cdot ds=
-\\
-&=\int_0^\ell\langle\gamma'(s),\gamma'(s)\rangle\cdot ds+\int_0^\ell\langle\gamma(s),\gamma''(s)\rangle\cdot ds\ge
-\\
-&\ge \ell-\tc\gamma,
-\end{align*}
-whence the result.
-\qeds
-
-\section{Remarks}
-
-The inequality in \ref{prop:inscribed-total-curvature} is optimal.
-More precisely the following holds true: 
-
-\begin{thm}{Theorem}\label{thm:total-curvature=}
-For any regular smooth space curve $\gamma$ we have that 
-\[\tc\gamma=\sup\{\tc\beta\},\]
-where the least upper bound is taken over all polygonal lines~$\beta$ inscribed in $\gamma$
-(if $\gamma$ is closed we assume that so is $\beta$).
-\end{thm}
-
-This theorem can be used to generalize the notion of  total curvature of arbitrary curves.
-Namely we can say that \emph{the total curvature of a curve $\gamma$ is the least upper bound on the total curvatures of inscribed nondegenerate polygonal lines inscribed in $\gamma$.}
-
-It is possible to generalze most of the statments in this chapter to the (nonsmooth) curves of finite total curvature;
-a good survey on the subject is written by John Sullivan \cite{sullivan-curves}.
-
-In the 2-dimensional case,
-the DNA inequality (\ref{thm:DNA}) was proved by Istv\'{a}n F\'{a}ry \cite{fary1950}.
-Latter it was generalized by Don Chakerian \cite{chakerian1962} to higher dimensions; later he gave another proof \cite{chakerian1964} which we presented in this chapter.
-This theorem has many very interesting and very different proofs;
-a number of them are collected by Serge Tabachnikov~\cite{tabachnikov}.
-
-The following closely related statement is also called \index{DNA inequality}\emph{DNA inequality}:
-
-\begin{thm}{Theorem}
-Suppose a closed regular smooth curve $\gamma$ lies in a convex figure of perimeter $2\cdot \pi$.
-Then 
-\[\tc\gamma\ge \length\gamma.\]
-
-\end{thm}
-
-This statement was conjectured by Serge Tabachnikov~\cite{tabachnikov}.
-Despite the simplicity of the formulation, the proof is annoyingly difficult;
-it was proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso}; later a simpler proof was given by Alexander Nazarov and Fedor Petrov~\cite{nazarov-petrov}.
 

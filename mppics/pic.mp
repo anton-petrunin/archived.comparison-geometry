@@ -2123,11 +2123,11 @@ save u;
 u:=1.4cm;
 
 z.a0=(0,0)*u;
-z.a1=(1,1)*u;
+z.a1=(1,3)*u;
 z.a2=(1.5,0)*u;
 
 save p; path p[];
-p0=z.a0..tension .8..z.a1{1,0}..z.a2;
+p0=z.a0..tension 1.4..z.a1{1,0}..tension 1.4..z.a2;
 
 draw p0;
 
