@@ -365,7 +365,7 @@ Moreover
 
 A surface that satisfies the conclusion of \ref{SHORT.prop:geod-existence:whole} for any tangent vector ${\vec v}$ is called \index{geodesically complete}\emph{geodesically complete}.
 So part \ref{SHORT.prop:geod-existence:whole} says that any proper surface is geodesically complete.
-The latter statement is a part of the \index{Hopf--Rinow theorem}\emph{Hopf--Rinow theorem} \cite{hopf-rinow} which provides a converse;
+The latter statement is a part of the \index{Hopf--Rinow theorem}\emph{Hopf--Rinow theorem} \cite{hopf-rinow} which also provides a converse;
 moreover, 
 \emph{if there is a point $p\in \Sigma$ such that for any tangent vector ${\vec v}\in\T_p\Sigma$ there is a both side infinite geodesic $\gamma$ with $\gamma'(0)={\vec v}$, then $\Sigma$ is proper.}
 
@@ -600,15 +600,23 @@ The latter implies that  $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
 \qeds
 
 \begin{thm}{Corollary}
-Let $\Sigma$ be a smooth regular surface, $p\in\Sigma$ and $r\le \inj(p)$.
+Let $\Sigma$ be a smooth regular surface, $p\in\Sigma$ and $r\z\le \inj(p)$.
 Then  the exponential map $\exp_p$ is a diffeomorphism from $B(0,r)_{\T_p}$ to $B(p,r)_\Sigma$.
 \end{thm}
+
+\parit{Proof.}
+By the definition of injectivity radius, the restriction of $\exp_p$ to $B={B(0,r)_{\T_p}}$ is a diffeomorphism to its image $\exp_p(B)$.
+
+Evidently $B(p,r)_\Sigma\supset\exp_p(B)$.
+By \ref{prop:gamma''}, $B(p,r)_\Sigma\subset\exp_p(B)$, hence the result.
+\qeds
 
 According to the corollary, the restriction $\exp_p|_{\T_p}$ admits an inverse map that is called \emph{logarithmic map at $p$};
 it is denoted by \[\log_p\:B(p,r)_\Sigma\to B(0,r)_{\T_p}.\]
 
 Note that according to the proposition above, any shortest path parameterized by its arc-length is a smooth curve.
 This observation should help to solve in the following two exercises.
+
 
 \begin{thm}{Exercise}\label{ex:two-min-geod}
 Show that two shortest paths can cross each other at most once.

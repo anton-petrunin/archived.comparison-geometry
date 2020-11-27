@@ -43,7 +43,6 @@ urlcolor=black%
 \vskip0.5em}%
 }
 
-
 \usepackage[nottoc]{tocbibind}
 
 \csname @openrightfalse\endcsname
@@ -69,6 +68,13 @@ isbn=false]{biblatex}
 \addbibresource{library.bib}
 
 
+\usepackage{titletoc}% http://ctan.org/pkg/titletoc
+\titlecontents*{section}[1.5em]
+  {\small}
+  {\thecontentslabel. }
+  {}
+  {---\thecontentspage}
+  [. ][.]
 
 % Fix latex
 \def\smallskip{\vskip\smallskipamount}
