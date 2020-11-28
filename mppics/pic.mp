@@ -29,8 +29,8 @@ p2=(3,-.2)*u..(3,1)*u..(5,1)*u..(5,-.2)*u..(4,.3)*u..cycle;
 draw p1 penbold;
 draw p2 penbold;
 
-hatchfill p1  withcolor (87, 1mm, -.5bp);
-hatchfill p2  withcolor (87, 1mm, -.5bp);
+hatchfill p1  withcolor (87, 1.4mm, -.5bp);
+hatchfill p2  withcolor (87, 1.4mm, -.5bp);
 
 label.bot(btex convex etex, (1,-.3)*u);
 label.bot(btex not convex etex, (4,-.3)*u);
@@ -178,7 +178,7 @@ z.r=.5[z.p,z.q];
 z.s=.5[z.u,z.v];
 draw z.r--z.s;
 
-hatchfill z.r--z.s--z.w--z.y--z.p--cycle  withcolor (87, 1mm, -.5bp);
+hatchfill z.r--z.s--z.w--z.y--z.p--cycle  withcolor (87, 1.4mm, -.5bp);
 draw z.r--z.s--z.w--z.y--z.p--cycle penbold;
 
 endfig;
@@ -219,7 +219,7 @@ z.ab=z.a rotatedabout (z.c, 30);
 z.ca=z.c rotatedabout (z.b, 30);
 
 draw z.a..z.ab..z.b--z.b..z.bc..z.c--z.c..z.ca..z.a--cycle penbold;
-hatchfill z.a..z.ab..z.b--z.b..z.bc..z.c--z.c..z.ca..z.a--cycle  withcolor (77, 1mm, -.5bp);
+hatchfill z.a..z.ab..z.b--z.b..z.bc..z.c--z.c..z.ca..z.a--cycle  withcolor (77, 1.4mm, -.5bp);
 draw circle (z.a,z.b-z.a)  dashed evenly;
 draw circle (z.b,z.c-z.b)  dashed evenly;
 draw circle (z.c,z.a-z.c)  dashed evenly;
@@ -261,7 +261,7 @@ z.a3=(1.1,-.5)*u;
 z.a4=(1.3,0)*u;
 
 draw z.a1..z.a2..z.a3--z.a3..z.a4..z.a1--cycle;
-hatchfill z.a1..z.a2..z.a3--z.a3..z.a4..z.a1--cycle  withcolor (57, 1mm, -.5bp);
+hatchfill z.a1..z.a2..z.a3--z.a3..z.a4..z.a1--cycle  withcolor (57, 1.4mm, -.5bp);
 
 z.b1=(-.5,1.2)*u;
 z.b2=(0,1.1)*u;
@@ -269,10 +269,10 @@ z.b3=(.5,1.2)*u;
 z.b4=(0,1.4)*u;
 
 draw z.b1..z.b2..z.b3--z.b3..z.b4..z.b1--cycle;
-hatchfill z.b1..z.b2..z.b3--z.b3..z.b4..z.b1--cycle  withcolor (57, 1mm, -.5bp);
+hatchfill z.b1..z.b2..z.b3--z.b3..z.b4..z.b1--cycle  withcolor (57, 1.4mm, -.5bp);
 
 draw z.a1+z.b3..z.a4+z.b3..z.a3+z.b3--z.a3+z.b3..z.a3+z.b2..z.a3+z.b1--z.a3+z.b1..z.a2+z.b1..z.a1+z.b1--z.a1+z.b1..z.a1+z.b4..z.a1+z.b3--cycle;
-hatchfill z.a1+z.b3..z.a4+z.b3..z.a3+z.b3--z.a3+z.b3..z.a3+z.b2..z.a3+z.b1--z.a3+z.b1..z.a2+z.b1..z.a1+z.b1--z.a1+z.b1..z.a1+z.b4..z.a1+z.b3--cycle  withcolor (57, 1mm, -.5bp);
+hatchfill z.a1+z.b3..z.a4+z.b3..z.a3+z.b3--z.a3+z.b3..z.a3+z.b2..z.a3+z.b1--z.a3+z.b1..z.a2+z.b1..z.a1+z.b1--z.a1+z.b1..z.a1+z.b4..z.a1+z.b3--cycle  withcolor (57, 1.4mm, -.5bp);
 
 z.a=(1.2,.2)*u;
 z.b=(.1,1.2)*u;
@@ -332,7 +332,7 @@ save p; path p[];
 p0=z.a1--z.a2--z.a3--z.a4--z.a6--z.a7--z.a8--z.a9--cycle;
 
 draw p0;
-hatchfill p0 withcolor black;
+fill p0 withcolor black;
 
 label(btex $U$ etex, ((2.5,.5)*u));
 
@@ -353,13 +353,13 @@ save p; path p[];
 p0=z.a1--z.a2--z.a3--z.a4--z.a5--z.a6--cycle;
 
 
-hatchfill p0 withcolor black;
+fill p0 withcolor black;
 
 z.x=whatever[z.a2,z.a3]=whatever[z.a4,z.a5];
 z.y=whatever[z.a6,z.a1]=whatever[z.a4,z.a5];
 z.z=whatever[z.a2,z.a3]=whatever[z.a6,z.a1];
 
-hatchfill z.x--z.y--z.z--cycle withcolor white;
+fill z.x--z.y--z.z--cycle withcolor white;
 
 draw p0;
 
@@ -538,9 +538,9 @@ z.b1=(.7,-.9)*u;
 z.b2=(-.7,-2.3)*u;
 z.x=whatever[z.a1,z.a2]=whatever[z.b1,z.b2];
 
-hatchfill z.a0--z.a1--z.b1--cycle  withcolor (87, 1mm, -.5bp);
-%hatchfill z.a1--z.b1--z.a2--cycle  withcolor (27, 1mm, -.5bp);
-%hatchfill z.b1--z.b2--z.a2--cycle  withcolor (-24, 1mm, -.5bp);
+hatchfill z.a0--z.a1--z.b1--cycle  withcolor (87, 1.4mm, -.5bp);
+%hatchfill z.a1--z.b1--z.a2--cycle  withcolor (27, 1.4mm, -.5bp);
+%hatchfill z.b1--z.b2--z.a2--cycle  withcolor (-24, 1.4mm, -.5bp);
 
 draw z.a1--z.a0--z.b1--z.b2--z.a3--z.a2 penbold;
 fill circle(z.x,2) withcolor white;
@@ -617,7 +617,7 @@ save u;
 u:=1cm;
 
 z.p=(1,0)*u;
-z.s=(0,2)*u;
+z.s=(0,1.4)*u;
 z.q=(-1,0)*u;
 
 save p; path p[];
@@ -692,7 +692,7 @@ z.sq=(.5,.7)*u;
 p1=z.p{dir 170}..z.s{dir ((angle direction 1 of p0)-180)}..z.sq;
 draw p1;
 
-hatchfill (subpath (0,1) of p1)--(reverse(subpath (0,1) of p0))--cycle withcolor (67, 2mm, -.5bp);
+hatchfill (subpath (0,1) of p1)--(reverse(subpath (0,1) of p0))--cycle withcolor (67, 1.4mm, -.5bp);
 
 draw ddline(z.pp,z.qq)(0.1, 0.1);
 
@@ -934,7 +934,7 @@ z.b2=p1 intersectionpoint subpath (7,8) of p0;
 z.b3=p1 intersectionpoint subpath (6,7) of p0;
 z.b4=p1 intersectionpoint subpath (5,6) of p0;
 
-hatchfill subpath (1,3) of p0 --cycle withcolor (67, 2mm, -.5bp);
+hatchfill subpath (1,3) of p0 --cycle withcolor (67, 1.4mm, -.5bp);
 
 dOt z.a0,z.a4, z.a1, z.a3, z.b1,z.b2, z.b3, z.b4;
 
@@ -1254,7 +1254,7 @@ p2=circle(origin,1.2*u);
 draw p1;
 draw p2;
 
-hatchfill reverse p1--p2--cycle  withcolor (57, 1mm, -.5bp);
+hatchfill reverse p1--p2--cycle  withcolor (57, .7mm, -.5bp);
 endfig;
 
 
@@ -1373,7 +1373,7 @@ z.b4=(1.4,5)*u;
 
 p2=z.b0{down}...subpath (1,3) of p1...z.b4{up};
 draw p2;
-hatchfill p2--cycle  withcolor (57, 1mm, -.5bp);
+hatchfill p2--cycle  withcolor (57, 1.4mm, -.5bp);
 
 draw (-2,0)*u--(2,0)*u dashed evenly;
 
@@ -1471,7 +1471,7 @@ draw z.p--z.pp--z.qq--z.q penbold;
 draw z.p--z.p1 dashed evenly;
 draw z.q--z.q1 dashed evenly;
 
-hatchfill p1  withcolor (57, 1mm, -.5bp);
+hatchfill p1  withcolor (57, 1.4mm, -.5bp);
 
 dOt z.p,z.pp,z.q,z.qq,z.p1,z.q1;
 
@@ -1502,7 +1502,7 @@ z.x=point 1.3 of p0;
 z.y=point 1.7 of p0;
 
 
-hatchfill subpath (1.3,1.7) of p0--z.p--cycle withcolor (57, 1mm, -.5bp);
+hatchfill subpath (1.3,1.7) of p0--z.p--cycle withcolor (57, 1.4mm, -.5bp);
 draw z.x--z.p--z.y;
 dOt z.p,z.x,z.y;
 
@@ -1551,7 +1551,7 @@ hatchfill
 --
 ((subpath (0,4) of p3) cutbefore (subpath (0,4) of p2) cutafter (subpath (0,4) of p1))
 --cycle
- withcolor (57, 1mm, -.5bp);
+ withcolor (57, 1.4mm, -.5bp);
  
 whitelabel(btex $\Delta$ etex, origin);
 endfig;
@@ -2273,18 +2273,33 @@ endfor
 endfig;
 
 beginfig(62);
-save u;
-u:=.5cm;
+save u, a, p;
+u:=.6cm;
+a:=88;
+path p[];
 
-z.a0=(.1,0)*u;
-z.a2=z.a0 rotated 120;
-z.a4=z.a2 rotated 120;
-z.a3=(-3,0)*u;
-z.a5=z.a3 rotated 120;
-z.a1=z.a5 rotated 120;
+z.o=origin;
+z0=(0,-1)*u;
+z2=z0 rotated 120;
+z4=z0 rotated -120;
 
-draw z.a0..z.a1..z.a2..z.a3..z.a4..z.a5..cycle;
-fill circumcircle (z.a0,z.a2,z.a4) withcolor black;
+z1= whatever*(z0 rotated 60)=z0+whatever*(-z0 rotated -a);
+z3=z1 rotated 120;
+z5=z1 rotated -120;
+
+z.r=(.5*(z1-z0)) rotated a;
+
+p0=arc(z0+z.r rotated a,z0+z.r,z0+z.r rotated -a)
+--
+arc(z1-z.r rotated -a,z1-z.r rotated 60,z1-z.r rotated (120+a));
+
+p1=p0--(p0 rotated 120)--(p0 rotated -120)--cycle;
+
+p2=circle(z.o,z0+z.r);
+
+draw p1;
+
+fill p2 withcolor 0;
 
 endfig;
 
@@ -2372,7 +2387,7 @@ endfig;
 
 beginfig(67);
 save u;
-u:=.7cm;
+u:=1cm;
 
 z.p=(0,0)*u;
 z.b=(0,2)*u;
@@ -2380,14 +2395,14 @@ z.b=(0,2)*u;
 save p; path p[];
 p0=z.p{1,1}..z.b..{0,-1}z.p;
 
-draw p0 penbold;
+draw p0;
 
 z.z=((point .6 of p0)+(point 1 of p0)+(point 1.4 of p0))/3;
 
 p1=circumcircle (.8*(point .6 of p0)+.2*z.z, .8*(point 1 of p0)+.2*z.z, .8*(point 1.4 of p0)+.2*z.z);
 
 draw p1;
-hatchfill p1  withcolor (67, 1mm, -.5bp);
+fill p1  withcolor 0;
 
 dOt z.p;
 %label.bot(btex $p$ etex, z.p);
@@ -2405,7 +2420,7 @@ z.yx=(1,1.4)*u;
 save p; path p[];
 p0=z.x{right}..z.xy..z.y{right}..z.yx{-1,.2}..cycle;
 
-hatchfill p0  withcolor (67, 1mm, -.5bp);
+hatchfill p0  withcolor (67, 1.4mm, -.5bp);
 draw p0;
 
 draw ddline(z.x,z.y)(.4,.3)dashed evenly;
@@ -2470,7 +2485,7 @@ save p; path p[];
 p0=arc(z.x,z.a,z.y);
 p1=arc(z.y,z.b,z.x);
 
-hatchfill p0--p1--cycle  withcolor (67, 1mm, -.5bp);
+hatchfill p0--p1--cycle  withcolor (67, 1.4mm, -.5bp);
 
 draw p0;
 draw p1;
@@ -2532,7 +2547,7 @@ p1=z.a0{1,-.5}..z.a2{1,.5};
 p2=z.b0{1,-.1}..z.b1{-1,.1}..cycle;
 
 hatchfill p1--(reverse (subpath (1,2) of p0))--(subpath (3,4) of p0)--cycle  withcolor (87, 1mm, -.5bp);
-hatchfill p2  withcolor (7, 1mm, -.5bp);
+hatchfill p2  withcolor (7, 1.4mm, -.5bp);
 draw p0 pensemibold;
 draw p1;
 draw p2 dashed evenly;
@@ -2565,7 +2580,7 @@ p1= z.a0{1,-.5}..z.a1..z.a2{-1,-.5}..z.a3..cycle;
 p3=z.c0..z.q..z.c1;
 p2=z.a0{1,-.5}..z.q{-direction 1 of p3}..z.a2{-1,-.5};
 
-hatchfill p0  withcolor (7, 1mm, -.5bp);
+hatchfill p0  withcolor (7, 1.4mm, -.5bp);
 draw p0;
 draw p1 penbold;
 draw p2;
@@ -2617,7 +2632,7 @@ z.q=1.3[point 1.5 of p0,point 2.4 of p0];
 draw p0 pensemibold;
 draw p1 pensemibold;
 
-hatchfill p0--z.r--p1--z.r--z.l--cycle  withcolor (37, 1mm, -.5bp);
+hatchfill p0--z.r--p1--z.r--z.l--cycle  withcolor (37, 1.4mm, -.5bp);
 
 draw z.r--z.l dashed evenly;
 draw z.r+(0,2)*u--z.l+(0,2)*u dashed evenly;
@@ -2657,7 +2672,7 @@ p1=z.b0..tension 2..z.b1..tension 2..cycle;
 draw p0 pensemibold;
 draw p1 pensemibold;
 
-hatchfill p0--z.r--p1--z.r--z.l--cycle  withcolor (37, 1mm, -.5bp);
+hatchfill p0--z.r--p1--z.r--z.l--cycle  withcolor (37, 1.4mm, -.5bp);
 
 draw z.r--z.l dashed evenly;
 draw z.r+(0,2)*u--z.l+(0,2)*u dashed evenly;
@@ -2689,9 +2704,9 @@ save p; path p[];
 p0=z.a0..z.a1..z.a2;
 p1=z.b0{right}...z.b1...{left}z.b2;
 
-hatchfill (subpath (0,1) of p0)--(subpath (1,0) of p1)--cycle  withcolor (37, 1mm, -.5bp);
+hatchfill (subpath (0,1) of p0)--(subpath (1,0) of p1)--cycle  withcolor (37, 1.4mm, -.5bp);
 
-hatchfill (subpath (2,1) of p0)--(subpath (1,2) of p1)--(-4,1.5)*u--(4,1.5)*u--cycle  withcolor (37, 1mm, -.5bp);
+hatchfill (subpath (2,1) of p0)--(subpath (1,2) of p1)--(-4,1.5)*u--(4,1.5)*u--cycle  withcolor (37, 1.4mm, -.5bp);
 
 draw p0;
 draw p1;
@@ -2750,7 +2765,7 @@ save p; path p[];
 p0= circle(origin, 2*u);
 p1=(1.2,0)*u{.1,1}..(0,1.1)*u{-1,.2}..(-1,0)*u{-.3,-1}..(0,-1)*u{1,-.2}..cycle;
 
-hatchfill p1  withcolor (87, 2mm, -.5bp);
+hatchfill p1  withcolor (87, 1.4mm, -.5bp);
 draw p0 pensemibold;
 draw p1 pensemibold;
 
@@ -2829,7 +2844,7 @@ z.a1=(1,0)*u;
 save p; path p[];
 p0=z.a0{.3,1}..z.a1{.3,-1}..cycle;
 
-hatchfill p0  withcolor (37, 1mm, -.5bp);
+hatchfill p0  withcolor (37, 1.4mm, -.5bp);
 draw p0;
 
 z.p=point .2 of p0;
@@ -2984,7 +2999,7 @@ draw p2 penhair;
 
 dOt point 2 of p0;
 
-hatchfill (subpath (1,3) of p1)--p2--cycle  withcolor (67, 2mm, -.5bp);
+hatchfill (subpath (1,3) of p1)--p2--cycle  withcolor (67, 1.4mm, -.5bp);
 
 label.bot(btex $p$ etex, z.a2);
 label.top(btex $\gamma_2$ etex,  point .7 of p0);
@@ -3210,16 +3225,18 @@ p[i]=(p[i-1] scaled x.r)--(p[i-1] scaled x.r rotated a shifted z1)--(p[i-1] scal
 endfor
 
 hatchfill   
-p[0]--(p[0] rotated -120 shifted z4)--(p[0] rotated 120 shifted z.b)--cycle withcolor (87, 1mm, -.5bp);
+p[0]--(p[0] rotated -120 shifted z4)--(p[0] rotated 120 shifted z.b)--cycle withcolor (87, 1.4mm, -.5bp);
+
 draw p[0]--(p[0] rotated -120 shifted z4)--(p[0] rotated 120 shifted z.b)--cycle ;
 
-hatchfill (p[1]--(p[1] rotated -120 shifted z4)--(p[1] rotated 120 shifted z.b)--cycle) shifted z.shift withcolor (87, 1mm, -.5bp);
+hatchfill (p[1]--(p[1] rotated -120 shifted z4)--(p[1] rotated 120 shifted z.b)--cycle) shifted z.shift withcolor (87, 1.4mm, -.5bp);
+
 draw (p[1]--(p[1] rotated -120 shifted z4)--(p[1] rotated 120 shifted z.b)--cycle) shifted z.shift ;
 
-hatchfill (p[2]--(p[2] rotated -120 shifted z4)--(p[2] rotated 120 shifted z.b)--cycle) shifted (2*z.shift) withcolor (87, 1mm, -.5bp);
+hatchfill (p[2]--(p[2] rotated -120 shifted z4)--(p[2] rotated 120 shifted z.b)--cycle) shifted (2*z.shift) withcolor (87, 1.4mm, -.5bp);
 draw (p[2]--(p[2] rotated -120 shifted z4)--(p[2] rotated 120 shifted z.b)--cycle) shifted (2*z.shift);
 
-hatchfill (p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle) shifted (3*z.shift+z.extra) withcolor (87, 1mm, -.5bp);
+hatchfill (p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle) shifted (3*z.shift+z.extra) withcolor (87, 1.4mm, -.5bp);
 draw (p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle) shifted (3*z.shift+z.extra) penhair;
 
 label(btex $\dots$ etex, .5[z4+.5*(z2 rotated -120)+2*z.shift,3*z.shift+z.extra+.5*(z2 rotated -120)]);
@@ -3694,7 +3711,7 @@ z.x0= point -.15 of p0;
 z.v0=direction -.15 of p0;
 p1= z.x0{z.v0}..z.x0 yscaled -1{-z.v0 yscaled -1};
 
-hatchfill p0  withcolor (87, 1mm, -.5bp);
+hatchfill p0  withcolor (87, 1.4mm, -.5bp);
 draw p0;
 draw p1 dashed evenly;
 draw p1 xscaled -1 dashed evenly;
@@ -4049,7 +4066,7 @@ z.dots=point 1.6 of p0;
 z.q=point .7 of p0;
 z.Sigma=point .3 of p0;
 
-hatchfill p0--cycle  withcolor (57, 2mm, -.5bp);
+hatchfill p0--cycle  withcolor (57, 1.4mm, -.5bp);
 draw p0 pensemibold;
 
 draw z.a1--(x.a1,y.a0);
@@ -4136,12 +4153,12 @@ z.shift=(-4,0)*u;
 p0=z.b{right}..z.a..z.b{1,-1}..z.c{1,1}..{-1,0}z.a;
 p1=(subpath (0,2) of p0 ..tension 1.5 .. z.d..(point 1.6 of p0){1,0}) shifted z.shift;
 
-hatchfill (subpath (0,2) of p0)--cycle  withcolor (87, 1mm, -.5bp);
+hatchfill (subpath (0,2) of p0)--cycle  withcolor (87, 1.4mm, -.5bp);
 
 draw subpath (0,2) of p0;
 drawarrow subpath (2,4) of p0;
 
-hatchfill (subpath (0,2) of p1)--cycle  withcolor (87, 1mm, -.5bp);
+hatchfill (subpath (0,2) of p1)--cycle  withcolor (87, 1.4mm, -.5bp);
 draw subpath (0,2) of p1;
 drawarrow subpath (2,4) of p1;
 
@@ -4534,11 +4551,11 @@ p3=arc(z.zx,z.zxy,z.zy);
 
 p4= z.x--z.y--z.p--cycle;
 draw p4;
-hatchfill p4  withcolor (67, 1mm, -.5bp);
+hatchfill p4  withcolor (67, 1.4mm, -.5bp);
 
 p5= z.xx--z.zz--z.yy--z.pp--cycle;
 draw p5;
-hatchfill p5  withcolor (67, 1mm, -.5bp);
+hatchfill p5  withcolor (67, 1.4mm, -.5bp);
 
 whiterimmark(z.x--z.z,z.xx--z.zz);
 whiterimmark2(z.y--z.z,z.yy--z.zz);

@@ -43,7 +43,7 @@ for any $r$ and~$\theta$.
 
 \parit{Proof.}
 Choose $\theta$.
-By the definition of exponential map, the curve $\gamma(t)=s(t,\theta)$ is a unit-speed geodesic that starts at $p$;
+By the definition of exponential map, the curve $\gamma(t)\z=s(t,\theta)$ is a unit-speed geodesic that starts at $p$;
 in particular we have the following two identities:
 \begin{enumerate}[(i)]
 \item Since the geodesic has unit speed we have $|s_r|=|\gamma'|=1$.
@@ -132,7 +132,7 @@ Assume a geodesic $\gamma$ of length less than $\eps$ from $p$ to $q$ does not m
 Then there is a shortest path from $p$ to $q$, which becomes a geodesic if parameterized by its arc-length.
 That is, there are two geodesics from $p$ to $q$ of length smaller than $\eps$.
 In other words there are two vectors ${\vec v},\vec w\in\T_p$ such that $|{\vec v}|<\eps$, $|\vec w|<\eps$ and 
-$q=\exp_p\vec v=\exp_p\vec w$.
+$q=\exp_p\vec v\z=\exp_p\vec w$.
 But according to \ref{prop:exp}, the exponential map is injective in the $\eps$-neighborhood of zero --- a contradiction.\qeds
 
 \section{Gauss curvature}
@@ -624,7 +624,7 @@ for any curve $\gamma$ in the open ball $B(p,r)_{\Sigma}$.
 
 \parit{Proof.}
 Suppose $(r(t),\theta(t))$ are polar coordinates of $\tilde\gamma(t)$.
-Note that $\gamma(t)=s(r(t),\theta(t))$; that is, $(r(t),\theta(t))$ are polar coordinates of $\gamma(t)$ on $\Sigma$.
+Note that $\gamma(t)\z=s(r(t),\theta(t))$; that is, $(r(t),\theta(t))$ are polar coordinates of $\gamma(t)$ on $\Sigma$.
 
 Set $b(r,\theta)\df|s_\theta|$.
 By \ref{prop:jaccobi}
@@ -675,7 +675,7 @@ A simple example of intrinsic isometry can obtained by warping a plane into a cy
 The following exercise produces a more interesting example.
 
 \begin{thm}{Exercise}\label{ex:deformation}
-Suppose $\gamma(t)=(x(t),y(t))$ is a smooth unit-speed curve in the plane such that $y(t)=a\cdot \cos t$ for a constant $a$.
+Suppose $\gamma(t)=(x(t),y(t))$ is a smooth unit-speed plane curve that $y(t)=a\cdot \cos t$ for a constant $a$.
 Let $\Sigma_a$ be the surface of revolution of $\gamma$ around the $x$-axis.
 \begin{figure}[h!]
 \vskip-0mm

@@ -71,10 +71,10 @@ isbn=false]{biblatex}
 \usepackage{titletoc}% http://ctan.org/pkg/titletoc
 \titlecontents*{section}[1.5em]
   {\small}
-  {\thecontentslabel. }
+  {\thecontentslabel.~}
   {}
-  {---\thecontentspage}
-  [. ][.]
+  { \textbf{\thecontentspage}}
+  [; ][.]
 
 % Fix latex
 \def\smallskip{\vskip\smallskipamount}

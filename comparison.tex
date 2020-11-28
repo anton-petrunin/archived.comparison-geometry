@@ -177,7 +177,7 @@ whence the result.
 
 \parit{\ref{SHORT.thm:loc-comp:cba}.}
 Consider a minimizing geodesic $\gamma$ joining $y$ to $z$ in $\Sigma$.
-Since $|x-y|,|x-z|<\tfrac r2$, the triangle inequality implies that $\gamma$ lies in $r$-neighborhood of $x$.
+Since $|x\z-y|,|x\z-z|\z<\tfrac r2$, the triangle inequality implies that $\gamma$ lies in $r$-neighborhood of $x$.
 In particular, $\log_x\circ\gamma$ is defined, and the curve
 $\tilde \gamma=\log_x\circ\gamma$ lies in a $r$-neighborhood of zero in $\T_x$ that corresponds to $\gamma$.
 Note that $\tilde\gamma$ connects $\vec v$ to $\vec w$ in $\T_x$.
@@ -631,8 +631,8 @@ A unit-speed geodesic $\lambda\:[0,\infty)\to \spc{X}$ is called a \index{half-l
 
 
 \begin{thm}{Proposition}\label{prop:busemann}
-Suppose $\Sigma$ is a smooth regular surface and $\lambda\:[0,\infty)\to \spc{X}$ is a half-line. 
-Thenthe function 
+Suppose that $\lambda\:[0,\infty)\to \Sigma$ is a half-line in a smooth regular surface $\Sigma$. 
+Then the function 
 \[\bus_\lambda(x)=\lim_{t\to\infty}\dist{\lambda(t)}{x}{\Sigma}- t\eqlbl{eq:def:busemann*}\]
 is defined.
 
@@ -653,7 +653,7 @@ $t\mapsto \bus_\lambda\circ\alpha(t)$ is convex.
 \begin{subthm}{prop:busemann+}
 If $\Sigma$ is an open surface with nonnegative Gauss curvature, then $\bus_\lambda$ is concave;
 that is, for any geodesic $\alpha$ the real-to-real function 
-$t\mapsto \bus_\lambda\circ\alpha(t)$ is concave.
+$t\z\mapsto \bus_\lambda\circ\alpha(t)$ is concave.
 \end{subthm}
 
 \end{thm}
@@ -827,7 +827,7 @@ It follows that
 
 Set $b=\bus_-(x)$.
 Consider a unit-speed geodesic $\zeta$
-such that $\zeta'(b)=\vec u(x)$.
+such that $\zeta'(b)\z=\vec u(x)$.
 Since $\bus_-$ is affine, we have that $\bus_-\circ\zeta(t)=t$ for any $t$.
 Since $\zeta$ is a unit-speed geodesic and $\bus_-$ is 1-Lipschitz, we get
 \begin{align*}

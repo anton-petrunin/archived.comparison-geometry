@@ -8,7 +8,7 @@ Otherwise, if a definition of property essentially use the ambient space, then i
 
 For instance, mean curvature as well as Gauss curvature are defined via principle curvatures, which are extrinsic.
 Later (\ref{thm:remarkable}) it will be shown that \emph{remarkably} Gauss curvature is actually intrinsic --- it can be calculated based on measurements inside the surface.
-The mean curvature is not intrinsic, for example intrinsic geometry of the $(x,y)$-plane is not distinguishable from the intrinsic geometry of the graph $z=\cos(x+y)$,
+The mean curvature is not intrinsic, for example intrinsic geometry of the $(x,y)$-plane is not distinguishable from the intrinsic geometry of the graph $z=(x+y)^2$,
 while the mean curvature of former vanish at all points, the mean curvature of the latter does not vanish, say at $p=(0,0,1)$.  
 
 The following exercise should help you to be in the right mood;
@@ -248,7 +248,7 @@ Show that for any two points $p,q\in \Sigma$ we have the following inequality:
 
 
 \begin{wrapfigure}{r}{27 mm}
-\vskip-0mm
+\vskip-10mm
 \centering
 \includegraphics{mppics/pic-240}
 \end{wrapfigure}
@@ -779,31 +779,45 @@ Assume $B(0,\eps)\subset K\subset B(0,1)$.
 Then the total curvatures of any shortest path in $\Sigma$ can be bounded in terms of~$\eps$. 
 \end{thm}
 
+The following exercise will guide you thru the proof of the theorem. 
+
 \begin{wrapfigure}{r}{48 mm}
-\vskip-4mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-83}
 \vskip-0mm
 \end{wrapfigure}
-
-The following exercise will guide you thru the proof of the theorem. 
 
 \begin{thm}{Exercise}\label{ex:bound-tc}
 Let $\Sigma$ be as in the theorem and $\gamma$ be a unit-speed shortest path in $\Sigma$.
 Denote by $\Norm_p$ the unit normal vector that points outside of $\Sigma$;
 denote by $\theta_p$ the angle between $\Norm_p$ and the direction from the origin to a point $p\in\Sigma$.
 Set $\rho(t)\z=|\gamma(t)|^2$; denote by $k(t)$ the curvature of $\gamma$ at $t$.
-\begin{enumerate}[(a)]
-\item Show that $\cos\theta_p\ge \eps$ for any $p\in \Sigma$.
-\item Show that $|\rho'(t)|\le 2$ for any $t$.
-\item Show that 
+
+\begin{subthm}{}
+Show that $\cos\theta_p\ge \eps$ for any $p\z\in \Sigma$.
+\end{subthm}
+
+\begin{subthm}{}
+ Show that $|\rho'(t)|\le 2$ for any $t$.
+\end{subthm}
+
+\begin{subthm}{}
+ Show that 
 \[\rho''(t)=2-2\cdot k(t)\cdot \cos \theta_{\gamma(t)}\cdot |\gamma(t)|\]
 for any $t$.
-\item Use the closest-point projection from the unit sphere to $\Sigma$ to show that 
+\end{subthm}
+
+\begin{subthm}{}
+ Use the closest-point projection from the unit sphere to $\Sigma$ to show that 
 \[\length \gamma\le \pi.\]
-\item Use the statements above to conclude that 
+\end{subthm}
+
+\begin{subthm}{}
+ Use the statements above to conclude that 
 \[\tc\gamma\le \frac{100}{\eps^2}.\]
-\end{enumerate}
+\end{subthm}
+
 \end{thm}
 
 Note that the obtained bound on total curvature goes to infinity as $\eps\to 0$.
