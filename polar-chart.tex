@@ -4,8 +4,7 @@ This chapter contains computational proofs of several statements discussed above
 \begin{itemize}
 \item Proposition~\ref{prop:inj-rad} --- a alternative defintions of injectivity radius.
 \item Proposition~\ref{prop:gamma''} --- shortest paths are geodesics.
-\item  The Gauss--Bonnet formula (\ref{thm:gb})
-\label{sec:proof-of-gamma''}
+\item The Gauss--Bonnet formula (\ref{thm:gb}).
 \end{itemize}
 In addition, we discuss intrinsic isometries between surfaces and prove Gauss' remarkable theorem, stating that Gauss curvature can be defined intrinsically.
 
@@ -87,7 +86,8 @@ for $r=0$.
 By \ref{eq:<s',s'>'=0} the same holds for any $r$.
 \qeds
 
-\section{Shortest paths are geodesics: a formal proof}
+\section{Shortest paths are geodesics}
+
 \label{sec:proof-of-gamma''}
 
 In this section we use the construction of polar coordinates and the Gauss lemma \ref{lem:palar-perp} to prove Proposition~\ref{prop:gamma''}.
@@ -518,11 +518,10 @@ where $\vec u=s_u$ and $K$ denote the Gauss curvature of $\Sigma$.
 
 The proof is done by a calculation with use the so-called \emph{Green formula} which can be formulated the following way:
 
-Let $\alpha$ be a piecewise smooth simple closed curve in the $(u,v)$-coordinate plane that bounds a compact region $D$.
+Let $D$ be a compact region in the $(u,v)$-coordinate plane that is bounded by a piecewise smooth simple closed curve $\alpha$.
 Suppose that $\alpha$ is oriented in such a way that $D$ lies on its left.
 Then for any two smooth functions $P$ and $Q$ defined on $D$ we have
 \[\iint_D (Q_u- P_v)\cdot du\cdot dv=\int_\alpha (P\cdot du+Q\cdot dv).\]
-Note that the Green formula can be proved by applying the Curl theorem (\ref{thm:curl}) assuming that the $(u,v)$-plane is a coordinate plane in $\RR^3$ and $\vec u=P\cdot\vec i+Q\cdot \vec j$.
 
 Note that Green and Gauss--Bonnet formulas are similar --- they relate the integral along a disc and its boundary curve.
 So it should be not surprising that Green helps to prove Gauss--Bonnet.
@@ -715,7 +714,7 @@ by measuring the lengths of curves in the surface.
 For example, Gauss curvature $K(p)$ appears in the following formula for the circumference $c(r)$ of a geodesic circle centered at $p$ in a surface: 
 \[c(r)=2\cdot\pi\cdot r-\tfrac\pi3\cdot K(p)\cdot r^3+o(r^3).\]
 
-Note that the theorem implies that there is no smooth length-preserving map that sends an open region in the unit sphere to the plane.%
+The theorem implies that there is no smooth length-preserving map that sends an open region in the unit sphere to the plane.%
 \footnote{There are plenty of non-smooth length-preserving maps from the sphere to the plane; see \cite{petrunin-yashinski} and the references there in.}
 It follows since the Gauss curvature of the plane is zero and the unit sphere has Gauss curvature 1. 
 In other words, there is no map of a region on Earth without distortion.
@@ -739,7 +738,7 @@ Note that $s^{*}$ is a chart of $\Sigma^{*}$ and
 \end{align*}
 at any $(u,v)$.
 Indeed the first and the third identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\mapsto s(t,v)$ or  $\gamma\:t\z\mapsto s(u,t)$.
-Taking this into account, the second identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\z\mapsto s(t,c-t)$ for some constant $c$.
+Taking this into account, the second identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\z\mapsto s(t,c-t)$ for some constant~$c$.
 
 It follows that if $s$ is a semigeodesic chart,
 then so is $s^{*}$.

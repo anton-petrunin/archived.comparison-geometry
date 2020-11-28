@@ -883,8 +883,8 @@ By taking its derivative and applying the above identity show that
 Conclude that $\Norm_2'$ is proportional to $\gamma'$
 and therefore $\gamma$ is a curvature line in~$\Sigma_2$.
 
-\parbf{\ref{ex:mean-curvature}};
-\ref{SHORT.ex:mean-curvature:smooth}.
+\parbf{\ref{ex:equidistant}};
+\ref{SHORT.ex:equidistant:smooth}.
 Fix $t$.
 Set $f_t\:p\mapsto p+t\cdot\Norm(p)$; it maps $\Sigma$ to $\Sigma_t$.
 
@@ -892,7 +892,7 @@ Use \ref{prop:S=-D} to show that $d_pf_t(\vec v)=\vec v-t\cdot\Shape_p(\vec v)$.
 Since $\Sigma$ is closed, the norm of $\Shape$ is bounded.
 Whence $f_t$ is regular for $t\approx 0$.
 
-\parit{\ref{SHORT.ex:mean-curvature:area}.} By the area formula (\ref{prop:surface-integral}), we have
+\parit{\ref{SHORT.ex:equidistant:area}.} By the area formula (\ref{prop:surface-integral}), we have
 \[a(t)=\int_{p\in \Sigma}\jac_pf_t.\]
 Show and use that for fixed $p$, the function $t\mapsto \jac_pf_t$ has derivative $-H(p)$ at zero.
 
@@ -937,11 +937,11 @@ Read about Bing's two-room house.
 Try to thicken it to construct the needed example.
 
 Assume $V$ does not contain a ball of radius $r_3$.
-Show that its cut locus $L$ of $V$ is formed by a few smooth surfaces that meets by three at their boundary points.
+Show that its cut locus $L$ is formed by a few smooth surfaces that meets by three at their boundary points.
 Show that $L$ is not simply connected; that is, there is a loop in $L$ that cannot be deformed continuously to a trivial loop.
 Conclude that $V$ is not simply connected.
 
-Finally show that if $V$ is bounded by sphere, then $V$ is simply connected --- a contradiction. 
+Finally, arrive to a contradiction by showing that if $V$ is bounded by a smooth sphere, then $V$ is simply connected. 
 
 
 \parbf{\ref{ex:surf-support}.}
@@ -1850,12 +1850,15 @@ f(z)
 By \ref{ex:unique-geod}, $[\bar x\bar z]$ is an arc of $\delta$.
 Therefore the midpoint of $[\bar x\bar z]$, say  $\bar y$, lies on $\delta$.
 
-By \ref{ex:dist-to-bry}, we have 
+By \ref{ex:dist-to-bry}%???problem
+, we have 
 \begin{align*}
-f(y)&\le |y-\bar y|_\Sigma\le
-\le\tfrac12\cdot(|x-\bar x|_\Sigma
+f(y)&\le |y-\bar y|_\Sigma
+\le
+\tfrac12\cdot(|x-\bar x|_\Sigma
 +
-|z-\bar z|_\Sigma)=
+|z-\bar z|_\Sigma)
+=
 \tfrac12\cdot(f(x)+f(z))
 \end{align*}
 

@@ -199,7 +199,7 @@ A family of \index{trochoid}\emph{trochoids} $\gamma_a\:[0,2\cdot\pi]\to \RR^2$ 
 \end{thm}
 
 \begin{thm}{Proposition}\label{prop:total-signed-curvature}
-The total signed curvature of any closed simple smooth regular plane curve $\gamma$ is $\pm2\cdot\pi$; it is $+2\cdot\pi$
+Any closed simple smooth regular plane curve $\gamma$ has total signed curvature  $\pm2\cdot\pi$; it is $+2\cdot\pi$
 if the region bounded by $\gamma$ lies on the left from it and  $-2\cdot\pi$ otherwise.
 
 Moreover the same statement holds for any closed piecewise simple smooth regular plane curve $\gamma$ if its total signed curvature is defined.
@@ -849,6 +849,7 @@ In particular $\sigma$ lies inside of $\gamma$, whence the result.
 
 \parit{Proof of \ref{thm:moon}.}
 Denote by $F$ the closed region surrounded by $\gamma$.
+We can assume that $F$ lies on the left from $\gamma$.
 Arguing by contradiction,
 assume that the osculating circle at each point $p\in \gamma$ does not lie in $F$.
 
@@ -862,21 +863,22 @@ assume that the osculating circle at each point $p\in \gamma$ does not lie in $F
 Given a point $p\in\gamma$ let us consider the maximal circle $\sigma$ that lies completely in $F$ and tangent to $\gamma$ at $p$.
 The circle $\sigma$ will be called the {}\emph{incircle} of $F$ at $p$.
 
-Note that the curvature $\skur_\sigma$ of $\sigma$ has to be larger than $\skur(p)_\gamma$.
-Indeed, by \ref{prop:supporting-circline} we have $\skur_\sigma\ge \skur(p)_\gamma$, and, in the case of equality, $\sigma$ is the osculating circle at $p$.
-The latter is impossible by the assumption.
+Note that the curvature $\skur_\sigma$ of the incircle $\sigma$ has to be larger than $\skur(p)_\gamma$.
+Indeed, since $\sigma$ supports $\gamma$ from the left, by \ref{prop:supporting-circline} we have $\skur_\sigma\ge \skur(p)_\gamma$; in the case of equality, $\sigma$ is the osculating circle at $p$.
+The latter is impossible by our assumption.
 
 It follows that $\sigma$ has to touch $\gamma$ at another point.
 Otherwise we can increase $\sigma$ slightly keeping it inside $F$.
 
 Indeed, since $\skur_\sigma> \skur(p)_\gamma$, 
-by \ref{prop:supporting-circline} we can choose a neighborhood $U$ of $p$ such that after any sufficiently small increase of $\sigma$, the intersection $U\cap \sigma$ is still in $F$.
-On the other hand, if $\sigma$ does not touch $\gamma$ at another point, then after any sufficiently small increase of $\sigma$ the complement $\sigma\backslash U$ is still in $F$.
+by \ref{prop:supporting-circline} we can choose a neighborhood $U$ of $p$ such that after a slight increase of $\sigma$, the intersection $U\cap \sigma$ is still in $F$.
+On the other hand, if $\sigma$ does not touch $\gamma$ at another point, then after some (maybe smaller) increase of $\sigma$ the complement $\sigma\backslash U$ is still in $F$.
 That is, a sightly increased $\sigma$ is still in $F$ --- a contradiction.
 
 
 
-Fix a point $p_1$ and let $\sigma_1$ be the incircle at $p_1$.
+Choose a point $p_1$ on $\gamma$ that is distinct from its base point. 
+Let $\sigma_1$ be the incircle at $p_1$.
 Denote by $\gamma_1$ an arc of $\gamma$ from $p_1$ to a first point $q_1$ on $\sigma_1$.
 Denote by $\hat\sigma_1$ and $\check\sigma_1$ two arcs of $\sigma_1$ from $p_1$ to $q_1$ such that the cyclic concatenation of $\hat\sigma_1$ and $\gamma_1$ surrounds~$\check\sigma_1$. 
 

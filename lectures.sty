@@ -59,6 +59,12 @@ url=false,
 style=numeric-comp,
 isbn=false]{biblatex}
 \usepackage{csquotes}
+
+\AtBeginDocument{%removes the last "and" in author field
+    \renewcommand*{\finalnamedelim}{,\space}
+}
+
+
 \AtEveryBibitem{\clearlist{language}}
 \AtEveryBibitem{\clearlist{note}}
 \renewbibmacro{in:}{}
@@ -178,10 +184,10 @@ isbn=false]{biblatex}
 \def\Shape{\mathop{\rm Shape}\nolimits}
 \def\rank{\mathop{\rm rank}\nolimits}
 
-\def\tan{\textsc{t}}
-\def\norm{\textsc{n}}
-\def\bi{\textsc{b}}
-\def\vec{\textsc}
+\def\tan{\text{\sc{t}}}
+\def\norm{\text{\sc{n}}}
+\def\bi{\text{\sc{b}}}
+\renewcommand*\vec[1]{\text{\sc{#1}}}
 \def\Norm{\nu}
 
 \def\eps{\varepsilon}
