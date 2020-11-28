@@ -340,8 +340,9 @@ First let recall the standard definition of directional derivative.
 Suppose $f$ is a function defined at a point $p$ in the space, and $\vec w$ is a vector.
 Consider the function function
 \[h(t)=f(p+t\cdot\vec w).\]
-Then 
+Then the directional derivative of $f$ at $p$ along $\vec w$ is defined by 
 \[D_{\vec w}f(p)\df h'(0).\]
+\index{10d@$D_{\vec{w}}f$}
 
 \begin{thm}{Proposition-Definition}\label{def:directional-derivative}
 Let $\Sigma$ be a smooth regular surface and $f$ is a smooth function defined on $\Sigma$. 
@@ -351,7 +352,7 @@ Then the derivative $(f\circ\gamma)'(0)$
 depends only on $f$, $p$ and $\vec{w}$;
 it is called \index{directional derivative}\emph{directional derivative of $f$ along $\vec{w}$ at $p$}
 and denoted by
-\[D_{\vec{w}}f,\quad D_{\vec{w}}f(p), \quad\text{or}\quad D_{\vec{w}}f(p)_\Sigma\] \index{$D_{\vec{w}}f$}
+\[D_{\vec{w}}f,\quad D_{\vec{w}}f(p), \quad\text{or}\quad D_{\vec{w}}f(p)_\Sigma\] 
 --- we may omit $p$ and $\Sigma$ if it is clear from the context.
 
 Moreover, if $(u,v)\mapsto s(u,v)$ is a local chart at $p$, then 
@@ -436,7 +437,7 @@ The map $d_p s$ is called a \index{differential of map}\emph{differential} of $s
 
 The differential $d_p s$ can be described by a $2{\times}2$-matrix $M$ in orthonormal basises of $\T_p$ and $\T_{ s(p)}\Sigma_1$.
 Set $\jac_p s=|\det M|$; this value  
-does not depend on the choice orthonormal basises in $\T_p$ and $\T_{ s(p)}\Sigma_1$. \label{page:|L|}\index{$d_p s$}
+does not depend on the choice orthonormal basises in $\T_p$ and $\T_{ s(p)}\Sigma_1$. \label{page:|L|}\index{10d@$d_p s$}
 
 Let $ s_1\:\Sigma_1\to\Sigma_2$ be another smooth map between smooth surfaces $\Sigma_1$ and $\Sigma_2$.
 Suppose that ${p_1}= s(p)\in\Sigma_1$;
@@ -517,7 +518,7 @@ This example and different approaches to the notion of area discussed in a popul
 
 \section{Normal vector and orientation}
 A unit vector that is normal to $\T_p$ is usually denoted by $\Norm_p$;
-it is uniquely defined up to sign.\index{$\Norm$}
+it is uniquely defined up to sign.\index{10nu@$\Norm$}
 
 A surface $\Sigma$ is called \index{oriented surface}\emph{oriented} if it is equipped with a unit normal vector field $\Norm$;
 that is, a continuous map $p\mapsto \Norm_p$ such that $\Norm_p\perp\T_p$ and $|\Norm_p|=1$ for any $p$.

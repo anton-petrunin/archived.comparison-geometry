@@ -126,9 +126,14 @@ In the case $\ell=\pm1$ it is called \index{Viviani's curve}\emph{Viviani's curv
 It admits the following smooth regular parameterization with a self-intersection:
 \[t\mapsto(\pm(\cos t)^2,\cos t\cdot\sin t,\sin t).\]
 
-\parbf{\ref{ex:open-curve}.}
+\parbf{\ref{ex:open-curve}.} Assume contrary, then there is a sequence $t_n\to\infty$ such that $\gamma(t_n)$ converges;
+denote its limit by $p$.
+Let $K$ be a closed ball centered at $p$.
+Observe that $\gamma^{-1}(K)$ is not compact.
+Conclude that $\gamma$ is not proper.
 
 \parbf{\ref{ex:proper-closed}.}
+Show and use that a set $C\subset \RR^3$ is closed if and only if the intersection $K\cap C$ is compact for any compact $K\subset \RR^3$.
 
 \parbf{\ref{ex:proper-curve}.}
 Without loss of generality we may assume that the origin does not lie on the curve.
@@ -659,7 +664,7 @@ Whence the statement follows.
 Observe that the circle supports $\gamma$ and apply \ref{prop:supporting-circline}.
 
 
-\parbf{\ref{ex:between-parallels-1}, \ref{ex:in-triangle} and \ref{ex:lens}.}
+\parbf{\ref{ex:between-parallels-1} + \ref{ex:in-triangle} + \ref{ex:lens}.}
 Observe that one of the arcs of curvature 1 in the families shown on the diagram suppots $\gamma$ and apply \ref{prop:supporting-circline}.
 \begin{figure}[h!]
 \begin{minipage}{.50\textwidth}
@@ -713,7 +718,7 @@ The case $k=7$ shown on the diagram.
 \vskip0mm
 \end{figure}
 
-\begin{wrapfigure}{r}{25 mm}
+\begin{wrapfigure}[7]{r}{25 mm}
 \vskip-4mm
 \centering
 \includegraphics{mppics/pic-305}
@@ -795,7 +800,7 @@ $\sigma_1(R-|x|)$; see page \pageref{page:sigma-function}.
 It remains to apply the Moser trick to the constructed vector field. 
 
 \parit{\ref{SHORT.ex:star-shaped-disc:smooth}--\ref{SHORT.ex:star-shaped-disc:star-shaped}.}
-Without loss of generality we can assume that the origin belongs to both $\Sigma$ and $\Theta$.
+Without loss of generality we can assume that the origin belongs to both $\Sigma$ and~$\Theta$.
 
 In each case show that there is a vector field $\vec v$ defined on $\RR^2\backslash\{0\}$ that flows $\Sigma$ to $\Theta$.
 In fact one can choose radial fields of that type,
@@ -849,7 +854,9 @@ In other words $m=0$, or equivalently, the $x$-axis points in the direction of c
 Therefore we can choose a unit normal $\Norm$ at each point so that both principle curvatures are positive.
 Show that it defines a field on the surface.
 
-\parbf{\ref{ex:shape-chart}.} %???
+\parbf{\ref{ex:shape-chart}.}
+Apply \ref{prop:S=-D} and together with the following identities:
+$\langle\Norm,s_u\rangle=\langle\Norm,s_v\rangle=0$.
 
 \parbf{\ref{ex:normal-curvature=const}}; \ref{SHORT.ex:normal-curvature=const:a}.
 Observe that $\Sigma$ has unit Hessian matrix at each point and apply the definition of shape operator.
@@ -876,9 +883,18 @@ By taking its derivative and applying the above identity show that
 Conclude that $\Norm_2'$ is proportional to $\gamma'$
 and therefore $\gamma$ is a curvature line in~$\Sigma_2$.
 
-\parbf{\ref{ex:mean-curvature}}; \ref{SHORT.ex:mean-curvature:smooth}.
+\parbf{\ref{ex:mean-curvature}};
+\ref{SHORT.ex:mean-curvature:smooth}.
+Fix $t$.
+Set $f_t\:p\mapsto p+t\cdot\Norm(p)$; it maps $\Sigma$ to $\Sigma_t$.
 
-\parit{\ref{SHORT.ex:mean-curvature:area}.}
+Use \ref{prop:S=-D} to show that $d_pf_t(\vec v)=\vec v-t\cdot\Shape_p(\vec v)$.
+Since $\Sigma$ is closed, the norm of $\Shape$ is bounded.
+Whence $f_t$ is regular for $t\approx 0$.
+
+\parit{\ref{SHORT.ex:mean-curvature:area}.} By the area formula (\ref{prop:surface-integral}), we have
+\[a(t)=\int_{p\in \Sigma}\jac_pf_t.\]
+Show and use that for fixed $p$, the function $t\mapsto \jac_pf_t$ has derivative $-H(p)$ at zero.
 
 \parbf{\ref{ex:mean-curvature}.}
 Apply \ref{obs:k1-k2} and the definition o mean curvature.
@@ -907,8 +923,7 @@ Apply that mean curvature is the trace of the Hessian matrix.
 
 \parbf{\ref{ex:thin}.} 
 Let us define \index{cut locus}\emph{cut locus} of $V$ as a closure of the set of points $x\in V$ such that there are at least two points on $\partial V$ that minimize the distance to $x$.
-
-Denote by $L$ the cut locus $L$ of $V$.
+Denote by $L$ the cut locus of $V$.
 
 Choose a connected component $\Sigma$ of the boundary $\partial V$.
 Show that $L$ is a smooth surface and the closest point projection $L\to \Sigma$ is a smooth regular parameterization.
@@ -933,7 +948,7 @@ Finally show that if $V$ is bounded by sphere, then $V$ is simply connected --- 
 Choose curvatures such that 
 \[k_2(p)_{\Sigma_1}\z>k_2(p)_{\Sigma_2}> k_1(p)_{\Sigma_1}> k_1(p)_{\Sigma_2}\] and suppose that the first principle direction of $\Sigma_1$ coincides with the second principle direction of $\Sigma_2$ and the other way around.
 
-\parbf{\ref{ex:positive-gauss-0} and \ref{ex:positive-gauss}.} Apply the same reasoning as in the problems \ref{ex:between-parallels-1}--\ref{ex:lens}, but use families of spheres instead.
+\parbf{\ref{ex:positive-gauss-0} + \ref{ex:positive-gauss}.} Apply the same reasoning as in the problems \ref{ex:between-parallels-1}--\ref{ex:lens}, but use families of spheres instead.
 
 
 \parbf{\ref{ex:convex-surf}.} Show and use that any tangent plane $\T_p$ supports $\Sigma$ at $p$.
@@ -973,13 +988,6 @@ Therefore the surface bounds a convex region that contains a line segment of len
 Use \ref{ex:curvature-graph} and \ref{thm:meusnier} to show that the Gauss curvature of the surface of revolution of the graph $y=a\cdot \sin x$ for $x\in(0,\pi)$ cannot exceed $1$.
 Try to support the surface $\Sigma$ from inside by a surface of revolution of the described type. 
 
-\begin{wrapfigure}[16]{r}{29 mm}
-\vskip-6mm
-\centering
-\includegraphics{mppics/pic-1182}
-\vskip-0mm
-\end{wrapfigure}
-
 \parit{Remark.}
 In fact if Gauss curvature of $\Sigma$ is at least $1$,
 then
@@ -990,7 +998,12 @@ The latter means that any two points in $\Sigma$ can be connected by a path that
 To prove \ref{SHORT.ex:convex-proper-sphere:single} use convexity of $R$.
 To prove \ref{SHORT.ex:convex-proper-sphere:smooth} observe that the map $\Sigma\to\mathbb{S}^2$ is smooth and regular, then apply the inverse function theorem to show that inverse is smooth as well.
 
-
+\begin{wrapfigure}[16]{r}{29 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-1182}
+\vskip-0mm
+\end{wrapfigure}
 
 \parbf{\ref{ex:convex-proper-plane}.}
 We can assume that the origin lies on $\Sigma$.
@@ -1087,12 +1100,10 @@ If $\bar\gamma$ is star shaped with respect to a point $w$, then $w$ cannot cros
 Therefore the function $t\mapsto h_t(w)$ is monotone on $\mathbb{S}^1$.
 Observing that this function cannot be constant, we arrive to a contradiction.
 
-\parit{Soruse:} The problem is discuss by Dmitri Panov \cite{panov-curves}.
-
 \parbf{\ref{ex:crosss}.}
 This problem follows easily from the so-called \index{Morse lemma}\emph{Morse lemma}.
 The following sketch is a slightly stripped version of it.
-A more instructive proof can be built using the Moser's trick \cite{palais}.
+A more conceptual proof can be built using the Moser's trick \cite{palais}.
 
 \medskip
 
@@ -1152,9 +1163,6 @@ Show that $s$ is a diffeomorphism from $F_\eps$ to a south hemisphere of~$\Sigma
 \parbf{\ref{ex:saddle-linear}.} Apply \ref{prop:hat}.
 
 
-\parit{\ref{SHORT.ex:saddle-intersection:graphik}.} Show that if $\Sigma$ is not a graph, then it has a vertical tangent $\T_p$ plane at some point $p$.
-Apply part \ref{SHORT.ex:saddle-intersection:graph} for the intersection of $\Sigma$ with $\T_p$.
-
 \parbf{\ref{ex:between-parallels}.} Look for an example among the surfaces of revolution and use \ref{ex:principle-revolution}.
 
 \parbf{\ref{ex:one-side-bernshtein}.} Look at the sections of the graph by planes parallel to the $(x,y)$-plane and to the $(x,z)$-plane, then apply Meusnier’s theorem (\ref{thm:meusnier}).
@@ -1165,21 +1173,12 @@ Show that there is a point $p\in\Sigma$ with vertical tangent plane;
 that is, $\T_p\Sigma$ is perpendicular to the $(x,y)$-plane.
 
 Let $\Gamma_p$ be the connected component of $p$ in the intersection of $\Sigma$ and $\T_p$.
-Show that (1) $\Gamma_p$ is a tree, (2) each vertex of $\Gamma_p$ has degree 4 or 1, (3) $p$ is a vertex of degree 4, and (4) each endvertex lies on the bounary of $\Sigma$.
+Use \ref{ex:crosss} to show that $\Gamma_p$ is a union of smooth regular curves that can cross each other transversely.
+Moreover two of these curves pass thru $p$ and $\Gamma_p$ does not bound a compact region on $\Sigma$.
 
-Observe that $\T_p$ meets the boundary of $\Sigma$ at two points,
-therefore $\Gamma$ has 2 endpoints.
+Observe that $\Gamma_p$ has only two ways to escape to infinity.
 Use it to get a contradiction.
 
-\parbf{\ref{ex:saddle-intersection};} \ref{SHORT.ex:saddle-intersection:graph}.
-Choose $p\in\Gamma$.
-
-If $\T_p\nparallel\Pi$, then implicit function theorem implies that a neighborhood of $p$ in $\Gamma$ admits a smooth parameterization by an real interval.
-
-If  $\T_p\parallel\Pi$, then \ref{ex:crosss} implies that $p$ is a cross point of two smooth curves in $\Gamma$.
-
-It follows that $\Gamma$ is a smooth graph and every vertex of $\Gamma$ in the interior of $\Delta$ has degree $4$.
-No cycle condition follows from Jordan's theorem \ref{thm:jordan} and \ref{lem:convex-saddle}.
 
 \begin{wrapfigure}{r}{24 mm}
 \vskip-0mm
@@ -1189,10 +1188,6 @@ No cycle condition follows from Jordan's theorem \ref{thm:jordan} and \ref{lem:c
 \end{wrapfigure}
 
 \parbf{\ref{ex:lasso}.} Cut the lateral surface of the mountain by a line from the cowboy to the tip, unfold it on the plane and try to figure out what is the image of the strained lasso.
-
-
-
-\parit{Source:} I learned this problem from Joel Fine, who attributed it so Frederic Bourgeois \cite{fine}.
 
 \parbf{\ref{ex:length-dist-conv}.} 
 Note that by \ref{thm:convex-embedded}, $\Sigma$ bounds a strictly convex region.
@@ -1705,7 +1700,7 @@ For \ref{SHORT.ex:open-comparison:proof}, repeat the proof assuming that $p$ is 
 \parbf{\ref{ex:convex-polyhon+self-intersections};} \ref{SHORT.ex:convex-polyhon+self-intersections:angles}.
 Apply the Gauss--Bonnet formula for each region that $\gamma$ cuts from $\Sigma$ and simplify.
 
-\begin{wrapfigure}{r}{50 mm}
+\begin{wrapfigure}[9]{r}{50 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-474}
@@ -1735,6 +1730,15 @@ It remains to show that the plane pentagon provided by \ref{SHORT.ex:convex-poly
 Imagine that there air pressure in the pentagon, it should not move it; so the total force should vanish.
 Use part \ref{SHORT.ex:convex-polyhon+self-intersections:angles} to show that this is not the case.
 
+
+{
+
+\begin{wrapfigure}[9]{o}{46 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-1650}
+\end{wrapfigure}
+
 \parbf{\ref{ex:convex-dist}.}
 It is sufficient to prove the Jensen inequality;
 that is, 
@@ -1746,15 +1750,6 @@ that is,
 \tfrac12\cdot \dist{\gamma_1(1)}{\gamma_2(1)}{}.
 \]
 
-
-
-{
-
-\begin{wrapfigure}{o}{46 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-1650}
-\end{wrapfigure}
 
 Let $\delta$ be the geodesic path from $\gamma_2(0)$ to $\gamma_1(1)$.
 From \ref{ex:midpoints}, we have
@@ -1776,7 +1771,7 @@ on the Euclidean plane the proof is just as hard.
 
 
 \begin{wrapfigure}{r}{27 mm}
-\vskip-0mm
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-1680}
 \vskip0mm
