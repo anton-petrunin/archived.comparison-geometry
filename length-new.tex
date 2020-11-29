@@ -32,12 +32,16 @@ Show that
 
 \end{thm}
 
+\begin{wrapfigure}{r}{33 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-224}
+\end{wrapfigure}
+
 Suppose $\gamma\:[a,b]\to \RR^3$ is a parameterized space curve.
-For a partition $a=t_0 < t_1 < \cdots < t_k=b$, set $p_i=\gamma(t_i)$.
+For a partition $a=t_0 < t_1 < \z\cdots < t_k=b$, set $p_i=\gamma(t_i)$.
 Then the polygonal line $p_0\dots p_k$ is called \index{inscribed polygonal line}\emph{inscribed} in $\gamma$.
 If $\gamma$ is closed, then $p_0=p_k$, so the inscribed polygonal line is also closed.
-
-%???+PIC
 
 Note that the length of a space curve $\gamma$ can be defined as the least upper bound of the lengths of polygonal lines $p_0\dots p_k$ inscribed in $\gamma$.
 
@@ -53,17 +57,23 @@ Show that
 \begin{thm}{Exercise}\label{ex:integral-length}
 Assume $\gamma\:[a,b]\to\RR^3$ is a smooth curve.
 Show that
+\vskip1mm
+\begin{minipage}{.48\textwidth}
 \begin{subthm}{ex:integral-length>}
 $\length \gamma
 \ge
 \int_a^b|\gamma'(t)|\cdot dt$,
 \end{subthm}
-
+\end{minipage}
+\hfill
+\begin{minipage}{.48\textwidth}
 \begin{subthm}{ex:integral-length<}
 $\length \gamma
 \le
 \int_a^b|\gamma'(t)|\cdot dt$.
 \end{subthm}
+\end{minipage}
+\vskip1mm
 
 Conclude that 
 \[\length \gamma

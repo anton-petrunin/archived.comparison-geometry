@@ -41,7 +41,7 @@ for curves, it measures how fast it deviates from a straight line.
 Show that any regular smooth unit-speed spherical curve has curvature at least 1 at each time.
 \end{thm}
 
-\section{Tangent indicatrix}
+\section{Tangent indicatrix}\label{sec:Tangent indicatrix}
 
 Let $\gamma$ be a regular smooth space curve.
 Let us consider another curve 
@@ -131,14 +131,13 @@ Rewriting the above integral using a change of variables produce a formula for a
 Find the curvature of the helix \[\gamma_{a,b}(t)=(a\cdot \cos t,a\cdot \sin t,b\cdot t),\] its tangent indicatrix and the total curvature of its arc $\gamma_{a,b}|_{[0,2\cdot\pi]}$.
 \end{thm}
 
+Note that for a unit-speed smooth curve,
+the speed of its tangent indicatrix equals its curvature.
+Therefore \ref{ex:integral-length} implies the following:
+
 \begin{thm}{Observation}\label{obs:tantrix}
 The total curvature of a smooth regular curve is the length of its tangent indicatrix.
 \end{thm}
-
-\parit{Proof.}
-Combine \ref{eq:tocurv} and \ref{eq:curvature}.
-\qedsf %???other cases --- closed curves, semiopen intervals...
-
 
 \begin{thm}{Fenchel's theorem}\label{thm:fenchel}
 The total curvature of any closed regular space curve is at least $2\cdot\pi$.
@@ -326,13 +325,13 @@ Then
 
 \end{thm}
 
-%??? is it really due to Reshetnyak???
+%This lemms is due to Alexandr Alexandrov and Yurii Reshetnyak \cite{aleksandrov-reshetnyak}.
 
 \parit{Proof.}
 Let us parameterize the chord $\ell$ from $\gamma(b)$ to $\gamma(a)$ and consider the cyclic concatenation $\bar\gamma$ of $\gamma$ and $\ell$.
 The closed curve $\bar\gamma$ has two external angles $\pi-\alpha$ and $\pi-\beta$.
 
-\begin{wrapfigure}{o}{45 mm}
+\begin{wrapfigure}{r}{45 mm}
 \vskip-5mm
 \centering
 \includegraphics{mppics/pic-53}
@@ -439,7 +438,8 @@ where the least upper bound is taken over all polygonal lines~$\beta$ inscribed 
 This exercise can be used to generalize the notion of total curvature of arbitrary curve $\gamma$.
 Namely it can be defined as \emph{the least upper bound on the total curvatures of inscribed nondegenerate polygonal lines inscribed in $\gamma$.}
 
-It is possible to generalze most of the statments in this chapter to the (nonsmooth) curves of finite total curvature;
+It is possible to generalze most of the statments in this chapter to the (nonsmooth) curves of finite total curvature.
+This theory was developed by Alexandr Alexandrov and Yuri Reshetnyak \cite{aleksandrov-reshetnyak};
 a good survey on the subject is written by John Sullivan \cite{sullivan-curves}.
 
 \begin{thm}{Exercise}\label{ex:sef-intersection}
@@ -495,8 +495,8 @@ Note that
 \eqlbl{eq:spheric-triangle}
 \]
 
-\begin{wrapfigure}{r}{40 mm}
-\vskip2mm
+\begin{wrapfigure}[9]{r}{37 mm}
+\vskip-2mm
 \centering
 \includegraphics{mppics/pic-56}
 \vskip0mm
@@ -548,6 +548,8 @@ It turns out that any {}\emph{nontrivial knot} admits an alternating quadrisecan
 according to the exercise the latter implies the so-called \index{F\'ary--Milnor theorem}\emph{F\'ary--Milnor theorem} --- the total curvature any knot exceeds~$4\cdot \pi$.
 
 \section{Bow lemma}
+
+The following lemma was proved by Axel Schur \cite{shur}.
 
 \begin{thm}{Lemma}\label{lem:bow}
 Let $\gamma_1\:[a,b]\to\RR^2$ and $\gamma_2\:[a,b] \to\RR^3$ be two smooth unit-speed curves.
@@ -669,7 +671,7 @@ $\theta$ there is a smooth regular curve $\gamma$ such that $\frac{|\gamma(b)-\g
 
 \end{thm}
 
-
+The statement in the following exercise is generally attributed to Hermann Schwarz \cite{shur}.
 
 \begin{thm}{Exercise}\label{ex:schwartz}
 Let $p$ and $q$ be points in a unit circle dividing it in two arcs with lengths $\ell_1<\ell_2$.
@@ -678,7 +680,7 @@ Suppose a space curve $\gamma$ connects $p$ to $q$ and has curvature at most 1. 
 \quad\text{or}\quad
 \length \gamma\ge \ell_2.
 \]
-\end{thm} %H. A. Schwartz???
+\end{thm}
 
 The following exercise generalizes \ref{ex:length>=2pi}.
 

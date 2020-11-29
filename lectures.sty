@@ -70,8 +70,11 @@ isbn=false]{biblatex}
 \renewbibmacro{in:}{}
 \renewcommand*{\bibfont}{\scriptsize}
 
-
 \addbibresource{library.bib}
+
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+\DeclareFieldFormat{pages}{#1}
 
 
 \usepackage{titletoc}% http://ctan.org/pkg/titletoc

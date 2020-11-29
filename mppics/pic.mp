@@ -3196,6 +3196,32 @@ fill p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle
 draw p[n]--(p[n] rotated -120 shifted z4)--(p[n] rotated 120 shifted z.b)--cycle penhair;
 endfig;
 
+beginfig(224);
+save u,p;
+u:=.7cm;
+path p[];
+
+z.p0=(0,0)*u;
+z.p1=(1,1)*u;
+z.p2=(2,.2)*u;
+z.p3=(3,1)*u;
+
+p0=z.p0..tension 1.2..z.p1..z.p2..z.p3;
+
+z.q1=point .7 of p0;
+z.q2=point 1.9 of p0;
+
+draw p0 pensemibold;
+draw z.p0--z.q1--z.q2--z.p3;
+dOt z.p0,z.q1,z.q2,z.p3;
+
+label.lft(btex $p_0$ etex, z.p0);
+label.top(btex $p_1$ etex, z.q1);
+label.bot(btex $\dots$ etex rotated -20, z.q2);
+label.rt(btex $p_k$ etex, z.p3);
+label.bot(btex $\gamma$ etex, point 2.5 of p0);
+endfig;
+
 beginfig(225);
 save u,a,n;
 u:=.7cm;
