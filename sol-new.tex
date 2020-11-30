@@ -13,18 +13,20 @@ Make a conclusion.
 Suppose the complement $\Omega=\mathcal{X}\backslash Q$ is open.
 Then for each point $p\in \Omega$ there is $\eps>0$ such that $|p-q|_{\spc{X}}>\eps$ for any $q\in Q$.
 It follows that $p$ is not a limit point of any sequence $q_n\in Q$.
-That is, any limit of points in $Q$ lies in $Q$ which by definition means that $Q$ is closed.
+That is, any limit of a sequence in $Q$ lies in $Q$;
+that is, by the definition, $Q$ is closed.
 
 Now suppose $\Omega=\mathcal{X}\backslash Q$ is not open.
-Then there is a point $p\in \Omega$ such that for any natural $n$ there is a point $q_n\in Q$ such that $|p-q_n|_{\spc{X}}\z<\tfrac 1n$; in particular $q_n\to p$ and $n\to \infty$.
-Since $p\notin Q$, we get that $Q$ is not closed.
+Show that there is a point $p\in \Omega$ and a sequence $q_n\in Q$ such that such that $|p-q_n|_{\spc{X}}\z<\tfrac 1n$ for any $n$.
+Conclude that $q_n\to p$ and $n\to \infty$;
+therefore $Q$ is not closed.
 
 \parbf{\ref{ex:9}.} The image of $\gamma$ might have a shape of digit $8$ or $9$.
 
 \parbf{\ref{aex:simple-curve}.}
 Let $\alpha$ be a path connecting $p$ to $q$.
 
-Passing to a subinterval if necessary,
+Passing to an arc of $\alpha$ if necessary,
 we can assume that $\alpha(t)\ne p,q$ for $t\ne0,1$.
 
 An open set $\Omega$ in $(0,1)$ will be called {}\emph{suitable}
@@ -32,38 +34,38 @@ if for any connected component $(a,b)$ of $\Omega$ we have $\alpha(a)=\alpha(b)$
 Show that the union of nested suitable sets is suitable.
 Therefore we can find a maximal suitable set $\hat \Omega$.
 
-Define $\beta(t)=\alpha(a)$ for any $t$ in a connected component $(a,b)\subset\Omega$.
+Define $\beta(t)=\alpha(a)$ for any $t$ in a connected component $(a,b)\subset\hat \Omega$.
 Note that for any $x\in [0,1]$ the set $\beta^{-1}\{\beta(x)\}$ is connected.
 
 It remains to re-parametrize $\beta$ to make it injective.
 In other words we need to construct a non-decreasing surjective function $\tau\:[0,1]\z\to[0,1]$ such that 
-$\tau(t_1)=\tau(t_2)$ if and only if there is a connected component $(a,b)$ such that $t_1,t_2\z\in [a,b]$.
-The construction is similar to the construction of devil's staircase.
+$\tau(t_1)=\tau(t_2)$ if and only if there is a connected component $(a,b)\subset\hat \Omega$ such that $t_1,t_2\z\in [a,b]$.
+
+The required function $\tau$ can be constructed in a similar way to the so-called \emph{devil's staircase} --- learn this construction and modify it.
 
 
 \parbf{\ref{ex:L-shape}.}
 Denote the union of two half-axis by $L$.
+
+Recall that the function $f$ is smooth; see Section~\ref{sec:analysis}.
+Therefore $t\mapsto \alpha(t)=(f(t),f(-t))$ is smooth as well.
+
 Observe that $f(t)\to\infty$ as $t\to \infty$.
 Since $f(0)=0$, the intermediate value theorem implies that $f(t)$ takes all nonnegative values for $t\ge 0$.
 Use it to show that $L$ is the range of~$\alpha$.
 
-Note that the function $f$
-is smooth.
-Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and direct calculations show that $f^{(n)}(0)=0$ for all $n$.
-Therefore $t\mapsto \alpha(t)=(f(t),f(-t))$ is smooth as well.
+\begin{wrapfigure}[12]{r}{24 mm}
+\vskip0mm
+\centering
+\includegraphics{mppics/pic-270}
+\vskip0mm
+\end{wrapfigure}
 
 Further, show that the function $f$ is strictly increasing for $t> 0$,
 and, moreover, if $0<t_0<t_1$, then $0<f(t_0)<f(t_1)$.
 Use it to show that the maps $t\mapsto \alpha(t)$ is injective.
 
 Summarizing we get that $\alpha$ is a smooth parametrization of $L$. 
-
-\begin{wrapfigure}[12]{r}{24 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-270}
-\vskip0mm
-\end{wrapfigure}
 
 Now suppose $\beta\:t\mapsto (x(t),y(t))$ is a smooth parameterization of~$L$.
 Without loss of generality we may assume that $x(0)=y(0)=0$.
@@ -84,8 +86,8 @@ Try to argue similarly to \ref{ex:L-shape}.
 
 \parbf{\ref{ex:viviani}.}
 For $\ell=0$ the system describes a pair of points $(0,0,\pm1)$, so we can assume that $\ell\ne 0$.
-Note that first equation desribes the unit sphere centered at the origin
-and the second equation describes a cylinder over the circle in the $(x,y)$-plane with diameter with opposite points $(0,0)$ and $(0,\ell)$.
+Note that the first equation describes the unit sphere centered at the origin
+and the second equation describes a cylinder over the circle in the $(x,y)$-plane with opposite points $(0,0)$ and $(0,\ell)$.
 
 {
 
@@ -93,8 +95,8 @@ and the second equation describes a cylinder over the circle in the $(x,y)$-plan
 \centering
 \begin{lpic}[t(2mm),b(0mm),r(0mm),l(0mm)]{asy/viviani(1)}
 \lbl[r]{-.5,13;$x$}
-\lbl[l]{30.5,15;$y$}
-\lbl[b]{14,40;$z$}
+\lbl[l]{31,15;$y$}
+\lbl[b]{14,40.5;$z$}
 \end{lpic}
 \end{wrapfigure}
 
@@ -119,7 +121,7 @@ Show that
 Note that the condition on gradients provides only sufficient condition.
 Therefore he case $\ell=\pm1$ has to be checked by hands.
 In this case a neighborhood of $(\pm1,0,0)$ does not admit a smooth regular parametrization --- try to prove it. 
-The case $\ell=0$ shown on the diagram.
+The case $\ell=1$ shown on the diagram.
 
 \parit{Remark.}
 In the case $\ell=\pm1$ it is called \index{Viviani's curve}\emph{Viviani's curve}.
@@ -138,13 +140,19 @@ Show and use that a set $C\subset \RR^3$ is closed if and only if the intersecti
 \parbf{\ref{ex:proper-curve}.}
 Without loss of generality we may assume that the origin does not lie on the curve.
 
-Show that inversion of the plane $(x,y)\mapsto (\tfrac{x}{x^2+y^2},\tfrac{y}{x^2+y^2})$ maps our curve maps to a closed curve with removed origin.
+Show that inversion of the plane $(x,y)\mapsto (\tfrac{x}{x^2+y^2},\tfrac{y}{x^2+y^2})$ maps our curve to a closed curve with removed origin.
 Apply Jordan's theorem for the obtained curve and use the inversion again.
 
-\parbf{\ref{ex:integral-length-0}.} Observe that if $c=\tau_0<\dots<\tau_n=d$ is a partition of $[c,d]$ if and only if $t_i=\phi(\tau_i)$ is a partition of $[a,b]$ and apply the definition of length (\ref{def:length}).
+\parbf{\ref{ex:integral-length-0}.}
+Show that the least upper bound in \ref{def:length} can be taken for all sequences
+$a=t_0\le t_1\le\z\dots\le t_k=b$.
+
+Observe that $a=t_0\le t_1\le\z\dots\le t_k=b$
+if there is a sequence $c=\tau_0\le \dots<\tau_k=d$ such that $t_i=\phi(\tau_i)$.
+Make a conclusion.
 
 \parbf{\ref{ex:length-image}.}
-Fix a partition $0=t_0<\dots <t_n=1$ of $[0,1]$.
+Choose a partition $0=t_0<\dots <t_n=1$ of $[0,1]$.
 Set $\tau_0=0$ and 
 \[\tau_i=\max\set{\tau \in[0,1]}{\beta(\tau_i)=\alpha(t_i)}.\]
 Show that $(\tau_i)$ is a partition of $[0,1]$;
@@ -166,9 +174,11 @@ Note that the partition $(\tau_i)$ is not arbitrary, therefore the inequality mi
 
 
 
-\parbf{\ref{ex:integral-length}.} For (\ref{ex:integral-length>}), apply the fundamental theorem of calculus for each segment in a given partition. For (\ref{ex:integral-length<}) consider a partition such that the velocity vector $\alpha'(t)$ is nearly constant on each of its segments.
+\parbf{\ref{ex:integral-length}.}
+For \ref{SHORT.ex:integral-length>}, apply the fundamental theorem of calculus for each segment in a given partition.
+For \ref{SHORT.ex:integral-length<} consider a partition such that the velocity vector $\alpha'(t)$ is nearly constant on each of its segments.
 
-\parbf{\ref{adex:integral-length}.} Use theorems of Rademacher and Lusin (\ref{thm:rademacher} and \ref{thm:lusin}).
+\parbf{\ref{adex:integral-length}.} Use the theorems of Rademacher and Lusin (\ref{thm:rademacher} and \ref{thm:lusin}).
 
 \parbf{\ref{ex:nonrectifiable-curve}}; \ref{SHORT.ex:nonrectifiable-curve:a}.
 \begin{figure}[h!]
@@ -188,9 +198,9 @@ Show that
 \[\length\gamma_k=k\cdot\length \gamma.\]
 
 Now suppose the arc $\gamma$ of the Koch snowflake shown on the diagram is rectifiable; denote its length by $\ell$.
-Evidently $\ell>0$.
-Observe that it $\gamma$ can be divided into 4 arcs each of which is a scaled copy of $\gamma$ with factor $\tfrac13$.
-It follows that $\ell=\tfrac43\cdot\ell$ --- a contradiction.
+Observe that $\gamma$ can be divided into 4 arcs each of which is a scaled copy of $\gamma$ with factor $\tfrac13$.
+It follows that $\ell=\tfrac43\cdot\ell$.
+Evidently $\ell>0$ --- a contradiction.
 
 
 \parbf{\ref{ex:arc-length-helix}.} 
@@ -198,8 +208,8 @@ We have to assume that $a\ne 0$ or $b\ne0$;
 otherwise we get a constant curve.
 
 Show that the curve has constant velocity $|\gamma'(t)|\equiv \sqrt{a^2+b^2}$.
-Therefore 
-\[s=\tfrac{t}{\sqrt{a^2+b^2}}\] is an arc-length parameter.
+Therefore $s=t/\sqrt{a^2+b^2}$ is an arc-length parameter.
+It remains to substitute $s\cdot \sqrt{a^2+b^2}$ for $t$.
 
 
 \parbf{\ref{ex:convex-hull}.}
@@ -233,14 +243,14 @@ Apply triangle inequality to show that
 and use it to modify the proof above.
 
 \parbf{\ref{ex:convex-croftons}.} 
-Denote by $\ell_u$ the line segment 
-obtained orthogonal projection of $\gamma$ to the line in the direction $u$.
-Note that $\gamma_u$ runs back and forth along $\ell_u$, we get 
-\[\length\gamma_u\ge 2\cdot\length\ell_u.\]
+Denote by $\ell_{\vec u}$ the line segment 
+obtained orthogonal projection of $\gamma$ to the line in the direction ${\vec u}$.
+Note that $\gamma_{\vec u}$ runs back and forth along $\ell_{\vec u}$, we get 
+\[\length\gamma_{\vec u}\ge 2\cdot\length\ell_{\vec u}.\]
 Applying the Crofton formula, we get that 
-\[\length\gamma\ge \pi\cdot \overline{\length\ell_u}.\]
+\[\length\gamma\ge \pi\cdot \overline{\length\ell_{\vec u}}.\]
 
-In the case of equality, the curve $\gamma_u$ runs exactly back and forth along $\ell_u$ without additional zigzags for almost all (and therefore for all) $u$.
+In the case of equality, the curve $\gamma_{\vec u}$ runs exactly back and forth along $\ell_{\vec u}$ without additional zigzags for almost all (and therefore for all) ${\vec u}$.
 
 Let $K$ be a closed set bounded by $\gamma$.
 Observe that the last statement implies that every line may intersect $K$ only along a closed segment.
@@ -398,7 +408,7 @@ By the fundamental theorem of calculus, we have
 \end{align*}
 Since $\gamma(0)=\gamma(\ell)$ and $\gamma'(0)=\gamma'(\ell)$, the right hand side vanishes.
 
-Note that without loss of generality we can assume the curve in \ref{thm:DNA} is described by a loop $\gamma\:[0,\ell]\to\RR^3$ parameterized by its arc-length.
+Note that without loss of generality we can assume the curve in \ref{thm:DNA} is described by a loop $\gamma\:[0,\ell]\to\RR^3$ parametrized by its arc-length.
 We can also assume that the origin is the center of the ball; that is $|\gamma|\le 1$.
 Since $\gamma$ is a smooth closed curve, we have 
 $\gamma'(0)=\gamma'(\ell)$ and $\gamma(0)=\gamma(\ell)$.
@@ -502,7 +512,7 @@ Show that the distance between the ends of $\gamma_1$ is smallet than $|p-q|$ an
 \input{torsion-sol.tex}
 
 \parbf{\ref{ex:bike}.}
-Without loss of generality, we may assume that $\gamma_0$ is parameterized by its arc-length.
+Without loss of generality, we may assume that $\gamma_0$ is parametrized by its arc-length.
 Then
 \begin{align*}
 |\gamma_1'|&=|\gamma_0'+\tan'|=|\tan+\kur\cdot\norm|=
@@ -570,7 +580,7 @@ Show that
 Since $\gamma$ is regular, $\gamma'\ne0$.
 Therefore if $\gamma_\ell'(t)=0$, then $\ell\cdot \skur(t)= 1$.
 
-\parit{\ref{SHORT.ex:length':formula}.} Observe that we can assume that $\gamma$ is parameterized by its arc-length, so $\gamma'(t)=\tan(t)$.
+\parit{\ref{SHORT.ex:length':formula}.} Observe that we can assume that $\gamma$ is parametrized by its arc-length, so $\gamma'(t)=\tan(t)$.
 Suppose $|\ell|<\frac{1}{\kur(t)}$ for any $t$.
 Then 
 \[
@@ -870,7 +880,7 @@ Observe that $\Sigma$ has unit Hessian matrix at each point and apply the defini
 Make a conclusion.
 
 \parbf{\ref{ex:shape-curvature-line}.} 
-We can assume that $\gamma$ is parameterized by its arc-length.
+We can assume that $\gamma$ is parametrized by its arc-length.
 Denote by $\Norm_1(s)$ and $\Norm_2(s)$ the unit normal vectors to $\Sigma_1$ and $\Sigma_2$ at $\gamma(s)$.
 Since $\gamma$ is a curvature line in $\Sigma_1$, we have 
 $\Norm_1'$ is proportional to $\gamma'$;
@@ -1023,7 +1033,7 @@ Use the inverse function theorem to show that $\Omega$ is open; hence \ref{SHORT
 %???cde???
 
 \parbf{\ref{ex:open+convex=plane}.}
-By \ref{ex:convex-proper-plane:d}, $\Sigma$ is parameterized by an open convex plane domain $\Omega$.
+By \ref{ex:convex-proper-plane:d}, $\Sigma$ is parametrized by an open convex plane domain $\Omega$.
 It remains to show that $\Omega$ can parameterize the whole plane.
 
 We may assume that the origin of the plane leis in $\Omega$.
@@ -1097,7 +1107,7 @@ and the derivative changes sign if $w$ changes the side of $\bar\ell_t$.
 
 Denote by $\bar\gamma$ the projection of $\gamma$ to the $(x, y)$-plane.
 If $\bar\gamma$ is star shaped with respect to a point $w$, then $w$ cannot cross $\bar\ell_t$.
-Therefore the function $t\mapsto h_t(w)$ is monotone on $\mathbb{S}^1$.
+Therefore the function $t\mapsto h_t(w)$ is monotonic on $\mathbb{S}^1$.
 Observing that this function cannot be constant, we arrive to a contradiction.
 
 \parbf{\ref{ex:crosss}.}
@@ -1277,7 +1287,8 @@ Consider an arbitrary closed geodesic $\gamma$.
 
 Note that if $\gamma$ is tangent to a meridian at some point, then by uniqueness, $\gamma$ runs along the meridian; in particular it is non-contractible.
 
-It remains to consider the case when $\gamma$ intersect meridians transitively. So the longitude of $\gamma$ is monotone.
+It remains to consider the case when $\gamma$ intersect meridians transitively.
+So the longitude of $\gamma$ is monotonic.
 Whence again $\gamma$ is non-contractible.
 
 \parbf{\ref{ex:two-min-geod}.}

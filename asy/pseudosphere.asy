@@ -1,23 +1,21 @@
-settings.render=8;
+settings.render=0;
 
 import graph3;
 import contour;
-import gsl;
-
 defaultpen(fontsize(10pt));
 
+size(0,4cm);
 
-size(5,2cm);
+currentprojection=orthographic(1.3,-1.5,.2);
 
-currentprojection=orthographic(1,-1.5,1);
+triple  f(pair z)
+{return
+(
+log(exp(z.x)*(1+sqrt(1-exp(-2*z.x))))-sqrt(1-exp(-2*z.x)),
+cos(z.y)*exp(-z.x),
+sin(z.y)*exp(-z.x)
+);
+}
 
-triple  f1(pair z)
-{return (
-z.y,
-z.x,
-0
-);}
-
-draw(surface(f1,(0,1),(0,1), nu=12,nv=12,Spline),
+draw(surface(f,(0,0),(4*pi,2*pi), nu=48,nv=24,Spline),
      white,meshpen=black+thick(),nolight);
-     

@@ -15,21 +15,21 @@ The following exercise should help you to be in the right mood;
 it might look like a tedious problem in calculus, but actually it is an easy problem in geometry.
 We learned this problem from Joel Fine, who attributed it so Frederic Bourgeois \cite{fine}.
 
-\begin{wrapfigure}{r}{33 mm}
-\vskip-0mm
+\begin{wrapfigure}[6]{r}{33 mm}
+\vskip-6mm
 \centering
 \includegraphics{mppics/pic-77}
 \vskip-0mm
 \end{wrapfigure}
 
 \begin{thm}{Exercise}\label{ex:lasso}
-There is a mountain of frictionless ice formed by a cone with a circular base.
-Suppose that a cowboy stands at the bottom and he wants to climb the mountain;
+А cowboy stands at the bottom of a frictionless ice-mountain formed by a cone with a circular base with the angle  of inclination~$\theta$.
+He wants to climb the mountain;
 he throws up his lasso which slips neatly over the tip of the cone, pulls it tight and starts to climb.
-If the angle of inclination $\theta$ is large, there is no problem; the lasso grips tight and up he goes.
-On the other hand if $\theta$ is small, the lasso slips off as soon as the cowboy pulls on it.
+%If the angle of inclination $\theta$ is large, there is no problem; the lasso grips tight and up he goes.
+%On the other hand if $\theta$ is small, the lasso slips off as soon as the cowboy pulls on it.
 
-What is the critical angle $\theta_0$ at which the cowboy can no longer climb the ice-mountain?
+What is the critical angle $\theta$ at which the cowboy can no longer climb the ice-mountain?
 \end{thm}
 
 \section{Definition}
@@ -101,7 +101,7 @@ By the definition of induced length metric (Section~\ref{sec:Length metric}),
 there is a sequence of paths $\gamma_n$ from $p$ to $q$ in $\Sigma$ such that
 \[\length\gamma_n\to \ell\quad\text{as}\quad n\to \infty.\]
 
-Without loss of generality, we may assume that $\length\gamma_n<\ell+1$ for any $n$ and each $\gamma_n$ is parameterized proportional to its arc-length.
+Without loss of generality, we may assume that $\length\gamma_n<\ell+1$ for any $n$ and each $\gamma_n$ is parametrized proportional to its arc-length.
 In particular each path $\gamma_n\:[0,1]\to\Sigma$ is $(\ell+1)$-Lipschitz; 
 that is,
 \[|\gamma(t_0)-\gamma(t_1)|\le (\ell+1)\cdot|t_0-t_1|\]
@@ -134,8 +134,6 @@ that is,
 for any pair of points $p,q\in \RR^3$.
 \end{thm}
 
-%???if we add that perpendicular bisector to [\bar p,p] separates R from p, then we can remove separation lemma from the preliminaries.
-
 The map $p\mapsto \bar p$ is called the \label{closest point projection}\index{closest point projection}\emph{closest point projection};
 it maps the Euclidean space to $R$.
 Note that if $p\in R$, then $\bar p=p$.
@@ -154,8 +152,10 @@ By construction
 \end{align*}
 Hence the existence follows.
 
+{
+
 \begin{wrapfigure}{r}{22 mm}
-\vskip-10mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-40}
 \vskip-0mm
@@ -166,19 +166,21 @@ Since $R$ is convex, their midpoint $m=\tfrac12\cdot (\bar p+\bar p')$ lies in~$
 Note that $|p-\bar p|\z=|p-\bar p'|=\ell$; that is, the triangle $[p\bar p\bar p']$ is isosceles and therefore the triangle $[p\bar p m]$ is right with the right angle at~$m$.
 Since a leg of a right triangle is shorter than its hypotenuse, we have $|p-m|<\ell$ --- a contradiction. 
 
+It remains to prove \ref{eq:short-cpp}.
+We can assume that $\bar p\ne\bar q$, otherwise there is nothing to prove.
+
+}
+
+Note that if $\measuredangle \hinge{\bar p}{p}{\bar q}< \tfrac\pi2$, then $\dist{p}{z}{}\z<\dist{p}{\bar p}{}$ for some point $x\in [\bar p\bar q]$.
+Since $[\bar p\bar q]\subset K$,
+the latter is impossible.
+
 \begin{wrapfigure}{l}{37 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-41}
 \vskip-0mm
 \end{wrapfigure}
-
-It remains to prove \ref{eq:short-cpp}.
-We can assume that $\bar p\ne\bar q$, otherwise there is nothing to prove.
-
-Note that if $\measuredangle \hinge{\bar p}{p}{\bar q}< \tfrac\pi2$, then $\dist{p}{z}{}\z<\dist{p}{\bar p}{}$ for some point $x\in [\bar p\bar q]$.
-Since $[\bar p\bar q]\subset K$,
-the latter is impossible.
 
 Therefore $p=\bar p$ or $\measuredangle \hinge{\bar p}{p}{\bar q}\ge \tfrac\pi2$.
 In both cases the orthogonal projection of $p$ to the line $\bar p\bar q$ lies behind $\bar p$, or coincides with $\bar p$.
@@ -303,7 +305,7 @@ is a geodesic, but not a shortest path on $\Sigma$.
 \begin{thm}{Exercise}\label{ex:reflection-geodesic}
 Assume that a smooth surface $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$.
 Suppose that $\Sigma$ and $\Pi$ intersect along a smooth regular curve $\gamma$.
-Show that $\gamma$ parameterized by its arc-length is a geodesic on $\Sigma$.
+Show that $\gamma$ parametrized by its arc-length is a geodesic on $\Sigma$.
 \end{thm}
 
 Recall that asymptotic line is defined in Section~\ref{sec:saddle}.
@@ -532,14 +534,15 @@ Moreover we have a {}\emph{local control} on $r_p$;
 that is, for any $q\in \Sigma$ there is $\eps>0$ such that if $|q-p|_\Sigma<\eps$, then $r_p\ge\eps$.
 \end{thm}
 
-The proof of the proposition uses the observation and the inverse function theorem (\ref{thm:inverse}). %???+Jacobian matrix
+The proof of the proposition uses the observation and the inverse function theorem (\ref{thm:inverse}).
 
 \parit{Proof.}
 Let $z=f(x,y)$ be a local graph representation of $\Sigma$ in the tangent-normal coordinates at $p$.
 Note that $(x,y)$-plane coincides with the tangent plane $\T_p$.
 
 Denote by $s$ the composition of  the exponential map $\exp_p$ with the orthogonal projection $(x,y,z)\mapsto (x,y)$.
-By \ref{obs:d(exp)=1}, the differential $d_0s$ is the identity.
+By \ref{obs:d(exp)=1}, the differential $d_0s$ is the identity;
+in other words, this map has identity Jacobian matrix at $0$.
 Applying the inverse function theorem (\ref{thm:inverse}) we get the first part of the proposition.
 
 The second part can be proved along the same lines, using the second part the inverse function theorem (\ref{thm:inverse});
@@ -566,7 +569,7 @@ In other words, the injectivity radius at $p$ can be defined as the least upper 
 
 \begin{thm}{Proposition}\label{prop:gamma''}
 Let $\Sigma$ be a smooth regular surface.
-Then any shortest path $\gamma$ in $\Sigma$ parameterized proportional to its arc-length is a geodesic in $\Sigma$.
+Then any shortest path $\gamma$ in $\Sigma$ parametrized proportional to its arc-length is a geodesic in $\Sigma$.
 In particular $\gamma$ is a smooth curve.
 
 A partial converse to the first statement also holds: a sufficiently short arc of any geodesic is a shortest path.
@@ -616,7 +619,7 @@ By \ref{prop:gamma''}, $B(p,r)_\Sigma\subset\exp_p(B)$, hence the result.
 According to the corollary, the restriction $\exp_p|_{\T_p}$ admits an inverse map that is called \emph{logarithmic map at $p$};
 it is denoted by \[\log_p\:B(p,r)_\Sigma\to B(0,r)_{\T_p}.\]
 
-Note that according to the proposition above, any shortest path parameterized by its arc-length is a smooth curve.
+Note that according to the proposition above, any shortest path parametrized by its arc-length is a smooth curve.
 This observation should help to solve in the following two exercises.
 
 

@@ -3599,8 +3599,8 @@ z.x=z.r;
 z.y=z.x rotated 120;
 z.z=z.x rotated -120;
 
-p1= z.a0{-z.a0}..z.b0{z.b0};
-p2= z.a0{-z.a0}..z.b1{z.b1};
+p1= z.a0{-z.a0 rotated 15}..z.b0{z.b0 rotated -15};
+p2= z.a0{-z.a0 rotated -15}..z.b1{z.b1 rotated 15};
 
 
 
