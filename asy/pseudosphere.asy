@@ -4,9 +4,9 @@ import graph3;
 import contour;
 defaultpen(fontsize(10pt));
 
-size(0,4cm);
+size(0,5.6cm);
 
-currentprojection=orthographic(1.3,-1.5,.2);
+currentprojection=perspective(-2,-1.5,.2);
 
 triple  f(pair z)
 {return
