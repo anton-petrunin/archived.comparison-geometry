@@ -393,9 +393,7 @@ Therefore
 \begin{align*}
 \int_0^\ell\langle\gamma(s),\gamma'(s)\rangle'\cdot ds
 &=
-\int_0^\ell\langle\gamma'(s),\gamma'(s)\rangle\cdot ds+\int_0^\ell\langle\gamma(s),\gamma''(s)\rangle\cdot ds\ge
-\\
-&\ge \length\gamma-\tc\gamma.
+\int_0^\ell\langle\gamma'(s),\gamma'(s)\rangle\cdot ds+\int_0^\ell\langle\gamma(s),\gamma''(s)\rangle\cdot ds\ge \length\gamma-\tc\gamma.
 \end{align*}
 
 \parit{\ref{SHORT.ex:DNA:end}.}
@@ -520,7 +518,7 @@ Then
 1=
 |\gamma_0'|;
 \end{align*}
-that is, $|\gamma_1'(t)|\ge|\gamma_0'(t)|$ for any $t\in[a,b]$
+that is, $|\gamma_1'(t)|\ge|\gamma_0'(t)|$ for any $t\in[a,b]$.
 The statement follows since 
 \[\length\gamma_i
 =
@@ -729,7 +727,7 @@ The case $k=7$ shown on the diagram.
 \end{figure}
 
 \begin{wrapfigure}[7]{r}{25 mm}
-\vskip-4mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-305}
 \vskip0mm
@@ -1140,7 +1138,7 @@ $b(x,y(x))=0$ and $b_y(x,y(x))>0$.
 
 It follows that 
 \begin{align*}
-f(x,y)&=a(x)^2-b(x,y)^2-=
+f(x,y)&=a(x)^2-b(x,y)^2=
 (a(x)-b(x,y))\cdot (a(x)+b(x,y)).
 \end{align*}
 That is $f(x,y)=0$ if $a(x)\pm b(x,y) =0$.
@@ -1190,8 +1188,8 @@ Observe that $\Gamma_p$ has only two ways to escape to infinity.
 Use it to get a contradiction.
 
 
-\begin{wrapfigure}{r}{24 mm}
-\vskip-0mm
+\begin{wrapfigure}[5]{r}{24 mm}
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-1250}
 \vskip-0mm
@@ -1297,17 +1295,19 @@ Denote by $\alpha_1$ and $\beta_1$ the arcs of
 $\alpha$ and $\beta$ from $p$ to $q$.
 Suppose that $\alpha_1$ is distinct from $\beta_1$.
 
-\begin{wrapfigure}{r}{38 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-308}
-\vskip0mm
-\end{wrapfigure}
-
 Note that $\alpha_1$ and $\beta_1$ are shorest paths with the same endpoints;
 in particular they have the same length.
 Exchanging $\alpha_1$ in $\alpha$ to $\beta_1$ produces a shortest path, say $\hat\alpha$, that is distinct from $\alpha$.
 By \ref{prop:gamma''}, $\hat\alpha$ is a geodesic.
+
+\begin{wrapfigure}[11]{r}{38 mm}
+\vskip-5mm
+\centering
+\includegraphics{mppics/pic-308}
+\bigskip
+\includegraphics{mppics/pic-310}
+\vskip0mm
+\end{wrapfigure}
 
 Suppose $\alpha_1$ is a proper subarc of $\alpha$;
 that is, if $\alpha_1\ne\alpha$, or, equivalently, either $p$ or $q$ is not an endpoint of $\alpha$.
@@ -1316,13 +1316,6 @@ By \ref{prop:geod-existence} $\alpha$ coincides with $\hat\alpha$ --- a contradi
 
 It follows that $p$ and $q$ are the end points of $\alpha$.
 The same way we can show that $p$ and $q$ are the end points of $\beta$.
-
-\begin{wrapfigure}{r}{38 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-310}
-\vskip0mm
-\end{wrapfigure}
 
 \parbf{\ref{ex:min-geod+plane}.}
 Assume a shortest path $\alpha$ changes the sides of $\Pi$ at least twice.
@@ -1630,14 +1623,14 @@ $;
 that is, $K=\ell\cdot n-m^2$.
 Therefore 
 \begin{align*}
+a\cdot b\cdot K
+&=
+a\cdot b\cdot(\ell\cdot n-m^2)
+=
 \langle\vec u_u,\vec v_v\rangle 
 -
 \langle\vec u_v,\vec v_u\rangle
-&=a\cdot b\cdot(\ell\cdot n-m^2)=a\cdot b\cdot K.
-\intertext{On the other hand}
-\langle\vec u_u,\vec v_v\rangle 
--
-\langle\vec u_v,\vec v_u\rangle
+\\
 &= 
 \left(
 \tfrac{\partial}{\partial v}
@@ -1654,9 +1647,8 @@ Therefore
 \\
 &=\tfrac{\partial}{\partial v}(-\tfrac1{b}\cdot a_v)
 -
-\tfrac{\partial}{\partial u}(\tfrac1{a}\cdot b_u)
+\tfrac{\partial}{\partial u}(\tfrac1{a}\cdot b_u).
 \end{align*}
-The required identity follows since the left hand sides in the last two equations are identical.
 
 \parbf{\ref{ex:conformal}.} Apply \ref{lem:K(orthogonal)} assuming that $a=b$ and simplify.
 
@@ -1744,8 +1736,8 @@ Use part \ref{SHORT.ex:convex-polyhon+self-intersections:angles} to show that th
 
 {
 
-\begin{wrapfigure}[9]{o}{46 mm}
-\vskip-6mm
+\begin{wrapfigure}[11]{o}{46 mm}
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-1650}
 \end{wrapfigure}
@@ -1767,13 +1759,13 @@ From \ref{ex:midpoints}, we have
 \begin{align*}
 \dist{\gamma_1(\tfrac12)}{\delta(\tfrac12)}{}
 &\le
-\tfrac12\cdot\dist{\gamma_1(0)}{\delta(0)}{}
+\tfrac12\cdot\dist{\gamma_1(0)}{\delta(0)}{},
 \\
 \dist{\delta(\tfrac12)}{\gamma_2(\tfrac12)}{}
 &\le
-\tfrac12\cdot\dist{\delta(1)}{\gamma_2(1)}{}
+\tfrac12\cdot\dist{\delta(1)}{\gamma_2(1)}{},
 \end{align*}
-It remains to sum it up and apply the triangle inequality.
+Sum it up and apply the triangle inequality.
 
 \parit{Remark.} Note that modulo the comparison theorem 
 on the Euclidean plane the proof is just as hard.
