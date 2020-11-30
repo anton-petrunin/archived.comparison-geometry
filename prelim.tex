@@ -526,15 +526,28 @@ A subset of Euclidean space is compact if and only if it is closed and bounded.
 \end{thm}
 
 
-\subsection*{Continuous inverse}
+\subsection*{Homeomorphisms and embedding}
 
-We sometimes use the following characterization of homeomorphisms between compact spaces.
+A bijection $f\:\spc{X}\to\spc{Y}$ between metric spaces is called \index{homeomorphism}\emph{homeomorphism} if $f$ and its inverse $f^{-1}$ are continuous.
+If $f\:\spc{X}\to\spc{Y}$ is a homeomorphism to its image $f(\spc{X})\subset \spc{Y}$, then it is called an \index{embedding}\emph{embedding}.
+
+The following theorem characterize homeomorphisms between compact spaces.
 
 \begin{thm}{Theorem}\label{thm:Hausdorff-compact}
 A continuous bijection $f$ between compact metric spaces has a continuous inverse.
+In particular, we have the following:
 
-In other words, any continuous bijection between compact metric spaces
+\begin{subthm}{}
+Any continuous bijection between compact metric spaces
 is a homeomorphism.
+\end{subthm}
+
+\begin{subthm}{}
+Any continuous injection from compact metric spaces to another metric space
+is an embedding.
+\end{subthm}
+
+
 \end{thm}
 
 \subsection*{Jordan's theorem}
