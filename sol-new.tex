@@ -1,3 +1,5 @@
+\setcounter{eqtn}{0}
+
 \parbf{\ref{ex:ell-infty}.} Check all the conditions in the definition of metric, page \pageref{page:def:metric}.
 
 \parbf{\ref{ex:B2inB1}}; \ref{SHORT.ex:B2inB1:a}.
@@ -21,7 +23,10 @@ Show that there is a point $p\in \Omega$ and a sequence $q_n\in Q$ such that suc
 Conclude that $q_n\to p$ and $n\to \infty$;
 therefore $Q$ is not closed.
 
-\parbf{\ref{ex:9}.} The image of $\gamma$ might have a shape of digit $8$ or $9$.
+\setcounter{eqtn}{0}
+
+\parbf{\ref{ex:9}.}
+The image of $\gamma$ might have a shape of digit $8$ or $9$.
 
 \parbf{\ref{aex:simple-curve}.}
 Let $\alpha$ be a path connecting $p$ to $q$.
@@ -142,6 +147,8 @@ Without loss of generality we may assume that the origin does not lie on the cur
 
 Show that inversion of the plane $(x,y)\mapsto (\tfrac{x}{x^2+y^2},\tfrac{y}{x^2+y^2})$ maps our curve to a closed curve with removed origin.
 Apply Jordan's theorem for the obtained curve and use the inversion again.
+
+\setcounter{eqtn}{0}
 
 \parbf{\ref{ex:integral-length-0}.}
 Show that the least upper bound in \ref{def:length} can be taken for all sequences
@@ -318,6 +325,7 @@ Therefore we can choose $u$ so that
 
 Observe that $\gamma_u$ runs in a semicircle $h$ and therefore $\gamma$ lies in a hemisphere with $h$ as a diameter.
 
+\setcounter{eqtn}{0}
 
 \parbf{\ref{ex:curvature-of-spherical-curve}.} Differentiate the identity $\langle\gamma(s),\gamma(s)\rangle=1$ a couple of times.
 
@@ -509,6 +517,8 @@ Show that the distance between the ends of $\gamma_1$ is smallet than $|p-q|$ an
 
 \input{torsion-sol.tex}
 
+\setcounter{eqtn}{0}
+
 \parbf{\ref{ex:bike}.}
 Without loss of generality, we may assume that $\gamma_0$ is parametrized by its arc-length.
 Then
@@ -620,6 +630,8 @@ Increase the torsion of the dashed arc without changing curvature until it a sel
 Observe that if a line or circle is tangent to $\gamma$,
 then it is tangent to osculating circle at the same point
 and apply the spiral lemma (\ref{lem:spiral}).
+
+\setcounter{eqtn}{0}
 
 \parbf{\ref{ex:vertex-support}.}
 Apply the spiral lemma (\ref{lem:spiral}).
@@ -740,6 +752,8 @@ Repeat the proof of theorem for each cyclic concatenation of an arc of $\gamma$ 
 
 An example for the second part can be guessed from the diagram.
 
+\setcounter{eqtn}{0}
+
 \parbf{\ref{ex:hyperboloinds}.} 
 Denote the set of solutions by $\Phi_\ell$.
 
@@ -814,6 +828,8 @@ In each case show that there is a vector field $\vec v$ defined on $\RR^2\backsl
 In fact one can choose radial fields of that type,
 but be careful with with the cases \ref{SHORT.ex:star-shaped-disc:nonsmooth} and \ref{SHORT.ex:star-shaped-disc:star-shaped} --- they are not as easy.
 
+\setcounter{eqtn}{0}
+
 \parbf{\ref{ex:tangent-normal}.}
 Let $\gamma$ be a smooth curve in $\Sigma$.
 Observe that $f\circ\gamma(t)\equiv 0$.
@@ -844,6 +860,8 @@ $0$, hence the result.
 Fix a closed set $A$ in the $(x,y)$-plane.
 Show that there is a smooth nonnegative function $(x,y)\mapsto f(x,y)$ such that $(x,y)\in A$ if and only if $f(x,y)=0$.
 Observe that the graph $z=f(x,y)$ describes a required surface.
+
+\setcounter{eqtn}{0}
 
 \parbf{\ref{ex:line-of-curvature}.}
 Fix a point $p$ on $\gamma$.
@@ -951,6 +969,7 @@ Conclude that $V$ is not simply connected.
 
 Finally, arrive to a contradiction by showing that if $V$ is bounded by a smooth sphere, then $V$ is simply connected. 
 
+\setcounter{eqtn}{0}
 
 \parbf{\ref{ex:surf-support}.}
 Choose curvatures such that 
@@ -1013,22 +1032,36 @@ To prove \ref{SHORT.ex:convex-proper-sphere:smooth} observe that the map $\Sigma
 \vskip-0mm
 \end{wrapfigure}
 
-\parbf{\ref{ex:convex-proper-plane}.}
+\parbf{\ref{ex:convex-proper-plane}}; \ref{SHORT.ex:convex-proper-plane:a}
 We can assume that the origin lies on $\Sigma$.
 Consider a sequence of points $x_n\in \Sigma$ such that $|x_n|\z\to \infty$ as $n\to \infty$.
-Set $u_n=\tfrac{x_n}{|x_n|}$; this is the unit vector in the direction from $x_n$.
-Since the unit sphere is compact, we can pass to a subsequence of $(x_n)$ such that $u_n$ converges to a unit vector $u$.
-Show that the half-line from the origin in the direction of $u$ can be taken as $\ell$; that will solve \ref{SHORT.ex:convex-proper-plane:a}.
+Denote by $\vec u_n$ the the unit vector in the direction from $x_n$; that is $\vec u_n=\tfrac{x_n}{|x_n|}$.
 
-To solve \ref{SHORT.ex:convex-proper-plane:b},
-Note and use that for any $q\in \Sigma$, the directions $v_n=\tfrac{x_n-q}{|x_n-q|}$ converge to $u$ as well.
+Since the unit sphere is compact, we can pass to a subsequence of $(x_n)$ such that $\vec u_n$ converges to a unit vector $\vec u$.
+Show that the half-line from the origin in the direction of $\vec u$ can be taken as $\ell$; that will solve .
 
+
+\parit{\ref{SHORT.ex:convex-proper-plane:b} and \ref{SHORT.ex:convex-proper-plane:c}.}
 Since $R$ is convex, so its projection $\Omega$.
-Show that $\Sigma$ has no vertical tangent planes;
-therefore projection $\Omega$ of $\Sigma$ to $(x,y)$-plane is regular.
-Use the inverse function theorem to show that $\Omega$ is open; hence \ref{SHORT.ex:convex-proper-plane:b}.
 
-%???cde???
+Note and use that for any $q\in \Sigma$, the directions $\vec v_n=\tfrac{x_n-q}{|x_n-q|}$ converge to $\vec u$ as well.
+
+Show that $\Sigma$ has no vertical tangent planes.
+Conclude that the projection map from $\Sigma$ to $(x,y)$-plane is regular.
+Use the inverse function theorem to show that $\Omega$ is open.
+
+\parit{\ref{SHORT.ex:convex-proper-plane:d}.} Follows from \ref{SHORT.ex:convex-proper-plane:b} and \ref{SHORT.ex:convex-proper-plane:c}.
+
+\parit{\ref{SHORT.ex:convex-proper-plane:e}.} 
+Arguing by contradiction, suppose that for some sequence $(x_n,y_n)\z\to(x_\infty,y_\infty)\in \partial\Omega$ the sequence $f(x_n,y_n)$ stays bounded above.
+We can pass to a subsequence such that either $f(x_n,y_n)$ converges to some finite value $z_\infty$ or it diverges to $-\infty$.
+
+In the first case, show that the point $(x_\infty, y_\infty,z_\infty)$ does not lie on $\Sigma$, but it has arbitrary close points on $\Sigma$.
+That is $\Sigma$ is not proper --- a contradiction.
+
+In the remaining case, if $f(x_n,y_n)\to -\infty$, use convexity of $f$ to show that $f(\tfrac{x_n}2 ,\tfrac{y_n}2)\z\to -\infty$.
+Show that $(\tfrac12\cdot x_\infty, \tfrac12\cdot y_\infty)\in\Omega$, and
+arrive to a contradiction.
 
 \parbf{\ref{ex:open+convex=plane}.}
 By \ref{ex:convex-proper-plane:d}, $\Sigma$ is parametrized by an open convex plane domain $\Omega$.
@@ -1175,18 +1208,19 @@ Show that $s$ is a diffeomorphism from $F_\eps$ to a south hemisphere of~$\Sigma
 
 \parbf{\ref{ex:one-side-bernshtein}.} Look at the sections of the graph by planes parallel to the $(x,y)$-plane and to the $(x,z)$-plane, then apply Meusnier’s theorem (\ref{thm:meusnier}).
 
-\parbf{\ref{ex:saddle-graph}.} %???fix
+\parbf{\ref{ex:saddle-graph}.}
 Suppose that orthogonal projection of $\Sigma$ to the $(x,y)$-plane is not injective.
 Show that there is a point $p\in\Sigma$ with vertical tangent plane;
 that is, $\T_p\Sigma$ is perpendicular to the $(x,y)$-plane.
 
-Let $\Gamma_p$ be the connected component of $p$ in the intersection of $\Sigma$ and $\T_p$.
+Let $\Gamma_p$ be the connected component of $p$ in the intersection of $\Sigma$ and the affine tangent plane $\T_p\Sigma$.
 Use \ref{ex:crosss} to show that $\Gamma_p$ is a union of smooth regular curves that can cross each other transversely.
 Moreover two of these curves pass thru $p$ and $\Gamma_p$ does not bound a compact region on $\Sigma$.
 
-Observe that $\Gamma_p$ has only two ways to escape to infinity.
-Use it to get a contradiction.
+Show that $\Gamma_p$ must have at least 4 ways to escape to infinity.
+On the other hand, since $\Sigma$ is a graph outside of compact set $K$, we have that $\Gamma_p\backslash K$ is a graph of a real-to-real function that has only two ways to escape to infinity --- a contradiction.
 
+\setcounter{eqtn}{0}
 
 \begin{wrapfigure}[5]{r}{24 mm}
 \vskip-4mm
@@ -1237,6 +1271,8 @@ This means that $\gamma$ is not length minimizing,
 a contradiction.
 
 \parbf{\ref{ex:intrinsic-diameter}.} Use \ref{lem:closest-point-projection}.
+
+\setcounter{eqtn}{0}
 
 \parbf{\ref{ex:helix=geodesic}.}
 Show that $\Norm_{\gamma(t)}=(\cos t,\sin t, 0)$.
@@ -1387,6 +1423,8 @@ are constants; it can be done the same way as \ref{SHORT.ex:parallel:a}.
 Then use the formula 
 \[\langle\vec v(t),\vec w(t)\rangle=|\vec v(t)|\cdot|\vec w(t)|\cdot\cos\theta.\]
 
+\setcounter{eqtn}{0}
+
 \parbf{\ref{ex:parallel-transport-support}.}
 Observe $\Sigma_1$ supports $\Sigma_2$ at any point of $\gamma$.
 Conclude that $\gamma$ identical spherical images in $\Sigma_1$ and $\Sigma_2$ and apply Observation \ref{obs:parallel=}.
@@ -1409,6 +1447,8 @@ Againg, applying scaling, we may assume that the speed is 1.
 In this case 
 \[\gamma''(t)=-k_n(t)\cdot \Norm(t).\]
 Therefore $\gamma''(t)\perp\T_{\gamma(t)}$.
+
+\setcounter{eqtn}{0}
 
 \parbf{\ref{ex:half-sphere-total-curvature}.}
 Apply \ref{prop:pt+tgc} and \ref{prop:area-of-spher-polygon}.
@@ -1463,9 +1503,12 @@ Passing to their arcs, we can assume that $\gamma_1$ and $\gamma_2$ share only t
 Since the surface is simply connected, $\gamma_1$ and $\gamma_2$ together bound a disc, say $\Delta\subset\Sigma$.
 It remains to Gauss--Bonnet formula to $\Delta$ and make a conclusion.
  
-%\parit{\ref{SHORT.ex:unique-geod:diffeomorphism}.} ???PROBLEM --- we need second fed of inj rad.
+\parit{\ref{SHORT.ex:unique-geod:diffeomorphism}.} 
+Use part \ref{SHORT.ex:unique-geod:unique} and \ref{prop:inj-rad}.
 
 \parbf{\ref{ex:cohn-vossen}.} Repeat the proof of \ref{thm:cohn-vossen} for one-parameter family of geodesics $\gamma_\tau$ defined by $\gamma_\tau(0)=\alpha(\tau)$ and $\gamma'(0)=\alpha'(\tau)$. 
+
+\setcounter{eqtn}{0}
 
 \parbf{\ref{ex:semigeodesc-chart}.}
 By Gauss lemma (\ref{lem:palar-perp}), polar coordinates with respect to $q$ is produce a semigeodesic chart at any near by point.
@@ -1672,7 +1715,7 @@ a\cdot b\cdot(\ell\cdot n-m^2)
 
 
 
-
+\setcounter{eqtn}{0}
 
 \parbf{\ref{ex:diam-angle}.}
 Observe that $|p-x|_\Sigma\le |p-q|_\Sigma$ and $|q-x|_\Sigma\le |p-q|_\Sigma$.
@@ -1701,7 +1744,7 @@ Arrive to a contradiction using  \ref{SHORT.ex:open-comparison:positive}.
 For \ref{SHORT.ex:open-comparison:proof}, repeat the proof assuming that $p$ is provided by \ref{SHORT.ex:open-comparison:almost-min}.
 
 \parbf{\ref{ex:convex-polyhon+self-intersections};} \ref{SHORT.ex:convex-polyhon+self-intersections:angles}.
-Apply the Gauss--Bonnet formula for each region that $\gamma$ cuts from $\Sigma$ and simplify.
+Apply the Gauss--Bonnet formula for each region that $\gamma$ cuts from $\Sigma$ and simplify the obtained inequalities.
 
 \begin{wrapfigure}[9]{r}{50 mm}
 \vskip-0mm
@@ -1710,7 +1753,7 @@ Apply the Gauss--Bonnet formula for each region that $\gamma$ cuts from $\Sigma$
 \vskip8mm
 \end{wrapfigure}
 
-\ref{SHORT.ex:convex-polyhon}. %??? to be finished
+\parit{\ref{SHORT.ex:convex-polyhon}.}
 Consider the pentagon $\Delta$ with induced length-metric.
 Note that all its angles cannot exceed $\pi$.
 Repeat the proof of \ref{thm:comp:toponogov} to show that the comparison holds in $\Delta$.
@@ -1719,6 +1762,10 @@ Now choose a vertex $v$ of $\Delta$, subdivide its sides so that each arc of the
 Divide $\Delta$ into triangles by joining $v$ to other vertexes of the broken geodesic.
 Take a model triangle for each so that they share sides as in $\Delta$.
 Use the comparison to show that these plane triangles form a required polygon.
+
+\parit{\ref{SHORT.ex:self-intersections-hard}.}
+Use the inequalities on angles and side lengths to show that the pentagon obtained in \ref{SHORT.ex:convex-polyhon} is impossible.
+Namely, show that the sum of its side vectors oriented counterclocwise does not vanish.  
 
 \parbf{\ref{ex:geod-convexity}.} Apply \ref{angk>angk} and \ref{angk<angk}.
 
@@ -1772,6 +1819,27 @@ on the Euclidean plane the proof is just as hard.
 
 }
 
+\parbf{\ref{ex:dist-to-bry}}; \ref{SHORT.ex:dist-to-bry:-}.
+Choose two points $x,z\in\Sigma$;
+let $y$ be the midpoint of $[xz]$.
+Denote by $\bar x$ and $\bar z$ the points on $\delta$ that minimize the distances to $x$ and $z$ respectively;
+so we have
+$f(x)
+=|x-\bar x|_\Sigma$,
+and $f(z)=|z-\bar z|_\Sigma$.
+
+Since $\Delta$ is convex, the midpoint of $[\bar x\bar z]$, say  $\bar y$, lies in $\Delta$.
+By \ref{ex:convex-dist}, we have 
+\begin{align*}
+f(y)&\le |y-\bar y|_\Sigma
+\le
+\tfrac12\cdot(|x-\bar x|_\Sigma
++
+|z-\bar z|_\Sigma)
+=
+\tfrac12\cdot(f(x)+f(z)).
+\end{align*}
+Observe that this inequality implies convexity of $f$.
 
 \begin{wrapfigure}{r}{27 mm}
 \vskip-4mm
@@ -1780,9 +1848,10 @@ on the Euclidean plane the proof is just as hard.
 \vskip0mm
 \end{wrapfigure}
 
-\parbf{\ref{ex:dist-to-bry}.} %???generalize
+
+\parit{\ref{SHORT.ex:dist-to-bry:+}.}
 Suppose $\gamma$ is a unit-speed geodesic in $\Delta$ and $\gamma(0)=p$. 
-Denote by $q$ a point on $\delta$ that minimize the distance to $p$.
+Let $q$ be a point on $\delta$ that minimize the distance to $p$.
 Denote by $\phi$ the angle between $\gamma$ and $[pq]$ at $p$.
 Note that it is sufficient to show that 
 \[f\circ\gamma(t)\le |p-q|_\Sigma+t\cdot\cos\phi\eqlbl{eq:dist<cosphi}\]
@@ -1792,32 +1861,29 @@ Chose small $t>0$ and set $x\z=\gamma(t)$.
 Consider a model triangle $[\tilde p\tilde q\tilde x]\z=\tilde\triangle(pqx)$.
 Let $\tilde\delta$ be the line thru $\tilde q$ perpendicular to $[\tilde p\tilde q]$.
 Denote by $\tilde y$ the orthogonal projection of $\tilde x$ to $\tilde\delta$.
-
 By comparison we have that 
 \begin{align*}
 \phi
-&\df\measuredangle\hinge qpx
-\ge \angk qpx
+=\measuredangle\hinge qpx
+&\ge \angk qpx
 \mathrel{=:}\tilde\phi,
 \\
-\psi&\df
+\psi\df
 \measuredangle\hinge pqx
-\ge 
+&\ge 
 \angk pqx
 \mathrel{=:}\tilde \psi
 \end{align*}
 
-
 Since $t=|\tilde p-\tilde x|_{\RR^2}$ is small, so is the distances $|\tilde q-\tilde y|_{\RR^2}$.
-Therefore we can choose a point $y$ on $\delta$ such that $|q-y|_\Sigma=|\tilde q-\tilde y|_{\RR^2}$;
-moreover we can assume that $y$ is chosen so that we have $\measuredangle\hinge qxy= \tfrac\pi2-\psi$.
-
+Therefore we can choose a point $y$ on $\delta$ such that $|q-y|_\Sigma=|\tilde q-\tilde y|_{\RR^2}$.
+Moreover, if we choose in on the \emph{right side}, then $\tfrac\pi2-\psi \ge \measuredangle\hinge qxy$.
 By construction and comparison, we have 
 \begin{align*}
 \measuredangle\hinge {\tilde q}{\tilde x}{\tilde y}&=\tfrac\pi2-\tilde\psi
 \ge
 \tfrac\pi2-\psi
-=
+\ge
 \measuredangle\hinge q x y
 \ge 
 \angk q x y.
@@ -1834,36 +1900,7 @@ f\circ\gamma(t)&\le |x-y|_\Sigma\le
 That is, we proved \ref{eq:dist<cosphi} for small $t>0$.
 The case $t<0$ can be done along the same lines. 
 
-%???
-Choose two points $x,z\in\Sigma$;
-let $y$ be the midpoint of $[xz]$.
-It is sufficient to show that 
-\[f(y)\le \tfrac12(f(x)+f(z)).\]
 
-Denote by $\bar x$ and $\bar z$ the points on $\delta$ that minimize the distances to $x$ and $z$ respectively;
-so we have
-\begin{align*}
-f(x)
-&=|x-\bar x|_\Sigma,
-&
-f(z)
-&=|z-\bar z|_\Sigma.
-\end{align*}
-
-By \ref{ex:unique-geod}, $[\bar x\bar z]$ is an arc of $\delta$.
-Therefore the midpoint of $[\bar x\bar z]$, say  $\bar y$, lies on $\delta$.
-
-By \ref{ex:dist-to-bry}%???problem
-, we have 
-\begin{align*}
-f(y)&\le |y-\bar y|_\Sigma
-\le
-\tfrac12\cdot(|x-\bar x|_\Sigma
-+
-|z-\bar z|_\Sigma)
-=
-\tfrac12\cdot(f(x)+f(z))
-\end{align*}
 
 \parbf{\ref{ex:half-line}}; \ref{SHORT.ex:half-line:exist}.
 Choose a sequence of points $x_n\in K$ that escapes to infinity; that is, such that $\dist{p}{x_n}{\Sigma}\to\infty$ as $n\to\infty$.
