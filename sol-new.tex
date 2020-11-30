@@ -5,7 +5,7 @@ Observe that $|p-q|_{\spc{X}}\le 1$.
 Apply the triangle inequality to show that $|p-x|_{\spc{X}}\le 2$ for any $x\in B[q,1]$.
 Make a conclusion.
 
-\parit{\ref{SHORT.ex:B2inB1:b}.} Take $\spc{X}$ to be a half-line $[0,\infty)$ with the standard metric; $p=0$ and $q=\tfrac45$.
+\parit{\ref{SHORT.ex:B2inB1:b}.} Take $\spc{X}$ to be the half-line $[0,\infty)$ with the standard metric; $p=0$ and $q=\tfrac45$.
 
 \parbf{\ref{ex:shrt=>continuous}.} Show that the conditions in \ref{def:continous} hold for $\delta=\eps$.
 
@@ -16,10 +16,10 @@ It follows that $p$ is not a limit point of any sequence $q_n\in Q$.
 That is, any limit of points in $Q$ lies in $Q$ which by definition means that $Q$ is closed.
 
 Now suppose $\Omega=\mathcal{X}\backslash Q$ is not open.
-Then there is a point $p\in \Omega$ such that for any natural $n$ there is a point $q_n\in Q$ such that $|p-q_n|_{\spc{X}}\z<\tfrac 1n$; in particular $q_n\to p$ and $n\to \infty$.
+Then there is a point $p\in \Omega$ such that for any natural $n$ there is a point $q_n\in Q$ with $|p-q_n|_{\spc{X}}\z<\tfrac 1n$; in particular $q_n\to p$ and $n\to \infty$.
 Since $p\notin Q$, we get that $Q$ is not closed.
 
-\parbf{\ref{ex:9}.} The image of $\gamma$ might have a shape of digit $8$ or $9$.
+\parbf{\ref{ex:9}.} The image of $\gamma$ might have the shape of the digit $8$ or $9$.
 
 \parbf{\ref{aex:simple-curve}.}
 Let $\alpha$ be a path connecting $p$ to $q$.
@@ -32,13 +32,15 @@ if for any connected component $(a,b)$ of $\Omega$ we have $\alpha(a)=\alpha(b)$
 Show that the union of nested suitable sets is suitable.
 Therefore we can find a maximal suitable set $\hat \Omega$.
 
-Define $\beta(t)=\alpha(a)$ for any $t$ in a connected component $(a,b)\subset\Omega$.
+Define $\beta(t)=\alpha(a)$ for any $t$ in a connected component $(a,b)\subset \hat \Omega$, and $\beta (t) = \alpha (t) $ for $t $ not in $\hat \Omega$.
 Note that for any $x\in [0,1]$ the set $\beta^{-1}\{\beta(x)\}$ is connected.
 
 It remains to re-parametrize $\beta$ to make it injective.
-In other words we need to construct a non-decreasing surjective function $\tau\:[0,1]\z\to[0,1]$ such that 
-$\tau(t_1)=\tau(t_2)$ if and only if there is a connected component $(a,b)$ such that $t_1,t_2\z\in [a,b]$.
-The construction is similar to the construction of devil's staircase.
+In order to do that, we need to construct a non-decreasing surjective function $\tau\:[0,1]\z\to[0,1]$ such that 
+$\tau(t_1)=\tau(t_2)$ if and only if there is a connected component $(a,b)$ of $\hat \Omega$ such that $t_1,t_2\z\in [a,b]$.
+This construction is similar to the construction of  the devil's staircase.
+The simple arc we are looking for is $\beta \circ \sigma $, where $\sigma: [0,1] \to [0,1]$ is any right inverse of $\tau$.
+
 
 
 \parbf{\ref{ex:L-shape}.}
@@ -52,11 +54,10 @@ is smooth.
 Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and direct calculations show that $f^{(n)}(0)=0$ for all $n$.
 Therefore $t\mapsto \alpha(t)=(f(t),f(-t))$ is smooth as well.
 
-Further, show that the function $f$ is strictly increasing for $t> 0$,
-and, moreover, if $0<t_0<t_1$, then $0<f(t_0)<f(t_1)$.
-Use it to show that the maps $t\mapsto \alpha(t)$ is injective.
+Further, show that the function $f$ is strictly increasing for $t> 0$.
+Use this to show that the map $t\mapsto \alpha(t)$ is injective.
 
-Summarizing we get that $\alpha$ is a smooth parametrization of $L$. 
+Summarizing, we get that $\alpha$ is a smooth parametrization of $L$. 
 
 \begin{wrapfigure}[12]{r}{24 mm}
 \vskip-4mm
@@ -84,8 +85,8 @@ Try to argue similarly to \ref{ex:L-shape}.
 
 \parbf{\ref{ex:viviani}.}
 For $\ell=0$ the system describes a pair of points $(0,0,\pm1)$, so we can assume that $\ell\ne 0$.
-Note that first equation desribes the unit sphere centered at the origin
-and the second equation describes a cylinder over the circle in the $(x,y)$-plane with diameter with opposite points $(0,0)$ and $(0,\ell)$.
+Note that the first equation describes the unit sphere centered at the origin
+and the second equation describes a cylinder over the circle in the $(x,y)$-plane with diameter with center $(-\ell / 2 , 0)$ and radius $\ell / 2$.
 
 {
 
@@ -116,17 +117,17 @@ Show that
 
 }
 
-Note that the condition on gradients provides only sufficient condition.
-Therefore he case $\ell=\pm1$ has to be checked by hands.
+Note that the linear independence of the gradients provides only a sufficient condition.
+Therefore he case $\ell=\pm1$ has to be checked by hand.
 In this case a neighborhood of $(\pm1,0,0)$ does not admit a smooth regular parametrization --- try to prove it. 
-The case $\ell=0$ shown on the diagram.
+The case $\ell=1$ is shown on the diagram.
 
 \parit{Remark.}
-In the case $\ell=\pm1$ it is called \index{Viviani's curve}\emph{Viviani's curve}.
+The case $\ell=\pm1$ is called \index{Viviani's curve}\emph{Viviani's curve}.
 It admits the following smooth regular parameterization with a self-intersection:
 \[t\mapsto(\pm(\cos t)^2,\cos t\cdot\sin t,\sin t).\]
 
-\parbf{\ref{ex:open-curve}.} Assume contrary, then there is a sequence $t_n\to\infty$ such that $\gamma(t_n)$ converges;
+\parbf{\ref{ex:open-curve}.} Assume contrary, then there is a sequence of real numbers $t_n\to \pm \infty$ such that $\gamma(t_n)$ converges;
 denote its limit by $p$.
 Let $K$ be a closed ball centered at $p$.
 Observe that $\gamma^{-1}(K)$ is not compact.
@@ -138,10 +139,10 @@ Show and use that a set $C\subset \RR^3$ is closed if and only if the intersecti
 \parbf{\ref{ex:proper-curve}.}
 Without loss of generality we may assume that the origin does not lie on the curve.
 
-Show that inversion of the plane $(x,y)\mapsto (\tfrac{x}{x^2+y^2},\tfrac{y}{x^2+y^2})$ maps our curve maps to a closed curve with removed origin.
+Show that inversion of the plane $(x,y)\mapsto (\tfrac{x}{x^2+y^2},\tfrac{y}{x^2+y^2})$ maps our curve to a curve whose union with the origin is a closed curve.
 Apply Jordan's theorem for the obtained curve and use the inversion again.
 
-\parbf{\ref{ex:integral-length-0}.} Observe that if $c=\tau_0<\dots<\tau_n=d$ is a partition of $[c,d]$ if and only if $t_i=\phi(\tau_i)$ is a partition of $[a,b]$ and apply the definition of length (\ref{def:length}).
+\parbf{\ref{ex:integral-length-0}.} Observe that $c=\tau_0<\dots<\tau_n=d$ is a partition of $[c,d]$ if and only if $t_i=\phi(\tau_i)$ is a partition of $[a,b]$ and apply the definition of length (\ref{def:length}).
 
 \parbf{\ref{ex:length-image}.}
 Fix a partition $0=t_0<\dots <t_n=1$ of $[0,1]$.
@@ -178,18 +179,18 @@ Note that the partition $(\tau_i)$ is not arbitrary, therefore the inequality mi
 \vskip0mm
 \end{figure}
 Look at the diagram and guess the parameterization of an arc of the snow flake by $[0,1]$.
-Extend it to whole snow flake.
-Show that it is indeed describes an embedding of the circle in the plane.
+Extend it to the whole snow flake.
+Show that it indeed describes an embedding of the circle in the plane.
 
 \parit{\ref{SHORT.ex:nonrectifiable-curve:b}.}
-Suppose that $\gamma\:[0,1]\to\RR^2$ is a rectifiable curve and $\gamma_k$ be a scaled copy of $\gamma$ with factor $k>0$;
+Suppose that $\gamma\:[0,1]\to\RR^2$ is a rectifiable curve and let $\gamma_k$ be a scaled copy of $\gamma$ with factor $k>0$;
 that is, $\gamma_k(t)=k\cdot\gamma(t)$ for any $t$.
 Show that 
 \[\length\gamma_k=k\cdot\length \gamma.\]
 
 Now suppose the arc $\gamma$ of the Koch snowflake shown on the diagram is rectifiable; denote its length by $\ell$.
 Evidently $\ell>0$.
-Observe that it $\gamma$ can be divided into 4 arcs each of which is a scaled copy of $\gamma$ with factor $\tfrac13$.
+Observe that $\gamma$ can be divided into 4 arcs such that each one is a scaled copy of $\gamma$ with factor $\tfrac13$.
 It follows that $\ell=\tfrac43\cdot\ell$ --- a contradiction.
 
 
@@ -228,7 +229,7 @@ Whence
 \end{wrapfigure}
 
 If $\alpha$ has self-intersections, then the points $p_1,\dots, p_n$ might appear on $\alpha$ in a different order, say $p_{i_1},\dots,p_{i_n}$.
-Apply triangle inequality to show that 
+Apply the triangle inequality to show that 
 \[\length(p_{i_1}\dots p_{i_n})\ge \length (p_1\dots p_n)\]
 and use it to modify the proof above.
 
@@ -265,9 +266,9 @@ that is, there are points $x,y\in A$ and a point $z\notin A$ that lies between $
 Since $A$ is closed, its complement is open.
 That is, the ball $B(z,\eps)$ does not intersect $A$ for some $\eps>0$.
 
-Show that there is $\delta>0$ such that any path of length at most $|z-y|_{\RR^3}+\delta$ pass thru $B(z,\eps)$.
-It follows that $|z-y|_A\ge |z-y|_{\RR^3}+\delta$, 
-in particular $|z\z-y|_A\z\ne |z\z-y|_{\RR^3}$.
+Show that there is $\delta>0$ such that any path of length at most $|x-y|_{\RR^3}+\delta$ passes thru $B(z,\eps)$.
+It follows that $|x-y|_A\ge |x-y|_{\RR^3}+\delta$, 
+in particular $|x-y|_A\ne |x-y|_{\RR^3}$.
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip-4mm
@@ -338,7 +339,7 @@ Show that $\gamma_{a,b}''\perp \gamma'_{a,b}$ and apply \ref{ex:curvature-formul
 \parbf{\ref{ex:length>=2pi}.} Apply Fenchel's theorem.
 
 \parbf{\ref{ex:gamma/|gamma|}.}
-We can assume that $\gamma$ has a unit-speed curve.
+We can assume that $\gamma$ is a unit-speed curve.
 Set $\theta(s)=\measuredangle(\gamma(s),\gamma'(s))$.
 Observe that it is sufficient to show that
 \[\kur\ge |\sigma'|+\theta'.
@@ -398,7 +399,7 @@ By the fundamental theorem of calculus, we have
 \end{align*}
 Since $\gamma(0)=\gamma(\ell)$ and $\gamma'(0)=\gamma'(\ell)$, the right hand side vanishes.
 
-Note that without loss of generality we can assume the curve in \ref{thm:DNA} is described by a loop $\gamma\:[0,\ell]\to\RR^3$ parameterized by its arc-length.
+Note that without loss of generality we can assume the curve in \ref{thm:DNA} is described by a loop $\gamma\:[0,\ell]\to\RR^3$ parameterized by arc-length.
 We can also assume that the origin is the center of the ball; that is $|\gamma|\le 1$.
 Since $\gamma$ is a smooth closed curve, we have 
 $\gamma'(0)=\gamma'(\ell)$ and $\gamma(0)=\gamma(\ell)$.
@@ -419,13 +420,13 @@ Try to guess the example from the diagram.
 The shown curve is divided into three arcs: I, II, and III. 
 Arc I turns from $\vec v$ to $\vec u$;
 it has total curvature $\alpha$.
-Analogously the arc III turns from $\vec u$ to $\vec w$  and has total curvature $\beta$. 
+Similarly, the arc III turns from $\vec u$ to $\vec w$  and has total curvature $\beta$. 
 Arc II goes very close and almost parallel to the chord $pq$ and its total curvature can be made arbitrary small.
 
 
 \parbf{\ref{ex:monotonic-tc}.}
-Use that exterior angle of a triangle equals to the sum of the two remote interior angles;
-for the second part apply the induction on number of vertexes.
+Use the fact that an exterior angle of a triangle equals the sum of the two remote interior angles;
+for the second part apply induction on the number of vertexes.
 
 \parbf{\ref{ex:total-curvature=}.}
 By \ref{prop:inscribed-total-curvature}, $\tc\gamma\ge \tc\beta$;
@@ -459,13 +460,13 @@ $\measuredangle\hinge yxz
 \measuredangle\hinge zyx
 <\pi$, or, equivalently, 
 \[\tc{xyzx}>\pi;\]
-here we assume that $xyzx$ is polygonal line which is not closed. 
+here we take $xyzx$ as a polygonal line which is not closed. 
 It remains to apply \ref{prop:inscribed-total-curvature}.
 
 \parbf{\ref{ex:quadrisecant}.}
 Observe that 
 \[\tc{acbd}=4\cdot\pi,\]
-here we assume that $acbd$ denotes the closed polygonal line.
+where $acbd$ denotes the closed polygonal line.
 It remains to apply \ref{prop:inscribed-total-curvature}.
 
 {
@@ -485,7 +486,7 @@ To obtain $\gamma_2$, slightly unbend (that is, decrease the curvature of) the d
 \parbf{\ref{ex:length-dist}.}
 Choose a value $s_0\in[a,b]$ that splits the total curvature into two equal parts, $\theta$ in each.
 Observe that $\measuredangle(\gamma'(s_0),\gamma'(s))\le \theta$ for any~$s$.
-Use this inequality the same way as in the proof of the bow lemma.
+Use this inequality in the same way as in the proof of the bow lemma.
 
 }
 
