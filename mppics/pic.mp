@@ -839,7 +839,7 @@ endfig;
 
 beginfig(29);
 save u;
-u:=.5cm;
+u:=.4cm;
 
 z.a0=(3,.5)*u;
 z.a1=(3,0)*u;
@@ -860,7 +860,7 @@ save p; path p[];
 p0=z.a0..z.a1..z.a2..z.a3..z.a4..z.a5..z.b..z.a6..z.a7..z.a8..z.a9..z.a10..z.a11..z.a12;
 
 draw p0;
-draw ddline(z.a5, z.a6)(0.2, 0.2) pensemibold;
+draw ddline(z.a5, z.a6)(0.1, 0.1) pensemibold;
 
 whitelabel.bot(btex $p_1$ etex, z.a1);
 whitelabel.top(btex $p_2$ etex, z.a2+(0,1));
@@ -3547,6 +3547,39 @@ draw p3;
 
 endfig;
 
+beginfig(268);
+save u,p;
+path p[];
+u:=1cm;
+
+z.x=(-1,0)*u;
+z.y=-z.x;
+
+
+p0=z.x{dir 40}..{dir -40}z.y;
+p1=z.y{dir -120}..{dir 120}z.x;
+
+z0=1.4*z.x;
+z1=point .5 of p0;
+z.d1= direction .5 of p0;
+z2=1.5*z.y;
+z3=point .4 of p1;
+z.d3= direction .4 of p1;
+
+p2=z0...z1{z.d1}...z2...z3{z.d3}...cycle;
+
+
+hatchfill p0--p1--cycle  withcolor (87, 1.4mm, -.5bp);
+draw p0;
+draw p1;
+draw p2;
+
+dOt z.x,z.y;
+
+label.lft (btex $x$ etex, z.x);
+label.rt (btex $y$ etex, z.y);
+endfig;
+
 beginfig(270);
 save u,p;
 path p[];
@@ -4138,7 +4171,7 @@ label.rt(btex $x_n$ etex, z.xn);
 label.rt(btex $x_1$ etex, z.x1);
 label.lft(btex $\Sigma$ etex, z.Sigma);
 label.rt(btex $R$ etex, (x.a1,y.Sigma));
-label.lft(btex $u$ etex,z.a1+(0,1)*u);
+label.lft(btex $\vec u$ etex,z.a1+(0,1)*u);
 label.rt(btex $\dots$ etex rotated angle(direction 1.6 of p0), z.dots);
 endfig;
 

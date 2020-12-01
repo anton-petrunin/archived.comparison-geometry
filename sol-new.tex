@@ -153,13 +153,14 @@ Show that the least upper bound in \ref{def:length} can be taken for all sequenc
 $a=t_0\le t_1\le\z\dots\le t_k=b$.
 
 Observe that $a=t_0\le t_1\le\z\dots\le t_k=b$
-if there is a sequence $c=\tau_0\le \dots<\tau_k=d$ such that $t_i=\phi(\tau_i)$.
+if there is a sequence $c=\tau_0\le \dots\le\tau_k=d$ such that $t_i=\phi(\tau_i)$.
 Make a conclusion.
 
 \parbf{\ref{ex:length-image}.}
 Choose a partition $0=t_0<\dots <t_n=1$ of $[0,1]$.
 Set $\tau_0=0$ and 
-\[\tau_i=\max\set{\tau \in[0,1]}{\beta(\tau_i)=\alpha(t_i)}.\]
+\[\tau_i=\max\set{\tau \in[0,1]}{\beta(\tau_i)=\alpha(t_i)}\]
+for $i>0$.
 Show that $(\tau_i)$ is a partition of $[0,1]$;
 that is, $0=\tau_0<\tau_1<\dots<\tau_n=1$.
 
@@ -218,7 +219,7 @@ It remains to substitute $s\cdot \sqrt{a^2+b^2}$ for $t$.
 
 \parbf{\ref{ex:convex-hull}.}
 Choose a closed polygonal line $p_1\dots p_n$ inscribed in $\beta$.
-By \ref{cor:convex=>rectifiable}, we can assume that it length is arbitrary close to the length of $\beta$;
+By \ref{cor:convex=>rectifiable}, we can assume that its length is arbitrary close to the length of $\beta$;
 that is, given $\eps>0$ 
 \[\length (p_1\dots p_n)>\length\beta-\eps.\]
 
@@ -249,7 +250,7 @@ and use it to modify the proof above.
 \parbf{\ref{ex:convex-croftons}.} 
 Denote by $\ell_{\vec u}$ the line segment 
 obtained orthogonal projection of $\gamma$ to the line in the direction ${\vec u}$.
-Note that $\gamma_{\vec u}$ runs back and forth along $\ell_{\vec u}$, we get 
+Since $\gamma_{\vec u}$ runs along $\ell_{\vec u}$ back and forth, we get 
 \[\length\gamma_{\vec u}\ge 2\cdot\length\ell_{\vec u}.\]
 Applying the Crofton formula, we get that 
 \[\length\gamma\ge \pi\cdot \overline{\length\ell_{\vec u}}.\]
@@ -257,13 +258,13 @@ Applying the Crofton formula, we get that
 In the case of equality, the curve $\gamma_{\vec u}$ runs exactly back and forth along $\ell_{\vec u}$ without additional zigzags for almost all (and therefore for all) ${\vec u}$.
 
 Let $K$ be a closed set bounded by $\gamma$.
-Observe that the last statement implies that every line may intersect $K$ only along a closed segment.
-In other words $K$ is convex.
+Observe that the last statement implies that every line may intersect $K$ only along a closed segment or a single point.
+It follows that $K$ is convex.
 
 \parbf{\ref{adex:more-croftons}.}
 The proof is identical to the proof of the standard Crofton formula.
-To find the coefficient one has to find average length of projection of unit vector to a line.
-Which can be done by integration.
+To find the coefficient it is sufficient to check it on a unit interval.
+The latter can be done by integration:
 \begin{align*}
 \frac1{k_a}&=\frac{1}{\area \mathbb{S}^2}\cdot\iint_{\mathbb{S}^2} |x|;
 &
@@ -316,21 +317,23 @@ For \ref{SHORT.adex:crofton:crofton}, modify the proof of the original Crofton f
 \parit{\ref{SHORT.adex:crofton:hemisphere}.}
 Assume $\length \gamma<2\cdot\pi$.
 By \ref{SHORT.adex:crofton:crofton},
-\[\overline{\length \gamma_u}<2\cdot\pi.\]
-Therefore we can choose $u$ so that 
-\[\length \gamma_u<2\cdot\pi.\]
+\[\overline{\length \gamma_{\vec u}}<2\cdot\pi.\]
+Therefore we can choose ${\vec u}$ so that 
+\[\length \gamma_{\vec u}<2\cdot\pi.\]
 
-Observe that $\gamma_u$ runs in a semicircle $h$ and therefore $\gamma$ lies in a hemisphere with $h$ as a diameter.
+Observe that $\gamma_{\vec u}$ runs in a semicircle $h$ and therefore $\gamma$ lies in a hemisphere with $h$ as a diameter.
 
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:curvature-of-spherical-curve}.} Differentiate the identity $\langle\gamma(s),\gamma(s)\rangle=1$ a couple of times.
 
-\parbf{\ref{ex:curvature-formulas}.} Prove and use the following identities: 
+\parbf{\ref{ex:curvature-formulas}.} 
+Set $\tan=\tfrac{\gamma'}{|\gamma|}$.
+Prove and use the following identities: 
 \begin{align*}
-\gamma''(t)-\gamma''(t)^\perp&=\tfrac{\gamma'(t)}{|\gamma'(t)|}\cdot\langle\gamma''(t),\tfrac{\gamma'(t)}{|\gamma'(t)|}\rangle,
-\\
-|\gamma'(t)|&=\sqrt{\langle \gamma'(t),\gamma'(t)\rangle}.\
+\gamma''-(\gamma'')^\perp&=\tan\cdot\langle\gamma'',\tan\rangle,
+&
+|\gamma'|&=\sqrt{\langle \gamma',\gamma'\rangle}.
 \end{align*}
 
 \parbf{\ref{ex:curvature-graph}.} 
@@ -343,9 +346,8 @@ Consider the tangent indicatrix $\tan(s)=\gamma'(s)$.
 Note that $\tan$ is a spherical curve and $|\tan'|\le 1$.
 Use it to construct a sequence of unit-speed spherical curves $\tan_n\:\mathbb{I}\to\SS^2$ such that $\tan_n(s)\to \tan(s)$ as $n\to\infty$ for any $s$.
 
-It remains to show that the sequence of curves defined by
-\[\gamma_n(s)=\gamma(a)+\int_a^s\tan_n(t)\cdot dt\]
-solves the exercise.
+It remains to show that the following sequence of curves solves the problem:
+\[\gamma_n(s)=\gamma(a)+\int_a^s\tan_n(t)\cdot dt.\]
 
 \parbf{\ref{ex:helix-curvature}.}
 Show that $\gamma_{a,b}''\perp \gamma'_{a,b}$ and apply \ref{ex:curvature-formulas:a}.
@@ -355,12 +357,6 @@ Show that $\gamma_{a,b}''\perp \gamma'_{a,b}$ and apply \ref{ex:curvature-formul
 \parbf{\ref{ex:gamma/|gamma|}.}
 We can assume that $\gamma$ is a unit-speed curve.
 Set $\theta(s)=\measuredangle(\gamma(s),\gamma'(s))$.
-Observe that it is sufficient to show that
-\[\kur\ge |\sigma'|+\theta'.
-\eqlbl{|sigma'|<kur-theta'}\]
-Moreover, it sufficient to show that \ref{|sigma'|<kur-theta'} holds if $\theta\ne0,\pi$;
-that is, if $\sin\theta\ne0$.
-
 Since $\langle\tan,\tan\rangle=1$, we have $\tan'\perp \tan$.
 Observe that $\langle \tan,\sigma\rangle=\cos\theta$;
 therefore
@@ -371,9 +367,11 @@ therefore
 \langle \tan,\sigma'\rangle-\langle \tan,\sigma\rangle'=
 (|\sigma'|+\theta')\cdot \sin\theta.
 \end{align*}
-Whence \ref{|sigma'|<kur-theta'} follows if $\theta\ne0,\pi$.
+Whence $\kur\ge |\sigma'|+\theta'$
+if $\theta\ne0,\pi$.
+It remains to integrate this inequality and show that the set with $\theta\ne0$ or $\pi$ does not create a problem.
 
-There is \emph{an alternative solution} by means of elementary geometry based on \ref{prop:inscribed-total-curvature}.
+\parit{An alternative solution}  can be built on \ref{prop:inscribed-total-curvature}.
 
 
 
@@ -386,9 +384,7 @@ Observe that
 \langle \gamma(s),\gamma(s)\rangle\le 1.\]
 Therefore
 \[\begin{aligned}
-\langle\gamma''(s),\gamma(s)\rangle&\ge -|\gamma''(s)|\cdot|\gamma(s)|\ge
-\\
-&\ge-\kur(s)
+\langle\gamma''(s),\gamma(s)\rangle&\ge -|\gamma''(s)|\cdot|\gamma(s)|\ge-\kur(s)
 \end{aligned}\eqlbl{eq:<gamma'',gamma>>=-k}\]
 for all $s$.
 
@@ -416,13 +412,13 @@ Note that without loss of generality we can assume the curve in \ref{thm:DNA} is
 We can also assume that the origin is the center of the ball; that is $|\gamma|\le 1$.
 Since $\gamma$ is a smooth closed curve, we have 
 $\gamma'(0)=\gamma'(\ell)$ and $\gamma(0)=\gamma(\ell)$.
-
 Therefore \ref{SHORT.ex:DNA:int>=length-tc} and \ref{SHORT.ex:DNA:end} imply \ref{thm:DNA}.
 
 \parbf{\ref{ex:chord-lemma-optimal}.} 
 Set $\alpha=\measuredangle(\vec w,\vec u)$ 
 and $\beta=\measuredangle(\vec v,\vec u)$.
 Try to guess the example from the diagram.
+
 \begin{figure}[h!]
 \vskip-0mm
 \centering
@@ -451,13 +447,12 @@ we need to construct a polygonal line $\beta$ inscribed in $\gamma$ such that
 \[\length\sigma<\tc\beta+\eps.
 \eqlbl{eq:tc=<tc}\]
 
-Suppose $\vec u_i=\tan(s_i)$;
-choose $p_{2\cdot i}$ and $p_{2\cdot i+1}$ sufficiency close to $\gamma(s_i)$.
-Observe that we can assume the direction of $p_{2\cdot i+1}-p_{2\cdot i}$ is sufficiency close to $\vec u_i$ for each $i$.
-Conclude that \ref{eq:tc=<tc} holds true for the polygonal line $\beta=p_0\dots p_{2\cdot k}$.
+Suppose $\vec u_i=\tan(s_i)$.
+Choose an inscribed polygonal line $\beta=p_0\dots p_{2\cdot k+1}$ such that $p_{2\cdot i}$ and $p_{2\cdot i+1}$ lie sufficiency close to $\gamma(s_i)$; so we can assume that the direction of $p_{2\cdot i+1}-p_{2\cdot i}$ is sufficiency close to $\vec u_i$ for each $i$.
+Conclude that \ref{eq:tc=<tc} holds true for the constructed polygonal line $\beta$.
 
 \begin{wrapfigure}{r}{23 mm}
-\vskip-0mm
+\vskip-6mm
 \centering
 \includegraphics{mppics/pic-290}
 \vskip-4mm
@@ -466,26 +461,23 @@ Conclude that \ref{eq:tc=<tc} holds true for the polygonal line $\beta=p_0\dots 
 \parbf{\ref{ex:sef-intersection}.} An example for \ref{SHORT.ex:sef-intersection:<2pi} is shown on the diagram. 
 
 \parit{\ref{SHORT.ex:sef-intersection:>pi}.} Assume $x$ is a point of self-intersection.
-Show that we may choose two points $y$ and $z$ on $\gamma$ so that the triangle $xyz$ iz nondegenerate.
+Show that we may choose two points $y$ and $z$ on $\gamma$ so that the triangle $xyz$ is nondegenerate.
 In particular, 
 $\measuredangle\hinge yxz
 +
 \measuredangle\hinge zyx
-<\pi$, or, equivalently, 
-\[\tc{xyzx}>\pi;\]
-here we take $xyzx$ as a polygonal line which is not closed. 
+<\pi$, or, equivalently, for a nonclosed polygonal line $xyzx$ we have $\tc{xyzx}>\pi$.
 It remains to apply \ref{prop:inscribed-total-curvature}.
 
 \parbf{\ref{ex:quadrisecant}.}
-Observe that 
-\[\tc{acbd}=4\cdot\pi,\]
-where $acbd$ denotes the closed polygonal line.
+Consider the closed polygonal line $acbd$.
+Observe that $\tc{acbd}=4\cdot\pi$.
 It remains to apply \ref{prop:inscribed-total-curvature}.
 
 {
 
 \begin{wrapfigure}{r}{22 mm}
-\vskip-0mm
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-255}
 \vskip0mm
@@ -497,7 +489,7 @@ To obtain $\gamma_2$, slightly unbend (that is, decrease the curvature of) the d
 
 
 \parbf{\ref{ex:length-dist}.}
-Choose a value $s_0\in[a,b]$ that splits the total curvature into two equal parts, $\theta$ in each.
+Choose a value $s_0\in[a,b]$ that splits the total curvature of $\gamma$ into two equal parts.
 Observe that $\measuredangle(\gamma'(s_0),\gamma'(s))\le \theta$ for any~$s$.
 Use this inequality in the same way as in the proof of the bow lemma.
 
@@ -527,32 +519,31 @@ Then
 |\gamma_0'|;
 \end{align*}
 that is, $|\gamma_1'(t)|\ge|\gamma_0'(t)|$ for any $t\in[a,b]$.
-The statement follows since 
-\[\length\gamma_i
-=
-\int_a^b|\gamma_i'(t)|\cdot dt.\]
+It remains to integrate this inequality and apply 
+\ref{ex:integral-length}.
 
 \parbf{\ref{ex:trochoids}.}
-Observe that
-\[\gamma'_a(t)=(1+a\cdot \cos t, -a\cdot \sin t);\]
+Observe that $\gamma'_a(t)=(1+a\cdot \cos t, -a\cdot \sin t)$;
 that is, $\gamma'_a$ runs clockwise along a circle with center at $(1,0)$ and radius $1$.
-If $|a|>1$ then $\tan_a(t)=\gamma'_a/|\gamma'_a|$ runs clockwise and makes full turn in time $2\cdot\pi$.
-It follows that if $|a|>1$, then
-\[\Psi(\gamma_a)=-2\cdot\pi,\quad \tc\gamma_a=|\Psi(\gamma_a)|=2\cdot\pi.\]
 
-If $|a|<1$, set $\theta_a=\arcsin a$.
-Note that $\tan_a(t)=\gamma'_a/|\gamma'_a|$ starts with the horizontal direction $\tan_a(0)=(1,0)$, turns monotonically to angle $\theta_a$, then monotonically to $-\theta_a$ and then monotonically to back to $\tan_a(2\cdot\pi)=(1,0)$.
-It follows that if $|a|>1$, then
-\[\Psi(\gamma_a)=0,\quad \tc{\gamma_a}=4\cdot\theta_a.\]
+\parit{Case $|a|>1$,} Note that $\tan_a(t)=\gamma'_a/|\gamma'_a|$ runs clockwise and makes full turn in time $2\cdot\pi$.
+Therefore $\Psi(\gamma_a)=-2\cdot\pi$ and $\tc\gamma_a=|\Psi(\gamma_a)|=2\cdot\pi$.
 
-In the cases $a=-1$ the velocity $\gamma'_{-1}(t)$ vanish at $t=0$ and $2\cdot\pi$.
+\parit{Case $|a|<1$.}
+Set $\theta_a=\arcsin a$.
+Show that $\tan_a(t)=\gamma'_a/|\gamma'_a|$ starts with the horizontal direction $\tan_a(0)=(1,0)$, turns monotonically to angle $\theta_a$, then monotonically to $-\theta_a$ and then monotonically to back to $\tan_a(2\cdot\pi)=(1,0)$.
+It follows that if $|a|>1$, then
+$\Psi(\gamma_a)=0$ and $\tc{\gamma_a}=4\cdot\theta_a$.
+
+\parit{Case $a=-1$.}
+The velocity $\gamma'_{-1}(t)$ vanish at $t=0$ and $2\cdot\pi$.
 Nevertheless, the curve admits a smooth regular parametrization --- show it.
 In this case $\Psi(\gamma_{-1})=-\pi$ and $\tc{\gamma_{-1}}=\pi$.
 
-In the cases $a=1$ the velocity $\gamma'_1(t)$ vanish at $t=\pi$.
+\parit{Case $a=1$.}
+The velocity $\gamma'_1(t)$ vanish at $t=\pi$.
 At $t=\pi$ the curve has a cusp;
-that is, 
-\[\lim_{t\to\pi-}\tan_1(t)=-\lim_{t\to\pi+}\tan_1(t).\]
+that is, $\gamma_1$ turns exactly back at the time $\pi$.
 So $\gamma_1(t)$ has undefined total signed curvature.
 The curve is a joint of two smooth arcs with external angle $\pi$,
 the total curvature of each arc is $\tfrac\pi2$, so 
@@ -560,7 +551,7 @@ $\tc{\gamma_{1}}=\tfrac\pi2+\pi+\tfrac\pi2=2\cdot\pi$.
 
 
 \parbf{\ref{ex:zero-tsc}.}
-See the drawing below; we assume that the two marked points in the last example have parallel tangent lines.
+See the drawings; we assume that the two marked points in the last example have parallel tangent lines.
 
 \begin{figure}[h!]
 \begin{minipage}{.32\textwidth}
@@ -671,14 +662,13 @@ so that they run almost horizontally to the right.
 Given $t\in[0,1]$ consider the curve $\gamma_t$ that is tangent and cooriented to the $x$ axis at  $\gamma_t(0)$ and has signed curvature defined by $\skur_t(s)=(1\z-t)\cdot\skur_0(s)+t\cdot\skur_1(s)$.
 It exists by \ref{thm:fund-curves-2D}.
 
-Fix $s\approx 0$.
+Choose $s\approx 0$.
 Consider the curve $\alpha_s\:t\mapsto \gamma_t(s)$.
-Show that $\alpha_s$ moves almost vertically up, while $\gamma_t$ moves almost horizontally to the right.
-Conclude that in a small neighborhood of $p$, the curve $\gamma_1$
-lies above $\gamma_0$.
+Show that $\alpha_s$ moves almost vertically up.
+Use tha $\gamma_t$ moves almost horizontally to the right to show that in a small neighborhood of $p$, the curve $\gamma_1$ lies above $\gamma_0$.
 Whence the statement follows.
 
-\parbf{\ref{ex:in-circle}.} Let reduce the radius of the circle until it touches $\gamma$.
+\parbf{\ref{ex:in-circle}.} Reduce the radius of the circle until it touches $\gamma$.
 Observe that the circle supports $\gamma$ and apply \ref{prop:supporting-circline}.
 
 
@@ -700,9 +690,14 @@ Observe that one of the arcs of curvature 1 in the families shown on the diagram
 \end{minipage}
 \end{figure}
 To do the second part in \ref{ex:between-parallels-1}, use shown family and another family of arcs curved in the opposite direction.
+(Compare to \ref{ex:moon-rad}.) 
 
-\parit{Remark.}
-Exercise \ref{ex:moon-rad} is a more general. 
+\begin{wrapfigure}[4]{r}{34 mm}
+\vskip-3mm
+\centering
+\includegraphics{mppics/pic-268}
+\vskip0mm
+\end{wrapfigure}
 
 \parbf{\ref{ex:convex small}.}
 Note that we can assume that $\gamma$ bounds a convex figure $F$, otherwise by \ref{prop:convex} its curvature changes the sign and therefore it has zero curvature at some point.
@@ -712,7 +707,7 @@ look at the maximal lens bounded by two arcs with common chord $xy$ that lies in
 \parbf{\ref{ex:line-curve-intersections}}; \ref{SHORT.ex:line-curve-intersections:a}.
 Apply the lens lemma to show that if $p_2$ lies between $p_1$ and $p_3$, then the curvature of $\gamma$ switches its sign.
 
-\parit{\ref{SHORT.ex:line-curve-intersections:b}.} Show that in this $p_4$ lies between $p_2$ and $p_3$;
+\parit{\ref{SHORT.ex:line-curve-intersections:b}.} Show that $p_4$ lies between $p_2$ and $p_3$;
 further $p_5$ lies between $p_3$ and $p_4$;
 and so on.
 
@@ -721,7 +716,16 @@ According to \ref{SHORT.ex:line-curve-intersections:a}, the point $p_3$ might li
 In the latter case we have two choices, either $p_4$ lies between $p_2$ and $p_3$ and then further order is determined uniquely or $p_2$ lies between $p_3$ and $p_4$.
 In the latter case we get a choice again.
 
-Assume we make a first choice on the step number $k$.
+{
+
+\begin{wrapfigure}{o}{50 mm}
+\vskip0mm
+\centering
+\includegraphics{mppics/pic-29}
+\vskip0mm
+\end{wrapfigure}
+
+Assume we make the first choice on the step number $k$.
 Without loss of generality we may assume that $p_k$ lies to the right from $p_{k-2}$.
 Then we have the following order:
 \[
@@ -729,15 +733,10 @@ p_{k-2},p_{p-4},\dots,p_{p-5},p_{k-3},p_k,p_{k+2},\dots,p_{k+1},p_{k-1}.
 \]
 The case $k=7$ shown on the diagram.
 
-\begin{figure}[h!]
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-29}
-\vskip0mm
-\end{figure}
+}
 
 \begin{wrapfigure}[7]{r}{25 mm}
-\vskip-0mm
+\vskip-3mm
 \centering
 \includegraphics{mppics/pic-305}
 \vskip0mm
@@ -1014,10 +1013,11 @@ Use \ref{ex:curvature-graph} and \ref{thm:meusnier} to show that the Gauss curva
 Try to support the surface $\Sigma$ from inside by a surface of revolution of the described type. 
 
 \parit{Remark.}
-In fact if Gauss curvature of $\Sigma$ is at least $1$,
+The exercise can be reduced to a deeper result of Heinz Hopf and Willi Rinow \cite{hopf-rinow}, stating that \emph{if Gauss curvature of $\Sigma$ is at least $1$,
 then
-the intrinsic diameter of $\Sigma$ cannot exceed $\pi$.
+the intrinsic diameter of $\Sigma$ cannot exceed $\pi$}.
 The latter means that any two points in $\Sigma$ can be connected by a path that lies in $\Sigma$ and has length at most~$\pi$.
+(This result named for Sumner Myers who generalized it latter \cite{myers}.) 
 
 \parbf{\ref{ex:convex-proper-sphere}.}
 To prove \ref{SHORT.ex:convex-proper-sphere:single} use convexity of $R$.
@@ -1741,7 +1741,7 @@ Arrive to a contradiction using  \ref{SHORT.ex:open-comparison:positive}.
 
 For \ref{SHORT.ex:open-comparison:proof}, repeat the proof assuming that $p$ is provided by \ref{SHORT.ex:open-comparison:almost-min}.
 
-\parbf{\ref{ex:convex-polyhon+self-intersections};} \ref{SHORT.ex:convex-polyhon+self-intersections:angles}.
+\parbf{\ref{ex:convex-polyhon+self-intersections}}; \ref{SHORT.ex:convex-polyhon+self-intersections:angles}.
 Apply the Gauss--Bonnet formula for each region that $\gamma$ cuts from $\Sigma$ and simplify the obtained inequalities.
 
 \begin{wrapfigure}[9]{r}{50 mm}

@@ -226,28 +226,28 @@ Denote by $\tan,\norm,\bi$ its Frenet frame and by $\kur$, $\tor$ its curvature 
 Assume that $\gamma$ is spherical; that is, $|\gamma(s)|=1$ for any $s$.
 Show that
 
-\begin{enumerate}[(a)]
-\item\label{ex:spherical-frenet:tau} $\langle\tan,\gamma\rangle=0$; conclude that $\langle\norm,\gamma\rangle^2+\langle\bi,\gamma\rangle^2=1$.
-\item\label{ex:spherical-frenet:nu} $\langle\norm,\gamma\rangle=-\tfrac1\kur$;
-\item\label{ex:spherical-frenet:beta} $\langle\bi,\gamma\rangle'=\tfrac\tor\kur$.
-\item\label{ex:spherical-frenet:beta+}
-Use (\ref{ex:spherical-frenet:beta}) to show that if $\gamma$ is closed, then $\tor(s)=0$ for some~$s$.
-\item\label{ex:spherical-frenet:kur-tor} Assume that the torsion of $\gamma$ does not vanish.
-Use (\ref{ex:spherical-frenet:tau})--(\ref{ex:spherical-frenet:beta}) to show that 
+\begin{subthm}{ex:spherical-frenet:tau} $\langle\tan,\gamma\rangle=0$; conclude that $\langle\norm,\gamma\rangle^2+\langle\bi,\gamma\rangle^2=1$.
+\end{subthm}
+
+\begin{subthm}{ex:spherical-frenet:nu} $\langle\norm,\gamma\rangle=-\tfrac1\kur$;
+\end{subthm}
+
+\begin{subthm}{ex:spherical-frenet:beta} $\langle\bi,\gamma\rangle'=\tfrac\tor\kur$.
+\end{subthm}
+
+\begin{subthm}{ex:spherical-frenet:beta+}
+Use \ref{SHORT.ex:spherical-frenet:beta} to show that if $\gamma$ is closed, then $\tor(s)=0$ for some~$s$.
+\end{subthm}
+
+\begin{subthm}{ex:spherical-frenet:kur-tor} Assume that the torsion of $\gamma$ does not vanish.
+Use \ref{SHORT.ex:spherical-frenet:tau}--\ref{SHORT.ex:spherical-frenet:beta} to show that 
 \[\left|\frac{\kur'}{\tor}\right|=\kur\cdot\sqrt{\kur^2-1}.\]
 (It proves the ``only if'' part of the theorem.)
-\setcounter{lastnumber}{\value{enumi}}
-\end{enumerate}
-
-
-\smallskip
-
-Now assume that $\gamma$ is a space curve that satisfies the idenity in (\ref{ex:spherical-frenet:kur-tor}).
-\begin{enumerate}[(a)]
-\setcounter{enumi}{\value{lastnumber}}
-\item Show that $p=\gamma+\tfrac1\kur\cdot \norm+\tfrac{\kur'}{\kur^2\cdot\tor}\cdot\bi$ is constant; conclude that $\gamma$ lies in the unit sphere centered at $p$.
+\end{subthm}
+Now assume that $\gamma$ is a space curve that satisfies the idenity in \ref{SHORT.ex:spherical-frenet:kur-tor}.
+\begin{subthm}{ex:spherical-frenet:f} Show that $p=\gamma+\tfrac1\kur\cdot \norm+\tfrac{\kur'}{\kur^2\cdot\tor}\cdot\bi$ is constant; conclude that $\gamma$ lies in the unit sphere centered at $p$.
 (It proves the ``if'' part of the theorem.)
-\end{enumerate}
+\end{subthm}
 
 \end{thm}
 
