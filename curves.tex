@@ -26,7 +26,7 @@
 In the following definition we use the notion of {}\emph{metric space} which is discussed in Section~\ref{sec:metric-spcaes}.
 The Euclidean plane and space are the main examples of metric spaces that one should keep in mind.
 
-Recall that \index{real interval}\emph{real interval} is defined as a connected subset of the real numbers.
+Recall that a \index{real interval}\emph{real interval} is defined as a connected subset of the real numbers.
 
 Recall that a bijective continuous map $f\:X\to Y$ between subsets of some metric spaces is called a {}\emph{homeomorphism} if its inverse $f^{-1}\:Y\z\to X$ is continuous.  
 
@@ -34,7 +34,7 @@ Recall that a bijective continuous map $f\:X\to Y$ between subsets of some metri
 A connected subset $\gamma$ in a metric space is called a \index{simple curve}\emph{simple curve} if it is {}\emph{locally} homeomorphic to a real interval.
 \end{thm}
 
-It turns out that any simple curve $\gamma$ can be \index{parametrization of curve}\emph{parametrized} by a real interval or a circle.
+It turns out that any simple curve $\gamma$ can be \index{parametrization of curve}\emph{parametrized} by a real interval or the circle.
 That is, there is a homeomorphism $\GG\to\gamma$ 
 where $\GG$ is a real interval (open, closed or semi-open) or the circle
 \[\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}.\] 
@@ -54,7 +54,15 @@ for example, we may say a plane curve $\gamma$ is given with a parametrization $
 Note, however, that any simple curve admits many different parametrizations. 
 
 \begin{thm}{Exercise}\label{ex:9}
+
+\begin{subthm}{ex:9:compact}
+Show that for any continuous injective map $\gamma : [0,1]\to \mathbb{R}^2$, its image is a simple arc.
+\end{subthm}
+
+\begin{subthm}{ex:9:9}
 Find a continuous injective map $\gamma\:(0,1)\to\RR^2$ such that its image is not a simple curve.
+\end{subthm}
+
 \end{thm}
 
 
@@ -84,7 +92,7 @@ Show that there is a simple arc in~$X$ connecting $p$ to $q$.
 
 \section{Smooth curves}
 
-Curves in Euclidean space or plane are called \index{space curve}\emph{space curves} or, respectively, \index{plane curve}\emph{plane curves}.
+Curves in the Euclidean space or plane are called \index{space curve}\emph{space curves} or, respectively, \index{plane curve}\emph{plane curves}.
 
 A parametrized space curve can be described by its coordinate functions 
 \[\gamma(t)=(x(t),y(t),z(t)).\]
@@ -138,7 +146,7 @@ simple.
 
 \end{thm}
 
-\section{Periodic parametrization}
+\section{Periodic parametrizations}
 
 Any smooth regular closed curve can be described by a \index{periodic parameterization}\emph{periodic} parametrized curve $\gamma\: \RR\to \mathcal{X}$; that is, a curve such that $\gamma(t+\ell)=\gamma(t)$ for a fixed period $\ell > 0$ and all $t$.
 For example, the unit circle in the plane can be described by the $2{\cdot}\pi$-periodic parametrization $\gamma(t)=(\cos t,\sin t)$.
@@ -170,7 +178,7 @@ $f_x(p)\ne 0$ or $f_y(p)\ne 0$.%
 $\tfrac{\partial f}{\partial x}$.\index{10f@$f_x$}}
 
 The described condition is sufficient but {}\emph{not necessary}.
-For example, zero is not a regular value the function $f(x,y)=y^2$, but equation $f(x,y)=0$ desribes a smooth regular curve --- the $x$-axis.
+For example, zero is not a regular value the function $f(x,y)=y^2$, but the equation $f(x,y)=0$ describes a smooth regular curve --- the $x$-axis.
 
 
 Similarly, assume $f,h$ is a pair of smooth functions defined in $\RR^3$.
@@ -183,7 +191,7 @@ The system of equations
 \]
 defines a regular smooth space curve if the set $\gamma$ of solutions is connected and $0$ is a regular value of the map $F\:\RR^3\to\RR^2$ defined as
 \[F\:(x,y,z)\mapsto (f(x,y,z),h(x,y,z)).\]
-In this case it means that the gradients $\nabla f$ and $\nabla h$ are linearly independent at any point $p\in \gamma$.
+It means that the gradients $\nabla f$ and $\nabla h$ are linearly independent at any point $p\in \gamma$.
 In other words, the Jacobian matrix
 \[
 \Jac_pF=\begin{pmatrix}
@@ -238,12 +246,12 @@ It follows that closed curves and arcs are automatically proper since the parame
 A simple curve is called proper if it admits a proper parametrization.
 
 \begin{thm}{Exercise}\label{ex:proper-closed}
-Show that simple space curve is proper if and only if its image is a closed set.
+Show that a simple space curve is proper if and only if its image is a closed set.
 
 \end{thm}
 
 A proper simple plane curve without endpoints is called \index{open curve}\emph{open}.
-(Here word open curve used as opposite from closed curve --- these terms have nothing to do with open and closed sets.)
+The terms open curve and closed curve have nothing to do with open and closed sets.
 
 \begin{thm}{Exercise}\label{ex:proper-curve}
 Use the Jordan's theorem (\ref{thm:jordan}) to show that any simple open curve divides the plane in two connected components.  

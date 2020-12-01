@@ -27,7 +27,10 @@ therefore $Q$ is not closed.
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:9}.}
-The image of $\gamma$ might have the shape of the digit $8$ or $9$.
+For \ref{SHORT.ex:9:compact}, use the fact that a continuous bijection with compact domain is a homeomorphism.
+For \ref{SHORT.ex:9:9}, the image of $\gamma$ might have the shape of the digit $8$ or $9$.
+
+
 
 \parbf{\ref{aex:simple-curve}.}
 Let $\alpha$ be a path connecting $p$ to $q$.
@@ -40,14 +43,18 @@ if for any connected component $(a,b)$ of $\Omega$ we have $\alpha(a)=\alpha(b)$
 Show that the union of nested suitable sets is suitable.
 Therefore we can find a maximal suitable set $\hat \Omega$.
 
-Define $\beta(t)=\alpha(a)$ for any $t$ in a connected component $(a,b)\subset\hat \Omega$.
+Define $\beta(t)=\alpha(a)$ for any $t$ in a connected component $(a,b)\subset\hat \Omega$, and $\beta (t) = \alpha (t) $ for $t$ not in $\hat{\Omega}$.
 Note that for any $x\in [0,1]$ the set $\beta^{-1}\{\beta(x)\}$ is connected.
 
 It remains to re-parametrize $\beta$ to make it injective.
-In other words we need to construct a non-decreasing surjective function $\tau\:[0,1]\z\to[0,1]$ such that 
+In order to do that, we need to construct a non-decreasing surjective function $\tau\:[0,1]\z\to[0,1]$ such that 
 $\tau(t_1)=\tau(t_2)$ if and only if there is a connected component $(a,b)\subset\hat \Omega$ such that $t_1,t_2\z\in [a,b]$.
 
 The required function $\tau$ can be constructed in a similar way to the so-called \emph{devil's staircase} --- learn this construction and modify it.
+
+The simple arc we are looking for is $\beta \circ \sigma$, where $\sigma:  [0,1]\to [0,1]$ is any right inverse of $\tau$.
+
+%This problem involves reparametrization. Should we move it to the "reparametrizations section"?
 
 \parbf{\ref{ex:L-shape}.}
 Denote the union of two half-axis by $L$.
@@ -143,7 +150,7 @@ Show and use that a set $C\subset \RR^3$ is closed if and only if the intersecti
 \parbf{\ref{ex:proper-curve}.}
 Without loss of generality we may assume that the origin does not lie on the curve.
 
-Show that inversion of the plane $(x,y)\mapsto (\tfrac{x}{x^2+y^2},\tfrac{y}{x^2+y^2})$ maps our curve to a closed curve with removed origin.
+Show that inversion of the plane $(x,y)\mapsto (\tfrac{x}{x^2+y^2},\tfrac{y}{x^2+y^2})$ maps our curve to a closed curve with the origin removed.
 Apply Jordan's theorem for the obtained curve and use the inversion again.
 
 \setcounter{eqtn}{0}
@@ -324,6 +331,14 @@ Therefore we can choose ${\vec u}$ so that
 Observe that $\gamma_{\vec u}$ runs in a semicircle $h$ and therefore $\gamma$ lies in a hemisphere with $h$ as a diameter.
 
 \setcounter{eqtn}{0}
+
+
+\parbf{\ref{ex:zero-curvature-curve}.} For a unit-speed parameterization $\gamma$, the velocity $\gamma ^{\prime}$ has to be constant, hence $\gamma $ is an affine function $\gamma(t) = p+tq$ for some $p,q \in \mathbb{R}^3$.
+
+
+\parbf{\ref{ex:scaled-curvature}.} Observe that $\alpha (t) :=  \gamma_{\lambda} (t/\lambda )$ is a unit-speed parameterization of the curve $ \gamma_{\lambda}$. Apply the chain rule twice.
+
+
 
 \parbf{\ref{ex:curvature-of-spherical-curve}.} Differentiate the identity $\langle\gamma(s),\gamma(s)\rangle=1$ a couple of times.
 

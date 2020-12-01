@@ -21,7 +21,7 @@ The length of $\gamma$ is a nonnegative real number or infinity;
 the curve $\gamma$ is called \index{rectifiable curve}\emph{rectifiable} if its length is finite. 
 
 The length of a closed curve is defined as the length of the corresponding loop.
-If a curve is defined on an open or semi-open interval, then its length is defined as the least upper bound for lengths of all its arcs.
+If a curve parameterized by an open or semi-open interval, then its length is defined as the least upper bound of the lengths of all its restrictions to closed intervals.
 \end{thm}
 
 
@@ -41,12 +41,6 @@ Show that
 \includegraphics{mppics/pic-224}
 \end{wrapfigure}
 
-Suppose $\gamma\:[a,b]\to \RR^3$ is a parametrized space curve.
-For a partition $a=t_0 < t_1 < \z\cdots < t_k=b$, set $p_i=\gamma(t_i)$.
-Then the polygonal line $p_0\dots p_k$ is called \index{inscribed polygonal line}\emph{inscribed} in $\gamma$.
-If $\gamma$ is closed, then $p_0=p_k$, so the inscribed polygonal line is also closed.
-
-Note that the length of a space curve $\gamma$ can be defined as the least upper bound of the lengths of polygonal lines $p_0\dots p_k$ inscribed in $\gamma$.
 
 \begin{thm}{Exercise}\label{ex:length-image}
 Let $\alpha\:[0,1]\to\RR^3$ be simple path.
@@ -56,6 +50,17 @@ Show that
 \[\length \beta\ge \length \alpha.\]
 
 \end{thm}
+
+
+
+
+Suppose $\gamma\:[a,b]\to \RR^3$ is a parametrized space curve.
+For a partition $a=t_0 < t_1 < \z\cdots < t_k=b$, set $p_i=\gamma(t_i)$.
+Then the polygonal line $p_0\dots p_k$ is said to be an \index{inscribed polygonal line}\emph{inscribed} in $\gamma$.
+If $\gamma$ is closed, then $p_0=p_k$, so the inscribed polygonal line is also closed.
+
+Note that the length of a space curve $\gamma$ can be defined as the least upper bound of the lengths of polygonal lines $p_0\dots p_k$ inscribed in $\gamma$.
+
 
 \begin{thm}{Exercise}\label{ex:integral-length}
 Assume $\gamma\:[a,b]\to\RR^3$ is a smooth curve.
@@ -89,9 +94,10 @@ Conclude that
 \begin{subthm}{adex:integral-length:a}Show that the formula \ref{eq:length} holds for any Lipschitz curve $\gamma\:[a,b]\z\to\RR^3$.
 \end{subthm}
 
-\begin{subthm}{adex:integral-length:b} Construct a simple curve $\gamma\:[a,b]\to\RR^3$ such that $\gamma'(t)=0$ almost everywhere.
+\begin{subthm}{adex:integral-length:b} Construct a non-constant curve $\gamma\:[a,b]\to\RR^3$ such that $\gamma'(t)=0$ almost everywhere.
 (In particular, the formula \ref{eq:length} does not hold for $\gamma$.).
 \end{subthm}
+%I think constructing a "simple curve with derivative 0 a.e." is much harder than a "non-constant curve with derivative 0 a.e." and any of them work as counterexample.
 
 \end{thm}
 
@@ -138,7 +144,7 @@ for all $t$; by that reason smooth curves equipped with an arc-length parametriz
 Observe that smooth unit-speed curves are automatically regular.
 
 Note that any rectifiable curve $\gamma$ can be parametrized by its arc length.
-Indeed, for fixed a value $t_0$, 
+Indeed, for a fixed value $t_0$, 
 \[s(t)=
 \left\{
 \begin{tabu}{rcr}
@@ -187,7 +193,7 @@ therefore it is often convenient to use the original parametrization.
 \section{Convex curves}
 
 A simple plane curve is called \index{convex curve}\emph{convex} if it bounds a convex region.
-Since boundary is closed, any convex curve is either closed or open (see Section \ref{sec:proper-curves}).
+Since the boundary of any region is closed, any convex curve is either closed or open (see Section \ref{sec:proper-curves}).
 
 \begin{thm}{Proposition}\label{prop:convex-curve}
 Assume a convex closed curve $\alpha$ lies inside the domain bounded by a simple closed plane curve $\beta$.
@@ -195,8 +201,7 @@ Then
 \[\length\alpha\le \length\beta.\]
 \end{thm}
 
-Note that it is sufficient to show that for any polygon  $P$ inscribed in $\alpha$ there is a polygon $Q$ inscribed in $\beta$ with equal or larger perimeter.
-Therefore it is sufficient to prove the following lemma.
+Note that in order to prove Proposition \ref{prop:convex-curve} it is sufficient to show that for any polygon  $P$ inscribed in $\alpha$ there is a polygon $Q$ inscribed in $\beta$ with equal or larger perimeter. Since any polygon $P$ inscribed in $\alpha$ is convex, it is sufficient to prove the following lemma.
 
 
 \begin{thm}{Lemma}\label{lem:perimeter}
@@ -204,7 +209,7 @@ Let $P$ and $Q$ be polygons.
 Assume $P$ is convex and $Q\supset P$.
 Then 
 \[\perim P\le \perim Q,\]
-where $\perim P$ denoted perimeter of $P$.
+where $\perim P$ denotes the perimeter of $P$.
 \end{thm}
 
 
@@ -246,8 +251,8 @@ Any convex closed plane curve is rectifiable.
 \parit{Proof.}
 Any closed curve is bounded.
 Indeed, the curve can be described as an image of a loop $\alpha\:[0,1]\to\RR^2$, $\alpha(t)=(x(t),y(t))$.
-The coordinate functions $x(t)$ and $y(t)$ are continous functions defined on $[0,1]$.
-Therefore the absolute values of both functions are bounded by some constant $C$.
+The coordinate functions $x(t)$ and $y(t)$ are continuous functions defined on $[0,1]$.
+This implies that the absolute values of both functions are bounded by some constant $C$.
 Therefore, $\alpha$ lies in the square defined by the inequalities $|x|\le C$ and $|y|\le C$.
 
 
@@ -270,7 +275,7 @@ Try to show that the statement holds for arbitrary closed plane curves $\alpha$,
 \section{Crofton's formulas}\label{sec:crofton}
 
 For a function $f: \mathbb{S}^1 \to \mathbb{R}$, we will denote its average value as $\overline{f(\vec u)}$.
-For a vector $\vec w$, and unit vector $\vec u$, we will denote by $\vec w_{\vec u}$ the orthogonal projection of $\vec w$ to the line in the direction $\vec u$;
+For a vector $\vec w$, and a unit vector $\vec u$, we will denote by $\vec w_{\vec u}$ the orthogonal projection of $\vec w$ to the line in the direction of  $\vec u$;
 that is,
 \[\vec w_{\vec u}=\langle\vec u,\vec w\rangle\cdot\vec u.\] 
 
@@ -280,18 +285,17 @@ For any plane curve $\gamma$ we have
 \length\gamma
 =\tfrac\pi2\cdot \overline{\length\gamma_{\vec u}},
 \]
-where the average is taken for all unit vectors $\vec u$.
+where $\gamma_{ \vec u}$ is the curve defined as $\gamma_{\vec u}(t) := (\gamma (t))_{\vec u}$.
 \end{thm}
 
 \parit{Proof.}
 Note that the magnitude of any plane vector ${\vec w}$ is proportional to the average magnitude of its projections; that is,
 \[|{\vec w}|=k\cdot \overline{|{\vec w}_{\vec u}|}\]
 for some $k \in \mathbb{R}$.
-The exact value of $k$ can be found by integration\footnote{It is the average value of $|\cos|$.}, but we will find it another way.
-
-For a smooth plane curve $\gamma\:[a,b]\to\RR^2$,  note that for any $t$,
-\[   | \gamma^{\prime}_{\vec u} (t) |  =  | \langle \vec u , \gamma^{\prime} (t) \rangle |    . \]
- Then, according to Exercise~\ref{ex:integral-length},
+The exact value of $k$ can be found by integration\footnote{It is the average value of $|\cos|$.}, but we will find it in a different way. 
+Note that for a smooth plane curve $\gamma\:[a,b]\to\RR^2$,
+\[  \gamma_{\vec u}^{\prime}(t) = (\gamma ^{\prime} (t))_{\vec u} \text{ and }     | \gamma^{\prime}_{\vec u} (t) |  =  | \langle \vec u , \gamma^{\prime} (t) \rangle |     \]
+for any $t \in [a,b]$. Then, according to Exercise~\ref{ex:integral-length},
 \begin{align*}
 \length\gamma
 &=\int_a^b|\gamma'(t)|\cdot dt=
@@ -305,15 +309,14 @@ Since $k$ is a universal constant, we can compute it by taking $\gamma$ to be th
 In this case
 \[\length \gamma=2\cdot\pi.\]
 Note that for any unit plane vector ${\vec u}$, the curve $\gamma_{\vec u}$ runs back and forth along an interval of length 2.
-Therefore $\length\gamma_{\vec u}=4$ for any $\vec u$.
-Therefore 
+Then $\length\gamma_{\vec u}=4$ for any $\vec u$, and
 \[\overline{\length\gamma_{\vec u}} =4.\]
 It follows that $2\cdot \pi =k\cdot 4$.
 Therefore Crofton's formula holds for arbitrary smooth curves.
 
 Applying the same argument together with \ref{adex:integral-length}, we get that Crofton's formula holds for arbitrary rectifiable curves.
 
-It remains to consider nonrectifiable case;
+It remains to consider the nonrectifiable case;
 we have to show that 
 \[\length\gamma=\infty
 \quad\Longrightarrow\quad
@@ -322,12 +325,12 @@ we have to show that
 
 Observe that from the definition of length, we get
 \[\length\gamma_{\vec u}+\length\gamma_{\vec v}\ge \length\gamma\]
-for any plane curve $\gamma$.
+for any plane curve $\gamma$ and any pair $(\vec u , \vec v )$ of orthonormal vectors in $\mathbb{R}^2$.
 Therefore, if $\gamma$ has infinite length, then the average of lengths of $\gamma_{\vec u}$ is infinte as well.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:convex-croftons}
-Show that any closed plane curve $\gamma$ has length at least $\pi\cdot s$, where $s$ is the average length of pojections of $\gamma$ to lines.
+Show that any closed plane curve $\gamma$ has length at least $\pi\cdot s$, where $s$ is the average length of the projections of $\gamma$ to lines.
 Moreover, equality holds if and only if $\gamma$ is convex.
 
 Use this statement to give another solution to Exercise~\ref{ex:convex-hull}.
@@ -335,7 +338,7 @@ Use this statement to give another solution to Exercise~\ref{ex:convex-hull}.
 
 The following exercise gives analogous formulas in the Euclidean space.
 
-As before, we denote by $\vec w_{\vec u}$ the projection of $\vec w$ to the line of $\vec u$.
+As before, we denote by $\vec w_{\vec u}$ the orthogonal projection of $\vec w$ to the line passing thru the origin with direction $\vec u$.
 Further let us denote by $\vec w_{\vec u}^\bot$ the projection of $\vec w$ to the plane orthogonal to $\vec u$;
 that is,
 \[\vec w_\vec u^\bot=\vec w - \vec w_{\vec u}.\]
@@ -370,7 +373,7 @@ The lower limit is defined for any sequence of real numbers and it lies in the e
 
 
 \begin{thm}{Theorem}\label{thm:length-semicont}
-Length is a lower semicontinuous with respect to pointwise convergence of curves. 
+Length is lower semicontinuous with respect to pointwise convergence of curves. 
 
 More precisely, assume that a sequence
 of curves $\gamma_n\:[a,b]\to \spc{X}$ in a metric space $\spc{X}$ converges pointwise 
@@ -439,11 +442,11 @@ Therefore if any two points in $\spc{X}$ can be connected by a rectifiable curve
 in this case $d$ is called the \index{induced length metric}\emph{induced length metric}.
 
 Evidently $d(x,y)\ge |x-y|$ for any pair of points $x,y\in \spc{X}$.
-If the equality holds for all pairs, then the metric $|{*}-{*}|$ is said to be a \index{length metric}\emph{length metric} and the space is called \index{length-metric space}\emph{length-metric space}.
+If the equality holds for all pairs, then the metric $|{*}-{*}|$ is said to be a \index{length metric}\emph{length metric} and the corresponding metric space is called a \index{length-metric space}\emph{length-metric space}.
 
 Most of the time we consider length-metric spaces.
 In particular the Euclidean space is a length-metric space.
-A subspace $A$ of a length-metric space $\spc{X}$ is not necessarily length-metric space;
+A subspace $A$ of a length-metric space $\spc{X}$ is not necessarily a length-metric space;
 the induced length distance between points $x$ and $y$ in the subspace $A$ will be denoted as $|x-y|_A$;
 that is, $|x-y|_A$ is the greatest lower bound of the lengths of paths in $A$ from $x$ to $y$.\index{10aaa@$\lvert x-y\rvert_A$}
 
