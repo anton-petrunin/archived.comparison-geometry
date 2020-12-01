@@ -27,15 +27,30 @@ whence $\gamma''\perp\gamma'$.
 
 \section{Curvature}\label{sec:curvature}
 
-For a unit-speed smooth space curve $\gamma$ the magnitude of its acceleration $|\gamma''(s)|$ is called its \index{curvature of curve}\emph{curvature} at the time $s$.
+For a unit-speed smooth space curve $\gamma$ the magnitude $|\gamma''(s)|$ of its acceleration is called its \index{curvature of curve}\emph{curvature} at  time $s$.
 If $\gamma$ is simple, then we can say that $|\gamma''(s)|$ is the curvature at the point $p=\gamma(s)$ without ambiguity.
 The curvature is usually denoted by $\kur(s)$ or $\kur(s)_\gamma$ and in the case of simple curves it might be also denoted by $\kur(p)$ or $\kur(p)_\gamma$.
 
 The curvature measures how fast the curve turns;
-if you drive along a plane curve, then curvature describes the position of your steering wheel at the given point.
+if you drive along a plane curve, then the curvature describes the position of your steering wheel at the given point.
 
 In general, the term {}\emph{curvature} is used for anything that measures how much a {}\emph{geometric object} deviates from being {}\emph{straight};
 for curves, it measures how fast it deviates from a straight line.
+
+
+\begin{thm}{Exercise}\label{ex:zero-curvature-curve}
+Show that a regular simple space curve has 0 curvature at each point if and only if it is a segment of a straight line.
+\end{thm}
+%This contrasts with the fact that a surface with 0 curvature is not necessarily an (extrinsic) plane.
+
+\begin{thm}{Exercise}\label{ex:scaled-curvature}
+Let $\gamma$ be a unit-speed smooth space curve and let $\gamma_{\lambda}$ be a scaled copy of $\gamma$ with factor $\lambda >0$;
+that is, $\gamma_{\lambda}(t)=\lambda \cdot\gamma(t)$ for any $t$.
+Show that 
+\[  \kur(\lambda \cdot p )_{\gamma_{\lambda}}= \frac{1}{\lambda} \kur(p)_{\gamma}   \]
+for any $p \in \gamma$.
+
+\end{thm}
 
 \begin{thm}{Exercise}\label{ex:curvature-of-spherical-curve}
 Show that any regular smooth unit-speed spherical curve has curvature at least 1 at each time.
@@ -44,7 +59,7 @@ Show that any regular smooth unit-speed spherical curve has curvature at least 1
 \section{Tangent indicatrix}\label{sec:Tangent indicatrix}
 
 Let $\gamma$ be a regular smooth space curve.
-Let us consider another curve 
+The curve 
 \[\tan(t)=\tfrac{\gamma'(t)}{|\gamma'(t)|};
 \eqlbl{eq:tantrix}\] 
 it is called \index{tangent indicatrix}\emph{tangent indicatrix} of $\gamma$.
@@ -95,7 +110,7 @@ at the point $p=(x,f(x))$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:approximation-const-curvature}
-Show that any smooth regular $\gamma\:\mathbb{I}\to\RR^3$ curve with curvature at most 1 can be approximated by a smooth curves with constant curvature 1.
+Show that any smooth regular curve $\gamma\:\mathbb{I}\to\RR^3$ with curvature at most 1 can be approximated by a smooth curves with constant curvature 1.
 
 In other words, construct a sequence $\gamma_n\:\mathbb{I}\to\RR^3$ of smooth regular curves  with constant curvature 1 such that $\gamma_n(t)\to \gamma(t)$ for any $t$ as $n\to\infty$.
 \end{thm}
@@ -104,12 +119,12 @@ In other words, construct a sequence $\gamma_n\:\mathbb{I}\to\RR^3$ of smooth re
 \section{Tangent curves}
 
 Let $\gamma$ be a smooth regular space curve and $\tan$ its tangent indicatrix.
-The line thru $\gamma(t)$ in the direction of $\tan(t)$ is called the \index{tangent line}\emph{tangent line} at~$t$.
+The line thru $\gamma(t)$ in the direction of $\tan(t)$ is called the \index{tangent line}\emph{tangent line} of $\gamma$  at~$t$.
 
 The tangent line could be also defined as a unique line that has that has \index{order of contact}\emph{first order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)=o(\ell)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to the line.
 
-We say that smooth regular curve $\gamma_1$ at $s_1$ is \index{tangent curves}\emph{tangent} to a smooth regular curve $\gamma_2$ at $s_2$
+We say that a smooth regular curve $\gamma_1$ at $s_1$ is \index{tangent curves}\emph{tangent} to a smooth regular curve $\gamma_2$ at $s_2$
 if $\gamma_1(s_1)=\gamma_2(s_2)$ and the tangent line of $\gamma_1$ at $s_1$ coincides with the tangent line of $\gamma_2$ at $s_2$;
 if both curves are simple we can also say that they are tangent at the point $p=\gamma_1(s_1)\z=\gamma_2(s_2)$ without ambiguity.
 
@@ -202,7 +217,7 @@ The 2-dimensional case of this theorem was proved by Istv\'{a}n F\'{a}ry \cite{f
 It was generalized by Don Chakerian \cite{chakerian1962} to higher dimensions.
 This theorem has many very interesting and very different proofs;
 a number of them are collected by Serge Tabachnikov~\cite{tabachnikov}.
-The following exercise will guide you thru another proof of Don Chakerian \cite{chakerian1964}:
+The following exercise will guide you thru another proof by Don Chakerian \cite{chakerian1964}:
 
 \begin{thm}{Exercise}\label{ex:DNA}
 Let $\gamma\:[0,\ell]\to\RR^3$ be a smooth unit-speed closed curve that lies in the unit ball; that is, $|\gamma|\le 1$.
@@ -453,7 +468,7 @@ a good survey on the subject is written by John Sullivan \cite{sullivan-curves}.
 \end{thm}
 
 \begin{thm}{Proposition}\label{prop:fenchel=}
-The equality case in the Fenchel's theorem holds only for convex plane curves;
+The equality case in Fenchel's theorem holds only for convex plane curves;
 that is, if the total curvature of a smooth regular space curve $\gamma$ equals $2\cdot\pi$, then $\gamma$ is a convex plane curve.
 \end{thm}
 
@@ -545,7 +560,7 @@ Show that
 
 Lines crossing a curve at four points as in the exercise are called \index{alternating quadrisecants}\emph{alternating quadrisecants}.
 It turns out that any {}\emph{nontrivial knot} admits an alternating quadrisecant \cite{denne};
-according to the exercise the latter implies the so-called \index{F\'ary--Milnor theorem}\emph{F\'ary--Milnor theorem} --- the total curvature any knot exceeds~$4\cdot \pi$.
+according to the exercise the latter implies the so-called \index{F\'ary--Milnor theorem}\emph{F\'ary--Milnor theorem} --- the total curvature of any knot exceeds~$4\cdot \pi$.
 
 \section{Bow lemma}
 
@@ -567,7 +582,7 @@ It is instructive to do this exercise before reading the proof of the lemma.
 {\sloppy 
 
 \begin{thm}{Exercise}\label{ex:anti-bow}
-Construct a simple smooth unit-speed plane curves $\gamma_1,\gamma_2\:[a,b]\to\RR^2$ such that 
+Construct two simple smooth unit-speed plane curves $\gamma_1,\gamma_2\:[a,b]\to\RR^2$ such that 
 that $\kur(s)_{\gamma_1}>\kur(s)_{\gamma_2}>0$ for any $s$ and
 \[|\gamma_1(b)-\gamma_1(a)|> |\gamma_2(b)-\gamma_2(a)|.\]
 \end{thm}
