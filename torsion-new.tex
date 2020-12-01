@@ -2,7 +2,7 @@
 
 This chapter provides mostly a practice in computations.
 Except for the definitions in Section \ref{sec:frenet-frame},
-it is not be used in the sequel.
+it will not be used in the sequel.
 
 
 \section{Frenet frame}\label{sec:frenet-frame}
@@ -40,10 +40,10 @@ in particular, we have that
 \eqlbl{eq:orthornomal}
 \]
 
-The orthonormal basis $\tan(s),\norm(s),\bi(s)$ is called \index{Frenet frame}\emph{Frenet frame} at $s$; the vectors in the frame are called \index{tangent}\emph{tangent}, \index{normal}\emph{normal} and \index{binormal}\emph{binormal} respectively.
+The orthonormal basis $\tan(s),\norm(s),\bi(s)$ is called the \index{Frenet frame}\emph{Frenet frame} at $s$; the vectors in the frame are called \index{tangent}\emph{tangent}, \index{normal}\emph{normal} and \index{binormal}\emph{binormal} respectively.
 Note that the frame $\tan(s),\norm(s),\bi(s)$ is defined only if $\kur(s)\ne 0$.
 
-The plane $\Pi_s$ thru $\gamma(s)$ spanned by vectors $\tan(s)$ and $\norm(s)$ is called \index{osculating plane}\emph{osculating plane} at $s$;
+The plane $\Pi_s$ thru $\gamma(s)$ spanned by vectors $\tan(s)$ and $\norm(s)$ is called the \index{osculating plane}\emph{osculating plane} at $s$;
 equivalently it can be defined as a plane thru $\gamma(s)$ that is perpendicular to the binormal vector $\bi(s)$.
 This is the unique plane that has \index{order of contact}\emph{second order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to $\Pi_s$.
@@ -51,7 +51,7 @@ that is, $\rho(\ell)=o(\ell^2)$, where $\rho(\ell)$ denotes the distance from $\
 \section{Torsion}
 
 Let $\gamma$ be a smooth unit-speed space curve
-and $\tan(s),\norm(s),\bi(s)$ is its Frenet frame.
+and $\tan(s),\norm(s),\bi(s)$ be its Frenet frame.
 The value 
 \[\tor(s)=\langle \norm'(s),\bi(s)\rangle\]\index{10tau@$\tor$}
 is called the \index{torsion}\emph{torsion} of $\gamma$ at $s$.
@@ -63,7 +63,6 @@ Therefore the Frenet frame is also defined in an open interval containing $s_0$.
 Clearly $\tan(s)$, $\norm(s)$ and $\bi(s)$ depend smoothly on $s$ in their domains of definition.
 Therefore $\norm'(s_0)$ is defined and so is the torsion $\tor(s_0)=\langle \norm'(s_0),\bi(s_0)\rangle$.
 
-The torsion measures how fast the osculating plane rotates when one travels along $\gamma$.
 
 \begin{thm}{Exercise}\label{ex:helix-torsion}
 Given real numbers $a$ and $b$, calculate curvature and torsion of the helix
@@ -93,14 +92,14 @@ Since the frame $\tan,\norm,\bi$ is orthonormal, the above formula is equivalent
 \langle \norm',\bi\rangle&=\tor,
 \end{aligned}\eqlbl{eq:<N',?>}\]
 The last identity follows from the definition of torsion.
-The second one is proved by taking derivative of the identity $\langle \norm,\norm\rangle\z=1$ in \ref{eq:orthornomal}. 
-Differentiating the identity $\langle\tan,\norm\rangle\z=0$ in \ref{eq:orthornomal};
+The second one is a consequence of the identity $\langle \norm,\norm\rangle\z=1$ in \ref{eq:orthornomal}. 
+By differentiating the identity $\langle\tan,\norm\rangle\z=0$ in \ref{eq:orthornomal}
 we get 
 \[\langle\tan',\norm\rangle+\langle\tan,\norm'\rangle=0.\]
 Applying \ref{eq:frenet-tau}, we get the first equation in \ref{eq:<N',?>}.
 
 Differentiating the third identity in \ref{eq:orthornomal}, we get that $\bi'\perp\bi$.
-Further taking derivatives of the other identities with $\bi$ in \ref{eq:orthornomal}, we get that 
+Taking further derivatives of the other identities with $\bi$ in \ref{eq:orthornomal}, we get that 
 \begin{align*}
 \langle\bi',\tan\rangle&=-\langle\bi,\tan'\rangle=-\kur\cdot\langle\bi,\norm\rangle=0,
 \\
@@ -136,6 +135,12 @@ All three can be written as one matrix identity:
 \bi
 \end{pmatrix}.
 \]
+
+
+Since $B$ is the normal vector to the osculating plane, Equation \eqlbl{eq:frenet-beta} shows that the torsion measures how fast the osculating plane rotates when one travels along $\gamma$.
+
+
+
 
 \begin{thm}{Exercise}\label{ex:beta-from-tau+nu}
 Deduce the formula \ref{eq:frenet-beta} from  \ref{eq:frenet-tau} and \ref{eq:frenet-nu} by differentiating the identity
@@ -185,11 +190,11 @@ Show that
 Use it to show that 
 \[\langle \vec w, -\kur\cdot\tan+\tor\cdot \bi\rangle =0.\]
 Use these two identities to show that $\tfrac\tor\kur$ is constant;
-it proves the ``only if'' part of the theorem.
+this proves the ``only if'' part of the theorem.
 \end{subthm}
 
 \begin{subthm}{ex:lancret:b} Assume $\tfrac\tor\kur$ is constant, show that the vector $\vec w=\tfrac\tor\kur\cdot \tan+\bi$ is constant.
-Conclude that $\gamma$ has constant slope; it proves the ``if'' part of the theorem.
+Conclude that $\gamma$ has constant slope; this proves the ``if'' part of the theorem.
 \end{subthm}
 
 \end{thm}
