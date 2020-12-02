@@ -542,11 +542,11 @@ then the velocity vectors $\gamma_1'(t_1)$ and $\gamma_2'(t_2)$ are parallel.
 \includegraphics{mppics/pic-85}
 \vskip0mm
 \end{figure}
-If $\gamma_1'(t_1)$ and $\gamma_2'(t_2)$ point in the same direction we say that the curves are \index{cooriented!curves}\emph{cooriented},
-if these directions are opposite, they are called \index{controriented!curves}\emph{controriented}.
+If $\gamma_1'(t_1)$ and $\gamma_2'(t_2)$ have the same direction, we say that the curves are \index{cooriented!curves}\emph{cooriented},
+if their directions are opposite, the curves are called \index{controriented!curves}\emph{counteroriented}.
 
 
-Note that reverting the parametrization of one of the curves, cooriented curves become counteroriented and vice versa; so we can always assume that the curves are cooriented at a given point of tangency.
+Note that reverting the parametrization of one of the curves, cooriented curves become counteroriented and vice versa; so we can always assume the curves are cooriented at any given point of tangency.
 
 \section{Supporting curves}
 
@@ -562,17 +562,17 @@ If both curves are simple, then  without ambiguity we also could say that $\gamm
 \vskip0mm
 \end{wrapfigure}
 
-If the curves on the diagram oriented according the arrows, then $\gamma_1$ supports $\gamma_2$ from the right at $p$ (as well as $\gamma_2$ supports $\gamma_1$ from the left at~$p$).
+If the curves on the diagram are oriented according to the arrows, then $\gamma_1$ supports $\gamma_2$ from the right at $p$ (as well as $\gamma_2$ supports $\gamma_1$ from the left at~$p$).
 
-Suppose $\gamma_1$ is simple proper curve, so it divides the plane into two closed region that lie on left and right from $\gamma_1$. Then we say that $\gamma_1$ \index{global support}\emph{globally supports} $\gamma_2$ at $t_2$ 
+Suppose $\gamma_1$ is simple proper curve, so it divides the plane into two closed regions that lie on left and right from $\gamma_1$. Then we say that $\gamma_1$ \index{global support}\emph{globally supports} $\gamma_2$ at $t_2$ 
 if $\gamma_2$ runs in one of these closed regions and 
 $\gamma_2(t_2)$ lies on $\gamma$.
 
 Further, suppose $\gamma_2$ is \emph{closed} so it divides the plane into two regions.
 We say that a point lies \index{inside}\emph{inside} (respectively, \index{outside}\emph{outside}) of $\gamma_2$ if it lies in the bounded region (respectively, unbounded) region.
-In this case we say if $\gamma_1$ supports $\gamma_2$ \index{support from inside}\emph{from inside} (\index{support from outside}\emph{from outside}) if $\gamma_1$ supports $\gamma_2$ and lies in the region inside it (respectively outside it). 
+In this case we say that $\gamma_1$ supports $\gamma_2$ \index{support from inside}\emph{from inside} (\index{support from outside}\emph{from outside}) if $\gamma_1$ supports $\gamma_2$ and lies in the region inside it (respectively outside it). 
 
-Note that if $\gamma_1$ and $\gamma_2$ share a point $p=\gamma_1(t_1)=\gamma_2(t_2)$ and not tangent at $t_1$ and $t_2$, then at time $t_2$ the curve $\gamma_2$ crosses $\gamma_1$  moving from one of its sides to the other.
+Note that if $\gamma_1$ and $\gamma_2$ share a point $p=\gamma_1(t_1)=\gamma_2(t_2)$ and are not tangent at $t_1$ and $t_2$, then at time $t_2$ the curve $\gamma_2$ crosses $\gamma_1$  moving from one of its sides to the other.
 It follows that $\gamma_1$ cannot locally support $\gamma_2$ at the time parameters $t_1$ and $t_2$.
 Whence we get the following:
 
@@ -581,18 +581,17 @@ Let $\gamma_1$ and $\gamma_2$ be two smooth regular plane curves.
 Suppose $\gamma_1$ locally supports $\gamma_2$ at time parameters $t_1$ and $t_2$.
 Then $\gamma_1$ is tangent to $\gamma_2$ at $t_1$ and $t_2$.
 
-In particular, we could say if $\gamma_1$ and $\gamma_2$ are coorineted or controriented at the time parameters $t_1$ and $t_2$.
-If the curves are coorienated and the region $R$ in the definition of supporting curves lie on the right (left) from the arc of $\gamma_1$, then we say that 
+In such a case, if the curves are cooriented and the region $R$ in the definition of supporting curves lies on the right (left) from the arc of $\gamma_1$, then we say that 
 $\gamma_1$ supports $\gamma_2$ from the left (respectively right).
 \end{thm}
 
 We say that a smooth regular plane curve $\gamma$ has a \index{vertex of  curve}\emph{vertex} at $s$
 if the signed curvature function is critical at $s$;
 that is, if $\skur'(s)_\gamma=0$.
-If $\gamma$ is simple we could say that the point $p=\gamma(s)$ is a vertex of $\gamma$.
+If in addition to that, $\gamma$ is simple, we could say that the point $p=\gamma(s)$ is a vertex of $\gamma$.
 
 \begin{thm}{Exercise}\label{ex:vertex-support}
-Assume that osculating circle $\sigma_s$ of a smooth regular simple plane curve $\gamma$ locally supports $\gamma$ at $p=\gamma(s)$.
+Assume that the osculating circle $\sigma_s$ of a smooth regular simple plane curve $\gamma$ locally supports $\gamma$ at $p=\gamma(s)$.
 Show that $p$ is a vertex of $\gamma$.
 \end{thm}
 
@@ -624,7 +623,7 @@ Note that $f_1''(0)=\skur_1(0)$ and $f_2''(0)=\skur_2(0)$ (see \ref{ex:curvature
 
 Clearly, $\gamma_1$ supports $\gamma_2$ from the left (right) if 
 \[f_1(x)\le f_2(x)\quad(\text{respectively}\quad f_1(x)\ge f_2(x))\]
-for all sufficiently small values $x$.
+for all sufficiently small values of $x$.
 Applying the second derivative test, we get the result.
 \qeds
 
@@ -637,8 +636,8 @@ Show that $\gamma_0$ locally supports $\gamma_1$ from the right at $p$.
 Give an example of two proper curves $\gamma_0$ and $\gamma_1$ satisfying the above condition such that $\gamma_0$ does not support $\gamma_1$ at $p$ globally.
 \end{thm}
 
-Note that according to \ref{thm:DNA} for any closed smooth regular curve that runs in a unit disc, the average of its absolute curvature at least 1; in particular it has a point with absolute curvature is at lest 1.
-The following exercise says that the last statement holds for loops.
+Note that according to \ref{thm:DNA} for any closed smooth regular curve that runs in a unit disc, the average of its absolute curvature is at least 1; in particular, there is has a point where the absolute curvature is at lest 1.
+The following exercise says that such  statement also holds for loops.
 
 \begin{thm}{Exercise}\label{ex:in-circle}
 Assume a closed smooth regular plane loop $\gamma$ runs in a unit disc.
@@ -647,18 +646,18 @@ Show that there is a point on $\gamma$ with absolute curvature at least~1.
 
 
 \begin{thm}{Exercise}\label{ex:between-parallels-1}
-Assume a closed smooth regular plane curve $\gamma$ runs between parallel lines on distance 2 from each other.
+Assume a closed smooth regular plane curve $\gamma$ runs between two parallel lines at distance 2 from each other.
 Show that there is a point on $\gamma$ with absolute curvature at least 1.
 
 Try to prove the same for a smooth regular plane loop.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:in-triangle}
-Assume a closed smooth regular plane curve $\gamma$ runs inside of a triangle $\triangle$ with inradius 1; that is, the inscribed circle of $\triangle$ has radius 1.
+Assume a closed smooth regular plane curve $\gamma$ runs inside of a triangle $\triangle$ with inradius 1; that is, the circle tangent to all three sides of $\triangle$ has radius 1. 
 Show that there is a point on $\gamma$ with absolute curvature at least~$1$.
 \end{thm}
 
-The three exercises above are a baby cases of a \ref{ex:moon-rad}; try to find a direct solution, without using \ref{thm:moon}.
+The three exercises above are baby cases of \ref{ex:moon-rad}; try to find a direct solution, without using \ref{thm:moon}.
 
 {
 
@@ -671,8 +670,8 @@ The three exercises above are a baby cases of a \ref{ex:moon-rad}; try to find a
 
 \begin{thm}{Exercise}\label{ex:lens}
 Let $F$ be a plane figure bounded by two circle arcs $\sigma_1$ and $\sigma_2$ of signed curvature 1 that run from $x$ to $y$.
-Suppose $\sigma_1$ is a shorter than $\sigma_2$.
-Assume a simple arc $\gamma$ runs in $F$ and has the end points on $\sigma_1$.
+Suppose $\sigma_1$ is  shorter than $\sigma_2$.
+Assume a simple arc $\gamma$ runs in $F$ and has both end points on $\sigma_1$.
 Show that the absolute curvature of $\gamma$ is at least 1 at some parameter value.
 
 \end{thm}
@@ -724,7 +723,7 @@ We can assume that $p$ and $q$ lie sufficiently far from $x$ and $y$, so that th
 Consider the smallest disc segment with chord $[pq]$ that contains $\gamma$.
 Note that its arc $\sigma$ supports $\gamma$ at some point $w=\gamma(t_0)$.
 
-Let us parameterise $\sigma$ from $p$ to $q$.
+Let us parameterize $\sigma$ from $p$ to $q$.
 Note that the $\gamma$ and $\sigma$ are tangent and cooriented at $w$.
 If not, then the arc of $\gamma$ from $w$ to $y$ would be trapped in the curvelinear triangle $xwp$ bounded by the line segment $[px]$ and the arcs of $\sigma$, $\gamma$.
 But this is impossible since $y$ does not belong to this triangle.
@@ -746,7 +745,7 @@ By \ref{prop:supporting-circline},
 
 \parit{Remark.}
 Instead of taking the minimal disc segment, one can take a point $w$ on $\gamma$ that maximizes the distance to the line $xy$.
-The same argument shows that the curvature at $w$ is nonnegative, which is weaker than the required positive curvature.
+The same argument shows that the curvature at $w$ is nonnegative, which is slightly weaker than the required positive curvature.
 
 }
 
@@ -754,7 +753,7 @@ The same argument shows that the curvature at $w$ is nonnegative, which is weake
 If $F$ is convex, then every tangent line of $\gamma$ supports $\gamma$.
 If a point moves along $\gamma$, the figure $F$ has to stay on one side from its tangent line;
 that is, we can assume that each tangent line supports $\gamma$ on one side, say on the right.
-Since line has vanishing curvature, the supporting test (\ref{prop:supporting-circline}) implies that $\skur\ge 0$ at each point.
+Since a line has vanishing curvature, the supporting test (\ref{prop:supporting-circline}) implies that $\skur\ge 0$ at each point.
 
 \begin{wrapfigure}{r}{35 mm}
 \vskip-3mm
@@ -792,7 +791,7 @@ Assume $\gamma$ crosses a line $\ell$ at the points $p_1,p_2,\dots p_n$ and thes
 \end{subthm}
 
 \begin{subthm}{ex:line-curve-intersections:c}
-Describe all possible orders of $p_i$ on $\ell$.
+Describe all possible orders of the points $p_i$ on $\ell$.
 
 \end{subthm}
 
@@ -866,7 +865,7 @@ Indeed, since $\sigma$ supports $\gamma$ from the left, by \ref{prop:supporting-
 The latter is impossible by our assumption.
 
 It follows that $\sigma$ has to touch $\gamma$ at another point.
-Otherwise we can increase $\sigma$ slightly keeping it inside $F$.
+Otherwise we can increase $\sigma$ slightly while keeping it inside $F$.
 
 Indeed, since $\skur_\sigma> \skur(p)_\gamma$, 
 by \ref{prop:supporting-circline} we can choose a neighborhood $U$ of $p$ such that after a slight increase of $\sigma$, the intersection $U\cap \sigma$ is still in $F$.
@@ -917,7 +916,7 @@ It follows that $q_\infty =p_\infty$ --- a contradiction.
 
 \begin{thm}{Exercise}\label{ex:moon-rad}
 Assume that a closed smooth regular curve $\gamma$ lies in a figure $F$ bounded by a closed simple plane curve.
-Suppose that $R$ is the maximal radius of discs that lies in $F$.
+Suppose that $R$ is the maximal radius of discs that lie in $F$.
 Show that absolute curvature of $\gamma$ is at least $\tfrac1R$ at some parameter value.
 \end{thm}
 
@@ -935,7 +934,7 @@ Show that absolute curvature of $\gamma$ is at least $\tfrac1R$ at some paramete
 
 Recall that a vertex of a smooth regular curve is defined as a critical point of its signed curvature;
 in particular, any local minimum (or maximum) of the signed curvature is a vertex.
-For example, every point of a circle is its vertex.
+For example, every point of a circle is a vertex.
 
 \begin{thm}{Four-vertex theorem}\label{thm:4-vert}
 Any smooth regular simple plane curve has at least four
@@ -950,13 +949,13 @@ the first curve has one self-intersection and exactly two vertexes;
 the second curve has exactly four vertexes and no self-intersections.
 
 The four-vertex theorem was first proved by Syamadas Mukhopadhyaya \cite{mukhopadhyaya} for convex curves.
-It known for many different proofs and generalizations.
+Many different proofs and generalizations are known.
 One of our favorite proofs was given by Robert Osserman \cite{osserman}.
-We give another proof based on the key lemma in the previous section.
-It proves the following stronger statement.
+We give a proof  of the following stronger statement  based on the key lemma in the previous section.
+
 
 \begin{thm}{Theorem}\label{thm:4-vert-supporting}
-Any smooth regular simple plane curve has is globally supported by its osculating circle at least at 4 distinct points; two from inside and two from outside.
+Any smooth regular simple plane curve is globally supported by its osculating circle at least at 4 distinct points; two from inside and two from outside.
 \end{thm}
 
 {
@@ -979,7 +978,7 @@ In particular the curve $\gamma$ crosses $\sigma$ at $p$ and therefore $\sigma$ 
 }
 
 \parit{Proof of \ref{thm:4-vert-supporting}.}
-According to key lemma (\ref{thm:moon}), there is a point $p\in\gamma$ such that its osculating circle supports $\gamma$ from inside.
+According to the key lemma (\ref{thm:moon}), there is a point $p\in\gamma$ such that its osculating circle supports $\gamma$ from inside.
 The curve $\gamma$ can be considered as a loop with the base at $p$.
 Therefore the key lemma implies existence of another point $q\in\gamma$ with the same property.
 
@@ -988,9 +987,9 @@ it remains to show existence of two osculating circles that support $\gamma$ fro
 
 In order to get the osculating circles supporting $\gamma$ from outside, one can repeat the proof of key lemma taking instead of incircle the circline of maximal signed curvature that supports the curve from outside, assuming that $\gamma$ is oriented so that the region on the left from it is bounded.%
 
-(Alternatively, if one applies to $\gamma$ an inverse with the center inside~$\gamma$, then the obtained curve $\gamma_1$ also has  two osculating circles that support $\gamma_1$ from inside.
+(Alternatively, if one applies to $\gamma$ an inversion with respect to a circle whose center lies inside~$\gamma$, then the obtained curve $\gamma_1$ also has  two osculating circles that support $\gamma_1$ from inside.
 According to \ref{ex:inverse}, these osculating circlines are inverses of the osculating circlines of $\gamma$.
-Note that the rigion lying inside of $\gamma$ is mapped to the region outside of $\gamma_1$ and the other way around.
+Note that the region lying inside of $\gamma$ is mapped to the region outside of $\gamma_1$ and the other way around.
 Therefore these two circlines correspond to the osculating circlines supporting $\gamma$ from outside.)
 \qeds
 
