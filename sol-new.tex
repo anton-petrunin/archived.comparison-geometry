@@ -543,9 +543,9 @@ It remains to integrate this inequality and apply
 
 \parbf{\ref{ex:trochoids}.}
 Observe that $\gamma'_a(t)=(1+a\cdot \cos t, -a\cdot \sin t)$;
-that is, $\gamma'_a$ runs clockwise along a circle with center at $(1,0)$ and radius $1$.
+that is, $\gamma'_a$ runs clockwise along a circle with center at $(1,0)$ and radius $\vert a \vert$.
 
-\parit{Case $|a|>1$,} Note that $\tan_a(t)=\gamma'_a/|\gamma'_a|$ runs clockwise and makes full turn in time $2\cdot\pi$.
+\parit{Case $|a|>1$,} Note that $\tan_a(t)=\gamma'_a/|\gamma'_a|$ runs clockwise and makes a full turn in time $2\cdot\pi$.
 Therefore $\Psi(\gamma_a)=-2\cdot\pi$ and $\tc\gamma_a=|\Psi(\gamma_a)|=2\cdot\pi$.
 
 \parit{Case $|a|<1$.}
@@ -555,22 +555,22 @@ It follows that if $|a|>1$, then
 $\Psi(\gamma_a)=0$ and $\tc{\gamma_a}=4\cdot\theta_a$.
 
 \parit{Case $a=-1$.}
-The velocity $\gamma'_{-1}(t)$ vanish at $t=0$ and $2\cdot\pi$.
-Nevertheless, the curve admits a smooth regular parametrization --- show it.
+The velocity $\gamma'_{-1}(t)$ vanishes at $t=0$ and $2\cdot\pi$.
+Nevertheless, the curve admits a smooth regular parametrization --- find it.
 In this case $\Psi(\gamma_{-1})=-\pi$ and $\tc{\gamma_{-1}}=\pi$.
 
 \parit{Case $a=1$.}
-The velocity $\gamma'_1(t)$ vanish at $t=\pi$.
+The velocity $\gamma'_1(t)$ vanishes at $t=\pi$.
 At $t=\pi$ the curve has a cusp;
 that is, $\gamma_1$ turns exactly back at the time $\pi$.
 So $\gamma_1(t)$ has undefined total signed curvature.
-The curve is a joint of two smooth arcs with external angle $\pi$,
+The curve is a joint of two smooth arcs with external angle $\pi$, and
 the total curvature of each arc is $\tfrac\pi2$, so 
 $\tc{\gamma_{1}}=\tfrac\pi2+\pi+\tfrac\pi2=2\cdot\pi$.
 
 
 \parbf{\ref{ex:zero-tsc}.}
-See the drawings; we assume that the two marked points in the last example have parallel tangent lines.
+Look at the drawings; we assume that the two marked points in the last example have parallel tangent lines.
 
 \begin{figure}[h!]
 \begin{minipage}{.32\textwidth}
@@ -593,8 +593,8 @@ Show that
 \[
 \gamma_\ell'(t)=(1-\ell\cdot\skur(t))\cdot \gamma'(t).
 \]
-Since $\gamma$ is regular, $\gamma'\ne0$.
-Therefore if $\gamma_\ell'(t)=0$, then $\ell\cdot \skur(t)= 1$.
+By regularity of $\gamma$, $\gamma'\ne0$.
+So if $\gamma_\ell'(t)=0$, then $\ell\cdot \skur(t)= 1$.
 
 \parit{\ref{SHORT.ex:length':formula}.} Observe that we can assume that $\gamma$ is parametrized by its arc-length, so $\gamma'(t)=\tan(t)$.
 Suppose $|\ell|<\frac{1}{\kur(t)}$ for any $t$.
@@ -607,7 +607,7 @@ Therefore
 L(\ell)
 &=
 \int_a^b(1-\ell\cdot\skur(t))\cdot dt=
-\int_a^b 1\cdot dt-\ell\cdot \int_a^b\skur(t))\cdot dt=
+\int_a^b 1\cdot dt-\ell\cdot \int_a^b\skur(t)\cdot dt=
 L(0)+\ell\cdot\Psi(\gamma).
 \end{align*}
 
@@ -617,7 +617,7 @@ L(0)+\ell\cdot\Psi(\gamma).
 Consider the unit circle $\gamma(t)=(\cos t,\sin t)$ for $t\in[0,2\cdot\pi]$ and $\gamma_\ell$ for $\ell=2$.
 
 \parbf{\ref{ex:inverse}.}
-Use the definition of osculating circle via order of contact and that inversion maps circles to circlines. 
+Use the definition of osculating circle via order of contact and use the fact that inversions send circles to circlines. 
 
 \parbf{\ref{ex:evolute-of-ellipse}.}
 Find $\tan(t)$ and $\norm(t)$.
@@ -632,12 +632,12 @@ Apply the formula given right before the exercise.
 \end{wrapfigure}
 
 \parbf{\ref{ex:3D-spiral}.} Start with a plane spiral curve as shown on the diagram.
-Increase the torsion of the dashed arc without changing curvature until it a self-intersection appears.
+Increase the torsion of the dashed arc without changing the curvature until a self-intersection appears.
 
 \parbf{\ref{ex:double-tangent}.} 
 Observe that if a line or circle is tangent to $\gamma$,
-then it is tangent to osculating circle at the same point
-and apply the spiral lemma (\ref{lem:spiral}).
+then it is tangent to the osculating circle at the same point.
+Then apply the spiral lemma (\ref{lem:spiral}).
 
 \setcounter{eqtn}{0}
 
