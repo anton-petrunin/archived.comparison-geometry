@@ -3,7 +3,18 @@
 \parbf{\ref{ex:helix-torsion}.} 
 The arc-length parameter $s$ is already found in   \ref{ex:arc-length-helix}.
 It remains to find the Frenet frame and calculate curvature and torsion.
-The latter can be done by straightforward calculations.
+The latter can be done by straightforward calculations;
+the answers are 
+\begin{align*}
+\tan(t)&=\tfrac{1}{\sqrt{a^2+b^2}}\cdot(-a\cdot\sin t, a\cdot\cos t,b),
+&
+\norm(t)&=(-\cos t,-\sin t,0),
+\\
+\bi(t)&=\tfrac{1}{\sqrt{a^2+b^2}}\cdot(b\cdot \sin t,-b\cdot \cos t, a),
+&
+\kur &\equiv \tfrac{a}{a^2+b^2},\qquad
+\tor \equiv \tfrac{b}{a^2+b^2}.
+\end{align*}
 
 \begin{wrapfigure}{r}{20 mm}
 \vskip0mm
@@ -15,29 +26,7 @@ The latter can be done by straightforward calculations.
 \end{lpic}
 \end{wrapfigure}
 
-
-\[  \kur \equiv \frac{a}{a^2+b^2} \text{ and }  \tau \equiv \frac{b}{a^2+b^2} .   \]
-
-The map $(a,b) \to (a/(a^2+b^2), b/(a^2+b^2))$ is the reflection with respect to the unit circle, which sends bijectively the half plane $a>0$ onto itself. 
-
-
-%I do not understand how this geometric observation solves the problem. I don't think the reader will.
-
-
-%If the calculations done right, then you should see that curvature $\kur$ and torsion $\tau$ do not depend on time.
-%Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix $\gamma_{a,b}$ has curvature $\kur$ and torsion~$\tor$.
-
-%One may also see it geometrically using that the helix is maped to itself by one-parameter family of glide rotations around $z$-axis.
-%Therefore, for the $t$-parametrization, Frenet frame rotates around $z$-axis with the angular velocity~$1$.
-%It remains rewrite it for the arc-length parametrization and note that 
-%\begin{align*}
-%\tan(0)&=(0,\cos\theta, \sin\theta),
-%&
-%\norm(0)&=(-1,0,0),
-%&
-%\bi(0)&=(0,\sin\theta, -\cos\theta),
-%\end{align*}
-%where $\tg\theta\z=b/a$ if $a>0$. 
+It remains to show that the map $(a,b) \mapsto (\frac{a}{a^2+b^2}, \frac{b}{a^2+b^2})$ sends bijectively the half plane $a>0$ onto itself.
 
 \parbf{\ref{ex:beta-from-tau+nu}.} By the product rule, we get
 \begin{align*}
