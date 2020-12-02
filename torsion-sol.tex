@@ -15,22 +15,31 @@ The latter can be done by straightforward calculations.
 \end{lpic}
 \end{wrapfigure}
 
-If the calculations done right, then you should see that curvature $\kur$ and torsion $\tau$ do not depend on time.
-Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix $\gamma_{a,b}$ has curvature $\kur$ and torsion~$\tor$.
 
-One may also see it geometrically using that the helix is maped to itself by one-parameter family of glide rotations around $z$-axis.
-Therefore, for the $t$-parametrization, Frenet frame rotates around $z$-axis with the angular velocity~$1$.
-It remains rewrite it for the arc-length parametrization and note that 
-\begin{align*}
-\tan(0)&=(0,\cos\theta, \sin\theta),
-&
-\norm(0)&=(-1,0,0),
-&
-\bi(0)&=(0,\sin\theta, -\cos\theta),
-\end{align*}
-where $\tg\theta\z=b/a$ if $a>0$. 
+\[  \kur \equiv \frac{a}{a^2+b^2} \text{ and }  \tau \equiv \frac{b}{a^2+b^2} .   \]
 
-\parbf{\ref{ex:beta-from-tau+nu}.} By product rule, we get
+The map $(a,b) \to (a/(a^2+b^2), b/(a^2+b^2))$ is the reflection with respect to the unit circle, which sends bijectively the half plane $a>0$ onto itself. 
+
+
+%I do not understand how this geometric observation solves the problem. I don't think the reader will.
+
+
+%If the calculations done right, then you should see that curvature $\kur$ and torsion $\tau$ do not depend on time.
+%Moreover for any $\kur>0$ and $\tor$ one can find $a$ and $b$ so that the helix $\gamma_{a,b}$ has curvature $\kur$ and torsion~$\tor$.
+
+%One may also see it geometrically using that the helix is maped to itself by one-parameter family of glide rotations around $z$-axis.
+%Therefore, for the $t$-parametrization, Frenet frame rotates around $z$-axis with the angular velocity~$1$.
+%It remains rewrite it for the arc-length parametrization and note that 
+%\begin{align*}
+%\tan(0)&=(0,\cos\theta, \sin\theta),
+%&
+%\norm(0)&=(-1,0,0),
+%&
+%\bi(0)&=(0,\sin\theta, -\cos\theta),
+%\end{align*}
+%where $\tg\theta\z=b/a$ if $a>0$. 
+
+\parbf{\ref{ex:beta-from-tau+nu}.} By the product rule, we get
 \begin{align*}
 \bi'&=(\tan\times \norm)'=
 \tan'\times \norm+\tan\times\norm'.
@@ -40,7 +49,7 @@ It remains to substitute the values from \ref{eq:frenet-tau} and \ref{eq:frenet-
 
 
 \parbf{\ref{ex:torsion=0}.}
-Show and use that the binormal vector is constant.
+This is a consequence of the equation $ \bi ^{\prime} = - \tau \norm $.
 
 \parbf{\ref{ex:frenet}.} Observe that $\tfrac{\gamma'\times\gamma''}{|\gamma'\times\gamma''|}$ is a unit vector perpendicular to the plane spanned by $\gamma'$ and $\gamma''$, so, up to sign, it has to be equal to $\bi$.
 It remains to check that the sign is right.
@@ -50,9 +59,9 @@ Observe that
 $\langle \vec w,\tan\rangle'=0$.
 Show that it implies that $\langle \vec w, \norm\rangle =0$.
 
-Further observe that 
-$\langle \vec w,\norm\rangle'=0$.
-Show that it implies that 
+Using the Frenet formulas,  
+$\langle \vec w,\norm\rangle'=0$
+ implies that 
 $\langle \vec w, -\kur\cdot\tan+\tor\cdot \bi\rangle =0$.
 
 \parit{\ref{SHORT.ex:lancret:b}.}
@@ -65,10 +74,10 @@ Suppose $\alpha$ is an evolvent of $\gamma$ and $\vec w$ is a fixed vector.
 Show that $\langle \vec w,\alpha\rangle$ is constant if $\gamma$ makes constant angle with $\vec w$.
 
 \parbf{\ref{ex:spherical-frenet}}.
-For \ref{SHORT.ex:spherical-frenet:tau} and \ref{SHORT.ex:spherical-frenet:nu} take the first and second derivatives of the identity $\langle\gamma,\gamma\rangle=1$ and simplify using the Frenet formulas.
-Part \ref{SHORT.ex:spherical-frenet:beta} follows \ref{SHORT.ex:spherical-frenet:nu} and the Frenet formulas.
-By \ref{SHORT.ex:spherical-frenet:beta}, $\int\tfrac\tor\kur=0$, whence \ref{SHORT.ex:spherical-frenet:beta+} follows.
-Part \ref{SHORT.ex:spherical-frenet:tau} is proved by algebraic manipulations.
+Part \ref{SHORT.ex:spherical-frenet:tau} follows from the fact that $(  \tan , \norm, \bi  )$ is an orthonormal basis. For \ref{SHORT.ex:spherical-frenet:nu} take the first and second derivatives of the identity $\langle\gamma,\gamma\rangle=1$ and simplify using the Frenet formulas.
+Part \ref{SHORT.ex:spherical-frenet:beta} follows from \ref{SHORT.ex:spherical-frenet:nu} and the Frenet formulas.
+By \ref{SHORT.ex:spherical-frenet:beta}, $\int\tfrac\tor\kur=0$, hence \ref{SHORT.ex:spherical-frenet:beta+} follows.
+Part \ref{SHORT.ex:spherical-frenet:kur-tor} is proved by algebraic manipulations.
 
 \parit{\ref{SHORT.ex:spherical-frenet:f}.}
 Use the Frenet formulas to show that $(\gamma+\tfrac1\kur\cdot \norm+\tfrac{\kur'}{\kur^2\cdot\tor}\cdot\bi)'=0$.
@@ -80,7 +89,7 @@ Use the Frenet formulas to show that $(\gamma+\tfrac1\kur\cdot \norm+\tfrac{\kur
 \parbf{\ref{ex:const-dist}.} Note that the function
 \[\rho(\ell)=|\gamma(t+\ell)-\gamma(t)|^2=\langle \gamma(t+\ell)-\gamma(t),\gamma(t+\ell)-\gamma(t)\rangle\] 
 is smooth and does not depend on $t$.
-Express speed, curvature and torsion of $\gamma$ in terms of derivatives $\rho^{(n)}(0)$.
-Be patient, you need two derivatives for the speed,
+Express speed, curvature and torsion of $\gamma$ in terms of the derivatives $\rho^{(n)}(0)$.
+Be patient, you will need two derivatives for the speed,
 four for the curvature and six for the torsion.
 Once it is done, apply \ref{ex:cur+tor=helix}.
