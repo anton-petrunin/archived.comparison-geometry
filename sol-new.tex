@@ -334,10 +334,13 @@ Observe that $\gamma_{\vec u}$ runs in a semicircle $h$ and therefore $\gamma$ l
 
 
 \parbf{\ref{ex:zero-curvature-curve}.}
-For a unit-speed parameterization $\gamma$, the velocity $\gamma^{\prime}$ has to be constant, hence $\gamma $ is an affine function $\gamma(t) = p+tq$ for some $p,q \in \mathbb{R}^3$.
+For a unit-speed parameterization $\gamma$, we have $\gamma''\equiv 0$.
+Therefore the velocity $\vec v=\gamma'$ is constant.
+Hence $\gamma(t)=p+(t-t_0)\cdot \vec v$, where $p=\gamma(t_0)$.
 
 
-\parbf{\ref{ex:scaled-curvature}.} Observe that $\alpha (t) :=  \gamma_{\lambda} (t/\lambda )$ is a unit-speed parameterization of the curve $ \gamma_{\lambda}$. Apply the chain rule twice.
+\parbf{\ref{ex:scaled-curvature}.}
+Observe that $\alpha (t) \df  \gamma_{\lambda} (t/\lambda )$ is a unit-speed parameterization of the curve $ \gamma_{\lambda}$. Apply the chain rule twice.
 
 
 
@@ -712,7 +715,7 @@ To do the second part in \ref{ex:between-parallels-1}, use shown family and anot
 (Compare to \ref{ex:moon-rad}.) 
 
 \begin{wrapfigure}[4]{r}{34 mm}
-\vskip-3mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-268}
 \vskip0mm
@@ -720,8 +723,9 @@ To do the second part in \ref{ex:between-parallels-1}, use shown family and anot
 
 \parbf{\ref{ex:convex small}.}
 Note that we can assume that $\gamma$ bounds a convex figure $F$, otherwise by \ref{prop:convex} its curvature changes the sign and therefore it has zero curvature at some point.
-Choose two points $x$ and $y$ surrounded by $\gamma$ such that $|x-y|>2$,
-look at the maximal lens bounded by two arcs with common chord $xy$ that lies in $F$ and apply supporting test (\ref{prop:supporting-circline}).
+Choose two points $x$ and $y$ surrounded by $\gamma$ such that $|x-y|>2$.
+Look at the maximal lens bounded by two arcs with common chord $xy$ that lies in $F$.
+Apply the supporting test (\ref{prop:supporting-circline}).
 
 \parbf{\ref{ex:line-curve-intersections}}; \ref{SHORT.ex:line-curve-intersections:a}.
 Apply the lens lemma to show that if $p_2$ lies between $p_1$ and $p_3$, then the curvature of $\gamma$ switches its sign.
@@ -885,7 +889,7 @@ so is the tangent plane $\T_p$.
 
 Choose $(x,y)$-coordinates on $\T_p$ so that the $x$-axis is the intersection $\Pi\cap  \T_p$.
 Suppose that the osculating paraboloid is described by the graph 
-\[z=\tfrac12\cdot(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)\]
+$z=\tfrac12\cdot(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)$.
 Since $\Sigma$ is mirror symmetric, so is the paraboloid;
 that is, changing $y$ to $(-y)$ does not change the value 
 $\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2$.
@@ -896,13 +900,15 @@ Therefore we can choose a unit normal $\Norm$ at each point so that both princip
 Show that it defines a field on the surface.
 
 \parbf{\ref{ex:shape-chart}.}
-Apply \ref{prop:S=-D} and together with the following identities:
+Apply \ref{prop:S=-D} together with the following identities:
 $\langle\Norm,s_u\rangle=\langle\Norm,s_v\rangle=0$.
 
 \parbf{\ref{ex:normal-curvature=const}}; \ref{SHORT.ex:normal-curvature=const:a}.
 Observe that $\Sigma$ has unit Hessian matrix at each point and apply the definition of shape operator.
 
-\parit{\ref{SHORT.ex:normal-curvature=const:b}.} Fix a chart $s$ in $\Sigma$ and show that 
+\parit{\ref{SHORT.ex:normal-curvature=const:b}.}
+Choose a chart $s$ in $\Sigma$.
+Show that 
 $\tfrac{\partial }{\partial u}(s+\nu)
 =
 \tfrac{\partial }{\partial v}(s+\nu)
@@ -917,7 +923,7 @@ Since $\gamma$ is a curvature line in $\Sigma_1$, we have
 $\Norm_1'$ is proportional to $\gamma'$;
 in particular $\langle\Norm_1',\Norm_2\rangle=0$.
 
-Note that $\langle \Norm_1(t),\Norm_2(t)\rangle$ is constant.
+By the assumption, $\langle \Norm_1(t),\Norm_2(t)\rangle$ is constant.
 By taking its derivative and applying the above identity show that $\langle\Norm_1,\Norm_2'\rangle=0$.
 Conclude that $\Norm_2'$ is proportional to $\gamma'$
 and therefore $\gamma$ is a curvature line in~$\Sigma_2$.
@@ -936,7 +942,7 @@ Whence $f_t$ is regular for $t\approx 0$.
 Show and use that for fixed $p$, the function $t\mapsto \jac_pf_t$ has derivative $-H(p)$ at zero.
 
 \parbf{\ref{ex:mean-curvature}.}
-Apply \ref{obs:k1-k2} and the definition o mean curvature.
+Apply \ref{obs:k1-k2} and the definition of mean curvature.
 
 \parbf{\ref{ex:meusnier}.} Use Meusnier's theorem (\ref{thm:meusnier}), to find center and radius of curvature of $\gamma$ in terms of normal curvature of $\gamma$ at $p$;
 make a conclusion.
@@ -948,24 +954,21 @@ Use \ref{ex:line-of-curvature} and Meusnier's theorem (\ref{thm:meusnier}).
 
 \parbf{\ref{ex:helicoid-is-minimal}.} Apply Meusnier's theorem (\ref{thm:meusnier}) to show that the coordinate curves $\alpha_v\:u\mapsto s(u,v)$ and $\beta_u\:v\mapsto s(u,v)$ are asymptotic; that is, they have vanishing normal curvature.
 
-{\sloppy
-
 Observe that these two families are orthogonal to each other.
 Therefore the Hessian matrix in the frame $s_u/|s_u|$ and $s_v/|s_v|$ will have zeros on the diagonal.
-Apply that mean curvature is the trace of the Hessian matrix.
-
-}
+Use that mean curvature is the trace of the Hessian matrix.
 
 \parbf{\ref{ex:moon-revolution}.} Use \ref{ex:line-of-curvature} and \ref{thm:moon-orginal}.
 
 \parbf{\ref{ex:lagunov-genus4}.} Drill an extra hole or combine two examples together.
 
 \parbf{\ref{ex:thin}.} 
-Let us define \index{cut locus}\emph{cut locus} of $V$ as a closure of the set of points $x\in V$ such that there are at least two points on $\partial V$ that minimize the distance to $x$.
-Denote by $L$ the cut locus of $V$.
+Denote by $L$ the \index{cut locus}\emph{cut locus} of $V$;
+that is, $L$ is a closure of the set of points $x\in V$ such that there are at least two points on $\partial V$ that minimize the distance to $x$.
+
 
 Choose a connected component $\Sigma$ of the boundary $\partial V$.
-Show that $L$ is a smooth surface and the closest point projection $L\to \Sigma$ is a smooth regular parameterization.
+Show that $L$ is a smooth surface and the closest point projection $L\to \Sigma$ is a smooth regular parameterization of $\Sigma$.
 In particular there is unique point on $\Sigma$ that minimize the distance to a given point $x\in L$.
 It follows that there is another component $\Sigma'$ with the same property.
 
@@ -976,8 +979,8 @@ Read about Bing's two-room house.
 Try to thicken it to construct the needed example.
 
 Assume $V$ does not contain a ball of radius $r_3$.
-Show that its cut locus $L$ is formed by a few smooth surfaces that meets by three at their boundary points.
-Show that $L$ is not simply connected; that is, there is a loop in $L$ that cannot be deformed continuously to a trivial loop.
+Show that its cut locus $L$ is formed by a few smooth surfaces that meets by three along their boundary curves.
+Use this description to show that $L$ is not \index{simply connected space}\emph{simply connected}; that is, there is a loop in $L$ that cannot be deformed continuously to a trivial loop.
 Conclude that $V$ is not simply connected.
 
 Finally, arrive to a contradiction by showing that if $V$ is bounded by a smooth sphere, then $V$ is simply connected. 
@@ -993,9 +996,22 @@ Choose curvatures such that
 
 \parbf{\ref{ex:convex-surf}.} Show and use that any tangent plane $\T_p$ supports $\Sigma$ at $p$.
 
+{
+
+\begin{wrapfigure}{r}{25 mm}
+\vskip-8mm
+\centering
+\includegraphics{mppics/pic-1050}
+\vskip-0mm
+\end{wrapfigure}
+
 \parbf{\ref{ex:convex-lagunov}.}
-Assume a maximal ball in $V$ touches its boundary at the points $p$ and $q$.
-Consider the projection of $V$ to a plane thru $p$, $q$ and the center of the ball. 
+Assume a maximal ball in $V$ has radius $r$ and touches its boundary at the points $p$ and $q$.
+Consider the projection $R$ of $V$ to a plane thru $p$, $q$ and the center of the ball.
+Show that $R$ is bounded by a smooth closed convex curve with curvature at most $1$.
+Use it to show that $r\ge 1$.
+
+}
 
 \parbf{\ref{ex:section-of-convex}.}
 Suppose that a point $p$ lies in the intersection $\Pi\cap\Sigma$.
@@ -1004,19 +1020,20 @@ Show that if the tangent plane $\T_p\Sigma$ is parallel to $\Pi$,
 then $p$ is an isolated point of the intersection $\Pi\cap\Sigma$.
 
 It follows that if $\gamma$ is a connected component of the intersection $\Pi\cap\Sigma$ that is not an isolated point,
-then at each point $p$ on $\gamma$ the tangent plane $\T_p\Sigma$ is transversal to $\Pi$.
+then $\Pi$ \index{transverse intersection}\emph{intersects $\Sigma$ tranversally} along $\gamma$;
+that is, at each point $p$ on $\gamma$ the tangent plane $\T_p\Sigma$ is not parallel to $\Pi$.
 Apply the implicit function theorem to show that $\gamma$ is a smooth regular curve.
 
 Finally, observe that curvature of $\gamma$ cannot be smaller than normal curvature of $\Sigma$ in the same direction.
 Whence $\gamma$ has no points with vanishing curvature.
-Therefore for a right choice of orientation of $\gamma$, we its signed curvature is positive.
+Whence the signed curvature of $\gamma$ has definite sign.
 
 \parbf{\ref{ex:surrounds-disc}.}
 Look for a supporting spherical dome with the unit circle as the boundary.
 
 \parbf{\ref{ex:small-gauss}.}
 Note that we can assume that the surface has positive Gauss curvature, otherwise the statement is evident.
-Therefore the surface bounds a convex region that contains a line segment of length~$\pi$.
+By \ref{thm:convex-embedded}, the surface bounds a convex region that contains a line segment of length~$\pi$.
 
 \begin{figure}[h!]
 \vskip-0mm
@@ -1027,13 +1044,15 @@ Therefore the surface bounds a convex region that contains a line segment of len
 
 Use \ref{ex:curvature-graph} and \ref{thm:meusnier} to show that the Gauss curvature of the surface of revolution of the graph $y=a\cdot \sin x$ for $x\in(0,\pi)$ cannot exceed $1$.
 Try to support the surface $\Sigma$ from inside by a surface of revolution of the described type. 
+(Compare to \ref{ex:convex small}.)
 
 \parit{Remark.}
-The exercise can be reduced to a deeper result of Heinz Hopf and Willi Rinow \cite{hopf-rinow}, stating that \emph{if Gauss curvature of $\Sigma$ is at least $1$,
+The exercise can be reduced to the following deeper result: \emph{if Gauss curvature of $\Sigma$ is at least $1$,
 then
 the intrinsic diameter of $\Sigma$ cannot exceed $\pi$}.
 The latter means that any two points in $\Sigma$ can be connected by a path that lies in $\Sigma$ and has length at most~$\pi$.
-(This result named for Sumner Myers who generalized it latter \cite{myers}.) 
+This theorem was proved Heinz Hopf and Willi Rinow \cite{hopf-rinow} and 
+named after Sumner Myers who generalized it \cite{myers}. 
 
 \parbf{\ref{ex:convex-proper-sphere}.}
 To prove \ref{SHORT.ex:convex-proper-sphere:single} use convexity of $R$.
@@ -1073,9 +1092,10 @@ We can pass to a subsequence such that either $f(x_n,y_n)$ converges to some fin
 In the first case, show that the point $(x_\infty, y_\infty,z_\infty)$ does not lie on $\Sigma$, but it has arbitrary close points on $\Sigma$.
 That is $\Sigma$ is not proper --- a contradiction.
 
-In the remaining case, if $f(x_n,y_n)\to -\infty$, use convexity of $f$ to show that $f(\tfrac{x_n}2 ,\tfrac{y_n}2)\z\to -\infty$.
-Show that $(\tfrac12\cdot x_\infty, \tfrac12\cdot y_\infty)\in\Omega$, and
-arrive to a contradiction.
+If $f(x_n,y_n)\to -\infty$, use convexity of $f$ to show that $f(\tfrac{x_n}2 ,\tfrac{y_n}2)\z\to -\infty$.
+Note that origin belongs to $\Omega$;
+use it to show that $(\tfrac{x_\infty}2, \tfrac{y_\infty}2)\in\Omega$.
+Arrive to a contradiction.
 
 \parbf{\ref{ex:open+convex=plane}.}
 By \ref{ex:convex-proper-plane:d}, $\Sigma$ is parametrized by an open convex plane domain $\Omega$.
@@ -1856,7 +1876,7 @@ f(y)&\le |y-\bar y|_\Sigma
 Observe that this inequality implies convexity of $f$.
 
 \begin{wrapfigure}{r}{27 mm}
-\vskip-4mm
+\vskip0mm
 \centering
 \includegraphics{mppics/pic-1680}
 \vskip0mm

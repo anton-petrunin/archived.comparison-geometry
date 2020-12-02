@@ -4111,6 +4111,31 @@ endfig;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+beginfig(1050)
+save u,p;
+path p[];
+u:=.7cm;
+
+z.o=origin;
+z.r=(1,0)*u;
+p0=circle (z.o,z.r);
+
+z.p=point .5 of p0;
+z.q=point 3.2 of p0;
+
+p1= z.p{z.p zscaled (0,1)}..tension .8..z.q{z.q zscaled (0,1)}..tension .8..cycle;
+draw p0 dashed evenly;
+draw p1;
+
+hatchfill p1  withcolor (87, 1.4mm, -.5bp);
+
+dOt z.o,z.p,z.q;
+
+whitelabel.lft (btex $R$ etex, z.o+(-4,0));
+label.urt (btex $p$ etex, z.p);
+label.lrt (btex $q$ etex, z.q);
+endfig;
+
 beginfig(1181);
 save u;
 u:=1cm;
