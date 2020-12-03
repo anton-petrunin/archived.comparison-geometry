@@ -188,7 +188,16 @@ Note that the equality holds if and only if the signed curvature does not change
 A trochoid is a curve traced out by a point fixed to a wheel as it rolls along a straight line.
 \begin{figure}[h!]
 \centering
-\includegraphics{asy/trochoids}
+\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/trochoids}
+\lbl[l]{4,0;{\footnotesize $-\tfrac32$}}
+\lbl[l]{4,6;{\footnotesize $-1$}}
+\lbl[tl]{10,15;{\footnotesize $-\tfrac12$}}
+\lbl[t]{22,17;{\footnotesize $0$}}
+\lbl[r]{3,23.6;{\footnotesize $\tfrac12$}}
+\lbl[r]{3,29.4;{\footnotesize $1$}}
+\lbl[r]{3,35.2;{\footnotesize $\tfrac32$}}
+
+\end{lpic}
 \end{figure}
 A family of \index{trochoid}\emph{trochoids} $\gamma_a\:[0,2\cdot\pi]\to \RR^2$ (see the picture) can be parametrized as
 \[\gamma_a(t)=(t+a\cdot \sin t, a\cdot \cos t).\]
@@ -661,7 +670,7 @@ The three exercises above are baby cases of \ref{ex:moon-rad}; try to find a dir
 
 {
 
-\begin{wrapfigure}{o}{35 mm}
+\begin{wrapfigure}{o}{32 mm}
 \vskip-4mm
 \centering
 \includegraphics{mppics/pic-70}
@@ -670,8 +679,8 @@ The three exercises above are baby cases of \ref{ex:moon-rad}; try to find a dir
 
 \begin{thm}{Exercise}\label{ex:lens}
 Let $F$ be a plane figure bounded by two circle arcs $\sigma_1$ and $\sigma_2$ of signed curvature 1 that run from $x$ to $y$.
-Suppose $\sigma_1$ is  shorter than $\sigma_2$.
-Assume a simple arc $\gamma$ runs in $F$ and has both end points on $\sigma_1$.
+Suppose $\sigma_1$ is shorter than~$\sigma_2$.
+Assume a smooth regular arc $\gamma$ runs in $F$ and has both end points on $\sigma_1$.
 Show that the absolute curvature of $\gamma$ is at least 1 at some parameter value.
 
 \end{thm}
