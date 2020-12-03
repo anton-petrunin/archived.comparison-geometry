@@ -68,7 +68,7 @@ Find a continuous injective map $\gamma\:(0,1)\to\RR^2$ such that its image is n
 
 \section{Parametrized curves}
 
-A \index{parametrized curve}\emph{parametrized curve} is defined as a continuous map $\gamma$ from a circle or a real interval (open, closed or semi-open) to a metric space. 
+A \index{parametrized curve}\emph{parametrized curve} is defined as a continuous map $\gamma\:\GG\to\spc{X}$ from a circle or a real interval (open, closed or semi-open) $\GG$ to a metric space $\spc{X}$. 
 For a parametrized curve we do not assume that $\gamma$ is injective; in other words a parametrized curve might have \index{self-intersections}\emph{self-intersections}.
 
 \begin{wrapfigure}{o}{17 mm}
@@ -83,6 +83,23 @@ If the domain of a parametrized curve is a closed interval $[a,b]$, then the cur
 Further, if it is the unit interval $[0,1]$, then it is also called a \index{path}\emph{path}.
 If in addition $p=\gamma(0)=\gamma(1)$, then $\gamma$ is called a \index{loop}\emph{loop};
 in this case the point $p$ is called the \index{base of loop}\emph{base} of the loop.
+
+Suppose $\GG_1$ and $\GG_2$ are either real intervals or circles.
+A continuous onto map $\tau\:\GG_1\to\GG_2$ is called \index{monotone map}\emph{monotone} if for any $t\in \GG_2$ the set $\tau^{-1}\{t\}$ is connected.
+Note that if $\GG_1$ and $\GG_2$ are intervals, then, by the intermidiate value theorem, monotone map is either nondecreaing or nonincreasing;
+that is, for the intervals our definition agrees with the standard one.
+
+Suppose that $\gamma_1\:\GG_1\to \spc{X}$ and $\gamma_2\:\GG_2\to \spc{X}$ are two parametrized curves such that 
+$\gamma_1=\gamma_2\circ\tau$ for a monotone map $\tau\:\GG_1\to\GG_2$.
+Then we say that $\gamma_2$ is \index{reparametrization}\emph{reparametrization}%
+\footnote{Note that in general, $\gamma_1$ is {}\emph{not} a reparametrization of $\gamma_2$.
+In other words, according to our definiton, the described relation {}\emph{being a reparametrization} is not symmetric;
+in particular it is not an equivalence relation.
+Usually it is fixed by extending {}\emph{being a reparametrization} to the minimal equivalence relation that includes ours.
+But we will stick to our version.}
+of $\gamma_1$
+ by $\tau$.
+
 
 \begin{thm}{Advanced exercise}\label{aex:simple-curve}
 Let $X$ be a subset of the plane.
@@ -132,17 +149,23 @@ that is, it does admit a smooth parametrization, but doesn't admit a regular smo
 Describe the set of real numbers $\ell$
 such that the plane curve $\gamma_\ell (t)= (t+\ell \cdot \sin t,\ell \cdot \cos t)$, $t\in\RR$ is
 
+\begin{minipage}{.30\textwidth}
 \begin{subthm}{ex:cycloid:smooth}
-smooth; % This is trivial, but I think it's better to make sure they understand the basics. They just read the definition!
+smooth; 
 \end{subthm}
-
+\end{minipage}
+\hfill
+\begin{minipage}{.30\textwidth}
 \begin{subthm}{ex:cycloid:regular}
 regular;
 \end{subthm}
-
+\end{minipage}
+\hfill
+\begin{minipage}{.30\textwidth}
 \begin{subthm}{ex:cycloid:simple}
 simple.
 \end{subthm}
+\end{minipage}
 
 \end{thm}
 
@@ -154,7 +177,7 @@ For example, the unit circle in the plane can be described by the $2{\cdot}\pi$-
 {
 
 \begin{wrapfigure}{o}{17 mm}
-\vskip-0mm
+\vskip-2mm
 \centering
 \includegraphics{mppics/pic-51}
 \end{wrapfigure}

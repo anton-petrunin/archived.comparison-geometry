@@ -47,7 +47,7 @@ Therefore we can find a maximal suitable set $\hat \Omega$.
 Define $\beta(t)=\alpha(a)$ for any $t$ in a connected component $(a,b)\subset\hat \Omega$, and $\beta (t) = \alpha (t) $ for $t$ not in $\hat{\Omega}$.
 Note that for any $x\in [0,1]$ the set $\beta^{-1}\{\beta(x)\}$ is connected.
 
-It remains to re-parametrize $\beta$ to make it injective.
+It remains to reparametrize $\beta$ to make it injective.
 In order to do that, we need to construct a non-decreasing surjective function $\tau\:[0,1]\z\to[0,1]$ such that 
 $\tau(t_1)=\tau(t_2)$ if and only if there is a connected component $(a,b)\subset\hat \Omega$ such that $t_1,t_2\z\in [a,b]$.
 
@@ -160,8 +160,11 @@ Apply Jordan's theorem for the obtained curve and use the inversion again.
 Show that the least upper bound in \ref{def:length} can be taken for all sequences
 $a=t_0\le t_1\le\z\dots\le t_k=b$.
 
-Observe that $a=t_0\le t_1\le\z\dots\le t_k=b$
-if there is a sequence $c=\tau_0\le \dots\le\tau_k=d$ such that $t_i=\phi(\tau_i)$.
+Suppose that $\gamma_2$ is reparametrization of $\gamma_1$ by $\tau\:[a_1,b_1]\to [a_2,b_2]$;
+without loss of generality we may assume that $\tau$ is nondecreasing.
+Set $\theta_i=\tau(t_i)$.
+Observe that $a_2=\theta_0\le\theta_1\le \z\dots\le\theta_k=b_2$ if and only if 
+$a_1=t_0\le t_1\le\z\dots\le t_k=b_1$.
 Make a conclusion.
 
 \parbf{\ref{ex:length-image}.}
