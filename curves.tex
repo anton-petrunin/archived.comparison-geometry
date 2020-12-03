@@ -10,7 +10,7 @@
 \centering
 \includegraphics{mppics/pic-115}
 \end{minipage}
-\bigskip
+\medskip
 \begin{minipage}{.48\textwidth}
 \centering
 \includegraphics{mppics/pic-120}
@@ -26,7 +26,7 @@
 In the following definition we use the notion of {}\emph{metric space} which is discussed in Section~\ref{sec:metric-spcaes}.
 The Euclidean plane and space are the main examples of metric spaces that one should keep in mind.
 
-Recall that a \index{real interval}\emph{real interval} is defined as a connected subset of the real numbers.
+Recall that a \index{real interval}\emph{real interval} is a connected subset of the real numbers.
 
 Recall that a bijective continuous map $f\:X\to Y$ between subsets of some metric spaces is called a {}\emph{homeomorphism} if its inverse $f^{-1}\:Y\z\to X$ is continuous.  
 
@@ -39,7 +39,7 @@ That is, there is a homeomorphism $\GG\to\gamma$
 where $\GG$ is a real interval (open, closed or semi-open) or the circle
 \[\mathbb{S}^1=\set{(x,y)\in\RR^2}{x^2+y^2=1}.\] 
 A complete proof of the latter statement is given by David Gale \cite{gale}.
-The proof is not hard, but we do not present it here since it would take us away from the main subject.
+The proof is not hard, but it would take us away from the main subject.
 A finickity reader may add this property in the definition of curve.
 
 If $\GG$ is an open interval or a circle, we say that $\gamma$ is a \index{endpoints}\emph{curve without endpoints}, otherwise it is 
@@ -48,7 +48,7 @@ In the case when $\GG$ is a circle we say that the curve is \index{closed curve}
 When $\GG$ is a closed interval, $\gamma$ is called a \index{simple arc}\emph{simple arc}.
 
 
-A parametrization describes a curve completely.
+A parametrization $\GG\to\gamma$ describes a curve completely.
 We will denote a curve and its parametrization by the same letter;
 for example, we may say a plane curve $\gamma$ is given with a parametrization $\gamma\:(a,b)\z\to \RR^2$.
 Note, however, that any simple curve admits many different parametrizations. 
@@ -56,7 +56,7 @@ Note, however, that any simple curve admits many different parametrizations.
 \begin{thm}{Exercise}\label{ex:9}
 
 \begin{subthm}{ex:9:compact}
-Show that for any continuous injective map $\gamma : [0,1]\to \mathbb{R}^2$, its image is a simple arc.
+Show that the image of any continuous injective map $\gamma\:[0,1]\to\mathbb{R}^2$ is a simple arc.
 \end{subthm}
 
 \begin{subthm}{ex:9:9}
@@ -71,7 +71,7 @@ Find a continuous injective map $\gamma\:(0,1)\to\RR^2$ such that its image is n
 A \index{parametrized curve}\emph{parametrized curve} is defined as a continuous map $\gamma\:\GG\to\spc{X}$ from a circle or a real interval (open, closed or semi-open) $\GG$ to a metric space $\spc{X}$. 
 For a parametrized curve we do not assume that $\gamma$ is injective; in other words a parametrized curve might have \index{self-intersections}\emph{self-intersections}.
 
-\begin{wrapfigure}{o}{17 mm}
+\begin{wrapfigure}{o}{15 mm}
 \vskip-3mm
 \centering
 \includegraphics{mppics/pic-130}
@@ -95,7 +95,7 @@ Then we say that $\gamma_2$ is \index{reparametrization}\emph{reparametrization}
 \footnote{Note that in general, $\gamma_1$ is {}\emph{not} a reparametrization of $\gamma_2$.
 In other words, according to our definiton, the described relation {}\emph{being a reparametrization} is not symmetric;
 in particular it is not an equivalence relation.
-Usually it is fixed by extending {}\emph{being a reparametrization} to the minimal equivalence relation that includes ours.
+Usually it is fixed by extending it to the minimal equivalence relation that includes ours \cite[2.5.1]{burago-burago-ivanov}.
 But we will stick to our version.}
 of $\gamma_1$
  by $\tau$.
@@ -127,7 +127,7 @@ Regular smooth curves are among the main objects in differential geometry;
 colloquially, the term \index{smooth curve}\emph{smooth curve} is often used as a shortcut for {}\emph{smooth regular curve}. 
 
 \begin{thm}{Exercise}\label{ex:L-shape}
-Recall that the function 
+Recall that (see Section \ref{sec:analysis}) that the following function is smooth: 
 \[f(t)=
 \begin{cases}
 0&\text{if}\ t\le 0,
@@ -135,13 +135,12 @@ Recall that the function
 \frac{t}{e^{1\!/\!t}}&\text{if}\ t> 0.
 \end{cases}
 \]
-is smooth; see Section \ref{sec:analysis}.
 
 Show that $\alpha(t)=(f(t),f(-t))$ gives a smooth parametrization of a simple curve formed by the union of two half-axis in the plane.
 
 Show that any smooth parametrization of this curve has vanishing velocity vector at the origin.
-Conclude that this curve is smooth, but not regular;
-that is, it does admit a smooth parametrization, but doesn't admit a regular smooth parametrization.
+Conclude that this curve is not regular;
+that is, it does not admit a regular smooth parametrization.
 \end{thm}
 
 
@@ -190,11 +189,11 @@ But in general the closed curve described by a smooth regular loop might fail to
 \section{Implicitly defined curves}
 
 Suppose $f\:\RR^2\to \RR$ is a smooth function; 
-that is, all its partial derivatives are defined in its domain of definition.
+that is, all its partial derivatives are defined everywhere.
 Let $\gamma\subset \RR^2$ be the set of solutions of the equation $f(x,y)=0$.
 
 Assume $\gamma$ is connected.
-According to the implicit function theorem (\ref{thm:imlicit}), the set $\gamma$ is a smooth regular simple curve if $0$ is a \index{regular value}\emph{regular value} of~$f$; that is, the gradient $\nabla f$ does not vanish at any point $p\in \gamma$.
+According to the implicit function theorem (\ref{thm:imlicit}), the set $\gamma$ is a smooth regular simple curve if $0$ is a \index{regular value}\emph{regular value} of~$f$; that is, the gradient $\nabla_p f$ does not vanish at any point $p\in \gamma$.
 In other words, if $f(p)=0$, then   
 $f_x(p)\ne 0$ or $f_y(p)\ne 0$.%
 \footnote{Here $f_x$ is a shortcut notation for the partial derivative
@@ -254,7 +253,7 @@ describes a smooth regular curve.
 A parametrized curve $\gamma$ in a metric space $\spc{X}$ is called \index{proper curve}\emph{proper} if for any compact set $K \subset \spc{X}$, the inverse image $\gamma^{-1}(K)$ is compact.
 
 For example, the curve $\gamma(t)=(e^t,0,0)$ defined on the real line is not proper.
-Indeed, the half-line $(-\infty,0]$ is not compact, but it is the inverse image of the unit closed ball around the origin.
+Indeed, the half-line $(-\infty,0]$ is not compact, but it is the inverse image of the closed unit ball around the origin.
 
 \begin{thm}{Exercise}\label{ex:open-curve}
 Suppose $\gamma\:\RR\to\RR^2$ is a proper curve.
@@ -264,7 +263,8 @@ Show that  $|\gamma(t)|\z\to\infty$ as $t\to\pm\infty$.
 
 Recall that a closed interval is compact (\ref{thm:Heine--Borel}) and closed subsets of compact set are compact;
 see Section~\ref{sec:topology}.
-It follows that closed curves and arcs are automatically proper since the parameter set is compact.
+It follows that closed curves and arcs are automatically proper;
+indeed, their parameter sets are compact.
 
 A simple curve is called proper if it admits a proper parametrization.
 
@@ -274,10 +274,10 @@ Show that a simple space curve is proper if and only if its image is a closed se
 \end{thm}
 
 A proper simple plane curve without endpoints is called \index{open curve}\emph{open}.
-The terms open curve and closed curve have nothing to do with open and closed sets.
+The terms {}\emph{open curve} and {}\emph{closed curve} have nothing to do with open and closed sets.
 
 \begin{thm}{Exercise}\label{ex:proper-curve}
-Use the Jordan's theorem (\ref{thm:jordan}) to show that any simple open curve divides the plane in two connected components.  
+Use the Jordan's theorem (\ref{thm:jordan}) to show that any simple open plane curve divides the plane in two connected components.  
 \end{thm}
 
 
