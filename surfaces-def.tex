@@ -3,7 +3,7 @@
 \section{Topological surfaces}
 
 We will be mostly interested in smooth regular surfaces defined in the following section.
-However few times we will use the following general definition.
+However we will sometimes use the following general definition.
 
 A connected subset $\Sigma$ in the Euclidean space $\RR^3$
 is called a \index{topological surface}\emph{topological surface} (more precisely an {}\emph{embedded surface without boundary}) 
@@ -30,7 +30,7 @@ it can be described as the graph of the function $f(x,y)=0$.
 All other planes are smooth surfaces as well since one can choose a coordinate system so that it becomes the $(x,y)$-plane.
 We may also present a plane as a graph of a linear function 
 $f(x,y)=a\cdot x+b\cdot y+c$ for some constants $a$, $b$ and $c$
-(assuming the plane is not perpendicular to the $(x,y)$-plane).
+(assuming the plane is not perpendicular to the $(x,y)$-plane, in which case a different coordinate system is required to write the plane as the graph of a function).
 
 A more interesting example is the unit sphere 
 \[\mathbb{S}^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
@@ -50,7 +50,7 @@ Since each function is smooth, so is the surface $\mathbb{S}^2$.
 
 \section{Surfaces with boundary}
 A connected subset in a surface that is bounded by one or more 
-curves is called \index{surface with boundary}\emph{surface with boundary}; the curves form the \index{boundary line}\emph{boundary line} of the surface.
+curves is called a  \index{surface with boundary}\emph{surface with boundary}; such curves form the \index{boundary line}\emph{boundary line} of the surface.
 
 When we say {}\emph{surface} we usually mean a {}\emph{smooth regular surface without boundary};
 we may use the terms {}\emph{surface without boundary} if we need to emphasize it;
@@ -58,7 +58,7 @@ otherwise we may use the term {}\emph{surface with possibly nonempty boundary}.
 
 \section{Proper, closed and open surfaces}
 If the surface $\Sigma$ is formed by a closed set, then it is called \index{proper surface}\emph{proper}.
-For example, for any smooth function $f$, defined on whole plane, its graph $z=f(x,y)$ is a proper surface.
+For example, for any smooth function $f$ defined on the whole plane, its graph $z=f(x,y)$ is a proper surface.
 The sphere $\mathbb{S}^2$ gives another example of proper surface.
 
 On the other hand, the open disc 
@@ -71,13 +71,13 @@ A compact surface without boundary is called \index{closed surface}\emph{closed}
 A proper noncompact surface without boundary is called \index{open surfac}\emph{open} (again the term {}\emph{open set} is not relevant).
 
 For example, the paraboloid $z=x^2+y^2$
-is an open surface; 
+is an open surface; the 
 sphere $\mathbb{S}^2$ is a closed surface.
 
 Note that any proper surface without boundary is either closed or open.
 
-The following claim is a three-dimesional analog of plane separation theorem (\ref{ex:proper-curve}).
-Despite it might look obvious, its proof is not at all trivial; a standard proof uses the so-called \index{Alexander's duality}\emph{Alexander's duality} which is a classical technique in algebraic topology \cite[see][]{hatcher}.
+The following claim is a three-dimesional analog of the plane separation theorem (\ref{ex:proper-curve}).
+Despite it might look obvious, its proof is not trivial at all; a standard proof uses the so-called \index{Alexander's duality}\emph{Alexander's duality} which is a classical technique in algebraic topology \cite[see][]{hatcher}.
 We omit its proof since it would take us far away from the main subject.
 
 \begin{thm}{Claim}\label{clm:proper-divides}
@@ -97,7 +97,7 @@ Then any connected component $\Sigma$ of the set of solutions of the equation $f
 Fix $p\in\Sigma$.
 Since $\nabla_p f\ne 0$ we have 
 \[f_x(p)\ne 0,\quad f_y(p)\ne 0,\quad \text{or}\quad f_z(p)\ne 0.\]
-We may assume thate $f_z(p)\ne 0$;
+We may assume that $f_z(p)\ne 0$;
 otherwise permute the coordinates $x,y,z$.
 
 The implicit function theorem (\ref{thm:imlicit}) implies that a neighborhood of $p$ in $\Sigma$ is the graph $z=h(x,y)$ of a smooth function $h$ defined on an open domain in $\RR^2$.
@@ -110,7 +110,7 @@ does the following equation
 \begin{align*}
 x^2+y^2-z^2&=\ell
 \end{align*}
-describes a smooth regular surface.
+describe a smooth regular surface.
 \end{thm}
 
 \section{Local parametrizations}
@@ -165,7 +165,7 @@ If we have $s$ and $\Sigma$ as in the proposition, then we say that $s$ is a \in
 
 Not all the smooth surfaces can be described by such a parametrization;
 for example the sphere $\mathbb{S}^2$ cannot.
-But any smooth surface $\Sigma$ admits a local parametrization; that is, any point $p\in\Sigma$ admits an open neighborhood $W\subset \Sigma$ with a smooth regular parametrization~$s$.
+However, any smooth surface $\Sigma$ admits a local parametrization; that is, any point $p\in\Sigma$ admits an open neighborhood $W\subset \Sigma$ with a smooth regular parametrization~$s$.
 In this case any point in $W$ can be described by two parameters, usually denoted by $u$ and $v$, 
 which are called \index{local coordinates}\emph{local coordinates} at $p$.
 The map $s$ is called a \index{chart}\emph{chart} of $\Sigma$.
@@ -202,7 +202,7 @@ Show that $s$ is a chart of the unit sphere centered at $(0,0,1)$; describe the 
 The map $s$ in the exercise can be visualized using the following map
 \[(u,v,1)\mapsto (\tfrac{2\cdot u}{1+u^2+v^2},\tfrac{2\cdot v}{1+u^2+v^2},\tfrac{2}{1+u^2+v^2})\]
 which is called \index{stereographic projection}\emph{stereographic projection} from the plane $z=1$ to the unit sphere with center at $(0,0,1)$.
-Note that the point $(u,v,1)$ and its image lie on one half-line emerging from the origin. 
+Note that the point $(u,v,1)$ and its image lie on the same half-line emerging from the origin. 
 
 \begin{wrapfigure}{o}{31 mm}
 \vskip0mm
@@ -215,8 +215,8 @@ Let $\gamma(t)=(x(t),y(t))$ be a plane curve.
 Recall that the \index{surface of revolution}\emph{surface of revolution} of the curve $\gamma$ around the $x$-axis can be described as the 
 image of the map 
 \[(t, s)\mapsto (x(t), y(t)\cdot\cos s,y(t)\cdot\sin s).\]
-For fixed $t$ or $s$ the obtained curves are called \index{meridian}\emph{meridian} or respectively \index{parallel}\emph{parallel} of the surface; note that parallels are formed by circles in the plane perpendicular to the axis of rotation.
-The curve $\gamma$ is called \index{generatrix}\emph{generatrix} of the surface.
+For fixed $t$ or $s$ the obtained curves are called \index{meridian}\emph{meridians} or \index{parallel}\emph{parallels} of the surface, respectively; note that parallels are formed by circles in the plane perpendicular to the axis of rotation.
+The curve $\gamma$ is called the \index{generatrix}\emph{generatrix} of the surface.
 
 \begin{thm}{Exercise}\label{ex:revolution}
 Assume $\gamma$ is a closed simple smooth regular plane curve that does not intersect the $x$-axis.
@@ -242,12 +242,12 @@ Note that $\Sigma_{a,b,c}$ can be defined as the image of the map $s\:\mathbb{S}
 For a surface $\Sigma$, a map $s\: \Sigma \to \RR ^3$ is called a 
 \emph{smooth parametrized surface} if $s$ is injective and for any chart $f\:U\to \Sigma$ 
 the composition $s\circ f$ is smooth and regular;
-that is, all partial derivatives $\frac{\partial^{m+n}}{\partial u^m\partial v^n}(s\circ f)$ exist and are continuous in the domain of definition and the following two vectors 
+that is, all partial derivatives $\frac{\partial^{m+n}}{\partial u^m\partial v^n}(s\circ f)$ exist and are continuous in the domain of definition and the two vectors 
 $\frac{\partial}{\partial u}(s\circ f)$ and $\frac{\partial}{\partial v}(s\circ f)$ are linearly independent.
 
 Note that in this case the image $\Sigma^{*}=s(\Sigma)$ is a smooth surface.
 The later follows since for any chart $f\:U\to \Sigma$ the composition $s\circ f\:U\to \Sigma^{*}$ is a chart of $\Sigma^{*}$. 
-Further, the map $s$ is called \index{diffeomorphism}\emph{diffeomorphism} from $\Sigma$ to $\Sigma^{*}$; the surfaces $\Sigma$ to $\Sigma^{*}$ are called {}\emph{diffeomorphic} if there is a diffeomorphism $s\:\Sigma\to\Sigma^{*}$.
+The map $s$ is called a \index{diffeomorphism}\emph{diffeomorphism} from $\Sigma$ to $\Sigma^{*}$; the surfaces $\Sigma$ and $\Sigma^{*}$ are said to be {}\emph{diffeomorphic} if there is a diffeomorphism $s\:\Sigma\to\Sigma^{*}$.
 
 
 \begin{thm}{Advanced exercise}\label{ex:star-shaped-disc}
@@ -259,16 +259,16 @@ $\Sigma$ and $\Theta$ obtained from the plane by removing $n$ points.
 
 
 \begin{subthm}{ex:star-shaped-disc:smooth}
-$\Sigma$ and $\Theta$ are open convex subset of a plane bounded by a smooth curves.
+$\Sigma$ and $\Theta$ are open convex subsets of a plane bounded by smooth curves.
 \end{subthm}
 
 
 \begin{subthm}{ex:star-shaped-disc:nonsmooth}
-$\Sigma$ and $\Theta$ are open convex subset of a plane.
+$\Sigma$ and $\Theta$ are open convex subsets of a plane.
 \end{subthm}
 
 \begin{subthm}{ex:star-shaped-disc:star-shaped}
-$\Sigma$ and $\Theta$ are open star-shaped subset of a plane.
+$\Sigma$ and $\Theta$ are open star-shaped subsets of a plane.
 \end{subthm}
 \end{thm}
 
@@ -285,15 +285,15 @@ that is, $p=\gamma(t)$ and $\vec w=\gamma'(t)$ for some $t$.
 \begin{thm}{Proposition-Definition}\label{def:tangent-plane}
 Let $\Sigma$ be a smooth surface and $p\in \Sigma$.
 Then the set of tangent vectors of $\Sigma$ at $p$ forms a plane;
-this plane is called \index{tangent plane}\emph{tangent plane} of $\Sigma$ at $p$.
+this plane is called the \index{tangent plane}\emph{tangent plane} of $\Sigma$ at $p$.
 
 Moreover if $s\:U\to \Sigma$ is a local chart and $p=s(u_p,v_p)$, then 
 the tangent plane of $\Sigma$ at $p$ is spanned by vectors $s_u(u_p,v_p)$ and $s_v(u_p,v_p)$.
 \end{thm}
 
 The tangent plane to $\Sigma$ at $p$ is usually denoted by $\T_p$ or $\T_p\Sigma$.
-Tangent plane $\T_p$ might be considered as a linear subspace of $\RR^3$ or as a parallel plane passing thru $p$;
-the latter can be called \index{affine tangent plane}\emph{affine tangent plane}.
+This plane $\T_p$ might be considered as a linear subspace of $\RR^3$ or as a parallel plane passing thru $p$;
+the latter is sometimes called the \index{affine tangent plane}\emph{affine tangent plane}.
 The affine tangent plane can be interpreted as the best approximation at~$p$ of the surface $\Sigma$ by a plane.
 More precisely, 
 it has \index{order of contact}\emph{first order of contact} with $\Sigma$ at $p$;
@@ -309,12 +309,12 @@ Applying chain rule, we get
 \[\gamma'=s_u\cdot u'+ s_v\cdot v';\]
 that is, $\gamma'$ is a linear combination of $s_u$ and $s_v$.
 
-Since the smooth functions $u(t)$ and $v(t)$ can be chosen arbitrary, any linear combination of $s_u$ and $s_v$ is a tangent vector at the corresponding point. 
+Since the smooth functions $u(t)$ and $v(t)$ can be chosen arbitrarily, any linear combination of $s_u$ and $s_v$ is a tangent vector at $p$. 
 \qeds
 
 
 \begin{thm}{Exercise}\label{ex:tangent-normal}
-Let $f:\RR^3\to\RR$ be a smooth function with a regular value $0$ and $\Sigma$ be a surface described as a connected component of the set of solutions $f(x,y,z)=0$.
+Let $f:\RR^3\to\RR$ be a smooth function with $0$ as a regular value and $\Sigma$ be a surface described as a connected component of the set of solutions $f(x,y,z)=0$.
 Show that the tangent plane $\T_p\Sigma$ is perpendicular to the gradient $\nabla_pf$ at any point $p\in\Sigma$.
 \end{thm}
 
@@ -335,20 +335,20 @@ In this section we extend the definition of directional derivative to smooth fun
 
 First let recall the standard definition of directional derivative.
 
-Suppose $f$ is a function defined at a point $p$ in the space, and $\vec w$ is a vector.
-Consider the function function
+Suppose $f$ is a function defined at a point $p$ in the space, and $\vec w$ a vector.
+Consider the function
 \[h(t)=f(p+t\cdot\vec w).\]
-Then the directional derivative of $f$ at $p$ along $\vec w$ is defined by 
+Then the directional derivative of $f$ at $p$ along $\vec w$ is defined as 
 \[D_{\vec w}f(p)\df h'(0).\]
 \index{10d@$D_{\vec{w}}f$}
 
 \begin{thm}{Proposition-Definition}\label{def:directional-derivative}
-Let $\Sigma$ be a smooth regular surface and $f$ is a smooth function defined on $\Sigma$. 
-Suppose $\gamma$ is a smooth curve in $\Sigma$ that starts at $p$ with the velocity vector $\vec{w}\in \T_p$;
+Let $\Sigma$ be a smooth regular surface and $f$ a smooth function defined on $\Sigma$. 
+Suppose $\gamma$ is a smooth curve in $\Sigma$ that starts at $p$ with velocity vector $\vec{w}\in \T_p$;
 that is, $\gamma(0)=p$ and $\gamma'(0)=\vec{w}$.
 Then the derivative $(f\circ\gamma)'(0)$
 depends only on $f$, $p$ and $\vec{w}$;
-it is called \index{directional derivative}\emph{directional derivative of $f$ along $\vec{w}$ at $p$}
+it is called the \index{directional derivative}\emph{directional derivative of $f$ along $\vec{w}$ at $p$}
 and denoted by
 \[D_{\vec{w}}f,\quad D_{\vec{w}}f(p), \quad\text{or}\quad D_{\vec{w}}f(p)_\Sigma\] 
 --- we may omit $p$ and $\Sigma$ if it is clear from the context.
@@ -358,8 +358,8 @@ Moreover, if $(u,v)\mapsto s(u,v)$ is a local chart at $p$, then
 where $\vec{w}=a\cdot s_u +b\cdot s_v$. 
 \end{thm}
 
-Note that our definition agrees with standard definition of directional derivative if $\Sigma$ is a plane.
-Indeed, in this case $\gamma(t)=p+\vec w\cdot t$ is a curve in $\Sigma$ that starts at $p$ with the velocity vector $\vec{w}$.
+Note that our definition agrees with the standard definition of directional derivative if $\Sigma$ is a plane.
+Indeed, in this case $\gamma(t)=p+\vec w\cdot t$ is a curve in $\Sigma$ that starts at $p$ with velocity vector $\vec{w}$.
 For a general surface the point $p+\vec w\cdot t$ might not lie on the surface; therefore the function $f$ might be undefined at this point; therefore the standard definition does not work.
 
 \parit{Proof.}
@@ -408,21 +408,21 @@ Moreover tangent vectors at $p$ can be \emph{defined} as linear functionals on t
 that satisfy the product rule \ref{eq:tangent-functional}.
 
 This definition grabs the key algebraic property of tangent vectors.
-It might be less intuitive way to think about tangent vectors, but often it is more convenient to use in the proofs. 
+It might be a less intuitive way to think about tangent vectors, but it is often convenient to use in the proofs. 
 For example \ref{def:directional-derivative} becomes a tautology.
 
 \section{Differential of map}
 
 Any smooth map $s$ from a surface $\Sigma$ to $\RR^3$ can be described by its coordinate functions 
 $ s(p)=(x(p),y(p),z(p))$. 
-To take a directional derivative of the map we should take the  directional derivative of each of its coordinate function.
+To take a directional derivative of the map we should take the  directional derivative of each of its coordinate functions.
 \[D_{\vec{w}} s\df(D_{\vec{w}}x,D_{\vec{w}}y,D_{\vec{w}}z).\]
 
 Assume $ s$ is a smooth map from one smooth surface $\Sigma_0$ to another $\Sigma_1$ and $p\in \Sigma_0$.
 Note that $D_{\vec w} s(p)\in \T_{s(p)}\Sigma_1$ for any $\vec w\in \T_p$.
-Indeed choose a curve $\gamma_0$ in $\Sigma_0$ such that $\gamma_0(0)=p$ and $\gamma_0'(0)=\vec w$.
+Indeed, choose a curve $\gamma_0$ in $\Sigma_0$ such that $\gamma_0(0)=p$ and $\gamma_0'(0)=\vec w$.
 Observe that $\gamma_1= s\circ \gamma_0$ is a smooth curve in $\Sigma_1$ and 
-by the definition directional derivative, we have $D_{\vec w} s(p)=\gamma_1'(0)$.
+by the definition of directional derivative, we have $D_{\vec w} s(p)=\gamma_1'(0)$.
 It remains to note that $\gamma_1(0)\z= s(p)$ and therefore its velocity $\gamma_1'(0)$ is in $\T_{ s(p)}\Sigma_1$.
 
 Recall that \ref{def:directional-derivative} implies that 
@@ -431,11 +431,11 @@ that is,
 \[D_{c\cdot \vec w} s=c\cdot D_{\vec w} s(p)
 \quad\text{and}\quad D_{\vec v+ \vec w} s=D_{\vec v} s(p)+ D_{\vec w} s(p)\]
 for any $c\in\RR$ and $\vec v, \vec w\in\T_p$.
-The map $d_p s$ is called a \index{differential of map}\emph{differential} of $s$ at $p$.
+The map $d_p s$ is called the \index{differential of map}\emph{differential} of $s$ at $p$.
 
-The differential $d_p s$ can be described by a $2{\times}2$-matrix $M$ in orthonormal basises of $\T_p$ and $\T_{ s(p)}\Sigma_1$.
+The differential $d_p s$ can be described by a $2{\times}2$-matrix $M$ in orthonormal bases of $\T_p$ and $\T_{ s(p)}\Sigma_1$.
 Set $\jac_p s=|\det M|$; this value  
-does not depend on the choice orthonormal basises in $\T_p$ and $\T_{ s(p)}\Sigma_1$. \label{page:|L|}\index{10d@$d_p s$}
+does not depend on the choice of orthonormal bases in $\T_p$ and $\T_{ s(p)}\Sigma_1$. \label{page:|L|}\index{10d@$d_p s$}
 
 Let $ s_1\:\Sigma_1\to\Sigma_2$ be another smooth map between smooth surfaces $\Sigma_1$ and $\Sigma_2$.
 Suppose that ${p_1}= s(p)\in\Sigma_1$;
@@ -456,7 +456,7 @@ If $\Sigma_0$ is a domain in the $(u,v)$-plane, then the value $\jac_p s$ can be
 \\
 &=\sqrt{\det[\Jac^\top s\cdot \Jac s]}.
 \end{align*}
-where $\Jac s$ denotes the Jacobean matrix of $s$; it is a 2$\times$3 matrix with column vectors $s_u$ and $ s_v$.
+where $\Jac s$ denotes the Jacobian matrix of $s$; it is a 2$\times$3 matrix with column vectors $s_u$ and $ s_v$.
 
 The value $\jac_p s$ has the following geometric meaning:
 if $P_0$ is a region in $\T_p$ and $P_1=(d_p s)(P_0)$, then
@@ -469,7 +469,7 @@ This identity will become important in the definition of surface area.
 
 Let $\Sigma$ be a smooth surface and $h\:\Sigma\to\RR$ be a smooth function.
 Let us define the integral $\iint_R h$ of the function $h$ along a region $R\subset \Sigma$.
-The definition will be used mostly surfaces with boundary, but the definition can be applied to any Borel set of $R\subset \Sigma$.
+The definition will be used mostly along surfaces with boundary, but the definition can be applied to any Borel set $R\subset \Sigma$.
 
 Recall that $\jac_ps$ is defined in the previous section.
 Assume that there is a chart $(u,v)\mapsto s(u,v)$ of $\Sigma$ defined on an open set $U\subset\RR^2$ such that $R\subset s(U)$.
@@ -487,7 +487,7 @@ After that one could define the integral along $R$ as the sum
 \[\iint_Rh
 \df
 \iint_{R_1}h+\iint_{R_2}h+\dots\]
-It is straightforward to check that the value $\iint_Rh$ does not depend on the choice of subdivision.
+It is straightforward to check that the value $\iint_Rh$ does not depend on the choice of such subdivision.
 
 The area of a region $R$ in a smooth surface $\Sigma$ is defined as the surface integral 
 \[\area R=\iint_R 1.\]
@@ -508,11 +508,11 @@ Follows from \ref{eq:jac-composition} and the definiton of surface integral.
 \qeds
 
 \parbf{Remark.}
-The notion of area of surface is closely related to length of curve.
-However, to define length we uses a different idea --- it was defined as the least upper bound on the lengths of inscribed polygonal lines.
-It turns out that analogous definition does not work even for very simple surfaces.
+The notion of area of a surface is closely related to the length of a curve.
+However, to define length we use a different idea --- it was defined as the least upper bound on the lengths of inscribed polygonal lines.
+It turns out that an analogous definition does not work even for very simple surfaces.
 The latter is shown by a classical example --- the so-called \emph{Schwarz's boot}.
-This example and different approaches to the notion of area discussed in a popular article of Vladimir Dubrovsky \cite{dubrovsky}.
+This example and different approaches to the notion of area are discussed in a popular article of Vladimir Dubrovsky \cite{dubrovsky}.
 
 \section{Normal vector and orientation}
 A unit vector that is normal to $\T_p$ is usually denoted by $\Norm_p$;
@@ -522,14 +522,14 @@ A surface $\Sigma$ is called \index{oriented surface}\emph{oriented} if it is eq
 that is, a continuous map $p\mapsto \Norm_p$ such that $\Norm_p\perp\T_p$ and $|\Norm_p|=1$ for any $p$.
 The choice of the field $\Norm$ is called the \index{orientation}\emph{orientation} of $\Sigma$.
 A surface $\Sigma$ is called \index{orientable}\emph{orientable} if it can be oriented.
-Note that each orientable surface admits two orientations $\Norm$ and $-\Norm$.
+Note that each orientable surface admits two orientations: $\Norm$ and $-\Norm$.
 
 Let $\Sigma$ be a smooth oriented surface with unit normal field $\Norm$.
-The map $\Norm\:\Sigma\to \mathbb{S}^2$ defined by $p\mapsto \Norm_p$ is called \index{spherical map}\emph{spherical map} or \index{Gauss map}\emph{Gauss map}.
+The map $\Norm\:\Sigma\to \mathbb{S}^2$ defined by $p\mapsto \Norm_p$ is called the \index{spherical map}\emph{spherical map} or \index{Gauss map}\emph{Gauss map}.
 
 For surfaces, the spherical map plays essentially the same role as the tangent indicatrix for curves.
 
-M\"obius strip shown on the diagram gives an example of a nonorientable surface --- there is no choice of normal vector field that is continuous along the middle of the strip (it changes the sign if you try to go around).
+The M\"obius strip shown on the diagram gives an example of a nonorientable surface --- there is no choice of normal vector field that is continuous along the middle of the strip (it changes the sign if you try to go around).
 
 \begin{wrapfigure}{o}{42 mm}
 \vskip-0mm
@@ -549,16 +549,16 @@ Evidently $(u,v)\mapsto \Norm(u,v)$ is a continuous map.
 Therefore $\Norm$ is a unit normal field. 
 
 \begin{thm}{Exercise}\label{ex:implicit-orientable}
-Let $h:\RR^3\to\RR$ be a smooth function with a regular value $0$ and $\Sigma$ is a surface described as a connected component of the set of solutions $h(x,y,z)=0$.
+Let $h:\RR^3\to\RR$ be a smooth function with $0$ as a regular value and $\Sigma$ a surface described as a connected component of the set of solutions $h(x,y,z)=0$.
 Show that $\Sigma$ is orientable.
 \end{thm}
 
 Recall that any proper surface without boundary in the Euclidean space divides it into two connected components (\ref{clm:proper-divides}).
-Therefore we can choose the unit normal field on any smooth proper surfaces that points into one of the components of the complement.
+Therefore we can choose the unit normal field on any smooth proper surface that points into one of the components of the complement.
 Therefore we obtain the following observation. 
 
 \begin{thm}{Observation}
-Any smooth proper surface in Euclidean space is oriented.
+Any smooth proper surface in the Euclidean space is oriented.
 \end{thm}
 
 In particular it follows that the M\"obius strip cannot be extended to a proper smooth surface without boundary.
@@ -566,7 +566,7 @@ In particular it follows that the M\"obius strip cannot be extended to a proper 
 \section{Sections}
 
 \begin{thm}{Advanced exercise}\label{ex:plane-section}
-Show that any closed set in a plane can appear as an intersection of this plane with an open smooth regular surface.  
+Let $\Pi$ be the $(x,y)$-plane and $A \subset \Pi$ be any closed subset. Show that there is an open smooth regular surface $\Sigma$ with $\Sigma \cap \Pi = A$.
 \end{thm}
 
 The exercise above says that plane sections of a smooth regular surface might look complicated.
@@ -583,7 +583,7 @@ $\Sigma$ is a smooth regular curve.
 \parit{Proof.}
 The surface $\Sigma$ can be covered by a countable set of charts $s_i\:U_i\z\to \Sigma$.
 Note that the composition $f\circ s_i$ is a smooth function for any $i$.
-By Sard's lemma (\ref{lem:sard}), almost all real numbers $r$ are regular values of each $f\circ s_i$.
+By Sard's lemma (\ref{lem:sard}), almost all real numbers $r$ are regular values for each $f\circ s_i$.
 
 Fix such a value $r$ sufficiently close to $r_0$ and consider the level set $L_r$ described by the equation $f(x,y,z)=r$.
 Any point in the intersection $\Sigma\cap L_r$ lies in the image of one of the charts.
