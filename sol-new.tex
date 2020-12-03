@@ -889,14 +889,14 @@ Suppose that the osculating paraboloid is described by the graph
 Since $\Sigma$ is mirror symmetric, so is the paraboloid;
 that is, changing $y$ to $(-y)$ does not change the value 
 $\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2$.
-In other words $m=0$, or equivalently, the $x$-axis points in the direction of curvature.
+In other words $m=0$, or equivalently, the $x$-axis points in a direction of curvature.
 
 \parbf{\ref{ex:gauss+orientable}.} Note that the principle curvatures have the same sign at each point.
 Therefore we can choose a unit normal $\Norm$ at each point so that both principle curvatures are positive.
-Show that it defines a field on the surface.
+Show that it defines a global field on the surface.
 
 \parbf{\ref{ex:shape-chart}.}
-Apply \ref{prop:S=-D} and together with the following identities:
+Apply \ref{prop:S=-D} and use the following identities:
 $\langle\Norm,s_u\rangle=\langle\Norm,s_v\rangle=0$.
 
 \parbf{\ref{ex:normal-curvature=const}}; \ref{SHORT.ex:normal-curvature=const:a}.
@@ -911,14 +911,14 @@ $\tfrac{\partial }{\partial u}(s+\nu)
 Make a conclusion.
 
 \parbf{\ref{ex:shape-curvature-line}.} 
-We can assume that $\gamma$ is parametrized by its arc-length.
+We can assume that $\gamma$ is parametrized by  arc-length.
 Denote by $\Norm_1(s)$ and $\Norm_2(s)$ the unit normal vectors to $\Sigma_1$ and $\Sigma_2$ at $\gamma(s)$.
-Since $\gamma$ is a curvature line in $\Sigma_1$, we have 
+Since $\gamma$ is a curvature line in $\Sigma_1$,  
 $\Norm_1'$ is proportional to $\gamma'$;
 in particular $\langle\Norm_1',\Norm_2\rangle=0$.
 
 Note that $\langle \Norm_1(t),\Norm_2(t)\rangle$ is constant.
-By taking its derivative and applying the above identity show that $\langle\Norm_1,\Norm_2'\rangle=0$.
+By taking its derivative and applying the above identity, show that $\langle\Norm_1,\Norm_2'\rangle=0$.
 Conclude that $\Norm_2'$ is proportional to $\gamma'$
 and therefore $\gamma$ is a curvature line in~$\Sigma_2$.
 
@@ -929,16 +929,16 @@ Set $f_t\:p\mapsto p+t\cdot\Norm(p)$; it maps $\Sigma$ to $\Sigma_t$.
 
 Use \ref{prop:S=-D} to show that $d_pf_t(\vec v)=\vec v-t\cdot\Shape_p(\vec v)$.
 Since $\Sigma$ is closed, the norm of $\Shape$ is bounded.
-Whence $f_t$ is regular for $t\approx 0$.
+Whence $f_t$ is regular for $t$ sufficiently close to $ 0$.
 
 \parit{\ref{SHORT.ex:equidistant:area}.} By the area formula (\ref{prop:surface-integral}), we have
 \[a(t)=\int_{p\in \Sigma}\jac_pf_t.\]
 Show and use that for fixed $p$, the function $t\mapsto \jac_pf_t$ has derivative $-H(p)$ at zero.
 
 \parbf{\ref{ex:mean-curvature}.}
-Apply \ref{obs:k1-k2} and the definition o mean curvature.
+Apply \ref{obs:k1-k2} and the definition of mean curvature.
 
-\parbf{\ref{ex:meusnier}.} Use Meusnier's theorem (\ref{thm:meusnier}), to find center and radius of curvature of $\gamma$ in terms of normal curvature of $\gamma$ at $p$;
+\parbf{\ref{ex:meusnier}.} Use Meusnier's theorem (\ref{thm:meusnier}), to find the center and radius of curvature of $\gamma$ in terms of its normal curvature at $p$;
 make a conclusion.
 
 \parbf{\ref{ex:principle-revolution}.}
@@ -952,7 +952,7 @@ Use \ref{ex:line-of-curvature} and Meusnier's theorem (\ref{thm:meusnier}).
 
 Observe that these two families are orthogonal to each other.
 Therefore the Hessian matrix in the frame $s_u/|s_u|$ and $s_v/|s_v|$ will have zeros on the diagonal.
-Apply that mean curvature is the trace of the Hessian matrix.
+Use the fact that the mean curvature is the trace of the Hessian matrix.
 
 }
 
@@ -961,7 +961,7 @@ Apply that mean curvature is the trace of the Hessian matrix.
 \parbf{\ref{ex:lagunov-genus4}.} Drill an extra hole or combine two examples together.
 
 \parbf{\ref{ex:thin}.} 
-Let us define \index{cut locus}\emph{cut locus} of $V$ as a closure of the set of points $x\in V$ such that there are at least two points on $\partial V$ that minimize the distance to $x$.
+Let us define the \index{cut locus}\emph{cut locus} of $V$ as the closure of the set of points $x\in V$ such that there are at least two points on $\partial V$ that minimize the distance to $x$.
 Denote by $L$ the cut locus of $V$.
 
 Choose a connected component $\Sigma$ of the boundary $\partial V$.
@@ -976,7 +976,7 @@ Read about Bing's two-room house.
 Try to thicken it to construct the needed example.
 
 Assume $V$ does not contain a ball of radius $r_3$.
-Show that its cut locus $L$ is formed by a few smooth surfaces that meets by three at their boundary points.
+Show that its cut locus $L$ is formed by a few smooth surfaces that meet by three at their boundary points.
 Show that $L$ is not simply connected; that is, there is a loop in $L$ that cannot be deformed continuously to a trivial loop.
 Conclude that $V$ is not simply connected.
 
@@ -986,7 +986,7 @@ Finally, arrive to a contradiction by showing that if $V$ is bounded by a smooth
 
 \parbf{\ref{ex:surf-support}.}
 Choose curvatures such that 
-\[k_2(p)_{\Sigma_1}\z>k_2(p)_{\Sigma_2}> k_1(p)_{\Sigma_1}> k_1(p)_{\Sigma_2}\] and suppose that the first principle direction of $\Sigma_1$ coincides with the second principle direction of $\Sigma_2$ and the other way around.
+\[k_2(p)_{\Sigma_1}\z>k_2(p)_{\Sigma_2}> k_1(p)_{\Sigma_1}> k_1(p)_{\Sigma_2}\] and suppose that the first principle direction of $\Sigma_1$ coincides with the second principle direction of $\Sigma_2$ and vice-versa.
 
 \parbf{\ref{ex:positive-gauss-0} + \ref{ex:positive-gauss}.} Apply the same reasoning as in the problems \ref{ex:between-parallels-1}--\ref{ex:lens}, but use families of spheres instead.
 

@@ -1,4 +1,4 @@
-\section{Curve in a surface}
+\section{Curves in a surface}
 
 \begin{wrapfigure}{o}{42 mm}
 \vskip-4mm
@@ -16,20 +16,20 @@ As usual we denote by $\Norm$ the unit normal field on~$\Sigma$.
 
 Without loss of generality we may assume that $\gamma$ is unit-speed;
 in this case $\tan(s)=\gamma'(s)$ is its tangent indicatrix.
-Let us use a shortcut notation $\Norm(s)\z=\Norm(\gamma(s))$.
+Let us use the shortcut notation $\Norm(s)\z=\Norm(\gamma(s))$.
 Note that the unit vectors $\tan(s)$ and $\Norm(s)$ are orthogonal.
 Тherefore there is a unique unit vector $\mu(s)$\index{10tmn@$\tan$, $\mu$, $\Norm$} such that 
 $\tan(s),\mu(s),\Norm(s)$ is an oriented orthonormal basis;
-it is called \index{Darboux frame}\emph{Darboux frame} of $\gamma$ at $s$.
-Since $\tan(s)\perp\nu(s)$, the vector $\mu(s)$ is tangent to $\Sigma$ at $\gamma(s)$.
-In fact $\mu(s)$ is a counterclockwise rotation of $\tan(s)$ by right angle in the tangent plane $\T_{\gamma(s)}$.
-This vector can be also defined as a vector product $\mu(s)=\nu(s)\times \tan(s)$.
+this triple is called the \index{Darboux frame}\emph{Darboux frame} of $\gamma$ at $s$.
+Since $T_{\gamma (s)}\perp\nu(s)$, the vector $\mu(s)$ is tangent to $\Sigma$ at $\gamma(s)$.
+In fact $\mu(s)$ is a counterclockwise rotation of $\tan(s)$ by the angle $\pi /2$ in the tangent plane $\T_{\gamma(s)}$.
+This vector can also be defined as the vector product $\mu(s)=\nu(s)\times \tan(s)$.
 
 Since $\gamma$ is unit-speed, we have that $\gamma''\perp \gamma'$ (see \ref{prop:a'-pertp-a''}).
 Therefore the acceleration of $\gamma$ can be written as a linear combination of $\mu$ and $\Norm$;
 that is,
 \[\gamma''(s)=k_g(s)\cdot \mu(s)+k_n(s)\cdot\Norm(s).\]\index{10k@$k_g$, $k_n$}
-The values $k_g(s)$ and $k_n(s)$ are called \index{geodesic curvature}\emph{geodesic} and \index{normal curvature}\emph{normal curvature} of $\gamma$ at $s$.
+The values $k_g(s)$ and $k_n(s)$ are called \index{geodesic curvature}\emph{geodesic} and \index{normal curvature}\emph{normal curvatures} of $\gamma$ at $s$, respectively.
 Since the frame $\tan(s),\mu(s),\nu(s)$ is orthonormal, these curvatures can be also written as the following scalar products:
 \begin{align*}
 k_g(s)&=\langle \gamma''(s),\mu(s)\rangle
@@ -55,20 +55,20 @@ Applying \ref{prop:S=-D},  we get the following:
 
 \begin{thm}{Proposition}\label{prop:normal-shape}
 Assume $\gamma$ is a smooth unit-speed curve in a smooth surface $\Sigma$.
-Suppose $p=\gamma(s_0)$ and $\vec v=\gamma'(s_0)$.
+Let $p=\gamma(s_0)$ and $\vec v=\gamma'(s_0)$.
 Then 
 \[k_n(s_0)=\langle \Shape_p(\vec v),\vec v\rangle,\]
 where $k_n$ denotes the normal curvature of $\gamma$ at $s_0$ and $\Shape_p$ is the shape operator at $p$.
 \end{thm}
 
-Note that according to the proposition, the normal curvature of regular smooth curve in $\Sigma$ is completely determined by the velocity vector $\vec v$ at the point $p$.
+Note that according to the proposition, the normal curvature of a regular smooth curve in $\Sigma$ is completely determined by the velocity vector $\vec v$ at the point $p$.
 By that reason the normal curvature is also denoted by $k_{\vec v}$;\index{10k@$k_{\vec v}$}
 according to the proposition,
 \[k_{\vec v}=\langle \Shape_p(\vec v),\vec v\rangle\]
 for any unit vector $\vec v$ in $\T_p$.
 
 Let $p$ be a point on a smooth surface $\Sigma$.
-Assume we choose the tangent-normal coordinates at $p$ so that the Hessian matrix is diagonalized, we can assume that
+Assume we choose tangent-normal coordinates at $p$ so that the Hessian matrix is diagonalized, then we have
 \[M_p=\begin{pmatrix}
    k_1(p)
    &0
@@ -92,7 +92,7 @@ If ${\vec w}$ is unit, then $a^2+b^2=1$ which implies the following:
 
 \begin{thm}{Observation}\label{obs:k1-k2}
 For any point $p$ on an oriented smooth surface $\Sigma$,
-the principle curvatures $k_1(p)$ and $k_2(p)$ are respectively minimum and maximum of the normal curvatures at $p$.
+the principle curvatures $k_1(p)$ and $k_2(p)$ are respectively the minimum and maximum of the normal curvatures at $p$.
 Moreover, if $\theta$ is the angle between a unit vector ${\vec w}\in\T_p$ and the first principle direction at $p$, then 
 \[k_{\vec w}(p)=k_1(p)\cdot(\cos\theta)^2+k_2(p)\cdot(\sin\theta)^2.\]
 
@@ -102,19 +102,19 @@ The last identity is called \index{Euler's formula}\emph{Euler's formula}.
 
 \begin{thm}{Exercise}\label{ex:mean-curvature}
 Let  $\Sigma$ be a smooth surface.
-Show that the sum of the normal curvatures for any pair of orthogonal directions, at a point $p\in\Sigma$ equals to $H(p)$ --- the mean curvature at $p$. 
+Show that the sum of the normal curvatures for any pair of orthogonal directions, at a point $p\in\Sigma$ equals $H(p)$ --- the mean curvature at $p$. 
 \end{thm}
 
 
 
 
 \begin{thm}{Meusnier's theorem}\label{thm:meusnier}
-Let $\gamma$ be a regular smooth curve that runs in a smooth oriented surface $\Sigma$.
-Suppose $p=\gamma(t_0)$ and ${\vec v}\z=\gamma'(t_0)$ and $\alpha=\measuredangle(\Norm(p),\norm(t_0))$;
+Let $\gamma$ be a regular smooth curve that runs along a smooth oriented surface $\Sigma$.
+Let $p=\gamma(t_0)$, ${\vec v}\z=\gamma'(t_0)$, and $\alpha=\measuredangle(\Norm(p),\norm(t_0))$;
 that is, $\alpha$ is the angle between the unit normal to $\Sigma$ at $p$ and the unit normal vector in the Frenet frame of $\gamma$ at~$t_0$.
 Then the following identity holds true 
 \[\kur(t_0)\cdot\cos\alpha=k_{n}(t_0);\]
-here $\kur(t_0)$ is the curvature and $k_n(t_0)$ is the normal curvature of $\gamma$ at $t_0$.  
+here $\kur(t_0)$  and $k_n(t_0)$ are the curvature and the normal curvature of $\gamma$ at $t_0$, respectively.  
 \end{thm}
 
 
@@ -128,21 +128,21 @@ k_{n}(t_0)&=\langle\gamma'',\Norm\rangle=
 \end{align*}
 \qedsf
 
-The theorem above, as well as the statement in the following exercise are proved by Jean Baptiste Meusnier \cite{meusnier}.
+The theorem above, as well as the statement in the following exercise were proved by Jean Baptiste Meusnier \cite{meusnier}.
 
 \begin{thm}{Exercise}\label{ex:meusnier}
-Let $\Sigma$ be a smooth surface, $p\in\Sigma$ and ${\vec v}\in \T_p\Sigma$ is a unit vector.
+Let $\Sigma$ be a smooth surface, $p\in\Sigma$ and ${\vec v}\in \T_p\Sigma$ a unit vector.
 Assume that $k_{\vec v}(p)\ne 0$; that is, the normal curvature of $\Sigma$ at $p$ in the direction of ${\vec v}$ does not vanish.
 
 Show that the osculating circles at $p$ of smooth regular curves in $\Sigma$ that run in the direction ${\vec v}$ sweep out a sphere $S$ with center $p+\tfrac1{k_{\vec v}}\cdot\Norm$ and radius $r=\tfrac1{|k_{\vec v}|}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:principle-revolution}
-Let $\gamma(s)=(x(s),y(s))$ be a smooth unit-speed simple plane curve in the upper half-plane.
-Suppose that $\Sigma$ is the surface of revolution around $x$-axis with generatrix $\gamma$.
+Let $\gamma(s)=(x(s),y(s))$ be a smooth unit-speed simple plane curve in the upper half-plane,
+and  $\Sigma$ be the surface of revolution around the $x$-axis with generatrix $\gamma$.
 
 \begin{enumerate}[(a)]
-\item Show that parallels and meridians form lines of curvature on $\Sigma$.
+\item Show that the parallels and meridians are lines of curvature on $\Sigma$.
 \item Show that 
 \[\frac{|x'(s)|}{y(s)}
 \quad
@@ -150,10 +150,10 @@ Suppose that $\Sigma$ is the surface of revolution around $x$-axis with generatr
 \quad
 \frac{-y''(s)}{|x'(s)|}
 \]
-are principle curvatures of $\Sigma$ at $(x(s),y(s),0)$ in the direction of parallel and meridian respectively.
+are the principle curvatures of $\Sigma$ at $(x(s),y(s),0)$ in the direction of the corresponding parallel and meridian respectively.
 \item Show that $\Sigma$ has Gauss curvature $-1$ at all points if and only if $y$ satisfies the following differential equation.
 \[y''=y.\] 
-The case  $y=e^{-s}$ --- the so-called \emph{psudosphere}; it is shown on the diagram.
+The case  $y=e^{-s}$ --- the so-called \emph{psudosphere}; is shown on the diagram.
 \end{enumerate}
 
 \end{thm}
@@ -166,13 +166,13 @@ The case  $y=e^{-s}$ --- the so-called \emph{psudosphere}; it is shown on the di
 \end{figure}
 
 \begin{thm}{Exercise}\label{ex:catenoid-is-minimal}
-Show that \index{catenoid}\emph{catenoid} defined implicitly by equation
+Show that the \index{catenoid}\emph{catenoid} defined implicitly by the equation
 \[(\cosh z)^2=x^2+y^2\]
 is a minimal surface.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:helicoid-is-minimal}
-Show that \index{helicoid}\emph{helicoid} defined by the following parametric equation
+Show that the \index{helicoid}\emph{helicoid} defined by the following parametric equation
 \[s(u,v)=(u\cdot \sin v,u\cdot \cos v,v)\]
 is a minimal surface.
 \end{thm}
@@ -195,12 +195,12 @@ Is it true that $V$ contains a ball of radius 1?
 According to \ref{ex:moon-revolution}, the answer is ``yes'' for surfaces of revolution.
 Latter (see \ref{ex:convex-lagunov})
 we will show that the answer is ``yes'' for convex surfaces.
-Now we are going to show by example that the answer is  ``no'' in general case;
+Now we are going to show by an example that the answer is  ``no'' in the general case;
 this example was constructed by Vladimir Lagunov \cite{lagunov-1961}.
 
 
 \parit{Construction.}
-Let us start with a body of revolution $V_1$ with cross section shown on the diagram below.
+Let us start with a body of revolution $V_1$ whose cross section is shown on the diagram below.
 The boundary curve of the cross section consists of 6 long vertical line segments included into 3 closed simple smooth curves.
 (To make the curves smooth, one has to use cutoffs and mollifiers from Section~\ref{sec:analysis}.)
 The boundary of $V_1$ has 3 components, each of which is a smooth sphere.
@@ -213,7 +213,7 @@ The boundary of $V_1$ has 3 components, each of which is a smooth sphere.
 \end{wrapfigure}
 
 We assume that the curves have curvature at most~1.
-Moreover with the exception for almost vertical parts, the curve have absolute curvature about 1 all the time.
+Moreover with the exception of the almost vertical parts, the curve has absolute curvature close to 1 all the time.
 The only thick part in $V$ is the place where all three boundary components come close together;
 the remaining part of $V$ is assumed to be very thin.
 It could be arranged that the radius $r$ of the maximal ball in $V$ is just a little bit above 
@@ -229,21 +229,21 @@ In particular, we may assume that $r<\tfrac16$.
 \end{figure}
 
 Exercise \ref{ex:principle-revolution} gives formulas for the principle curvatures of the boundary of $V$;
-which imply that both principle curvatures are at most 1 by absolute value.  
+which imply that both principle curvatures are at most 1 in absolute value.  
 
-It remains to modify $V_1$ to make its boundary connected without increasing bounds on its principle curvatures and  without allowing larger balls inside.
+It remains to modify $V_1$ to make its boundary connected without increasing the bounds on its principle curvatures and  without allowing larger balls inside.
 
 Note that each sphere in the boundary contains two flat discs;
 they come into pairs closely lying to each other. 
 Let us drill thru two of such pairs and reconnect the holes by another body of revolution whose 
 axis is shifted but stays parallel to the axis of $V_1$.
-Denote the obtained body by $V_2$; its cross section of the obtained body is shown on the diagram. 
+Denote the obtained body by $V_2$; the cross section of the obtained body is shown on the diagram. 
 
 Then repeat the operation for the other two pairs.
 Denote the obtained body by $V_3$.
 
 Note that the boundary of $V_3$ is connected.
-Assuming that the holes are large, its boundary can be made so that its principle curvatures are still at most $1$; the latter can be proved the same way as for~$V_1$.
+Assuming that the holes are large, its boundary can be made so that its principle curvatures are still at most $1$; the latter can be proved in the same way as for~$V_1$.
 \qeds
 
 \section*{Remarks}
@@ -260,8 +260,8 @@ that is, it can be parametrized by a sphere with two handles.
 Indeed, the boundary of $V_1$ consists of three smooth spheres.
 
 When we drill a hole, we make one hole in two spheres and two holes in one shpere.
-We reconnect two spheres by a tube and obtain one sphere.
-Connecting the two holes of the other sphere by a tube we get a torus;
+We reconnect two spheres with a tube and obtain one sphere.
+By connecting the two holes of the other sphere with a tube we get a torus;
 it is on the right side on the picture of $V_2$.
 That is, the boundary of $V_2$ is formed by one sphere and one torus.
 
@@ -272,7 +272,7 @@ This way we get a sphere with two handles; that is, it has genus 2.
 Modify Lagunov's construction to make the boundary surface a sphere with 4 handles.
 \end{thm}
 
-Question \ref{quest:lagunov} can be asked differently: what is the maximal radius $r$ of the ball that has to be included in any body bounded by smooth surface with principle curvatures bounded in absolute value by 1.
+Question \ref{quest:lagunov} can be asked differently: what is the maximal radius $r$ of the ball that has to be included in any body bounded by a smooth surface with principle curvatures bounded in absolute value by 1.
 
 \begin{wrapfigure}{o}{25 mm}
 \vskip-0mm
@@ -281,11 +281,11 @@ Question \ref{quest:lagunov} can be asked differently: what is the maximal radiu
 \vskip0mm
 \end{wrapfigure}
 
-One may also consider bodies bounded by few smooth surfaces.
-In this case the example of a region between two large concentric spheres with almost equal radiuses shows that in general case there is no bound.
+One may also consider bodies bounded by more than one smooth surface.
+In this case the example of a region between two large concentric spheres with almost equal radii shows that in the general case there is no bound.
 Indeed, this region can be made arbitrary thin while the curvature of the boundary can be made arbitrary close to zero.
 
-Recall that Lagunov example shows that $r\le r_2$,
+Recall that the Lagunov example shows that $r\le r_2$,
 where $r_2$ is the radius of the smallest circle tangent to three unit circles that are tangent to each other,
 so 
 \[r_2=\tfrac2{\sqrt{3}}-1< \tfrac16.\]
@@ -305,13 +305,13 @@ Direct calculations show that
 \[r_3=\sqrt{\tfrac32}-1>\tfrac15.\]
 In particular $r_3>r_2$.
 
-The statement in the following exercise is a partial case of a theorem Vladimir Lagunov and Abram Fet \cite{lagunov-fet-1963, lagunov-fet-1965}.
+The statement in the following exercise is a partial case of a theorem by Vladimir Lagunov and Abram Fet \cite{lagunov-fet-1963, lagunov-fet-1965}.
 
 \begin{thm}{Very advanced exercise}\label{ex:PI-sphere}
 Suppose a body $V\subset \RR^3$ is bounded by a smooth sphere with principle curvatures bounded in absolute value by 1.
 Show that $V$ contains a ball of radius~$r_3$.
 
-Show that this bound is sharp; that is, there are examples of $V$ as above with a ball of radius arbitrary close to~$r_3$.
+Show that this bound is sharp; that is, show that for every $\varepsilon >0$, there are examples of $V$ as above not containing a ball of radius $r_3+ \varepsilon$.
 \end{thm}
 
 

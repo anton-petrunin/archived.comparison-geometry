@@ -3,7 +3,7 @@
 \section{Tangent-normal coordinates} \label{sec:lmn}
 
 Fix a point $p$ in a smooth oriented surface $\Sigma$.
-Consider a coordinate system $(x,y,z)$ with origin at $p$ such that the $(x,y)$-plane coincides with $\T_p$ and the $z$-axis in the direction of the normal vector $\Norm_p$.
+Consider a coordinate system $(x,y,z)$ with origin at $p$ such that the $(x,y)$-plane coincides with $\T_p$ and the $z$-axis points in the direction of the normal vector $\Norm_p$.
 By \ref{ex:vertical-tangent}, we can present $\Sigma$ locally at $p$ as a graph $z=f(x,y)$ of a smooth function. 
 Note that $f$ satisfies the following additional properties:
 \begin{align*}
@@ -13,7 +13,7 @@ f_x(0,0)&=0,
 &
 f_y(0,0)&=0.
 \end{align*}
-The first equality holds since $p=(0,0,0)$ lies on the graph and the last two equalities mean that the tangent plane at $p$ is horizontal.
+The first equality holds since $p=(0,0,0)$ lies on the graph and the other two equalities mean that the tangent plane at $p$ is horizontal.
 
 
 \begin{wrapfigure}[7]{o}{42 mm}
@@ -37,7 +37,7 @@ for $f$ at $(0,0)$ up to the second order term can be then written as
 Note that values $\ell$, $m$, and $n$ are completely determined by this equation.\index{10lmn@$\ell$, $m$, $n$}
 The so-called \index{osculating paraboloid}\emph{osculating paraboloid}
 \[z=\tfrac12\cdot(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)\]
-gives the best approximation of the surface at $p$;
+gives the best approximation of the surface at $p$ among all paraboloids;
 it has \index{order of contact}\emph{second order of contact} with $\Sigma$ at $p$.
 
 Note that 
@@ -56,13 +56,13 @@ where
   \end{pmatrix};
 \eqlbl{eq:hessian}
 \]
-it is the so-called the \index{Hessian matrix}\emph{Hessian matrix} of $f$ at $(0,0)$.\index{10m@$M_p$}
+$M_p$ is called the \index{Hessian matrix}\emph{Hessian matrix} of $f$ at $(0,0)$.\index{10m@$M_p$}
 
 \section{Principle curvatures}
 
 Note that tangent-normal coordinates give an almost canonical coordinate system in a neighborhood of $p$;
 it is unique up to a rotation of  the $(x,y)$-plane.
-Rotating the $(x,y)$-plane results in the rewriting   
+Rotating the $(x,y)$-plane results in rewriting   
 the matrix $M_p$ in the new basis.
 
 Since the Hessian matrix $M_p$ is symmetric, it is diagonalizable by orthogonal matrices.
@@ -76,9 +76,9 @@ In this case
    &k_2
   \end{pmatrix},
 \]
-the diagonal components $k_1$ and $k_2$ of $M_p$ are called \index{principle curvatures}\emph{principle curvatures} of $\Sigma$ at $p$;\index{10k@$k_1$, $k_2$}
+the diagonal components $k_1$ and $k_2$ of $M_p$ are called the \index{principle curvatures}\emph{principle curvatures} of $\Sigma$ at $p$;\index{10k@$k_1$, $k_2$}
 they might also be denoted as $k_1(p)$ and $k_2(p)$, or $k_1(p)_\Sigma$ and $k_2(p)_\Sigma$;
-if we need to emphasise that we calculate it at the point $p$ for the surface $\Sigma$.
+if we need to emphasize that we compute them at the point $p$ for the surface $\Sigma$.
 We will always assume that $k_1\le k_2$.
 
 
@@ -86,7 +86,7 @@ Note that if $x=f(x,y)$ is a local graph representation of $\Sigma$ in these coo
 \[f(x,y)=\tfrac12\cdot(k_1\cdot x^2+k_2\cdot y^2)+o(x^2+y^2).\]
 
 The principle curvatures can be also defined as the eigenvalues of the Hessian matrix $M_p$.
-The eigendirections of $M_p$  are called \index{principle directions}\emph{principle directions} of $\Sigma$ at~$p$.
+The eigendirections of $M_p$  are called the \index{principle directions}\emph{principle directions} of $\Sigma$ at~$p$.
 Note that if $k_1(p)\ne k_2(p)$, then $p$ has exactly two principle directions, which are perpendicular to each other; if $k_1(p)\z= k_2(p)$ then all tangent directions at $p$ are principle.
 
 Note that if we revert the orientation of $\Sigma$, then the principle curvatures at each point switch their signs and indexes.
@@ -105,11 +105,11 @@ Fix an oriented smooth surface $\Sigma$ and a point $p\in\Sigma$.
 
 The product 
 \[K(p)=k_1(p)\cdot k_2(p)\]
-is called \index{10k@$K$}\index{Gauss curvature}\emph{Gauss curvature} at $p$.
+is called the \index{10k@$K$}\index{Gauss curvature}\emph{Gauss curvature} at $p$.
 We may denote it by $K$, $K(p)$, or $K(p)_\Sigma$ if we need to specify the point $p$ and the surface $\Sigma$.
 
-Since the product of principle values equals to determinant,
-the Gauss curvature equals to the determinant of the Hessian matrix 
+Since the product of the eigenvalues of a matrix equals its determinant,
+the Gauss curvature equals the determinant of the Hessian matrix 
 $M_p\z=
 (\begin{smallmatrix}
 \ell&m
@@ -127,7 +127,7 @@ Show that any surface with positive Gauss curvature is orientable.
 
 The sum \index{10h@$H$}
 \[H(p)=k_1(p)+ k_2(p)\] 
-is called \index{mean curvature}\emph{mean curvature}\footnote{Some authors define mean curvature as $\tfrac12\cdot(k_1(p)+ k_2(p))$ --- the mean value of the principle curvatures. It is suits the name better, but not as convenient when it comes to calculations.} at $p$.
+is called the \index{mean curvature}\emph{mean curvature}\footnote{Some authors define the mean curvature as $\tfrac12\cdot(k_1(p)+ k_2(p))$ --- the mean value of the principle curvatures. It suits the name better, but it is not as convenient when it comes to calculations.} at $p$.
 We may also denote it by $H(p)_\Sigma$.
 The mean curvature can be also interpreted as the trace of the Hessian matrix $M_p\z=
 (\begin{smallmatrix}
@@ -141,13 +141,16 @@ that is,
 
 A surface with vanishing mean curvature is called \index{minimal surface}\emph{minimal}.
 
-Note that reverting orientaion of $\Sigma$ does not change Gauss curvatre and changes sign of mean curvature.
-In particular, the Gauss curvature is well defined for nonoriented surface $\Sigma$ and $p$.
+Note that reverting the orientation of $\Sigma$ does not change the Gauss curvature, but changes the sign of the mean curvature.
+In particular, the Gauss curvature is well defined at every point for a nonoriented surface $\Sigma$.
+
+
+
 
 \section{Shape operator}
 
 Let $p$ be a point on a smooth oriented surface $\Sigma$.
-Suppose $z=f(x,y)$ is a local description of $\Sigma$ in a tangent-normal coordinates at $p$
+Suppose $z=f(x,y)$ is a local description of $\Sigma$ in tangent-normal coordinates at $p$
 and 
 \[M_p=\begin{pmatrix}
    \ell
@@ -169,16 +172,17 @@ x\\y
 \end{smallmatrix});\]\index{10shape@$\Shape$}
 it is a linear operator $\Shape\:\T_p\to \T_p$.
 For a point $p\in \Sigma$ the shape operator of a tangent vector $\vec w\in \T_p$ will be denoted by $\Shape(\vec w)$ if it is clear from the context which base point $p$ and which surface we are working with;
-otherwise we may use notations 
-\[\Shape_p(\vec w)\quad\text{or even}\quad \Shape_p(\vec w)_\Sigma.\]
+otherwise we may use the notations 
+\[\Shape_p(\vec w)\quad\text{or}\quad \Shape_p(\vec w)_\Sigma\]
 
+as the situation requires.
 
 Since $M_p$ is symmetric, $\Shape$ is \index{self-adjoint operator}\emph{self-adjoint}; that is,
 \[\langle \Shape(\vec v),\vec w\rangle=\langle \vec v,\Shape(\vec w)\rangle\]
 for any $\vec v,\vec w\in\T_p$.
-Note also that principle curvatures of $\Sigma$ at $p$ are the eigenvalues of $\Shape_p$ and the principle directions are the directions of principle vectors of $\Shape_p$.
+Note also that the principle curvatures of $\Sigma$ at $p$ are the eigenvalues of $\Shape_p$ and the principle directions are the directions of principle vectors of $\Shape_p$.
 
-Recall that $D_{\vec v}f$ denoted directional derivative of $f$ along vector $\vec v$;
+Recall that $D_{\vec v}f$ denotes the directional derivative of $f$ along the vector $\vec v$;
 that is, if $\phi(t)=f(q+\vec v\cdot t)$, then $D_{\vec v}f(q)=\phi'(0)$.
 
 Denote by $\vec i$, $\vec j$ and $\vec k$ the standard basis in the $(x,y,z)$-coordinates.
@@ -196,11 +200,11 @@ The following proposition implies in particular that $\Shape_p$ does not depend 
 
 \begin{thm}{Proposition}\label{prop:shape=D2}
 Let $p$ be a point on a smooth oriented surface $\Sigma$.
-Suppose $\Sigma$ is described locally as a graph $z=f(x,y)$ in a tangent-normal coordinates at $p$.
+Suppose $\Sigma$ is described locally as a graph $z=f(x,y)$ in tangent-normal coordinates at $p$.
 Then
 \[\langle \Shape(\vec v),\vec w\rangle=D_{\vec w}D_{\vec v}f(0,0)\]
 for any $\vec v,\vec w\in\T_p$.
-Moreover $\Shape\:\T_p\to\T_p$ is a unique linear operator that satisfies the above condition.
+Moreover $\Shape\:\T_p\to\T_p$ is the unique linear operator that satisfies the above condition.
 \end{thm}
 
 \parit{Proof.} 
@@ -238,7 +242,7 @@ D_{\vec w}D_{\vec v}f(0,0)&=a\cdot c\cdot\ell
 In the following proposition we use the notion of directional derivative defined in \ref{def:directional-derivative}.
 
 \begin{thm}{Proposition}\label{prop:S=-D}
-Let $\Sigma$ be a smooth surface with orientation defined by unit normal field $\Norm$.
+Let $\Sigma$ be a smooth surface with orientation defined by the unit normal field $\Norm$.
 Then 
 \[\Shape(\vec w)=-D_{\vec w}\Norm
 \eqlbl{eq:shape=-dNorm}\]
@@ -250,8 +254,8 @@ where $d\Norm$ denotes differential of the spherical map $\nu\:\Sigma\to\mathbb{
 
 
 
-The reason for minus sign in \ref{eq:shape=-dNorm} and \ref{eq:shape=-L} is the same as in the formula  
-for curvature of plane curve in its Frenet frame: $\norm'=-\skur\cdot\tan$.
+The reason the minus sign in \ref{eq:shape=-dNorm} and \ref{eq:shape=-L} arises is the same as in the formula  
+for the signed curvature of a plane curve in its Frenet frame: $\norm'=-\skur\cdot\tan$.
 The proof is done by straightforward calculations.
 
 
@@ -269,7 +273,7 @@ Since the vectors $s_u(u,v)$ and $s_v(u,v)$ are tangent to $\Sigma$ at $s(u,v)$ 
 \end{align*}
 
 Taking partial derivatives of these there identities and applying the product rule,
-we get the following six:
+we get the following six identities:
 \begin{align*}
 0&=\tfrac{\partial}{\partial u}\langle\Norm ,\Norm \rangle
 =
@@ -313,7 +317,7 @@ we get the following six:
 \langle s_v, \Norm_v\rangle.
 \end{align*}
 
-Now suppose $z=f(x,y)$ be a local description of $\Sigma$ in the tangent-normal coordinates at $p$.
+Now suppose $z=f(x,y)$ is a local description of $\Sigma$ in  tangent-normal coordinates at $p$.
 Note that 
 \[s(u,v)=(u,v,f(u,v))\]
 describes a chart of $\Sigma$ at $p$.
@@ -326,7 +330,7 @@ s_u(0,0)&=\vec i,
 s_v(0,0)&=\vec j,
 &
 \nu(0,0)&=\vec k,
-\intertext{In particular $D_{\vec i}\Norm=\Norm_u(0,0)$ and $D_{\vec j}\Norm=\Norm_v(0,0)$. Further,}
+\intertext{In particular $D_{\vec i}\Norm=\Norm_u(0,0)$ and $D_{\vec j}\Norm=\Norm_v(0,0)$. Then,}
 s_{uu}(0,0)&=\ell\cdot \vec k,
 &
 s_{uv}(0,0)&=m\cdot \vec k,
@@ -339,7 +343,7 @@ Evaluating the above 6 identities at $(u,v)\z=(0,0)$, we get that
 \begin{align*}
 \langle -D_{\vec i}\nu ,\vec i\rangle&=\ell,
 &
-\langle -D_{\vec i},\vec j\rangle&=m,
+\langle -D_{\vec i}\nu,\vec j\rangle&=m,
 &
 \langle -D_{\vec i}\nu,\vec k\rangle&=0,
 \\
@@ -381,7 +385,7 @@ for any $(u,v)$.
 \end{thm}
 
 \begin{thm}{Corollary}\label{cor:intK}
-Let $\Sigma$ be a smooth surface with orientation defined by unit normal field $\Norm$.
+Let $\Sigma$ be a smooth surface with orientation defined by a unit normal field $\Norm$.
 Suppose the spherical map $\Norm\:\Sigma\to\mathbb{S}^2$ is injective.
 Then 
 \[\iint_\Sigma|K|=\area[\nu(\Sigma)].\]
@@ -392,8 +396,8 @@ Observe that the tangent planes $\T_p\Sigma=\T_{\Norm(p)}\mathbb{S}^2$ are paral
 Indeed both of these planes are perpendicular to $\Norm(p)$. 
 
 
-Choose an orthonormal basis of $\T_p$ with in principle directions,
-so the shape operator can be expressed by matrix 
+Choose an orthonormal basis of $\T_p$ consisting of principle directions,
+so the shape operator can be expressed by the matrix 
 $(\begin{smallmatrix}
    k_1
    &0
@@ -415,38 +419,38 @@ By the area formula (\ref{prop:surface-integral}), the statement follows.
 
 
 \begin{thm}{Exercise}\label{ex:normal-curvature=const}
-Let $\Sigma$ be a smooth surface with orientation defined by unit normal field $\Norm$.
+Let $\Sigma$ be a smooth surface with orientation defined by a unit normal field $\Norm$.
 Suppose that $\Sigma$ has unit principle curvatures at any point.
 
 \begin{subthm}{ex:normal-curvature=const:a} Show that $\Shape_p(\vec w)=\vec w$ for any $p\in\Sigma$ and $\vec w\in \T_p\Sigma$.
 \end{subthm}
 
 \begin{subthm}{ex:normal-curvature=const:b}Show that $p+\Norm_p$ is constant; that is, the point $c=p+\Norm_p$ does not depend on $p\in\Sigma$.
-Conclude that $\Sigma$ is a part of the unit sphere centered at $c$.
+Conclude that $\Sigma$ is a subset of the unit sphere centered at $c$.
 \end{subthm}
 
 \end{thm}
 
-The following exercise is a result by Ferdinand Joachimsthal \cite{joachimsthal} generalized by Ossian Bonnet \cite{bonnet}.
+Let $p$ be a common point of two surfaces $\Sigma_1$ and $\Sigma _2$. We define the \textit{angle of intersection} of $\Sigma_1$ and $\Sigma_2$ at $p$ as the acute angle between the normal lines to the tangent planes $T_p\Sigma_1$ and $T_p\Sigma_2$. The following exercise is a result by Ferdinand Joachimsthal \cite{joachimsthal} generalized by Ossian Bonnet \cite{bonnet}.
 
 \begin{thm}{Exercise}\label{ex:shape-curvature-line}
-Assume that smooth surfaces $\Sigma_1$ and $\Sigma_2$ intersect at constant angle along a smooth regular curve $\gamma$.
+Assume that two smooth surfaces $\Sigma_1$ and $\Sigma_2$ intersect at constant angle along a smooth regular curve $\gamma$.
 Show that if $\gamma$ is a curvature line in $\Sigma_1$, then it is also a curvature line in $\Sigma_2$.
 
-Conclude that if a smooth surface $\Sigma$ intersects a plane or sphere at constant angle along a smooth curve $\gamma$,
+Conclude that if a smooth surface $\Sigma$ intersects a plane or sphere at constant angle along a smooth regular curve $\gamma$,
 then $\gamma$ is a curvature line of~$\Sigma$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:equidistant}
-Let $\Sigma$ be a closed smooth surface with orientation defined by unit normal field $\Norm$.
+Let $\Sigma$ be a closed smooth surface with orientation defined by a unit normal field $\Norm$.
 Assume $t$ is sufficiently close to zero.
 
 \begin{subthm}{ex:equidistant:smooth}
-Show that the set of point of the $p+t\cdot \Norm(p)$ for $p\in\Sigma$ form a smooth surface, say $\Sigma_t$.
+Show that the set of points of the form $p+t\cdot \Norm(p)$ with $p\in\Sigma$ forms a smooth surface, say $\Sigma_t$.
 \end{subthm}
 
 \begin{subthm}{ex:equidistant:area}
-Let $a(t)$ denotes the area of $\Sigma_t$.
+Let $a(t)$ denote the area of $\Sigma_t$.
 Show that 
 \[a'(0)=-\iint_\Sigma H,\]
 where $H$ denotes mean curvature of $\Sigma$.
