@@ -5,7 +5,7 @@
 Fix a point $p$ in a smooth oriented surface $\Sigma$.
 Consider a coordinate system $(x,y,z)$ with origin at $p$ such that the $(x,y)$-plane coincides with $\T_p$ and the $z$-axis points in the direction of the normal vector $\Norm(p)$.
 By \ref{ex:vertical-tangent}, we can present $\Sigma$ locally at $p$ as a graph $z=f(x,y)$ of a smooth function. 
-Note that $f$ satisfies the following additional properties:
+Note that 
 \begin{align*}
 f(0,0)&=0,
 &
@@ -37,8 +37,7 @@ for $f$ at $(0,0)$ up to the second order term can be then written as
 Note that values $\ell$, $m$, and $n$ are completely determined by this equation.\index{10lmn@$\ell$, $m$, $n$}
 The so-called \index{osculating paraboloid}\emph{osculating paraboloid}
 \[z=\tfrac12\cdot(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)\]
-gives the best approximation of the surface at $p$ among all paraboloids;
-it has \index{order of contact}\emph{second order of contact} with $\Sigma$ at $p$.
+has \index{order of contact}\emph{second order of contact} with $\Sigma$ at $p$.
 
 Note that 
 \[\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2=\langle M_p\cdot (\begin{smallmatrix}
@@ -46,17 +45,17 @@ x\\y
 \end{smallmatrix}), (\begin{smallmatrix}
 x\\y
 \end{smallmatrix})\rangle,\]
-where
+where $M_p$ is the so-called \index{Hessian matrix}\emph{Hessian matrix} of $f$ at $(0,0)$,\index{10m@$M_p$}
 \[M_p=\begin{pmatrix}
    \ell
    &m
    \\
    m
    &n
-  \end{pmatrix};
+  \end{pmatrix}.
 \eqlbl{eq:hessian}
 \]
-$M_p$ is called the \index{Hessian matrix}\emph{Hessian matrix} of $f$ at $(0,0)$.\index{10m@$M_p$}
+
 
 \section{Principle curvatures}
 
@@ -65,7 +64,7 @@ it is unique up to a rotation of  the $(x,y)$-plane.
 Rotating the $(x,y)$-plane results in rewriting   
 the matrix $M_p$ in the new basis.
 
-Since the Hessian matrix $M_p$ is symmetric, it is diagonalizable by orthogonal matrices.
+Since the Hessian matrix $M_p$ is symmetric, by the spectral theorem (\ref{thm:spectral}) it is diagonalizable by orthogonal matrices.
 That is, by rotating the $(x,y)$-plane we can assume that $m=0$ in \ref{eq:hessian}; see \ref{thm:spectral}.
 In this case
 \[M_p=\begin{pmatrix}
@@ -89,7 +88,7 @@ The principle curvatures can be also defined as the eigenvalues of the Hessian m
 The eigendirections of $M_p$  are called the \index{principle directions}\emph{principle directions} of $\Sigma$ at~$p$.
 Note that if $k_1(p)\ne k_2(p)$, then $p$ has exactly two principle directions, which are perpendicular to each other; if $k_1(p)\z= k_2(p)$ then all tangent directions at $p$ are principle.
 
-Note that if we revert the orientation of $\Sigma$, then the principle curvatures at each point switch their signs and indexes.
+Note that if we revert the orientation of $\Sigma$, then the principle curvatures switch their signs and indexes.
 
 A smooth regular curve on a surface $\Sigma$ that always runs in the principle directions is called a \index{line of curvature}\emph{line of curvature} of $\Sigma$.  
 
@@ -101,15 +100,16 @@ Show that $\gamma$ is a line of curvature of $\Sigma$.
 
 \section{More curvatures}\label{sec:More curvatures}
 
-Fix an oriented smooth surface $\Sigma$ and a point $p\in\Sigma$.
+Let $p$ be a point on an oriented smooth surface $\Sigma$.
 
 The product 
 \[K(p)=k_1(p)\cdot k_2(p)\]
 is called the \index{10k@$K$}\index{Gauss curvature}\emph{Gauss curvature} at $p$.
 We may denote it by $K$, $K(p)$, or $K(p)_\Sigma$ if we need to specify the point $p$ and the surface $\Sigma$.
 
-Since the product of the eigenvalues of a matrix equals its determinant,
-the Gauss curvature equals the determinant of the Hessian matrix 
+Since the determinant is equal to the product of the eigenvalues, we get
+\[K=\ell\cdot n-m^2,\]
+where 
 $M_p\z=
 (\begin{smallmatrix}
 \ell&m
@@ -117,9 +117,7 @@ $M_p\z=
 m&n
 \end{smallmatrix}
 )
-$;
-that is,
-\[K=\ell\cdot n-m^2.\]
+$ is the Hessian matrix.
 
 \begin{thm}{Exercise}\label{ex:gauss+orientable}
 Show that any surface with positive Gauss curvature is orientable. 
@@ -142,7 +140,7 @@ that is,
 A surface with vanishing mean curvature is called \index{minimal surface}\emph{minimal}.
 
 Note that reverting the orientation of $\Sigma$ does not change the Gauss curvature, but changes the sign of the mean curvature.
-In particular, the Gauss curvature is well defined at every point for a nonoriented surface $\Sigma$.
+In particular, the Gauss curvature is well defined  for a nonoriented surfaces.
 
 
 
@@ -151,15 +149,14 @@ In particular, the Gauss curvature is well defined at every point for a nonorien
 
 Let $p$ be a point on a smooth oriented surface $\Sigma$.
 Suppose $z=f(x,y)$ is a local description of $\Sigma$ in tangent-normal coordinates at $p$
-and 
-\[M_p=\begin{pmatrix}
-   \ell
-   &m
-   \\
-   m
-   &n
-  \end{pmatrix};
-\]
+and $M_p\z=
+(\begin{smallmatrix}
+\ell&m
+\\
+m&n
+\end{smallmatrix}
+)
+$
 is the Hessian matrix of $f$ at $(0,0)$; the components $\ell$, $m$, and $n$ are defined in Section~\ref{sec:lmn}.
 
 The multiplication by the Hessian matrix defies the so-called \index{shape operator}\emph{shape operator}
@@ -174,7 +171,6 @@ it is a linear operator $\Shape\:\T_p\to \T_p$.
 For a point $p\in \Sigma$ the shape operator of a tangent vector $\vec w\in \T_p$ will be denoted by $\Shape(\vec w)$ if it is clear from the context which base point $p$ and which surface we are working with;
 otherwise we may use the notations 
 \[\Shape_p(\vec w)\quad\text{or}\quad \Shape_p(\vec w)_\Sigma\]
-
 as the situation requires.
 
 Since $M_p$ is symmetric, $\Shape$ is \index{self-adjoint operator}\emph{self-adjoint}; that is,
@@ -186,7 +182,7 @@ Recall that $D_{\vec v}f$ denotes the directional derivative of $f$ along the ve
 that is, if $\phi(t)=f(q+\vec v\cdot t)$, then $D_{\vec v}f(q)=\phi'(0)$.
 
 Denote by $\vec i$, $\vec j$ and $\vec k$ the standard basis in the $(x,y,z)$-coordinates.
-Then according to the definition of shape operator, we have
+Then by the definition of shape operator, we have
 \[
 \begin{aligned}
 \Shape(\vec i)&=\ell\cdot \vec i+m\cdot \vec j,
@@ -272,7 +268,7 @@ Since the vectors $s_u(u,v)$ and $s_v(u,v)$ are tangent to $\Sigma$ at $s(u,v)$ 
 0&=\langle s_v,\Norm\rangle.
 \end{align*}
 
-Taking partial derivatives of these there identities and applying the product rule,
+Taking partial derivatives of these three identities and applying the product rule,
 we get the following six identities:
 \begin{align*}
 0&=\tfrac{\partial}{\partial u}\langle\Norm ,\Norm \rangle
@@ -431,10 +427,11 @@ Conclude that $\Sigma$ is a subset of the unit sphere centered at $c$.
 
 \end{thm}
 
-Let $p$ be a common point of two surfaces $\Sigma_1$ and $\Sigma _2$. We define the \textit{angle of intersection} of $\Sigma_1$ and $\Sigma_2$ at $p$ as the acute angle between the normal lines to the tangent planes $T_p\Sigma_1$ and $T_p\Sigma_2$. The following exercise is a result by Ferdinand Joachimsthal \cite{joachimsthal} generalized by Ossian Bonnet \cite{bonnet}.
+We define the \index{angle between surfaces}\emph{angle} between two oriented surfaces at a point of their intersection $p$ as the angle between their normal vectors at $p$.
+The following exercise is a result by Ferdinand Joachimsthal \cite{joachimsthal} generalized by Ossian Bonnet \cite{bonnet}.
 
 \begin{thm}{Exercise}\label{ex:shape-curvature-line}
-Assume that two smooth surfaces $\Sigma_1$ and $\Sigma_2$ intersect at constant angle along a smooth regular curve $\gamma$.
+Assume that two smooth oriented surfaces $\Sigma_1$ and $\Sigma_2$ intersect at constant angle along a smooth regular curve $\gamma$.
 Show that if $\gamma$ is a curvature line in $\Sigma_1$, then it is also a curvature line in $\Sigma_2$.
 
 Conclude that if a smooth surface $\Sigma$ intersects a plane or sphere at constant angle along a smooth regular curve $\gamma$,
@@ -446,11 +443,11 @@ Let $\Sigma$ be a closed smooth surface with orientation defined by a unit norma
 Assume $t$ is sufficiently close to zero.
 
 \begin{subthm}{ex:equidistant:smooth}
-Show that the set of points of the form $p+t\cdot \Norm(p)$ with $p\in\Sigma$ forms a smooth surface, say $\Sigma_t$.
+Show that the set of points of the form $p+t\cdot \Norm(p)$ with $p\in\Sigma$ forms a smooth surface; denote it by $\Sigma_t$.
 \end{subthm}
 
 \begin{subthm}{ex:equidistant:area}
-Let $a(t)$ denote the area of $\Sigma_t$.
+Let $a(t)$ be the area of $\Sigma_t$.
 Show that 
 \[a'(0)=-\iint_\Sigma H,\]
 where $H$ denotes mean curvature of $\Sigma$.
