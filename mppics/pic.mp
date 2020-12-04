@@ -4136,6 +4136,9 @@ label.urt (btex $p$ etex, z.p);
 label.lrt (btex $q$ etex, z.q);
 endfig;
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 beginfig(1181);
 save u;
 u:=1cm;

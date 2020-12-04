@@ -1012,7 +1012,8 @@ $k_2(p)_{\Sigma_1}\z>k_2(p)_{\Sigma_2}> k_1(p)_{\Sigma_1}> k_1(p)_{\Sigma_2}$ an
 Assume a maximal ball in $V$ has radius $r$ and touches its boundary at the points $p$ and $q$.
 Consider the projection $R$ of $V$ to a plane thru $p$, $q$ and the center of the ball.
 Show that $R$ is bounded by a smooth closed convex curve with curvature at most $1$.
-Use it to show that $r\ge 1$.
+Argue as in \ref{ex:between-parallels-1} to
+show that $r\ge 1$.
 
 }
  
@@ -1078,7 +1079,7 @@ Since the unit sphere is compact, we can pass to a subsequence of $(x_n)$ such t
 Show that the half-line from the origin in the direction of $\vec u$ can be taken as $\ell$; that will solve .
 
 
-\parit{\ref{SHORT.ex:convex-proper-plane:b} and \ref{SHORT.ex:convex-proper-plane:c}.}
+\parit{\ref{SHORT.ex:convex-proper-plane:b} + \ref{SHORT.ex:convex-proper-plane:c} + \ref{SHORT.ex:convex-proper-plane:d}.}
 Since $R$ is convex, so its projection $\Omega$.
 
 Note and use that for any $q\in \Sigma$, the directions $\vec v_n=\tfrac{x_n-q}{|x_n-q|}$ converge to $\vec u$ as well.
@@ -1086,8 +1087,6 @@ Note and use that for any $q\in \Sigma$, the directions $\vec v_n=\tfrac{x_n-q}{
 Show that $\Sigma$ has no vertical tangent planes.
 Conclude that the projection map from $\Sigma$ to $(x,y)$-plane is regular.
 Use the inverse function theorem to show that $\Omega$ is open.
-
-\parit{\ref{SHORT.ex:convex-proper-plane:d}.} Follows from \ref{SHORT.ex:convex-proper-plane:b} and \ref{SHORT.ex:convex-proper-plane:c}.
 
 \parit{\ref{SHORT.ex:convex-proper-plane:e}.} 
 Arguing by contradiction, suppose that for some sequence $(x_n,y_n)\z\to(x_\infty,y_\infty)\in \partial\Omega$ the sequence $f(x_n,y_n)$ stays bounded above.
@@ -1110,9 +1109,9 @@ Show that in this case the boundary of $\Omega$ can be written in polar coordina
 Then homeomorphism to the plane can be described in polar coordinate by changing only the radial coordinate;
 for example as 
 $(\theta,r)\z\mapsto (\theta,
-\tfrac1{f(\theta)-r}\z-\tfrac1{f(\theta)})$.
+\tfrac{r}{1-r/f(\theta)})$.
 
-To do the second part ane may apply \ref{ex:star-shaped-disc:nonsmooth}.
+To do the second part, one may apply \ref{ex:star-shaped-disc:nonsmooth}.
 
 
 \parbf{\ref{ex:circular-cone}.}
@@ -1120,7 +1119,7 @@ Choose a coordinate system so that $(x,y)$-plane supports $\Sigma$ at the origin
 
 Show that there is $\eps>0$ such that any line starting from the origin with slope at most $\eps$ may intersect $\Sigma$ only in the unit ball centered at the origin;
 we may assume that $\eps$ is small, say $\eps<1$.
-Consider the cone formed by half-lines from the origin with slope $\eps$ shifted down by 10 and observe that entire surface lies in this cone.
+Consider the cone formed by half-lines from the origin with slope $\eps$ shifted down by $1$ and observe that entire surface lies in this cone.
 
 
 
@@ -1135,60 +1134,47 @@ that is, $\Norm\:\Sigma\to\mathbb{S}^2$ is injective.
 \parit{\ref{SHORT.ex:intK:4pi}.}
 Given a unit vector $\vec u$, consider a point $p\in \Sigma$ that maximize the scalar product $\langle p,\vec u\rangle$.
 Show that $\Norm(p)=\vec u$.
-Conclude that the spherical map $\Norm\:\Sigma\to\mathbb{S}^2$ is onto.
-It follows that $\Norm\:\Sigma\to\mathbb{S}^2$ is bijection.
+Conclude that the spherical map $\Norm\:\Sigma\to\mathbb{S}^2$ is onto, and therefore it is a bijection.
 
-Applying \ref{cor:intK}, we get that 
-\begin{align*}
-\iint_\Sigma K
-&=\area\mathbb{S}^2=
-4\cdot\pi.
-\end{align*}
+Applying \ref{cor:intK}, we get that the integral is $4\cdot\pi=\area\mathbb{S}^2$.
 
 \parit{\ref{SHORT.ex:intK:2pi}.} Choose an $(x,y,z)$-coordinate system provided by \ref{ex:convex-proper-plane:d}.
 Observe that for any $p$ the normal vector $\Norm(p)$ forms an obtuse angle with the direction of $z$-axis.
 It follows that the image $\Norm(\Sigma)$ lies in the south hemisphere.
 
-Applying \ref{cor:intK}, we get that 
-\begin{align*}
-\iint_\Sigma K&\le \tfrac12\cdot\area\mathbb{S}^2=2\cdot\pi.
-\end{align*}
+Applying \ref{cor:intK}, we get that the integral is $2\cdot\pi=\tfrac12\cdot\area\mathbb{S}^2$.
 
-\parbf{\ref{ex:convex-revolution}.} Use \ref{ex:principle-revolution}.
+\parbf{\ref{ex:convex-revolution}.}
+Apply \ref{ex:principle-revolution}.
 
 \parbf{\ref{ex:ruled=>saddle}.} Prove and use that each point $p\in\Sigma$ has a direction with vanishing normal curvature.
 
-\parbf{\ref{ex:saddle-convex}.} Suppose $p$ is a point of local maximum.
+\parbf{\ref{ex:saddle-convex}.} Suppose $p\in \Sigma$ is a point of local maximum of $f$.
 Arrive to a contradiction by showing that $\Sigma$ is supported by the tangent plane at $p$.
 
 
 \parbf{\ref{ex:panov}.} Denote by $\Pi_t$ the tangent plane to $\Sigma$ at $\gamma(t)$ and by $\ell_t$ the tangent line of $\gamma$ at time $t$.
 
-Since $\gamma$ is asymptotic, the plane $\Pi_t$ rotates around $\ell_t$ as $t$ changes.
-Since $\Sigma$ is saddle, the speed of rotation cannot vanish.%
-\footnote{In fact by the Beltrami--Enneper theorem, if $\gamma$ has unit speed, then the speed of rotation is $\pm\sqrt{-K}$, where $K$ is the Gauss curvature which cannot vanish on a saddle surface.}
-
 Note that $\Pi_t$ is a graph of a linear function, say $h_t$, defined on the $(x, y)$-plane.
 Denote by $\bar\ell_t$ the projection of $\ell_t$ to the $(x, y)$-plane.
-The described rotation of $\Pi_t$ can be expressed algebraicaly:
-the derivative $\tfrac{d}{dt}h_t(w)$ vanishes at the point $w$ if and only if $w\in \bar\ell_t$ 
+Show that the derivative $\tfrac{d}{dt}h_t(w)$ vanishes at the point $w$ if and only if $w\in \bar\ell_t$ 
 and the derivative changes sign if $w$ changes the side of $\bar\ell_t$.
 
 Denote by $\bar\gamma$ the projection of $\gamma$ to the $(x, y)$-plane.
 If $\bar\gamma$ is star shaped with respect to a point $w$, then $w$ cannot cross $\bar\ell_t$.
 Therefore the function $t\mapsto h_t(w)$ is monotonic on $\mathbb{S}^1$.
-Observing that this function cannot be constant, we arrive to a contradiction.
+Observe that this function cannot be constant, and arrive to a contradiction.
 
 \parbf{\ref{ex:crosss}.}
 This problem follows easily from the so-called \index{Morse lemma}\emph{Morse lemma}.
 The following sketch is a slightly stripped version of it.
-A more conceptual proof can be built using the Moser's trick \cite{palais}.
+A more conceptual proof can be built on the Moser's trick \cite{palais}.
 
 \medskip
 
 Choose a tangent-normal coordinates at $p$ so that the axis point in the principle directions of $\Sigma$ at $p$;
 let $z=f(x,y)$ be the local graph representation of $\Sigma$.
-We need to show that the solution of equation $f(x,y)=0$ is a union of two smooth curves that intersect transversely at $p$.
+We need to show that the solution of the equation $f(x,y)=0$ is a union of two smooth curves that intersect transversely at $p$.
 
 Prove the following claim:
 \begin{itemize}
@@ -1214,8 +1200,9 @@ f(x,y)&=a(x)^2-b(x,y)^2=
 \end{align*}
 That is $f(x,y)=0$ if $a(x)\pm b(x,y) =0$.
 
-It remains to observe that the two functions $g_\pm(x,y)=a(x)\pm b(x,y)$ have distinct non-zero gradients at $0$ and apply the implicit function theorem.
-Therefore each equation $a(x)\pm b(x,y) =0$ defines a smooth regular curve in a neighborhood of $p$.
+It remains to observe that the two functions $g_\pm(x,y)=a(x)\pm b(x,y)$ have distinct non-zero gradients at $0$.
+Therefore each equation $a(x)\pm b(x,y) =0$ defines a smooth regular curve in a neighborhood of $p$;
+see Section~\ref{sec:implicit-curves}.
 
 
 
@@ -1226,23 +1213,25 @@ Therefore each equation $a(x)\pm b(x,y) =0$ defines a smooth regular curve in a 
 \parbf{\ref{ex:circular-cone-saddle}.}
 Assume $\Sigma$ is an open saddle surface that lies in a cone $K$.
 Show that there is a plane $\Pi$ that cuts $\Sigma$ and cuts from $K$ a compact region.
-Observe that $\Pi$ cuts from $\Sigma$ a compact region.
+Conclude that $\Pi$ cuts from $\Sigma$ a compact region.
 
 By \ref{lem:reg-section} one can move plane $\Pi$ slightly so that it cuts from $\Sigma$ a compact surface with boundary.
 Apply \ref{lem:convex-saddle}.
 
 
-\parbf{\ref{ex:disc-hat}.} Observe that it is sufficient to construct a smooth parametrization of $F_\eps$ by a closed hemisphere.
-
+\parbf{\ref{ex:disc-hat}.} 
 Consider the radial projection of $F_\eps$ to the sphere $\Sigma$ with the center at $p=(0,0,\eps)$;
 that is, a point $q\in F_\eps$ is mapped to a point $s(q)$ on the sphere that lies on the ray $pq$.
 
 Show that $s$ is a diffeomorphism from $F_\eps$ to a south hemisphere of~$\Sigma$.
+It remains to observe that unit disc is diffeomorphic to the hemisphere.
 
 \parbf{\ref{ex:saddle-linear}.} Apply \ref{prop:hat}.
 
 
-\parbf{\ref{ex:between-parallels}.} Look for an example among the surfaces of revolution and use \ref{ex:principle-revolution}.
+\parbf{\ref{ex:between-parallels}.}
+Find an example among the surfaces of revolution.
+Use \ref{ex:principle-revolution} in the proof.
 
 \parbf{\ref{ex:one-side-bernshtein}.} Look at the sections of the graph by planes parallel to the $(x,y)$-plane and to the $(x,z)$-plane, then apply Meusnier’s theorem (\ref{thm:meusnier}).
 
@@ -1261,13 +1250,15 @@ On the other hand, since $\Sigma$ is a graph outside of compact set $K$, we have
 \setcounter{eqtn}{0}
 
 \begin{wrapfigure}[5]{r}{24 mm}
-\vskip-4mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-1250}
 \vskip-0mm
 \end{wrapfigure}
 
-\parbf{\ref{ex:lasso}.} Cut the lateral surface of the mountain by a line from the cowboy to the tip, unfold it on the plane and try to figure out what is the image of the strained lasso.
+\parbf{\ref{ex:lasso}.}
+Cut the lateral surface of the ice-mountain by a line from the cowboy to the tip;
+unfold it on the plane (see the picture) and try to figure out what is the image of the strained lasso.
 
 \parbf{\ref{ex:length-dist-conv}.} 
 Note that by \ref{thm:convex-embedded}, $\Sigma$ bounds a strictly convex region.
@@ -1278,9 +1269,9 @@ Further, we can assume that $\Norm(p)+\Norm(q)\ne 0$, otherwise the right hand s
 
 In the remaining case the tangent planes $\T_p$ and $\T_q$ intersect along a line, say $\ell$.
 Set $\alpha=\tfrac12\cdot\measuredangle(\Norm(p),\Norm(q))$;
-observe that $\cos\alpha= |\Norm(p)+\Norm(q)|/2$.
+observe that $2\cdot\cos\alpha= |\Norm(p)+\Norm(q)|$.
 Let $x\in \ell$ be the point that minimize the sum $|p-x|\z+|x-q|$.
-Observe that $\measuredangle\hinge xpq\ge \pi-2\cdot\alpha$.
+Show that $\measuredangle\hinge xpq\ge \pi-2\cdot\alpha$.
 Conclude that 
 \[|p-x|+|x-q|\le \frac{|p-q|}{\cos\alpha}.\]
 
@@ -1288,8 +1279,7 @@ Finally, apply \ref{cor:shorts+convex} to show that
 \[|p-q|_\Sigma\le |p-x|+|x-q|.\]
 
 
-\parbf{\ref{ex:hat-convex}.} Assume the contrary,
-then there is a minimizing geodesic $\gamma\not\subset\Delta$ with ends $p$ and $q$ in $\Delta$.
+\parbf{\ref{ex:hat-convex}.} Suppose that there is a minimizing geodesic $\gamma\not\subset\Delta$ that ends $p$ and $q$ lie in $\Delta$.
 
 Without loss of generality, we may assume that only one arc of $\gamma$ lies outside of $\Delta$.
 Reflection of this arc  with respect to $\Pi$ together with the remaining part of $\gamma$ forms another curve $\hat\gamma$ from $p$ to $q$;
@@ -1308,7 +1298,8 @@ and by \ref{cor:shorts+convex}
 This means that $\gamma$ is not length minimizing, 
 a contradiction.
 
-\parbf{\ref{ex:intrinsic-diameter}.} Use \ref{lem:closest-point-projection}.
+\parbf{\ref{ex:intrinsic-diameter}.} 
+Consider the closest-point projection from the sphere to $\Sigma$ and apply \ref{lem:closest-point-projection}.
 
 \setcounter{eqtn}{0}
 
