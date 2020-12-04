@@ -324,7 +324,7 @@ and (3) show that $\gamma$ lies in the unit disc centered at $z$.
 
 \parbf{\ref{adex:crofton}.}
 For \ref{SHORT.adex:crofton:crofton}, modify the proof of the original Crofton formula
-[Section~\ref{sec:crofton}].
+(Section~\ref{sec:crofton}).
 
 \parit{\ref{SHORT.adex:crofton:hemisphere}.}
 Assume $\length \gamma<2\cdot\pi$.
@@ -1312,10 +1312,10 @@ Note that the latter is equivalent to $\gamma''(t)\perp\T_{\gamma(t)}$.
 \parbf{\ref{ex:asymptotic-geodesic}.} Without loss of generality, we can assume that $\gamma$ has unit speed.
 By the definition of geodesic, we have that $\gamma''(s)\perp\T_{\gamma(s)}$. 
 Therefore 
-\[\gamma''(s)=k_n(s)\cdot\Norm(\gamma(s))},\]
+\[\gamma''(s)=k_n(s)\cdot\Norm(\gamma(s)),\]
 where $k_n(s)$ is the normal curvature of $\gamma$ at time $s$.
 Since $\gamma$ is asymptotic, $k_n(s)\equiv 0$;
-that is, $\gamma''(s)\equiv 0$, therefore $\gamma'$ is constant and $\gamma$ runs along a line segment.
+that is, $\gamma''(s)\equiv 0$, therefore $\gamma'$ is constant and $\gamma$ runs along a line segment; see \ref{ex:zero-curvature-curve}.
 
 \parbf{\ref{ex:reflection-geodesic}.}
 Denote by $\mu$ a unit vector perpendicular to $\Pi$.
@@ -1351,8 +1351,8 @@ Consider an arbitrary closed geodesic $\gamma$.
 
 Note that if $\gamma$ is tangent to a meridian at some point, then by uniqueness, $\gamma$ runs along the meridian; in particular it is non-contractible.
 
-It remains to consider the case when $\gamma$ intersect meridians transitively.
-So the longitude of $\gamma$ is monotonic.
+In the remaining case $\gamma$ can intersect meridians only transitively.
+Therefore the longitude of $\gamma$ is monotonic.
 Whence again $\gamma$ is non-contractible.
 
 \parbf{\ref{ex:two-min-geod}.}
@@ -1384,7 +1384,7 @@ It follows that $p$ and $q$ are the end points of $\alpha$.
 The same way we can show that $p$ and $q$ are the end points of $\beta$.
 
 \parbf{\ref{ex:min-geod+plane}.}
-Assume a shortest path $\alpha$ changes the sides of $\Pi$ at least twice.
+Assume that a shortest path $\alpha$ changes the sides of $\Pi$ at least twice.
 In this case there is an arc $\alpha_1$ of $\alpha$ that lies on one side on $\Pi$ and has ends on $\Pi$ and these ends are distinct from the ends of $\alpha$.
 
 Let us remove the arc $\alpha_1$ from $\alpha$ and exchange it to the reflection of $\alpha_1$ across $\Pi$.
@@ -1396,7 +1396,7 @@ Since $\alpha$ and $\beta$ have a common subarc, they share one point and veloci
 by \ref{prop:geod-existence} $\alpha$ coinsides with $\beta$ --- a contradiction.
 
 
-\parbf{\ref{ex:milka}.} Show that the concatenation of the line segment $[p^t\,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path from $p^t$ to $q$ in the closed region $W$ outside of $\Sigma$.
+\parbf{\ref{ex:milka}.} Show that the concatenation of the line segment $[p^t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path from $p^t$ to $q$ in the closed region $W$ outside of $\Sigma$.
 
 \parbf{\ref{ex:rho''}.}
 Equip $\Sigma$ with unit normal field $\Norm$ that points inside.
@@ -1431,17 +1431,19 @@ Observe that $z'(t)\to\pm \tfrac\ell{\sqrt{1+ \ell ^2}}$ as $t\to\pm\infty$.
 Conclude that 
 \[\int_{-\infty}^{+\infty}z''(t)\cdot dt
 =
-\tfrac{2\cdot\ell}{\sqrt{1+ \ell ^2}}.\eqlbl{eq:int z''}\]
+\frac{2\cdot\ell}{\sqrt{1+ \ell ^2}}.\eqlbl{eq:int z''}\]
 By \ref{eq:gamma''=z''} and \ref{eq:int z''}, we have
 \begin{align*}
 \tc\gamma&=\int_{-\infty}^{+\infty}|\gamma''(t)|\cdot dt=
 \sqrt{1+ \ell ^2}\cdot \int_{-\infty}^{+\infty}z''(t)\cdot dt=2\cdot \ell.
 \end{align*}
 
-\parbf{\ref{ex:rough-bound-mountain}.} Use \ref{thm:usov} and \ref{ex:sef-intersection}.
+\parbf{\ref{ex:rough-bound-mountain}.}
+Use \ref{thm:usov} and \ref{ex:sef-intersection}.
 
-The suggested argument does not give the optimal bound for the Lipschitz constant that guarantees that $\gamma$ is simple, but
-later (see \ref{ex:sqrt(3)}) we will show that the exact bound is $\sqrt{3}=\tg\tfrac\pi3$ --- it is the same as in the exercise about mountain of with the shape of a perfect cone; see~\ref{ex:lasso}.
+\parit{Remark.}
+The statement still holds for $\sqrt{3}$-Lipschitz functions, and $\sqrt{3}=\tg\tfrac\pi3$ is the optmal bound; see \ref{ex:sqrt(3)}.
+It is the same slope as in the problem about lasso (\ref{ex:lasso}).
 
 \parbf{\ref{ex:parallel}}; \ref{SHORT.ex:parallel:a}.
 Show and use that $\langle\vec v(t),\vec v'(t)\rangle=0$.
@@ -1456,14 +1458,15 @@ $\langle\vec v(t),\vec w(t)\rangle=|\vec v(t)|\cdot|\vec w(t)|\cdot\cos\theta$.
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:parallel-transport-support}.}
-Observe $\Sigma_1$ supports $\Sigma_2$ at any point of $\gamma$.
-Conclude that $\gamma$ identical spherical images in $\Sigma_1$ and $\Sigma_2$ and apply Observation \ref{obs:parallel=}.
+Observe that $\Sigma_1$ supports $\Sigma_2$ at any point of $\gamma$.
+Conclude that $\gamma$ has identical spherical images as a curve in $\Sigma_1$ and in $\Sigma_2$.
+Apply \ref{obs:parallel=}.
 
 \parbf{\ref{ex:holonomy=not0}.}
 Consider triangle that coordinate octant cuts form the sphere and try to argue that parallel transport around it rotates the tangent plane by angle $\tfrac\pi 2$. 
 
 \parbf{\ref{ex:geodesic-curvature}.}
-Suppose $\tan(t),\mu(t),\Norm(t)$ is the frame as in the definition of geodesic curvature.
+Let $\tan,\mu,\Norm$ be the Darboux frame of $\gamma$ in $\Sigma$ (see Section~\ref{sec:Darboux}).
 
 If $\gamma$ is a geodesic, then by \ref{lem:constant-speed}, it has constant speed.
 Applying scaling, we may assume that the speed is 1.
@@ -1800,9 +1803,9 @@ Namely, show that the sum of its side vectors oriented counterclocwise does not 
 \parbf{\ref{ex:geod-convexity}.} Apply \ref{angk>angk} and \ref{angk<angk}.
 
 \parbf{\ref{ex:midpoints}.} Use \ref{angk>angk} or \ref{angk<angk} twice:
-first for the triangle $[pxy]$ and $\bar x\in [px]$
+first for the triangle $[pxy]$ and $\bar x\in [p,x]$
 and 
-second for the triangle $[p\bar xy]$ and $\bar y\in [py]$.
+second for the triangle $[p\bar xy]$ and $\bar y\in [p,y]$.
 Then apply the angle monotonicity (\ref{lem:angle-monotonicity}).
 
 \parit{\ref{SHORT.ex:self-intersections-hard}}.
@@ -1851,14 +1854,14 @@ on the Euclidean plane the proof is just as hard.
 
 \parbf{\ref{ex:dist-to-bry}}; \ref{SHORT.ex:dist-to-bry:-}.
 Choose two points $x,z\in\Sigma$;
-let $y$ be the midpoint of $[xz]$.
+let $y$ be the midpoint of $[x,z]$.
 Denote by $\bar x$ and $\bar z$ the points on $\delta$ that minimize the distances to $x$ and $z$ respectively;
 so we have
 $f(x)
 =|x-\bar x|_\Sigma$,
 and $f(z)=|z-\bar z|_\Sigma$.
 
-Since $\Delta$ is convex, the midpoint of $[\bar x\bar z]$, say  $\bar y$, lies in $\Delta$.
+Since $\Delta$ is convex, the midpoint of $[\bar x,\bar z]$, say  $\bar y$, lies in $\Delta$.
 By \ref{ex:convex-dist}, we have 
 \begin{align*}
 f(y)&\le |y-\bar y|_\Sigma
@@ -1882,14 +1885,14 @@ Observe that this inequality implies convexity of $f$.
 \parit{\ref{SHORT.ex:dist-to-bry:+}.}
 Suppose $\gamma$ is a unit-speed geodesic in $\Delta$ and $\gamma(0)=p$. 
 Let $q$ be a point on $\delta$ that minimize the distance to $p$.
-Denote by $\phi$ the angle between $\gamma$ and $[pq]$ at $p$.
+Denote by $\phi$ the angle between $\gamma$ and $[p,q]$ at $p$.
 Note that it is sufficient to show that 
 \[f\circ\gamma(t)\le |p-q|_\Sigma+t\cdot\cos\phi\eqlbl{eq:dist<cosphi}\]
 for $t$ sufficiently close to $0$.
 
 Chose small $t>0$ and set $x\z=\gamma(t)$.
 Consider a model triangle $[\tilde p\tilde q\tilde x]\z=\tilde\triangle(pqx)$.
-Let $\tilde\delta$ be the line thru $\tilde q$ perpendicular to $[\tilde p\tilde q]$.
+Let $\tilde\delta$ be the line thru $\tilde q$ perpendicular to $[\tilde p,\tilde q]$.
 Denote by $\tilde y$ the orthogonal projection of $\tilde x$ to $\tilde\delta$.
 By comparison we have that 
 \begin{align*}
@@ -1934,7 +1937,7 @@ The case $t<0$ can be done along the same lines.
 
 \parbf{\ref{ex:half-line}}; \ref{SHORT.ex:half-line:exist}.
 Choose a sequence of points $x_n\in K$ that escapes to infinity; that is, such that $\dist{p}{x_n}{\Sigma}\to\infty$ as $n\to\infty$.
-Denote by $\vec u_n\in\T_p$ the unit vector in the direction of $[px_n]$.
+Denote by $\vec u_n\in\T_p$ the unit vector in the direction of $[p,x_n]$.
 Let $\vec u_\infty$ be a partial limit of $\vec u_n$.
 
 Show that the geodesic that starts from $p$ in the direction of $\vec u_\infty$ is a half-line that runs in $K$.

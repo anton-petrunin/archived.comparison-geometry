@@ -4,12 +4,12 @@ This chapter based on material in the book os Stephanie Alexander, Vitali Kapovi
 
 \section{Triangles and hinges}
 
-Recall that a shortest path between points $x$ and $y$ in a surface $\Sigma$ is denoted as $[xy]$ or $[xy]_\Sigma$, and
+Recall that a shortest path between points $x$ and $y$ in a surface $\Sigma$ is denoted as $[x,y]$ or $[x,y]_\Sigma$, and
 $|x-y|_\Sigma$ denotes the \index{intrinsic distance}\emph{intrinsic distance} from $x$ to $y$ in $\Sigma$.
 
-A \index{geodesic triangle}\emph{geodesic triangle} in a surface $\Sigma$ is defined as a triple of points $x,y,z\in \Sigma$ with choice of minimizing geodesics $[xy]_\Sigma$, $[yz]_\Sigma$ and $[zx]_\Sigma$.
+A \index{geodesic triangle}\emph{geodesic triangle} in a surface $\Sigma$ is defined as a triple of points $x,y,z\in \Sigma$ with choice of minimizing geodesics $[x,y]_\Sigma$, $[y,z]_\Sigma$ and $[z,x]_\Sigma$.
 The points $x,y,z$ are called {}\emph{vertexes} of the geodesic triangle,
-the minimizing geodesics $[xy]$, $[yz]$ and $[zx]$ are called its {}\emph{sides};
+the minimizing geodesics $[x,y]$, $[y,z]$ and $[z,x]$ are called its {}\emph{sides};
 the triangle itself is denoted by $[xyz]$, or by $[xyz]_\Sigma$, if we need to emphasize that it lies in $\Sigma$.\index{10aad@$[xyz]$, $[xyz]_\Sigma$}
 
 A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\RR^2$ is called \index{model triangle}\emph{model triangle} of the triangle $[xyz]$
@@ -24,7 +24,7 @@ that is,
 In this case we write $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$.
 \index{10aae@$\tilde\triangle$}
 
-A pair of minimizing geodesics $[xy]$ and $[xz]$ starting from one point $x$ is called \index{hinge}\emph{hinge} and denoted as $\hinge xyz$.\index{10aac@$\hinge yxz$}
+A pair of minimizing geodesics $[x,y]$ and $[x,z]$ starting from one point $x$ is called \index{hinge}\emph{hinge} and denoted as $\hinge xyz$.\index{10aac@$\hinge yxz$}
 The angle between these geodesics at $x$ is denoted by $\measuredangle\hinge xyz$.
 The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in the model triangle $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$ is denoted by $\angk xyz$.
 \index{10aab@$\angk xyz$}
@@ -255,16 +255,16 @@ The new hinge $\hinge{x'}p q$ will satisfy the following properties:
 \ge\side \hinge{x'}p q
 \eqlbl{eq:thm:=def-loc-fivestar}\]
 and 
-$x'\in [xp]\z\cup [xq]$. In particular, the triangle inequality implies that 
+$x'\in [x,p]\z\cup [x,q]$. In particular, the triangle inequality implies that 
 \[
 \dist{p}{x}{}+\dist{x}{q}{}\ge\dist{p}{x'}{}+\dist{x'}{q}{}.
 \eqlbl{eq:thm:=def-loc-fourstar}\]
 
 Assume $\dist{x}{q}{}\ge\dist{x}{p}{}$, otherwise switch the roles of $p$ and $q$ in the following construction.
-Take $x'\in [x q]$ such that 
+Take $x'\in [x, q]$ such that 
 \[\dist{p}{x}{}+3\cdot\dist{x}{x'}{}
 =\tfrac{2}{3}\cdot\ell \eqlbl{3|xx'|}\]
-Choose a geodesic $[x' p]$ and consider the  hinge $\hinge{x'}p q$ fromed by $[x'p]$ and $[x' q]\subset [x q]$. 
+Choose a geodesic $[x', p]$ and consider the  hinge $\hinge{x'}p q$ fromed by $[x',p]$ and $[x',q]\subset [x,q]$. 
 
 By \ref{3|xx'|}, we have that 
 \begin{align*}
@@ -288,7 +288,7 @@ In particular,
 
 Consider the model triangle
 $\trig{\tilde x}{\tilde x'}{\tilde p}\z=\modtrig xx'p$.
-Take $\tilde  q$ on the extension of $[\tilde  x\tilde  x']$ beyond $x'$ such that $\dist{\tilde x}{\tilde q}{}=\dist{x}{q}{}$ (and therefore $\dist{\tilde x'}{\tilde q}{}=\dist{x'}{q}{}$).
+Take $\tilde  q$ on the extension of $[\tilde  x,\tilde  x']$ beyond $x'$ such that $\dist{\tilde x}{\tilde q}{}=\dist{x}{q}{}$ (and therefore $\dist{\tilde x'}{\tilde q}{}=\dist{x'}{q}{}$).
 From \ref{eq:thm:=def-loc-threestar},
 \[\measuredangle\hinge x p q
 =\measuredangle\hinge  x p{x'}\ge\angk x p{x'}\ \ \Rightarrow\ \ 
@@ -331,7 +331,7 @@ Since $(r_n)$ is nonincreasing, $r_n\to r\ge |p-q|_\Sigma$ as $n\to\infty$.
 Let us show that $\measuredangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
 
 Indeed assume $\measuredangle\hinge{x_n}p q\le \pi-\eps$ for some $\eps>0$.
-Without loss of generality we can assume that $x_{n+1}\in [x_nq]$;
+Without loss of generality we can assume that $x_{n+1}\in [x_n,q]$;
 otherwise switch $p$ and $q$ further.
 Note that $|x_n-x_{n+1}|,|p-x_n|>\tfrac\ell{100}$.
 Therefore by comparison 
@@ -437,7 +437,7 @@ A reformulation of the following lemma in the plane geometry will be used in the
 \begin{thm}{Lemma}
 \label{lem:alex}
 Assume $[pxyz]$ and $[p'x'y'z']$ be two quadraliterals in the plane with equal corresponding sides.
-Assume that the sides $[x'y']$ and $[y'z']$ extend each other; that is, $y'$ lies on the line segment $[x'z']$.
+Assume that the sides $[x',y']$ and $[y',z']$ extend each other; that is, $y'$ lies on the line segment $[x',z']$.
 Then the following expressions have the same signs:
 \begin{enumerate}[(i)]
  \item $|p-y|-|p'-y'|$;
@@ -449,7 +449,7 @@ Then the following expressions have the same signs:
 \parit{Proof.} 
 Take 
 a point $\bar z$ on the extension of 
-$[xy]$ beyond $y$ so that $\dist{y}{\bar z}{}=\dist{y}{z}{}$ (and therefore $\dist{x}{\bar z}{}=\dist{x'}{z'}{}$). 
+$[x,y]$ beyond $y$ so that $\dist{y}{\bar z}{}=\dist{y}{z}{}$ (and therefore $\dist{x}{\bar z}{}=\dist{x'}{z'}{}$). 
  
 \begin{figure}[h!]
 \vskip-0mm
@@ -491,7 +491,7 @@ For any geodesic triangle $[xyz]$ in $\Sigma$ we have
  \[\measuredangle\hinge {x}{y}{z}\ge\angk xyz.\]
 \end{subthm}
 
-\begin{subthm}{angk>angk} For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[xz]$ we have
+\begin{subthm}{angk>angk} For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[x,z]$ we have
  \[\angk xpy \ge \angk xpz.\]
  
 \end{subthm}
@@ -510,7 +510,7 @@ For any geodesic triangle $[xyz]$ in $\Sigma$ we have
  \[\measuredangle\hinge {x}{y}{z}\le\angk xyz.\]
 \end{subthmA}
 
-\begin{subthmA}{angk<angk} For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[xz]$ we have
+\begin{subthmA}{angk<angk} For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[x,z]$ we have
  \[\angk xpy \le \angk xpz.\]
 \end{subthmA}
 
@@ -530,8 +530,8 @@ In the proof we will use the following translation of Alexandrov lemma to the la
 
 \begin{thm}{Reformulation of Alexandrov lemma}\label{lem:alex-reformulation}\\
 Assume $[pxz]$ be a triangle in a surface $\Sigma$ and 
-the point $y$ lies on the side $[xz]$.
-Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x\tilde z]$.
+the point $y$ lies on the side $[x,z]$.
+Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x,\tilde z]$.
 Then the following expressions have the same signs:
 \begin{enumerate}[(i)]
  \item $|p-y|_\Sigma-|\tilde p-\tilde y|_{\RR^2}$;
@@ -552,7 +552,7 @@ It reamains to apply Alexandrov's lemma (\ref{lem:alex-reformulation}).
 
 
 \parit{\ref{SHORT.angk>angk}$\Rightarrow$\ref{SHORT.fat}.}
-Applying \textit{\ref{SHORT.mang>angk}} twice, first for $y\in [xz]$ and then for $w\in [px]$, we get that
+Applying \textit{\ref{SHORT.mang>angk}} twice, first for $y\in [x,z]$ and then for $w\in [p,x]$, we get that
 \[\angk xwy \ge \angk xpy \ge \angk xpz\]
 and therefore
 \[|w-y|_\Sigma\ge |\tilde w-\tilde y|_{\RR^2},\]
@@ -584,7 +584,7 @@ Show that if $\Sigma$ is simply connected and the Gauss curvature of $\Sigma$ is
 
 
 \begin{thm}{Exercise}\label{ex:midpoints}
-Let $\bar x$ and $\bar y$ be the midpoints of minimizing geodesics $[px]$ and $[py]$ in an open smooth regular surface $\Sigma$.
+Let $\bar x$ and $\bar y$ be the midpoints of minimizing geodesics $[p,x]$ and $[p,y]$ in an open smooth regular surface $\Sigma$.
 
 \begin{subthm}{}
  Show that if $\Sigma$ is simply connected and has nonpositive Gauss curvature, then 
@@ -606,7 +606,7 @@ is convex.
 
 \begin{thm}{Advanced exercise}\label{ex:dist-to-bry}
 Suppose that a smooth curve $\delta$ bounds a convex disc $\Delta$ in a proper smooth surface $\Sigma$;
-that is, for any two points $x,y\in\Delta$, any shortest path $[xy]_\Sigma$ lies in $\Delta$.
+that is, for any two points $x,y\in\Delta$, any shortest path $[x,y]_\Sigma$ lies in $\Delta$.
 
 Denote by $f\:\Sigma\to\RR$ the intrinsic distance function to $\delta$;
 that is, 
@@ -800,8 +800,8 @@ that is, $\vec u$ is a tangent vector field such that for any tangent field $\ve
 Let us show that, the surface $\Sigma$ can be subdivided into lines that run in the direction of $\vec u$.
 
 Fix a point $x$.
-Given a real value $a$ choose a shortest path $[x\,\lambda(a)]$;
-denote by $\vec w^a\in\T_x$ the unit vector in the direction of geodesic $[x\,\lambda(a)]$. 
+Given a real value $a$ choose a shortest path $[x,\lambda(a)]$;
+denote by $\vec w^a\in\T_x$ the unit vector in the direction of geodesic $[x,\lambda(a)]$. 
 Since $|\vec w^a|=1$ and $\bus_-$ is affine, we get that 
 \begin{align*}
 |\vec u|&\ge \limsup_{a\to\infty}\langle\vec u,\vec w^a\rangle =
@@ -853,7 +853,7 @@ Then
 \end{clm}
 
 Given $x\in \Sigma$, 
-let $t\to\delta^x_a(t)$ be the parametrization of $[x\,\lambda(a)]$ by arc-length starting from $x$.
+let $t\to\delta^x_a(t)$ be the parametrization of $[x,\lambda(a)]$ by arc-length starting from $x$.
 Since $\measuredangle(\vec u,\vec w^a)\to 0$ as $a\to\infty$, we get that
 \[\delta^x_a(t)\to\zeta(b+t)\quad\text{as}\quad a\to\infty\]
 for any fixed $t\ge0$.

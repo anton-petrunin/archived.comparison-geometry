@@ -43,12 +43,12 @@ Since any such path is rectifiable, the value $|p-q|_\Sigma$ is finite for any p
 
 A path $\gamma$ from $p$ to $q$ in $\Sigma$ that minimizes the length is called a \index{shortest path}\emph{shortest path} from $p$ to $q$.
 
-The image of a shortest path between $p$ and $q$ in $\Sigma$ is usually denoted by $[pq]$ or by $[pq]_\Sigma$.
+The image of a shortest path between $p$ and $q$ in $\Sigma$ is usually denoted by $[p,q]$ or by $[p,q]_\Sigma$.
 In general there might be no shortest path between two given points on the surface
 and it might be many of them;
 this is shown in the following two examples.
 
-Usually, if we write $[pq]_\Sigma$, then we assume that a shortest path exists and we made a choice of one of them.
+Usually, if we write $[p,q]_\Sigma$, then we assume that a shortest path exists and we made a choice of one of them.
 
 {
 
@@ -84,7 +84,7 @@ Since $|p-q|_\Sigma\ge |p-q|_{\RR^3}=2$, we get $|p-q|_\Sigma=2$.
 
 
 It follows that a shortest path from $p$ to $q$, if it exists, must have length 2.
-By triangle inequality any curve of length 2 from $p$ to $q$ must run along the line segment $[pq]$;
+By triangle inequality any curve of length 2 from $p$ to $q$ must run along the line segment $[p,q]$;
 in particular it must pass thru the origin.
 Since the origin does not lie in $\Sigma$, there is no shortest from $p$ to $q$ in $\Sigma$ 
 \qeds
@@ -171,8 +171,8 @@ We can assume that $\bar p\ne\bar q$, otherwise there is nothing to prove.
 
 }
 
-Note that if $\measuredangle \hinge{\bar p}{p}{\bar q}< \tfrac\pi2$, then $\dist{p}{z}{}\z<\dist{p}{\bar p}{}$ for some point $x\in [\bar p\bar q]$.
-Since $[\bar p\bar q]\subset K$,
+Note that if $\measuredangle \hinge{\bar p}{p}{\bar q}< \tfrac\pi2$, then $\dist{p}{z}{}\z<\dist{p}{\bar p}{}$ for some point $x\in [\bar p,\bar q]$.
+Since $[\bar p,\bar q]\subset K$,
 the latter is impossible.
 
 \begin{wrapfigure}{l}{37 mm}
@@ -185,7 +185,7 @@ the latter is impossible.
 Therefore $p=\bar p$ or $\measuredangle \hinge{\bar p}{p}{\bar q}\ge \tfrac\pi2$.
 In both cases the orthogonal projection of $p$ to the line $\bar p\bar q$ lies behind $\bar p$, or coincides with $\bar p$.
 The same way we show that the orthogonal projection of $q$ to the line $\bar p\bar q$ lies behind $\bar q$, or coincides with $\bar q$.
-It implies that the orthogonal projection of the line segment $[pq]$ to the line $\bar p\bar q$ contains the line segment $[\bar p\bar q]$.
+It implies that the orthogonal projection of the line segment $[p,q]$ to the line $\bar p\bar q$ contains the line segment $[\bar p,\bar q]$.
 In particular 
 \[|p-q|\ge |\bar p-\bar q|.\]
 \qedsf
@@ -230,9 +230,9 @@ By the separation lemma (\ref{lem:separation}) there is a plane $\Pi$ that cuts 
 The curve $\gamma$ must intersect $\Pi$ at two points: one point before $t_1$ and one after.
 Let $a=\gamma(t_0)$ and $b=\gamma(t_2)$ be these points.
 Note that the arc of $\gamma$ from $a$ to $b$ is strictly longer that $|a-b|$;
-indeed its length is at least $|a-w|+|w-b|$ and $|a-w|+|w-b|>|a-b|$ since $w\notin[ab]$.
+indeed its length is at least $|a-w|+|w-b|$ and $|a-w|+|w-b|>|a-b|$ since $w\notin[a,b]$.
 
-Remove from $\gamma$ the arc from $a$ to $b$ and glue in the line segment $[ab]$;
+Remove from $\gamma$ the arc from $a$ to $b$ and glue in the line segment $[a,b]$;
 denote the obtained curve by $\gamma_1$. 
 From above, we have that
 \[\length\gamma>\length \gamma_1\]
@@ -474,7 +474,7 @@ Therefore $\mathbb{I}$ is not a maximal interval --- a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:round-torus}
-Let $\Sigma$ be a smooth torus of revolution; that is,
+Let $\Sigma$ be a torus of revolution; that is,
 a smooth surface of revolution with closed generatrix.
 Show that any closed geodesic on $\Sigma$ is noncontractible.
 
@@ -657,7 +657,7 @@ where $\gamma'(t)$ denotes the velocity vector of $\gamma$ at $t$.
 
 Show that for any $t\in (0,\ell)$,
 one {}\emph{cannot see}  $q$ from $p^t$;
-that is, the line segment $[p^tq]$ intersects $\Sigma$ at a point distinct from $q$.
+that is, the line segment $[p^t,q]$ intersects $\Sigma$ at a point distinct from $q$.
 
 Show that the statement does not hold without assuming that $\gamma$ is minimizing.
 \end{thm}
