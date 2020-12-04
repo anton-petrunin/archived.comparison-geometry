@@ -95,7 +95,7 @@ It is straightforward to see that if the partition is sufficiently fine, then it
 Construct a loop $\gamma$ in $\mathbb{S}^2$ with base at $p$ such that the parallel transport $\iota_\gamma\:\T_p\to\T_p$ is not the identity map.
 \end{thm}
 
-\section{Geodesic curvature}
+\section{Geodesic curvature}\label{sec:Darboux}
 
 Plane is the simplest example of smooth surface.
 Earlier, in Section~\ref{sec:def(skur)}, we introduced signed curvature of a plane curve.
@@ -116,7 +116,8 @@ Let $\Norm\:\Sigma\to \mathbb{S}^2$ be the spherical map that defines the orient
 Without loss of generality we can assume that $\gamma$ has unit speed.
 Then for any $t$ the vectors $\Norm(t)=\Norm(\gamma(t))_\Sigma$ and the velocity vector $\tan(t)=\gamma'(t)$ are unit vectors that are normal to each other.
 Denote by $\mu(t)$ the unit vector that is normal to both $\Norm(t)$ and $\tan(t)$ that points to the left from $\gamma$; that is, $\mu=\Norm\times \tan$.
-Note that the triple $\tan(t),\mu(t),\Norm(t)$ is an oriented orthonormal basis for any $t$.
+Note that the triple $\tan(t),\mu(t),\Norm(t)$ is an oriented orthonormal basis for any $t$;
+it is called \index{Darboux frame}\emph{Darboux frame} of $\gamma$ in $\Sigma$.
 
 Since $\gamma$ is unit-speed, the acceleration $\gamma''(t)$ is perpendicular to $\tan(t)$;
 therefore at any parameter value $t$, we have
@@ -140,7 +141,7 @@ The total geodesic curvature is defined as integral
 \[\tgc\gamma
 \df
 \int_{\mathbb{I}} k_g(t)\cdot dt,\]
-assuming that $\gamma$ is a smooth unit-speed curve defined on the real interval $\mathbb{I}$.
+assuming that $\gamma$ is a smooth unit-speed curve defined on the real interval~$\mathbb{I}$.
 
 Note that if $\Sigma$ is a plane and $\gamma$ lies in $\Sigma$, then geodesic curvature of $\gamma$ equals to signed curvature and therefore total geodesic curvature equals to the total signed curvature.
 By that reason we use the same notation $\tgc\gamma$ as for total signed curvature; if we need to emphasize that we consider $\gamma$ as a curve in $\Sigma$, we write $\tgc\gamma_\Sigma$.
