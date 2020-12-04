@@ -68,7 +68,7 @@ Since $f(0)=0$, the intermediate value theorem implies that $f(t)$ takes all non
 Use it to show that $L$ is the range of~$\alpha$.
 
 \begin{wrapfigure}[12]{r}{24 mm}
-\vskip0mm
+\vskip-4mm
 \centering
 \includegraphics{mppics/pic-270}
 \vskip0mm
@@ -104,6 +104,7 @@ Note that the first equation describes the unit sphere centered at the origin an
 
 \begin{wrapfigure}{o}{35 mm}
 \centering
+\vskip-2mm
 \begin{lpic}[t(2mm),b(0mm),r(0mm),l(0mm)]{asy/viviani(1)}
 \lbl[r]{-.5,13;$x$}
 \lbl[l]{31,15;$y$}
@@ -1304,14 +1305,14 @@ Consider the closest-point projection from the sphere to $\Sigma$ and apply \ref
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:helix=geodesic}.}
-Show that $\Norm_{\gamma(t)}=(\cos t,\sin t, 0)$.
-Calculate $\gamma''(t)$ and show that it is proportional to $\Norm_{\gamma(t)}$.
+Show that $\Norm(\gamma(t))=(\cos t,\sin t, 0)$.
+Calculate $\gamma''(t)$ and show that it is proportional to $\Norm(\gamma(t))$.
 Note that the latter is equivalent to $\gamma''(t)\perp\T_{\gamma(t)}$.
 
 \parbf{\ref{ex:asymptotic-geodesic}.} Without loss of generality, we can assume that $\gamma$ has unit speed.
 By the definition of geodesic, we have that $\gamma''(s)\perp\T_{\gamma(s)}$. 
 Therefore 
-\[\gamma''(s)=k_n(s)\cdot\Norm_{\gamma(s)},\]
+\[\gamma''(s)=k_n(s)\cdot\Norm(\gamma(s))},\]
 where $k_n(s)$ is the normal curvature of $\gamma$ at time $s$.
 Since $\gamma$ is asymptotic, $k_n(s)\equiv 0$;
 that is, $\gamma''(s)\equiv 0$, therefore $\gamma'$ is constant and $\gamma$ runs along a line segment.
@@ -1402,14 +1403,14 @@ Equip $\Sigma$ with unit normal field $\Norm$ that points inside.
 Denote by $k(t)$ the normal curvature of $\Sigma$ at $\gamma(t)$ in the direction of $\gamma'(t)$.
 Since $\Sigma$ is convex $k(t)\ge 0$ for any $t$.
 
-Since $\gamma$ is geodesic, we have $\gamma''(t)=k(t)\cdot\Norm_{\gamma(t)}$.
+Since $\gamma$ is geodesic, we have $\gamma''(t)=k(t)\cdot\Norm(\gamma(t))$.
 
 Since $\gamma$ has unit speed, $\langle\gamma'(t),\gamma'(t)\rangle=1$ for any $t$.
 
 Without loss of generality, we can assume that $p$ is the origin of~$\RR^3$.
-Since $p$ is inside $\Sigma$, we have that $\langle\gamma(t),\Norm_{\gamma(t)}\rangle\le 0$ for any $t$.
+Since $p$ is inside $\Sigma$, we have that $\langle\gamma(t),\Norm(\gamma(t))\rangle\le 0$ for any $t$.
 It follows that 
-\[\langle\gamma''(t),\gamma(t)\rangle=k(t)\cdot \langle\gamma(t),\Norm_{\gamma(t)}\rangle\le 0\]
+\[\langle\gamma''(t),\gamma(t)\rangle=k(t)\cdot \langle\gamma(t),\Norm(\gamma(t))\rangle\le 0\]
 for any $t$.
 
 Applying the above estimates, we get that 
