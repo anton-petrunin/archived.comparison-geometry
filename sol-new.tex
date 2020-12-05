@@ -904,8 +904,10 @@ In other words $m=0$, or equivalently, the $x$-axis points in a direction of cur
 Therefore we can choose a unit normal $\Norm$ at each point so that both principle curvatures are positive.
 Show that it defines a global field on the surface.
 
+\parbf{\ref{ex:self-adjoint}.}
+
 \parbf{\ref{ex:shape-chart}.}
-Apply \ref{prop:S=-D} and use the following identities:
+Apply the definition of shape operator and use the following identities:
 $\langle\Norm,s_u\rangle=\langle\Norm,s_v\rangle=0$.
 
 \parbf{\ref{ex:normal-curvature=const}}; \ref{SHORT.ex:normal-curvature=const:a}.
@@ -938,7 +940,7 @@ and therefore $\gamma$ is a curvature line in~$\Sigma_2$.
 Fix $t$.
 Set $f_t\:p\mapsto p+t\cdot\Norm(p)$; it maps $\Sigma$ to $\Sigma_t$.
 
-Use \ref{prop:S=-D} to show that $d_pf_t(\vec v)=\vec v-t\cdot\Shape_p(\vec v)$.
+Apply the definition of shape operator to show that $d_pf_t(\vec v)=\vec v-t\cdot\Shape_p(\vec v)$.
 Since $\Sigma$ is closed, the norm of $\Shape$ is bounded.
 Whence $f_t$ is regular for $t$ sufficiently close to $ 0$.
 
@@ -1337,11 +1339,11 @@ is constant.
 Since $\gamma''(t)\perp\T_{\gamma(t)}$ we have that three vectors $\vec i$, $\gamma$, and $\gamma''$ lie in the same plane.
 In particular $\langle\gamma''\times \gamma,\vec i\rangle=0$.
 Therefore
-\begin{align*}
+$
 \langle\gamma'\times \gamma,\vec i\rangle'
-&=
-\langle\gamma'\times \gamma',\vec i\rangle+\langle\gamma''\times \gamma,\vec i\rangle =0.
-\end{align*}
+=
+\langle\gamma'\times \gamma',\vec i\rangle+\langle\gamma''\times \gamma,\vec i\rangle =0
+$.
 
 
 
@@ -1513,8 +1515,6 @@ The latter contradicts \ref{ex:intK:4pi}.
 \parbf{\ref{ex:self-intersections}}; \textit{(easy)}.
 Consider the 4 regions bounded by loops.
 Apply Gauss--Bonnet formula (\ref{thm:gb}) to show that the integral of Gauss curvature on each of these region exceeds $\pi$.
-Therefore 
-\[\iint_\Sigma K>4\cdot\pi.\]
 The latter contradicts \ref{ex:intK:4pi}.
 
 \parit{(tricky)}.
@@ -1522,9 +1522,7 @@ Denote by $\alpha$, $\beta$, and $\gamma$ the angles of the triangle.
 Apply the Gauss--Bonnet formula (\ref{thm:gb}) to show that the loops surround regions with integral of Gauss curvature $\pi+\alpha$, $\pi+\beta$, and $\pi+\gamma$ respectively.
 
 Apply the Gauss--Bonnet formula for the triangular region to show that $\alpha+\beta+\gamma>\pi$.
-It follows that 
-\[\iint_\Sigma K>(\pi+\alpha)+(\pi+\beta)+(\pi+\gamma)>4\cdot\pi\]
-which contradicts \ref{ex:intK:4pi}.
+Use \ref{ex:intK:4pi} to arrive at a contradiction.
 
 \parbf{\ref{ex:sqrt(3)}.} Note that it is sufficient to show that the surface has no geodesic loops.
 Estimate the integral of Gauss curvature of whole surface and a disc in it surrounded by a geodesic loop.
@@ -1760,21 +1758,19 @@ Observe that
 $\measuredangle\hinge pxy+\measuredangle\hinge pyz+\measuredangle\hinge pzx\le2\cdot \pi$.
 Apply \ref{thm:comp:toponogov}.
 
-\parbf{\ref{ex:open-comparison}.} To prove \ref{SHORT.ex:open-comparison:positive}, apply Rauch comparison \ref{prop:rauch} and the property of exponential map in \ref{prop:exp}.
+\parbf{\ref{ex:open-comparison}}; \ref{SHORT.ex:open-comparison:positive}. Apply Rauch comparison \ref{prop:rauch} and the property of exponential map in \ref{prop:exp}.
 
-For \ref{SHORT.ex:open-comparison:almost-min}, argue by contradiction;
+\parit{\ref{SHORT.ex:open-comparison:almost-min}.} Argue by contradiction;
 if the statement does not hold then for any $p\in\Sigma$ there is a point $q=q(p)\in \Sigma$ such that 
-\[
-q(p)\in B(p,100\cdot R_p)
-\quad\text{and}\quad
-R_{q(p)}<(1-\tfrac1{100})\cdot R_p.
-\]
+$|q-p|_\Sigma< 100\cdot R_p$
+and
+$R_q<(1-\tfrac1{100})\cdot R_p$.
 
 Start with any point $p_0$ and consider a sequence $p_n$ defined by $p_{n+1}\z=q(p_n)$.
 Show that $p_n$ converges and $R_{p_n}\to 0$ as $n\to\infty$.
 Arrive to a contradiction using  \ref{SHORT.ex:open-comparison:positive}.
 
-For \ref{SHORT.ex:open-comparison:proof}, repeat the proof assuming that $p$ is provided by \ref{SHORT.ex:open-comparison:almost-min}.
+\parit{\ref{SHORT.ex:open-comparison:proof}.} Repeat the proof assuming that $p$ is provided by \ref{SHORT.ex:open-comparison:almost-min}.
 
 \parbf{\ref{ex:convex-polyhon+self-intersections}}; \ref{SHORT.ex:convex-polyhon+self-intersections:angles}.
 Apply the Gauss--Bonnet formula for each region that $\gamma$ cuts from $\Sigma$ and simplify the obtained inequalities.

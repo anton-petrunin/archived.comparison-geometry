@@ -1,3 +1,273 @@
+
+\section{Shape operator}
+
+Let $p$ be a point on a smooth oriented surface $\Sigma$.
+Suppose $z=f(x,y)$ is a local description of $\Sigma$ in tangent-normal coordinates at $p$
+and $M_p\z=
+(\begin{smallmatrix}
+\ell&m
+\\
+m&n
+\end{smallmatrix}
+)
+$
+is the Hessian matrix of $f$ at $(0,0)$; the components $\ell$, $m$, and $n$ are defined in Section~\ref{sec:lmn}.
+
+The multiplication by the Hessian matrix defies the so-called \index{shape operator}\emph{shape operator}
+\[\Shape\:(\begin{smallmatrix}
+x\\y
+\end{smallmatrix})
+\mapsto
+M_p\cdot(\begin{smallmatrix}
+x\\y
+\end{smallmatrix});\]\index{10shape@$\Shape$}
+it is a linear operator $\Shape\:\T_p\to \T_p$.
+For a point $p\in \Sigma$ the shape operator of a tangent vector $\vec w\in \T_p$ will be denoted by $\Shape(\vec w)$ if it is clear from the context which base point $p$ and which surface we are working with;
+otherwise we may use the notations 
+\[\Shape_p(\vec w)\quad\text{or}\quad \Shape_p(\vec w)_\Sigma\]
+as the situation requires.
+
+Since $M_p$ is symmetric, $\Shape$ is \index{self-adjoint operator}\emph{self-adjoint}; that is,
+\[\langle \Shape(\vec v),\vec w\rangle=\langle \vec v,\Shape(\vec w)\rangle\]
+for any $\vec v,\vec w\in\T_p$.
+Note also that the principle curvatures of $\Sigma$ at $p$ are the eigenvalues of $\Shape_p$ and the principle directions are the directions of principle vectors of $\Shape_p$.
+
+Recall that $D_{\vec v}f$ denotes the directional derivative of $f$ along the vector $\vec v$;
+that is, if $\phi(t)=f(q+\vec v\cdot t)$, then $D_{\vec v}f(q)=\phi'(0)$.
+
+Denote by $\vec i$, $\vec j$ and $\vec k$ the standard basis in the $(x,y,z)$-coordinates.
+Then by the definition of shape operator, we have
+\[
+\begin{aligned}
+\Shape(\vec i)&=\ell\cdot \vec i+m\cdot \vec j,
+&
+\Shape(\vec j)&=m\cdot \vec i+n\cdot\vec j.
+\end{aligned}
+\eqlbl{eq:Shape(ij)}
+\]
+
+The following proposition implies in particular that $\Shape_p$ does not depend on the choice of basis.
+
+\begin{thm}{Proposition}\label{prop:shape=D2}
+Let $p$ be a point on a smooth oriented surface $\Sigma$.
+Suppose $\Sigma$ is described locally as a graph $z=f(x,y)$ in tangent-normal coordinates at $p$.
+Then
+\[\langle \Shape(\vec v),\vec w\rangle=D_{\vec w}D_{\vec v}f(0,0)\]
+for any $\vec v,\vec w\in\T_p$.
+Moreover $\Shape\:\T_p\to\T_p$ is the unique linear operator that satisfies the above condition.
+\end{thm}
+
+\parit{Proof.} 
+Suppose $\vec v=(\begin{smallmatrix}
+a\\b
+\end{smallmatrix})$
+and 
+$\vec v=(\begin{smallmatrix}
+c\\d
+\end{smallmatrix})$, then 
+\begin{align*}
+D_{\vec v}&=a\cdot\tfrac{\partial}{\partial x}+ b\cdot\tfrac{\partial}{\partial y},
+&
+D_{\vec w}&=c\cdot\tfrac{\partial}{\partial x}+ d\cdot\tfrac{\partial}{\partial y}.
+\end{align*}
+Therefore 
+\begin{align*}
+D_{\vec w}D_{\vec v}f&=
+a\cdot c\cdot\tfrac{\partial^2 f}{\partial^2 x}
++b\cdot c\cdot\tfrac{\partial^2 f}{\partial x\partial y}
++a\cdot d\cdot\tfrac{\partial^2 f}{\partial y\partial x}
++b\cdot d\cdot\tfrac{\partial^2 f}{\partial^2 y}
+\intertext{evaluating this expression at $(0,0)$ we get}
+D_{\vec w}D_{\vec v}f(0,0)&=a\cdot c\cdot\ell
++b\cdot c\cdot m
++a\cdot d\cdot m
++b\cdot d\cdot n=
+\\
+&=\langle M_p\cdot \vec v,\vec w\rangle=\langle \vec v,M_p\cdot \vec w\rangle=
+\\
+&=\langle \Shape(\vec v),\vec w\rangle=\langle \vec v,\Shape(\vec w)\rangle.
+\end{align*}
+\qedsf
+
+In the following proposition we use the notion of directional derivative defined in \ref{def:directional-derivative}.
+
+\begin{thm}{Proposition}\label{prop:S=-D}
+Let $\Sigma$ be a smooth surface with orientation defined by the unit normal field $\Norm$.
+Then 
+\[\Shape(\vec w)=-D_{\vec w}\Norm
+\eqlbl{eq:shape=-dNorm}\]
+for any $\vec w\in \T_p$.
+Equivalently 
+\[\Shape=-d\Norm,\eqlbl{eq:shape=-L}\] 
+where $d\Norm$ denotes differential of the spherical map $\nu\:\Sigma\to\mathbb{S}^2$; that is, $d_p\Norm(\vec v)=(D_{\vec v}\Norm)(p)$.
+\end{thm}
+
+
+
+The reason the minus sign in \ref{eq:shape=-dNorm} and \ref{eq:shape=-L} arises is the same as in the formula  
+for the signed curvature of a plane curve in its Frenet frame: $\norm'=-\skur\cdot\tan$.
+The proof is done by straightforward calculations.
+
+
+\parit{Proof of \ref{prop:S=-D}.}
+Suppose $(u,v)\mapsto s(u,v)$ is a local chart of $\Sigma$ at $p$.
+Denote by $\Norm(u,v)$ the unit normal vector at $s(u,v)$.
+
+Since the vectors $s_u(u,v)$ and $s_v(u,v)$ are tangent to $\Sigma$ at $s(u,v)$ and $\Norm(u,v)$ is a unit normal vector, we get that
+\begin{align*}
+1&=\langle\Norm,\Norm\rangle,
+&
+0&=\langle s_u,\Norm\rangle,
+&
+0&=\langle s_v,\Norm\rangle.
+\end{align*}
+
+Taking partial derivatives of these three identities and applying the product rule,
+we get the following six identities:
+\begin{align*}
+0&=\tfrac{\partial}{\partial u}\langle\Norm ,\Norm \rangle
+=
+2\cdot \langle\Norm_u,\Norm\rangle,
+\\
+0
+&=\tfrac{\partial}{\partial v}\langle\Norm,\Norm\rangle
+=
+2\cdot \langle\Norm_v,\Norm\rangle,
+\\
+0&=\tfrac{\partial}{\partial u}
+\langle s_u,\Norm\rangle
+=
+\langle s_{uu},\Norm\rangle
++
+\langle s_u,\Norm_u\rangle,
+\\
+0&=
+\tfrac{\partial}{\partial v}\langle s_u,\Norm\rangle
+=
+\langle s_{uv},\Norm\rangle
++
+\langle s_u,\Norm_v\rangle
+\\
+0
+&=
+\tfrac{\partial}{\partial u}
+\langle s_v,\Norm\rangle
+=
+\langle s_{uv},\Norm\rangle
++
+\langle s_v,\Norm_u\rangle,
+\\
+0
+&=
+\tfrac{\partial}{\partial v}
+\langle s_v,\Norm\rangle
+=
+\langle s_{vv},\Norm\rangle
++
+\langle s_v, \Norm_v\rangle.
+\end{align*}
+
+Now suppose $z=f(x,y)$ is a local description of $\Sigma$ in  tangent-normal coordinates at $p$.
+Note that 
+\[s(u,v)=(u,v,f(u,v))\]
+describes a chart of $\Sigma$ at $p$.
+
+Denote by $\vec i$, $\vec j$ and $\vec k$ the standard basis in the $(x,y,z)$-coordinates.
+Note that $s(0,0)=p$ and 
+\begin{align*}
+s_u(0,0)&=\vec i,
+&
+s_v(0,0)&=\vec j,
+&
+\nu(0,0)&=\vec k,
+\intertext{In particular $D_{\vec i}\Norm=\Norm_u(0,0)$ and $D_{\vec j}\Norm=\Norm_v(0,0)$. Then,}
+s_{uu}(0,0)&=\ell\cdot \vec k,
+&
+s_{uv}(0,0)&=m\cdot \vec k,
+&
+s_{vv}(0,0)&=n\cdot \vec k,
+\end{align*}
+where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$; see Section~\ref{sec:lmn}.
+
+Evaluating the above 6 identities at $(u,v)\z=(0,0)$, we get that
+\begin{align*}
+\langle -D_{\vec i}\nu ,\vec i\rangle&=\ell,
+&
+\langle -D_{\vec i}\nu,\vec j\rangle&=m,
+&
+\langle -D_{\vec i}\nu,\vec k\rangle&=0,
+\\
+\langle -D_{\vec j}\nu,\vec i\rangle&=m,
+&
+\langle -D_{\vec j}\nu,\vec j\rangle&=n,
+&
+\langle -D_{\vec j}\nu,\vec k\rangle&=0,
+\end{align*}
+or, equivalently,
+\begin{align*}
+-D_{\vec i}\nu
+&=\ell\cdot \vec i+m\cdot \vec j,
+&
+-D_{\vec j}\nu
+&=m\cdot \vec i+n\cdot\vec j.
+\end{align*}
+It remains to apply \ref{cor:Shape(ij)}.
+\qeds
+
+\begin{thm}{Exercise}\label{ex:shape-chart}
+Suppose that $(u,v)\mapsto s(u,v)$ is a smooth map to a smooth surface $\Sigma$ with unit normal field $\Norm$.
+Show that 
+\begin{align*}
+\langle \Shape(s_u), s_u\rangle 
+&=\langle s_{uu},\Norm\rangle,
+&
+\langle \Shape(s_u), s_v\rangle 
+&=\langle s_{uv},\Norm\rangle,
+\\
+\langle \Shape(s_v), s_u\rangle 
+&=\langle s_{uv},\Norm\rangle,
+&
+\langle \Shape(s_v), s_v\rangle 
+&=\langle s_{vv},\Norm\rangle
+\end{align*}
+for any $(u,v)$.
+
+\end{thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 The following statement is closely related to \ref{thm:DNA}:
 
 \begin{thm}{DNA inequality}\index{DNA inequality}

@@ -5,7 +5,7 @@
 Fix a point $p$ in a smooth oriented surface $\Sigma$.
 Consider a coordinate system $(x,y,z)$ with origin at $p$ such that the $(x,y)$-plane coincides with $\T_p$ and the $z$-axis points in the direction of the normal vector $\Norm(p)$.
 By \ref{ex:vertical-tangent}, we can present $\Sigma$ locally at $p$ as a graph $z=f(x,y)$ of a smooth function. 
-Note that $f$ satisfies the following additional properties:
+Note that 
 \begin{align*}
 f(0,0)&=0,
 &
@@ -37,8 +37,7 @@ for $f$ at $(0,0)$ up to the second order term can be then written as
 Note that values $\ell$, $m$, and $n$ are completely determined by this equation.\index{10lmn@$\ell$, $m$, $n$}
 The so-called \index{osculating paraboloid}\emph{osculating paraboloid}
 \[z=\tfrac12\cdot(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)\]
-gives the best approximation of the surface at $p$ among all paraboloids;
-it has \index{order of contact}\emph{second order of contact} with $\Sigma$ at $p$.
+has \index{order of contact}\emph{second order of contact} with $\Sigma$ at $p$.
 
 Note that 
 \[\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2=\langle M_p\cdot (\begin{smallmatrix}
@@ -46,17 +45,17 @@ x\\y
 \end{smallmatrix}), (\begin{smallmatrix}
 x\\y
 \end{smallmatrix})\rangle,\]
-where
+where $M_p$ is the so-called \index{Hessian matrix}\emph{Hessian matrix} of $f$ at $(0,0)$,\index{10m@$M_p$}
 \[M_p=\begin{pmatrix}
    \ell
    &m
    \\
    m
    &n
-  \end{pmatrix};
+  \end{pmatrix}.
 \eqlbl{eq:hessian}
 \]
-$M_p$ is called the \index{Hessian matrix}\emph{Hessian matrix} of $f$ at $(0,0)$.\index{10m@$M_p$}
+
 
 \section{Principle curvatures}
 
@@ -65,7 +64,7 @@ it is unique up to a rotation of  the $(x,y)$-plane.
 Rotating the $(x,y)$-plane results in rewriting   
 the matrix $M_p$ in the new basis.
 
-Since the Hessian matrix $M_p$ is symmetric, it is diagonalizable by orthogonal matrices.
+Since the Hessian matrix $M_p$ is symmetric, by the spectral theorem (\ref{thm:spectral}) it is diagonalizable by orthogonal matrices.
 That is, by rotating the $(x,y)$-plane we can assume that $m=0$ in \ref{eq:hessian}; see \ref{thm:spectral}.
 In this case
 \[M_p=\begin{pmatrix}
@@ -89,7 +88,7 @@ The principle curvatures can be also defined as the eigenvalues of the Hessian m
 The eigendirections of $M_p$  are called the \index{principle directions}\emph{principle directions} of $\Sigma$ at~$p$.
 Note that if $k_1(p)\ne k_2(p)$, then $p$ has exactly two principle directions, which are perpendicular to each other; if $k_1(p)\z= k_2(p)$ then all tangent directions at $p$ are principle.
 
-Note that if we revert the orientation of $\Sigma$, then the principle curvatures at each point switch their signs and indexes.
+Note that if we revert the orientation of $\Sigma$, then the principle curvatures switch their signs and indexes.
 
 A smooth regular curve on a surface $\Sigma$ that always runs in the principle directions is called a \index{line of curvature}\emph{line of curvature} of $\Sigma$.  
 
@@ -101,15 +100,16 @@ Show that $\gamma$ is a line of curvature of $\Sigma$.
 
 \section{More curvatures}\label{sec:More curvatures}
 
-Fix an oriented smooth surface $\Sigma$ and a point $p\in\Sigma$.
+Let $p$ be a point on an oriented smooth surface $\Sigma$.
 
 The product 
 \[K(p)=k_1(p)\cdot k_2(p)\]
 is called the \index{10k@$K$}\index{Gauss curvature}\emph{Gauss curvature} at $p$.
 We may denote it by $K$, $K(p)$, or $K(p)_\Sigma$ if we need to specify the point $p$ and the surface $\Sigma$.
 
-Since the product of the eigenvalues of a matrix equals its determinant,
-the Gauss curvature equals the determinant of the Hessian matrix 
+Since the determinant is equal to the product of the eigenvalues, we get
+\[K=\ell\cdot n-m^2,\]
+where 
 $M_p\z=
 (\begin{smallmatrix}
 \ell&m
@@ -117,9 +117,7 @@ $M_p\z=
 m&n
 \end{smallmatrix}
 )
-$;
-that is,
-\[K=\ell\cdot n-m^2.\]
+$ is the Hessian matrix.
 
 \begin{thm}{Exercise}\label{ex:gauss+orientable}
 Show that any surface with positive Gauss curvature is orientable. 
@@ -142,247 +140,136 @@ that is,
 A surface with vanishing mean curvature is called \index{minimal surface}\emph{minimal}.
 
 Note that reverting the orientation of $\Sigma$ does not change the Gauss curvature, but changes the sign of the mean curvature.
-In particular, the Gauss curvature is well defined at every point for a nonoriented surface $\Sigma$.
-
-
-
+In particular, the Gauss curvature is well defined  for a nonoriented surfaces.
 
 \section{Shape operator}
 
-Let $p$ be a point on a smooth oriented surface $\Sigma$.
-Suppose $z=f(x,y)$ is a local description of $\Sigma$ in tangent-normal coordinates at $p$
-and 
-\[M_p=\begin{pmatrix}
-   \ell
-   &m
-   \\
-   m
-   &n
-  \end{pmatrix};
-\]
-is the Hessian matrix of $f$ at $(0,0)$; the components $\ell$, $m$, and $n$ are defined in Section~\ref{sec:lmn}.
+In the following definitions we use the notion of directional derivative defined in \ref{def:directional-derivative}.
 
-The multiplication by the Hessian matrix defies the so-called \index{shape operator}\emph{shape operator}
-\[\Shape\:(\begin{smallmatrix}
-x\\y
-\end{smallmatrix})
-\mapsto
-M_p\cdot(\begin{smallmatrix}
-x\\y
-\end{smallmatrix});\]\index{10shape@$\Shape$}
-it is a linear operator $\Shape\:\T_p\to \T_p$.
+Let $p$ be a point on a smooth surface $\Sigma$ with orientation defined by the unit normal field $\Norm$.
+Given $\vec w\in \T_p$,
+its \emph{shape operator} is defined by
+\[\Shape_p\vec w=-D_{\vec w}\Norm.\]
+Equivalently, the shape operator can be defined by
+\[\Shape=-d\Norm,\eqlbl{eq:shape=-L}\] 
+where $d\Norm$ denotes differential of the spherical map $\nu\:\Sigma\to\mathbb{S}^2$; that is, $d_p\Norm(\vec v)=(D_{\vec v}\Norm)(p)$.
+Note that $\T_p\Sigma=\T_{\Norm(p)}\SS^2$ --- both of these spaces are normal subspaces to $\Norm(p)$.
+Therefore $\Shape_p$ is indeed a linear operator $\T_p\to \T_p$ (the latter also follows from \ref{thm:shape-chart}).
+
 For a point $p\in \Sigma$ the shape operator of a tangent vector $\vec w\in \T_p$ will be denoted by $\Shape(\vec w)$ if it is clear from the context which base point $p$ and which surface we are working with;
 otherwise we may use the notations 
 \[\Shape_p(\vec w)\quad\text{or}\quad \Shape_p(\vec w)_\Sigma\]
+as the situation requires.  
 
-as the situation requires.
+\begin{thm}{Theorem}\label{thm:shape-chart}
+Suppose that $(u,v)\mapsto s(u,v)$ is a smooth map to a smooth surface $\Sigma$ with unit normal field $\Norm$.
+Then 
+\begin{align*}
+\langle \Shape(s_u), s_u\rangle 
+&=\langle s_{uu},\Norm\rangle,
+&
+\langle \Shape(s_v), s_u\rangle 
+&=\langle s_{uv},\Norm\rangle,
+\\
+\langle \Shape(s_u), s_v\rangle 
+&=\langle s_{uv},\Norm\rangle,
+&
+\langle \Shape(s_v), s_v\rangle 
+&=\langle s_{vv},\Norm\rangle,
+\\
+\langle \Shape(s_u), \Norm\rangle 
+&=0,
+&
+\langle \Shape(s_v), \Norm\rangle 
+&=0
+\end{align*}
+for any $(u,v)$.
 
-Since $M_p$ is symmetric, $\Shape$ is \index{self-adjoint operator}\emph{self-adjoint}; that is,
-\[\langle \Shape(\vec v),\vec w\rangle=\langle \vec v,\Shape(\vec w)\rangle\]
-for any $\vec v,\vec w\in\T_p$.
-Note also that the principle curvatures of $\Sigma$ at $p$ are the eigenvalues of $\Shape_p$ and the principle directions are the directions of principle vectors of $\Shape_p$.
+\end{thm}
 
-Recall that $D_{\vec v}f$ denotes the directional derivative of $f$ along the vector $\vec v$;
-that is, if $\phi(t)=f(q+\vec v\cdot t)$, then $D_{\vec v}f(q)=\phi'(0)$.
-
-Denote by $\vec i$, $\vec j$ and $\vec k$ the standard basis in the $(x,y,z)$-coordinates.
-Then according to the definition of shape operator, we have
+\parit{Proof.}
+We will use shortcut $\Norm=\Norm(u,v)$ for $\Norm(s(u,v))$,
+so 
 \[
 \begin{aligned}
-\Shape(\vec i)&=\ell\cdot \vec i+m\cdot \vec j,
+\Shape(s_u)&=-D_{s_u}\Norm=-\Norm_u,
 &
-\Shape(\vec j)&=m\cdot \vec i+n\cdot\vec j.
+\Shape(s_v)&=-D_{s_v}\Norm=-\Norm_v.
 \end{aligned}
-\eqlbl{eq:Shape(ij)}
+\eqlbl{eq:shape=norm_u}
 \]
 
-The following proposition implies in particular that $\Shape_p$ does not depend on the choice of basis.
+Note that $\Norm$ is a unit vector orthogonal to $s_u$ and $s_v$;
+therefore
+\begin{align*}
+\langle \Norm,s_u\rangle&\equiv0,
+&
+\langle \Norm,s_v\rangle&\equiv0,
+&
+\langle \Norm,\Norm\rangle&\equiv1.
+\end{align*}
+Taking partial derivatives of these two identities we get
+\begin{align*}
+\langle \Norm_u,s_u\rangle+\langle \Norm,s_{uu}\rangle&=0,
+&
+\langle \Norm_v,s_u\rangle+\langle \Norm,s_{uv}\rangle&=0,
+\\
+\langle \Norm_u,s_v\rangle+\langle \Norm,s_{uv}\rangle&=0,
+&
+\langle \Norm_v,s_v\rangle+\langle \Norm,s_{vv}\rangle&=0,
+\\
+2\cdot\langle \Norm_u,\Norm\rangle&=0,
+&
+2\cdot\langle \Norm_v,\Norm\rangle&=0.
+\end{align*}
+It remains to plug in the expressions from \ref{eq:shape=norm_u}.
+\qeds
 
-\begin{thm}{Proposition}\label{prop:shape=D2}
-Let $p$ be a point on a smooth oriented surface $\Sigma$.
-Suppose $\Sigma$ is described locally as a graph $z=f(x,y)$ in tangent-normal coordinates at $p$.
-Then
-\[\langle \Shape(\vec v),\vec w\rangle=D_{\vec w}D_{\vec v}f(0,0)\]
+\begin{thm}{Exercise}\label{ex:self-adjoint}
+Show that the shape operator is \index{self-adjoint operator}\emph{self-adjoint}; that is,
+\[\langle \Shape\vec v,\vec w\rangle=\langle \vec v,\Shape\vec w\rangle\]
 for any $\vec v,\vec w\in\T_p$.
-Moreover $\Shape\:\T_p\to\T_p$ is the unique linear operator that satisfies the above condition.
 \end{thm}
 
-\parit{Proof.} 
-Suppose $\vec v=(\begin{smallmatrix}
-a\\b
-\end{smallmatrix})$
-and 
-$\vec v=(\begin{smallmatrix}
-c\\d
-\end{smallmatrix})$, then 
-\begin{align*}
-D_{\vec v}&=a\cdot\tfrac{\partial}{\partial x}+ b\cdot\tfrac{\partial}{\partial y},
-&
-D_{\vec w}&=c\cdot\tfrac{\partial}{\partial x}+ d\cdot\tfrac{\partial}{\partial y}.
-\end{align*}
-Therefore 
-\begin{align*}
-D_{\vec w}D_{\vec v}f&=
-a\cdot c\cdot\tfrac{\partial^2 f}{\partial^2 x}
-+b\cdot c\cdot\tfrac{\partial^2 f}{\partial x\partial y}
-+a\cdot d\cdot\tfrac{\partial^2 f}{\partial y\partial x}
-+b\cdot d\cdot\tfrac{\partial^2 f}{\partial^2 y}
-\intertext{evaluating this expression at $(0,0)$ we get}
-D_{\vec w}D_{\vec v}f(0,0)&=a\cdot c\cdot\ell
-+b\cdot c\cdot m
-+a\cdot d\cdot m
-+b\cdot d\cdot n=
-\\
-&=\langle M_p\cdot \vec v,\vec w\rangle=\langle \vec v,M_p\cdot \vec w\rangle=
-\\
-&=\langle \Shape(\vec v),\vec w\rangle=\langle \vec v,\Shape(\vec w)\rangle.
-\end{align*}
-\qedsf
+Let us denote by $\vec i$, $\vec j$ and $\vec k$ the standard basis in the $(x,y,z)$-coordinates.\index{10i@$\vec i$, $\vec j$ and $\vec k$}
+Recall that the components $\ell$, $m$, and $n$ of the Hessian matrix are defined in Section~\ref{sec:lmn}.
 
-In the following proposition we use the notion of directional derivative defined in \ref{def:directional-derivative}.
-
-\begin{thm}{Proposition}\label{prop:S=-D}
-Let $\Sigma$ be a smooth surface with orientation defined by the unit normal field $\Norm$.
+\begin{thm}{Corollary}\label{cor:Shape(ij)}
+Let $z=f(x,y)$ be a local representation of a smooth surface $\Sigma$ in the tangent-normal coordinates at $p$.
+Suppose that its the Hessian matrix at $p$ is $(\begin{smallmatrix}
+\ell&m\\ m&n
+\end{smallmatrix})$.
 Then 
-\[\Shape(\vec w)=-D_{\vec w}\Norm
-\eqlbl{eq:shape=-dNorm}\]
-for any $\vec w\in \T_p$.
-Equivalently 
-\[\Shape=-d\Norm,\eqlbl{eq:shape=-L}\] 
-where $d\Norm$ denotes differential of the spherical map $\nu\:\Sigma\to\mathbb{S}^2$; that is, $d_p\Norm(\vec v)=(D_{\vec v}\Norm)(p)$.
+\begin{align*}
+\Shape(\vec i)&=\ell\cdot \vec i+m\cdot \vec j,
+&
+\Shape(\vec j)&=m\cdot \vec i+n\cdot\vec j;
+\end{align*}
+that is, the multiplication by the Hessian matrix at $p$ describes its shape operator.
+
+In particular, the principle curvatures of $\Sigma$ at $p$ are the eigenvalues of $\Shape_p$ and the principle directions are the eigendirections of $\Shape_p$.
 \end{thm}
 
+Since Hessian matrix is symmetric, the corollary also implies that $\Shape$ is self-adjoint which gives another way to solve \ref{ex:self-adjoint}.
 
-
-The reason the minus sign in \ref{eq:shape=-dNorm} and \ref{eq:shape=-L} arises is the same as in the formula  
-for the signed curvature of a plane curve in its Frenet frame: $\norm'=-\skur\cdot\tan$.
-The proof is done by straightforward calculations.
-
-
-\parit{Proof of \ref{prop:S=-D}.}
-Suppose $(u,v)\mapsto s(u,v)$ is a local chart of $\Sigma$ at $p$.
-Denote by $\Norm(u,v)$ the unit normal vector at $s(u,v)$.
-
-Since the vectors $s_u(u,v)$ and $s_v(u,v)$ are tangent to $\Sigma$ at $s(u,v)$ and $\Norm(u,v)$ is a unit normal vector, we get that
-\begin{align*}
-1&=\langle\Norm,\Norm\rangle,
-&
-0&=\langle s_u,\Norm\rangle,
-&
-0&=\langle s_v,\Norm\rangle.
-\end{align*}
-
-Taking partial derivatives of these there identities and applying the product rule,
-we get the following six identities:
-\begin{align*}
-0&=\tfrac{\partial}{\partial u}\langle\Norm ,\Norm \rangle
-=
-2\cdot \langle\Norm_u,\Norm\rangle,
-\\
-0
-&=\tfrac{\partial}{\partial v}\langle\Norm,\Norm\rangle
-=
-2\cdot \langle\Norm_v,\Norm\rangle,
-\\
-0&=\tfrac{\partial}{\partial u}
-\langle s_u,\Norm\rangle
-=
-\langle s_{uu},\Norm\rangle
-+
-\langle s_u,\Norm_u\rangle,
-\\
-0&=
-\tfrac{\partial}{\partial v}\langle s_u,\Norm\rangle
-=
-\langle s_{uv},\Norm\rangle
-+
-\langle s_u,\Norm_v\rangle
-\\
-0
-&=
-\tfrac{\partial}{\partial u}
-\langle s_v,\Norm\rangle
-=
-\langle s_{uv},\Norm\rangle
-+
-\langle s_v,\Norm_u\rangle,
-\\
-0
-&=
-\tfrac{\partial}{\partial v}
-\langle s_v,\Norm\rangle
-=
-\langle s_{vv},\Norm\rangle
-+
-\langle s_v, \Norm_v\rangle.
-\end{align*}
-
-Now suppose $z=f(x,y)$ is a local description of $\Sigma$ in  tangent-normal coordinates at $p$.
-Note that 
-\[s(u,v)=(u,v,f(u,v))\]
-describes a chart of $\Sigma$ at $p$.
-
-Denote by $\vec i$, $\vec j$ and $\vec k$ the standard basis in the $(x,y,z)$-coordinates.
-Note that $s(0,0)=p$ and 
+\parit{Proof.}
+Note that $s\:(u,v)\mapsto (u,v,f(u,v))$ is a chart of $\Sigma$ that covers $p$.
+Further note that 
 \begin{align*}
 s_u(0,0)&=\vec i,
 &
 s_v(0,0)&=\vec j,
 &
-\nu(0,0)&=\vec k,
-\intertext{In particular $D_{\vec i}\Norm=\Norm_u(0,0)$ and $D_{\vec j}\Norm=\Norm_v(0,0)$. Then,}
+\Norm(0,0)&=\vec k,
+\\
 s_{uu}(0,0)&=\ell\cdot \vec k,
 &
 s_{uv}(0,0)&=m\cdot \vec k,
 &
-s_{vv}(0,0)&=n\cdot \vec k,
+s_{vv}(0,0)&=n\cdot \vec k.
 \end{align*}
-where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$; see Section~\ref{sec:lmn}.
-
-Evaluating the above 6 identities at $(u,v)\z=(0,0)$, we get that
-\begin{align*}
-\langle -D_{\vec i}\nu ,\vec i\rangle&=\ell,
-&
-\langle -D_{\vec i}\nu,\vec j\rangle&=m,
-&
-\langle -D_{\vec i}\nu,\vec k\rangle&=0,
-\\
-\langle -D_{\vec j}\nu,\vec i\rangle&=m,
-&
-\langle -D_{\vec j}\nu,\vec j\rangle&=n,
-&
-\langle -D_{\vec j}\nu,\vec k\rangle&=0,
-\end{align*}
-or, equivalently,
-\begin{align*}
--D_{\vec i}\nu
-&=\ell\cdot \vec i+m\cdot \vec j,
-&
--D_{\vec j}\nu
-&=m\cdot \vec i+n\cdot\vec j.
-\end{align*}
-It remains to apply \ref{eq:Shape(ij)}.
+It remains to apply \ref{thm:shape-chart}.
 \qeds
-
-\begin{thm}{Exercise}\label{ex:shape-chart}
-Suppose that $(u,v)\mapsto s(u,v)$ is a smooth map to a smooth surface $\Sigma$ with unit normal field $\Norm$.
-Show that 
-\begin{align*}
-\langle \Shape(s_u), s_u\rangle 
-&=\langle s_{uu},\Norm\rangle,
-&
-\langle \Shape(s_u), s_v\rangle 
-&=\langle s_{uv},\Norm\rangle,
-\\
-\langle \Shape(s_v), s_u\rangle 
-&=\langle s_{uv},\Norm\rangle,
-&
-\langle \Shape(s_v), s_v\rangle 
-&=\langle s_{vv},\Norm\rangle
-\end{align*}
-for any $(u,v)$.
-
-\end{thm}
 
 \begin{thm}{Corollary}\label{cor:intK}
 Let $\Sigma$ be a smooth surface with orientation defined by a unit normal field $\Norm$.
@@ -406,7 +293,7 @@ $(\begin{smallmatrix}
    &k_2
   \end{smallmatrix})$.
 
-Since by \ref{prop:S=-D}, $\Shape_p=-d_p\Norm$, we have
+Since $\Shape_p=-d_p\Norm$, \ref{cor:Shape(ij)} implies that
 \[\jac_p\Norm=|\det(\begin{smallmatrix}
    k_1
    &0
@@ -431,10 +318,11 @@ Conclude that $\Sigma$ is a subset of the unit sphere centered at $c$.
 
 \end{thm}
 
-Let $p$ be a common point of two surfaces $\Sigma_1$ and $\Sigma _2$. We define the \textit{angle of intersection} of $\Sigma_1$ and $\Sigma_2$ at $p$ as the acute angle between the normal lines to the tangent planes $T_p\Sigma_1$ and $T_p\Sigma_2$. The following exercise is a result by Ferdinand Joachimsthal \cite{joachimsthal} generalized by Ossian Bonnet \cite{bonnet}.
+We define the \index{angle between surfaces}\emph{angle} between two oriented surfaces at a point of their intersection $p$ as the angle between their normal vectors at $p$.
+The following exercise is a result by Ferdinand Joachimsthal \cite{joachimsthal} generalized by Ossian Bonnet \cite{bonnet}.
 
 \begin{thm}{Exercise}\label{ex:shape-curvature-line}
-Assume that two smooth surfaces $\Sigma_1$ and $\Sigma_2$ intersect at constant angle along a smooth regular curve $\gamma$.
+Assume that two smooth oriented surfaces $\Sigma_1$ and $\Sigma_2$ intersect at constant angle along a smooth regular curve $\gamma$.
 Show that if $\gamma$ is a curvature line in $\Sigma_1$, then it is also a curvature line in $\Sigma_2$.
 
 Conclude that if a smooth surface $\Sigma$ intersects a plane or sphere at constant angle along a smooth regular curve $\gamma$,
@@ -446,11 +334,11 @@ Let $\Sigma$ be a closed smooth surface with orientation defined by a unit norma
 Assume $t$ is sufficiently close to zero.
 
 \begin{subthm}{ex:equidistant:smooth}
-Show that the set of points of the form $p+t\cdot \Norm(p)$ with $p\in\Sigma$ forms a smooth surface, say $\Sigma_t$.
+Show that the set of points of the form $p+t\cdot \Norm(p)$ with $p\in\Sigma$ forms a smooth surface; denote it by $\Sigma_t$.
 \end{subthm}
 
 \begin{subthm}{ex:equidistant:area}
-Let $a(t)$ denote the area of $\Sigma_t$.
+Let $a(t)$ be the area of $\Sigma_t$.
 Show that 
 \[a'(0)=-\iint_\Sigma H,\]
 where $H$ denotes mean curvature of $\Sigma$.

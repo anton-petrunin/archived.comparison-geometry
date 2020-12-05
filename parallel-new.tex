@@ -95,38 +95,10 @@ It is straightforward to see that if the partition is sufficiently fine, then it
 Construct a loop $\gamma$ in $\mathbb{S}^2$ with base at $p$ such that the parallel transport $\iota_\gamma\:\T_p\to\T_p$ is not the identity map.
 \end{thm}
 
-\section{Geodesic curvature}\label{sec:Darboux}
+\section{Total geodesic curvature}
 
-Plane is the simplest example of smooth surface.
-Earlier, in Section~\ref{sec:def(skur)}, we introduced signed curvature of a plane curve.
-Let us introduce the so-called \index{geodesic curvature}\emph{geodesic curvature} --- an analogous notion for a smooth curve $\gamma$ in general oriented smooth surface $\Sigma$.
-
-\begin{wrapfigure}{o}{42 mm}
-\vskip-0mm
-\centering
-\begin{lpic}[t(-0mm),b(0mm),r(0mm),l(0mm)]{asy/paraboloid+curve(1)}
-\lbl[ul]{34,14;$\tan$}
-\lbl[b]{20,43;$\Norm$}
-\lbl[bl]{38,35;$\mu$}
-\end{lpic}
-\vskip-0mm
-\end{wrapfigure}
-
-Let $\Norm\:\Sigma\to \mathbb{S}^2$ be the spherical map that defines the orientation on $\Sigma$.
-Without loss of generality we can assume that $\gamma$ has unit speed.
-Then for any $t$ the vectors $\Norm(t)=\Norm(\gamma(t))_\Sigma$ and the velocity vector $\tan(t)=\gamma'(t)$ are unit vectors that are normal to each other.
-Denote by $\mu(t)$ the unit vector that is normal to both $\Norm(t)$ and $\tan(t)$ that points to the left from $\gamma$; that is, $\mu=\Norm\times \tan$.
-Note that the triple $\tan(t),\mu(t),\Norm(t)$ is an oriented orthonormal basis for any $t$;
-it is called \index{Darboux frame}\emph{Darboux frame} of $\gamma$ in $\Sigma$.
-
-Since $\gamma$ is unit-speed, the acceleration $\gamma''(t)$ is perpendicular to $\tan(t)$;
-therefore at any parameter value $t$, we have
-\[\gamma''(t)=k_g(t)\cdot \mu(t)-k_n(t)\cdot \Norm(t),\]
-for some real numbers $k_n(t)$ and $k_g(t)$.
-The numbers $k_n(t)$ and $k_g(t)$ are called \index{normal curvature}\emph{normal} and \index{geodesic curvature}\emph{geodesic curvature} of $\gamma$ at $t$ respectively;
-we may write $k_n(t)_\Sigma$ and $k_g(t)_\Sigma$ if we need to emphasize that we work in the surface $\Sigma$.
- 
-Geodesic curvature measures how much a given curve diverges from being a geodesic;
+Recall that geodesic curvature is defined in Section~\ref{sec:Darboux}.
+Note that it measures how much a given curve $\gamma$ diverges from being a geodesic;
 it is positive if $\gamma$ turns left and negative if $\gamma$ turns right.
 In particular, by the following exercise, geodesics have vanishing geodesic curvature.
 
@@ -134,8 +106,6 @@ In particular, by the following exercise, geodesics have vanishing geodesic curv
 Let $\gamma$ be a smooth regular curve in a smooth surface~$\Sigma$.
 Show that $\gamma$ is a geodesic if and only if it has constant speed and vanishing geodesic curvature.
 \end{thm}
-
-\section{Total geodesic curvature}
 
 The total geodesic curvature is defined as integral 
 \[\tgc\gamma
@@ -254,7 +224,6 @@ that is, the length of $\gamma$ cannot exceed the length of the unit circle in t
 Let $\gamma$ be a closed simple geodesic on a smooth closed surface $\Sigma$ with positive Gauss curvature.
 Assume $\Norm\:\Sigma\to\mathbb{S}^2$ is a Gauss map.
 Show that the curve $\alpha=\Norm\circ\gamma$ divides the sphere into regions of equal area.
-
 Conclude that $\length \alpha\ge 2\cdot\pi.$
 \end{thm}
 
