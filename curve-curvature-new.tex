@@ -62,7 +62,7 @@ Let $\gamma$ be a regular smooth space curve.
 The curve 
 \[\tan(t)=\tfrac{\gamma'(t)}{|\gamma'(t)|};
 \eqlbl{eq:tantrix}\] 
-it is called \index{tangent indicatrix}\emph{tangent indicatrix} of $\gamma$.
+it is called a \index{tangent indicatrix}\emph{tangent indicatrix} of $\gamma$.
 Note that $|\tan(t)|=1$ for any $t$;
 that is, $\tan$ is a spherical curve.
 
@@ -110,7 +110,7 @@ at the point $p=(x,f(x))$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:approximation-const-curvature}
-Show that any smooth regular curve $\gamma\:\mathbb{I}\to\RR^3$ with curvature at most 1 can be approximated by a smooth curves with constant curvature 1.
+Show that any smooth regular curve $\gamma\:\mathbb{I}\to\RR^3$ with curvature at most 1 can be approximated by smooth curves with constant curvature 1.
 
 In other words, construct a sequence $\gamma_n\:\mathbb{I}\to\RR^3$ of smooth regular curves  with constant curvature 1 such that $\gamma_n(t)\to \gamma(t)$ for any $t$ as $n\to\infty$.
 \end{thm}
@@ -134,7 +134,7 @@ if both curves are simple we can also say that they are tangent at the point $p=
 Let $\gamma\:\mathbb{I}\to\RR^3$ be a smooth unit-speed curve and $\tan$ its tangent indicatrix.
 The integral 
 \[\tc\gamma\df\int_{\mathbb{I}}\kur(s)\cdot ds\]
-is called \index{total curvature of}\emph{total curvature of}\label{page:total curvature of:smooth-def}
+is called the \index{total curvature of}\emph{total curvature of}\label{page:total curvature of:smooth-def}
 $\gamma$.
 
 Rewriting the above integral using a change of variables produce a formula for a general parametrization $t\mapsto \gamma(t)$:
@@ -258,7 +258,7 @@ The obtained curve $\gamma$ is called the
 \emph{concatenation} of $\alpha$ and $\beta$. %briefly $\gamma=\alpha{*}\beta$.
 (The condition $\alpha(b)=\beta(b)$ ensures that the map $t\mapsto\gamma(t)$ is continuous.)
 
-The same definition of concatenation can be applied if $\alpha$ and/or $\beta$ are defied on semiopen intervals 
+The same definition of concatenation can be applied if $\alpha$ and/or $\beta$ are defined on semiopen intervals 
 $(a,b]$ and/or $[b,c)$.
 
 \begin{wrapfigure}{o}{25 mm}
@@ -267,18 +267,18 @@ $(a,b]$ and/or $[b,c)$.
 \includegraphics{mppics/pic-54}
 \end{wrapfigure}
 
-The assumption that the intervals of definition of $\alpha$ and $\beta$ fit together is not essential --- one can concatenate any the curves as long as the endpoint of $\alpha$ coincides with the starting point of~$\beta$.
+The assumption that the intervals of definition of $\alpha$ and $\beta$ fit together is not essential --- one can concatenate any of the curves as long as the endpoint of $\alpha$ coincides with the starting point of~$\beta$.
 If this is the case, then the time intervals of both curves can be shifted so that they fit together. 
 
-If in addition $\beta(c)=\alpha(a)$, then we can do cyclic concatination of these curves;
+If in addition $\beta(c)=\alpha(a)$, then we can do cyclic concatenation of these curves;
 this way we obtain a closed curve.
 
-If $\alpha'(b)$ and $\beta'(b)$ are defined, then the angle $\theta\z=\measuredangle(\alpha'(b),\beta'(b))$ is called \index{external angle}\emph{external angle} of $\gamma$ at time $b$.
+If $\alpha'(b)$ and $\beta'(b)$ are defined, then the angle $\theta\z=\measuredangle(\alpha'(b),\beta'(b))$ is called the \index{external angle}\emph{external angle} of $\gamma$ at time $b$.
 If $\theta=\pi$, then we say that $\gamma$ has a \index{cusp}\emph{cusp} at  time $b$.
 
-A space curve $\gamma$ is called \index{piecewise smooth regular curve}\emph{piecewise smooth and regular} if it can be presented as an iterated concatination of a finite number of smooth regular curves; if $\gamma$ is closed, then the  concatination is assumed to be cyclic.
+A space curve $\gamma$ is called \index{piecewise smooth regular curve}\emph{piecewise smooth and regular} if it can be presented as an iterated concatenation of a finite number of smooth regular curves; if $\gamma$ is closed, then the  concatenation is assumed to be cyclic.
 
-If $\gamma$ is a concatination of smooth regular arcs $\gamma_1,\dots,\gamma_n$, then the total curvature of $\gamma$ is defined as a sum of the total curvatures of $\gamma_i$ and the external angles;
+If $\gamma$ is a concatenation of smooth regular arcs $\gamma_1,\dots,\gamma_n$, then the total curvature of $\gamma$ is defined as a sum of the total curvatures of $\gamma_i$ and the external angles;
 that is, 
 \[\tc\gamma=\tc{\gamma_1}+\dots+\tc{\gamma_n}+\theta_1+\dots+\theta_{n-1}\]
 where $\theta_i$ is the external angle at the joint between $\gamma_i$ and $\gamma_{i+1}$;
@@ -318,11 +318,11 @@ these are smooth spherical arcs.
 
 The same argument as in the proof of Fenchel's theorem, shows that the curves $\tan_1,\dots,\tan_n$ cannot lie in an open hemisphere.
 
-Note that the spherical distance from the end point of $\tan_i$ to the starting point of $\tan_{i+1}$ is equal to the external angle $\theta_i$ (we enumerate the arcs modulo $n$, so $\gamma_{n+1}=\gamma_1$).
-Let us connect the end point of $\tan_i$ to the starting point of $\tan_{i+1}$ by a short arc of a great circle in the sphere.
+Note that the spherical distance from the endpoint of $\tan_i$ to the starting point of $\tan_{i+1}$ is equal to the external angle $\theta_i$ (we enumerate the arcs modulo $n$, so $\gamma_{n+1}=\gamma_1$).
+Let us connect the endpoint of $\tan_i$ to the starting point of $\tan_{i+1}$ by a short arc of a great circle in the sphere.
 This way we get a closed spherical curve that is $\theta_1+\dots+\theta_n$ longer then the total length of $\tan_1,\dots,\tan_n$.
 
-Applying the hemisphee lemma (\ref{lem:hemisphere}) to the obtained closed curve, we get that
+Applying the hemisphere lemma (\ref{lem:hemisphere}) to the obtained closed curve, we get that
 \[\length\tan_1+\dots+\length\tan_n+\theta_1+\dots+\theta_n\ge 2\cdot\pi.\]
 By \ref{obs:tantrix}, the statement follows.
 \qedsf
@@ -394,7 +394,7 @@ Moreover if $\gamma$ is closed we allow the inscribed polygonal line $\beta$ to 
 
 \parit{Proof.}
 Since the curvature of line segments vanishes, 
-the total curvature of polygonal line is the sum of external angles $\theta_i=\pi-
+the total curvature of the polygonal line is the sum of external angles $\theta_i=\pi-
 \measuredangle\hinge {p_i}{p_{i-1}}{p_{i+1}}$.
 
 \begin{wrapfigure}{o}{40 mm}
@@ -453,7 +453,7 @@ where the least upper bound is taken over all polygonal lines~$\beta$ inscribed 
 This exercise can be used to generalize the notion of total curvature of arbitrary curve $\gamma$.
 Namely it can be defined as \emph{the least upper bound on the total curvatures of inscribed nondegenerate polygonal lines inscribed in $\gamma$.}
 
-It is possible to generalze most of the statments in this chapter to the (nonsmooth) curves of finite total curvature.
+It is possible to generalize most of the statements in this chapter to the (nonsmooth) curves of finite total curvature.
 This theory was developed by Alexandr Alexandrov and Yuri Reshetnyak \cite{aleksandrov-reshetnyak};
 a good survey on the subject is written by John Sullivan \cite{sullivan-curves}.
 
@@ -475,7 +475,7 @@ that is, if the total curvature of a smooth regular space curve $\gamma$ equals 
 The proof is an application of Proposition~\ref{prop:inscribed-total-curvature}.
 
 \parit{Proof.}
-Consider an inscribed quadraliteral $abcd$ in $\gamma$.
+Consider an inscribed quadrangle $abcd$ in $\gamma$.
 By the definition of total curvature, we have that
 \begin{align*}
 \tc{abcd}&=(\pi-
@@ -534,11 +534,11 @@ By \ref{prop:inscribed-total-curvature},
 Therefore we have equalities in \ref{eq:spheric-triangle}.
 It means that the point $d$ lies in the angle $abc$ 
 and the point $b$ lies in the angle $cda$.
-That is, $abcd$ is a convex plane quadrilateral.
+That is, $abcd$ is a convex plane quadrangle.
 
-It follows that any quadrilateral inscribed in $\gamma$ is a convex plane quadrilateral.
+It follows that any quadrangle inscribed in $\gamma$ is a convex plane quadrangle.
 Therefore all points of $\gamma$ lie in one plane defined by three points on $\gamma$.
-Further, since any quadrilateral inscribed in $\gamma$ is a convex,
+Further, since any quadrangle inscribed in $\gamma$ is a convex,
 we get that $\gamma$ is a convex plane curve. 
 \qeds
 
@@ -570,7 +570,7 @@ The following lemma was proved by Axel Schur \cite{shur}.
 Let $\gamma_1\:[a,b]\to\RR^2$ and $\gamma_2\:[a,b] \to\RR^3$ be two smooth unit-speed curves.
 Suppose that $\kur(s)_{\gamma_1}\ge\kur(s)_{\gamma_2}$ for any $s$ 
 and the curve
-$\gamma_1$ is an arc of a convex curve; that is, it runs in the boundary of a covex plane figure.
+$\gamma_1$ is an arc of a convex curve; that is, it runs in the boundary of a convex plane figure.
 Then the distance between the ends of $\gamma_1$ cannot exceed the  distance between the ends of $\gamma_2$; that is,
 \[|\gamma_1(b)-\gamma_1(a)|\le |\gamma_2(b)-\gamma_2(a)|.\]
 

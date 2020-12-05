@@ -21,7 +21,7 @@ The length of $\gamma$ is a nonnegative real number or infinity;
 the curve $\gamma$ is called \index{rectifiable curve}\emph{rectifiable} if its length is finite. 
 
 The length of a closed curve is defined as the length of the corresponding loop.
-If a curve parameterized by an open or semi-open interval, then its length is defined as the least upper bound of the lengths of all its restrictions to closed intervals.
+If a curve is parameterized by an open or semi-open interval, then its length is defined as the least upper bound of the lengths of all its restrictions to closed intervals.
 \end{thm}
 
 
@@ -33,7 +33,7 @@ Suppose that curve $\gamma_1\:[a_1,b_1] \to\RR^3$ is a reparametrization of $\ga
 
 
 \begin{thm}{Exercise}\label{ex:length-image}
-Let $\alpha\:[0,1]\to\RR^3$ be simple path.
+Let $\alpha\:[0,1]\to\RR^3$ be a simple path.
 Suppose a path $\beta\:[0,1]\to\RR^3$ has the same image as $\alpha$;
 that is, $\beta([0,1])=\alpha([0,1])$.
 Show that 
@@ -49,7 +49,7 @@ Show that
 
 Suppose $\gamma\:[a,b]\to \RR^3$ is a parametrized space curve.
 For a partition $a=t_0 < t_1 < \z\cdots < t_k=b$, set $p_i=\gamma(t_i)$.
-Then the polygonal line $p_0\dots p_k$ is said to be an \index{inscribed polygonal line}\emph{inscribed} in $\gamma$.
+Then the polygonal line $p_0\dots p_k$ is said to be \index{inscribed polygonal line}\emph{inscribed} in $\gamma$.
 If $\gamma$ is closed, then $p_0=p_k$, so the inscribed polygonal line is also closed.
 
 Note that the length of a space curve $\gamma$ can be defined as the least upper bound of the lengths of polygonal lines $p_0\dots p_k$ inscribed in $\gamma$.
@@ -319,7 +319,7 @@ we have to show that
 Observe that from the definition of length, we get
 \[\length\gamma_{\vec u}+\length\gamma_{\vec v}\ge \length\gamma\]
 for any plane curve $\gamma$ and any pair $(\vec u , \vec v )$ of orthonormal vectors in $\mathbb{R}^2$.
-Therefore, if $\gamma$ has infinite length, then the average of lengths of $\gamma_{\vec u}$ is infinte as well.
+Therefore, if $\gamma$ has infinite length, then the average of lengths of $\gamma_{\vec u}$ is infinite as well.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:convex-croftons}
@@ -362,7 +362,7 @@ Recall that the lower limit
 of a sequence of real numbers $(x_n)$ is denoted by
 \[\liminf_{n\to\infty} x_n.\] 
 It is defined as the lowest partial limit; that is, the lowest possible limit of a subsequence of $(x_n)$.
-The lower limit is defined for any sequence of real numbers and it lies in the exteded real line $[-\infty,\infty]$
+The lower limit is defined for any sequence of real numbers and it lies in the extended real line $[-\infty,\infty]$
 
 
 \begin{thm}{Theorem}\label{thm:length-semicont}
@@ -415,8 +415,7 @@ Since the partition was arbitrary, by the definition of length, the inequality  
 
 The inequality \ref{eq:semicont-length} might be strict.
 For example, the diagonal $\gamma_\infty$ of the unit square 
-can be  approximated by a stairs-like
-polygonal curves $\gamma_n$
+can be approximated by stairs-like polygonal curves $\gamma_n$
 with sides parallel to the sides of the square ($\gamma_6$ is on the picture).
 In this case
 \[\length\gamma_\infty=\sqrt{2}\quad
@@ -477,7 +476,7 @@ $\beta_1=q_0\dots q_n$ inscribed in any given spherical path $\gamma_1$ connecti
 \[\length\beta_1\ge \length \beta.\eqlbl{eq:length beta=<length beta}\]
 
 Define $q_i$ as the first point on $\gamma_1$ such that $|u-p_i|=|u-q_i|$, but set $q_n=v$.
-Clearly $\beta_1$ is inscribed in $\gamma_1$ and according the triangle inequality for angles (\ref{thm:spherical-triangle-inq}), we have that 
+Clearly $\beta_1$ is inscribed in $\gamma_1$ and according to the triangle inequality for angles (\ref{thm:spherical-triangle-inq}), we have that 
 \[ \measuredangle(q_{i-1},q_i)\ge\measuredangle(p_{i-1},p_i).\]
 Therefore 
 \[ |q_{i-1}-q_i|\ge|p_{i-1}-p_i|\]

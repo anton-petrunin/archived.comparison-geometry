@@ -22,7 +22,7 @@ Note that
 \[\kur(s)=|\skur(s)|;\]
 that is, up to sign, the signed curvature $\skur(s)$ equals the curvature $\kur(s)$  of $\gamma$ at $s$ defined in Section~\ref{sec:curvature};
 the sign tells us in which direction $\gamma$ turns --- if $\gamma$ is turning left at time $s$, then $\skur (s)>0$.
-If we want to emphasise that we are working with the {}\emph{nonsigned} curvature of the curve, 
+If we want to emphasise that we are working with the {}\emph{non-signed} curvature of the curve, 
 we call it \index{absolute curvature}\emph{absolute curvature}.
 
 Note that if we reverse the parametrization of $\gamma$ or change the orientation of the plane, then
@@ -36,7 +36,7 @@ Since $\tan(s),\norm(s)$ is an orthonormal frame, we have
 &
 \langle\tan,\norm\rangle&=0,
 \end{align*}
-Differentiating these idenitites we get 
+Differentiating these identities we get 
 \begin{align*}
 \langle\tan',\tan\rangle&=0,
 &
@@ -78,7 +78,7 @@ Show that
 \end{thm}
 
 The curves $\gamma_0$ and $\gamma_1$ in the exercise above describe the tracks of an idealized bicycle with  distance 1 from the rear to the front wheel.
-Thus by the exercise, the front wheel must have longer track.
+Thus by the exercise, the front wheel must have a longer track.
 For more on the geometry of bicycle tracks, see the survey of Robert Foote, Mark Levi, and Serge Tabachnikov \cite{foote-levi-tabachnikov} and the references therein.
 
 \section{Fundamental theorem of plane curves}
@@ -339,7 +339,7 @@ and a real number $\skur$, there is a unique smooth unit-speed curve $\sigma\:\R
 that starts at $p$ in the direction of $\tan$ and has constant signed curvature $\skur$.
 
 Moreover, if $\skur=0$, then it is a line $\sigma(s)=p+s\cdot \tan$;
-if $\skur\ne 0$, then $\sigma$ runs around a circle of radius $\tfrac1{|\skur|}$ with center at $p+\tfrac1\skur\cdot \norm$, where $\tan,\norm$ is an oriented orthonoral frame.
+if $\skur\ne 0$, then $\sigma$ runs around a circle of radius $\tfrac1{|\skur|}$ with center at $p+\tfrac1\skur\cdot \norm$, where $\tan,\norm$ is an oriented orthonormal frame.
 \end{thm}
 
 Further we will use the term \index{circline}\emph{circline} for {}\emph{a circle or a line};
@@ -381,7 +381,7 @@ denote by $\skur(s)$ the signed curvature of $\gamma$ at $s$.
 
 The unit-speed curve $\sigma$ of constant signed curvature $\skur(s)$ that starts at $\gamma(s)$ in the direction $\gamma'(s)$ is called the \index{osculating circline}\emph{osculating circline} of $\gamma$ at~$s$.
 
-The center and radius of the osculating circle at a given point are called \index{center of curvature}\emph{center of curvature} and \index{radius of curvature}\emph{radius of curvature} of the curve at that point.
+The center and radius of the osculating circle at a given point are called the \index{center of curvature}\emph{center of curvature} and \index{radius of curvature}\emph{radius of curvature} of the curve at that point.
 \end{thm}
 
 The osculating circle $\sigma_s$ can be also defined as the unique circline that has \index{order of contact}\emph{second order of contact} with $\gamma$ at $s$;
@@ -573,7 +573,8 @@ If both curves are simple, then  without ambiguity we also could say that $\gamm
 
 If the curves on the diagram are oriented according to the arrows, then $\gamma_1$ supports $\gamma_2$ from the right at $p$ (as well as $\gamma_2$ supports $\gamma_1$ from the left at~$p$).
 
-Suppose $\gamma_1$ is simple proper curve, so it divides the plane into two closed regions that lie on left and right from $\gamma_1$. Then we say that $\gamma_1$ \index{global support}\emph{globally supports} $\gamma_2$ at $t_2$ 
+Suppose $\gamma_1$ is a simple proper curve, so it divides the plane into two closed regions that lie on the left and right from $\gamma_1$.
+Then we say that $\gamma_1$ \index{global support}\emph{globally supports} $\gamma_2$ at $t_2$ 
 if $\gamma_2$ runs in one of these closed regions and 
 $\gamma_2(t_2)$ lies on $\gamma$.
 
@@ -645,8 +646,8 @@ Show that $\gamma_0$ locally supports $\gamma_1$ from the right at $p$.
 Give an example of two proper curves $\gamma_0$ and $\gamma_1$ satisfying the above condition such that $\gamma_0$ does not support $\gamma_1$ at $p$ globally.
 \end{thm}
 
-Note that according to \ref{thm:DNA} for any closed smooth regular curve that runs in a unit disc, the average of its absolute curvature is at least 1; in particular, there is has a point where the absolute curvature is at lest 1.
-The following exercise says that such  statement also holds for loops.
+Note that according to \ref{thm:DNA} for any closed smooth regular curve that runs in a unit disc, the average of its absolute curvature is at least 1; in particular, there is a point where the absolute curvature is at least 1.
+The following exercise says that this statement also holds for loops.
 
 \begin{thm}{Exercise}\label{ex:in-circle}
 Assume a closed smooth regular plane loop $\gamma$ runs in a unit disc.
@@ -680,7 +681,7 @@ The three exercises above are baby cases of \ref{ex:moon-rad}; try to find a dir
 \begin{thm}{Exercise}\label{ex:lens}
 Let $F$ be a plane figure bounded by two circle arcs $\sigma_1$ and $\sigma_2$ of signed curvature 1 that run from $x$ to $y$.
 Suppose $\sigma_1$ is shorter than~$\sigma_2$.
-Assume a smooth regular arc $\gamma$ runs in $F$ and has both end points on $\sigma_1$.
+Assume a smooth regular arc $\gamma$ runs in $F$ and has both endpoints on $\sigma_1$.
 Show that the absolute curvature of $\gamma$ is at least 1 at some parameter value.
 
 \end{thm}
@@ -734,7 +735,7 @@ Note that its arc $\sigma$ supports $\gamma$ at some point $w=\gamma(t_0)$.
 
 Let us parameterize $\sigma$ from $p$ to $q$.
 Note that the $\gamma$ and $\sigma$ are tangent and cooriented at $w$.
-If not, then the arc of $\gamma$ from $w$ to $y$ would be trapped in the curvelinear triangle $xwp$ bounded by the line segment $[p,x]$ and the arcs of $\sigma$, $\gamma$.
+If not, then the arc of $\gamma$ from $w$ to $y$ would be trapped in the curvilinear triangle $xwp$ bounded by the line segment $[p,x]$ and the arcs of $\sigma$, $\gamma$.
 But this is impossible since $y$ does not belong to this triangle.
 
 {
@@ -777,7 +778,7 @@ If $F$ is not convex, then $F$ is a proper subset of $K$.
 Therefore $\partial K$ contains a line segment that is not a part of $\partial F$.
 In other words, there is a line that supports $\gamma$ at two points, say $x$ and $y$ that divide $\gamma$ in two arcs $\gamma_1$ and $\gamma_2$, both distinct from the line segment $[x,y]$.
 
-Note the one of the arcs $\gamma_1$ or $\gamma_2$ is parametrized from $x$ to $y$ and the other from $y$ to $x$.
+Note that one of the arcs $\gamma_1$ or $\gamma_2$ is parametrized from $x$ to $y$ and the other from $y$ to $x$.
 Passing to a smaller arc if necessary we can ensure that only its endpoints lie on the line. 
 Applying the lens lemma, we get that the arcs $\gamma_1$ and $\gamma_2$ contain points with signed curvatures of opposite signs.
 \qeds
@@ -842,14 +843,14 @@ However, as one may see from the spinner-like example on the diagram it does not
 
 \begin{thm}{Key lemma}\label{thm:moon}
 Assume $\gamma$ is a simple closed smooth regular plane loop.
-Then at one point of $\gamma$ (distinct from its base) its osculating circle $\sigma$ globally support $\gamma$ from the inside.
+Then at one point of $\gamma$ (distinct from its base) its osculating circle $\sigma$ globally supports $\gamma$ from the inside.
 \end{thm}
 
 First let us show that the theorem follows from the lemma.
 
 \parit{Proof of \ref{thm:moon-orginal} modulo \ref{thm:moon}.}
 Since $\gamma$ has absolute curvature at most 1, each osculating circle has radius at least 1.
-According to the key lemma one of the osculating circles $\sigma$ globally support $\gamma$ from inside.
+According to the key lemma one of the osculating circles $\sigma$ globally supports $\gamma$ from inside.
 In particular $\sigma$ lies inside of $\gamma$, whence the result.
 \qeds
 
@@ -964,7 +965,8 @@ We give a proof  of the following stronger statement  based on the key lemma in 
 
 
 \begin{thm}{Theorem}\label{thm:4-vert-supporting}
-Any smooth regular simple plane curve is globally supported by its osculating circle at least at 4 distinct points; two from inside and two from outside.
+Any smooth regular simple plane curve is globally supported by its osculating circle at least at 4 distinct points;
+two from inside and two from outside.
 \end{thm}
 
 {

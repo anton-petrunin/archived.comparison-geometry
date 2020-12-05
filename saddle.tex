@@ -111,7 +111,7 @@ The statement follows from  \ref{prop:surf-support} and the definition of mean c
 \[H(p)_{\Sigma_i}=k_1(p)_{\Sigma_i}+k_2(p)_{\Sigma_i}.\]
 
 
-\parit{\ref{SHORT.cor:surf-support:gauss}.} Since $k_2(p)_{\Sigma_i}\ge k_1(p)_{\Sigma_i}$ and $k_1(p)_{\Sigma_2}\ge 0$, we get that all the principle curvatures 
+\parit{\ref{SHORT.cor:surf-support:gauss}.} Since $k_2(p)_{\Sigma_i}\ge k_1(p)_{\Sigma_i}$ and $k_1(p)_{\Sigma_2}\ge 0$, we get that all the principal curvatures 
 $k_1(p)_{\Sigma_1}$, 
 $k_1(p)_{\Sigma_2}$, 
 $k_2(p)_{\Sigma_1}$, and 
@@ -143,7 +143,7 @@ Show that the Gauss curvature of any convex smooth surface is nonnegative at eac
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:convex-lagunov}
-Assume $R$ is a convex body in $\RR^3$ bounded by a surface with principle curvatures at most 1.
+Assume $R$ is a convex body in $\RR^3$ bounded by a surface with principal curvatures at most 1.
 Show that $R$ contains a unit ball.
 \end{thm}
 
@@ -155,14 +155,14 @@ Recall that a closed convex region is strictly convex if and only if its boundar
 
 \begin{thm}{Lemma}\label{lem:gauss+=>convexity}
 Let $z=f(x,y)$ be the local description of a smooth surface $\Sigma$ in tangent-normal coordinates at some point $p\in\Sigma$.
-Assume both principle curvatures of $\Sigma$ are positive at $p$.
+Assume both principal curvatures of $\Sigma$ are positive at $p$.
 Then the function $f$ is strictly convex in a neighborhood of the origin and has a local minimum at the origin.
 
 In particular the tangent plane $\T_p$ locally supports $\Sigma$ from outside at $p$.
 \end{thm}
 
 \parit{Proof.}
-Since both principle curvatures are positive, by \ref{cor:Shape(ij)}, we have 
+Since both principal curvatures are positive, by \ref{cor:Shape(ij)}, we have 
 \[D^2_{\vec w}f(0,0)=\langle \Shape_p({\vec w}),{\vec w}\rangle\ge k_1(p)>0\] 
 for any unit tangent vector ${\vec w}\in\T_p\Sigma$ (which is the $(x,y)$-plane).
 
@@ -195,7 +195,7 @@ Note that in the proof we have to use that the surface is a connected set;
 otherwise a pair of disjoint spheres which bound two disjoint balls would give a counterexample.
 
 \parit{Proof.}
-Since the Gauss curvature is positive, we can choose unit normal field $\Norm$ on $\Sigma$ so that the principle curvatures are positive at any point.
+Since the Gauss curvature is positive, we can choose unit normal field $\Norm$ on $\Sigma$ so that the principal curvatures are positive at any point.
 Denote by $R$ the region bounded by $\Sigma$ that lies on the side of $\Norm$;
 that is, $\Norm$ points inside of $R$ at any point of $\Sigma$.
 (The region $R$ exists by \ref{clm:proper-divides}.)
@@ -366,12 +366,12 @@ maps $\Sigma$ bijectively into a subset of a hemisphere. Conclude that
 \end{wrapfigure}
 
 A surface is called \index{saddle surface}\emph{saddle} if its Gauss curvature at each point is nonpositive;
-in other words the principle curvatures at each point have opposite signs or at least one of them is zero.
+in other words the principal curvatures at each point have opposite signs or at least one of them is zero.
 
 If the Gauss curvature is negative at each point,
 then the surface is said to be \index{strictly saddle surface}\emph{strictly saddle};
-equivalently, this means that the principle curvatures have opposite signs at each point.
-Note that in this case the tangent plane cannot support the surface even locally --- moving along the surface in the principle directions at a given point, one goes above and below the tangent plane at this point.  
+equivalently, this means that the principal curvatures have opposite signs at each point.
+Note that in this case the tangent plane cannot support the surface even locally --- moving along the surface in the principal directions at a given point, one goes above and below the tangent plane at this point.  
 
 
 \begin{thm}{Exercise}\label{ex:convex-revolution}
@@ -418,7 +418,7 @@ such that the intersection of $\Omega$ with the tangent plane $\T_p$ is a union 
 
 Note that a closed surface cannot be saddle.
 Indeed, let $\Sigma$ be a closed surface and consider a smallest sphere that contains $\Sigma$ in its interior;
-it supports $\Sigma$ at some point $p$ and at this point the principle curvatures must have the same sign.
+it supports $\Sigma$ at some point $p$ and at this point the principal curvatures must have the same sign.
 The following more general statement  is proved using the same idea.
 
 \begin{thm}{Lemma}\label{lem:convex-saddle}
@@ -449,7 +449,7 @@ let $\sigma$ be the circle of intersection of this sphere and $\Pi$.
 Consider the smallest spherical dome $\Sigma_0$ with boundary $\sigma$ that surrounds~$\Sigma'$.
 
 Note that $\Sigma_0$ supports $\Sigma$ at some point~$q$.
-Without loss of generality we may assume that $\Sigma_0$ and $\Sigma$ are cooriented at $q$ and $\Sigma_0$ has positive principle curvatures.
+Without loss of generality we may assume that $\Sigma_0$ and $\Sigma$ are cooriented at $q$ and $\Sigma_0$ has positive principal curvatures.
 In this case $\Sigma_0$ supports $\Delta$ from outside.
 By \ref{cor:surf-support}, we have $K(q)_\Sigma\ge K(q)_{\Sigma_0}>0$, a contradiction.
 \qeds
@@ -487,7 +487,7 @@ Since a plane is convex, the ``only if'' part follows from \ref{lem:convex-saddl
 it remains to prove the ``if'' part.
 
 Assume $\Sigma$ is not saddle; that is, it has a point $p$ with strictly positive Gauss curvature;
-or equivalently, the principle curvatures $k_1(p)$ and $k_2(p)$ have the same sign.
+or equivalently, the principal curvatures $k_1(p)$ and $k_2(p)$ have the same sign.
 
 
 Let $z=f(x,y)$ be a graph representation of $\Sigma$ in tangent-normal coordinates at $p$.
@@ -625,7 +625,7 @@ It follows that the tangent plane $\T_p$ at some point $p\in\Sigma$ is not horiz
 
 Denote by $\Sigma^+$ the part of $\Sigma$ that lies above $\T_p$.
 Note that it has at least two connected components which are approaching $p$ from both sides 
-in the principle direction with positive principle curvature.
+in the principal direction with positive principal curvature.
 Indeed, if there was a curve that runs in $\Sigma^+$ and approaches $p$ from both sides, then it would cut a disc from $\Sigma$ with boundary line above $\T_p$ and some points below it;
 the latter would contradict \ref{lem:convex-saddle}.
 
