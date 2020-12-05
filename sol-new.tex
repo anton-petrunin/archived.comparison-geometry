@@ -1,4 +1,4 @@
-
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:ell-infty}.} Check all the conditions in the definition of metric, page \pageref{page:def:metric}.
@@ -24,7 +24,7 @@ Show that there is a point $p\in \Omega$ and a sequence $q_n\in Q$ such that suc
 Conclude that $q_n\to p$ and $n\to \infty$;
 therefore $Q$ is not closed.
 
-
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:9}}; \ref{SHORT.ex:9:compact}. Use that a continuous injection defined on a compact domain is an embedding (\ref{thm:Hausdorff-compact}).
@@ -155,6 +155,7 @@ Without loss of generality we may assume that the origin does not lie on the cur
 Show that inversion of the plane $(x,y)\mapsto (\tfrac{x}{x^2+y^2},\tfrac{y}{x^2+y^2})$ maps our curve to a closed curve with the origin removed.
 Apply Jordan's theorem for the obtained curve and use the inversion again.
 
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:integral-length-0}.}
@@ -335,6 +336,7 @@ Therefore we can choose ${\vec u}$ so that
 
 Observe that $\gamma_{\vec u}$ runs in a semicircle $h$ and therefore $\gamma$ lies in a hemisphere with $h$ as a diameter.
 
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 
@@ -531,6 +533,7 @@ Show that the distance between the ends of $\gamma_1$ is smaller than $|p-q|$ an
 
 \input{torsion-sol.tex}
 
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 
@@ -647,6 +650,7 @@ Observe that if a line or circle is tangent to $\gamma$,
 then it is tangent to the osculating circle at the same point.
 Then apply the spiral lemma (\ref{lem:spiral}).
 
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:vertex-support}.}
@@ -778,6 +782,7 @@ Repeat the proof of the theorem for each cyclic concatenation of an arc of $\gam
 
 An example for the second part can be guessed from the diagram.
 
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:hyperboloinds}.} 
@@ -853,6 +858,7 @@ In each case show that there is a vector field $\vec v$ defined on $\RR^2\backsl
 In fact one can choose radial fields of that type,
 but be careful with the cases \ref{SHORT.ex:star-shaped-disc:nonsmooth} and \ref{SHORT.ex:star-shaped-disc:star-shaped} --- they are not as easy as one might think.
 
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:tangent-normal}.}
@@ -885,6 +891,7 @@ $0$, hence the result.
 Use cutoffs and mollifiers from the analysis section (\ref{sec:analysis}) to construct a smooth nonnegative function $f$ on the $(x,y)$-plane such that $f(x,y)=0$ if and only if $(x,y)\in A$.
 Observe that the graph $z=f(x,y)$ describes the required surface.
 
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:line-of-curvature}.}
@@ -905,10 +912,7 @@ Therefore we can choose a unit normal $\Norm$ at each point so that both princip
 Show that it defines a global field on the surface.
 
 \parbf{\ref{ex:self-adjoint}.}
-
-\parbf{\ref{ex:shape-chart}.}
-Apply the definition of shape operator and use the following identities:
-$\langle\Norm,s_u\rangle=\langle\Norm,s_v\rangle=0$.
+Apply \ref{thm:shape-chart} to a map $s$ such that $s_u(0,0)=\vec u$ and $s_v(0,0)=\vec v$.
 
 \parbf{\ref{ex:normal-curvature=const}}; \ref{SHORT.ex:normal-curvature=const:a}.
 Observe that $\Sigma$ has unit Hessian matrix at each point and apply the definition of shape operator.
@@ -991,6 +995,7 @@ Conclude that $V$ is not simply connected.
 
 Finally, arrive to a contradiction by showing that if $V$ is bounded by a smooth sphere, then $V$ is simply connected. 
 
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:surf-support}.}
@@ -1250,6 +1255,7 @@ Moreover two of these curves pass thru $p$ and $\Gamma_p$ does not bound a compa
 Show that $\Gamma_p$ must have at least 4 ways to escape to infinity.
 On the other hand, since $\Sigma$ is a graph outside of compact set $K$, we have that $\Gamma_p\backslash K$ is a graph of a real-to-real function that has only two ways to escape to infinity --- a contradiction.
 
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \begin{wrapfigure}[5]{r}{24 mm}
@@ -1304,20 +1310,13 @@ a contradiction.
 \parbf{\ref{ex:intrinsic-diameter}.} 
 Consider the closest-point projection from the sphere to $\Sigma$ and apply \ref{lem:closest-point-projection}.
 
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:helix=geodesic}.}
 Show that $\Norm(\gamma(t))=(\cos t,\sin t, 0)$.
 Calculate $\gamma''(t)$ and show that it is proportional to $\Norm(\gamma(t))$.
 Note that the latter is equivalent to $\gamma''(t)\perp\T_{\gamma(t)}$.
-
-\parbf{\ref{ex:asymptotic-geodesic}.} Without loss of generality, we can assume that $\gamma$ has unit speed.
-By the definition of geodesic, we have that $\gamma''(s)\perp\T_{\gamma(s)}$. 
-Therefore 
-\[\gamma''(s)=k_n(s)\cdot\Norm(\gamma(s)),\]
-where $k_n(s)$ is the normal curvature of $\gamma$ at time $s$.
-Since $\gamma$ is asymptotic, $k_n(s)\equiv 0$;
-that is, $\gamma''(s)\equiv 0$, therefore $\gamma'$ is constant and $\gamma$ runs along a line segment; see \ref{ex:zero-curvature-curve}.
 
 \parbf{\ref{ex:reflection-geodesic}.}
 Denote by $\mu$ a unit vector perpendicular to $\Pi$.
@@ -1329,6 +1328,14 @@ the tangent palne $\T_{\gamma(t)}\Sigma$ is also mirror symmetric with respect t
 It follows that $\T_{\gamma(t)}\Sigma$ is spanned by $\mu$ and $\gamma'(t)$.
 Therefore $\gamma''\perp \mu$ and $\gamma''\perp\gamma'$ imply $\gamma''\perp\T_{\gamma(t)}\Sigma$;
 that is, $\gamma$ is a geodesic.
+
+\parbf{\ref{ex:asymptotic-geodesic}.} Without loss of generality, we can assume that $\gamma$ has unit speed.
+By the definition of geodesic, we have that $\gamma''(s)\perp\T_{\gamma(s)}$. 
+Therefore 
+\[\gamma''(s)=k_n(s)\cdot\Norm(\gamma(s)),\]
+where $k_n(s)$ is the normal curvature of $\gamma$ at time $s$.
+Since $\gamma$ is asymptotic, $k_n(s)\equiv 0$;
+that is, $\gamma''(s)\equiv 0$, therefore $\gamma'$ is constant and $\gamma$ runs along a line segment; see \ref{ex:zero-curvature-curve}.
 
 \parbf{\ref{ex:clairaut}.} 
 We can assume that the origin lies on the axis of revolution and $\vec i$ points in the direction of the axis.
@@ -1457,6 +1464,7 @@ are constants; it can be done the same way as \ref{SHORT.ex:parallel:a}.
 Then use the formula 
 $\langle\vec v(t),\vec w(t)\rangle=|\vec v(t)|\cdot|\vec w(t)|\cdot\cos\theta$.
 
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:parallel-transport-support}.}
@@ -1467,26 +1475,8 @@ Apply \ref{obs:parallel=}.
 \parbf{\ref{ex:holonomy=not0}.}
 Consider triangle that coordinate octant cuts form the sphere and try to argue that parallel transport around it rotates the tangent plane by angle $\tfrac\pi 2$. 
 
-\parbf{\ref{ex:geodesic-curvature}.}
-Let $\tan,\mu,\Norm$ be the Darboux frame of $\gamma$ in $\Sigma$ (see Section~\ref{sec:Darboux}).
-
-If $\gamma$ is a geodesic, then by \ref{lem:constant-speed}, it has constant speed.
-Applying scaling, we may assume that the speed is 1.
-In this case 
-\[\gamma''(t)=k_g(t)\cdot \mu(t)-k_n(t)\cdot \Norm(t).\]
-Since $\gamma''(t)\perp\T_{\gamma(t)}$ we get that $k_g=0$. 
-That proves the ``only if'' part.
-
-Now assume that $\gamma$ has constant speed.
-Againg, applying scaling, we may assume that the speed is 1.
-In this case 
-\[\gamma''(t)=-k_n(t)\cdot \Norm(t).\]
-Therefore $\gamma''(t)\perp\T_{\gamma(t)}$.
-
+\stepcounter{section}
 \setcounter{eqtn}{0}
-
-\parbf{\ref{ex:half-sphere-total-curvature}.}
-Apply \ref{prop:pt+tgc} and \ref{prop:area-of-spher-polygon}.
 
 \parbf{\ref{ex:1=geodesic-curvature}.}
 By \ref{ex:convex-proper-sphere}, $\Sigma$ is a smooth sphere.
@@ -1508,8 +1498,7 @@ Note that $\gamma_2$ lies in one of the regions, say $R_1$, that $\gamma_1$ cuts
 Similarly $\gamma_1$ lies in one of the regions, say $R_2$, that $\gamma_2$ cuts  from $\Sigma$.
 
 Observe that $R_1$ and $R_2$ cover $\Sigma$ with overlap.
-Therefore the first part implies that 
-\[\iint_\Sigma K< 4\cdot\pi.\]
+Therefore the first part implies that the integral of Gauss curvature of whole surface is less than $4\cdot\pi$.
 The latter contradicts \ref{ex:intK:4pi}.
 
 \parbf{\ref{ex:self-intersections}}; \textit{(easy)}.
@@ -1528,17 +1517,21 @@ Use \ref{ex:intK:4pi} to arrive at a contradiction.
 Estimate the integral of Gauss curvature of whole surface and a disc in it surrounded by a geodesic loop.
 
 \parbf{\ref{ex:unique-geod}}; \ref{SHORT.ex:unique-geod:unique}.
-By \ref{prop:shortest-paths-exist} and \ref{prop:gamma''} any two points in $\Sigma$ can be connected by a geodesic.
+By \ref{prop:shortest-paths-exist} and \ref{prop:gamma''}, any two points in $\Sigma$ can be connected by a geodesic.
 Suppose that points $p$ and $q$ can be connected by two distinct geodesics $\gamma_1$ and $\gamma_2$.
 Passing to their arcs, we can assume that $\gamma_1$ and $\gamma_2$ share only their endpoints.
 Since the surface is simply connected, $\gamma_1$ and $\gamma_2$ together bound a disc, say $\Delta\subset\Sigma$.
-It remains to Gauss--Bonnet formula to $\Delta$ and make a conclusion.
+It remains to apply Gauss--Bonnet formula to $\Delta$ and make a conclusion.
  
 \parit{\ref{SHORT.ex:unique-geod:diffeomorphism}.} 
 Use part \ref{SHORT.ex:unique-geod:unique} and \ref{prop:inj-rad}.
 
+\parbf{\ref{ex:half-sphere-total-curvature}.}
+Apply \ref{prop:pt+tgc} and \ref{prop:area-of-spher-polygon}.
+
 \parbf{\ref{ex:cohn-vossen}.} Repeat the proof of \ref{thm:cohn-vossen} for one-parameter family of geodesics $\gamma_\tau$ defined by $\gamma_\tau(0)=\alpha(\tau)$ and $\gamma'(0)=\alpha'(\tau)$. 
 
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:semigeodesc-chart}.}
@@ -1551,7 +1544,7 @@ Show that we can choose right orientation on $\Sigma$ so that $b_r(0,\theta)\z=1
 Conclude that we can assume that $b(r,\theta)>0$ for small positive values $r$.
 
 Suppose $b(r_1,\theta_1)<0$ at some pair $(r_1,\theta_1)$ with $0<r_1<r_0$.
-Observe that if $\theta_2$ is sufficiency close to $\theta_1$ then the radial curves $r\mapsto b(r,\theta_1)$ and $r\mapsto b(r,\theta_2)$ defined on the interval $(0,r_1)$ intersect each other.
+Observe that if $\theta_2$ is sufficiency close to $\theta_1$ then the radial curves $r\mapsto b(r,\theta_1)$ and $r\mapsto b(r,\theta_2)$ defined on the interval $(0,r_1)$ intersect.
 Therefore $\exp_p$ is not injective in $B$ --- a contradiction.
 
 \parit{\ref{SHORT.ex:inj-rad:0}.}
@@ -1568,8 +1561,8 @@ Show that $\exp_p$ is regular at $\vec v$ if $b(r,\theta)\ne 0$.
 Conclude that $\exp_p$ is regular in $B\backslash \{0\}$.
 
 By \ref{obs:d(exp)=1}, $\exp_p$ is regular at $0$.
-Whence $\exp_p|_B$ is a regular injective smooth map;
-therefore it is a diffeomorphism. 
+Whence $\exp_p|_B$ is a regular injective smooth map.
+Use the inverse function theorem (\ref{thm:inverse}) to show that the restriction $\exp_p|_B$ is a diffeomorphism to its image. 
  
 
 
@@ -1642,7 +1635,7 @@ we get
 \end{align*}
 Hence we get two more identities in \ref{eq:key-orthogonal/2}.
 
-Since $\vec u, \vec v$ is an orthonormal frame, by \ref{ex:shape-chart} we have
+Since $\vec u, \vec v$ is an orthonormal frame, by \ref{thm:shape-chart} we have
 \[
 \begin{aligned}
 \tfrac1{a^2}
@@ -1717,9 +1710,7 @@ a\cdot b\cdot(\ell\cdot n-m^2)
 \langle\vec u_v,\vec v\rangle
 -
 \cancel{\langle\vec u_{uv},\vec v\rangle}
-\right)=
-\\
-&=\tfrac{\partial}{\partial v}(-\tfrac1{b}\cdot a_v)
+\right)=\tfrac{\partial}{\partial v}(-\tfrac1{b}\cdot a_v)
 -
 \tfrac{\partial}{\partial u}(\tfrac1{a}\cdot b_u).
 \end{align*}
@@ -1745,7 +1736,7 @@ a\cdot b\cdot(\ell\cdot n-m^2)
 
 
 
-
+\stepcounter{section}
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:diam-angle}.}
@@ -1787,14 +1778,16 @@ Consider the pentagon $\Delta$ with induced length-metric.
 Note that all its angles cannot exceed $\pi$.
 Repeat the proof of \ref{thm:comp:toponogov} to show that the comparison holds in $\Delta$.
 
-Now choose a vertex $v$ of $\Delta$, subdivide its sides so that each arc of the subdivision is a minimizing geodesic, so the boundary of $\Delta$ is a broken geodesic.
+Choose a vertex $v$ of $\Delta$, subdivide its sides so that each arc of the subdivision is a minimizing geodesic, so the boundary of $\Delta$ is a broken geodesic.
 Divide $\Delta$ into triangles by joining $v$ to other vertexes of the broken geodesic.
-Take a model triangle for each so that they share sides as in $\Delta$.
+Take a model triangle for each so that they shared sides as in $\Delta$.
 Use the comparison to show that these plane triangles form a required polygon.
 
-\parit{\ref{SHORT.ex:self-intersections-hard}.}
-Use the inequalities on angles and side lengths to show that the pentagon obtained in \ref{SHORT.ex:convex-polyhon} is impossible.
-Namely, show that the sum of its side vectors oriented counterclocwise does not vanish.  
+\parit{\ref{SHORT.ex:self-intersections-hard}}.
+It remains to show that the plane pentagon provided by \ref{SHORT.ex:convex-polyhon} cannot exist.
+Imagine that there air pressure in the pentagon, it should not move it; so the total force should vanish.
+Use part \ref{SHORT.ex:convex-polyhon+self-intersections:angles} to show that this is not the case.
+(Equivalently, show that the sum of its side vectors oriented counterclocwise does not vanish.)
 
 \parbf{\ref{ex:geod-convexity}.} Apply \ref{angk>angk} and \ref{angk<angk}.
 
@@ -1804,15 +1797,10 @@ and
 second for the triangle $[p\bar xy]$ and $\bar y\in [p,y]$.
 Then apply the angle monotonicity (\ref{lem:angle-monotonicity}).
 
-\parit{\ref{SHORT.ex:self-intersections-hard}}.
-It remains to show that the plane pentagon provided by \ref{SHORT.ex:convex-polyhon} cannot exist.
-Imagine that there air pressure in the pentagon, it should not move it; so the total force should vanish.
-Use part \ref{SHORT.ex:convex-polyhon+self-intersections:angles} to show that this is not the case.
-
 
 {
 
-\begin{wrapfigure}[11]{o}{46 mm}
+\begin{wrapfigure}{r}{46 mm}
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-1650}
@@ -1843,8 +1831,8 @@ From \ref{ex:midpoints}, we have
 \end{align*}
 Sum it up and apply the triangle inequality.
 
-\parit{Remark.} Note that modulo the comparison theorem 
-on the Euclidean plane the proof is just as hard.
+\parit{Remark.} Note that modulo the comparison theorem, 
+the case of Euclidean plane is just as hard.
 
 }
 
@@ -1870,14 +1858,6 @@ f(y)&\le |y-\bar y|_\Sigma
 \end{align*}
 Observe that this inequality implies convexity of $f$.
 
-\begin{wrapfigure}{r}{27 mm}
-\vskip-4mm
-\centering
-\includegraphics{mppics/pic-1680}
-\vskip0mm
-\end{wrapfigure}
-
-
 \parit{\ref{SHORT.ex:dist-to-bry:+}.}
 Suppose $\gamma$ is a unit-speed geodesic in $\Delta$ and $\gamma(0)=p$. 
 Let $q$ be a point on $\delta$ that minimize the distance to $p$.
@@ -1885,6 +1865,13 @@ Denote by $\phi$ the angle between $\gamma$ and $[p,q]$ at $p$.
 Note that it is sufficient to show that 
 \[f\circ\gamma(t)\le |p-q|_\Sigma+t\cdot\cos\phi\eqlbl{eq:dist<cosphi}\]
 for $t$ sufficiently close to $0$.
+
+\begin{wrapfigure}{r}{27 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1680}
+\vskip0mm
+\end{wrapfigure}
 
 Chose small $t>0$ and set $x\z=\gamma(t)$.
 Consider a model triangle $[\tilde p\tilde q\tilde x]\z=\tilde\triangle(pqx)$.
@@ -1922,6 +1909,8 @@ Since $\tilde\phi\le\phi$, we get that
 \begin{align*}
 f\circ\gamma(t)&\le |x-y|_\Sigma\le 
 |\tilde x-\tilde y|_{\RR}=
+\\
+&=
 |p-q|_\Sigma+t\cdot\cos\tilde\phi
 \le
 |p-q|_\Sigma+t\cdot\cos\phi.
@@ -1933,7 +1922,7 @@ The case $t<0$ can be done along the same lines.
 
 \parbf{\ref{ex:half-line}}; \ref{SHORT.ex:half-line:exist}.
 Choose a sequence of points $x_n\in K$ that escapes to infinity; that is, such that $\dist{p}{x_n}{\Sigma}\to\infty$ as $n\to\infty$.
-Denote by $\vec u_n\in\T_p$ the unit vector in the direction of $[p,x_n]$.
+Denote by $\vec u_n\in\T_p$ the unit vector in the direction of $[p,x_n]_\Sigma$.
 Let $\vec u_\infty$ be a partial limit of $\vec u_n$.
 
 Show that the geodesic that starts from $p$ in the direction of $\vec u_\infty$ is a half-line that runs in $K$.
@@ -1941,12 +1930,14 @@ Show that the geodesic that starts from $p$ in the direction of $\vec u_\infty$ 
 \parit{\ref{SHORT.ex:half-line:suplevel}.} The concavity of $f$ follows from \ref{prop:busemann+}.
 Whence the convexity of $S_c$ follows.
 
-If $S_c$ is not compact then by \ref{SHORT.ex:half-line:exist} there is a half-line $\lambda$ that starts at $p$ and runs in $S_c$ for some $c$.
+Suppose that $S_c$ is not compact.
+Note that we can assume that $p\in S_c$.
+Then by \ref{SHORT.ex:half-line:exist} there is a half-line $\lambda$ that starts at $p$ and runs in $S_c$ for some $c$.
 It remains to observe that $f\circ\lambda(t)+t=0$ and use it to arrive to a contradiction.
 
 \parit{\ref{SHORT.ex:half-line:soul}.}
 Show that 
-\[f(x)-c=\Dist_{\partial S_c}x\]
+$f(x)-c=\Dist_{\partial S_c}x$
 for any $x\in S_c$.
 Conclude that $S_s$ has no interior points.
 Since $S_s$ is convex, the first part follows.
@@ -1954,7 +1945,7 @@ Since $S_s$ is convex, the first part follows.
 In the Euclidean plane $S_s$ is a single point.
 In the cylinder, $S_s$ is a circle.
 The surface of $r$-neighborhood of infinite rectangle provides an example with a line segment as $S_s$; this example is not smooth, but it can be smoothed keeping this property.
-
+One can use the cutoffs and mollifiers to do this (Section~\ref{sec:analysis}).
 
 
 \parbf{\ref{ex:line+half-line}.}

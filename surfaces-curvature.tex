@@ -153,10 +153,12 @@ its \emph{shape operator} is defined by
 Equivalently, the shape operator can be defined by
 \[\Shape=-d\Norm,\eqlbl{eq:shape=-L}\] 
 where $d\Norm$ denotes differential of the spherical map $\nu\:\Sigma\to\mathbb{S}^2$; that is, $d_p\Norm(\vec v)=(D_{\vec v}\Norm)(p)$.
-Note that $\T_p\Sigma=\T_{\Norm(p)}\SS^2$ --- both of these spaces are normal subspaces to $\Norm(p)$.
+
+Recall that $d_p\Norm$ is a linear map $\T_p\Sigma\to \T_{\Norm(p)}\SS^2$.
+Note that $\T_p\Sigma$ coincides with $\T_{\Norm(p)}\SS^2$ --- both of them are normal subspaces to $\Norm(p)$.
 Therefore $\Shape_p$ is indeed a linear operator $\T_p\to \T_p$ (the latter also follows from \ref{thm:shape-chart}).
 
-For a point $p\in \Sigma$ the shape operator of a tangent vector $\vec w\in \T_p$ will be denoted by $\Shape(\vec w)$ if it is clear from the context which base point $p$ and which surface we are working with;
+For a point $p\in \Sigma$ the shape operator of a tangent vector $\vec w\in \T_p$ will be denoted by $\Shape\vec w$ if it is clear from the context which base point $p$ and which surface we are working with;
 otherwise we may use the notations 
 \[\Shape_p(\vec w)\quad\text{or}\quad \Shape_p(\vec w)_\Sigma\]
 as the situation requires.  
@@ -227,8 +229,8 @@ It remains to plug in the expressions from \ref{eq:shape=norm_u}.
 
 \begin{thm}{Exercise}\label{ex:self-adjoint}
 Show that the shape operator is \index{self-adjoint operator}\emph{self-adjoint}; that is,
-\[\langle \Shape\vec v,\vec w\rangle=\langle \vec v,\Shape\vec w\rangle\]
-for any $\vec v,\vec w\in\T_p$.
+\[\langle \Shape\vec u,\vec v\rangle=\langle \vec u,\Shape\vec v\rangle\]
+for any $\vec u,\vec v\in\T_p$.
 \end{thm}
 
 Let us denote by $\vec i$, $\vec j$ and $\vec k$ the standard basis in the $(x,y,z)$-coordinates.\index{10i@$\vec i$, $\vec j$ and $\vec k$}
@@ -241,9 +243,9 @@ Suppose that its the Hessian matrix at $p$ is $(\begin{smallmatrix}
 \end{smallmatrix})$.
 Then 
 \begin{align*}
-\Shape(\vec i)&=\ell\cdot \vec i+m\cdot \vec j,
+\Shape\vec i&=\ell\cdot \vec i+m\cdot \vec j,
 &
-\Shape(\vec j)&=m\cdot \vec i+n\cdot\vec j;
+\Shape\vec j&=m\cdot \vec i+n\cdot\vec j;
 \end{align*}
 that is, the multiplication by the Hessian matrix at $p$ describes its shape operator.
 

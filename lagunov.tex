@@ -78,17 +78,12 @@ Assume we choose tangent-normal coordinates at $p$ so that the Hessian matrix is
    &k_2(p)
   \end{pmatrix}.
 \]
-Consider a vector ${\vec w}=(\begin{smallmatrix}a\\b
-\end{smallmatrix})$ in the $(x,y)$-plane.
-Then
-\begin{align*}
-\langle \Shape(\vec w),\vec w\rangle
-&=\langle M_p\cdot(\begin{smallmatrix}a\\b
-\end{smallmatrix}),(\begin{smallmatrix}a\\b
-\end{smallmatrix})\rangle=
-\\
-&=a^2\cdot k_1(p) +b^2\cdot k_2(p). 
-\end{align*}
+Consider a vector ${\vec w}=a\cdot\vec i+b\cdot\vec j$ in the $(x,y)$-plane.
+Then by \ref{cor:Shape(ij)}, we have
+\[
+\langle \Shape\vec w,\vec w\rangle
+=a^2\cdot k_1(p) +b^2\cdot k_2(p). 
+\]
 If ${\vec w}$ is unit, then $a^2+b^2=1$ which implies the following:
 
 \begin{thm}{Observation}\label{obs:k1-k2}
@@ -142,9 +137,13 @@ Show that the osculating circles at $p$ of smooth regular curves in $\Sigma$ tha
 Let $\gamma(s)=(x(s),y(s))$ be a smooth unit-speed simple plane curve in the upper half-plane,
 and  $\Sigma$ be the surface of revolution around the $x$-axis with generatrix $\gamma$.
 
-\begin{enumerate}[(a)]
-\item Show that the parallels and meridians are lines of curvature on $\Sigma$.
-\item Show that 
+
+\begin{subthm}{}
+Show that the parallels and meridians are lines of curvature on $\Sigma$.
+\end{subthm}
+
+\begin{subthm}{}
+Show that 
 \[\frac{|x'(s)|}{y(s)}
 \quad
 \text{and}
@@ -152,16 +151,18 @@ and  $\Sigma$ be the surface of revolution around the $x$-axis with generatrix $
 \frac{-y''(s)}{|x'(s)|}
 \]
 are the principle curvatures of $\Sigma$ at $(x(s),y(s),0)$ in the direction of the corresponding parallel and meridian respectively.
-\item Show that $\Sigma$ has Gauss curvature $-1$ at all points if and only if $y$ satisfies the following differential equation.
-\[y''=y.\] 
-The case  $y=e^{-s}$ --- the so-called \emph{psudosphere}; is shown on the diagram.
-\end{enumerate}
+\end{subthm}
+
+\begin{subthm}{}
+Show that $\Sigma$ has Gauss curvature $-1$ at all points if and only if $y$ satisfies the differential equation $y''=y$. 
+The case  $y=e^{-s}$ is shown; this is the so-called \emph{psudosphere}.
+\end{subthm}
 
 \end{thm}
 
 \begin{figure}[h!]
-\vskip-7mm
-\hskip20mm
+\vskip-3mm
+\hskip30mm
 \includegraphics{asy/pseudosphere}
 \vskip-3mm
 \end{figure}
@@ -207,7 +208,7 @@ The boundary curve of the cross section consists of 6 long vertical line segment
 The boundary of $V_1$ has 3 components, each of which is a smooth sphere.
 
 \begin{wrapfigure}{o}{20 mm}
-\vskip-0mm
+\vskip-6mm
 \centering
 \includegraphics{mppics/pic-910}
 \vskip0mm

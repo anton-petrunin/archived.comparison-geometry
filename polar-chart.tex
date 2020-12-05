@@ -176,9 +176,9 @@ Suppose that $\ell=\ell(u,v)$, $m=m(u,v)$, and $n=n(u,v)$ be the components of t
 that is,
 \[
 \begin{aligned}
-\Shape(\vec u)&=\ell\cdot \vec u+ m\cdot \vec v,
+\Shape\vec u&=\ell\cdot \vec u+ m\cdot \vec v,
 &
-\Shape(\vec v)&=m\cdot \vec u+ n\cdot \vec v.
+\Shape\vec v&=m\cdot \vec u+ n\cdot \vec v.
 \end{aligned}
 \eqlbl{eq:Shape(u,v)}
 \]
@@ -240,7 +240,7 @@ Since $u\mapsto s(u,v)$ is a geodesic we have that $\vec u_u=s_{uu}(u,v)\perp\T_
 Hence the first two identities follow.
 
 The remaining identity 
-$\langle\vec u_u,\Norm\rangle=\ell$ follow from \ref{ex:shape-chart} and \ref{eq:Shape(u,v)}.
+$\langle\vec u_u,\Norm\rangle=\ell$ follow from \ref{thm:shape-chart} and \ref{eq:Shape(u,v)}.
 Indeed
 \begin{align*}
 \langle\vec u_u,\Norm\rangle
@@ -292,7 +292,7 @@ we get
 \end{align*}
 hence the first identity in \ref{eq:uu-vv:2} follows.
 
-Finally, applying \ref{ex:shape-chart}, \ref{eq:Shape(u,v)}, and $s_v=b\cdot \vec v$, we get
+Finally, applying \ref{thm:shape-chart}, \ref{eq:Shape(u,v)}, and $s_v=b\cdot \vec v$, we get
 \begin{align*}
 \langle\vec u_v,\Norm\rangle
 &=\langle s_{uv},\Norm\rangle=
