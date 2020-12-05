@@ -1017,7 +1017,7 @@ $k_2(p)_{\Sigma_1}\z>k_2(p)_{\Sigma_2}> k_1(p)_{\Sigma_1}> k_1(p)_{\Sigma_2}$ an
 \end{wrapfigure}
 
 \parbf{\ref{ex:convex-lagunov}.}
-Assume a maximal ball in $V$ has radius $r$ and touches its boundary at the points $p$ and $q$.
+Assume a maximal ball in $V$ has radius $r$ and touches the boundary of $R$ at the points $p$ and $q$.
 Consider the projection $R$ of $V$ to a plane thru $p$, $q$ and the center of the ball.
 Show that $R$ is bounded by a smooth closed convex curve with curvature at most $1$.
 Argue as in \ref{ex:between-parallels-1} to
@@ -1034,11 +1034,11 @@ then $p$ is an isolated point of the intersection $\Pi\cap\Sigma$.
 
 It follows that if $\gamma$ is a connected component of the intersection $\Pi\cap\Sigma$ that is not an isolated point,
 then $\Pi$ \index{transverse intersection}\emph{intersects $\Sigma$ tranversally} along $\gamma$;
-that is, at each point $p$ on $\gamma$ the tangent plane $\T_p\Sigma$ is not parallel to $\Pi$.
+that is, at each point $p \in \gamma$ the tangent plane $\T_p\Sigma$ is not parallel to $\Pi$.
 Apply the implicit function theorem to show that $\gamma$ is a smooth regular curve.
 
-Finally, observe that curvature of $\gamma$ cannot be smaller than normal curvature of $\Sigma$ in the same direction.
-Whence $\gamma$ has no points with vanishing curvature, and therefore it has signed curvature of a definite sign.
+Finally, observe that the curvature of $\gamma$ cannot be smaller than the normal curvature of $\Sigma$ in the same direction.
+Whence $\gamma$ has no points with vanishing curvature, and therefore its signed curvature has constant sign.
 
 
 \parbf{\ref{ex:surrounds-disc}.}
@@ -1060,16 +1060,16 @@ Try to support the surface $\Sigma$ from inside by a surface of revolution of th
 (Compare to \ref{ex:convex small}.)
 
 \parit{Remark.}
-The exercise can be reduced to the following deeper result: \emph{if Gauss curvature of $\Sigma$ is at least $1$,
+The exercise can be reduced to the following deeper result: \emph{if the Gauss curvature of $\Sigma$ is at least $1$,
 then
 the intrinsic diameter of $\Sigma$ cannot exceed $\pi$}.
 The latter means that any two points in $\Sigma$ can be connected by a path that lies in $\Sigma$ and has length at most~$\pi$.
-This theorem was proved Heinz Hopf and Willi Rinow \cite{hopf-rinow} and 
+This theorem was proved by Heinz Hopf and Willi Rinow \cite{hopf-rinow} and 
 named after Sumner Myers who generalized it \cite{myers}.
 
 \parbf{\ref{ex:convex-proper-sphere}.}
 To prove \ref{SHORT.ex:convex-proper-sphere:single} use convexity of $R$.
-To prove \ref{SHORT.ex:convex-proper-sphere:smooth} observe that the map $\Sigma\to\mathbb{S}^2$ is smooth and regular, then apply the inverse function theorem to show that inverse is smooth as well.
+To prove \ref{SHORT.ex:convex-proper-sphere:smooth} observe that the map $\Sigma\to\mathbb{S}^2$ is smooth and regular, then apply the inverse function theorem to show that its inverse is smooth as well.
 
 \begin{wrapfigure}[16]{r}{29 mm}
 \vskip-6mm
@@ -1081,26 +1081,26 @@ To prove \ref{SHORT.ex:convex-proper-sphere:smooth} observe that the map $\Sigma
 \parbf{\ref{ex:convex-proper-plane}}; \ref{SHORT.ex:convex-proper-plane:a}
 We can assume that the origin lies on $\Sigma$.
 Consider a sequence of points $x_n\in \Sigma$ such that $|x_n|\z\to \infty$ as $n\to \infty$.
-Denote by $\vec u_n$ the unit vector in the direction from $x_n$; that is $\vec u_n=\tfrac{x_n}{|x_n|}$.
+Denote by $\vec u_n$ the unit vector in the direction of $x_n$; that is $\vec u_n=\tfrac{x_n}{|x_n|}$.
 
 Since the unit sphere is compact, we can pass to a subsequence of $(x_n)$ such that $\vec u_n$ converges to a unit vector $\vec u$.
-Show that the half-line from the origin in the direction of $\vec u$ can be taken as $\ell$; that will solve .
+Show that the half-line from the origin in the direction of $\vec u$ can be taken as $\ell$.
 
 
 \parit{\ref{SHORT.ex:convex-proper-plane:b} + \ref{SHORT.ex:convex-proper-plane:c} + \ref{SHORT.ex:convex-proper-plane:d}.}
-Since $R$ is convex, so its projection $\Omega$.
+Since $R$ is convex, so is its projection $\Omega$.
 
 Note and use that for any $q\in \Sigma$, the directions $\vec v_n=\tfrac{x_n-q}{|x_n-q|}$ converge to $\vec u$ as well.
 
 Show that $\Sigma$ has no vertical tangent planes.
-Conclude that the projection map from $\Sigma$ to $(x,y)$-plane is regular.
+Conclude that the projection map from $\Sigma$ to the $(x,y)$-plane is regular.
 Use the inverse function theorem to show that $\Omega$ is open.
 
 \parit{\ref{SHORT.ex:convex-proper-plane:e}.} 
 Arguing by contradiction, suppose that for some sequence $(x_n,y_n)\z\to(x_\infty,y_\infty)\in \partial\Omega$ the sequence $f(x_n,y_n)$ stays bounded above.
 We can pass to a subsequence such that either $f(x_n,y_n)$ converges to some finite value $z_\infty$ or it diverges to $-\infty$.
 
-In the first case, show that the point $(x_\infty, y_\infty,z_\infty)$ does not lie on $\Sigma$, but it has arbitrary close points on $\Sigma$.
+In the first case, show that the point $(x_\infty, y_\infty,z_\infty)$ does not lie on $\Sigma$, but it has arbitrarily close points on $\Sigma$.
 That is $\Sigma$ is not proper --- a contradiction.
 
 If $f(x_n,y_n)\to -\infty$, use convexity of $f$ to show that $f(\tfrac{x_n}2 ,\tfrac{y_n}2)\z\to -\infty$.
@@ -1112,9 +1112,9 @@ Arrive to a contradiction.
 By \ref{ex:convex-proper-plane:d}, $\Sigma$ is parametrized by an open convex plane domain $\Omega$.
 It remains to show that $\Omega$ can parameterize the whole plane.
 
-We may assume that the origin of the plane leis in $\Omega$.
+We may assume that the origin of the plane lies in $\Omega$.
 Show that in this case the boundary of $\Omega$ can be written in polar coordinates as $(\theta,f(\theta))$ where $f\:\mathbb{S}^1\to\RR$ is a positive continuous function.
-Then homeomorphism to the plane can be described in polar coordinate by changing only the radial coordinate;
+Then homeomorphism to the plane can be described in polar coordinates by changing only the radial coordinate;
 for example as 
 $(\theta,r)\z\mapsto (\theta,
 \tfrac{r}{1-r/f(\theta)})$.
@@ -1123,11 +1123,11 @@ To do the second part, one may apply \ref{ex:star-shaped-disc:nonsmooth}.
 
 
 \parbf{\ref{ex:circular-cone}.}
-Choose a coordinate system so that $(x,y)$-plane supports $\Sigma$ at the origin, so $\Sigma$ lies in the upper half-space.
+Choose a coordinate system so that the $(x,y)$-plane supports $\Sigma$ at the origin, so $\Sigma$ lies in the upper half-space.
 
 Show that there is $\eps>0$ such that any line starting from the origin with slope at most $\eps$ may intersect $\Sigma$ only in the unit ball centered at the origin;
 we may assume that $\eps$ is small, say $\eps<1$.
-Consider the cone formed by half-lines from the origin with slope $\eps$ shifted down by $1$ and observe that entire surface lies in this cone.
+Consider the cone formed by the half-lines from the origin with slope $\eps$ shifted down by $1$ and observe that the entire surface lies inside this cone.
 
 
 
@@ -1140,14 +1140,14 @@ that is, $\Norm\:\Sigma\to\mathbb{S}^2$ is injective.
 
 
 \parit{\ref{SHORT.ex:intK:4pi}.}
-Given a unit vector $\vec u$, consider a point $p\in \Sigma$ that maximize the scalar product $\langle p,\vec u\rangle$.
+Given a unit vector $\vec u$, consider a point $p\in \Sigma$ that maximizes the scalar product $\langle p,\vec u\rangle$.
 Show that $\Norm(p)=\vec u$.
 Conclude that the spherical map $\Norm\:\Sigma\to\mathbb{S}^2$ is onto, and therefore it is a bijection.
 
 Applying \ref{cor:intK}, we get that the integral is $4\cdot\pi=\area\mathbb{S}^2$.
 
 \parit{\ref{SHORT.ex:intK:2pi}.} Choose an $(x,y,z)$-coordinate system provided by \ref{ex:convex-proper-plane:d}.
-Observe that for any $p$ the normal vector $\Norm(p)$ forms an obtuse angle with the direction of $z$-axis.
+Observe that for any $p$ the normal vector $\Norm(p)$ forms an obtuse angle with the $z$-axis.
 It follows that the image $\Norm(\Sigma)$ lies in the south hemisphere.
 
 Applying \ref{cor:intK}, we get that the integral is $2\cdot\pi=\tfrac12\cdot\area\mathbb{S}^2$.
@@ -1157,16 +1157,16 @@ Apply \ref{ex:principle-revolution}.
 
 \parbf{\ref{ex:ruled=>saddle}.} Prove and use that each point $p\in\Sigma$ has a direction with vanishing normal curvature.
 
-\parbf{\ref{ex:saddle-convex}.} Suppose $p\in \Sigma$ is a point of local maximum of $f$.
-Arrive to a contradiction by showing that $\Sigma$ is supported by the tangent plane at $p$.
+\parbf{\ref{ex:saddle-convex}.} Suppose $p\in \Sigma$ is a point of strict  local maximum of $f$.
+Arrive to a contradiction by showing that $\Sigma$ is supported by its tangent plane at $p$.
 
 
-\parbf{\ref{ex:panov}.} Denote by $\Pi_t$ the tangent plane to $\Sigma$ at $\gamma(t)$ and by $\ell_t$ the tangent line of $\gamma$ at time $t$.
+\parbf{\ref{ex:panov}.} Denote by $\Pi_t$ the tangent plane to $\Sigma$ at $\gamma(t)$ and by $\ell_t$ the tangent line to $\gamma$ at time $t$.
 
-Note that $\Pi_t$ is a graph of a linear function, say $h_t$, defined on the $(x, y)$-plane.
+Note that $\Pi_t$ is the graph of a linear function, say $h_t$, defined on the $(x, y)$-plane.
 Denote by $\bar\ell_t$ the projection of $\ell_t$ to the $(x, y)$-plane.
 Show that the derivative $\tfrac{d}{dt}h_t(w)$ vanishes at the point $w$ if and only if $w\in \bar\ell_t$ 
-and the derivative changes sign if $w$ changes the side of $\bar\ell_t$.
+and the derivative changes sign if $w$ goes from one side of $\bar\ell_t$ to the other.
 
 Denote by $\bar\gamma$ the projection of $\gamma$ to the $(x, y)$-plane.
 If $\bar\gamma$ is star shaped with respect to a point $w$, then $w$ cannot cross $\bar\ell_t$.
@@ -1180,7 +1180,7 @@ A more conceptual proof can be built on the Moser's trick \cite{palais}.
 
 \medskip
 
-Choose a tangent-normal coordinates at $p$ so that the axis point in the principle directions of $\Sigma$ at $p$;
+Choose tangent-normal coordinates at $p$ so that the coordinate axes point in the principle directions of $\Sigma$ at $p$;
 let $z=f(x,y)$ be the local graph representation of $\Sigma$.
 We need to show that the solution of the equation $f(x,y)=0$ is a union of two smooth curves that intersect transversely at $p$.
 
@@ -1198,7 +1198,7 @@ Note that $h(0)=h'(0)=0$ and $h''>0$.
 Applying the claim, we get a function $a$ such that $h=a^2$, where $a(0)=0$ and $a'(0)>0$.
 
 Observe that $g(x,y)=h(x)-f(x,y)\ge 0$ and $g_y(x,y(x))\z=g(x,y(x))\z=0$ and $g_{yy}>0$.
-Applying the claim for each functions $y\mapsto g(x,y)$ with fixed $x$, we get that $g(x,y)=b(x,y)^2$ for a smooth function $b$ such that 
+Applying the claim to each function $y\mapsto g(x,y)$ with fixed $x$, we get that $g(x,y)=b(x,y)^2$ for a smooth function $b$ such that 
 $b(x,y(x))=0$ and $b_y(x,y(x))>0$.
 
 It follows that 
@@ -1221,18 +1221,18 @@ see Section~\ref{sec:implicit-curves}.
 \parbf{\ref{ex:circular-cone-saddle}.}
 Assume $\Sigma$ is an open saddle surface that lies in a cone $K$.
 Show that there is a plane $\Pi$ that cuts $\Sigma$ and cuts from $K$ a compact region.
-Conclude that $\Pi$ cuts from $\Sigma$ a compact region.
+Conclude that $\Pi$ cuts from $\Sigma$ a compact region as well.
 
-By \ref{lem:reg-section} one can move plane $\Pi$ slightly so that it cuts from $\Sigma$ a compact surface with boundary.
+By \ref{lem:reg-section} one can move the plane $\Pi$ slightly so that it cuts from $\Sigma$ a compact surface with boundary.
 Apply \ref{lem:convex-saddle}.
 
 
 \parbf{\ref{ex:disc-hat}.} 
-Consider the radial projection of $F_\eps$ to the sphere $\Sigma$ with the center at $p=(0,0,\eps)$;
+Consider the radial projection of $F_\eps$ to the sphere $\Sigma$ with center at $p=(0,0,\eps)$;
 that is, a point $q\in F_\eps$ is mapped to a point $s(q)$ on the sphere that lies on the ray $pq$.
 
-Show that $s$ is a diffeomorphism from $F_\eps$ to a south hemisphere of~$\Sigma$.
-It remains to observe that unit disc is diffeomorphic to the hemisphere.
+Show that $s$ is a diffeomorphism from $F_\eps$ to the south hemisphere of~$\Sigma$.
+It remains to observe that the  unit disc is diffeomorphic to the hemisphere.
 
 \parbf{\ref{ex:saddle-linear}.} Apply \ref{prop:hat}.
 
@@ -1288,7 +1288,7 @@ Finally, apply \ref{cor:shorts+convex} to show that
 \[|p-q|_\Sigma\le |p-x|+|x-q|.\]
 
 
-\parbf{\ref{ex:hat-convex}.} Suppose that there is a minimizing geodesic $\gamma\not\subset\Delta$ that ends $p$ and $q$ lie in $\Delta$.
+\parbf{\ref{ex:hat-convex}.} Suppose there is a minimizing curve $\gamma\not\subset\Delta$ with endpoints $p$ and $q$ in $\Delta$.
 
 Without loss of generality, we may assume that only one arc of $\gamma$ lies outside of $\Delta$.
 Reflection of this arc  with respect to $\Pi$ together with the remaining part of $\gamma$ forms another curve $\hat\gamma$ from $p$ to $q$;
@@ -1308,7 +1308,7 @@ This means that $\gamma$ is not length minimizing,
 a contradiction.
 
 \parbf{\ref{ex:intrinsic-diameter}.} 
-Consider the closest-point projection from the sphere to $\Sigma$ and apply \ref{lem:closest-point-projection}.
+Show that the closest point projection $\partial B \to \Sigma $ is surjective and apply \ref{lem:closest-point-projection}.
 
 \stepcounter{section}
 \setcounter{eqtn}{0}
