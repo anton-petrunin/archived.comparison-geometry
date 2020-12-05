@@ -2,11 +2,11 @@
 \usepackage[intlimits]{amsmath}
 \usepackage{tabu}
 \usepackage{enumerate}
-\usepackage{bm}
-\usepackage{gensymb}
+\usepackage{bm}%bold math\bm
+\usepackage{gensymb}% provides \degree
 \usepackage{color}
 \usepackage{pifont}
-\usepackage[makeroom]{cancel}
+\usepackage[makeroom]{cancel}%crossing formulas with \cancel
 
 \usepackage[T1,T2A]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -20,20 +20,15 @@ filecolor=black,
 menucolor=black,
 urlcolor=black%
 ]{hyperref}
-\usepackage{caption}
+\usepackage{caption}%provides \caption*
 \usepackage[russian,german,english]{babel}
 \usepackage{epigraph}
 \usepackage{framed}
-\usepackage{geometry}
+\usepackage{geometry}%page/text size and 
 \usepackage[normalem]{ulem} % для зачёркивания текста
-
-\usepackage{tikz}
-\usetikzlibrary{arrows}
 
 \usepackage{epsfig,lpic,wrapfig}
 \usepackage{multicol}
-
-
 
 \usepackage{titling}
 \newcommand{\subtitle}[1]{%
@@ -45,7 +40,7 @@ urlcolor=black%
 
 \usepackage[nottoc]{tocbibind}
 
-\csname @openrightfalse\endcsname
+\csname @openrightfalse\endcsname %chapters can start from left page
 
 \usepackage[
 sorting=debug,
@@ -115,8 +110,6 @@ isbn=false]{biblatex}
 \par\medskip}
 \newenvironment{thm}{\claim}{\endclaim}
 
-\def\~{\tilde}
-
 \def\epsilon{\varepsilon}
 \def\phi{\varphi}
 %\def\theta{\vartheta}
@@ -124,7 +117,7 @@ isbn=false]{biblatex}
 \def\ge{\geqslant}
 \def\le{\leqslant}
 
-\def\df{:=}
+\def\df{\mathrel{:=}}
 %{\buildrel \mathrm{def} \over{=\!\!=}}
 
 \def\:{\colon}
@@ -132,7 +125,6 @@ isbn=false]{biblatex}
 {\ifthenelse{\equal{#2}{}}{\left\{\,{#1}\,\right\}}{\left\{\,{#1}\,:\,{#2}\,\right\}}}
 
 
-\def\defect{\mathop{\rm defect}\nolimits}
 \def\Dom{\mathop{\rm Dom}\nolimits}
 \def\length{\mathop{\rm length}\nolimits}
 \def\area{\mathop{\rm area}\nolimits}
@@ -148,14 +140,11 @@ isbn=false]{biblatex}
 \def\trace{\mathop{\rm trace}\nolimits}
 \def\proj{\mathop{\rm proj}\nolimits}
 \newcommand*{\tc}[1]{\ifthenelse{\equal{#1}{}}{\Phi}{\Phi({#1})}}
-\def\tsc{\mathop{\rm TotSignCurv}\nolimits}
-\newcommand*{\tgc}[1]{\Psi({#1})}
+\newcommand*{\tgc}[1]{\ifthenelse{\equal{#1}{}}{\Psi}{\Psi({#1})}}
 \newcommand*{\hinge}[3]{[#1\,{}^{#2}_{#3}]}
 \newcommand*{\angk}[3]{\tilde\measuredangle(#1\,{}^{#2}_{#3}\hspace{-0.2ex})}
 \def\side{\tilde\curlyvee}
-\newcommand*{\trig}[3]{[#1{#2}{#3}]}
 \def\modtrig{\tilde\triangle}
-\def\kay{k}
 \def\Dist{\mathop{\rm dist}\nolimits}
 \def\spc{\mathcal}
 \def\tor{\tau}
@@ -163,12 +152,6 @@ isbn=false]{biblatex}
 \def\skur{k}
 
 \newcommand*\dist[3]{|{#1}\z-{#2}|_{#3}}
-
-\def\iso{\buildrel \hbox{\tiny\it iso} \over{=\joinrel=}}
-
-\def\Interior{\operatorname{Interior}}
-\def\Closure{\operatorname{Closure}}
-\def\Const{\operatorname{Const}}
 
 \def\Conv{\mathop{\rm Conv}\nolimits}
 
@@ -194,11 +177,6 @@ isbn=false]{biblatex}
 \def\Norm{\nu}
 
 \def\eps{\varepsilon}
-
-
-
-\def\solidtriangle{\text{\ding{115}}}
-\def\solidsquare{\blacksquare}
 
 \newcommand*{\z}[1]{#1\nobreak\discretionary{}%
             {\hbox{$\mathsurround=0pt #1$}}{}}
@@ -281,8 +259,6 @@ semi-pe-ri-me-ter}
 \newenvironment{subthmN}[1]{\ifthenelse{\equal{#1}{}}
 {\par\refstepcounter{subthmN}\begin{itemize}\item[\arabic{subthmN})]}{\par\refstepcounter{subthmN}\label{#1}\setcounter{cloneN}{\value{subthmN}} \addtocounter{cloneN}{-1}\refstepcounter{cloneN}\label{SHORT.#1}\begin{itemize}
 \item [\arabic{subthmN})]}}{\end{itemize}}
-
-\newcounter{lastnumber}
 
 \makeatletter\renewcommand{\p@section}{\thechapter}\makeatother
 \renewcommand{\thesection}{\Alph{section}}

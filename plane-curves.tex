@@ -157,14 +157,14 @@ for all $s$, where
 \section{Total signed curvature}
 
 Let $\gamma\:\mathbb{I}\to\RR^2$ be a smooth unit-speed plane curve.
-The \index{total signed curvature}\emph{total signed curvature} of $\gamma$, denoted by $\Psi(\gamma)$, is defined as the integral
-\[\Psi(\gamma)
+The \index{total signed curvature}\emph{total signed curvature} of $\gamma$, denoted by $\tgc\gamma$, is defined as the integral
+\[\tgc\gamma
 =
-\int_\mathbb{I} \skur(s)\cdot ds,\eqlbl{eq:tsc-k}\]\index{10psi@$\Psi(\gamma)$}
+\int_\mathbb{I} \skur(s)\cdot ds,\eqlbl{eq:tsc-k}\]\index{10psi@$\tgc\gamma$}
 where $\skur$ denotes the signed curvature of $\gamma$.
 
 Note that if $\mathbb{I}=[a,b]$, then 
-\[\Psi(\gamma)=\theta(b)-\theta(a),\eqlbl{eq:tsc-theta}\]
+\[\tgc\gamma=\theta(b)-\theta(a),\eqlbl{eq:tsc-theta}\]
 where $\theta$ is as in \ref{cor:2D-angle}.
 
 If $\gamma$ is a piecewise smooth and regular plane curve, then we define its total signed curvature as the sum of the total signed curvatures of its arcs plus the sum of the \emph{signed} external angles at its joints;
@@ -172,16 +172,16 @@ they are positive where $\gamma$ turns left, negative where $\gamma$ turns right
 It is undefined if it turns exactly backward;
 that is, if the curve has a cusp.
 That is, if $\gamma$ is a concatenation of smooth and regular arcs $\gamma_1,\dots,\gamma_n$, then 
-\[\Psi(\gamma)=\Psi(\gamma_1)+\dots+\Psi(\gamma_n)+\theta_1+\dots+\theta_{n-1}\]
+\[\tgc\gamma=\tgc{\gamma_1}+\dots+\tgc{\gamma_n}+\theta_1+\dots+\theta_{n-1}\]
 where $\theta_i$ is the signed external angle at the joint between $\gamma_i$ and $\gamma_{i+1}$.
 If $\gamma$ is closed, then the concatenation is cyclic and
-\[\Psi(\gamma)=\Psi(\gamma_1)+\dots+\Psi(\gamma_n)+\theta_1+\dots+\theta_{n},\]
+\[\tgc\gamma=\tgc{\gamma_1}+\dots+\tgc{\gamma_n}+\theta_1+\dots+\theta_{n},\]
 where $\theta_n$ is the signed external angle at the joint between $\gamma_n$ and $\gamma_1$.
 
 Since $\left|\int \skur(s)\cdot ds\right|\le \int|\skur(s)|\cdot ds$, we have
-\[|\Psi(\gamma)|\le \tc\gamma\eqlbl{eq:tsc-tc}\] 
+\[|\tgc\gamma|\le \tc\gamma\eqlbl{eq:tsc-tc}\] 
 for any smooth regular plane curve $\gamma$;
-that is, the total signed curvature $\Psi$ cannot exceed the total curvature $\tc{}$ in absolute value.
+that is, the total signed curvature $\tgc{}$ cannot exceed the total curvature $\tc{}$ in absolute value.
 Note that the equality holds if and only if the signed curvature does not change sign.
 
 \begin{thm}{Exercise}\label{ex:trochoids}
@@ -202,7 +202,7 @@ A trochoid is a curve traced out by a point fixed to a wheel as it rolls along a
 A family of \index{trochoid}\emph{trochoids} $\gamma_a\:[0,2\cdot\pi]\to \RR^2$ (see the picture) can be parametrized as
 \[\gamma_a(t)=(t+a\cdot \sin t, a\cdot \cos t).\]
 \begin{enumerate}[(a)]
-\item Given $a\in \RR$, find $\Psi(\gamma_a)$ if it is defined.
+\item Given $a\in \RR$, find $\tgc{\gamma_a}$ if it is defined.
 \item Given $a\in \RR$, find $\tc{\gamma_a}$.
 \end{enumerate}
 \end{thm}
@@ -243,13 +243,13 @@ Set
 where $\alpha_i,\beta_i\in(-\pi,\pi]$ are signed angles --- $\alpha_i$ is positive if $\vec w_i$ points to the left from $\vec v_i$.
 
 By \ref{eq:tsc-theta}, the value
-\[\Psi(\gamma_i)-\alpha_i-\beta_{i+1}\eqlbl{eq:Psi-alpha-beta}\]
+\[\tgc{\gamma_i}-\alpha_i-\beta_{i+1}\eqlbl{eq:Psi-alpha-beta}\]
 is a multiple of $2\cdot\pi$.
 Since $\tc{\gamma_i}<\pi$, by the chord lemma (\ref{lem:chord}), we also have that $|\alpha_i|\z+|\beta_i|<\pi$.
-By \ref{eq:tsc-tc}, we have that $|\Psi(\gamma_i)|\le\tc{\gamma_i}$;
+By \ref{eq:tsc-tc}, we have that $|\tgc{\gamma_i}|\le\tc{\gamma_i}$;
 therefore the value in \ref{eq:Psi-alpha-beta} vanishes.
 In other word,for each $i$ we have
-\[\Psi(\gamma_i)=\alpha_i+\beta_{i+1}.\]
+\[\tgc{\gamma_i}=\alpha_i+\beta_{i+1}.\]
 
 Note that 
 \[\delta_i=\pi-\alpha_i-\beta_i\eqlbl{eq:delta=pi-alpha-beta}\] 
@@ -260,7 +260,7 @@ Recall that the sum of the internal angles of an $n$-gon is $(n-2)\cdot \pi$ (se
 Therefore 
 \[
 \begin{aligned}
-\Psi(\gamma)&=\Psi(\gamma_1)+\dots+\Psi(\gamma_n)=
+\tgc\gamma&=\tgc\gamma_1+\dots+\tgc\gamma_n=
 \\
 &=(\alpha_1+\beta_2)+\dots+(\alpha_n+\beta_1)=
 \\
@@ -279,7 +279,7 @@ we need to subdivide the arcs in the cyclic concatenation further to meet the re
 where $\theta_i$ is the signed external angle of $\gamma$ at $p_i$; it vanishes if the curve $\gamma$ is smooth at $p_i$.
 Therefore instead of equation \ref{eq:delta=pi-alpha-beta-sum}, we have
 \begin{align*}
-\Psi(\gamma)&=\Psi(\gamma_1)+\dots+\Psi(\gamma_n)+\theta_1+\dots+\theta_n=
+\tgc\gamma&=\tgc{\gamma_1}+\dots+\tgc{\gamma_n}+\theta_1+\dots+\theta_n=
 \\
 &=(\alpha_1+\beta_2)+\dots+(\alpha_n+\beta_1)=
 \\
@@ -296,13 +296,13 @@ Therefore instead of equation \ref{eq:delta=pi-alpha-beta-sum}, we have
 \begin{thm}{Exercise}\label{ex:zero-tsc}
 Draw a smooth regular closed plane curve $\gamma$ such that 
 
-\begin{subthm}{ex:zero-tsc:0}$\Psi(\gamma)=0$;
+\begin{subthm}{ex:zero-tsc:0}$\tgc\gamma=0$;
 \end{subthm}
  
-\begin{subthm}{ex:zero-tsc:5}$\Psi(\gamma)=\tc\gamma=10\cdot\pi$;
+\begin{subthm}{ex:zero-tsc:5}$\tgc\gamma=\tc\gamma=10\cdot\pi$;
 \end{subthm}
 
-\begin{subthm}{ex:zero-tsc:2-4}$\Psi(\gamma)=2\cdot \pi$ and $\tc\gamma=4\cdot\pi$.
+\begin{subthm}{ex:zero-tsc:2-4}$\tgc\gamma=2\cdot \pi$ and $\tc\gamma=4\cdot\pi$.
 \end{subthm}
 
 \end{thm}
@@ -319,7 +319,7 @@ Show that $\gamma_\ell$ is a regular curve if $\ell\cdot \skur(t)\ne 1$ for all 
 \begin{subthm}{ex:length':formula}
 Set $L(\ell)=\length\gamma_\ell$.
 Show that 
-\[L(\ell)=L(0)-\ell\cdot\Psi(\gamma)\eqlbl{eq:length(parallel-curve)}\]
+\[L(\ell)=L(0)-\ell\cdot\tgc\gamma\eqlbl{eq:length(parallel-curve)}\]
 for all $\ell$ sufficiently close to $0$. 
 \end{subthm}
 

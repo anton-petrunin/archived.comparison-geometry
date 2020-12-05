@@ -21,16 +21,16 @@ Note that the unit vectors $\tan(s)$ and $\Norm(s)$ are orthogonal.
 Тherefore there is a unique unit vector $\mu(s)$\index{10tmn@$\tan$, $\mu$, $\Norm$} such that 
 $\tan(s),\mu(s),\Norm(s)$ is an oriented orthonormal basis;
 it is called the \index{Darboux frame}\emph{Darboux frame} of $\gamma$ in $\Sigma$.
-Since $\T_{\gamma (s)}\z\perp\nu(s)$, the vector $\mu(s)$ is tangent to $\Sigma$ at $\gamma(s)$.
+Since $\T_{\gamma (s)}\z\perp\Norm(s)$, the vector $\mu(s)$ is tangent to $\Sigma$ at $\gamma(s)$.
 In fact $\mu(s)$ is a counterclockwise rotation of $\tan(s)$ by the angle $\tfrac\pi2$ in the tangent plane $\T_{\gamma(s)}$.
-This vector can also be defined as the vector product $\mu(s)=\nu(s)\times \tan(s)$.
+This vector can also be defined as the vector product $\mu(s)=\Norm(s)\times \tan(s)$.
 
 Since $\gamma$ is unit-speed, we have that $\gamma''\perp \gamma'$ (see \ref{prop:a'-pertp-a''}).
 Therefore the acceleration of $\gamma$ can be written as a linear combination of $\mu$ and $\Norm$;
 that is,
 \[\gamma''(s)=k_g(s)\cdot \mu(s)+k_n(s)\cdot\Norm(s).\]\index{10k@$k_g$, $k_n$}
 The values $k_g(s)$ and $k_n(s)$ are called \index{geodesic curvature}\emph{geodesic} and \index{normal curvature}\emph{normal curvatures} of $\gamma$ at $s$, respectively.
-Since the frame $\tan(s),\mu(s),\nu(s)$ is orthonormal, these curvatures can be also written as the following scalar products:
+Since the frame $\tan(s),\mu(s),\Norm(s)$ is orthonormal, these curvatures can be also written as the following scalar products:
 \begin{align*}
 k_g(s)&=\langle \gamma''(s),\mu(s)\rangle
 =
@@ -49,7 +49,7 @@ that
 \\
 &=\langle \tan'(s),\Norm(s)\rangle+\langle \tan(s),\Norm'(s)\rangle=
 \\
-&=k_n(s)+\langle \tan(s),D_{\tan(s)}\nu\rangle.
+&=k_n(s)+\langle \tan(s),D_{\tan(s)}\Norm\rangle.
 \end{align*}
 Applying the definition of shape operator,
 we get the following:

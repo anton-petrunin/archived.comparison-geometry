@@ -387,7 +387,7 @@ Since $\langle\tan,\tan\rangle=1$, we have $\tan'\perp \tan$.
 Observe that $\langle \tan,\sigma\rangle=\cos\theta$;
 therefore
 \begin{align*}
-\kappa\cdot \sin\theta
+\kur\cdot \sin\theta
 &=|\tan'|\cdot \sin\theta\ge
 -\langle \tan',\sigma\rangle=
 \langle \tan,\sigma'\rangle-\langle \tan,\sigma\rangle'=
@@ -557,18 +557,18 @@ Observe that $\gamma'_a(t)=(1+a\cdot \cos t, -a\cdot \sin t)$;
 that is, $\gamma'_a$ runs clockwise along a circle with center at $(1,0)$ and radius $\vert a \vert$.
 
 \parit{Case $|a|>1$,} Note that $\tan_a(t)=\gamma'_a/|\gamma'_a|$ runs clockwise and makes a full turn in time $2\cdot\pi$.
-Therefore $\Psi(\gamma_a)=-2\cdot\pi$ and $\tc\gamma_a=|\Psi(\gamma_a)|=2\cdot\pi$.
+Therefore $\tgc{\gamma_a}=-2\cdot\pi$ and $\tc\gamma_a=|\tgc{\gamma_a}|=2\cdot\pi$.
 
 \parit{Case $|a|<1$.}
 Set $\theta_a=\arcsin a$.
 Show that $\tan_a(t)=\gamma'_a/|\gamma'_a|$ starts with the horizontal direction $\tan_a(0)=(1,0)$, turns monotonically to angle $\theta_a$, then monotonically to $-\theta_a$ and then monotonically to back to $\tan_a(2\cdot\pi)=(1,0)$.
 It follows that if $|a|>1$, then
-$\Psi(\gamma_a)=0$ and $\tc{\gamma_a}=4\cdot\theta_a$.
+$\tgc{\gamma_a}=0$ and $\tc{\gamma_a}=4\cdot\theta_a$.
 
 \parit{Case $a=-1$.}
 The velocity $\gamma'_{-1}(t)$ vanishes at $t=0$ and $2\cdot\pi$.
 Nevertheless, the curve admits a smooth regular parametrization --- find it.
-In this case $\Psi(\gamma_{-1})=-\pi$ and $\tc{\gamma_{-1}}=\pi$.
+In this case $\tgc{\gamma_{-1}}=-\pi$ and $\tc{\gamma_{-1}}=\pi$.
 
 \parit{Case $a=1$.}
 The velocity $\gamma'_1(t)$ vanishes at $t=\pi$.
@@ -619,7 +619,7 @@ L(\ell)
 &=
 \int_a^b(1-\ell\cdot\skur(t))\cdot dt=
 \int_a^b 1\cdot dt-\ell\cdot \int_a^b\skur(t)\cdot dt=
-L(0)+\ell\cdot\Psi(\gamma).
+L(0)+\ell\cdot\tgc\gamma.
 \end{align*}
 
 
@@ -660,7 +660,7 @@ Apply the spiral lemma (\ref{lem:spiral}).
 We will assume that the curvature does not vanish at $p$, the remaining case is simpler.
 We may assume that $\gamma$ is a unit-speed curve and $p=\gamma(0)$.
 Further, we may assume that be the center of curvature of $\gamma$ at $p$ is the origin;
-in other words, $\kappa(0)\cdot\gamma(0)+ \norm(0)=0$.
+in other words, $\kur(0)\cdot\gamma(0)+ \norm(0)=0$.
 
 Since the osculating circle supports $\gamma$ at $p$,
 we get that the function $f\:t\mapsto \langle\gamma(t),\gamma(t)\rangle$ has a local minimum or maximum at $0$.
@@ -674,17 +674,17 @@ f'
 f''
 &=2\cdot\langle\tan,\gamma\rangle'
 =2\cdot\langle\tan',\gamma\rangle+2\cdot\langle\tan,\tan\rangle
-=2\cdot\kappa\cdot\langle\norm,\gamma\rangle+2,
+=2\cdot\kur\cdot\langle\norm,\gamma\rangle+2,
 \\
 f'''
-&=2\cdot\kappa'\cdot\langle\norm,\gamma\rangle
-+2\cdot\kappa\cdot\langle\norm',\gamma\rangle+\cancel{2\cdot\kappa\cdot\langle\norm,\tan\rangle}.
+&=2\cdot\kur'\cdot\langle\norm,\gamma\rangle
++2\cdot\kur\cdot\langle\norm',\gamma\rangle+\cancel{2\cdot\kur\cdot\langle\norm,\tan\rangle}.
 \end{align*}
 
 Observe that $\norm'(0)\perp\gamma(0)$.
-Therefore $f'(0)=0$, $f''(0)=0$, and $f'''(0)\z=-2\cdot\kappa'/\kappa$.
+Therefore $f'(0)=0$, $f''(0)=0$, and $f'''(0)\z=-2\cdot\kur'/\kur$.
 Since $f$ is a maximum or minimum at $0$, we get that $f'''(0)=0$ and therefore
-$\kappa'=0$.
+$\kur'=0$.
 
 \parbf{\ref{ex:support}.} Consider the coordinate system with $p$ as the origin and $x$-axis as the common tangent line to $\gamma_1$ and $\gamma_2$.
 We may assume that $\gamma_i$ are defined in $(-\eps,\eps)$ for some small $\eps>0$,
@@ -786,18 +786,18 @@ An example for the second part can be guessed from the diagram.
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:hyperboloinds}.} 
-Denote the set of solutions by $\Phi_\ell$.
+Denote the set of solutions by $\Sigma_\ell$.
 
 Show that $\nabla_p f=0$ if and only if $p=(0,0,0)$.
-Use \ref{prop:implicit-surface} to conclude that if $\ell\ne 0$, then $\Phi_\ell$ is a union of disjoint smooth regular surfaces.
+Use \ref{prop:implicit-surface} to conclude that if $\ell\ne 0$, then $\Sigma_\ell$ is a union of disjoint smooth regular surfaces.
 
-Show that $\Phi_\ell$ is connected if and only if $\ell\le 0$.
-It follows that if $\ell<0$, then $\Phi_\ell$ is a smooth regular surface, and if $\ell>0$ --- it is not.
+Show that $\Sigma_\ell$ is connected if and only if $\ell\le 0$.
+It follows that if $\ell<0$, then $\Sigma_\ell$ is a smooth regular surface, and if $\ell>0$ --- it is not.
 
-The case $\ell=0$ has to be done by hand --- it does not satisfy the sufficient condition in \ref{prop:implicit-surface}, but that does not solely imply that $\Phi_0$ is not a smooth surface.
+The case $\ell=0$ has to be done by hand --- it does not satisfy the sufficient condition in \ref{prop:implicit-surface}, but that does not solely imply that $\Sigma_0$ is not a smooth surface.
 
-Show that any neighborhood of origin in $\Phi_0$ cannot be described by a graph in any coordinate system;
-so by the definition (Section~\ref{sec:def-smooth-surface}) $\Phi_0$ is not a smooth surface.
+Show that any neighborhood of origin in $\Sigma_0$ cannot be described by a graph in any coordinate system;
+so by the definition (Section~\ref{sec:def-smooth-surface}) $\Sigma_0$ is not a smooth surface.
 
 \parbf{\ref{ex:inversion-chart}.} 
 First check that the image of $s$ lies in the unit sphere centered at $(0,0,1)$;
@@ -920,9 +920,9 @@ Observe that $\Sigma$ has unit Hessian matrix at each point and apply the defini
 \parit{\ref{SHORT.ex:normal-curvature=const:b}.}
 Choose a chart $s$ in $\Sigma$.
 Show that
-$\tfrac{\partial }{\partial u}(s+\nu)
+$\tfrac{\partial }{\partial u}(s+\Norm)
 =
-\tfrac{\partial }{\partial v}(s+\nu)
+\tfrac{\partial }{\partial v}(s+\Norm)
 =
 0$.
 Make a conclusion.
