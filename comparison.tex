@@ -103,7 +103,7 @@ The angles for comparison theorems can be found using internal angles:
 \hat\gamma&=\min\{\,\gamma,2\cdot\pi-\gamma\,\}.
 \end{align*}
 One can use it to see that despite Gauss--Bonnet formula and the comparison theorems are closely related,
-these relation is not straightforward.
+this relation is not straightforward.
 
 For example, suppose $K\ge 0$.
 Then the Gauss--Bonnet formula does not forbid the internal angles $\alpha$, $\beta$, and $\gamma$ to be close to $2\cdot\pi$.
@@ -130,7 +130,7 @@ for any four distinct points $p,x,y,z$ in $\Sigma$.
 \section{Local comparisons}\label{sec:loc-comp}
 
 The following local version of comparison theorem follows from the Rauch comparison (\ref{prop:rauch}).
-It will be used in the proof the global version (\ref{thm:comp}).
+It will be used in the proof of the global version (\ref{thm:comp}).
 
 \begin{thm}{Theorem}\label{thm:loc-comp}
 The comparison theorem (\ref{thm:comp}) holds in a small neighborhood of any point.
@@ -214,7 +214,7 @@ From the local theorem (\ref{thm:loc-comp}), we get that there is $\eps>0$ such 
 \[\measuredangle\hinge {x}{p}{q}\ge\angk xpq.\]
 holds for any hinge $\hinge {x}{p}{q}$ such that $|x-p|+|x-q|<\eps$.
 The following lemma states that in this case the same holds true for any hinge $\hinge {x}{p}{q}$ such that $|x-p|+|x-q|<\tfrac32\cdot\eps$.
-Applying the key lemma (\ref{key-lem:globalization}) few times we will get that the comparison holds for arbitrary hinge, which proves \mbox{\ref{thm:comp:toponogov}}.
+Applying the key lemma (\ref{key-lem:globalization}) a few times we will get that the comparison holds for arbitrary hinge, which proves \mbox{\ref{thm:comp:toponogov}}.
 \qeds
 
 \begin{thm}{Key lemma}\label{key-lem:globalization}  
@@ -238,7 +238,7 @@ holds for any hinge $\hinge x y z$ with $\dist{x}{y}{}+\dist{x}{z}{}<\ell$.
 \parit{Proof.} 
 Given a hinge $\hinge x p q$ consider a triangle in the plane
 with angle $\measuredangle\hinge x p q$ and two adjacent sides $|x-p|$ and $|x-q|$.
-Let us denote by $\side \hinge x p q$ the third side of this triangle; let us call it \index{model side}\emph{model side} of the hinge.
+Let us denote by $\side \hinge x p q$ the third side of this triangle; let us call it the \index{model side}\emph{model side} of the hinge.
 
 Note that the inequalities 
 \[\measuredangle\hinge x p q\ge \angk x p q\quad\iff\quad\side \hinge x p q
@@ -265,7 +265,7 @@ Assume $\dist{x}{q}{}\ge\dist{x}{p}{}$, otherwise switch the roles of $p$ and $q
 Take $x'\in [x, q]$ such that 
 \[\dist{p}{x}{}+3\cdot\dist{x}{x'}{}
 =\tfrac{2}{3}\cdot\ell \eqlbl{3|xx'|}\]
-Choose a geodesic $[x', p]$ and consider the  hinge $\hinge{x'}p q$ fromed by $[x',p]$ and $[x',q]\subset [x,q]$. 
+Choose a geodesic $[x', p]$ and consider the  hinge $\hinge{x'}p q$ formed by $[x',p]$ and $[x',q]\subset [x,q]$. 
 
 By \ref{3|xx'|}, we have that 
 \begin{align*}
@@ -433,7 +433,7 @@ Arrive to a contradiction using \ref{SHORT.ex:convex-polyhon+self-intersections:
 
 \section{Alexandrov's lemma}
 
-A reformulation of the following lemma in the plane geometry will be used in the next section to produce a few equivalent formulations of comparison theorems.
+A reformulation of the following lemma in plane geometry will be used in the next section to produce a few equivalent formulations of comparison theorems.
 
 \begin{thm}{Lemma}
 \label{lem:alex}
@@ -549,7 +549,7 @@ The implications \ref{SHORT.mang<angk}$\Rightarrow$\ref{SHORT.angk<angk}$\Righta
 Note that $\measuredangle\hinge ypx+\measuredangle\hinge ypz=\pi$.
 By \textit{\ref{SHORT.mang>angk}}, 
 \[\angk ypx+\angk ypz\le \pi.\]
-It reamains to apply Alexandrov's lemma (\ref{lem:alex-reformulation}).
+It remains to apply Alexandrov's lemma (\ref{lem:alex-reformulation}).
 
 
 \parit{\ref{SHORT.angk>angk}$\Rightarrow$\ref{SHORT.fat}.}
@@ -568,7 +568,7 @@ Whence the implication follows.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:geod-convexity}
-Let $\Sigma$ be an proper smooth regular surface
+Let $\Sigma$ be a proper smooth regular surface
 and $\gamma$ be a unit-speed geodesic in $\Sigma$ and $p\in\Sigma$.
 
 Consider the function
@@ -747,7 +747,7 @@ and it has a sequence of variations in differential geometry:
 
 
 \parit{Proof.} 
-Consider two Busemann functions $\bus_+$ and $\bus_-$ asociated with half-lines $\lambda:[0,\infty)\to \Sigma$ and $\lambda:(-\infty,0]\to \Sigma$; that is,
+Consider two Busemann functions $\bus_+$ and $\bus_-$ associated with half-lines $\lambda:[0,\infty)\to \Sigma$ and $\lambda:(-\infty,0]\to \Sigma$; that is,
 \[
 \bus_\pm(x)
 =
@@ -884,7 +884,7 @@ Straightforward computations show that passing to the limit as $a\to \infty$, we
 
 Now let us swap ${x_0}$ with $x_1$ and ${z_0}$ with $z_1$,
 and repeat the argument above for $a\to-\infty$.
-Note that the two longer sides the triangle are close to  $s-a$ and $t-a$.
+Note that the two longer sides of the triangle are close to  $s-a$ and $t-a$.
 Therefore we get the opposite inequality
 \[|x_1-z_1|_\Sigma^2\le|{x_0}-{z_0}|_\Sigma^2+(s-t)^2.\]
 
@@ -901,7 +901,7 @@ Note that since $\bus_-$ is affine, the level set
 \[L=\set{x\in\Sigma}{\bus_-(x)=0}\]
 is closed \index{totally convex}\emph{totally convex} and \index{totally geodesic}\emph{geodesic};
 that is, if a geodesic $\alpha$ has two common points with $L$, then $\alpha$ lies in $L$.
-It follows that $L$ is either a closed or both sides infinite geodesic.
+It follows that $L$ is either closed or both-sides-infinite geodesic.
 
 Choose an arc-length parametrization $v\mapsto\gamma(v)$ of $L$ by a circle (or line).
 Denote by $\lambda^v$ the line thru $\gamma(v)$ in the direction of $\vec u$ with the parametrization as above that is $\bus_-\circ\lambda^v(u)=u$ for any $u$ and $v$.
@@ -911,6 +911,6 @@ According to \ref{clm:parallel}, $(u,v)\mapsto \lambda^v(u)$ is an intrinsic iso
 \begin{thm}{Exercise}\label{ex:line+half-line}
 Let $\Sigma$ be an open smooth surface with nonnegative Gauss curvature.
 Suppose that $\Sigma$ has a line and a half-line that meet at exactly one point.
-Show that $\Sigma$ is admits an intrinsic isometry to Euclidean plane.
+Show that $\Sigma$ admits an intrinsic isometry to the Euclidean plane.
 \end{thm}
 

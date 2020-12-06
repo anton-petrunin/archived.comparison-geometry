@@ -33,7 +33,7 @@ Suppose that ${\vec v}(t)$, $\vec w(t)$ are parallel vector fields along $\gamma
 Let $\Sigma$ be a smooth surface in the Euclidean space and $\gamma\:[a,b]\z\to \Sigma$ be a smooth curve.
 Assume $p=\gamma(a)$ and $q=\gamma(b)$.
 
-Given a tangent vector ${\vec v}\in\T_p$ there is unique parallel field ${\vec v}(t)$ along $\gamma$ such that ${\vec v}(a)={\vec v}$.
+Given a tangent vector ${\vec v}\in\T_p$ there is a unique parallel field ${\vec v}(t)$ along $\gamma$ such that ${\vec v}(a)={\vec v}$.
 The latter follows from \ref{thm:ODE}; the uniqueness also follows from Exercise~\ref{ex:parallel}.
 
 The vector $\vec w={\vec v}(b)\in\T_q$ is called the \index{parallel transport}\emph{parallel transport} of ${\vec v}$ along~$\gamma$ in $\Sigma$.
@@ -62,7 +62,7 @@ Then the parallel transport $\iota_{\gamma_1}$ and $\iota_{\gamma_2}$ are identi
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:parallel-transport-support}
-Let $\Sigma_1$ and $\Sigma_2$ be two surfaces with common curve~$\gamma$.
+Let $\Sigma_1$ and $\Sigma_2$ be two surfaces with a common curve~$\gamma$.
 Suppose that $\Sigma_1$ bounds a region that contains $\Sigma_2$.
 Show that the parallel translations along $\gamma$ in $\Sigma_1$ 
 coincides the parallel translations along $\gamma$ in $\Sigma_2$. 
@@ -72,7 +72,7 @@ coincides the parallel translations along $\gamma$ in $\Sigma_2$.
 
 In this section we describe two interpretations of parallel transport;
 they might help to build right intuition, but will not help to write a rigorous proof.
-The first one is physical use \emph{bike wheel} it was suggested by Mark Levi \cite{levi} and the second via orthogonal projections of tangent planes.
+The first one is a physical use \emph{bike wheel} it was suggested by Mark Levi \cite{levi} and the second via orthogonal projections of tangent planes.
 
 Think of walking along $\gamma$ and carrying a perfectly balanced bike wheel.
 Imagine that you keep its axis normal to $\Sigma$ and touch only its axis.
@@ -80,7 +80,7 @@ It should be physically evident that if the wheel is non-spinning at the startin
 (Indeed, by pushing the axis one cannot produce torque to spin the wheel.)
 The map that sends the initial position of the wheel to the final position is  the parallel transport~$\iota_\gamma$.
 
-The observation above essentially states that {}\emph{moving axis of the wheel without changing its direction does not change the direction of the wheel's spikes.}
+The observation above essentially states that {}\emph{moving the axis of the wheel without changing its direction does not change the direction of the wheel's spikes.}
 
 On a more formal level, one can choose a partition $a=t_0<\dots\z<t_n=b$ of $[a,b]$
 and consider the sequence of orthogonal projections $\phi_i\:\T_{\gamma(t_{i-1})}\to\T_{\gamma(t_i)}$.
@@ -112,7 +112,7 @@ Note that if $\Sigma$ is a plane and $\gamma$ lies in $\Sigma$, then geodesic cu
 By that reason we use the same notation $\tgc\gamma$ as for total signed curvature; if we need to emphasize that we consider $\gamma$ as a curve in $\Sigma$, we write $\tgc\gamma_\Sigma$.
 
 If $\gamma$ is a piecewise smooth regular curve in $\Sigma$, then
-its total geodesic curvatures is defined as a sum of all total geodesic curvature of its arcs and the sum signed exterior angles of $\gamma$ at the joints.
+its total geodesic curvatures is defined as a sum of all total geodesic curvatures of its arcs and the sum signed exterior angles of $\gamma$ at the joints.
 More precisely, if $\gamma$ is a concatenation of smooth regular curves $\gamma_1,\dots,\gamma_n$, then
 \[\tgc\gamma=\tgc{\gamma_1}+\dots+\tgc{\gamma_n}+\theta_1+\dots+\theta_{n-1},\]
 where $\theta_i$ is the signed external angle at the joint $\gamma_i$ and $\gamma_{i+1}$; it is positive if we turn left and negative if we turn right, it is undefined if we turn to the opposite direction.
@@ -205,7 +205,7 @@ where $K$ denotes the Gauss curvature of $\Sigma$.
 We will give an informal proof of this formula in a leading partial case.
 A formal computational proof will be given in Section~\ref{sec:gauss--bonnet:formal}.
 
-Before going into the proofs, we suggest to solve the following exercises using the Gauss--Bonnet formula.
+Before going into the proofs, we suggest solving the following exercises using the Gauss--Bonnet formula.
 
 \begin{thm}{Exercise}\label{ex:1=geodesic-curvature}
  Assume $\gamma$ is a closed simple curve with constant geodesic curvature $1$ in a smooth closed surface $\Sigma$ with positive Gauss curvature.
@@ -271,7 +271,7 @@ Show that $\gamma$ cannot look like one the curves on the following diagrams.
 \includegraphics{mppics/pic-471}
 \end{wrapfigure}
 
-In fact $\gamma$ also cannot look like the curve on the right, but the proof requires a more advanced teqnique;
+In fact $\gamma$ also cannot look like the curve on the right, but the proof requires a more advanced technique;
 see \ref{ex:convex-polyhon+self-intersections}.
 
 The following exercise gives the optimal bound on Lipschitz constant of a convex function that guarantees that its geodesics have no self-intersections;
@@ -293,7 +293,7 @@ Suppose that $\Sigma$ is a simply connected open surface with nonpositive Gauss 
 Show that any two points in $\Sigma$ are connected by a unique geodesic.
 \end{subthm}
 \begin{subthm}{ex:unique-geod:diffeomorphism}
-Conculude that for any point $p\in \Sigma$,
+Conclude that for any point $p\in \Sigma$,
 the exponential map $\exp_p$ is a diffeomorphism from the tangent plane $\T_p$ to $\Sigma$.
 In particular $\Sigma$ is diffeomorphic to the plane.
 \end{subthm}
@@ -307,7 +307,8 @@ Set
 \[\GB(\Delta)=\tgc{\partial\Delta}+\iint_\Delta K-2\cdot \pi,
 \eqlbl{eq:GB}\]\index{10gb@$\GB$}
 where $K$ denotes the Gauss curvature of $\Sigma$.
-Here $\GB$ stands for Gauss--Bonnet formula; it can be states as
+Here $\GB$ stands for Gauss--Bonnet formula;
+it can be stated as
 \[\GB(\Delta)=0.\]
 
 \begin{thm}{Lemma}\label{lem:GB-sum}
@@ -363,7 +364,7 @@ Assume $\partial P$ is oriented such that $P$ lies on the left from $\partial P$
 Then 
 \[\GB(P)=\tgc{\partial P}+\area P-2\cdot \pi=0.\]
 
-Moreover the same formula holds true for any spherical region bounded by piecewise smooth simple closed curve.
+Moreover the same formula holds true for any spherical region bounded by a piecewise smooth simple closed curve.
 \end{thm}
 
 This proposition will be used in the informal proof given below.
@@ -381,13 +382,14 @@ Therefore
 It follows that $\tgc{\partial\Delta}+\area \Delta=2\cdot\pi$ or, equivalently,
 \[\GB(\Delta)=0.\]
  
-Note that we can subdivide a given spherical polygon $P$ into triangles by dividing a polgon in two on each step.
+Note that we can subdivide a given spherical polygon $P$ into triangles by dividing a polygon in two on each step.
 By the additivity lemma (\ref{lem:GB-sum}), we get
 \[\GB(P)=0\]
 for any spherical polygon $P$.
 
 The second statement can be proved by approximation. One has to show that the total geodesic curvature of an inscribed broken geodesic approximates the total geodesic curvature of the original curve.
-We omit the proof of the latter statement goes along the same lines as \ref{ex:total-curvature=}.
+We omit the proof of the latter statement,
+but it goes along the same lines as \ref{ex:total-curvature=}.
 \qeds
 
 
@@ -477,7 +479,7 @@ It follows that after leaving $\Delta_1$, the geodesic $\gamma$ has to enter it 
 \includegraphics{mppics/pic-1550}
 \end{figure}
 Consider the moment when $\gamma$ enters $\Delta_1$;
-two possible scenarios are shown on the picture.
+two possible scenarios are shown in the picture.
 On the left picture we get two nonoverlapping discs which, as we know, is impossible.
 The right picture is impossible as well --- in this case we get a concave simple loop.
 
@@ -499,7 +501,7 @@ the $t\mapsto \gamma(-t)$; that is, $\gamma_0(t)\z=\gamma(t)$ and $\gamma_\pi(t)
 Observe that the subset of values $s\in [0,\pi]$ such that $\gamma_s$ is right (or left) is open.
 That is, if $\gamma_s$ is right, then so is $\gamma_t$ for all $t$ sufficiently close to $s$.
 Indeed, denote by $\phi_s$ the angle of the simple loop of $\gamma_s$.
-From abve we have $0<\phi_s<\pi$.
+From above we have $0<\phi_s<\pi$.
 Therefore the self-intersection at the base of the loop of $\gamma_s$ is transverse.
 It follows that the self-intersection survives in $\gamma_t$ for all $t$ sufficiently close to $s$.
 

@@ -2,7 +2,7 @@
 
 This chapter contains computational proofs of several statements discussed above, including 
 \begin{itemize}
-\item Proposition~\ref{prop:inj-rad} --- a alternative defintions of injectivity radius.
+\item Proposition~\ref{prop:inj-rad} --- a alternative definitions of injectivity radius.
 \item Proposition~\ref{prop:gamma''} --- shortest paths are geodesics.
 \item The Gauss--Bonnet formula (\ref{thm:gb}).
 \end{itemize}
@@ -19,7 +19,7 @@ then we say that $s(r,\theta)=\exp_p\vec v$ is the point in $\Sigma$ with the po
 
 Since there might be many geodesics from $p$ to a given point $x$,
 the point $x$ might have many different polar coordinates.
-However, according to Proposition~\ref{prop:exp} polar coordinates behave usual way for small values $r$.
+However, according to Proposition~\ref{prop:exp} polar coordinates behave the usual way for small values $r$.
 More precisely, the following statement holds:
 
 \begin{thm}{Observation}\label{obs:polar}
@@ -33,7 +33,7 @@ $r_1=r_2=0$ or $r_1=r_2$ and $\theta_1\z=\theta_2+2\cdot n\cdot\pi$ for an integ
 The following statement will play a key role in the formal proof that shortest paths are geodesics; see Section~\ref{sec:proof-of-gamma''}.
 
 \begin{thm}{Gauss lemma}\label{lem:palar-perp}
-Let $s(r,\theta)$ describes polar coordinates with respect to a point $p$ of smooth surface $\Sigma$.
+Let $(r,\theta)\mapsto s(r,\theta)$ describes polar coordinates with respect to a point $p$ of smooth surface $\Sigma$.
 Then
 $s_\theta\perp s_r$
 for any $r$ and~$\theta$.
@@ -370,7 +370,7 @@ Note that any semigeodesic chart is orthogonal.
 A solution of the following exercise is very similar to \ref{prop:jaccobi}.
 
 \begin{thm}{Exercise}\label{lem:K(orthogonal)}
-Let $(u,v)\mapsto s(u,v)$ be a orthogonal chart of smooth surface $\Sigma$.
+Let $(u,v)\mapsto s(u,v)$ be an orthogonal chart of a smooth surface $\Sigma$.
 Denote by $K=K(u,v)$ the Gauss curvature of $\Sigma$ at $s(u,v)$.
 Set $a=a(u,v)\df|s_u|$,
 $b=b(u,v)\df|s_v|$,
@@ -430,10 +430,10 @@ Show that
 \end{thm}
 
 
-\begin{thm}{Exericse}\label{ex:conformal}
+\begin{thm}{Exercise}\label{ex:conformal}
 Suppose that $(u,v)\mapsto s(u,v)$ is a \index{conformal chart}\emph{conformal chart};
 that is, $s_u\perp s_v$ and $b=|s_u|=|s_v|$ for any $(u,v)$;
-in this case the function $(u,v)\mapsto b(u,v)$ is called \index{conformal factor}\emph{conformal factor} of $s$.
+in this case the function $(u,v)\mapsto b(u,v)$ is called a \index{conformal factor}\emph{conformal factor} of $s$.
 
 Use \ref{lem:K(orthogonal)} to show that the Gauss curvature can be expressed as 
 \[K=-\frac{\triangle (\ln b)}{b^2},\]
@@ -516,7 +516,7 @@ Then
 where $\vec u=s_u$ and $K$ denote the Gauss curvature of $\Sigma$.
 \end{thm}
 
-The proof is done by a calculation with use the so-called \emph{Green formula} which can be formulated the following way:
+The proof is done by a calculation using the so-called \emph{Green formula} which can be formulated the following way:
 
 Let $D$ be a compact region in the $(u,v)$-coordinate plane that is bounded by a piecewise smooth simple closed curve $\alpha$.
 Suppose that $\alpha$ is oriented in such a way that $D$ lies on its left.
@@ -568,7 +568,7 @@ Therefore applying \ref{lem:GB-sum} finite number of times, we get that
 \ref{eq:gb(n)} holds for any disc $\Delta$ in $\Sigma$.
 
 Assume that $\Delta$ lies in a local graph realization $z=f(x,y)$ of~$\Sigma$.
-Consider one-parameter family $\Sigma_t$ of graphs $z=t\cdot f(x,y)$ and denote by $\Delta_t$ the corresponding disc in $\Sigma_t$, so $\Delta_1=\Delta$ amd $\Delta_0$ is its projection to the $(x,y)$-plane.
+Consider one-parameter family $\Sigma_t$ of graphs $z=t\cdot f(x,y)$ and denote by $\Delta_t$ the corresponding disc in $\Sigma_t$, so $\Delta_1=\Delta$ and $\Delta_0$ is its projection to the $(x,y)$-plane.
 Note that the function $f\:t\mapsto \GB(\Delta_t)$ is continuous.
 From above $f(t)$ is a multiple of $2\cdot\pi$ for any $t$.
 It follows that $f$ is a constant function.
@@ -670,7 +670,7 @@ Suppose that a smooth surface $\Sigma$ has unit Gauss curvature at every point.
 Show that a neighborhood of any point in $\Sigma$ admits an intrinsic isometry to an open domain in the unit sphere.
 \end{thm}
 
-A simple example of intrinsic isometry can obtained by warping a plane into a cylinder.
+A simple example of intrinsic isometry can be obtained by warping a plane into a cylinder.
 The following exercise produces a more interesting example.
 
 \begin{thm}{Exercise}\label{ex:deformation}
@@ -716,7 +716,7 @@ For example, Gauss curvature $K(p)$ appears in the following formula for the cir
 \[c(r)=2\cdot\pi\cdot r-\tfrac\pi3\cdot K(p)\cdot r^3+o(r^3).\]
 
 The theorem implies that there is no smooth length-preserving map that sends an open region in the unit sphere to the plane.%
-\footnote{There are plenty of non-smooth length-preserving maps from the sphere to the plane; see \cite{petrunin-yashinski} and the references there in.}
+\footnote{There are plenty of non-smooth length-preserving maps from the sphere to the plane; see \cite{petrunin-yashinski} and the references therein.}
 It follows since the Gauss curvature of the plane is zero and the unit sphere has Gauss curvature 1. 
 In other words, there is no map of a region on Earth without distortion.
 
@@ -739,7 +739,7 @@ Note that $s^{*}$ is a chart of $\Sigma^{*}$ and
 \end{align*}
 at any $(u,v)$.
 Indeed the first and the third identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\mapsto s(t,v)$ or  $\gamma\:t\z\mapsto s(u,t)$.
-Taking this into account, the second identity hold since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\z\mapsto s(t,c-t)$ for some constant~$c$.
+Taking this into account, the second identity holds since otherwise $f$ does not preserve length of coordinate lines $\gamma\:t\z\mapsto s(t,c-t)$ for some constant~$c$.
 
 It follows that if $s$ is a semigeodesic chart,
 then so is $s^{*}$.

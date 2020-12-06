@@ -44,10 +44,10 @@ Since any such path is rectifiable, the value $|p-q|_\Sigma$ is finite for any p
 A path $\gamma$ from $p$ to $q$ in $\Sigma$ that minimizes the length is called a \index{shortest path}\emph{shortest path} from $p$ to $q$.
 
 The image of a shortest path between $p$ and $q$ in $\Sigma$ is usually denoted by $[p,q]$ or by $[p,q]_\Sigma$.\index{10aac@$[p,q]$, $[p,q]_\Sigma$}
-In general there might be no shortest path between two given points on a surface and it might be many of them;
+In general there might be no shortest path between two given points on a surface and there might be many of them;
 this is shown in the following two examples.
 
-Usually, if we write $[pq]_\Sigma$, we are assuming that such shortest path exists and we have made a choice of one of them.
+Usually, if we write $[pq]_\Sigma$, we are assuming that such a shortest path exists and we have made a choice of one of them.
 
 {
 
@@ -109,7 +109,7 @@ for any $t_0,t_1\in[0,1]$.
 Note that the image of $\gamma_n$ lies in the closed ball $\bar B[p,\ell+1]$ for any $n$.
 It follows that the coordinate functions of $\gamma_n$ are uniformly equicontinuous and uniformly bounded.
 By the Arzel\'{a}--Ascoli theorem (\ref{lem:equicontinuous})
- there is a converging subsequence of $\gamma_n$ and its limit, say $\gamma_\infty\:[0,1]\to\RR^3$, is continuous;
+ there is a convergent subsequence of $\gamma_n$ and its limit, say $\gamma_\infty\:[0,1]\to\RR^3$, is continuous;
 that is, $\gamma_\infty$ is a path.
 Evidently $\gamma_\infty$ runs from $p$ to $q$;
 in particular
@@ -162,7 +162,7 @@ Hence the existence follows.
 
 Assume there are two distinct points $\bar p, \bar p'\in R$ that minimize the distance to $p$.
 Since $R$ is convex, their midpoint $m=\tfrac12\cdot (\bar p+\bar p')$ lies in~$R$.
-Note that $|p-\bar p|\z=|p-\bar p'|=\ell$; that is, the triangle $[p\bar p\bar p']$ is isosceles and therefore the triangle $[p\bar p m]$ is right with  right angle at~$m$.
+Note that $|p-\bar p|\z=|p-\bar p'|=\ell$; that is, the triangle $[p\bar p\bar p']$ is isosceles and therefore the triangle $[p\bar p m]$ is right with the right angle at~$m$.
 Since a leg of a right triangle is shorter than its hypotenuse, we have $|p-m|<\ell$, a contradiction. 
 
 It remains to prove \ref{eq:short-cpp}.
@@ -304,7 +304,7 @@ is a geodesic, but not a shortest path on $\Sigma$.
 \begin{thm}{Exercise}\label{ex:reflection-geodesic}
 Assume that a smooth surface $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$.
 Suppose that $\Sigma$ and $\Pi$ intersect along a smooth regular curve $\gamma$.
-Show that $\gamma$ reparametrized by its arc-length is a geodesic on $\Sigma$.
+Show that $\gamma$, parametrized by its arc-length, is a geodesic on $\Sigma$.
 \end{thm}
 
 Recall that asymptotic line is defined in Section~\ref{sec:saddle}.
@@ -360,7 +360,7 @@ Moreover
 \begin{subthm}{prop:geod-existence:smooth} the map $(p,{\vec v},t)\mapsto \gamma(t)$ is smooth in its domain of definition.
 \end{subthm}
 
-\begin{subthm}{prop:geod-existence:whole} if $\Sigma$ is proper, then $\mathbb{I}=\RR$; that is, the maximal interval is whole real line.
+\begin{subthm}{prop:geod-existence:whole} if $\Sigma$ is proper, then $\mathbb{I}=\RR$; that is, the maximal interval is the whole real line.
 \end{subthm}
 
 \end{thm}
@@ -391,7 +391,7 @@ The proof of the lemma is done by means of direct calculations.
 
 \parit{Proof.} In the following calculations, we often omit the arguments --- we may write $x$ instead of $x(t)$  and $f$ instead of $f(x,y)$ or $f(x(t),y(t))$ and so on.
 
-First let us calulate $z''(t)$ in terms of $f$, $x(t)$, and $y(t)$.
+First let us calculate $z''(t)$ in terms of $f$, $x(t)$, and $y(t)$.
 \[
 \begin{aligned}
 z''&=f(x,y)''=
@@ -440,9 +440,9 @@ It remains use expression \ref{eq:z''} for $z''$, combine like terms and simplif
 
 
 \parit{Proof of \ref{prop:geod-existence}.}
-Let $z=f(x,y)$ be a description of $\Sigma$ in a tangent-normal coordinates at $p$.
+Let $z=f(x,y)$ be a description of $\Sigma$ in tangent-normal coordinates at $p$.
 By Lemma \ref{lem:geodesic=2nd-order} the condition $\gamma''(t)\perp\T_{\gamma(t)}$ can be written as a second order differential equation.
-Applying the existence and uniqueness of the initial value problem (\ref{thm:ODE}) we get existence and uniqueness of geodesic $\gamma$ in a in a small interval $(-\eps,\eps)$ for some $\eps>0$.
+Applying the existence and uniqueness of the initial value problem (\ref{thm:ODE}) we get existence and uniqueness of geodesic $\gamma$  in a small interval $(-\eps,\eps)$ for some $\eps>0$.
 
 Let us extend $\gamma$ to a maximal open interval $\mathbb{I}$.
 Suppose there is another geodesic $\gamma_1$ with the same initial data that is defined on a maximal open interval $\mathbb{I}_1$.
@@ -468,7 +468,7 @@ Therefore  the limit point
 is defined.
 Since $\Sigma$ is a proper surface, $q\in \Sigma$. 
 
-Applying the argument above in a tangent-normal coordinates at $q$ shows that $\gamma$ can be extended as a geodesic behind $q$.
+Applying the argument above in tangent-normal coordinates at $q$ shows that $\gamma$ can be extended as a geodesic behind $q$.
 Therefore $\mathbb{I}$ is not a maximal interval --- a contradiction.
 \qeds
 
@@ -477,7 +477,7 @@ Let $\Sigma$ be a smooth torus of revolution; that is,
 a smooth surface of revolution with closed generatrix.
 Show that any closed geodesic on $\Sigma$ is noncontractible.
 
-(In other words, if $s\:\RR^2\to \Sigma$ is the natural bi-periodic parameterization of $\Sigma$, then
+(In other words, if $s\:\RR^2\to \Sigma$ is the natural bi-periodic parametrization of $\Sigma$, then
 there is no closed curve $\gamma$ in $\RR^2$ such that $s\circ\gamma$ is a geodesic.)
 \end{thm}
 
@@ -496,10 +496,10 @@ By \ref{prop:geod-existence}, the map $\exp_p\:\T_p\to \Sigma$ is smooth and def
 moreover, if $\Sigma$ is proper, then $\exp_p$ is defined on the whole space $\T_p$.
 
 Note that the exponential map $\exp_p$ 
-is defined on the tangent plane $\T_p$, which is a smooth surfaces,
+is defined on the tangent plane $\T_p$, which is a smooth surface,
 and its target is another smooth surface $\Sigma$.
 Observe that one can identify the plane $\T_p$
-with its tangent plane $\T_0\T_p$ so the differenial $d_0(\exp_p)\:\vec v\mapsto D_{\vec v}\exp_p$ maps $\T_p$ to itself.
+with its tangent plane $\T_0\T_p$ so the differential $d_0(\exp_p)\:\vec v\mapsto D_{\vec v}\exp_p$ maps $\T_p$ to itself.
 Further note that by the definition of exponential map we have that this differential is the identity map; that is, $d_0\exp_p(\vec v)=
 \vec v$ for any $\vec v\in \T_p$.
 
@@ -524,7 +524,7 @@ Note also that \ref{prop:geod-existence:whole} implies that \emph{if $\Sigma$ is
 
 
 \begin{thm}{Proposition}\label{prop:exp}
-Let $\Sigma$ be smooth surface (without boundary) and $p\in \Sigma$.
+Let $\Sigma$ be a smooth surface (without boundary) and $p\in \Sigma$.
 Then there is $r_p>0$ such that
 the exponential map $\exp_p$ is defined on the open ball $B=B(0,r_p)_{\T_p}$
 and the restriction $\exp_p|_B$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$.
@@ -541,7 +541,7 @@ Note that $(x,y)$-plane coincides with the tangent plane $\T_p$.
 
 Denote by $s$ the composition of  the exponential map $\exp_p$ with the orthogonal projection $(x,y,z)\mapsto (x,y)$.
 By \ref{obs:d(exp)=1}, the differential $d_0s$ is the identity;
-in other words, this map has identity Jacobian matrix at $0$.
+in other words, the Jacobian matrix of this map at $0$ is unit.
 Applying the inverse function theorem (\ref{thm:inverse}) we get the first part of the proposition.
 
 The second part can be proved along the same lines, using the second part the inverse function theorem (\ref{thm:inverse});
@@ -558,7 +558,7 @@ the latter was proved by Wilhelm Klingenberg \cite[5.4]{gromoll-klingenberg-meye
 The proof of the following statement will be indicated in \ref{ex:inj-rad}.
 
 \begin{thm}{Proposition}\label{prop:inj-rad}
-Let $\Sigma$ be smooth surface (without boundary) and $p\in \Sigma$.
+Let $\Sigma$ be a smooth surface (without boundary) and $p\in \Sigma$.
 If $\exp_p$ is injective in $B(0,r)_{\T_p}$, then the restriction $\exp_p|_{B(0,r)}$ is a diffeomorphism to its image.
 
 In other words, the injectivity radius at $p$ can be defined as the least upper bound on $r$ such that $\exp_p$ is injective in the ball $B(0,r)_{\T_p}$.
@@ -578,13 +578,13 @@ More precisely, any point $p$ in $\Sigma$ has a neighborhood $U$ such that any g
 A geodesic might not form a shortest path, but if this is the case, then it is called a \index{minimizing geodesic}\emph{minimizing geodesic}.
 Note that according to the proposition, any shortest path is a minimizing geodesic after a reparametrization.
 
-A formal proof will be given much latter; see Section~\ref{sec:proof-of-gamma''}.
+A formal proof will be given later; see Section~\ref{sec:proof-of-gamma''}.
 
 The following informal physical explanation might be sufficiently convincing.
 In fact, if one assumes that $\gamma$ is smooth, then it is easy to convert this explanation into a rigorous proof.
 
 \parit{Informal explanation.}
-Let us think about a shortest path $\gamma$ as of stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
+Let us think about a shortest path $\gamma$ as a stable position of a stretched elastic thread that is forced to lie on a frictionless surface.
 Since it is frictionless, the force density $\vec n=\vec n(t)$ that keeps $\gamma$ in the surface must be proportional to the normal vector to the surface at $\gamma(t)$.
 
 The tension in the thread has to be the same at all points (otherwise the thread would move back or forth and it would not be stable).
@@ -615,11 +615,11 @@ Evidently $B(p,r)_\Sigma\supset\exp_p(B)$.
 By \ref{prop:gamma''}, $B(p,r)_\Sigma\subset\exp_p(B)$, hence the result.
 \qeds
 
-According to the corollary, the restriction $\exp_p|_{\T_p}$ admits an inverse map that is called \emph{logarithmic map at $p$};
+According to the corollary, the restriction $\exp_p|_{\T_p}$ admits an inverse map that is called a \emph{logarithmic map at $p$};
 it is denoted by \[\log_p\:B(p,r)_\Sigma\to B(0,r)_{\T_p}.\]
 
 Note that according to the proposition above, any shortest path parametrized by its arc-length is a smooth curve.
-This observation should help to solve in the following two exercises.
+This observation should help to solve the following two exercises.
 
 
 \begin{thm}{Exercise}\label{ex:two-min-geod}
@@ -676,7 +676,7 @@ Then $t\mapsto z(t)$ is a convex function; that is, $z''(t)\ge 0$ for any $t$.
 \parit{Proof.}
 Choose the orientation on the graph so that the unit normal vector $\Norm$ always points up;
 that is, $\Norm$ has positive $z$-coordinate.
-Let us use shortcut $\Norm(t)$ for $\Norm(\gamma(t))$.
+Let us use the shortcut $\Norm(t)$ for $\Norm(\gamma(t))$.
 
 Since $\gamma$ is a geodesic, we have $\gamma''(t)\perp\T_{\gamma(t)}$,
 or equivalently $\gamma''(t)$ is proportional to $\Norm(t)$ for any $t$.
@@ -744,7 +744,7 @@ If $\gamma$ is defined on the interval $[a,b]$, then
 \]
 
 Further, note that $z''$ is the projection of $\gamma''$ to the $z$-axis.
-Since $f$ is $\ell$-Lipschitz, the tangent plane $\T_{\gamma (t)} \Sigma$ cannot have slope greater than $\ell$ for any $t$.
+Since $f$ is $\ell$-Lipschitz, the tangent plane $\T_{\gamma (t)} \Sigma$ cannot have a slope greater than $\ell$ for any $t$.
 Because $\gamma ''$ is perpendicular to that plane, we have that
 \[|\gamma'' (t)|  \le  z''(t)\cdot\sqrt{1+ \ell ^2}.\]
 
