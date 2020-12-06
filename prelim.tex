@@ -109,7 +109,7 @@ Substituting \ref{eq:area(S2)} and \ref{eq:area(Sa)} and simplifying, we get \re
 \section{Convex geometry}
 
 A set $X$ in the Euclidean space is called \index{convex set}\emph{convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in $X$.
-It is called  \index{strictly convex set}\emph{strictly convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
+It is called  \index{strictly!convex}\emph{strictly convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
 
 From the definition, it is easy to see that the intersection of an arbitrary family of convex sets is convex. 
 The intersection of all convex sets containing $X$ is called the \index{convex hull}\emph{convex hull} of $X$;
@@ -307,7 +307,7 @@ The following material is discussed in any course of multivariable calculus, the
 
 A map $\bm{f}\:\RR^m\to\RR^n$ can be thought of as an array of functions 
 \[f_1,\dots,f_n\:\RR^m\to \RR.\]
-The map $\bm{f}$ is called \index{smooth map}\emph{smooth} if each function $f_i$ is smooth;
+The map $\bm{f}$ is called \index{smooth!map}\emph{smooth} if each function $f_i$ is smooth;
 that is, all partial derivatives of $f_i$ are defined in the domain of definition of $\bm{f}$.
 
 The Jacobian matrix of $\bm{f}$ at $\bm{x}\in\RR^m$ is defined as
@@ -319,10 +319,10 @@ The Jacobian matrix of $\bm{f}$ at $\bm{x}\in\RR^m$ is defined as
 we assume that the right hand side is evaluated at $\bm{x}=(x_1,\dots,x_m)$.
 
 If the Jacobian matrix defines a surjective linear map $\RR^m\to\RR^n$ (that is, if $\rank(\Jac_{\bm{x}}\bm{f})=n$) then we say that 
-$\bm{x}$ is a \index{regular point}\emph{regular point} of~$\bm{f}$.
+$\bm{x}$ is a \index{regular!point}\emph{regular point} of~$\bm{f}$.
 
 If for some $\bm{y}\in \RR^n$ each point $\bm{x}$ such that $\bm{f}(\bm{x})=\bm{y}$ is regular,
-then we say that $\bm{y}$ is a \index{regular value}\emph{regular value} of $\bm{f}$.
+then we say that $\bm{y}$ is a \index{regular!value}\emph{regular value} of $\bm{f}$.
 The following lemma states that {}\emph{most} values of a smooth map are regular.
 
 \begin{thm}{Sard's lemma}\label{lem:sard}
