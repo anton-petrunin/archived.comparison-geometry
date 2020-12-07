@@ -13,14 +13,14 @@ The points $x,y,z$ are called {}\emph{vertexes} of the geodesic triangle,
 the minimizing geodesics $[x,y]$, $[y,z]$ and $[z,x]$ are called its {}\emph{sides};
 the triangle itself is denoted by $[xyz]$, or by $[xyz]_\Sigma$, if we need to emphasize that it lies in $\Sigma$.\index{10aad@$[xyz]$, $[xyz]_\Sigma$}
 
-A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\RR^2$ is called \index{model triangle}\emph{model triangle} of the triangle $[xyz]$
+A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\mathbb{R}^2$ is called \index{model triangle}\emph{model triangle} of the triangle $[xyz]$
 if its corresponding sides are equal;
 that is,
-\[\dist{\tilde x}{\tilde y}{\RR^2}=\dist{x}{y}\Sigma,
+\[\dist{\tilde x}{\tilde y}{\mathbb{R}^2}=\dist{x}{y}\Sigma,
 \quad
-\dist{\tilde y}{\tilde z}{\RR^2}=\dist{y}{z}\Sigma,
+\dist{\tilde y}{\tilde z}{\mathbb{R}^2}=\dist{y}{z}\Sigma,
 \quad
-\dist{\tilde z}{\tilde x}{\RR^2}=\dist{z}{x}\Sigma.
+\dist{\tilde z}{\tilde x}{\mathbb{R}^2}=\dist{z}{x}\Sigma.
 \]
 In this case we write $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$.
 \index{10aae@$\tilde\triangle$}
@@ -69,7 +69,7 @@ The proof of part \ref{SHORT.thm:comp:toponogov} will be finished in  Section~\r
 
 Let us show that the statement \ref{SHORT.thm:comp:cat} does not hold without assuming that $\Sigma$ is simply connected.
 Consider the hyperboloid
-\[\set{(x,y,z)\in\RR^3}{x^2+y^2-z^2=1};\]
+\[\set{(x,y,z)\in\mathbb{R}^3}{x^2+y^2-z^2=1};\]
 it has negative Gauss curvature, but it is not simply connected.
 The equator $z=0$ of the hyperboloid
 forms a triangle with all angles $\pi$, which does not meet the conclusion in~\ref{SHORT.thm:comp:cat}.
@@ -537,7 +537,7 @@ the point $y$ lies on the side $[x,z]$.
 Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x,\tilde z]$.
 Then the following expressions have the same signs:
 \begin{enumerate}[(i)]
- \item $\dist{p}{y}\Sigma-\dist{\tilde p}{\tilde y}{\RR^2}$;
+ \item $\dist{p}{y}\Sigma-\dist{\tilde p}{\tilde y}{\mathbb{R}^2}$;
  \item $\angk xpy-\angk {x}{p}{z}$;
  \item $\pi-\angk ypx-\angk ypz$;
 \end{enumerate}
@@ -558,7 +558,7 @@ It remains to apply Alexandrov's lemma (\ref{lem:alex-reformulation}).
 Applying \textit{\ref{SHORT.mang>angk}} twice, first for $y\in [x,z]$ and then for $w\in [p,x]$, we get that
 \[\angk xwy \ge \angk xpy \ge \angk xpz\]
 and therefore
-\[\dist{w}{y}\Sigma\ge \dist{\tilde w}{\tilde y}{\RR^2},\]
+\[\dist{w}{y}\Sigma\ge \dist{\tilde w}{\tilde y}{\mathbb{R}^2},\]
 where $\tilde w$ and $\tilde y$ are the points corresponding to $w$ and $y$ points on the sides of the model triangle. 
 
 \parit{\ref{SHORT.fat}$\Rightarrow$\ref{SHORT.mang>angk}.}
@@ -611,7 +611,7 @@ is convex.
 Suppose that a smooth curve $\delta$ bounds a convex disc $\Delta$ in a proper smooth surface $\Sigma$;
 that is, for any two points $x,y\in\Delta$, any shortest path $[x,y]_\Sigma$ lies in $\Delta$.
 
-Denote by $f\:\Sigma\to\RR$ the intrinsic distance function to $\delta$;
+Denote by $f\:\Sigma\to\mathbb{R}$ the intrinsic distance function to $\delta$;
 that is, 
 \[f(x)=\inf_{y\in\delta}\{\,\dist{x}{y}\Sigma\,\}.\]
 
@@ -662,7 +662,7 @@ $t\z\mapsto \bus_\lambda\circ\alpha(t)$ is concave.
 
 \end{thm}
 
-The function  $\bus_\lambda\:\Sigma\z\to \RR$ as in the proposition is called 
+The function  $\bus_\lambda\:\Sigma\z\to \mathbb{R}$ as in the proposition is called 
 \index{Busemann function}\emph{Busemann function associated to $\lambda$}.
 Intuitively the function $\bus_\lambda$ can be described as a distance function to the ideal point on the end of the half-line $\lambda$.
 
@@ -712,7 +712,7 @@ Consider the function
 where the greatest lower bound is taken for all half-lines $\lambda$ that stat at $p$.
 Show that $f$ is concave function and its suplevel sets 
 \[S_c=\set{x\in\Sigma}{f(x)\ge c}\] 
-are compact for any $c\in\RR$.
+are compact for any $c\in\mathbb{R}$.
 \end{subthm}
 
 \begin{subthm}{ex:half-line:soul}
@@ -728,12 +728,12 @@ Show that all these possibilities can occur.
 \section{Line splitting theorem}
 
 Let $\Sigma$ be a smooth regular surface.
-A unit-speed geodesic $\lambda\:\RR\to\Sigma$ is called a \index{line}\emph{line} if it is length-minimizing on each interval $[a,b]\subset \RR$.
+A unit-speed geodesic $\lambda\:\mathbb{R}\to\Sigma$ is called a \index{line}\emph{line} if it is length-minimizing on each interval $[a,b]\subset \mathbb{R}$.
 
 \begin{thm}{Line splitting theorem}\label{thm:splitting}
 Let $\Sigma$  be an open smooth regular surface with nonnegative Gauss curvature
 and $\lambda$ be a line in $\Sigma$. 
-Then $\Sigma$ admits an intrinsic isometry to the Euclidean plane or a circular cylinder $\set{(x,y,z)\in \RR^2}{x^2+y^2=r^2}$ for some $r>0$.
+Then $\Sigma$ admits an intrinsic isometry to the Euclidean plane or a circular cylinder $\set{(x,y,z)\in \mathbb{R}^2}{x^2+y^2=r^2}$ for some $r>0$.
 
 In particular, $\Sigma$ has vanishing Gauss curvature.
 \end{thm}
@@ -781,7 +781,7 @@ $h(t)=\dist{\lambda(t)}{x}\Sigma^2-t^2$
 is concave.
 In particular, 
 \[\dist{\lambda(t)}{x}\Sigma\le \sqrt{t^2+at+b}\]
-for some constants $a,b\in\RR$. 
+for some constants $a,b\in\mathbb{R}$. 
 Passing to the limit as $t\to\pm\infty$, we get \[\bus_+(x)+\bus_-(x)\le0;\]
 whence \ref{eq:bus+-=0} follows.
 
@@ -791,7 +791,7 @@ both functions $\bus_\pm$ are concave and $\bus_\pm\circ\lambda(t)=\mp t$ for an
 By \ref{eq:bus+-=0} both functions $\bus_\pm$ are affine;
 that is, they are convex and concave at the same time.
 It follows that the differential of $\bus_\pm$ is defined at any point $x\in\Sigma$;
-that is, there is a linear function $\T_x\to\RR$ that is defined by
+that is, there is a linear function $\T_x\to\mathbb{R}$ that is defined by
 $\vec v\mapsto D_{\vec v}\bus_\pm$
 for any tangent vector field $\vec v$.
 

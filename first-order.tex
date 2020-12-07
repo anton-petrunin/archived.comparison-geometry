@@ -18,7 +18,7 @@ the tangent plane of $\Sigma$ at $p$ is spanned by vectors $s_u(u_p,v_p)$ and $s
 \end{thm}
 
 The tangent plane to $\Sigma$ at $p$ is usually denoted by $\T_p$ or $\T_p\Sigma$.
-This plane $\T_p$ might be considered as a linear subspace of $\RR^3$ or as a parallel plane passing thru $p$;
+This plane $\T_p$ might be considered as a linear subspace of $\mathbb{R}^3$ or as a parallel plane passing thru $p$;
 the latter is sometimes called the \index{affine tangent plane}\emph{affine tangent plane}.
 The affine tangent plane can be interpreted as the best approximation at~$p$ of the surface $\Sigma$ by a plane.
 More precisely, 
@@ -40,7 +40,7 @@ Since the smooth functions $u(t)$ and $v(t)$ can be chosen arbitrarily, any line
 
 
 \begin{thm}{Exercise}\label{ex:tangent-normal}
-Let $f:\RR^3\to\RR$ be a smooth function with $0$ as a regular value and $\Sigma$ be a surface described as a connected component of the set of solutions $f(x,y,z)=0$.
+Let $f:\mathbb{R}^3\to\mathbb{R}$ be a smooth function with $0$ as a regular value and $\Sigma$ be a surface described as a connected component of the set of solutions $f(x,y,z)=0$.
 Show that the tangent plane $\T_p\Sigma$ is perpendicular to the gradient $\nabla_pf$ at any point $p\in\Sigma$.
 \end{thm}
 
@@ -139,7 +139,7 @@ For example \ref{def:directional-derivative} becomes a tautology.
 
 \section{Differential of map}
 
-Any smooth map $s$ from a surface $\Sigma$ to $\RR^3$ can be described by its coordinate functions 
+Any smooth map $s$ from a surface $\Sigma$ to $\mathbb{R}^3$ can be described by its coordinate functions 
 $ s(p)=(x(p),y(p),z(p))$. 
 To take a directional derivative of the map we should take the  directional derivative of each of its coordinate functions.
 \[D_{\vec{w}} s\df(D_{\vec{w}}x,D_{\vec{w}}y,D_{\vec{w}}z).\]
@@ -156,7 +156,7 @@ $d_p s\:\vec w \mapsto D_{\vec w} s$ defines a linear map $d_p s\:\T_p\Sigma_0\t
 that is,
 \[D_{c\cdot \vec w} s=c\cdot D_{\vec w} s(p)
 \quad\text{and}\quad D_{\vec v+ \vec w} s=D_{\vec v} s(p)+ D_{\vec w} s(p)\]
-for any $c\in\RR$ and $\vec v, \vec w\in\T_p$.
+for any $c\in\mathbb{R}$ and $\vec v, \vec w\in\T_p$.
 The map $d_p s$ is called the \index{differential of map}\emph{differential} of $s$ at $p$.
 
 The differential $d_p s$ can be described by a $2{\times}2$-matrix $M$ in orthonormal bases of $\T_p$ and $\T_{ s(p)}\Sigma_1$.
@@ -193,12 +193,12 @@ This identity will become important in the definition of surface area.
 
 \section{Surface integral and area}
 
-Let $\Sigma$ be a smooth surface and $h\:\Sigma\to\RR$ be a smooth function.
+Let $\Sigma$ be a smooth surface and $h\:\Sigma\to\mathbb{R}$ be a smooth function.
 Let us define the integral $\iint_R h$ of the function $h$ along a region $R\subset \Sigma$.
 The definition will be used mostly along surfaces with boundary, but the definition can be applied to any Borel set $R\subset \Sigma$.
 
 Recall that $\jac_ps$ is defined in the previous section.
-Assume that there is a chart $(u,v)\mapsto s(u,v)$ of $\Sigma$ defined on an open set $U\subset\RR^2$ such that $R\subset s(U)$.
+Assume that there is a chart $(u,v)\mapsto s(u,v)$ of $\Sigma$ defined on an open set $U\subset\mathbb{R}^2$ such that $R\subset s(U)$.
 In this case set
 \[\iint_R h\df \iint_{s^{-1}(R)} h\circ s(u,v)\cdot \jac_{(u,v)}s  \cdot du\cdot dv.\eqlbl{eq:area-def}\]
 
@@ -222,7 +222,7 @@ The following proposition provides a substitution rule for surface integral.
 
 \begin{thm}{Area formula}\label{prop:surface-integral}
 Suppose $ s\:\Sigma_0\to \Sigma_1$ is a smooth parametrization of a smooth surface $\Sigma_1$ by  a smooth surface $\Sigma_0$.
-Then for any region $R\subset \Sigma_0$ and any smooth function $f\:\Sigma_1\to\RR$ we have
+Then for any region $R\subset \Sigma_0$ and any smooth function $f\:\Sigma_1\to\mathbb{R}$ we have
 \[\iint_R (f\circ s)\cdot \jac  s=\int_{ s(R)}f.\]
 In particular, if $f\equiv 1$, we have
 \[\iint_R \jac  s=\area [ s(R)].\]
@@ -275,7 +275,7 @@ Evidently $(u,v)\mapsto \Norm(u,v)$ is a continuous map.
 Therefore $\Norm$ is a unit normal field. 
 
 \begin{thm}{Exercise}\label{ex:implicit-orientable}
-Let $h:\RR^3\to\RR$ be a smooth function with $0$ as a regular value and $\Sigma$ a surface described as a connected component of the set of solutions $h(x,y,z)=0$.
+Let $h:\mathbb{R}^3\to\mathbb{R}$ be a smooth function with $0$ as a regular value and $\Sigma$ a surface described as a connected component of the set of solutions $h(x,y,z)=0$.
 Show that $\Sigma$ is orientable.
 \end{thm}
 
@@ -300,7 +300,7 @@ The following lemma makes it possible to perturb the plane so that the section b
 
 \begin{thm}{Lemma}\label{lem:reg-section}
 Let $\Sigma$ be a smooth regular surface.
-Suppose $f\:\RR^3\z\to\RR$ is a smooth function.
+Suppose $f\:\mathbb{R}^3\z\to\mathbb{R}$ is a smooth function.
 Then for any constant $r_0$ there is an arbitrarily close value $r$ such that 
 each connected component of the intersection of the level set $L_{r}=f^{-1}\{r\}$ with
 $\Sigma$ is a smooth regular curve.

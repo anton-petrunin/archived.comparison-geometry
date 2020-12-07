@@ -320,7 +320,7 @@ follows from \ref{prop:inscribed-total-curvature};
 it remains to show 
 \[\tc\gamma\le\sup\{\tc\beta\}. \eqlbl{eq:tc=<tc}\]
 
-Let $\gamma\:[a,b]\to\RR^3$ be a smooth curve.
+Let $\gamma\:[a,b]\to\mathbb{R}^3$ be a smooth curve.
 Fix a partition $a\z=t_0\z<\dots<t_k=b$ and consider the corresponding inscribed polygonal line $\beta=p_0\dots p_k$.
 (If $\gamma$ is closed, then  $p_0=p_k$ and $\beta$ is closed as well.)
 
@@ -348,8 +348,8 @@ By the semi-continuity of the length (\ref{thm:length-semicont}), we get that
 \begin{thm}{Exercise}\label{ex:tc-semicontinuous}
 Show that the total curvature is lower semicontinuous with respect to pointwise convergence of curves.
 That is, if a sequence
-of curves $\gamma_n\:[a,b]\to \RR^3$ converges pointwise 
-to a nontrivial curve $\gamma_\infty\:[a,b]\z\to \RR^3$, then 
+of curves $\gamma_n\:[a,b]\to \mathbb{R}^3$ converges pointwise 
+to a nontrivial curve $\gamma_\infty\:[a,b]\z\to \mathbb{R}^3$, then 
 \[\liminf_{n\to\infty} \tc{\gamma_n} \ge \tc{\gamma_\infty}.\]
 \end{thm}
 
@@ -363,12 +363,12 @@ for any  closed space curve $\gamma$ (not necessary piecewise smooth and regular
 \begin{thm}{Exercise}\label{ex:tc-length}
 
 \begin{subthm}{ex:tc-length:rectifiable}
-Assume that a curve $\gamma\:[a,b]\to\RR^3$ has finite total curvature.
+Assume that a curve $\gamma\:[a,b]\to\mathbb{R}^3$ has finite total curvature.
 Show that $\gamma$ is rectifiable.
 \end{subthm}
 
 \begin{subthm}{ex:tc-length:example}
-Construct a rectifiable curve $\gamma\:[a,b]\to\RR^3$ that has infinite total curvature.
+Construct a rectifiable curve $\gamma\:[a,b]\to\mathbb{R}^3$ that has infinite total curvature.
 \end{subthm}
 
 \end{thm}
@@ -688,11 +688,11 @@ which proves the theorem.
 Evidently the parametric definition includes the embedded surfaces defined previously --- as the domain of parameters we can take the surface itself and the identity map as $s$.
 But parametrized surfaces are more general, in particular they  might  have self-intersections.
 
-If $\Sigma$ is a known surface for example a sphere or a plane, the parameterized surface $s\:\Sigma\to\RR^3$ might be called by the same name.
-For example, any embedding $s\:\mathbb{S}^2\to\RR^3$ might be called a \index{topological sphere}\emph{topological sphere}
+If $\Sigma$ is a known surface for example a sphere or a plane, the parameterized surface $s\:\Sigma\to\mathbb{R}^3$ might be called by the same name.
+For example, any embedding $s\:\mathbb{S}^2\to\mathbb{R}^3$ might be called a \index{topological sphere}\emph{topological sphere}
 and if $s$ is smooth and regular, then it might be called \index{smooth sphere}\emph{smooth sphere}.
-(A smooth regular map $s\:\mathbb{S}^2\to\RR^3$ which is not necessary an embedding is called a \index{smooth immersion}\emph{smooth immersion}, so we can say that $s$ describes a \index{smooth immersed sphere}\emph{smooth immersed sphere}.) 
-Similarly an embedding $s\:\RR^2\to\RR^3$ might be called \index{topological plane}\emph{topological plane},
+(A smooth regular map $s\:\mathbb{S}^2\to\mathbb{R}^3$ which is not necessary an embedding is called a \index{smooth immersion}\emph{smooth immersion}, so we can say that $s$ describes a \index{smooth immersed sphere}\emph{smooth immersed sphere}.) 
+Similarly an embedding $s\:\mathbb{R}^2\to\mathbb{R}^3$ might be called \index{topological plane}\emph{topological plane},
 and if $s$ is smooth, it might be called \index{smooth plane}\emph{smooth plane}.
 
 \begin{wrapfigure}{o}{52 mm}
@@ -1281,10 +1281,10 @@ Fix $v,w$ on the sides of $\trig p x y$;
 let $\tilde v,\tilde w$ be the corresponding points on the sides of the model triangle $\trig {\tilde p}{\tilde x}{\tilde y}=\modtrig p x y$
 and $\dot v,\dot w$ be the corresponding points on the sides of the model triangles $\trig {\dot p} {\dot x}{\dot z}=\modtrig p x z$ and $\trig {\dot p} {\dot y}{\dot z}=\modtrig p y z$.
 Denote by $\ell$ the length of shortest curve from $\dot v$ to $\dot w$ in $\solidtriangle {\dot p}{\dot x}{\dot z}\cup \solidtriangle {\dot p} {\dot y} {\dot z}$.
-Since $F$ is short, $|\tilde v-\tilde w|_{\RR^2}\ge \ell$.
+Since $F$ is short, $|\tilde v-\tilde w|_{\mathbb{R}^2}\ge \ell$.
 Since both triangles $\trig p x z$ and $\trig p y z$ are thin, $\ell\ge|v-w|_{\Sigma}$.
 
-It follows that $|\tilde v-\tilde w|_{\RR^2}\ge |v-w|_{\Sigma}$ for any $v$ and $w$;
+It follows that $|\tilde v-\tilde w|_{\mathbb{R}^2}\ge |v-w|_{\Sigma}$ for any $v$ and $w$;
 that is, the triangle $\trig p x y$ is thin.
 \qeds
 
@@ -1391,7 +1391,7 @@ that is, for any geodesic $\gamma$ in $\Sigma$ the function $t\mapsto f\circ\gam
 \subsection*{Morse lemma}
 
 \begin{thm}{Lemma}\label{lem:morse}
-Let $f(\bm{x})$ be a smooth function defined for $\bm{x}=(x_1,\dots,x_n$ in a neighborhood of the origin in $\RR^n$.
+Let $f(\bm{x})$ be a smooth function defined for $\bm{x}=(x_1,\dots,x_n$ in a neighborhood of the origin in $\mathbb{R}^n$.
 Suppose that $f(\bm{0})=0$, $\tfrac{\partial f}{\partial x_i}(\bm{0})=0$ and the Hessian matrix
 \[M=\begin{pmatrix}
 \dfrac{\partial f}{\partial x_1\partial x_1} & \cdots & \dfrac{\partial f}{\partial x_1\partial x_n}\\
@@ -1421,13 +1421,13 @@ Then there is a
 Let $\tilde x_1\dots\tilde x_n$ be a convex plane polygon and
 $x_1\dots x_n$ be a broken geodesic in an open simply connected surface $\Sigma$ with nonpositive curvature.
 Assume that
-$|x_i-x_{i-1}|_\Sigma=|\tilde x_i-\tilde x_{i-1}|_{\RR^2}$ and
+$|x_i-x_{i-1}|_\Sigma=|\tilde x_i-\tilde x_{i-1}|_{\mathbb{R}^2}$ and
 $\measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}\ge \measuredangle\hinge{x_{i-1}}{x_i}{x_{i+1}}$
  for each $i$.
-Show that \[|x_1-x_n|_\Sigma\ge |\tilde x_1\z-\tilde x_n|_{\RR^2}.\]
+Show that \[|x_1-x_n|_\Sigma\ge |\tilde x_1\z-\tilde x_n|_{\mathbb{R}^2}.\]
 \end{thm}
 
-For $\Sigma=\RR^2$, the exercise above is the so-called \index{arm lemma}\emph{arm lemma} \cite{sabitov}; 
+For $\Sigma=\mathbb{R}^2$, the exercise above is the so-called \index{arm lemma}\emph{arm lemma} \cite{sabitov}; 
 you can use it without proof.
 
 \parbf{\ref{ex:arm-lemma}.} 
@@ -1652,7 +1652,7 @@ Then $\Sigma$ is a smooth sphere; that is, $\Sigma$ admits a smooth regular para
 Without loss of generality we can assume that the origin lies in the interior of the convex region $R$ bounded by $\Sigma$.
 
 By convexity of $R$, any half-line starting at the origin intersects $\Sigma$ at a single point;
-that is, there is a positive function $\rho\:\mathbb{S}^2\to\RR$ such that $\Sigma$ is formed by points $q=\rho(\xi)\cdot \xi$ for $\xi\in \mathbb{S}^2$.
+that is, there is a positive function $\rho\:\mathbb{S}^2\to\mathbb{R}$ such that $\Sigma$ is formed by points $q=\rho(\xi)\cdot \xi$ for $\xi\in \mathbb{S}^2$.
 
 Let us show that $\rho$ is a smooth function.
 Fix a point $p=(x_p,y_p,z_p)$ on $\Sigma$.
@@ -1828,7 +1828,7 @@ any isolated point of $W_h$ either lies in $\Sigma_h$ together with its neighbor
 Note that for small values of $h$, the surface $\Sigma_h$ is an embedded disc.
 Indeed, if $z=f(x,y)$ is a graph represetation of $\Sigma$ around $p$,
 then $\Sigma_h$ is a graph of $f$ over 
-\[\Delta=\set{(x,y)\in\RR^2}{f(x,y)\le h}.\]
+\[\Delta=\set{(x,y)\in\mathbb{R}^2}{f(x,y)\le h}.\]
 Since the Gauss curvature is positive, the function $f$ is convex and therefore $\Delta$ is convex and bounded by a smooth curve;
 any such set can be parameterized by a disc.
 
@@ -2376,7 +2376,7 @@ Fix a pair or real numbers $(\theta,\rho)$.
 Denote by $w$ the counterclockwise rotation of $u$ by angle $\theta$ and let $\gamma_\theta$ be the unit-speed geodesic that runs from $p$ in the direction $w$.
 Further set $s(\theta,\rho)=\gamma_\theta(\rho)$.
 
-Note that the function $s\:\RR\times \RR\to \Sigma$ could be also defined as 
+Note that the function $s\:\mathbb{R}\times \mathbb{R}\to \Sigma$ could be also defined as 
 \[s(\theta,\rho)=\exp_p\tilde s(\theta,\rho),\]
 where $\tilde s(\theta,\rho)$ denotes the vector in $\T_p$ with polar coordinates $(\theta,\rho)$, if one takes the axis in the direction of $u$.
 By ???, it follows that there is $\epsilon>$ such that $s(\theta,\rho)$ is defined if $|\rho|<\epsilon$;
@@ -2487,7 +2487,7 @@ Furthermore, by approximation, the signed-area formula holds for any reasonable 
 Summarizing, we hope the discussion above convinced the reader that the following statement holds.
 
 A domain $\Delta$ in a surface is called a \index{disc}\emph{disc} (or more precisely \index{topological disc}\emph{topological disc}) if it is bounded by a closed simple curve and can be parameterized by a unit plane disc 
-\[\DD=\set{(x,y)\in\RR^2}{x^2+y^2\le1}.\]
+\[\DD=\set{(x,y)\in\mathbb{R}^2}{x^2+y^2\le1}.\]
 That is, there is a continuous bijection $\DD\to\Delta$.
 
 \begin{thm}{Proposition}\label{prop:spherical-gb}
@@ -2706,7 +2706,7 @@ Furthermore, by approximation, the signed-area formula holds for any reasonable 
 Summarizing, we hope the discussion above convinced the reader that the following statement holds.
 
 A domain $\Delta$ in a surface is called a \index{disc}\emph{disc} (or more precisely \index{topological disc}\emph{topological disc}) if it is bounded by a closed simple curve and can be parameterized by a unit plane disc 
-\[\DD=\set{(x,y)\in\RR^2}{x^2+y^2\le1}.\]
+\[\DD=\set{(x,y)\in\mathbb{R}^2}{x^2+y^2\le1}.\]
 That is there is a continuous bijection $\DD\to\Delta$.
 
 \begin{thm}{Proposition}\label{prop:spherical-gb}
@@ -3084,7 +3084,7 @@ which aren't clockwise nor counterclockwise.
 Those geodesics have no self-intersections.\qeds
 
 \begin{thm}{Exercise}
-Suppose that $f\:\RR^2\to\RR$ is a $\sqrt{3}$-Lipshitz smooth convex function.
+Suppose that $f\:\mathbb{R}^2\to\mathbb{R}$ is a $\sqrt{3}$-Lipshitz smooth convex function.
 Show that any geodesic in the surface defined by the graph $z=f(x,y)$ has no self-intersections.
 \end{thm}
 
@@ -3245,7 +3245,7 @@ The proof of the theorem is built on the following lemmas which are interesting 
 \begin{thm}{Lemma}
 Let $D$ be a closed domain in the $(x,y)$-plane bounded by a closed piecewise smooth simple curve $\gamma$,
 and $f$ a smooth function defined on $D$.
-Let $\Delta$ be the graph $z=f(x,y)$ and $\Delta'$ be another piecewise smooth surface that has the same boundary as $\Delta$ and lies in the cylinder $D\times \RR$.
+Let $\Delta$ be the graph $z=f(x,y)$ and $\Delta'$ be another piecewise smooth surface that has the same boundary as $\Delta$ and lies in the cylinder $D\times \mathbb{R}$.
 Then
 \[\area\Delta'\ge\area \Delta.\]
 Moreover in case of equality, we have $\Delta'=\Delta$.
@@ -3253,14 +3253,14 @@ Moreover in case of equality, we have $\Delta'=\Delta$.
 
 \parit{Proof.}
 Note that $\Delta'$ is oriented.
-Indeed, by ???, the complement of $\Delta'$ in $D\times \RR$ has two components (lower and upper), so we can equip $\Delta'$ with a unit normal vector field $\Norm'$ that points in upper component. 
+Indeed, by ???, the complement of $\Delta'$ in $D\times \mathbb{R}$ has two components (lower and upper), so we can equip $\Delta'$ with a unit normal vector field $\Norm'$ that points in upper component. 
 
 Let us denote by $\Norm(x,y)$ the unit normal vector at the point $(x,y,f(x,y))\in\Delta$ that points up;
 that is, its $z$-coordinate is positive at each point.
-Consider the vector field $\vec u$ on the domain $\RR\times D$ defined by 
+Consider the vector field $\vec u$ on the domain $\mathbb{R}\times D$ defined by 
 $\vec u(x,y,z)\z=\Norm (x,y)$.
 By construction $|\vec u|\equiv 1$ and according to Lemma~\ref{lem:div+H}, $\div \vec u\equiv -H\equiv 0$.
-Therefore $\vec u$ is a calibrating $\Delta$ in $\RR\times D$.
+Therefore $\vec u$ is a calibrating $\Delta$ in $\mathbb{R}\times D$.
 In particular
 \[\begin{aligned}
 \area \Delta&=\flux_{\vec u}\Delta,
@@ -3269,7 +3269,7 @@ In particular
 \end{aligned}
 \eqlbl{area=>=flux}\]
 
-Observe that $\RR\times D$ is contactable???.
+Observe that $\mathbb{R}\times D$ is contactable???.
 By ??? it follows that there is a vector field $\vec v$ such that $\curl \vec v=\vec u$.
 Since $\Delta$ and $\Delta'$ share the boundary, the curl theorem (???), implies that 
 \[\flux_{\vec u}\Delta=\flux_{\vec u}\Delta'.\]
@@ -3371,18 +3371,18 @@ Whence
 
 
 
-Let $f$ be a function on $\RR^3$ and $c$ be a real constant.
-The set $L_c=\set{(x,y,z)\in\RR^3}{f(x,y,z)=c}$ is called \emph{level set} of $f$.
+Let $f$ be a function on $\mathbb{R}^3$ and $c$ be a real constant.
+The set $L_c=\set{(x,y,z)\in\mathbb{R}^3}{f(x,y,z)=c}$ is called \emph{level set} of $f$.
 Recall that if the gradient of $f$ is does not vanish on $L_c$, then $L_c$ is a smooth surface.
 
-Let $\vec v$ be a vector field defined on a set $A\subset \RR^3$.
+Let $\vec v$ be a vector field defined on a set $A\subset \mathbb{R}^3$.
 A vector field $\vec w$ defined on a bigger set $B\supset A$
 is called \emph{extension} of $\vec v$ if $\vec w=\vec v$ at any point in $A$.
 If in addition $\vec v$ is a smooth vector field, than it is called \emph{smooth extension}. 
 
 
 \begin{thm}{Lemma}
-Suppose a smooth surface $\Sigma$ bounds a convex region $K$ in $\RR^3$.
+Suppose a smooth surface $\Sigma$ bounds a convex region $K$ in $\mathbb{R}^3$.
 Denote by $W$ the closed outer region of $\Sigma$; that is $W$ contains $\Sigma$ and all points in the complement of $K$.  
 Then there is a unit vector field $\vec u$ defined on $W$ such that 
 $\div \vec u\ge 0$.
@@ -3557,7 +3557,7 @@ The reader might be able to reinvent the theory by trying to prove that if the m
 
 \parbf{Equidistant surfaces.}
 Assume $\Norm\:\Sigma\to \mathbb{S}^2$ is a Gauss map of a smooth surface $\Sigma$.
-Fix a real number $R$ and consider the map $h_R\:\Sigma\z\to\RR^3$ defined by $h_R\:p\mapsto p+R\cdot\Norm_p$.
+Fix a real number $R$ and consider the map $h_R\:\Sigma\z\to\mathbb{R}^3$ defined by $h_R\:p\mapsto p+R\cdot\Norm_p$.
 The map $h_R$ describe the so-called \emph{equidistant surface};
 it is smooth by definition, but in general it does not have to be regular.
 
@@ -3615,7 +3615,7 @@ the parameters $\set{(x,y)}{f(x,y)<\epsilon}$ coincide with a neighborhood of $p
 Hence the general case follows.\qeds
 
 \parit{Proof assembling.}
-Let $s\:\mathbb{S}^2\z\to\RR^3$ be the parametization of $\Sigma$ provided by Lemma~\ref{lem:gauss-inverse}.
+Let $s\:\mathbb{S}^2\z\to\mathbb{R}^3$ be the parametization of $\Sigma$ provided by Lemma~\ref{lem:gauss-inverse}.
 Then the equidistant surface $\Sigma_R$ can be parametrized by $s_R(u)= s(u)+R\cdot u$ for $u\in\mathbb{S}^2$.
 Rescaling $s_R$ by a  factor of $\tfrac1r$ we get the map $u\mapsto \tfrac1R\cdot s(u)+u$ which converges smoothly to the indentity map on the sphere $\mathbb{S}^2$.
 Therefore $\Sigma_R$ is embedded for sufficiently large $R$.
@@ -4497,7 +4497,7 @@ Denote by $\Gamma$ the graph $z=f(x,y)$.
 Assume contrary; that is, $\Gamma$ lies between two planes $z=\pm C$.
 
 Note $f$ cannot be constant.
-It follows that there is a line $\ell$ in $\RR^3$ with three points $a,b,c$ in the same order such that 
+It follows that there is a line $\ell$ in $\mathbb{R}^3$ with three points $a,b,c$ in the same order such that 
 $a$ and $c$ are above $\Gamma$ and $b$ is below $\Gamma$.
 Without loss of generality we can assume that the $z$-coordinate of $c$ is bigger than $C$.
 
@@ -4558,8 +4558,8 @@ It follows that a plane parallel to $\Pi_t$ is supporting $\Gamma$ along a line.
 
 \begin{thm}{Exercise}\label{ex:saddle-projection}
 Let $\Omega$ is an open convex set in the $(x,y)$-plane and 
-$\Sigma$ be a compact saddle surface in $\RR^3$ with boundary line $\gamma$.
-Denote by $\hat \Sigma$ and $\hat\gamma$ the orthogonal projections of $\Sigma$ and $\gamma$ to the $(x,y)$-plane in $\RR^3$.
+$\Sigma$ be a compact saddle surface in $\mathbb{R}^3$ with boundary line $\gamma$.
+Denote by $\hat \Sigma$ and $\hat\gamma$ the orthogonal projections of $\Sigma$ and $\gamma$ to the $(x,y)$-plane in $\mathbb{R}^3$.
 Assume that $\hat\gamma$ lies outside of $\Omega$.
 Show that each connected component of $\Omega\backslash \hat\Sigma$ is convex. 
 \end{thm}
@@ -4615,7 +4615,7 @@ By \ref{cor:surf-support}, $K(p)_\Sigma\ge0$ --- a contradiction.
 \begin{thm}{Exercise}\label{ex:signed-distance}
 Let $\gamma$ be a simple smooth regular closed plane curve.
 Assume it is parametrized so that the bounded region lies on the left from $\gamma$.
-Given a point $p\in\RR^2$ denote by $f(p)$ the \emph{signed distance} to $\gamma$;
+Given a point $p\in\mathbb{R}^2$ denote by $f(p)$ the \emph{signed distance} to $\gamma$;
 that is, $|f(p)|$ is the distance to $\gamma$ and $f(p)<0$ if $p$ is surrounded by $\gamma$; otherwise $f(p)\ge0$.
 Suppose $\tau,\nu$ denotes the Frenet frame of $\gamma$.
 
@@ -4780,7 +4780,7 @@ it packs two coordinates $(x,y)$ in one complex number $z=x+i\cdot y$.
 \vskip0mm
 \end{wrapfigure}
 
-In particular any vector $w$ in $\RR^2$ can be regarded as a complex number.
+In particular any vector $w$ in $\mathbb{R}^2$ can be regarded as a complex number.
 Note that $i\cdot w$ is the vector obtained from $w$ by the counterclockwise rotation by $\tfrac\pi2$.
 
 }
@@ -4965,7 +4965,7 @@ The Gauss map can be defined (globally) if and only if the surface is orientable
 \section{Tennis ball theorem}
 
 Suppose that a curve $\alpha$ runs on the unit sphere 
-\[\mathbb{S}^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\] 
+\[\mathbb{S}^2=\set{(x,y,z)\in\mathbb{R}^3}{x^2+y^2+z^2=1}.\] 
 Let us denote by $\alpha''(t)^\top$ the projection of vector $\alpha''(t)$ to the tanget plane of the sphere at $\alpha(t)$.
 
 Assume $\alpha$ is a unit-speed curve.
@@ -5044,7 +5044,7 @@ moreover one can choose crossing points $a$, $b$, $c$ and $d$ that appear in the
 
 
 
-The total signed curvature of a smooth unit-speed curve $\alpha\:[a,b]\z\to\RR^2$ can be defined as the integral
+The total signed curvature of a smooth unit-speed curve $\alpha\:[a,b]\z\to\mathbb{R}^2$ can be defined as the integral
 \[\tsc\alpha=\int_{[a,b]}\kappa(t)\cdot dt.\]
 
 It is straightforward to show that for sufficienlty fine partition of closed unit-speed curve $\alpha$ the inscribed polygonal line has the same total signed curvature.
@@ -5054,6 +5054,6 @@ we get that the total signed curvature of any closed simple curve is mutiple of 
 \begin{thm}{Exercise}\label{ex:curvature-of-circle}
 Find a unit-speed parametrization of the circle $\gamma$ or radius $R$ centered at the point $p$;
 it is defined as the set 
-\[\gamma=\set{v\in\RR^2}{|p-v|=R}.\]
+\[\gamma=\set{v\in\mathbb{R}^2}{|p-v|=R}.\]
 Show that the signed curvature of this circle is $\pm \tfrac1R$.
 \end{thm}

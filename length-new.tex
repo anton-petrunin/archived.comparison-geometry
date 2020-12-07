@@ -29,15 +29,15 @@ If a curve is parameterized by an open or semi-open interval, then its length is
 
 
 \begin{thm}{Exercise}\label{ex:integral-length-0}
-Suppose that curve $\gamma_1\:[a_1,b_1] \to\RR^3$ is a reparametrization of $\gamma_2\:[a_2,b_2] \to\RR^3$. 
+Suppose that curve $\gamma_1\:[a_1,b_1] \to\mathbb{R}^3$ is a reparametrization of $\gamma_2\:[a_2,b_2] \to\mathbb{R}^3$. 
 \[\length \gamma_1 = \length \gamma_2.\]
 
 \end{thm}
 
 
 \begin{thm}{Exercise}\label{ex:length-image}
-Let $\alpha\:[0,1]\to\RR^3$ be a simple path.
-Suppose a path $\beta\:[0,1]\to\RR^3$ has the same image as $\alpha$;
+Let $\alpha\:[0,1]\to\mathbb{R}^3$ be a simple path.
+Suppose a path $\beta\:[0,1]\to\mathbb{R}^3$ has the same image as $\alpha$;
 that is, $\beta([0,1])=\alpha([0,1])$.
 Show that 
 \[\length \beta\ge \length \alpha.\]
@@ -50,7 +50,7 @@ Show that
 \includegraphics{mppics/pic-224}
 \end{wrapfigure}
 
-Suppose $\gamma\:[a,b]\to \RR^3$ is a parametrized space curve.
+Suppose $\gamma\:[a,b]\to \mathbb{R}^3$ is a parametrized space curve.
 For a partition $a=t_0 < t_1 < \z\cdots < t_k=b$, set $p_i=\gamma(t_i)$.
 Then the polygonal line $p_0\dots p_k$ is said to be \index{inscribed polygonal line}\emph{inscribed} in $\gamma$.
 If $\gamma$ is closed, then $p_0=p_k$, so the inscribed polygonal line is also closed.
@@ -59,7 +59,7 @@ Note that the length of a space curve $\gamma$ can be defined as the least upper
 
 
 \begin{thm}{Exercise}\label{ex:integral-length}
-Assume $\gamma\:[a,b]\to\RR^3$ is a smooth curve.
+Assume $\gamma\:[a,b]\to\mathbb{R}^3$ is a smooth curve.
 Show that
 \vskip1mm
 \begin{minipage}{.48\textwidth}
@@ -87,10 +87,10 @@ Conclude that
 
 \begin{thm}{Advanced exercises}\label{adex:integral-length}
 
-\begin{subthm}{adex:integral-length:a}Show that the formula \ref{eq:length} holds for any Lipschitz curve $\gamma\:[a,b]\z\to\RR^3$.
+\begin{subthm}{adex:integral-length:a}Show that the formula \ref{eq:length} holds for any Lipschitz curve $\gamma\:[a,b]\z\to\mathbb{R}^3$.
 \end{subthm}
 
-\begin{subthm}{adex:integral-length:b} Construct a non-constant curve $\gamma\:[a,b]\to\RR^3$ such that $\gamma'(t)=0$ almost everywhere.
+\begin{subthm}{adex:integral-length:b} Construct a non-constant curve $\gamma\:[a,b]\to\mathbb{R}^3$ such that $\gamma'(t)=0$ almost everywhere.
 (In particular, the formula \ref{eq:length} does not hold for~$\gamma$ despite that both sides are defined.).
 \end{subthm}
 %I think constructing a "simple curve with derivative 0 a.e." is much harder than a "non-constant curve with derivative 0 a.e." and any of them work as counterexample.
@@ -246,7 +246,7 @@ Any convex closed plane curve is rectifiable.
 
 \parit{Proof.}
 Any closed curve is bounded.
-Indeed, the curve can be described as an image of a loop $\alpha\:[0,1]\to\RR^2$, $\alpha(t)=(x(t),y(t))$.
+Indeed, the curve can be described as an image of a loop $\alpha\:[0,1]\to\mathbb{R}^2$, $\alpha(t)=(x(t),y(t))$.
 The coordinate functions $x(t)$ and $y(t)$ are continuous functions defined on $[0,1]$.
 This implies that the absolute values of both functions are bounded by some constant $C$.
 Therefore, $\alpha$ lies in the square defined by the inequalities $|x|\le C$ and $|y|\le C$.
@@ -289,7 +289,7 @@ Note that the magnitude of any plane vector ${\vec w}$ is proportional to the av
 \[|{\vec w}|=k\cdot \overline{|{\vec w}_{\vec u}|}\]
 for some $k \in \mathbb{R}$.
 The exact value of $k$ can be found by integration\footnote{It is the average value of $|\cos|$.}, but we will find it in a different way. 
-Note that for a smooth plane curve $\gamma\:[a,b]\to\RR^2$,
+Note that for a smooth plane curve $\gamma\:[a,b]\to\mathbb{R}^2$,
 \[\gamma_{\vec u}'(t) = (\gamma'(t))_{\vec u} \text{ and }     | \gamma'_{\vec u} (t) |  =  | \langle \vec u , \gamma' (t) \rangle |     \]
 for any $t \in [a,b]$. Then, according to Exercise~\ref{ex:integral-length},
 \begin{align*}
@@ -452,9 +452,9 @@ the induced length distance between points $x$ and $y$ in the subspace $A$ will 
 that is, $\dist{x}{y}A$ is the greatest lower bound of the lengths of paths in $A$ from $x$ to $y$.\index{10aaa@$\lvert x-y\rvert_A$}
 
 \begin{thm}{Exercise}\label{ex:intrinsic-convex}
-Let $A\subset \RR^3$ be a closed subset.
+Let $A\subset \mathbb{R}^3$ be a closed subset.
 Show that $A$ is convex if and only if
-\[\dist{x}{y}A=\dist{x}{y}{\RR^3}\]
+\[\dist{x}{y}A=\dist{x}{y}{\mathbb{R}^3}\]
 for any $x,y\in A$
 \end{thm}
 
@@ -462,7 +462,7 @@ for any $x,y\in A$
 \section{Spherical curves}
 
 Let us denote by $\mathbb{S}^2$ the unit sphere in the space; that is,
-\[\mathbb{S}^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
+\[\mathbb{S}^2=\set{(x,y,z)\in\mathbb{R}^3}{x^2+y^2+z^2=1}.\]
 A space curve $\gamma$ is called \index{spherical curve}\emph{spherical} if it runs in the unit sphere;
 that is, $|\gamma(t)|=1$, or equivalently, $\gamma(t)\in\mathbb{S}^2$  for any $t$.
 

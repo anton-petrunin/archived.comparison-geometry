@@ -144,7 +144,7 @@ Show that the Gauss curvature of any convex smooth surface is nonnegative at eac
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:convex-lagunov}
-Assume $R$ is a convex body in $\RR^3$ bounded by a surface with principal curvatures at most 1.
+Assume $R$ is a convex body in $\mathbb{R}^3$ bounded by a surface with principal curvatures at most 1.
 Show that $R$ contains a unit ball.
 \end{thm}
 
@@ -267,11 +267,11 @@ Assume a convex compact region $R$ contains the origin in its interior and is bo
 
 \begin{subthm}{ex:convex-proper-sphere:single}
 Show that any half-line that starts at the origin intersects $\Sigma$ at a single point;
-that is, there is a positive function $\rho\:\mathbb{S}^2\z\to\RR$ such that $\Sigma$ consists of the points $q\z=\rho(\xi)\cdot \xi$ for $\xi\in \mathbb{S}^2$.
+that is, there is a positive function $\rho\:\mathbb{S}^2\z\to\mathbb{R}$ such that $\Sigma$ consists of the points $q\z=\rho(\xi)\cdot \xi$ for $\xi\in \mathbb{S}^2$.
 \end{subthm}
 
 \begin{subthm}{ex:convex-proper-sphere:smooth}
-Show that $\rho\:\mathbb{S}^2\to\RR$ is a smooth function.
+Show that $\rho\:\mathbb{S}^2\to\mathbb{R}$ is a smooth function.
 \end{subthm}
 
 \begin{subthm}{ex:convex-proper-sphere:regular}
@@ -330,7 +330,7 @@ Prove the last statement in \ref{thm:convex-open}.
 
 \begin{thm}{Exercise}\label{ex:open+convex=plane}
 Show that any open surface $\Sigma$ with positive Gauss curvature is a topological plane;
-that is, there is an embedding $\RR^2\to\RR^3$ with image $\Sigma$.
+that is, there is an embedding $\mathbb{R}^2\to\mathbb{R}^3$ with image $\Sigma$.
 
 Try to show that $\Sigma$ is a smooth plane; that is, the embedding $f$ can be made smooth and regular.
 \end{thm}
@@ -376,7 +376,7 @@ Note that in this case the tangent plane cannot support the surface even locally
 
 
 \begin{thm}{Exercise}\label{ex:convex-revolution}
-Let $f\:\RR\to\RR$ be a smooth positive function.
+Let $f\:\mathbb{R}\to\mathbb{R}$ be a smooth positive function.
 Show that the surface of revolution of the graph $y\z=f(x)$ around the $x$-axis
  is saddle if and only if $f$ is convex; that is, if $f''(x)\ge0$ for any $x$.
 \end{thm}
@@ -388,7 +388,7 @@ Show that any ruled surface $\Sigma$ is saddle.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:saddle-convex}
-Let $\Sigma$ be an open strictly saddle surface and $f\:\RR^3\z\to\RR$ be a smooth convex function.
+Let $\Sigma$ be an open strictly saddle surface and $f\:\mathbb{R}^3\z\to\mathbb{R}$ be a smooth convex function.
 Show that the restriction of $f$ to $\Sigma$ does not have a point of strict local maximum.
 \end{thm}
 
@@ -499,7 +499,7 @@ In particular, $F_\epsilon$ is a topological disc.
 
 Note that $(x,y)\mapsto (x,y,f(x,y))$ is a homeomorphism from $F_\epsilon$
 to
-\[\Delta_\epsilon=\set{(x,y,f(x,y))\in \RR^3}{f(x,y)\le \epsilon};\]
+\[\Delta_\epsilon=\set{(x,y,f(x,y))\in \mathbb{R}^3}{f(x,y)\le \epsilon};\]
 so $\Delta_\epsilon$ is a topological disc for any sufficiently small $\epsilon>0$.
 Note that the boundary line of $\Delta_\epsilon$ lies on the plane $z=\epsilon$ and the entire disc lies below it;
 that is, $\Delta_\epsilon$ is a hat of $\Sigma$.
@@ -510,14 +510,14 @@ This can be used to prove a slightly stronger version of \ref{prop:hat};
 namely in the definition of hats one can assume that the disc is smooth.
 
 \begin{thm}{Exercise}\label{ex:disc-hat}
-Let $f\:\RR^2\to\RR$ be a smooth strictly convex function with minimum at the origin.
+Let $f\:\mathbb{R}^2\to\mathbb{R}$ be a smooth strictly convex function with minimum at the origin.
 Show that the set $F_\epsilon$ in the graph $z=f(x,y)$ defined by the inequality $f(x,y)\le \epsilon$ is a smooth disc for any $\epsilon>0$;
 that is, there is a diffeomorphism 
-$\DD\to F_\epsilon$, where $\DD\z=\set{(x,y)\in\RR^2}{x^2+y^2\le 1}$ is the unit disc.
+$\DD\to F_\epsilon$, where $\DD\z=\set{(x,y)\in\mathbb{R}^2}{x^2+y^2\le 1}$ is the unit disc.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:saddle-linear}
-Let $L\:\RR^3\to\RR^3$ be an affine transformation; that is, $L$ is an invertible map $\RR^3\to\RR^3$ that sends any plane to a plane. 
+Let $L\:\mathbb{R}^3\to\mathbb{R}^3$ be an affine transformation; that is, $L$ is an invertible map $\mathbb{R}^3\to\mathbb{R}^3$ that sends any plane to a plane. 
 Show that for any saddle surface $\Sigma$ the image $L(\Sigma)$ is also a saddle surface.
 \end{thm}
 
@@ -527,11 +527,11 @@ Show that for any saddle surface $\Sigma$ the image $L(\Sigma)$ is also a saddle
 The following theorem was proved by Sergei Bernstein \cite{bernstein}.
 
 \begin{thm}{Theorem}\label{thm:bernshtein}
-Let $f\:\RR^2\to\RR$ be a smooth function.
-Assume its graph $z=f(x,y)$ is a strictly saddle surface in $\RR^3$.
+Let $f\:\mathbb{R}^2\to\mathbb{R}$ be a smooth function.
+Assume its graph $z=f(x,y)$ is a strictly saddle surface in $\mathbb{R}^3$.
 Then $f$ is not bounded;
 that is, there is no constant $C$ such that 
-$|f(x,y)|\le C$ for any $(x,y)\in\RR^2$.
+$|f(x,y)|\le C$ for any $(x,y)\in\mathbb{R}^2$.
 \end{thm}
 
 The theorem states that a saddle graph cannot lie between two parallel horizontal planes;
@@ -557,7 +557,7 @@ The following exercise gives a condition that guarantees that a saddle surface i
 it can be used in combination with Bernshtein's theorem.
 
 \begin{thm}{Advanced exercise}\label{ex:saddle-graph}
-Let $\Sigma$ be an open smooth strictly saddle disk in $\RR^3$.
+Let $\Sigma$ be an open smooth strictly saddle disk in $\mathbb{R}^3$.
 Assume there is a compact subset $K\subset \Sigma$ such that the complement $\Sigma\backslash K$ is the graph $z=f(x,y)$ of a smooth function defined in an open domain of the $(x,y)$-plane.
 Show that the surface $\Sigma$ is a graph.
 \end{thm}
@@ -576,14 +576,14 @@ Note that by \ref{ex:saddle-linear}, the statement can be reformulated in the fo
 \emph{There is no proper strictly saddle smooth surface 
 with  boundary line in the $(x,y)$-plane
 and contained in a region of the form:}
-\[R=\set{(x,y,z)\in\RR^3}{0\le z\le r, 0\le y\le r}.\]
+\[R=\set{(x,y,z)\in\mathbb{R}^3}{0\le z\le r, 0\le y\le r}.\]
 Let us prove this statement.
 
 Assume the contrary, let $\Sigma$ be such a surface.
 Consider the projection $\hat \Sigma$ of $\Sigma$ to the $(x,z)$-plane.
 It lies in the upper half-plane and below the line $z=r$.
 
-Consider the open upper half-plane $H=\set{(x,z)\in \RR^2}{z> 0}$. 
+Consider the open upper half-plane $H=\set{(x,z)\in \mathbb{R}^2}{z> 0}$. 
 Let $\Theta$ be the connected component of the complement $H\backslash \hat \Sigma$ that contains all the points above the line $z=r$.
 
 Note that $\Theta$ is convex.

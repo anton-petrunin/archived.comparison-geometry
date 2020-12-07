@@ -71,8 +71,8 @@ They can be written in matrix form as:
 \]
 
 \begin{thm}{Exercise}\label{ex:bike}
-Let $\gamma_0\:[a,b]\to\RR^2$ be a smooth regular curve and $\tan$ its tangent indicatrix.
-Consider another curve $\gamma_1\:[a,b]\to\RR^2$ defined by $\gamma_1(t)=\gamma_0(t)+\tan(t)$.
+Let $\gamma_0\:[a,b]\to\mathbb{R}^2$ be a smooth regular curve and $\tan$ its tangent indicatrix.
+Consider another curve $\gamma_1\:[a,b]\to\mathbb{R}^2$ defined by $\gamma_1(t)=\gamma_0(t)+\tan(t)$.
 Show that
 \[\length\gamma_0\le \length\gamma_1.\]
 
@@ -86,7 +86,7 @@ For more on the geometry of bicycle tracks, see the survey of Robert Foote, Mark
 
 \begin{thm}{Theorem}\label{thm:fund-curves-2D}
 Let $\skur(s)$ be a smooth real valued function defined on a real interval $\mathbb{I}$.
-Then there is a smooth unit-speed curve $\gamma\:\mathbb{I}\to\RR^2$ with signed curvature $\skur(s)$.
+Then there is a smooth unit-speed curve $\gamma\:\mathbb{I}\to\mathbb{R}^2$ with signed curvature $\skur(s)$.
 Moreover, $\gamma$ is uniquely defined up to a rigid motion of the plane.
 \end{thm}
 
@@ -145,7 +145,7 @@ Note that from the proof of the theorem we obtain the following corollary:
 
 
 \begin{thm}{Corollary}\label{cor:2D-angle}
-Let $\gamma\:\mathbb{I}\to\RR^2$ be a smooth unit-speed curve and $s_0\z\in \mathbb{I}$.
+Let $\gamma\:\mathbb{I}\to\mathbb{R}^2$ be a smooth unit-speed curve and $s_0\z\in \mathbb{I}$.
 Denote by $\skur$ the signed curvature of $\gamma$.
 Assume an oriented $(x,y)$-coordinate system is chosen in such a way that $\gamma(s_0)$ is the origin and $\gamma'(s_0)$ points in the direction of the $x$-axis.
 Then 
@@ -157,7 +157,7 @@ for all $s$, where
 
 \section{Total signed curvature}
 
-Let $\gamma\:\mathbb{I}\to\RR^2$ be a smooth unit-speed plane curve.
+Let $\gamma\:\mathbb{I}\to\mathbb{R}^2$ be a smooth unit-speed plane curve.
 The \index{total signed curvature}\emph{total signed curvature} of $\gamma$, denoted by $\tgc\gamma$, is defined as the integral
 \[\tgc\gamma
 =
@@ -200,11 +200,11 @@ A trochoid is a curve traced out by a point fixed to a wheel as it rolls along a
 
 \end{lpic}
 \end{figure}
-A family of \index{trochoid}\emph{trochoids} $\gamma_a\:[0,2\cdot\pi]\to \RR^2$ (see the picture) can be parametrized as
+A family of \index{trochoid}\emph{trochoids} $\gamma_a\:[0,2\cdot\pi]\to \mathbb{R}^2$ (see the picture) can be parametrized as
 \[\gamma_a(t)=(t+a\cdot \sin t, a\cdot \cos t).\]
 \begin{enumerate}[(a)]
-\item Given $a\in \RR$, find $\tgc{\gamma_a}$ if it is defined.
-\item Given $a\in \RR$, find $\tc{\gamma_a}$.
+\item Given $a\in \mathbb{R}$, find $\tgc{\gamma_a}$ if it is defined.
+\item Given $a\in \mathbb{R}$, find $\tc{\gamma_a}$.
 \end{enumerate}
 \end{thm}
 
@@ -309,7 +309,7 @@ Draw a smooth regular closed plane curve $\gamma$ such that
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:length'}
-Let $\gamma\:[a,b]\to\RR$ be a smooth regular plane curve with Frenet frame $\tan,\norm$.
+Let $\gamma\:[a,b]\to\mathbb{R}$ be a smooth regular plane curve with Frenet frame $\tan,\norm$.
 Given a real parameter $\ell$, consider
 the curve $\gamma_\ell(t)\z=\gamma(t)+\ell\cdot\norm(t)$; it is called a {}\emph{parallel curve of $\gamma$ at signed distance~$\ell$}.
 
@@ -336,7 +336,7 @@ Describe an example showing that formula \ref{eq:length(parallel-curve)} does no
 \begin{thm}{Proposition}\label{prop:circline}
 Given a point $p$,
 a unit vector $\tan$ 
-and a real number $\skur$, there is a unique smooth unit-speed curve $\sigma\:\RR\to\RR^2$ 
+and a real number $\skur$, there is a unique smooth unit-speed curve $\sigma\:\mathbb{R}\to\mathbb{R}^2$ 
 that starts at $p$ in the direction of $\tan$ and has constant signed curvature $\skur$.
 
 Moreover, if $\skur=0$, then it is a line $\sigma(s)=p+s\cdot \tan$;

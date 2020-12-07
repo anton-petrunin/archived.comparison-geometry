@@ -17,7 +17,7 @@ Physically speaking, the following lemma follows from the law of conservation of
 Let $\gamma$ be a geodesic in a smooth surface $\Sigma$. 
 Then  $|\gamma'|$ is constant.
 
-Moreover, for any $\lambda\in\RR$, the curve 
+Moreover, for any $\lambda\in\mathbb{R}$, the curve 
 $\gamma_{\lambda}\df \gamma (\lambda\cdot t)$ is a geodesic as well. 
 In other words, any geodesic has constant speed, and multiplying its parameter by a constant yields another geodesic.
 \end{thm}
@@ -81,7 +81,7 @@ Moreover
 \begin{subthm}{prop:geod-existence:smooth} the map $(p,{\vec v},t)\mapsto \gamma(t)$ is smooth in its domain of definition.
 \end{subthm}
 
-\begin{subthm}{prop:geod-existence:whole} if $\Sigma$ is proper, then $\mathbb{I}=\RR$; that is, the maximal interval is the entire real line.
+\begin{subthm}{prop:geod-existence:whole} if $\Sigma$ is proper, then $\mathbb{I}=\mathbb{R}$; that is, the maximal interval is the entire real line.
 \end{subthm}
 
 \end{thm}
@@ -97,7 +97,7 @@ The latter statement is a part of the \index{Hopf--Rinow theorem}\emph{Hopf--Rin
 The proof of this proposition uses the theorem on existence of solutions for an initial value problem (\ref{thm:ODE}). The following lemma shows that the condition of being a geodesic can be stated as a second order ordinary differential equation.
 
 \begin{thm}{Lemma}\label{lem:geodesic=2nd-order}
-Let $f$ be  a smooth function defined on an open domain in $\RR^2$.
+Let $f$ be  a smooth function defined on an open domain in $\mathbb{R}^2$.
 A smooth curve $t\mapsto \gamma(t)=(x(t),y(t),z(t))$ is a geodesic in the graph $z=f(x,y)$ if and only if $z(t)=f(x(t),y(t))$ for any $t$ and the functions $t\mapsto x(t)$ and $t\mapsto y(t)$
 satisfy a differential equation
 \[
@@ -183,7 +183,7 @@ in particular, $\mathbb{I}_1=\mathbb{I}$.
 Part \ref{SHORT.prop:geod-existence:smooth} follows since the solution of the initial value problem depends smoothly on the initial data (\ref{thm:ODE}).
 
 Assume \ref{SHORT.prop:geod-existence:whole} does not hold;
-that is, the maximal interval $\mathbb{I}$ is a proper subset of the real line $\RR$.
+that is, the maximal interval $\mathbb{I}$ is a proper subset of the real line $\mathbb{R}$.
 Without loss of generality, we may assume that $b=\sup\mathbb{I}<\infty$.
 (If not, switch the direction of $\gamma$.)
 
@@ -202,8 +202,8 @@ Let $\Sigma$ be a smooth torus of revolution; that is,
 a smooth surface of revolution with closed generatrix.
 Show that any closed geodesic on $\Sigma$ is noncontractible.
 
-(In other words, if $s\:\RR^2\to \Sigma$ is the natural bi-periodic parametrization of $\Sigma$, then
-there is no closed curve $\gamma$ in $\RR^2$ such that $s\circ\gamma$ is a geodesic.)
+(In other words, if $s\:\mathbb{R}^2\to \Sigma$ is the natural bi-periodic parametrization of $\Sigma$, then
+there is no closed curve $\gamma$ in $\mathbb{R}^2$ such that $s\circ\gamma$ is a geodesic.)
 \end{thm}
 
 
@@ -384,7 +384,7 @@ In other words, if you travel along $\alpha$, then you go from one side  of $\Pi
 
 \begin{thm}{Advanced exercise}\label{ex:milka}
 Let $\Sigma$ be a smooth closed strictly convex surface 
-in $\RR^3$ 
+in $\mathbb{R}^3$ 
 and $\gamma\:[0,\ell]\z\to \Sigma$ be a unit-speed minimizing geodesic.
 Set $p\z=\gamma(0)$, $q=\gamma(\ell)$ and 
 $$p^t=\gamma(t)-t\cdot\gamma'(t),$$ 

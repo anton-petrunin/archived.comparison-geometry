@@ -48,8 +48,8 @@ However the plane (as well as the space) admits many other metrics, for example 
 \begin{thm}{Exercise}\label{ex:ell-infty}
 Consider the function
 $$\Dist(p,q)=|x_1-x_2|+|y_1-y_2|,$$
-where $p=(x_1,y_1)$ and $q=(x_2,y_2)$ are points in the coordinate plane $\RR^2$.
-Show that $\Dist$ is a metric on $\RR^2$.
+where $p=(x_1,y_1)$ and $q=(x_2,y_2)$ are points in the coordinate plane $\mathbb{R}^2$.
+Show that $\Dist$ is a metric on $\mathbb{R}^2$.
 \end{thm}
 
 Another example: the \index{discrete space}\emph{discrete space} --- an arbitrary nonempty set $\spc{X}$ with the metric defined as $\dist{x}{y}{\spc{X}}=0$ if $x=y$ and $\dist{x}{y}{\spc{X}}=1$ otherwise.
@@ -276,7 +276,7 @@ it is the minimal convex set containing the set $X$.
 We will use the following corollary of the so-called \index{hyperplane separation theorem}\emph{hyperplane separation theorem}:
 
 \begin{thm}{Lemma}\label{lem:separation}
-Let $K\subset \RR^3$ be a closed convex set.
+Let $K\subset \mathbb{R}^3$ be a closed convex set.
 Then for any point $p\notin K$ there is a plane $\Pi$ that separates $K$ from $p$;
 that is, $K$ and $p$ lie on opposite open half-spaces separated by $\Pi$.
 \end{thm}
@@ -346,7 +346,7 @@ The following theorem makes it possible to extend a number of results about smoo
 Recall that {}\emph{almost all} means all values, with the possible exceptions in a set of zero {}\emph{Lebesgue measure}.
 
 \begin{thm}{Rademacher's theorem}\label{thm:rademacher}
-Let $f\:[a,b]\to\RR$ be a Lipschitz function.
+Let $f\:[a,b]\to\mathbb{R}$ be a Lipschitz function.
 Then the derivative $f'$ of $f$ is a bounded measurable function defined almost everywhere in $[a,b]$ and it satisfies the fundamental theorem of calculus; that is, the following identity 
 \[f(b)-f(a)=\int_a^b f'(x)\cdot dx,\]
 holds if the integral is understood in the sense of Lebesgue.
@@ -355,8 +355,8 @@ holds if the integral is understood in the sense of Lebesgue.
 The following theorem makes it possible to extend many statements about continuous function to measurable functions.
 
 \begin{thm}{Lusin's theorem}\label{thm:lusin}
-Let $\phi\:[a,b]\to \RR$ be a measurable function.
-Then for any $\epsilon>0$, there is a continuous function $\psi_\epsilon\:[a,b]\to \RR$ that coincides with $\phi$ outside of a set of measure at most $\epsilon$.
+Let $\phi\:[a,b]\to \mathbb{R}$ be a measurable function.
+Then for any $\epsilon>0$, there is a continuous function $\psi_\epsilon\:[a,b]\to \mathbb{R}$ that coincides with $\phi$ outside of a set of measure at most $\epsilon$.
 Moreover, if $\phi$ is bounded above and/or below by some constants, then we may assume that so is $\psi_\epsilon$.  
 \end{thm}
 
@@ -462,12 +462,12 @@ The following material is discussed in any course of multivariable calculus, the
 
 \subsection*{Regular value}
 
-A map $\bm{f}\:\RR^m\to\RR^n$ can be thought of as an array of functions 
-\[f_1,\dots,f_n\:\RR^m\to \RR.\]
+A map $\bm{f}\:\mathbb{R}^m\to\mathbb{R}^n$ can be thought of as an array of functions 
+\[f_1,\dots,f_n\:\mathbb{R}^m\to \mathbb{R}.\]
 The map $\bm{f}$ is called \index{smooth!map}\emph{smooth} if each function $f_i$ is smooth;
 that is, all partial derivatives of $f_i$ are defined in the domain of definition of $\bm{f}$.
 
-The Jacobian matrix of $\bm{f}$ at $\bm{x}\in\RR^m$ is defined as
+The Jacobian matrix of $\bm{f}$ at $\bm{x}\in\mathbb{R}^m$ is defined as
 \[\Jac_{\bm{x}}\bm{f}=
 \begin{pmatrix}
 \dfrac{\partial f_1}{\partial x_1} & \cdots & \dfrac{\partial f_1}{\partial x_m}\\
@@ -475,23 +475,23 @@ The Jacobian matrix of $\bm{f}$ at $\bm{x}\in\RR^m$ is defined as
 \dfrac{\partial f_n}{\partial x_1} & \cdots & \dfrac{\partial f_n}{\partial x_m} \end{pmatrix};\]\index{10j@$\Jac$}
 we assume that the right hand side is evaluated at $\bm{x}=(x_1,\dots,x_m)$.
 
-If the Jacobian matrix defines a surjective linear map $\RR^m\to\RR^n$ (that is, if $\rank(\Jac_{\bm{x}}\bm{f})=n$) then we say that 
+If the Jacobian matrix defines a surjective linear map $\mathbb{R}^m\to\mathbb{R}^n$ (that is, if $\rank(\Jac_{\bm{x}}\bm{f})=n$) then we say that 
 $\bm{x}$ is a \index{regular!point}\emph{regular point} of~$\bm{f}$.
 
-If for some $\bm{y}\in \RR^n$ each point $\bm{x}$ such that $\bm{f}(\bm{x})=\bm{y}$ is regular,
+If for some $\bm{y}\in \mathbb{R}^n$ each point $\bm{x}$ such that $\bm{f}(\bm{x})=\bm{y}$ is regular,
 then we say that $\bm{y}$ is a \index{regular!value}\emph{regular value} of $\bm{f}$.
 The following lemma states that {}\emph{most} values of a smooth map are regular.
 
 \begin{thm}{Sard's lemma}\label{lem:sard}
-Given a smooth map $\bm{f}\colon \Omega \z\to \RR^n$ defined on an open set $\Omega\subset \RR^m$, almost all values in $\RR^n$ are regular.
+Given a smooth map $\bm{f}\colon \Omega \z\to \mathbb{R}^n$ defined on an open set $\Omega\subset \mathbb{R}^m$, almost all values in $\mathbb{R}^n$ are regular.
 \end{thm}
 
 The words \index{almost all}\emph{almost all} mean all values, with the possible exceptions belonging to a set with vanishing {}\emph{Lebesgue measure}.
-In particular if one chooses a random value equidistributed in an arbitrarily small ball $B\z\subset \RR^n$, then it is a regular value of $\bm{f}$ with probability 1.
+In particular if one chooses a random value equidistributed in an arbitrarily small ball $B\z\subset \mathbb{R}^n$, then it is a regular value of $\bm{f}$ with probability 1.
 
 Note that if $m<n$, then any point $\bm{y}=\bm{f}(\bm{x})$ is not a regular value of $\bm{f}$.
 Therefore the only regular value of $\bm{f}$ are the points in the complement of the image $\Im \bm{f}$.
-In this case, the theorem states that almost all points in $\RR^n$, do {}\emph{not} belong to $\Im \bm{f}$.
+In this case, the theorem states that almost all points in $\mathbb{R}^n$, do {}\emph{not} belong to $\Im \bm{f}$.
 
 
 \subsection*{Inverse function theorem}
@@ -507,12 +507,12 @@ Both theorems reduce the existence of a map satisfying a certain equation to a q
 We use these two theorems only for $n\le 3$.
 
 \begin{thm}{Inverse function theorem}\label{thm:inverse}
-Let $\bm{f}=(f_1,\dots,f_n)\:\Omega\to\RR^n$ be a smooth map
-defined on an open set $\Omega\subset \RR^n$.
+Let $\bm{f}=(f_1,\dots,f_n)\:\Omega\to\mathbb{R}^n$ be a smooth map
+defined on an open set $\Omega\subset \mathbb{R}^n$.
 Assume that the Jacobian matrix
 $\Jac_{\bm{x}}\bm{f}$
 is invertible at some point $\bm{x}\in \Omega$.
-Then there is a smooth map $\bm{h}\:\Phi\to\RR^n$ defined in an open neighborhood $\Phi$ of ${\bm{y}}\z=\bm{f}(\bm{x})$ that is a {}\emph{local inverse of $\bm{f}$ at $\bm{x}$};
+Then there is a smooth map $\bm{h}\:\Phi\to\mathbb{R}^n$ defined in an open neighborhood $\Phi$ of ${\bm{y}}\z=\bm{f}(\bm{x})$ that is a {}\emph{local inverse of $\bm{f}$ at $\bm{x}$};
 that is, there is a neighborhood $\Psi\ni \bm{x}$ such that
 $\bm{f}$ defines a bijection $\Psi\leftrightarrow \Phi$ and
 $\bm{h} \circ \bm{f}$ is an identity map on $\Psi$.
@@ -521,9 +521,9 @@ Moreover if an $\Omega$ contains an $\epsilon$-neighborhood of $\bm{x}$, and the
 \end{thm}
 
 \begin{thm}{Implicit function theorem}\label{thm:imlicit}
-Let $\bm{f}=(f_1,\dots,f_n)\:\Omega\to\RR^n$ be a smooth map, defined on a open subset $\Omega\subset\RR^{n+m}$, where
+Let $\bm{f}=(f_1,\dots,f_n)\:\Omega\to\mathbb{R}^n$ be a smooth map, defined on a open subset $\Omega\subset\mathbb{R}^{n+m}$, where
 $m,n\z\ge 1$.
-Let us consider $\RR^{n+m}$ as a product space $\RR^n\times \RR^m$ with coordinates 
+Let us consider $\mathbb{R}^{n+m}$ as a product space $\mathbb{R}^n\times \mathbb{R}^m$ with coordinates 
 $x_1,\dots,x_n,y_1,\dots,y_m$.
 Consider the following matrix 
 \[
@@ -534,7 +534,7 @@ M=\begin{pmatrix}
 formed by the first $n$ columns of the Jacobian matrix.
 Assume $M$ is invertible at some point $\bm{x}=(x_1,\dots,x_n,y_1,\dots y_m)$ in the domain of definition of $\bm{f}$ and $\bm{f}(\bm{x})=0$.
 Then there is a neighborhood $\Psi\ni \bm{x}$
-and a smooth function $\bm{h}\:\RR^m\to\RR^n$ defined in a neighborhood $\Phi\ni 0$ such that
+and a smooth function $\bm{h}\:\mathbb{R}^m\to\mathbb{R}^n$ defined in a neighborhood $\Phi\ni 0$ such that
 for any $(x_1,\dots,x_n,y_1,\dots y_m)\in \Omega$, the equality
 \[\bm{f}(x_1,\dots,x_n,y_1,\dots y_m)=0\]
 holds if and only if 
@@ -544,7 +544,7 @@ holds if and only if
 
 \subsection*{Multiple integral}
 
-Let $\bm{f}\:\RR^n\to\RR^n$ is a smooth map (maybe partially defined).
+Let $\bm{f}\:\mathbb{R}^n\to\mathbb{R}^n$ is a smooth map (maybe partially defined).
 
 \[\jac_{\bm{x}}\bm{f}\df|\det[\Jac_{\bm{x}}\bm{f}]|;\index{10j@$\jac$}\]
 that is, $\jac_{\bm{x}}\bm{f}$ is the absolute value of the determinant of the Jacobian matrix of $\bm{f}$ at $\bm{x}$.
@@ -558,8 +558,8 @@ This class of sets includes virtually all sets that naturally appear in geometry
 
 
 \begin{thm}{Theorem}\label{thm:mult-substitution} %???do we need measure here???
-Let $h\:K\to\RR$ be a continuous function on a Borel subset $K\subset \RR^n$.
-Assume $\bm{f}\:K\to \RR^n$ is an injective smooth map.
+Let $h\:K\to\mathbb{R}$ be a continuous function on a Borel subset $K\subset \mathbb{R}^n$.
+Assume $\bm{f}\:K\to \mathbb{R}^n$ is an injective smooth map.
 Then 
 \[\idotsint_{\bm{x}\in K} h(\bm{x})\cdot \jac_{\bm{x}}\bm{f}
 =
@@ -571,22 +571,22 @@ Then
 
 The following statements will be used only for $n\le 3$.
 
-Let $f\:\RR^n\to \RR$ be a smooth function (maybe partially defined).
-Choose a vector $\vec w\in \RR^n$.
-Given a point $p\in\RR^n$ consider the function $\phi(t)=f(p+t\cdot \vec w)$.
+Let $f\:\mathbb{R}^n\to \mathbb{R}$ be a smooth function (maybe partially defined).
+Choose a vector $\vec w\in \mathbb{R}^n$.
+Given a point $p\in\mathbb{R}^n$ consider the function $\phi(t)=f(p+t\cdot \vec w)$.
 Then the \index{directional derivative}\emph{directional derivative} $(D_{\vec w}f)(p)$ of $f$ at $p$ with respect to vector $\vec w$ is defined by
 \[(D_{\vec w}f)(p)=\phi'(0).\]
 
 Recall that a function $f$ is called \index{convex function}\emph{convex} if 
-its epigraph $z\ge f(\bm{x})$ is a convex set in $\RR^n\times \RR$.
+its epigraph $z\ge f(\bm{x})$ is a convex set in $\mathbb{R}^n\times \mathbb{R}$.
 
 \begin{thm}{Theorem}
-A smooth function $f\:K\to \RR$ defined on a convex subset $K\subset\RR^n$ is convex if and only if one of the following equivalent condition holds:
+A smooth function $f\:K\to \mathbb{R}$ defined on a convex subset $K\subset\mathbb{R}^n$ is convex if and only if one of the following equivalent condition holds:
 
 \begin{subthm}{}
 The second directional derivative of $f$ at any point in the direction of any vector is nonnegative; that is,
 \[(D_{\vec w}^2f)(p)\ge 0\]
-for any $p\in K$ and $\vec w\in\RR^n$.
+for any $p\in K$ and $\vec w\in\mathbb{R}^n$.
 \end{subthm}
 
 \begin{subthm}{}
@@ -625,23 +625,23 @@ x_n'&=f_n(x_1,\dots,x_n,t),
 \end{cases}
 \]
 where each $t\mapsto x_i=x_i(t)$ is a real valued function defined on a real interval $\mathbb{I}$
-and each $f_i$ is a smooth function defined on an open subset $\Omega\subset \RR^n\times \RR$.
+and each $f_i$ is a smooth function defined on an open subset $\Omega\subset \mathbb{R}^n\times \mathbb{R}$.
 
 The array of functions $(f_1,\dots,f_n)$ can be packed into one vector-valued function 
-$\bm{f}\:\Omega\to \RR^n$;
-the same way the array $(x_1,\dots,x_n)$ can be packed into a vector  $\bm{x}\in\RR^n$.
+$\bm{f}\:\Omega\to \mathbb{R}^n$;
+the same way the array $(x_1,\dots,x_n)$ can be packed into a vector  $\bm{x}\in\mathbb{R}^n$.
 Therefore the system can be rewritten as one vector equation 
 \[\bm{x}'=\bm{f}(\bm{x}, t).\] 
 
 \begin{thm}{Theorem}\label{thm:ODE}
-Suppose $\mathbb{I}$ is a real interval and $\bm{f}\:\Omega\to \RR^n$ is a smooth function defined on an open subset $\Omega\subset \RR^n\times \RR$.
+Suppose $\mathbb{I}$ is a real interval and $\bm{f}\:\Omega\to \mathbb{R}^n$ is a smooth function defined on an open subset $\Omega\subset \mathbb{R}^n\times \mathbb{R}$.
 Then for any initial data $\bm{x}(t_0)=\bm{u}$ such that $(\bm{u},t)\in\Omega$ the differential equation 
 \[\bm{x}'=\bm{f}(\bm{x},t)\]
 has a unique solution $t\mapsto \bm{x}(t)$ defined at a maximal interval $\mathbb{J}$ that contains $t_0$.
 Moreover
 \begin{enumerate}[(a)]
-\item  if $\mathbb{J}\ne \RR$ (that is, if an end $a$ of $\mathbb{J}$ is finite) then $\bm{x}(t)$ does not have a limit point in $\Omega$ as $t\to a$;
-\item  the function $(\bm{u},t_0,t)\mapsto \bm{x}(t)$ has open domain of definition in $\Omega\times \RR$ and it is smooth in this domain.
+\item  if $\mathbb{J}\ne \mathbb{R}$ (that is, if an end $a$ of $\mathbb{J}$ is finite) then $\bm{x}(t)$ does not have a limit point in $\Omega$ as $t\to a$;
+\item  the function $(\bm{u},t_0,t)\mapsto \bm{x}(t)$ has open domain of definition in $\Omega\times \mathbb{R}$ and it is smooth in this domain.
 \end{enumerate}
 
 \end{thm}
@@ -650,7 +650,7 @@ Moreover
 
 Suppose we have an ordinary differential equation of order $k$
 \[\bm{x}^{(k)}=\bm{f}(\bm{x},\dots,\bm{x}^{(k-1)},t),\]
-where $\bm{x}=\bm{x}(t)$ is a function from a real interval to $\RR^n$.
+where $\bm{x}=\bm{x}(t)$ is a function from a real interval to $\mathbb{R}^n$.
 
 This equation can be rewritten as $k$ first order equations as follows with $k-1$ new variables $\bm{y}_i=\bm{x}^{(i)}$:
 \[
@@ -723,7 +723,7 @@ The first part of the following theorem was proved by Camille Jordan, the second
 \begin{thm}{Theorem}\label{thm:jordan}
 The complement of any closed simple plane curve $\gamma$ has exactly two connected components. 
 
-Moreover, there is a homeomorphism $h\:\RR^2\to \RR^2$ that maps the unit circle to $\gamma$.
+Moreover, there is a homeomorphism $h\:\mathbb{R}^2\to \mathbb{R}^2$ that maps the unit circle to $\gamma$.
 In particular $\gamma$ bounds a topological disc.
 \end{thm}
 

@@ -5,11 +5,11 @@
 We will be mostly interested in smooth regular surfaces defined in the following section.
 However we will sometimes use the following general definition.
 
-A connected subset $\Sigma$ in the Euclidean space $\RR^3$
+A connected subset $\Sigma$ in the Euclidean space $\mathbb{R}^3$
 is called a \index{topological surface}\emph{topological surface} (more precisely an {}\emph{embedded surface without boundary}) 
 if any point of $p\in \Sigma$ admits a neighborhood $W$ in $\Sigma$ 
 that can be parametrized by an open subset in the Euclidean plane; 
-that is, there is an injective continuous map $U\to W$ from an open set $U\subset \RR^2$ such that its inverse $W\to U$ is also continuous.
+that is, there is an injective continuous map $U\to W$ from an open set $U\subset \mathbb{R}^2$ such that its inverse $W\to U$ is also continuous.
 
 
 \section{Smooth surfaces}\label{sec:def-smooth-surface}
@@ -23,7 +23,7 @@ the intersection $W=U\cap \Sigma$ is a graph $z=f(x,y)$ of a smooth function $f$
 
 \parbf{Examples.}
 The simplest example of a smooth surface is the $(x,y)$-plane 
-\[\Pi=\set{(x,y,z)\in\RR^3}{z=0}.\]
+\[\Pi=\set{(x,y,z)\in\mathbb{R}^3}{z=0}.\]
 The plane $\Pi$ is a surface since
 it can be described as the graph of the function $f(x,y)=0$.
 
@@ -33,7 +33,7 @@ $f(x,y)=a\cdot x+b\cdot y+c$ for some constants $a$, $b$ and $c$
 (assuming the plane is not perpendicular to the $(x,y)$-plane, in which case a different coordinate system is required to write the plane as the graph of a function).
 
 A more interesting example is the unit sphere 
-\[\mathbb{S}^2=\set{(x,y,z)\in\RR^3}{x^2+y^2+z^2=1}.\]
+\[\mathbb{S}^2=\set{(x,y,z)\in\mathbb{R}^3}{x^2+y^2+z^2=1}.\]
 This set is not the graph of any function,
 but $\mathbb{S}^2$ is locally a graph;
 it can be covered by the following 6 graphs:
@@ -62,7 +62,7 @@ For example, for any smooth function $f$ defined on the whole plane, its graph $
 The sphere $\mathbb{S}^2$ gives another example of proper surface.
 
 On the other hand, the open disc 
-\[\set{(x,y,z)\in\RR^3}{x^2+y^2<1,\  z=0}\]
+\[\set{(x,y,z)\in\mathbb{R}^3}{x^2+y^2<1,\  z=0}\]
 is not proper; this set is neither open nor closed.
 
 A compact surface without boundary is called \index{closed surface}\emph{closed}
@@ -87,7 +87,7 @@ The complement of any proper topological surface without boundary (or, equivalen
 \section{Implicitly defined surfaces}
 
 \begin{thm}{Proposition}\label{prop:implicit-surface}
-Let $f\:\RR^3\to \RR$ be a smooth function.
+Let $f\:\mathbb{R}^3\to \mathbb{R}$ be a smooth function.
 Suppose that $0$ is a regular value of $f$;
 that is, $\nabla_p f\ne 0$ at any point $p$ such that $f(p)=0$.
 Then any connected component $\Sigma$ of the set of solutions of the equation $f(x,y,z)=0$ is a smooth surface.
@@ -100,7 +100,7 @@ Since $\nabla_p f\ne 0$ we have
 We may assume that $f_z(p)\ne 0$;
 otherwise permute the coordinates $x,y,z$.
 
-The implicit function theorem (\ref{thm:imlicit}) implies that a neighborhood of $p$ in $\Sigma$ is the graph $z=h(x,y)$ of a smooth function $h$ defined on an open domain in $\RR^2$.
+The implicit function theorem (\ref{thm:imlicit}) implies that a neighborhood of $p$ in $\Sigma$ is the graph $z=h(x,y)$ of a smooth function $h$ defined on an open domain in $\mathbb{R}^2$.
 It remains to apply the definition of smooth surface (Section~\ref{sec:def-smooth-surface}).
 \qeds
 
@@ -115,13 +115,13 @@ describe a smooth regular surface.
 
 \section{Local parametrizations}
 
-Let $U$ be an open domain in $\RR^2$ and $s\:U\to \RR^3$ be a smooth map.
+Let $U$ be an open domain in $\mathbb{R}^2$ and $s\:U\to \mathbb{R}^3$ be a smooth map.
 We say that $s$ is regular if its Jacobian has maximal rank;
 in this case it means that the vectors $s_u$ and $s_v$ are linearly independent at any $(u,v)\in U$;
 equivalently $s_u\times s_v\ne 0$, where $\times$ denotes the vector product.
 
 \begin{thm}{Proposition}\label{prop:graph-chart}
-If $s\:U\to \RR^3$ is a smooth regular embedding of an open connected set $U\subset \RR^2$, then its image $\Sigma=s(U)$ is a smooth surface.
+If $s\:U\to \mathbb{R}^3$ is a smooth regular embedding of an open connected set $U\subset \mathbb{R}^2$, then its image $\Sigma=s(U)$ is a smooth surface.
 \end{thm}
 
 \parit{Proof.}
@@ -182,7 +182,7 @@ that is, $s$ is a regular map.
 Note that from \ref{prop:graph-chart}, we obtain the following corollary.
 
 \begin{thm}{Corollary}\label{cor:reg-parmeterization}
-A connected set $\Sigma\subset \RR^3$ is a smooth regular surface if and only if a neighborhood of any point in $\Sigma$ can be covered by a chart.
+A connected set $\Sigma\subset \mathbb{R}^3$ is a smooth regular surface if and only if a neighborhood of any point in $\Sigma$ can be covered by a chart.
 \end{thm}
 
 
@@ -228,7 +228,7 @@ Show that the surface of revolution around the $x$-axis with generatrix $\gamma$
 A surface can be described by an embedding from a known surface to the space.
 
 For example, consider the ellipsoid
-\[\Sigma_{a,b,c}=\set{(x,y,z)\in\RR^3}{\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}+\tfrac{z^2}{c^2}=1}\]
+\[\Sigma_{a,b,c}=\set{(x,y,z)\in\mathbb{R}^3}{\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}+\tfrac{z^2}{c^2}=1}\]
 for some positive numbers $a$, $b$, and $c$.
 Note that by \ref{prop:implicit-surface}, $\Sigma_{a,b,c}$ is a smooth regular surface.
 Indeed, set $f(x,y,z)=\tfrac{x^2}{a^2}+\tfrac{y^2}{b^2}+\tfrac{z^2}{c^2}$,
@@ -236,10 +236,10 @@ then
 \[\nabla f(x,y,z)=(\tfrac{2}{a^2}\cdot x,\tfrac{2}{b^2}\cdot y,\tfrac{2}{c^2}\cdot z).\]
 Therefore $\nabla f\ne0$ if $f=1$; that is, $1$ is a regular value of $f$.
 
-Note that $\Sigma_{a,b,c}$ can be defined as the image of the map $s\:\mathbb{S}^2\to\RR^3$, defined as the restriction of the following map to the unit sphere $\mathbb{S}^2$:
+Note that $\Sigma_{a,b,c}$ can be defined as the image of the map $s\:\mathbb{S}^2\to\mathbb{R}^3$, defined as the restriction of the following map to the unit sphere $\mathbb{S}^2$:
 \[(x,y,z)\z\mapsto (a\cdot x, b\cdot y,c\cdot z).\]
 
-For a surface $\Sigma$, a map $s\: \Sigma \to \RR ^3$ is called a 
+For a surface $\Sigma$, a map $s\: \Sigma \to \mathbb{R} ^3$ is called a 
 \emph{smooth parametrized surface} if $s$ is injective and for any chart $f\:U\to \Sigma$ 
 the composition $s\circ f$ is smooth and regular;
 that is, all partial derivatives $\frac{\partial^{m+n}}{\partial u^m\partial v^n}(s\circ f)$ exist and are continuous in the domain of definition and the two vectors 

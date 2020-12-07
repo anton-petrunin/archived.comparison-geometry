@@ -147,7 +147,7 @@ Observe that $\gamma^{-1}(K)$ is not compact.
 Conclude that $\gamma$ is not proper.
 
 \parbf{\ref{ex:proper-closed}.}
-Show and use that a set $C\subset \RR^3$ is closed if and only if the intersection $K\cap C$ is compact for any compact $K\subset \RR^3$.
+Show and use that a set $C\subset \mathbb{R}^3$ is closed if and only if the intersection $K\cap C$ is compact for any compact $K\subset \mathbb{R}^3$.
 
 \parbf{\ref{ex:proper-curve}.}
 Without loss of generality we may assume that the origin does not lie on the curve.
@@ -211,7 +211,7 @@ Extend it to the whole snow flake.
 Show that it indeed describes an embedding of the circle in the plane.
 
 \parit{\ref{SHORT.ex:nonrectifiable-curve:b}.}
-Suppose that $\gamma\:[0,1]\to\RR^2$ is a rectifiable curve and let $\gamma_k$ be a scaled copy of $\gamma$ with factor $k>0$;
+Suppose that $\gamma\:[0,1]\to\mathbb{R}^2$ is a rectifiable curve and let $\gamma_k$ be a scaled copy of $\gamma$ with factor $k>0$;
 that is, $\gamma_k(t)=k\cdot\gamma(t)$ for any $t$.
 Show that 
 \[\length\gamma_k=k\cdot\length \gamma.\]
@@ -293,9 +293,9 @@ that is, there are points $x,y\in A$ and a point $z\notin A$ that lies between $
 Since $A$ is closed, its complement is open.
 That is, the ball $B(z,\epsilon)$ does not intersect $A$ for some $\epsilon>0$.
 
-Show that there is $\delta>0$ such that any path of length at most $\dist{x}{y}{\RR^3}+\delta$ passes thru $B(z,\epsilon)$.
-It follows that $\dist{x}{y}A\ge \dist{x}{y}{\RR^3}+\delta$, 
-in particular $\dist{x}{y}A\ne \dist{x}{y}{\RR^3}$.
+Show that there is $\delta>0$ such that any path of length at most $\dist{x}{y}{\mathbb{R}^3}+\delta$ passes thru $B(z,\epsilon)$.
+It follows that $\dist{x}{y}A\ge \dist{x}{y}{\mathbb{R}^3}+\delta$, 
+in particular $\dist{x}{y}A\ne \dist{x}{y}{\mathbb{R}^3}$.
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip-4mm
@@ -434,7 +434,7 @@ By the fundamental theorem of calculus, we have
 Since $\gamma(0)=\gamma(\ell)$ and $\gamma'(0)=\gamma'(\ell)$, the right hand side vanishes.
 
 
-Note that without loss of generality we can assume the curve in \ref{thm:DNA} is described by a loop $\gamma\:[0,\ell]\to\RR^3$ parametrized by arc-length.
+Note that without loss of generality we can assume the curve in \ref{thm:DNA} is described by a loop $\gamma\:[0,\ell]\to\mathbb{R}^3$ parametrized by arc-length.
 We can also assume that the origin is the center of the ball; that is $|\gamma|\le 1$.
 Since $\gamma$ is a smooth closed curve, we have 
 $\gamma'(0)=\gamma'(\ell)$ and $\gamma(0)=\gamma(\ell)$.
@@ -841,8 +841,8 @@ such a map is automatically a diffeomorphism.
 
 
 \parit{\ref{SHORT.ex:plane-n}.}
-Suppose $\Sigma=\RR^2\backslash{p_1,\dots,p_n}$ and $\Theta=\RR^2\backslash{q_1,\dots,q_n}$.
-Choose smooth paths $\gamma_i\:[0,1]\z\to \RR^2$ such that $\gamma_i(0)=p_i$,
+Suppose $\Sigma=\mathbb{R}^2\backslash{p_1,\dots,p_n}$ and $\Theta=\mathbb{R}^2\backslash{q_1,\dots,q_n}$.
+Choose smooth paths $\gamma_i\:[0,1]\z\to \mathbb{R}^2$ such that $\gamma_i(0)=p_i$,
 $\gamma_i(1)=q_i$, and $\gamma_i(t)\ne \gamma_j(t)$ if $i\ne j$.
 
 Choose a smooth vector field $\vec v_t$ such that $\vec v_t(\gamma_i(t))=\gamma'_i(t)$ for any $i$ and $t$.
@@ -854,7 +854,7 @@ It remains to apply the Moser trick to the constructed vector field.
 \parit{\ref{SHORT.ex:star-shaped-disc:smooth}--\ref{SHORT.ex:star-shaped-disc:star-shaped}.}
 Without loss of generality we can assume that the origin belongs to both $\Sigma$ and~$\Theta$.
 
-In each case show that there is a vector field $\vec v$ defined on $\RR^2\backslash\{0\}$ that flows $\Sigma$ to $\Theta$.
+In each case show that there is a vector field $\vec v$ defined on $\mathbb{R}^2\backslash\{0\}$ that flows $\Sigma$ to $\Theta$.
 In fact one can choose radial fields of that type,
 but be careful with the cases \ref{SHORT.ex:star-shaped-disc:nonsmooth} and \ref{SHORT.ex:star-shaped-disc:star-shaped} --- they are not as easy as one might think.
 
@@ -1113,7 +1113,7 @@ By \ref{ex:convex-proper-plane:d}, $\Sigma$ is parametrized by an open convex pl
 It remains to show that $\Omega$ can parameterize the whole plane.
 
 We may assume that the origin of the plane lies in $\Omega$.
-Show that in this case the boundary of $\Omega$ can be written in polar coordinates as $(\theta,f(\theta))$ where $f\:\mathbb{S}^1\to\RR$ is a positive continuous function.
+Show that in this case the boundary of $\Omega$ can be written in polar coordinates as $(\theta,f(\theta))$ where $f\:\mathbb{S}^1\to\mathbb{R}$ is a positive continuous function.
 Then homeomorphism to the plane can be described in polar coordinates by changing only the radial coordinate;
 for example as 
 $(\theta,r)\z\mapsto (\theta,
@@ -1187,7 +1187,7 @@ We need to show that the solution of the equation $f(x,y)=0$ is a union of two s
 Prove the following claim:
 \begin{itemize}
  \item Suppose that  $x\mapsto h(x)$ is a smooth function defined in an open interval $\mathbb{I}\ni0$ such that $h(0)=h'(0)=0$ and $h''(0)>0$.
- Then, for a smaller interval $\mathbb{J}\ni0$ there is a unique smooth function $a\:\mathbb{J}\to\RR$ such that $h=a^2$, $a(0)=0$ and $a'(0)> 0$.
+ Then, for a smaller interval $\mathbb{J}\ni0$ there is a unique smooth function $a\:\mathbb{J}\to\mathbb{R}$ such that $h=a^2$, $a(0)=0$ and $a'(0)> 0$.
 \end{itemize}
 Note that by passing to a small rectangular domain $|x|,|y|<\epsilon$, we can assume that $f_{xx}>\epsilon$ and $f_{yy}<-\epsilon$. 
 Show that if $\epsilon$ is small, then for every $x$ there is unique $y(x)$ such that $f_x(x,y(x))=0$; 
@@ -1448,7 +1448,7 @@ Since $\gamma$ is a geodesic, we have $\gamma''(t)=k(t)\cdot\Norm(\gamma(t))$.
 
 Since $\gamma$ has unit speed, $\langle\gamma'(t),\gamma'(t)\rangle=1$ for any $t$.
 
-Without loss of generality, we can assume that $p$ is the origin of~$\RR^3$.
+Without loss of generality, we can assume that $p$ is the origin of~$\mathbb{R}^3$.
 Since $p$ is inside $\Sigma$, we have that $\langle\gamma(t),\Norm(\gamma(t))\rangle\le 0$ for any $t$.
 It follows that 
 \[\langle\gamma''(t),\gamma(t)\rangle=k(t)\cdot \langle\gamma(t),\Norm(\gamma(t))\rangle\le 0\]
@@ -1525,7 +1525,7 @@ Conclude that $\gamma$ has identical spherical images as a curve in $\Sigma_1$ a
 Apply \ref{obs:parallel=}.
 
 \parbf{\ref{ex:holonomy=not0}.}
-Consider the right angled spherical triangle that an octant of $\RR^3$ cuts form the sphere.
+Consider the right angled spherical triangle that an octant of $\mathbb{R}^3$ cuts form the sphere.
 Argue that parallel transport around it rotates the tangent plane by angle $\tfrac\pi 2$. 
 
 \stepcounter{section}
@@ -1943,8 +1943,8 @@ By comparison we have that
 \mathrel{=:}\tilde \psi
 \end{align*}
 
-Since $t=\dist{\tilde p}{\tilde x}{\RR^2}$ is small, so is the distances $\dist{\tilde q}{\tilde y}{\RR^2}$.
-Therefore we can choose a point $y$ on $\delta$ such that $\dist{q}{y}\Sigma=\dist{\tilde q}{\tilde y}{\RR^2}$.
+Since $t=\dist{\tilde p}{\tilde x}{\mathbb{R}^2}$ is small, so is the distances $\dist{\tilde q}{\tilde y}{\mathbb{R}^2}$.
+Therefore we can choose a point $y$ on $\delta$ such that $\dist{q}{y}\Sigma=\dist{\tilde q}{\tilde y}{\mathbb{R}^2}$.
 Moreover, if we choose in on the \emph{right side}, then $\tfrac\pi2-\psi \ge \measuredangle\hinge qxy$.
 By construction and comparison, we have 
 \begin{align*}
@@ -1956,11 +1956,11 @@ By construction and comparison, we have
 \ge 
 \angk q x y.
 \end{align*}
-Therefore $\dist{x}{y}\Sigma\le \dist{\tilde x}{\tilde y}{\RR}$.
+Therefore $\dist{x}{y}\Sigma\le \dist{\tilde x}{\tilde y}{\mathbb{R}}$.
 Since $\tilde\phi\le\phi$, we get that
 \begin{align*}
 f\circ\gamma(t)&\le \dist{x}{y}\Sigma\le 
-\dist{\tilde x}{\tilde y}{\RR}=
+\dist{\tilde x}{\tilde y}{\mathbb{R}}=
 \\
 &=
 \dist{p}{q}\Sigma+t\cdot\cos\tilde\phi

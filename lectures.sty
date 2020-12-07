@@ -25,7 +25,6 @@ urlcolor=black%
 \usepackage{epigraph}
 \usepackage{framed}
 \usepackage{geometry}%page/text size and 
-\usepackage[normalem]{ulem} % для зачёркивания текста
 
 \usepackage{tikz}
 \usetikzlibrary{arrows}
@@ -41,7 +40,7 @@ urlcolor=black%
 \vskip0.5em}%
 }
 
-\usepackage[nottoc]{tocbibind}
+\usepackage[nottoc]{tocbibind}%adds index to ToC
 
 \csname @openrightfalse\endcsname %chapters can start from left page
 
@@ -103,6 +102,18 @@ isbn=false]{biblatex}
 \def\qeds{\qed\par\medskip}%END OF PROOF
 \def\qedsf{\vskip-6mm\qeds}%END OF PROOF BY FORMULA
 
+\def\epsilon{\varepsilon}
+\def\phi{\varphi}
+
+\def\ge{\geqslant}
+\def\le{\leqslant}
+
+\def\df{\mathrel{:=}}
+
+\def\:{\colon}
+\newcommand*{\set}[2]%{\left\{\,{#1}\,:\,{#2}\,\right\}}
+{\ifthenelse{\equal{#2}{}}{\left\{\,{#1}\,\right\}}{\left\{\,{#1}\,:\,{#2}\,\right\}}}
+
 %THEOREM
 \newcounter{thm}[chapter]
 \renewcommand{\thethm}{\thechapter.\arabic{thm}}
@@ -113,20 +124,7 @@ isbn=false]{biblatex}
 \par\medskip}
 \newenvironment{thm}{\claim}{\endclaim}
 
-\def\epsilon{\varepsilon}
-\def\phi{\varphi}
-%\def\theta{\vartheta}
-
-\def\ge{\geqslant}
-\def\le{\leqslant}
-
-\def\df{\mathrel{:=}}
-%{\buildrel \mathrm{def} \over{=\!\!=}}
-
-\def\:{\colon}
-\newcommand*{\set}[2]%{\left\{\,{#1}\,:\,{#2}\,\right\}}
-{\ifthenelse{\equal{#2}{}}{\left\{\,{#1}\,\right\}}{\left\{\,{#1}\,:\,{#2}\,\right\}}}
-
+%NOTATIONS
 
 \def\Dom{\mathop{\rm Dom}\nolimits}
 \def\length{\mathop{\rm length}\nolimits}
@@ -142,51 +140,47 @@ isbn=false]{biblatex}
 \def\diam{\mathop{\rm diam}\nolimits}
 \def\trace{\mathop{\rm trace}\nolimits}
 \def\proj{\mathop{\rm proj}\nolimits}
-\newcommand*{\tc}[1]{\ifthenelse{\equal{#1}{}}{\Phi}{\Phi({#1})}}
-\newcommand*{\tgc}[1]{\ifthenelse{\equal{#1}{}}{\Psi}{\Psi({#1})}}
-\newcommand*{\hinge}[3]{[#1\,{}^{#2}_{#3}]}
-\newcommand*{\angk}[3]{\tilde\measuredangle(#1\,{}^{#2}_{#3}\hspace{-0.2ex})}
-\def\side{\tilde\curlyvee}
-\def\modtrig{\tilde\triangle}
-\def\Dist{\mathop{\rm dist}\nolimits}
-\def\spc{\mathcal}
-\def\tor{\tau}
-\def\kur{\kappa}
-\def\skur{k}
+\newcommand*{\tc}[1]{\ifthenelse{\equal{#1}{}}{\Phi}{\Phi({#1})}}%toatal curvature \tc\gamma produces \Phi(\gamma)
+\newcommand*{\tgc}[1]{\ifthenelse{\equal{#1}{}}{\Psi}{\Psi({#1})}}%toatal signed/geodesic curvature \tgc\gamma produces \Psi(\gamma)
+\newcommand*{\hinge}[3]{[#1\,{}^{#2}_{#3}]}%\hinge x y z is the hinge with vertex x
+\newcommand*{\angk}[3]{\tilde\measuredangle(#1\,{}^{#2}_{#3}\hspace{-0.2ex})}%\angk x y z --- model angle with vertex at x
+\def\side{\tilde\curlyvee}%model side of hinge
+\def\modtrig{\tilde\triangle}%model triangle
+\def\spc{\mathcal}%used for spaces
+\def\tor{\tau}%torsion
+\def\kur{\kappa}%absolute curvature
+\def\skur{k}%signed curvature
 
+\def\Dist{\mathop{\rm dist}\nolimits} 
 \newcommand*\dist[3]{|{#1}\z-{#2}|_{#3}} % notation fo distance from x to y in the space Z --- "\dist xyZ" produces |x-y|_Z 
 %\newcommand*\dist[3]{}
 
 \def\Conv{\mathop{\rm Conv}\nolimits}
 
-\def\Re{\mathop{\rm Re}\nolimits}
-\def\Im{\mathop{\rm Im}\nolimits}
-\def\DD{\mathbb{D}}
-\def\GG{\mathbb{G}}
-\def\RR{\mathbb{R}}
-\def\SS{\mathbb{S}}
-\def\TT{\mathbb{T}}
-\def\T{\mathrm{T}}
 
-\def\Jac{\mathop{\rm Jac}\nolimits}
-\def\jac{\mathop{\rm jac}\nolimits}
-\def\GB{\mathop{\rm GB}\nolimits}
-\def\Shape{\mathop{\rm Shape}\nolimits}
+\def\DD{\mathbb{D}}%disc
+\def\GG{\mathbb{G}}%circle or line segment
+\def\SS{\mathbb{S}}%sphere
+\def\TT{\mathbb{T}}%torus
+\def\T{\mathrm{T}}%tangent plane
+
+\def\Jac{\mathop{\rm Jac}\nolimits}%Jacobian matrix
+\def\jac{\mathop{\rm jac}\nolimits}%Jacobian determinant
+\def\GB{\mathop{\rm GB}\nolimits}%gauss-bonnet expression
+\def\Shape{\mathop{\rm Shape}\nolimits}%shape operator
 \def\rank{\mathop{\rm rank}\nolimits}
 
-\def\tan{\text{\sc{t}}}
-\def\norm{\text{\sc{n}}}
-\def\bi{\text{\sc{b}}}
+\def\tan{\text{\sc{t}}}%tangent
+\def\norm{\text{\sc{n}}}%normal to curve
+\def\bi{\text{\sc{b}}}%binormal
 \renewcommand*\vec[1]{\text{\sc{#1}}}
-\def\Norm{\nu}
-
-\def\eps{\varepsilon}
+\def\Norm{\nu}%normal to surface
 
 \newcommand*{\z}[1]{#1\nobreak\discretionary{}%
             {\hbox{$\mathsurround=0pt #1$}}{}}
             
 \let\oldcdot\cdot
-\def\cdot{{\hskip0.5pt\z\oldcdot\hskip0.5pt}}
+\def\cdot{{\hskip0.5pt\z\oldcdot\hskip0.5pt}}%\cdot with smaller spaces
 
 \hyphenation{% 
 col-lin-e-ar 

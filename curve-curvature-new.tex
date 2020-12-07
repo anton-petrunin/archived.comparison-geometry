@@ -111,9 +111,9 @@ at the point $p=(x,f(x))$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:approximation-const-curvature}
-Show that any smooth regular curve $\gamma\:\mathbb{I}\to\RR^3$ with curvature at most 1 can be approximated by smooth curves with constant curvature 1.
+Show that any smooth regular curve $\gamma\:\mathbb{I}\to\mathbb{R}^3$ with curvature at most 1 can be approximated by smooth curves with constant curvature 1.
 
-In other words, construct a sequence $\gamma_n\:\mathbb{I}\to\RR^3$ of smooth regular curves  with constant curvature 1 such that $\gamma_n(t)\to \gamma(t)$ for any $t$ as $n\to\infty$.
+In other words, construct a sequence $\gamma_n\:\mathbb{I}\to\mathbb{R}^3$ of smooth regular curves  with constant curvature 1 such that $\gamma_n(t)\to \gamma(t)$ for any $t$ as $n\to\infty$.
 \end{thm}
 
 
@@ -132,7 +132,7 @@ if both curves are simple we can also say that they are tangent at the point $p=
 
 \section{Total curvature}
 
-Let $\gamma\:\mathbb{I}\to\RR^3$ be a smooth unit-speed curve and $\tan$ its tangent indicatrix.
+Let $\gamma\:\mathbb{I}\to\mathbb{R}^3$ be a smooth unit-speed curve and $\tan$ its tangent indicatrix.
 The integral 
 \[\tc\gamma\df\int_{\mathbb{I}}\kur(s)\cdot ds\]
 is called the \index{total curvature of}\emph{total curvature of}\label{page:total curvature of:smooth-def}
@@ -161,7 +161,7 @@ The total curvature of any closed regular space curve is at least $2\cdot\pi$.
 
 \parit{Proof.}
 Fix a closed regular space curve $\gamma$.
-We can assume that $\gamma$ is described by a unit-speed loop $\gamma\:[a,b]\to \RR^3$;
+We can assume that $\gamma$ is described by a unit-speed loop $\gamma\:[a,b]\to \mathbb{R}^3$;
 in this case $\gamma(a)=\gamma(b)$ and $\gamma'(a)=\gamma'(b)$.
 
 Consider its tangent indicatrix $\tan=\gamma'$.
@@ -221,7 +221,7 @@ a number of them are collected by Serge Tabachnikov~\cite{tabachnikov}.
 The following exercise will guide you thru another proof by Don Chakerian \cite{chakerian1964}:
 
 \begin{thm}{Exercise}\label{ex:DNA}
-Let $\gamma\:[0,\ell]\to\RR^3$ be a smooth unit-speed closed curve that lies in the unit ball; that is, $|\gamma|\le 1$.
+Let $\gamma\:[0,\ell]\to\mathbb{R}^3$ be a smooth unit-speed closed curve that lies in the unit ball; that is, $|\gamma|\le 1$.
 
 \begin{subthm}{ex:DNA:c''c>=k}
 Show that 
@@ -246,8 +246,8 @@ Use this equality together with  part \ref{SHORT.ex:DNA:int>=length-tc} to prove
 
 \section{Piecewise smooth curves}
 
-Assume $\alpha\:[a,b]\to \RR^3$ and $\beta\:[b,c]\z\to \RR^3$ are two curves such that $\alpha(b)\z=\beta(b)$.
-Note that these two curves can be combined into one $\gamma\:[a,c]\z\to \RR^3$ by the rule 
+Assume $\alpha\:[a,b]\to \mathbb{R}^3$ and $\beta\:[b,c]\z\to \mathbb{R}^3$ are two curves such that $\alpha(b)\z=\beta(b)$.
+Note that these two curves can be combined into one $\gamma\:[a,c]\z\to \mathbb{R}^3$ by the rule 
 \[\gamma(t)=
 \begin{cases}
 \alpha(t)&\text{if}\quad t\le b,
@@ -329,7 +329,7 @@ By \ref{obs:tantrix}, the statement follows.
 \qedsf
 
 \begin{thm}{Chord lemma}\label{lem:chord}
-Let $\gamma\:[a,b]\z\to\RR^3$
+Let $\gamma\:[a,b]\z\to\mathbb{R}^3$
 be a smooth regular arc, and
 $\ell$ be its chord.
 Assume $\gamma$ meets $\ell$ at angles $\alpha$ and $\beta$ at $\gamma (a)$ and $\gamma (b)$, respectively;
@@ -363,7 +363,7 @@ hence \ref{tc>a+b} follows.
 
 \begin{thm}{Exercise}\label{ex:chord-lemma-optimal}
 Show that the estimate in the chord lemma is optimal.
-That is, given two points $p, q$ and two unit vectors $u,v$ in $\RR^3$,
+That is, given two points $p, q$ and two unit vectors $u,v$ in $\mathbb{R}^3$,
 show that there is a smooth regular curve $\gamma$ that starts at $p$ in the direction $\vec u$ and ends at $q$ in the direction $\vec v$ such that 
 $\tc\gamma$ is arbitrarily close to $\measuredangle(\vec w,\vec u)+\measuredangle(\vec w,\vec v)$, where $\vec w=q-p$.
 
@@ -376,7 +376,7 @@ each arc in its concatenation is a line segment.
 Since the curvature of a line segment vanishes, the total curvature of a polygonal line is the sum of its external angles.
 
 \begin{thm}{Exercise}\label{ex:monotonic-tc}
-Let $a,b,c,d$ and $x$ be distinct points in $\RR^3$.
+Let $a,b,c,d$ and $x$ be distinct points in $\mathbb{R}^3$.
 Show that the total curvature of the polygonal line $abcd$ cannot exceed the total curvature of $abxcd$; that is, 
 \[\tc {abcd} \le \tc {abxcd}.\]
 
@@ -463,7 +463,7 @@ a good survey on the subject is written by John Sullivan \cite{sullivan-curves}.
 \begin{subthm}{ex:sef-intersection:<2pi}Draw a smooth regular plane curve $\gamma$ that has a self-intersection and such that $\tc\gamma<2\cdot\pi$.
 \end{subthm}
 
-\begin{subthm}{ex:sef-intersection:>pi} Show that if a smooth regular curve $\gamma\:[a,b]\to\RR^3$ has a self-intersection, then $\tc\gamma>\pi$.
+\begin{subthm}{ex:sef-intersection:>pi} Show that if a smooth regular curve $\gamma\:[a,b]\to\mathbb{R}^3$ has a self-intersection, then $\tc\gamma>\pi$.
 \end{subthm}
 
 \end{thm}
@@ -568,7 +568,7 @@ according to the exercise the latter implies the so-called \index{F\'ary--Milnor
 The following lemma was proved by Axel Schur \cite{shur}.
 
 \begin{thm}{Lemma}\label{lem:bow}
-Let $\gamma_1\:[a,b]\to\RR^2$ and $\gamma_2\:[a,b] \to\RR^3$ be two smooth unit-speed curves.
+Let $\gamma_1\:[a,b]\to\mathbb{R}^2$ and $\gamma_2\:[a,b] \to\mathbb{R}^3$ be two smooth unit-speed curves.
 Suppose that $\kur(s)_{\gamma_1}\ge\kur(s)_{\gamma_2}$ for any $s$ 
 and the curve
 $\gamma_1$ is an arc of a convex curve; that is, it runs in the boundary of a convex plane figure.
@@ -583,7 +583,7 @@ It is instructive to do this exercise before reading the proof of the lemma.
 {\sloppy 
 
 \begin{thm}{Exercise}\label{ex:anti-bow}
-Construct two simple smooth unit-speed plane curves $\gamma_1,\gamma_2\:[a,b]\to\RR^2$ such that 
+Construct two simple smooth unit-speed plane curves $\gamma_1,\gamma_2\:[a,b]\to\mathbb{R}^2$ such that 
 that $\kur(s)_{\gamma_1}>\kur(s)_{\gamma_2}>0$ for any $s$ and
 \[|\gamma_1(b)-\gamma_1(a)|> |\gamma_2(b)-\gamma_2(a)|.\]
 \end{thm}
@@ -670,7 +670,7 @@ Integrating \ref{<gamma',u>}, we get
 \qedsf
 
 \begin{thm}{Exercise}\label{ex:length-dist}
-Let $\gamma\:[a,b]\to \RR^3$ be a smooth regular curve and $0\z<\theta\z\le\tfrac\pi2$.
+Let $\gamma\:[a,b]\to \mathbb{R}^3$ be a smooth regular curve and $0\z<\theta\z\le\tfrac\pi2$.
 Assume 
 \[\tc\gamma\le 2\cdot\theta.\]
 
@@ -701,7 +701,7 @@ Suppose a space curve $\gamma$ connects $p$ to $q$ and has curvature at most 1. 
 The following exercise generalizes \ref{ex:length>=2pi}.
 
 \begin{thm}{Exercise}\label{ex:loop}
-Suppose $\gamma\:[a,b]\to \RR^3$ is a smooth regular loop with curvature at most 1.
+Suppose $\gamma\:[a,b]\to \mathbb{R}^3$ is a smooth regular loop with curvature at most 1.
 Show that 
 \[\length\gamma\ge2\cdot\pi.\]
 
