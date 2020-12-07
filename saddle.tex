@@ -1,4 +1,5 @@
 \chapter{Supporting surfaces}
+\label{chap:surface-support}
 
 \section{Definitions}
 
@@ -238,7 +239,7 @@ Namely, {}\emph{any closed connected locally convex region in the Euclidean spac
 
 \begin{thm}{Exercise}\label{ex:surrounds-disc}
 Assume that a closed convex surface $\Sigma$ surrounds a unit circle.
-Show that there is a point  $p \in \Sigma$ with $K(p)\leq 1$. 
+Show that there is a point  $p \in \Sigma$ with $K(p)\le 1$. 
 \end{thm} 
 
 \begin{thm}{Exercise}\label{ex:small-gauss}
@@ -336,7 +337,7 @@ Try to show that $\Sigma$ is a smooth plane; that is, the embedding $f$ can be m
 
 \begin{thm}{Exercise}\label{ex:circular-cone}
 Show that any open smooth surface $\Sigma$ with positive Gauss curvature
-lies inside an infinite circular cone. In other words, there is an $(x,y,z)$-coordinate system in which $\Sigma$ lies in the region $z \geq m \sqrt{x^2 + y^2}$ for some $m > 0$.
+lies inside an infinite circular cone. In other words, there is an $(x,y,z)$-coordinate system in which $\Sigma$ lies in the region $z \z\ge m \cdot\sqrt{x^2 + y^2}$ for some $m > 0$.
 \end{thm} 
 
 \begin{thm}{Exercise}\label{ex:intK}
@@ -451,7 +452,7 @@ Consider the smallest spherical dome $\Sigma_0$ with boundary $\sigma$ that surr
 Note that $\Sigma_0$ supports $\Sigma$ at some point~$q$.
 Without loss of generality we may assume that $\Sigma_0$ and $\Sigma$ are cooriented at $q$ and $\Sigma_0$ has positive principal curvatures.
 In this case $\Sigma_0$ supports $\Delta$ from outside.
-By \ref{cor:surf-support}, we have $K(q)_\Sigma\ge K(q)_{\Sigma_0}>0$, a contradiction.
+By \ref{cor:surf-support}, we have $K(q)_\Sigma\z\ge K(q)_{\Sigma_0}>0$, a contradiction.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:length-of-bry}
@@ -600,11 +601,9 @@ we can assume that $\Delta$ is a compact surface with boundary line in $\Pi$ and
 Since the plane $\Pi$ is convex, this statement contradicts \ref{lem:convex-saddle}.
 
 Summarizing, $\Theta$ is an open convex set of $H$ that contains all points above $z=r$.
-By convexity, for any point $w\in \Theta$, $\Theta$ contains all points on the half-lines 
-\[  \{  w+ t \vec v |  t \geq 0   \}   \]
- with 
- \[ \vec v  \in \{  (x,y) \in \mathbb{S}^1  | y  > 0   \}  \]
-Whence it contains all points with $z$-coordinate larger than the $z$-coordinate of $w$.
+By convexity, together with any point $w$, the set $\Theta$ contains all points on the half-lines that start as $w$ and {}\emph{point up}; that is, in directions with positive $z$-coordinate. 
+In other words, with any point $w$,
+the set $\Theta$ contains all points with larger $z$-coordinates.
 \begin{figure}[h!]
 \vskip-0mm
 \centering
