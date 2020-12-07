@@ -77,8 +77,8 @@ There is no shortest path from $p$ to $q$ in $\Sigma$.
 
 \parit{Proof.}
 Note that $|p-q|_\Sigma=2$. 
-Indeed, given $\eps\z>0$, consider the point $s_\eps=(0,\eps,0)$.
-Observe that the polygonal path $ps_\eps q$ lies in $\Sigma$ and its length $2\cdot\sqrt{1+\eps^2}$ approaches $2$ as $\eps\to0$.
+Indeed, given $\epsilon\z>0$, consider the point $s_\epsilon=(0,\epsilon,0)$.
+Observe that the polygonal path $ps_\epsilon q$ lies in $\Sigma$ and its length $2\cdot\sqrt{1+\epsilon^2}$ approaches $2$ as $\epsilon\to0$.
 It follows that $|p-q|_\Sigma\le 2$.
 Since $|p-q|_\Sigma\z\ge |p-q|_{\RR^3}=2$, we get $|p-q|_\Sigma=2$.
 
@@ -454,12 +454,12 @@ It remains use expression \ref{eq:z''} for $z''$, combine similar terms and simp
 \parit{Proof of \ref{prop:geod-existence}.}
 Let $z=f(x,y)$ be a description of $\Sigma$ in tangent-normal coordinates at $p$.
 By Lemma \ref{lem:geodesic=2nd-order}, the condition $\gamma''(t)\perp\T_{\gamma(t)}$ can be written as a second order differential equation.
-Applying the existence and uniqueness of the initial value problem (\ref{thm:ODE}) we get existence and uniqueness of a geodesic $\gamma$  in a small interval $(-\eps,\eps)$ for some $\eps>0$.
+Applying the existence and uniqueness of the initial value problem (\ref{thm:ODE}) we get existence and uniqueness of a geodesic $\gamma$  in a small interval $(-\epsilon,\epsilon)$ for some $\epsilon>0$.
 
 Let us extend $\gamma$ to a maximal open interval $\mathbb{I}$.
 Suppose there is another geodesic $\gamma_1$ with the same initial data that is defined on a maximal open interval $\mathbb{I}_1$.
 Suppose $\gamma_1$ splits from $\gamma$ at some time $t_0>0$;
-that is, $\gamma_1$ coincides with $\gamma$ on the interval $[0,t_0)$, but they are different on the interval $[0,t_0+\eps)$ for any $\eps>0$.
+that is, $\gamma_1$ coincides with $\gamma$ on the interval $[0,t_0)$, but they are different on the interval $[0,t_0+\epsilon)$ for any $\epsilon>0$.
 By continuity $\gamma_1(t_0)=\gamma(t_0)$ and $\gamma'(t_0)=\gamma'(t_0)$.
 Applying uniqueness of the initial value problem (\ref{thm:ODE}) again, we get that $\gamma_1$ coincides with $\gamma$ in a small neighborhood of $t_0$ --- a contradiction.
 
@@ -542,7 +542,7 @@ the exponential map $\exp_p$ is defined on the open ball $B_p=B(0,r_p)_{\T_p}$
 and the restriction $\exp_p|_{B_p}$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$.
 
 Moreover we have a {}\emph{local control} on $r_p$;
-that is, for any $q\in \Sigma$ there is $\eps>0$ such that if $|q-p|_\Sigma<\eps$, then $r_p\ge\eps$.
+that is, for any $q\in \Sigma$ there is $\epsilon>0$ such that if $|q-p|_\Sigma<\epsilon$, then $r_p\ge\epsilon$.
 \end{thm}
 
 The proof of the proposition uses the observation and the inverse function theorem (\ref{thm:inverse}).
@@ -560,7 +560,7 @@ The second part of the inverse function theorem (\ref{thm:inverse})
  guarantees that for a given point $q\in \Sigma$, the radii of the balls $B_p$
    for all points $p$ sufficiently close to $q$
     can be taken uniformly 
-  bounded below by a positive number $\varepsilon_q >0$.
+  bounded below by a positive number $\epsilon_q >0$.
 \qeds
 
 Given $p\in \Sigma$, the least upper bound on $r_p$ that satisfies \ref{prop:exp} is called the \index{injectivity radius}\emph{injectivity radius} of $\Sigma$ at $p$;
@@ -802,8 +802,8 @@ with a nonsimple geodesic $\gamma$ in its graph $z=f(x,y)$.
 
 \begin{thm}{Theorem}\label{thm:tc-of-mingeod}
 Suppose a smooth surface $\Sigma$ bounds a convex set $K$ in the Euclidean space.
-Assume $B(0,\eps)\subset K\subset B(0,1)$.
-Then the total curvatures of any shortest path in $\Sigma$ can be bounded in terms of~$\eps$. 
+Assume $B(0,\epsilon)\subset K\subset B(0,1)$.
+Then the total curvatures of any shortest path in $\Sigma$ can be bounded in terms of~$\epsilon$. 
 \end{thm}
 
 The following exercise will guide you thru the proof of the theorem. 
@@ -822,7 +822,7 @@ denote by $\theta_p$ the angle between $\Norm_p$ and the direction from the orig
 Set $\rho(t)\z=|\gamma(t)|^2$; denote by $k(t)$ the curvature of $\gamma$ at $t$.
 
 \begin{subthm}{}
-Show that $\cos\theta_p\ge \eps$ for any $p\z\in \Sigma$.
+Show that $\cos\theta_p\ge \epsilon$ for any $p\z\in \Sigma$.
 \end{subthm}
 
 \begin{subthm}{}
@@ -842,13 +842,13 @@ for any $t$.
 
 \begin{subthm}{}
  Use the statements above to conclude that 
-\[\tc\gamma\le \frac{100}{\eps^2}.\]
+\[\tc\gamma\le \frac{100}{\epsilon^2}.\]
 \end{subthm}
 
 \end{thm}
 
-Note that the obtained bound of the total curvature goes to infinity as $\eps\to 0$.
-In fact there is a bound that is independent of $\eps$ \cite{lebedeva-petrunin}.
+Note that the obtained bound of the total curvature goes to infinity as $\epsilon\to 0$.
+In fact there is a bound that is independent of $\epsilon$ \cite{lebedeva-petrunin}.
 (According to Exercise~\ref{ex:tc-spherical-image}, it would also follow if the length of the spherical image of $\gamma$ could be bounded above; 
 that is, if $\length(\Norm\circ\gamma)\le C$ for a universal constant $C$.
 The latter was conjectured by Aleksei Pogorelov \cite{pogorelov};

@@ -168,8 +168,8 @@ Since both principal curvatures are positive, by \ref{cor:Shape(ij)}, we have
 for any unit tangent vector ${\vec w}\in\T_p\Sigma$ (which is the $(x,y)$-plane).
 
 Since the set of unit vectors is compact, we have that 
-\[D^2_{\vec w}f(0,0)>\eps\]
-for some fixed $\eps>0$ and any unit tangent vector ${\vec w}\in\T_p\Sigma$.
+\[D^2_{\vec w}f(0,0)>\epsilon\]
+for some fixed $\epsilon>0$ and any unit tangent vector ${\vec w}\in\T_p\Sigma$.
 
 By continuity of the function $(x,y,{\vec w})\mapsto D^2_{\vec w}f(x,y)$,
 we have that $D^2_{\vec w}f(x,y)>0$ if $\vec w\ne 0$ and $(x,y)$ lies in a small enough neighborhood of the origin.
@@ -222,8 +222,8 @@ Assume the interior of $R$ is not convex; that is, there are points $x,y\in R$ a
 Consider a polygonal  line $\beta$ from $x$ to $y$ in the interior of $R$.
 Let $y_0$ be the first point on $\beta$ such that the chord $[x,y_0]$ touches $\Sigma$ at some point, say~$z_0$.
 
-Since $R$ is locally strictly convex, $R\z\cap B(z_0,\eps)$ is strictly convex for all sufficiently small $\eps>0$.
-On the other hand $z_0$ lies between two points in the intersection $[x,y_0]\cap B(z_0,\eps)$.
+Since $R$ is locally strictly convex, $R\z\cap B(z_0,\epsilon)$ is strictly convex for all sufficiently small $\epsilon>0$.
+On the other hand $z_0$ lies between two points in the intersection $[x,y_0]\cap B(z_0,\epsilon)$.
 Since $[x,y_0]\subset R$, we arrived to a contradiction.
 
 Therefore the interior of $R$ is a convex set.
@@ -492,28 +492,28 @@ or equivalently, the principal curvatures $k_1(p)$ and $k_2(p)$ have the same si
 
 
 Let $z=f(x,y)$ be a graph representation of $\Sigma$ in tangent-normal coordinates at $p$.
-Consider the set $F_\eps$ in the $(x,y)$-plane defined by the inequality $f(x,y)\le \eps$.
+Consider the set $F_\epsilon$ in the $(x,y)$-plane defined by the inequality $f(x,y)\le \epsilon$.
 By \ref{lem:gauss+=>convexity}, $f$ is convex in a small neighborhood of $(0,0)$.
-Therefore $F_\eps$ is convex, for sufficiently small $\eps>0$.
-In particular, $F_\eps$ is a topological disc.
+Therefore $F_\epsilon$ is convex, for sufficiently small $\epsilon>0$.
+In particular, $F_\epsilon$ is a topological disc.
 
-Note that $(x,y)\mapsto (x,y,f(x,y))$ is a homeomorphism from $F_\eps$
+Note that $(x,y)\mapsto (x,y,f(x,y))$ is a homeomorphism from $F_\epsilon$
 to
-\[\Delta_\eps=\set{(x,y,f(x,y))\in \RR^3}{f(x,y)\le \eps};\]
-so $\Delta_\eps$ is a topological disc for any sufficiently small $\eps>0$.
-Note that the boundary line of $\Delta_\eps$ lies on the plane $z=\eps$ and the entire disc lies below it;
-that is, $\Delta_\eps$ is a hat of $\Sigma$.
+\[\Delta_\epsilon=\set{(x,y,f(x,y))\in \RR^3}{f(x,y)\le \epsilon};\]
+so $\Delta_\epsilon$ is a topological disc for any sufficiently small $\epsilon>0$.
+Note that the boundary line of $\Delta_\epsilon$ lies on the plane $z=\epsilon$ and the entire disc lies below it;
+that is, $\Delta_\epsilon$ is a hat of $\Sigma$.
 \qeds
 
-The following exercise shows that $\Delta_\eps$ is in fact a smooth disc.
+The following exercise shows that $\Delta_\epsilon$ is in fact a smooth disc.
 This can be used to prove a slightly stronger version of \ref{prop:hat};
 namely in the definition of hats one can assume that the disc is smooth.
 
 \begin{thm}{Exercise}\label{ex:disc-hat}
 Let $f\:\RR^2\to\RR$ be a smooth strictly convex function with minimum at the origin.
-Show that the set $F_\eps$ in the graph $z=f(x,y)$ defined by the inequality $f(x,y)\le \eps$ is a smooth disc for any $\eps>0$;
+Show that the set $F_\epsilon$ in the graph $z=f(x,y)$ defined by the inequality $f(x,y)\le \epsilon$ is a smooth disc for any $\epsilon>0$;
 that is, there is a diffeomorphism 
-$\DD\to F_\eps$, where $\DD\z=\set{(x,y)\in\RR^2}{x^2+y^2\le 1}$ is the unit disc.
+$\DD\to F_\epsilon$, where $\DD\z=\set{(x,y)\in\RR^2}{x^2+y^2\le 1}$ is the unit disc.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:saddle-linear}

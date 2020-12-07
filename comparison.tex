@@ -211,10 +211,10 @@ The proof is taken from \cite{alexander-kapovitch-petrunin2027} and it is very c
 
 \parit{Proof of \ref{thm:comp:toponogov} in the compact case.}\label{proof(thm:comp:toponogov)}
 Assume $\Sigma$ is compact. 
-From the local theorem (\ref{thm:loc-comp}), we get that there is $\eps>0$ such that the inequality 
+From the local theorem (\ref{thm:loc-comp}), we get that there is $\epsilon>0$ such that the inequality 
 \[\measuredangle\hinge {x}{p}{q}\ge\angk xpq.\]
-holds for any hinge $\hinge {x}{p}{q}$ such that $|x-p|+|x-q|<\eps$.
-The following lemma states that in this case the same holds true for any hinge $\hinge {x}{p}{q}$ such that $|x-p|+|x-q|<\tfrac32\cdot\eps$.
+holds for any hinge $\hinge {x}{p}{q}$ such that $|x-p|+|x-q|<\epsilon$.
+The following lemma states that in this case the same holds true for any hinge $\hinge {x}{p}{q}$ such that $|x-p|+|x-q|<\tfrac32\cdot\epsilon$.
 Applying the key lemma (\ref{key-lem:globalization}) a few times we will get that the comparison holds for arbitrary hinge, which proves \mbox{\ref{thm:comp:toponogov}}.
 \qeds
 
@@ -332,17 +332,17 @@ Since $(r_n)$ is nonincreasing, $r_n\to r\ge |p-q|_\Sigma$ as $n\to\infty$.
 
 Let us show that $\measuredangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
 
-Indeed assume $\measuredangle\hinge{x_n}p q\le \pi-\eps$ for some $\eps>0$.
+Indeed assume $\measuredangle\hinge{x_n}p q\le \pi-\epsilon$ for some $\epsilon>0$.
 Without loss of generality we can assume that $x_{n+1}\in [x_n,q]$;
 otherwise switch $p$ and $q$ further.
 Note that $|x_n-x_{n+1}|,|p-x_n|>\tfrac\ell{100}$.
 Therefore by comparison 
 \[|p-x_{n+1}|<\side\hinge{x_n}p{x_{n+1}}<|p-x_n|+|x_n-x_{n+1}|-\delta\]
-for some fixed $\delta=\delta(\eps)>0$.
+for some fixed $\delta=\delta(\epsilon)>0$.
 Therefore $r_n-r_{n+1}>\delta$.
 The latter cannot hold for large $n$, otherwise the sequence $r_n$ would not converge.
 
-It follows that for any $\eps>0$ we have that $\measuredangle\hinge{x_n}p q> \pi-\eps$ for all large $n$;
+It follows that for any $\epsilon>0$ we have that $\measuredangle\hinge{x_n}p q> \pi-\epsilon$ for all large $n$;
 that is, $\measuredangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
 
 Since $\measuredangle\hinge{x_n}p q\to \pi$, we have 
@@ -366,7 +366,7 @@ the maximal value (possibly $\infty$) such that the comparison
 holds for any hinge $\hinge x p y$ with $\dist{p}{x}{}+\dist{x}{y}{}<R_p$.
 
 \begin{subthm}{ex:open-comparison:positive}
-Show that for any compact subset $K\subset \Sigma$, there is $\eps>0$ such that $R_p>\eps$ for any $p\in K$.
+Show that for any compact subset $K\subset \Sigma$, there is $\epsilon>0$ such that $R_p>\epsilon$ for any $p\in K$.
 \end{subthm}
 
 \begin{subthm}{ex:open-comparison:almost-min}
