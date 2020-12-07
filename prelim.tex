@@ -364,7 +364,7 @@ Moreover, if $\phi$ is bounded above and/or below by some constants, then we may
 
 Let $f\:{\spc{X}}\to \spc{Y}$ be a map between metric spaces.
 If  for any $\epsilon>0$ there is $\delta>0$ such that 
-\[\dist{x_1}{x_2}{\spc{X}}<\delta\quad\Longrightarrow\quad |f(x_1)-f(x_2)|_\spc{Y}<\epsilon,\]
+\[\dist{x_1}{x_2}{\spc{X}}<\delta\quad\Longrightarrow\quad \dist{f(x_1)}{f(x_2)}{\spc{Y}}<\epsilon,\]
 then $f$ is called \index{uniformly continuous}\emph{uniformly continuous}.
 
 Evidently every uniformly continuous function is continuous;
@@ -386,7 +386,7 @@ for any $n$.
 
 
 We say that a sequence of functions $f_i : {\spc{X}} \to \spc{Y}$ \index{uniform convergence}\emph{converges uniformly} to a function $f_{\infty}: {\spc{X}} \to \spc{Y}$ if for any 
-$\epsilon >0$, there is a natural number $N$ such that for all $n \ge N$, we have $|f_{\infty} (x)-f_n (x)|<\epsilon$
+$\epsilon >0$, there is a natural number $N$ such that for all $n \ge N$, we have $\dist{f_{\infty}(x)}{f_n (x)}{}<\epsilon$
 for all $x  \in {\spc{X}}$.
 
 \begin{thm}{Arzel\'{a}--Ascoli Theorem}\label{lem:equicontinuous}

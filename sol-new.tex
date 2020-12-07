@@ -4,8 +4,8 @@
 \parbf{\ref{ex:ell-infty}.} Check all the conditions in the definition of metric, page \pageref{page:def:metric}.
 
 \parbf{\ref{ex:B2inB1}}; \ref{SHORT.ex:B2inB1:a}.
-Observe that $|p-q|_{\spc{X}}\le 1$. 
-Apply the triangle inequality to show that $|p-x|_{\spc{X}}\le 2$ for any $x\in B[q,1]$.
+Observe that $\dist{p}{q}{\spc{X}}\le 1$. 
+Apply the triangle inequality to show that $\dist{p}{x}{\spc{X}}\le 2$ for any $x\in B[q,1]$.
 Make a conclusion.
 
 \parit{\ref{SHORT.ex:B2inB1:b}.} Take $\spc{X}$ to be the half-line $[0,\infty)$ with the standard metric; $p=0$ and $q=\tfrac45$.
@@ -14,13 +14,13 @@ Make a conclusion.
 
 \parbf{\ref{ex:close-open}.}
 Suppose the complement $\Omega=\spc{X}\backslash Q$ is open.
-Then for each point $p\in \Omega$ there is $\epsilon>0$ such that $|p-q|_{\spc{X}}>\epsilon$ for any $q\in Q$.
+Then for each point $p\in \Omega$ there is $\epsilon>0$ such that $\dist{p}{q}{\spc{X}}>\epsilon$ for any $q\in Q$.
 It follows that $p$ is not a limit point of any sequence $q_n\in Q$.
 That is, any limit of a sequence in $Q$ lies in $Q$;
 that is, by the definition, $Q$ is closed.
 
 Now suppose $\Omega=\spc{X}\backslash Q$ is not open.
-Show that there is a point $p\in \Omega$ and a sequence $q_n\in Q$ such that such that $|p-q_n|_{\spc{X}}\z<\tfrac 1n$ for any $n$.
+Show that there is a point $p\in \Omega$ and a sequence $q_n\in Q$ such that such that $\dist{p}{q_n}{\spc{X}}\z<\tfrac 1n$ for any $n$.
 Conclude that $q_n\to p$ and $n\to \infty$;
 therefore $Q$ is not closed.
 
@@ -293,9 +293,9 @@ that is, there are points $x,y\in A$ and a point $z\notin A$ that lies between $
 Since $A$ is closed, its complement is open.
 That is, the ball $B(z,\epsilon)$ does not intersect $A$ for some $\epsilon>0$.
 
-Show that there is $\delta>0$ such that any path of length at most $|x-y|_{\RR^3}+\delta$ passes thru $B(z,\epsilon)$.
-It follows that $|x-y|_A\ge |x-y|_{\RR^3}+\delta$, 
-in particular $|x-y|_A\ne |x-y|_{\RR^3}$.
+Show that there is $\delta>0$ such that any path of length at most $\dist{x}{y}{\RR^3}+\delta$ passes thru $B(z,\epsilon)$.
+It follows that $\dist{x}{y}A\ge \dist{x}{y}{\RR^3}+\delta$, 
+in particular $\dist{x}{y}A\ne \dist{x}{y}{\RR^3}$.
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip-4mm
@@ -1285,7 +1285,7 @@ Conclude that
 \[|p-x|+|x-q|\le \frac{|p-q|}{\cos\alpha}.\]
 
 Finally, apply \ref{cor:shorts+convex} to show that
-\[|p-q|_\Sigma\le |p-x|+|x-q|.\]
+\[\dist{p}{q}\Sigma\le |p-x|+|x-q|.\]
 
 
 \parbf{\ref{ex:hat-convex}.} Suppose there is a minimizing curve $\gamma\not\subset\Delta$ with endpoints $p$ and $q$ in $\Delta$.
@@ -1421,20 +1421,20 @@ Since $\alpha$ and $\beta$ have a common subarc, they share one point and veloci
 by \ref{prop:geod-existence} $\alpha$ coincides with $\beta$ --- a contradiction.
 
 
-\parbf{\ref{ex:milka}.} Let $W$ be the closed region outside of $\Sigma$. Show that the distance $ | p^t - q   |_W  $ is constant with respect to $t$. This implies that the concatenation of the line segment $[p^t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path from $p^t$ to $q$  in $W$. Since $\Sigma$ is strictly convex, 
-\[ | \gamma (t) - q  | _W > | \gamma (t) - q   |_{\mathbb{R}^3}  \]
+\parbf{\ref{ex:milka}.} Let $W$ be the closed region outside of $\Sigma$. Show that the distance $\dist{p^t}{q}W$ is constant with respect to $t$. This implies that the concatenation of the line segment $[p^t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path from $p^t$ to $q$  in $W$. Since $\Sigma$ is strictly convex, 
+\[ \dist{\gamma (t)}{q}W > \dist{\gamma(t)}{q}{\mathbb{R}^3}  \]
 for all $t < \ell$. Hence 
 
 \[
 \begin{aligned}
- |p^t - q   |_W  &=  | p^t - \gamma(t)   |_W + | \gamma (t) -q  |_W   
+ \dist{p^t}{q}W  &=  \dist{p^t}{\gamma(t)}W + \dist{\gamma (t)}{q}W   
 \\
-&>   | p^t - \gamma(t)   |_{\mathbb{R}^3} + | \gamma (t) -q  |_{\mathbb{R}^3}   
+&> \dist{p^t}{\gamma(t)}{\mathbb{R}^3} + \dist{ \gamma (t)}{q}{\mathbb{R}^3}   
 \\
-&\geq  |p^t - q|_{\mathbb{R}^3}.   
+&\geq  \dist{p^t}{q}{\mathbb{R}^3}.   
 \end{aligned}
 \]
-If the segment $[p^t , q ]$ was entirely contained in $W$ for some $t< \ell $, then $ |p^t - q   |_W = |p^t - q|_{\mathbb{R}^3} $, which would be a contradiction.
+If the segment $[p^t , q ]$ was entirely contained in $W$ for some $t< \ell $, then $ \dist{p^t}{q}W = \dist{p^t}{q}{\mathbb{R}^3} $, which would be a contradiction.
 
 
 %Strictly speaking, this solution requires the first variation formula, which students don't have right now.
@@ -1791,7 +1791,7 @@ a\cdot b\cdot(\ell\cdot n-m^2)
 \setcounter{eqtn}{0}
 
 \parbf{\ref{ex:diam-angle}.}
-Observe that $|p-x|_\Sigma\le |p-q|_\Sigma$ and $|q-x|_\Sigma\le |p-q|_\Sigma$.
+Observe that $\dist{p}{x}\Sigma\le \dist{p}{q}\Sigma$ and $\dist{q}{x}\Sigma\le \dist{p}{q}\Sigma$.
 Conclude that $\angk xpq\ge \tfrac\pi3$.
 Apply \ref{thm:comp:toponogov}.
 
@@ -1804,7 +1804,7 @@ Apply \ref{thm:comp:toponogov}.
 
 \parit{\ref{SHORT.ex:open-comparison:almost-min}.} Argue by contradiction;
 if the statement does not hold then for any $p\in\Sigma$ there is a point $q=q(p)\in \Sigma$ such that 
-$|q-p|_\Sigma< 100\cdot R_p$
+$\dist{q}{p}\Sigma< 100\cdot R_p$
 and
 $R_q<(1-\tfrac1{100})\cdot R_p$.
 
@@ -1893,17 +1893,17 @@ let $y$ be the midpoint of $[x,z]$.
 Denote by $\bar x$ and $\bar z$ the points on $\delta$ that minimize the distances to $x$ and $z$ respectively;
 so we have
 $f(x)
-=|x-\bar x|_\Sigma$,
-and $f(z)=|z-\bar z|_\Sigma$.
+=\dist{x}{\bar x}\Sigma$,
+and $f(z)=\dist{z}{\bar z}\Sigma$.
 
 Since $\Delta$ is convex, the midpoint of $[\bar x,\bar z]$, say  $\bar y$, lies in $\Delta$.
 By \ref{ex:convex-dist}, we have 
 \begin{align*}
-f(y)&\le |y-\bar y|_\Sigma
+f(y)&\le \dist{y}{\bar y}\Sigma
 \le
-\tfrac12\cdot(|x-\bar x|_\Sigma
+\tfrac12\cdot(\dist{x}{\bar x}\Sigma
 +
-|z-\bar z|_\Sigma)
+\dist{z}{\bar z}\Sigma)
 =
 \tfrac12\cdot(f(x)+f(z)).
 \end{align*}
@@ -1914,7 +1914,8 @@ Suppose $\gamma$ is a unit-speed geodesic in $\Delta$ and $\gamma(0)=p$.
 Let $q$ be a point on $\delta$ that minimize the distance to $p$.
 Denote by $\phi$ the angle between $\gamma$ and $[p,q]$ at $p$.
 Note that it is sufficient to show that 
-\[f\circ\gamma(t)\le |p-q|_\Sigma+t\cdot\cos\phi\eqlbl{eq:dist<cosphi}\]
+\[f\circ\gamma(t)\le 
+\dist{p}{q}\Sigma+t\cdot\cos\phi\eqlbl{eq:dist<cosphi}\]
 for $t$ sufficiently close to $0$.
 
 \begin{wrapfigure}{r}{27 mm}
@@ -1942,8 +1943,8 @@ By comparison we have that
 \mathrel{=:}\tilde \psi
 \end{align*}
 
-Since $t=|\tilde p-\tilde x|_{\RR^2}$ is small, so is the distances $|\tilde q-\tilde y|_{\RR^2}$.
-Therefore we can choose a point $y$ on $\delta$ such that $|q-y|_\Sigma=|\tilde q-\tilde y|_{\RR^2}$.
+Since $t=\dist{\tilde p}{\tilde x}{\RR^2}$ is small, so is the distances $\dist{\tilde q}{\tilde y}{\RR^2}$.
+Therefore we can choose a point $y$ on $\delta$ such that $\dist{q}{y}\Sigma=\dist{\tilde q}{\tilde y}{\RR^2}$.
 Moreover, if we choose in on the \emph{right side}, then $\tfrac\pi2-\psi \ge \measuredangle\hinge qxy$.
 By construction and comparison, we have 
 \begin{align*}
@@ -1955,16 +1956,16 @@ By construction and comparison, we have
 \ge 
 \angk q x y.
 \end{align*}
-Therefore $|x-y|_\Sigma\le |\tilde x-\tilde y|_{\RR}$.
+Therefore $\dist{x}{y}\Sigma\le \dist{\tilde x}{\tilde y}{\RR}$.
 Since $\tilde\phi\le\phi$, we get that
 \begin{align*}
-f\circ\gamma(t)&\le |x-y|_\Sigma\le 
-|\tilde x-\tilde y|_{\RR}=
+f\circ\gamma(t)&\le \dist{x}{y}\Sigma\le 
+\dist{\tilde x}{\tilde y}{\RR}=
 \\
 &=
-|p-q|_\Sigma+t\cdot\cos\tilde\phi
+\dist{p}{q}\Sigma+t\cdot\cos\tilde\phi
 \le
-|p-q|_\Sigma+t\cdot\cos\phi.
+\dist{p}{q}\Sigma+t\cdot\cos\phi.
 \end{align*}
 That is, we proved \ref{eq:dist<cosphi} for small $t>0$.
 The case $t<0$ can be done along the same lines. 
