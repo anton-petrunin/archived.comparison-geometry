@@ -2,7 +2,7 @@
 
 \section{Intrinsic geometry}
 
-We start to study the \index{intrinsic geometry}\emph{intrinsic geometry} of surfaces.
+We begin to study the \index{intrinsic geometry}\emph{intrinsic geometry} of surfaces.
 A property is called \index{intrinsic property}\emph{intrinsic} if it can be checked by measuring things inside the surface, for example lengths of curves or angles between the curves that lie in the surface.
 Otherwise, if a definition of a property essentially uses the ambient space, then it is called \index{extrinsic property}\emph{extrinsic}.
 
@@ -288,42 +288,25 @@ Show that the area of $\Sigma$ cannot exceed $4\cdot \pi$.
 
 \section{Definition}
 
-A smooth curve $\gamma$ on a smooth surface $\Sigma$ is called \index{geodesic}\emph{geodesic} if for any~$t$, the acceleration $\gamma''(t)$ is perpendicular to the tangent plane $\T_{\gamma(t)}$.
+A smooth curve $\gamma$ in a smooth surface $\Sigma$ is called a \index{geodesic}\emph{geodesic} if for any~$t$, the acceleration $\gamma''(t)$ is perpendicular to the tangent plane $\T_{\gamma(t)}$.
 
-Physically, geodesics can be understood as the trajectories of a particle that slides on $\Sigma$ without friction.
+Physically, geodesics can be understood as the trajectories of  particles that slide on $\Sigma$ without friction.
 Indeed, since there is no friction, the force that keeps the particle on $\Sigma$ must be perpendicular to $\Sigma$.
-Therefore, by the second Newton's laws of motion,
+Therefore, by  Newton's second law of motion,
 we get that the acceleration $\gamma''$ is perpendicular to $\T_{\gamma(t)}$.
 
-\begin{thm}{Exercise}\label{ex:helix=geodesic}
-Let $\Sigma$ be the cylindrical surface described by the equation $x^2\z+y^2=1$.
-Show that one turn of helix $\gamma\:[0,2\cdot\pi]\to \Sigma$ defined by $\gamma(t)=(\cos t,\sin t, t)$
-is a geodesic, but not a shortest path on $\Sigma$.
-\end{thm}
+Physically speaking, the following lemma follows from the law of conservation of energy.
 
-\begin{thm}{Exercise}\label{ex:reflection-geodesic}
-Assume that a smooth surface $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$.
-Suppose that $\Sigma$ and $\Pi$ intersect along a smooth regular curve $\gamma$.
-Show that $\gamma$, parametrized by its arc-length, is a geodesic on $\Sigma$.
-\end{thm}
-
-Recall that asymptotic line is defined in Section~\ref{sec:saddle}.
-
-\begin{thm}{Exercise}\label{ex:asymptotic-geodesic}
-Suppose that a curve $\gamma$ is a geodesic and, at the same time, is an asymptotic line on a smooth surface $\Sigma$.
-Show that $\gamma$ is a line segment.
-\end{thm}
-
-\section{Existence and uniqueness}
-
-The following lemma, exercise, and proposition can be interpreted physically as follows.
-The lemma follows from the conservation of energy.
 
 \begin{thm}{Lemma}\label{lem:constant-speed}
-Any geodesic has constant speed.
-
-More precisely, if $\gamma$ is a geodesic on a smooth surface, then $|\gamma'|$ is constant.
+Let $\gamma: (-1,1) \to \Sigma $ be a geodesic in a smooth surface $\Sigma$. 
+Then  $| \gamma ' |$ is constant.
+Moreover, for any $\lambda >0$, the curve 
+\[ \gamma_{\lambda}: (\frac{-1}{\lambda} , \frac{1}{\lambda} ) \to \Sigma   \]
+ defined as $\gamma _{\lambda }(t) : = \gamma (\lambda t)$ is a geodesic as well. 
+ In other words, any geodesic has constant speed, and multiplying its speed by a positive constant yields a new geodesic with the same image.
 \end{thm}
+
 
 \parit{Proof.} 
 Since $\gamma'(t)$ is a tangent vector at $\gamma(t)$,
@@ -333,10 +316,15 @@ Whence
 \langle\gamma',\gamma'\rangle'&=2\cdot \langle\gamma'',\gamma'\rangle=0.
 \end{align*}
 That is, $|\gamma'|^2=\langle\gamma',\gamma'\rangle$ is constant.
+
+For the second part, we only need to notice that 
+\[  \gamma_{\lambda}''(t) =  \lambda^2 \gamma''(\lambda t)   \]
+This implies that $\gamma_{\lambda}''(t)$ is parallel to $\gamma''(\lambda t)$, hence perpendicular to $T_{\gamma (\lambda t)}=T_{\gamma_{\lambda}(t)}$.
 \qeds
 
+
 The statement in the following exercise is called \emph{Clairaut's relation};
-it can be obtained from the lemma above and the conservation angular momentum.
+it can be obtained from the lemma above and the conservation of angular momentum.
 
 \begin{thm}{Exercise}\label{ex:clairaut}
 Let $\gamma$ be a geodesic on a smooth surface of revolution.
@@ -347,12 +335,31 @@ Show that the value $r(t)\cdot \cos\theta(t)$ is constant.
 \end{thm}
 
 
-The following proposition gives smooth dependence of trajectory of a particle depending on its initial position and velocity.
+
+
+
+\begin{thm}{Exercise}\label{ex:reflection-geodesic}
+Assume a smooth surface $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$.
+Suppose that $\Sigma$ and $\Pi$ intersect along a smooth regular curve $\gamma$.
+Show that $\gamma$, parametrized by arc-length, is a geodesic on $\Sigma$.
+\end{thm}
+
+Recall that an asymptotic line is a curve in the surface with vanishing normal curvature.
+
+\begin{thm}{Exercise}\label{ex:asymptotic-geodesic}
+Assume a curve $\gamma$ is a geodesic and, at the same time, is an asymptotic line of a smooth surface $\Sigma$.
+Show that $\gamma$ is a straight line segment.
+\end{thm}
+
+\section{Existence and uniqueness}
+
+The following proposition  shows that the position of a particle that travels without friction depends smoothly on its initial position, initial velocity, and the amount of time it has traveled. 
+
 
 
 \begin{thm}{Proposition}\label{prop:geod-existence} 
 Let $\Sigma$ be  a smooth surface without boundary.
-Given a tangent vector ${\vec v}$ to $\Sigma$ at a point $p$
+Given a tangent vector ${\vec v}$ to $\Sigma$ at a point $p$,
 there is a unique geodesic $\gamma\:\mathbb{I}\to \Sigma$ defined on a maximal open interval $\mathbb{I}\ni 0$ that starts at $p$ with velocity vector ${\vec v}$;
 that is, $\gamma(0)=p$ and $\gamma'(0)={\vec v}$.
 
@@ -360,22 +367,24 @@ Moreover
 \begin{subthm}{prop:geod-existence:smooth} the map $(p,{\vec v},t)\mapsto \gamma(t)$ is smooth in its domain of definition.
 \end{subthm}
 
-\begin{subthm}{prop:geod-existence:whole} if $\Sigma$ is proper, then $\mathbb{I}=\RR$; that is, the maximal interval is the whole real line.
+\begin{subthm}{prop:geod-existence:whole} if $\Sigma$ is proper, then $\mathbb{I}=\RR$; that is, the maximal interval is the entire real line.
 \end{subthm}
 
 \end{thm}
 
-A surface that satisfies the conclusion of \ref{SHORT.prop:geod-existence:whole} for any tangent vector ${\vec v}$ is called \index{geodesically complete}\emph{geodesically complete}.
+A surface that satisfies the conclusion of \ref{SHORT.prop:geod-existence:whole} for any tangent vector ${\vec v}$ is said to be \index{geodesically complete}\emph{geodesically complete}.
 So part \ref{SHORT.prop:geod-existence:whole} says that any proper surface is geodesically complete.
-The latter statement is a part of the \index{Hopf--Rinow theorem}\emph{Hopf--Rinow theorem} \cite{hopf-rinow} which also provides a converse;
-moreover, 
-\emph{if there is a point $p\in \Sigma$ such that for any tangent vector ${\vec v}\in\T_p\Sigma$ there is a both side infinite geodesic $\gamma$ with $\gamma'(0)={\vec v}$, then $\Sigma$ is proper.}
+The latter statement is a part of the \index{Hopf--Rinow theorem}\emph{Hopf--Rinow theorem} \cite{hopf-rinow}.% which also provides a converse;
+%moreover, 
+%\emph{if there is a point $p\in \Sigma$ such that for any tangent vector ${\vec v}\in\T_p\Sigma$ there is a two side infinite geodesic $\gamma$ with $\gamma'(0)={\vec v}$, then $\Sigma$ is proper.}
 
-The proof of this proposition on the existence theorem for an initial value problem (\ref{thm:ODE}).
+%Cannot be proper. z=sin(1/x), x>0 is a counterexample.
+
+The proof of this proposition uses the theorem on existence of solutions for an initial value problem (\ref{thm:ODE}). The following lemma shows that the condition of being a geodesic can be stated as a second order ordinary differential equation.
 
 \begin{thm}{Lemma}\label{lem:geodesic=2nd-order}
 Let $f$ be  a smooth function defined on an open domain in $\RR^2$.
-A smooth curve $t\mapsto \gamma(t)=(x(t),y(t),z(t))$ is the geodesic in a graph $z=f(x,y)$ if and only if $z(t)=f(x(t),y(t))$ for any $t$ and the functions $t\mapsto x(t)$ and $t\mapsto y(t)$
+A smooth curve $t\mapsto \gamma(t)=(x(t),y(t),z(t))$ is a geodesic in the graph $z=f(x,y)$ if and only if $z(t)=f(x(t),y(t))$ for any $t$ and the functions $t\mapsto x(t)$ and $t\mapsto y(t)$
 satisfy a differential equation
 \[
 \begin{cases}
@@ -384,7 +393,7 @@ x''=g(x,y,x',y'),
 y''=h(x,y,x',y'),
 \end{cases}
 \]
-where the functions $g$ and $h$ are smooth functions of four variables that determined by $f$.
+where the functions $g$ and $h$ are smooth functions of four variables determined by $f$.
 \end{thm}
 
 The proof of the lemma is done by means of direct calculations.
@@ -402,7 +411,9 @@ z''&=f(x,y)''=
 f_{xx}\cdot (x')^2
 +
 f_x\cdot x''
-+
++ 2f_{xy}x'y'
+\\
+&+
 f_{yy}\cdot (y')^2
 +
 f_y\cdot y''.
@@ -410,10 +421,10 @@ f_y\cdot y''.
 \eqlbl{eq:def-geod}
 \]
 Now observe that the equation 
-\[\gamma''(t)\perp\T_{\gamma(t)}\] 
+\[\gamma''(t)\perp\T_{\gamma(t)} \eqlbl{eq:def-def-geod}  \] 
 means that 
-$\gamma''$ is perpendicular to two basis vectors in $\T_{\gamma(t)}$.
-Therefore the vector equation \ref{eq:def-geod} can be rewritten as the following system of two real equations
+$\gamma''$ is perpendicular to the two basis vectors in $\T_{\gamma(t)}$.
+Therefore the vector equation \ref{eq:def-def-geod} can be rewritten as the following system of two real equations
 \[
 \begin{cases}
 \langle \gamma'',s_x\rangle=0,
@@ -427,7 +438,7 @@ Observe that
 $s_x=(1,0, f_x)$ 
 and 
 $s_y=(0,1, f_y)$.
-Since $\gamma''\z=(x'',y'',z'')$, we can rewrite the system the following way.
+Since $\gamma''\z=(x'',y'',z'')$, we can rewrite the system in the following way.
 \[
 \begin{cases}
 x''+ f_x\cdot z''=0,
@@ -435,14 +446,14 @@ x''+ f_x\cdot z''=0,
 y''+ f_y\cdot z''=0,
 \end{cases}
 \]
-It remains use expression \ref{eq:z''} for $z''$, combine like terms and simplify.
+It remains use expression \ref{eq:z''} for $z''$, combine similar terms and simplify.
 \qeds
 
 
 \parit{Proof of \ref{prop:geod-existence}.}
 Let $z=f(x,y)$ be a description of $\Sigma$ in tangent-normal coordinates at $p$.
-By Lemma \ref{lem:geodesic=2nd-order} the condition $\gamma''(t)\perp\T_{\gamma(t)}$ can be written as a second order differential equation.
-Applying the existence and uniqueness of the initial value problem (\ref{thm:ODE}) we get existence and uniqueness of geodesic $\gamma$  in a small interval $(-\eps,\eps)$ for some $\eps>0$.
+By Lemma \ref{lem:geodesic=2nd-order}, the condition $\gamma''(t)\perp\T_{\gamma(t)}$ can be written as a second order differential equation.
+Applying the existence and uniqueness of the initial value problem (\ref{thm:ODE}) we get existence and uniqueness of a geodesic $\gamma$  in a small interval $(-\eps,\eps)$ for some $\eps>0$.
 
 Let us extend $\gamma$ to a maximal open interval $\mathbb{I}$.
 Suppose there is another geodesic $\gamma_1$ with the same initial data that is defined on a maximal open interval $\mathbb{I}_1$.
@@ -457,10 +468,10 @@ in particular, $\mathbb{I}_1=\mathbb{I}$.
 
 Part \ref{SHORT.prop:geod-existence:smooth} follows since the solution of the initial value problem depends smoothly on the initial data (\ref{thm:ODE}).
 
-Suppose \ref{SHORT.prop:geod-existence:whole} does not hold;
+Assume \ref{SHORT.prop:geod-existence:whole} does not hold;
 that is, the maximal interval $\mathbb{I}$ is a proper subset of the real line $\RR$.
-Without loss of generality we may assume that $b=\sup\mathbb{I}<\infty$.
-(If not switch the direction of $\gamma$.)
+Without loss of generality, we may assume that $b=\sup\mathbb{I}<\infty$.
+(If not, switch the direction of $\gamma$.)
 
 By \ref{lem:constant-speed} $|\gamma'|$ is constant, in particular $t\mapsto \gamma(t)$ is a uniformly continuous function.
 Therefore  the limit point
@@ -468,7 +479,7 @@ Therefore  the limit point
 is defined.
 Since $\Sigma$ is a proper surface, $q\in \Sigma$. 
 
-Applying the argument above in tangent-normal coordinates at $q$ shows that $\gamma$ can be extended as a geodesic behind $q$.
+Applying the argument above in a tangent-normal coordinate chart at $q$, we conclude that $\gamma$ can be extended as a geodesic beyond $q$.
 Therefore $\mathbb{I}$ is not a maximal interval --- a contradiction.
 \qeds
 
@@ -485,7 +496,7 @@ there is no closed curve $\gamma$ in $\RR^2$ such that $s\circ\gamma$ is a geode
 \section{Exponential map}\label{sec:exp}
 
 Let $\Sigma$ be a smooth regular surface and $p\in \Sigma$.
-Given a tangent vector ${\vec v}\in \T_p$, consider a geodesic $\gamma_{\vec v}$ in $\Sigma$ that runs from $p$ with the initial velocity ${\vec v}$;  
+Given a tangent vector ${\vec v}\in \T_p$, consider a geodesic $\gamma_{\vec v}$ in $\Sigma$ that starts at $p$ with initial velocity ${\vec v}$;  
 that is, $\gamma(0)=p$ and $\gamma'(0)={\vec v}$.
 
 The map 
@@ -493,14 +504,14 @@ The map
 is called \index{exponential map}\emph{exponential}.%
 \footnote{There is a good reason to call this map {}\emph{exponential}, but it is far from the subject.}
 By \ref{prop:geod-existence}, the map $\exp_p\:\T_p\to \Sigma$ is smooth and defined in a neighborhood of zero in $\T_p$;
-moreover, if $\Sigma$ is proper, then $\exp_p$ is defined on the whole space $\T_p$.
+moreover, if $\Sigma$ is proper, then $\exp_p$ is defined on the entire plane $\T_p$.
 
 Note that the exponential map $\exp_p$ 
 is defined on the tangent plane $\T_p$, which is a smooth surface,
 and its target is another smooth surface $\Sigma$.
 Observe that one can identify the plane $\T_p$
 with its tangent plane $\T_0\T_p$ so the differential $d_0(\exp_p)\:\vec v\mapsto D_{\vec v}\exp_p$ maps $\T_p$ to itself.
-Further note that by the definition of exponential map we have that this differential is the identity map; that is, $d_0\exp_p(\vec v)=
+Furthermore,  note that by Lemma \ref{lem:constant-speed}, this differential is the identity map; that is, $d_0\exp_p(\vec v)=
 \vec v$ for any $\vec v\in \T_p$.
 
 Summarizing, we get the following statement:
@@ -526,8 +537,8 @@ Note also that \ref{prop:geod-existence:whole} implies that \emph{if $\Sigma$ is
 \begin{thm}{Proposition}\label{prop:exp}
 Let $\Sigma$ be a smooth surface (without boundary) and $p\in \Sigma$.
 Then there is $r_p>0$ such that
-the exponential map $\exp_p$ is defined on the open ball $B=B(0,r_p)_{\T_p}$
-and the restriction $\exp_p|_B$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$.
+the exponential map $\exp_p$ is defined on the open ball $B_p=B(0,r_p)_{\T_p}$
+and the restriction $\exp_p|_{B_p}$ is a smooth regular parametrization of a neighborhood of $p$ in $\Sigma$.
 
 Moreover we have a {}\emph{local control} on $r_p$;
 that is, for any $q\in \Sigma$ there is $\eps>0$ such that if $|q-p|_\Sigma<\eps$, then $r_p\ge\eps$.
@@ -536,32 +547,35 @@ that is, for any $q\in \Sigma$ there is $\eps>0$ such that if $|q-p|_\Sigma<\eps
 The proof of the proposition uses the observation and the inverse function theorem (\ref{thm:inverse}).
 
 \parit{Proof.}
-Let $z=f(x,y)$ be a local graph representation of $\Sigma$ in the tangent-normal coordinates at $p$.
-Note that $(x,y)$-plane coincides with the tangent plane $\T_p$.
+Let $z=f(x,y)$ be a local graph representation of $\Sigma$ in  tangent-normal coordinates at $p$.
+Note that the $(x,y)$-plane coincides with the tangent plane $\T_p$.
 
 Denote by $s$ the composition of  the exponential map $\exp_p$ with the orthogonal projection $(x,y,z)\mapsto (x,y)$.
 By \ref{obs:d(exp)=1}, the differential $d_0s$ is the identity;
-in other words, the Jacobian matrix of this map at $0$ is unit.
+in other words, the Jacobian matrix of this map at $0$ is the identity.
 Applying the inverse function theorem (\ref{thm:inverse}) we get the first part of the proposition.
 
-The second part can be proved along the same lines, using the second part the inverse function theorem (\ref{thm:inverse});
-it guarantees that the size of the neighborhood in $\T_p$ for all points $p$ sufficiently close to~$q$.
+The second part of the inverse function theorem (\ref{thm:inverse}) 
+ guarantees that for a given point $q\in \Sigma$, the radii of the balls $B_p$
+   for all points $p$ sufficiently close to $q$
+    can be taken uniformly 
+  bounded below by a positive number $\varepsilon_q >0$.
 \qeds
 
-Given $p\in \Sigma$, the least upper bound on $r_p$ that satisfies \ref{prop:exp} is called \index{injectivity radius}\emph{injectivity radius} of $\Sigma$ at $p$;
+Given $p\in \Sigma$, the least upper bound on $r_p$ that satisfies \ref{prop:exp} is called the \index{injectivity radius}\emph{injectivity radius} of $\Sigma$ at $p$;
 it is denoted by $\inj(p)$.
 The proposition states that {}\emph{injectivity radius is positive and locally bounded away from zero}.
 
-In fact the function {}\emph{$\inj\:\Sigma\to (0,\infty]$ is continuous};
+In fact, the function {}\emph{$\inj\:\Sigma\to (0,\infty]$ is continuous};
 the latter was proved by Wilhelm Klingenberg \cite[5.4]{gromoll-klingenberg-meyer}. 
 
 The proof of the following statement will be indicated in \ref{ex:inj-rad}.
 
 \begin{thm}{Proposition}\label{prop:inj-rad}
 Let $\Sigma$ be a smooth surface (without boundary) and $p\in \Sigma$.
-If $\exp_p$ is injective in $B(0,r)_{\T_p}$, then the restriction $\exp_p|_{B(0,r)}$ is a diffeomorphism to its image.
+If $\exp_p$ is injective in $B(0,r)_{\T_p}$, then the restriction $\exp_p|_{B(0,r)}$ is a diffeomorphism between $B(0,r)_{T_p}$ and its image.
 
-In other words, the injectivity radius at $p$ can be defined as the least upper bound on $r$ such that $\exp_p$ is injective in the ball $B(0,r)_{\T_p}$.
+In other words, the injectivity radius at $p$ can be defined as the least upper bound on the $r$ such that $\exp_p$ is injective in the ball $B(0,r)_{\T_p}$.
 \end{thm}
 
 \section{Shortest paths are geodesics}
@@ -569,14 +583,22 @@ In other words, the injectivity radius at $p$ can be defined as the least upper 
 \begin{thm}{Proposition}\label{prop:gamma''}
 Let $\Sigma$ be a smooth regular surface.
 Then any shortest path $\gamma$ in $\Sigma$ parametrized proportional to its arc-length is a geodesic in $\Sigma$.
-In particular $\gamma$ is a smooth curve.
+In particular, $\gamma$ is a smooth curve.
 
 A partial converse to the first statement also holds: a sufficiently short arc of any geodesic is a shortest path.
-More precisely, any point $p$ in $\Sigma$ has a neighborhood $U$ such that any geodesic that lies completely in $U$ is a shortest path.
+More precisely, any point $p$ in $\Sigma$ has a neighborhood $U$ such that any geodesic that lies entirely in $U$ is a shortest path.
 \end{thm}
 
-A geodesic might not form a shortest path, but if this is the case, then it is called a \index{minimizing geodesic}\emph{minimizing geodesic}.
-Note that according to the proposition, any shortest path is a minimizing geodesic after a reparametrization.
+
+\begin{thm}{Exercise}\label{ex:helix=geodesic}
+Let $\Sigma$ be the cylindrical surface described by the equation $x^2\z+y^2=1$.
+Show that the helix $\gamma\:[0,2\cdot\pi]\to \Sigma$ defined by $\gamma(t)=(\cos t,\sin t, t)$
+is a geodesic, but not a shortest path on $\Sigma$.
+\end{thm}
+
+
+As one can see from the previous exercise, a geodesics might fail to be shortest paths. A geodesic that is also a shortest path is called a  \index{minimizing geodesic}\emph{minimizing geodesic}.
+Note that according to Proposition \ref{prop:gamma''}, any shortest path is a minimizing geodesic after a suitable reparametrization.
 
 A formal proof will be given later; see Section~\ref{sec:proof-of-gamma''}.
 
@@ -591,14 +613,14 @@ The tension in the thread has to be the same at all points (otherwise the thread
 Denote the tension by $\tau$.
 
 We can assume that $\gamma$ has unit speed;
-in this case the net force from tension to the arc $\gamma_{[t_0,t_1]}$ is $\tau\cdot(\gamma'(t_1)-\gamma'(t_0)$.
-Hence the density of net force from tension at $t_0$ is 
+in this case the net force from tension along the arc $\gamma_{[t_0,t_1]}$ is $\tau\cdot(\gamma'(t_1)-\gamma'(t_0))$.
+Hence the density of the net force from tension at $t_0$ is 
 \begin{align*}
 \vec f(t_0)&=\lim_{t_1\to t_0}\tau\cdot\frac{\gamma'(t_1)-\gamma'(t_0)}{t_1-t_0}=
 \\
 &=\tau\cdot\gamma''(t_0).
 \end{align*}
-According to the second Newton's law of motion, we have 
+According to Newton's second law of motion, we have 
 $\vec f+\vec n=0$.
 The latter implies that  $\gamma''(t)\perp\T_{\gamma(t)}\Sigma$.
 \qeds
@@ -615,26 +637,26 @@ Evidently $B(p,r)_\Sigma\supset\exp_p(B)$.
 By \ref{prop:gamma''}, $B(p,r)_\Sigma\subset\exp_p(B)$, hence the result.
 \qeds
 
-According to the corollary, the restriction $\exp_p|_{\T_p}$ admits an inverse map that is called a \emph{logarithmic map at $p$};
+According to the corollary, the restriction $\exp_p|_{\T_p}$ admits an inverse map  called the \emph{logarithmic map at $p$};
 it is denoted by \[\log_p\:B(p,r)_\Sigma\to B(0,r)_{\T_p}.\]
 
 Note that according to the proposition above, any shortest path parametrized by its arc-length is a smooth curve.
-This observation should help to solve the following two exercises.
+This observation should help the reader to solve the following two exercises.
 
 
 \begin{thm}{Exercise}\label{ex:two-min-geod}
 Show that two shortest paths can cross each other at most once.
-More precisely, if two shortest paths have two distinct common points $p$ and $q$, then either these points are the ends of both shortest paths or both shortest paths contain an arc from $p$ to $q$.
+More precisely, if two shortest paths have two distinct common points $p$ and $q$, then either these points are the ends of both shortest paths or both shortest paths share a common arc from $p$ to $q$.
 
-Show by example that nonoverlapping geodesics can cross each other an arbitrary number of times.
+Show by an example that nonoverlapping geodesics can cross each other an arbitrary number of times.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:min-geod+plane}
-Assume that a smooth regular surface $\Sigma$ is mirror symmetric with respect to a plane $\Pi$.
+Assume a smooth regular surface $\Sigma$ is mirror symmetric with respect to a plane $\Pi$.
 Show that no shortest path $\alpha$ in $\Sigma$ can {}\emph{cross} $\Pi$ more than once.
 
 
-In other words, if you travel along $\alpha$, then you change the sides of $\Pi$ at most once. 
+In other words, if you travel along $\alpha$, then you go from one side  of $\Pi$ to the other at most once. 
 \end{thm}
 
 {
@@ -665,7 +687,7 @@ Show that the statement does not hold without assuming that $\gamma$ is minimizi
 
 \section{Liberman's lemma}
 
-The following lemma is a smooth analog of lemma proved by Joseph Liberman \cite{liberman}.
+The following lemma is a smooth analog of a lemma proved by Joseph Liberman \cite{liberman}.
 
 \begin{thm}{Liberman's lemma}\label{lem:liberman}
 Let $f$ be a smooth convex function  defined on an open subset of the plane.
@@ -680,7 +702,7 @@ Let us use the shortcut $\Norm(t)$ for $\Norm(\gamma(t))$.
 
 Since $\gamma$ is a geodesic, we have $\gamma''(t)\perp\T_{\gamma(t)}$,
 or equivalently $\gamma''(t)$ is proportional to $\Norm(t)$ for any $t$.
-Further 
+Furthermore,
 \[\gamma''=k\cdot\Norm,\]
 where $k=k(t)$ is the normal curvature at $\gamma(t)$ in the direction of $\gamma'(t)$.
 
@@ -699,7 +721,7 @@ whence the statement follows.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:rho''}
-Assume $\gamma$ is a unit-speed geodesic on a smooth convex surface $\Sigma$ and a point $p$ lies in the interior of a convex set bounded by $\Sigma$.
+Assume $\gamma$ is a unit-speed geodesic on a smooth convex surface $\Sigma$ and a point $p$ lies in the interior of the convex set bounded by $\Sigma$.
 Set $\rho(t)=|p-\gamma(t)|^2$.
 Show that $\rho''(t)\le 2$ for any $t$.
 \end{thm}
@@ -723,7 +745,7 @@ Assume $\Sigma$ is a graph $z=f(x,y)$ of a convex $\ell$-Lipschitz function $f$ 
 Then the total curvature of any geodesic in $\Sigma$ is at most $2\cdot \ell$.
 \end{thm}
 
-This theorem proved by Vladimir Usov \cite{usov},
+This theorem was first proved by Vladimir Usov \cite{usov},
 an amusing generalization was found by David Berg \cite{berg}.
 
 \parit{Proof.}
@@ -736,14 +758,14 @@ Since the slope of $f$ is at most $\ell$, we have
 If $\gamma$ is defined on the interval $[a,b]$, then
 \[
 \begin{aligned}
-\int_a^b z''(t)&=z'(b)-z'(a)\le 
+\int_a^b z''(t) dt&=z'(b)-z'(a)\le 
 \\
 &\le 2\cdot \tfrac{\ell}{\sqrt{1+\ell^2}}.
 \end{aligned}
 \eqlbl{eq:intz''}
 \]
 
-Further, note that $z''$ is the projection of $\gamma''$ to the $z$-axis.
+Also note that $z''$ is the projection of $\gamma''$ to the $z$-axis.
 Since $f$ is $\ell$-Lipschitz, the tangent plane $\T_{\gamma (t)} \Sigma$ cannot have a slope greater than $\ell$ for any $t$.
 Because $\gamma ''$ is perpendicular to that plane, we have that
 \[|\gamma'' (t)|  \le  z''(t)\cdot\sqrt{1+ \ell ^2}.\]
@@ -759,12 +781,12 @@ By \ref{eq:intz''}, we get that
 \qedsf
 
 \begin{thm}{Exercise}\label{ex:usov-exact}
-Note that the graph $z=\ell\cdot\sqrt{x^2+y^2}$ with removed origin is a smooth surface; denote it by $\Sigma$.
+Note that the graph $z=\ell\cdot\sqrt{x^2+y^2}$ with the origin removed is a smooth surface; denote it by $\Sigma$.
 Show that any both side infinite geodesic $\gamma$ in $\Sigma$ has total curvature exactly $2\cdot \ell$.
 \end{thm}
 
-Note that the last exercise implies that the estimate in the Usov's theorem is optimal. Smooth the function $f(x,y)=\ell\cdot\sqrt{x^2+y^2}$ in a small neighborhood of the origin keeping it convex and $\ell$-Lipschitz,
-and note that we can assume that the geodesic $\gamma$ does not enter the smoothed part of the graph.
+Note that the previous exercise implies that the estimate in Usov's theorem is optimal. Mollify the function $f(x,y)=\ell\cdot\sqrt{x^2+y^2}$ in a small neighborhood of the origin while keeping it convex and $\ell$-Lipschitz. 
+Note that we can assume that the geodesic $\gamma$ does not enter the smoothed part of the graph.
 
 
 \begin{thm}{Exercise}\label{ex:rough-bound-mountain}
@@ -773,7 +795,7 @@ Show that any geodesic $\gamma$ on the graph $z=f(x,y)$ is simple;
 that is, it has no self-intersections.
 
 Construct a convex $2$-Lipschitz function defined on the $(x,y)$-plane
-with a nonsimple geodesic $\gamma$ on its graph $z=f(x,y)$.
+with a nonsimple geodesic $\gamma$ in its graph $z=f(x,y)$.
 \end{thm}
 
 
@@ -795,7 +817,7 @@ The following exercise will guide you thru the proof of the theorem.
 \begin{thm}{Exercise}\label{ex:bound-tc}
 Let $\Sigma$ be as in the theorem and $\gamma$ be a unit-speed shortest path in $\Sigma$.
 Denote by $\Norm_p$ the unit normal vector that points outside of $\Sigma$;
-denote by $\theta_p$ the angle between $\Norm_p$ and the direction from the origin to a point $p\in\Sigma$.
+denote by $\theta_p$ the angle between $\Norm_p$ and the direction from the origin to the point $p\in\Sigma$.
 Set $\rho(t)\z=|\gamma(t)|^2$; denote by $k(t)$ the curvature of $\gamma$ at $t$.
 
 \begin{subthm}{}
@@ -824,9 +846,9 @@ for any $t$.
 
 \end{thm}
 
-Note that the obtained bound on total curvature goes to infinity as $\eps\to 0$.
+Note that the obtained bound of the total curvature goes to infinity as $\eps\to 0$.
 In fact there is a bound that is independent of $\eps$ \cite{lebedeva-petrunin}.
-(According to Exercise~\ref{ex:tc-spherical-image}, it would also follow if the length of spherical image of $\gamma$ can be bounded above; 
+(According to Exercise~\ref{ex:tc-spherical-image}, it would also follow if the length of the spherical image of $\gamma$ could be bounded above; 
 that is, if $\length(\Norm\circ\gamma)\le C$ for a universal constant $C$.
 The latter was conjectured by Aleksei Pogorelov \cite{pogorelov};
 counterexamples to the different forms of this conjecture were found 

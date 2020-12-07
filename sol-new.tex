@@ -1313,10 +1313,24 @@ Show that the closest point projection $\partial B \to \Sigma $ is surjective an
 \stepcounter{section}
 \setcounter{eqtn}{0}
 
-\parbf{\ref{ex:helix=geodesic}.}
-Show that $\Norm(\gamma(t))=(\cos t,\sin t, 0)$.
-Calculate $\gamma''(t)$ and show that it is proportional to $\Norm(\gamma(t))$.
-Note that the latter is equivalent to $\gamma''(t)\perp\T_{\gamma(t)}$.
+
+\parbf{\ref{ex:clairaut}.} 
+We can assume that the origin lies on the axis of revolution and $\vec i$ points in the direction of the axis.
+Use \ref{lem:constant-speed} to show that it is sufficient to prove that 
+$\langle\gamma'\times \gamma,\vec i\rangle$
+is constant.
+
+Since $\gamma''(t)\perp\T_{\gamma(t)}$ we have that three vectors $\vec i$, $\gamma$, and $\gamma''$ lie in the same plane.
+In particular $\langle\gamma''\times \gamma,\vec i\rangle=0$.
+Therefore
+$
+\langle\gamma'\times \gamma,\vec i\rangle'
+=
+\langle\gamma'\times \gamma',\vec i\rangle+\langle\gamma''\times \gamma,\vec i\rangle =0
+$.
+
+
+
 
 \parbf{\ref{ex:reflection-geodesic}.}
 Denote by $\mu$ a unit vector perpendicular to $\Pi$.
@@ -1337,22 +1351,6 @@ where $k_n(s)$ is the normal curvature of $\gamma$ at time $s$.
 Since $\gamma$ is asymptotic, $k_n(s)\equiv 0$;
 that is, $\gamma''(s)\equiv 0$, therefore $\gamma'$ is constant and $\gamma$ runs along a line segment; see \ref{ex:zero-curvature-curve}.
 
-\parbf{\ref{ex:clairaut}.} 
-We can assume that the origin lies on the axis of revolution and $\vec i$ points in the direction of the axis.
-Use \ref{lem:constant-speed} to show that it is sufficient to prove that 
-$\langle\gamma'\times \gamma,\vec i\rangle$
-is constant.
-
-Since $\gamma''(t)\perp\T_{\gamma(t)}$ we have that three vectors $\vec i$, $\gamma$, and $\gamma''$ lie in the same plane.
-In particular $\langle\gamma''\times \gamma,\vec i\rangle=0$.
-Therefore
-$
-\langle\gamma'\times \gamma,\vec i\rangle'
-=
-\langle\gamma'\times \gamma',\vec i\rangle+\langle\gamma''\times \gamma,\vec i\rangle =0
-$.
-
-
 
 \parbf{\ref{ex:round-torus}.}
 By \ref{ex:reflection-geodesic}, any meridian of $\Sigma$ is a closed geodesic.
@@ -1363,6 +1361,14 @@ Note that if $\gamma$ is tangent to a meridian at some point, then by uniqueness
 In the remaining case $\gamma$ can intersect meridians only transitively.
 Therefore the longitude of $\gamma$ is monotonic.
 Whence again $\gamma$ is non-contractible.
+
+
+\parbf{\ref{ex:helix=geodesic}.}
+Show that $\Norm(\gamma(t))=(\cos t,\sin t, 0)$.
+Calculate $\gamma''(t)$ and show that it is proportional to $\Norm(\gamma(t))$.
+Note that the latter is equivalent to $\gamma''(t)\perp\T_{\gamma(t)}$.
+
+
 
 \parbf{\ref{ex:two-min-geod}.}
 Assume that two shortest paths $\alpha$ and $\beta$ have two common points $p$ and $q$.
