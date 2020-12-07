@@ -1099,7 +1099,7 @@ Choose two points $x,y$ in one level set $L_a$.
 Suppose $z=\gamma(t)$.
 Note that as $t\to \infty$ we have $\measuredangle\hinge xyz\to\tfrac\pi2$.
 Indeed, let $\alpha$ be the extension of $[xy]$ to both sides.
-If there is $\eps>0$ such that $\measuredangle\hinge xyz<\tfrac\pi2-\eps$ for a sequence $t_n\to\infty$, then by comparison there is a point $\bar y=\alpha(
+If there is $\epsilon>0$ such that $\measuredangle\hinge xyz<\tfrac\pi2-\epsilon$ for a sequence $t_n\to\infty$, then by comparison there is a point $\bar y=\alpha(
 
 
 Choose a point $x\in\Sigma$ and $t_1,t_2>0$;
@@ -2379,9 +2379,9 @@ Further set $s(\theta,\rho)=\gamma_\theta(\rho)$.
 Note that the function $s\:\RR\times \RR\to \Sigma$ could be also defined as 
 \[s(\theta,\rho)=\exp_p\tilde s(\theta,\rho),\]
 where $\tilde s(\theta,\rho)$ denotes the vector in $\T_p$ with polar coordinates $(\theta,\rho)$, if one takes the axis in the direction of $u$.
-By ???, it follows that there is $\eps>$ such that $s(\theta,\rho)$ is defined if $|\rho|<\eps$;
-moreover, if $|\rho_i|<\eps$, then $s(\theta_1,\rho_1)=s(\theta_2,\rho_2)$ if and only if $\rho_1=\rho_2=0$ or $\theta_1=\theta_2+\pi\cdot n$ and $\rho_1=(-1)^n\cdot \rho_2$ for some integer $n$;
-that is, in the strip described by the inequality $|\rho|<\eps$ the polar coordinates on $\Sigma$ behave as usual polar coordinates.
+By ???, it follows that there is $\epsilon>$ such that $s(\theta,\rho)$ is defined if $|\rho|<\epsilon$;
+moreover, if $|\rho_i|<\epsilon$, then $s(\theta_1,\rho_1)=s(\theta_2,\rho_2)$ if and only if $\rho_1=\rho_2=0$ or $\theta_1=\theta_2+\pi\cdot n$ and $\rho_1=(-1)^n\cdot \rho_2$ for some integer $n$;
+that is, in the strip described by the inequality $|\rho|<\epsilon$ the polar coordinates on $\Sigma$ behave as usual polar coordinates.
 
 Consider the polar coordinates $(\theta,\rho)$ in the tangent plane $\T_p$.
 Recall that the polar coordinates of a point are not uniquely defined;
@@ -2392,13 +2392,13 @@ Let us use the exponential map to transfer the polar coordinates to the surface.
 That is, a point has polar coordinates $(r,\theta)$ is 
 
 \begin{thm}{Proposition}
-For any point $p$ in a smooth surface $\Sigma$ there is a positive function $\eps$
-such that any geodesic of length less than $\eps$ that starts at $p$ is a shortest path.  
+For any point $p$ in a smooth surface $\Sigma$ there is a positive function $\epsilon$
+such that any geodesic of length less than $\epsilon$ that starts at $p$ is a shortest path.  
 \end{thm}
 
-\parit{Proof.} Let $\eps$ be as in ???.
+\parit{Proof.} Let $\epsilon$ be as in ???.
 Consider a curve $\alpha$ with arc-length parametrization in $\Sigma$ that starts at $p$.
-Assume $\length\alpha<\eps$.
+Assume $\length\alpha<\epsilon$.
 
 Consider the polar coordinates $(\theta,\rho)\mapsto s(\theta,\rho)$ at $p$.
 Note that the polar coordinates at $p$ satisfy the conditions in \ref{prop:semigeodesic}.
@@ -2950,12 +2950,12 @@ we need to show that
 Suppose $\Delta_1$ is a small geodesic triangle in $\Sigma_1$ that contains $p_1$.
 Set $\Delta_2=f(\Delta_1)$.
 We may assume that the Gauss curvature is almost constant in $\Delta_1$ and $\Delta_2$;
-that is, given $\eps>0$, we can assume that 
+that is, given $\epsilon>0$, we can assume that 
 \[
 \begin{aligned}
-|K(x_1)_{\Sigma_1}-g_1|&<\eps,
+|K(x_1)_{\Sigma_1}-g_1|&<\epsilon,
 \\
-|K(x_2)_{\Sigma_2}-g_2|&<\eps
+|K(x_2)_{\Sigma_2}-g_2|&<\epsilon
 \end{aligned}
 \eqlbl{eq:almost=}\]
 for any $x_1\in \Delta_1$ and $x_2\in \Delta_2$.
@@ -2970,17 +2970,17 @@ By Gauss--Bonnet formula, we get that
 
 By \ref{eq:almost=}, 
 \begin{align*}
-\left|g_1-\frac1{\area\Delta_1}\cdot\iint_{\Delta_1}K_{\Sigma_1}\right|&<\eps,
+\left|g_1-\frac1{\area\Delta_1}\cdot\iint_{\Delta_1}K_{\Sigma_1}\right|&<\epsilon,
 \\
-\left|g_2-\frac1{\area\Delta_2}\cdot\iint_{\Delta_2}K_{\Sigma_2}\right|&<\eps.
+\left|g_2-\frac1{\area\Delta_2}\cdot\iint_{\Delta_2}K_{\Sigma_2}\right|&<\epsilon.
 \end{align*}
 By \ref{eq:area=} and \ref{eq:gauss-int=},
 \[\frac1{\area\Delta_1}\cdot\iint_{\Delta_1}K_{\Sigma_1}
 =
 \frac1{\area\Delta_2}\cdot\iint_{\Delta_2}K_{\Sigma_2},\]
 therefore
-\[|g_1-g_2|<2\cdot\eps.\]
-Since $\eps>0$ is arbitrary, \ref{eq:g=g} follows.
+\[|g_1-g_2|<2\cdot\epsilon.\]
+Since $\epsilon>0$ is arbitrary, \ref{eq:g=g} follows.
 \qeds
 
 
@@ -3174,12 +3174,12 @@ we need to show that
 Suppose $\Delta_1$ is a small geodesic triangle in $\Sigma_1$ that contains $p_1$.
 Set $\Delta_2=f(\Delta_1)$.
 We may assume that the Gauss curvature is almost constant in $\Delta_1$ and $\Delta_2$;
-that is, given $\eps>0$, we can assume that 
+that is, given $\epsilon>0$, we can assume that 
 \[
 \begin{aligned}
-|G(x_1)_{\Sigma_1}-g_1|&<\eps,
+|G(x_1)_{\Sigma_1}-g_1|&<\epsilon,
 \\
-|G(x_2)_{\Sigma_2}-g_2|&<\eps
+|G(x_2)_{\Sigma_2}-g_2|&<\epsilon
 \end{aligned}
 \eqlbl{eq:almost=}\]
 for any $x_1\in \Delta_1$ and $x_2\in \Delta_2$.
@@ -3193,17 +3193,17 @@ By Gauss--Bonnet formula, we get that
 
 By \ref{eq:almost=}, 
 \begin{align*}
-\left|g_1-\frac1{\area\Delta_1}\cdot\iint_{\Delta_1}G_{\Sigma_1}\right|&<\eps,
+\left|g_1-\frac1{\area\Delta_1}\cdot\iint_{\Delta_1}G_{\Sigma_1}\right|&<\epsilon,
 \\
-\left|g_2-\frac1{\area\Delta_2}\cdot\iint_{\Delta_2}G_{\Sigma_2}\right|&<\eps.
+\left|g_2-\frac1{\area\Delta_2}\cdot\iint_{\Delta_2}G_{\Sigma_2}\right|&<\epsilon.
 \end{align*}
 By \ref{eq:area=} and \ref{eq:gauss-int=},
 \[\frac1{\area\Delta_1}\cdot\iint_{\Delta_1}G_{\Sigma_1}
 =
 \frac1{\area\Delta_2}\cdot\iint_{\Delta_2}G_{\Sigma_2},\]
 therefore
-\[|g_1-g_2|<2\cdot\eps.\]
-Since $\eps>0$ is arbitrary, \ref{eq:g=g} follows.
+\[|g_1-g_2|<2\cdot\epsilon.\]
+Since $\epsilon>0$ is arbitrary, \ref{eq:g=g} follows.
 \qeds
 
 
@@ -3329,21 +3329,21 @@ Without loss of generality we may assume that $p$ is the origin.
 According to ???, for almost all $r$, the intersection of the $r$-sphere centered at $p$ with $\Sigma$ is a collection of smooth curves.
 Denote by $\ell(r)$ the total length of this collection.
 
-Fix small $\eps>0$.
+Fix small $\epsilon>0$.
 Let us modify the surface $\Sigma$ in the ball $B(p,r)$ the following way.
-Consider the rescaled copy of the intersection $\Sigma_r$ with coefficient $1-\eps$ and a conic collar 
-formed by the line segments from $(1-\eps)\cdot x$ to $x$ for all points $x\in\gamma$.
+Consider the rescaled copy of the intersection $\Sigma_r$ with coefficient $1-\epsilon$ and a conic collar 
+formed by the line segments from $(1-\epsilon)\cdot x$ to $x$ for all points $x\in\gamma$.
 Note that the obtained piecewise smooth surface $\Sigma'$ has boundary $\gamma$, the same as the boundary of $\Sigma$.
 
 Denote by $a(r)$ the area of $\Sigma_r$.
-Note the rescaled copy of $\Sigma_r$ has area $(1-\eps)^2\cdot a(r)$
-and the area of collar is $(1-\tfrac\eps2)^2\cdot\ell\cdot r$.
+Note the rescaled copy of $\Sigma_r$ has area $(1-\epsilon)^2\cdot a(r)$
+and the area of collar is $(1-\tfrac\epsilon2)^2\cdot\ell\cdot r$.
 
 Since $\Sigma$ is area-minimizing, we have
 \[\area\Sigma'\ge \area \Sigma.\]
 The latter is equivalent to 
-\[(1-\eps)^2\cdot a+(1-\tfrac\eps2)^2\cdot\ell\cdot r\ge a.\]
-Applying this inequality for $\eps\to 0+$, we get that
+\[(1-\epsilon)^2\cdot a+(1-\tfrac\epsilon2)^2\cdot\ell\cdot r\ge a.\]
+Applying this inequality for $\epsilon\to 0+$, we get that
 \[\ell(r)\cdot r\ge 2\cdot a(r).\]
 
 According to the coarea formula, 
@@ -3419,7 +3419,7 @@ The curve $\sigma_r(t)=w(t,r)$ is a parametrization of the circle of radius $r$ 
 If the latter is not the case, then a minimizing geodesic $[pq]_\Sigma$ would be shorter than $r$ and therefore $q$ would not be described uniquely in the polar coordinates. 
 
 Note that $\tfrac{\partial}{\partial r}w\perp \tfrac{\partial}{\partial \theta}w$ if $r>0$;
-otherwise for small $\eps>0$ the intrinsic distance from $p$ to $w(\theta\pm \eps,r)$ would be shorter than $r$, which contradicts the previous statement.
+otherwise for small $\epsilon>0$ the intrinsic distance from $p$ to $w(\theta\pm \epsilon,r)$ would be shorter than $r$, which contradicts the previous statement.
 
 \begin{thm}{Proposition}\label{prop:loc-comp-l}
 Let $w(\theta,r)$ and $\~w(\theta,r)$ be the polar coordinates of a surface $\Sigma$ at $p$ and its tangent plane $\T_p$ at zero, so $w(\theta,r)\z=\exp_p[\~w(\theta,r)]$.
@@ -3591,9 +3591,9 @@ If $\Sigma$ bounds a convex closed set $K$.
 Then $\Sigma_R$ bounds $K_R$ --- the closed $R$-neighborhood of $K$;
 that is, $K_R$ is the set of all points at distance at most $R$ from $K$.
 
-Since $\Sigma$ is smooth it is supported at each point $p$ from inside by a small ball $B_\eps(o)$.
-Then the ball $B_{R+\eps}(o)$ lies in $K_R$ and touches its boundary at the point corresponding to $p$.
-Hence the principle curvatures at $p$ are at least $\tfrac1{R+\eps}$.
+Since $\Sigma$ is smooth it is supported at each point $p$ from inside by a small ball $B_\epsilon(o)$.
+Then the ball $B_{R+\epsilon}(o)$ lies in $K_R$ and touches its boundary at the point corresponding to $p$.
+Hence the principle curvatures at $p$ are at least $\tfrac1{R+\epsilon}$.
 
 In the general case, a local chart of $\Sigma$ can be modified so that it has a piece of the original surface around $p$  and bounds a convex set.
 Here is one way to do this:
@@ -3605,13 +3605,13 @@ Here is one way to do this:
 \vskip-0mm
 \end{wrapfigure}
 
-Choose a smooth function $\phi(x)$ that is convex increasing and such that for sufficiently small $\eps>0$ we have $\phi(x)=x$ if $x<\eps$ and $\phi(x)\to\infty$ as $x\to 2\cdot\eps$.
+Choose a smooth function $\phi(x)$ that is convex increasing and such that for sufficiently small $\epsilon>0$ we have $\phi(x)=x$ if $x<\epsilon$ and $\phi(x)\to\infty$ as $x\to 2\cdot\epsilon$.
 (Such functions do exist; moreover an explicit formula can be written, but we leave it without a proof.)
 
 Assume $z=f(x,y)$ is a special representation of $\Sigma$ around $p$ by some convex function $f$.
 Direct computations show that $h=\phi\circ f(x,y)$ is still convex.
 The surface $\Sigma'$ described as the graph $z=h(x,y)$ bounds a convex closed set $K$ and the part of $\Sigma'$ described by 
-the parameters $\set{(x,y)}{f(x,y)<\eps}$ coincide with a neighborhood of $p$ in $\Sigma$.
+the parameters $\set{(x,y)}{f(x,y)<\epsilon}$ coincide with a neighborhood of $p$ in $\Sigma$.
 Hence the general case follows.\qeds
 
 \parit{Proof assembling.}
@@ -4620,8 +4620,8 @@ that is, $|f(p)|$ is the distance to $\gamma$ and $f(p)<0$ if $p$ is surrounded 
 Suppose $\tau,\nu$ denotes the Frenet frame of $\gamma$.
 
 \begin{enumerate}[(a)]
-\item\label{ex:signed-distance:a} Show that there is $\eps>0$ such that if $|x|<\eps$, then $f(\gamma(t)+x\cdot \nu(t))=x$.
-\item Use part (\ref{ex:signed-distance:a}) to show that $f$ is smooth in the $\eps$-neighborhood of $\gamma$. 
+\item\label{ex:signed-distance:a} Show that there is $\epsilon>0$ such that if $|x|<\epsilon$, then $f(\gamma(t)+x\cdot \nu(t))=x$.
+\item Use part (\ref{ex:signed-distance:a}) to show that $f$ is smooth in the $\epsilon$-neighborhood of $\gamma$. 
 \item Show that for any $p=\gamma(t)$, the Laplacian $\Delta_p f$ equals to the signed curvature of $\gamma$ at $p$.
 \end{enumerate}
 

@@ -10,11 +10,11 @@ Make a conclusion.
 
 \parit{\ref{SHORT.ex:B2inB1:b}.} Take $\spc{X}$ to be the half-line $[0,\infty)$ with the standard metric; $p=0$ and $q=\tfrac45$.
 
-\parbf{\ref{ex:shrt=>continuous}.} Show that the conditions in \ref{def:continuous} hold for $\delta=\eps$.
+\parbf{\ref{ex:shrt=>continuous}.} Show that the conditions in \ref{def:continuous} hold for $\delta=\epsilon$.
 
 \parbf{\ref{ex:close-open}.}
 Suppose the complement $\Omega=\spc{X}\backslash Q$ is open.
-Then for each point $p\in \Omega$ there is $\eps>0$ such that $|p-q|_{\spc{X}}>\eps$ for any $q\in Q$.
+Then for each point $p\in \Omega$ there is $\epsilon>0$ such that $|p-q|_{\spc{X}}>\epsilon$ for any $q\in Q$.
 It follows that $p$ is not a limit point of any sequence $q_n\in Q$.
 That is, any limit of a sequence in $Q$ lies in $Q$;
 that is, by the definition, $Q$ is closed.
@@ -233,8 +233,8 @@ It remains to substitute $s\cdot \sqrt{a^2+b^2}$ for $t$.
 \parbf{\ref{ex:convex-hull}.}
 Choose a closed polygonal line $p_1\dots p_n$ inscribed in $\beta$.
 By \ref{cor:convex=>rectifiable}, we can assume that its length is arbitrary close to the length of $\beta$;
-that is, given $\eps>0$ 
-\[\length (p_1\dots p_n)>\length\beta-\eps.\]
+that is, given $\epsilon>0$ 
+\[\length (p_1\dots p_n)>\length\beta-\epsilon.\]
 
 Show that we may assume in addition that each point $p_i$ lies on $\alpha$.
 
@@ -243,8 +243,8 @@ that is, the polygonal line $p_1\dots p_n$ is also inscribed in $\alpha$.
 In particular 
 \[\length\alpha\ge \length (p_1\dots p_n).\]
 It follows that 
-\[\length\alpha>\length\beta-\eps.\]
-for any $\eps>0$.
+\[\length\alpha>\length\beta-\epsilon.\]
+for any $\epsilon>0$.
 Whence 
 \[\length\alpha\ge\length\beta.\]
 
@@ -291,9 +291,9 @@ To show the ``if'' part, assume $A$ is not convex;
 that is, there are points $x,y\in A$ and a point $z\notin A$ that lies between $x$ and $y$.
 
 Since $A$ is closed, its complement is open.
-That is, the ball $B(z,\eps)$ does not intersect $A$ for some $\eps>0$.
+That is, the ball $B(z,\epsilon)$ does not intersect $A$ for some $\epsilon>0$.
 
-Show that there is $\delta>0$ such that any path of length at most $|x-y|_{\RR^3}+\delta$ passes thru $B(z,\eps)$.
+Show that there is $\delta>0$ such that any path of length at most $|x-y|_{\RR^3}+\delta$ passes thru $B(z,\epsilon)$.
 It follows that $|x-y|_A\ge |x-y|_{\RR^3}+\delta$, 
 in particular $|x-y|_A\ne |x-y|_{\RR^3}$.
 
@@ -468,9 +468,9 @@ By \ref{prop:inscribed-total-curvature}, $\tc\gamma\ge \tc\beta$;
 it remains to show that
 $\tc\gamma\le\sup\{\tc\beta\}$.
 In other words, 
-given $\eps>0$ and any polygonal line $\sigma=\vec u_0\dots \vec u_k$ inscribed in the tangent indicatrix $\tan$ of $\gamma$, 
+given $\epsilon>0$ and any polygonal line $\sigma=\vec u_0\dots \vec u_k$ inscribed in the tangent indicatrix $\tan$ of $\gamma$, 
 we need to construct a polygonal line $\beta$ inscribed in $\gamma$ such that
-\[\length\sigma<\tc\beta+\eps.
+\[\length\sigma<\tc\beta+\epsilon.
 \eqlbl{eq:tc=<tc}\]
 
 Suppose $\vec u_i=\tan(s_i)$.
@@ -687,7 +687,7 @@ Since $f$ is a maximum or minimum at $0$, we get that $f'''(0)=0$ and therefore
 $\kur'=0$.
 
 \parbf{\ref{ex:support}.} Consider the coordinate system with $p$ as the origin and $x$-axis as the common tangent line to $\gamma_1$ and $\gamma_2$.
-We may assume that $\gamma_i$ are defined in $(-\eps,\eps)$ for some small $\eps>0$,
+We may assume that $\gamma_i$ are defined in $(-\epsilon,\epsilon)$ for some small $\epsilon>0$,
 so that they run almost horizontally to the right.
 
 Given $t\in[0,1]$ consider the curve $\gamma_t$ that is tangent and cooriented to the $x$ axis at  $\gamma_t(0)$ and has signed curvature defined by $\skur_t(s)=(1\z-t)\cdot\skur_0(s)+t\cdot\skur_1(s)$.
@@ -1125,9 +1125,9 @@ To do the second part, one may apply \ref{ex:star-shaped-disc:nonsmooth}.
 \parbf{\ref{ex:circular-cone}.}
 Choose a coordinate system so that the $(x,y)$-plane supports $\Sigma$ at the origin, so $\Sigma$ lies in the upper half-space.
 
-Show that there is $\eps>0$ such that any line starting from the origin with slope at most $\eps$ may intersect $\Sigma$ only in the unit ball centered at the origin;
-we may assume that $\eps$ is small, say $\eps<1$.
-Consider the cone formed by the half-lines from the origin with slope $\eps$ shifted down by $1$ and observe that the entire surface lies inside this cone.
+Show that there is $\epsilon>0$ such that any line starting from the origin with slope at most $\epsilon$ may intersect $\Sigma$ only in the unit ball centered at the origin;
+we may assume that $\epsilon$ is small, say $\epsilon<1$.
+Consider the cone formed by the half-lines from the origin with slope $\epsilon$ shifted down by $1$ and observe that the entire surface lies inside this cone.
 
 
 
@@ -1189,8 +1189,8 @@ Prove the following claim:
  \item Suppose that  $x\mapsto h(x)$ is a smooth function defined in an open interval $\mathbb{I}\ni0$ such that $h(0)=h'(0)=0$ and $h''(0)>0$.
  Then, for a smaller interval $\mathbb{J}\ni0$ there is a unique smooth function $a\:\mathbb{J}\to\RR$ such that $h=a^2$, $a(0)=0$ and $a'(0)> 0$.
 \end{itemize}
-Note that by passing to a small rectangular domain $|x|,|y|<\eps$, we can assume that $f_{xx}>\eps$ and $f_{yy}<-\eps$. 
-Show that if $\eps$ is small, then for every $x$ there is unique $y(x)$ such that $f_x(x,y(x))=0$; 
+Note that by passing to a small rectangular domain $|x|,|y|<\epsilon$, we can assume that $f_{xx}>\epsilon$ and $f_{yy}<-\epsilon$. 
+Show that if $\epsilon$ is small, then for every $x$ there is unique $y(x)$ such that $f_x(x,y(x))=0$; 
 moreover the function $x\mapsto y(x)$ is smooth.
 
 Set $h(x)=f(x,y(x))$.
@@ -1228,10 +1228,10 @@ Apply \ref{lem:convex-saddle}.
 
 
 \parbf{\ref{ex:disc-hat}.} 
-Consider the radial projection of $F_\eps$ to the sphere $\Sigma$ with center at $p=(0,0,\eps)$;
-that is, a point $q\in F_\eps$ is mapped to a point $s(q)$ on the sphere that lies on the ray $pq$.
+Consider the radial projection of $F_\epsilon$ to the sphere $\Sigma$ with center at $p=(0,0,\epsilon)$;
+that is, a point $q\in F_\epsilon$ is mapped to a point $s(q)$ on the sphere that lies on the ray $pq$.
 
-Show that $s$ is a diffeomorphism from $F_\eps$ to the south hemisphere of~$\Sigma$.
+Show that $s$ is a diffeomorphism from $F_\epsilon$ to the south hemisphere of~$\Sigma$.
 It remains to observe that the  unit disc is diffeomorphic to the hemisphere.
 
 \parbf{\ref{ex:saddle-linear}.} Apply \ref{prop:hat}.

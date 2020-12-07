@@ -1,3 +1,161 @@
+\addtocounter{chapter}{-1}
+\chapter{Preliminaries}
+
+This chapter should be used as a quick reference while reading the rest of the book;
+it also contains all necessary references with complete proof.
+
+The fist section on metric spaces is an exception;
+we suggest to read in before going further.
+
+\section{Metric spaces}\label{sec:metric-spcaes}
+
+We assume that the reader is familiar with the notion of distance in the 
+Euclidean space.
+In this chapter we briefly discuss its generalization and fix notations that will be used further.
+
+The introductory part of the book by Dmitri Burago, Yuri Burago, and Sergei Ivanov \cite{burago-burago-ivanov} contains all the needed material.
+
+\subsection*{Definitions}
+
+\emph{Metric} is a function that returns a real value $\Dist(x,y)$ for any pair $x,y$ in a given nonempty set $\spc{X}$  and satisfies the following axioms for any triple $x,y,z$: \label{page:def:metric}
+\begin{enumerate}[(a)]
+\item\label{def:metric-space:a} Positiveness: 
+$$\Dist(x,y)\ge 0.$$
+\item\label{def:metric-space:b} $x=y$ if and only if 
+$$\Dist(x,y)=0.$$
+\item\label{def:metric-space:c} Symmetry: $$\Dist(x, y) = \Dist(y, x).$$
+\item\label{def:metric-space:d} Triangle inequality: 
+$$\Dist(x, z) \le \Dist(x, y) + \Dist(y, z).$$
+\end{enumerate}
+
+A set with a metric is called \index{metric space}\emph{metric space} and the elements of the set are called \index{point}\emph{points}.
+
+\subsection*{Shortcut for distance}
+Usually we consider only one metric on a set, therefore we can denote the metric space and its underlying set by the same letter, say $\spc{X}$.
+In this case we also use the shortcut notations $\dist{x}{y}{}$ or $\dist{x}{y}{\spc{X}}$  for the {}\emph{distance $\Dist(x,y)$ from $x$ to $y$ in $\spc{X}$}.\index{10aaa@$\dist{x}{y}{}$, $\dist{x}{y}{\spc{X}}$}
+For example, the triangle inequality can be written as 
+$$\dist{x}{z}{\spc{X}}\le \dist{x}{y}{\spc{X}}+\dist{y}{z}{\spc{X}}.$$
+
+The Euclidean space and plane as well as the real line will be the most important examples of metric spaces for us.
+In these examples the introduced notation $\dist{x}{y}{}$ for the distance from $x$ to $y$ has perfect sense as the norm of the vector $x-y$.
+However, in a general metric space the expression $x-y$ has no meaning, but we use expression $\dist{x}{y}{}$ for the distance anyway.
+
+\subsection*{More examples}
+
+Usually, if we say {}\emph{plane} or {}\emph{space} we mean the {}\emph{Euclidean} plane or space.
+However the plane (as well as the space) admits many other metrics, for example the so-called \index{Manhattan metric}\emph{Manhattan metric} from the following exercise.
+
+\begin{thm}{Exercise}\label{ex:ell-infty}
+Consider the function
+$$\Dist(p,q)=|x_1-x_2|+|y_1-y_2|,$$
+where $p=(x_1,y_1)$ and $q=(x_2,y_2)$ are points in the coordinate plane $\RR^2$.
+Show that $\Dist$ is a metric on $\RR^2$.
+\end{thm}
+
+Another example: the \index{discrete space}\emph{discrete space} --- an arbitrary nonempty set $\spc{X}$ with the metric defined as $\dist{x}{y}{\spc{X}}=0$ if $x=y$ and $\dist{x}{y}{\spc{X}}=1$ otherwise.
+
+\subsection*{Subspaces}
+Any subset of a metric space is also a metric space, by restricting the original metric to the subset;
+the obtained metric space is called a \index{subspace of metric space}\emph{subspace}.
+In particular, all subsets of the Euclidean space are metric spaces.
+
+\subsection*{Balls}
+Given a point $p$ in a metric space $\spc{X}$ and a real number $R\ge 0$, the set of points $x$ on the distance less then $R$ (at most $R$) from $p$ is called the \index{open ball}\emph{open} (respectively \index{closed ball}\emph{closed}) \emph{ball} of radius $R$ with center $p$.
+The {}\emph{open ball} is denoted as $B(p,R)$ or $B(p,R)_{\spc{X}}$;
+the second notation is used if we need to emphasize that the ball lies in the metric space $\spc{X}$.
+Formally speaking
+\[B(p,R)=B(p,R)_{\spc{X}}=\set{x\in \spc{X}}{\dist{x}{p}{\spc{X}}< R}.\]
+\index{10b@$B(p,R)_{\spc{X}}$, $\bar B[p,R]_{\spc{X}}$}
+Analogously, the {}\emph{closed ball} is denoted as $\bar B[p,R]$ or $\bar B[p,R]_{\spc{X}}$ and
+\[\bar B[p,R]=\bar B[p,R]_{\spc{X}}=\set{x\in \spc{X}}{\dist{x}{p}{\spc{X}}\le R}.\]
+
+\begin{thm}{Exercise}\label{ex:B2inB1}
+Let $\spc{X}$ be a metric space.
+
+\begin{subthm}{ex:B2inB1:a}
+Show that if $\bar B[p,2]\subset \bar B[q,1]$ for some points $p,q\in \spc{X}$, then $\bar B[p,2]\z=\bar B[q,1]$.
+\end{subthm}
+
+\begin{subthm}{ex:B2inB1:b} Construct a metric space $\spc{X}$ with two points $p$ and $q$ such that the strict inclusion
+$B(p,\tfrac32)\subset B(q,1)$ holds.
+\end{subthm}
+
+\end{thm}
+
+
+
+\subsection*{Continuity}
+
+\begin{thm}{Definition}
+ Let ${\spc{X}}$ be a metric space.
+A sequence of points $x_1, x_2, \ldots$ in ${\spc{X}}$ is called \index{convergence of points}\emph{convergent}
+if there is 
+$x_\infty\in {\spc{X}}$ such that $\dist{x_\infty}{x_n}{}\to 0$ as $n\to\infty$.  
+That is, for every $\epsilon > 0$, there is a natural number $N$ such that for all $n \ge N$, we have
+\[
+\dist{x_\infty}{x_n}{\spc{X}}
+<
+\epsilon.
+\]
+
+In this case we say that the sequence $(x_n)$ {}\emph{converges} to $x_\infty$, 
+or $x_\infty$ is the {}\emph{limit} of the sequence $(x_n)$.
+Notationally, we write $x_n\to x_\infty$ as $n\to\infty$
+or $x_\infty=\lim_{n\to\infty} x_n$.
+\end{thm}
+
+\begin{thm}{Definition}\label{def:continuous}
+Let $\spc{X}$ and $\spc{Y}$ be metric spaces.
+A map $f\:\spc{X}\to \spc{Y}$ is called \index{continuous function}\index{continuous map}\emph{continuous} if for any convergent sequence $x_n\to x_\infty$ in ${\spc{X}}$,
+%the sequence $y_n\z=f(x_n)$ converges to $y_\infty=f(x_\infty)$ in $\spc{Y}$.
+we have $f(x_n) \to f(x_\infty)$ in $\spc{Y}$.
+
+Equivalently, $f\:\spc{X}\to \spc{Y}$ is continuous if for any $x\in {\spc{X}}$ and any $\epsilon>0$,
+there is $\delta>0$ such that 
+$$\dist{x}{y}{\spc{X}}<\delta\quad \text{ implies that }\quad \dist{f(x)}{f(y)}{\spc{Y}}<\epsilon.$$
+
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:shrt=>continuous}
+Let ${\spc{X}}$ and $\spc{Y}$ be metric spaces $f\:\spc{X}\to \spc{Y}$ is \index{distance non-expanding map}\emph{distance non-expanding map}; that is, 
+\[\dist{f(x)}{f(y)}{\spc{Y}}\le \dist{x}{y}{\spc{X}}\]
+for any $x,y\in \spc{X}$.
+Show that $f$ is continuous.
+\end{thm}
+
+\subsection*{Homeomorphisms}
+
+\begin{thm}{Definition}
+Let $\spc{X}$ and $\spc{Y}$ be metric spaces.
+A continuous bijection $f\:\spc{X}\to \spc{Y}$ 
+is called a \index{homeomorphism}\emph{homeomorphism} 
+if its inverse $f^{-1}\:\spc{Y}\z\to \spc{X}$ is also continuous.
+
+If there exists a homeomorphism $f\:\spc{X}\to \spc{Y}$,
+we say that ${\spc{X}}$ is {}\emph{homeomorphic} to $\spc{Y}$,
+or  $\spc{X}$ and $\spc{Y}$ are {}\emph{homeomorphic}.
+\end{thm}
+
+If a metric space $\spc{X}$ is homeomorphic to a known space, for example plane, sphere, disc, circle and so on,
+we may also say that $\spc{X}$ is a \index{topological}\emph{topological} plane, sphere, disc, circle and so on.
+
+\subsection*{Closed and open sets}
+
+\begin{thm}{Definition}
+A subset $C$ of a metric space $\spc{X}$ is called \index{closed set}\emph{closed} if whenever a sequence $(x_n)$ of points from $C$ converges in $\spc{X}$, we have that $\lim_{n\to\infty} x_n \in C$.
+
+A set $\Omega \subset \spc{X}$ is called \index{open set}\emph{open} if for any $z\in \Omega$, 
+there is $\epsilon>0$ such that $B(z,\epsilon)\subset\Omega$.
+\end{thm}
+
+\begin{thm}{Exercise}\label{ex:close-open}
+Let $Q$ be a subset of a metric space $\spc{X}$.
+Show that $Q$ is closed if and only if its complement $\Omega=\spc{X}\backslash Q$ is open.
+\end{thm}
+
+An open set $\Omega$ that contains a given point $p$ is called a \index{neighborhood}\emph{neighborhood of~$p$}.
+A closed subset $C$ that contains $p$ together with its neighborhood is called a {}\emph{closed neighborhood of~$p$}
+
 \section{Elementary geometry}
 
 \subsection*{Internal angles}
@@ -31,7 +189,7 @@ It says that the angle of a triangle monotonically depends on the opposite side,
 It follows directly from the cosine rule.
 
 \begin{thm}{Monotonicity lemma}\label{lem:angle-monotonicity}
-Let $x$, $y$, $z$, $x^{*}$, $y^{*}$ and $z^{*}$ be 6 points such that $|x-y|\z=|x^{*}-y^{*}|>0$ and $|y-z|=|y^{*}-z^{*}|>0$.
+Let $x$, $y$, $z$, $x^{*}$, $y^{*}$ and $z^{*}$ be 6 points such that $\dist{x}{y}{}\z=|x^{*}-y^{*}|>0$ and $|y-z|=|y^{*}-z^{*}|>0$.
 Then 
 \[\measuredangle\hinge yxz
 \ge
@@ -181,9 +339,8 @@ The following material is discussed in any course of real analysis, the classica
 \subsection*{Lipschitz condition}
 
 Recall that a function $f$ between metric spaces is called \index{Lipschitz function}\emph{Lipschitz} if there is a constant $L$ such that 
-\[|f(x)-f(y)|\le L\cdot|x-y|\]
+\[\dist{f(x)}{f(y)}{}\le L\cdot\dist{x}{y}{}\]
 for all values $x$ and $y$ in the domain of definition of $f$.
-%Although this definition makes sense for maps between metric spaces, we will only use it for real-to-real functions.
 
 The following theorem makes it possible to extend a number of results about smooth functions to Lipschitz functions.
 Recall that {}\emph{almost all} means all values, with the possible exceptions in a set of zero {}\emph{Lebesgue measure}.
@@ -199,15 +356,15 @@ The following theorem makes it possible to extend many statements about continuo
 
 \begin{thm}{Lusin's theorem}\label{thm:lusin}
 Let $\phi\:[a,b]\to \RR$ be a measurable function.
-Then for any $\eps>0$, there is a continuous function $\psi_\eps\:[a,b]\to \RR$ that coincides with $\phi$ outside of a set of measure at most $\eps$.
-Moreover, if $\phi$ is bounded above and/or below by some constants, then we may assume that so is $\psi_\eps$.  
+Then for any $\epsilon>0$, there is a continuous function $\psi_\epsilon\:[a,b]\to \RR$ that coincides with $\phi$ outside of a set of measure at most $\epsilon$.
+Moreover, if $\phi$ is bounded above and/or below by some constants, then we may assume that so is $\psi_\epsilon$.  
 \end{thm}
 
 \subsection*{Uniform continuity and convergence}
 
 Let $f\:{\spc{X}}\to \spc{Y}$ be a map between metric spaces.
-If  for any $\eps>0$ there is $\delta>0$ such that 
-\[|x_1-x_2|_{\spc{X}}<\delta\quad\Longrightarrow\quad |f(x_1)-f(x_2)|_\spc{Y}<\eps,\]
+If  for any $\epsilon>0$ there is $\delta>0$ such that 
+\[\dist{x_1}{x_2}{\spc{X}}<\delta\quad\Longrightarrow\quad |f(x_1)-f(x_2)|_\spc{Y}<\epsilon,\]
 then $f$ is called \index{uniformly continuous}\emph{uniformly continuous}.
 
 Evidently every uniformly continuous function is continuous;
@@ -219,17 +376,17 @@ However the following statement holds true:
 Any continuous function defined on a compact metric space is uniformly continuous.
 \end{thm}
 
-If the condition above holds for any function $f_n$ in a sequence and $\delta$ depends solely on $\eps$,
+If the condition above holds for any function $f_n$ in a sequence and $\delta$ depends solely on $\epsilon$,
 then the sequence $(f_n)$ is called \index{uniformly continuous}\emph{uniformly equicontinuous}.
 More precisely, 
 a sequence of functions $f_n:{\spc{X}}\to \spc{Y}$ is called {}\emph{uniformly equicontinuous} if 
-for any $\eps>0$ there is $\delta>0$ such that 
-\[|x_1-x_2|_{\spc{X}}<\delta\quad\Longrightarrow\quad |f_n(x_1)-f_n(x_2)|_\spc{Y}<\eps\]
+for any $\epsilon>0$ there is $\delta>0$ such that 
+\[\dist{x_1}{x_2}{\spc{X}}<\delta\quad\Longrightarrow\quad \dist{f_n(x_1)}{f_n(x_2)}{\spc{Y}}<\epsilon\]
 for any $n$.
 
 
 We say that a sequence of functions $f_i : {\spc{X}} \to \spc{Y}$ \index{uniform convergence}\emph{converges uniformly} to a function $f_{\infty}: {\spc{X}} \to \spc{Y}$ if for any 
-$\varepsilon >0$, there is a natural number $N$ such that for all $n \ge N$, we have $| f_{\infty} (x)- f_n (x) | < \varepsilon$
+$\epsilon >0$, there is a natural number $N$ such that for all $n \ge N$, we have $|f_{\infty} (x)-f_n (x)|<\epsilon$
 for all $x  \in {\spc{X}}$.
 
 \begin{thm}{Arzel\'{a}--Ascoli Theorem}\label{lem:equicontinuous}
@@ -274,10 +431,10 @@ The function $h$ is not smooth --- its derivative at $0$ is undefined.
 Unlike $h$, the function $f$ is smooth.
 Indeed, the existence of all derivatives $f^{(n)}(x)$ at $x\ne 0$ is evident and direct calculations show that $f^{(n)}(0)=0$ for all $n$.
 
-Other useful examples of that type are the so-called \index{bell function}\emph{bell function} --- a smooth function that is positive in an $\eps$-neighborhood of zero and vanishing outside this neighborhood.
+Other useful examples of that type are the so-called \index{bell function}\emph{bell function} --- a smooth function that is positive in an $\epsilon$-neighborhood of zero and vanishing outside this neighborhood.
 An example of such function can be constructed based using the function $f$ constructed above, say 
-\[b_\eps(t)=c\cdot f(\eps^2-t^2);\]
-typically one chooses the constant $c$ so that $\int b_\eps=1$.
+\[b_\epsilon(t)=c\cdot f(\epsilon^2-t^2);\]
+typically one chooses the constant $c$ so that $\int b_\epsilon=1$.
 
 \begin{figure}[h!]
 \begin{minipage}{.48\textwidth}
@@ -290,11 +447,11 @@ typically one chooses the constant $c$ so that $\int b_\eps=1$.
 \end{minipage}
 \end{figure}
 
-Another useful example is a sigmoid --- nondecreasing function that vanish for $t\le -\eps$ and takes value $1$ for any $t\ge \eps$.
+Another useful example is a sigmoid --- nondecreasing function that vanish for $t\le -\epsilon$ and takes value $1$ for any $t\ge \epsilon$.
 For example the following function \label{page:sigma-function}
-\[\sigma_\eps(t)
+\[\sigma_\epsilon(t)
 =
-\int_{-\infty}^t b_\eps(x)\cdot dx.\]
+\int_{-\infty}^t b_\epsilon(x)\cdot dx.\]
 
 %???Borel sets
 
@@ -360,7 +517,7 @@ that is, there is a neighborhood $\Psi\ni \bm{x}$ such that
 $\bm{f}$ defines a bijection $\Psi\leftrightarrow \Phi$ and
 $\bm{h} \circ \bm{f}$ is an identity map on $\Psi$.
 
-Moreover if an $\Omega$ contains an $\eps$-neighborhood of $\bm{x}$, and the first and second partial derivatives $\tfrac{\partial f_i}{\partial x_j}$, $\tfrac{\partial^2 f_i}{\partial x_j\partial x_k}$ are bounded by a constant $C$ for all $i$, $j$, and $k$, then we can assume that $\Phi$ is a $\delta$-neighborhood of $\bm{y}$, for some $\delta>0$ that depends only on $\eps$ and $C$. 
+Moreover if an $\Omega$ contains an $\epsilon$-neighborhood of $\bm{x}$, and the first and second partial derivatives $\tfrac{\partial f_i}{\partial x_j}$, $\tfrac{\partial^2 f_i}{\partial x_j\partial x_k}$ are bounded by a constant $C$ for all $i$, $j$, and $k$, then we can assume that $\Phi$ is a $\delta$-neighborhood of $\bm{y}$, for some $\delta>0$ that depends only on $\epsilon$ and $C$. 
 \end{thm}
 
 \begin{thm}{Implicit function theorem}\label{thm:imlicit}
