@@ -14,12 +14,12 @@ Physically speaking, the following lemma follows from the law of conservation of
 
 
 \begin{thm}{Lemma}\label{lem:constant-speed}
-Let $\gamma: (-1,1) \to \Sigma $ be a geodesic in a smooth surface $\Sigma$. 
-Then  $| \gamma ' |$ is constant.
-Moreover, for any $\lambda >0$, the curve 
-\[ \gamma_{\lambda}: (\frac{-1}{\lambda} , \frac{1}{\lambda} ) \to \Sigma   \]
- defined as $\gamma _{\lambda }(t) : = \gamma (\lambda t)$ is a geodesic as well. 
- In other words, any geodesic has constant speed, and multiplying its speed by a positive constant yields a new geodesic with the same image.
+Let $\gamma$ be a geodesic in a smooth surface $\Sigma$. 
+Then  $|\gamma'|$ is constant.
+
+Moreover, for any $\lambda\in\RR$, the curve 
+$\gamma_{\lambda}\df \gamma (\lambda\cdot t)$ is a geodesic as well. 
+In other words, any geodesic has constant speed, and multiplying its parameter by a constant yields another geodesic.
 \end{thm}
 
 
@@ -32,9 +32,8 @@ Whence
 \end{align*}
 That is, $|\gamma'|^2=\langle\gamma',\gamma'\rangle$ is constant.
 
-For the second part, we only need to notice that 
-\[  \gamma_{\lambda}''(t) =  \lambda^2 \gamma''(\lambda t)   \]
-This implies that $\gamma_{\lambda}''(t)$ is parallel to $\gamma''(\lambda t)$, hence perpendicular to $T_{\gamma (\lambda t)}=T_{\gamma_{\lambda}(t)}$.
+The second part, follows since 
+$\gamma_{\lambda}''(t) =\lambda^2\cdot \gamma''(\lambda t)$.
 \qeds
 
 
@@ -288,7 +287,7 @@ The proof of the following statement will be indicated in \ref{ex:inj-rad}.
 
 \begin{thm}{Proposition}\label{prop:inj-rad}
 Let $\Sigma$ be a smooth surface (without boundary) and $p\in \Sigma$.
-If $\exp_p$ is injective in $B(0,r)_{\T_p}$, then the restriction $\exp_p|_{B(0,r)}$ is a diffeomorphism between $B(0,r)_{T_p}$ and its image.
+If $\exp_p$ is injective in $B(0,r)_{\T_p}$, then the restriction $\exp_p|_{B(0,r)}$ is a diffeomorphism between $B(0,r)_{\T_p}$ and its image.
 
 In other words, the injectivity radius at $p$ can be defined as the least upper bound on the $r$ such that $\exp_p$ is injective in the ball $B(0,r)_{\T_p}$.
 \end{thm}

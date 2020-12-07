@@ -13,7 +13,10 @@ The \index{length of curve}\emph{length} of $\gamma$ is defined as
 \begin{align*}
 \length \gamma
 &= 
-\sup \{|\gamma(t_0)-\gamma(t_1)|+\dots+|\gamma(t_{k-1})-\gamma(t_k)|\},
+\sup
+\set{\dist{\gamma(t_0)}{\gamma(t_1)}{}
++\dots+
+\dist{\gamma(t_{k-1})}{\gamma(t_k)}{}}{},
 \end{align*}\index{10length@$\length \gamma$}
 where the least upper bound is taken over all partitions $(t_i)$ of $[a,b]$.
 
@@ -383,15 +386,21 @@ Fix a partition $a=t_0<t_1<\dots<t_k=b$.
 Set 
 \begin{align*}\Sigma_n
 &\df
-|\gamma_n(t_0)-\gamma_n(t_1)|+\dots+|\gamma_n(t_{k-1})-\gamma_n(t_k)|.
+\dist{\gamma_n(t_0)}{\gamma_n(t_1)}{}
++\dots+
+\dist{\gamma_n(t_{k-1})}{\gamma_n(t_k)}{}.
 \\
 \Sigma_\infty
 &\df
-|\gamma_\infty(t_0)-\gamma_\infty(t_1)|+\dots+|\gamma_\infty(t_{k-1})-\gamma_\infty(t_k)|.
+\dist{\gamma_\infty(t_0)}{\gamma_\infty(t_1)}{}
++\dots+
+\dist{\gamma_\infty(t_{k-1})}{\gamma_\infty(t_k)}{}.
 \end{align*}
 
 Note that for each $i$ we have 
-\[|\gamma_n(t_{i-1})-\gamma_n(t_i)|\to|\gamma_\infty(t_{i-1})-\gamma_\infty(t_i)|\]
+\[\dist{\gamma_n(t_{i-1})}{\gamma_n(t_i)}{}
+\to
+\dist{\gamma_\infty(t_{i-1})}{\gamma_\infty(t_i)}{}\]
 and therefore
 \[\Sigma_n\to \Sigma_\infty\] 
 as $n\to\infty$.
@@ -427,25 +436,25 @@ for any $n$.
 \section{Length metric}\label{sec:Length metric}
 
 Let $\spc{X}$ be a metric space.
-Given two points $x,y$ in $\spc{X}$, denote by $d(x,y)$ the greatest lower bound of lengths of all paths connecting $x$ to $y$; if there is no such path, then $d(x,y)=\infty$.
+Given two points $x,y$ in $\spc{X}$, denote by $\ell(x,y)$ the greatest lower bound of lengths of all paths connecting $x$ to $y$; if there is no such path, then $\ell(x,y)=\infty$.
 
-It is straightforward to see that the function $d$ satisfies all the axioms of a metric except it might take infinite values.
-Therefore if any two points in $\spc{X}$ can be connected by a rectifiable curve, then $d$ defines a new metric on $\spc{X}$;
-in this case $d$ is called the \index{induced length -metric}\emph{induced length-metric}.
+It is straightforward to see that the function $\ell$ satisfies all the axioms of a metric except it might take infinite values.
+Therefore if any two points in $\spc{X}$ can be connected by a rectifiable curve, then $\ell$ defines a new metric on $\spc{X}$;
+in this case $\ell$ is called the \index{induced length -metric}\emph{induced length-metric}.
 
-Evidently $d(x,y)\ge |x-y|$ for any pair of points $x,y\in \spc{X}$.
-If the equality holds for all pairs, then the metric $|{*}-{*}|$ is said to be a \index{length-metric}\emph{length-metric} and the corresponding metric space is called a \index{}\emph{length-metric space}.
+Evidently $\ell(x,y)\ge \dist{x}{y}{}$ for any pair of points $x,y\in \spc{X}$.
+If the equality holds for all pairs, then the metric $\dist{{*}}{{*}}{}$ is said to be a \index{length-metric}\emph{length-metric} and the corresponding metric space is called a \index{}\emph{length-metric space}.
 
 Most of the time we consider length-metric spaces.
 In particular the Euclidean space is a length-metric space.
 A subspace $A$ of a length-metric space $\spc{X}$ is not necessarily a length-metric space;
-the induced length distance between points $x$ and $y$ in the subspace $A$ will be denoted as $|x-y|_A$;
-that is, $|x-y|_A$ is the greatest lower bound of the lengths of paths in $A$ from $x$ to $y$.\index{10aaa@$\lvert x-y\rvert_A$}
+the induced length distance between points $x$ and $y$ in the subspace $A$ will be denoted as $\dist{x}{y}A$;
+that is, $\dist{x}{y}A$ is the greatest lower bound of the lengths of paths in $A$ from $x$ to $y$.\index{10aaa@$\lvert x-y\rvert_A$}
 
 \begin{thm}{Exercise}\label{ex:intrinsic-convex}
 Let $A\subset \RR^3$ be a closed subset.
 Show that $A$ is convex if and only if
-\[|x-y|_A=|x-y|_{\RR^3}\]
+\[\dist{x}{y}A=\dist{x}{y}{\RR^3}\]
 for any $x,y\in A$
 \end{thm}
 
@@ -461,14 +470,14 @@ Recall that $\measuredangle(u,v)$ denotes the angle between two vectors $u$ and 
 
 \begin{thm}{Observation}
 For any $u,v\in \mathbb{S}^2$, we have
-\[|u-v|_{\mathbb{S}^2}=\measuredangle(u,v)\]
+\[\dist{u}{v}{\mathbb{S}^2}=\measuredangle(u,v)\]
 
 \end{thm}
 
 \parit{Proof.}
 The short arc $\gamma$ of a great circle  from $u$ to $v$ in $\mathbb{S}^2$ has length $\measuredangle(u,v)$.
 Therefore
-\[|u-v|_{\mathbb{S}^2}\le\measuredangle(u,v).\]
+\[\dist{u}{v}{\mathbb{S}^2}\le\measuredangle(u,v).\]
 
 It remains to prove the opposite inequality.
 In other words, we need to show that given a polygonal line $\beta=p_0\dots p_n$ inscribed in $\gamma$ there is a polygonal line

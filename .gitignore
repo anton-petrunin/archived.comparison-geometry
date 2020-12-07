@@ -18,9 +18,9 @@ lib/*
 *.blg
 *.xml
 *.kilepr
-*.kilepr
 *.mps
 *.mpx
 *mptextmp.mp
 *mpxerr.tex
+*.eps
 *eps-converted-to.pdf

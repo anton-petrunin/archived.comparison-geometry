@@ -6,7 +6,7 @@ This chapter based on material in the book os Stephanie Alexander, Vitali Kapovi
 \section{Triangles and hinges}
 
 Recall that a shortest path between points $x$ and $y$ in a surface $\Sigma$ is denoted as $[x,y]$ or $[x,y]_\Sigma$, and
-$|x-y|_\Sigma$ denotes the \index{intrinsic distance}\emph{intrinsic distance} from $x$ to $y$ in $\Sigma$.
+$\dist{x}{y}\Sigma$ denotes the \index{intrinsic distance}\emph{intrinsic distance} from $x$ to $y$ in $\Sigma$.
 
 A \index{geodesic triangle}\emph{geodesic triangle} in a surface $\Sigma$ is defined as a triple of points $x,y,z\z\in \Sigma$ with choice of minimizing geodesics $[x,y]_\Sigma$, $[y,z]_\Sigma$ and $[z,x]_\Sigma$.
 The points $x,y,z$ are called {}\emph{vertexes} of the geodesic triangle,
@@ -16,11 +16,11 @@ the triangle itself is denoted by $[xyz]$, or by $[xyz]_\Sigma$, if we need to e
 A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\RR^2$ is called \index{model triangle}\emph{model triangle} of the triangle $[xyz]$
 if its corresponding sides are equal;
 that is,
-\[|\tilde x-\tilde y|_{\RR^2}=|x-y|_\Sigma,
+\[\dist{\tilde x}{\tilde y}{\RR^2}=\dist{x}{y}\Sigma,
 \quad
-|\tilde y-\tilde z|_{\RR^2}=|y-z|_\Sigma,
+\dist{\tilde y}{\tilde z}{\RR^2}=\dist{y}{z}\Sigma,
 \quad
-|\tilde z-\tilde x|_{\RR^2}=|z-x|_\Sigma.
+\dist{\tilde z}{\tilde x}{\RR^2}=\dist{z}{x}\Sigma.
 \]
 In this case we write $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$.
 \index{10aae@$\tilde\triangle$}
@@ -115,7 +115,7 @@ The following exercise is a lemma from the note of Arseniy Akopyan and the first
 
 \begin{thm}{Exercise}\label{ex:diam-angle}
 Let $p$ and $q$ be points on a closed convex surface $\Sigma$ that lie on maximal intrinsic distance from each other;
-that is, $|p\z-q|_\Sigma\z\ge|x-y|_\Sigma$ for any $x,y\in \Sigma$.
+that is, $\dist{p}{q}\Sigma\z\ge\dist{x}{y}\Sigma$ for any $x,y\in \Sigma$.
 Show that 
 \[\measuredangle\hinge xpq\ge \tfrac\pi3\]
 for any point $x\in \Sigma\backslash\{p,q\}$.
@@ -137,7 +137,7 @@ It will be used in the proof of the global version (\ref{thm:comp}).
 The comparison theorem (\ref{thm:comp}) holds in a small neighborhood of any point.
 
 Moreover, suppose $\Sigma$ be a smooth regular surface without boundary,
-then for any $p\in \Sigma$ there is $r>0$ such that if $|p-x|_\Sigma<r$, then $\inj(x)_\Sigma>r$ and the following statements hold:
+then for any $p\in \Sigma$ there is $r>0$ such that if $\dist{p}{x}\Sigma<r$, then $\inj(x)_\Sigma>r$ and the following statements hold:
 
 
 \begin{subthm}{thm:loc-comp:cba}
@@ -163,32 +163,32 @@ Note that $y=\exp_x\vec v$ and $z=\exp_x\vec w$ for two vectors $\vec v,\vec w\i
 \begin{align*}
 \measuredangle\hinge 0{\vec v}{\vec w}_{\T_x}&=\measuredangle\hinge xyz_\Sigma,
 \\
-|\vec v|_{\T_x}&=|x-y|_\Sigma, 
+|\vec v|_{\T_x}&=\dist{x}{y}\Sigma, 
 \\
-|\vec w|_{\T_x}&=|x-z|_\Sigma;
+|\vec w|_{\T_x}&=\dist{x}{z}\Sigma;
 \end{align*}
 in particular, $|\vec v|, |\vec w|< \tfrac r2$.
 \parit{\ref{SHORT.thm:loc-comp:cbb}.}
 Consider the line segment $\tilde \gamma$ joining $\vec v$ to $\vec w$ in the tangent plane $\T_x$ and set $\gamma=\exp_x\circ\tilde \gamma$.
 By Rauch comparison (\ref{prop:rauch:K>=0}), we have
 \[\length\gamma\le \length \tilde \gamma.\]
-Since $|\vec v-\vec w|_{\T_x}=\length\tilde \gamma$ and $|y-z|_{\Sigma}\le \length\gamma$, we get 
-\[|\vec v-\vec w|_{\T_x}\ge |y-z|_\Sigma.\]
+Since $\dist{\vec v}{\vec w}{\T_x}=\length\tilde \gamma$ and $\dist{y}{z}\Sigma\le \length\gamma$, we get 
+\[\dist{\vec v}{\vec w}{\T_x}\ge \dist{y}{z}\Sigma.\]
 By the angle monotonicity (\ref{lem:angle-monotonicity}), we get
 \[\angk xzy\le\measuredangle\hinge 0{\vec v}{\vec w}_{\T_x},\]
 whence the result.
 
 \parit{\ref{SHORT.thm:loc-comp:cba}.}
 Consider a minimizing geodesic $\gamma$ joining $y$ to $z$ in $\Sigma$.
-Since $|x\z-y|,|x\z-z|\z<\tfrac r2$, the triangle inequality implies that $\gamma$ lies in $r$-neighborhood of $x$.
+Since $\dist{x}{y}{\Sigma},\dist{x}{z}{\Sigma}\z<\tfrac r2$, the triangle inequality implies that $\gamma$ lies in $r$-neighborhood of $x$.
 In particular, $\log_x\circ\gamma$ is defined, and the curve
 $\tilde \gamma=\log_x\circ\gamma$ lies in a $r$-neighborhood of zero in $\T_x$ that corresponds to $\gamma$.
 Note that $\tilde\gamma$ connects $\vec v$ to $\vec w$ in $\T_x$.
 
 By Rauch comparison (\ref{prop:rauch:K=<0}), we have
 \[\length\gamma\ge \length \tilde \gamma.\]
-Since $|\vec v-\vec w|_{\T_x}\le\length\tilde \gamma$ and $|y-z|_{\Sigma}= \length\gamma$, we get 
-\[|\vec v-\vec w|_{\T_x}\ge |y-z|_\Sigma.\]
+Since $\dist{\vec v}{\vec w}{\T_x}\le\length\tilde \gamma$ and $\dist{y}{z}{\Sigma}= \length\gamma$, we get 
+\[\dist{\vec v}{\vec w}{\T_x}\ge \dist{y}{z}\Sigma.\]
 By angle monotonicity (\ref{lem:angle-monotonicity}), we get
 \[\angk xzy\ge\measuredangle\hinge 0{\vec v}{\vec w}_{\T_x}.\]
 whence the result.
@@ -213,8 +213,9 @@ The proof is taken from \cite{alexander-kapovitch-petrunin2027} and it is very c
 Assume $\Sigma$ is compact. 
 From the local theorem (\ref{thm:loc-comp}), we get that there is $\epsilon>0$ such that the inequality 
 \[\measuredangle\hinge {x}{p}{q}\ge\angk xpq.\]
-holds for any hinge $\hinge {x}{p}{q}$ such that $|x-p|+|x-q|<\epsilon$.
-The following lemma states that in this case the same holds true for any hinge $\hinge {x}{p}{q}$ such that $|x-p|+|x-q|<\tfrac32\cdot\epsilon$.
+holds for any hinge $\hinge{x}{p}{q}$ such that 
+$\dist{x}{p}\Sigma+\dist{x}{q}\Sigma<\epsilon$.
+The following lemma states that in this case the same holds true for any hinge $\hinge{x}{p}{q}$ such that $\dist{x}{p}\Sigma+\dist{x}{q}\Sigma<\tfrac32\cdot\epsilon$.
 Applying the key lemma (\ref{key-lem:globalization}) a few times we will get that the comparison holds for arbitrary hinge, which proves \mbox{\ref{thm:comp:toponogov}}.
 \qeds
 
@@ -224,11 +225,11 @@ Assume that the comparison
 \[\measuredangle\hinge x y z
 \ge\angk x y z\eqlbl{eq:key-lem:globalization}\]
 holds for any hinge $\hinge x y z$ with 
-$\dist{x}{y}{}+\dist{x}{z}{}
+$\dist{x}{y}\Sigma+\dist{x}{z}\Sigma
 <
 \frac{2}{3}\cdot\ell$.
 Then the comparison \ref{eq:key-lem:globalization}
-holds for any hinge $\hinge x y z$ with $\dist{x}{y}{}+\dist{x}{z}{}<\ell$.
+holds for any hinge $\hinge x y z$ with $\dist{x}{y}\Sigma+\dist{x}{z}\Sigma<\ell$.
 \end{thm}
 
 \begin{wrapfigure}{r}{35mm}
@@ -238,20 +239,20 @@ holds for any hinge $\hinge x y z$ with $\dist{x}{y}{}+\dist{x}{z}{}<\ell$.
 
 \parit{Proof.} 
 Given a hinge $\hinge x p q$ consider a triangle in the plane
-with angle $\measuredangle\hinge x p q$ and two adjacent sides $|x-p|$ and $|x-q|$.
+with angle $\measuredangle\hinge x p q$ and two adjacent sides $\dist{x}{p}\Sigma$ and $\dist{x}{q}\Sigma$.
 Let us denote by $\side \hinge x p q$ the third side of this triangle; let us call it the \index{model side}\emph{model side} of the hinge.
 
 Note that the inequalities 
 \[\measuredangle\hinge x p q\ge \angk x p q\quad\iff\quad\side \hinge x p q
-\ge\dist{p}{q}{}.\]
+\ge\dist{p}{q}\Sigma.\]
 So it is sufficient to prove that
 \[\side \hinge x p q
-\ge\dist{p}{q}{}.\eqlbl{eq:thm:=def-loc*}\] 
-for any hinge $\hinge x p q$ with $\dist{x}{p}{}+\dist{x}{q}{}<\ell$.
+\ge\dist{p}{q}\Sigma.\eqlbl{eq:thm:=def-loc*}\] 
+for any hinge $\hinge x p q$ with $\dist{x}{p}\Sigma+\dist{x}{q}\Sigma<\ell$.
 
 \parit{Construction.}
 Let us describe a construction that produce a new hinge $\hinge{x'}p q$ for a given hinge $\hinge x p q$ such that 
-\[\tfrac{2}{3}\cdot\ell \le\dist{p}{x}{}\z+\dist{x}{q}{}< \ell.\]
+\[\tfrac{2}{3}\cdot\ell \le\dist{p}{x}\Sigma\z+\dist{x}{q}\Sigma< \ell.\]
 The new hinge $\hinge{x'}p q$ will satisfy the following properties:
 \[\side \hinge x p q
 \ge\side \hinge{x'}p q
@@ -259,12 +260,12 @@ The new hinge $\hinge{x'}p q$ will satisfy the following properties:
 and 
 $x'\in [x,p]\z\cup [x,q]$. In particular, the triangle inequality implies that 
 \[
-\dist{p}{x}{}+\dist{x}{q}{}\ge\dist{p}{x'}{}+\dist{x'}{q}{}.
+\dist{p}{x}\Sigma+\dist{x}{q}\Sigma\ge\dist{p}{x'}\Sigma+\dist{x'}{q}\Sigma.
 \eqlbl{eq:thm:=def-loc-fourstar}\]
 
-Assume $\dist{x}{q}{}\ge\dist{x}{p}{}$, otherwise switch the roles of $p$ and $q$ in the following construction.
+Assume $\dist{x}{q}\Sigma\ge\dist{x}{p}\Sigma$, otherwise switch the roles of $p$ and $q$ in the following construction.
 Take $x'\in [x, q]$ such that 
-\[\dist{p}{x}{}+3\cdot\dist{x}{x'}{}
+\[\dist{p}{x}\Sigma+3\cdot\dist{x}{x'}\Sigma
 =\tfrac{2}{3}\cdot\ell \eqlbl{3|xx'|}\]
 Choose a geodesic $[x', p]$ and consider the  hinge $\hinge{x'}p q$ formed by $[x',p]$ and $[x',q]\subset [x,q]$. 
 
@@ -290,11 +291,11 @@ In particular,
 
 Consider the model triangle
 $[\tilde x\tilde x'\tilde p]\z=\modtrig xx'p$.
-Take $\tilde  q$ on the extension of $[\tilde  x,\tilde  x']$ beyond $x'$ such that $\dist{\tilde x}{\tilde q}{}=\dist{x}{q}{}$ (and therefore $\dist{\tilde x'}{\tilde q}{}=\dist{x'}{q}{}$).
+Take $\tilde  q$ on the extension of $[\tilde  x,\tilde  x']$ beyond $x'$ such that $\dist{\tilde x}{\tilde q}\Sigma=\dist{x}{q}\Sigma$ (and therefore $\dist{\tilde x'}{\tilde q}\Sigma=\dist{x'}{q}\Sigma$).
 From \ref{eq:thm:=def-loc-threestar},
 \[\measuredangle\hinge x p q
 =\measuredangle\hinge  x p{x'}\ge\angk x p{x'}\ \ \Rightarrow\ \ 
-\side \hinge x q p\ge\dist{\tilde p}{\tilde q}{}.\]
+\side \hinge x q p\ge\dist{\tilde p}{\tilde q}\Sigma.\]
 Since $\measuredangle\hinge{x'}p x+\measuredangle\hinge{x'}p q= \pi$,
 \ref{eq:thm:=def-loc-threestar} implies
 \[
@@ -306,7 +307,7 @@ Since $\measuredangle\hinge{x'}p x+\measuredangle\hinge{x'}p q= \pi$,
 \measuredangle\hinge{x'}p q.
 \]
 Therefore
-$\dist{\tilde p}{\tilde q}{}\ge\side \hinge{x'}q p$ and \ref{eq:thm:=def-loc-fivestar} follows.
+$\dist{\tilde p}{\tilde q}\Sigma\ge\side \hinge{x'}q p$ and \ref{eq:thm:=def-loc-fivestar} follows.
 Hence the constructed hinge $\hinge{x'}q p$ satisfies the declared properties.
 
 \begin{figure}[h!]
@@ -317,27 +318,27 @@ Hence the constructed hinge $\hinge{x'}q p$ satisfies the declared properties.
 Set $x_0=x$.
 Let us apply inductively the above construction to get a sequence of hinges  $\hinge{x_n}p q$ with $x_{n+1}=x_n'$.
 By \ref{eq:thm:=def-loc-fivestar} and triangle inequality, both sequences
-\[s_n=\side \hinge{x_n}pq\quad\text{and}\quad r_n=\dist{p}{x_n}{}+\dist{x_n}{q}{}\]
+\[s_n=\side \hinge{x_n}pq\quad\text{and}\quad r_n=\dist{p}{x_n}\Sigma+\dist{x_n}{q}\Sigma\]
 are nonincreasing.
 
 The sequence might terminate at some $n$ only if $r_n< \tfrac{2}{3}\cdot\ell $.
 In this case, by the assumptions of the lemma, 
-\[s_n=\side \hinge{x_n}p q\ge\dist{p}{q}{}.\]
+\[s_n=\side \hinge{x_n}p q\ge\dist{p}{q}\Sigma.\]
 Since sequence $s_n$ is nonincreasing;
-\[s_0=\side \hinge{x}p q\ge\dist{p}{q}{},\]
+\[s_0=\side \hinge{x}p q\ge\dist{p}{q}\Sigma,\]
 whence inequality \ref{eq:thm:=def-loc*} follows.
 
 If the sequence does not terminate, then $r_n\ge\tfrac{2}{3}\cdot\ell$ for all $n$.
-Since $(r_n)$ is nonincreasing, $r_n\to r\ge |p-q|_\Sigma$ as $n\to\infty$.
+Since $(r_n)$ is nonincreasing, $r_n\to r\ge \dist{p}{q}\Sigma$ as $n\to\infty$.
 
 Let us show that $\measuredangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
 
 Indeed assume $\measuredangle\hinge{x_n}p q\le \pi-\epsilon$ for some $\epsilon>0$.
 Without loss of generality we can assume that $x_{n+1}\in [x_n,q]$;
 otherwise switch $p$ and $q$ further.
-Note that $|x_n-x_{n+1}|,|p-x_n|>\tfrac\ell{100}$.
+Note that $\dist{x_n}{x_{n+1}}\Sigma,\dist{p}{x_n}\Sigma>\tfrac\ell{100}$.
 Therefore by comparison 
-\[|p-x_{n+1}|<\side\hinge{x_n}p{x_{n+1}}<|p-x_n|+|x_n-x_{n+1}|-\delta\]
+\[\dist{p}{x_{n+1}}\Sigma<\side\hinge{x_n}p{x_{n+1}}<\dist{p}{x_n}\Sigma+\dist{x_n}{x_{n+1}}\Sigma-\delta\]
 for some fixed $\delta=\delta(\epsilon)>0$.
 Therefore $r_n-r_{n+1}>\delta$.
 The latter cannot hold for large $n$, otherwise the sequence $r_n$ would not converge.
@@ -349,11 +350,11 @@ Since $\measuredangle\hinge{x_n}p q\to \pi$, we have
 $s_n-r_n\to 0$ as $n\to\infty$;
 that is, $s_n\to r$.
 
-Since the sequence $(s_n)$ is nonincreasing and $r\ge |p-q|$, we get
-\[s_n\ge |p-q|\]
+Since the sequence $(s_n)$ is nonincreasing and $r\ge \dist{p}{q}\Sigma$, we get
+\[s_n\ge \dist{p}{q}\Sigma\]
 for any $n$.
 In particular
-\[\side\hinge spq=s_0\ge |p-q|,\] so we obtain \ref{eq:thm:=def-loc*}.
+\[\side\hinge spq=s_0\ge \dist{p}{q}\Sigma,\] so we obtain \ref{eq:thm:=def-loc*}.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:open-comparison}
@@ -363,7 +364,7 @@ Given $p\in\Sigma$, denote by $R_p$
 the maximal value (possibly $\infty$) such that the comparison 
 \[\measuredangle\hinge x p y
 \ge\angk x p y\]
-holds for any hinge $\hinge x p y$ with $\dist{p}{x}{}+\dist{x}{y}{}<R_p$.
+holds for any hinge $\hinge x p y$ with $\dist{p}{x}\Sigma+\dist{x}{y}\Sigma<R_p$.
 
 \begin{subthm}{ex:open-comparison:positive}
 Show that for any compact subset $K\subset \Sigma$, there is $\epsilon>0$ such that $R_p>\epsilon$ for any $p\in K$.
@@ -481,7 +482,7 @@ In this section we formulate conditions equivalent to the conclusion of the comp
 A triangle $[xyz]$ in a surface is called \index{fat triangle}\emph{fat} (\index{thin triangle}\emph{thin})
 if for any two points $p$ and $q$ on the sides of the triangle and the corresponding points 
 $\tilde p$ and $\tilde q$ on the sides of its model triangle $[\tilde x\tilde y\tilde z]\z=\tilde\triangle xyz$ we have
-$|p-q|\ge |\tilde p-\tilde q|$ (or, respectively, $|p-q|\le |\tilde p-\tilde q|$).
+$\dist{p}{q}{}\ge |\tilde p-\tilde q|$ (or, respectively, $\dist{p}{q}{}\le |\tilde p-\tilde q|$).
 
 
 \begin{thm}{Proposition}\label{prop:comp-reformulations}
@@ -536,7 +537,7 @@ the point $y$ lies on the side $[x,z]$.
 Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x,\tilde z]$.
 Then the following expressions have the same signs:
 \begin{enumerate}[(i)]
- \item $|p-y|_\Sigma-|\tilde p-\tilde y|_{\RR^2}$;
+ \item $\dist{p}{y}\Sigma-\dist{\tilde p}{\tilde y}{\RR^2}$;
  \item $\angk xpy-\angk {x}{p}{z}$;
  \item $\pi-\angk ypx-\angk ypz$;
 \end{enumerate}
@@ -557,7 +558,7 @@ It remains to apply Alexandrov's lemma (\ref{lem:alex-reformulation}).
 Applying \textit{\ref{SHORT.mang>angk}} twice, first for $y\in [x,z]$ and then for $w\in [p,x]$, we get that
 \[\angk xwy \ge \angk xpy \ge \angk xpz\]
 and therefore
-\[|w-y|_\Sigma\ge |\tilde w-\tilde y|_{\RR^2},\]
+\[\dist{w}{y}\Sigma\ge \dist{\tilde w}{\tilde y}{\RR^2},\]
 where $\tilde w$ and $\tilde y$ are the points corresponding to $w$ and $y$ points on the sides of the model triangle. 
 
 \parit{\ref{SHORT.fat}$\Rightarrow$\ref{SHORT.mang>angk}.}
@@ -573,7 +574,7 @@ Let $\Sigma$ be a proper smooth regular surface
 and $\gamma$ be a unit-speed geodesic in $\Sigma$ and $p\in\Sigma$.
 
 Consider the function
-\[h(t)=|p-\gamma(t)|_\Sigma^2-t^2.\]
+\[h(t)=\dist{p}{\gamma(t)}\Sigma^2-t^2.\]
 
 \begin{subthm}{}
 Show that if $\Sigma$ is simply connected and the Gauss curvature of $\Sigma$ is nonpositive, then the function $h$ is convex.
@@ -590,11 +591,11 @@ Let $\bar x$ and $\bar y$ be the midpoints of minimizing geodesics $[p,x]$ and $
 
 \begin{subthm}{}
  Show that if $\Sigma$ is simply connected and has nonpositive Gauss curvature, then 
- \[2\cdot |\bar x-\bar y|_\Sigma\le |x-y|_\Sigma.\]
+ \[2\cdot \dist{\bar x}{\bar y}\Sigma\le \dist{x}{y}\Sigma.\]
  \end{subthm}
  
 \begin{subthm}{} Show that if the Gauss curvature of $\Sigma$ is nonnegative, then 
- \[2\cdot |\bar x-\bar y|_\Sigma\ge |x-y|_\Sigma.\]
+ \[2\cdot \dist{\bar x}{\bar y}\Sigma\ge \dist{x}{y}\Sigma.\]
 \end{subthm}
 
 \end{thm}
@@ -602,7 +603,7 @@ Let $\bar x$ and $\bar y$ be the midpoints of minimizing geodesics $[p,x]$ and $
 \begin{thm}{Exercise}\label{ex:convex-dist}
 Assume $\gamma_1$ and $\gamma_2$ are two geodesics in an open smooth regular simply connected surface $\Sigma$ with nonpositive Gauss curvature.
 Show that the function
-\[h(t)=|\gamma_1(t)-\gamma_2(t)|_\Sigma\]
+\[h(t)=\dist{\gamma_1(t)}{\gamma_2(t)}\Sigma\]
 is convex.
 \end{thm}
 
@@ -612,7 +613,7 @@ that is, for any two points $x,y\in\Delta$, any shortest path $[x,y]_\Sigma$ lie
 
 Denote by $f\:\Sigma\to\RR$ the intrinsic distance function to $\delta$;
 that is, 
-\[f(x)=\inf_{y\in\delta}\{\,|x-y|_\Sigma\,\}.\]
+\[f(x)=\inf_{y\in\delta}\{\,\dist{x}{y}\Sigma\,\}.\]
 
 Show that
 
@@ -680,10 +681,10 @@ The second part of \ref{SHORT.prop:busemann:all} is evident.
 
 It remains to prove the last two statements.
 Choose a geodesic~$\alpha$.
-Given $t\ge 0$, consider the function $h_t(s)=|{\lambda(t)}-{\alpha(s)}|_{\Sigma}^2-s^2$.
+Given $t\ge 0$, consider the function $h_t(s)=\dist{\lambda(t)}{\alpha(s)}{\Sigma}^2-s^2$.
 
 
-Observe that for any fixed $x\in\Sigma$ we have $\frac{|\lambda(t)-x|}{t}\to 1$ as $t\to\infty$.
+Observe that for any fixed $x\in\Sigma$ we have $\dist{\lambda(t)}{x}{}/t\to 1$ as $t\to\infty$.
 Therefore
 \begin{align*}
 \bus_\lambda\circ\alpha(s)
@@ -776,10 +777,10 @@ Passing to the limit as $t\to\infty$, we get
 \[\bus_+(x)+\bus_-(x)\ge0.\]
 
 On the other hand, by \ref{ex:geod-convexity}, we have 
-$h(t)=|\lambda(t)-x|^2-t^2$ 
+$h(t)=\dist{\lambda(t)}{x}\Sigma^2-t^2$ 
 is concave.
 In particular, 
-\[|\lambda(t)-x|_\Sigma\le \sqrt{t^2+at+b}\]
+\[\dist{\lambda(t)}{x}\Sigma\le \sqrt{t^2+at+b}\]
 for some constants $a,b\in\RR$. 
 Passing to the limit as $t\to\pm\infty$, we get \[\bus_+(x)+\bus_-(x)\le0;\]
 whence \ref{eq:bus+-=0} follows.
@@ -811,7 +812,7 @@ Since $|\vec w^a|=1$ and $\bus_-$ is affine, we get that
 &=\limsup_{a\to\infty} D_{\vec w^a}\bus_-=
 \\
 &=
-\limsup_{a\to\infty}\frac{\bus_-\circ\lambda(a)-\bus_-(x)}{|x-\lambda(a)|_\Sigma}=
+\limsup_{a\to\infty}\frac{\bus_-\circ\lambda(a)-\bus_-(x)}{\dist{x}{\lambda(a)}\Sigma}=
 \\
 &=\limsup_{a\to\infty} \frac{a-\bus_-(x)}{a}=
 \\
@@ -834,7 +835,7 @@ such that $\zeta'(b)\z=\vec u(x)$.
 Since $\bus_-$ is affine, we have that $\bus_-\circ\zeta(t)=t$ for any $t$.
 Since $\zeta$ is a unit-speed geodesic and $\bus_-$ is 1-Lipschitz, we get
 \begin{align*}
-|t_1-t_0|&\ge|\zeta(t_1)-\zeta(t_0)|_\Sigma\ge
+|t_1-t_0|&\ge\dist{\zeta(t_1)}{\zeta(t_0)}\Sigma\ge
 \\
 &\ge |\bus\circ\lambda(t_1)-\bus\circ\lambda(t_0)|=
 \\
@@ -851,7 +852,7 @@ Let $\xi$ and $\zeta$ be two lines in $\Sigma$ that run in the direction of $\ve
 Suppose that $\xi$ and $\zeta$ are parametrized so that $\bus_-\circ \xi(t)=\bus_-\circ \zeta(t)=t$ for any $t$;
 further set $x_0=\xi(0)$, $z_0=\zeta(0)$, $x_1=\xi(s)$, $z_1=\zeta(t)$ for some $s,t$. 
 Then
-\[|x_1-z_1|_\Sigma^2=|x_0-z_0|_\Sigma^2+(s-t)^2.\]
+\[\dist{x_1}{z_1}\Sigma^2=\dist{x_0}{z_0}\Sigma^2+(s-t)^2.\]
 \end{clm}
 
 Given $x\in \Sigma$, 
@@ -872,10 +873,11 @@ z_1&=\lim_{a\to\infty}\delta^{z_0}_a(t).
 \end{align*}
 
 Recall that the triangle $[x_0\,\gamma(a)\,z_0]$ is fat (\ref{fat}).
-Therefore we get a lower bound for the distance $|\delta^{x_0}_a(s)-\delta^{z_0}_a(t)|_\Sigma$.
+Therefore we get a lower bound for the distance
+$\dist{\delta^{x_0}_a(s)}{\delta^{z_0}_a(t)}\Sigma$.
 Note that if $a$ is large, then the two long sides of the triangle are close to $a$.
 Straightforward computations show that passing to the limit as $a\to \infty$, we get
-\[|x_1-z_1|_\Sigma^2\ge|{x_0}-{z_0}|_\Sigma^2+(s-t)^2.\]
+\[\dist{x_1}{z_1}\Sigma^2\ge\dist{x_0}{z_0}\Sigma^2+(s-t)^2.\]
 
 \begin{figure}
 \centering
@@ -887,10 +889,10 @@ Now let us swap ${x_0}$ with $x_1$ and ${z_0}$ with $z_1$,
 and repeat the argument above for $a\to-\infty$.
 Note that the two longer sides of the triangle are close to  $s-a$ and $t-a$.
 Therefore we get the opposite inequality
-\[|x_1-z_1|_\Sigma^2\le|{x_0}-{z_0}|_\Sigma^2+(s-t)^2.\]
+\[\dist{x_1}{z_1}\Sigma^2\le\dist{x_0}{z_0}\Sigma^2+(s-t)^2.\]
 
 Whence 
-\[|x_1-z_1|_\Sigma^2=|{x_0}-{z_0}|_\Sigma^2+(s-t)^2.\eqlbl{ex:|x-y|=|x-y|}\]
+\[\dist{x_1}{z_1}\Sigma^2=\dist{x_0}{z_0}\Sigma^2+(s-t)^2.\eqlbl{ex:|x-y|=|x-y|}\]
 if $s,t\ge0$.
 The same argument proves \ref{ex:|x-y|=|x-y|} if $s,t\le 0$.
 Applying it couple of times for $s_1=t_1\ge 0$ and $s_2,t_2\le 0$, we get that \ref{ex:|x-y|=|x-y|} holds 
