@@ -1315,12 +1315,12 @@ Show that the closest point projection $\partial B \to \Sigma $ is surjective an
 
 
 \parbf{\ref{ex:clairaut}.} 
-We can assume that the origin lies on the axis of revolution and $\vec i$ points in the direction of the axis.
+We can assume that the origin lies on the axis of revolution and $\vec i$ points in the direction of such axis.
 Use \ref{lem:constant-speed} to show that it is sufficient to prove that 
 $\langle\gamma'\times \gamma,\vec i\rangle$
 is constant.
 
-Since $\gamma''(t)\perp\T_{\gamma(t)}$ we have that three vectors $\vec i$, $\gamma$, and $\gamma''$ lie in the same plane.
+Since $\gamma''(t)\perp\T_{\gamma(t)}$, the three vectors $\vec i$, $\gamma$, and $\gamma''$ lie in the same plane.
 In particular $\langle\gamma''\times \gamma,\vec i\rangle=0$.
 Therefore
 $
@@ -1331,19 +1331,8 @@ $.
 
 
 
-
-\parbf{\ref{ex:reflection-geodesic}.}
-Denote by $\mu$ a unit vector perpendicular to $\Pi$.
-Since $\gamma$ lies in $\Pi$, we have that $\gamma''$ is parallel to $\Pi$, or equivalently $\gamma''\perp \mu$.
-Since $\gamma$ is unit speed, \ref{prop:a'-pertp-a''} implies that $\gamma''\perp\gamma'$.
-
-Since $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$,
-the tangent plane $\T_{\gamma(t)}\Sigma$ is also mirror symmetric with respect to  a plane $\Pi$.
-It follows that $\T_{\gamma(t)}\Sigma$ is spanned by $\mu$ and $\gamma'(t)$.
-Therefore $\gamma''\perp \mu$ and $\gamma''\perp\gamma'$ imply $\gamma''\perp\T_{\gamma(t)}\Sigma$;
-that is, $\gamma$ is a geodesic.
-
-\parbf{\ref{ex:asymptotic-geodesic}.} Without loss of generality, we can assume that $\gamma$ has unit speed.
+\parbf{\ref{ex:asymptotic-geodesic}.} By Lemma \ref{lem:constant-speed},
+we can assume that $\gamma$ is parametrized by arc-length.
 By the definition of geodesic, we have that $\gamma''(s)\perp\T_{\gamma(s)}$. 
 Therefore 
 \[\gamma''(s)=k_n(s)\cdot\Norm(\gamma(s)),\]
@@ -1352,13 +1341,29 @@ Since $\gamma$ is asymptotic, $k_n(s)\equiv 0$;
 that is, $\gamma''(s)\equiv 0$, therefore $\gamma'$ is constant and $\gamma$ runs along a line segment; see \ref{ex:zero-curvature-curve}.
 
 
+
+
+\parbf{\ref{ex:reflection-geodesic}.}
+Denote by $\mu$ a unit vector perpendicular to $\Pi$.
+Since $\gamma$ lies in $\Pi$, we have that $\gamma''$ is parallel to $\Pi$, or equivalently $\gamma''\perp \mu$.
+Since $\gamma$ is unit speed, \ref{prop:a'-pertp-a''} implies that $\gamma''\perp\gamma'$.
+
+Since $\Sigma$ is mirror symmetric with respect to the plane $\Pi$,
+the tangent plane $\T_{\gamma(t)}\Sigma$ is also mirror symmetric with respect to  $\Pi$ as well.
+It follows that $\T_{\gamma(t)}\Sigma$ is spanned by $\mu$ and $\gamma'(t)$.
+Hence $\gamma''\perp \mu$ and $\gamma''\perp\gamma'$ imply $\gamma''\perp\T_{\gamma(t)}\Sigma$;
+that is, $\gamma$ is a geodesic.
+
+
+
 \parbf{\ref{ex:round-torus}.}
 By \ref{ex:reflection-geodesic}, any meridian of $\Sigma$ is a closed geodesic.
 Consider an arbitrary closed geodesic $\gamma$.
 
-Note that if $\gamma$ is tangent to a meridian at some point, then by uniqueness, $\gamma$ runs along the meridian; in particular it is non-contractible.
+In the case when $\gamma$ is tangent to a meridian at some point, then by the  uniqueness part of Proposition \ref{prop:geod-existence},
+ $\gamma$ runs along that meridian; in particular it is non-contractible.
 
-In the remaining case $\gamma$ can intersect meridians only transitively.
+In the remaining case, $\gamma$ can intersect meridians only transversely.
 Therefore the longitude of $\gamma$ is monotonic.
 Whence again $\gamma$ is non-contractible.
 
@@ -1366,7 +1371,8 @@ Whence again $\gamma$ is non-contractible.
 \parbf{\ref{ex:helix=geodesic}.}
 Show that $\Norm(\gamma(t))=(\cos t,\sin t, 0)$.
 Calculate $\gamma''(t)$ and show that it is proportional to $\Norm(\gamma(t))$.
-Note that the latter is equivalent to $\gamma''(t)\perp\T_{\gamma(t)}$.
+The latter is equivalent to $\gamma''(t)\perp\T_{\gamma(t)}$. 
+Note that the line segment from $\gamma (0) $ to $\gamma (2 \pi) $ is contained in $\Sigma$.
 
 
 
@@ -1391,34 +1397,54 @@ By \ref{prop:gamma''}, $\hat\alpha$ is a geodesic.
 \end{wrapfigure}
 
 Suppose $\alpha_1$ is a proper subarc of $\alpha$;
-that is, if $\alpha_1\ne\alpha$, or, equivalently, either $p$ or $q$ is not an endpoint of $\alpha$.
+that is, $\alpha_1\ne\alpha$, or equivalently, either $p$ or $q$ is not an endpoint of $\alpha$.
 Then $\alpha$ and $\hat\alpha$ share one point and velocity vector at this point.
 By \ref{prop:geod-existence} $\alpha$ coincides with $\hat\alpha$ --- a contradiction.
 
-It follows that $p$ and $q$ are the endpoints of $\alpha$.
-The same way we can show that $p$ and $q$ are the endpoints of $\beta$.
+It follows that $p$ and $q$ are the endpoints of $\alpha$. Analogously,  $p$ and $q$ are the endpoints of $\beta$.
+
+For the second part, one could consider two distinct curves of the form 
+\[ \gamma_b(t) = ( \cos t , \sin t , bt  )  , t \in \mathbb{R}  \]
+in the cylinder $x^2 + y^2 =1$.
 
 \parbf{\ref{ex:min-geod+plane}.}
-Assume that a shortest path $\alpha$ changes the sides of $\Pi$ at least twice.
-In this case there is an arc $\alpha_1$ of $\alpha$ that lies on one side on $\Pi$ and has ends on $\Pi$ and these ends are distinct from the ends of $\alpha$.
+Assume a shortest path $\alpha$ crosses $\Pi$ at least twice.
+In this case there is an arc $\alpha_1$ of $\alpha$ that lies entirely on one side
+ on $\Pi$,  has ends on $\Pi$, and these ends are distinct from the ends of $\alpha$.
 
-Let us remove the arc $\alpha_1$ from $\alpha$ and exchange it to the reflection of $\alpha_1$ across $\Pi$.
+Let us remove the arc $\alpha_1$ from $\alpha$ and replace it with the reflection of $\alpha_1$ across $\Pi$.
 Note that the obtained curve, say $\beta$, lies in the surface; it has the same length as $\alpha$, and it connects the same pair of points, say $p$ and $q$.
-Therefore $\beta$ is another shortest path from $p$ to $q$ that is distinct from $\alpha$.
+Therefore $\beta$ is another shortest path from $p$ to $q$ in $\Sigma$ that is distinct from $\alpha$.
 
 By \ref{prop:gamma''}, $\alpha$ and $\beta$ are geodesics.
 Since $\alpha$ and $\beta$ have a common subarc, they share one point and velocity vector at this point;
 by \ref{prop:geod-existence} $\alpha$ coincides with $\beta$ --- a contradiction.
 
 
-\parbf{\ref{ex:milka}.} Show that the concatenation of the line segment $[p^t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path from $p^t$ to $q$ in the closed region $W$ outside of $\Sigma$.
+\parbf{\ref{ex:milka}.} Let $W$ be the closed region outside of $\Sigma$. Show that the distance $ | p^t - q   |_W  $ is constant with respect to $t$. This implies that the concatenation of the line segment $[p^t,\gamma(t)]$ and the arc $\gamma|_{[t,\ell]}$ is a shortest path from $p^t$ to $q$  in $W$. Since $\Sigma$ is strictly convex, 
+\[ | \gamma (t) - q  | _W > | \gamma (t) - q   |_{\mathbb{R}^3}  \]
+for all $t < \ell$. Hence 
+
+\[
+\begin{aligned}
+ |p^t - q   |_W  &=  | p^t - \gamma(t)   |_W + | \gamma (t) -q  |_W   
+\\
+&>   | p^t - \gamma(t)   |_{\mathbb{R}^3} + | \gamma (t) -q  |_{\mathbb{R}^3}   
+\\
+&\geq  |p^t - q|_{\mathbb{R}^3}.   
+\end{aligned}
+\]
+If the segment $[p^t , q ]$ was entirely contained in $W$ for some $t< \ell $, then $ |p^t - q   |_W = |p^t - q|_{\mathbb{R}^3} $, which would be a contradiction.
+
+
+%Strictly speaking, this solution requires the first variation formula, which students don't have right now.
 
 \parbf{\ref{ex:rho''}.}
 Equip $\Sigma$ with unit normal field $\Norm$ that points inside.
 Denote by $k(t)$ the normal curvature of $\Sigma$ at $\gamma(t)$ in the direction of $\gamma'(t)$.
-Since $\Sigma$ is convex $k(t)\ge 0$ for any $t$.
+Since $\Sigma$ is convex, $k(t)\ge 0$ for any $t$.
 
-Since $\gamma$ is geodesic, we have $\gamma''(t)=k(t)\cdot\Norm(\gamma(t))$.
+Since $\gamma$ is a geodesic, we have $\gamma''(t)=k(t)\cdot\Norm(\gamma(t))$.
 
 Since $\gamma$ has unit speed, $\langle\gamma'(t),\gamma'(t)\rangle=1$ for any $t$.
 
@@ -1428,13 +1454,33 @@ It follows that
 \[\langle\gamma''(t),\gamma(t)\rangle=k(t)\cdot \langle\gamma(t),\Norm(\gamma(t))\rangle\le 0\]
 for any $t$.
 
-Applying the above estimates, we get that 
+Applying the above estimates, we get 
 \begin{align*}
 \rho''(t)
 &=\langle\gamma(t),\gamma(t)\rangle''
 =2\cdot\langle\gamma''(t),\gamma(t)\rangle+2\cdot\langle\gamma'(t),\gamma'(t)\rangle
 \le 2.
 \end{align*}
+
+
+\parbf{\ref{ex:tc-spherical-image}.}
+We can assume $\gamma$ is parametrized by arc-length. If we write $\nu (t) = \nu ( \gamma (t)) $, then  $\langle \gamma'(t) , \nu (t) \rangle \equiv 0$. Also, since $\gamma$ is a geodesic, we have that $\gamma''(t) \parallel \nu (t)$. Then
+\[
+\begin{aligned}
+ | \gamma''(t) |  &=  | \langle \gamma '' (t) , \nu (t) \rangle |   
+\\
+&=   | \langle \gamma ' (t) , \nu (t) \rangle ' - \langle \gamma '(t) , \nu ' (t) \rangle |   
+\\
+&=   | \langle \gamma '(t) , \nu ' (t) \rangle |
+\\
+& \leq |\gamma ' (t) | |\nu ' (t)|
+\\
+& = |\nu ' (t)|.    
+\end{aligned}
+\]
+
+Integrating both sides with respect to $t$, we get 
+\[\length(\Norm\circ\gamma)\ge \tc\gamma.\]
 
 \parbf{\ref{ex:usov-exact}.} 
 Suppose $\gamma(t)=(x(t),y(t),z(t))$. 
@@ -1458,7 +1504,7 @@ Use \ref{thm:usov} and \ref{ex:sef-intersection}.
 
 \parit{Remark.}
 The statement still holds for $\sqrt{3}$-Lipschitz functions, and $\sqrt{3}=\tg\tfrac\pi3$ is the optimal bound; see \ref{ex:sqrt(3)}.
-It is the same slope as in the problem about lasso (\ref{ex:lasso}).
+It is the same slope as in the problem about the cowboy and the  lasso (\ref{ex:lasso}).
 
 \parbf{\ref{ex:parallel}}; \ref{SHORT.ex:parallel:a}.
 Show and use that $\langle\vec v(t),\vec v'(t)\rangle=0$.
