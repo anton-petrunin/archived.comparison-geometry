@@ -2780,7 +2780,7 @@ label.urt(btex $\xi$ etex, z.xi+(1,-2));
 label.urt(btex $q$ etex, z.rhoxi+(1,-2));
 whitelabel(btex $R$ etex, (-.4,.4)*u);
 label.ulft(btex $\Sigma$ etex, point 1.5 of p1);
-label.ulft(btex $\SS^2$ etex, point 1.5 of p0);
+label.ulft(btex $\mathbb{S}^2$ etex, point 1.5 of p0);
 endfig;
 
 beginfig(79);
@@ -2800,7 +2800,7 @@ dOt origin;
 
 label.rt(btex $p$ etex, z.p);
 label.lft(btex $q$ etex, z.q);
-label.top(btex $s_\eps$ etex, z.s);
+label.top(btex $s_\epsilon$ etex, z.s);
 endfig;
 
 beginfig(80);
@@ -3052,42 +3052,53 @@ endfig;
 beginfig(110) 
 save u,p;
 path p[];
-u:=1cm;
+u:=.45cm;
 
-draw (0,0)*u{up}..(1,1)*u{1,-.5}..(1.5,.5)*u{-1,-.4}..(1,1)*u{up}..(2,.5)*u{1,-1}..(2,0)*u{left}..(2,.5)*u{1,1}..(3,1)*u;
+p0=(1,0)*u{up}..(3,0)*u{down}..(2,0)*u{up}..(5,0)*u{down}..(4,0)*u{up}..(7,0)*u{down}..(6,0)*u{up}..(8,0)*u{down}..tension 2..cycle;
 
-label.bot(btex curve etex, (1.5,-.5)*u);
+draw subpath (0,7.4) of p0 pensemibold;
+draw subpath (7.7,8) of p0 pensemibold;
+
+label.bot(btex curve etex, (0,-2)+point 7.5 of p0);
+
 endfig;
 
 beginfig(115) 
 save u,p;
 path p[];
-u:=1cm;
+u:=.45cm;
 
-draw (0,0)*u{up}..(1,1)*u{1,-.5}..(1.5,.5)*u{-1,-.4}..(1,1)*u{up}..(2,.5)*u{1,-1}..(2,0)*u{left}..(2,.5)*u..(3,1)*u..tension 2..cycle;
+p0=(1,0)*u{up}..(3,0)*u{down}..(2,0)*u{up}..(5,0)*u{down}..(4,0)*u{up}..(7,0)*u{down}..(6,0)*u{up}..(8,0)*u{down}..tension 2..cycle;
 
-label.bot(btex closed curve etex, (1.5,-.5)*u);
+draw p0 pensemibold;
+
+label.bot(btex closed curve etex, (0,-2)+point 7.5 of p0);
+
 endfig;
 
 beginfig(120) 
 save u,p;
 path p[];
-u:=1cm;
+u:=.45cm;
 
-draw (0,0)*u{up}..(1,1)*u{1,-.5}..(1.5,.5)*u{1,.4}..(2,.5)*u{1,-1}..(2,0)*u{right}..(3,1)*u{down};
+p0=(1,0)*u{up}..(4,0)*u{down}..(3,0)*u{up}..(2,0)*u{down}..(5,0)*u{up}..(8,0)*u{down}..(7,0)*u{up}..(6,0)*u{down}..cycle;
 
-label.bot(btex simple curve etex, (1.5,-.5)*u);
+draw subpath (0,7.4) of p0 pensemibold;
+
+
+label.bot(btex simple curve etex, (4.5,-2.6)*u);
 endfig;
 
 beginfig(125) 
 save u,p;
 path p[];
-u:=1cm;
+u:=.45cm;
 
+p0=(1,0)*u{up}..(4,0)*u{down}..(3,0)*u{up}..(2,0)*u{down}..(5,0)*u{up}..(8,0)*u{down}..(7,0)*u{up}..(6,0)*u{down}..cycle;
 
-draw (0,0)*u{up}..(1,1)*u{1,-.5}..(1.5,.5)*u{1,.4}..(2,.5)*u{1,-1}..(2,0)*u{right}..(3,1)*u{down}..tension 1.8..cycle;
+draw  p0 pensemibold;
 
-label.bot(btex simple closed curve etex, (1.5,-.5)*u);
+label.bot(btex simple closed curve etex, (4.5,-2.6)*u);
 endfig;
 
 beginfig(130) 
@@ -3912,7 +3923,7 @@ draw p0 penbold;
 drawarrow (-r,0)*u--(r,0)*u;
 drawarrow (0,-.5)*u--(0,r)*u;
 
-label.urt (btex $y=b_\eps(x)$ etex, point 2.4 of p0);
+label.urt (btex $y=b_\epsilon(x)$ etex, point 2.4 of p0);
 endfig;
 
 beginfig(326);
@@ -3928,7 +3939,7 @@ draw p0 penbold;
 drawarrow (-r,0)*u--(r,0)*u;
 drawarrow (0,-.5)*u--(0,r)*u;
 
-label.top (btex $y=\sigma_\eps(x)$ etex, point 2.4 of p0);
+label.top (btex $y=\sigma_\epsilon(x)$ etex, point 2.4 of p0);
 endfig;
 
 

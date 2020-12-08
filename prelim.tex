@@ -60,7 +60,7 @@ the obtained metric space is called a \index{subspace of metric space}\emph{subs
 In particular, all subsets of the Euclidean space are metric spaces.
 
 \subsection*{Balls}
-Given a point $p$ in a metric space $\spc{X}$ and a real number $R\ge 0$, the set of points $x$ on the distance less then $R$ (at most $R$) from $p$ is called the \index{open ball}\emph{open} (respectively \index{closed ball}\emph{closed}) {}\emph{ball} of radius $R$ with center $p$.
+Given a point $p$ in a metric space $\spc{X}$ and a real number $R\ge 0$, the set of points $x$ on the distance less then $R$ (at most $R$) from $p$ is called the \index{open!ball}\emph{open} (respectively \index{closed!ball}\emph{closed}) {}\emph{ball} of radius $R$ with center $p$.
 The {}\emph{open ball} is denoted as $B(p,R)$ or $B(p,R)_{\spc{X}}$;
 the second notation is used if we need to emphasize that the ball lies in the metric space $\spc{X}$.
 Formally speaking
@@ -106,7 +106,7 @@ or $x_\infty=\lim_{n\to\infty} x_n$.
 
 \begin{thm}{Definition}\label{def:continuous}
 Let $\spc{X}$ and $\spc{Y}$ be metric spaces.
-A map $f\:\spc{X}\to \spc{Y}$ is called \index{continuous function}\index{continuous map}\emph{continuous} if for any convergent sequence $x_n\to x_\infty$ in ${\spc{X}}$,
+A map $f\:\spc{X}\to \spc{Y}$ is called \index{continuous}\emph{continuous} if for any convergent sequence $x_n\to x_\infty$ in ${\spc{X}}$,
 %the sequence $y_n\z=f(x_n)$ converges to $y_\infty=f(x_\infty)$ in $\spc{Y}$.
 we have $f(x_n) \to f(x_\infty)$ in $\spc{Y}$.
 
@@ -142,7 +142,7 @@ we may also say that $\spc{X}$ is a \index{topological}\emph{topological} plane,
 \subsection*{Closed and open sets}
 
 \begin{thm}{Definition}
-A subset $C$ of a metric space $\spc{X}$ is called \index{closed set}\emph{closed} if whenever a sequence $(x_n)$ of points from $C$ converges in $\spc{X}$, we have that $\lim_{n\to\infty} x_n \in C$.
+A subset $C$ of a metric space $\spc{X}$ is called \index{closed!set}\emph{closed} if whenever a sequence $(x_n)$ of points from $C$ converges in $\spc{X}$, we have that $\lim_{n\to\infty} x_n \in C$.
 
 A set $\Omega \subset \spc{X}$ is called \index{open set}\emph{open} if for any $z\in \Omega$, 
 there is $\epsilon>0$ such that $B(z,\epsilon)\subset\Omega$.
@@ -266,11 +266,11 @@ Substituting \ref{eq:area(S2)} and \ref{eq:area(Sa)} and simplifying, we get \re
 
 \section{Convex geometry}
 
-A set $X$ in the Euclidean space is called \index{convex set}\emph{convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in $X$.
+A set $X$ in the Euclidean space is called \index{convex!set}\emph{convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in $X$.
 It is called  \index{strictly!convex}\emph{strictly convex} if for any two points $x,y\in X$, any point $z$ between $x$ and $y$ lies in the interior of $X$.
 
 From the definition, it is easy to see that the intersection of an arbitrary family of convex sets is convex. 
-The intersection of all convex sets containing $X$ is called the \index{convex hull}\emph{convex hull} of $X$;
+The intersection of all convex sets containing $X$ is called the \index{convex!hull}\emph{convex hull} of $X$;
 it is the minimal convex set containing the set $X$.
 
 We will use the following corollary of the so-called \index{hyperplane separation theorem}\emph{hyperplane separation theorem}:
@@ -462,7 +462,7 @@ The following material is discussed in any course of multivariable calculus, the
 
 \subsection*{Regular value}
 
-A map $\bm{f}\:\mathbb{R}^m\to\mathbb{R}^n$ can be thought of as an array of functions 
+A map $\bm{f}\:\mathbb{R}^m\to\mathbb{R}^n$ can be thaut of as an array of functions 
 \[f_1,\dots,f_n\:\mathbb{R}^m\to \mathbb{R}.\]
 The map $\bm{f}$ is called \index{smooth!map}\emph{smooth} if each function $f_i$ is smooth;
 that is, all partial derivatives of $f_i$ are defined in the domain of definition of $\bm{f}$.
@@ -577,7 +577,7 @@ Given a point $p\in\mathbb{R}^n$ consider the function $\phi(t)=f(p+t\cdot \vec 
 Then the \index{directional derivative}\emph{directional derivative} $(D_{\vec w}f)(p)$ of $f$ at $p$ with respect to vector $\vec w$ is defined by
 \[(D_{\vec w}f)(p)=\phi'(0).\]
 
-Recall that a function $f$ is called \index{convex function}\emph{convex} if 
+Recall that a function $f$ is called \index{convex!function}\emph{convex} if 
 its epigraph $z\ge f(\bm{x})$ is a convex set in $\mathbb{R}^n\times \mathbb{R}$.
 
 \begin{thm}{Theorem}
