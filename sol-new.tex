@@ -51,7 +51,7 @@ It remains to reparametrize $\beta$ to make it injective.
 In order to do that, we need to construct a non-decreasing surjective function $\tau\:[0,1]\z\to[0,1]$ such that 
 $\tau(t_1)=\tau(t_2)$ if and only if there is a connected component $(a,b)\subset\hat \Omega$ such that $t_1,t_2\z\in [a,b]$.
 
-The required function $\tau$ can be constructed in a similar way to the so-called \emph{devil's staircase} --- learn this construction and modify it.
+The required function $\tau$ can be constructed in a similar way to the so-called {}\emph{devil's staircase} --- learn this construction and modify it.
 
 The simple arc we are looking for is $\beta \circ \sigma$, where $\sigma:  [0,1]\to [0,1]$ is any right inverse of $\tau$.
 
@@ -370,7 +370,7 @@ Without loss of generality we may assume that $\gamma$ has a unit-speed parametr
 
 Consider the tangent indicatrix $\tan(s)=\gamma'(s)$.
 Note that $\tan$ is a spherical curve and $|\tan'|\le 1$.
-Use it to construct a sequence of unit-speed spherical curves $\tan_n\:\mathbb{I}\to\SS^2$ such that $\tan_n(s)\to \tan(s)$ as $n\to\infty$ for any $s$.
+Use it to construct a sequence of unit-speed spherical curves $\tan_n\:\mathbb{I}\to\mathbb{S}^2$ such that $\tan_n(s)\to \tan(s)$ as $n\to\infty$ for any $s$.
 
 It remains to show that the following sequence of curves solves the problem:
 \[\gamma_n(s)=\gamma(a)+\int_a^s\tan_n(t)\cdot dt.\]
@@ -1060,7 +1060,7 @@ Try to support the surface $\Sigma$ from inside by a surface of revolution of th
 (Compare to \ref{ex:convex small}.)
 
 \parit{Remark.}
-The exercise can be reduced to the following deeper result: \emph{if the Gauss curvature of $\Sigma$ is at least $1$,
+The exercise can be reduced to the following deeper result: {}\emph{if the Gauss curvature of $\Sigma$ is at least $1$,
 then
 the intrinsic diameter of $\Sigma$ cannot exceed $\pi$}.
 The latter means that any two points in $\Sigma$ can be connected by a path that lies in $\Sigma$ and has length at most~$\pi$.
@@ -1793,7 +1793,7 @@ a\cdot b\cdot(\ell\cdot n-m^2)
 
 \parbf{\ref{ex:diam-angle}.}
 Observe that $\dist{p}{x}\Sigma\le \dist{p}{q}\Sigma$ and $\dist{q}{x}\Sigma\le \dist{p}{q}\Sigma$.
-Conclude that $\angk xpq\ge \tfrac\pi3$.
+Conclude that $\modangle xpq\ge \tfrac\pi3$.
 Apply \ref{thm:comp:toponogov}.
 
 \parbf{\ref{ex:sum=<2pi}.}
@@ -1934,19 +1934,19 @@ By comparison we have that
 \begin{align*}
 \phi
 =\measuredangle\hinge qpx
-&\ge \angk qpx
+&\ge \modangle qpx
 \mathrel{=:}\tilde\phi,
 \\
 \psi\df
 \measuredangle\hinge pqx
 &\ge 
-\angk pqx
+\modangle pqx
 \mathrel{=:}\tilde \psi
 \end{align*}
 
 Since $t=\dist{\tilde p}{\tilde x}{\mathbb{R}^2}$ is small, so is the distances $\dist{\tilde q}{\tilde y}{\mathbb{R}^2}$.
 Therefore we can choose a point $y$ on $\delta$ such that $\dist{q}{y}\Sigma=\dist{\tilde q}{\tilde y}{\mathbb{R}^2}$.
-Moreover, if we choose in on the \emph{right side}, then $\tfrac\pi2-\psi \ge \measuredangle\hinge qxy$.
+Moreover, if we choose in on the {}\emph{right side}, then $\tfrac\pi2-\psi \ge \measuredangle\hinge qxy$.
 By construction and comparison, we have 
 \begin{align*}
 \measuredangle\hinge {\tilde q}{\tilde x}{\tilde y}&=\tfrac\pi2-\tilde\psi
@@ -1955,7 +1955,7 @@ By construction and comparison, we have
 \ge
 \measuredangle\hinge q x y
 \ge 
-\angk q x y.
+\modangle q x y.
 \end{align*}
 Therefore $\dist{x}{y}\Sigma\le \dist{\tilde x}{\tilde y}{\mathbb{R}}$.
 Since $\tilde\phi\le\phi$, we get that

@@ -32,7 +32,7 @@ m&=f_{xy}(0,0)=f_{yx}(0,0),
 \\
 n&=f_{yy}(0,0).
 \end{align*}
-The \index{Taylor series}\emph{Taylor series} 
+The {}\emph{Taylor series} 
 for $f$ at $(0,0)$ up to the second order term can be then written as
 \[f(x,y)=\tfrac12(\ell\cdot x^2+2\cdot m\cdot x\cdot y+n\cdot y^2)+o(x^2+y^2).\]
 Note that values $\ell$, $m$, and $n$ are completely determined by this equation.\index{10lmn@$\ell$, $m$, $n$}
@@ -48,12 +48,12 @@ x\\y
 \end{smallmatrix})\rangle,\]
 where $M_p$ is the so-called \index{Hessian matrix}\emph{Hessian matrix} of $f$ at $(0,0)$,\index{10m@$M_p$}
 \[M_p=\begin{pmatrix}
-   \ell
-   &m
-   \\
-   m
-   &n
-  \end{pmatrix}.
+ \ell
+ &m
+ \\
+ m
+ &n
+ \end{pmatrix}.
 \eqlbl{eq:hessian}
 \]
 
@@ -61,20 +61,20 @@ where $M_p$ is the so-called \index{Hessian matrix}\emph{Hessian matrix} of $f$ 
 \section{Principal curvatures}
 
 Note that tangent-normal coordinates give an almost canonical coordinate system in a neighborhood of $p$;
-it is unique up to a rotation of  the $(x,y)$-plane.
-Rotating the $(x,y)$-plane results in rewriting   
+it is unique up to a rotation of the $(x,y)$-plane.
+Rotating the $(x,y)$-plane results in rewriting 
 the matrix $M_p$ in the new basis.
 
 Since the Hessian matrix $M_p$ is symmetric, by the spectral theorem (\ref{thm:spectral}) it is diagonalizable by orthogonal matrices.
 That is, by rotating the $(x,y)$-plane we can assume that $m=0$ in \ref{eq:hessian}; see \ref{thm:spectral}.
 In this case
 \[M_p=\begin{pmatrix}
-   k_1
-   &0
-   \\
-   0
-   &k_2
-  \end{pmatrix},
+ k_1
+ &0
+ \\
+ 0
+ &k_2
+ \end{pmatrix},
 \]
 the diagonal components $k_1$ and $k_2$ of $M_p$ are called the \index{principal curvatures and directions}\emph{principal curvatures} of $\Sigma$ at $p$;\index{10k@$k_1$, $k_2$}
 they might also be denoted as $k_1(p)$ and $k_2(p)$, or $k_1(p)_\Sigma$ and $k_2(p)_\Sigma$;
@@ -86,15 +86,15 @@ Note that if $x=f(x,y)$ is a local graph representation of $\Sigma$ in these coo
 \[f(x,y)=\tfrac12\cdot(k_1\cdot x^2+k_2\cdot y^2)+o(x^2+y^2).\]
 
 The principal curvatures can be also defined as the eigenvalues of the Hessian matrix $M_p$.
-The eigendirections of $M_p$  are called the {}\emph{principal directions} of $\Sigma$ at~$p$.
+The eigendirections of $M_p$ are called the {}\emph{principal directions} of $\Sigma$ at~$p$.
 Note that if $k_1(p)\ne k_2(p)$, then $p$ has exactly two principal directions, which are perpendicular to each other; if $k_1(p)\z= k_2(p)$ then all tangent directions at $p$ are principal.
 
 Note that if we revert the orientation of $\Sigma$, then the principal curvatures switch their signs and indexes.
 
-A smooth regular curve on a surface $\Sigma$ that always runs in the principal directions is called a \index{line of curvature}\emph{line of curvature} of $\Sigma$.  
+A smooth regular curve on a surface $\Sigma$ that always runs in the principal directions is called a \index{line of curvature}\emph{line of curvature} of $\Sigma$. 
 
 \begin{thm}{Exercise}\label{ex:line-of-curvature}
-Assume that a smooth surface $\Sigma$ is mirror symmetric with respect to  a plane $\Pi$.
+Assume that a smooth surface $\Sigma$ is mirror symmetric with respect to a plane $\Pi$.
 Suppose that $\Sigma$ and $\Pi$ intersect along a smooth regular curve~$\gamma$.
 Show that $\gamma$ is a line of curvature of $\Sigma$.
 \end{thm}
@@ -141,7 +141,7 @@ that is,
 A surface with vanishing mean curvature is called \index{minimal surface}\emph{minimal}.
 
 Note that reverting the orientation of $\Sigma$ does not change the Gauss curvature, but changes the sign of the mean curvature.
-In particular, the Gauss curvature is well defined  for a nonoriented surfaces.
+In particular, the Gauss curvature is well defined for a nonoriented surfaces.
 
 \section{Shape operator}
 
@@ -149,20 +149,32 @@ In the following definitions we use the notion of directional derivative defined
 
 Let $p$ be a point on a smooth surface $\Sigma$ with orientation defined by the unit normal field $\Norm$.
 Given $\vec w\in \T_p$,
-its \emph{shape operator} is defined by
+its \index{shape operator}\emph{shape operator} is defined by
 \[\Shape_p\vec w=-D_{\vec w}\Norm.\]
 Equivalently, the shape operator can be defined by
 \[\Shape=-d\Norm,\eqlbl{eq:shape=-L}\] 
 where $d\Norm$ denotes the differential of the spherical map $\Norm\:\Sigma\to\mathbb{S}^2$; that is, $d_p\Norm(\vec v)=(D_{\vec v}\Norm)(p)$.
 
-Recall that $d_p\Norm$ is a linear map $\T_p\Sigma\to \T_{\Norm(p)}\SS^2$.
-Note that $\T_p\Sigma$ coincides with $\T_{\Norm(p)}\SS^2$ --- both of them are normal subspaces to $\Norm(p)$.
+Recall that $d_p\Norm$ is a linear map $\T_p\Sigma\to \T_{\Norm(p)}\mathbb{S}^2$.
+Note that $\T_p\Sigma$ coincides with $\T_{\Norm(p)}\mathbb{S}^2$ --- both of them are normal subspaces to $\Norm(p)$.
 Therefore $\Shape_p$ is indeed a linear operator $\T_p\to \T_p$ (the latter also follows from \ref{thm:shape-chart}).
 
 For a point $p\in \Sigma$ the shape operator of a tangent vector $\vec w\in \T_p$ will be denoted by $\Shape\vec w$ if it is clear from the context which base point $p$ and which surface we are working with;
 otherwise we may use the notations 
 \[\Shape_p(\vec w)\quad\text{or}\quad \Shape_p(\vec w)_\Sigma\]
-as the situation requires.  
+as the situation requires.
+\footnote{
+The following bilinear forms on a tangent plane  
+\begin{align*}
+\mathrm{I}(\vec v,\vec w)&=\langle\vec v,\vec w\rangle,
+&
+\mathrm{II}(\vec v,\vec w)&=\langle\Shape\vec v,\vec w\rangle,
+&
+\mathrm{III}(\vec v,\vec w)&=\langle\Shape\vec v,\Shape\vec w\rangle
+\end{align*}
+are so called the \index{fundamental form}\emph{first, second, and third fundamental forms} of the smooth surface.
+They closely related to shape operator, but we are not going to consider them.
+}
 
 \begin{thm}{Theorem}\label{thm:shape-chart}
 Suppose that $(u,v)\mapsto s(u,v)$ is a smooth map to a smooth surface $\Sigma$ with unit normal field $\Norm$.
@@ -289,21 +301,21 @@ Indeed both of these planes are perpendicular to $\Norm(p)$.
 Choose an orthonormal basis of $\T_p$ consisting of principal directions,
 so the shape operator can be expressed by the matrix 
 $(\begin{smallmatrix}
-   k_1
-   &0
-   \\
-   0
-   &k_2
-  \end{smallmatrix})$.
+ k_1
+ &0
+ \\
+ 0
+ &k_2
+ \end{smallmatrix})$.
 
 Since $\Shape_p=-d_p\Norm$, \ref{cor:Shape(ij)} implies that
 \[\jac_p\Norm=|\det(\begin{smallmatrix}
-   k_1
-   &0
-   \\
-   0
-   &k_2
-  \end{smallmatrix})|=|K(p)|.\]
+ k_1
+ &0
+ \\
+ 0
+ &k_2
+ \end{smallmatrix})|=|K(p)|.\]
 By the area formula (\ref{prop:surface-integral}), the statement follows.
 \qeds
 
@@ -424,12 +436,12 @@ for any unit vector $\vec v$ in $\T_p$.
 Let $p$ be a point on a smooth surface $\Sigma$.
 Assume we choose tangent-normal coordinates at $p$ so that the Hessian matrix is diagonalized, then we have
 \[M_p=\begin{pmatrix}
-   k_1(p)
-   &0
-   \\
-   0
-   &k_2(p)
-  \end{pmatrix}.
+ k_1(p)
+ &0
+ \\
+ 0
+ &k_2(p)
+ \end{pmatrix}.
 \]
 Consider a vector ${\vec w}=a\cdot\vec i+b\cdot\vec j$ in the $(x,y)$-plane.
 Then by \ref{cor:Shape(ij)}, we have
@@ -450,7 +462,7 @@ Moreover, if $\theta$ is the angle between a unit vector ${\vec w}\in\T_p$ and t
 The last identity is called \index{Euler's formula}\emph{Euler's formula}.
 
 \begin{thm}{Exercise}\label{ex:mean-curvature}
-Let  $\Sigma$ be a smooth surface.
+Let $\Sigma$ be a smooth surface.
 Show that the sum of the normal curvatures for any pair of orthogonal directions, at a point $p\in\Sigma$ equals $H(p)$ --- the mean curvature at $p$. 
 \end{thm}
 
@@ -463,7 +475,7 @@ Let $p=\gamma(t_0)$, ${\vec v}\z=\gamma'(t_0)$, and $\alpha\z=\measuredangle(\No
 that is, $\alpha$ is the angle between the unit normal to $\Sigma$ at $p$ and the unit normal vector in the Frenet frame of $\gamma$ at~$t_0$.
 Then the following identity holds true 
 \[\kur(t_0)\cdot\cos\alpha=k_{n}(t_0);\]
-here $\kur(t_0)$  and $k_n(t_0)$ are the curvature and the normal curvature of $\gamma$ at $t_0$, respectively.  
+here $\kur(t_0)$ and $k_n(t_0)$ are the curvature and the normal curvature of $\gamma$ at $t_0$, respectively. 
 \end{thm}
 
 
@@ -488,7 +500,7 @@ Show that the osculating circles at $p$ of smooth regular curves in $\Sigma$ tha
 
 \begin{thm}{Exercise}\label{ex:principal-revolution}
 Let $\gamma(s)=(x(s),y(s))$ be a smooth unit-speed simple plane curve in the upper half-plane,
-and  $\Sigma$ be the surface of revolution around the $x$-axis with generatrix $\gamma$.
+and $\Sigma$ be the surface of revolution around the $x$-axis with generatrix $\gamma$.
 
 
 \begin{subthm}{}
@@ -508,7 +520,7 @@ are the principal curvatures of $\Sigma$ at $(x(s),y(s),0)$ in the direction of 
 
 \begin{subthm}{}
 Show that $\Sigma$ has Gauss curvature $-1$ at all points if and only if $y$ satisfies the differential equation $y''=y$. 
-The case  $y=e^{-s}$ is shown; this is the so-called \index{pseudosphere}\emph{pseudosphere}.
+The case $y=e^{-s}$ is shown; this is the so-called \index{pseudosphere}\emph{pseudosphere}.
 \end{subthm}
 
 \end{thm}
@@ -550,7 +562,7 @@ Is it true that $V$ contains a ball of radius 1?
 According to \ref{ex:moon-revolution}, the answer is ``yes'' for surfaces of revolution.
 Later (see \ref{ex:convex-lagunov})
 we will show that the answer is ``yes'' for convex surfaces.
-Now we are going to show by an example that the answer is  ``no'' in the general case;
+Now we are going to show by an example that the answer is ``no'' in the general case;
 this example was constructed by Vladimir Lagunov \cite{lagunov-1961}.
 
 
@@ -584,9 +596,9 @@ In particular, we may assume that $r<\tfrac16$.
 \end{figure}
 
 Exercise \ref{ex:principal-revolution} gives formulas for the principal curvatures of the boundary of $V$;
-which imply that both principal curvatures are at most 1 in absolute value.  
+which imply that both principal curvatures are at most 1 in absolute value. 
 
-It remains to modify $V_1$ to make its boundary connected without increasing the bounds on its principal curvatures and  without allowing larger balls inside.
+It remains to modify $V_1$ to make its boundary connected without increasing the bounds on its principal curvatures and without allowing larger balls inside.
 
 Note that each sphere in the boundary contains two flat discs;
 they come into pairs closely lying to each other. 
@@ -650,7 +662,7 @@ it implies that this bound is optimal.
 \begin{thm}{Advanced exercise}\label{ex:thin}
 Suppose a connected body $V\subset \mathbb{R}^3$ is bounded by a finite number of closed smooth surfaces with principal curvatures bounded in absolute value by 1.
 Assume that $V$ does not contain a ball of radius $r_2$.
-Show that its boundary has two diffeomorphic  connected components. 
+Show that its boundary has two diffeomorphic connected components. 
 \end{thm}
 
 

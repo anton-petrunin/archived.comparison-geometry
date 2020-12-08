@@ -27,8 +27,8 @@ In this case we write $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$.
 
 A pair of minimizing geodesics $[x,y]$ and $[x,z]$ starting from one point $x$ is called \index{hinge}\emph{hinge} and denoted as $\hinge xyz$.\index{10aac@$\hinge yxz$}
 The angle between these geodesics at $x$ is denoted by $\measuredangle\hinge xyz$.
-The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in the model triangle $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$ is denoted by $\angk xyz$.
-\index{10aab@$\angk xyz$}
+The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in the model triangle $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$ is denoted by $\modangle xyz$.
+\index{10aab@$\modangle xyz$}
 
 \section{Formulations}
 
@@ -52,13 +52,13 @@ Let $\Sigma$ be a proper smooth regular surface.
 \begin{subthm}{thm:comp:cat}
 If $\Sigma$ is simply connected and has nonpositive Gauss curvature,
  then 
-\[\measuredangle\hinge {x}{y}{z}\le\angk xyz\]
+\[\measuredangle\hinge {x}{y}{z}\le\modangle xyz\]
 for any geodesic triangle $[xyz]$.
 \end{subthm}
 
 \begin{subthm}{thm:comp:toponogov}
 If $\Sigma$ has nonnegative Gauss curvature, then 
- \[\measuredangle\hinge {x}{y}{z}\ge\angk xyz\]
+ \[\measuredangle\hinge {x}{y}{z}\ge\modangle xyz\]
 for any geodesic triangle $[xyz]$.
 \end{subthm}
 
@@ -124,7 +124,7 @@ for any point $x\in \Sigma\backslash\{p,q\}$.
 \begin{thm}{Exercise}\label{ex:sum=<2pi}
 Let $\Sigma$ be a closed (or open) regular surface and with nonnegative Gauss curvature.
 Show that 
-\[\angk pxy+\angk pyz+\angk pzx\le2\cdot \pi.\]
+\[\modangle pxy+\modangle pyz+\modangle pzx\le2\cdot \pi.\]
 for any four distinct points $p,x,y,z$ in $\Sigma$.
 \end{thm}
 
@@ -142,13 +142,13 @@ then for any $p\in \Sigma$ there is $r>0$ such that if $\dist{p}{x}\Sigma<r$, th
 
 \begin{subthm}{thm:loc-comp:cba}
 If $\Sigma$ has nonpositive Gauss curvature, then 
-\[\measuredangle\hinge {x}{y}{z}\le\angk xyz\]
+\[\measuredangle\hinge {x}{y}{z}\le\modangle xyz\]
 for any geodesic triangle $[xyz]$  in $B(p,\tfrac r4)_\Sigma$.
 \end{subthm}
 
 \begin{subthm}{thm:loc-comp:cbb}
 If $\Sigma$ has nonnegative Gauss curvature, then 
-\[\measuredangle\hinge {x}{y}{z}\ge\angk xyz\]
+\[\measuredangle\hinge {x}{y}{z}\ge\modangle xyz\]
 for any geodesic triangle $[xyz]$ in $B(p,\tfrac r4)_\Sigma$.
 \end{subthm}
 
@@ -175,7 +175,7 @@ By Rauch comparison (\ref{prop:rauch:K>=0}), we have
 Since $\dist{\vec v}{\vec w}{\T_x}=\length\tilde \gamma$ and $\dist{y}{z}\Sigma\le \length\gamma$, we get 
 \[\dist{\vec v}{\vec w}{\T_x}\ge \dist{y}{z}\Sigma.\]
 By the angle monotonicity (\ref{lem:angle-monotonicity}), we get
-\[\angk xzy\le\measuredangle\hinge 0{\vec v}{\vec w}_{\T_x},\]
+\[\modangle xzy\le\measuredangle\hinge 0{\vec v}{\vec w}_{\T_x},\]
 whence the result.
 
 \parit{\ref{SHORT.thm:loc-comp:cba}.}
@@ -190,7 +190,7 @@ By Rauch comparison (\ref{prop:rauch:K=<0}), we have
 Since $\dist{\vec v}{\vec w}{\T_x}\le\length\tilde \gamma$ and $\dist{y}{z}{\Sigma}= \length\gamma$, we get 
 \[\dist{\vec v}{\vec w}{\T_x}\ge \dist{y}{z}\Sigma.\]
 By angle monotonicity (\ref{lem:angle-monotonicity}), we get
-\[\angk xzy\ge\measuredangle\hinge 0{\vec v}{\vec w}_{\T_x}.\]
+\[\modangle xzy\ge\measuredangle\hinge 0{\vec v}{\vec w}_{\T_x}.\]
 whence the result.
 \qeds
 
@@ -212,7 +212,7 @@ The proof is taken from \cite{alexander-kapovitch-petrunin2027} and it is very c
 \parit{Proof of \ref{thm:comp:toponogov} in the compact case.}\label{proof(thm:comp:toponogov)}
 Assume $\Sigma$ is compact. 
 From the local theorem (\ref{thm:loc-comp}), we get that there is $\epsilon>0$ such that the inequality 
-\[\measuredangle\hinge {x}{p}{q}\ge\angk xpq.\]
+\[\measuredangle\hinge {x}{p}{q}\ge\modangle xpq.\]
 holds for any hinge $\hinge{x}{p}{q}$ such that 
 $\dist{x}{p}\Sigma+\dist{x}{q}\Sigma<\epsilon$.
 The following lemma states that in this case the same holds true for any hinge $\hinge{x}{p}{q}$ such that $\dist{x}{p}\Sigma+\dist{x}{q}\Sigma<\tfrac32\cdot\epsilon$.
@@ -223,7 +223,7 @@ Applying the key lemma (\ref{key-lem:globalization}) a few times we will get tha
 Let $\Sigma$ be a proper smooth regular surface.
 Assume that the comparison
 \[\measuredangle\hinge x y z
-\ge\angk x y z\eqlbl{eq:key-lem:globalization}\]
+\ge\modangle x y z\eqlbl{eq:key-lem:globalization}\]
 holds for any hinge $\hinge x y z$ with 
 $\dist{x}{y}\Sigma+\dist{x}{z}\Sigma
 <
@@ -243,7 +243,7 @@ with angle $\measuredangle\hinge x p q$ and two adjacent sides $\dist{x}{p}\Sigm
 Let us denote by $\side \hinge x p q$ the third side of this triangle; let us call it the \index{model side}\emph{model side} of the hinge.
 
 Note that the inequalities 
-\[\measuredangle\hinge x p q\ge \angk x p q\quad\iff\quad\side \hinge x p q
+\[\measuredangle\hinge x p q\ge \modangle x p q\quad\iff\quad\side \hinge x p q
 \ge\dist{p}{q}\Sigma.\]
 So it is sufficient to prove that
 \[\side \hinge x p q
@@ -277,10 +277,10 @@ By \ref{3|xx'|}, we have that
 \end{align*}
 In particular, 
 \[\measuredangle\hinge x p{x'}
-\ge\angk x p{x'}
+\ge\modangle x p{x'}
 \ \ \text{and}\ \ 
 \measuredangle\hinge {x'}p x
-\ge\angk {x'}p x.
+\ge\modangle {x'}p x.
 \eqlbl{eq:thm:=def-loc-threestar}\]
 
 \begin{wrapfigure}{r}{35mm}
@@ -294,13 +294,13 @@ $[\tilde x\tilde x'\tilde p]\z=\modtrig xx'p$.
 Take $\tilde  q$ on the extension of $[\tilde  x,\tilde  x']$ beyond $x'$ such that $\dist{\tilde x}{\tilde q}\Sigma=\dist{x}{q}\Sigma$ (and therefore $\dist{\tilde x'}{\tilde q}\Sigma=\dist{x'}{q}\Sigma$).
 From \ref{eq:thm:=def-loc-threestar},
 \[\measuredangle\hinge x p q
-=\measuredangle\hinge  x p{x'}\ge\angk x p{x'}\ \ \Rightarrow\ \ 
+=\measuredangle\hinge  x p{x'}\ge\modangle x p{x'}\ \ \Rightarrow\ \ 
 \side \hinge x q p\ge\dist{\tilde p}{\tilde q}\Sigma.\]
 Since $\measuredangle\hinge{x'}p x+\measuredangle\hinge{x'}p q= \pi$,
 \ref{eq:thm:=def-loc-threestar} implies
 \[
 \pi
--\angk{x'}p x
+-\modangle{x'}p x
 \ge
 \pi-\measuredangle\hinge{x'}p x
 \ge
@@ -363,7 +363,7 @@ Given $p\in\Sigma$, denote by $R_p$
 (the {}\emph{comparison radius} at $p$) 
 the maximal value (possibly $\infty$) such that the comparison 
 \[\measuredangle\hinge x p y
-\ge\angk x p y\]
+\ge\modangle x p y\]
 holds for any hinge $\hinge x p y$ with $\dist{p}{x}\Sigma+\dist{x}{y}\Sigma<R_p$.
 
 \begin{subthm}{ex:open-comparison:positive}
@@ -491,11 +491,11 @@ Then the following three conditions are equivalent:
 
 \begin{subthm}{mang>angk}
 For any geodesic triangle $[xyz]$ in $\Sigma$ we have
- \[\measuredangle\hinge {x}{y}{z}\ge\angk xyz.\]
+ \[\measuredangle\hinge {x}{y}{z}\ge\modangle xyz.\]
 \end{subthm}
 
 \begin{subthm}{angk>angk} For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[x,z]$ we have
- \[\angk xpy \ge \angk xpz.\]
+ \[\modangle xpy \ge \modangle xpz.\]
  
 \end{subthm}
 
@@ -510,11 +510,11 @@ Similarly, following three conditions are equivalent:
 
 \begin{subthmA}{mang<angk}
 For any geodesic triangle $[xyz]$ in $\Sigma$ we have
- \[\measuredangle\hinge {x}{y}{z}\le\angk xyz.\]
+ \[\measuredangle\hinge {x}{y}{z}\le\modangle xyz.\]
 \end{subthmA}
 
 \begin{subthmA}{angk<angk} For any geodesic triangle $[pxz]$ in $\Sigma$ and $y$ on the side $[x,z]$ we have
- \[\angk xpy \le \angk xpz.\]
+ \[\modangle xpy \le \modangle xpz.\]
 \end{subthmA}
 
 \begin{subthmA}{thin}
@@ -538,8 +538,8 @@ Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and
 Then the following expressions have the same signs:
 \begin{enumerate}[(i)]
  \item $\dist{p}{y}\Sigma-\dist{\tilde p}{\tilde y}{\mathbb{R}^2}$;
- \item $\angk xpy-\angk {x}{p}{z}$;
- \item $\pi-\angk ypx-\angk ypz$;
+ \item $\modangle xpy-\modangle {x}{p}{z}$;
+ \item $\pi-\modangle ypx-\modangle ypz$;
 \end{enumerate}
 \end{thm}
 
@@ -550,22 +550,22 @@ The implications \ref{SHORT.mang<angk}$\Rightarrow$\ref{SHORT.angk<angk}$\Righta
 \parit{\ref{SHORT.mang>angk}$\Rightarrow$\ref{SHORT.angk>angk}.}
 Note that $\measuredangle\hinge ypx+\measuredangle\hinge ypz=\pi$.
 By \textit{\ref{SHORT.mang>angk}}, 
-\[\angk ypx+\angk ypz\le \pi.\]
+\[\modangle ypx+\modangle ypz\le \pi.\]
 It remains to apply Alexandrov's lemma (\ref{lem:alex-reformulation}).
 
 
 \parit{\ref{SHORT.angk>angk}$\Rightarrow$\ref{SHORT.fat}.}
 Applying \textit{\ref{SHORT.mang>angk}} twice, first for $y\in [x,z]$ and then for $w\in [p,x]$, we get that
-\[\angk xwy \ge \angk xpy \ge \angk xpz\]
+\[\modangle xwy \ge \modangle xpy \ge \modangle xpz\]
 and therefore
 \[\dist{w}{y}\Sigma\ge \dist{\tilde w}{\tilde y}{\mathbb{R}^2},\]
 where $\tilde w$ and $\tilde y$ are the points corresponding to $w$ and $y$ points on the sides of the model triangle. 
 
 \parit{\ref{SHORT.fat}$\Rightarrow$\ref{SHORT.mang>angk}.}
 Since the triangle is fat, we have 
-\[\angk xwy \ge \angk xpz\]
+\[\modangle xwy \ge \modangle xpz\]
 for any $w\in \left]xp\right]$ and $y\in \left]xz\right]$.
-Note that $\angk xwy\to \measuredangle\hinge xpz$ as $w,y\to x$.
+Note that $\modangle xwy\to \measuredangle\hinge xpz$ as $w,y\to x$.
 Whence the implication follows.
 \qeds
 

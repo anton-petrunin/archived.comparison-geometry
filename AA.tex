@@ -1107,7 +1107,7 @@ set $p=\gamma(0)$, $y=\gamma(-t_1)$, and $z=\gamma(t_2)$.
 Consider the triangle $[xyz]$.
 Note that 
 \[t_1+t_2\le|x-y|_\Sigma+|x-z|_\Sigma\le t_1+t_2+2\cdot|p-x|_\Sigma.\]
-It follows that $\angk xyz\to \pi$ as $t_1,t_2\to \infty$.
+It follows that $\modangle xyz\to \pi$ as $t_1,t_2\to \infty$.
 
 
 Choose a level set $L_a$ and a point $x\in L_a$.
@@ -1252,7 +1252,7 @@ and $\trig {\dot p} {\dot y} {\dot z}=\modtrig(p y z)$ so that $\dot x$ and $\do
 \end{wrapfigure}
 
 Suppose
-\[\angk{z}{p}{x}+\angk{z}{p}{y}
+\[\modangle{z}{p}{x}+\modangle{z}{p}{y}
 <
 \pi.\]
 Then for some point $\dot w\in[\dot p\dot z]$, we have \[\dist{\dot x}{\dot w}{}+\dist{\dot w}{\dot y}{}
@@ -1264,11 +1264,11 @@ Since $\trig p x z$ and $\trig p y z$ are thin, we have
 contradicting the triangle inequality. 
 
 Thus 
-\[\angk{z}{p}{x}+\angk{z}{p}{y}
+\[\modangle{z}{p}{x}+\modangle{z}{p}{y}
 \ge
 \pi.\]
 By Alexandrov's lemma (\ref{lem:alex-reformulation}), this is equivalent to 
-\[\angk x p z\le\angk x p y.
+\[\modangle x p z\le\modangle x p y.
 \eqlbl{eq:for|pz|}\]
 
 Let $\trig{\tilde  p}{\tilde  x}{\tilde  y}=\modtrig (p x y)$ 
@@ -2538,7 +2538,7 @@ For example the disc $\DD$ has Euler's characteristic $1$;
 it can be divided into discs many ways, 
 but each time we have $v-e=f=1$.
 The latter agrees with \ref{eq:g-b} and \ref{eq:g-b-euler}.
-It is useful to know that $\chi(\mathbb{S}^2)=2$; $\chi(\TT^2)=0$ where $\TT^2$ denotes torus; 
+It is useful to know that $\chi(\mathbb{S}^2)=2$; $\chi(\mathbb{T}^2)=0$ where $\mathbb{T}^2$ denotes torus; 
 $\chi(S_g)=2-2\cdot g$, where $S_g$ is a surface of genus $g$;
 that is, sphere with $g$ handles.
 
@@ -2757,7 +2757,7 @@ For example the disc $\DD$ has Euler's characteristic $1$;
 it can be divided into discs many ways, 
 but each time we have $v-e=f=1$.
 The latter agrees with \ref{eq:g-b} and \ref{eq:g-b-euler}.
-It is useful to know that $\chi(\mathbb{S}^2)=2$; $\chi(\TT^2)=0$ where $\TT^2$ denotes torus; 
+It is useful to know that $\chi(\mathbb{S}^2)=2$; $\chi(\mathbb{T}^2)=0$ where $\mathbb{T}^2$ denotes torus; 
 $\chi( S_g)=2-2\cdot g$, where $S_g$ is a surface of genus $g$; that is, sphere with $g$ handles.
 
 \parit{(2).} Note that if $\Sigma$ is a plane, then a geodesic in $\Sigma$ are formed by line segments.
@@ -3057,7 +3057,7 @@ If $\phi$ is the angle at the base of the loop, then by Gauss--Bonnet,
 By Lemma \ref{lem:graph}, $\phi<\pi$; that is $\gamma$ has no concave simple loops 
 
 Assume $\gamma$ has two simple loops, say $\ell_1$ and $\ell_2$ that bound discs $\Delta_1$ and $\Delta_2$.
-Then the disks $\Delta_1$ and $\Delta_2$ have to overlap,
+Then the discs $\Delta_1$ and $\Delta_2$ have to overlap,
 otherwise the curvature of $\Sigma$ would exceed $2\cdot\pi$.
 
 We may assume that $\Delta_1\not\subset \Delta_2$; the loop $\ell_2$ appears after $\ell_1$ on $\gamma$ and there are no other simple loops between them.
@@ -3067,7 +3067,7 @@ The latter contradicts the above observation.
 If a geodesic $\gamma$ has a self-intersection,
 then it contains a simple loop.
 From above, there is only one such loop;
-it cuts a disk from $\Sigma$ 
+it cuts a disc from $\Sigma$ 
 and goes around it either clockwise or counterclockwise.
 This way we divide all the self-intersecting geodesics 
 into two sets which we will call {}\emph{clockwise} and {}\emph{counterclockwise}.
