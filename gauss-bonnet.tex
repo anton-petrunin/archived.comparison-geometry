@@ -11,13 +11,13 @@ A generalized formula (\ref{thm:GB-generalized}) was proved by Walther von Dyck.
 
 \begin{thm}{Theorem}\label{thm:gb}
 Let $\Delta$ be a topological disc in a smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$.
-Suppose that $\partial \Delta$ oriented in such a way that $\Delta$ lies on its left.
+Suppose that $\partial \Delta$ is oriented in such a way that $\Delta$ lies on its left.
 Then 
 \[\tgc{\partial\Delta}+\iint_\Delta K=2\cdot \pi,\eqlbl{eq:g-b}\]
 where $K$ denotes the Gauss curvature of $\Sigma$.
 \end{thm}
 
-We will give an informal proof of this formula in a leading partial case.
+We will give an informal proof of this formula in a leading special case.
 A formal computational proof will be given in Section~\ref{sec:gauss--bonnet:formal}.
 
 Before going into the proofs, we suggest solving the following exercises using the Gauss--Bonnet formula.
@@ -31,9 +31,9 @@ that is, the length of $\gamma$ cannot exceed the length of the unit circle in t
 
 
 \begin{thm}{Exercise}\label{ex:geodesic-half}
-Let $\gamma$ be a closed simple geodesic on a smooth closed surface $\Sigma$ with positive Gauss curvature.
+Let $\gamma$ be a simple closed geodesic on a smooth closed surface $\Sigma$ with positive Gauss curvature.
 Assume $\Norm\:\Sigma\to\mathbb{S}^2$ is a Gauss map.
-Show that the curve $\alpha=\Norm\circ\gamma$ divides the sphere into regions of equal area.
+Show that the curve $\alpha=\Norm\circ\gamma$ divides the sphere into two regions of equal area.
 Conclude that $\length \alpha\ge 2\cdot\pi.$
 \end{thm}
 
@@ -50,8 +50,8 @@ Conclude that any two closed geodesics on $\Sigma$ have a common point.
 
 \begin{thm}{Exercise}\label{ex:self-intersections}
 Let $\Sigma$ be a smooth regular sphere with positive Gauss curvature and $p\in\Sigma$. 
-Suppose $\gamma$ is a closed geodesic that is covered by one chart.
-Show that $\gamma$ cannot look like one the curves on the following diagrams.
+Suppose $\gamma$ is a closed geodesic whose image is covered by a single coordinate chart.
+Show that $\gamma$ cannot look like one of the curves on the following diagrams.
 
 \begin{figure}[h]
 \begin{minipage}{.48\textwidth}
@@ -89,7 +89,7 @@ Show that $\gamma$ cannot look like one the curves on the following diagrams.
 In fact $\gamma$ also cannot look like the curve on the right, but the proof requires a more advanced technique;
 see \ref{ex:convex-polyhon+self-intersections}.
 
-The following exercise gives the optimal bound on Lipschitz constant of a convex function that guarantees that its geodesics have no self-intersections;
+The following exercise gives the optimal bound on the Lipschitz constant of a convex function that guarantees that its geodesics have no self-intersections;
 compare to \ref{ex:ruf-bound-mountain}.
 
 \begin{thm}{Exercise}\label{ex:sqrt(3)}
@@ -100,7 +100,7 @@ Show that any geodesic in the graph $z=f(x,y)$ has no self-intersections.
 A surface $\Sigma$ is called \index{simply-connected}\emph{simply-connected} if any closed simple curve in $\Sigma$ bounds a disc.
 Equivalently any closed curve in $\Sigma$ can be continuously deformed into a \index{trivial curve}\emph{trivial curve}; that is, a curve that stands at one point all the time.
 
-Observe that a plane or a sphere are examples of simply-connected surfaces, while torus or cylinder are not simply-connected.
+Observe that a plane or a sphere are examples of simply-connected surfaces, while the torus or the cylinder are not simply-connected.
 
 \begin{thm}{Exercise}\label{ex:unique-geod}
 Suppose that $\Sigma$ is a simply-connected open surface with nonpositive Gauss curvature.
@@ -117,13 +117,13 @@ In particular $\Sigma$ is diffeomorphic to the plane.
 \section{Additivity}
 
 Let $\Delta$ be a topological disc in a smooth oriented surface $\Sigma$ bounded by a simple piecewise smooth and regular curve $\partial \Delta$.
-As before we suppose that $\partial \Delta$ oriented in such a way that $\Delta$ lies on its left.
+As before we suppose that $\partial \Delta$ is oriented in such a way that $\Delta$ lies on its left.
 Set
 \[\GB(\Delta)=\tgc{\partial\Delta}+\iint_\Delta K-2\cdot \pi,
 \eqlbl{eq:GB}\]\index{10gb@$\GB$}
 where $K$ denotes the Gauss curvature of $\Sigma$.
 Here $\GB$ stands for Gauss--Bonnet formula;
-it can be stated as
+ our goal is to show that
 \[\GB(\Delta)=0.\]
 
 \begin{thm}{Lemma}\label{lem:GB-sum}
@@ -141,14 +141,11 @@ Then
 \end{wrapfigure}
 
 \parit{Proof.}
-Let us subdivide $\partial \Delta$ into two curves $\gamma_1$ and $\gamma_2$ that share the endpoints with $\delta$ so that
-\begin{itemize}
-\item $\Delta_1$ is bounded by an arc $\gamma_1$  and~$\delta$.
-\item Similarly, $\Delta_2$ is bounded by $\gamma_2$ and~$\delta$.
-\end{itemize}
+Let us subdivide $\partial \Delta$ into two curves $\gamma_1$ and $\gamma_2$ that share  endpoints with $\delta$ so that
+ $\Delta_i$ is bounded by the arc $\gamma_i$  and~$\delta$ for $i=1,2.$
 
 Denote by $\phi_1$, $\phi_2$, $\psi_1$, and $\psi_2$ the angles between $\delta$ and $\gamma_i$ marked on the diagram.
-Further, suppose that the arcs $\gamma_1$, $\gamma_2$, and $\delta$ are oriented as on the diagram. 
+Suppose that the arcs $\gamma_1$, $\gamma_2$, and $\delta$ are oriented as on the diagram. 
 Then
 \begin{align*}
 \tgc{\partial \Delta}&= \tgc{\gamma_1}-\tgc{\gamma_2}+(\pi-\phi_1-\phi_2)+(\pi-\psi_1-\psi_2),
@@ -164,18 +161,18 @@ It remains to plug in the results in the formulas for $\GB(\Delta)$, $\GB(\Delta
 
 \section{Spherical case}
 
-Note that if $\Sigma$ is a plane, then the Gauss curvature vanished;
+Note that if $\Sigma$ is a plane, then the Gauss curvature vanishes;
 therefore the Gauss--Bonnet formula \ref{eq:g-b} can be written as 
 \[\tgc{\partial\Delta}=2\cdot \pi,\]
 and it follows from \ref{prop:total-signed-curvature}.
 In other words, $\GB(\Delta)=0$ for any disc~$\Delta$ in the plane.
 
 If $\Sigma$ is the unit sphere, then $K\equiv1$;
-in this case Theorem \ref{thm:gb} can be formulated the following way:
+in this case Theorem \ref{thm:gb} can be formulated in the following way:
 
 \begin{thm}{Proposition}\label{prop:area-of-spher-polygon}
 Let $P$ be a spherical polygon bounded by a simple closed broken geodesic $\partial P$.
-Assume $\partial P$ is oriented such that $P$ lies on the left from $\partial P$.
+Assume $\partial P$ is oriented such that $P$ lies on the left of $\partial P$.
 Then 
 \[\GB(P)=\tgc{\partial P}+\area P-2\cdot \pi=0.\]
 
@@ -202,14 +199,17 @@ By the additivity lemma (\ref{lem:GB-sum}), we get
 \[\GB(P)=0\]
 for any spherical polygon $P$.
 
-The second statement can be proved by approximation. One has to show that the total geodesic curvature of an inscribed broken geodesic approximates the total geodesic curvature of the original curve.
+The second statement can be proved by approximation. One has to show that
+one could approximate the total geodesic curvature of  
+a piecewise smooth simple closed curve by  
+the total geodesic curvature of inscribed broken geodesics.
 We omit the proof of the latter statement,
 but it goes along the same lines as \ref{ex:total-curvature=}.
 \qeds
 
 
 \begin{thm}{Exercise}\label{ex:half-sphere-total-curvature}
-Assume $\gamma$ is a simple piecewise smooth loop on $\mathbb{S}^2$ that divides its area into two equal parts.
+Assume $\gamma$ is a simple piecewise smooth loop on $\mathbb{S}^2$ that divides its area in two equal parts.
 Denote by $p$ the base point of $\gamma$.
 Show that the parallel transport $\iota_\gamma\:\T_p\mathbb{S}^2\to\T_p\mathbb{S}^2$ is the identity map.
 \end{thm}
@@ -218,7 +218,7 @@ Show that the parallel transport $\iota_\gamma\:\T_p\mathbb{S}^2\to\T_p\mathbb{S
 
 \section{Intuitive proof}
 
-In this section we prove the Gauss--Bonnet in a partial case.
+In this section we prove a special case of the Gauss--Bonnet formula.
 This case is leading --- the general case can be proved similarly, but one has to use the signed area counted with multiplicity.
 
 \parit{Proof of \ref{thm:gb} for proper surfaces with positive Gauss curvature.}
@@ -229,10 +229,10 @@ By \ref{cor:intK}, in this case, we have
 Fix $p\in \partial\Delta$;
 assume the loop $\alpha$ runs along $\partial\Delta$ so that $\Delta$ lies on the left from it.
 Consider the parallel translation $\iota_\alpha\:\T_p\to\T_p$ along $\alpha$.
-According to \ref{prop:pt+tgc}, $\iota_\alpha$ is a clockwise rotation by angle $\tgc{\alpha}_\Sigma$.
+According to \ref{prop:pt+tgc}, $\iota_\alpha$ is the clockwise rotation by the angle $\tgc{\alpha}_\Sigma$.
 
 Set $\beta=\Norm\circ\alpha$.
-By \ref{obs:parallel=}, the map $\iota_\alpha=\iota_\beta$ where $\beta$ is considered as a curve in the unit sphere.
+By \ref{obs:parallel=}, we have $\iota_\alpha=\iota_\beta$, where $\beta$ is considered as a curve in the unit sphere.
 In particular $\iota$ is a clockwise rotation by angle $\tgc{\beta}_{\mathbb{S}^2}$.
 By \ref{prop:area-of-spher-polygon} 
 \[\GB(\Norm(\Delta))=\tgc{\beta}_{\mathbb{S}^2}+\area[\Norm(\Delta)]-2\cdot \pi=0.\]
@@ -249,19 +249,19 @@ Therefore
 &=2\cdot n \cdot \pi
 \end{aligned}
 \eqlbl{eq:sum=2pin}\]
-for an integer $n$.
+for some integer $n$.
 
 It remains to show that $n=0$.
 By \ref{prop:total-signed-curvature}, this is so for a topological disc in a plane.
-One can think of a general disc $\Delta$ as about a result of a continuous deformation of a plane disc.
+One can think of a general disc $\Delta$ as the result of a continuous deformation of a plane disc.
 The integer $n$ cannot change in the process of deformation since the left hand side in \ref{eq:sum=2pin} is continuous along the deformation;
 whence $n=0$ for the result of the deformation.
 \qeds
 
 \section{Simple geodesic}
 
-The following theorem provides an interesting application of Gauss--Bonnet formula;
-it is proved by Stephan Cohn-Vossen \cite[Satz 9 in][]{convossen}.
+The following theorem provides an interesting application of the Gauss--Bonnet formula 
+ proved by Stephan Cohn-Vossen \cite[Satz 9 in][]{convossen}.
 
 \begin{thm}{Theorem}\label{thm:cohn-vossen}
 Any open smooth regular surface with positive Gauss curvature has a simple two-sided infinite geodesic.
@@ -271,11 +271,11 @@ Any open smooth regular surface with positive Gauss curvature has a simple two-s
 Let $\Sigma$ be an open surface with positive Gauss curvature and $\gamma$ a two-sided infinite geodesic in $\Sigma$.
 
 If $\gamma$ has a self-intersection, then it contains a simple loop;
-that is, a restriction $\ell=\gamma|_{[a,b]}$ for some closed interval $[a,b]$ is a simple loop.
+that is, a restriction $\ell=\gamma|_{[a,b]}$ is a simple loop for some closed interval $[a,b]$.
 
 By \ref{ex:convex-proper-plane}, $\Sigma$ is parametrized by an open convex region $\Omega$ in the plane.
 By Jordan's theorem (\ref{thm:jordan}), $\ell$ bounds a disc in $\Sigma$; denote it by~$\Delta$.
-If $\phi$ is the angle at the base of the loop, then by Gauss--Bonnet formula,
+If $\phi$ is the angle at the base of the loop, then by the Gauss--Bonnet formula,
 \[\iint_\Delta K=\pi+\phi.\] 
 
 Recall that by \ref{ex:intK:2pi}, we have
@@ -284,7 +284,7 @@ Therefore $0<\phi<\pi$; that is, $\gamma$ has no concave simple loops.
 
 Assume $\gamma$ has two simple loops, say $\ell_1$ and $\ell_2$ that bound discs $\Delta_1$ and $\Delta_2$.
 Then the discs $\Delta_1$ and $\Delta_2$ have to overlap,
-otherwise the curvature of $\Sigma$ would exceed $2\cdot\pi$ which contradicts \ref{intK=<2pi+}.
+otherwise the curvature of $\Sigma$ would exceed $2\cdot\pi$  contradicting \ref{intK=<2pi+}.
 
 
 It follows that after leaving $\Delta_1$, the geodesic $\gamma$ has to enter it again before creating another simple loop.
@@ -293,25 +293,25 @@ It follows that after leaving $\Delta_1$, the geodesic $\gamma$ has to enter it 
 \centering
 \includegraphics{mppics/pic-1550}
 \end{figure}
-Consider the moment when $\gamma$ enters $\Delta_1$;
+Consider the moment when $\gamma$ enters $\Delta_1$ again;
 two possible scenarios are shown in the picture.
-On the left picture we get two nonoverlapping discs which, as we know, is impossible.
+On the left picture we get two nonoverlapping discs which, as we know, is an impossible scenario.
 The right picture is impossible as well --- in this case we get a concave simple loop.
 
 It follows that $\gamma$ contains only one simple loop.
 This loop cuts a disc from $\Sigma$ 
 and goes around it either clockwise or counterclockwise.
 This way we divide all the self-intersecting geodesics on $\Sigma$
-into two sets which we will call {}\emph{clockwise} and {}\emph{counterclockwise}.
+into two sets which we  call {}\emph{clockwise} and {}\emph{counterclockwise}.
 
 Note that the geodesic $t\mapsto \gamma(t)$ is clockwise 
 if and only if the same geodesic traveled backwards
 $t\mapsto \gamma(-t)$
 is counterclockwise.
 
-Let us shoot a unit-speed geodesic in all directions at a given point $p\z=\gamma(0)$.
-It gives a one-parameter family of geodesics $\gamma_s$ for $s\in[0,\pi]$ connecting the geodesic $t\mapsto \gamma(t)$ with
-the $t\mapsto \gamma(-t)$; that is, $\gamma_0(t)\z=\gamma(t)$ and $\gamma_\pi(t)=\gamma(-t)$.
+Let us shoot a unit-speed geodesic at each directions from a given point $p\z=\gamma(0)$.
+this gives a one-parameter family of geodesics $\gamma_s$ for $s\in[0,\pi]$ connecting the geodesic $t\mapsto \gamma(t)$ with
+ $t\mapsto \gamma(-t)$; that is, $\gamma_0(t)\z=\gamma(t)$ and $\gamma_\pi(t)=\gamma(-t)$.
 
 Observe that the subset of values $s\in [0,\pi]$ such that $\gamma_s$ is right (or left) is open.
 That is, if $\gamma_s$ is right, then so is $\gamma_t$ for all $t$ sufficiently close to $s$.
@@ -350,8 +350,8 @@ for an integer $\chi=\chi(\Lambda)$.
 Moreover, if $\Lambda$ can be subdivided into $f$ discs by an embedded graph with   $v$ vertexes and $e$ edges then $\chi=v-e+f$.
 \end{thm}
 
-The number $\chi=\chi(\Lambda)$ is called \index{Euler characteristic}\emph{Euler characteristic} of $\Lambda$. 
-Note that $\chi$ does not depend on the choice of subdivision since the left hand side in \ref{eq:g-b++} does not.
+The number $\chi=\chi(\Lambda)$ is called the \index{Euler characteristic}\emph{Euler characteristic} of $\Lambda$. 
+Note that $\chi$ does not depend on the choice of the subdivision since the left hand side in \ref{eq:g-b++} does not.
 
 \parit{Proof.}
 Suppose a graph with $v$ vertexes and $e$ edges subdivides $\Lambda$ into $f$ discs.
@@ -363,7 +363,7 @@ Whence \ref{eq:g-b++} follows.
 
 
 \begin{thm}{Exercise}\label{ex:g-b-chi}
-Find the integral of Gauss curvature for each of the following surfaces:
+Find the integral of the Gauss curvature on each of the following surfaces:
 
 \begin{subthm}{ex:g-b-chi:torus}
 Torus.
