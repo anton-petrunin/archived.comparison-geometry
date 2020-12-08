@@ -3081,12 +3081,12 @@ save u,p;
 path p[];
 u:=.45cm;
 
-p0=(1,0)*u{up}..(4,0)*u{down}..(3,0)*u{up}..(2,0)*u{down}..(5,0)*u{up}..(8,0)*u{down}..(7,0)*u{up}..(6,0)*u{down}..cycle;
+p0=(1,0)*u{-1,1}..tension 1.4..(4,0)*u{1,-1}..tension 1.4..(3,0)*u{-1,1}..tension 1.4..(2,0)*u{1,-1}..tension 1.4..(5,0)*u{-1,1}..tension 1.4..(8,0)*u{1,-1}..tension 1.4..(7,0)*u{-1,1}..tension 1.4..(6,0)*u{1,-1}..tension 1.4..cycle;
 
 draw subpath (0,7.4) of p0 pensemibold;
 
 
-label.bot(btex simple curve etex, (4.5,-2.6)*u);
+label.bot(btex simple curve etex, (4.5,-2)*u);
 endfig;
 
 beginfig(125) 
@@ -3094,11 +3094,11 @@ save u,p;
 path p[];
 u:=.45cm;
 
-p0=(1,0)*u{up}..(4,0)*u{down}..(3,0)*u{up}..(2,0)*u{down}..(5,0)*u{up}..(8,0)*u{down}..(7,0)*u{up}..(6,0)*u{down}..cycle;
+p0=(1,0)*u{-1,1}..tension 1.4..(4,0)*u{1,-1}..tension 1.4..(3,0)*u{-1,1}..tension 1.4..(2,0)*u{1,-1}..tension 1.4..(5,0)*u{-1,1}..tension 1.4..(8,0)*u{1,-1}..tension 1.4..(7,0)*u{-1,1}..tension 1.4..(6,0)*u{1,-1}..tension 1.4..cycle;
 
 draw  p0 pensemibold;
 
-label.bot(btex simple closed curve etex, (4.5,-2.6)*u);
+label.bot(btex simple closed curve etex, (4.5,-2)*u);
 endfig;
 
 beginfig(130) 
@@ -4323,7 +4323,7 @@ z.pp=(0,2)*u;
 z.xx=(.7,2.3)*u;
 z.yy=(x.xx,0);
 
-z.shift=(0,3.5)*u;
+z.shift=(-2.5,0)*u;
 
 z.p=z.pp+z.shift;
 z.q=z.qq+z.shift;

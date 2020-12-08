@@ -28,7 +28,7 @@ whence $\gamma''\perp\gamma'$.
 
 \section{Curvature}\label{sec:curvature}
 
-For a unit-speed smooth space curve $\gamma$ the magnitude $|\gamma''(s)|$ of its acceleration is called its \index{curvature of curve}\emph{curvature} at  time $s$.
+For a unit-speed smooth space curve $\gamma$ the magnitude $|\gamma''(s)|$ of its acceleration is called its \index{curvature}\emph{curvature} at  time $s$.
 If $\gamma$ is simple, then we can say that $|\gamma''(s)|$ is the curvature at the point $p=\gamma(s)$ without ambiguity.
 The curvature is usually denoted by $\kur(s)$ or $\kur(s)_\gamma$ and in the case of simple curves it might be also denoted by $\kur(p)$ or $\kur(p)_\gamma$.
 
@@ -63,7 +63,7 @@ Let $\gamma$ be a regular smooth space curve.
 The curve 
 \[\tan(t)=\tfrac{\gamma'(t)}{|\gamma'(t)|};
 \eqlbl{eq:tantrix}\] 
-it is called a \index{tangent indicatrix}\emph{tangent indicatrix} of $\gamma$.
+it is called a \index{tangent!indicatrix}\emph{tangent indicatrix} of $\gamma$.
 Note that $|\tan(t)|=1$ for any $t$;
 that is, $\tan$ is a spherical curve.
 
@@ -120,12 +120,12 @@ In other words, construct a sequence $\gamma_n\:\mathbb{I}\to\mathbb{R}^3$ of sm
 \section{Tangent curves}
 
 Let $\gamma$ be a smooth regular space curve and $\tan$ its tangent indicatrix.
-The line thru $\gamma(t)$ in the direction of $\tan(t)$ is called the \index{tangent line}\emph{tangent line} of $\gamma$  at~$t$.
+The line thru $\gamma(t)$ in the direction of $\tan(t)$ is called the \index{tangent!line}\emph{tangent line} of $\gamma$  at~$t$.
 
 The tangent line could be also defined as a unique line that has that has \index{order of contact}\emph{first order of contact} with $\gamma$ at $s$;
 that is, $\rho(\ell)=o(\ell)$, where $\rho(\ell)$ denotes the distance from $\gamma(s+\ell)$ to the line.
 
-We say that a smooth regular curve $\gamma_1$ at $s_1$ is \index{tangent curves}\emph{tangent} to a smooth regular curve $\gamma_2$ at $s_2$
+We say that a smooth regular curve $\gamma_1$ at $s_1$ is \index{tangent!curves}\emph{tangent} to a smooth regular curve $\gamma_2$ at $s_2$
 if $\gamma_1(s_1)=\gamma_2(s_2)$ and the tangent line of $\gamma_1$ at $s_1$ coincides with the tangent line of $\gamma_2$ at $s_2$;
 if both curves are simple we can also say that they are tangent at the point $p=\gamma_1(s_1)\z=\gamma_2(s_2)$ without ambiguity.
 
@@ -135,7 +135,7 @@ if both curves are simple we can also say that they are tangent at the point $p=
 Let $\gamma\:\mathbb{I}\to\mathbb{R}^3$ be a smooth unit-speed curve and $\tan$ its tangent indicatrix.
 The integral 
 \[\tc\gamma\df\int_{\mathbb{I}}\kur(s)\cdot ds\]
-is called the \index{total curvature of}\emph{total curvature of}\label{page:total curvature of:smooth-def}
+is called the \index{total!curvature}\emph{total curvature of}\label{page:total curvature of:smooth-def}
 $\gamma$.
 
 Rewriting the above integral using a change of variables produce a formula for a general parametrization $t\mapsto \gamma(t)$:
@@ -155,7 +155,9 @@ Therefore \ref{ex:integral-length} implies the following:
 The total curvature of a smooth regular curve is the length of its tangent indicatrix.
 \end{thm}
 
-\begin{thm}{Fenchel's theorem}\label{thm:fenchel}
+\begin{thm}{Fenchel's theorem}
+\label{thm:fenchel}
+\index{Fenchel's theorem}
 The total curvature of any closed regular space curve is at least $2\cdot\pi$.
 \end{thm}
 
@@ -565,9 +567,10 @@ according to the exercise the latter implies the so-called \index{F\'ary--Milnor
 
 \section{Bow lemma}
 
-The following lemma was proved by Axel Schur \cite{shur}.
+The following lemma was proved by Axel Schur \cite{shur};
+it is a differential-geometric analog of the so called {}\emph{arm lemma} of Augustin-Louis Cauchy.
 
-\begin{thm}{Lemma}\label{lem:bow}
+\begin{thm}{Lemma}\label{lem:bow}\index{bow lemma}
 Let $\gamma_1\:[a,b]\to\mathbb{R}^2$ and $\gamma_2\:[a,b] \to\mathbb{R}^3$ be two smooth unit-speed curves.
 Suppose that $\kur(s)_{\gamma_1}\ge\kur(s)_{\gamma_2}$ for any $s$ 
 and the curve

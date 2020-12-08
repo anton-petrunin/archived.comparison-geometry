@@ -22,5 +22,8 @@ lib/*
 *.mpx
 *mptextmp.mp
 *mpxerr.tex
+*.maf
+*.pdf
+*.zip
 *.eps
 *eps-converted-to.pdf

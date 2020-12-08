@@ -14,9 +14,9 @@ The \index{length of curve}\emph{length} of $\gamma$ is defined as
 \length \gamma
 &= 
 \sup
-\set{\dist{\gamma(t_0)}{\gamma(t_1)}{}
+\set{\dist{\gamma(t_0)}{\gamma(t_1)}{\spc{X}}
 +\dots+
-\dist{\gamma(t_{k-1})}{\gamma(t_k)}{}}{},
+\dist{\gamma(t_{k-1})}{\gamma(t_k)}{\spc{X}}}{},
 \end{align*}\index{10length@$\length \gamma$}
 where the least upper bound is taken over all partitions $(t_i)$ of $[a,b]$.
 
@@ -268,7 +268,9 @@ Try to show that the statement holds for arbitrary closed plane curves $\alpha$,
 \end{thm}
 
 
-\section{Crofton's formulas}\label{sec:crofton}
+\section{Crofton's formulas}
+\label{sec:crofton}
+\index{Crofton's formula}
 
 For a function $f: \mathbb{S}^1 \to \mathbb{R}$, we will denote its average value as $\overline{f(\vec u)}$.
 For a vector $\vec w$, and a unit vector $\vec u$, we will denote by $\vec w_{\vec u}$ the orthogonal projection of $\vec w$ to the line in the direction of  $\vec u$;
@@ -440,7 +442,7 @@ Given two points $x,y$ in $\spc{X}$, denote by $\ell(x,y)$ the greatest lower bo
 
 It is straightforward to see that the function $\ell$ satisfies all the axioms of a metric except it might take infinite values.
 Therefore if any two points in $\spc{X}$ can be connected by a rectifiable curve, then $\ell$ defines a new metric on $\spc{X}$;
-in this case $\ell$ is called the \index{induced length -metric}\emph{induced length-metric}.
+in this case $\ell$ is called the \index{induced length-metric}\emph{induced length-metric}.
 
 Evidently $\ell(x,y)\ge \dist{x}{y}{}$ for any pair of points $x,y\in \spc{X}$.
 If the equality holds for all pairs, then the metric $\dist{{*}}{{*}}{}$ is said to be a \index{length-metric}\emph{length-metric} and the corresponding metric space is called a \index{}\emph{length-metric space}.
@@ -463,7 +465,7 @@ for any $x,y\in A$
 
 Let us denote by $\mathbb{S}^2$ the unit sphere in the space; that is,
 \[\mathbb{S}^2=\set{(x,y,z)\in\mathbb{R}^3}{x^2+y^2+z^2=1}.\]
-A space curve $\gamma$ is called \index{spherical curve}\emph{spherical} if it runs in the unit sphere;
+A space curve $\gamma$ is called \index{spherical!curve}\emph{spherical} if it runs in the unit sphere;
 that is, $|\gamma(t)|=1$, or equivalently, $\gamma(t)\in\mathbb{S}^2$  for any $t$.
 
 Recall that $\measuredangle(u,v)$ denotes the angle between two vectors $u$ and $v$.

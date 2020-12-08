@@ -8,12 +8,12 @@ This chapter based on material in the book os Stephanie Alexander, Vitali Kapovi
 Recall that a shortest path between points $x$ and $y$ in a surface $\Sigma$ is denoted as $[x,y]$ or $[x,y]_\Sigma$, and
 $\dist{x}{y}\Sigma$ denotes the \index{intrinsic distance}\emph{intrinsic distance} from $x$ to $y$ in $\Sigma$.
 
-A \index{geodesic triangle}\emph{geodesic triangle} in a surface $\Sigma$ is defined as a triple of points $x,y,z\z\in \Sigma$ with choice of minimizing geodesics $[x,y]_\Sigma$, $[y,z]_\Sigma$ and $[z,x]_\Sigma$.
+A \index{geodesic!triangle}\emph{geodesic triangle} in a surface $\Sigma$ is defined as a triple of points $x,y,z\z\in \Sigma$ with choice of minimizing geodesics $[x,y]_\Sigma$, $[y,z]_\Sigma$ and $[z,x]_\Sigma$.
 The points $x,y,z$ are called {}\emph{vertexes} of the geodesic triangle,
 the minimizing geodesics $[x,y]$, $[y,z]$ and $[z,x]$ are called its {}\emph{sides};
 the triangle itself is denoted by $[xyz]$, or by $[xyz]_\Sigma$, if we need to emphasize that it lies in $\Sigma$.\index{10aad@$[xyz]$, $[xyz]_\Sigma$}
 
-A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\mathbb{R}^2$ is called \index{model triangle}\emph{model triangle} of the triangle $[xyz]$
+A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\mathbb{R}^2$ is called \index{model!triangle}\emph{model triangle} of the triangle $[xyz]$
 if its corresponding sides are equal;
 that is,
 \[\dist{\tilde x}{\tilde y}{\mathbb{R}^2}=\dist{x}{y}\Sigma,
@@ -32,11 +32,11 @@ The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in
 
 \section{Formulations}
 
-Part \textit{\ref{SHORT.thm:comp:toponogov}} of the following theorem is called \index{Toponogov comparison theorem}\emph{Toponogov comparison theorem} and sometimes \index{Alexandrov comparison theorem}\emph{Alexandrov comparison theorem};
+Part \textit{\ref{SHORT.thm:comp:toponogov}} of the following theorem is called {}\emph{Toponogov comparison theorem} and sometimes {}\emph{Alexandrov comparison theorem};
 it was proved by Paolo Pizzetti \cite{pizzetti} and rediscovered by Alexandr Alexandrov \cite{alexandrov}; 
 generalizations were obtained by  Victor Toponogov \cite{toponogov1957}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{burago-gromov-perelman}.
 
-Part \textit{\ref{SHORT.thm:comp:cat}} is called \index{Cartan--Hadamard theorem}\emph{Cartan--Hadamard theorem};
+Part \textit{\ref{SHORT.thm:comp:cat}} is called {}\emph{Cartan--Hadamard theorem};
 it was proved by 
 Hans von Mangoldt \cite{mangoldt} and generalized by Elie Cartan \cite{cartan}, Jacques Hadamard \cite{hadamard},
 Herbert Busemann \cite{busemann},
@@ -44,13 +44,15 @@ Willi Rinow \cite{rinow},
 Mikhael Gromov \cite[p.~119]{gromov-1987},
 Stephanie Alexander and Richard Bishop \cite{alexander-bishop1990}.
 
-Recall that a surface $\Sigma$ is called {}\emph{simply connected} if any closed simple curve in $\Sigma$ bounds a disc.
+Recall that a surface $\Sigma$ is called {}\emph{simply-connected} if any closed simple curve in $\Sigma$ bounds a disc.
 
-\begin{thm}{Comparison theorems}\label{thm:comp}
+\begin{thm}{Comparison theorems}
+\label{thm:comp}
+\index{comparison theorem}
 Let $\Sigma$ be a proper smooth regular surface.
 
 \begin{subthm}{thm:comp:cat}
-If $\Sigma$ is simply connected and has nonpositive Gauss curvature,
+If $\Sigma$ is simply-connected and has nonpositive Gauss curvature,
  then 
 \[\measuredangle\hinge {x}{y}{z}\le\modangle xyz\]
 for any geodesic triangle $[xyz]$.
@@ -67,10 +69,10 @@ for any geodesic triangle $[xyz]$.
 The proof of part \ref{SHORT.thm:comp:cat} will be given at the end of Section~\ref{sec:nonpos-comp}.
 The proof of part \ref{SHORT.thm:comp:toponogov} will be finished in  Section~\ref{sec:nonneg-comp}.
 
-Let us show that the statement \ref{SHORT.thm:comp:cat} does not hold without assuming that $\Sigma$ is simply connected.
+Let us show that the statement \ref{SHORT.thm:comp:cat} does not hold without assuming that $\Sigma$ is simply-connected.
 Consider the hyperboloid
 \[\set{(x,y,z)\in\mathbb{R}^3}{x^2+y^2-z^2=1};\]
-it has negative Gauss curvature, but it is not simply connected.
+it has negative Gauss curvature, but it is not simply-connected.
 The equator $z=0$ of the hyperboloid
 forms a triangle with all angles $\pi$, which does not meet the conclusion in~\ref{SHORT.thm:comp:cat}.
 
@@ -197,7 +199,7 @@ whence the result.
 \section{Nonpositive curvature}\label{sec:nonpos-comp}
 
 \parit{Proof of \ref{thm:comp:cat}.}
-Sine $\Sigma$ is simply connected, \ref{ex:unique-geod} implies that 
+Sine $\Sigma$ is simply-connected, \ref{ex:unique-geod} implies that 
 \[\inj(p)_\Sigma=\infty\]
 for any $p\in\Sigma$.
 Therefore \ref{SHORT.thm:loc-comp:cba} implies \ref{thm:comp:cat}.
@@ -240,7 +242,7 @@ holds for any hinge $\hinge x y z$ with $\dist{x}{y}\Sigma+\dist{x}{z}\Sigma<\el
 \parit{Proof.} 
 Given a hinge $\hinge x p q$ consider a triangle in the plane
 with angle $\measuredangle\hinge x p q$ and two adjacent sides $\dist{x}{p}\Sigma$ and $\dist{x}{q}\Sigma$.
-Let us denote by $\side \hinge x p q$ the third side of this triangle; let us call it the \index{model side}\emph{model side} of the hinge.
+Let us denote by $\side \hinge x p q$ the third side of this triangle; let us call it the \index{model!side}\emph{model side} of the hinge.
 
 Note that the inequalities 
 \[\measuredangle\hinge x p q\ge \modangle x p q\quad\iff\quad\side \hinge x p q
@@ -434,6 +436,7 @@ Arrive to a contradiction using \ref{SHORT.ex:convex-polyhon+self-intersections:
 \end{thm}
 
 \section{Alexandrov's lemma}
+\index{Alexandrov's lemma}
 
 A reformulation of the following lemma in plane geometry will be used in the next section to produce a few equivalent formulations of comparison theorems.
 
@@ -577,7 +580,7 @@ Consider the function
 \[h(t)=\dist{p}{\gamma(t)}\Sigma^2-t^2.\]
 
 \begin{subthm}{}
-Show that if $\Sigma$ is simply connected and the Gauss curvature of $\Sigma$ is nonpositive, then the function $h$ is convex.
+Show that if $\Sigma$ is simply-connected and the Gauss curvature of $\Sigma$ is nonpositive, then the function $h$ is convex.
 \end{subthm}
 
 \begin{subthm}{} Show that if the Gauss curvature of $\Sigma$ is nonnegative, then the function $h$ is concave.
@@ -590,7 +593,7 @@ Show that if $\Sigma$ is simply connected and the Gauss curvature of $\Sigma$ is
 Let $\bar x$ and $\bar y$ be the midpoints of minimizing geodesics $[p,x]$ and $[p,y]$ in an open smooth regular surface $\Sigma$.
 
 \begin{subthm}{}
- Show that if $\Sigma$ is simply connected and has nonpositive Gauss curvature, then 
+ Show that if $\Sigma$ is simply-connected and has nonpositive Gauss curvature, then 
  \[2\cdot \dist{\bar x}{\bar y}\Sigma\le \dist{x}{y}\Sigma.\]
  \end{subthm}
  
@@ -601,7 +604,7 @@ Let $\bar x$ and $\bar y$ be the midpoints of minimizing geodesics $[p,x]$ and $
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:convex-dist}
-Assume $\gamma_1$ and $\gamma_2$ are two geodesics in an open smooth regular simply connected surface $\Sigma$ with nonpositive Gauss curvature.
+Assume $\gamma_1$ and $\gamma_2$ are two geodesics in an open smooth regular simply-connected surface $\Sigma$ with nonpositive Gauss curvature.
 Show that the function
 \[h(t)=\dist{\gamma_1(t)}{\gamma_2(t)}\Sigma\]
 is convex.
@@ -618,7 +621,7 @@ that is,
 Show that
 
 \begin{subthm}{ex:dist-to-bry:-}
-If $\Sigma$ is simply connected and $K_\Sigma\le 0$, then the restriction of $f$ to the complement of $\Delta$ is convex;
+If $\Sigma$ is simply-connected and $K_\Sigma\le 0$, then the restriction of $f$ to the complement of $\Delta$ is convex;
 that is, for any geodesic $\gamma$ in $\Sigma\backslash\Delta$ the function $t\mapsto f\circ\gamma(t)$ is convex.
 \end{subthm}
 
@@ -649,7 +652,7 @@ for any $t$.
 \end{subthm}
 
 \begin{subthm}{prop:busemann-}
-If $\Sigma$ is an open simply connected surface with nonpositive Gauss curvature, then $\bus_\lambda$ is convex;
+If $\Sigma$ is an open simply-connected surface with nonpositive Gauss curvature, then $\bus_\lambda$ is convex;
 that is, for any geodesic $\alpha$ the real-to-real function 
 $t\mapsto \bus_\lambda\circ\alpha(t)$ is convex.
 \end{subthm}
@@ -902,7 +905,7 @@ Whence \ref{clm:parallel} follows for any pair $s$ and~$t$.
 \parit{Final step.}
 Note that since $\bus_-$ is affine, the level set 
 \[L=\set{x\in\Sigma}{\bus_-(x)=0}\]
-is closed \index{totally convex}\emph{totally convex} and \index{totally geodesic}\emph{geodesic};
+is closed \index{totally convex/geodesic}\emph{totally convex} and {}\emph{geodesic};
 that is, if a geodesic $\alpha$ has two common points with $L$, then $\alpha$ lies in $L$.
 It follows that $L$ is either closed or both-sides-infinite geodesic.
 

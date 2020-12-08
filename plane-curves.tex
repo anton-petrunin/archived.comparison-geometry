@@ -16,7 +16,7 @@ Recall that $\gamma''(s)\perp \gamma'(s)$ (see \ref{prop:a'-pertp-a''}).
 Therefore 
 \[\tan'(s)=\skur(s)\cdot \norm(s).\eqlbl{eq:tau'}\]\index{10k@$\skur$}
 for some real number $\skur(s)$;
-the value $\skur(s)$ is called \index{signed curvature}\emph{signed curvature} of $\gamma$ at $s$.
+the value $\skur(s)$ is called \index{curvature}\index{signed curvature}\emph{signed curvature} of $\gamma$ at $s$.
 We may use notation $\skur(s)_\gamma$ if we need to specify the curve~$\gamma$.
 
 Note that 
@@ -24,7 +24,7 @@ Note that
 that is, up to sign, the signed curvature $\skur(s)$ equals the curvature $\kur(s)$  of $\gamma$ at $s$ defined in Section~\ref{sec:curvature};
 the sign tells us in which direction $\gamma$ turns --- if $\gamma$ is turning left at time $s$, then $\skur (s)>0$.
 If we want to emphasise that we are working with the {}\emph{non-signed} curvature of the curve, 
-we call it \index{absolute curvature}\emph{absolute curvature}.
+we call it \index{curvature}\index{absolute curvature}\emph{absolute curvature}.
 
 Note that if we reverse the parametrization of $\gamma$ or change the orientation of the plane, then
 the signed curvature changes its sign.
@@ -158,7 +158,7 @@ for all $s$, where
 \section{Total signed curvature}
 
 Let $\gamma\:\mathbb{I}\to\mathbb{R}^2$ be a smooth unit-speed plane curve.
-The \index{total signed curvature}\emph{total signed curvature} of $\gamma$, denoted by $\tgc\gamma$, is defined as the integral
+The \index{curvature}\index{total!signed curvature}\emph{total signed curvature} of $\gamma$, denoted by $\tgc\gamma$, is defined as the integral
 \[\tgc\gamma
 =
 \int_\mathbb{I} \skur(s)\cdot ds,\eqlbl{eq:tsc-k}\]\index{10psi@$\tgc\gamma$}
@@ -215,7 +215,7 @@ if the region bounded by $\gamma$ lies on the left from it and  $-2\cdot\pi$ oth
 Moreover the same statement holds for any closed piecewise simple smooth regular plane curve $\gamma$ if its total signed curvature is defined.
 \end{thm}
 
-This proposition is called sometimes \index{Umlaufsatz}\emph{Umlaufsatz}; it is a differential-geometric analog of the theorem about the sum of the internal angles of a polygon (\ref{thm:sum=(n-2)pi}) which we use in the proof.
+This proposition is called sometimes {}\emph{Umlaufsatz}; it is a differential-geometric analog of the theorem about the sum of the internal angles of a polygon (\ref{thm:sum=(n-2)pi}) which we use in the proof.
 A more conceptual proof was given by Heinz Hopf \cite{hopf1935}, \cite[p. 42]{hopf1989}.
 
 \parit{Proof.}
@@ -398,6 +398,7 @@ Show that the osculating circline of $\hat\gamma$ at $s$ is the inversion of the
 
 \section{Spiral lemma}
 \label{spiral}
+\index{Spiral lemma}
 
 The following lemma was proved by Peter Tait \cite{tait}
 and later rediscovered by Adolf Kneser \cite{kneser}.
