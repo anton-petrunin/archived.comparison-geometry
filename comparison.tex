@@ -312,6 +312,34 @@ Since $\measuredangle\hinge{x'}p x+\measuredangle\hinge{x'}p q= \pi$,
  and \ref{eq:thm:=def-loc-fivestar} follows.
 Hence the constructed hinge $\hinge{x'}q p$ satisfies the declared properties.
 
+In the above construction, set 
+ 
+ \[
+s := \dist{p}{x}\Sigma+\dist{x}{q}\Sigma,   s':  =  \dist{p}{x'}\Sigma+\dist{x'}{q}\Sigma , \text{ and } \delta : = s-s'.
+\]
+
+Note that from \ref{eq:thm:=def-loc-threestar}, we have 
+
+\[   | x-x'  |_{\Sigma} \geq \dfrac{\ell}{18},  \eqlbl{eq:long-hinge1}\]   
+hence 
+\begin{align*}
+|  x' - q |_{\Sigma}
+&\geq \dfrac{2\ell}{3} - |x- p |_{\Sigma} - |x-x'|_{\Sigma}=
+\\
+&= 2 |  x-x' |_{\Sigma} \geq
+\\
+& \geq   \dfrac{\ell}{9} ,
+\end{align*}
+and
+\begin{align*}
+|  x' - p |_{\Sigma}
+&= s' -   |x'-q|_{\Sigma}  = \\
+& = s' + |x-p|_{\Sigma} + |x-x'|_{\Sigma} - s >\\
+&> |x-x'|_{\Sigma} - \delta \geq \\
+& \geq \dfrac{\ell}{18}- \delta.
+\end{align*}
+Consequently
+\[  \min \{ | x'-p  |_{\Sigma} , |x'-q|_{\Sigma}    \} \geq \dfrac{\ell}{18} - \delta.     \eqlbl{eq:long-hinge2}\]
 
 %Comments about why xx', px' and qx' are not small. 
 
@@ -334,24 +362,16 @@ Since the sequence $s_n$ is nonincreasing;
 whence inequality \ref{eq:thm:=def-loc*} follows.
 
 If the sequence does not terminate, then $r_n\ge\tfrac{2}{3}\cdot\ell$ for all $n$.
-Since $(r_n)$ is nonincreasing, $r_n\to r\ge \dist{p}{q}\Sigma$ as $n\to\infty$.
+Since $(r_n)$ is nonincreasing, $r_n\to r\ge \dist{p}{q}\Sigma$ as $n\to\infty$. This implies that the sequence $\delta_n : = r_n - r_{n+1}$ converges to $0$, so from \ref{eq:long-hinge1} and \ref{eq:long-hinge2}, we have for large $n$,
 
-Let us show that $\measuredangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
+\[  \ell >   | x_n-x_{n+1} |_{\Sigma} , | p-x_n| _{\Sigma} > \dfrac{\ell}{100}  .  \]
 
-Indeed assume $\measuredangle\hinge{x_n}p q\le \pi-\epsilon$ for some $\epsilon>0$.
-Without loss of generality we can assume that $x_{n+1}\in [x_n,q]$;
-otherwise switch $p$ and $q$ further.
-Note that $\dist{x_n}{x_{n+1}}\Sigma,\dist{p}{x_n}\Sigma>\tfrac\ell{100}$.
-Therefore by comparison 
-\[\dist{p}{x_{n+1}}\Sigma<\side\hinge{x_n}p{x_{n+1}}<\dist{p}{x_n}\Sigma+\dist{x_n}{x_{n+1}}\Sigma-\delta\]
-for some fixed $\delta=\delta(\epsilon)>0$.
-Therefore $r_n-r_{n+1}>\delta$.
-The latter cannot hold for large $n$, otherwise the sequence $r_n$ would not converge.
+Hence by  \ref{prop:wide-hinges}, 
 
-It follows that for any $\epsilon>0$ we have that $\measuredangle\hinge{x_n}p q> \pi-\epsilon$ for all large $n$;
-that is, $\measuredangle\hinge{x_n}p q\to \pi$ as $n\to\infty$.
 
-Since $\measuredangle\hinge{x_n}p q\to \pi$, we have 
+\[
+\measuredangle\hinge{x_n}p q\to \pi. \]
+Therefore we have 
 $s_n-r_n\to 0$ as $n\to\infty$;
 that is, $s_n\to r$.
 
