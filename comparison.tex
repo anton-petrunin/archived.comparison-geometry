@@ -1,19 +1,19 @@
 \chapter{Comparison theorems}
 \label{chap:comparison}
 
-This chapter based on material in the book os Stephanie Alexander, Vitali Kapovitch and the first author \cite{alexander-kapovitch-petrunin2027}.
+This chapter is based on material in the book by Stephanie Alexander, Vitali Kapovitch and the first author \cite{alexander-kapovitch-petrunin2027}.
 
 \section{Triangles and hinges}
 
-Recall that a shortest path between points $x$ and $y$ in a surface $\Sigma$ is denoted as $[x,y]$ or $[x,y]_\Sigma$, and
+Recall that a shortest path between points $x$ and $y$ in a surface $\Sigma$ is denoted by $[x,y]$ or $[x,y]_\Sigma$, and
 $\dist{x}{y}\Sigma$ denotes the \index{intrinsic distance}\emph{intrinsic distance} from $x$ to $y$ in $\Sigma$.
 
-A \index{geodesic!triangle}\emph{geodesic triangle} in a surface $\Sigma$ is defined as a triple of points $x,y,z\z\in \Sigma$ with choice of minimizing geodesics $[x,y]_\Sigma$, $[y,z]_\Sigma$ and $[z,x]_\Sigma$.
-The points $x,y,z$ are called {}\emph{vertices} of the geodesic triangle,
+A \index{geodesic!triangle}\emph{geodesic triangle} in a surface $\Sigma$ is defined as a triple of points $x,y,z\z\in \Sigma$ with a choice of minimizing geodesics $[x,y]_\Sigma$, $[y,z]_\Sigma$ and $[z,x]_\Sigma$.
+The points $x,y,z$ are called the {}\emph{vertices} of the geodesic triangle,
 the minimizing geodesics $[x,y]$, $[y,z]$ and $[z,x]$ are called its {}\emph{sides};
-the triangle itself is denoted by $[xyz]$, or by $[xyz]_\Sigma$, if we need to emphasize that it lies in $\Sigma$.\index{10aad@$[xyz]$, $[xyz]_\Sigma$}
+the triangle itself is denoted by $[xyz]$, or by $[xyz]_\Sigma$, if we need to emphasize that it lies in the surface $\Sigma$.\index{10aad@$[xyz]$, $[xyz]_\Sigma$}
 
-A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\mathbb{R}^2$ is called \index{model!triangle}\emph{model triangle} of the triangle $[xyz]$
+A triangle $[\tilde x\tilde y\tilde z]$ in the plane $\mathbb{R}^2$ is called a \index{model!triangle}\emph{model triangle} of the triangle $[xyz]$
 if its corresponding sides are equal;
 that is,
 \[\dist{\tilde x}{\tilde y}{\mathbb{R}^2}=\dist{x}{y}\Sigma,
@@ -25,18 +25,20 @@ that is,
 In this case we write $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$.
 \index{10aae@$\tilde\triangle$}
 
-A pair of minimizing geodesics $[x,y]$ and $[x,z]$ starting from one point $x$ is called \index{hinge}\emph{hinge} and denoted as $\hinge xyz$.\index{10aac@$\hinge yxz$}
+A pair of minimizing geodesics $[x,y]$ and $[x,z]$ starting from one point $x$ is called a \index{hinge}\emph{hinge} and is denoted by $\hinge xyz$.\index{10aac@$\hinge yxz$}
 The angle between these geodesics at $x$ is denoted by $\measuredangle\hinge xyz$.
-The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in the model triangle $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$ is denoted by $\modangle xyz$.
+The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in a model triangle $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$ is denoted by $\modangle xyz$.
 \index{10aab@$\modangle xyz$}
+
+Observe that if $[xyz]_{\Sigma }$ is a triangle in a smooth surface $\Sigma$, it has a model triangle $[\tilde x \tilde y \tilde z]_{\mathbb{R}^2}$, and any two model triangles are congruent. That is, if $ [\tilde x' \tilde y' \tilde z'  ]_{\mathbb{R}^2} $ is another model triangle for $[xyz]_{\Sigma }$, then there is an isometry $f: \mathbb{R}^2 \to \mathbb{R}^2$ that sends $\tilde x $ to $\tilde x'$, $\tilde y $ to $\tilde y'$, and $\tilde z $ to $\tilde z'$. This implies that  $\modangle xyz$ is well defined for any triangle $[xyz]_{\Sigma }$. We will call this quantity the \textit{ comparison angle} of $[xyz]_{\Sigma } $ at $x$.
 
 \section{Formulations}
 
-Part \textit{\ref{SHORT.thm:comp:toponogov}} of the following theorem is called {}\emph{Toponogov comparison theorem} and sometimes {}\emph{Alexandrov comparison theorem};
+Part \textit{\ref{SHORT.thm:comp:toponogov}} of the following theorem is called the {}\emph{Toponogov comparison theorem} and sometimes the {}\emph{Alexandrov comparison theorem};
 it was proved by Paolo Pizzetti \cite{pizzetti} and rediscovered by Alexandr Alexandrov \cite{aleksandrov}; 
 generalizations were obtained by  Victor Toponogov \cite{toponogov1957}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{burago-gromov-perelman}.
 
-Part \textit{\ref{SHORT.thm:comp:cat}} is called {}\emph{Cartan--Hadamard theorem};
+Part \textit{\ref{SHORT.thm:comp:cat}} is called the {}\emph{Cartan--Hadamard theorem};
 it was proved by 
 Hans von Mangoldt \cite{mangoldt} and generalized by Elie Cartan \cite{cartan}, Jacques Hadamard \cite{hadamard},
 Herbert Busemann \cite{busemann},
@@ -73,10 +75,10 @@ Let us show that the statement \ref{SHORT.thm:comp:cat} does not hold without as
 Consider the hyperboloid
 \[\set{(x,y,z)\in\mathbb{R}^3}{x^2+y^2-z^2=1};\]
 it has negative Gauss curvature, but it is not simply-connected.
-The equator $z=0$ of the hyperboloid
-forms a triangle with all angles $\pi$, which does not meet the conclusion in~\ref{SHORT.thm:comp:cat}.
+The points $(1,0,0)$, $(-\tfrac{1}2, \tfrac{\sqrt{3} }2, 0)$, $(-\tfrac{1}2, -\tfrac{\sqrt{3} }2, 0)$
+form a triangle with all angles equal to $\pi$, but all comparison angles equal to $\tfrac{\pi}3$.
 
-Let us discuss the relations between Gauss--Bonnet formula and the comparison theorems.
+Let us discuss the relationship between the Gauss--Bonnet formula and the comparison theorems.
 Suppose that a disc $\Delta$ is bounded by a geodesic triangle $[xyz]$ with internal angles $\alpha$, $\beta$ and $\gamma$.
 Then Gauss--Bonnet implies that 
 \[\alpha+\beta+\gamma-\pi=\iint_\Delta K;\]
@@ -91,13 +93,13 @@ Now set
 $\hat\alpha=\measuredangle\hinge {x}{y}{z}$,
 $\hat\beta=\measuredangle\hinge {y}{z}{x}$,
 and $\hat\gamma=\measuredangle\hinge {z}{x}{y}$.
-Since the angles of any plane triangle sum up to $\pi$, from the comparison theorems, we get that
+Since the angles of any plane triangle add up $\pi$, from the comparison theorems, we get that
 \begin{itemize}
 \item if $K_\Sigma\ge 0$ then $\hat\alpha+\hat\beta+\hat\gamma\ge\pi$, and
 \item if $K_\Sigma\le 0$ then $\hat\alpha+\hat\beta+\hat\gamma\le\pi$.
 \end{itemize}
 
-The angles for comparison theorems can be found using internal angles: 
+The triples of angles $\{ \alpha , \beta , \gamma \}$, $\{   \hat\alpha , \hat\beta , \hat\gamma   \}$ are related by the identities:
 \begin{align*}
 \hat \alpha&=\min\{\,\alpha,2\cdot\pi-\alpha\,\},
 &
@@ -105,18 +107,18 @@ The angles for comparison theorems can be found using internal angles:
 &
 \hat\gamma&=\min\{\,\gamma,2\cdot\pi-\gamma\,\}.
 \end{align*}
-One can use it to see that despite Gauss--Bonnet formula and the comparison theorems are closely related,
-this relation is not straightforward.
+One can use them to see that despite the Gauss--Bonnet formula and the comparison theorems are closely related,
+this relationship is not straightforward.
 
 For example, suppose $K\ge 0$.
-Then the Gauss--Bonnet formula does not forbid the internal angles $\alpha$, $\beta$, and $\gamma$ to be close to $2\cdot\pi$.
-But if $\alpha$, $\beta$, and $\gamma$ are close to $2\cdot\pi$, then $\hat\alpha$, $\hat\beta$, and $\hat\gamma$ are close to $0$.
+Then the Gauss--Bonnet formula does not forbid the internal angles $\alpha$, $\beta$, and $\gamma$ to be simultaneously close to $2\cdot\pi$.
+But if $\alpha$, $\beta$, and $\gamma$ are each close to $2\cdot\pi$, then $\hat\alpha$, $\hat\beta$, and $\hat\gamma$ are close to $0$.
 The latter is impossible by the comparison theorem.
 
-The following exercise is a lemma from the note of Arseniy Akopyan and the first author \cite{akopyan-petrunin}.
+The following exercise is a lemma from the note by Arseniy Akopyan and the first author \cite{akopyan-petrunin}.
 
 \begin{thm}{Exercise}\label{ex:diam-angle}
-Let $p$ and $q$ be points on a closed convex surface $\Sigma$ that lie on maximal intrinsic distance from each other;
+Let $p$ and $q$ be points on a closed convex surface $\Sigma$ that lie at maximal intrinsic distance from each other;
 that is, $\dist{p}{q}\Sigma\z\ge\dist{x}{y}\Sigma$ for any $x,y\in \Sigma$.
 Show that 
 \[\measuredangle\hinge xpq\ge \tfrac\pi3\]
@@ -124,7 +126,7 @@ for any point $x\in \Sigma\backslash\{p,q\}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:sum=<2pi}
-Let $\Sigma$ be a closed (or open) regular surface and with nonnegative Gauss curvature.
+Let $\Sigma$ be a closed (or open) regular surface  with nonnegative Gauss curvature.
 Show that 
 \[\modangle pxy+\modangle pyz+\modangle pzx\le2\cdot \pi.\]
 for any four distinct points $p,x,y,z$ in $\Sigma$.
@@ -132,14 +134,13 @@ for any four distinct points $p,x,y,z$ in $\Sigma$.
 
 \section{Local comparisons}\label{sec:loc-comp}
 
-The following local version of comparison theorem follows from the Rauch comparison (\ref{prop:rauch}).
+The following local version of the comparison theorem follows from the Rauch comparison (\ref{prop:rauch}).
 It will be used in the proof of the global version (\ref{thm:comp}).
 
 \begin{thm}{Theorem}\label{thm:loc-comp}
 The comparison theorem (\ref{thm:comp}) holds in a small neighborhood of any point.
 
-Moreover, suppose $\Sigma$ be a smooth regular surface without boundary,
-then for any $p\in \Sigma$ there is $r>0$ such that if $\dist{p}{x}\Sigma<r$, then $\inj(x)_\Sigma>r$ and the following statements hold:
+Moreover, let $\Sigma$ be a smooth regular surface without boundary. Then for any $p\in \Sigma$ there is $r>0$ such that if $\dist{p}{x}\Sigma<r$, then $\inj(x)_\Sigma>r$ and the following statements hold:
 
 
 \begin{subthm}{thm:loc-comp:cba}
@@ -159,9 +160,9 @@ for any geodesic triangle $[xyz]$ in $B(p,\tfrac r4)_\Sigma$.
 
 
 \parit{Proof.}
-The existence of $r>0$ follows from \ref{prop:exp}.
+The existence of $r>0$ follows from \ref{prop:exp}. Let $[xyz] $ be a geodesic triangle in  $B(p, \tfrac{r}4)$.
 
-Note that $y=\exp_x\vec v$ and $z=\exp_x\vec w$ for two vectors $\vec v,\vec w\in\T_x$ such that 
+Note that $y=\exp_x\vec v$ and $z=\exp_x\vec w$ for two vectors $\vec v,\vec w\in\T_x$ with
 \begin{align*}
 \measuredangle\hinge 0{\vec v}{\vec w}_{\T_x}&=\measuredangle\hinge xyz_\Sigma,
 \\
@@ -176,13 +177,13 @@ By Rauch comparison (\ref{prop:rauch:K>=0}), we have
 \[\length\gamma\le \length \tilde \gamma.\]
 Since $\dist{\vec v}{\vec w}{\T_x}=\length\tilde \gamma$ and $\dist{y}{z}\Sigma\le \length\gamma$, we get 
 \[\dist{\vec v}{\vec w}{\T_x}\ge \dist{y}{z}\Sigma.\]
-By the angle monotonicity (\ref{lem:angle-monotonicity}), we get
+By the angle monotonicity (\ref{lem:angle-monotonicity}), we obtain
 \[\modangle xzy\le\measuredangle\hinge 0{\vec v}{\vec w}_{\T_x},\]
 whence the result.
 
 \parit{\ref{SHORT.thm:loc-comp:cba}.}
 Consider a minimizing geodesic $\gamma$ joining $y$ to $z$ in $\Sigma$.
-Since $\dist{x}{y}{\Sigma},\dist{x}{z}{\Sigma}\z<\tfrac r2$, the triangle inequality implies that $\gamma$ lies in $r$-neighborhood of $x$.
+Since $\dist{x}{y}{\Sigma},\dist{x}{z}{\Sigma}\z<\tfrac r2$, the triangle inequality implies that $\gamma$ lies in the $r$-neighborhood of $x$.
 In particular, $\log_x\circ\gamma$ is defined, and the curve
 $\tilde \gamma=\log_x\circ\gamma$ lies in a $r$-neighborhood of zero in $\T_x$ that corresponds to $\gamma$.
 Note that $\tilde\gamma$ connects $\vec v$ to $\vec w$ in $\T_x$.
@@ -215,10 +216,10 @@ The proof is taken from \cite{alexander-kapovitch-petrunin2027} and it is very c
 Assume $\Sigma$ is compact. 
 From the local theorem (\ref{thm:loc-comp}), we get that there is $\epsilon>0$ such that the inequality 
 \[\measuredangle\hinge {x}{p}{q}\ge\modangle xpq.\]
-holds for any hinge $\hinge{x}{p}{q}$ such that 
+holds for any hinge $\hinge{x}{p}{q}$ with  
 $\dist{x}{p}\Sigma+\dist{x}{q}\Sigma<\epsilon$.
 The following lemma states that in this case the same holds true for any hinge $\hinge{x}{p}{q}$ such that $\dist{x}{p}\Sigma+\dist{x}{q}\Sigma<\tfrac32\cdot\epsilon$.
-Applying the key lemma (\ref{key-lem:globalization}) a few times we will get that the comparison holds for arbitrary hinge, which proves \mbox{\ref{thm:comp:toponogov}}.
+Applying the key lemma (\ref{key-lem:globalization}) a few times we  get that the comparison holds for an arbitrary hinge, which proves \mbox{\ref{thm:comp:toponogov}}.
 \qeds
 
 \begin{thm}{Key lemma}\label{key-lem:globalization}  
@@ -244,7 +245,7 @@ Given a hinge $\hinge x p q$ consider a triangle in the plane
 with angle $\measuredangle\hinge x p q$ and two adjacent sides $\dist{x}{p}\Sigma$ and $\dist{x}{q}\Sigma$.
 Let us denote by $\side \hinge x p q$ the third side of this triangle; let us call it the \index{model!side}\emph{model side} of the hinge.
 
-Note that the inequalities 
+Note that by angle monotonicity (\ref{lem:angle-monotonicity}),
 \[\measuredangle\hinge x p q\ge \modangle x p q\quad\iff\quad\side \hinge x p q
 \ge\dist{p}{q}\Sigma.\]
 So it is sufficient to prove that
@@ -253,14 +254,13 @@ So it is sufficient to prove that
 for any hinge $\hinge x p q$ with $\dist{x}{p}\Sigma+\dist{x}{q}\Sigma<\ell$.
 
 \parit{Construction.}
-Let us describe a construction that produce a new hinge $\hinge{x'}p q$ for a given hinge $\hinge x p q$ such that 
+Let us describe a construction that produces a new hinge $\hinge{x'}p q$ for a given hinge $\hinge x p q$ with 
 \[\tfrac{2}{3}\cdot\ell \le\dist{p}{x}\Sigma\z+\dist{x}{q}\Sigma< \ell.\]
 The new hinge $\hinge{x'}p q$ will satisfy the following properties:
 \[\side \hinge x p q
 \ge\side \hinge{x'}p q
 \eqlbl{eq:thm:=def-loc-fivestar}\]
 and 
-$x'\in [x,p]\z\cup [x,q]$. In particular, the triangle inequality implies that 
 \[
 \dist{p}{x}\Sigma+\dist{x}{q}\Sigma\ge\dist{p}{x'}\Sigma+\dist{x'}{q}\Sigma.
 \eqlbl{eq:thm:=def-loc-fourstar}\]
@@ -269,7 +269,7 @@ Assume $\dist{x}{q}\Sigma\ge\dist{x}{p}\Sigma$, otherwise switch the roles of $p
 Take $x'\in [x, q]$ such that 
 \[\dist{p}{x}\Sigma+3\cdot\dist{x}{x'}\Sigma
 =\tfrac{2}{3}\cdot\ell \eqlbl{3|xx'|}\]
-Choose a geodesic $[x', p]$ and consider the  hinge $\hinge{x'}p q$ formed by $[x',p]$ and $[x',q]\subset [x,q]$. 
+Choose a geodesic $[x', p]$ and consider the  hinge $\hinge{x'}p q$ formed by $[x',p]$ and $[x',q]\subset [x,q]$.  Note that \ref{eq:thm:=def-loc-fourstar} follows from the triangle inequality. We are left to show \ref{eq:=def-loc-fivestar}.
 
 By \ref{3|xx'|}, we have that 
 \begin{align*}
@@ -297,7 +297,7 @@ Take $\tilde  q$ on the extension of $[\tilde  x,\tilde  x']$ beyond $x'$ such t
 From \ref{eq:thm:=def-loc-threestar},
 \[\measuredangle\hinge x p q
 =\measuredangle\hinge  x p{x'}\ge\modangle x p{x'}\ \ \Rightarrow\ \ 
-\side \hinge x q p\ge\dist{\tilde p}{\tilde q}\Sigma.\]
+\side \hinge x q p\ge\dist{\tilde p}{\tilde q}{\mathbb{R}^2} .\]
 Since $\measuredangle\hinge{x'}p x+\measuredangle\hinge{x'}p q= \pi$,
 \ref{eq:thm:=def-loc-threestar} implies
 \[
@@ -306,27 +306,30 @@ Since $\measuredangle\hinge{x'}p x+\measuredangle\hinge{x'}p q= \pi$,
 \ge
 \pi-\measuredangle\hinge{x'}p x
 \ge
-\measuredangle\hinge{x'}p q.
+\measuredangle\hinge{x'}p q
 \]
-Therefore
-$\dist{\tilde p}{\tilde q}\Sigma\ge\side \hinge{x'}q p$ and \ref{eq:thm:=def-loc-fivestar} follows.
+\[ \Rightarrow  \dist{\tilde p}{\tilde q}{\mathbb{R}^2}\ge\side \hinge{x'}q p  \]
+ and \ref{eq:thm:=def-loc-fivestar} follows.
 Hence the constructed hinge $\hinge{x'}q p$ satisfies the declared properties.
+
+
+%Comments about why xx', px' and qx' are not small. 
+
 
 \begin{figure}[h!]
 \centering
 \includegraphics{mppics/pic-2315}
 \end{figure}
 
-Set $x_0=x$.
-Let us apply inductively the above construction to get a sequence of hinges  $\hinge{x_n}p q$ with $x_{n+1}=x_n'$.
-By \ref{eq:thm:=def-loc-fivestar} and triangle inequality, both sequences
+Set $x_0=x$. and apply inductively the above construction to get a sequence of hinges  $\hinge{x_n}p q$ with $x_{n+1}=x_n'$.
+By \ref{eq:thm:=def-loc-fivestar} and \ref{eq:thm:=def-loc-fourstar}, both sequences
 \[s_n=\side \hinge{x_n}pq\quad\text{and}\quad r_n=\dist{p}{x_n}\Sigma+\dist{x_n}{q}\Sigma\]
 are nonincreasing.
 
 The sequence might terminate at some $n$ only if $r_n< \tfrac{2}{3}\cdot\ell $.
 In this case, by the assumptions of the lemma, 
 \[s_n=\side \hinge{x_n}p q\ge\dist{p}{q}\Sigma.\]
-Since sequence $s_n$ is nonincreasing;
+Since the sequence $s_n$ is nonincreasing;
 \[s_0=\side \hinge{x}p q\ge\dist{p}{q}\Sigma,\]
 whence inequality \ref{eq:thm:=def-loc*} follows.
 
@@ -438,7 +441,7 @@ Arrive to a contradiction using \ref{SHORT.ex:convex-polyhon+self-intersections:
 \section{Alexandrov's lemma}
 \index{Alexandrov's lemma}
 
-A reformulation of the following lemma in plane geometry will be used in the next section to produce a few equivalent formulations of comparison theorems.
+A reformulation of the following lemma in plane geometry will be used in the next section to produce a few equivalent reformulations of the comparison theorems.
 
 \begin{thm}{Lemma}
 \label{lem:alex}
@@ -469,8 +472,8 @@ the following expressions have the same sign:
 \begin{enumerate}[(i)]
 \item $|p-y|-|p'-y'|$;
 \item $\measuredangle\hinge{x}{y}{p}-\measuredangle\hinge{x'}{y'}{p'}=\measuredangle\hinge{x}{\bar z}{p}-\measuredangle\hinge{x'}{z'}{p'}$;
-\item $|p-\bar z|-|p'-z'|$;
-\item $\measuredangle\hinge{y}{\bar z}{p}-\measuredangle\hinge{y'}{z'}{p'}$;
+\item $|p-\bar z|-|p'-z'| =  | p - \bar z  | - | p-z  | $;
+\item $\measuredangle\hinge{y}{\bar z}{p}-\measuredangle\hinge{y}{z}{p}$;
 \end{enumerate}
 The statement follows since
 \[\measuredangle\hinge{y'}{z'}{p'}+\measuredangle\hinge{y'}{x'}{p'}=\pi\]
