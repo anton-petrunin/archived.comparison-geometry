@@ -200,33 +200,6 @@ Then
 
 %???+inversion
 
-\subsection*{Wide hinges}
-
-The following elementary observation will prove itself useful near the end of the book.
-
-\begin{thm}{Proposition}\label{prop:wide-hinges}
-Let $0<r_0< r_1 $, and a sequence of triangles $ A_nB_nC_n$ in $\mathbb{R}^2$ with $|A_n - B_n | , $ $| A_n - C_n |  \in [r_0,r_1]$. If 
-\[   \lim_{n \to \infty}   |A_n - B_n | + | A_n - C_n |  - | B_n - C_n  |  =0 ,   \]
-then 
-\[  \lim_{n \to \infty}  \measuredangle\hinge {A_n }{B_n}{C_n} = \pi.     \]
-\end{thm}
-
-\begin{proof}
- Assuming the contrary, by taking a subsequence, we can assume that $\measuredangle\hinge {A_n }{B_n}{C_n} \leq \pi - \varepsilon$ for some $\varepsilon > 0$ and all $n$. Since the box $[r_0,r_1]\times [r_0 , r_1]\times [0, \pi - \varepsilon ]$ is compact, after taking again a subsequence, we can assume that 
- \[  | A_n - B_n  | \to c , |A_n - C_n | \to b ,  \measuredangle\hinge {A_n }{B_n}{C_n} \to \theta     \]
- for some $b,c \in [r_0, r_1]$, $\theta \in [0,\pi - \varepsilon ]$. Then
- \begin{align*}
-\lim_{n \to \infty} | B_n - C_n  |
-&= b^2 + c^2 - 2bc \cos \theta=
-\\
-&<  b+c=
-\\
-& =   \lim_{n \to \infty}   |A_n - B_n | + | A_n - C_n | .
-\end{align*}
- Which is a contradiction.
-\end{proof}
-
-
 \subsection*{Spherical triangle inequality}
 
 The following theorem says that the triangle inequality holds for angles between half-lines from a fixed point.

@@ -201,7 +201,7 @@ For \ref{SHORT.ex:integral-length<} consider a partition such that the velocity 
 \parbf{\ref{adex:integral-length}.} Use the theorems of Rademacher and Lusin (\ref{thm:rademacher} and \ref{thm:lusin}).
 
 \parbf{\ref{ex:nonrectifiable-curve}}; \ref{SHORT.ex:nonrectifiable-curve:a}.
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-226}
@@ -446,7 +446,7 @@ Set $\alpha=\measuredangle(\vec w,\vec u)$
 and $\beta=\measuredangle(\vec v,\vec u)$.
 Try to guess the example from the diagram.
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-285}
@@ -584,7 +584,7 @@ $\tc{\gamma_{1}}=\tfrac\pi2+\pi+\tfrac\pi2=2\cdot\pi$.
 \parbf{\ref{ex:zero-tsc}.}
 Look at the drawings; we assume that the two marked points in the last example have parallel tangent lines.
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \begin{minipage}{.32\textwidth}
 \centering
 \includegraphics{mppics/pic-260}
@@ -706,7 +706,7 @@ Observe that the circle supports $\gamma$ and apply \ref{prop:supporting-circlin
 
 \parbf{\ref{ex:between-parallels-1} + \ref{ex:in-triangle} + \ref{ex:lens}.}
 Observe that one of the arcs of curvature 1 in the families shown on the diagram supports $\gamma$ and apply \ref{prop:supporting-circline}.
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \begin{minipage}{.50\textwidth}
 \centering
 \includegraphics{mppics/pic-265}
@@ -1049,7 +1049,7 @@ Look for a supporting spherical dome with the unit circle as the boundary.
 Note that we can assume that the surface has positive Gauss curvature, otherwise the statement is evident.
 By \ref{thm:convex-embedded}, the surface bounds a convex region that contains a line segment of length~$\pi$.
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \vskip-0mm
 \centering
 \includegraphics{asy/sin}
@@ -1790,6 +1790,19 @@ a\cdot b\cdot(\ell\cdot n-m^2)
 
 \stepcounter{section}
 \setcounter{eqtn}{0}
+
+\parbf{\ref{ex:wide-hinges}.}
+Apply the triangle inequality $c_n\le a_n+b_n$ and the bound $a_n,b_n>\epsilon$ to show that the sequence 
+\[\frac{a_n+b_n+c_n}{2\cdot a_n\cdot b_n}\]
+is bounded.
+Conclude that 
+\[\frac{(a_n+b_n)^2-c_n^2}{2\cdot a_n\cdot b_n}=\frac{(a_n+b_n+c_n)\cdot(a_n+b_n-c_n)}{2\cdot a_n\cdot b_n}\to 0\]
+as $n\to\infty$.
+
+Use the last statement together with the cosine rule
+\[a_n^2+b_n^2-2\cdot a_n\cdot b_n\cdot\cos\tilde\theta_n -c_n^2=0\]
+to show that $\cos\tilde\theta_n\to -1$ as $n\to\infty$;
+conclude that $\theta_n\to \pi$.
 
 \parbf{\ref{ex:diam-angle}.}
 Observe that $\dist{p}{x}\Sigma\le \dist{p}{q}\Sigma$ and $\dist{q}{x}\Sigma\le \dist{p}{q}\Sigma$.

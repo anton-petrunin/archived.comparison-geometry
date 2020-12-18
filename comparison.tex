@@ -27,16 +27,34 @@ In this case we write $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$.
 
 A pair of minimizing geodesics $[x,y]$ and $[x,z]$ starting from one point $x$ is called a \index{hinge}\emph{hinge} and is denoted by $\hinge xyz$.\index{10aac@$\hinge yxz$}
 The angle between these geodesics at $x$ is denoted by $\measuredangle\hinge xyz$.
-The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in a model triangle $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$ is denoted by $\modangle xyz$.
+The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in a model triangle $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$ is denoted by $\modangle xyz$;
 \index{10aab@$\modangle xyz$}
+it is called \index{model angle}\emph{model} or \index{comparison angle}\emph{comparison angle} of the triangle $[xyz]$ at $x$.
 
-Observe that if $[xyz]_{\Sigma }$ is a triangle in a smooth surface $\Sigma$, it has a model triangle $[\tilde x \tilde y \tilde z]_{\mathbb{R}^2}$, and any two model triangles are congruent. That is, if $ [\tilde x' \tilde y' \tilde z'  ]_{\mathbb{R}^2} $ is another model triangle for $[xyz]_{\Sigma }$, then there is an isometry $f: \mathbb{R}^2 \to \mathbb{R}^2$ that sends $\tilde x $ to $\tilde x'$, $\tilde y $ to $\tilde y'$, and $\tilde z $ to $\tilde z'$. This implies that  $\modangle xyz$ is well defined for any triangle $[xyz]_{\Sigma }$. We will call this quantity the \textit{ comparison angle} of $[xyz]_{\Sigma } $ at $x$.
+By side-side-side congruence condition,
+the model triangle $[\tilde x\tilde y\tilde z]$ is uniquely defined up to congruence.
+Therefore the model angle $\tilde\theta=\modangle xyz$ is uniquely defined as well.
+In fact by cosine rule, we get 
+\[\cos \tilde\theta=\frac{a^2+b^2-c^2}{2\cdot a \cdot b},\]
+where $a=\dist{x}{y}{\Sigma}$, $b=\dist{x}{z}{\Sigma}$, and $c=\dist{y}{z}{\Sigma}$.
+
+\begin{thm}{Exercise}\label{ex:wide-hinges}
+Let $[x_ny_nz_n]$ be a sequence of triangles in a smooth surface $\Sigma$.
+Set $a_n=\dist{x_n}{y_n}{\Sigma}$,
+$b_n=\dist{x_n}{z_n}{\Sigma}$,
+and $c_n=\dist{y_n}{z_n}{\Sigma}$, and $\tilde\theta_n=\modangle {x_n}{y_n}{z_n}$.
+Suppose that the sequences $a_n$ and $b_n$ are bounded away from zero;
+that is, $a_n>\epsilon$ and $b_n>\epsilon$ for a fixed $\epsilon>0$ and any $n$.
+Show that
+\[(a_n+b_n-c_n)\to 0\qquad\iff\qquad \tilde\theta_n\to \pi\]
+as $n\to\infty$
+\end{thm}
 
 \section{Formulations}
 
 Part \textit{\ref{SHORT.thm:comp:toponogov}} of the following theorem is called the {}\emph{Toponogov comparison theorem} and sometimes the {}\emph{Alexandrov comparison theorem};
 it was proved by Paolo Pizzetti \cite{pizzetti} and rediscovered by Alexandr Alexandrov \cite{aleksandrov}; 
-generalizations were obtained by  Victor Toponogov \cite{toponogov1957}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{burago-gromov-perelman}.
+generalizations were obtained by Victor Toponogov \cite{toponogov1957}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{burago-gromov-perelman}.
 
 Part \textit{\ref{SHORT.thm:comp:cat}} is called the {}\emph{Cartan--Hadamard theorem};
 it was proved by 
@@ -69,7 +87,7 @@ for any geodesic triangle $[xyz]$.
 \end{thm}
 
 The proof of part \ref{SHORT.thm:comp:cat} will be given at the end of Section~\ref{sec:nonpos-comp}.
-The proof of part \ref{SHORT.thm:comp:toponogov} will be finished in  Section~\ref{sec:nonneg-comp}.
+The proof of part \ref{SHORT.thm:comp:toponogov} will be finished in Section~\ref{sec:nonneg-comp}.
 
 Let us show that the statement \ref{SHORT.thm:comp:cat} does not hold without assuming that $\Sigma$ is simply-connected.
 Consider the hyperboloid
@@ -99,7 +117,7 @@ Since the angles of any plane triangle add up $\pi$, from the comparison theorem
 \item if $K_\Sigma\le 0$ then $\hat\alpha+\hat\beta+\hat\gamma\le\pi$.
 \end{itemize}
 
-The triples of angles $\{ \alpha , \beta , \gamma \}$, $\{   \hat\alpha , \hat\beta , \hat\gamma   \}$ are related by the identities:
+The triples of angles $\{ \alpha , \beta , \gamma \}$, $\{ \hat\alpha , \hat\beta , \hat\gamma \}$ are related by the identities:
 \begin{align*}
 \hat \alpha&=\min\{\,\alpha,2\cdot\pi-\alpha\,\},
 &
@@ -126,7 +144,7 @@ for any point $x\in \Sigma\backslash\{p,q\}$.
 \end{thm}
 
 \begin{thm}{Exercise}\label{ex:sum=<2pi}
-Let $\Sigma$ be a closed (or open) regular surface  with nonnegative Gauss curvature.
+Let $\Sigma$ be a closed (or open) regular surface with nonnegative Gauss curvature.
 Show that 
 \[\modangle pxy+\modangle pyz+\modangle pzx\le2\cdot \pi.\]
 for any four distinct points $p,x,y,z$ in $\Sigma$.
@@ -146,7 +164,7 @@ Moreover, let $\Sigma$ be a smooth regular surface without boundary. Then for an
 \begin{subthm}{thm:loc-comp:cba}
 If $\Sigma$ has nonpositive Gauss curvature, then 
 \[\measuredangle\hinge {x}{y}{z}\le\modangle xyz\]
-for any geodesic triangle $[xyz]$  in $B(p,\tfrac r4)_\Sigma$.
+for any geodesic triangle $[xyz]$ in $B(p,\tfrac r4)_\Sigma$.
 \end{subthm}
 
 \begin{subthm}{thm:loc-comp:cbb}
@@ -160,7 +178,7 @@ for any geodesic triangle $[xyz]$ in $B(p,\tfrac r4)_\Sigma$.
 
 
 \parit{Proof.}
-The existence of $r>0$ follows from \ref{prop:exp}. Let $[xyz] $ be a geodesic triangle in  $B(p, \tfrac{r}4)$.
+The existence of $r>0$ follows from \ref{prop:exp}. Let $[xyz] $ be a geodesic triangle in $B(p, \tfrac{r}4)$.
 
 Note that $y=\exp_x\vec v$ and $z=\exp_x\vec w$ for two vectors $\vec v,\vec w\in\T_x$ with
 \begin{align*}
@@ -216,13 +234,13 @@ The proof is taken from \cite{alexander-kapovitch-petrunin2027} and it is very c
 Assume $\Sigma$ is compact. 
 From the local theorem (\ref{thm:loc-comp}), we get that there is $\epsilon>0$ such that the inequality 
 \[\measuredangle\hinge {x}{p}{q}\ge\modangle xpq.\]
-holds for any hinge $\hinge{x}{p}{q}$ with  
+holds for any hinge $\hinge{x}{p}{q}$ with 
 $\dist{x}{p}\Sigma+\dist{x}{q}\Sigma<\epsilon$.
 The following lemma states that in this case the same holds true for any hinge $\hinge{x}{p}{q}$ such that $\dist{x}{p}\Sigma+\dist{x}{q}\Sigma<\tfrac32\cdot\epsilon$.
-Applying the key lemma (\ref{key-lem:globalization}) a few times we  get that the comparison holds for an arbitrary hinge, which proves \mbox{\ref{thm:comp:toponogov}}.
+Applying the key lemma (\ref{key-lem:globalization}) a few times we get that the comparison holds for an arbitrary hinge, which proves \mbox{\ref{thm:comp:toponogov}}.
 \qeds
 
-\begin{thm}{Key lemma}\label{key-lem:globalization}  
+\begin{thm}{Key lemma}\label{key-lem:globalization} 
 Let $\Sigma$ be a proper smooth regular surface.
 Assume that the comparison
 \[\measuredangle\hinge x y z
@@ -269,7 +287,7 @@ Assume $\dist{x}{q}\Sigma\ge\dist{x}{p}\Sigma$, otherwise switch the roles of $p
 Take $x'\in [x, q]$ such that 
 \[\dist{p}{x}\Sigma+3\cdot\dist{x}{x'}\Sigma
 =\tfrac{2}{3}\cdot\ell \eqlbl{3|xx'|}\]
-Choose a geodesic $[x', p]$ and consider the  hinge $\hinge{x'}p q$ formed by $[x',p]$ and $[x',q]\subset [x,q]$.  Note that \ref{eq:thm:=def-loc-fourstar} follows from the triangle inequality. We are left to show \ref{eq:=def-loc-fivestar}.
+Choose a geodesic $[x', p]$ and consider the hinge $\hinge{x'}p q$ formed by $[x',p]$ and $[x',q]\subset [x,q]$. Note that \ref{eq:thm:=def-loc-fourstar} follows from the triangle inequality. We are left to show \ref{eq:=def-loc-fivestar}.
 
 By \ref{3|xx'|}, we have that 
 \begin{align*}
@@ -293,10 +311,10 @@ In particular,
 
 Consider the model triangle
 $[\tilde x\tilde x'\tilde p]\z=\modtrig xx'p$.
-Take $\tilde  q$ on the extension of $[\tilde  x,\tilde  x']$ beyond $x'$ such that $\dist{\tilde x}{\tilde q}\Sigma=\dist{x}{q}\Sigma$ (and therefore $\dist{\tilde x'}{\tilde q}\Sigma=\dist{x'}{q}\Sigma$).
+Take $\tilde q$ on the extension of $[\tilde x,\tilde x']$ beyond $x'$ such that $\dist{\tilde x}{\tilde q}\Sigma=\dist{x}{q}\Sigma$ (and therefore $\dist{\tilde x'}{\tilde q}\Sigma=\dist{x'}{q}\Sigma$).
 From \ref{eq:thm:=def-loc-threestar},
 \[\measuredangle\hinge x p q
-=\measuredangle\hinge  x p{x'}\ge\modangle x p{x'}\ \ \Rightarrow\ \ 
+=\measuredangle\hinge x p{x'}\ge\modangle x p{x'}\ \ \Rightarrow\ \ 
 \side \hinge x q p\ge\dist{\tilde p}{\tilde q}{\mathbb{R}^2} .\]
 Since $\measuredangle\hinge{x'}p x+\measuredangle\hinge{x'}p q= \pi$,
 \ref{eq:thm:=def-loc-threestar} implies
@@ -308,48 +326,48 @@ Since $\measuredangle\hinge{x'}p x+\measuredangle\hinge{x'}p q= \pi$,
 \ge
 \measuredangle\hinge{x'}p q
 \]
-\[ \Rightarrow  \dist{\tilde p}{\tilde q}{\mathbb{R}^2}\ge\side \hinge{x'}q p  \]
+\[ \Rightarrow \dist{\tilde p}{\tilde q}{\mathbb{R}^2}\ge\side \hinge{x'}q p \]
  and \ref{eq:thm:=def-loc-fivestar} follows.
 Hence the constructed hinge $\hinge{x'}q p$ satisfies the declared properties.
 
 In the above construction, set 
  
  \[
-s := \dist{p}{x}\Sigma+\dist{x}{q}\Sigma,   s':  =  \dist{p}{x'}\Sigma+\dist{x'}{q}\Sigma , \text{ and } \delta : = s-s'.
+s := \dist{p}{x}\Sigma+\dist{x}{q}\Sigma, s': = \dist{p}{x'}\Sigma+\dist{x'}{q}\Sigma , \text{ and } \delta : = s-s'.
 \]
 
 Note that from \ref{eq:thm:=def-loc-threestar}, we have 
 
-\[   | x-x'  |_{\Sigma} \geq \dfrac{\ell}{18},  \eqlbl{eq:long-hinge1}\]   
+\[ | x-x' |_{\Sigma} \geq \dfrac{\ell}{18}, \eqlbl{eq:long-hinge1}\] 
 hence 
 \begin{align*}
-|  x' - q |_{\Sigma}
+| x' - q |_{\Sigma}
 &\geq \dfrac{2\ell}{3} - |x- p |_{\Sigma} - |x-x'|_{\Sigma}=
 \\
-&= 2 |  x-x' |_{\Sigma} \geq
+&= 2 | x-x' |_{\Sigma} \geq
 \\
-& \geq   \dfrac{\ell}{9} ,
+& \geq \dfrac{\ell}{9} ,
 \end{align*}
 and
 \begin{align*}
-|  x' - p |_{\Sigma}
-&= s' -   |x'-q|_{\Sigma}  = \\
+| x' - p |_{\Sigma}
+&= s' - |x'-q|_{\Sigma} = \\
 & = s' + |x-p|_{\Sigma} + |x-x'|_{\Sigma} - s >\\
 &> |x-x'|_{\Sigma} - \delta \geq \\
 & \geq \dfrac{\ell}{18}- \delta.
 \end{align*}
 Consequently
-\[  \min \{ | x'-p  |_{\Sigma} , |x'-q|_{\Sigma}    \} \geq \dfrac{\ell}{18} - \delta.     \eqlbl{eq:long-hinge2}\]
+\[ \min \{ | x'-p |_{\Sigma} , |x'-q|_{\Sigma} \} \geq \dfrac{\ell}{18} - \delta. \eqlbl{eq:long-hinge2}\]
 
 %Comments about why xx', px' and qx' are not small. 
 
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \centering
 \includegraphics{mppics/pic-2315}
 \end{figure}
 
-Set $x_0=x$. and apply inductively the above construction to get a sequence of hinges  $\hinge{x_n}p q$ with $x_{n+1}=x_n'$.
+Set $x_0=x$. and apply inductively the above construction to get a sequence of hinges $\hinge{x_n}p q$ with $x_{n+1}=x_n'$.
 By \ref{eq:thm:=def-loc-fivestar} and \ref{eq:thm:=def-loc-fourstar}, both sequences
 \[s_n=\side \hinge{x_n}pq\quad\text{and}\quad r_n=\dist{p}{x_n}\Sigma+\dist{x_n}{q}\Sigma\]
 are nonincreasing.
@@ -363,12 +381,9 @@ whence inequality \ref{eq:thm:=def-loc*} follows.
 
 If the sequence does not terminate, then $r_n\ge\tfrac{2}{3}\cdot\ell$ for all $n$.
 Since $(r_n)$ is nonincreasing, $r_n\to r\ge \dist{p}{q}\Sigma$ as $n\to\infty$. This implies that the sequence $\delta_n : = r_n - r_{n+1}$ converges to $0$, so from \ref{eq:long-hinge1} and \ref{eq:long-hinge2}, we have for large $n$,
-
-\[  \ell >   | x_n-x_{n+1} |_{\Sigma} , | p-x_n| _{\Sigma} > \dfrac{\ell}{100}  .  \]
-
-Hence by  \ref{prop:wide-hinges}, 
-
-
+\[ \ell > | x_n-x_{n+1} |_{\Sigma},
+|p-x_n|_{\Sigma} > \tfrac{\ell}{100}.\]
+Hence by \ref{ex:wide-hinges}, 
 \[
 \measuredangle\hinge{x_n}p q\to \pi. \]
 Therefore we have 
@@ -427,7 +442,7 @@ Make a complete proof from it.
 Arguing by contradiction, suppose that such geodesic exists;
 assume that arcs and angles are labeled as on the left diagram.
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \begin{minipage}{.38\textwidth}
 \centering
 \includegraphics{mppics/pic-472}
@@ -480,7 +495,7 @@ Take
 a point $\bar z$ on the extension of 
 $[x,y]$ beyond $y$ so that $\dist{y}{\bar z}{}=\dist{y}{z}{}$ (and therefore $\dist{x}{\bar z}{}=\dist{x'}{z'}{}$). 
  
-\begin{figure}[h!]
+\begin{figure}[!ht]
 \vskip-0mm
 \centering
 \includegraphics{mppics/pic-50}
@@ -492,7 +507,7 @@ the following expressions have the same sign:
 \begin{enumerate}[(i)]
 \item $|p-y|-|p'-y'|$;
 \item $\measuredangle\hinge{x}{y}{p}-\measuredangle\hinge{x'}{y'}{p'}=\measuredangle\hinge{x}{\bar z}{p}-\measuredangle\hinge{x'}{z'}{p'}$;
-\item $|p-\bar z|-|p'-z'| =  | p - \bar z  | - | p-z  | $;
+\item $|p-\bar z|-|p'-z'| = | p - \bar z | - | p-z | $;
 \item $\measuredangle\hinge{y}{\bar z}{p}-\measuredangle\hinge{y}{z}{p}$;
 \end{enumerate}
 The statement follows since
@@ -505,9 +520,9 @@ and
 
 In this section we formulate conditions equivalent to the conclusion of the comparison theorem (\ref{thm:comp}).
 
-For any triangle $[xyz]_{\Sigma}$ in a surface $\Sigma$, and $[\tilde x \tilde y \tilde z]_{\mathbb{R}^2}$ a comparison triangle, there is a map $f :[xyz]\to [\tilde x \tilde y \tilde z ]$ that isometrically  sends the geodesics $[x,y]$, $[y,z]$, $[z,x]$ to the segments $[\tilde x , \tilde y ]$, $[\tilde y , \tilde z]$, $[ \tilde z , \tilde x ]$, respectively.
+For any triangle $[xyz]_{\Sigma}$ in a surface $\Sigma$, and $[\tilde x \tilde y \tilde z]_{\mathbb{R}^2}$ a comparison triangle, there is a map $f :[xyz]\to [\tilde x \tilde y \tilde z ]$ that isometrically sends the geodesics $[x,y]$, $[y,z]$, $[z,x]$ to the segments $[\tilde x , \tilde y ]$, $[\tilde y , \tilde z]$, $[ \tilde z , \tilde x ]$, respectively.
 The triangle $[xyz]$ is called \index{fat triangle}\emph{fat} (\index{thin triangle}\emph{thin})
-if for any two points $p$ and $q$  in $[xyz]$,  $\dist{p}{q}{\Sigma}\ge |f( p)- f( q)|_{\mathbb{R}^2}$ (or, respectively, $\dist{p}{q}{\Sigma}\le | f( p) - f( q) |_{\mathbb{R}^2}$).
+if for any two points $p$ and $q$ in $[xyz]$, $\dist{p}{q}{\Sigma}\ge |f( p)- f( q)|_{\mathbb{R}^2}$ (or, respectively, $\dist{p}{q}{\Sigma}\le | f( p) - f( q) |_{\mathbb{R}^2}$).
 
 
 \begin{thm}{Proposition}\label{prop:comp-reformulations}
@@ -596,7 +611,7 @@ Whence the implication follows.
 
 \begin{thm}{Exercise}\label{ex:geod-convexity}
 Let $\Sigma$ be a proper smooth regular surface, 
- $\gamma$  a unit-speed geodesic in $\Sigma$, and $p\in\Sigma$.
+ $\gamma$ a unit-speed geodesic in $\Sigma$, and $p\in\Sigma$.
 
 Consider the function
 \[h(t)=\dist{p}{\gamma(t)}\Sigma^2-t^2.\]
@@ -687,13 +702,13 @@ $t\z\mapsto \bus_\lambda\circ\alpha(t)$ is concave.
 
 \end{thm}
 
-The function  $\bus_\lambda\:\Sigma\z\to \mathbb{R}$ as in the proposition is called  the
+The function $\bus_\lambda\:\Sigma\z\to \mathbb{R}$ as in the proposition is called the
 \index{Busemann function}\emph{Busemann function associated to $\lambda$}.
 Intuitively the function $\bus_\lambda$ can be described as a distance function to the ideal point at infinity at the end of the half-line $\lambda$.
 
 \parit{Proof.}
 By the triangle inequality, the function 
-\[t\mapsto\dist{\lambda(t)}{x}{}- t\] is nonincreasing in $t$.  
+\[t\mapsto\dist{\lambda(t)}{x}{}- t\] is nonincreasing in $t$. 
 Also by the triangle inequality,
 \[\dist{\lambda(t)}{x}{\Sigma}- t\ge-\dist{\lambda(0)}{x}{};\]
 that is, for each $x$, the values $\dist{\lambda(t)}{x}{\Sigma}- t$ are bounded below.
@@ -701,7 +716,7 @@ Thus the limit in \ref{eq:def:busemann*} is defined.
 
 Observe that each function $x\mapsto \dist{\lambda(t)}{x}{\Sigma}- t$ is 1-Lipschitz.
 Therefore its limit $x\mapsto\bus_\lambda(x)$ is 1-Lipschitz as well.
-The second part of \ref{SHORT.prop:busemann:all} is evident, since for $s \geq t$, we have $|  \gamma (s) - \gamma (t) |_{\Sigma} = s-t$.
+The second part of \ref{SHORT.prop:busemann:all} is evident, since for $s \geq t$, we have $| \gamma (s) - \gamma (t) |_{\Sigma} = s-t$.
 
 
 It remains to prove the last two statements.
@@ -714,12 +729,12 @@ Therefore
 \[
 \bus_\lambda\circ\alpha(s)
 =
-\lim_{t\to\infty}\frac{| \lambda (t) - \alpha (s)  |_{\Sigma}^2 - s^2 }{t} -t
+\lim_{t\to\infty}\frac{| \lambda (t) - \alpha (s) |_{\Sigma}^2 - s^2 }{t} -t
 =
 \lim_{t\to\infty}\frac{h_t(s)}{t} -t
 \]
 According to \ref{ex:geod-convexity}, the function 
-$s\mapsto h_t(s)$ is convex or concave, assuming the conditions in  \ref{SHORT.prop:busemann-} or \ref{SHORT.prop:busemann+} respectively. So is
+$s\mapsto h_t(s)$ is convex or concave, assuming the conditions in \ref{SHORT.prop:busemann-} or \ref{SHORT.prop:busemann+} respectively. So is
 \[ s \to \dfrac{h_t(s)}{t} -t \]
 for every $t$. Since pointwise limits of convex or concave functions are respectively convex or concave, \ref{SHORT.prop:busemann-} and \ref{SHORT.prop:busemann+} follow.
 \qeds
@@ -759,7 +774,7 @@ Let $\Sigma$ be a smooth regular surface.
 A unit-speed geodesic $\lambda\:\mathbb{R}\to\Sigma$ is called a \index{line}\emph{line} if it is length-minimizing on each interval $[a,b]\subset \mathbb{R}$.
 
 \begin{thm}{Line splitting theorem}\label{thm:splitting}
-Let $\Sigma$  be an open smooth regular surface with nonnegative Gauss curvature
+Let $\Sigma$ be an open smooth regular surface with nonnegative Gauss curvature
 and $\lambda$ be a line in $\Sigma$. 
 Then $\Sigma$ admits an intrinsic isometry to the Euclidean plane or a circular cylinder $\set{(x,y,z)\in \mathbb{R}^2}{x^2+y^2=r^2}$ for some $r>0$.
 
@@ -804,7 +819,7 @@ Since $\lambda$ is a line, the triangle inequality implies that
 Passing to the limit as $t\to\infty$, we get
 \[\bus_+(x)+\bus_-(x)\ge0.\]
 
-On the other hand, by \ref{ex:geod-convexity}, the function  
+On the other hand, by \ref{ex:geod-convexity}, the function 
 $h(t)=\dist{\lambda(t)}{x}\Sigma^2-t^2$ 
 is concave.
 In particular, 
@@ -821,7 +836,7 @@ that is, they are convex and concave at the same time.
 It follows that the differential of $\bus_\pm$ is defined at any point $x\in\Sigma$;
 that is, there is a linear function $\T_x\to\mathbb{R}$ that is defined by
 $\vec v\mapsto D_{\vec v}\bus_\pm$
-for any tangent vector  $\vec v  \in T_x$.
+for any tangent vector $\vec v \in T_x$.
 
 Denote by $\vec u$ the gradient vector field of $\bus_-$;
 that is, $\vec u$ is a tangent vector field such that for any tangent field $\vec v$ the following identity holds
@@ -915,7 +930,7 @@ Straightforward computations show that passing to the limit as $a\to \infty$, we
 
 Now let us swap ${x_0}$ with $x_1$ and ${z_0}$ with $z_1$,
 and repeat the argument above for $a\to-\infty$.
-Note that the two longer sides of the triangle are close to  $s-a$ and $t-a$.
+Note that the two longer sides of the triangle are close to $s-a$ and $t-a$.
 Therefore we get the opposite inequality
 \[\dist{x_1}{z_1}\Sigma^2\le\dist{x_0}{z_0}\Sigma^2+(s-t)^2.\]
 
