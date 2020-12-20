@@ -29,7 +29,7 @@ A pair of minimizing geodesics $[x,y]$ and $[x,z]$ starting from one point $x$ i
 The angle between these geodesics at $x$ is denoted by $\measuredangle\hinge xyz$.
 The corresponding angle $\measuredangle\hinge {\tilde x}{\tilde y}{\tilde z}$ in a model triangle $[\tilde x\tilde y\tilde z]=\tilde\triangle xyz$ is denoted by $\modangle xyz$;
 \index{10aab@$\modangle xyz$}
-it is called \index{model angle}\emph{model} or \index{comparison angle}\emph{comparison angle} of the triangle $[xyz]$ at $x$.
+it is called \index{model angle}\emph{model angle} of the triangle $[xyz]$ at $x$.
 
 By side-side-side congruence condition,
 the model triangle $[\tilde x\tilde y\tilde z]$ is uniquely defined up to congruence.
@@ -52,11 +52,11 @@ as $n\to\infty$
 
 \section{Formulations}
 
-Part \textit{\ref{SHORT.thm:comp:toponogov}} of the following theorem is called the {}\emph{Toponogov comparison theorem} and sometimes the {}\emph{Alexandrov comparison theorem};
+Part \ref{SHORT.thm:comp:toponogov} of the following theorem is called the {}\emph{Toponogov comparison theorem} and sometimes the {}\emph{Alexandrov comparison theorem};
 it was proved by Paolo Pizzetti \cite{pizzetti} and rediscovered by Alexandr Alexandrov \cite{aleksandrov}; 
 generalizations were obtained by Victor Toponogov \cite{toponogov1957}, Mikhael Gromov, Yuri Burago and Grigory Perelman \cite{burago-gromov-perelman}.
 
-Part \textit{\ref{SHORT.thm:comp:cat}} is called the {}\emph{Cartan--Hadamard theorem};
+Part \ref{SHORT.thm:comp:cat} is called the {}\emph{Cartan--Hadamard theorem};
 it was proved by 
 Hans von Mangoldt \cite{mangoldt} and generalized by Elie Cartan \cite{cartan}, Jacques Hadamard \cite{hadamard},
 Herbert Busemann \cite{busemann},
@@ -94,7 +94,7 @@ Consider the hyperboloid
 \[\set{(x,y,z)\in\mathbb{R}^3}{x^2+y^2-z^2=1};\]
 it has negative Gauss curvature, but it is not simply-connected.
 The points $(1,0,0)$, $(-\tfrac{1}2, \tfrac{\sqrt{3} }2, 0)$, $(-\tfrac{1}2, -\tfrac{\sqrt{3} }2, 0)$
-form a triangle with all angles equal to $\pi$, but all comparison angles equal to $\tfrac{\pi}3$.
+form a triangle with all angles equal to $\pi$, but all model angles equal to $\tfrac{\pi}3$.
 
 Let us discuss the relationship between the Gauss--Bonnet formula and the comparison theorems.
 Suppose that a disc $\Delta$ is bounded by a geodesic triangle $[xyz]$ with internal angles $\alpha$, $\beta$ and $\gamma$.
@@ -178,7 +178,8 @@ for any geodesic triangle $[xyz]$ in $B(p,\tfrac r4)_\Sigma$.
 
 
 \parit{Proof.}
-The existence of $r>0$ follows from \ref{prop:exp}. Let $[xyz] $ be a geodesic triangle in $B(p, \tfrac{r}4)$.
+The existence of $r>0$ follows from \ref{prop:exp}.
+Let $[xyz]$ be a geodesic triangle in $B(p,\tfrac{r}4)$.
 
 Note that $y=\exp_x\vec v$ and $z=\exp_x\vec w$ for two vectors $\vec v,\vec w\in\T_x$ with
 \begin{align*}
@@ -520,9 +521,11 @@ and
 
 In this section we formulate conditions equivalent to the conclusion of the comparison theorem (\ref{thm:comp}).
 
-For any triangle $[xyz]_{\Sigma}$ in a surface $\Sigma$, and $[\tilde x \tilde y \tilde z]_{\mathbb{R}^2}$ a comparison triangle, there is a map $f :[xyz]\to [\tilde x \tilde y \tilde z ]$ that isometrically sends the geodesics $[x,y]$, $[y,z]$, $[z,x]$ to the segments $[\tilde x , \tilde y ]$, $[\tilde y , \tilde z]$, $[ \tilde z , \tilde x ]$, respectively.
+For any triangle $[xyz]$ in a surface $\Sigma$, and its model trianle $[\tilde x \tilde y \tilde z]$, there is a natural map $p\mapsto \tilde p$ that isometrically sends the geodesics $[x,y]$, $[y,z]$, $[z,x]$ to the line segments $[\tilde x,\tilde y ]$, $[\tilde y , \tilde z]$, $[ \tilde z , \tilde x ]$, respectively.
 The triangle $[xyz]$ is called \index{fat triangle}\emph{fat} (\index{thin triangle}\emph{thin})
-if for any two points $p$ and $q$ in $[xyz]$, $\dist{p}{q}{\Sigma}\ge |f( p)- f( q)|_{\mathbb{R}^2}$ (or, respectively, $\dist{p}{q}{\Sigma}\le | f( p) - f( q) |_{\mathbb{R}^2}$).
+if the inequality
+\[\dist{p}{q}{\Sigma}\ge |\tilde p- \tilde q|_{\mathbb{R}^2}\qquad \text{(or, respectively,}\quad \dist{p}{q}{\Sigma}\le |\tilde p- \tilde q|_{\mathbb{R}^2})\]
+holds for any two points $p$ and $q$ on the sides of $[xyz]$.
 
 
 \begin{thm}{Proposition}\label{prop:comp-reformulations}
@@ -589,13 +592,13 @@ The implications \ref{SHORT.mang<angk}$\Rightarrow$\ref{SHORT.angk<angk}$\Righta
 
 \parit{\ref{SHORT.mang>angk}$\Rightarrow$\ref{SHORT.angk>angk}.}
 Note that $\measuredangle\hinge ypx+\measuredangle\hinge ypz=\pi$.
-By \textit{\ref{SHORT.mang>angk}}, 
+By \ref{SHORT.mang>angk}, 
 \[\modangle ypx+\modangle ypz\le \pi.\]
 It remains to apply Alexandrov's lemma (\ref{lem:alex-reformulation}).
 
 
 \parit{\ref{SHORT.angk>angk}$\Rightarrow$\ref{SHORT.fat}.}
-Applying \textit{\ref{SHORT.angk>angk}} twice, first for $y\in [x,z]$ and then for $w\in [p,x]$, we get that
+Applying \ref{SHORT.angk>angk} twice, first for $y\in [x,z]$ and then for $w\in [p,x]$, we get that
 \[\modangle xwy \ge \modangle xpy \ge \modangle xpz\]
 and therefore
 \[\dist{w}{y}\Sigma\ge \dist{\tilde w}{\tilde y}{\mathbb{R}^2},\]
@@ -724,18 +727,20 @@ Choose a geodesic~$\alpha$.
 Given $t\ge 0$, consider the function $h_t(s)=\dist{\lambda(t)}{\alpha(s)}{\Sigma}^2-s^2$.
 
 
-Observe that for any fixed $x\in\Sigma$, we have $\dist{\lambda(t)}{x}{}/t\to 1$ as $t\to\infty$.
+Observe that for any fixed $x\in\Sigma$, we have $\tfrac{\dist{\lambda(t)}{x}{}}t\to 1$ as $t\to\infty$.
 Therefore
-\[
+\begin{align*}
 \bus_\lambda\circ\alpha(s)
-=
-\lim_{t\to\infty}\frac{| \lambda (t) - \alpha (s) |_{\Sigma}^2 - s^2 }{t} -t
-=
-\lim_{t\to\infty}\frac{h_t(s)}{t} -t
-\]
+&=
+\lim_{t\to\infty}\left(\frac{| \lambda (t) - \alpha (s) |_{\Sigma}^2 - s^2 }{t} -t\right)=
+\\
+&=
+\lim_{t\to\infty}\left(\frac{h_t(s)}{t} -t\right).
+\end{align*}
 According to \ref{ex:geod-convexity}, the function 
-$s\mapsto h_t(s)$ is convex or concave, assuming the conditions in \ref{SHORT.prop:busemann-} or \ref{SHORT.prop:busemann+} respectively. So is
-\[ s \to \dfrac{h_t(s)}{t} -t \]
+$s\mapsto h_t(s)$ is convex or concave, assuming the conditions in \ref{SHORT.prop:busemann-} or \ref{SHORT.prop:busemann+} respectively.
+So is the function
+\[s \mapsto \frac{h_t(s)}{t} -t \]
 for every $t$. Since pointwise limits of convex or concave functions are respectively convex or concave, \ref{SHORT.prop:busemann-} and \ref{SHORT.prop:busemann+} follow.
 \qeds
 
@@ -836,7 +841,7 @@ that is, they are convex and concave at the same time.
 It follows that the differential of $\bus_\pm$ is defined at any point $x\in\Sigma$;
 that is, there is a linear function $\T_x\to\mathbb{R}$ that is defined by
 $\vec v\mapsto D_{\vec v}\bus_\pm$
-for any tangent vector $\vec v \in T_x$.
+for any tangent vector $\vec v \in \T_x$.
 
 Denote by $\vec u$ the gradient vector field of $\bus_-$;
 that is, $\vec u$ is a tangent vector field such that for any tangent field $\vec v$ the following identity holds

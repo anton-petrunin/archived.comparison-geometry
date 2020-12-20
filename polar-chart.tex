@@ -13,9 +13,9 @@ In addition, we discuss intrinsic isometries between surfaces and prove Gauss' r
 
 The property of the exponential map in \ref{prop:exp} can be used to define \index{polar coordinates}\emph{polar coordinates} in a smooth surface $\Sigma$ with respect to a point $p\in \Sigma$.
 
-Namely, fix some polar coordinates $(r,\theta) \in \mathbb{R}^+ \times \mathbb{S}^1  $ on the tangent plane $\T_p$.
+Namely, fix some polar coordinates $(r,\theta) \in \mathbb{R}_{\ge0} \times \mathbb{S}^1  $ on the tangent plane $\T_p$.
 If $\vec v\in \T_p$ has coordinates $(r,\theta)$,
-then we say that $s(r,\theta)=\exp_p\vec v$ is the point in $\Sigma$ with  polar coordinates $(r,\theta)$.
+then we say that $s(r,\theta)\z=\exp_p\vec v$ is the point in $\Sigma$ with  polar coordinates $(r,\theta)$.
 
 
 Since there might be many geodesics from $p$ to a given point $x$,
@@ -134,7 +134,7 @@ Then there is a shortest path from $p$ to $q$, which becomes a geodesic when it 
 That is, there are two geodesics from $p$ to $q$ of length smaller than $\epsilon$.
 In other words there are two vectors ${\vec v},\vec w\in\T_p$ such that $|{\vec v}|<\epsilon$, $|\vec w|<\epsilon$ and 
 $q=\exp_p\vec v\z=\exp_p\vec w$.
-But according to \ref{prop:exp}, the exponential map $T_p \to \Sigma$ is injective in the $\epsilon$-neighborhood of zero --- a contradiction.\qeds
+But according to \ref{prop:exp}, the exponential map $\T_p \to \Sigma$ is injective in the $\epsilon$-neighborhood of zero --- a contradiction.\qeds
 
 \section{Gauss curvature}
 

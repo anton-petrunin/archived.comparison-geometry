@@ -2534,7 +2534,7 @@ Therefore
 In particular,
 \[\langle\tfrac{\partial s}{\partial u},\tfrac{\partial^2 s}{\partial u\partial v}\rangle=0.\]
 
-Further the equation for geodesic for $u\to s(u,v)$ implies that $\tfrac{\partial^2 s}{\partial u^2}(u,v)$ is perpendicular to the tangent plane $T_{s(u,v)}$.
+Further the equation for geodesic for $u\to s(u,v)$ implies that $\tfrac{\partial^2 s}{\partial u^2}(u,v)$ is perpendicular to the tangent plane $\T_{s(u,v)}$.
 Since $\tfrac{\partial s}{\partial u}(u,v)$ and $\tfrac{\partial s}{\partial v}(u,v)$ are tangent vectors at $s(u,v)$, we have the following two identities:
 \begin{align*}
 \langle\tfrac{\partial^2 s}{\partial u^2},\tfrac{\partial s}{\partial u}\rangle&=0,
@@ -2789,8 +2789,8 @@ By Proposition~\ref{prop:spherical-gb},
 Therefore 
 \[\tgc{\alpha,\Sigma}+\area\beta=0\pmod{2\cdot \pi}.\]
 
-Recall that the shape  operator $s_p\: T_p\Sigma \to \T_{\Norm(p)}\mathbb{S}^2=T_p\Sigma$ is the Jacobian of the Gauss map $\Norm\:\Sigma\to \mathbb{S}^2$ at the point $p$.
-In appropriately chosen coordinates in $T_p$, the shape operator can be presented by a diagonal matrix 
+Recall that the shape  operator $s_p\: \T_p\Sigma \to \T_{\Norm(p)}\mathbb{S}^2=\T_p\Sigma$ is the Jacobian of the Gauss map $\Norm\:\Sigma\to \mathbb{S}^2$ at the point $p$.
+In appropriately chosen coordinates in $\T_p$, the shape operator can be presented by a diagonal matrix 
 $\left(\begin{smallmatrix}
 k_1&0
 \\
@@ -3007,8 +3007,8 @@ By Proposition~\ref{prop:spherical-gb},
 Therefore 
 \[\tgc{\alpha,\Sigma}+\area\beta=0\pmod{2\cdot \pi}.\]
 
-Recall that the shape  operator $s_p\: T_p\Sigma \to \T_{\nu(p)}\mathbb{S}^2=T_p\Sigma$ is the Jacobian of the Gauss map $\nu\:\Sigma\to \mathbb{S}^2$ at the point $p$.
-In appropriately chosen coordinates in $T_p$, the shape operator can be presented by a diagonal matrix 
+Recall that the shape  operator $s_p\: \T_p\Sigma \to \T_{\nu(p)}\mathbb{S}^2=\T_p\Sigma$ is the Jacobian of the Gauss map $\nu\:\Sigma\to \mathbb{S}^2$ at the point $p$.
+In appropriately chosen coordinates in $\T_p$, the shape operator can be presented by a diagonal matrix 
 $\left(\begin{smallmatrix}
 k_1&0
 \\
@@ -5111,12 +5111,12 @@ Any closed embedded surface is oriented since one can choose the  direction poin
 Fix a point $p\in \Sigma$ and a smooth curve $\alpha$ in $\Sigma$ that starts at $p$;
 that is $\alpha(0)=p$.
 Set  $v=\alpha'(0)$ and $w=(\nu\circ\alpha)'(0)$.
-Note that $v$ lie in $T_p$ --- the tangent plane at $p$.
+Note that $v$ lie in $\T_p$ --- the tangent plane at $p$.
 
 Further $w\in \T_p$ as well.
 Indeed $\nu\circ\alpha$ is a curve that starts at $\nu(p)$;
 so $w=(\nu\circ\alpha)'(0)$ lies in the tangent plane $\T_{\nu(p)}\mathbb{S}^2$.
-But at $\nu(p)$, the sphere $\mathbb{S}^2$ has normal $\nu(p)$ and therefore its tangent plane $\T_{\nu(p)}\mathbb{S}^2$ is parallel $T_p$, so $\T_{\nu(p)}\mathbb{S}^2$ and $T_p$ are identical as vector spaces.
+But at $\nu(p)$, the sphere $\mathbb{S}^2$ has normal $\nu(p)$ and therefore its tangent plane $\T_{\nu(p)}\mathbb{S}^2$ is parallel $\T_p$, so $\T_{\nu(p)}\mathbb{S}^2$ and $\T_p$ are identical as vector spaces.
 
 Further note that since Gauss map is smooth,
 the vector $w$ depends only on $v$;
