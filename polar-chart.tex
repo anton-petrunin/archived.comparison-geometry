@@ -3,8 +3,8 @@
 
 This chapter contains computational proofs of several statements discussed above, including 
 \begin{itemize}
-\item Proposition\nobreakspace\ref{prop:inj-rad} --- an alternative definition of injectivity radius.
-\item Proposition\nobreakspace\ref{prop:gamma''} --- shortest paths are geodesics.
+\item Proposition~\ref{prop:inj-rad} --- an alternative definition of injectivity radius.
+\item Proposition~\ref{prop:gamma''} --- shortest paths are geodesics.
 \item The Gauss--Bonnet formula (\ref{thm:gb}).
 \end{itemize}
 In addition, we discuss intrinsic isometries between surfaces and prove Gauss' remarkable theorem, stating that Gauss curvature can be defined intrinsically.
@@ -20,7 +20,7 @@ then we say that $s(r,\theta)=\exp_p\vec v$ is the point in $\Sigma$ with  polar
 
 Since there might be many geodesics from $p$ to a given point $x$,
 the point $x$ might have many different polar coordinates.
-However, according to Proposition\nobreakspace\ref{prop:exp} polar coordinates behave in  the usual way for small values of $r$.
+However, according to Proposition~\ref{prop:exp} polar coordinates behave in  the usual way for small values of $r$.
 More precisely, the following statement holds:
 
 \begin{thm}{Observation}\label{obs:polar}
@@ -31,13 +31,13 @@ Moreover if $0\le r_1,r_2<r_0$, then $s(r_1,\theta_1) \z= s(r_2,\theta_2)$ if an
 $r_1=r_2=0$ or $r_1=r_2$ and $\theta_1\z=\theta_2+2\cdot n\cdot\pi$ for an integer $n$.
 \end{thm}
 
-The following statement will play a key role in the formal proof that shortest paths are geodesics; see Section\nobreakspace\ref{sec:proof-of-gamma''}.
+The following statement will play a key role in the formal proof that shortest paths are geodesics; see Section~\ref{sec:proof-of-gamma''}.
 
 \begin{thm}{Gauss lemma}\label{lem:palar-perp}
 Let $(r,\theta)\mapsto s(r,\theta)$ describe polar coordinates with respect to a point $p$ in a smooth surface $\Sigma$.
 Then
 $s_\theta\perp s_r$
-for any $r$ and\nobreakspace$\theta$.
+for any $r$ and~$\theta$.
 \end{thm}
 
 
@@ -91,7 +91,7 @@ By \ref{eq:<s',s'>'=0} the same holds for any $r$.
 
 \label{sec:proof-of-gamma''}
 
-In this section we use the construction of polar coordinates and the Gauss lemma \ref{lem:palar-perp} to prove Proposition\nobreakspace\ref{prop:gamma''}.
+In this section we use the construction of polar coordinates and the Gauss lemma \ref{lem:palar-perp} to prove Proposition~\ref{prop:gamma''}.
 
 \parit{Proof of \ref{prop:gamma''}.}
 Let $\gamma\:[0,\ell]\to\Sigma$ be a shortest path parametrized by arc-length.
@@ -111,7 +111,7 @@ Since $\gamma$ parametrized by arc-length, we have
 \[|\gamma(t_2)-\gamma(t_1)|\le |t_2-t_1|.\]
 In particular, $\gamma$ is Lipschitz.
 Therefore by Rademacher's theorem (\ref{thm:rademacher}) the derivative $\gamma'$ is defined almost everywhere.
-By\nobreakspace\ref{adex:integral-length:a}, we have that
+By~\ref{adex:integral-length:a}, we have that
 \begin{align*}
 \length\gamma&=\int_0^\ell|\gamma'(t)|\cdot dt\ge
 \\
@@ -143,7 +143,7 @@ The map $s$ is called \index{semigeodesic}\emph{semigeodesic} if for any fixed $
 
 Note that according to the Gauss lemma (\ref{lem:palar-perp}), the polar coordinates on $\Sigma$ are described by a semigeodesic map.
 
-Note that we can choose a unit vector field\nobreakspace$\Norm=\Norm(u,v)$ that is normal to $\Sigma$ at the point $s(u,v)$.
+Note that we can choose a unit vector field~$\Norm=\Norm(u,v)$ that is normal to $\Sigma$ at the point $s(u,v)$.
 For each pair $(u,v)$, consider an orthonormal frame $\Norm$, $\vec u=s_u$ and $\vec v=\Norm\times \vec u$.
 Recall that  since the vector $s_v(u,v)$ is tangent to $\Sigma$ at $s(u,v)$, $s_v\perp \vec u$ and $s_v\perp \Norm$. 
 Therefore we have that $s_v=b\cdot\vec v$ for some smooth function $(u,v)\z\mapsto b(u,v)$.
@@ -445,7 +445,7 @@ where $\triangle$ denotes the \index{laplacian}\emph{laplacian}; that is, $\tria
 
 \section{Rotation of a vector field}
 
-Let $\Sigma$ be a smooth oriented surface and $\gamma$ a simple closed path in\nobreakspace$\Sigma$.
+Let $\Sigma$ be a smooth oriented surface and $\gamma$ a simple closed path in~$\Sigma$.
 Suppose that $\vec u$ is a field of unit tangent vectors to $\Sigma$ defined in a neighborhood of $\gamma$.
 Denote by $\vec v$ the field obtained from $\vec u$ by a counterclockwise rotation by $\tfrac{\pi}2$ of the tangent plane at each point; it could also be defined as $\vec v=\Norm\times\vec u$.
 Then the \index{rotation}\emph{rotation} of $\vec u$ around $\gamma$ is defined as the integral
@@ -569,7 +569,7 @@ By \ref{ex:semigeodesc-chart}, any point can be covered by a semigeodesic chart.
 Therefore applying \ref{lem:GB-sum} finite number of times, we get that 
 \ref{eq:gb(n)} holds for any disc $\Delta$ in $\Sigma$.
 
-Assume that $\Delta$ lies in a local graph realization $z=f(x,y)$ of\nobreakspace$\Sigma$.
+Assume that $\Delta$ lies in a local graph realization $z=f(x,y)$ of~$\Sigma$.
 Consider the one-parameter family $\Sigma_t$ of graphs $z=t\cdot f(x,y)$ and denote by $\Delta_t$ the corresponding disc in $\Sigma_t$, so $\Delta_1=\Delta$ and $\Delta_0$ is its projection to the $(x,y)$-plane.
 Note that the function $f\:t\mapsto \GB(\Delta_t)$ is continuous.
 From above, $f(t)$ is a multiple of $2\cdot\pi$ for any $t$.
@@ -585,7 +585,7 @@ where the last equality follows from $\ref{prop:total-signed-curvature}$.
 We proved that 
 \[\GB(\Delta)=0\eqlbl{eq:GB=0}\]
 if $\Delta$ lies in a graph $z=f(x,y)$ for some $(x,y,z)$-coordinate system.
-Since  any point of $\Sigma$ has a neighborhood that can be covered by such a graph, applying Lemma\nobreakspace\ref{lem:GB-sum} as above we get that \ref{eq:GB=0} holds for any disc\nobreakspace$\Delta$ in\nobreakspace$\Sigma$.
+Since  any point of $\Sigma$ has a neighborhood that can be covered by such a graph, applying Lemma~\ref{lem:GB-sum} as above we get that \ref{eq:GB=0} holds for any disc~$\Delta$ in~$\Sigma$.
 \qeds
 
 
@@ -743,7 +743,7 @@ Note that $s^{*}$ is a chart of $\Sigma^{*}$ and
 \end{align*}
 at any $(u,v)$.
 Indeed the first and the third identity hold since otherwise $f$ would not preserve the lengths of the coordinate lines $\gamma\:t\mapsto s(t,v)$ or  $\gamma\:t\z\mapsto s(u,t)$.
-Taking this into account, the second identity holds since otherwise $f$ would not preserve the lengths of the coordinate lines $\gamma\:t\z\mapsto s(t,c-t)$ for some constant\nobreakspace$c$.
+Taking this into account, the second identity holds since otherwise $f$ would not preserve the lengths of the coordinate lines $\gamma\:t\z\mapsto s(t,c-t)$ for some constant~$c$.
 
 It follows that if $s$ is a semigeodesic chart,
 then so is $s^{*}$.
