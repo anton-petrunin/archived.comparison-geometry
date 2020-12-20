@@ -61,7 +61,7 @@ it was proved by
 Hans von Mangoldt \cite{mangoldt} and generalized by Elie Cartan \cite{cartan}, Jacques Hadamard \cite{hadamard},
 Herbert Busemann \cite{busemann},
 Willi Rinow \cite{rinow},
-Mikhael Gromov \cite[p.~119]{gromov-1987},
+Mikhael Gromov \cite[p.\nobreakspace119]{gromov-1987},
 Stephanie Alexander and Richard Bishop \cite{alexander-bishop1990}.
 
 Recall that a surface $\Sigma$ is called {}\emph{simply-connected} if any closed simple curve in $\Sigma$ bounds a disc.
@@ -86,8 +86,8 @@ for any geodesic triangle $[xyz]$.
 
 \end{thm}
 
-The proof of part \ref{SHORT.thm:comp:cat} will be given at the end of Section~\ref{sec:nonpos-comp}.
-The proof of part \ref{SHORT.thm:comp:toponogov} will be finished in Section~\ref{sec:nonneg-comp}.
+The proof of part \ref{SHORT.thm:comp:cat} will be given at the end of Section\nobreakspace\ref{sec:nonpos-comp}.
+The proof of part \ref{SHORT.thm:comp:toponogov} will be finished in Section\nobreakspace\ref{sec:nonneg-comp}.
 
 Let us show that the statement \ref{SHORT.thm:comp:cat} does not hold without assuming that $\Sigma$ is simply-connected.
 Consider the hyperboloid
@@ -258,65 +258,99 @@ holds for any hinge $\hinge x y z$ with $\dist{x}{y}\Sigma+\dist{x}{z}\Sigma<\el
 \includegraphics{mppics/pic-2308}
 \end{wrapfigure}
 
-\parit{Proof.} 
 Given a hinge $\hinge x p q$ consider a triangle in the plane
 with angle $\measuredangle\hinge x p q$ and two adjacent sides $\dist{x}{p}\Sigma$ and $\dist{x}{q}\Sigma$.
 Let us denote by $\side \hinge x p q$ the third side of this triangle; let us call it the \index{model!side}\emph{model side} of the hinge.
 
+The following comutational exercise plays a role in the proof of lemma.
+
+\begin{thm}{Exercise}\label{ex:s-r}
+\begin{subthm}{ex:s-r:convex}
+Let $\vec u$ be a unit vector in the plane.
+Show that for any vector $
+\vec w$, the function
+\[t\mapsto t+|\vec w|-|\vec w+t\cdot \vec u|\]
+is concave.
+\end{subthm}
+
+\begin{subthm}{ex:s-r:s-r}
+Suppose that hinges $\hinge xpq$ and $\hinge xpy$ have a common side $[x,p]$ and $[x,y]\subset [x,q]$.
+Use part \ref{SHORT.ex:s-r:convex} to show that 
+\[\frac{\dist{x}{p}{}+\dist{x}{q}{}-\side\hinge xpq}{\dist{x}{q}{}}
+\le
+\frac{\dist{x}{p}{}+\dist{x}{y}{}-\side\hinge xpy}{\dist{x}{y}{}}.\]
+\end{subthm}
+
+
+\end{thm}
+
+
+\parit{Proof.} 
 Note that by angle monotonicity (\ref{lem:angle-monotonicity}),
 \[\measuredangle\hinge x p q\ge \modangle x p q\quad\iff\quad\side \hinge x p q
 \ge\dist{p}{q}\Sigma.\]
-So it is sufficient to prove that
+Therefore it is sufficient to prove that
 \[\side \hinge x p q
-\ge\dist{p}{q}\Sigma.\eqlbl{eq:thm:=def-loc*}\] 
-for any hinge $\hinge x p q$ with $\dist{x}{p}\Sigma+\dist{x}{q}\Sigma<\ell$.
+\ge\dist{p}{q}\Sigma.\eqlbl{eq:thm:=def-loc}\]
+for a given hinge $\hinge x p q$ with $\dist{x}{p}\Sigma+\dist{x}{q}\Sigma<\ell$.
 
-\parit{Construction.}
-Let us describe a construction that produces a new hinge $\hinge{x'}p q$ for a given hinge $\hinge x p q$ with 
+Let us describe a construction that produces a new hinge $\hinge{x'}p q$ for a given hinge $\hinge x p q$ such that 
 \[\tfrac{2}{3}\cdot\ell \le\dist{p}{x}\Sigma\z+\dist{x}{q}\Sigma< \ell.\]
-The new hinge $\hinge{x'}p q$ will satisfy the following properties:
-\[\side \hinge x p q
-\ge\side \hinge{x'}p q
-\eqlbl{eq:thm:=def-loc-fivestar}\]
-and 
-\[
-\dist{p}{x}\Sigma+\dist{x}{q}\Sigma\ge\dist{p}{x'}\Sigma+\dist{x'}{q}\Sigma.
-\eqlbl{eq:thm:=def-loc-fourstar}\]
-
 Assume $\dist{x}{q}\Sigma\ge\dist{x}{p}\Sigma$, otherwise switch the roles of $p$ and $q$ in the following construction.
 Take $x'\in [x, q]$ such that 
 \[\dist{p}{x}\Sigma+3\cdot\dist{x}{x'}\Sigma
-=\tfrac{2}{3}\cdot\ell \eqlbl{3|xx'|}\]
-Choose a geodesic $[x', p]$ and consider the hinge $\hinge{x'}p q$ formed by $[x',p]$ and $[x',q]\subset [x,q]$. Note that \ref{eq:thm:=def-loc-fourstar} follows from the triangle inequality. We are left to show \ref{eq:=def-loc-fivestar}.
+=\tfrac{2}{3}\cdot\ell
+\eqlbl{3|xx'|}\]
+Choose a geodesic $[x', p]$ and consider the hinge $\hinge{x'}p q$ formed by $[x',p]$ and $[x',q]\subset [x,q]$.
 
-By \ref{3|xx'|}, we have that 
-\begin{align*}
-\dist{p}{x}{\Sigma}\z+\dist{x}{x'}{\Sigma}&<\tfrac{2}{3}\cdot\ell,
-\\
-\dist{p}{x'}{\Sigma}\z+\dist{x'}{x}{\Sigma}&<\tfrac{2}{3}\cdot\ell.
-\end{align*}
-In particular, 
-\[\measuredangle\hinge x p{x'}
-\ge\modangle x p{x'}
-\ \ \text{and}\ \ 
-\measuredangle\hinge {x'}p x
-\ge\modangle {x'}p x.
-\eqlbl{eq:thm:=def-loc-threestar}\]
-
-\begin{wrapfigure}{r}{35mm}
-\vskip -4mm
+\begin{wrapfigure}{r}{32mm}
+\vskip0mm
 \centering
 \includegraphics{mppics/pic-2310}
 \end{wrapfigure}
 
+By te triangle inequality we have 
+\[
+\dist{p}{x}\Sigma+\dist{x}{q}\Sigma\ge\dist{p}{x'}\Sigma+\dist{x'}{q}\Sigma.
+\eqlbl{eq:thm:=def-loc-fourstar}\]
+Let us show that
+\[\side \hinge x p q
+\ge\side \hinge{x'}p q
+\eqlbl{eq:thm:=def-loc-fivestar}\]
+
+By \ref{3|xx'|}, we have that 
+\[
+\begin{aligned}
+\dist{p}{x}{\Sigma}\z+\dist{x}{x'}{\Sigma}&<\tfrac{2}{3}\cdot\ell,
+\\
+\dist{p}{x'}{\Sigma}\z+\dist{x'}{x}{\Sigma}&<\tfrac{2}{3}\cdot\ell.
+\end{aligned}
+\]
+By the assumption, we get that 
+\[\begin{aligned}
+\measuredangle\hinge x p{x'}
+\ge\modangle x p{x'},
+\\
+\measuredangle\hinge {x'}p x
+\ge\modangle {x'}p x.
+  \end{aligned}
+\eqlbl{eq:thm:=def-loc-threestar}
+\]
+
 Consider the model triangle
 $[\tilde x\tilde x'\tilde p]\z=\modtrig xx'p$.
-Take $\tilde q$ on the extension of $[\tilde x,\tilde x']$ beyond $x'$ such that $\dist{\tilde x}{\tilde q}\Sigma=\dist{x}{q}\Sigma$ (and therefore $\dist{\tilde x'}{\tilde q}\Sigma=\dist{x'}{q}\Sigma$).
-From \ref{eq:thm:=def-loc-threestar},
+Take $\tilde q$ on the extension of $[\tilde x,\tilde x']$ beyond $x'$ such that $\dist{\tilde x}{\tilde q}\Sigma=\dist{x}{q}\Sigma$ and therefore $\dist{\tilde x'}{\tilde q}\Sigma\z=\dist{x'}{q}\Sigma$.
+
+From \ref{eq:thm:=def-loc-threestar}, we get
 \[\measuredangle\hinge x p q
-=\measuredangle\hinge x p{x'}\ge\modangle x p{x'}\ \ \Rightarrow\ \ 
-\side \hinge x q p\ge\dist{\tilde p}{\tilde q}{\mathbb{R}^2} .\]
-Since $\measuredangle\hinge{x'}p x+\measuredangle\hinge{x'}p q= \pi$,
+=\measuredangle\hinge x p{x'}\ge\modangle x p{x'}.\]
+Therefore
+\[
+\side\hinge x q p
+\ge
+\dist{\tilde p}{\tilde q}{\mathbb{R}^2}.
+\]
+Further, since $\measuredangle\hinge{x'}p x+\measuredangle\hinge{x'}p q= \pi$,
 \ref{eq:thm:=def-loc-threestar} implies
 \[
 \pi
@@ -324,77 +358,51 @@ Since $\measuredangle\hinge{x'}p x+\measuredangle\hinge{x'}p q= \pi$,
 \ge
 \pi-\measuredangle\hinge{x'}p x
 \ge
-\measuredangle\hinge{x'}p q
+\measuredangle\hinge{x'}p q.
 \]
-\[ \Rightarrow \dist{\tilde p}{\tilde q}{\mathbb{R}^2}\ge\side \hinge{x'}q p \]
- and \ref{eq:thm:=def-loc-fivestar} follows.
-Hence the constructed hinge $\hinge{x'}q p$ satisfies the declared properties.
+Therefore
+\[\dist{\tilde p}{\tilde q}{\mathbb{R}^2}\ge\side \hinge{x'}q p \]
+and \ref{eq:thm:=def-loc-fivestar} follows.
 
-In the above construction, set 
- 
- \[
-s := \dist{p}{x}\Sigma+\dist{x}{q}\Sigma, s': = \dist{p}{x'}\Sigma+\dist{x'}{q}\Sigma , \text{ and } \delta : = s-s'.
-\]
+Set $x_0=x$; apply inductively the above construction to get a sequence of hinges $\hinge{x_n}p q$ with $x_{n+1}=x_n'$.
+By \ref{eq:thm:=def-loc-fivestar} and \ref{eq:thm:=def-loc-fourstar}, both sequences
+\[s_n=\side \hinge{x_n}pq\quad\text{and}\quad r_n=\dist{p}{x_n}\Sigma+\dist{x_n}{q}\Sigma\]
+are nonincreasing.
 
-Note that from \ref{eq:thm:=def-loc-threestar}, we have 
-
-\[ | x-x' |_{\Sigma} \geq \dfrac{\ell}{18}, \eqlbl{eq:long-hinge1}\] 
-hence 
-\begin{align*}
-| x' - q |_{\Sigma}
-&\geq \dfrac{2\ell}{3} - |x- p |_{\Sigma} - |x-x'|_{\Sigma}=
-\\
-&= 2 | x-x' |_{\Sigma} \geq
-\\
-& \geq \dfrac{\ell}{9} ,
-\end{align*}
-and
-\begin{align*}
-| x' - p |_{\Sigma}
-&= s' - |x'-q|_{\Sigma} = \\
-& = s' + |x-p|_{\Sigma} + |x-x'|_{\Sigma} - s >\\
-&> |x-x'|_{\Sigma} - \delta \geq \\
-& \geq \dfrac{\ell}{18}- \delta.
-\end{align*}
-Consequently
-\[ \min \{ | x'-p |_{\Sigma} , |x'-q|_{\Sigma} \} \geq \dfrac{\ell}{18} - \delta. \eqlbl{eq:long-hinge2}\]
-
-%Comments about why xx', px' and qx' are not small. 
-
+The sequence $(x_n)$ might terminate at some $n$ only if $r_n< \tfrac{2}{3}\cdot\ell $.
+In this case, by the assumptions of the lemma, 
+\[s_n=\side \hinge{x_n}p q\ge\dist{p}{q}\Sigma.\]
+Since the sequence $(s_n)$ is nonincreasing, we get
+\[\side \hinge{x}p q=s_0\ge s_n\ge\dist{p}{q}\Sigma;\]
+whence \ref{eq:thm:=def-loc} follows.
 
 \begin{figure}[!ht]
 \centering
 \includegraphics{mppics/pic-2315}
 \end{figure}
 
-Set $x_0=x$. and apply inductively the above construction to get a sequence of hinges $\hinge{x_n}p q$ with $x_{n+1}=x_n'$.
-By \ref{eq:thm:=def-loc-fivestar} and \ref{eq:thm:=def-loc-fourstar}, both sequences
-\[s_n=\side \hinge{x_n}pq\quad\text{and}\quad r_n=\dist{p}{x_n}\Sigma+\dist{x_n}{q}\Sigma\]
-are nonincreasing.
-
-The sequence might terminate at some $n$ only if $r_n< \tfrac{2}{3}\cdot\ell $.
-In this case, by the assumptions of the lemma, 
-\[s_n=\side \hinge{x_n}p q\ge\dist{p}{q}\Sigma.\]
-Since the sequence $s_n$ is nonincreasing;
-\[s_0=\side \hinge{x}p q\ge\dist{p}{q}\Sigma,\]
-whence inequality \ref{eq:thm:=def-loc*} follows.
-
-If the sequence does not terminate, then $r_n\ge\tfrac{2}{3}\cdot\ell$ for all $n$.
-Since $(r_n)$ is nonincreasing, $r_n\to r\ge \dist{p}{q}\Sigma$ as $n\to\infty$. This implies that the sequence $\delta_n : = r_n - r_{n+1}$ converges to $0$, so from \ref{eq:long-hinge1} and \ref{eq:long-hinge2}, we have for large $n$,
-\[ \ell > | x_n-x_{n+1} |_{\Sigma},
-|p-x_n|_{\Sigma} > \tfrac{\ell}{100}.\]
-Hence by \ref{ex:wide-hinges}, 
+Assume the sequence $(x_n)$ does not terminate.
+By \ref{3|xx'|}, we have 
 \[
-\measuredangle\hinge{x_n}p q\to \pi. \]
-Therefore we have 
-$s_n-r_n\to 0$ as $n\to\infty$;
-that is, $s_n\to r$.
+\dist{x_n}{x_{n-1}}\Sigma
+\ge 
+\tfrac1{100}\cdot \ell.
+\eqlbl{eq:|x-x|><l}
+\]
+Evidently $\dist{x_n}{p}{},\dist{x_n}{q}{}<
+\ell$ for any $n$.
+Applying \ref{ex:s-r:s-r} for the hinge $\hinge{x_n}pq$ and $\hinge{x_n}p{x_{n+1}}$ (or $\hinge{x_n}{x_{n+1}}q$, depending on $n$) we get that 
+\[r_n-s_n\le 100\cdot (r_n-r_{n+1})\]
 
-Since the sequence $(s_n)$ is nonincreasing and $r\ge \dist{p}{q}\Sigma$, we get
-\[s_n\ge \dist{p}{q}\Sigma\]
-for any $n$.
-In particular
-\[\side\hinge spq=s_0\ge \dist{p}{q}\Sigma,\] so we obtain \ref{eq:thm:=def-loc*}.
+The sequences $(r_n)$ and $(s_n)$ are nonincreasing and nonnegative.
+Therefore they have to convege.
+In particular $r_n-r_{n+1}\to0$ as $n\to \infty$.
+It follows that
+\[\lim_{n\to\infty}s_n=\lim_{n\to\infty}r_n.\]
+By the triangle inequality, $r_n\ge \dist{p}{q}\Sigma$ for any $n$.
+Since $s_n$ is nonincreasing, we get
+\[\side \hinge{x}p q=s_0\ge \lim_{n\to\infty}s_n=\lim_{n\to\infty}r_n\ge \dist{p}{q}\Sigma.\]
+which proves \ref{eq:thm:=def-loc} in the remaining case.
 \qeds
 
 \begin{thm}{Exercise}\label{ex:open-comparison}
@@ -462,7 +470,7 @@ Conclude that $\alpha <\tfrac \pi 3$.
 \end{subthm}
 
 \begin{subthm}{ex:convex-polyhon}
-Consider the part of the geodesic $\gamma$ without the arc~$a$.
+Consider the part of the geodesic $\gamma$ without the arc\nobreakspace$a$.
 It cuts from $\Sigma$ a pentagon $\Delta$ with sides and angles as shown on the diagram. 
 Show that there is a plane pentagon with convex sides of the same length and angles at most as big as the corresponding angles of $\Delta$.
 \end{subthm}
@@ -720,7 +728,7 @@ The second part of \ref{SHORT.prop:busemann:all} is evident, since for $s \geq t
 
 
 It remains to prove the last two statements.
-Choose a geodesic~$\alpha$.
+Choose a geodesic\nobreakspace$\alpha$.
 Given $t\ge 0$, consider the function $h_t(s)=\dist{\lambda(t)}{\alpha(s)}{\Sigma}^2-s^2$.
 
 
@@ -830,7 +838,7 @@ whence \ref{eq:bus+-=0} follows.
 
 \parit{Conclusions.}
 According to \ref{prop:busemann}, 
-both functions $\bus_\pm$ are concave and $\bus_\pm\circ\lambda(t)=\mp t$ for any~$t$.
+both functions $\bus_\pm$ are concave and $\bus_\pm\circ\lambda(t)=\mp t$ for any\nobreakspace$t$.
 By \ref{eq:bus+-=0} both functions $\bus_\pm$ are affine;
 that is, they are convex and concave at the same time.
 It follows that the differential of $\bus_\pm$ is defined at any point $x\in\Sigma$;
@@ -940,7 +948,7 @@ if $s,t\ge0$.
 The same argument proves \ref{ex:|x-y|=|x-y|} if $s,t\le 0$.
 Applying it a couple of times for $s_1=t_1\ge 0$ and $s_2,t_2\le 0$, we get that \ref{ex:|x-y|=|x-y|} holds 
 for $s=s_1+s_2$ and $t=t_1+t_2$.
-Whence \ref{clm:parallel} follows for any pair $s$ and~$t$.
+Whence \ref{clm:parallel} follows for any pair $s$ and\nobreakspace$t$.
 
 \parit{Final step.}
 Note that since $\bus_-$ is affine, the level set 

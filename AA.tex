@@ -1,4 +1,196 @@
 
+
+
+
+
+
+
+Since both sequences $(r_n)$ and $(s_n)$ are nonincreasing and nonnegative, both limits in \ref{eq:lim=lim} are defined.
+In particular $r_{n+1}-r_n\to 0$ as $n\to\infty$.
+Note that there is a constant $C$ such that 
+
+
+If the sequence does not terminate, then $r_n\ge\tfrac{2}{3}\cdot\ell$ for all $n$.
+Since $(r_n)$ and $(s_n)$ are nonincreasing, they converge to some values $r$ and $s$ respectively.
+By triangle inequality we have
+\[r\ge \dist{p}{q}\Sigma.\eqlbl{eq:r>|p-q|}\]
+Set $\theta_n=\measuredangle\hinge{x_n}pq$.
+Let us show that 
+\[\theta_n\to \pi\eqlbl{eq:theta->pi}\]
+as $n\to\infty$.
+Once it is done, we get $s=r$;
+therefore \ref{eq:r>|p-q|} implies \ref{eq:s0>|p-q|}, and the proof is finished.
+
+Assume that $x_n\in [x_{n-1},q]$; 
+in particular, $\dist{p}{x_{n-1}}\Sigma\le \dist{q}{x_{n-1}}\Sigma$.
+Otherwise swap $p$ with $q$ further.
+
+Set $\triangle_n=[px_{n-1}x_n]$.
+By \ref{3|xx'|}, we have 
+\[
+\dist{x_n}{x_{n-1}}\Sigma
+\ge 
+\tfrac1{100}\cdot \ell.
+\eqlbl{eq:|x-x|><l}
+\]
+Since $\dist q{x_{n-1}}\Sigma\ge\dist p{x_{n-1}}\Sigma$ and $r_{n-1} =\dist q{x_{n-1}}\Sigma+\dist p{x_{n-1}}\Sigma\ge \tfrac23\cdot\ell$, the triangle inequality implies 
+\[
+\dist q{x_n}\Sigma
+\ge 
+\tfrac1{100}\cdot \ell.
+\]
+
+Set $\delta_n=r_n-r_{n-1}$.
+Since $(r_n)$ converges, we have $\delta_n\to0$ as $n\to\infty$.
+Observe that 
+\[\dist{p}{x_n}\Sigma=\dist p{x_{n-1}}\Sigma+\dist{x_{n-1}}{x_n}\Sigma-\delta_n>\tfrac1{100}\cdot \ell-\delta_n.\]
+Therefore, for large $n$, \ref{eq:|x-x|><l} implies that 
+\[\dist{p}{x_n}\Sigma>\tfrac1{101}\cdot \ell.\]
+
+It follows that \ref{ex:wide-hinges} is applicable to the sequence of triangles $\triangle_n$.
+Whence $\tilde\theta_n=\modangle {x_{n-1}}{x_n}p\to \pi$ as $n\to\infty$.
+By assumption $\tilde\theta_n\le \theta_n$;
+therefore \ref{eq:theta->pi} follows.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Whence ... follow.
+
+
+Further, for all large $n$ we have 
+\[\bigl|\dist{x_n}{p}{\Sigma}-\dist{x_n}{q}{\Sigma}\bigr|<\tfrac\ell5.\]
+Indeed, since $r_n$ converges and $n$ is large, we can assume that 
+$|r_n-r_{n-1}|<\tfrac1{100}\cdot\ell$, or, equivalently,
+\[\dist{p}{x_{n-1}}\Sigma+\dist{x_n}{x_{n-1}}\Sigma<\dist{p}{x_n}\Sigma+\tfrac1{100}\cdot\ell.\]
+ If
+\[\dist{x_n}{p}{\Sigma}-\dist{x_n}{q}{\Sigma}>\tfrac\ell5.\]
+Since $n$ is large, we can assume that $r_n-r_{n+1}<\tfrac1{100}\cdot\ell$.
+It follows that 
+\[\dist{x_{n-1}}{p}{\Sigma}-\dist{x_{n-1}}{q}{\Sigma}>0.\]
+then by \ref{eq:|x-x|><l} we get 
+$\dist{x_{n-1}}{p}{\Sigma}-\dist{x_{n-1}}{q}{\Sigma}>0$ therefore  
+
+
+This implies that the sequence $\delta_n \df r_n - r_{n+1}$ converges to $0$.
+Note that by \ref{3|xx'|}, we have 
+\[\tfrac1{10}\cdot \ell
+\ge
+\dist{x_n}{x_{n+1}}\Sigma
+\ge 
+\tfrac1{100}\cdot \ell
+\eqlbl{eq:|x-x|><l}
+\]
+for any $n$.
+
+
+
+so from \ref{eq:long-hinge1} and \ref{eq:long-hinge2}, we have for large $n$,
+\[\ell > |x_n-x_{n+1}|_{\Sigma},
+|p-x_n|_{\Sigma} > \tfrac{\ell}{100}.\]
+Hence by \ref{ex:wide-hinges}, 
+\[
+\measuredangle\hinge{x_n}p q\to \pi. \]
+Therefore we have 
+$s_n-r_n\to 0$ as $n\to\infty$;
+that is, $s_n\to r$.
+
+Since the sequence $(s_n)$ is nonincreasing and $r\ge \dist{p}{q}\Sigma$, we get
+\[s_n\ge \dist{p}{q}\Sigma\]
+for any $n$.
+In particular
+\[\side\hinge xpq=s_0\ge \dist{p}{q}\Sigma,\] so we obtain \ref{eq:thm:=def-loc*}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+In the above construction, set 
+\[
+s\df \dist{p}{x}\Sigma+\dist{x}{q}\Sigma,
+\quad
+s'\df \dist{p}{x'}\Sigma+\dist{x'}{q}\Sigma,
+\quad\text{and}\quad
+\delta \df s-s'.
+\]
+
+Note that from \ref{eq:thm:=def-loc-threestar}, we have 
+\[\dist{x}{x'}{\Sigma}
+\ge
+\dfrac{\ell}{18},
+\eqlbl{eq:long-hinge1}\] 
+hence 
+\begin{align*}
+| x' - q |_{\Sigma}
+&\geq \dfrac{2\ell}{3} - |x- p |_{\Sigma} - |x-x'|_{\Sigma}=
+\\
+&= 2 | x-x' |_{\Sigma} \geq
+\\
+& \geq \dfrac{\ell}{9} ,
+\end{align*}
+and
+\begin{align*}
+| x' - p |_{\Sigma}
+&= s' - |x'-q|_{\Sigma} = \\
+& = s' + |x-p|_{\Sigma} + |x-x'|_{\Sigma} - s >\\
+&> |x-x'|_{\Sigma} - \delta \geq \\
+& \geq \dfrac{\ell}{18}- \delta.
+\end{align*}
+Consequently
+\[ \min \{ | x'-p |_{\Sigma} , |x'-q|_{\Sigma} \} \geq \dfrac{\ell}{18} - \delta. \eqlbl{eq:long-hinge2}\]
+
+%Comments about why xx', px' and qx' are not small. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Shape operator}
 
 Let $p$ be a point on a smooth oriented surface $\Sigma$.
@@ -11,7 +203,7 @@ m&n
 \end{smallmatrix}
 )
 $
-is the Hessian matrix of $f$ at $(0,0)$; the components $\ell$, $m$, and $n$ are defined in Section~\ref{sec:lmn}.
+is the Hessian matrix of $f$ at $(0,0)$; the components $\ell$, $m$, and $n$ are defined in Section\nobreakspace{}\ref{sec:lmn}.
 
 The multiplication by the Hessian matrix defies the so-called \index{shape operator}\emph{shape operator}
 \[\Shape\:(\begin{smallmatrix}
@@ -187,7 +379,7 @@ s_{uv}(0,0)&=m\cdot \vec k,
 &
 s_{vv}(0,0)&=n\cdot \vec k,
 \end{align*}
-where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$; see Section~\ref{sec:lmn}.
+where $\ell$, $m$, and $n$ are the components of the Hessian matrix of $f$ at $(0,0)$; see Section\nobreakspace{}\ref{sec:lmn}.
 
 Evaluating the above 6 identities at $(u,v)\z=(0,0)$, we get that
 \begin{align*}
@@ -277,9 +469,9 @@ Then
 
 \end{thm}
 
-This statement was conjectured by Serge Tabachnikov~\cite{tabachnikov}.
+This statement was conjectured by Serge Tabachnikov\nobreakspace{}\cite{tabachnikov}.
 Despite its simple formulation, the proof is annoyingly difficult;
-it was proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso}; later a simpler proof was given by Alexander Nazarov and Fedor Petrov~\cite{nazarov-petrov}.
+it was proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso}; later a simpler proof was given by Alexander Nazarov and Fedor Petrov\nobreakspace{}\cite{nazarov-petrov}.
 
 
 
@@ -302,7 +494,7 @@ it was proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso
 
 
 
-This theorem is a refinement of Proposition~\ref{prop:inscribed-total-curvature}.
+This theorem is a refinement of Proposition\nobreakspace{}\ref{prop:inscribed-total-curvature}.
 It shows that the following definition of total curvature of arbitrary curves, 
 generalize the original definition that works only for (piecewise) smooth and regular curves.
 
@@ -1273,8 +1465,8 @@ By Alexandrov's lemma (\ref{lem:alex-reformulation}), this is equivalent to
 
 Let $\trig{\tilde  p}{\tilde  x}{\tilde  y}=\modtrig (p x y)$ 
 and $\tilde  z\in[\tilde  x\tilde  y]$ correspond to $z$; that is, $\dist{x}{z}{}=\dist{\tilde  x}{\tilde  z}{}$.
-Inequality~\ref{eq:for|pz|} is equivalent to $\dist{ p}{ z}{}\le \dist{\tilde  p}{\tilde  z}{}$.
-Hence  Lemma~\ref{lem:quadrangle} applies;
+Inequality\nobreakspace{}\ref{eq:for|pz|} is equivalent to $\dist{ p}{ z}{}\le \dist{\tilde  p}{\tilde  z}{}$.
+Hence  Lemma\nobreakspace{}\ref{lem:quadrangle} applies;
 let $F\:\solidtriangle{\tilde  p}{\tilde  x}{\tilde  y}\to\solidtriangle {\dot p}{\dot x}{\dot z}\cup \solidtriangle {\dot p} {\dot y} {\dot z}$ be the provided short map.
 
 Fix $v,w$ on the sides of $\trig p x y$;
@@ -1312,7 +1504,7 @@ one is $[xy]$ which does not contain $w$ and the other is the limit of $[x_ny_n]
 
 \parit{Proof of \ref{thm:comp:cat}.}
 Fix a triangle $[p x y]$; 
-by Proposition~\ref{prop:comp-reformulations}, it is sufficient to show that the triangle $\trig p x y$ is thin.   
+by Proposition\nobreakspace{}\ref{prop:comp-reformulations}, it is sufficient to show that the triangle $\trig p x y$ is thin.   
 
 Divide $[xy]$ by points $x=x^{0,N},\dots,x^{N,N}=y$ into $N$ equal parts.
 Further divide each geodesic $[p\,x^{i,N}]$ into $N$ equal parts by points $p=x^{i,0},\dots,x^{i,N}$.
@@ -1750,7 +1942,7 @@ Any closed connected immersed surface with positive Gauss curvature is embedded.
 In other words such surface cannot have self-intersections.
 Note that an analogous statement does not hold in the plane;
 on the diagram you can see a closed curve with a self-intersection and positive curvature at all points.
-Exercise~\ref{ex:convex+2pi} gives a condition that guarantees simplicity of a locally convex plane curve;
+Exercise\nobreakspace{}\ref{ex:convex+2pi} gives a condition that guarantees simplicity of a locally convex plane curve;
 it will be used in the following proof.
 
 
@@ -1766,7 +1958,7 @@ In the following sections we will give one complete proof and sketch an alternat
 
 The first proof uses a \index{Morse-type argument}\emph{Morse-type argument} for the height function;
 that is, we study how the part of the surface that lies below a plane changes when we move the plane upward.
-Little more careful analysis of this changes would imply the corollary above directly, without using Theorem~\ref{thm:convex-embedded}.
+Little more careful analysis of this changes would imply the corollary above directly, without using Theorem\nobreakspace{}\ref{thm:convex-embedded}.
 
 The sketch use equidistants surfaces and the Gauss map.
 We will not proove a topological statement relying on intuition.
@@ -1786,7 +1978,7 @@ Note that the intersection $W_h=\Sigma\cap\Pi_h$ is formed by a finite collectio
 Indeed, if $\T_p=\Pi_h$, then, since the principle curvatures are positive, $p$ is a local minimum or local maximum of the height function.
 In both cases, $p$ is an isolated point of $W_h$ in $\Sigma$.
 If the tangent plane $\T_p$ is not $\Pi_h$, then it is not perpendicular to $(x,z)$-plane or $(y,z)$-plane.
-Therefore by Proposition~\ref{prop:perp}, the surface can be written locally as a graph $x=f(y,z)$ or $y=f(x,z)$;
+Therefore by Proposition\nobreakspace{}\ref{prop:perp}, the surface can be written locally as a graph $x=f(y,z)$ or $y=f(x,z)$;
 in both cases $p$ lies on the curve $x=f(y,h)$ or $y=f(x,h)$ respectively.
 
 Summarizing, the closed set $W_h\subset \Sigma$ locally looks like a curve or an isolated point.
@@ -1805,7 +1997,7 @@ The family $\alpha_h$ depends smoothly on $h$ and the same holds for its tangent
 Therefore the total signed curvature $K_h$ of $\alpha_h$ depends continuously on $h$.
 If $K_h=2\cdot\pi$ for some $h$, then $K_h=2\cdot\pi$ for every $h$.
 It follows since, the function $h\mapsto K_h$ is continuous and its value is a multiple of $2\cdot\pi$.
-In this case, by Exercise~\ref{ex:convex+2pi}, all curves $\alpha_h$ are simple and each one bounds a convex region in the plane $\Pi_h$.
+In this case, by Exercise\nobreakspace{}\ref{ex:convex+2pi}, all curves $\alpha_h$ are simple and each one bounds a convex region in the plane $\Pi_h$.
 
 Summarizing, if one of the curves in the constructed family $\alpha_{h}$ is simple,
 then each curve in the family is simple and each $\alpha_{h}$ bounds a convex region in the plane $\Pi_h$. 
@@ -1841,7 +2033,7 @@ any such set can be parameterized by a disc.
 
 Let $H>0$ be the maximal value such that $\Sigma_h$ has no self-intersections for any $h<H$.
 For a sequence $h_n\to H^-$, choose a point $q_n$ on the boundary of $\Sigma_h$ and pass to a partial limit $q$ of $q_n$ in $\Sigma$;
-that is, $q$ is a limit of a subsequence of~$(q_n)$.
+that is, $q$ is a limit of a subsequence of\nobreakspace{}$(q_n)$.
 
 If the tangent plane at $q$ is {}\emph{not} horizontal, 
 then there is a closed curve $\alpha_H$ in $\Sigma$ that passes thru $q$ and lies on the plane $z=H$.
@@ -1983,7 +2175,7 @@ Then
 
 \end{thm}
 
-It was  conjectured by Serge Tabachnikov~\cite{tabachnikov} and proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso}; latter a simpler proof was given by Alexander Nazarov and Fedor Petrov~\cite{nazarov-petrov}.
+It was  conjectured by Serge Tabachnikov\nobreakspace{}\cite{tabachnikov} and proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso}; latter a simpler proof was given by Alexander Nazarov and Fedor Petrov\nobreakspace{}\cite{nazarov-petrov}.
 Despite the simplicity of the formulation, the proof is annoyingly difficult.
 
 
@@ -2240,43 +2432,43 @@ The following proposition is a special case of the so a comparison theorem, prov
 
 \begin{thm}{Theorem}\label{thm:rauch}
 Let $\Sigma$ be a smooth regular surface and $p\in\Sigma$.
-Assume $\~\gamma\:[a,b]$ is a curve the tangent plane $\T_p\Sigma$ that runs in a sufficiently small neighborhood of the origin; 
+Assume $\\nobreakspace{}\gamma\:[a,b]$ is a curve the tangent plane $\T_p\Sigma$ that runs in a sufficiently small neighborhood of the origin; 
 consider the curve 
 \[\gamma=\exp_p\circ\gamma\] in $\Sigma$.
 
 \begin{enumerate}[(i)]
  \item If Gauss curvature of $\Sigma$ is nonnegative, then 
- \[\length \gamma\le \length \~\gamma\]
+ \[\length \gamma\le \length \\nobreakspace{}\gamma\]
 \item If Gauss curvature of $\Sigma$ is nonpositive, then 
- \[\length \gamma\ge \length \~\gamma.\]
+ \[\length \gamma\ge \length \\nobreakspace{}\gamma.\]
 \end{enumerate}
 \end{thm}
 
 The proof is a direct application of Corollary \ref{cor:w<w}.
 
 \parit{Proof.}
-Let us denote $\~w(\theta,r)$ and $w(\theta,r)$ the polar coordinates of $\T_p$ and $\Sigma$ at $p$
+Let us denote $\\nobreakspace{}w(\theta,r)$ and $w(\theta,r)$ the polar coordinates of $\T_p$ and $\Sigma$ at $p$
 Recall that 
 \begin{align*}
-\tfrac{\partial \~w}{\partial\theta}&\perp \tfrac{\partial \~w}{\partial r};
+\tfrac{\partial \\nobreakspace{}w}{\partial\theta}&\perp \tfrac{\partial \\nobreakspace{}w}{\partial r};
 &
-|\tfrac{\partial \~w}{\partial r}|&=1;
+|\tfrac{\partial \\nobreakspace{}w}{\partial r}|&=1;
 \\
 \tfrac{\partial w}{\partial\theta}&\perp \tfrac{\partial w}{\partial r};
 &
 |\tfrac{\partial w}{\partial r}|&=1;
 \intertext{By Corollary \ref{cor:w<w}, we also have}
-|\tfrac{\partial \~w}{\partial \theta}|&\ge |\tfrac{\partial \~w}{\partial \theta}|;
+|\tfrac{\partial \\nobreakspace{}w}{\partial \theta}|&\ge |\tfrac{\partial \\nobreakspace{}w}{\partial \theta}|;
 &
-|\tfrac{\partial \~w}{\partial \theta}|&\le |\tfrac{\partial \~w}{\partial \theta}|;
+|\tfrac{\partial \\nobreakspace{}w}{\partial \theta}|&\le |\tfrac{\partial \\nobreakspace{}w}{\partial \theta}|;
 \end{align*}
 if Gauss curvature is nonnegative or nonpositive respectively.
 
 It is sufficient to show that
-\[|\gamma'(t)|\le |\~\gamma'(t)|\quad\text{or, correspondingly}\quad|\gamma'(t)|\ge |\~\gamma'(t)|\eqlbl{gamma<gamma}\]
+\[|\gamma'(t)|\le |\\nobreakspace{}\gamma'(t)|\quad\text{or, correspondingly}\quad|\gamma'(t)|\ge |\\nobreakspace{}\gamma'(t)|\eqlbl{gamma<gamma}\]
 for any $t$.
 
-Note that both curves $\gamma(t)$ and $\~\gamma(t)$ described the same way in the polar coordinates;
+Note that both curves $\gamma(t)$ and $\\nobreakspace{}\gamma(t)$ described the same way in the polar coordinates;
 denote these coordinates by $(\theta(t),r(t))$.
 Then 
 \begin{align*}
@@ -2284,7 +2476,7 @@ Then
 \\
 &=|\tfrac{\partial w}{\partial\theta}|^2\cdot|\theta'(t)|^2+|r'(t)|^2
 \intertext{The same way} 
-\~\gamma'(t)|^2&=|\tfrac{\partial \~w}{\partial\theta}|^2\cdot|\theta'(t)|^2+|r'(t)|^2;
+\\nobreakspace{}\gamma'(t)|^2&=|\tfrac{\partial \\nobreakspace{}w}{\partial\theta}|^2\cdot|\theta'(t)|^2+|r'(t)|^2;
 \end{align*}
 hence \ref{gamma<gamma} follows.
 \qeds
@@ -2364,7 +2556,7 @@ that is, for fixed $v$, the value $\langle\tfrac{\partial s}{\partial u},\tfrac{
 If $v\mapsto s(u_0,v)$ is constant, then $\tfrac{\partial s}{\partial u}(u_0,v)=0$.
 In particular $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle(u_0,v)=0$ for any $v$.
 Since $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle$ does not depend on $u$, we have that $\langle\tfrac{\partial s}{\partial u},\tfrac{\partial s}{\partial v}\rangle(u,v)=0$, or equivalently
-$\tfrac{\partial s}{\partial u}\perp \tfrac{\partial s}{\partial v}$ for any $u$ and~$v$.
+$\tfrac{\partial s}{\partial u}\perp \tfrac{\partial s}{\partial v}$ for any $u$ and\nobreakspace{}$v$.
 \qeds
 
 \section*{Polar coordinates}
@@ -2543,11 +2735,11 @@ $\chi(S_g)=2-2\cdot g$, where $S_g$ is a surface of genus $g$;
 that is, sphere with $g$ handles.
 
 \parit{(2).} Note that if $\Sigma$ is a plane, then a geodesic in $\Sigma$ are formed by line segments.
-In this case the statement of theorem follows from Exercise~\ref{ex:pm2pi}.
+In this case the statement of theorem follows from Exercise\nobreakspace{}\ref{ex:pm2pi}.
 
 \parit{(3).} If $\Sigma$ is the unit sphere, then $G\equiv1$ and therefore formula \ref{eq:g-b} can be rewritten as 
 \[\tgc{\partial\Delta}+\area\Delta=2\cdot \pi,\]
-which follows from Proposition~\ref{prop:spherical-gb}.
+which follows from Proposition\nobreakspace{}\ref{prop:spherical-gb}.
 
 \medskip
 
@@ -2576,7 +2768,7 @@ Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parall
 
 \begin{thm}{Exercise}
 Let $\Sigma$ be a smooth closed surface with positive Gauss curvature.
-Given a line $\ell$ denote by $\omega_\ell$ the closed curve formed by points with tangent planes parallel to $\ell$.\footnote{Equivalently the normal vector at any point of $\omega_\ell$ is perpendicular to $\ell$. If the light falls on $\Sigma$ from one side parallel to $\ell$, then $\omega_\ell$ divides the bright and dark sides of~$\Sigma$.}
+Given a line $\ell$ denote by $\omega_\ell$ the closed curve formed by points with tangent planes parallel to $\ell$.\footnote{Equivalently the normal vector at any point of $\omega_\ell$ is perpendicular to $\ell$. If the light falls on $\Sigma$ from one side parallel to $\ell$, then $\omega_\ell$ divides the bright and dark sides of\nobreakspace{}$\Sigma$.}
 Show that parallel transport around $\omega_\ell$ is the identity map.
 \end{thm}
 
@@ -2589,10 +2781,10 @@ Assume $p$ is the point where $\alpha$ starts and ends.
 Set $\beta=\Norm\circ\gamma$ and $q=\Norm(p)$, so the spherical curve $\beta$ starts and ends at $q$.
 
 By Lemma \ref{lem:spherical-image} the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta$ in $\mathbb{S}^2$.
-By Proposition~\ref{prop:pt+tgc}, it follows that 
+By Proposition\nobreakspace{}\ref{prop:pt+tgc}, it follows that 
 \[\tgc{\alpha,\Sigma}=\tgc{\beta,\mathbb{S}^2} \pmod{2\cdot \pi}.\]
 
-By Proposition~\ref{prop:spherical-gb},
+By Proposition\nobreakspace{}\ref{prop:spherical-gb},
 \[\tgc{\beta,\mathbb{S}^2}+\area\beta=0\pmod{2\cdot \pi}.\]
 Therefore 
 \[\tgc{\alpha,\Sigma}+\area\beta=0\pmod{2\cdot \pi}.\]
@@ -2604,7 +2796,7 @@ k_1&0
 \\
 0&k_2
 \end{smallmatrix}\right)$, where $k_1$ and $k_2$ are the principle curvatures at $p$.
-Therefore, the determinant of $s_p$ is the Gauss curvature at~$p$.
+Therefore, the determinant of $s_p$ is the Gauss curvature at\nobreakspace{}$p$.
 
 If $\Sigma$ is a closed surface with positive Gauss curvature, then the Gauss map $\Norm\:\Sigma\to\mathbb{S}^2$ is a smooth bijection.
 Therefore 
@@ -2617,7 +2809,7 @@ where $\area\beta$ is the signed area surrounded by $\beta$; it is defined above
 Therefore 
 \[\tgc{\alpha,\Sigma}+\iint_\Delta G=0\pmod{2\cdot \pi}.\eqlbl{eq:gb(mod2pi)}\]
 
-If $\Delta$ is a disc in the plane, then Gauss curvature vanishes and by Exercise~\ref{ex:pm2pi}, we have 
+If $\Delta$ is a disc in the plane, then Gauss curvature vanishes and by Exercise\nobreakspace{}\ref{ex:pm2pi}, we have 
 \[\tgc{\partial\Delta}+\iint_\Delta G=2\cdot \pi.\]
 Assunme that $\Sigma_t$ is a smooth one parameter family of surfaces with 
 a one parameter family of discs $\Delta_t\subset \Sigma_t$ and $\alpha_t$ is the boundary $\partial\Delta_t$ parameterized in such a way that $\Delta_t$ lies on the left from it.
@@ -2761,11 +2953,11 @@ It is useful to know that $\chi(\mathbb{S}^2)=2$; $\chi(\mathbb{T}^2)=0$ where $
 $\chi( S_g)=2-2\cdot g$, where $S_g$ is a surface of genus $g$; that is, sphere with $g$ handles.
 
 \parit{(2).} Note that if $\Sigma$ is a plane, then a geodesic in $\Sigma$ are formed by line segments.
-In this case the statement of theorem follows from Exercise~\ref{ex:pm2pi}.
+In this case the statement of theorem follows from Exercise\nobreakspace{}\ref{ex:pm2pi}.
 
 \parit{(3).} If $\Sigma$ is the unit sphere, then $K\equiv1$. Therefore the formula \ref{eq:g-b} can be rewritten as 
 \[\tgc{\partial\Delta}+\area\Delta=2\cdot \pi,\]
-which follows from Proposition~\ref{prop:spherical-gb}.
+which follows from Proposition\nobreakspace{}\ref{prop:spherical-gb}.
 
 \medskip
 
@@ -2794,7 +2986,7 @@ Then the parallel transport along $\alpha$ in $\Sigma$ coincides with the parall
 
 \begin{thm}{Exercise}
 Let $\Sigma$ be a smooth closed surface with positive Gauss curvature.
-Given a line $\ell$ denote by $\omega_\ell$ the closed curve formed by points with tangent planes parallel to $\ell$.\footnote{Equivalently the normal vector at any point of $\omega_\ell$ is perpendicular to $\ell$. If the light falls on $\Sigma$ from one side parallel to $\ell$, then $\omega_\ell$ divides the bright and dark sides of~$\Sigma$.}
+Given a line $\ell$ denote by $\omega_\ell$ the closed curve formed by points with tangent planes parallel to $\ell$.\footnote{Equivalently the normal vector at any point of $\omega_\ell$ is perpendicular to $\ell$. If the light falls on $\Sigma$ from one side parallel to $\ell$, then $\omega_\ell$ divides the bright and dark sides of\nobreakspace{}$\Sigma$.}
 Show that parallel transport around $\omega_\ell$ is the identity map.
 \end{thm}
 
@@ -2807,10 +2999,10 @@ Assume $p$ is the point where $\alpha$ starts and ends.
 Set $\beta=\nu\circ\gamma$ and $q=\nu(p)$, so the spherical curve $\beta$ starts and ends at $q$.
 
 By Lemma \ref{lem:spherical-image} the parallel transport along $\alpha$ in $\Sigma$ coincides with the parallel transport along the curve $\beta$ in $\mathbb{S}^2$.
-By Proposition~\ref{prop:pt+tgc}, it follows that 
+By Proposition\nobreakspace{}\ref{prop:pt+tgc}, it follows that 
 \[\tgc{\alpha,\Sigma}=\tgc{\beta,\mathbb{S}^2} \pmod{2\cdot \pi}.\]
 
-By Proposition~\ref{prop:spherical-gb},
+By Proposition\nobreakspace{}\ref{prop:spherical-gb},
 \[\tgc{\beta,\mathbb{S}^2}+\area\beta=0\pmod{2\cdot \pi}.\]
 Therefore 
 \[\tgc{\alpha,\Sigma}+\area\beta=0\pmod{2\cdot \pi}.\]
@@ -2822,7 +3014,7 @@ k_1&0
 \\
 0&k_2
 \end{smallmatrix}\right)$, where $k_1$ and $k_2$ are the principle curvatures at $p$.
-Therefore, the determinant of $s_p$ is the Gauss curvature at~$p$.
+Therefore, the determinant of $s_p$ is the Gauss curvature at\nobreakspace{}$p$.
 
 If $\Sigma$ is a closed surface with positive Gauss curvature, then the Gauss map $\nu\:\Sigma\to\mathbb{S}^2$ is a smooth bijection.
 Therefore 
@@ -2835,7 +3027,7 @@ where $\area\beta$ is the signed area surrounded by $\beta$; it is defined above
 Therefore 
 \[\tgc{\alpha,\Sigma}+\iint_\Delta K=0\pmod{2\cdot \pi}.\eqlbl{eq:gb(mod2pi)}\]
 
-If $\Delta$ is a disc in the plane, then Gauss curvature vanishes and by Exercise~\ref{ex:pm2pi}, we have 
+If $\Delta$ is a disc in the plane, then Gauss curvature vanishes and by Exercise\nobreakspace{}\ref{ex:pm2pi}, we have 
 \[\tgc{\partial\Delta}+\iint_\Delta K=2\cdot \pi.\]
 Assunme that $\Sigma_t$ is a smooth one parameter family of surfaces with 
 a one parameter family of discs $\Delta_t\subset \Sigma_t$ and $\alpha_t$ is the boundary $\partial\Delta_t$ parameterized in such a way that $\Delta_t$ lies on the left from it.
@@ -3259,7 +3451,7 @@ Let us denote by $\Norm(x,y)$ the unit normal vector at the point $(x,y,f(x,y))\
 that is, its $z$-coordinate is positive at each point.
 Consider the vector field $\vec u$ on the domain $\mathbb{R}\times D$ defined by 
 $\vec u(x,y,z)\z=\Norm (x,y)$.
-By construction $|\vec u|\equiv 1$ and according to Lemma~\ref{lem:div+H}, $\div \vec u\equiv -H\equiv 0$.
+By construction $|\vec u|\equiv 1$ and according to Lemma\nobreakspace{}\ref{lem:div+H}, $\div \vec u\equiv -H\equiv 0$.
 Therefore $\vec u$ is a calibrating $\Delta$ in $\mathbb{R}\times D$.
 In particular
 \[\begin{aligned}
@@ -3422,18 +3614,18 @@ Note that $\tfrac{\partial}{\partial r}w\perp \tfrac{\partial}{\partial \theta}w
 otherwise for small $\epsilon>0$ the intrinsic distance from $p$ to $w(\theta\pm \epsilon,r)$ would be shorter than $r$, which contradicts the previous statement.
 
 \begin{thm}{Proposition}\label{prop:loc-comp-l}
-Let $w(\theta,r)$ and $\~w(\theta,r)$ be the polar coordinates of a surface $\Sigma$ at $p$ and its tangent plane $\T_p$ at zero, so $w(\theta,r)\z=\exp_p[\~w(\theta,r)]$.
-Given a real interval $[a,b]$ consider the one parameter families of circular arcs $\sigma_r\:[a,b]\to \Sigma$ and $\~\sigma_r\:[a,b]\to \T_p$
-$\sigma_r(t)\z=w(t,r)$ and $\~\sigma_r(t)=\~w(t,r)$.
-Set $\ell(r)=\length \sigma_r$ and $\~\ell(r)\z=\length \~\sigma_r$.%
-\footnote{Note that angular measure of $\~\sigma_r$ is $b-a$; therefore $\~\ell(r)=r\cdot(b-a)$.}
+Let $w(\theta,r)$ and $\\nobreakspace{}w(\theta,r)$ be the polar coordinates of a surface $\Sigma$ at $p$ and its tangent plane $\T_p$ at zero, so $w(\theta,r)\z=\exp_p[\\nobreakspace{}w(\theta,r)]$.
+Given a real interval $[a,b]$ consider the one parameter families of circular arcs $\sigma_r\:[a,b]\to \Sigma$ and $\\nobreakspace{}\sigma_r\:[a,b]\to \T_p$
+$\sigma_r(t)\z=w(t,r)$ and $\\nobreakspace{}\sigma_r(t)=\\nobreakspace{}w(t,r)$.
+Set $\ell(r)=\length \sigma_r$ and $\\nobreakspace{}\ell(r)\z=\length \\nobreakspace{}\sigma_r$.%
+\footnote{Note that angular measure of $\\nobreakspace{}\sigma_r$ is $b-a$; therefore $\\nobreakspace{}\ell(r)=r\cdot(b-a)$.}
 
 \begin{enumerate}[(i)]
  \item If the Gauss curvature of $\Sigma$ is nonnegative, then 
- \[\ell(r)\le \~\ell(r)\]
+ \[\ell(r)\le \\nobreakspace{}\ell(r)\]
  for all small $r>0$.
  \item If the Gauss curvature of $\Sigma$ is nonpositive, then 
- \[\ell(r)\ge \~\ell(r)\]
+ \[\ell(r)\ge \\nobreakspace{}\ell(r)\]
  for all small $r>0$.
 \end{enumerate}
 
@@ -3442,13 +3634,13 @@ Set $\ell(r)=\length \sigma_r$ and $\~\ell(r)\z=\length \~\sigma_r$.%
 Taking a limit as $b\to a$, we obtain the following corollary.
 
 \begin{thm}{Corollary}\label{cor:w<w}
-Let $w(\theta,r)$ and $\~w(\theta,r)$ be the polar coordinates of a surface $\Sigma$ at $p$ and its tangent plane $\T_p$ at zero, so $w(\theta,r)\z=\exp_p[\~w(\theta,r)]$.
+Let $w(\theta,r)$ and $\\nobreakspace{}w(\theta,r)$ be the polar coordinates of a surface $\Sigma$ at $p$ and its tangent plane $\T_p$ at zero, so $w(\theta,r)\z=\exp_p[\\nobreakspace{}w(\theta,r)]$.
 \begin{enumerate}[(i)]
  \item If the Gauss curvature of $\Sigma$ is nonnegative, then 
- \[|\tfrac{\partial}{\partial \theta} w|\le |\tfrac{\partial}{\partial \theta} \~w|\]
+ \[|\tfrac{\partial}{\partial \theta} w|\le |\tfrac{\partial}{\partial \theta} \\nobreakspace{}w|\]
  for all small $r>0$.
  \item If the Gauss curvature of $\Sigma$ is nonpositive, then 
-\[|\tfrac{\partial}{\partial \theta} w|\ge |\tfrac{\partial}{\partial \theta} \~w|\]
+\[|\tfrac{\partial}{\partial \theta} w|\ge |\tfrac{\partial}{\partial \theta} \\nobreakspace{}w|\]
  for all small $r>0$.
 \end{enumerate}
 \end{thm}
@@ -3469,20 +3661,20 @@ which is bounded by two geodesics from $p$ with angle $b-a$
 and a circular arc that meets these geodesics at right angle.
 
 Since the plane has vanishing Gauss curvature, we have
-\[\~\ell'(r)=2\cdot (b-a),\eqlbl{eq:tilde-ell'}\]
-which agrees with the formula for the length of the arc $\~\ell(r)\z=2\cdot\pi\cdot r$.
+\[\\nobreakspace{}\ell'(r)=2\cdot (b-a),\eqlbl{eq:tilde-ell'}\]
+which agrees with the formula for the length of the arc $\\nobreakspace{}\ell(r)\z=2\cdot\pi\cdot r$.
 
 If the Gauss curvature of $\Sigma$ is nonnegative,
 the equations \ref{eq:ell'} and \ref{eq:tilde-ell'} imply that
-\[\ell'(r)\le \~\ell'(r)\]
+\[\ell'(r)\le \\nobreakspace{}\ell'(r)\]
 for any small $r$.
 
 If the Gauss curvature of $\Sigma$ is nonnegative,
 the same equations imply that
-\[\ell'(r)\ge \~\ell'(r)\]
+\[\ell'(r)\ge \\nobreakspace{}\ell'(r)\]
 for any small $r$.
 
-Since $\ell(0)=\~\ell(0)$, integrating the inequalities proves both statements.\qeds
+Since $\ell(0)=\\nobreakspace{}\ell(0)$, integrating the inequalities proves both statements.\qeds
 
 The following exercise provides a stronger statement.
 It almost follow from the proof above, but one has to make an extra observation.
@@ -3491,11 +3683,11 @@ It almost follow from the proof above, but one has to make an extra observation.
 \begin{thm}{Exercise}
 Assume $\Sigma$ is a smooth regular surface and $p\in\Sigma$,
 denote by $\ell(r)$ the circumference of the circle with the center at $p$ and radius $r$ in $\Sigma$
-and let $\~\ell(r)=2\cdot\pi\cdot r$ the circumference of the plane circle of radius $r$.
+and let $\\nobreakspace{}\ell(r)=2\cdot\pi\cdot r$ the circumference of the plane circle of radius $r$.
 
 \begin{enumerate}[(i)]
- \item Show that if Gauss curvature of $\Sigma$ is nonnegative, then the function $r\mapsto \ell(r)$ is concave for small $r>0$. Conclude that the function $r\mapsto \frac{\ell(r)}{\~\ell(r)}$ is nonincreasing for small $r>0$.
-\item Show that if Gauss curvature of $\Sigma$ is nonpositive, then the function $r\mapsto \ell(r)$ is convex for small $r>0$. Conclude that the function $r\mapsto \frac{\ell(r)}{\~\ell(r)}$ is nondecresing for small $r>0$.
+ \item Show that if Gauss curvature of $\Sigma$ is nonnegative, then the function $r\mapsto \ell(r)$ is concave for small $r>0$. Conclude that the function $r\mapsto \frac{\ell(r)}{\\nobreakspace{}\ell(r)}$ is nonincreasing for small $r>0$.
+\item Show that if Gauss curvature of $\Sigma$ is nonpositive, then the function $r\mapsto \ell(r)$ is convex for small $r>0$. Conclude that the function $r\mapsto \frac{\ell(r)}{\\nobreakspace{}\ell(r)}$ is nondecresing for small $r>0$.
 \end{enumerate}
 
 \end{thm}
@@ -3615,7 +3807,7 @@ the parameters $\set{(x,y)}{f(x,y)<\epsilon}$ coincide with a neighborhood of $p
 Hence the general case follows.\qeds
 
 \parit{Proof assembling.}
-Let $s\:\mathbb{S}^2\z\to\mathbb{R}^3$ be the parametization of $\Sigma$ provided by Lemma~\ref{lem:gauss-inverse}.
+Let $s\:\mathbb{S}^2\z\to\mathbb{R}^3$ be the parametization of $\Sigma$ provided by Lemma\nobreakspace{}\ref{lem:gauss-inverse}.
 Then the equidistant surface $\Sigma_R$ can be parametrized by $s_R(u)= s(u)+R\cdot u$ for $u\in\mathbb{S}^2$.
 Rescaling $s_R$ by a  factor of $\tfrac1r$ we get the map $u\mapsto \tfrac1R\cdot s(u)+u$ which converges smoothly to the indentity map on the sphere $\mathbb{S}^2$.
 Therefore $\Sigma_R$ is embedded for sufficiently large $R$.
@@ -3627,10 +3819,10 @@ Therefore $\Sigma_R$ is embedded for sufficiently large $R$.
 \vskip-0mm
 \end{wrapfigure}
 
-Applying Theorem~\ref{thm:convex-embedded}, we get that $\Sigma_R$ bounds a convex set.
+Applying Theorem\nobreakspace{}\ref{thm:convex-embedded}, we get that $\Sigma_R$ bounds a convex set.
 
-By Lemma~\ref{lem:curc<1/R}, the principle curvatures of $\Sigma_R$ are smaller than $\tfrac1R$.
-Therefore the same idea as in Exercise~\ref{ex:convex-lagunov} shows that any point $p$ of $\Sigma_R$ can be supported by a ball of radius $R$ from inside.
+By Lemma\nobreakspace{}\ref{lem:curc<1/R}, the principle curvatures of $\Sigma_R$ are smaller than $\tfrac1R$.
+Therefore the same idea as in Exercise\nobreakspace{}\ref{ex:convex-lagunov} shows that any point $p$ of $\Sigma_R$ can be supported by a ball of radius $R$ from inside.
 Note that the center $p'$ of such ball has to lie on $\Sigma$;
 indeed it lies at distance $R$ in the normal direction.
 In other words, the map $s_0(u)=s_R(u)-R\cdot u$ is injective, or equivalently $\Sigma$  has no self-intersection.
@@ -3671,7 +3863,7 @@ Fix a parameter value $t_0$; set $p=\gamma(t_0)$, $v=\gamma'(t_0)$ and $a\z=\gam
 so we need to show that
 \[\langle a,\Norm_{p}\rangle=\II_p(v,v).\eqlbl{a-nu-II}\]
 Let $z=f(x,y)$ be the local representaion of $\Sigma$ in the tangent-normal coordinates at $p$;
-we assume that $\Norm$ points in the direction of~$\Norm_p$.
+we assume that $\Norm$ points in the direction of\nobreakspace{}$\Norm_p$.
 
 Without loss of generality may assume that $\gamma$ runs in the graph $z=f(x,y)$;
 so 
@@ -3722,7 +3914,7 @@ Note that
 2\cdot \tfrac{\partial^2 f}{\partial x\partial y}\cdot x'\cdot y'
 +
 \tfrac{\partial^2 f}{\partial y^2}\cdot (y')^2\right)(t_0);\]
-that is, the $z$-coordinate of the acceleration $a$ equals $\II_p(v,v)$ which is equivalent to~\ref{a-nu-II}.
+that is, the $z$-coordinate of the acceleration $a$ equals $\II_p(v,v)$ which is equivalent to\nobreakspace{}\ref{a-nu-II}.
 \qeds
 
 
@@ -4473,11 +4665,11 @@ Fix a plane $\Pi$ intersecting $R$.
 Consider a conn
 
 Since $\Sigma$ is connected, so is $R$;
-moreover any two points in the interior of $R$ can be connected by a polygonal line in the interior of~$R$.
+moreover any two points in the interior of $R$ can be connected by a polygonal line in the interior of\nobreakspace{}$R$.
 
 Assume the interior of $R$ is not convex; that is, there are points $x,y\in R$ and a point $z$ between $x$ and $y$ that does not lie in the interior of $R$.
 Consider a polygonal  line $\beta$ from $x$ to $y$ in the interior of $R$.
-Let $y_0$ be the first point on $\beta$ such that the chord $[x,y_0]$ touches $\Sigma$ at some point, say~$z_0$.
+Let $y_0$ be the first point on $\beta$ such that the chord $[x,y_0]$ touches $\Sigma$ at some point, say\nobreakspace{}$z_0$.
 
 \qeds
 
@@ -4644,7 +4836,7 @@ Suppose $\tau,\nu$ denotes the Frenet frame of $\gamma$.
 \section*{DNA inequality*}
 
 Recall that curvature of a spherical curve is at least $1$
-(Exercise~\ref{ex:curvature-of-spherical-curve}).
+(Exercise\nobreakspace{}\ref{ex:curvature-of-spherical-curve}).
 In particular the length of spherical curve cannot exceed its total curvature.
 The following theorem shows that the same inequality holds for \emph{closed} curves in a unit ball.
 
@@ -4742,7 +4934,7 @@ Hence the result.
 
 This theorem was proved by Don Chakerian \cite{chakerian};
 for plane curves it was prved earlier by Istv\'{a}n F\'{a}ry \cite{fary-DNA}.
-Few proofs of this theorem are discussed by Serge Tabachnikov~\cite{tabachnikov}.
+Few proofs of this theorem are discussed by Serge Tabachnikov\nobreakspace{}\cite{tabachnikov}.
 He also conjectured the following closely related statement:
 
 \begin{thm}{Theorem}
@@ -4752,7 +4944,7 @@ Then
 
 \end{thm}
 
-It was proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso}; latter a simpler proof was given by Alexander Nazarov and Fedor Petrov~\cite{nazarov-petrov}.
+It was proved by Jeffrey Lagarias and Thomas Richardson \cite{lagarias-richardso}; latter a simpler proof was given by Alexander Nazarov and Fedor Petrov\nobreakspace{}\cite{nazarov-petrov}.
 The proof is annoyingly difficult; we do not present it here.
 
 
@@ -4888,7 +5080,7 @@ where $G$ denotes the Gauss curvature of $\Sigma$.
 \end{thm}
 
 Note that if $\Sigma$ is a plane, then geodesic in $\Sigma$ are formed by line segments.
-In this case the statement of theorem follows from Exercise~\ref{ex:pm2pi}.
+In this case the statement of theorem follows from Exercise\nobreakspace{}\ref{ex:pm2pi}.
 In the next section we will prove the formula for the unit sphere;
 latter we will use it in the sketch of the proof of the general case.
 
@@ -4969,7 +5161,7 @@ Suppose that a curve $\alpha$ runs on the unit sphere
 Let us denote by $\alpha''(t)^\top$ the projection of vector $\alpha''(t)$ to the tanget plane of the sphere at $\alpha(t)$.
 
 Assume $\alpha$ is a unit-speed curve.
-By Proposition~\ref{prop:a'-pertp-a''}, $\alpha''(t)\perp\alpha'(t)$ and therefore $\alpha''(t)^\top\perp\alpha'(t)$.
+By Proposition\nobreakspace{}\ref{prop:a'-pertp-a''}, $\alpha''(t)\perp\alpha'(t)$ and therefore $\alpha''(t)^\top\perp\alpha'(t)$.
 If $w(t)$ denotes by the vector $\alpha'(t)$ rotated
 counterclockwise by angle $\tfrac\pi2$ in the tangent plane to the sphere at $\alpha(t)$, then 
 \[\alpha''(t)^\top=\kappa_\alpha(t)\cdot w(t)\]
@@ -5048,7 +5240,7 @@ The total signed curvature of a smooth unit-speed curve $\alpha\:[a,b]\z\to\math
 \[\tsc\alpha=\int_{[a,b]}\kappa(t)\cdot dt.\]
 
 It is straightforward to show that for sufficienlty fine partition of closed unit-speed curve $\alpha$ the inscribed polygonal line has the same total signed curvature.
-Therefore by exercises~\ref{ex:2kpi} and \ref{ex:pm2pi},
+Therefore by exercises\nobreakspace{}\ref{ex:2kpi} and \ref{ex:pm2pi},
 we get that the total signed curvature of any closed simple curve is mutiple of $2\cdot\pi$ and if the curve is simple, it has to be $\pm2\cdot\pi$.
 
 \begin{thm}{Exercise}\label{ex:curvature-of-circle}

@@ -4569,8 +4569,8 @@ draw z.x5--z.q;
 
 dOt z.p,z.q,z.x0,z.x1,z.x2,z.x3,z.x4,z.x5;
 
-label.bot(btex $p$ etex, z.p);
-label.bot(btex $q$ etex, z.q);
+label.llft(btex $p$ etex, z.p);
+label.lrt(btex $q$ etex, z.q);
 label.top(btex $x_0$ etex, z.x0);
 label.urt(btex $x_1$ etex, z.x1);
 label.urt(btex $x_2$ etex, z.x2);

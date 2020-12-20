@@ -77,7 +77,7 @@ isbn=false]{biblatex}
 \usepackage{titletoc}% http://ctan.org/pkg/titletoc
 \titlecontents*{section}[.5em]
   {\small}
-  {\thecontentslabel.~}
+  {\thecontentslabel.\nobreakspace{}}
   {}
   { \textbf{\thecontentspage}}
   [; ][.]
@@ -107,6 +107,8 @@ isbn=false]{biblatex}
 
 \def\ge{\geqslant}
 \def\le{\leqslant}
+\def\geq{\ge}
+\def\leq{\le}
 
 \def\df{\mathrel{:=}}
 
