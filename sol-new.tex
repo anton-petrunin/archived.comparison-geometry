@@ -55,8 +55,6 @@ The required function $\tau$ can be constructed in a similar way to the so-calle
 
 The simple arc we are looking for is $\beta \circ \sigma$, where $\sigma\:  [0,1]\to [0,1]$ is any right inverse of $\tau$.
 
-%This problem involves reparametrization. Should we move it to the "reparametrizations section"?
-
 \parbf{\ref{ex:L-shape}.}
 Denote the union of two half-axis by $L$.
 
@@ -1777,8 +1775,8 @@ a\cdot b\cdot(\ell\cdot n-m^2)
 
 \parbf{\ref{ex:deformation}.}
 To find $x(t)$, one may solve the differential equation
-$x'(t)=\sqrt{1-|a\cdot \sin t|^2}$.
-Its solution is defined on any interval where $|a\cdot \sin t|<1$ holds.
+$x'(t)=\sqrt{1-|y'(t)|^2}$.
+Its solution is defined on any interval where $|y'(t)|=|a\cdot \sin t|<1$ holds.
 
 Apply \ref{ex:principal-revolution:formula} to calculate Gauss curvature of $\Sigma_a$.
 
@@ -1812,9 +1810,9 @@ $\measuredangle\hinge pxy+\measuredangle\hinge pyz+\measuredangle\hinge pzx\le2\
 Apply \ref{thm:comp:toponogov}.
 
 \parbf{\ref{ex:s-r}.}
-Choose vecctors $\vec u$, and $\vec w$ 
+Choose vectors $\vec u$, and $\vec w$ 
 such that $|\vec w|=\dist{p}{x}{}$, $|\vec u|=1$, and $\measuredangle(\vec u,\vec w)=\measuredangle\hinge xpq$.
-Conside the function
+Consider the function
 \[f\:t\mapsto t+|\vec w|-|\vec w-t\cdot \vec u|\]
 is concave.
 
@@ -1876,15 +1874,6 @@ and
 second for the triangle $[p\bar xy]$ and $\bar y\in [p,y]$.
 Then apply the angle monotonicity (\ref{lem:angle-monotonicity}).
 
-
-{
-
-\begin{wrapfigure}{r}{46 mm}
-\vskip-0mm
-\centering
-\includegraphics{mppics/pic-1650}
-\end{wrapfigure}
-
 \parbf{\ref{ex:convex-dist}.}
 It is sufficient to prove the Jensen inequality;
 that is, 
@@ -1896,6 +1885,11 @@ that is,
 \tfrac12\cdot \dist{\gamma_1(1)}{\gamma_2(1)}{}.
 \]
 
+\begin{wrapfigure}{r}{46 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-1650}
+\end{wrapfigure}
 
 Let $\delta$ be the geodesic path from $\gamma_2(0)$ to $\gamma_1(1)$.
 From \ref{ex:midpoints}, we have
@@ -1912,8 +1906,6 @@ Sum it up and apply the triangle inequality.
 
 \parit{Remark.} Note that modulo the comparison theorem, 
 the case of the Euclidean plane is just as hard.
-
-}
 
 \parbf{\ref{ex:dist-to-bry}}; \ref{SHORT.ex:dist-to-bry:-}.
 Choose two points $x,z\in\Sigma$;
