@@ -53,7 +53,7 @@ $\tau(t_1)=\tau(t_2)$ if and only if there is a connected component $(a,b)\subse
 
 The required function $\tau$ can be constructed in a similar way to the so-called {}\emph{devil's staircase} --- learn this construction and modify it.
 
-The simple arc we are looking for is $\beta \circ \sigma$, where $\sigma:  [0,1]\to [0,1]$ is any right inverse of $\tau$.
+The simple arc we are looking for is $\beta \circ \sigma$, where $\sigma\:  [0,1]\to [0,1]$ is any right inverse of $\tau$.
 
 %This problem involves reparametrization. Should we move it to the "reparametrizations section"?
 
@@ -1573,7 +1573,7 @@ Estimate the integral of the Gauss curvature over the entire surface and over a 
 \parbf{\ref{ex:unique-geod}}; \ref{SHORT.ex:unique-geod:unique}.
 By \ref{prop:shortest-paths-exist} and \ref{prop:gamma''}, any two points in $\Sigma$ can be connected by a geodesic.
 Suppose that points $p$ and $q$ can be connected by two distinct geodesics $\gamma_1$ and $\gamma_2$.
-By Exercise  \label{ex:two-min-geod}, $\gamma_1$ and $\gamma_2$ share only their endpoints.
+By \ref{ex:two-min-geod}, $\gamma_1$ and $\gamma_2$ share only their endpoints.
 Since the surface is simply-connected, $\gamma_1$ and $\gamma_2$ together bound a disc, say $\Delta\subset\Sigma$.
 It remains to apply Gauss--Bonnet formula to $\Delta$ and make a conclusion.
  
@@ -1771,22 +1771,19 @@ a\cdot b\cdot(\ell\cdot n-m^2)
 
 \parbf{\ref{ex:K=0}.} Note and use that by \ref{prop:rauch}, $\exp_p$ is length-preserving.
 
-{
-
 \parbf{\ref{ex:K=1}.} Modify the proof of \ref{prop:rauch} to show that $K\equiv 1$ implies that $b(\theta,r)\z=\sin r$ for all small $r\ge 0$.
 
-}
 
 
+\parbf{\ref{ex:deformation}.}
+To find $x(t)$, one may solve the differential equation
+$x'(t)=\sqrt{1-|a\cdot \sin t|^2}$.
+Its solution is defined on any interval where $|a\cdot \sin t|<1$ holds.
 
+Apply \ref{ex:principal-revolution:formula} to calculate Gauss curvature of $\Sigma_a$.
 
-
-
-
-
-
-
-
+By \ref{ex:K=1}, small discs $\Delta_a$  in $\Sigma_a$ admit intrinsic isometry to a disc in a unit sphere.
+To show that $\Delta_a$ is not congruent to a sphericsl disc $\Delta_1$ for $a\ne 1$, show that its principle curvature is not 1 at some point. 
 
 \stepcounter{section}
 \setcounter{eqtn}{0}

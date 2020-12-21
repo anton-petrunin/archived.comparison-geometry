@@ -173,9 +173,7 @@ If $\Sigma$ has nonnegative Gauss curvature, then
 for any geodesic triangle $[xyz]$ in $B(p,\tfrac r4)_\Sigma$.
 \end{subthm}
 
-
 \end{thm}
-
 
 \parit{Proof.}
 The existence of $r>0$ follows from \ref{prop:exp}.
@@ -273,7 +271,6 @@ Show that
 \le
 \frac{\dist{x}{p}{}+\dist{x}{y}{}-\side\hinge xpy}{\dist{x}{y}{}}.\]
 \end{thm}
-
 
 \parit{Proof.} 
 By the angle monotonicity (\ref{lem:angle-monotonicity}), we have
@@ -423,9 +420,7 @@ Use \ref{SHORT.ex:open-comparison:almost-min} to extend the proof of \ref{thm:co
 (Show that $R_p=\infty$ for any $p\in\Sigma$.) 
 \end{subthm}
 
-
 \end{thm}
-
 
 \begin{wrapfigure}{r}{30 mm}
 \vskip4mm
@@ -527,7 +522,6 @@ if the inequality
 \[\dist{p}{q}{\Sigma}\ge |\tilde p- \tilde q|_{\mathbb{R}^2}\qquad \text{(or, respectively,}\quad \dist{p}{q}{\Sigma}\le |\tilde p- \tilde q|_{\mathbb{R}^2})\]
 holds for any two points $p$ and $q$ on the sides of $[xyz]$.
 
-
 \begin{thm}{Proposition}\label{prop:comp-reformulations}
 Let $\Sigma$ be a proper smooth regular surface.
 Then the following three conditions are equivalent:
@@ -545,7 +539,6 @@ For any geodesic triangle $[xyz]$ in $\Sigma$ we have
 \begin{subthm}{fat}
  Any geodesic triangle in $\Sigma$ is fat.
 \end{subthm}
-
 
 \medskip
 
@@ -577,7 +570,7 @@ In the proof we will use the following translation of the Alexandrov lemma to th
 \begin{thm}{Reformulation of Alexandrov lemma}\label{lem:alex-reformulation}\\
 Let $[pxz]$ be a triangle in a surface $\Sigma$ and 
  $y$ a point on the side $[x,z]$.
-Consider its model triangle $[\tilde p\tilde x\tilde z]=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x,\tilde z]$.
+Consider its model triangle $[\tilde p\tilde x\tilde z]\z=\tilde\triangle pxz$ and let $\tilde y$ be the corresponding point on the side $[\tilde x,\tilde z]$.
 Then the following expressions have the same signs:
 \begin{enumerate}[(i)]
  \item $\dist{p}{y}\Sigma-\dist{\tilde p}{\tilde y}{\mathbb{R}^2}$;
@@ -595,7 +588,6 @@ Note that $\measuredangle\hinge ypx+\measuredangle\hinge ypz=\pi$.
 By \ref{SHORT.mang>angk}, 
 \[\modangle ypx+\modangle ypz\le \pi.\]
 It remains to apply Alexandrov's lemma (\ref{lem:alex-reformulation}).
-
 
 \parit{\ref{SHORT.angk>angk}$\Rightarrow$\ref{SHORT.fat}.}
 Applying \ref{SHORT.angk>angk} twice, first for $y\in [x,z]$ and then for $w\in [p,x]$, we get that
@@ -627,7 +619,6 @@ Show that if $\Sigma$ is simply-connected and the Gauss curvature of $\Sigma$ is
 \end{subthm}
 
 \end{thm}
-
 
 \begin{thm}{Exercise}\label{ex:midpoints}
 Let $\bar x$ and $\bar y$ be the midpoints of minimizing geodesics $[p,x]$ and $[p,y]$ in an open smooth regular surface $\Sigma$.
@@ -676,7 +667,6 @@ that is, for any geodesic $\gamma$ in $\Delta$ the function $t\mapsto f\circ\gam
 
 A unit-speed geodesic $\lambda\:[0,\infty)\to \spc{X}$ is called a \index{half-line}\emph{half-line} if it is minimizing on each interval $[a,b]\subset [0,\infty)$.
 
-
 \begin{thm}{Proposition}\label{prop:busemann}
 Suppose that $\lambda\:[0,\infty)\to \Sigma$ is a half-line in a smooth regular surface $\Sigma$. 
 Then the function 
@@ -721,11 +711,10 @@ Observe that each function $x\mapsto \dist{\lambda(t)}{x}{\Sigma}- t$ is 1-Lipsc
 Therefore its limit $x\mapsto\bus_\lambda(x)$ is 1-Lipschitz as well.
 The second part of \ref{SHORT.prop:busemann:all} is evident, since for $s \geq t$, we have $| \gamma (s) - \gamma (t) |_{\Sigma} = s-t$.
 
-
 It remains to prove the last two statements.
 Choose a geodesic~$\alpha$.
-Given $t\ge 0$, consider the function $h_t(s)=\dist{\lambda(t)}{\alpha(s)}{\Sigma}^2-s^2$.
-
+Given $t\ge 0$, consider the function 
+\[h_t(s)=\dist{\lambda(t)}{\alpha(s)}{\Sigma}^2-s^2.\]
 
 Observe that for any fixed $x\in\Sigma$, we have $\tfrac{\dist{\lambda(t)}{x}{}}t\to 1$ as $t\to\infty$.
 Therefore
@@ -769,8 +758,6 @@ Show that the set $S_s$ is either one-point, a geodesic arc or a closed geodesic
 Show that all these possibilities can occur.
 \end{subthm}
 
-
-
 \end{thm}
 
 \section{Line splitting theorem}
@@ -786,7 +773,6 @@ Then $\Sigma$ admits an intrinsic isometry to the Euclidean plane or a circular 
 In particular, $\Sigma$ has zero Gauss curvature at every point.
 \end{thm}
 
-
 This theorem was proved by Stefan Cohn-Vossen \cite[Satz 5 in][]{convossen}
 and it has a sequence of variations in differential geometry:
 \begin{itemize}
@@ -794,7 +780,6 @@ and it has a sequence of variations in differential geometry:
  \item Jeff Cheeger and Detlef Gromoll \cite{cheeger-gromoll-split} generalized it further to Riemannian manifolds with nonnegative Ricci curvature;
  \item Jost-Hinrich Eshenburg \cite{eshenburg-split} proved a splitting theorem for space-time with nonnegative Ricci curvature in timelike directions.
 \end{itemize}
-
 
 \parit{Proof.} 
 Consider two Busemann functions $\bus_+$ and $\bus_-$ associated with half-lines $\lambda:[0,\infty)\to \Sigma$ and $\lambda:(-\infty,0]\to \Sigma$; that is,
@@ -811,7 +796,6 @@ Let us show and use that
 \eqlbl{eq:bus+-=0}
 \]
 for any $x\in \Sigma$.
-
 
 Fix $x\in \Sigma$.
 Since $\lambda$ is a line, the triangle inequality implies that
@@ -931,7 +915,6 @@ Straightforward computations show that passing to the limit as $a\to \infty$, we
 \centering
 \includegraphics{mppics/pic-1775}
 \end{figure}
-
 
 Now let us swap ${x_0}$ with $x_1$ and ${z_0}$ with $z_1$,
 and repeat the argument above for $a\to-\infty$.
